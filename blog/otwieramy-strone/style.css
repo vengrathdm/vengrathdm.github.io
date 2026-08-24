@@ -1,22 +1,19 @@
 /* ============================================================
-   VENGRATH — launch post
-   A self-contained visual treatment for this article.
+   VENGRATH — individual article treatment
+   The global header/navigation intentionally comes from the
+   site's shared CSS. This file styles only the article.
    ============================================================ */
 
 :root {
-  --paper: #eee6d5;
-  --paper-deep: #e3d7c1;
-  --ink: #211d19;
-  --muted: #756c60;
-  --wine: #552d32;
-  --wine-dark: #341d22;
-  --gold: #a88752;
-  --line: rgba(62, 49, 39, .18);
-  --shadow: rgba(35, 25, 18, .22);
-}
-
-* {
-  box-sizing: border-box;
+  --article-paper: #d8cfbc;
+  --article-paper-deep: #c8bda8;
+  --article-ink: #211b18;
+  --article-muted: #655b50;
+  --article-wine: #552d32;
+  --article-wine-dark: #2e181d;
+  --article-gold: #a88752;
+  --article-line: rgba(31, 24, 19, .25);
+  --article-shadow: rgba(0, 0, 0, .48);
 }
 
 html {
@@ -24,101 +21,57 @@ html {
 }
 
 body.post-launch {
-  margin: 0;
   min-height: 100vh;
-  color: var(--ink);
+  margin: 0;
+  color: var(--article-ink);
   background:
-    radial-gradient(circle at 50% 0%, rgba(168, 135, 82, .13), transparent 34rem),
-    linear-gradient(115deg, #e6ddcc 0%, var(--paper) 48%, #ded2bd 100%);
-  font-family: "Libre Baskerville", Georgia, serif;
+    radial-gradient(circle at 50% -8%, rgba(111, 81, 51, .22), transparent 34rem),
+    radial-gradient(circle at 92% 72%, rgba(72, 36, 42, .18), transparent 30rem),
+    linear-gradient(145deg, #151516 0%, #211c1b 46%, #111112 100%);
   overflow-x: hidden;
 }
 
-/* Header */
+/* Atmospheric background */
 
-.post-launch .site-header {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: min(1180px, calc(100% - 48px));
-  margin: 0 auto;
-  padding: 28px 0 22px;
-  border-bottom: 1px solid var(--line);
-}
-
-.post-launch .wordmark {
-  color: var(--wine-dark);
-  text-decoration: none;
-  font-family: "Cinzel", serif;
-  font-weight: 700;
-  letter-spacing: .08em;
-}
-
-.post-launch .main-nav {
-  display: flex;
-  gap: 26px;
-  align-items: center;
-}
-
-.post-launch .main-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  font-family: "Manrope", sans-serif;
-  font-size: .72rem;
-  font-weight: 700;
-  letter-spacing: .11em;
-  text-transform: uppercase;
-  transition: color .2s ease, transform .2s ease;
-}
-
-.post-launch .main-nav a:hover {
-  color: var(--wine);
-  transform: translateY(-1px);
-}
-
-/* Atmosphere */
-
-.post-atmosphere {
+.post-launch .post-atmosphere {
   position: fixed;
   inset: 0;
+  z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  z-index: 0;
 }
 
-.post-orb {
+.post-launch .post-orb {
   position: absolute;
   display: block;
-  width: 28rem;
-  height: 28rem;
+  width: 30rem;
+  height: 30rem;
   border-radius: 50%;
-  filter: blur(70px);
-  opacity: .16;
+  filter: blur(90px);
+  opacity: .15;
 }
 
-.post-orb--one {
-  top: 4rem;
-  right: -12rem;
+.post-launch .post-orb--one {
+  top: -12rem;
+  right: -10rem;
   background: #a88752;
 }
 
-.post-orb--two {
-  bottom: -14rem;
+.post-launch .post-orb--two {
+  bottom: -15rem;
   left: -12rem;
   background: #552d32;
 }
 
-.post-starfield {
+.post-launch .post-starfield {
   position: absolute;
   inset: 0;
-  opacity: .16;
+  opacity: .13;
   background-image:
-    radial-gradient(circle at 15% 18%, var(--gold) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 78% 24%, var(--wine) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 31% 72%, var(--gold) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 88% 81%, var(--wine) 0 1px, transparent 1.5px);
+    radial-gradient(circle at 15% 18%, #c2a66f 0 1px, transparent 1.5px),
+    radial-gradient(circle at 78% 24%, #b78d91 0 1px, transparent 1.5px),
+    radial-gradient(circle at 31% 72%, #c2a66f 0 1px, transparent 1.5px),
+    radial-gradient(circle at 88% 81%, #b78d91 0 1px, transparent 1.5px);
   background-size: 220px 190px, 270px 240px, 310px 280px, 190px 230px;
 }
 
@@ -129,48 +82,51 @@ body.post-launch {
   z-index: 1;
   width: min(940px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 92px 0 120px;
+  padding: 88px 0 120px;
 }
 
 .post-launch .article {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(rgba(255,255,255,.12), rgba(255,255,255,.12)),
-    var(--paper);
-  border: 1px solid rgba(62, 49, 39, .22);
+    linear-gradient(rgba(255,255,255,.035), rgba(255,255,255,.035)),
+    var(--article-paper);
+  border: 1px solid rgba(194, 166, 111, .38);
   box-shadow:
-    0 30px 70px var(--shadow),
-    0 3px 0 rgba(255,255,255,.35) inset;
-}
-
-.post-launch .article::before,
-.post-launch .article::after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
+    0 34px 90px var(--article-shadow),
+    0 2px 0 rgba(255,255,255,.12) inset;
 }
 
 .post-launch .article::before {
+  content: "";
+  position: absolute;
   inset: 14px;
-  border: 1px solid rgba(168, 135, 82, .35);
+  border: 1px solid rgba(82, 61, 43, .28);
+  pointer-events: none;
 }
 
 .post-launch .article::after {
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
-  width: 7px;
+  width: 6px;
   height: 100%;
-  background: linear-gradient(var(--wine), var(--gold), var(--wine));
+  background: linear-gradient(
+    to bottom,
+    var(--article-wine),
+    var(--article-gold) 48%,
+    var(--article-wine)
+  );
 }
 
 /* Hero */
 
 .post-launch .article__header {
   position: relative;
-  padding: 86px clamp(34px, 8vw, 90px) 72px;
+  padding: 82px clamp(34px, 8vw, 90px) 70px;
   text-align: center;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--article-line);
 }
 
 .post-launch .article__header::after {
@@ -181,15 +137,15 @@ body.post-launch {
   transform: translateX(-50%);
   width: 38px;
   height: 24px;
-  color: var(--gold);
-  background: var(--paper);
+  color: var(--article-gold);
+  background: var(--article-paper);
   font-size: 16px;
   line-height: 24px;
 }
 
 .post-launch .eyebrow {
   margin: 0 0 24px;
-  color: var(--wine);
+  color: var(--article-wine);
   font-family: "Special Elite", "Courier New", monospace;
   font-size: .72rem;
   letter-spacing: .17em;
@@ -199,7 +155,7 @@ body.post-launch {
 .post-launch h1 {
   max-width: 760px;
   margin: 0 auto;
-  color: var(--wine-dark);
+  color: var(--article-wine-dark);
   font-family: "Cinzel", Georgia, serif;
   font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 600;
@@ -211,7 +167,7 @@ body.post-launch {
 .post-launch .article__lead {
   max-width: 650px;
   margin: 30px auto 0;
-  color: var(--muted);
+  color: var(--article-muted);
   font-size: 1.06rem;
   line-height: 1.9;
   font-style: italic;
@@ -234,7 +190,7 @@ body.post-launch {
 .post-launch .article__body p:first-child::first-letter {
   float: left;
   margin: .08em .14em 0 0;
-  color: var(--wine);
+  color: var(--article-wine);
   font-family: "Cinzel", serif;
   font-size: 4.2em;
   font-weight: 600;
@@ -244,16 +200,16 @@ body.post-launch {
 .post-launch .article__body p:nth-of-type(3) {
   margin: 3rem -2rem;
   padding: 1.5rem 2rem;
-  border-top: 1px solid var(--gold);
-  border-bottom: 1px solid var(--gold);
-  color: var(--wine-dark);
+  border-top: 1px solid var(--article-gold);
+  border-bottom: 1px solid var(--article-gold);
+  color: var(--article-wine-dark);
   font-size: 1.18rem;
   font-style: italic;
 }
 
 .post-launch .article__closing {
   margin-top: 3.8rem !important;
-  color: var(--wine-dark);
+  color: var(--article-wine-dark);
   font-family: "Cinzel", serif;
   font-size: 2rem;
   font-weight: 600;
@@ -269,7 +225,7 @@ body.post-launch {
   width: min(940px, calc(100% - 32px));
   margin: -48px auto 0;
   padding: 0 0 55px;
-  color: var(--muted);
+  color: rgba(230, 221, 204, .55);
   font-family: "Manrope", sans-serif;
   font-size: .7rem;
   letter-spacing: .08em;
@@ -280,17 +236,6 @@ body.post-launch {
 /* Responsive */
 
 @media (max-width: 760px) {
-  .post-launch .site-header {
-    display: block;
-    width: min(100% - 32px, 620px);
-  }
-
-  .post-launch .main-nav {
-    flex-wrap: wrap;
-    gap: 12px 18px;
-    margin-top: 18px;
-  }
-
   .post-launch .post-page {
     width: min(100% - 18px, 940px);
     padding-top: 36px;
@@ -318,9 +263,5 @@ body.post-launch {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .post-launch .main-nav a {
-    transition: none;
   }
 }
