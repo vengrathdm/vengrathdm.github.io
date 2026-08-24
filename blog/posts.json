@@ -1,0 +1,11 @@
+[
+  {
+    "title": "[Tytuł Wpisu]",
+    "description": "[Treść Opisu]",
+    "date": "2026-08-24",
+    "category": "Recenzja",
+    "system": "[System]",
+    "url": "posts/example-post.html",
+    "order": 10
+  }
+]

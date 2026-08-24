@@ -1,0 +1,29 @@
+
+:root{
+  --night:#10110f;
+  --night-soft:#171713;
+  --ink:#25231e;
+  --paper:#d9c79f;
+  --paper-light:#eadbb9;
+  --paper-shadow:#b69d72;
+  --red:#7b2229;
+  --red-light:#a13a3f;
+  --green:#31453c;
+  --blue:#2d3d45;
+  --gold:#a88955;
+  --muted:#958d7d;
+  --white:#eee6d4;
+  --serif:"Libre Baskerville", Georgia, serif;
+  --display:"Cinzel", Georgia, serif;
+  --type:"Special Elite", "Courier New", monospace;
+  --sans:"Manrope", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--white);font-family:var(--sans);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+::selection{background:var(--red);color:#fff}
+.skip-link{position:fixed;left:15px;top:-60px;z-index:200;background:var(--paper);color:var(--ink);padding:12px 18px}.skip-link:focus{top:15px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
