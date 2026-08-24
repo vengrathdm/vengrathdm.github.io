@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "title": "Otwieramy stronę. A teraz zaczynamy grać.",
+    "description": "Strona Vengratha jest gotowa. Od tego tygodnia zaczyna się również pisemna kronika prowadzonych sesji, projektów i innych rzeczy związanych z RPG.",
+    "date": "2026-08-24",
+    "category": "Ogłoszenia",
+    "system": "RPG",
+    "order": 9999,
+    "url": "otwieramy-strone/"
+  }
+]

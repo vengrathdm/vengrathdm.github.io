@@ -46,13 +46,13 @@ Każda podstrona korzysta ze wspólnych arkuszy CSS, więc późniejsze zmiany t
 
 ## Automatyczny blog
 
-Wpisy blogowe znajdują się w `blog/posts/`. Nie trzeba ręcznie edytować `blog/index.html`.
+Wpisy blogowe znajdują się w `blog/`. Nie trzeba ręcznie edytować `blog/index.html`.
 
 Aby dodać wpis:
-1. Skopiuj `blog/posts/example-post.html` i nadaj mu nową nazwę, np. `moja-recenzja.html`.
+1. Skopiuj `blog/example-post.html` i nadaj mu nową nazwę, np. `moja-recenzja.html`.
 2. Zmień jego `<title>`, `description` oraz metadane `post-date`, `post-category`, `post-system` i opcjonalnie `post-order`.
 3. Wgraj plik do GitHub.
-4. GitHub Actions uruchomi `.github/workflows/build-blog.yml`, przeskanuje `blog/posts/*.html` i wygeneruje `blog/posts.json`.
+4. GitHub Actions uruchomi `.github/workflows/build-blog.yml`, przeskanuje `blog/*/index.html` i wygeneruje `blog/posts.json`.
 5. Strona `blog/` pobierze ten plik i sama zbuduje tabelę z linkami.
 
 Dzięki temu głównym krokiem przy publikacji jest dodanie nowego pliku HTML. Nie trzeba dopisywać go ręcznie do listy wpisów.
@@ -62,7 +62,7 @@ Uwaga: GitHub Pages samo w sobie jest hostingiem statycznym, więc przeglądarka
 
 ## Real-Deal content architecture
 
-Kampanie, Projekty i Blog mają osobne automatyczne katalogi. Kampania lub projekt to folder zawierający `index.html`; wpis blogowy to pojedynczy HTML w `blog/posts/`. GitHub Actions generuje manifesty JSON po każdym pushu.
+Kampanie, Projekty i Blog mają osobne automatyczne katalogi. Kampania lub projekt to folder zawierający `index.html`; wpis blogowy to pojedynczy HTML w `blog/`. GitHub Actions generuje manifesty JSON po każdym pushu.
 
 ## Jak działa automatyczne wykrywanie kampanii
 
@@ -88,4 +88,15 @@ i dodać w `<head>`:
 
 Nie trzeba zmieniać `campaigns/index.html`, `campaigns.json` ani `campaign-index.js`. Po `git push` Action zrobi to automatycznie.
 
-Ten sam mechanizm działa niezależnie dla `projects/*/index.html` oraz `blog/posts/*.html`.
+Ten sam mechanizm działa niezależnie dla `projects/*/index.html` oraz `blog/*/index.html`.
+
+
+### Blog — struktura wpisów
+
+Każdy wpis jest osobnym folderem bezpośrednio w `blog/`:
+
+`blog/nazwa-wpisu/index.html`
+
+Katalog `blog/index.html` ładuje `blog/posts.json`, a GitHub Action automatycznie wykrywa każdy `blog/*/index.html` (z pominięciem samego `blog/index.html`) i aktualizuje manifest.
+
+Dodanie nowego wpisu wymaga więc tylko utworzenia nowego folderu z `index.html`.

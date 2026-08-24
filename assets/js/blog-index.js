@@ -44,7 +44,7 @@
 
   function safePath(value) {
     const normalized = String(value).replace(/^\/+/, '');
-    if (!normalized.startsWith('posts/') || normalized.includes('..')) return '#';
+    if (normalized.includes('..') || normalized.startsWith('/')) return '#';
     return normalized;
   }
 })();
