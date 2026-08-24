@@ -63,3 +63,29 @@ Uwaga: GitHub Pages samo w sobie jest hostingiem statycznym, więc przeglądarka
 ## Real-Deal content architecture
 
 Kampanie, Projekty i Blog mają osobne automatyczne katalogi. Kampania lub projekt to folder zawierający `index.html`; wpis blogowy to pojedynczy HTML w `blog/posts/`. GitHub Actions generuje manifesty JSON po każdym pushu.
+
+## Jak działa automatyczne wykrywanie kampanii
+
+Strona `campaigns/index.html` nie musi znać nazw kampanii. GitHub Pages jest hostingiem statycznym, więc przeglądarka nie może bezpośrednio wylistować zawartości katalogu serwera.
+
+Przy każdym `push` GitHub Action uruchamia skrypt, który przeszukuje:
+
+`campaigns/*/index.html`
+
+Każdy znaleziony folder jest odczytywany, a metadane z jego `<head>` trafiają do `campaigns/campaigns.json`. `campaigns/index.html` pobiera ten plik i generuje karty kampanii.
+
+Aby dodać nową kampanię, wystarczy utworzyć:
+
+`campaigns/nazwa-kampanii/index.html`
+
+i dodać w `<head>`:
+
+`campaign-title` — tytuł kampanii  
+`campaign-day` — dzień tygodnia  
+`campaign-system` — system  
+`campaign-creator` — twórca materiału  
+`campaign-status` — np. `Trwa`
+
+Nie trzeba zmieniać `campaigns/index.html`, `campaigns.json` ani `campaign-index.js`. Po `git push` Action zrobi to automatycznie.
+
+Ten sam mechanizm działa niezależnie dla `projects/*/index.html` oraz `blog/posts/*.html`.

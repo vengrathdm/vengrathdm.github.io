@@ -1,1 +1,56 @@
-(async()=>{const g=document.querySelector("#campaign-schedule");try{const r=await fetch("./campaigns.json");const a=await r.json();g.innerHTML="";a.forEach(c=>{const x=document.createElement("a");x.className="schedule-card";x.href=c.url;x.innerHTML=`<span class="schedule-card__day">${e(c.day)}</span><span class="status-live">Trwa</span><h3 class="schedule-card__title">${e(c.title)}</h3><span class="schedule-card__system">${e(c.system)}</span><span class="schedule-card__creator">${e(c.creator)}</span><span class="schedule-card__arrow">Otwórz kampanię →</span>`;g.appendChild(x)})}catch(e){g.innerHTML="<div class=blog-status>Nie udało się załadować grafiku.</div>"}function e(v){return String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",""":"&quot;","'":"&#039;"}[c]))}})();
+(() => {
+  const grid = document.querySelector("#campaign-schedule");
+  if (!grid) return;
+
+  fetch("./campaigns.json", { cache: "no-store" })
+    .then(response => {
+      if (!response.ok) throw new Error("Nie udało się pobrać campaigns.json.");
+      return response.json();
+    })
+    .then(campaigns => {
+      grid.innerHTML = "";
+
+      if (!campaigns.length) {
+        grid.innerHTML = '<div class="blog-status">Brak aktywnych kampanii.</div>';
+        return;
+      }
+
+      campaigns
+        .sort((a, b) => (a.order ?? 99) - (b.order ?? 99))
+        .forEach(campaign => {
+          const card = document.createElement("a");
+          card.className = "schedule-card";
+          card.href = campaign.url;
+
+          card.innerHTML = `
+            <span class="schedule-card__day">${escapeHtml(campaign.day)}</span>
+            <span class="status-live">${escapeHtml(campaign.status || "Trwa")}</span>
+            <h3 class="schedule-card__title">${escapeHtml(campaign.title)}</h3>
+            <span class="schedule-card__system">${escapeHtml(campaign.system)}</span>
+            <span class="schedule-card__creator">${escapeHtml(campaign.creator)}</span>
+            <span class="schedule-card__arrow">Otwórz kampanię →</span>
+          `;
+
+          grid.appendChild(card);
+        });
+    })
+    .catch(error => {
+      console.error(error);
+      grid.innerHTML = `
+        <div class="blog-status">
+          Nie udało się załadować grafiku. Sprawdź, czy GitHub Action wygenerował
+          <code>campaigns/campaigns.json</code>.
+        </div>
+      `;
+    });
+
+  function escapeHtml(value) {
+    return String(value ?? "").replace(/[&<>"']/g, character => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#039;"
+    }[character]));
+  }
+})();
