@@ -58,3 +58,8 @@ Aby dodać wpis:
 Dzięki temu głównym krokiem przy publikacji jest dodanie nowego pliku HTML. Nie trzeba dopisywać go ręcznie do listy wpisów.
 
 Uwaga: GitHub Pages samo w sobie jest hostingiem statycznym, więc przeglądarka nie może po prostu „wylistować” zawartości folderu serwera. Dlatego mechanizm wykorzystuje GitHub Actions do wygenerowania małego manifestu `posts.json`. Jest to rozwiązanie stabilniejsze niż odpytanie GitHub API z przeglądarki.
+
+
+## Real-Deal content architecture
+
+Kampanie, Projekty i Blog mają osobne automatyczne katalogi. Kampania lub projekt to folder zawierający `index.html`; wpis blogowy to pojedynczy HTML w `blog/posts/`. GitHub Actions generuje manifesty JSON po każdym pushu.
