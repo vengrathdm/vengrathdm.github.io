@@ -4,44 +4,44 @@
     "type": "KAMPANIA AUTORSKA",
     "system": "D&D 5e",
     "status": "W TRAKCIE TWORZENIA",
-    "description": "Celtycko-inspirowana heroic fantasy o roku, w którym Dullahan zapowiedział nadejście Dzikiego Gonu.",
-    "url": "echtra-midst-the-sidhe/",
-    "legacy": false
+    "legacy": false,
+    "order": 1,
+    "url": "echtra-midst-the-sidhe/"
   },
   {
     "title": "Widma Szarolasu",
     "type": "ZAKOŃCZONA KAMPANIA",
     "system": "D&D 5e",
     "status": "ZAKOŃCZONE · LEGACY",
-    "description": "Sandboxowa kampania o baronii nawiedzanej przez smoczą przeszłość, klątwy i polityczną zdradę.",
-    "url": "widma-szarolasu/",
-    "legacy": true
+    "legacy": true,
+    "order": 2,
+    "url": "widma-szarolasu/"
   },
   {
     "title": "Odłamki Przeszłości",
     "type": "ZAKOŃCZONA KAMPANIA",
     "system": "D&D 5e",
     "status": "ZAKOŃCZONE · LEGACY",
-    "description": "Poszukiwanie odłamków upadłej, niezwykle zaawansowanej cywilizacji i wyścig z arcymagiem, który chce wykorzystać jej dziedzictwo.",
-    "url": "odlamki-przeszlosci/",
-    "legacy": true
+    "legacy": true,
+    "order": 3,
+    "url": "odlamki-przeszlosci/"
   },
   {
     "title": "Książęta Heartwell",
     "type": "KAMPANIA AUTORSKA",
     "system": "D&D 5e",
     "status": "W PRZYGOTOWANIU",
-    "description": "Gotycki horror w industrialnym mieście inspirowanym Dishonored — z ropą i dieslem zamiast tranu.",
-    "url": "ksiazeta-heartwell/",
-    "legacy": false
+    "legacy": false,
+    "order": 4,
+    "url": "ksiazeta-heartwell/"
   },
   {
     "title": "Samotnie przeciw Jedności",
     "type": "KAMPANIA AUTORSKA",
     "system": "Call of Cthulhu 7e",
     "status": "KIEDYŚ",
-    "description": "Lovecraftiańskie śledztwo z przewagą pulp-style adventure, skupione wokół Ubbo-Sathli i tajemnicy Wyspy Wielkanocnej.",
-    "url": "samotnie-przeciw-jednosci/",
-    "legacy": false
+    "legacy": false,
+    "order": 5,
+    "url": "samotnie-przeciw-jednosci/"
   }
 ]
