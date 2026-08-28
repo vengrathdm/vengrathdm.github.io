@@ -1,0 +1,207 @@
+import { categories, entries } from './data.js';
+
+const state = {
+  category: 'all',
+  query: '',
+  selected: null
+};
+
+const nav = document.querySelector('#entry-nav');
+const grid = document.querySelector('#entry-grid');
+const filters = document.querySelector('#filters');
+const count = document.querySelector('#entry-count');
+const search = document.querySelector('#search');
+const hero = document.querySelector('#compendium-hero');
+const view = document.querySelector('#entry-view');
+const content = document.querySelector('#entry-content');
+const back = document.querySelector('#entry-back');
+const menuToggle = document.querySelector('#menu-toggle');
+const sidebar = document.querySelector('#compendium-sidebar');
+
+renderFilters();
+renderNavigation();
+render();
+
+search?.addEventListener('input', event => {
+  state.query = event.target.value.trim().toLowerCase();
+  state.selected = null;
+  render();
+});
+
+filters?.addEventListener('click', event => {
+  const button = event.target.closest('[data-category]');
+  if (!button) return;
+
+  state.category = button.dataset.category;
+  state.selected = null;
+  renderFilters();
+  render();
+});
+
+nav?.addEventListener('click', event => {
+  const link = event.target.closest('[data-entry]');
+  if (!link) return;
+
+  event.preventDefault();
+  state.selected = link.dataset.entry;
+  render();
+  closeMobileMenu();
+  document.querySelector('.compendium-main')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+grid?.addEventListener('click', event => {
+  const card = event.target.closest('[data-entry]');
+  if (!card) return;
+
+  state.selected = card.dataset.entry;
+  render();
+  document.querySelector('.compendium-main')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+back?.addEventListener('click', () => {
+  state.selected = null;
+  render();
+});
+
+menuToggle?.addEventListener('click', () => {
+  const open = sidebar?.classList.toggle('is-open');
+  menuToggle.setAttribute('aria-expanded', String(Boolean(open)));
+});
+
+function getVisibleEntries() {
+  return entries.filter(entry => {
+    const categoryMatch = state.category === 'all' || entry.category === state.category;
+    const haystack = [entry.title, entry.eyebrow, entry.summary, entry.body, ...entry.tags].join(' ').toLowerCase();
+    const searchMatch = !state.query || haystack.includes(state.query);
+    return categoryMatch && searchMatch;
+  });
+}
+
+function renderFilters() {
+  if (!filters) return;
+
+  filters.innerHTML = categories.map(category => `
+    <button class="filter-button ${state.category === category.id ? 'is-active' : ''}" data-category="${category.id}" type="button">
+      ${category.label}
+    </button>
+  `).join('');
+}
+
+function renderNavigation() {
+  if (!nav) return;
+
+  nav.innerHTML = categories.slice(1).map(category => {
+    const categoryEntries = entries.filter(entry => entry.category === category.id);
+    if (!categoryEntries.length) return '';
+
+    return `
+      <div class="nav-group">
+        <button class="nav-group__title" type="button" data-category="${category.id}">${category.label}</button>
+        <div class="nav-group__entries">
+          ${categoryEntries.map(entry => `
+            <a href="#${entry.id}" data-entry="${entry.id}" class="nav-entry ${state.selected === entry.id ? 'is-active' : ''}">${entry.title}</a>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  nav.querySelectorAll('.nav-group__title').forEach(button => {
+    button.addEventListener('click', () => {
+      state.category = button.dataset.category;
+      state.selected = null;
+      renderFilters();
+      render();
+    });
+  });
+}
+
+function render() {
+  const visible = getVisibleEntries();
+  const selected = state.selected ? entries.find(entry => entry.id === state.selected) : null;
+
+  if (count) count.textContent = `${visible.length} ${visible.length === 1 ? 'entry' : 'entries'}`;
+  renderNavigation();
+
+  if (selected) {
+    if (hero) hero.hidden = true;
+    if (grid) grid.hidden = true;
+    if (view) view.hidden = false;
+    renderEntry(selected);
+    return;
+  }
+
+  if (hero) hero.hidden = false;
+  if (grid) grid.hidden = false;
+  if (view) view.hidden = true;
+  renderGrid(visible);
+}
+
+function renderGrid(visible) {
+  if (!grid) return;
+
+  if (!visible.length) {
+    grid.innerHTML = `
+      <div class="empty-state">
+        <span class="empty-state__mark">✦</span>
+        <h3>No lore found.</h3>
+        <p>Try another search or return to all entries.</p>
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = visible.map(entry => `
+    <article class="entry-card" data-entry="${entry.id}" tabindex="0" role="button" aria-label="Open ${entry.title}">
+      <span class="entry-card__ornament">✦</span>
+      <p class="entry-card__eyebrow">${entry.eyebrow}</p>
+      <h3>${entry.title}</h3>
+      <p>${entry.summary}</p>
+      <div class="entry-card__footer">
+        <span>${entry.tags.slice(0, 2).join(' · ')}</span>
+        <span>Read entry →</span>
+      </div>
+    </article>
+  `).join('');
+
+  grid.querySelectorAll('.entry-card').forEach(card => {
+    card.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        state.selected = card.dataset.entry;
+        render();
+      }
+    });
+  });
+}
+
+function renderEntry(entry) {
+  if (!content) return;
+
+  content.innerHTML = `
+    <div class="entry-header">
+      <p class="eyebrow">${entry.eyebrow}</p>
+      <h2>${entry.title}</h2>
+      <p class="entry-lead">${entry.summary}</p>
+      <div class="entry-rule"><span>✦</span></div>
+    </div>
+    <div class="entry-body">
+      <p>${entry.body}</p>
+      <aside class="lore-note">
+        <span class="lore-note__glyph">❧</span>
+        <div>
+          <strong>Archive note</strong>
+          <p>This entry is part of the compendium skeleton. More detailed lore, relationships, maps, images, and cross-references can be added here without changing the page structure.</p>
+        </div>
+      </aside>
+    </div>
+    <div class="entry-tags">
+      ${entry.tags.map(tag => `<span>${tag}</span>`).join('')}
+    </div>
+  `;
+}
+
+function closeMobileMenu() {
+  sidebar?.classList.remove('is-open');
+  menuToggle?.setAttribute('aria-expanded', 'false');
+}
