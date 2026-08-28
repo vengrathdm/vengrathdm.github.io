@@ -1,6 +1,6 @@
 import { categories, entries } from './data.js';
 
-const state = { category: 'all', query: '', selected: null };
+const state = { category: 'all', query: '' };
 const nav = document.querySelector('#entry-nav');
 const contentsGrid = document.querySelector('#contents-grid');
 const contentsPanel = document.querySelector('#contents-panel');
@@ -17,15 +17,11 @@ const sidebar = document.querySelector('#compendium-sidebar');
 
 renderFilters();
 renderNavigation();
-
-const initialEntry = decodeURIComponent(window.location.hash.slice(1));
-if (entries.some(entry => entry.id === initialEntry)) state.selected = initialEntry;
-render();
+renderFromHash();
 
 search?.addEventListener('input', event => {
   state.query = event.target.value.trim().toLowerCase();
-  state.selected = null;
-  history.replaceState(null, '', window.location.pathname + window.location.search);
+  clearHash();
   render();
 });
 
@@ -33,56 +29,58 @@ filters?.addEventListener('click', event => {
   const button = event.target.closest('[data-category]');
   if (!button) return;
   state.category = button.dataset.category;
-  state.selected = null;
-  history.replaceState(null, '', window.location.pathname + window.location.search);
+  clearHash();
   renderFilters();
   render();
 });
 
-document.addEventListener('click', event => {
-  const link = event.target.closest('a[data-entry]');
-  if (!link) return;
-  const entry = entries.find(item => item.id === link.dataset.entry);
-  if (!entry) return;
-  event.preventDefault();
-  openEntry(entry.id);
-});
+// Navigation links use the URL hash as the source of truth. This means
+// clicking a link, opening a bookmarked #entry URL, and using browser
+// back/forward all go through the same rendering path.
+window.addEventListener('hashchange', renderFromHash);
 
-grid?.addEventListener('click', event => {
-  const card = event.target.closest('[data-entry]');
-  if (!card) return;
-  openEntry(card.dataset.entry);
-});
-
-back?.addEventListener('click', closeEntry);
-
-window.addEventListener('hashchange', () => {
-  const id = decodeURIComponent(window.location.hash.slice(1));
-  state.selected = entries.some(entry => entry.id === id) ? id : null;
-  render();
-});
+back?.addEventListener('click', clearHash);
 
 menuToggle?.addEventListener('click', () => {
   const open = sidebar?.classList.toggle('is-open');
   menuToggle.setAttribute('aria-expanded', String(Boolean(open)));
 });
 
-function openEntry(id) {
-  const entry = entries.find(item => item.id === id);
-  if (!entry) return;
-  state.selected = id;
-  history.pushState(null, '', `${window.location.pathname}${window.location.search}#${encodeURIComponent(id)}`);
-  render();
-  closeMobileMenu();
-  view?.focus({ preventScroll: true });
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+function getHashEntryId() {
+  const rawHash = window.location.hash.slice(1);
+  if (!rawHash) return null;
+
+  try {
+    return decodeURIComponent(rawHash);
+  } catch {
+    return rawHash;
+  }
 }
 
-function closeEntry() {
-  state.selected = null;
-  history.pushState(null, '', window.location.pathname + window.location.search);
+function getSelectedEntry() {
+  const id = getHashEntryId();
+  if (!id) return null;
+  return entries.find(entry => entry.id === id) ?? null;
+}
+
+function renderFromHash() {
   render();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (getSelectedEntry()) closeMobileMenu();
+}
+
+function setHash(id) {
+  const encodedId = encodeURIComponent(id);
+  if (window.location.hash.slice(1) === encodedId) {
+    renderFromHash();
+    return;
+  }
+  window.location.hash = encodedId;
+}
+
+function clearHash() {
+  if (window.location.hash) {
+    history.pushState(null, '', `${window.location.pathname}${window.location.search}`);
+  }
 }
 
 function getVisibleEntries() {
@@ -101,15 +99,18 @@ function renderFilters() {
 }
 
 function navigationMarkup() {
+  const selectedId = getHashEntryId();
+
   return categories.slice(1).map(category => {
     const categoryEntries = entries.filter(entry => entry.category === category.id);
     if (!categoryEntries.length) return '';
+
     return `
       <div class="nav-group">
         <button class="nav-group__title" type="button" data-category="${category.id}">${category.label}</button>
         <div class="nav-group__entries">
           ${categoryEntries.map(entry => `
-            <a href="#${entry.id}" data-entry="${entry.id}" class="nav-entry ${state.selected === entry.id ? 'is-active' : ''}" ${state.selected === entry.id ? 'aria-current="page"' : ''}>${entry.title}</a>
+            <a href="#${encodeURIComponent(entry.id)}" data-entry="${entry.id}" class="nav-entry ${selectedId === entry.id ? 'is-active' : ''}" ${selectedId === entry.id ? 'aria-current="page"' : ''}>${entry.title}</a>
           `).join('')}
         </div>
       </div>
@@ -119,20 +120,23 @@ function navigationMarkup() {
 
 function renderNavigation() {
   if (nav) nav.innerHTML = navigationMarkup();
+
   if (contentsGrid) {
     contentsGrid.innerHTML = categories.slice(1).map(category => {
       const categoryEntries = entries.filter(entry => entry.category === category.id);
       if (!categoryEntries.length) return '';
+
       return `
         <section class="contents-category">
           <button class="contents-category__title" type="button" data-category="${category.id}">${category.label}</button>
           <div class="contents-links">
-            ${categoryEntries.map(entry => `<a href="#${entry.id}" data-entry="${entry.id}">${entry.title}<span>→</span></a>`).join('')}
+            ${categoryEntries.map(entry => `<a href="#${encodeURIComponent(entry.id)}" data-entry="${entry.id}">${entry.title}<span>→</span></a>`).join('')}
           </div>
         </section>
       `;
     }).join('');
   }
+
   nav?.querySelectorAll('.nav-group__title').forEach(bindCategoryButton);
   contentsGrid?.querySelectorAll('.contents-category__title').forEach(bindCategoryButton);
 }
@@ -140,8 +144,7 @@ function renderNavigation() {
 function bindCategoryButton(button) {
   button.addEventListener('click', () => {
     state.category = button.dataset.category;
-    state.selected = null;
-    history.replaceState(null, '', window.location.pathname + window.location.search);
+    clearHash();
     renderFilters();
     render();
   });
@@ -149,9 +152,11 @@ function bindCategoryButton(button) {
 
 function render() {
   const visible = getVisibleEntries();
-  const selected = state.selected ? entries.find(entry => entry.id === state.selected) : null;
+  const selected = getSelectedEntry();
+
   if (count) count.textContent = `${visible.length} ${visible.length === 1 ? 'wpis' : 'wpisów'}`;
   renderNavigation();
+
   if (selected) {
     if (hero) hero.hidden = true;
     if (contentsPanel) contentsPanel.hidden = true;
@@ -163,6 +168,7 @@ function render() {
     renderEntry(selected);
     return;
   }
+
   if (hero) hero.hidden = false;
   if (contentsPanel) contentsPanel.hidden = false;
   if (grid) grid.hidden = false;
@@ -172,10 +178,12 @@ function render() {
 
 function renderGrid(visible) {
   if (!grid) return;
+
   if (!visible.length) {
     grid.innerHTML = `<div class="empty-state"><span class="empty-state__mark">✦</span><h3>Nie znaleziono wpisów.</h3><p>Spróbuj innego wyszukiwania albo wróć do wszystkich wpisów.</p></div>`;
     return;
   }
+
   grid.innerHTML = visible.map(entry => `
     <article class="entry-card" data-entry="${entry.id}" tabindex="0" role="button" aria-label="Otwórz ${entry.title}">
       <span class="entry-card__ornament">✦</span>
@@ -185,15 +193,20 @@ function renderGrid(visible) {
       <div class="entry-card__footer"><span>${entry.tags.slice(0, 2).join(' · ')}</span><span>Czytaj →</span></div>
     </article>
   `).join('');
-  grid.querySelectorAll('.entry-card').forEach(card => card.addEventListener('keydown', event => {
-    if (event.key !== 'Enter' && event.key !== ' ') return;
-    event.preventDefault();
-    openEntry(card.dataset.entry);
-  }));
+
+  grid.querySelectorAll('.entry-card').forEach(card => {
+    card.addEventListener('click', () => setHash(card.dataset.entry));
+    card.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      setHash(card.dataset.entry);
+    });
+  });
 }
 
 function renderEntry(entry) {
   if (!content) return;
+
   content.innerHTML = `
     <div class="entry-header">
       <p class="eyebrow">${entry.eyebrow}</p>
@@ -204,6 +217,9 @@ function renderEntry(entry) {
     <div class="entry-body"><p>${entry.body}</p></div>
     <div class="entry-tags">${entry.tags.map(tag => `<span>${tag}</span>`).join('')}</div>
   `;
+
+  document.querySelector('#entry-title')?.focus({ preventScroll: true });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function closeMobileMenu() {
