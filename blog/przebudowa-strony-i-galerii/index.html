@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Trochę porządków pod maską. I galeria, która wreszcie działa. — Vengrath</title>
+
+  <meta name="post-title" content="Trochę porządków pod maską. I galeria, która wreszcie działa.">
+  <meta name="post-date" content="2026-08-28">
+  <meta name="post-category" content="Strona">
+  <meta name="post-system" content="WWW">
+  <meta name="description" content="Kilka większych porządków w kodzie strony Vengratha, nowa automatyczna galeria ilustracji i trochę walki z CSS-em, zanim wszystko zaczęło wyglądać tak, jak powinno.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&family=Special+Elite&display=swap&subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/subpages.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="../../index.html">Vengrath</a>
+
+    <nav class="main-nav" aria-label="Główna nawigacja">
+      <a href="../../campaigns/">Kampanie</a>
+      <a href="../../blog/">Blog</a>
+      <a href="../../projects/">Projekty</a>
+      <a href="../../charactermancer/index.html">Charactermancer</a>
+      <a href="../../sessions/">Sesje</a>
+      <a href="../../illustrations/">Ilustracje</a>
+      <a href="../../about/">O mnie</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="article-hero">
+      <p class="eyebrow">STRONA · WWW · 28 SIERPNIA 2026</p>
+      <h1>Trochę porządków<br><em>pod maską.</em></h1>
+      <p>Przez ostatnie dni strona dostała trochę porządnego zaplecza. Przy okazji udało mi się doprowadzić galerię ilustracji do stanu, w którym naprawdę można z niej korzystać.</p>
+    </section>
+
+    <section class="subsection reading-layout">
+      <article class="reading-column">
+        <p>Dzisiejsza aktualizacja jest trochę mniej efektowna od nowych kampanii czy kolejnych materiałów do RPG, ale za to bardzo przydatna. Zamiast dokładać kolejne rzeczy na istniejącą konstrukcję, zrobiłem trochę porządków pod spodem.</p>
+
+        <h2>Najpierw: porządek w kodzie.</h2>
+
+        <p>Przebudowałem organizację części strony tak, żeby kod był czytelniejszy i bardziej modułowy. Wspólne rzeczy zostały wydzielone do osobnych plików, logika poszczególnych podstron jest mniej wymieszana, a dane, które można trzymać poza HTML-em, rzeczywiście są trzymane poza HTML-em.</p>
+
+        <p>To brzmi jak rzecz dla innych programistów i prawdopodobnie właśnie nią jest. Dla mnie oznacza jednak coś bardzo praktycznego: dodanie kolejnej sekcji albo kolejnego elementu nie powinno już wymagać przekopywania pół strony i kopiowania tego samego kodu w kilku miejscach.</p>
+
+        <h2>Galeria ilustracji dostała własny system.</h2>
+
+        <p>Strona „Ilustracje” nie ma już ręcznie wpisanej listy obrazków. Galeria sprawdza zawartość katalogu <code>illustrations/graphics/</code> i na tej podstawie buduje swoją zawartość automatycznie. Nowy plik graficzny trafiający do katalogu może więc pojawić się w galerii bez dopisywania kolejnego kawałka HTML-a.</p>
+
+        <p>Po drodze trochę czasu zjadła rzecz, która w założeniu miała być prosta: różne obrazy mają różne rozdzielczości i proporcje. Próbowaliśmy kilku podejść opartych na CSS Grid, szerokościach zależnych od proporcji i dynamicznym wykrywaniu wymiarów. Okazało się, że im więcej magii dokładamy, tym łatwiej o dziwne wiersze, przycinanie i podpisy przesuwające się w miejsce, w którym absolutnie nie powinny być.</p>
+
+        <p>Finalnie wygrała prostsza wersja. Galeria jest zbudowana z niezależnych kafelków, każdy ma stałą szerokość w kolumnie, a wysokość obrazu wynika bezpośrednio z jego własnych proporcji. Dzięki temu wysoka ilustracja może być naprawdę wysoka, szeroka naprawdę szeroka, a sąsiedni obraz nie musi przez to udawać, że też ma taki sam rozmiar.</p>
+
+        <h2>A do tego: powiększanie obrazów.</h2>
+
+        <p>Kliknięcie ilustracji otwiera ją teraz w dużym podglądzie nad stroną. Można wrócić do galerii przyciskiem zamknięcia, kliknięciem poza obrazem albo klawiszem <code>Esc</code>. Interakcja działa również z klawiatury.</p>
+
+        <p>To niby drobiazg, ale przy większych ilustracjach robi dużą różnicę. Miniatura może zostać w galerii, a szczegóły można obejrzeć bez otwierania osobnej strony i bez walki z przeglądarką.</p>
+
+        <h2>Charactermancer też dostał mały ukłon.</h2>
+
+        <p>Na górze Charactermancera pojawił się przycisk powrotu do głównego indeksu strony. Niewielka rzecz, ale dzięki niej można wejść w narzędzie, pobawić się nim i wrócić do reszty strony bez szukania wyjścia w nawigacji.</p>
+
+        <h2>I jeszcze jedno: czytelność.</h2>
+
+        <p>Przy okazji porządków poprawiłem również formatowanie kilku starszych plików HTML. Nie zmienia to ich działania, ale kod przestał wyglądać jak jedna bardzo długa linia, którą należy czytać pod lupą. To ma znaczenie, bo ta strona ma żyć i rosnąć, a nie być eksponatem, którego boję się dotknąć.</p>
+
+        <p>Na dziś to tyle. Strona nie zmieniła się przez to w framework ani w wielki system zarządzania treścią. I dobrze. Nadal jest to stosunkowo prosty, statyczny projekt. Po prostu teraz jest odrobinę bardziej uporządkowany, łatwiejszy do rozwijania i — przynajmniej w przypadku galerii — znacznie przyjemniejszy w użyciu.</p>
+
+        <p>— Vengrath</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Vengrath · Wasz wieczny bard i czarujący wampir.</span>
+  </footer>
+
+  <script src="../../assets/js/navigation.js" defer></script>
+</body>
+</html>
