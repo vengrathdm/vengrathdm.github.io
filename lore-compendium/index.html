@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Almendra:wght@400;700&family=Almendra+SC&family=Cinzel:wght@500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Tangerine:wght@400;700&family=Uncial+Antiqua&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="contents.css">
 </head>
 <body>
   <div class="world-atmosphere" aria-hidden="true"></div>
@@ -23,7 +22,94 @@
     <aside class="compendium-sidebar" id="compendium-sidebar">
       <div class="sidebar-heading"><span class="sidebar-mark">✦</span><div><p class="eyebrow">ARCHIWUM</p><h2>Irgaela</h2></div></div>
       <label class="search-box"><span>Przeszukaj kompendium</span><input id="search" type="search" placeholder="Szukaj w lore…" autocomplete="off"></label>
-      <nav class="entry-nav" id="entry-nav" aria-label="Spis treści kompendium"></nav>
+      <nav class="entry-nav" id="entry-nav" aria-label="Spis treści kompendium">
+        <div class="nav-group">
+          <button class="nav-group__title" type="button" data-category="irgaelia">Irgaela</button>
+          <div class="nav-group__entries">
+            <a class="nav-entry" href="#irgaela" data-entry="irgaela">Irgaela</a>
+            <a class="nav-entry" href="#people-and-tribes" data-entry="people-and-tribes">Ludzie i Plemiona</a>
+            <a class="nav-entry" href="#places-and-regions" data-entry="places-and-regions">Miejsca i Regiony</a>
+            <a class="nav-entry" href="#places-of-power" data-entry="places-of-power">Miejsca Mocy i Święte Miejsca</a>
+            <a class="nav-entry" href="#history-of-world" data-entry="history-of-world">Historia Świata</a>
+            <a class="nav-entry" href="#culture-traditions" data-entry="culture-traditions">Kultura i Tradycje</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-group__title" type="button" data-category="divinities">Bóstwa</button>
+          <div class="nav-group__entries">
+            <a class="nav-entry" href="#history-of-gods" data-entry="history-of-gods">Historia Bogów</a>
+            <a class="nav-entry" href="#dagda" data-entry="dagda">Dagda</a>
+            <a class="nav-entry" href="#danu" data-entry="danu">Danu</a>
+            <a class="nav-entry" href="#brigid" data-entry="brigid">Brigid</a>
+            <a class="nav-entry" href="#lugh" data-entry="lugh">Lugh</a>
+            <a class="nav-entry" href="#cernunnos" data-entry="cernunnos">Cernunnos</a>
+            <a class="nav-entry" href="#morrigan" data-entry="morrigan">Morrigan</a>
+            <a class="nav-entry" href="#manannan" data-entry="manannan">Manannán</a>
+            <a class="nav-entry" href="#cailleach" data-entry="cailleach">Cailleach</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-group__title" type="button" data-category="sidhe">Sidhe i Inny Świat</button>
+          <div class="nav-group__entries">
+            <a class="nav-entry" href="#otherworld" data-entry="otherworld">Inny Świat</a>
+            <a class="nav-entry" href="#sidhe" data-entry="sidhe">Sidhe</a>
+            <a class="nav-entry" href="#seelie-unseelie" data-entry="seelie-unseelie">Seelie i Unseelie</a>
+            <a class="nav-entry" href="#court-of-winter" data-entry="court-of-winter">Dwór Zimy</a>
+            <a class="nav-entry" href="#court-of-spring" data-entry="court-of-spring">Dwór Wiosny</a>
+            <a class="nav-entry" href="#court-of-summer" data-entry="court-of-summer">Dwór Lata</a>
+            <a class="nav-entry" href="#court-of-autumn" data-entry="court-of-autumn">Dwór Jesieni</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-group__title" type="button" data-category="fomorian">Fomorianie</button>
+          <div class="nav-group__entries">
+            <a class="nav-entry" href="#fomorian-history" data-entry="fomorian-history">Historia</a>
+            <a class="nav-entry" href="#balor" data-entry="balor">Balor Złego Oka</a>
+            <a class="nav-entry" href="#osmandias" data-entry="osmandias">Osmandias Stormeye</a>
+            <a class="nav-entry" href="#ceithleen" data-entry="ceithleen">Ceithleen o Krzywych Zębach</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-group__title" type="button" data-category="wyrms">Wielkie Wyrmy</button>
+          <div class="nav-group__entries">
+            <a class="nav-entry" href="#primordial-wyrms" data-entry="primordial-wyrms">Pierwotne Wyrmy Irgaeli</a>
+            <a class="nav-entry" href="#caoranach" data-entry="caoranach">Caoránach, Wyrm Mrozu</a>
+            <a class="nav-entry" href="#cruimheach" data-entry="cruimheach">Cruimheach, Wyrm Magmy</a>
+            <a class="nav-entry" href="#feileacanach" data-entry="feileacanach">Féileacánach, Wyrm Kryształu</a>
+            <a class="nav-entry" href="#cnagach" data-entry="cnagach">Cnagach, Wyrm Błyskawic</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-group__title" type="button" data-category="magical-beings">Istoty Magiczne</button>
+          <div class="nav-group__entries">
+            <a class="nav-entry" href="#magical-beings" data-entry="magical-beings">Istoty Magiczne</a>
+            <a class="nav-entry" href="#tressym" data-entry="tressym">Tressym</a>
+            <a class="nav-entry" href="#phoenixes" data-entry="phoenixes">Feniksy</a>
+            <a class="nav-entry" href="#hags" data-entry="hags">Hagi</a>
+            <a class="nav-entry" href="#demons" data-entry="demons">Demony</a>
+            <a class="nav-entry" href="#shadows" data-entry="shadows">Cienie</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-group__title" type="button" data-category="magic-items">MAGICZNE PRZEDMIOTY</button>
+          <div class="nav-group__entries">
+            <a class="nav-entry" href="#silver-hand" data-entry="silver-hand">Srebrna Dłoń Nuady</a>
+            <a class="nav-entry" href="#auric-edge" data-entry="auric-edge">Auric Edge</a>
+            <a class="nav-entry" href="#claiohm-solais" data-entry="claiohm-solais">Claíomh Solais</a>
+            <a class="nav-entry" href="#fragarach" data-entry="fragarach">Fragarach, Odwetujący</a>
+            <a class="nav-entry" href="#divine-weapons" data-entry="divine-weapons">Osiem Boskich Broni</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <button class="nav-group__title" type="button" data-category="magic-materials">MAGICZNE MATERIAŁY</button>
+          <div class="nav-group__entries">
+            <a class="nav-entry" href="#magic-materials" data-entry="magic-materials">Magiczne Materiały</a>
+            <a class="nav-entry" href="#cold-iron" data-entry="cold-iron">Zimne Żelazo</a>
+            <a class="nav-entry" href="#orichalcum" data-entry="orichalcum">Orichalkum</a>
+            <a class="nav-entry" href="#starmetal" data-entry="starmetal">Starmetal</a>
+          </div>
+        </div>
+      </nav>
       <div class="sidebar-note"><span>✦</span><p>Żywe archiwum krain, ludów, potęg i opowieści świata Echtra.</p></div>
     </aside>
     <main class="compendium-main">
@@ -33,10 +119,6 @@
         <p>Poznaj świat <strong>Echtra midst the Sidhe</strong> jako żywe archiwum miejsc, ludów, bogów, duchów, historii i dziwnych istot, które czekają po drugiej stronie świata śmiertelników.</p>
         <div class="hero-rule"><span>✦</span></div>
         <p class="hero-aside">„Wszystkie sídhe są otwarte podczas Samhain.”</p>
-      </section>
-      <section class="contents-panel" id="contents-panel">
-        <div class="contents-heading"><p class="eyebrow">ARCHIWUM</p><h2>Spis treści</h2><p>Wybierz wpis, aby otworzyć jego stronę.</p></div>
-        <div class="contents-grid" id="contents-grid"></div>
       </section>
       <section class="filter-bar" aria-label="Kategorie wpisów"><div class="filter-buttons" id="filters"></div><span class="entry-count" id="entry-count"></span></section>
       <section class="entry-grid" id="entry-grid" aria-live="polite"></section>
