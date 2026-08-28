@@ -10,14 +10,14 @@ const categories = [
 ];
 
 const entries = [
-  ['irgaelia', 'Irgaela', 'Irgaela'], ['irgaelia', 'Ludzie i Plemiona', 'Ludzie i Plemiona'], ['irgaelia', 'Miejsca i Regiony', 'Miejsca i Regiony'], ['irgaelia', 'Miejsca Mocy i Święte Miejsca', 'Miejsca Mocy i Święte Miejsca'], ['irgaelia', 'Kultura i Tradycje', 'Kultura i Tradycje'],
-  ['divinities', 'Historia Bogów', 'Historia Bogów'], ['divinities', 'Dagda', 'Dagda'], ['divinities', 'Danu', 'Danu'], ['divinities', 'Brigid', 'Brigid'], ['divinities', 'Lugh', 'Lugh'], ['divinities', 'Cernunnos', 'Cernunnos'], ['divinities', 'Morrigan', 'Morrigan'], ['divinities', 'Manannán', 'Manannán'], ['divinities', 'Cailleach', 'Cailleach'],
-  ['sidhe', 'Inny Świat', 'Inny Świat'], ['sidhe', 'Sidhe', 'Sidhe'], ['sidhe', 'Seelie i Unseelie', 'Seelie i Unseelie'], ['sidhe', 'Dwór Zimy', 'Dwór Zimy'], ['sidhe', 'Dwór Wiosny', 'Dwór Wiosny'], ['sidhe', 'Dwór Lata', 'Dwór Lata'], ['sidhe', 'Dwór Jesieni', 'Dwór Jesieni'],
-  ['fomorian', 'Historia Fomorian', 'Historia Fomorian'], ['fomorian', 'Balor Złego Oka', 'Balor Złego Oka'], ['fomorian', 'Osmandias Stormeye', 'Osmandias Stormeye'], ['fomorian', 'Ceithleen o Krzywych Zębach', 'Ceithleen o Krzywych Zębach'],
-  ['wyrms', 'Pierwotne Wyrmy Irgaeli', 'Pierwotne Wyrmy Irgaeli'], ['wyrms', 'Caoránach, Mroźny Wyrm', 'Caoránach, Mroźny Wyrm'], ['wyrms', 'Cruimheach, Magmowy Wyrm', 'Cruimheach, Magmowy Wyrm'], ['wyrms', 'Féileacánach, Kryształowy Wyrm', 'Féileacánach, Kryształowy Wyrm'], ['wyrms', 'Cnagach, Piorunowy Wyrm', 'Cnagach, Piorunowy Wyrm'],
-  ['magical-beings', 'Tressym', 'Tressym'], ['magical-beings', 'Hagi', 'Hagi'], ['magical-beings', 'Demony', 'Demony'], ['magical-beings', 'Cienie', 'Cienie'], ['magical-beings', 'Feniksy', 'Feniksy'],
-  ['magic-items', 'Srebrna Dłoń Nuady', 'Srebrna Dłoń Nuady'], ['magic-items', 'Auric Edge', 'Auric Edge'], ['magic-items', 'Claíomh Solais', 'Claíomh Solais'], ['magic-items', 'Fragarach, Odwetnik', 'Fragarach, Odwetnik'], ['magic-items', 'Osiem Boskich Broni', 'Osiem Boskich Broni'],
-  ['magic-materials', 'Zimne Żelazo', 'Zimne Żelazo'], ['magic-materials', 'Orichalcum', 'Orichalcum'], ['magic-materials', 'Starmetal', 'Starmetal']
+  ['irgaelia', 'Irgaela'], ['irgaelia', 'Ludzie i Plemiona'], ['irgaelia', 'Miejsca i Regiony'], ['irgaelia', 'Miejsca Mocy i Święte Miejsca'], ['irgaelia', 'Kultura i Tradycje'],
+  ['divinities', 'Historia Bogów'], ['divinities', 'Dagda'], ['divinities', 'Danu'], ['divinities', 'Brigid'], ['divinities', 'Lugh'], ['divinities', 'Cernunnos'], ['divinities', 'Morrigan'], ['divinities', 'Manannán'], ['divinities', 'Cailleach'],
+  ['sidhe', 'Inny Świat'], ['sidhe', 'Sidhe'], ['sidhe', 'Seelie i Unseelie'], ['sidhe', 'Dwór Zimy'], ['sidhe', 'Dwór Wiosny'], ['sidhe', 'Dwór Lata'], ['sidhe', 'Dwór Jesieni'],
+  ['fomorian', 'Historia Fomorian'], ['fomorian', 'Balor Złego Oka'], ['fomorian', 'Osmandias Stormeye'], ['fomorian', 'Ceithleen o Krzywych Zębach'],
+  ['wyrms', 'Pierwotne Wyrmy Irgaeli'], ['wyrms', 'Caoránach, Mroźny Wyrm'], ['wyrms', 'Cruimheach, Magmowy Wyrm'], ['wyrms', 'Féileacánach, Kryształowy Wyrm'], ['wyrms', 'Cnagach, Piorunowy Wyrm'],
+  ['magical-beings', 'Tressym'], ['magical-beings', 'Hagi'], ['magical-beings', 'Demony'], ['magical-beings', 'Cienie'], ['magical-beings', 'Feniksy'],
+  ['magic-items', 'Srebrna Dłoń Nuady'], ['magic-items', 'Auric Edge'], ['magic-items', 'Claíomh Solais'], ['magic-items', 'Fragarach, Odwetnik'], ['magic-items', 'Osiem Boskich Broni'],
+  ['magic-materials', 'Zimne Żelazo'], ['magic-materials', 'Orichalcum'], ['magic-materials', 'Starmetal']
 ];
 
 const pathFor = title => `${encodeURIComponent(title)}/`;
@@ -26,28 +26,30 @@ const nav = document.querySelector('#entry-nav');
 const search = document.querySelector('#search');
 const menuToggle = document.querySelector('#menu-toggle');
 const sidebar = document.querySelector('#compendium-sidebar');
-const contentsGrid = document.querySelector('#contents-grid');
 const entryGrid = document.querySelector('#entry-grid');
 
-function renderNavigation(filter = '') {
+function filteredEntries(filter = '') {
   const needle = filter.trim().toLowerCase();
-  if (nav) {
-    nav.innerHTML = categories.map(category => {
-      const items = entries.filter(([id]) => id === category.id && (!needle || [arguments[0]].join('').toLowerCase()));
-      const filtered = entries.filter(([id, title]) => id === category.id && (!needle || title.toLowerCase().includes(needle)));
-      if (!filtered.length) return '';
-      return `<div class="nav-group"><div class="nav-group__title">${category.label}</div><div class="nav-group__entries">${filtered.map(([, title]) => `<a href="${pathFor(title)}" class="nav-entry ${title === currentTitle ? 'is-active' : ''}" ${title === currentTitle ? 'aria-current="page"' : ''}>${title}</a>`).join('')}</div></div>`;
-    }).join('');
-  }
+  return entries.filter(([, title]) => !needle || title.toLowerCase().includes(needle));
+}
+
+function renderNavigation(filter = '') {
+  if (!nav) return;
+  const visible = filteredEntries(filter);
+  nav.innerHTML = categories.map(category => {
+    const categoryEntries = visible.filter(([id]) => id === category.id);
+    if (!categoryEntries.length) return '';
+    return `<div class="nav-group"><div class="nav-group__title">${category.label}</div><div class="nav-group__entries">${categoryEntries.map(([, title]) => `<a href="${pathFor(title)}" class="nav-entry ${title === currentTitle ? 'is-active' : ''}" ${title === currentTitle ? 'aria-current="page"' : ''}>${title}</a>`).join('')}</div></div>`;
+  }).join('');
 }
 
 function renderIndex(filter = '') {
   if (!entryGrid) return;
-  const needle = filter.trim().toLowerCase();
+  const visible = filteredEntries(filter);
   entryGrid.innerHTML = categories.map(category => {
-    const filtered = entries.filter(([id, title]) => id === category.id && (!needle || title.toLowerCase().includes(needle)));
-    if (!filtered.length) return '';
-    return `<section class="contents-category"><p class="eyebrow">${category.label}</p><div class="contents-links">${filtered.map(([, title]) => `<a href="${pathFor(title)}">${title}<span>→</span></a>`).join('')}</div></section>`;
+    const categoryEntries = visible.filter(([id]) => id === category.id);
+    if (!categoryEntries.length) return '';
+    return `<section class="contents-category"><p class="eyebrow">${category.label}</p><div class="contents-links">${categoryEntries.map(([, title]) => `<a href="${pathFor(title)}">${title}<span>→</span></a>`).join('')}</div></section>`;
   }).join('');
 }
 
