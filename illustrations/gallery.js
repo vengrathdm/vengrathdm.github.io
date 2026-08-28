@@ -5,7 +5,11 @@ const REPOSITORY_API = 'https://api.github.com/repos/vengrathdm/vengrathdm.githu
 
 const IMAGE_EXTENSIONS = new Set(['.avif', '.gif', '.jpeg', '.jpg', '.png', '.svg', '.webp']);
 
-if (gallery) loadGallery().catch(handleGalleryError);
+let lightbox;
+
+if (gallery) {
+  loadGallery().catch(handleGalleryError);
+}
 
 async function loadGallery() {
   const files = await getImageFiles(REPOSITORY_API);
@@ -57,6 +61,9 @@ function isImageFile(filename) {
 function createGalleryItem(file) {
   const figure = document.createElement('figure');
   figure.className = 'gallery-item';
+  figure.tabIndex = 0;
+  figure.setAttribute('role', 'button');
+  figure.setAttribute('aria-label', `Powiększ ilustrację: ${formatTitle(file.name)}`);
 
   const image = document.createElement('img');
   image.src = file.download_url;
@@ -68,7 +75,71 @@ function createGalleryItem(file) {
   caption.textContent = formatTitle(file.name);
 
   figure.append(image, caption);
+  figure.addEventListener('click', () => openLightbox(file));
+  figure.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openLightbox(file);
+    }
+  });
+
   return figure;
+}
+
+function openLightbox(file) {
+  if (!lightbox) {
+    lightbox = createLightbox();
+  }
+
+  const image = lightbox.querySelector('.gallery-lightbox__image');
+  const caption = lightbox.querySelector('.gallery-lightbox__caption');
+
+  image.src = file.download_url;
+  image.alt = formatTitle(file.name);
+  caption.textContent = formatTitle(file.name);
+
+  lightbox.hidden = false;
+  document.body.classList.add('gallery-lightbox-open');
+  lightbox.querySelector('.gallery-lightbox__close').focus();
+}
+
+function createLightbox() {
+  const overlay = document.createElement('div');
+  overlay.className = 'gallery-lightbox';
+  overlay.hidden = true;
+  overlay.innerHTML = `
+    <button class="gallery-lightbox__close" type="button" aria-label="Zamknij podgląd">×</button>
+    <div class="gallery-lightbox__content" role="dialog" aria-modal="true" aria-label="Powiększona ilustracja">
+      <img class="gallery-lightbox__image" src="" alt="">
+      <p class="gallery-lightbox__caption"></p>
+    </div>
+  `;
+
+  const closeButton = overlay.querySelector('.gallery-lightbox__close');
+  const content = overlay.querySelector('.gallery-lightbox__content');
+
+  closeButton.addEventListener('click', closeLightbox);
+  overlay.addEventListener('click', event => {
+    if (event.target === overlay || !content.contains(event.target)) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !overlay.hidden) {
+      closeLightbox();
+    }
+  });
+
+  document.body.append(overlay);
+  return overlay;
+}
+
+function closeLightbox() {
+  if (!lightbox) return;
+
+  lightbox.hidden = true;
+  document.body.classList.remove('gallery-lightbox-open');
 }
 
 function formatTitle(filename) {
