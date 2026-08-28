@@ -70,6 +70,7 @@ function createGalleryItem(file) {
   image.alt = formatTitle(file.name);
   image.loading = 'lazy';
   image.decoding = 'async';
+  image.addEventListener('load', () => applySizeClass(figure, image), { once: true });
 
   const caption = document.createElement('figcaption');
   caption.textContent = formatTitle(file.name);
@@ -84,6 +85,12 @@ function createGalleryItem(file) {
   });
 
   return figure;
+}
+
+function applySizeClass(figure, image) {
+  if (image.naturalWidth / image.naturalHeight >= 1.4) {
+    figure.classList.add('gallery-item--wide');
+  }
 }
 
 function openLightbox(file) {
