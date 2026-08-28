@@ -20,12 +20,20 @@ const entries = [
   ['magic-materials', 'Zimne Żelazo'], ['magic-materials', 'Orichalcum'], ['magic-materials', 'Starmetal']
 ];
 
-// Article URLs are rooted at /lore-compendium/, not relative to the current article folder.
-const compendiumRoot = new URL('../', window.location.href);
-const pathFor = title => {
-  const url = new URL(`${encodeURIComponent(title)}/`, compendiumRoot);
-  return url.pathname;
-};
+// Resolve the compendium root from this script itself. This is independent of the current article URL.
+const navigationScript = document.currentScript;
+const compendiumRoot = new URL('./', navigationScript?.src || `${window.location.origin}/lore-compendium/navigation.js`);
+const pathFor = title => new URL(`${encodeURIComponent(title)}/`, compendiumRoot).href;
+
+// Article pages historically did not all include the Google Fonts <link> tags.
+// Load the shared font stylesheet from this script so every article gets the same typography.
+if (!document.querySelector('link[data-compendium-fonts]')) {
+  const fonts = document.createElement('link');
+  fonts.rel = 'stylesheet';
+  fonts.dataset.compendiumFonts = 'true';
+  fonts.href = 'https://fonts.googleapis.com/css2?family=Almendra:wght@400;700&family=Almendra+SC&family=Cinzel:wght@500;600;700&family=Tangerine:wght@400;700&family=Uncial+Antiqua&display=swap';
+  document.head.appendChild(fonts);
+}
 
 const currentTitle = document.body.dataset.article || '';
 const nav = document.querySelector('#entry-nav');
