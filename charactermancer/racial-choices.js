@@ -3,42 +3,48 @@
  RACIAL CHOICES
 ===========================================================
 
-Keeps race-specific selectable proficiencies and ability
-bonuses outside the main renderer/rules files.
+Adds interactive 2014 race choices without replacing the main
+Charactermancer renderer.
 
-2014 rules implemented here:
-- Half-Elf: choose 2 skills; choose two abilities for +1 each,
-  in addition to the fixed CHA +2.
-- Variant Human: choose 1 skill; choose two abilities for +1
-  each instead of the standard Human +1 to every ability.
+Supported choices:
+- Half-Elf: 2 skills + two different +1 ability choices,
+  added to fixed CHA +2.
+- Variant Human: 1 skill + two different +1 ability choices,
+  replacing the standard Human +1 to every ability.
 ===========================================================
 */
 
 const RACIAL_CHOICE_RULES = {
-  "Half-Elf": {
+  halfElf: {
     skillCount: 2,
     abilityCount: 2,
-    abilityBonus: 1,
-    abilityMode: "add"
+    abilityBonus: 1
   },
-  "Human::Variant Human": {
+  variantHuman: {
     skillCount: 1,
     abilityCount: 2,
-    abilityBonus: 1,
-    abilityMode: "replaceFixed"
+    abilityBonus: 1
   }
 };
 
 function racialChoiceRule() {
-  if (S.race === "Human" && S.subrace === "Variant Human") {
-    return RACIAL_CHOICE_RULES["Human::Variant Human"];
+  if (S.race === "Half-Elf" && S.racialMode === "2014") {
+    return RACIAL_CHOICE_RULES.halfElf;
   }
 
-  if (S.race === "Half-Elf" && S.racialMode === "2014") {
-    return RACIAL_CHOICE_RULES["Half-Elf"];
+  if (S.race === "Human" && S.subrace === "Variant Human" && S.racialMode === "2014") {
+    return RACIAL_CHOICE_RULES.variantHuman;
   }
 
   return null;
+}
+
+function isHalfElf() {
+  return S.race === "Half-Elf" && S.racialMode === "2014";
+}
+
+function isVariantHuman() {
+  return S.race === "Human" && S.subrace === "Variant Human" && S.racialMode === "2014";
 }
 
 function ensureRacialChoiceState() {
@@ -48,163 +54,185 @@ function ensureRacialChoiceState() {
   }
 
   const rule = racialChoiceRule();
-  const abilityCount = rule?.abilityCount || 0;
-  const selectedAbilities = Object.keys(S.racialAbilityChoices)
-    .filter(ability => DATA.abilities.includes(ability))
-    .slice(0, abilityCount);
-
-  S.racialAbilityChoices = Object.fromEntries(
-    selectedAbilities.map(ability => [ability, rule.abilityBonus])
-  );
 
   if (!rule) {
     S.racialSkills = [];
     S.racialAbilityChoices = {};
-  } else if (S.racialSkills.length > rule.skillCount) {
-    S.racialSkills = S.racialSkills.slice(0, rule.skillCount);
+    return;
   }
+
+  S.racialSkills = S.racialSkills
+    .filter(skill => DATA.skills.includes(skill))
+    .slice(0, rule.skillCount);
+
+  const selectedAbilities = Object.keys(S.racialAbilityChoices)
+    .filter(ability => DATA.abilities.includes(ability))
+    .slice(0, rule.abilityCount);
+
+  S.racialAbilityChoices = Object.fromEntries(
+    selectedAbilities.map(ability => [ability, rule.abilityBonus])
+  );
 }
 
-function renderRacialSkillChoices(rule) {
-  if (!rule?.skillCount) return "";
+function findRacePorthole() {
+  const portholes = document.querySelectorAll(".porthole");
 
-  return `
-    <label class="field-label">
-      Skill Proficiencies — choose exactly ${rule.skillCount}
-    </label>
-    <div class="specimen-rack">
-      ${DATA.skills
-        .map(skill => choice(
-          "racialSkill",
-          skill,
-          skill,
-          S.racialSkills.includes(skill)
-        ))
-        .join("")}
-    </div>
-    <p class="panel-sub">
-      ${S.race === "Half-Elf"
-        ? "Half-Elf: choose any two skill proficiencies."
-        : "Variant Human: choose one skill proficiency."}
-    </p>
-  `;
+  for (const porthole of portholes) {
+    const heading = [...porthole.querySelectorAll("b")]
+      .find(node => node.textContent.trim() === "Ability Modifiers");
+
+    if (heading) return porthole;
+  }
+
+  return null;
 }
 
-function renderRacialAbilityChoices(rule) {
-  if (!rule?.abilityCount) return "";
-
-  const selected = new Set(Object.keys(S.racialAbilityChoices));
-
-  return `
-    <label class="field-label">
-      Ability Score Increase — choose ${rule.abilityCount} abilities (+${rule.abilityBonus} each)
-    </label>
-    <div class="specimen-rack">
-      ${DATA.abilities
-        .map(ability => choice(
-          "racialAbility",
-          ability,
-          ability,
-          selected.has(ability)
-        ))
-        .join("")}
-    </div>
-    <p class="panel-sub">
-      ${rule.abilityMode === "add"
-        ? "These bonuses are added to the fixed racial modifiers."
-        : "These bonuses replace the standard Human +1 to every ability."}
-    </p>
-  `;
+function findLabel(porthole, text) {
+  return [...porthole.children]
+    .find(node => node.matches("b") && node.textContent.trim() === text);
 }
 
-const baseRenderRace = window.renderRace;
+function replaceAdjacentParagraph(label, replacement) {
+  if (!label) return;
 
-window.renderRace = function () {
+  const next = label.nextElementSibling;
+  if (next) next.replaceWith(replacement);
+  else label.after(replacement);
+}
+
+function createChoiceRack(type, values, selected) {
+  const rack = document.createElement("div");
+  rack.className = "specimen-rack racial-choice-rack";
+
+  for (const value of values) {
+    const wrapper = document.createElement("div");
+    wrapper.innerHTML = choice(type, value, value, selected.includes(value));
+    rack.append(wrapper.firstElementChild);
+  }
+
+  return rack;
+}
+
+function enhanceRaceUI() {
+  const rule = racialChoiceRule();
+  const porthole = findRacePorthole();
+
+  if (!rule || !porthole) return;
+  if (porthole.dataset.racialChoicesEnhanced === "true") return;
+
   ensureRacialChoiceState();
 
-  let html = baseRenderRace();
-  const rule = racialChoiceRule();
+  const abilityLabel = findLabel(porthole, "Ability Modifiers");
+  const existingAbilityParagraph = abilityLabel?.nextElementSibling;
 
-  if (!rule) return html;
+  if (existingAbilityParagraph) {
+    if (isHalfElf()) {
+      const fixedBonuses = ["CHA +2"];
+      const selected = Object.keys(S.racialAbilityChoices);
+      existingAbilityParagraph.innerHTML = [
+        ...fixedBonuses,
+        ...selected.map(ability => `${ability} +1`)
+      ].map(value => `<i>${escapeHtml(value)}</i>`).join("");
+    } else if (isVariantHuman()) {
+      const selected = Object.keys(S.racialAbilityChoices);
+      existingAbilityParagraph.innerHTML = selected.length
+        ? selected.map(ability => `<i>${escapeHtml(ability)} +1</i>`).join("")
+        : "None";
+    }
+  }
 
-  const abilityText = rule.abilityMode === "add"
-    ? ["CHA +2", ...Object.keys(S.racialAbilityChoices).map(ability => `${ability} +1`)].join("</i><i>")
-    : Object.keys(S.racialAbilityChoices)
-        .map(ability => `${ability} +1`)
-        .join("</i><i>");
+  const proficiencyLabel = findLabel(porthole, "Innate Proficiencies");
+  if (proficiencyLabel) {
+    const oldParagraph = proficiencyLabel.nextElementSibling;
+    if (oldParagraph) oldParagraph.remove();
 
-  html = html.replace(
-    /(<b>Ability Modifiers<\/b><p class="tags">).*?(<\/p>)/,
-    `$1<i>${abilityText || "None"}</i>$2`
-  );
+    const skillLabel = document.createElement("label");
+    skillLabel.className = "field-label";
+    skillLabel.textContent = `Skill Proficiencies — choose exactly ${rule.skillCount}`;
+    proficiencyLabel.after(skillLabel);
 
-  html = html.replace(
-    /<b>Innate Proficiencies<\/b><p>.*?<\/p>/,
-    `${renderRacialSkillChoices(rule)}${renderRacialAbilityChoices(rule)}`
-  );
+    const rack = createChoiceRack(
+      "racialSkill",
+      DATA.skills,
+      S.racialSkills
+    );
 
-  return html;
-};
+    skillLabel.after(rack);
+
+    const hint = document.createElement("p");
+    hint.className = "panel-sub";
+    hint.textContent = isHalfElf()
+      ? "Half-Elf: choose any two skill proficiencies."
+      : "Variant Human: choose one skill proficiency.";
+    rack.after(hint);
+
+    if (isHalfElf() || isVariantHuman()) {
+      const abilityLabel2 = document.createElement("label");
+      abilityLabel2.className = "field-label";
+      abilityLabel2.textContent = "Ability Score Increase — choose two abilities (+1 each)";
+      hint.after(abilityLabel2);
+
+      const abilityRack = createChoiceRack(
+        "racialAbility",
+        DATA.abilities,
+        Object.keys(S.racialAbilityChoices)
+      );
+      abilityLabel2.after(abilityRack);
+
+      const abilityHint = document.createElement("p");
+      abilityHint.className = "panel-sub";
+      abilityHint.textContent = isHalfElf()
+        ? "These +1 bonuses are added to the fixed Half-Elf CHA +2."
+        : "These +1 bonuses replace the standard Human +1 to every ability.";
+      abilityRack.after(abilityHint);
+    }
+  }
+
+  porthole.dataset.racialChoicesEnhanced = "true";
+}
 
 const baseRacialBonuses = R.bonus;
-
 R.bonus = function () {
   ensureRacialChoiceState();
 
   const rule = racialChoiceRule();
-
   if (!rule) return baseRacialBonuses.call(R);
 
   const bonuses = {};
   const race = R.race();
   const subrace = (race?.subs || {})[S.subrace] || {};
 
-  if (rule.abilityMode !== "replaceFixed") {
-    Object.entries(race?.fixed || {}).forEach(([ability, value]) => {
+  if (isHalfElf()) {
+    for (const [ability, value] of Object.entries(race?.fixed || {})) {
       bonuses[ability] = (bonuses[ability] || 0) + Number(value || 0);
-    });
+    }
   }
 
-  Object.entries(subrace).forEach(([ability, value]) => {
+  for (const [ability, value] of Object.entries(subrace)) {
     bonuses[ability] = (bonuses[ability] || 0) + Number(value || 0);
-  });
+  }
 
-  Object.entries(S.racialAbilityChoices).forEach(([ability, value]) => {
+  for (const [ability, value] of Object.entries(S.racialAbilityChoices)) {
     bonuses[ability] = (bonuses[ability] || 0) + Number(value || 0);
-  });
+  }
 
   return bonuses;
 };
 
-R.scores = function () {
-  const scores = {};
-  const bonuses = R.bonus();
-
-  for (const ability of DATA.abilities) {
-    scores[ability] = Number(S.assign?.[ability] || 0) + Number(bonuses[ability] || 0);
-  }
-
-  return scores;
-};
-
 const baseProficientSkills = R.proficientSkills;
-
 R.proficientSkills = function () {
   ensureRacialChoiceState();
 
-  const skills = baseProficientSkills.call(R);
   const rule = racialChoiceRule();
+  const skills = baseProficientSkills.call(R)
+    .filter(skill => skill !== "2 CHOICE");
 
   if (!rule) return skills;
 
-  return [...new Set([
-    ...skills.filter(skill => skill !== "2 CHOICE"),
-    ...S.racialSkills
-  ])];
+  return [...new Set([...skills, ...S.racialSkills])];
 };
 
 const baseValidation = R.validation;
-
 R.validation = function () {
   ensureRacialChoiceState();
 
@@ -215,13 +243,13 @@ R.validation = function () {
 
   checks.push({
     key: "racialSkills",
-    label: `${S.race === "Half-Elf" ? "Half-Elf" : "Variant Human"} skill proficiencies`,
+    label: `${isHalfElf() ? "Half-Elf" : "Variant Human"} skill proficiencies`,
     ok: S.racialSkills.length === rule.skillCount
   });
 
   checks.push({
     key: "racialAbilityChoices",
-    label: `${S.race === "Half-Elf" ? "Half-Elf" : "Variant Human"} ability bonuses`,
+    label: `${isHalfElf() ? "Half-Elf" : "Variant Human"} ability bonuses`,
     ok: Object.keys(S.racialAbilityChoices).length === rule.abilityCount
   });
 
@@ -251,14 +279,34 @@ document.addEventListener("click", event => {
       S.racialSkills.push(value);
     }
   } else {
-    const selected = S.racialAbilityChoices;
-
-    if (selected[value]) {
-      delete selected[value];
-    } else if (Object.keys(selected).length < rule.abilityCount) {
-      selected[value] = rule.abilityBonus;
+    if (S.racialAbilityChoices[value]) {
+      delete S.racialAbilityChoices[value];
+    } else if (Object.keys(S.racialAbilityChoices).length < rule.abilityCount) {
+      S.racialAbilityChoices[value] = rule.abilityBonus;
     }
   }
 
   render();
-}, true);
+});
+
+document.addEventListener("click", event => {
+  if (!event.target.closest("[data-type=\"race\"],[data-type=\"subrace\"],[data-type=\"racialMode\"]")) {
+    return;
+  }
+
+  queueMicrotask(ensureRacialChoiceState);
+});
+
+const observer = new MutationObserver(() => {
+  const porthole = findRacePorthole();
+  if (!porthole) return;
+  if (porthole.dataset.racialChoicesEnhanced === "true") return;
+  enhanceRaceUI();
+});
+
+observer.observe(document.body, {
+  childList: true,
+  subtree: true
+});
+
+queueMicrotask(enhanceRaceUI);
