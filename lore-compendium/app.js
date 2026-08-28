@@ -2,6 +2,8 @@ import { categories, entries } from './data.js';
 
 const state = { category: 'all', query: '', selected: null };
 const nav = document.querySelector('#entry-nav');
+const contentsGrid = document.querySelector('#contents-grid');
+const contentsPanel = document.querySelector('#contents-panel');
 const grid = document.querySelector('#entry-grid');
 const filters = document.querySelector('#filters');
 const count = document.querySelector('#entry-count');
@@ -32,27 +34,37 @@ filters?.addEventListener('click', event => {
   render();
 });
 
+function openEntry(id) {
+  state.selected = id;
+  render();
+  closeMobileMenu();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 nav?.addEventListener('click', event => {
   const link = event.target.closest('[data-entry]');
   if (!link) return;
   event.preventDefault();
-  state.selected = link.dataset.entry;
-  render();
-  closeMobileMenu();
-  document.querySelector('.compendium-main')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  openEntry(link.dataset.entry);
+});
+
+contentsGrid?.addEventListener('click', event => {
+  const link = event.target.closest('[data-entry]');
+  if (!link) return;
+  event.preventDefault();
+  openEntry(link.dataset.entry);
 });
 
 grid?.addEventListener('click', event => {
   const card = event.target.closest('[data-entry]');
   if (!card) return;
-  state.selected = card.dataset.entry;
-  render();
-  document.querySelector('.compendium-main')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  openEntry(card.dataset.entry);
 });
 
 back?.addEventListener('click', () => {
   state.selected = null;
   render();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 menuToggle?.addEventListener('click', () => {
@@ -71,35 +83,51 @@ function getVisibleEntries() {
 function renderFilters() {
   if (!filters) return;
   filters.innerHTML = categories.map(category => `
-    <button class="filter-button ${state.category === category.id ? 'is-active' : ''}" data-category="${category.id}" type="button">
-      ${category.label}
-    </button>
+    <button class="filter-button ${state.category === category.id ? 'is-active' : ''}" data-category="${category.id}" type="button">${category.label}</button>
   `).join('');
 }
 
-function renderNavigation() {
-  if (!nav) return;
-  nav.innerHTML = categories.slice(1).map(category => {
+function navigationMarkup() {
+  return categories.slice(1).map(category => {
     const categoryEntries = entries.filter(entry => entry.category === category.id);
     if (!categoryEntries.length) return '';
     return `
       <div class="nav-group">
         <button class="nav-group__title" type="button" data-category="${category.id}">${category.label}</button>
         <div class="nav-group__entries">
-          ${categoryEntries.map(entry => `
-            <a href="#${entry.id}" data-entry="${entry.id}" class="nav-entry ${state.selected === entry.id ? 'is-active' : ''}">${entry.title}</a>
-          `).join('')}
+          ${categoryEntries.map(entry => `<a href="#${entry.id}" data-entry="${entry.id}" class="nav-entry ${state.selected === entry.id ? 'is-active' : ''}">${entry.title}</a>`).join('')}
         </div>
       </div>
     `;
   }).join('');
-  nav.querySelectorAll('.nav-group__title').forEach(button => {
-    button.addEventListener('click', () => {
-      state.category = button.dataset.category;
-      state.selected = null;
-      renderFilters();
-      render();
-    });
+}
+
+function renderNavigation() {
+  if (nav) nav.innerHTML = navigationMarkup();
+  if (contentsGrid) {
+    contentsGrid.innerHTML = categories.slice(1).map(category => {
+      const categoryEntries = entries.filter(entry => entry.category === category.id);
+      if (!categoryEntries.length) return '';
+      return `
+        <section class="contents-category">
+          <button class="contents-category__title" type="button" data-category="${category.id}">${category.label}</button>
+          <div class="contents-links">
+            ${categoryEntries.map(entry => `<a href="#${entry.id}" data-entry="${entry.id}">${entry.title}<span>→</span></a>`).join('')}
+          </div>
+        </section>
+      `;
+    }).join('');
+  }
+  nav?.querySelectorAll('.nav-group__title').forEach(button => bindCategoryButton(button));
+  contentsGrid?.querySelectorAll('.contents-category__title').forEach(button => bindCategoryButton(button));
+}
+
+function bindCategoryButton(button) {
+  button.addEventListener('click', () => {
+    state.category = button.dataset.category;
+    state.selected = null;
+    renderFilters();
+    render();
   });
 }
 
@@ -110,12 +138,14 @@ function render() {
   renderNavigation();
   if (selected) {
     if (hero) hero.hidden = true;
+    if (contentsPanel) contentsPanel.hidden = true;
     if (grid) grid.hidden = true;
     if (view) view.hidden = false;
     renderEntry(selected);
     return;
   }
   if (hero) hero.hidden = false;
+  if (contentsPanel) contentsPanel.hidden = true;
   if (grid) grid.hidden = false;
   if (view) view.hidden = true;
   renderGrid(visible);
@@ -124,13 +154,7 @@ function render() {
 function renderGrid(visible) {
   if (!grid) return;
   if (!visible.length) {
-    grid.innerHTML = `
-      <div class="empty-state">
-        <span class="empty-state__mark">✦</span>
-        <h3>Nie znaleziono wpisów.</h3>
-        <p>Spróbuj innego wyszukiwania albo wróć do wszystkich wpisów.</p>
-      </div>
-    `;
+    grid.innerHTML = `<div class="empty-state"><span class="empty-state__mark">✦</span><h3>Nie znaleziono wpisów.</h3><p>Spróbuj innego wyszukiwania albo wróć do wszystkich wpisów.</p></div>`;
     return;
   }
   grid.innerHTML = visible.map(entry => `
@@ -139,20 +163,14 @@ function renderGrid(visible) {
       <p class="entry-card__eyebrow">${entry.eyebrow}</p>
       <h3>${entry.title}</h3>
       <p>${entry.summary}</p>
-      <div class="entry-card__footer">
-        <span>${entry.tags.slice(0, 2).join(' · ')}</span>
-        <span>Czytaj →</span>
-      </div>
+      <div class="entry-card__footer"><span>${entry.tags.slice(0, 2).join(' · ')}</span><span>Czytaj →</span></div>
     </article>
   `).join('');
-  grid.querySelectorAll('.entry-card').forEach(card => {
-    card.addEventListener('keydown', event => {
-      if (event.key !== 'Enter' && event.key !== ' ') return;
-      event.preventDefault();
-      state.selected = card.dataset.entry;
-      render();
-    });
-  });
+  grid.querySelectorAll('.entry-card').forEach(card => card.addEventListener('keydown', event => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    openEntry(card.dataset.entry);
+  }));
 }
 
 function renderEntry(entry) {
@@ -164,12 +182,8 @@ function renderEntry(entry) {
       <p class="entry-lead">${entry.summary}</p>
       <div class="entry-rule"><span>✦</span></div>
     </div>
-    <div class="entry-body">
-      <p>${entry.body}</p>
-    </div>
-    <div class="entry-tags">
-      ${entry.tags.map(tag => `<span>${tag}</span>`).join('')}
-    </div>
+    <div class="entry-body"><p>${entry.body}</p></div>
+    <div class="entry-tags">${entry.tags.map(tag => `<span>${tag}</span>`).join('')}</div>
   `;
 }
 
