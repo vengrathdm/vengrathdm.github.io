@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="pl">
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#11110f">
@@ -13,43 +12,71 @@
   <link rel="stylesheet" href="../assets/css/layout.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <link rel="stylesheet" href="../assets/css/subpages.css">
-
+  <link rel="stylesheet" href="gallery.css">
   <title>Ilustracje — Vengrath</title>
 </head>
 <body>
   <a class="skip-link" href="#main">Przejdź do treści</a>
-  <div class="site-atmosphere" aria-hidden="true"><div class="fog fog--one"></div><div class="fog fog--two"></div><div class="stars"></div></div>
+  <div class="site-atmosphere" aria-hidden="true">
+    <div class="fog fog--one"></div>
+    <div class="fog fog--two"></div>
+    <div class="stars"></div>
+  </div>
 
   <header class="site-header">
     <a class="wordmark" href="../index.html" aria-label="Vengrath — strona główna">
-      <span class="wordmark__crest">V</span><span class="wordmark__name">Vengrath</span>
+      <span class="wordmark__crest">V</span>
+      <span class="wordmark__name">Vengrath</span>
     </a>
-    <nav class="main-nav" aria-label="Główna nawigacja"><a href="../campaigns/">Kampanie</a><a href="../blog/">Blog</a><a href="../projects/">Projekty</a><a href="../charactermancer/index.html">Charactermancer</a><a href="../sessions/">Sesje</a><a href="../illustrations/">Ilustracje</a><a href="../about/">O mnie</a></nav>
-    <div class="header-links"><a href="#">Discord</a><a href="#">YouTube</a></div>
+    <nav class="main-nav" aria-label="Główna nawigacja">
+      <a href="../campaigns/">Kampanie</a>
+      <a href="../blog/">Blog</a>
+      <a href="../projects/">Projekty</a>
+      <a href="../charactermancer/index.html">Charactermancer</a>
+      <a href="../sessions/">Sesje</a>
+      <a href="../illustrations/">Ilustracje</a>
+      <a href="../about/">O mnie</a>
+    </nav>
+    <div class="header-links">
+      <a href="#">Discord</a>
+      <a href="#">YouTube</a>
+    </div>
   </header>
 
   <main id="main">
-
-    <section class="subhero subhero--compact"><div class="subhero__copy"><p class="eyebrow">KSIĘGA IV · ILUSTRACJE</p><h1>Rysunki<br><em>ze światów.</em></h1><p>[Treść Opisu] Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></section>
-    <section class="subsection">
-      <div class="gallery-grid">
-        <div class="gallery-item gallery-item--wide"><span>[Ilustracja]</span><small>[Tytuł · Rok]</small></div>
-        <div class="gallery-item"><span>[Ilustracja]</span><small>[Tytuł · Rok]</small></div>
-        <div class="gallery-item"><span>[Ilustracja]</span><small>[Tytuł · Rok]</small></div>
-        <div class="gallery-item"><span>[Ilustracja]</span><small>[Tytuł · Rok]</small></div>
-        <div class="gallery-item gallery-item--tall"><span>[Ilustracja]</span><small>[Tytuł · Rok]</small></div>
+    <section class="subhero subhero--compact">
+      <div class="subhero__copy">
+        <p class="eyebrow">KSIĘGA IV · ILUSTRACJE</p>
+        <h1>Rysunki<br><em>ze światów.</em></h1>
+        <p>Galeria jest budowana automatycznie na podstawie plików graficznych znajdujących się w <code>illustrations/graphics/</code>.</p>
       </div>
     </section>
 
+    <section class="subsection">
+      <div class="gallery-header">
+        <div>
+          <p class="eyebrow">ARCHIWUM</p>
+          <h2>Wszystkie<br><em>ilustracje.</em></h2>
+        </div>
+        <p id="gallery-status" class="gallery-status" aria-live="polite">Wykrywanie plików…</p>
+      </div>
+
+      <div class="gallery-grid" id="illustration-gallery">
+        <div class="blog-status">Ładowanie galerii…</div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <a class="wordmark" href="../index.html"><span class="wordmark__crest">V</span><span class="wordmark__name">Vengrath</span></a>
+    <a class="wordmark" href="../index.html">
+      <span class="wordmark__crest">V</span>
+      <span class="wordmark__name">Vengrath</span>
+    </a>
     <p>Mistrz Podziemi · Twórca światów · Kronikarz</p>
     <a href="#" class="back-top">↑</a>
   </footer>
-  <script src="../assets/js/navigation.js" defer></script>
-  <script src="../assets/js/reveal.js" defer></script>
 
+  <script src="../assets/js/navigation.js" defer></script>
+  <script src="gallery.js" defer></script>
 </body>
 </html>
