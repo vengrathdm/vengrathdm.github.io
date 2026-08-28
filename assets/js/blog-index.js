@@ -1,50 +1,84 @@
+import { loadJson, requireArray } from './core/data.js';
+import { createElement, clear } from './core/dom.js';
 
-(async () => {
-  const tbody = document.querySelector('#blog-posts');
-  const status = document.querySelector('#blog-status');
-  if (!tbody) return;
+const tbody = document.querySelector('#blog-posts');
+const status = document.querySelector('#blog-status');
 
-  try {
-    const response = await fetch('./posts.json', { cache: 'no-store' });
-    if (!response.ok) throw new Error(`posts.json: HTTP ${response.status}`);
-    const posts = await response.json();
+if (tbody) loadPosts().catch(handleError);
 
-    tbody.innerHTML = '';
+async function loadPosts() {
+  const posts = requireArray(await loadJson('./posts.json'), 'posts.json');
+  clear(tbody);
 
-    if (!posts.length) {
-      tbody.innerHTML = '<tr><td colspan="5">Brak wpisów w archiwum.</td></tr>';
-      status.textContent = 'ARCHIWUM · 0 WPISÓW';
-      return;
-    }
-
-    posts.forEach(post => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td data-label="Data">${escapeHTML(post.date || '—')}</td>
-        <td data-label="Wpis"><a class="blog-table__title" href="${safePath(post.url)}">${escapeHTML(post.title)}</a><span class="blog-table__excerpt">${escapeHTML(post.description || '')}</span></td>
-        <td data-label="Kategoria">${escapeHTML(post.category || '—')}</td>
-        <td data-label="System">${escapeHTML(post.system || '—')}</td>
-        <td><a class="blog-table__arrow" href="${safePath(post.url)}" aria-label="Otwórz wpis">→</a></td>
-      `;
-      tbody.appendChild(tr);
-    });
-
-    status.textContent = `ARCHIWUM · ${posts.length} ${posts.length === 1 ? 'WPIS' : 'WPISÓW'}`;
-  } catch (error) {
-    console.error(error);
-    tbody.innerHTML = '<tr><td colspan="5">Nie udało się załadować archiwum. Sprawdź, czy GitHub Action wygenerował <code>posts.json</code>.</td></tr>';
-    status.textContent = 'ARCHIWUM · BŁĄD ŁADOWANIA';
+  if (!posts.length) {
+    tbody.append(createEmptyRow('Brak wpisów w archiwum.'));
+    updateStatus(0);
+    return;
   }
 
-  function escapeHTML(value) {
-    return String(value).replace(/[&<>"']/g, c => ({
-      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
-    }[c]));
-  }
+  posts.forEach(post => tbody.append(createPostRow(post)));
+  updateStatus(posts.length);
+}
 
-  function safePath(value) {
-    const normalized = String(value).replace(/^\/+/, '');
-    if (normalized.includes('..') || normalized.startsWith('/')) return '#';
-    return normalized;
-  }
-})();
+function createPostRow(post) {
+  const titleLink = createElement('a', {
+    className: 'blog-table__title',
+    href: safePath(post.url),
+    text: post.title
+  });
+  const excerpt = createElement('span', {
+    className: 'blog-table__excerpt',
+    text: post.description || ''
+  });
+
+  return createElement('tr', {
+    children: [
+      createCell(post.date || '—', 'Data'),
+      createElement('td', { children: [titleLink, excerpt] }),
+      createCell(post.category || '—', 'Kategoria'),
+      createCell(post.system || '—', 'System'),
+      createElement('td', {
+        children: [createElement('a', {
+          className: 'blog-table__arrow',
+          href: safePath(post.url),
+          ariaLabel: 'Otwórz wpis',
+          text: '→'
+        })]
+      })
+    ]
+  });
+}
+
+function createCell(text, label) {
+  return createElement('td', {
+    text,
+    attributes: { 'data-label': label }
+  });
+}
+
+function createEmptyRow(message) {
+  return createElement('tr', {
+    children: [createElement('td', {
+      text: message,
+      attributes: { colspan: '5' }
+    })]
+  });
+}
+
+function updateStatus(count) {
+  if (!status) return;
+  status.textContent = `ARCHIWUM · ${count} ${count === 1 ? 'WPIS' : 'WPISÓW'}`;
+}
+
+function safePath(value) {
+  const normalized = String(value ?? '').replace(/^\/+/, '');
+  if (normalized.includes('..') || normalized.startsWith('/')) return '#';
+  return normalized;
+}
+
+function handleError(error) {
+  console.error('Blog archive error:', error);
+  clear(tbody);
+  tbody.append(createEmptyRow('Nie udało się załadować archiwum. Sprawdź, czy posts.json jest dostępny.'));
+  if (status) status.textContent = 'ARCHIWUM · BŁĄD ŁADOWANIA';
+}
