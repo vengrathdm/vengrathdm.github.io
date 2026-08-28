@@ -1,11 +1,6 @@
 import { categories, entries } from './data.js';
 
-const state = {
-  category: 'all',
-  query: '',
-  selected: null
-};
-
+const state = { category: 'all', query: '', selected: null };
 const nav = document.querySelector('#entry-nav');
 const grid = document.querySelector('#entry-grid');
 const filters = document.querySelector('#filters');
@@ -31,7 +26,6 @@ search?.addEventListener('input', event => {
 filters?.addEventListener('click', event => {
   const button = event.target.closest('[data-category]');
   if (!button) return;
-
   state.category = button.dataset.category;
   state.selected = null;
   renderFilters();
@@ -41,7 +35,6 @@ filters?.addEventListener('click', event => {
 nav?.addEventListener('click', event => {
   const link = event.target.closest('[data-entry]');
   if (!link) return;
-
   event.preventDefault();
   state.selected = link.dataset.entry;
   render();
@@ -52,7 +45,6 @@ nav?.addEventListener('click', event => {
 grid?.addEventListener('click', event => {
   const card = event.target.closest('[data-entry]');
   if (!card) return;
-
   state.selected = card.dataset.entry;
   render();
   document.querySelector('.compendium-main')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -72,14 +64,12 @@ function getVisibleEntries() {
   return entries.filter(entry => {
     const categoryMatch = state.category === 'all' || entry.category === state.category;
     const haystack = [entry.title, entry.eyebrow, entry.summary, entry.body, ...entry.tags].join(' ').toLowerCase();
-    const searchMatch = !state.query || haystack.includes(state.query);
-    return categoryMatch && searchMatch;
+    return categoryMatch && (!state.query || haystack.includes(state.query));
   });
 }
 
 function renderFilters() {
   if (!filters) return;
-
   filters.innerHTML = categories.map(category => `
     <button class="filter-button ${state.category === category.id ? 'is-active' : ''}" data-category="${category.id}" type="button">
       ${category.label}
@@ -89,11 +79,9 @@ function renderFilters() {
 
 function renderNavigation() {
   if (!nav) return;
-
   nav.innerHTML = categories.slice(1).map(category => {
     const categoryEntries = entries.filter(entry => entry.category === category.id);
     if (!categoryEntries.length) return '';
-
     return `
       <div class="nav-group">
         <button class="nav-group__title" type="button" data-category="${category.id}">${category.label}</button>
@@ -105,7 +93,6 @@ function renderNavigation() {
       </div>
     `;
   }).join('');
-
   nav.querySelectorAll('.nav-group__title').forEach(button => {
     button.addEventListener('click', () => {
       state.category = button.dataset.category;
@@ -119,10 +106,8 @@ function renderNavigation() {
 function render() {
   const visible = getVisibleEntries();
   const selected = state.selected ? entries.find(entry => entry.id === state.selected) : null;
-
-  if (count) count.textContent = `${visible.length} ${visible.length === 1 ? 'entry' : 'entries'}`;
+  if (count) count.textContent = `${visible.length} ${visible.length === 1 ? 'wpis' : 'wpisów'}`;
   renderNavigation();
-
   if (selected) {
     if (hero) hero.hidden = true;
     if (grid) grid.hidden = true;
@@ -130,7 +115,6 @@ function render() {
     renderEntry(selected);
     return;
   }
-
   if (hero) hero.hidden = false;
   if (grid) grid.hidden = false;
   if (view) view.hidden = true;
@@ -139,45 +123,40 @@ function render() {
 
 function renderGrid(visible) {
   if (!grid) return;
-
   if (!visible.length) {
     grid.innerHTML = `
       <div class="empty-state">
         <span class="empty-state__mark">✦</span>
-        <h3>No lore found.</h3>
-        <p>Try another search or return to all entries.</p>
+        <h3>Nie znaleziono wpisów.</h3>
+        <p>Spróbuj innego wyszukiwania albo wróć do wszystkich wpisów.</p>
       </div>
     `;
     return;
   }
-
   grid.innerHTML = visible.map(entry => `
-    <article class="entry-card" data-entry="${entry.id}" tabindex="0" role="button" aria-label="Open ${entry.title}">
+    <article class="entry-card" data-entry="${entry.id}" tabindex="0" role="button" aria-label="Otwórz ${entry.title}">
       <span class="entry-card__ornament">✦</span>
       <p class="entry-card__eyebrow">${entry.eyebrow}</p>
       <h3>${entry.title}</h3>
       <p>${entry.summary}</p>
       <div class="entry-card__footer">
         <span>${entry.tags.slice(0, 2).join(' · ')}</span>
-        <span>Read entry →</span>
+        <span>Czytaj →</span>
       </div>
     </article>
   `).join('');
-
   grid.querySelectorAll('.entry-card').forEach(card => {
     card.addEventListener('keydown', event => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        state.selected = card.dataset.entry;
-        render();
-      }
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      state.selected = card.dataset.entry;
+      render();
     });
   });
 }
 
 function renderEntry(entry) {
   if (!content) return;
-
   content.innerHTML = `
     <div class="entry-header">
       <p class="eyebrow">${entry.eyebrow}</p>
@@ -187,13 +166,6 @@ function renderEntry(entry) {
     </div>
     <div class="entry-body">
       <p>${entry.body}</p>
-      <aside class="lore-note">
-        <span class="lore-note__glyph">❧</span>
-        <div>
-          <strong>Archive note</strong>
-          <p>This entry is part of the compendium skeleton. More detailed lore, relationships, maps, images, and cross-references can be added here without changing the page structure.</p>
-        </div>
-      </aside>
     </div>
     <div class="entry-tags">
       ${entry.tags.map(tag => `<span>${tag}</span>`).join('')}
