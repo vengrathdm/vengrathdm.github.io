@@ -13,68 +13,36 @@
 </head>
 <body>
   <div class="world-atmosphere" aria-hidden="true"></div>
-
   <header class="compendium-header">
     <a class="back-link" href="../index.html">← Vengrath</a>
-    <div class="header-title">
-      <p class="eyebrow">ECHTRA · MIDST THE SIDHE</p>
-      <h1>Kompendium Świata</h1>
-    </div>
+    <div class="header-title"><p class="eyebrow">ECHTRA · MIDST THE SIDHE</p><h1>Kompendium Świata</h1></div>
     <button class="menu-button" id="menu-toggle" type="button" aria-expanded="false" aria-controls="compendium-sidebar">Spis treści</button>
   </header>
-
   <div class="compendium-shell">
     <aside class="compendium-sidebar" id="compendium-sidebar">
-      <div class="sidebar-heading">
-        <span class="sidebar-mark">✦</span>
-        <div>
-          <p class="eyebrow">ARCHIWUM</p>
-          <h2>Irgaela</h2>
-        </div>
-      </div>
-
-      <label class="search-box">
-        <span>Przeszukaj kompendium</span>
-        <input id="search" type="search" placeholder="Szukaj w lore…" autocomplete="off">
-      </label>
-
-      <nav class="entry-nav" id="entry-nav" aria-label="Wpisy kompendium"></nav>
-
-      <div class="sidebar-note">
-        <span>✦</span>
-        <p>Żywe archiwum krain, ludów, potęg i opowieści świata Echtra.</p>
-      </div>
+      <div class="sidebar-heading"><span class="sidebar-mark">✦</span><div><p class="eyebrow">ARCHIWUM</p><h2>Irgaela</h2></div></div>
+      <label class="search-box"><span>Przeszukaj kompendium</span><input id="search" type="search" placeholder="Szukaj w lore…" autocomplete="off"></label>
+      <nav class="entry-nav" id="entry-nav" aria-label="Spis treści kompendium"></nav>
+      <div class="sidebar-note"><span>✦</span><p>Żywe archiwum krain, ludów, potęg i opowieści świata Echtra.</p></div>
     </aside>
-
     <main class="compendium-main">
       <section class="compendium-hero" id="compendium-hero">
         <p class="eyebrow">KRAINY POZA ZASŁONĄ</p>
         <h2>Witaj w <em>Irgaeli.</em></h2>
-        <p>Poznaj świat <strong>Echtra midst the Sidhe</strong> nie jako ścieżkę przygody, lecz jako żywe archiwum: miejsc, ludów, bogów, duchów, historii i dziwnych istot, które czekają po drugiej stronie świata śmiertelników.</p>
+        <p>Poznaj świat <strong>Echtra midst the Sidhe</strong> jako żywe archiwum miejsc, ludów, bogów, duchów, historii i dziwnych istot, które czekają po drugiej stronie świata śmiertelników.</p>
         <div class="hero-rule"><span>✦</span></div>
         <p class="hero-aside">„Wszystkie sídhe są otwarte podczas Samhain.”</p>
       </section>
-
-      <section class="filter-bar" aria-label="Kategorie wpisów">
-        <div class="filter-buttons" id="filters"></div>
-        <span class="entry-count" id="entry-count"></span>
+      <section class="contents-panel" id="contents-panel">
+        <div class="contents-heading"><p class="eyebrow">ARCHIWUM</p><h2>Spis treści</h2><p>Wybierz wpis, aby otworzyć jego stronę.</p></div>
+        <div class="contents-grid" id="contents-grid"></div>
       </section>
-
+      <section class="filter-bar" aria-label="Kategorie wpisów"><div class="filter-buttons" id="filters"></div><span class="entry-count" id="entry-count"></span></section>
       <section class="entry-grid" id="entry-grid" aria-live="polite"></section>
-
-      <article class="entry-view" id="entry-view" hidden>
-        <button class="entry-back" id="entry-back" type="button">← Wszystkie wpisy</button>
-        <div id="entry-content"></div>
-      </article>
+      <article class="entry-view" id="entry-view" hidden><button class="entry-back" id="entry-back" type="button">← Wszystkie wpisy</button><div id="entry-content"></div></article>
     </main>
   </div>
-
-  <footer class="compendium-footer">
-    <a href="../index.html">Vengrath</a>
-    <span>·</span>
-    <span>Kompendium Świata Echtra</span>
-  </footer>
-
+  <footer class="compendium-footer"><a href="../index.html">Vengrath</a><span>·</span><span>Kompendium Świata Echtra</span></footer>
   <script type="module" src="app.js"></script>
 </body>
 </html>
