@@ -20,7 +20,13 @@ const entries = [
   ['magic-materials', 'Zimne Żelazo'], ['magic-materials', 'Orichalcum'], ['magic-materials', 'Starmetal']
 ];
 
-const pathFor = title => `${encodeURIComponent(title)}/`;
+// Article URLs are rooted at /lore-compendium/, not relative to the current article folder.
+const compendiumRoot = new URL('../', window.location.href);
+const pathFor = title => {
+  const url = new URL(`${encodeURIComponent(title)}/`, compendiumRoot);
+  return url.pathname;
+};
+
 const currentTitle = document.body.dataset.article || '';
 const nav = document.querySelector('#entry-nav');
 const search = document.querySelector('#search');
