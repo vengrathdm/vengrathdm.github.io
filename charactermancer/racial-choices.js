@@ -94,12 +94,11 @@ function renderRacialAbilityChoices(rule) {
   if (!rule?.abilityCount) return "";
 
   const selected = new Set(Object.keys(S.racialAbilityChoices));
-  const label = rule.abilityCount === 2
-    ? "Ability Score Increase — choose two abilities (+1 each)"
-    : "Ability Score Increase";
 
   return `
-    <label class="field-label">${label}</label>
+    <label class="field-label">
+      Ability Score Increase — choose ${rule.abilityCount} abilities (+${rule.abilityBonus} each)
+    </label>
     <div class="specimen-rack">
       ${DATA.abilities
         .map(ability => choice(
@@ -129,7 +128,7 @@ window.renderRace = function () {
   if (!rule) return html;
 
   const abilityText = rule.abilityMode === "add"
-    ? ["CHA +2", ...Object.keys(S.racialAbilityChoices).map(ability => `${ability} +1")].join("</i><i>")
+    ? ["CHA +2", ...Object.keys(S.racialAbilityChoices).map(ability => `${ability} +1`)].join("</i><i>")
     : Object.keys(S.racialAbilityChoices)
         .map(ability => `${ability} +1`)
         .join("</i><i>");
@@ -148,16 +147,15 @@ window.renderRace = function () {
 };
 
 const baseRacialBonuses = R.bonus;
-const baseScores = R.scores;
 
 R.bonus = function () {
   ensureRacialChoiceState();
 
   const rule = racialChoiceRule();
-  const bonuses = {};
 
   if (!rule) return baseRacialBonuses.call(R);
 
+  const bonuses = {};
   const race = R.race();
   const subrace = (race?.subs || {})[S.subrace] || {};
 
@@ -190,6 +188,7 @@ R.scores = function () {
 };
 
 const baseProficientSkills = R.proficientSkills;
+
 R.proficientSkills = function () {
   ensureRacialChoiceState();
 
@@ -199,12 +198,13 @@ R.proficientSkills = function () {
   if (!rule) return skills;
 
   return [...new Set([
-    ...skills.filter(skill => !["2 CHOICE"].includes(skill)),
+    ...skills.filter(skill => skill !== "2 CHOICE"),
     ...S.racialSkills
   ])];
 };
 
 const baseValidation = R.validation;
+
 R.validation = function () {
   ensureRacialChoiceState();
 
