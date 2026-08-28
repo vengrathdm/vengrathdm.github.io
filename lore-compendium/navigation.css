@@ -1,0 +1,54 @@
+/* Dedicated navigation chrome: keeps the sidebar scrollbar visually consistent with the compendium. */
+.compendium-sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(212, 181, 102, .55) rgba(255, 255, 255, .035);
+  scrollbar-gutter: stable;
+}
+
+.compendium-sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.compendium-sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, .035);
+  border-left: 1px solid rgba(212, 181, 102, .08);
+}
+
+.compendium-sidebar::-webkit-scrollbar-thumb {
+  min-height: 42px;
+  background: linear-gradient(180deg, rgba(212, 181, 102, .7), rgba(184, 148, 69, .42));
+  border: 2px solid rgba(22, 26, 19, .9);
+  border-radius: 999px;
+}
+
+.compendium-sidebar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(212, 181, 102, .9), rgba(184, 148, 69, .62));
+}
+
+.nav-entry {
+  position: relative;
+}
+
+.nav-entry::before {
+  position: absolute;
+  left: -1px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  content: '';
+  background: var(--gold);
+  transform: translateY(-50%);
+  transition: width .18s ease;
+}
+
+.nav-entry:hover::before,
+.nav-entry.is-active::before {
+  width: 3px;
+  height: 55%;
+}
+
+.nav-entry:focus-visible,
+.nav-group__title:focus-visible {
+  outline: 1px solid var(--gold-bright);
+  outline-offset: 2px;
+}

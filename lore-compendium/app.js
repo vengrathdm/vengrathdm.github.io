@@ -17,11 +17,15 @@ const sidebar = document.querySelector('#compendium-sidebar');
 
 renderFilters();
 renderNavigation();
+
+const initialEntry = decodeURIComponent(window.location.hash.slice(1));
+if (entries.some(entry => entry.id === initialEntry)) state.selected = initialEntry;
 render();
 
 search?.addEventListener('input', event => {
   state.query = event.target.value.trim().toLowerCase();
   state.selected = null;
+  history.replaceState(null, '', window.location.pathname + window.location.search);
   render();
 });
 
@@ -30,29 +34,18 @@ filters?.addEventListener('click', event => {
   if (!button) return;
   state.category = button.dataset.category;
   state.selected = null;
+  history.replaceState(null, '', window.location.pathname + window.location.search);
   renderFilters();
   render();
 });
 
-function openEntry(id) {
-  state.selected = id;
-  render();
-  closeMobileMenu();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-nav?.addEventListener('click', event => {
-  const link = event.target.closest('[data-entry]');
+document.addEventListener('click', event => {
+  const link = event.target.closest('a[data-entry]');
   if (!link) return;
+  const entry = entries.find(item => item.id === link.dataset.entry);
+  if (!entry) return;
   event.preventDefault();
-  openEntry(link.dataset.entry);
-});
-
-contentsGrid?.addEventListener('click', event => {
-  const link = event.target.closest('[data-entry]');
-  if (!link) return;
-  event.preventDefault();
-  openEntry(link.dataset.entry);
+  openEntry(entry.id);
 });
 
 grid?.addEventListener('click', event => {
@@ -61,16 +54,38 @@ grid?.addEventListener('click', event => {
   openEntry(card.dataset.entry);
 });
 
-back?.addEventListener('click', () => {
-  state.selected = null;
+back?.addEventListener('click', closeEntry);
+
+window.addEventListener('hashchange', () => {
+  const id = decodeURIComponent(window.location.hash.slice(1));
+  if (entries.some(entry => entry.id === id)) {
+    state.selected = id;
+  } else {
+    state.selected = null;
+  }
   render();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 menuToggle?.addEventListener('click', () => {
   const open = sidebar?.classList.toggle('is-open');
   menuToggle.setAttribute('aria-expanded', String(Boolean(open)));
 });
+
+function openEntry(id) {
+  if (!entries.some(entry => entry.id === id)) return;
+  state.selected = id;
+  history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${encodeURIComponent(id)}`);
+  render();
+  closeMobileMenu();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function closeEntry() {
+  state.selected = null;
+  history.replaceState(null, '', window.location.pathname + window.location.search);
+  render();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
 function getVisibleEntries() {
   return entries.filter(entry => {
@@ -95,7 +110,9 @@ function navigationMarkup() {
       <div class="nav-group">
         <button class="nav-group__title" type="button" data-category="${category.id}">${category.label}</button>
         <div class="nav-group__entries">
-          ${categoryEntries.map(entry => `<a href="#${entry.id}" data-entry="${entry.id}" class="nav-entry ${state.selected === entry.id ? 'is-active' : ''}">${entry.title}</a>`).join('')}
+          ${categoryEntries.map(entry => `
+            <a href="#${entry.id}" data-entry="${entry.id}" class="nav-entry ${state.selected === entry.id ? 'is-active' : ''}">${entry.title}</a>
+          `).join('')}
         </div>
       </div>
     `;
@@ -126,6 +143,7 @@ function bindCategoryButton(button) {
   button.addEventListener('click', () => {
     state.category = button.dataset.category;
     state.selected = null;
+    history.replaceState(null, '', window.location.pathname + window.location.search);
     renderFilters();
     render();
   });
