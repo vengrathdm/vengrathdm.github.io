@@ -58,11 +58,7 @@ back?.addEventListener('click', closeEntry);
 
 window.addEventListener('hashchange', () => {
   const id = decodeURIComponent(window.location.hash.slice(1));
-  if (entries.some(entry => entry.id === id)) {
-    state.selected = id;
-  } else {
-    state.selected = null;
-  }
+  state.selected = entries.some(entry => entry.id === id) ? id : null;
   render();
 });
 
@@ -72,17 +68,19 @@ menuToggle?.addEventListener('click', () => {
 });
 
 function openEntry(id) {
-  if (!entries.some(entry => entry.id === id)) return;
+  const entry = entries.find(item => item.id === id);
+  if (!entry) return;
   state.selected = id;
-  history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${encodeURIComponent(id)}`);
+  history.pushState(null, '', `${window.location.pathname}${window.location.search}#${encodeURIComponent(id)}`);
   render();
   closeMobileMenu();
+  view?.focus({ preventScroll: true });
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function closeEntry() {
   state.selected = null;
-  history.replaceState(null, '', window.location.pathname + window.location.search);
+  history.pushState(null, '', window.location.pathname + window.location.search);
   render();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -111,7 +109,7 @@ function navigationMarkup() {
         <button class="nav-group__title" type="button" data-category="${category.id}">${category.label}</button>
         <div class="nav-group__entries">
           ${categoryEntries.map(entry => `
-            <a href="#${entry.id}" data-entry="${entry.id}" class="nav-entry ${state.selected === entry.id ? 'is-active' : ''}">${entry.title}</a>
+            <a href="#${entry.id}" data-entry="${entry.id}" class="nav-entry ${state.selected === entry.id ? 'is-active' : ''}" ${state.selected === entry.id ? 'aria-current="page"' : ''}>${entry.title}</a>
           `).join('')}
         </div>
       </div>
@@ -158,7 +156,10 @@ function render() {
     if (hero) hero.hidden = true;
     if (contentsPanel) contentsPanel.hidden = true;
     if (grid) grid.hidden = true;
-    if (view) view.hidden = false;
+    if (view) {
+      view.hidden = false;
+      view.setAttribute('aria-labelledby', 'entry-title');
+    }
     renderEntry(selected);
     return;
   }
@@ -196,7 +197,7 @@ function renderEntry(entry) {
   content.innerHTML = `
     <div class="entry-header">
       <p class="eyebrow">${entry.eyebrow}</p>
-      <h2>${entry.title}</h2>
+      <h2 id="entry-title" tabindex="-1">${entry.title}</h2>
       <p class="entry-lead">${entry.summary}</p>
       <div class="entry-rule"><span>✦</span></div>
     </div>
