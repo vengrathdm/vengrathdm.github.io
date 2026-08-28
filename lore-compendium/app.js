@@ -118,8 +118,8 @@ function renderNavigation() {
       `;
     }).join('');
   }
-  nav?.querySelectorAll('.nav-group__title').forEach(button => bindCategoryButton(button));
-  contentsGrid?.querySelectorAll('.contents-category__title').forEach(button => bindCategoryButton(button));
+  nav?.querySelectorAll('.nav-group__title').forEach(bindCategoryButton);
+  contentsGrid?.querySelectorAll('.contents-category__title').forEach(bindCategoryButton);
 }
 
 function bindCategoryButton(button) {
@@ -145,7 +145,7 @@ function render() {
     return;
   }
   if (hero) hero.hidden = false;
-  if (contentsPanel) contentsPanel.hidden = true;
+  if (contentsPanel) contentsPanel.hidden = false;
   if (grid) grid.hidden = false;
   if (view) view.hidden = true;
   renderGrid(visible);
