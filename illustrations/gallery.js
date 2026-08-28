@@ -68,7 +68,6 @@ function createGalleryItem(file) {
   const image = document.createElement('img');
   image.src = file.download_url;
   image.alt = formatTitle(file.name);
-  image.loading = 'lazy';
   image.decoding = 'async';
   image.addEventListener('load', () => applySizeClass(figure, image), { once: true });
 
