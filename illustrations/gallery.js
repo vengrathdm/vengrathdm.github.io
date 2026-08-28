@@ -2,7 +2,6 @@ const gallery = document.querySelector('#illustration-gallery');
 const status = document.querySelector('#gallery-status');
 
 const REPOSITORY_API = 'https://api.github.com/repos/vengrathdm/vengrathdm.github.io/contents/illustrations/graphics?ref=main';
-
 const IMAGE_EXTENSIONS = new Set(['.avif', '.gif', '.jpeg', '.jpg', '.png', '.svg', '.webp']);
 
 let lightbox;
@@ -13,20 +12,18 @@ if (gallery) {
 
 async function loadGallery() {
   const files = await getImageFiles(REPOSITORY_API);
-  const sizedFiles = await getImageDimensions(files);
-
   gallery.replaceChildren();
 
-  if (!sizedFiles.length) {
+  if (!files.length) {
     showMessage('Brak plików graficznych w katalogu.');
     return;
   }
 
-  sizedFiles
+  files
     .sort((a, b) => a.name.localeCompare(b.name, 'pl'))
     .forEach(file => gallery.append(createGalleryItem(file)));
 
-  showMessage(`GALERIA · ${sizedFiles.length} ${sizedFiles.length === 1 ? 'PLIK' : 'PLIKÓW'}`);
+  showMessage(`GALERIA · ${files.length} ${files.length === 1 ? 'PLIK' : 'PLIKÓW'}`);
 }
 
 async function getImageFiles(url) {
@@ -53,25 +50,6 @@ async function getImageFiles(url) {
   return files;
 }
 
-async function getImageDimensions(files) {
-  return Promise.all(
-    files.map(file => new Promise((resolve, reject) => {
-      const image = new Image();
-
-      image.onload = () => {
-        resolve({
-          ...file,
-          naturalWidth: image.naturalWidth,
-          naturalHeight: image.naturalHeight
-        });
-      };
-
-      image.onerror = () => reject(new Error(`Unable to load image: ${file.name}`));
-      image.src = file.download_url;
-    }))
-  );
-}
-
 function isImageFile(filename) {
   const dotIndex = filename.lastIndexOf('.');
   if (dotIndex === -1) return false;
@@ -86,15 +64,9 @@ function createGalleryItem(file) {
   figure.setAttribute('role', 'button');
   figure.setAttribute('aria-label', `Powiększ ilustrację: ${formatTitle(file.name)}`);
 
-  if (file.naturalWidth / file.naturalHeight >= 1.4) {
-    figure.classList.add('gallery-item--wide');
-  }
-
   const image = document.createElement('img');
   image.src = file.download_url;
   image.alt = formatTitle(file.name);
-  image.width = file.naturalWidth;
-  image.height = file.naturalHeight;
   image.decoding = 'async';
 
   const caption = document.createElement('figcaption');
