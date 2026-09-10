@@ -1,0 +1,13 @@
+{
+  "categories": [
+    {"id":"irgaelia","title":"Irgaela"},
+    {"id":"divinities","title":"Bóstwa"},
+    {"id":"sidhe","title":"Sidhe i Inny Świat"},
+    {"id":"fomorian","title":"Fomorianie"},
+    {"id":"wyrms","title":"Wielkie Wyrmy"},
+    {"id":"magical-beings","title":"Istoty magiczne"},
+    {"id":"magic-items","title":"Magiczne przedmioty"},
+    {"id":"magic-materials","title":"Magiczne materiały"}
+  ],
+  "articles": []
+}
