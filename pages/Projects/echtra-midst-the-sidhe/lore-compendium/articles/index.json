@@ -1,13 +1,15 @@
 {
   "categories": [
-    {"id":"irgaelia","title":"Irgaela"},
-    {"id":"divinities","title":"Bóstwa"},
-    {"id":"sidhe","title":"Sidhe i Inny Świat"},
-    {"id":"fomorian","title":"Fomorianie"},
-    {"id":"wyrms","title":"Wielkie Wyrmy"},
-    {"id":"magical-beings","title":"Istoty magiczne"},
-    {"id":"magic-items","title":"Magiczne przedmioty"},
-    {"id":"magic-materials","title":"Magiczne materiały"}
+    {"id":"irgaelia","title":"Irgaela"}, {"id":"divinities","title":"Bóstwa"}, {"id":"sidhe","title":"Sidhe i Inny Świat"}, {"id":"fomorian","title":"Fomorianie"}, {"id":"wyrms","title":"Wielkie Wyrmy"}, {"id":"magical-beings","title":"Istoty magiczne"}, {"id":"magic-items","title":"Magiczne przedmioty"}, {"id":"magic-materials","title":"Magiczne materiały"}
   ],
-  "articles": []
+  "articles": [
+    {"title":"Irgaela","category":"irgaelia"},{"title":"Ludzie i Plemiona","category":"irgaelia"},{"title":"Miejsca i Regiony","category":"irgaelia"},{"title":"Miejsca Mocy i Święte Miejsca","category":"irgaelia"},{"title":"Kultura i Tradycje","category":"irgaelia"},{"title":"Samhain","category":"irgaelia"},{"title":"Cùilfeorna","category":"irgaelia"},{"title":"Comairle","category":"irgaelia"},{"title":"Airthin","category":"irgaelia"},{"title":"Eornaigh","category":"irgaelia"},{"title":"Clachair","category":"irgaelia"},{"title":"Stary Las","category":"irgaelia"},{"title":"Krucza Twierdza","category":"irgaelia"},{"title":"Krucza Przełęcz","category":"irgaelia"},{"title":"Fionnach","category":"irgaelia"},
+    {"title":"Historia Bogów","category":"divinities"},{"title":"Dagda","category":"divinities"},{"title":"Danu","category":"divinities"},{"title":"Brigid","category":"divinities"},{"title":"Lugh","category":"divinities"},{"title":"Cernunnos","category":"divinities"},{"title":"Morrigan","category":"divinities"},{"title":"Manannán","category":"divinities"},{"title":"Cailleach","category":"divinities"},{"title":"Nuada i Boinne","category":"divinities"},{"title":"Arcydruidzi","category":"divinities"},
+    {"title":"Inny Świat","category":"sidhe"},{"title":"Sidhe","category":"sidhe"},{"title":"Seelie i Unseelie","category":"sidhe"},{"title":"Dziki Gon","category":"sidhe"},{"title":"Dullahan","category":"sidhe"},{"title":"Wiedźmy","category":"sidhe"},{"title":"Sabat z Popielnej Góry","category":"sidhe"},{"title":"Córki Sabatu","category":"sidhe"},{"title":"Prawo Wdzięczności","category":"sidhe"},{"title":"Dwór Zimy","category":"sidhe"},{"title":"Dwór Wiosny","category":"sidhe"},{"title":"Dwór Lata","category":"sidhe"},{"title":"Dwór Jesieni","category":"sidhe"},{"title":"Maeve","category":"sidhe"},
+    {"title":"Historia Fomorian","category":"fomorian"},{"title":"Fomorianie","category":"fomorian"},{"title":"Balor Złego Oka","category":"fomorian"},{"title":"Osmandias Stormeye","category":"fomorian"},{"title":"Ceithleen o Krzywych Zębach","category":"fomorian"},
+    {"title":"Pierwotne Wyrmy Irgaeli","category":"wyrms"},{"title":"Caoránach, Mroźny Wyrm","category":"wyrms"},{"title":"Cruimheach, Magmowy Wyrm","category":"wyrms"},{"title":"Féileacánach, Kryształowy Wyrm","category":"wyrms"},{"title":"Cnagach, Piorunowy Wyrm","category":"wyrms"},
+    {"title":"Tressym","category":"magical-beings"},{"title":"Niamh","category":"magical-beings"},{"title":"Hagi","category":"magical-beings"},{"title":"Demony","category":"magical-beings"},{"title":"Cienie","category":"magical-beings"},{"title":"Scáileanna","category":"magical-beings"},{"title":"Feniksy","category":"magical-beings"},{"title":"Pùca","category":"magical-beings"},{"title":"Cieniste Harty","category":"magical-beings"},{"title":"Thornling","category":"magical-beings"},{"title":"Czerwone Kapturki","category":"magical-beings"},{"title":"Mroźny Korzeń","category":"magical-beings"},{"title":"Garany","category":"magical-beings"},{"title":"Drogon","category":"magical-beings"},{"title":"Stara Tessa","category":"magical-beings"},
+    {"title":"Srebrna Dłoń Nuady","category":"magic-items"},{"title":"Auric Edge","category":"magic-items"},{"title":"Claíomh Solais","category":"magic-items"},{"title":"Fragarach, Odwetnik","category":"magic-items"},{"title":"Osiem Boskich Broni","category":"magic-items"},{"title":"Kosiarz Mrozu","category":"magic-items"},{"title":"Księżycowy Sierp","category":"magic-items"},{"title":"Gleislinne","category":"magic-items"},{"title":"Złota Krawędź","category":"magic-items"},{"title":"Serce Zimy","category":"magic-items"},{"title":"Rytuał Oczyszczającego Mrozu","category":"magic-items"},
+    {"title":"Zimne Żelazo","category":"magic-materials"},{"title":"Orichalcum","category":"magic-materials"},{"title":"Starmetal","category":"magic-materials"}
+  ]
 }
