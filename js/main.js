@@ -1,0 +1,1 @@
+const t=document.querySelector('.menu-toggle'),n=document.querySelector('.site-nav');if(t&&n){t.onclick=()=>{const o=n.classList.toggle('open');t.setAttribute('aria-expanded',o);t.textContent=o?'CLOSE':'MENU'}}const h=document.querySelector('.site-header');addEventListener('scroll',()=>h&&h.classList.toggle('scrolled',scrollY>20),{passive:true});
