@@ -3,7 +3,7 @@
   "description": "Materiały zachowane z archiwalnej kampanii.",
   "pdf": {
     "title": "Odłamki Przeszłości — PDF",
-    "src": "./materials/Odlamki-Przeszlosci.pdf",
+    "src": "./ShardsOfThePast.pdf",
     "preview": true
   },
   "images": []
