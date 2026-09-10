@@ -7,19 +7,18 @@ const apiFolder = 'https://api.github.com/repos/vengrathdm/vengrathdm.github.io/
 const manifestUrl = './articles/index.json';
 const articleFolder = './articles/';
 
-let articles = [];
+let manifest = { categories: [], articles: [] };
 
 loadArticles();
 
 async function loadArticles() {
   try {
-    articles = await loadFromApi();
-  } catch (apiError) {
-    console.warn('GitHub API niedostępne, używam lokalnego indeksu artykułów.', apiError);
+    manifest = await loadManifest();
+  } catch (manifestError) {
     try {
-      articles = await loadFromManifest();
-    } catch (manifestError) {
-      console.error('Lore index error:', manifestError);
+      manifest = await loadFromApi();
+    } catch (apiError) {
+      console.error('Lore index error:', manifestError, apiError);
       if (status) status.textContent = 'NIE UDAŁO SIĘ ZAŁADOWAĆ';
       if (root) root.innerHTML = '<p class="lore-empty">Nie udało się odczytać listy artykułów.</p>';
       return;
@@ -31,94 +30,92 @@ async function loadArticles() {
 
   const requestedArticle = new URLSearchParams(location.search).get('article');
   if (requestedArticle) {
-    const article = articles.find(item => item.name === requestedArticle);
-    if (article) loadArticle(article.name);
+    const article = manifest.articles.find(item => item.file === requestedArticle);
+    if (article) loadArticle(article);
     else if (status) status.textContent = 'NIE ZNALEZIONO';
   }
+}
+
+async function loadManifest() {
+  const response = await fetch(manifestUrl, { cache: 'no-store' });
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  return normalizeManifest(await response.json());
 }
 
 async function loadFromApi() {
   const response = await fetch(apiFolder, { cache: 'no-store' });
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   const files = await response.json();
-  return files
-    .filter(file => file.type === 'file' && file.name.toLowerCase().endsWith('.html') && file.name !== '_TEMPLATE.html')
-    .map(file => ({ name: file.name }))
-    .sort((a, b) => a.name.localeCompare(b.name, 'pl'));
+  return normalizeManifest({
+    categories: [{ id: 'inne', title: 'Pozostałe' }],
+    articles: files
+      .filter(file => file.type === 'file' && file.name.toLowerCase().endsWith('.html') && file.name !== '_TEMPLATE.html')
+      .map(file => ({ file: file.name, title: displayTitle(file.name), category: 'inne' }))
+  });
 }
 
-async function loadFromManifest() {
-  const response = await fetch(manifestUrl, { cache: 'no-store' });
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  const files = await response.json();
-  return files
-    .filter(name => typeof name === 'string' && name.toLowerCase().endsWith('.html') && name !== '_TEMPLATE.html')
-    .map(name => ({ name }))
-    .sort((a, b) => a.name.localeCompare(b.name, 'pl'));
+function normalizeManifest(data) {
+  if (Array.isArray(data)) {
+    return { categories: [{ id: 'inne', title: 'Pozostałe' }], articles: data.map(file => ({ file, title: displayTitle(file), category: 'inne' })) };
+  }
+  return {
+    categories: Array.isArray(data.categories) ? data.categories : [],
+    articles: Array.isArray(data.articles) ? data.articles.filter(article => article.file && article.category) : []
+  };
 }
 
 function renderIndex() {
   const needle = (search?.value || '').trim().toLowerCase();
-  const filtered = articles.filter(article => displayTitle(article.name).toLowerCase().includes(needle));
-  const links = filtered.map(article => {
-    const title = displayTitle(article.name);
-    return `<a href="?article=${encodeURIComponent(article.name)}"><span>${escapeHtml(title)}</span><b>↗</b></a>`;
+  let total = 0;
+  const groups = manifest.categories.map(category => {
+    const entries = manifest.articles.filter(article => article.category === category.id && (!needle || article.title.toLowerCase().includes(needle)));
+    if (!entries.length) return '';
+    total += entries.length;
+    return `<section class="lore-category"><h2 class="lore-category__title">${escapeHtml(category.title)}</h2><div class="lore-links">${entries.map(articleLink).join('')}</div></section>`;
   }).join('');
 
-  root.innerHTML = links
-    ? `<section class="lore-category"><div class="lore-links">${links}</div></section>`
-    : '<p class="lore-empty">Brak artykułów.</p>';
-
-  sidebar.innerHTML = filtered.map(article => {
-    const title = displayTitle(article.name);
-    return `<section class="lore-sidebar__group"><a href="?article=${encodeURIComponent(article.name)}">${escapeHtml(title)}</a></section>`;
-  }).join('') || '<p class="lore-empty">Brak artykułów.</p>';
-
-  if (status) status.textContent = `${filtered.length} artykułów`;
+  root.innerHTML = groups || '<p class="lore-empty">Brak artykułów.</p>';
+  renderSidebar(needle);
+  if (status) status.textContent = `${total} artykułów`;
 }
 
-async function loadArticle(filename) {
+function renderSidebar(needle = '') {
+  sidebar.innerHTML = manifest.categories.map(category => {
+    const entries = manifest.articles.filter(article => article.category === category.id && (!needle || article.title.toLowerCase().includes(needle)));
+    if (!entries.length) return '';
+    return `<section class="lore-sidebar__group"><h2>${escapeHtml(category.title)}</h2>${entries.map(article => `<a href="?article=${encodeURIComponent(article.file)}">${escapeHtml(article.title)}</a>`).join('')}</section>`;
+  }).join('') || '<p class="lore-empty">Brak artykułów.</p>';
+}
+
+function articleLink(article) {
+  return `<a href="?article=${encodeURIComponent(article.file)}"><span>${escapeHtml(article.title)}</span><b>↗</b></a>`;
+}
+
+async function loadArticle(article) {
   try {
-    const response = await fetch(articleFolder + encodeURIComponent(filename), { cache: 'no-store' });
+    const response = await fetch(articleFolder + encodeURIComponent(article.file), { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const html = await response.text();
     const documentFragment = new DOMParser().parseFromString(html, 'text/html');
     const content = documentFragment.body?.innerHTML?.trim();
     if (!content) throw new Error('Pusty artykuł');
 
-    const title = displayTitle(filename);
-    document.title = `${title} — Heartwell — Vengrath`;
+    document.title = `${article.title} — Heartwell — Vengrath`;
     root.innerHTML = `<article class="project-copy lore-article"><p><a href="./">← Wszystkie artykuły</a></p>${content}</article>`;
-    renderSidebar(title);
-    if (status) status.textContent = title;
+    renderSidebar();
+    sidebar.querySelectorAll('a').forEach(link => { if (link.getAttribute('href')?.includes(encodeURIComponent(article.file))) link.classList.add('is-active'); });
+    if (status) status.textContent = article.title;
   } catch (error) {
     console.error(error);
     if (status) status.textContent = 'BŁĄD ŁADOWANIA';
-    if (root) root.innerHTML = '<p class="lore-empty">Nie udało się załadować artykułu.</p>';
+    root.innerHTML = '<p class="lore-empty">Nie udało się załadować artykułu.</p>';
   }
 }
 
-function renderSidebar(activeTitle) {
-  sidebar.innerHTML = articles.map(article => {
-    const title = displayTitle(article.name);
-    const active = title === activeTitle ? ' is-active' : '';
-    return `<section class="lore-sidebar__group"><a class="${active.trim()}" href="?article=${encodeURIComponent(article.name)}">${escapeHtml(title)}</a></section>`;
-  }).join('');
-}
-
 function displayTitle(filename) {
-  return filename
-    .replace(/\.html$/i, '')
-    .replace(/[-_]+/g, ' ')
-    .replace(/\b\w/g, char => char.toUpperCase());
+  return filename.replace(/\.html$/i, '').replace(/[-_]+/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
 }
 
 function escapeHtml(value) {
-  return String(value ?? '').replace(/[&<>"']/g, char => ({
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#39;'
-  }[char]));
+  return String(value ?? '').replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[char]));
 }
