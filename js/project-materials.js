@@ -11,9 +11,14 @@ async function loadProjectMaterials() {
   const response = await fetch('./materials/index.json', { cache: 'no-store' });
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   const manifest = await response.json();
-  const pdf = manifest?.pdf && await validResource(manifest.pdf.src) ? manifest.pdf : null;
+  const manifestUrl = response.url;
+  const pdf = manifest?.pdf && await resolveResource(manifest.pdf.src, manifestUrl) ? { ...manifest.pdf, src: resolveResource(manifest.pdf.src, manifestUrl) } : null;
   const images = Array.isArray(manifest?.images)
-    ? (await Promise.all(manifest.images.map(async image => image?.src && await validResource(image.src) ? image : null))).filter(Boolean)
+    ? (await Promise.all(manifest.images.map(async image => {
+        if (!image?.src) return null;
+        const src = resolveResource(image.src, manifestUrl);
+        return await validResource(src) ? { ...image, src } : null;
+      }))).filter(Boolean)
     : [];
 
   if (!pdf && !images.length) { materialHost.hidden = true; return; }
@@ -23,7 +28,13 @@ async function loadProjectMaterials() {
   if (images.length) materialHost.append(buildImageGallery(images));
 }
 
+function resolveResource(src, baseUrl) {
+  try { return new URL(String(src || ''), baseUrl).href; }
+  catch { return ''; }
+}
+
 async function validResource(src) {
+  if (!src) return false;
   try { return (await fetch(src, { method: 'HEAD', cache: 'no-store' })).ok; }
   catch { return false; }
 }
@@ -75,7 +86,7 @@ function buildImageGallery(images) {
 
 function safeUrl(value) {
   const url = String(value || '');
-  return url.startsWith('./') || url.startsWith('../') || url.startsWith('/') ? url : '';
+  return /^https?:\/\//i.test(url) || url.startsWith('/') ? url : '';
 }
 
 function escapeHtml(value) {
