@@ -1,7 +1,7 @@
 const grid = document.querySelector('#campaign-list');
 if (grid) {
   fetch('./campaigns.json')
-    .then(response => response.json())
+    .then(response => response.ok ? response.json() : Promise.reject(new Error(`HTTP ${response.status}`)))
     .then(items => items.forEach((item, index) => {
       const article = document.createElement('article');
       article.className = `index-card${index === 0 ? ' index-card--large' : ''}${index === 4 ? ' index-card--wide' : ''}`;
