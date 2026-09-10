@@ -3,20 +3,23 @@ const sidebar = document.querySelector('#lore-sidebar-groups');
 const status = document.querySelector('#lore-status');
 const search = document.querySelector('#lore-search');
 const articleFolder = './articles/';
+const apiFolder = 'https://api.github.com/repos/vengrathdm/vengrathdm.github.io/contents/pages/Projects/ksiazeta-heartwell/lore-compendium/articles?ref=main';
+
+let articles = [];
 
 loadArticles();
 
 async function loadArticles() {
   try {
-    const response = await fetch('https://api.github.com/repos/vengrathdm/vengrathdm.github.io/contents/pages/Projects/ksiazeta-heartwell/lore-compendium/articles?ref=main', { cache: 'no-store' });
+    const response = await fetch(apiFolder, { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const files = await response.json();
-    const articles = files
+    articles = files
       .filter(file => file.type === 'file' && file.name.toLowerCase().endsWith('.html') && file.name !== '_TEMPLATE.html')
       .sort((a, b) => a.name.localeCompare(b.name, 'pl'));
 
-    render(articles);
-    search?.addEventListener('input', () => render(articles));
+    renderIndex();
+    search?.addEventListener('input', renderIndex);
   } catch (error) {
     console.error(error);
     if (status) status.textContent = 'NIE UDAŁO SIĘ ZAŁADOWAĆ';
@@ -24,13 +27,12 @@ async function loadArticles() {
   }
 }
 
-function render(articles) {
+function renderIndex() {
   const needle = (search?.value || '').trim().toLowerCase();
   const filtered = articles.filter(article => displayTitle(article.name).toLowerCase().includes(needle));
-
   const links = filtered.map(article => {
     const title = displayTitle(article.name);
-    return `<a href="${articleFolder}${encodeURIComponent(article.name)}"><span>${escapeHtml(title)}</span><b>↗</b></a>`;
+    return `<a href="?article=${encodeURIComponent(article.name)}"><span>${escapeHtml(title)}</span><b>↗</b></a>`;
   }).join('');
 
   root.innerHTML = links
@@ -39,10 +41,39 @@ function render(articles) {
 
   sidebar.innerHTML = filtered.map(article => {
     const title = displayTitle(article.name);
-    return `<section class="lore-sidebar__group"><a href="${articleFolder}${encodeURIComponent(article.name)}">${escapeHtml(title)}</a></section>`;
+    return `<section class="lore-sidebar__group"><a href="?article=${encodeURIComponent(article.name)}">${escapeHtml(title)}</a></section>`;
   }).join('') || '<p class="lore-empty">Brak artykułów.</p>';
 
   if (status) status.textContent = `${filtered.length} artykułów`;
+}
+
+async function loadArticle(filename) {
+  try {
+    const response = await fetch(articleFolder + encodeURIComponent(filename), { cache: 'no-store' });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const html = await response.text();
+    const documentFragment = new DOMParser().parseFromString(html, 'text/html');
+    const content = documentFragment.body?.innerHTML?.trim();
+    if (!content) throw new Error('Pusty artykuł');
+
+    const title = displayTitle(filename);
+    document.title = `${title} — Heartwell — Vengrath`;
+    root.innerHTML = `<article class="project-copy lore-article"><p><a href="./">← Wszystkie artykuły</a></p>${content}</article>`;
+    renderSidebar(title);
+    if (status) status.textContent = title;
+  } catch (error) {
+    console.error(error);
+    if (status) status.textContent = 'BŁĄD ŁADOWANIA';
+    if (root) root.innerHTML = '<p class="lore-empty">Nie udało się załadować artykułu.</p>';
+  }
+}
+
+function renderSidebar(activeTitle) {
+  sidebar.innerHTML = articles.map(article => {
+    const title = displayTitle(article.name);
+    const active = title === activeTitle ? ' is-active' : '';
+    return `<section class="lore-sidebar__group"><a class="${active.trim()}" href="?article=${encodeURIComponent(article.name)}">${escapeHtml(title)}</a></section>`;
+  }).join('');
 }
 
 function displayTitle(filename) {
@@ -60,4 +91,14 @@ function escapeHtml(value) {
     '"': '&quot;',
     "'": '&#39;'
   }[char]));
+}
+
+const requestedArticle = new URLSearchParams(location.search).get('article');
+if (requestedArticle) {
+  const waitForArticles = setInterval(() => {
+    if (articles.length) {
+      clearInterval(waitForArticles);
+      loadArticle(requestedArticle);
+    }
+  }, 25);
 }
