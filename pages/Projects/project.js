@@ -12,29 +12,20 @@ if (catalog) {
         render(projects, button.dataset.filter);
       }));
     })
-    .catch(error => {
-      console.error('Project catalog error:', error);
-      catalog.innerHTML = '<p class="project-empty">Nie udało się załadować katalogu projektów.</p>';
-    });
+    .catch(error => { console.error('Project catalog error:', error); catalog.innerHTML = '<p class="project-empty">Nie udało się załadować katalogu projektów.</p>'; });
 }
 
 function render(projects, filter) {
-  const visible = projects.filter(project => {
-    if (filter === 'legacy') return project.legacy;
-    if (filter === 'active') return !project.legacy && project.status !== 'KIEDYŚ';
-    return true;
-  });
+  const visible = projects.filter(project => filter === 'legacy' ? project.legacy : filter === 'active' ? !project.legacy && project.status !== 'KIEDYŚ' : true);
   catalog.replaceChildren(...visible.map((project, index) => card(project, index)));
 }
-
 function card(project, index) {
   const link = document.createElement('a');
   link.className = `project-card${project.legacy ? ' project-card--legacy' : ''}`;
+  link.dataset.tilt = 'true';
   link.href = project.url;
+  link.setAttribute('aria-label', `${project.title} — ${project.status}`);
   link.innerHTML = `<span class="project-card__number">${String(index + 1).padStart(2, '0')}</span><span class="project-card__type">${escapeHtml(project.type)}</span><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.system)}</p><span class="project-card__status">${escapeHtml(project.status)}</span><span class="project-card__arrow">OTWÓRZ PROJEKT ↗</span>`;
   return link;
 }
-
-function escapeHtml(value) {
-  return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-}
+function escapeHtml(value) { return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
