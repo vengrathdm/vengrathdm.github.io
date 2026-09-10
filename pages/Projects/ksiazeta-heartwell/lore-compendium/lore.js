@@ -1,7 +1,63 @@
-const root=document.querySelector('#lore-index'),sidebar=document.querySelector('#lore-sidebar-groups'),status=document.querySelector('#lore-status'),search=document.querySelector('#lore-search');
-const articleSlug=new URLSearchParams(location.search).get('article');
-if(articleSlug){loadArticle(articleSlug);}else{loadIndex();}
-function loadIndex(){fetch('./lore.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject(new Error(`HTTP ${r.status}`))).then(data=>{const render=query=>{const needle=query.trim().toLowerCase();const groups=data.categories.map(category=>{const entries=data.entries.filter(([id,title])=>id===category.id&&(!needle||title.toLowerCase().includes(needle)));if(!entries.length)return '';return `<section class="lore-category"><h2 class="lore-category__title">${escapeHtml(category.label)}</h2><div class="lore-links">${entries.map(([,title,slug])=>`<a href="?article=${encodeURIComponent(slug||title)}"><span>${escapeHtml(title)}</span><b>↗</b></a>`).join('')}</div></section>`}).join('');root.innerHTML=groups||'<p class="lore-empty">Brak wpisów dla tego wyszukiwania.</p>';sidebar.innerHTML=data.categories.map(category=>{const entries=data.entries.filter(([id,title])=>id===category.id&&(!needle||title.toLowerCase().includes(needle)));if(!entries.length)return '';return `<section class="lore-sidebar__group"><h2>${escapeHtml(category.label)}</h2>${entries.map(([,title,slug])=>`<a href="?article=${encodeURIComponent(slug||title)}">${escapeHtml(title)}</a>`).join('')}</section>`}).join('');status.textContent=`${data.entries.filter(([,title])=>!needle||title.toLowerCase().includes(needle)).length} wpisów`;};render('');search?.addEventListener('input',e=>render(e.target.value));}).catch(showError);}
-function loadArticle(slug){fetch('./articles.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject(new Error(`HTTP ${r.status}`))).then(data=>{const a=data[slug];if(!a)throw new Error('Article not found');document.title=`${a.title} — Heartwell — Vengrath`;root.innerHTML=`<article class="project-copy" style="max-width:900px"><p><a href="./">← Wróć do kompendium</a></p><h1>${escapeHtml(a.title)}</h1><p class="project-lead">${escapeHtml(a.lead)}</p>${a.body.map(p=>`<p>${escapeHtml(p)}</p>`).join('')}</article>`;sidebar.innerHTML='<section class="lore-sidebar__group"><h2>Heartwell</h2><a href="./">Wszystkie wpisy</a></section>';status.textContent='Heartwell';}).catch(showError);}
-function showError(e){console.error(e);if(status)status.textContent='BŁĄD ŁADOWANIA';if(root)root.innerHTML='<p class="lore-empty">Nie udało się załadować wpisu.</p>';}
-function escapeHtml(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+const root = document.querySelector('#lore-index');
+const sidebar = document.querySelector('#lore-sidebar-groups');
+const status = document.querySelector('#lore-status');
+const search = document.querySelector('#lore-search');
+const articleFolder = './articles/';
+
+loadArticles();
+
+async function loadArticles() {
+  try {
+    const response = await fetch('https://api.github.com/repos/vengrathdm/vengrathdm.github.io/contents/pages/Projects/ksiazeta-heartwell/lore-compendium/articles?ref=main', { cache: 'no-store' });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const files = await response.json();
+    const articles = files
+      .filter(file => file.type === 'file' && file.name.toLowerCase().endsWith('.html') && file.name !== '_TEMPLATE.html')
+      .sort((a, b) => a.name.localeCompare(b.name, 'pl'));
+
+    render(articles);
+    search?.addEventListener('input', () => render(articles));
+  } catch (error) {
+    console.error(error);
+    if (status) status.textContent = 'NIE UDAŁO SIĘ ZAŁADOWAĆ';
+    if (root) root.innerHTML = '<p class="lore-empty">Nie udało się odczytać listy artykułów.</p>';
+  }
+}
+
+function render(articles) {
+  const needle = (search?.value || '').trim().toLowerCase();
+  const filtered = articles.filter(article => displayTitle(article.name).toLowerCase().includes(needle));
+
+  const links = filtered.map(article => {
+    const title = displayTitle(article.name);
+    return `<a href="${articleFolder}${encodeURIComponent(article.name)}"><span>${escapeHtml(title)}</span><b>↗</b></a>`;
+  }).join('');
+
+  root.innerHTML = links
+    ? `<section class="lore-category"><div class="lore-links">${links}</div></section>`
+    : '<p class="lore-empty">Brak artykułów.</p>';
+
+  sidebar.innerHTML = filtered.map(article => {
+    const title = displayTitle(article.name);
+    return `<section class="lore-sidebar__group"><a href="${articleFolder}${encodeURIComponent(article.name)}">${escapeHtml(title)}</a></section>`;
+  }).join('') || '<p class="lore-empty">Brak artykułów.</p>';
+
+  if (status) status.textContent = `${filtered.length} artykułów`;
+}
+
+function displayTitle(filename) {
+  return filename
+    .replace(/\.html$/i, '')
+    .replace(/[-_]+/g, ' ')
+    .replace(/\b\w/g, char => char.toUpperCase());
+}
+
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, char => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  }[char]));
+}
