@@ -3,7 +3,7 @@
   "description": "Materiały zachowane z archiwalnej kampanii.",
   "pdf": {
     "title": "Odłamki Przeszłości — PDF",
-    "src": "./Odlamki-Przeszlosci.pdf",
+    "src": "./materials/Odlamki-Przeszlosci.pdf",
     "preview": true
   },
   "images": []
