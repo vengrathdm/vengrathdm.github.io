@@ -5,7 +5,7 @@ if (grid) {
     .then(items => items.forEach((item, index) => {
       const slide = document.createElement('a');
       slide.className = 'canvas-slide canvas-slide--campaigns';
-      slide.href = item.href || `./${encodeURIComponent(item.title)}/`;
+      slide.href = item.href || '#';
       slide.draggable = false;
       slide.dataset.slide = index;
       slide.setAttribute('aria-label', `Przejdź do kampanii ${item.title}`);
