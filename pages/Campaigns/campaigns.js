@@ -3,10 +3,14 @@ if (grid) {
   fetch('./campaigns.json')
     .then(response => response.ok ? response.json() : Promise.reject(new Error(`HTTP ${response.status}`)))
     .then(items => items.forEach((item, index) => {
-      const article = document.createElement('article');
-      article.className = `index-card${index === 0 ? ' index-card--large' : ''}${index === 4 ? ' index-card--wide' : ''}`;
-      article.innerHTML = `<div class="index-art art-campaign"><span>${String(index + 1).padStart(2,'0')}</span><b>${item.day} · ${item.status}</b></div><div class="index-meta"><small>${item.system} · ${item.creator}</small><h2>${item.title}</h2><p>${item.status}.</p></div>`;
-      grid.append(article);
+      const slide = document.createElement('a');
+      slide.className = 'canvas-slide canvas-slide--campaigns';
+      slide.href = item.href || `./${encodeURIComponent(item.title)}/`;
+      slide.draggable = false;
+      slide.dataset.slide = index;
+      slide.setAttribute('aria-label', `Przejdź do kampanii ${item.title}`);
+      slide.innerHTML = `<div class="canvas-art"><span class="canvas-number">${String(index + 1).padStart(2,'0')} / ${String(items.length).padStart(2,'0')}</span><span class="canvas-mark canvas-mark--orbit" aria-hidden="true"></span><div class="canvas-copy"><span class="canvas-label">${item.day} · ${item.status}</span><h2>${item.title}</h2><span class="canvas-enter">WEJDŹ ↗</span></div></div>`;
+      grid.append(slide);
     }))
     .catch(error => console.error('Campaign archive error:', error));
 }
