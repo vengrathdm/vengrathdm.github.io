@@ -1,0 +1,7 @@
+const root=document.getElementById('catalog'),q=document.getElementById('q'),race=document.getElementById('race'),cls=document.getElementById('class');
+const esc=s=>String(s).replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\\':'&#92;'}[c]));
+const money=n=>Number(n).toLocaleString('en-US')+' KCr';
+const classes=[...new Set(SHIPS.map(s=>s.class))];
+classes.forEach(c=>cls.add(new Option(c,c))); Object.keys(RACES).forEach(id=>race.add(new Option(raceName(id),id)));
+function render(){let term=q.value.toLowerCase().trim(),r=race.value,c=cls.value;let rows=SHIPS.filter(s=>(!term||[s.name,s.class,s.subclass,s.race,s.generation,s.description].join(' ').toLowerCase().includes(term))&&(!r||s.raceId===r)&&(!c||s.class===c));let groups=classes.filter(c=>rows.some(s=>s.class===c));root.innerHTML=groups.map(c=>`<section class="class"><div class="classhead"><h2>${esc(c)}</h2><span>${rows.filter(s=>s.class===c).length} modeli</span></div><div class="models">${rows.filter(s=>s.class===c).map(s=>`<a class="model" href="ships/${s.file}"><div><b>${esc(s.name)}</b><em>${esc(s.subclass)}</em></div><div class="meta">${esc(raceName(s.raceId))} · ${esc(s.generation)} generacja</div><div class="mini">${s.hull} MJ kadłub · ${s.shield} MJ osłony · ${money(s.price)}</div></a>`).join('')}</div></section>`).join('')||'<div class="empty">BRAK MODELI SPEŁNIAJĄCYCH KRYTERIA.</div>'}
+q.oninput=race.onchange=cls.onchange=render;render();
