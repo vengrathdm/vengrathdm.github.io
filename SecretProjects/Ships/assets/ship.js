@@ -1,8 +1,8 @@
 const file=document.body.dataset.model;const raceParam=new URLSearchParams(location.search).get('race');const s=SHIPS.find(x=>x.file===file&&(!raceParam||x.raceId===raceParam));const a=document.getElementById('ship');const n=x=>Number(x).toLocaleString('en-US');
 if(!s){a.innerHTML='<p>MODEL NIEZNANY.</p>'}else{
  document.body.classList.add('race-'+s.raceId.toLowerCase());document.body.dataset.race=s.raceId;
+ const css=document.createElement('link');css.rel='stylesheet';css.href=`../assets/race-${s.raceId.toLowerCase().replace('race','')==='race1'?'terran':s.raceId.toLowerCase().replace('race','')==='race2'?'turian':s.raceId.toLowerCase().replace('race','')==='race3'?'aasari':s.raceId.toLowerCase().replace('race','')==='race4'?'quarian':'hanar'}.css`;document.head.appendChild(css);
  if(s.raceId==='Race5'){
-   const css=document.createElement('link');css.rel='stylesheet';css.href='../assets/race-hanar.css';document.head.appendChild(css);
    const seg=(value,max=100)=>Math.max(0,Math.min(100,Math.round(value/max*100)));
    const meter=(value,max=100)=>{const on=Math.max(1,Math.min(30,Math.round(seg(value,max)/100*30)));return Array.from({length:30},(_,i)=>`<i class="${i<on?'on':''}"></i>`).join('')};
    const signal=Math.max(12,Math.min(99,Math.round(72+s.generation*5-(s.slots[2]*2))));
