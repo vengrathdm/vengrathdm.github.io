@@ -4,6 +4,39 @@ const $=s=>document.querySelector(s);
 const $$=s=>[...document.querySelectorAll(s)];
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 
+/* Procedural terminal audio — no external sound files required. */
+let audioCtx=null;
+function initAudio(){
+  if(!audioCtx){
+    const C=window.AudioContext||window.webkitAudioContext;
+    if(!C)return;
+    audioCtx=new C();
+  }
+  if(audioCtx.state==='suspended')audioCtx.resume();
+}
+function tone(freq=440,duration=.045,type='square',gain=.025,delay=0){
+  if(!audioCtx)return;
+  const now=audioCtx.currentTime+delay;
+  const osc=audioCtx.createOscillator();
+  const amp=audioCtx.createGain();
+  osc.type=type;
+  osc.frequency.setValueAtTime(freq,now);
+  amp.gain.setValueAtTime(.0001,now);
+  amp.gain.exponentialRampToValueAtTime(gain,now+.006);
+  amp.gain.exponentialRampToValueAtTime(.0001,now+duration);
+  osc.connect(amp).connect(audioCtx.destination);
+  osc.start(now);
+  osc.stop(now+duration+.01);
+}
+function navSound(){tone(760,.025,'square',.018)}
+function selectSound(){tone(420,.045,'square',.028);tone(840,.07,'square',.022,.035)}
+function logSound(){tone(110,.018,'sawtooth',.009)}
+function progressSound(p){
+  if(p%10===0)tone(560,.025,'square',.012);
+}
+function successSound(){tone(440,.06,'square',.018);tone(660,.07,'square',.018,.06);tone(880,.1,'square',.02,.13)}
+function backSound(){tone(700,.04,'square',.018);tone(350,.07,'square',.016,.05)}
+
 async function loadData(){
   const response=await fetch("data.json",{cache:"no-store"});
   if(!response.ok)throw new Error("DATA LOAD FAILED");
@@ -26,10 +59,16 @@ function buildMenu(){
     button.className="item";
     button.dataset.id=entry.id;
     button.textContent=entry.label;
-    button.addEventListener("mouseenter",()=>{if(!busy&&$("#menu").classList.contains("active"))setActive(i)});
+    button.addEventListener("mouseenter",()=>{
+      if(!busy&&$("#menu").classList.contains("active")){
+        if(index!==i)navSound();
+        setActive(i);
+      }
+    });
     button.addEventListener("click",e=>{
       e.preventDefault();
-      if(!busy&&$("#menu").classList.contains("active")){index=i;run(entry.id)}
+      initAudio();
+      if(!busy&&$("#menu").classList.contains("active")){index=i;selectSound();run(entry.id)}
     });
     menu.appendChild(button);
   });
@@ -44,6 +83,7 @@ function setActive(n){
 
 async function run(id){
   if(busy)return;
+  initAudio();
   busy=true;
   const d=data.options[id];
   if(!d){busy=false;return}
@@ -53,6 +93,7 @@ async function run(id){
   $("#consoleName").textContent=d.consoleName;
   $("#log").innerHTML="";
   $("#progressWrap").style.display="none";
+  selectSound();
 
   for(const line of d.logs){
     await wait(180+Math.random()*280);
@@ -60,20 +101,24 @@ async function run(id){
     el.className="logline";
     el.textContent=line;
     $("#log").appendChild(el);
+    logSound();
   }
 
   $("#progressWrap").style.display="block";
   $("#progressLabel").textContent=d.progress;
   $("#bar").style.width="0%";
   $("#percent").textContent="0%";
+  tone(220,.08,'square',.012);
 
   for(let p=0;p<=100;p+=2){
     await wait(22+Math.random()*28);
     $("#bar").style.width=p+"%";
     $("#percent").textContent=p+"%";
+    progressSound(p);
   }
 
   await wait(350);
+  successSound();
   $("#consoleScreen").classList.remove("active");
 
   $("#info").innerHTML=`
@@ -99,6 +144,7 @@ function escapeHtml(value){
 }
 
 function back(){
+  backSound();
   $("#infoScreen").classList.remove("active");
   $("#info").classList.remove("visible");
   $("#consoleScreen").classList.remove("active");
@@ -108,6 +154,7 @@ function back(){
 }
 
 document.addEventListener("keydown",e=>{
+  if(!audioCtx&&['ArrowDown','ArrowUp','Enter','Escape'].includes(e.key))initAudio();
   if(busy)return;
   const menuOpen=$("#menu").classList.contains("active");
   const infoOpen=$("#infoScreen").classList.contains("active");
@@ -119,9 +166,9 @@ document.addEventListener("keydown",e=>{
   }
 
   if(menuOpen){
-    if(e.key==="ArrowDown"){e.preventDefault();setActive(index<0?0:index+1)}
-    if(e.key==="ArrowUp"){e.preventDefault();setActive(index<0?items.length-1:index-1)}
-    if(e.key==="Enter"&&index>=0){e.preventDefault();e.stopPropagation();run(items[index].dataset.id)}
+    if(e.key==="ArrowDown"){e.preventDefault();setActive(index<0?0:index+1);navSound()}
+    if(e.key==="ArrowUp"){e.preventDefault();setActive(index<0?items.length-1:index-1);navSound()}
+    if(e.key==="Enter"&&index>=0){e.preventDefault();e.stopPropagation();selectSound();run(items[index].dataset.id)}
   }
 });
 
