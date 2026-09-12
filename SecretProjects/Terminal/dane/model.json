@@ -1,0 +1,7 @@
+{
+  "wersja": 1,
+  "typy_encji": ["ENTITY", "RELATIONSHIP", "EVENT", "NOTE", "SECRET", "REFERENCE DATA"],
+  "hierarchia_swiata": ["GALAKTYKA", "SYSTEM", "PLANETA", "LOKACJA"],
+  "moduly": ["COMMAND", "SESSION", "CREW", "DATABASE", "WORLD", "FACTIONS", "MISSIONS", "SHIP", "ARCHIVE", "TIMELINE", "TOOLS", "SETTINGS"],
+  "zasada": "Jeden model świata, wiele widoków."
+}
