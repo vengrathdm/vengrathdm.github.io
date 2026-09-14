@@ -1,0 +1,48 @@
+<h1>Mapa Heartwell</h1>
+
+<p>Interaktywna mapa miasta Heartwell. Możesz przybliżać i przesuwać mapę, a następnie wybrać oznaczoną dzielnicę, aby zobaczyć skrót jej opisu i przejść do pełnego artykułu.</p>
+
+<div class="heartwell-map" data-map-root>
+  <div class="heartwell-map__toolbar" aria-label="Narzędzia mapy">
+    <button type="button" data-map-zoom="in" aria-label="Przybliż mapę">+</button>
+    <button type="button" data-map-zoom="out" aria-label="Oddal mapę">−</button>
+    <button type="button" data-map-reset aria-label="Przywróć widok początkowy">Reset</button>
+  </div>
+
+  <div class="heartwell-map__viewport" data-map-viewport tabindex="0" aria-label="Interaktywna mapa Heartwell. Przeciągaj, aby przesuwać mapę.">
+    <div class="heartwell-map__canvas" data-map-canvas>
+      <img class="heartwell-map__image" src="https://i.imgur.com/FHPUsh5.jpeg" alt="Mapa miasta Heartwell, widok z góry" draggable="false">
+
+      <button class="heartwell-map__marker heartwell-map__marker--wisielcze" type="button" style="left:50%;top:18%" data-location="wisielcze" aria-label="Wisielcze Wzgórze">
+        <span>Wisielcze Wzgórze</span>
+      </button>
+      <button class="heartwell-map__marker heartwell-map__marker--korona" type="button" style="left:50%;top:36%" data-location="korona" aria-label="Korona">
+        <span>Korona</span>
+      </button>
+      <button class="heartwell-map__marker heartwell-map__marker--senatorium" type="button" style="left:72%;top:38%" data-location="senatorium" aria-label="Senatorium">
+        <span>Senatorium</span>
+      </button>
+      <button class="heartwell-map__marker heartwell-map__marker--erozja" type="button" style="left:70%;top:55%" data-location="erozja" aria-label="Erozja">
+        <span>Erozja</span>
+      </button>
+      <button class="heartwell-map__marker heartwell-map__marker--apetoria" type="button" style="left:31%;top:53%" data-location="apetoria" aria-label="Apetoria">
+        <span>Apetoria</span>
+      </button>
+      <button class="heartwell-map__marker heartwell-map__marker--zabraniec" type="button" style="left:35%;top:70%" data-location="zabraniec" aria-label="Zabraniec">
+        <span>Zabraniec</span>
+      </button>
+      <button class="heartwell-map__marker heartwell-map__marker--port" type="button" style="left:62%;top:78%" data-location="port" aria-label="Port rzeczny">
+        <span>Port rzeczny</span>
+      </button>
+    </div>
+  </div>
+
+  <aside class="heartwell-map__details" data-map-details aria-live="polite">
+    <div class="heartwell-map__details-empty">
+      <strong>Wybierz miejsce na mapie</strong>
+      <p>Punkty dzielnic są orientacyjne. Mapa źródłowa nie posiada legendy granic administracyjnych, dlatego oznaczenia nie przedstawiają dokładnego przebiegu dzielnic.</p>
+    </div>
+  </aside>
+</div>
+
+<p class="note"><strong>Uwaga kartograficzna:</strong> położenie dzielnic zostało oznaczone orientacyjnie na podstawie mapy oraz istniejącego opisu Heartwell. Granice i dokładne lokalizacje poszczególnych miejsc nie są jeszcze zdefiniowane w lore.</p>
