@@ -1,6 +1,6 @@
 <h1>Mapa Heartwell</h1>
 
-<p>Interaktywna mapa miasta Heartwell. Możesz przybliżać i przesuwać mapę, a następnie wybrać oznaczoną dzielnicę, aby zobaczyć skrót jej opisu i przejść do pełnego artykułu.</p>
+<p>Interaktywna mapa miasta Heartwell. Możesz ją przybliżać i przesuwać. Na mapie umieszczane są wyłącznie konkretne lokacje — przede wszystkim pojedyncze budynki, place, mosty, doki i inne ważne punkty.</p>
 
 <div class="heartwell-map" data-map-root>
   <div class="heartwell-map__toolbar" aria-label="Narzędzia mapy">
@@ -13,36 +13,43 @@
     <div class="heartwell-map__canvas" data-map-canvas>
       <img class="heartwell-map__image" src="https://i.imgur.com/FHPUsh5.jpeg" alt="Mapa miasta Heartwell, widok z góry" draggable="false">
 
-      <button class="heartwell-map__marker heartwell-map__marker--wisielcze" type="button" style="left:50%;top:18%" data-location="wisielcze" aria-label="Wisielcze Wzgórze">
-        <span>Wisielcze Wzgórze</span>
-      </button>
-      <button class="heartwell-map__marker heartwell-map__marker--korona" type="button" style="left:50%;top:36%" data-location="korona" aria-label="Korona">
-        <span>Korona</span>
-      </button>
-      <button class="heartwell-map__marker heartwell-map__marker--senatorium" type="button" style="left:72%;top:38%" data-location="senatorium" aria-label="Senatorium">
-        <span>Senatorium</span>
-      </button>
-      <button class="heartwell-map__marker heartwell-map__marker--erozja" type="button" style="left:70%;top:55%" data-location="erozja" aria-label="Erozja">
-        <span>Erozja</span>
-      </button>
-      <button class="heartwell-map__marker heartwell-map__marker--apetoria" type="button" style="left:31%;top:53%" data-location="apetoria" aria-label="Apetoria">
-        <span>Apetoria</span>
-      </button>
-      <button class="heartwell-map__marker heartwell-map__marker--zabraniec" type="button" style="left:35%;top:70%" data-location="zabraniec" aria-label="Zabraniec">
-        <span>Zabraniec</span>
-      </button>
-      <button class="heartwell-map__marker heartwell-map__marker--port" type="button" style="left:62%;top:78%" data-location="port" aria-label="Port rzeczny">
-        <span>Port rzeczny</span>
-      </button>
+      <!--
+        LOKACJE DODAJEMY TUTAJ, JEDEN BUDYNEK = JEDEN MARKER.
+
+        style="left:XX%;top:YY%" określa położenie na mapie.
+        data-location to unikalny identyfikator.
+        data-title to nazwa wyświetlana po kliknięciu.
+        data-type to rodzaj lokacji.
+        data-description to krótki opis.
+        data-article jest opcjonalny i wskazuje artykuł w kompendium.
+
+        Przykład:
+        <button class="heartwell-map__marker" type="button"
+          style="left:42.5%;top:61.2%"
+          data-location="karczma-czarny-kruk"
+          data-title="Karczma Czarny Kruk"
+          data-type="Karczma"
+          data-description="Popularna karczma przy głównym trakcie."
+          data-article="karczma-czarny-kruk.html"
+          aria-label="Karczma Czarny Kruk">
+          <span>Karczma Czarny Kruk</span>
+        </button>
+
+        Aby usunąć lokację, usuń cały odpowiadający jej element <button>.
+      -->
     </div>
   </div>
 
   <aside class="heartwell-map__details" data-map-details aria-live="polite">
     <div class="heartwell-map__details-empty">
-      <strong>Wybierz miejsce na mapie</strong>
-      <p>Punkty dzielnic są orientacyjne. Mapa źródłowa nie posiada legendy granic administracyjnych, dlatego oznaczenia nie przedstawiają dokładnego przebiegu dzielnic.</p>
+      <strong>Wybierz lokację na mapie</strong>
+      <p>Mapa nie zawiera już oznaczeń całych dzielnic. Kolejne punkty będziemy dodawać pojedynczo, zgodnie z konkretnymi budynkami i miejscami opisanymi w lore.</p>
     </div>
   </aside>
 </div>
 
-<p class="note"><strong>Uwaga kartograficzna:</strong> położenie dzielnic zostało oznaczone orientacyjnie na podstawie mapy oraz istniejącego opisu Heartwell. Granice i dokładne lokalizacje poszczególnych miejsc nie są jeszcze zdefiniowane w lore.</p>
+<div class="note">
+  <strong>Jak dodać punkt?</strong>
+  <p>Dodaj w kodzie mapy jeden element <code>&lt;button class="heartwell-map__marker"&gt;</code> dla każdego budynku lub miejsca. Najważniejsze są wartości <code>left</code> i <code>top</code>, podawane w procentach względem mapy. Możesz ustawić je z dokładnością do dziesiątych części procenta.</p>
+  <p>Jak usunąć punkt? Usuń jego cały element <code>&lt;button&gt;</code>. Nie trzeba zmieniać JavaScriptu — mapa automatycznie odczytuje markery znajdujące się w artykule.</p>
+</div>
