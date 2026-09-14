@@ -3,7 +3,13 @@
 <p>Interaktywna mapa miasta Heartwell. Kliknij oznaczoną lokację, aby zobaczyć jej opis i przejść do powiązanego artykułu.</p>
 
 <div class="heartwell-map" data-map-root>
-  <div class="heartwell-map__stage" data-map-stage>
+  <div class="heartwell-map__toolbar" aria-label="Narzędzia mapy">
+    <button type="button" data-map-zoom="in" aria-label="Przybliż mapę">+</button>
+    <button type="button" data-map-zoom="out" aria-label="Oddal mapę">−</button>
+    <button type="button" data-map-reset aria-label="Przywróć widok początkowy">Reset</button>
+  </div>
+
+  <div class="heartwell-map__stage" data-map-stage tabindex="0" aria-label="Mapa Heartwell. Przeciągaj mapę, aby ją przesuwać.">
     <img class="heartwell-map__image" src="https://i.imgur.com/FHPUsh5.jpeg" alt="Mapa miasta Heartwell, widok z góry" draggable="false">
   </div>
 
