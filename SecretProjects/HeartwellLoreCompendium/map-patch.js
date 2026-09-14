@@ -1,0 +1,1 @@
+const _heartwellMap=map;map=function(){_heartwellMap();const img=document.querySelector('.map-frame img');if(img)img.src='./heartwell-map.svg';};
