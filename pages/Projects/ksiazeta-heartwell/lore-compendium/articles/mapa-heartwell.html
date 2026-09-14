@@ -1,55 +1,16 @@
 <h1>Mapa Heartwell</h1>
 
-<p>Interaktywna mapa miasta Heartwell. Możesz ją przybliżać i przesuwać. Na mapie umieszczane są wyłącznie konkretne lokacje — przede wszystkim pojedyncze budynki, place, mosty, doki i inne ważne punkty.</p>
+<p>Interaktywna mapa miasta Heartwell. Kliknij oznaczoną lokację, aby zobaczyć jej opis i przejść do powiązanego artykułu.</p>
 
 <div class="heartwell-map" data-map-root>
-  <div class="heartwell-map__toolbar" aria-label="Narzędzia mapy">
-    <button type="button" data-map-zoom="in" aria-label="Przybliż mapę">+</button>
-    <button type="button" data-map-zoom="out" aria-label="Oddal mapę">−</button>
-    <button type="button" data-map-reset aria-label="Przywróć widok początkowy">Reset</button>
-  </div>
-
-  <div class="heartwell-map__viewport" data-map-viewport tabindex="0" aria-label="Interaktywna mapa Heartwell. Przeciągaj, aby przesuwać mapę.">
-    <div class="heartwell-map__canvas" data-map-canvas>
-      <img class="heartwell-map__image" src="https://i.imgur.com/FHPUsh5.jpeg" alt="Mapa miasta Heartwell, widok z góry" draggable="false">
-
-      <!--
-        LOKACJE DODAJEMY TUTAJ, JEDEN BUDYNEK = JEDEN MARKER.
-
-        style="left:XX%;top:YY%" określa położenie na mapie.
-        data-location to unikalny identyfikator.
-        data-title to nazwa wyświetlana po kliknięciu.
-        data-type to rodzaj lokacji.
-        data-description to krótki opis.
-        data-article jest opcjonalny i wskazuje artykuł w kompendium.
-
-        Przykład:
-        <button class="heartwell-map__marker" type="button"
-          style="left:42.5%;top:61.2%"
-          data-location="karczma-czarny-kruk"
-          data-title="Karczma Czarny Kruk"
-          data-type="Karczma"
-          data-description="Popularna karczma przy głównym trakcie."
-          data-article="karczma-czarny-kruk.html"
-          aria-label="Karczma Czarny Kruk">
-          <span>Karczma Czarny Kruk</span>
-        </button>
-
-        Aby usunąć lokację, usuń cały odpowiadający jej element <button>.
-      -->
-    </div>
+  <div class="heartwell-map__stage" data-map-stage>
+    <img class="heartwell-map__image" src="https://i.imgur.com/FHPUsh5.jpeg" alt="Mapa miasta Heartwell, widok z góry" draggable="false">
   </div>
 
   <aside class="heartwell-map__details" data-map-details aria-live="polite">
     <div class="heartwell-map__details-empty">
       <strong>Wybierz lokację na mapie</strong>
-      <p>Mapa nie zawiera już oznaczeń całych dzielnic. Kolejne punkty będziemy dodawać pojedynczo, zgodnie z konkretnymi budynkami i miejscami opisanymi w lore.</p>
+      <p>Mapa przedstawia konkretne miejsca, a nie granice dzielnic. Nowe lokacje będą oznaczane pojedynczo.</p>
     </div>
   </aside>
-</div>
-
-<div class="note">
-  <strong>Jak dodać punkt?</strong>
-  <p>Dodaj w kodzie mapy jeden element <code>&lt;button class="heartwell-map__marker"&gt;</code> dla każdego budynku lub miejsca. Najważniejsze są wartości <code>left</code> i <code>top</code>, podawane w procentach względem mapy. Możesz ustawić je z dokładnością do dziesiątych części procenta.</p>
-  <p>Jak usunąć punkt? Usuń jego cały element <code>&lt;button&gt;</code>. Nie trzeba zmieniać JavaScriptu — mapa automatycznie odczytuje markery znajdujące się w artykule.</p>
 </div>
