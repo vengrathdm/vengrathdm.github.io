@@ -122,7 +122,7 @@ function initHeartwellMap() {
     const { maxX, maxY } = bounds();
     x = clamp(x, -maxX, maxX);
     y = clamp(y, -maxY, maxY);
-    canvas.style.transform = `translate3d(${x}px,${y}px,0) scale(${zoom})`;
+    canvas.style.transform = `translate3d(-50%,-50%,0) translate3d(${x}px,${y}px,0) scale(${zoom})`;
   }
 
   function setZoom(next, focusX = viewport.clientWidth / 2, focusY = viewport.clientHeight / 2) {
@@ -143,7 +143,6 @@ function initHeartwellMap() {
   }
 
   markers.forEach(marker => marker.addEventListener('click', () => selectPlace(marker.dataset.location)));
-
   map.querySelector('[data-map-zoom="in"]')?.addEventListener('click', () => setZoom(zoom + .35));
   map.querySelector('[data-map-zoom="out"]')?.addEventListener('click', () => setZoom(zoom - .35));
   map.querySelector('[data-map-reset]')?.addEventListener('click', () => { zoom = 1; x = 0; y = 0; applyTransform(); });
@@ -173,16 +172,10 @@ function initHeartwellMap() {
     applyTransform();
   });
 
-  function stopDrag() {
-    dragging = false;
-    pointerId = null;
-    viewport.classList.remove('is-dragging');
-  }
-
+  function stopDrag() { dragging = false; pointerId = null; viewport.classList.remove('is-dragging'); }
   viewport.addEventListener('pointerup', stopDrag);
   viewport.addEventListener('pointercancel', stopDrag);
   viewport.addEventListener('pointerleave', event => { if (dragging && event.buttons === 0) stopDrag(); });
-
   viewport.addEventListener('keydown', event => {
     if (event.key === '+' || event.key === '=') { event.preventDefault(); setZoom(zoom + .25); }
     if (event.key === '-') { event.preventDefault(); setZoom(zoom - .25); }
@@ -190,7 +183,7 @@ function initHeartwellMap() {
   });
 
   image.addEventListener('load', applyTransform, { once: true });
-  applyTransform();
+  if (image.complete) applyTransform();
 }
 
 function displayTitle(filename) { return filename.replace(/\.html$/i, '').replace(/[-_]+/g, ' ').replace(/\b\w/g, char => char.toUpperCase()); }
