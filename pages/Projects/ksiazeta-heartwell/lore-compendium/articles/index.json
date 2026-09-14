@@ -9,6 +9,7 @@
   ],
   "articles": [
     {"file":"heartwell-miasto.html","title":"Heartwell","category":"swiat"},
+    {"file":"mapa-heartwell.html","title":"Mapa Heartwell","category":"lokacje"},
     {"file":"korona.html","title":"Korona","category":"dzielnice"},
     {"file":"apetoria.html","title":"Apetoria","category":"dzielnice"},
     {"file":"erozja.html","title":"Erozja","category":"dzielnice"},
