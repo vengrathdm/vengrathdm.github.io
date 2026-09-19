@@ -7,7 +7,7 @@
 (function () {
     "use strict";
 
-    var API = "https://api.github.com/repos/vengrathdm/vengrathdm.github.io/contents/subpages/Ksiazeta-Heartwell/HeartwellWiki/articles";
+    var MANIFEST = "articles/index.json";
     var el = {
         rail: document.getElementById("rail"),
         index: document.getElementById("index"),
@@ -168,10 +168,10 @@
         el.gm.setAttribute("aria-pressed",String(on));document.documentElement.classList.toggle("gm-off",!on);store("heartwell-gm",on?"1":"0");
     }
     function load(){
-        fetch(API,{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error("GitHub API: "+r.status);return r.json();})
-        .then(function(items){
-            var files=items.filter(function(i){return i.type==="file"&&/\.html$/i.test(i.name);});
-            return Promise.all(files.map(function(i){return makeArticle(i.download_url);}));
+        fetch(MANIFEST,{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error("Manifest: "+r.status);return r.json();})
+        .then(function(files){
+            if(!Array.isArray(files))throw new Error("Nieprawidłowy manifest artykułów.");
+            return Promise.all(files.filter(function(name){return typeof name==="string"&&/\.html$/i.test(name);}).map(function(name){return makeArticle("articles/"+name);}));
         }).then(function(articles){
             articles.forEach(function(a){ARTICLES[a.key]=a;});
             rebuildCatalog();renderRail();fromHash();
