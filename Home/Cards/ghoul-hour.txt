@@ -1,4 +1,4 @@
 Ghoul Hour
 Sesje
-../Graphics/notes.jpg
+../Graphics/ghoul-hour.png
 ../../subpages/ghoul-hour/
