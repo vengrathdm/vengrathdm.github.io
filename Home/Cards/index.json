@@ -1,11 +1,23 @@
 [
   {
+    "name": "barber-of-silverymoon.txt",
+    "url": "barber-of-silverymoon.txt"
+  },
+  {
     "name": "blog.txt",
     "url": "blog.txt"
   },
   {
     "name": "charactermancer.txt",
     "url": "charactermancer.txt"
+  },
+  {
+    "name": "curse-of-strahd.txt",
+    "url": "curse-of-strahd.txt"
+  },
+  {
+    "name": "dragon-of-icespire-peak.txt",
+    "url": "dragon-of-icespire-peak.txt"
   },
   {
     "name": "dungeons-of-drakkenheim.txt",
@@ -18,6 +30,10 @@
   {
     "name": "ghoul-hour.txt",
     "url": "ghoul-hour.txt"
+  },
+  {
+    "name": "klatwa-strahda.txt",
+    "url": "klatwa-strahda.txt"
   },
   {
     "name": "ksiazeta-heartwell.txt",
@@ -48,8 +64,16 @@
     "url": "odyssey-of-the-dragonlords.txt"
   },
   {
+    "name": "red-blood-snow-white.txt",
+    "url": "red-blood-snow-white.txt"
+  },
+  {
     "name": "rime-of-the-frostmaiden.txt",
     "url": "rime-of-the-frostmaiden.txt"
+  },
+  {
+    "name": "rise-of-tiamat.txt",
+    "url": "rise-of-tiamat.txt"
   },
   {
     "name": "samotnie-przeciw-jednosci.txt",
@@ -74,5 +98,9 @@
   {
     "name": "tomb-of-annihilation.txt",
     "url": "tomb-of-annihilation.txt"
+  },
+  {
+    "name": "turn-of-fortunes-wheel.txt",
+    "url": "turn-of-fortunes-wheel.txt"
   }
 ]
