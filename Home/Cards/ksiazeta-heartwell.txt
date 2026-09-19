@@ -1,4 +1,4 @@
 Książęta Heartwell
 Kampania
 ../Graphics/ksiazeta-heartwell.jpg
-../../Subpages/ksiazeta-heartwell.html
+../../subpages/Ksiazeta-Heartwell/
