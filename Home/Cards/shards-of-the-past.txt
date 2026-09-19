@@ -1,4 +1,4 @@
 Shards of the Past
 Archiwum
-../Graphics/history.jpg
+../Graphics/shards-of-the-past.png
 ../../subpages/shards-of-the-past/
