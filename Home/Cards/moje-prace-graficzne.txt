@@ -1,4 +1,4 @@
 Moje Prace Graficzne
 Grafika
 ../Graphics/visuals.jpg
-../../Subpages/moje-prace-graficzne.html
+../../subpages/moje-prace-graficzne/
