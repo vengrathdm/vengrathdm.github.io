@@ -23,42 +23,39 @@ async function discoverCardFiles(){
   const pageBase=document.baseURI;
   const owner="vengrathdm";
   const repo="vengrathdm.github.io";
+  const found=new Map();
 
-  // Primary source: a generated manifest. GitHub Actions keeps this in sync
-  // whenever TXT files are added or removed from Home/Cards.
+  // Manifest is the fast path, but it may briefly lag behind a newly added TXT.
   try{
     const manifestUrl=new URL(cardsPath+"index.json",pageBase).href;
     const r=await fetch(manifestUrl,{cache:"no-store"});
     if(r.ok){
       const manifest=await r.json();
       if(Array.isArray(manifest)){
-        const files=manifest
-          .filter(x=>x && typeof x.name==="string")
-          .map(x=>({name:x.name,url:new URL(x.name,manifestUrl).href}))
-          .filter(x=>/\.txt$/i.test(x.name))
-          .sort((a,b)=>a.name.localeCompare(b.name,"en",{numeric:true,sensitivity:"base"}));
-        if(files.length)return files;
+        manifest
+          .filter(x=>x && typeof x.name==="string" && /\.txt$/i.test(x.name))
+          .forEach(x=>found.set(x.name,{name:x.name,url:new URL(x.name,manifestUrl).href}));
       }
     }
   }catch(_){}
 
-  // Fallback: GitHub Contents API. This also works immediately if the
-  // manifest has not been generated yet.
+  // Always merge the live GitHub Contents listing. This makes discovery work
+  // even when the generated manifest has not caught up yet.
   try{
     const api="https://api.github.com/repos/"+owner+"/"+repo+"/contents/"+cardsPath+"?ref=main";
     const r=await fetch(api,{headers:{Accept:"application/vnd.github+json"},cache:"no-store"});
     if(r.ok){
       const items=await r.json();
       if(Array.isArray(items)){
-        const files=items
+        items
           .filter(x=>x.type==="file" && /\.txt$/i.test(x.name))
-          .sort((a,b)=>a.name.localeCompare(b.name,"en",{numeric:true,sensitivity:"base"}))
-          .map(x=>({name:x.name,url:new URL(cardsPath+x.name,pageBase).href}));
-        if(files.length)return files;
+          .forEach(x=>found.set(x.name,{name:x.name,url:new URL(cardsPath+x.name,pageBase).href}));
       }
     }
   }catch(_){}
 
+  const files=[...found.values()].sort((a,b)=>a.name.localeCompare(b.name,"en",{numeric:true,sensitivity:"base"}));
+  if(files.length)return files;
   throw Error("Nie można odnaleźć plików TXT w Home/Cards");
 }
 
