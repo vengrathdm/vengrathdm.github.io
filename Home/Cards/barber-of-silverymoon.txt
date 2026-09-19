@@ -1,4 +1,4 @@
 Barber of Silverymoon
 Kampania
-../Graphics/Default.jpg
+../Graphics/barber-of-silverymoon.jpg
 ../../subpages/barber-of-silverymoon/
