@@ -1,0 +1,4 @@
+Red Blood Snow White
+Kampania
+../Graphics/Default.jpg
+../../subpages/red-blood-snow-white/
