@@ -1,0 +1,4 @@
+Barber of Silverymoon
+Kampania
+../Graphics/Default.jpg
+../../subpages/barber-of-silverymoon/
