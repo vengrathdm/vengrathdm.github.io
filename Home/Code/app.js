@@ -29,7 +29,7 @@ async function discoverCardFiles(){
       const doc=new DOMParser().parseFromString(await r.text(),"text/html");
       const files=[...doc.querySelectorAll("a[href]")]
         .map(a=>decodeURIComponent(a.getAttribute("href")))
-        .filter(h=>/\\.txt$/i.test(h) && !h.includes("/"))
+        .filter(h=>/\.txt$/i.test(h) && !h.includes("/"))
         .sort((a,b)=>a.localeCompare(b,"en",{numeric:true,sensitivity:"base"}))
         .map(name=>({name,url:new URL(cardsPath+encodeURIComponent(name),document.baseURI).href}));
       if(files.length)return files;
@@ -52,7 +52,7 @@ async function discoverCardFiles(){
     const items=await r.json();
     if(!Array.isArray(items))throw Error("GitHub API returned an invalid directory response");
     const files=items
-      .filter(x=>x.type==="file" && /\\.txt$/i.test(x.name))
+      .filter(x=>x.type==="file" && /\.txt$/i.test(x.name))
       .sort((a,b)=>a.name.localeCompare(b.name,"en",{numeric:true,sensitivity:"base"}))
       .map(x=>({name:x.name,url:x.download_url}));
     if(files.length)return files;
@@ -67,7 +67,7 @@ async function load(){
   const parsed=await Promise.all(files.map(async file=>{
     const r=await fetch(file.url,{cache:"no-cache"});
     if(!r.ok)throw Error("Home/Cards/"+file.name+" ("+r.status+")");
-    const lines=(await r.text()).replace(/^\\uFEFF/,"").split(/\\r?\\n/).map(x=>x.trim());
+    const lines=(await r.text()).replace(/^\uFEFF/,"").split(/\r?\n/).map(x=>x.trim());
     if(lines.length<4)throw Error("Nieprawidłowy plik: "+file.name);
     const [title,tag,graphic,link]=lines;
     return {title,tag,graphic,link};
