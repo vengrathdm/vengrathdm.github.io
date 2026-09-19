@@ -1,5 +1,9 @@
 [
   {
+    "name": "assault-on-castle-blackrose.txt",
+    "url": "assault-on-castle-blackrose.txt"
+  },
+  {
     "name": "barber-of-silverymoon.txt",
     "url": "barber-of-silverymoon.txt"
   },
@@ -8,12 +12,20 @@
     "url": "blog.txt"
   },
   {
+    "name": "cemetery-of-dragons.txt",
+    "url": "cemetery-of-dragons.txt"
+  },
+  {
     "name": "charactermancer.txt",
     "url": "charactermancer.txt"
   },
   {
     "name": "curse-of-strahd.txt",
     "url": "curse-of-strahd.txt"
+  },
+  {
+    "name": "dom-malowanych-luster.txt",
+    "url": "dom-malowanych-luster.txt"
   },
   {
     "name": "dragon-of-dampen-depths.txt",
@@ -104,8 +116,16 @@
     "url": "sons-of-azalin.txt"
   },
   {
+    "name": "the-dragon-and-the-kraken.txt",
+    "url": "the-dragon-and-the-kraken.txt"
+  },
+  {
     "name": "tomb-of-annihilation.txt",
     "url": "tomb-of-annihilation.txt"
+  },
+  {
+    "name": "tower-of-the-veiled-star.txt",
+    "url": "tower-of-the-veiled-star.txt"
   },
   {
     "name": "trouble-below-the-mountains-of-ash.txt",
@@ -114,5 +134,9 @@
   {
     "name": "turn-of-fortunes-wheel.txt",
     "url": "turn-of-fortunes-wheel.txt"
+  },
+  {
+    "name": "wails-from-the-lighthouse.txt",
+    "url": "wails-from-the-lighthouse.txt"
   }
 ]
