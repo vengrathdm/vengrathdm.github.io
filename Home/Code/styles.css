@@ -26,14 +26,14 @@ body{background:#0b0d0e;color:#f1f2f2;font-family:Georgia,"Times New Roman",seri
 .shard-image{filter:none}
 .shard:hover{transform:scale(1.035);filter:drop-shadow(0 0 12px rgba(255,255,255,.22))}
 .shard:hover .shard-image{filter:none}
-.shard-flash{fill:rgba(255,255,255,0);stroke:none;pointer-events:none;opacity:0}
+.shard-flash{fill:rgba(255,255,255,.78);pointer-events:none;opacity:0;filter:blur(7px)}
 .shard-flash.play{animation:shard-flash-sweep 560ms cubic-bezier(.2,.7,.2,1) both}
 @keyframes shard-flash-sweep{
-  0%{opacity:0;transform:translateX(-115%)}
-  18%{opacity:.9}
-  50%{opacity:.55}
-  82%{opacity:.18}
-  100%{opacity:0;transform:translateX(115%)}
+  0%{opacity:0;transform:translateX(-70px)}
+  12%{opacity:.7}
+  45%{opacity:.42}
+  78%{opacity:.16}
+  100%{opacity:0;transform:translateX(calc(100% + 70px))}
 }
 .shard:focus,.shard:focus-visible{outline:none}
 
