@@ -19,20 +19,47 @@ const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");svg.setAt
 sites.forEach((s,i)=>{const raw=cell(s,sites,{x0:0,y0:0,x1:worldW,y1:H});if(raw.length<3)return;const poly=shape(raw,i,worldW,H);const cp=document.createElementNS("http://www.w3.org/2000/svg","clipPath"),id="clip"+i;cp.id=id;const cpPath=document.createElementNS("http://www.w3.org/2000/svg","path");cpPath.setAttribute("d",path(poly));cp.appendChild(cpPath);defs.appendChild(cp);const a=document.createElementNS("http://www.w3.org/2000/svg","a");a.classList.add("shard");a.setAttribute("href",s.data.link);a.setAttribute("tabindex","0");a.setAttribute("aria-label",s.data.title);const xs=poly.map(p=>p.x),ys=poly.map(p=>p.y),minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);const im=document.createElementNS("http://www.w3.org/2000/svg","image");im.setAttribute("x",minX);im.setAttribute("y",minY);im.setAttribute("width",maxX-minX);im.setAttribute("height",maxY-minY);im.setAttribute("preserveAspectRatio","xMidYMid slice");im.setAttribute("clip-path",`url(#${id})`);im.dataset.src=s.data.graphic;im.classList.add("shard-image");a.appendChild(im);const tint=document.createElementNS("http://www.w3.org/2000/svg","path");tint.setAttribute("d",path(poly));tint.classList.add("shard-tint");a.appendChild(tint);const g=document.createElementNS("http://www.w3.org/2000/svg","g");g.setAttribute("clip-path",`url(#${id})`);addText(g,s,poly);a.appendChild(g);svg.appendChild(a)});board.appendChild(svg);lazyLoadImages()}
 function lazyLoadImages(){const imgs=board.querySelectorAll("image[data-src]");if(!imgs.length)return;const loadImage=im=>{const src=im.dataset.src;if(!src)return;im.setAttribute("href",src);delete im.dataset.src};if(!("IntersectionObserver" in window)){imgs.forEach(loadImage);return}const io=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){loadImage(entry.target);io.unobserve(entry.target)}}},{root:viewport,rootMargin:"500px 900px"});imgs.forEach(im=>io.observe(im))}
 async function discoverCardFiles(){
-  // GitHub Pages does not expose directory listings. A GitHub Action maintains
-  // this manifest whenever files in Home/Cards change, so the homepage can
-  // discover every TXT dynamically without relying on the GitHub API.
-  const manifestUrl=new URL("Home/Cards/index.json",document.baseURI).href;
-  const r=await fetch(manifestUrl,{cache:"no-store"});
-  if(!r.ok)throw Error("Home/Cards/index.json ("+r.status+")");
-  const manifest=await r.json();
-  if(!Array.isArray(manifest))throw Error("Nieprawidłowy manifest Home/Cards");
-  const files=manifest
-    .filter(x=>x && typeof x.name==="string" && typeof x.url==="string")
-    .map(x=>({name:x.name,url:new URL(x.url,manifestUrl).href}))
-    .sort((a,b)=>a.name.localeCompare(b.name,"en",{numeric:true,sensitivity:"base"}));
-  if(!files.length)throw Error("Home/Cards contains no TXT files");
-  return files;
+  const cardsPath="Home/Cards/";
+  const pageBase=document.baseURI;
+  const owner="vengrathdm";
+  const repo="vengrathdm.github.io";
+
+  // Primary source: a generated manifest. GitHub Actions keeps this in sync
+  // whenever TXT files are added or removed from Home/Cards.
+  try{
+    const manifestUrl=new URL(cardsPath+"index.json",pageBase).href;
+    const r=await fetch(manifestUrl,{cache:"no-store"});
+    if(r.ok){
+      const manifest=await r.json();
+      if(Array.isArray(manifest)){
+        const files=manifest
+          .filter(x=>x && typeof x.name==="string")
+          .map(x=>({name:x.name,url:new URL(x.url||x.name,manifestUrl).href}))
+          .filter(x=>/\\.txt$/i.test(x.name))
+          .sort((a,b)=>a.name.localeCompare(b.name,"en",{numeric:true,sensitivity:"base"}));
+        if(files.length)return files;
+      }
+    }
+  }catch(_){}
+
+  // Fallback: GitHub Contents API. This also works immediately if the
+  // manifest has not been generated yet.
+  try{
+    const api="https://api.github.com/repos/"+owner+"/"+repo+"/contents/"+cardsPath+"?ref=main";
+    const r=await fetch(api,{headers:{Accept:"application/vnd.github+json"},cache:"no-store"});
+    if(r.ok){
+      const items=await r.json();
+      if(Array.isArray(items)){
+        const files=items
+          .filter(x=>x.type==="file" && /\\.txt$/i.test(x.name))
+          .sort((a,b)=>a.name.localeCompare(b.name,"en",{numeric:true,sensitivity:"base"}))
+          .map(x=>({name:x.name,url:x.download_url}));
+        if(files.length)return files;
+      }
+    }
+  }catch(_){}
+
+  throw Error("Nie można odnaleźć plików TXT w Home/Cards");
 }
 
 async function load(){
