@@ -1,4 +1,4 @@
 The Sunless Citadel
 Kampania
-https://cdn.midjourney.com/
+../Graphics/the-sunless-citadel.jpg
 ../../subpages/the-sunless-citadel/
