@@ -22,9 +22,9 @@ body{background:#0b0d0e;color:#f1f2f2;font-family:Georgia,"Times New Roman",seri
 .viewport::-webkit-scrollbar{display:none}
 .board{position:relative;height:100%;min-width:100%}
 .shatter{display:block}
-.shard{cursor:pointer;outline:none;text-decoration:none;transform-box:fill-box;transform-origin:center;transition:transform 180ms ease,filter 180ms ease}
+.shard{cursor:pointer;outline:none;text-decoration:none;transform-box:fill-box;transform-origin:center;transition:filter 180ms ease}
 .shard-image{filter:none}
-.shard:hover{transform:scale(1.035);filter:drop-shadow(0 0 12px rgba(255,255,255,.22))}
+.shard:hover{filter:drop-shadow(0 0 12px rgba(255,255,255,.22))}
 .shard:hover .shard-image{filter:none}
 .shard-flash{fill:rgba(255,255,255,.78);pointer-events:none;opacity:0;filter:blur(7px)}
 .shard-flash.play{animation:shard-flash-sweep 560ms cubic-bezier(.2,.7,.2,1) both}
