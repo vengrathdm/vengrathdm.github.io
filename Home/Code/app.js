@@ -76,7 +76,8 @@ async function load(){
     const link=new URL(linkPath,file.url).href;
     return {title,tag,graphic,link};
   }));
-  records=parsed;
+  // Hide placeholder/mock cards from the public homepage.
+  records=parsed.filter(d=>!/^Mock\d+$/i.test(d.title.trim()));
   shuffled=shuffle([...records]);
   build();
 }
