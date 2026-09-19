@@ -1,4 +1,4 @@
 Curse of Strahd
 Kampania
-../Graphics/Default.jpg
+../Graphics/curse-of-strahd.jpg
 ../../subpages/curse-of-strahd/
