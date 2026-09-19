@@ -4,29 +4,63 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Echtra midst the Sidhe — Vengrath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:#111315;color:#eee;font-family:Georgia,"Times New Roman",serif}
-body{display:flex;align-items:center;justify-content:center;padding:6vh 6vw}
-.wrap{width:min(1100px,100%);border:1px solid #353a3e;background:#17191b;box-shadow:0 20px 80px #0008;overflow:hidden}
-.hero{height:min(48vh,520px);min-height:280px;background:#222 center/cover no-repeat url("../../Home/Graphics/echtra-midst-the-sidhe.jpg")}
-.body{padding:34px 38px 40px}
-.kicker{font:600 11px/1.4 Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#9aa0a4}
-h1{font-size:clamp(36px,6vw,76px);font-weight:400;line-height:.95;margin:12px 0}
-p{font:15px/1.7 Arial,sans-serif;color:#b9bec2}
-a{display:inline-block;margin-top:18px;color:#fff;text-decoration:none;border:1px solid #555d62;padding:10px 16px;font:600 12px Arial,sans-serif;letter-spacing:.7px}
-a:hover{background:#25292d}
+*{box-sizing:border-box}:root{--ink:#eeeae0;--muted:#c5c4bd;--line:#41433f;--accent:#a9b86b}
+body{margin:0;background:radial-gradient(circle at 50% 0,#252c25,#111412 46%,#080909 100%);color:var(--ink);font-family:"Fira Sans Extra Condensed",sans-serif;line-height:1.6}
+.hero{min-height:72vh;display:flex;align-items:flex-end;position:relative;background:linear-gradient(180deg,rgba(5,7,5,.08) 20%,rgba(5,7,5,.95) 100%),url("../../Home/Graphics/echtra-midst-the-sidhe.jpg") center/cover no-repeat}
+.hero-inner,main,.nav-inner{width:min(1180px,calc(100% - 48px));margin:auto}.hero-inner{padding:90px 0 60px}
+.kicker{font-family:Voltaire,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#c5d68a;font-size:15px}
+h1{font-family:Voltaire,sans-serif;font-weight:400;font-size:clamp(48px,8vw,100px);line-height:.9;margin:12px 0 20px;max-width:1000px}
+.lead{font-family:"Brygada 1918",Georgia,serif;font-size:clamp(18px,2.1vw,24px);color:#ddd8ca;max-width:860px}
+nav{position:sticky;top:0;z-index:5;background:#0b0d0bee;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}.nav-inner{min-height:58px;display:flex;justify-content:space-between;align-items:center}.nav a{color:var(--ink);text-decoration:none;padding:8px 12px;font-weight:700;border:1px solid transparent}.nav a:hover{border-color:#686d62;background:#20251f}
+main{padding:68px 0 100px}.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:28px}.panel{background:linear-gradient(145deg,#191d1a,#111412);border:1px solid var(--line);padding:30px;box-shadow:0 18px 60px #0007}
+h2{font-family:Voltaire,sans-serif;font-size:38px;font-weight:400;margin:0 0 14px}h3{font-family:Voltaire,sans-serif;font-size:27px;font-weight:400;margin:28px 0 8px}p{font-size:18px;color:#c9cbc5;margin:0 0 16px}
+.status{border-left:2px solid var(--accent);padding-left:18px}.status strong{display:block;font-family:Voltaire,sans-serif;font-size:29px;font-weight:400}.status span{color:#aeb2aa;font-size:16px}
+.players{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 24px;margin-top:20px}.player{padding:11px 0;border-bottom:1px solid #343733}.player b{font-size:18px}.player span{display:block;color:#aeb2aa;font-size:16px}
+.yt{display:inline-block;margin-top:8px;color:#f2eee4;text-decoration:none;border:1px solid #666b61;padding:11px 16px;font-family:Voltaire,sans-serif;letter-spacing:1px}.yt:hover{background:#252b24}
+.note{color:#9fa49d;font-size:15px;margin-top:18px}
+@media(max-width:760px){.hero{min-height:66vh}.hero-inner,main,.nav-inner{width:calc(100% - 28px)}.grid{grid-template-columns:1fr}.players{grid-template-columns:1fr}h1{font-size:57px}}
 </style>
 </head>
 <body>
-<main class="wrap">
-<div class="hero"></div>
-<section class="body">
-<div class="kicker">Kampania</div>
+<header class="hero"><div class="hero-inner">
+<div class="kicker">Kampania · w toku · poziomy 1–14</div>
 <h1>Echtra midst the Sidhe</h1>
-<p>Strona kampanii / wpisu w archiwum Vengrath.</p>
-<a href="../../index.html">← POWRÓT DO VENGRATH</a>
+<p class="lead">Irgaelia to kraina celtyckich legend, dawnych bogów, druidów i Sidhe — istot z Drugiego Świata. Tutaj zmiana pór roku nie jest jedynie częścią natury. Jest częścią porządku świata.</p>
+</div></header>
+<nav><div class="nav-inner"><a href="../../index.html">← VENGRATH</a><span>CAMPAIGN LOG</span></div></nav>
+<main>
+<div class="grid">
+<section class="panel">
+<h2>O kampanii</h2>
+<p><em>Echtra midst the Sidhe</em> to autorska epicka kampania inspirowana przede wszystkim mitologią celtycką, szczególnie irlandzką, oraz tradycjami druidów, wojowników i fae. Jej świat — Irgaelia — ma własne plemiona, święte miejsca i bogów, a granica między światem śmiertelników a Drugim Światem jest cienka.</p>
+<p>Historia rozpoczyna się podczas Samhain w Cúilfeorna. Święto, które powinno zamykać stary rok i otwierać nowy, zostaje naznaczone niepokojącymi omenami i pojawieniem się Dullahana. Od tego momentu bohaterowie zostają wciągnięci w historię, w której los Irgaelii splata się z rytmem pór roku i światem Sidhe.</p>
+</section>
+<aside class="panel">
+<h2>Status</h2>
+<div class="status"><strong>W toku</strong><span>Kampania jest obecnie rozgrywana.</span></div>
+<a class="yt" href="https://www.youtube.com/playlist?list=PL-Lm83myvu0gjfyGW9ErTPXe7NhqmRLGn" target="_blank" rel="noopener">▶ OGLĄDAJ NAGRANIA</a>
+</aside>
+</div>
+<section class="panel" style="margin-top:28px">
+<h2>Drużyna</h2>
+<div class="players">
+<div class="player"><b>Viking</b><span>Caden Argall</span></div>
+<div class="player"><b>Rivani</b><span>Drogon Na'ar</span></div>
+<div class="player"><b>Maria</b><span>Sigrun</span></div>
+<div class="player"><b>Daniel</b><span>Grunmor</span></div>
+<div class="player"><b>Mat</b><span>Feichin</span></div>
+<div class="player"><b>wpoluwiatr</b><span>Maeve</span></div>
+<div class="player"><b>Vengrath</b><span>DMPC — Śpiąca Tressymka Niamh</span></div>
+</div>
+<p class="note">Kampania jest projektowana jako przygoda na poziomach 1–14. Jej struktura przechodzi przez kolejne pory roku i coraz szersze konflikty, ale szczegóły dalszych wydarzeń pozostają tutaj celowo pominięte.</p>
+</section>
+<section class="panel" style="margin-top:28px">
+<h2>Irgaelia</h2>
+<p>W Irgaelii osiem plemion związanych jest z własnymi patronackimi duchami, a ich kultury tworzą mozaikę całego regionu. W tle obecne są dawne bóstwa natury, wojny i mądrości oraz dwa dwory Sidhe, których wpływ sięga świata śmiertelników.</p>
+<p>Motywem przewodnim jest cykl roku: kampania została podzielona na kolejne etapy związane z zimą, wiosną, latem i jesienią. Każdy z nich zmienia atmosferę świata i stawia drużynę przed innym rodzajem zagrożenia.</p>
 </section>
 </main>
-</body>
-</html>
+</body></html>
