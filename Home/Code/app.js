@@ -69,7 +69,11 @@ async function load(){
     if(!r.ok)throw Error("Home/Cards/"+file.name+" ("+r.status+")");
     const lines=(await r.text()).replace(/^\uFEFF/,"").split(/\r?\n/).map(x=>x.trim());
     if(lines.length<4)throw Error("Nieprawidłowy plik: "+file.name);
-    const [title,tag,graphic,link]=lines;
+    const [title,tag,graphicPath,linkPath]=lines;
+    // The graphic and sub-page paths are written relative to the TXT file
+    // in Home/Cards/, not relative to the homepage.
+    const graphic=new URL(graphicPath,file.url).href;
+    const link=new URL(linkPath,file.url).href;
     return {title,tag,graphic,link};
   }));
   records=parsed;
