@@ -1,0 +1,4 @@
+Curse of Strahd
+Kampania
+../Graphics/Default.jpg
+../../subpages/curse-of-strahd/
