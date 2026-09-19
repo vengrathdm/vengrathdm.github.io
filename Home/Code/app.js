@@ -19,53 +19,20 @@ const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");svg.setAt
 sites.forEach((s,i)=>{const raw=cell(s,sites,{x0:0,y0:0,x1:worldW,y1:H});if(raw.length<3)return;const poly=shape(raw,i,worldW,H);const cp=document.createElementNS("http://www.w3.org/2000/svg","clipPath"),id="clip"+i;cp.id=id;const cpPath=document.createElementNS("http://www.w3.org/2000/svg","path");cpPath.setAttribute("d",path(poly));cp.appendChild(cpPath);defs.appendChild(cp);const a=document.createElementNS("http://www.w3.org/2000/svg","a");a.classList.add("shard");a.setAttribute("href",s.data.link);a.setAttribute("tabindex","0");a.setAttribute("aria-label",s.data.title);const xs=poly.map(p=>p.x),ys=poly.map(p=>p.y),minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);const im=document.createElementNS("http://www.w3.org/2000/svg","image");im.setAttribute("x",minX);im.setAttribute("y",minY);im.setAttribute("width",maxX-minX);im.setAttribute("height",maxY-minY);im.setAttribute("preserveAspectRatio","xMidYMid slice");im.setAttribute("clip-path",`url(#${id})`);im.dataset.src=s.data.graphic;im.classList.add("shard-image");a.appendChild(im);const tint=document.createElementNS("http://www.w3.org/2000/svg","path");tint.setAttribute("d",path(poly));tint.classList.add("shard-tint");a.appendChild(tint);const g=document.createElementNS("http://www.w3.org/2000/svg","g");g.setAttribute("clip-path",`url(#${id})`);addText(g,s,poly);a.appendChild(g);svg.appendChild(a)});board.appendChild(svg);lazyLoadImages()}
 function lazyLoadImages(){const imgs=board.querySelectorAll("image[data-src]");if(!imgs.length)return;const loadImage=im=>{const src=im.dataset.src;if(!src)return;im.setAttribute("href",src);delete im.dataset.src};if(!("IntersectionObserver" in window)){imgs.forEach(loadImage);return}const io=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){loadImage(entry.target);io.unobserve(entry.target)}}},{root:viewport,rootMargin:"500px 900px"});imgs.forEach(im=>io.observe(im))}
 async function discoverCardFiles(){
-  const cardsPath="Home/Cards/";
-  const pageBase=document.baseURI;
-
-  // Local HTTP server: use its directory listing when available.
-  try{
-    const dir=new URL(cardsPath,pageBase).href;
-    const r=await fetch(dir,{cache:"no-store"});
-    if(r.ok){
-      const doc=new DOMParser().parseFromString(await r.text(),"text/html");
-      const files=[...doc.querySelectorAll("a[href]")]
-        .map(a=>decodeURIComponent(a.getAttribute("href")))
-        .filter(h=>/^[^/]+\\.txt$/i.test(h))
-        .sort((a,b)=>a.localeCompare(b,"en",{numeric:true,sensitivity:"base"}))
-        .map(name=>({name,url:new URL(cardsPath+encodeURIComponent(name),pageBase).href}));
-      if(files.length)return files;
-    }
-  }catch(_){}
-
-  // GitHub Pages: enumerate the repository tree in one API request.
-  // This avoids relying on the current site's URL or on a directory index.
-  const owner="vengrathdm";
-  const repo="vengrathdm.github.io";
-  const treeApi="https://api.github.com/repos/"+owner+"/"+repo+"/git/trees/main?recursive=1";
-
-  try{
-    const r=await fetch(treeApi,{
-      headers:{Accept:"application/vnd.github+json"},
-      cache:"no-store"
-    });
-    if(!r.ok)throw Error("GitHub API HTTP "+r.status);
-    const tree=await r.json();
-    if(!Array.isArray(tree.tree))throw Error("GitHub API returned an invalid tree");
-    const files=tree.tree
-      .filter(x=>x.type==="blob" && /^Home\\/Cards\\/[^/]+\\.txt$/i.test(x.path))
-      .sort((a,b)=>a.path.localeCompare(b.path,"en",{numeric:true,sensitivity:"base"}))
-      .map(x=>{
-        const name=x.path.slice(cardsPath.length);
-        return {
-          name,
-          url:"https://raw.githubusercontent.com/"+owner+"/"+repo+"/main/"+x.path.split("/").map(encodeURIComponent).join("/")
-        };
-      });
-    if(files.length)return files;
-    throw Error("Home/Cards contains no TXT files");
-  }catch(e){
-    throw Error("Nie można odczytać Home/Cards: "+e.message);
-  }
+  // GitHub Pages does not expose directory listings. A GitHub Action maintains
+  // this manifest whenever files in Home/Cards change, so the homepage can
+  // discover every TXT dynamically without relying on the GitHub API.
+  const manifestUrl=new URL("Home/Cards/index.json",document.baseURI).href;
+  const r=await fetch(manifestUrl,{cache:"no-store"});
+  if(!r.ok)throw Error("Home/Cards/index.json ("+r.status+")");
+  const manifest=await r.json();
+  if(!Array.isArray(manifest))throw Error("Nieprawidłowy manifest Home/Cards");
+  const files=manifest
+    .filter(x=>x && typeof x.name==="string" && typeof x.url==="string")
+    .map(x=>({name:x.name,url:new URL(x.url,manifestUrl).href}))
+    .sort((a,b)=>a.name.localeCompare(b.name,"en",{numeric:true,sensitivity:"base"}));
+  if(!files.length)throw Error("Home/Cards contains no TXT files");
+  return files;
 }
 
 async function load(){
