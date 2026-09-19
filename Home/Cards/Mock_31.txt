@@ -1,4 +1,0 @@
-Mock_31
-Mock31
-../Graphics/Default.jpg
-../../index.html
