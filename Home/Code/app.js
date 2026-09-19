@@ -35,7 +35,7 @@ async function discoverCardFiles(){
         const files=manifest
           .filter(x=>x && typeof x.name==="string")
           .map(x=>({name:x.name,url:new URL(x.name,manifestUrl).href}))
-          .filter(x=>/\\.txt$/i.test(x.name))
+          .filter(x=>/\.txt$/i.test(x.name))
           .sort((a,b)=>a.name.localeCompare(b.name,"en",{numeric:true,sensitivity:"base"}));
         if(files.length)return files;
       }
@@ -51,7 +51,7 @@ async function discoverCardFiles(){
       const items=await r.json();
       if(Array.isArray(items)){
         const files=items
-          .filter(x=>x.type==="file" && /\\.txt$/i.test(x.name))
+          .filter(x=>x.type==="file" && /\.txt$/i.test(x.name))
           .sort((a,b)=>a.name.localeCompare(b.name,"en",{numeric:true,sensitivity:"base"}))
           .map(x=>({name:x.name,url:new URL(cardsPath+x.name,pageBase).href}));
         if(files.length)return files;
