@@ -20,45 +20,51 @@ sites.forEach((s,i)=>{const raw=cell(s,sites,{x0:0,y0:0,x1:worldW,y1:H});if(raw.
 function lazyLoadImages(){const imgs=board.querySelectorAll("image[data-src]");if(!imgs.length)return;const loadImage=im=>{const src=im.dataset.src;if(!src)return;im.setAttribute("href",src);delete im.dataset.src};if(!("IntersectionObserver" in window)){imgs.forEach(loadImage);return}const io=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){loadImage(entry.target);io.unobserve(entry.target)}}},{root:viewport,rootMargin:"500px 900px"});imgs.forEach(im=>io.observe(im))}
 async function discoverCardFiles(){
   const cardsPath="Home/Cards/";
+  const pageBase=document.baseURI;
 
-  // When running from a local HTTP server, use its real directory listing.
+  // Local HTTP server: use its directory listing when available.
   try{
-    const dir=new URL(cardsPath,document.baseURI).href;
+    const dir=new URL(cardsPath,pageBase).href;
     const r=await fetch(dir,{cache:"no-store"});
     if(r.ok){
       const doc=new DOMParser().parseFromString(await r.text(),"text/html");
       const files=[...doc.querySelectorAll("a[href]")]
         .map(a=>decodeURIComponent(a.getAttribute("href")))
-        .filter(h=>/\.txt$/i.test(h) && !h.includes("/"))
+        .filter(h=>/^[^/]+\\.txt$/i.test(h))
         .sort((a,b)=>a.localeCompare(b,"en",{numeric:true,sensitivity:"base"}))
-        .map(name=>({name,url:new URL(cardsPath+encodeURIComponent(name),document.baseURI).href}));
+        .map(name=>({name,url:new URL(cardsPath+encodeURIComponent(name),pageBase).href}));
       if(files.length)return files;
     }
   }catch(_){}
 
-  // GitHub Pages has no directory listing. The site is this repository,
-  // so use the GitHub Contents API directly instead of trying to infer the
-  // repository from the current URL (which can be a custom domain).
+  // GitHub Pages: enumerate the repository tree in one API request.
+  // This avoids relying on the current site's URL or on a directory index.
   const owner="vengrathdm";
   const repo="vengrathdm.github.io";
-  const api="https://api.github.com/repos/"+owner+"/"+repo+"/contents/Home/Cards?ref=main";
+  const treeApi="https://api.github.com/repos/"+owner+"/"+repo+"/git/trees/main?recursive=1";
 
   try{
-    const r=await fetch(api,{
+    const r=await fetch(treeApi,{
       headers:{Accept:"application/vnd.github+json"},
       cache:"no-store"
     });
     if(!r.ok)throw Error("GitHub API HTTP "+r.status);
-    const items=await r.json();
-    if(!Array.isArray(items))throw Error("GitHub API returned an invalid directory response");
-    const files=items
-      .filter(x=>x.type==="file" && /\.txt$/i.test(x.name))
-      .sort((a,b)=>a.name.localeCompare(b.name,"en",{numeric:true,sensitivity:"base"}))
-      .map(x=>({name:x.name,url:x.download_url}));
+    const tree=await r.json();
+    if(!Array.isArray(tree.tree))throw Error("GitHub API returned an invalid tree");
+    const files=tree.tree
+      .filter(x=>x.type==="blob" && /^Home\\/Cards\\/[^/]+\\.txt$/i.test(x.path))
+      .sort((a,b)=>a.path.localeCompare(b.path,"en",{numeric:true,sensitivity:"base"}))
+      .map(x=>{
+        const name=x.path.slice(cardsPath.length);
+        return {
+          name,
+          url:"https://raw.githubusercontent.com/"+owner+"/"+repo+"/main/"+x.path.split("/").map(encodeURIComponent).join("/")
+        };
+      });
     if(files.length)return files;
     throw Error("Home/Cards contains no TXT files");
   }catch(e){
-    throw Error("Nie można odczytać Home/Cards przez GitHub API: "+e.message);
+    throw Error("Nie można odczytać Home/Cards: "+e.message);
   }
 }
 
