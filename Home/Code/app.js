@@ -19,58 +19,56 @@ const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");svg.setAt
 sites.forEach((s,i)=>{const raw=cell(s,sites,{x0:0,y0:0,x1:worldW,y1:H});if(raw.length<3)return;const poly=shape(raw,i,worldW,H);const cp=document.createElementNS("http://www.w3.org/2000/svg","clipPath"),id="clip"+i;cp.id=id;const cpPath=document.createElementNS("http://www.w3.org/2000/svg","path");cpPath.setAttribute("d",path(poly));cp.appendChild(cpPath);defs.appendChild(cp);const a=document.createElementNS("http://www.w3.org/2000/svg","a");a.classList.add("shard");a.setAttribute("href",s.data.link);a.setAttribute("tabindex","0");a.setAttribute("aria-label",s.data.title);const xs=poly.map(p=>p.x),ys=poly.map(p=>p.y),minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);const im=document.createElementNS("http://www.w3.org/2000/svg","image");im.setAttribute("x",minX);im.setAttribute("y",minY);im.setAttribute("width",maxX-minX);im.setAttribute("height",maxY-minY);im.setAttribute("preserveAspectRatio","xMidYMid slice");im.setAttribute("clip-path",`url(#${id})`);im.dataset.src=s.data.graphic;im.classList.add("shard-image");a.appendChild(im);const tint=document.createElementNS("http://www.w3.org/2000/svg","path");tint.setAttribute("d",path(poly));tint.classList.add("shard-tint");a.appendChild(tint);const g=document.createElementNS("http://www.w3.org/2000/svg","g");g.setAttribute("clip-path",`url(#${id})`);addText(g,s,poly);a.appendChild(g);svg.appendChild(a)});board.appendChild(svg);lazyLoadImages()}
 function lazyLoadImages(){const imgs=board.querySelectorAll("image[data-src]");if(!imgs.length)return;const loadImage=im=>{const src=im.dataset.src;if(!src)return;im.setAttribute("href",src);delete im.dataset.src};if(!("IntersectionObserver" in window)){imgs.forEach(loadImage);return}const io=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){loadImage(entry.target);io.unobserve(entry.target)}}},{root:viewport,rootMargin:"500px 900px"});imgs.forEach(im=>io.observe(im))}
 async function discoverCardFiles(){
-  // Cards are stored under Home/Cards relative to the repository root.
   const cardsPath="Home/Cards/";
-  const dir=new URL(cardsPath,document.baseURI).href;
-  // Local HTTP servers (including Python's http.server) expose directory listings.
+
+  // When running from a local HTTP server, use its real directory listing.
   try{
+    const dir=new URL(cardsPath,document.baseURI).href;
     const r=await fetch(dir,{cache:"no-store"});
     if(r.ok){
-      const html=await r.text();
-      const doc=new DOMParser().parseFromString(html,"text/html");
+      const doc=new DOMParser().parseFromString(await r.text(),"text/html");
       const files=[...doc.querySelectorAll("a[href]")]
         .map(a=>decodeURIComponent(a.getAttribute("href")))
-        .filter(h=>/\.txt$/i.test(h) && !h.includes("/"))
-        .sort((a,b)=>a.localeCompare(b,"en",{numeric:true,sensitivity:"base"}));
+        .filter(h=>/\\.txt$/i.test(h) && !h.includes("/"))
+        .sort((a,b)=>a.localeCompare(b,"en",{numeric:true,sensitivity:"base"}))
+        .map(name=>({name,url:new URL(cardsPath+encodeURIComponent(name),document.baseURI).href}));
       if(files.length)return files;
     }
   }catch(_){}
 
-  // GitHub Pages does not generate directory listings. Discover the same folder
-  // through the public GitHub Contents API, without hard-coding card filenames.
-  const host=location.hostname;
-  const path=location.pathname.split("/").filter(Boolean);
-  let owner=null,repo=null,base=[];
-  if(host.endsWith(".github.io")){
-    owner=host.slice(0,-".github.io".length);
-    if(path.length && path[0].toLowerCase()!==owner.toLowerCase()){
-      repo=path[0]; base=path.slice(1);
-    }else{ repo=owner; base=path; }
+  // GitHub Pages has no directory listing. The site is this repository,
+  // so use the GitHub Contents API directly instead of trying to infer the
+  // repository from the current URL (which can be a custom domain).
+  const owner="vengrathdm";
+  const repo="vengrathdm.github.io";
+  const api="https://api.github.com/repos/"+owner+"/"+repo+"/contents/Home/Cards?ref=main";
+
+  try{
+    const r=await fetch(api,{
+      headers:{Accept:"application/vnd.github+json"},
+      cache:"no-store"
+    });
+    if(!r.ok)throw Error("GitHub API HTTP "+r.status);
+    const items=await r.json();
+    if(!Array.isArray(items))throw Error("GitHub API returned an invalid directory response");
+    const files=items
+      .filter(x=>x.type==="file" && /\\.txt$/i.test(x.name))
+      .sort((a,b)=>a.name.localeCompare(b.name,"en",{numeric:true,sensitivity:"base"}))
+      .map(x=>({name:x.name,url:x.download_url}));
+    if(files.length)return files;
+    throw Error("Home/Cards contains no TXT files");
+  }catch(e){
+    throw Error("Nie można odczytać Home/Cards przez GitHub API: "+e.message);
   }
-  if(owner&&repo){
-    const apiPath=[...base,"Home","Cards"].join("/");
-    for(const branch of ["main","master"]){
-      try{
-        const u=`https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/contents/${apiPath}?ref=${branch}`;
-        const r=await fetch(u,{headers:{Accept:"application/vnd.github+json"},cache:"no-store"});
-        if(!r.ok)continue;
-        const items=await r.json();
-        const files=items.filter(x=>x.type==="file"&&/\.txt$/i.test(x.name)).map(x=>x.name).sort((a,b)=>a.localeCompare(b,"en",{numeric:true,sensitivity:"base"}));
-        if(files.length)return files;
-      }catch(_){}
-    }
-  }
-  throw Error("Nie znaleziono plików TXT w Home/Cards/. Na GitHub Pages sprawdź, czy repozytorium jest publiczne.");
 }
 
 async function load(){
-  const cardsPath="Home/Cards/";
   const files=await discoverCardFiles();
   const parsed=await Promise.all(files.map(async file=>{
-    const r=await fetch(new URL(cardsPath+encodeURIComponent(file),document.baseURI).href,{cache:"no-cache"});
-    if(!r.ok)throw Error("Home/Cards/"+file+" ("+r.status+")");
-    const lines=(await r.text()).replace(/^\uFEFF/,"").split(/\r?\n/).map(x=>x.trim());
-    if(lines.length<4)throw Error("Nieprawidłowy plik: "+file);
+    const r=await fetch(file.url,{cache:"no-cache"});
+    if(!r.ok)throw Error("Home/Cards/"+file.name+" ("+r.status+")");
+    const lines=(await r.text()).replace(/^\\uFEFF/,"").split(/\\r?\\n/).map(x=>x.trim());
+    if(lines.length<4)throw Error("Nieprawidłowy plik: "+file.name);
     const [title,tag,graphic,link]=lines;
     return {title,tag,graphic,link};
   }));
@@ -78,6 +76,7 @@ async function load(){
   shuffled=shuffle([...records]);
   build();
 }
+
 function setup(){filters.innerHTML="";FILTERS.forEach(([label,tag],i)=>{const b=document.createElement("button");b.className="filter"+(i===0?" active":"");b.dataset.tag=tag;b.textContent=label;filters.appendChild(b)});filters.onclick=e=>{const b=e.target.closest(".filter");if(!b)return;activeTag=b.dataset.tag;filters.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x===b));build()};search.addEventListener("input",build);shuffleBtn.addEventListener("click",()=>{shuffled=shuffle([...records]);build()})}
 viewport.addEventListener("wheel",e=>{const d=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:e.deltaY;if(d){e.preventDefault();viewport.scrollLeft+=d*2.5}},{passive:false});
 viewport.addEventListener("pointerdown",e=>{if(e.button!==0)return;cancelAnimationFrame(momentum);drag={active:true,startX:e.clientX,lastX:e.clientX,lastTime:performance.now(),velocity:0,moved:false};viewport.style.cursor="grabbing";viewport.setPointerCapture(e.pointerId)});
