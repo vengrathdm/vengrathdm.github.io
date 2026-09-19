@@ -1,4 +1,4 @@
 Dom Malowanych Luster
 Kampania
-https://cdn.midjourney.com/placeholder-mirror-mansion.png
+../Graphics/dom-malowanych-luster.jpg
 ../../subpages/dom-malowanych-luster/
