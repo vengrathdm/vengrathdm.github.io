@@ -7,7 +7,7 @@
 (function () {
     "use strict";
 
-    var API = "https://api.github.com/repos/vengrathdm/vengrathdm.github.io/contents/SecretProjects/Heartwell/articles";
+    var API = "https://api.github.com/repos/vengrathdm/vengrathdm.github.io/contents/subpages/Ksiazeta-Heartwell/HeartwellWiki/articles";
     var el = {
         rail: document.getElementById("rail"),
         index: document.getElementById("index"),
