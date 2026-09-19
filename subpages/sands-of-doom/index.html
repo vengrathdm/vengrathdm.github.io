@@ -1,32 +1,40 @@
 <!doctype html>
 <html lang="pl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sands of Doom — Vengrath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:#111315;color:#eee;font-family:Georgia,"Times New Roman",serif}
-body{display:flex;align-items:center;justify-content:center;padding:6vh 6vw}
-.wrap{width:min(1100px,100%);border:1px solid #353a3e;background:#17191b;box-shadow:0 20px 80px #0008;overflow:hidden}
-.hero{height:min(48vh,520px);min-height:280px;background:#222 center/cover no-repeat url("../../Home/Graphics/sands-of-doom.jpg")}
-.body{padding:34px 38px 40px}
-.kicker{font:600 11px/1.4 Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#9aa0a4}
-h1{font-size:clamp(36px,6vw,76px);font-weight:400;line-height:.95;margin:12px 0}
-p{font:15px/1.7 Arial,sans-serif;color:#b9bec2}
-a{display:inline-block;margin-top:18px;color:#fff;text-decoration:none;border:1px solid #555d62;padding:10px 16px;font:600 12px Arial,sans-serif;letter-spacing:.7px}
-a:hover{background:#25292d}
+*{box-sizing:border-box}:root{--panel:#171716;--ink:#eee9dc;--muted:#aaa89e;--line:#413f38;--accent:#c69b5a}
+html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% 0%,#302a20 0,#141311 42%,#080908 100%);color:var(--ink);font-family:"Fira Sans Extra Condensed",sans-serif;line-height:1.6}
+.hero{min-height:72vh;display:flex;align-items:flex-end;position:relative;background:linear-gradient(180deg,rgba(8,8,7,.05) 25%,rgba(8,8,7,.95) 100%),url("../../Home/Graphics/sands-of-doom.jpg") center/cover no-repeat}.hero:after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 120px #000b;pointer-events:none}
+.hero-inner{position:relative;z-index:1;width:min(1180px,calc(100% - 48px));margin:auto;padding:80px 0 58px}.kicker{font-family:Voltaire,sans-serif;font-size:15px;letter-spacing:3px;text-transform:uppercase;color:var(--accent)}
+h1{font-family:Voltaire,sans-serif;font-size:clamp(54px,9vw,112px);font-weight:400;line-height:.9;margin:10px 0 18px}.lead{max-width:860px;font-family:"Brygada 1918",Georgia,serif;font-size:clamp(18px,2.2vw,25px);color:#ddd8cc;margin:0}
+.nav{position:sticky;top:0;z-index:10;background:#0b0d0eee;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}.nav-inner{width:min(1180px,calc(100% - 48px));margin:auto;display:flex;gap:10px;align-items:center;justify-content:space-between;min-height:58px}.nav a{color:#e8e6df;text-decoration:none;padding:8px 12px;border:1px solid transparent;font-weight:700;letter-spacing:.8px}.nav a:hover{border-color:#666;background:#202425}.nav .youtube{border-color:#75613f;color:#efd09c}
+main{width:min(1180px,calc(100% - 48px));margin:auto;padding:70px 0 90px}.intro{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:start}.panel{background:linear-gradient(145deg,#1b1a17,#111211);border:1px solid var(--line);padding:30px;box-shadow:0 18px 60px #0006}
+h2{font-family:Voltaire,sans-serif;font-size:38px;font-weight:400;margin:0 0 14px;color:#f0ede4}.panel p{font-size:18px;margin:0 0 14px;color:#c9c7bd}.stats{display:grid}.stat{border-left:2px solid var(--accent);padding-left:18px;margin:0 0 22px}.stat strong{display:block;font-family:Voltaire,sans-serif;font-size:30px;font-weight:400;color:#eee9dc}.stat span{color:var(--muted);font-size:16px}
+.players{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}.player{padding:18px;background:#111210;border:1px solid #35342f}.player strong{font-family:Voltaire,sans-serif;font-size:23px;font-weight:400;display:block;color:#eee9dc}.player span{color:#b4b2aa;font-size:17px}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 18px;border:1px solid #75613f;color:#efd09c;text-decoration:none;font-weight:700;letter-spacing:.8px;background:#181714}.button:hover{background:#29251d;border-color:#b4945e}.actions{margin-top:24px}
+.status{margin-top:28px;padding:18px 20px;border:1px solid #5b4b34;background:#201c14;color:#d3c4a9;font-size:18px}
+footer{border-top:1px solid var(--line);background:#0a0b09;padding:24px;text-align:center;color:#7f807a}
+@media(max-width:760px){.hero{min-height:68vh}.hero-inner,main,.nav-inner{width:min(100% - 28px,1180px)}.intro{grid-template-columns:1fr}.players{grid-template-columns:1fr}.hero-inner{padding-bottom:38px}h1{font-size:58px}.nav-inner{flex-wrap:wrap;padding:8px 0}}
 </style>
 </head>
 <body>
-<main class="wrap">
-<div class="hero"></div>
-<section class="body">
-<div class="kicker">Kampania</div>
-<h1>Sands of Doom</h1>
-<p>Strona kampanii / wpisu w archiwum Vengrath.</p>
-<a href="../../index.html">← POWRÓT DO VENGRATH</a>
-</section>
+<header class="hero"><div class="hero-inner"><div class="kicker">Kirat · Great Wasteland · Dark Fantasy</div><h1>Sands of Doom</h1><p class="lead">Wielka wyprawa przez przeklętą pustynię, ruiny zapomnianej cywilizacji i świat, w którym piasek skrywa znacznie więcej niż tylko dawno utracone skarby.</p></div></header>
+<nav class="nav"><div class="nav-inner"><a href="../../index.html">← VENGRATH</a><a class="youtube" href="https://www.youtube.com/playlist?list=PLQFKRphh4eos" target="_blank" rel="noopener">▶ OBEJRZYJ PLAYLISTĘ NA YOUTUBE</a></div></nav>
+<main>
+<section class="intro"><article class="panel"><h2>O kampanii</h2><p><i>Sands of Doom</i> to dark fantasy osadzone na ogromnym, przeklętym pustkowiu. W sercu tego świata leżą ruiny dawnej cywilizacji, starożytne grobowce i ślady bogów, których czas dawno minął.</p><p>Punktem wyjścia jest wielka ekspedycja w głąb pustyni. Bohaterowie trafiają do świata pełnego niebezpiecznych ruin, tajemnic, frakcji i skarbów ukrytych pod piaskiem. W tle narasta zagrożenie związane z dawno uśpioną siłą i armią nieumarłych.</p><p>To kampania, która łączy eksplorację, survival, starożytne tajemnice i heroic fantasy. <strong>Historia naszej drużyny wciąż trwa.</strong></p><div class="actions"><a class="button" href="https://www.youtube.com/playlist?list=PLQFKRphh4eos" target="_blank" rel="noopener">▶ OBEJRZYJ PLAYLISTĘ NA YOUTUBE</a></div></article>
+<aside class="panel"><div class="stats"><div class="stat"><strong>Great Wasteland</strong><span>przeklęta pustynia pełna ruin</span></div><div class="stat"><strong>Al-Kirat</strong><span>ostatnie wielkie miasto pustkowi</span></div><div class="stat"><strong>Starożytne ruiny</strong><span>ślad dawnej cywilizacji i zapomnianych bogów</span></div><div class="stat"><strong>Kampania trwa</strong><span>bez spoilerów — zapisujemy tylko punkt wyjścia</span></div></div></aside></section>
+<section class="panel" style="margin-top:28px"><h2>Nasza drużyna</h2><p>W kampanii występują:</p><div class="players">
+<div class="player"><strong>Rezus</strong><span>jako Vaelor</span></div>
+<div class="player"><strong>koksuvi</strong><span>jako Bromli</span></div>
+<div class="player"><strong>Lexonis</strong><span>jako Gromar</span></div>
+<div class="player"><strong>Jeesso</strong><span>jako Samira</span></div>
+</div></section>
+<div class="status"><strong>Kampania w toku.</strong> Podstrona celowo nie zawiera spoilerów ani informacji o dalszych wydarzeniach.</div>
 </main>
+<footer>Archiwum kampanii Vengrath · aktualna kampania · bez spoilerów</footer>
 </body>
 </html>
