@@ -1,0 +1,50 @@
+name: Generate card manifest
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Home/Cards/**"
+      - ".github/workflows/generate-card-manifest.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate Home/Cards/index.json
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          cards = Path("Home/Cards")
+          files = sorted(
+              p.name for p in cards.glob("*.txt")
+              if p.is_file()
+          )
+
+          manifest = [
+              {"name": name, "url": name}
+              for name in files
+          ]
+
+          (cards / "index.json").write_text(
+              json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8"
+          )
+          PY
+
+      - name: Commit manifest when changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Home/Cards/index.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Update card manifest"
+          git push
