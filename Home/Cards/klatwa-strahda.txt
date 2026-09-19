@@ -1,4 +1,4 @@
 Klątwa Strahda
 Kampania
-../Graphics/Default.jpg
+../Graphics/klatwa-strahda.webp
 ../../subpages/klatwa-strahda/
