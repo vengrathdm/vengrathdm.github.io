@@ -26,13 +26,14 @@ body{background:#0b0d0e;color:#f1f2f2;font-family:Georgia,"Times New Roman",seri
 .shard-image{filter:none}
 .shard:hover{transform:scale(1.035);filter:drop-shadow(0 0 12px rgba(255,255,255,.22))}
 .shard:hover .shard-image{filter:none}
-.shard-flash{fill:none;stroke:rgba(255,255,255,0);stroke-width:0;pointer-events:none;opacity:0}
-.shard-flash.play{animation:shard-flash-sweep 520ms cubic-bezier(.2,.7,.2,1) both}
+.shard-flash{fill:rgba(255,255,255,0);stroke:none;pointer-events:none;opacity:0}
+.shard-flash.play{animation:shard-flash-sweep 560ms cubic-bezier(.2,.7,.2,1) both}
 @keyframes shard-flash-sweep{
-  0%{opacity:0;stroke:rgba(255,255,255,0);stroke-width:0;transform:translateX(-120%)}
-  12%{opacity:.85;stroke:rgba(255,255,255,.85);stroke-width:2px}
-  55%{opacity:.35;stroke:rgba(255,255,255,.55);stroke-width:1.5px}
-  100%{opacity:0;stroke:rgba(255,255,255,0);stroke-width:0;transform:translateX(120%)}
+  0%{opacity:0;transform:translateX(-115%)}
+  18%{opacity:.9}
+  50%{opacity:.55}
+  82%{opacity:.18}
+  100%{opacity:0;transform:translateX(115%)}
 }
 .shard:focus,.shard:focus-visible{outline:none}
 
