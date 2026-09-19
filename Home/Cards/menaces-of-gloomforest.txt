@@ -1,4 +1,4 @@
 Menaces of Gloomforest
 Kampania
-https://cdn.midjourney.com/
+../Graphics/menaces-of-gloomforest.jpg
 ../../subpages/menaces-of-gloomforest/
