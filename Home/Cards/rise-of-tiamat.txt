@@ -1,4 +1,4 @@
 Rise of Tiamat
 Kampania
-../Graphics/Default.jpg
+../Graphics/rise-of-tiamat.jpg
 ../../subpages/rise-of-tiamat/
