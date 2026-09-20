@@ -1,4 +1,4 @@
 Książęta Heartwell
-Kampania
+Aktywna Kampania
 ../Graphics/ksiazeta-heartwell.jpg
 ../../subpages/Ksiazeta-Heartwell/
