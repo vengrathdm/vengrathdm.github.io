@@ -1,4 +1,4 @@
 Rise of Tiamat
-Kampania
+Zamknięta Kampania
 ../Graphics/rise-of-tiamat.jpg
 ../../subpages/rise-of-tiamat/
