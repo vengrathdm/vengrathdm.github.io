@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "Home/Cards/**"
+      - "subpages/moje-prace-graficzne/Pictures/**"
       - ".github/workflows/generate-card-manifest.yml"
 
 permissions:
@@ -40,11 +41,35 @@ jobs:
           )
           PY
 
+      - name: Generate Pictures/index.json
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          pictures = Path("subpages/moje-prace-graficzne/Pictures")
+          extensions = {".avif", ".gif", ".jpeg", ".jpg", ".png", ".webp"}
+          files = sorted(
+              p.name for p in pictures.iterdir()
+              if p.is_file() and p.suffix.lower() in extensions
+          )
+
+          manifest = [
+              {"name": name, "url": name}
+              for name in files
+          ]
+
+          (pictures / "index.json").write_text(
+              json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8"
+          )
+          PY
+
       - name: Commit manifest when changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add Home/Cards/index.json
+          git add Home/Cards/index.json subpages/moje-prace-graficzne/Pictures/index.json
           git diff --cached --quiet && exit 0
           git commit -m "Update card manifest"
           git push
