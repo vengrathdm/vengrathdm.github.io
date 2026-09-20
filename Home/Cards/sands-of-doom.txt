@@ -1,4 +1,4 @@
 Sands of Doom
-Kampania
+Aktywna Kampania
 ../Graphics/sands-of-doom.jpg
 ../../subpages/sands-of-doom/
