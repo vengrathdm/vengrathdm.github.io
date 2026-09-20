@@ -59,11 +59,14 @@ function closeViewer(){viewer.classList.remove("open");viewer.setAttribute("aria
 close.addEventListener("click",closeViewer);viewer.addEventListener("click",e=>{if(e.target===viewer)closeViewer()});addEventListener("keydown",e=>{if(e.key==="Escape")closeViewer()});
 
 async function loadFiles(){
- const url="https://api.github.com/repos/"+owner+"/"+repo+"/contents/"+folder+"?ref=main";
- const r=await fetch(url,{headers:{Accept:"application/vnd.github+json"},cache:"no-store"});
- if(!r.ok)throw Error("Pictures ("+r.status+")");
- const items=await r.json();
- return items.filter(x=>x.type==="file"&&/\.(avif|gif|jpe?g|png|webp)$/i.test(x.name)).sort((a,b)=>a.name.localeCompare(b.name,"pl",{numeric:true,sensitivity:"base"}));
+ const manifestUrl="Pictures/index.json";
+ const r=await fetch(manifestUrl,{cache:"no-store"});
+ if(!r.ok)throw Error("Pictures manifest ("+r.status+")");
+ const manifest=await r.json();
+ if(!Array.isArray(manifest))throw Error("Invalid Pictures manifest");
+ return manifest.filter(x=>x&&typeof x.name==="string"&&/\.(avif|gif|jpe?g|png|webp)$/i.test(x.name))
+   .map(x=>({name:x.name,download_url:new URL(x.url||x.name,"Pictures/").href}))
+   .sort((a,b)=>a.name.localeCompare(b.name,"pl",{numeric:true,sensitivity:"base"}));
 }
 function build(files){
  const H=Math.max(420,gallery.clientHeight||innerHeight-82),W=Math.max(gallery.clientWidth||innerWidth,1200),rows=4,tileW=Math.max(210,Math.min(280,W/5.5)),cols=Math.max(1,Math.ceil(files.length/rows)),worldW=Math.max(W,cols*tileW),counts=Array(cols).fill(Math.floor(files.length/cols));
