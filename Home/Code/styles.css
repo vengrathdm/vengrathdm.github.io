@@ -42,3 +42,11 @@ body{background:#0b0d0e;color:#f1f2f2;font-family:"Fira Sans Extra Condensed",sa
 .footer span{margin-left:auto;color:#b4b8b9}
 .load-error{position:fixed;inset:0;display:grid;place-items:center;background:#0b0d0e;color:#e8e9e8;font:600 16px "Fira Sans Extra Condensed",sans-serif}
 @media(max-width:700px){.topbar{height:82px;flex-basis:82px;padding:0 16px}.brand-logo{width:48px;height:48px}.logo{font-size:21px;letter-spacing:4px}.tagline{font-size:8px}.controls{gap:5px}.youtube-button{width:150px;height:48px}.youtube-button span{font-size:11px;letter-spacing:1px}.youtube-button small{font-size:8px}#search{width:130px}.filters{padding:0 16px}.footer{padding:0 16px}}
+
+/* Homepage Fraternity of Shadows YouTube button */
+.controls .campaign-playlist{width:228px;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:0 14px;border:1px solid #62686a;border-radius:999px;background:#111415 url("../../Home/Graphics/fraternity-of-shadows.webp") center/cover no-repeat;color:#f1f2f2;text-decoration:none;line-height:1;box-shadow:inset 0 0 0 100px rgba(7,8,8,.38),0 4px 16px #0007;text-align:center;overflow:hidden}
+.controls .campaign-playlist span{font:700 15px/1 "Fira Sans Extra Condensed",sans-serif;letter-spacing:1.5px;text-shadow:0 1px 3px #000}
+.controls .campaign-playlist small{font:600 10px/1.1 "Fira Sans Extra Condensed",sans-serif;letter-spacing:2px;text-transform:uppercase;color:#d0d3d3;text-shadow:0 1px 3px #000}
+.controls .campaign-playlist:hover{border-color:#c2c6c6;filter:brightness(1.12);transform:translateY(-1px)}
+.controls .campaign-playlist:focus-visible{outline:2px solid #d9ddde;outline-offset:2px}
+@media(max-width:700px){.controls .campaign-playlist{width:150px;height:48px}.controls .campaign-playlist span{font-size:11px;letter-spacing:1px}.controls .campaign-playlist small{font-size:8px}}
