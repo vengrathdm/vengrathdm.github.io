@@ -1,4 +1,4 @@
 Shards of the Past
-Archiwum
+Zamknięta Kampania
 ../Graphics/shards-of-the-past.png
 ../../subpages/shards-of-the-past/
