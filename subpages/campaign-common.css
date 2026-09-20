@@ -20,7 +20,7 @@ nav{position:sticky!important;top:0!important;z-index:10!important;background:#0
 .nav-inner{width:min(var(--campaign-content-width),calc(100% - var(--campaign-gutter)))!important;margin:auto!important;min-height:var(--campaign-nav-height)!important;display:flex!important;gap:10px!important;align-items:center!important;justify-content:space-between!important}
 .nav a{font-family:"Fira Sans Extra Condensed",sans-serif!important;font-size:14px!important;line-height:1!important;font-weight:700!important;letter-spacing:1px!important;color:#eeeae0!important;text-decoration:none!important;padding:11px 18px!important;border:1px solid #596064!important;background:#111415!important;min-height:42px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important}
 .nav a:hover{background:#25292a!important;border-color:#aeb3b5!important}
-.nav .campaign-playlist{border-color:#75613f!important;color:#efd09c!important}
+.nav .campaign-playlist,.youtube{border-color:#75613f!important;color:#efd09c!important}
 .nav .campaign-playlist:hover{background:#29241d!important;border-color:#b4945e!important}
 main{width:min(var(--campaign-content-width),calc(100% - var(--campaign-gutter)))!important;margin:auto!important;padding:70px 0 90px!important}
 .grid,.intro{display:grid!important;grid-template-columns:1.25fr .75fr!important;gap:var(--campaign-section-gap)!important;align-items:start!important}
@@ -47,15 +47,15 @@ footer{font-size:15px!important}
   .players{grid-template-columns:1fr!important}
   .nav-inner{flex-wrap:wrap!important;padding:8px 0!important}
 }
-.site-home-button{display:inline-flex!important;align-items:center!important;gap:12px!important;min-height:82px!important;padding:7px 22px 7px 10px!important;border:1px solid #596064!important;border-radius:999px!important;background:#111415!important;color:#f5f5f3!important;text-decoration:none!important;box-shadow:0 6px 22px #0007!important}
+.site-home-button{display:inline-flex!important;width:280px!important;align-items:center!important;gap:12px!important;min-height:82px!important;padding:7px 22px 7px 10px!important;border:1px solid #596064!important;border-radius:999px!important;background:#111415!important;color:#f5f5f3!important;text-decoration:none!important;box-shadow:0 6px 22px #0007!important}
 .site-home-button img{width:66px!important;height:66px!important;object-fit:contain!important;display:block!important;filter:brightness(1.08) contrast(1.05)!important;mix-blend-mode:screen!important}
 .site-home-button span{font-family:"Fira Sans Extra Condensed",sans-serif!important;font-size:31px!important;font-weight:700!important;letter-spacing:6px!important;line-height:1!important;white-space:nowrap!important}
 .site-home-button:hover{background:#25292a!important;border-color:#aeb3b5!important;transform:none!important}
 .site-home-button:focus-visible{outline:2px solid #d9ddde!important;outline-offset:3px!important}
 @media(max-width:760px){.site-home-button{min-height:62px!important;padding:5px 16px 5px 8px!important;gap:9px!important}.site-home-button img{width:48px!important;height:48px!important}.site-home-button span{font-size:23px!important;letter-spacing:4px!important}}
 
-.campaign-playlist{display:inline-flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:2px!important;width:180px!important;height:82px!important;min-height:82px!important;padding:7px 18px!important;border:1px solid #8d2222!important;border-radius:999px!important;background:#c51f1f!important;color:#fff!important;text-decoration:none!important;box-shadow:0 6px 22px #0007!important;line-height:1!important;text-align:center!important}
-.campaign-playlist:before{content:"YouTube";font-family:Arial,sans-serif!important;font-size:24px!important;font-weight:700!important;letter-spacing:-1px!important;line-height:1!important}
-.campaign-playlist{font-family:"Fira Sans Extra Condensed",sans-serif!important;font-size:13px!important;font-weight:700!important;letter-spacing:2px!important}
+.campaign-playlist,.youtube{display:inline-flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:2px!important;width:180px!important;height:82px!important;min-height:82px!important;padding:7px 18px!important;border:1px solid #8d2222!important;border-radius:999px!important;background:#c51f1f!important;color:#fff!important;text-decoration:none!important;box-shadow:0 6px 22px #0007!important;line-height:1!important;text-align:center!important}
+.campaign-playlist:before,.youtube:before{content:"YouTube";font-family:Arial,sans-serif!important;font-size:24px!important;font-weight:700!important;letter-spacing:-1px!important;line-height:1!important}
+.campaign-playlist,.youtube{font-family:"Fira Sans Extra Condensed",sans-serif!important;font-size:13px!important;font-weight:700!important;letter-spacing:2px!important}
 .campaign-playlist:hover{background:#df2a2a!important;border-color:#ff6666!important;color:#fff!important}
 .campaign-playlist:focus-visible{outline:2px solid #fff!important;outline-offset:3px!important}
