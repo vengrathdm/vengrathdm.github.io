@@ -11,7 +11,7 @@ body{margin:0;background:radial-gradient(circle at 78% 12%,#6f60451a 0,transpare
 body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E");mix-blend-mode:screen}
 .sitebar{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:#0b0d0ee8;backdrop-filter:blur(14px)}
 .sitebar-inner{width:min(var(--max),calc(100% - 48px));min-height:58px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{font-family:Voltaire,sans-serif;font-size:21px;letter-spacing:2px;color:#f3efe5;text-decoration:none}
+.brand{display:flex;align-items:center;gap:10px;font-family:Voltaire,sans-serif;font-size:21px;letter-spacing:2px;color:#f3efe5;text-decoration:none}.brand img{width:28px;height:28px;object-fit:contain;display:block}.section-label{font:700 13px/1 "Fira Sans Extra Condensed",sans-serif;letter-spacing:3px;color:#aeb3b3}
 .back,.post-nav a{font:700 13px/1 "Fira Sans Extra Condensed",sans-serif;letter-spacing:1px;text-transform:uppercase;color:#bfc3c2;text-decoration:none;border:1px solid #464d4f;padding:11px 16px;background:#111415}
 .back:hover,.post-nav a:hover{color:#fff;border-color:#929899;background:#222728}
 article{width:min(var(--max),calc(100% - 48px));margin:auto;padding:64px 0 110px}
@@ -41,7 +41,7 @@ h1{font-family:Voltaire,sans-serif;font-size:clamp(58px,9vw,116px);font-weight:4
 </style>
 </head>
 <body>
-<header class="sitebar"><div class="sitebar-inner"><a class="brand" href="../../index.html">VENGRATH</a><a class="back" href="../../index.html">← Wróć do świata</a></div></header>
+<header class="sitebar"><div class="sitebar-inner"><a class="brand" href="../../index.html"><img src="../../Home/Graphics/mg-logo.png" alt="MG">VENGRATH</a><div class="section-label">BLOG</div></div></header>
 <article>
 <header class="hero" id="top"><div class="hero-content"><div class="eyebrow">Blog · Wpis #001 · Początek</div><h1>Witaj<br>w Vengrath.</h1><p class="dek">To nie jest jeszcze kronika. To jest pierwszy ślad na mapie.</p><div class="meta"><span>20 września 2026</span><span>Vengrath</span><span>Autor: Vengrath</span></div></div></header>
 <div class="layout">
@@ -64,7 +64,7 @@ h1{font-family:Voltaire,sans-serif;font-size:clamp(58px,9vw,116px);font-weight:4
 </main>
 <aside class="toc"><div class="toc-title">W tym wpisie</div><a href="#top">Początek</a><a href="#why">Po co ten blog?</a><a href="#next">Co znajdziesz dalej</a><div class="note">Ta strona jest również bazowym szablonem przyszłych wpisów. Treść może się zmieniać. Forma zostaje.</div></aside>
 </div>
-<nav class="post-nav" aria-label="Nawigacja wpisu"><a href="../../index.html">← VENGRATH</a><a href="../../index.html">Wszystkie światy →</a></nav>
+
 </article>
 </body>
 </html>
