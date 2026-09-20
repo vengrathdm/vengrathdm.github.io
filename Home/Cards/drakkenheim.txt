@@ -1,4 +1,4 @@
 Drakkenheim
-Aktywna Kampania
+Zamknięta Kampania
 ../Graphics/drakkenheim.png
 ../../subpages/drakkenheim/
