@@ -1,4 +1,4 @@
 Legends of Barovia
-Kampania
+Aktywna Kampania
 ../Graphics/legends-of-barovia.jpg
 ../../subpages/legends-of-barovia/
