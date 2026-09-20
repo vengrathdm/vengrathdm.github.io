@@ -1,4 +1,4 @@
 Sons of Azalin
-Kampania
+Zamknięta Kampania
 ../Graphics/sons-of-azalin.jpg
 ../../subpages/sons-of-azalin/
