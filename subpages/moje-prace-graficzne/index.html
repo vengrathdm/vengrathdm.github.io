@@ -59,13 +59,13 @@ function closeViewer(){viewer.classList.remove("open");viewer.setAttribute("aria
 close.addEventListener("click",closeViewer);viewer.addEventListener("click",e=>{if(e.target===viewer)closeViewer()});addEventListener("keydown",e=>{if(e.key==="Escape")closeViewer()});
 
 async function loadFiles(){
- const manifestUrl="Pictures/index.json";
+ const manifestUrl=new URL("Pictures/index.json",document.baseURI).href;
  const r=await fetch(manifestUrl,{cache:"no-store"});
  if(!r.ok)throw Error("Pictures manifest ("+r.status+")");
  const manifest=await r.json();
  if(!Array.isArray(manifest))throw Error("Invalid Pictures manifest");
  return manifest.filter(x=>x&&typeof x.name==="string"&&/\.(avif|gif|jpe?g|png|webp)$/i.test(x.name))
-   .map(x=>({name:x.name,download_url:new URL(x.url||x.name,"Pictures/").href}))
+   .map(x=>({name:x.name,download_url:new URL(x.url||x.name,manifestUrl).href}))
    .sort((a,b)=>a.name.localeCompare(b.name,"pl",{numeric:true,sensitivity:"base"}));
 }
 function build(files){
