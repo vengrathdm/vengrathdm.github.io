@@ -1,4 +1,4 @@
 Dragon of Icespire Peak
-Kampania
+Zamknięta Kampania
 ../Graphics/dragon-of-icespire-peak.avif
 ../../subpages/dragon-of-icespire-peak/
