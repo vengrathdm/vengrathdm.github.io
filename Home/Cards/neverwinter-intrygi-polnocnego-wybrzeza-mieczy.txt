@@ -1,4 +1,4 @@
 Neverwinter: Intrygi Północnego Wybrzeża Mieczy
-Kampania
+Zamknięta Kampania
 ../Graphics/neverwinter.webp
 ../../subpages/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/
