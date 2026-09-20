@@ -556,3 +556,7 @@ body.campaign-page {
     letter-spacing: 4px;
   }
 }
+
+.campaign-page[data-campaign-theme="turn-back-the-endless-night"]{--campaign-accent:#b88a4a;--campaign-hero-image:url("../../Home/Graphics/turn-back-the-endless-night.webp");}
+.campaign-page[data-campaign-theme="hand-of-glory"]{--campaign-accent:#9a6a58;--campaign-hero-image:url("../../Home/Graphics/hand-of-glory.jpg");}
+.campaign-page[data-campaign-theme="dungeons-of-drakkenheim"]{--campaign-accent:#b87333;--campaign-hero-image:url("../../Home/Graphics/drakkenheim.png");}
