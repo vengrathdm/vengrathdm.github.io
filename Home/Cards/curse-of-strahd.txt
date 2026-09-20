@@ -1,4 +1,4 @@
 Curse of Strahd
-Kampania
+Zamknięta Kampania
 ../Graphics/curse-of-strahd.jpg
 ../../subpages/curse-of-strahd/
