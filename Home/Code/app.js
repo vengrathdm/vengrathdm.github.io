@@ -2,7 +2,7 @@
 const viewport=document.getElementById("viewport"),board=document.getElementById("board"),filters=document.getElementById("filters"),search=document.getElementById("search"),shuffleBtn=document.getElementById("shuffle");
 let records=[],shuffled=[],activeTag="Wszystko",drag={active:false,startX:0,lastX:0,lastTime:0,velocity:0,moved:false},momentum=0;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const FILTERS=[["Wszystko","Wszystko"],["Kampanie","Kampania"],["Sesje","Sesje"],["Blog","Blog"],["Grafika","Grafika"],["Narzędzia","Narzędzia"],["Archiwum","Archiwum"]];
+const FILTERS=[["Wszystko","Wszystko"],["Aktywna Kampania","Aktywna Kampania"],["Zamknięta Kampania","Zamknięta Kampania"],["Archiwum","Archiwum"],["Blog","Blog"],["Grafika","Grafika"],["Narzędzie","Narzędzie"]];
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function path(poly){return poly.map((p,i)=>(i?"L":"M")+p.x.toFixed(2)+" "+p.y.toFixed(2)).join(" ")+" Z"}
 function cell(site,sites,b){let p=[{x:b.x0,y:b.y0},{x:b.x1,y:b.y0},{x:b.x1,y:b.y1},{x:b.x0,y:b.y1}];for(const o of sites){if(o===site)continue;const nx=o.x-site.x,ny=o.y-site.y,mid=nx*(o.x+site.x)/2+ny*(o.y+site.y)/2,n=[];for(let i=0;i<p.length;i++){const a=p[i],z=p[(i+1)%p.length],da=nx*a.x+ny*a.y-mid,dz=nx*z.x+ny*z.y-mid,ia=da<=0,iz=dz<=0;if(ia)n.push(a);if(ia!==iz){const t=da/(da-dz);n.push({x:a.x+(z.x-a.x)*t,y:a.y+(z.y-a.y)*t})}}p=n;if(!p.length)break}return p}
