@@ -1,4 +1,4 @@
 Ghoul Hour
-Sesje
+Zamknięta Kampania
 ../Graphics/ghoul-hour.png
 ../../subpages/ghoul-hour/
