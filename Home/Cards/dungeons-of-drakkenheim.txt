@@ -1,4 +1,4 @@
 Dungeons of Drakkenheim
 Zamknięta Kampania
-../Graphics/drakkenheim.png
+../Graphics/dungeons-of-drakkenheim.jpg
 ../../subpages/dungeons-of-drakkenheim/
