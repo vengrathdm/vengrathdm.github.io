@@ -1,4 +1,4 @@
 Dragon of Dampen Depths
-Kampania
+Zamknięta Kampania
 ../Graphics/dragon-of-dampen-depths.jpg
 ../../subpages/dragon-of-dampen-depths/
