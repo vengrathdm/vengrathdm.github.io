@@ -1,4 +1,4 @@
 Klątwa Strahda
-Kampania
+Aktywna Kampania
 ../Graphics/klatwa-strahda.webp
 ../../subpages/klatwa-strahda/
