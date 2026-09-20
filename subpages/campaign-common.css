@@ -523,7 +523,7 @@ body.campaign-page {
   width: min(var(--campaign-content-width), calc(100% - var(--campaign-gutter)));
   min-height: 0;
   margin: auto;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 10px;
   pointer-events: none;
 }
@@ -584,7 +584,7 @@ body.campaign-page {
   .campaign-page .nav-inner {
     width: calc(100% - 28px);
     flex-wrap: nowrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 7px;
   }
 
