@@ -1,4 +1,4 @@
 Charactermancer
-Narzędzia
+Narzędzie
 ../Graphics/charactermancer.png
 ../../subpages/Charactermancer/
