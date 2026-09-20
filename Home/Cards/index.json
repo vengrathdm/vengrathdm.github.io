@@ -1,154 +1,289 @@
 [
   {
     "name": "assault-on-castle-blackrose.txt",
-    "url": "assault-on-castle-blackrose.txt"
+    "title": "Assault on Castle Blackrose",
+    "tag": "Archiwum",
+    "graphic": "https://cdn.midjourney.com/47c79b31-a4ac-4c58-8cf8-f5d95ab3a959/0_0.png",
+    "link": "../../subpages/assault-on-castle-blackrose/"
   },
   {
     "name": "barber-of-silverymoon.txt",
-    "url": "barber-of-silverymoon.txt"
+    "title": "Barber of Silverymoon",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/barber-of-silverymoon.jpg",
+    "link": "../../subpages/barber-of-silverymoon/"
   },
   {
     "name": "blog.txt",
-    "url": "blog.txt"
+    "title": "Blog",
+    "tag": "Blog",
+    "graphic": "../Graphics/Blog001.png",
+    "link": "../../subpages/blog/"
   },
   {
     "name": "cemetery-of-dragons.txt",
-    "url": "cemetery-of-dragons.txt"
+    "title": "Cemetery of Dragons",
+    "tag": "Archiwum",
+    "graphic": "https://cdn.midjourney.com/dd7584b6-fb31-4a57-ac17-ce1f8a1c5a3e/0_2.png",
+    "link": "../../subpages/cemetery-of-dragons/"
   },
   {
     "name": "charactermancer.txt",
-    "url": "charactermancer.txt"
+    "title": "Charactermancer",
+    "tag": "Narzędzie",
+    "graphic": "../Graphics/charactermancer.png",
+    "link": "../../subpages/Charactermancer/"
   },
   {
     "name": "curse-of-strahd.txt",
-    "url": "curse-of-strahd.txt"
+    "title": "Curse of Strahd",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/curse-of-strahd.jpg",
+    "link": "../../subpages/curse-of-strahd/"
   },
   {
     "name": "dom-malowanych-luster.txt",
-    "url": "dom-malowanych-luster.txt"
+    "title": "Dom Malowanych Luster",
+    "tag": "Archiwum",
+    "graphic": "../Graphics/dom-malowanych-luster.jpg",
+    "link": "../../subpages/dom-malowanych-luster/"
   },
   {
     "name": "dragon-of-dampen-depths.txt",
-    "url": "dragon-of-dampen-depths.txt"
+    "title": "Dragon of Dampen Depths",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/dragon-of-dampen-depths.jpg",
+    "link": "../../subpages/dragon-of-dampen-depths/"
   },
   {
     "name": "dragon-of-icespire-peak.txt",
-    "url": "dragon-of-icespire-peak.txt"
+    "title": "Dragon of Icespire Peak",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/dragon-of-icespire-peak.avif",
+    "link": "../../subpages/dragon-of-icespire-peak/"
+  },
+  {
+    "name": "drakkenheim.txt",
+    "title": "Drakkenheim",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/drakkenheim.png",
+    "link": "../../subpages/drakkenheim/"
   },
   {
     "name": "dungeons-of-drakkenheim.txt",
-    "url": "dungeons-of-drakkenheim.txt"
+    "title": "Dungeons of Drakkenheim",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/dungeons-of-drakkenheim.jpg",
+    "link": "../../subpages/dungeons-of-drakkenheim/"
   },
   {
     "name": "echtra-midst-the-sidhe.txt",
-    "url": "echtra-midst-the-sidhe.txt"
+    "title": "Echtra midst the Sidhe",
+    "tag": "Aktywna Kampania",
+    "graphic": "../Graphics/echtra-midst-the-sidhe.jpg",
+    "link": "../../subpages/echtra-midst-the-sidhe/"
   },
   {
     "name": "ghoul-hour.txt",
-    "url": "ghoul-hour.txt"
+    "title": "Ghoul Hour",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/ghoul-hour.png",
+    "link": "../../subpages/ghoul-hour/"
+  },
+  {
+    "name": "hand-of-glory.txt",
+    "title": "Hand of Glory",
+    "tag": "Archiwum",
+    "graphic": "../Graphics/hand-of-glory.jpg",
+    "link": "../../subpages/hand-of-glory/"
   },
   {
     "name": "klatwa-strahda.txt",
-    "url": "klatwa-strahda.txt"
+    "title": "Klątwa Strahda",
+    "tag": "Aktywna Kampania",
+    "graphic": "../Graphics/klatwa-strahda.webp",
+    "link": "../../subpages/klatwa-strahda/"
   },
   {
     "name": "ksiazeta-heartwell.txt",
-    "url": "ksiazeta-heartwell.txt"
+    "title": "Książęta Heartwell",
+    "tag": "Aktywna Kampania",
+    "graphic": "../Graphics/ksiazeta-heartwell.jpg",
+    "link": "../../subpages/Ksiazeta-Heartwell/"
   },
   {
     "name": "legends-of-barovia.txt",
-    "url": "legends-of-barovia.txt"
+    "title": "Legends of Barovia",
+    "tag": "Aktywna Kampania",
+    "graphic": "../Graphics/legends-of-barovia.jpg",
+    "link": "../../subpages/legends-of-barovia/"
   },
   {
     "name": "lost-mine-of-phandelver.txt",
-    "url": "lost-mine-of-phandelver.txt"
+    "title": "Lost Mine of Phandelver",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/lost-mine-of-phandelver.jpg",
+    "link": "../../subpages/lost-mine-of-phandelver/"
   },
   {
     "name": "maski-nyarlotepa.txt",
-    "url": "maski-nyarlotepa.txt"
+    "title": "Maski Nyarlathotepa - Peru",
+    "tag": "Archiwum",
+    "graphic": "../Graphics/maski-nyarlotepa.jpg",
+    "link": "../../subpages/maski-nyarlotepa/"
   },
   {
     "name": "menaces-of-gloomforest.txt",
-    "url": "menaces-of-gloomforest.txt"
+    "title": "Menaces of Gloomforest",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/menaces-of-gloomforest.jpg",
+    "link": "../../subpages/menaces-of-gloomforest/"
   },
   {
     "name": "mences-of-irensberg.txt",
-    "url": "mences-of-irensberg.txt"
+    "title": "Mences of Irensberg",
+    "tag": "Aktywna Kampania",
+    "graphic": "../Graphics/mences-of-irensberg.jpg",
+    "link": "../../subpages/mences-of-irensberg/"
   },
   {
     "name": "moje-prace-graficzne.txt",
-    "url": "moje-prace-graficzne.txt"
+    "title": "Moje Prace Graficzne",
+    "tag": "Grafika",
+    "graphic": "../Graphics/moje-prace-graficzne.jpg",
+    "link": "../../subpages/moje-prace-graficzne/"
   },
   {
     "name": "mythic-odyssey-of-the-dragonlords.txt",
-    "url": "mythic-odyssey-of-the-dragonlords.txt"
+    "title": "Mythic Odyssey of the Dragonlords",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/mythic-odyssey-of-the-dragonlords.jpg",
+    "link": "../../subpages/mythic-odyssey-of-the-dragonlords/"
   },
   {
     "name": "neverwinter-intrygi-polnocnego-wybrzeza-mieczy.txt",
-    "url": "neverwinter-intrygi-polnocnego-wybrzeza-mieczy.txt"
+    "title": "Neverwinter: Intrygi Północnego Wybrzeża Mieczy",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/neverwinter.webp",
+    "link": "../../subpages/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/"
   },
   {
     "name": "odyssey-of-the-dragonlords.txt",
-    "url": "odyssey-of-the-dragonlords.txt"
+    "title": "Odyssey of the Dragonlords",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/odyssey-of-the-dragonlords.jpg",
+    "link": "../../subpages/odyssey-of-the-dragonlords/"
   },
   {
     "name": "red-blood-snow-white.txt",
-    "url": "red-blood-snow-white.txt"
+    "title": "Red Blood Snow White",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/blood-red-snow-white.png",
+    "link": "../../subpages/red-blood-snow-white/"
   },
   {
     "name": "rime-of-the-frostmaiden.txt",
-    "url": "rime-of-the-frostmaiden.txt"
+    "title": "Rime of the Frostmaiden",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/rime-of-the-frostmaiden.jpg",
+    "link": "../../subpages/rime-of-the-frostmaiden/"
   },
   {
     "name": "rise-of-tiamat.txt",
-    "url": "rise-of-tiamat.txt"
+    "title": "Rise of Tiamat",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/rise-of-tiamat.jpg",
+    "link": "../../subpages/rise-of-tiamat/"
   },
   {
     "name": "samotnie-przeciw-jednosci.txt",
-    "url": "samotnie-przeciw-jednosci.txt"
+    "title": "Samotnie przeciw Jedności",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/samotnie-przeciw-jednosci.jpg",
+    "link": "../../subpages/samotnie-przeciw-jednosci/"
   },
   {
     "name": "sands-of-doom.txt",
-    "url": "sands-of-doom.txt"
+    "title": "Sands of Doom",
+    "tag": "Aktywna Kampania",
+    "graphic": "../Graphics/sands-of-doom.jpg",
+    "link": "../../subpages/sands-of-doom/"
   },
   {
     "name": "shadow-of-the-sword-coast.txt",
-    "url": "shadow-of-the-sword-coast.txt"
+    "title": "Shadow of the Sword Coast",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/shadow-of-the-sword-coast.jpg",
+    "link": "../../subpages/shadow-of-the-sword-coast/"
   },
   {
     "name": "shards-of-the-past.txt",
-    "url": "shards-of-the-past.txt"
+    "title": "Shards of the Past",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/shards-of-the-past.png",
+    "link": "../../subpages/shards-of-the-past/"
   },
   {
     "name": "sons-of-azalin.txt",
-    "url": "sons-of-azalin.txt"
+    "title": "Sons of Azalin",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/sons-of-azalin.jpg",
+    "link": "../../subpages/sons-of-azalin/"
   },
   {
     "name": "the-dragon-and-the-kraken.txt",
-    "url": "the-dragon-and-the-kraken.txt"
+    "title": "The Dragon and the Kraken",
+    "tag": "Archiwum",
+    "graphic": "https://cdn.midjourney.com/233c92ad-8ba9-45f1-be79-1ea5bbc2f4d1/0_3.png",
+    "link": "../../subpages/the-dragon-and-the-kraken/"
   },
   {
     "name": "the-sunless-citadel.txt",
-    "url": "the-sunless-citadel.txt"
+    "title": "The Sunless Citadel",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/the-sunless-citadel.jpg",
+    "link": "../../subpages/the-sunless-citadel/"
   },
   {
     "name": "tomb-of-annihilation.txt",
-    "url": "tomb-of-annihilation.txt"
+    "title": "Tomb of Annihilation",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/tomb-of-annihilation.jpg",
+    "link": "../../subpages/tomb-of-annihilation/"
   },
   {
     "name": "tower-of-the-veiled-star.txt",
-    "url": "tower-of-the-veiled-star.txt"
+    "title": "The Tower of the Veiled Star",
+    "tag": "Archiwum",
+    "graphic": "https://i.imgur.com/T5JE3IL.jpeg",
+    "link": "../../subpages/tower-of-the-veiled-star/"
   },
   {
     "name": "trouble-below-the-mountains-of-ash.txt",
-    "url": "trouble-below-the-mountains-of-ash.txt"
+    "title": "Trouble Below the Mountains of Ash",
+    "tag": "Archiwum",
+    "graphic": "https://cdn.midjourney.com/d1fed19a-e4f0-482d-9db8-54ecad204628/0_0.png",
+    "link": "../../subpages/trouble-below-the-mountains-of-ash/"
+  },
+  {
+    "name": "turn-back-the-endless-night.txt",
+    "title": "Turn Back the Endless Night",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/turn-back-the-endless-night.webp",
+    "link": "../../subpages/turn-back-the-endless-night/"
   },
   {
     "name": "turn-of-fortunes-wheel.txt",
-    "url": "turn-of-fortunes-wheel.txt"
+    "title": "Turn of Fortune's Wheel",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/turn-of-fortunes-wheel.jpg",
+    "link": "../../subpages/turn-of-fortunes-wheel/"
   },
   {
     "name": "wails-from-the-lighthouse.txt",
-    "url": "wails-from-the-lighthouse.txt"
+    "title": "Wails from the Lighthouse",
+    "tag": "Archiwum",
+    "graphic": "https://cdn.midjourney.com/f2d52c3c-0e32-4b72-a9a2-5f1fdca9d8ed/0_0.png",
+    "link": "../../subpages/wails-from-the-lighthouse/"
   }
 ]
