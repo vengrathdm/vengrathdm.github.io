@@ -21,8 +21,8 @@ body{background:#0b0d0e;color:#f1f2f2;font-family:"Fira Sans Extra Condensed",sa
 #search:focus{border-color:#aeb3b5}
 #shuffle{padding:10px 15px;background:#171a1b;border:1px solid #5a5f61;color:#e7e8e7;cursor:pointer;border-radius:999px;text-transform:uppercase}
 #shuffle:hover{background:#232728;border-color:#a6abad}
-.filters{min-height:0;flex:0 1 auto;min-width:0;display:flex;align-items:center;justify-content:flex-start;gap:7px;padding:0;background:transparent;border:0;overflow:auto;position:relative;z-index:5;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}
-.filter{padding:7px 13px;border:1px solid #3a3f41;background:#171a1b;color:#8d9395;cursor:pointer;font-size:12px;border-radius:999px;text-transform:uppercase;white-space:nowrap}
+.filters{min-height:0;flex:1 1 auto;min-width:0;display:flex;align-items:center;justify-content:flex-start;gap:7px;padding:0;background:transparent;border:0;overflow:visible;position:relative;z-index:5}
+.filter{padding:10px 13px;border:1px solid #3a3f41;background:#171a1b;color:#8d9395;cursor:pointer;font-size:12px;border-radius:999px;text-transform:uppercase;white-space:nowrap}
 .filter:hover,.filter.active{color:#fff;background:#292d2f;border-color:#aeb3b5}
 .viewport{position:relative;flex:1;min-height:0;overflow-x:auto;overflow-y:hidden;background:radial-gradient(circle at 50% 45%,#292d2f 0%,#171a1b 44%,#0c0e0f 100%);cursor:grab;scrollbar-width:none}
 .viewport::-webkit-scrollbar{display:none}
@@ -41,7 +41,7 @@ body{background:#0b0d0e;color:#f1f2f2;font-family:"Fira Sans Extra Condensed",sa
 .footer{height:30px;flex:0 0 30px;padding:0 34px;background:#0c0e0f;border-top:1px solid #272b2d}
 .footer span{margin-left:auto;color:#b4b8b9}
 .load-error{position:fixed;inset:0;display:grid;place-items:center;background:#0b0d0e;color:#e8e9e8;font:600 16px "Fira Sans Extra Condensed",sans-serif}
-@media(max-width:700px){.topbar{height:82px;flex-basis:82px;gap:10px;padding:0 16px}.brand-logo{width:48px;height:48px}.logo{font-size:21px;letter-spacing:4px}.tagline{font-size:8px}.controls{gap:5px}.youtube-button{width:150px;height:48px}.youtube-button span{font-size:11px;letter-spacing:1px}.youtube-button small{font-size:8px}#search{width:130px}.filters{padding:0;flex:1 1 auto}.footer{padding:0 16px}}
+@media(max-width:700px){.topbar{height:82px;flex-basis:82px;gap:10px;padding:0 16px}.brand-logo{width:48px;height:48px}.logo{font-size:21px;letter-spacing:4px}.tagline{font-size:8px}.controls{gap:5px}.youtube-button{width:150px;height:48px}.youtube-button span{font-size:11px;letter-spacing:1px}.youtube-button small{font-size:8px}#search{width:130px}.filters{padding:0;flex:1 1 auto;overflow:visible}.footer{padding:0 16px}}
 
 /* Homepage Fraternity of Shadows YouTube button */
 .controls .campaign-playlist{width:228px;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:0 14px;border:1px solid #62686a;border-radius:999px;background:#111415 url("../../Home/Graphics/fraternity-of-shadows.webp") center/cover no-repeat;color:#f1f2f2;text-decoration:none;line-height:1;box-shadow:inset 0 0 0 100px rgba(7,8,8,.38),0 4px 16px #0007;text-align:center;overflow:hidden}
