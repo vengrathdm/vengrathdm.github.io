@@ -506,6 +506,129 @@ body.campaign-page {
   --campaign-hero-image: url("https://cdn.midjourney.com/f2d52c3c-0e32-4b72-a9a2-5f1fdca9d8ed/0_0.png");
 }
 
+/* Campaign controls live inside the hero instead of consuming a full-width bar. */
+.campaign-page nav {
+  position: absolute;
+  top: 22px;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  background: transparent;
+  border: 0;
+  backdrop-filter: none;
+  pointer-events: none;
+}
+
+.campaign-page .nav-inner {
+  width: min(var(--campaign-content-width), calc(100% - var(--campaign-gutter)));
+  min-height: 0;
+  margin: auto;
+  justify-content: flex-end;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.campaign-page .nav-inner > * {
+  pointer-events: auto;
+}
+
+.campaign-page .site-home-button,
+.campaign-page .nav .campaign-playlist,
+.campaign-page .nav .youtube,
+.campaign-page .nav .yt,
+.campaign-page .nav .button.youtube {
+  min-height: 58px;
+  height: 58px;
+  box-shadow: 0 8px 28px #0008;
+}
+
+.campaign-page .site-home-button {
+  padding: 5px 18px 5px 8px;
+  gap: 9px;
+}
+
+.campaign-page .site-home-button img {
+  width: 46px;
+  height: 46px;
+}
+
+.campaign-page .site-home-button span {
+  font-size: 22px;
+  letter-spacing: 4px;
+}
+
+.campaign-page .nav .campaign-playlist,
+.campaign-page .nav .youtube,
+.campaign-page .nav .yt,
+.campaign-page .nav .button.youtube {
+  width: 190px;
+  padding: 5px 16px;
+}
+
+.campaign-page .nav .campaign-playlist::before,
+.campaign-page .nav .youtube::before,
+.campaign-page .nav .yt::before,
+.campaign-page .nav .button.youtube::before {
+  font-size: 20px;
+}
+
+.campaign-page .hero-inner {
+  padding-top: 118px;
+}
+
+@media (max-width: 760px) {
+  .campaign-page nav {
+    top: 12px;
+  }
+
+  .campaign-page .nav-inner {
+    width: calc(100% - 28px);
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: 7px;
+  }
+
+  .campaign-page .hero-inner {
+    padding-top: 108px;
+  }
+
+  .campaign-page .site-home-button {
+    min-height: 50px;
+    height: 50px;
+    padding: 4px 12px 4px 6px;
+    gap: 6px;
+  }
+
+  .campaign-page .site-home-button img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .campaign-page .site-home-button span {
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+
+  .campaign-page .nav .campaign-playlist,
+  .campaign-page .nav .youtube,
+  .campaign-page .nav .yt,
+  .campaign-page .nav .button.youtube {
+    width: 132px;
+    min-height: 50px;
+    height: 50px;
+    padding: 4px 10px;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .campaign-page .nav .campaign-playlist::before,
+  .campaign-page .nav .youtube::before,
+  .campaign-page .nav .yt::before,
+  .campaign-page .nav .button.youtube::before {
+    font-size: 17px;
+  }
+}
+
 @media (max-width: 760px) {
   .campaign-page .hero {
     min-height: 68vh;
