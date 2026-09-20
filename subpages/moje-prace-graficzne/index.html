@@ -4,29 +4,89 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Moje Prace Graficzne — Vengrath</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:#111315;color:#eee;font-family:Georgia,"Times New Roman",serif}
-body{display:flex;align-items:center;justify-content:center;padding:6vh 6vw}
-.wrap{width:min(1100px,100%);border:1px solid #353a3e;background:#17191b;box-shadow:0 20px 80px #0008;overflow:hidden}
-.hero{height:min(48vh,520px);min-height:280px;background:#222 center/cover no-repeat url("../../Home/Graphics/moje-prace-graficzne.jpg")}
-.body{padding:34px 38px 40px}
-.kicker{font:600 11px/1.4 Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#9aa0a4}
-h1{font-size:clamp(36px,6vw,76px);font-weight:400;line-height:.95;margin:12px 0}
-p{font:15px/1.7 Arial,sans-serif;color:#b9bec2}
-a{display:inline-block;margin-top:18px;color:#fff;text-decoration:none;border:1px solid #555d62;padding:10px 16px;font:600 12px Arial,sans-serif;letter-spacing:.7px}
-a:hover{background:#25292d}
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{background:#0b0d0e;color:#f1f2f2;font-family:"Fira Sans Extra Condensed",sans-serif}
+.page{height:100vh;display:flex;flex-direction:column;background:#0b0d0e}
+.topbar{height:82px;flex:0 0 82px;display:flex;align-items:center;padding:0 34px;background:linear-gradient(180deg,#171a1b,#101213 72%,#0d0f10);border-bottom:1px solid #24282a;box-shadow:0 5px 24px #0009;position:relative;z-index:5}
+.back{color:#f5f5f3;text-decoration:none;font:700 13px Voltaire,sans-serif;letter-spacing:2px}
+.title{margin-left:auto;font:400 25px Voltaire,sans-serif;letter-spacing:3px;text-transform:uppercase}
+.gallery{position:relative;flex:1;min-height:0;overflow-x:auto;overflow-y:hidden;background:radial-gradient(circle at 50% 45%,#292d2f 0%,#171a1b 44%,#0c0e0f 100%);cursor:grab;scrollbar-width:none}
+.gallery::-webkit-scrollbar{display:none}
+.board{position:relative;height:100%;min-width:100%}
+.shatter{display:block}
+.shard{cursor:pointer;outline:none;text-decoration:none;transform-box:fill-box;transform-origin:center center;transition:transform 180ms ease,filter 180ms ease}
+.shard:hover{transform:scale(1.04);filter:drop-shadow(0 0 12px rgba(255,255,255,.22))}
+.shard-image{filter:none}
+.shard-title{fill:#fff;paint-order:stroke;stroke:#080909;stroke-width:4px;stroke-linejoin:round;filter:drop-shadow(0 2px 3px #000b);font-size:clamp(15px,1.6vw,25px);font-weight:600;letter-spacing:.2px;text-anchor:middle;pointer-events:none}
+.empty{height:100%;display:grid;place-items:center;color:#858b8d;font-size:17px}
+.viewer{position:fixed;inset:0;z-index:20;display:none;place-items:center;background:rgba(3,4,4,.94);padding:30px}
+.viewer.open{display:grid}
+.viewer img{max-width:calc(100vw - 60px);max-height:calc(100vh - 60px);width:auto;height:auto;object-fit:contain;box-shadow:0 20px 90px #000}
+.close{position:fixed;top:20px;right:24px;border:1px solid #596064;background:#111415;color:#fff;border-radius:999px;width:42px;height:42px;font:24px/1 Arial,sans-serif;cursor:pointer}
+.name{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);padding:7px 14px;background:#111415dd;border:1px solid #3d4244;color:#ddd;font:600 13px "Fira Sans Extra Condensed",sans-serif;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
+@media(max-width:700px){.topbar{height:68px;flex-basis:68px;padding:0 16px}.title{font-size:18px;letter-spacing:2px}.gallery{overflow-x:auto}.viewer{padding:16px}.viewer img{max-width:calc(100vw - 32px);max-height:calc(100vh - 32px)}}
 </style>
 </head>
 <body>
-<main class="wrap">
-<div class="hero"></div>
-<section class="body">
-<div class="kicker">Grafika</div>
-<h1>Moje Prace Graficzne</h1>
-<p>Strona kampanii / wpisu w archiwum Vengrath.</p>
-<a href="../../index.html">← POWRÓT DO VENGRATH</a>
-</section>
-</main>
+<div class="page">
+<header class="topbar">
+<a class="back" href="../../index.html">← VENGRATH</a>
+<div class="title">Moje Prace Graficzne</div>
+</header>
+<main id="gallery" class="gallery"><div id="board" class="board"></div></main>
+</div>
+<div id="viewer" class="viewer" aria-hidden="true">
+<button id="close" class="close" type="button" aria-label="Zamknij">×</button>
+<img id="viewerImage" alt="">
+<div id="viewerName" class="name"></div>
+</div>
+<script>
+(()=>{"use strict";
+const gallery=document.getElementById("gallery"),board=document.getElementById("board"),viewer=document.getElementById("viewer"),viewerImage=document.getElementById("viewerImage"),viewerName=document.getElementById("viewerName"),close=document.getElementById("close");
+const owner="vengrathdm",repo="vengrathdm.github.io",folder="subpages/moje-prace-graficzne/Pictures/";
+let drag={active:false,startX:0,lastX:0,lastTime:0,velocity:0,moved:false,target:null},momentum=0;
+
+function path(poly){return poly.map((p,i)=>(i?"L":"M")+p.x.toFixed(2)+" "+p.y.toFixed(2)).join(" ")+" Z"}
+function centroid(poly){let x=0,y=0;for(const p of poly){x+=p.x;y+=p.y}return{x:x/poly.length,y:y/poly.length}}
+function cell(site,sites,b){let p=[{x:b.x0,y:b.y0},{x:b.x1,y:b.y0},{x:b.x1,y:b.y1},{x:b.x0,y:b.y1}];for(const o of sites){if(o===site)continue;const nx=o.x-site.x,ny=o.y-site.y,mid=nx*(o.x+site.x)/2+ny*(o.y+site.y)/2,n=[];for(let i=0;i<p.length;i++){const a=p[i],z=p[(i+1)%p.length],da=nx*a.x+ny*a.y-mid,dz=nx*z.x+ny*z.y-mid,ia=da<=0,iz=dz<=0;if(ia)n.push(a);if(ia!==iz){const t=da/(da-dz);n.push({x:a.x+(z.x-a.x)*t,y:a.y+(z.y-a.y)*t})}}p=n;if(!p.length)break}return p}
+function shape(poly,i,W,H){const c=centroid(poly),seed=(i+1)*97;return poly.map((p,k)=>{const dx=c.x-p.x,dy=c.y-p.y,dist=Math.hypot(dx,dy)||1;let q={x:p.x+dx/dist*7,y:p.y+dy/dist*7};const n1=Math.sin(seed+k*19.17),n2=Math.cos(seed*1.7+k*13.41);if(q.y<14)q.y+=8+Math.abs(n1)*13;if(q.y>H-14)q.y-=8+Math.abs(n2)*13;if(q.x<14)q.x+=6+Math.abs(n2)*10;if(q.x>W-14)q.x-=6+Math.abs(n1)*10;return q})}
+function titleOf(name){return name.replace(/\.[^.]+$/,"")}
+function openViewer(src,name){viewerImage.src=src;viewerImage.alt=name;viewerName.textContent=name;viewer.classList.add("open");viewer.setAttribute("aria-hidden","false")}
+function closeViewer(){viewer.classList.remove("open");viewer.setAttribute("aria-hidden","true");viewerImage.removeAttribute("src")}
+close.addEventListener("click",closeViewer);viewer.addEventListener("click",e=>{if(e.target===viewer)closeViewer()});addEventListener("keydown",e=>{if(e.key==="Escape")closeViewer()});
+
+async function loadFiles(){
+ const url="https://api.github.com/repos/"+owner+"/"+repo+"/contents/"+folder+"?ref=main";
+ const r=await fetch(url,{headers:{Accept:"application/vnd.github+json"},cache:"no-store"});
+ if(!r.ok)throw Error("Pictures ("+r.status+")");
+ const items=await r.json();
+ return items.filter(x=>x.type==="file"&&/\.(avif|gif|jpe?g|png|webp)$/i.test(x.name)).sort((a,b)=>a.name.localeCompare(b.name,"pl",{numeric:true,sensitivity:"base"}));
+}
+function build(files){
+ const H=Math.max(420,gallery.clientHeight||innerHeight-82),W=Math.max(gallery.clientWidth||innerWidth,1200),rows=4,tileW=Math.max(210,Math.min(280,W/5.5)),cols=Math.max(1,Math.ceil(files.length/rows)),worldW=Math.max(W,cols*tileW),counts=Array(cols).fill(Math.floor(files.length/cols));
+ for(let i=0;i<files.length%cols;i++)counts[i]++;
+ const sites=[];let k=0;
+ for(let c=0;c<cols;c++){const rh=H/Math.max(1,counts[c]);for(let r=0;r<counts[c];r++){const f=files[k++];sites.push({file:f,x:(c+.5)*tileW+(Math.random()-.5)*tileW*.42,y:(r+.5)*rh+(Math.random()-.5)*rh*.34})}}
+ board.style.width=worldW+"px";board.style.height=H+"px";board.innerHTML="";
+ if(!files.length){board.innerHTML='<div class="empty">Wrzuć ilustracje do folderu Pictures.</div>';return}
+ const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");svg.setAttribute("width",worldW);svg.setAttribute("height",H);svg.setAttribute("viewBox","0 0 "+worldW+" "+H);svg.classList.add("shatter");
+ const defs=document.createElementNS("http://www.w3.org/2000/svg","defs");svg.appendChild(defs);
+ sites.forEach((s,i)=>{const raw=cell(s,sites,{x0:0,y0:0,x1:worldW,y1:H});if(raw.length<3)return;const poly=shape(raw,i,worldW,H),cp=document.createElementNS("http://www.w3.org/2000/svg","clipPath"),id="clip"+i;cp.id=id;const cpPath=document.createElementNS("http://www.w3.org/2000/svg","path");cpPath.setAttribute("d",path(poly));cp.appendChild(cpPath);defs.appendChild(cp);
+ const a=document.createElementNS("http://www.w3.org/2000/svg","a");a.classList.add("shard");a.setAttribute("href","#");a.setAttribute("tabindex","0");a.setAttribute("aria-label",titleOf(s.file.name));a.dataset.src=s.file.download_url;a.dataset.name=titleOf(s.file.name);
+ const xs=poly.map(p=>p.x),ys=poly.map(p=>p.y),minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);
+ const im=document.createElementNS("http://www.w3.org/2000/svg","image");im.setAttribute("x",minX);im.setAttribute("y",minY);im.setAttribute("width",maxX-minX);im.setAttribute("height",maxY-minY);im.setAttribute("preserveAspectRatio","xMidYMid slice");im.setAttribute("clip-path","url(#"+id+")");im.setAttribute("href",s.file.download_url);im.classList.add("shard-image");a.appendChild(im);
+ const g=document.createElementNS("http://www.w3.org/2000/svg","g");g.setAttribute("clip-path","url(#"+id+")");const t=document.createElementNS("http://www.w3.org/2000/svg","text");t.classList.add("shard-title");const c=centroid(poly);t.setAttribute("x",c.x);t.setAttribute("y",c.y+7);t.textContent=titleOf(s.file.name);g.appendChild(t);a.appendChild(g);svg.appendChild(a)});
+ board.appendChild(svg);
+}
+gallery.addEventListener("pointerdown",e=>{if(e.button!==0)return;cancelAnimationFrame(momentum);drag={active:true,startX:e.clientX,lastX:e.clientX,lastTime:performance.now(),velocity:0,moved:false,target:e.target.closest?.(".shard")||null};gallery.style.cursor="grabbing";gallery.setPointerCapture(e.pointerId)});
+gallery.addEventListener("pointermove",e=>{if(!drag.active)return;const now=performance.now(),dx=e.clientX-drag.lastX,dt=Math.max(1,now-drag.lastTime);gallery.scrollLeft-=dx;drag.velocity=(-dx/dt)*16;if(Math.abs(e.clientX-drag.startX)>8)drag.moved=true;drag.lastX=e.clientX;drag.lastTime=now});
+function release(e){if(!drag.active)return;const moved=drag.moved,target=drag.target;drag.active=false;gallery.style.cursor="grab";try{gallery.releasePointerCapture(e.pointerId)}catch(_){}let v=drag.velocity;const tick=()=>{gallery.scrollLeft+=v;v*=.94;if(Math.abs(v)>.15)momentum=requestAnimationFrame(tick)};if(Math.abs(v)>.15)momentum=requestAnimationFrame(tick);if(!moved&&target)openViewer(target.dataset.src,target.dataset.name)}
+gallery.addEventListener("pointerup",release);gallery.addEventListener("pointercancel",release);addEventListener("resize",()=>loadFiles().then(files=>build(files)).catch(e=>{console.error(e);board.innerHTML='<div class="empty">Nie udało się wczytać folderu Pictures.</div>'}));
+loadFiles().then(files=>build(files)).catch(e=>{console.error(e);board.innerHTML='<div class="empty">Nie udało się wczytać folderu Pictures.</div>'});
+})();
+</script>
 </body>
 </html>
