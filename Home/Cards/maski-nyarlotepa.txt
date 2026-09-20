@@ -1,4 +1,4 @@
 Maski Nyarlathotepa
-Kampania
+Zamknięta Kampania
 ../Graphics/maski-nyarlotepa.jpg
 ../../subpages/maski-nyarlotepa/
