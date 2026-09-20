@@ -173,7 +173,7 @@ body.campaign-page {
   border-color: #aeb3b5;
 }
 
-.campaign-page .campaign-playlist,
+.campaign-page .nav .campaign-playlist,
 .campaign-page .nav .youtube,
 .campaign-page .nav .yt,
 .campaign-page .nav .button.youtube {
@@ -188,15 +188,15 @@ body.campaign-page {
   gap: 2px;
   border: 1px solid #8d2222;
   border-radius: 999px;
-  background: #c51f1f;
-  color: #fff;
+  background: #c51f1f !important;
+  color: #fff !important;
   box-shadow: 0 6px 22px #0007;
   text-align: center;
   font-size: 13px;
   letter-spacing: 2px;
 }
 
-.campaign-page .campaign-playlist::before,
+.campaign-page .nav .campaign-playlist::before,
 .campaign-page .nav .youtube::before,
 .campaign-page .nav .yt::before,
 .campaign-page .nav .button.youtube::before {
@@ -208,7 +208,7 @@ body.campaign-page {
   letter-spacing: -1px;
 }
 
-.campaign-page .campaign-playlist:hover,
+.campaign-page .nav .campaign-playlist:hover,
 .campaign-page .nav .youtube:hover,
 .campaign-page .nav .yt:hover,
 .campaign-page .nav .button.youtube:hover {
