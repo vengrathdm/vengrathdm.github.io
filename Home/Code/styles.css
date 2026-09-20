@@ -21,7 +21,7 @@ body{background:#0b0d0e;color:#f1f2f2;font-family:"Fira Sans Extra Condensed",sa
 #search:focus{border-color:#aeb3b5}
 #shuffle{padding:10px 15px;background:#171a1b;border:1px solid #5a5f61;color:#e7e8e7;cursor:pointer;border-radius:999px;text-transform:uppercase}
 #shuffle:hover{background:#232728;border-color:#a6abad}
-.filters{min-height:0;flex:1 1 auto;min-width:0;display:flex;align-items:center;justify-content:flex-start;gap:7px;padding:0;background:transparent;border:0;overflow:visible;position:relative;z-index:5}
+.filters{min-height:0;flex:1 1 auto;min-width:0;display:flex;align-items:center;justify-content:flex-end;gap:7px;padding:0;background:transparent;border:0;overflow:visible;position:relative;z-index:5}
 .filter{padding:10px 13px;border:1px solid #3a3f41;background:#171a1b;color:#8d9395;cursor:pointer;font-size:12px;border-radius:999px;text-transform:uppercase;white-space:nowrap}
 .filter:hover,.filter.active{color:#fff;background:#292d2f;border-color:#aeb3b5}
 .viewport{position:relative;flex:1;min-height:0;overflow-x:auto;overflow-y:hidden;background:radial-gradient(circle at 50% 45%,#292d2f 0%,#171a1b 44%,#0c0e0f 100%);cursor:grab;scrollbar-width:none}
