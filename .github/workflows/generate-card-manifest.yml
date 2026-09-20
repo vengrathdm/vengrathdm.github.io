@@ -25,15 +25,19 @@ jobs:
           from pathlib import Path
 
           cards = Path("Home/Cards")
-          files = sorted(
-              p.name for p in cards.glob("*.txt")
-              if p.is_file()
-          )
-
-          manifest = [
-              {"name": name, "url": name}
-              for name in files
-          ]
+          manifest = []
+          for path in sorted(cards.glob("*.txt"), key=lambda p: p.name.lower()):
+              lines = [line.strip() for line in path.read_text(encoding="utf-8-sig").splitlines()]
+              if len(lines) < 4 or any(not line for line in lines[:4]):
+                  raise SystemExit(f"Invalid card: {path}")
+              title, tag, graphic, link = lines[:4]
+              manifest.append({
+                  "name": path.name,
+                  "title": title,
+                  "tag": tag,
+                  "graphic": graphic,
+                  "link": link,
+              })
 
           (cards / "index.json").write_text(
               json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
