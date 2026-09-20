@@ -1,4 +1,4 @@
 Red Blood Snow White
-Kampania
+Zamknięta Kampania
 ../Graphics/blood-red-snow-white.png
 ../../subpages/red-blood-snow-white/
