@@ -1,4 +1,0 @@
-Ogham Test
-Zamknięta Kampania
-../Graphics/Ogham.jpg
-../../subpages/ogham/
