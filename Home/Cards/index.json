@@ -285,5 +285,26 @@
     "tag": "Archiwum",
     "graphic": "https://cdn.midjourney.com/f2d52c3c-0e32-4b72-a9a2-5f1fdca9d8ed/0_0.png",
     "link": "../../subpages/wails-from-the-lighthouse/"
+  },
+  {
+    "name": "forge-of-fury.txt",
+    "title": "Forge of Fury",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/forge-of-fury.png",
+    "link": "../../subpages/forge-of-fury/"
+  },
+  {
+    "name": "gold-for-fools-and-princes.txt",
+    "title": "Gold for Fools and Princes",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/Gold-for-Fools-and-Princes.jpg",
+    "link": "../../subpages/gold-for-fools-and-princes/"
+  },
+  {
+    "name": "mayhem-in-earthspur-mines.txt",
+    "title": "Mayhem in Earthspur Mines",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/mayhem-in-earthspur-mines.webp",
+    "link": "../../subpages/mayhem-in-earthspur-mines/"
   }
 ]
