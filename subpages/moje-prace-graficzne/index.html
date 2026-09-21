@@ -89,7 +89,7 @@ async function loadFiles(){
        const files=manifest.filter(x=>x&&typeof x.name==="string"&&imagePattern.test(x.name))
          .map(x=>({
            name:x.name,
-           download_url:"https://raw.githubusercontent.com/"+owner+"/"+repo+"/main/"+folder.split("/").map(encodeURIComponent).join("/") + encodeURIComponent(x.name)
+           download_url:"https://raw.githubusercontent.com/"+owner+"/"+repo+"/main/"+folder + encodeURIComponent(x.name)
          }))
          .sort((a,b)=>a.name.localeCompare(b.name,"pl",{numeric:true,sensitivity:"base"}));
        if(files.length)return files;
