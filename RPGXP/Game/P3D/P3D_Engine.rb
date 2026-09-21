@@ -888,6 +888,12 @@ module P3D
   end
 end
 
+# Compatibility for older P3D script entries that referenced P3D::P3D::Scene.
+# This lets an older P3D_Main coexist while Scripts.rxdata is being replaced.
+module P3D
+  P3D::P3D = ::P3D unless defined?(P3D::P3D)
+end
+
 class Scene_Map
   alias p3d_update update unless method_defined?(:p3d_update)
 
