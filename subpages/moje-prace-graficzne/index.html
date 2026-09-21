@@ -3,9 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>
-      Moje Prace Graficzne — Vengrath
-    </title>
+    <title>Moje Rysunki 2026 — Vengrath</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&display=swap" rel="stylesheet">
     <style>
       *{box-sizing:border-box}
@@ -43,7 +41,7 @@ body{background:#0b0d0e;color:#f1f2f2;font-family:"Fira Sans Extra Condensed",sa
           </span>
         </a>
         <div class="title">
-          Moje Prace Graficzne
+          Moje Rysunki 2026
         </div>
       </header>
       <main id="gallery" class="gallery">
@@ -89,7 +87,10 @@ async function loadFiles(){
      const manifest=await r.json();
      if(Array.isArray(manifest)){
        const files=manifest.filter(x=>x&&typeof x.name==="string"&&imagePattern.test(x.name))
-         .map(x=>({name:x.name,download_url:new URL(x.url||x.name,manifestUrl).href}))
+         .map(x=>({
+           name:x.name,
+           download_url:"https://raw.githubusercontent.com/"+owner+"/"+repo+"/main/"+folder+encodeURIComponent(x.name)
+         }))
          .sort((a,b)=>a.name.localeCompare(b.name,"pl",{numeric:true,sensitivity:"base"}));
        if(files.length)return files;
      }
