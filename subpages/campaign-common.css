@@ -217,7 +217,7 @@ body.campaign-page {
   color: #fff;
 }
 
-.campaign-page .nav .campaign-pdf {
+.campaign-page .campaign-pdf {
   width: 280px;
   height: 82px;
   min-height: 82px;
@@ -241,11 +241,11 @@ body.campaign-page {
   text-decoration: none !important;
 }
 
-.campaign-page .nav .campaign-pdf::before {
+.campaign-page .campaign-pdf::before {
   content: none;
 }
 
-.campaign-page .nav .campaign-pdf:hover {
+.campaign-page .campaign-pdf:hover {
   background: #25292a !important;
   border-color: #aeb3b5;
   color: #fff !important;
