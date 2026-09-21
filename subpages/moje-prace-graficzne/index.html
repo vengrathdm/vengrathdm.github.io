@@ -89,7 +89,7 @@ async function loadFiles(){
        const files=manifest.filter(x=>x&&typeof x.name==="string"&&imagePattern.test(x.name))
          .map(x=>({
            name:x.name,
-           download_url:"https://raw.githubusercontent.com/"+owner+"/"+repo+"/main/"+folder+encodeURIComponent(x.name)
+           download_url:"https://raw.githubusercontent.com/"+owner+"/"+repo+"/main/"+folder.split("/").map(encodeURIComponent).join("/") + encodeURIComponent(x.name)
          }))
          .sort((a,b)=>a.name.localeCompare(b.name,"pl",{numeric:true,sensitivity:"base"}));
        if(files.length)return files;
@@ -118,14 +118,14 @@ function build(files){
               Wrzuć ilustracje do folderu Pictures.
             </div>
             ';return}
- const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");svg.setAttribute("width",worldW);svg.setAttribute("height",H);svg.setAttribute("viewBox","0 0 "+worldW+" "+H);svg.classList.add("shatter");
+ const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");svg.setAttribute("width",worldW);svg.setAttribute("overflow","visible");svg.setAttribute("height",H);svg.setAttribute("viewBox","0 0 "+worldW+" "+H);svg.classList.add("shatter");
  const defs=document.createElementNS("http://www.w3.org/2000/svg","defs");svg.appendChild(defs);
  sites.forEach((s,i)=>{const raw=cell(s,sites,{x0:0,y0:0,x1:worldW,y1:H});if(raw.length
             <3)return;const poly=shape(raw,i,worldW,H),cp=document.createElementNS("http://www.w3.org/2000/svg","clipPath"),id="clip"+i;cp.id=id;const cpPath=document.createElementNS("http://www.w3.org/2000/svg","path");cpPath.setAttribute("d",path(poly));cp.appendChild(cpPath);defs.appendChild(cp);
  const a=document.createElementNS("http://www.w3.org/2000/svg","a");a.classList.add("shard");a.setAttribute("href","#");a.setAttribute("tabindex","0");a.setAttribute("aria-label",titleOf(s.file.name));a.dataset.src=s.file.download_url;a.dataset.name=titleOf(s.file.name);
  const xs=poly.map(p=>
               p.x),ys=poly.map(p=>p.y),minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);
- const im=document.createElementNS("http://www.w3.org/2000/svg","image");im.setAttribute("x",minX);im.setAttribute("y",minY);im.setAttribute("width",maxX-minX);im.setAttribute("height",maxY-minY);im.setAttribute("preserveAspectRatio","xMidYMid slice");im.setAttribute("clip-path","url(#"+id+")");im.setAttribute("href",s.file.download_url);im.classList.add("shard-image");a.appendChild(im);
+ const im=document.createElementNS("http://www.w3.org/2000/svg","image");im.setAttribute("x",minX);im.setAttribute("y",minY);im.setAttribute("width",maxX-minX);im.setAttribute("height",maxY-minY);im.setAttribute("preserveAspectRatio","xMidYMid slice");im.setAttribute("clip-path","url(#"+id+")");im.setAttribute("href",s.file.download_url);im.setAttributeNS("http://www.w3.org/1999/xlink","xlink:href",s.file.download_url);im.classList.add("shard-image");im.addEventListener("error",()=>{im.removeAttribute("href");im.removeAttribute("xlink:href");im.setAttribute("href","");im.style.opacity="0";},{once:true});a.appendChild(im);
  const g=document.createElementNS("http://www.w3.org/2000/svg","g");g.setAttribute("clip-path","url(#"+id+")");const t=document.createElementNS("http://www.w3.org/2000/svg","text");t.classList.add("shard-title");const c=centroid(poly);t.setAttribute("x",c.x);t.setAttribute("y",c.y+7);t.textContent=titleOf(s.file.name);g.appendChild(t);a.appendChild(g);svg.appendChild(a)});
  board.appendChild(svg);
 }
