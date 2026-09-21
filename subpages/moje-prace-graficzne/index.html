@@ -97,10 +97,7 @@ function build(files){
  const sites=[];let k=0;
  for(let c=0;c<cols;c++){const rh=H/Math.max(1,counts[c]);for(let r=0;r<counts[c];r++){const f=files[k++];sites.push({file:f,x:(c+.5)*tileW+(Math.random()-.5)*tileW*.42,y:(r+.5)*rh+(Math.random()-.5)*rh*.34})}}
  board.style.width=worldW+"px";board.style.height=H+"px";board.innerHTML="";
- if(!files.length){board.innerHTML='<div class="empty">
-              Wrzuć ilustracje do folderu Pictures.
-            </div>
-            ';return}
+ if(!files.length){board.innerHTML='<div class="empty">Wrzuć ilustracje do folderu Pictures.</div>';return}
  const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");svg.setAttribute("width",worldW);svg.setAttribute("height",H);svg.setAttribute("viewBox","0 0 "+worldW+" "+H);svg.classList.add("shatter");
  const defs=document.createElementNS("http://www.w3.org/2000/svg","defs");svg.appendChild(defs);
  sites.forEach((s,i)=>{const raw=cell(s,sites,{x0:0,y0:0,x1:worldW,y1:H});if(raw.length
@@ -115,16 +112,8 @@ function build(files){
 gallery.addEventListener("pointerdown",e=>{if(e.button!==0)return;cancelAnimationFrame(momentum);drag={active:true,startX:e.clientX,lastX:e.clientX,lastTime:performance.now(),velocity:0,moved:false,target:e.target.closest?.(".shard")||null};gallery.style.cursor="grabbing";gallery.setPointerCapture(e.pointerId)});
 gallery.addEventListener("pointermove",e=>{if(!drag.active)return;const now=performance.now(),dx=e.clientX-drag.lastX,dt=Math.max(1,now-drag.lastTime);gallery.scrollLeft-=dx;drag.velocity=(-dx/dt)*16;if(Math.abs(e.clientX-drag.startX)>8)drag.moved=true;drag.lastX=e.clientX;drag.lastTime=now});
 function release(e){if(!drag.active)return;const moved=drag.moved,target=drag.target;drag.active=false;gallery.style.cursor="grab";try{gallery.releasePointerCapture(e.pointerId)}catch(_){}let v=drag.velocity;const tick=()=>{gallery.scrollLeft+=v;v*=.94;if(Math.abs(v)>.15)momentum=requestAnimationFrame(tick)};if(Math.abs(v)>.15)momentum=requestAnimationFrame(tick);if(!moved&&target)openViewer(target.dataset.src,target.dataset.name)}
-gallery.addEventListener("pointerup",release);gallery.addEventListener("pointercancel",release);addEventListener("resize",()=>loadFiles().then(files=>build(files)).catch(e=>{console.error(e);board.innerHTML='
-              <div class="empty">
-                Nie udało się wczytać folderu Pictures.
-              </div>
-              '}));
-loadFiles().then(files=>build(files)).catch(e=>{console.error(e);board.innerHTML='
-              <div class="empty">
-                Nie udało się wczytać folderu Pictures.
-              </div>
-              '});
+gallery.addEventListener("pointerup",release);gallery.addEventListener("pointercancel",release);addEventListener("resize",()=>loadFiles().then(files=>build(files)).catch(e=>{console.error(e);board.innerHTML='<div class="empty">Nie udało się wczytać folderu Pictures.</div>'}));
+loadFiles().then(files=>build(files)).catch(e=>{console.error(e);board.innerHTML='<div class="empty">Nie udało się wczytać folderu Pictures.</div>'});
 })();
             </script>
           </body>
