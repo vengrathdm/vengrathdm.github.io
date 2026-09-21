@@ -1,32 +1,40 @@
 <!doctype html>
+
+
 <html lang="pl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Vengrath — kampanie, projekty graficzne i narzędzia.">
-<meta name="theme-color" content="#0b0d0e">
-<meta property="og:title" content="Vengrath">
-<meta property="og:description" content="Kampanie, projekty graficzne i narzędzia Vengrath.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://vengrathdm.github.io/">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="stylesheet" href="Home/Code/styles.css">
-<title>Vengrath</title>
-</head>
-<body>
-<div class="app">
-<header class="topbar">
-  <div class="brand">
-    <img class="brand-logo" src="Home/Graphics/mg-logo.png" alt="MG">
-    <div class="brand-copy"><div class="logo">VENGRATH</div></div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Vengrath — kampanie, projekty graficzne i narzędzia.">
+    <meta name="theme-color" content="#0b0d0e">
+    <meta property="og:title" content="Vengrath">
+    <meta property="og:description" content="Kampanie, projekty graficzne i narzędzia Vengrath.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vengrathdm.github.io/">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="stylesheet" href="Home/Code/styles.css">
+    <title>Vengrath</title>
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <img class="brand-logo" src="Home/Graphics/mg-logo.png" alt="MG">
+          <div class="brand-copy">
+            <div class="logo">VENGRATH</div>
+          </div>
+        </div>
+        <nav id="filters" class="filters" aria-label="Kategorie"></nav>
+        <div class="controls">
+              <input id="search" type="search" placeholder="Szukaj…" aria-label="Szukaj">
   </div>
-  <nav id="filters" class="filters" aria-label="Kategorie"></nav>
-  <div class="controls">
-    <input id="search" type="search" placeholder="Szukaj…" aria-label="Szukaj">
-  </div>
-</header>
-<main id="viewport" class="viewport"><div id="board" class="board"></div></main>
-</div>
-<script src="Home/Code/app.js"></script>
-</body>
+      </header>
+      <main id="viewport" class="viewport">
+        <div id="board" class="board"></div>
+      </main>
+    </div>
+    <script src="Home/Code/app.js"></script>
+  </body>
 </html>
+
+
