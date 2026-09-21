@@ -684,3 +684,18 @@ body.campaign-page {
 .campaign-page[data-campaign-theme="hand-of-glory"]{--campaign-accent:#9a6a58;--campaign-hero-image:url("../../Home/Graphics/hand-of-glory.jpg");}
 
 .campaign-page[data-campaign-theme="drakkenheim"]{--campaign-accent:#b87333;--campaign-hero-image:url("../../Home/Graphics/drakkenheim.png");}
+
+.campaign-page[data-campaign-theme="forge-of-fury"] {
+  --campaign-accent: #b87333;
+  --campaign-hero-image: url("../../Home/Graphics/forge-of-fury.png");
+}
+
+.campaign-page[data-campaign-theme="gold-for-fools-and-princes"] {
+  --campaign-accent: #c4a36a;
+  --campaign-hero-image: url("../../Home/Graphics/Gold-for-Fools-and-Princes.jpg");
+}
+
+.campaign-page[data-campaign-theme="mayhem-in-earthspur-mines"] {
+  --campaign-accent: #8d6f4b;
+  --campaign-hero-image: url("../../Home/Graphics/mayhem-in-earthspur-mines.webp");
+}
