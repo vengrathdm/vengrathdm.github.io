@@ -28,6 +28,13 @@
     "link": "../../subpages/cemetery-of-dragons/"
   },
   {
+    "name": "character-shiney.txt",
+    "title": "Shiney, Różowa Paladynka",
+    "tag": "Postać",
+    "graphic": "../Graphics/Shiney.png",
+    "link": "../../Subpages/character-shiney.html"
+  },
+  {
     "name": "charactermancer.txt",
     "title": "Charactermancer",
     "tag": "Narzędzie",
