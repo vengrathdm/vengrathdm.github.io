@@ -27,6 +27,11 @@
     --shadow-gold: 0 0 0 1px rgba(240,194,75,0.5), 0 12px 30px rgba(240,194,75,0.25);
   }
 
+  .vengrath-home{position:fixed;top:18px;left:18px;z-index:1000;display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border:1px solid rgba(240,194,75,0.65);border-radius:999px;background:linear-gradient(135deg,rgba(51,25,66,0.96),rgba(91,46,110,0.94));color:#FFF5F8;text-decoration:none;font-family:'Cinzel Decorative',serif;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;box-shadow:0 6px 18px rgba(51,25,66,0.28);backdrop-filter:blur(6px);transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+  .vengrath-home:hover{transform:translateY(-2px);box-shadow:0 9px 24px rgba(51,25,66,0.36);background:linear-gradient(135deg,rgba(51,25,66,1),rgba(224,85,157,0.96))}
+  .vengrath-home:focus-visible{outline:3px solid rgba(240,194,75,0.8);outline-offset:3px}
+  @media(max-width:700px){.vengrath-home{top:12px;left:12px;padding:8px 14px;font-size:0.68rem}}
+
   *{ box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
 
@@ -415,6 +420,7 @@
 </style>
 </head>
 <body>
+<a class="vengrath-home" href="../../" aria-label="Wróć do strony głównej Vengrath">VENGRATH</a>
 
 <div class="sparkle-field" id="sparkleField" aria-hidden="true"></div>
 
