@@ -730,3 +730,8 @@ body.campaign-page {
   --campaign-accent: #8d6f4b;
   --campaign-hero-image: url("../../Home/Graphics/mayhem-in-earthspur-mines.webp");
 }
+
+.campaign-page[data-campaign-theme="ku-chwale-tyra"] {
+  --campaign-accent: #c4a36a;
+  --campaign-hero-image: url("../../Home/Graphics/neverwinter.webp");
+}
