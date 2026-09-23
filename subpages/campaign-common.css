@@ -733,5 +733,5 @@ body.campaign-page {
 
 .campaign-page[data-campaign-theme="ku-chwale-tyra"] {
   --campaign-accent: #c4a36a;
-  --campaign-hero-image: url("../../Home/Graphics/neverwinter.webp");
+  --campaign-hero-image: url("../../Home/Graphics/KuChwaleTyra.png");
 }
