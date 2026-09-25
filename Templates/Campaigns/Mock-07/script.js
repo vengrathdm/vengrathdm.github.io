@@ -1,1 +1,29 @@
-const places={Field_Name:"Field_Name / major political centre of Field_Name.",Field_Name:"Field_Name / settlement record for NPCs, scenes and local consequences.",Field_Name:"Field_Name / sacred site for prophecy and deeper Field_Name knowledge.",'Field_Name':"Field_Name / legendary destination for heroic and Field_Nameic threads."};document.querySelectorAll(".place").forEach(b=>b.onclick=()=>document.getElementById("mapNote").textContent=places[b.dataset.place]);const p={Field_Name:"Field_Name — Field_Name. Expand with class, race, level, backstory, relationships and session discoveries.",Field_Name:"Field_Name — Field_Name. Expand with class, race, level, backstory, relationships and session discoveries.",Field_Name:"Field_Name — Field_Name. Expand with class, race, level, backstory, relationships and session discoveries.",Field_Name:"Field_Name — Field_Name. Expand with class, race, level, backstory, relationships and session discoveries.",Field_Name:"Field_Name — Field_Name. Expand with class, race, level, backstory, relationships and session discoveries."};document.querySelectorAll(".party button").forEach(b=>b.onclick=()=>document.getElementById("profile").textContent=p[b.dataset.p]);
+// Mock 07 — Atlas and party interactions
+const locationRecords = {
+  location_01: "This is the field where the actual location description would go.",
+  location_02: "This is the field where the actual location description would go.",
+  location_03: "This is the field where the actual location description would go.",
+  location_04: "This is the field where the actual location description would go."
+};
+
+document.querySelectorAll(".place").forEach((button, index) => {
+  const locationKey = "location_0" + (index + 1);
+
+  button.addEventListener("click", () => {
+    document.getElementById("mapNote").textContent = locationRecords[locationKey];
+  });
+});
+
+const characterRecords = [
+  "This is the field where the actual character profile 01 would go.",
+  "This is the field where the actual character profile 02 would go.",
+  "This is the field where the actual character profile 03 would go.",
+  "This is the field where the actual character profile 04 would go.",
+  "This is the field where the actual character profile 05 would go."
+];
+
+document.querySelectorAll(".party button").forEach((button, index) => {
+  button.addEventListener("click", () => {
+    document.getElementById("profile").textContent = characterRecords[index];
+  });
+});
