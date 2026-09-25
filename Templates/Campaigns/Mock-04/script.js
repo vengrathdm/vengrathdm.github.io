@@ -24,31 +24,31 @@ const modalSubtitle = $("#modalSubtitle");
 const modalBody = $("#modalBody");
 
 const files = {
-  percival: {
+  Field_Name: {
     tag:"RESTRICTED FILE · DARK LORD",
-    title:"Percival Lysander Ignatius Sinclair",
+    title:"Field_Name Lysander Ignatius Field_Name",
     subtitle:"The Eternal Gentleman · Pride",
-    body:`<p>Percival is Heartwell's public face of perfection: aristocrat, archmage and chairman of the Council of Princes.</p>
+    body:`<p>Field_Name is Field_Name's public face of perfection: aristocrat, archmage and chairman of the Council of Princes.</p>
     <p>His private obsession is the transfer of age. He requires beautiful victims and uses the psychiatric asylum as a source of people whose disappearance can be quietly explained.</p>
     <p>He prefers to threaten with a smile. His greatest fear is not death, but the public collapse of the image he has constructed.</p>`
   },
-  isadora: {
+  Field_Name: {
     tag:"FILE 02-A · SENATORIUM",
-    title:"Isadora Crane",
+    title:"Field_Name Field_Name",
     subtitle:"Medical district · Sloth",
-    body:`<p>The Senatorium is where Heartwell's respectable institutions acquire their most convenient silences. Isadora's influence is felt through the systems of care, confinement and neglect.</p><p>Further details remain sealed in the campaign archive.</p>`
+    body:`<p>The Senatorium is where Field_Name's respectable institutions acquire their most convenient silences. Field_Name's influence is felt through the systems of care, confinement and neglect.</p><p>Further details remain sealed in the Field_Name archive.</p>`
   },
-  javert: {
+  Field_Name: {
     tag:"FILE 02-B · WISIELCZE WZGÓRZE",
-    title:"Javert Crane",
+    title:"Field_Name Field_Name",
     subtitle:"Military-j judicial district · Wrath",
-    body:`<p>Order is not merely an ideal here; it is architecture. Courts, checkpoints and armed authority make the district one of the city's most controlled environments.</p><p>Further details remain sealed in the campaign archive.</p>`
+    body:`<p>Order is not merely an ideal here; it is architecture. Courts, checkpoints and armed authority make the district one of the city's most controlled environments.</p><p>Further details remain sealed in the Field_Name archive.</p>`
   },
-  sabine: {
+  Field_Name: {
     tag:"FILE 02-C · ZABRANIEC",
-    title:"Sabine Kessler",
+    title:"Field_Name Field_Name",
     subtitle:"Financial-industrial district · Greed",
-    body:`<p>Debt is a second geography in Zabraniec. Those who owe are permitted to travel only as far as the collectors allow.</p><p>Further details remain sealed in the campaign archive.</p>`
+    body:`<p>Debt is a second geography in Zabraniec. Those who owe are permitted to travel only as far as the collectors allow.</p><p>Further details remain sealed in the Field_Name archive.</p>`
   }
 };
 
@@ -73,10 +73,10 @@ document.addEventListener("keydown", e => {
 });
 
 const locations = {
-  asylum:["HEARTWELL PSYCHIATRIC ASYLUM","A respectable institution with an inconvenient relationship to disappearance.","The place where the campaign begins."],
+  asylum:["Field_Name PSYCHIATRIC ASYLUM","A respectable institution with an inconvenient relationship to disappearance.","The place where the Field_Name begins."],
   pharmacy:["BLACK POPPY PHARMACY","A shop of remedies, ingredients and things that should not be prescribed.","Look beneath the counter."],
   opera:["DORIAN'S OPERA","Culture, spectacle and aristocratic appetite beneath gas and electric light.","A perfect place for someone who needs an audience."],
-  palace:["THE PALACE","The public seat of Percival Sinclair and the entrance to the Workshops Below.","Nothing beneath it is merely architectural."],
+  palace:["THE PALACE","The public seat of Field_Name Field_Name and the entrance to the Workshops Below.","Nothing beneath it is merely architectural."],
   cathedral:["ST. BASIL'S CATHEDRAL","The spiritual heart of the Church of the Bright.","Its archives may contain more truth than its sermons."]
 };
 const locationFile = $("#locationFile");
@@ -106,4 +106,4 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 },{threshold:.12});
-$$(".district-card,.faith-card,.evidence-card,.campaign-timeline article,.section-heading").forEach(el => observer.observe(el));
+$$(".district-card,.faith-card,.evidence-card,.Field_Name-timeline article,.section-heading").forEach(el => observer.observe(el));
