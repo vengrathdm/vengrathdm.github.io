@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Voltaire&display=swap');
+/* Experiment 03 — Tomb of Annihilation crystal-ball scrying archive */
+
+:root{--void:#08060c;--stone:#25202a;--ink:#120d18;--violet:#c9a7df;--pale:#e2d5c6;--muted:#887d8e;--gold:#c9a866;--line:#6f5878}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#07060a;color:var(--pale);font-family:"Voltaire",Arial,sans-serif}
+body{overflow-x:hidden;font-kerning:normal;text-rendering:optimizeLegibility}
+.veil{position:fixed;inset:0;z-index:20;pointer-events:none;overflow:hidden;background:linear-gradient(115deg,#09070d,#15101b 42%,#08070c 72%,#110b16)}
+.fog{position:absolute;inset:-35%;opacity:.42;mix-blend-mode:screen;filter:blur(20px);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 700'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.008 .025' numOctaves='4' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 0 0 0 .12 0 1 0 0 .08 0 0 1 0 .16 0 0 0 .72 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");background-size:115% 115%}
+.fog-a{animation:fogDriftA 24s ease-in-out infinite alternate;transform:scale(1.2) rotate(-4deg)}
+.fog-b{opacity:.24;filter:blur(34px);animation:fogDriftB 31s ease-in-out infinite alternate-reverse;transform:scale(1.35) rotate(7deg)}
+.fog-c{opacity:.16;filter:blur(55px);animation:fogDriftC 39s ease-in-out infinite alternate;transform:scale(1.5)}
+.grain{position:absolute;inset:-50%;opacity:.14;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E");animation:noise .18s steps(2) infinite}
+.ripple{position:absolute;inset:-30%;background:repeating-radial-gradient(ellipse at 50% 46%,transparent 0 85px,#c5a1dc0d 87px,#0000 92px);animation:ripple 10s ease-in-out infinite}
+body:after{content:"";position:fixed;inset:0;z-index:19;pointer-events:none;box-shadow:inset 0 0 100px #000,inset 0 0 260px #000;background:radial-gradient(ellipse,#0000 48%,#000c 100%)}
+
+header{height:66px;padding:0 4vw;display:flex;align-items:center;gap:15px;border-bottom:1px solid #5d496866;background:#0b0810e8;position:sticky;top:0;z-index:30}
+header .sigil{width:30px;height:30px;display:grid;place-items:center;border:1px solid #9274a155;border-radius:50%;color:var(--gold);font-size:14px}
+header b{display:block;font-family:"Voltaire",Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase}header span{display:block;color:var(--muted);font:400 7px "Voltaire",Arial,sans-serif;letter-spacing:.16em;margin-top:4px;text-transform:uppercase}
+.status{margin-left:auto!important;color:#a58fae!important}.status i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#c75c70;box-shadow:0 0 9px #c75c70;margin-right:7px}
+
+.sanctum{min-height:calc(100vh - 66px);padding:55px 4vw 75px;display:grid;grid-template-columns:minmax(0,920px) 260px;gap:55px;justify-content:center;align-items:center}
+.altar{min-width:0}
+.stone-ring{position:relative;width:min(780px,92vw);aspect-ratio:1;margin:auto;padding:30px;border-radius:50%;background:radial-gradient(circle,#514459 0,#201a26 53%,#0b080f 70%);box-shadow:0 35px 80px #000,inset 0 0 0 4px #74607b,inset 0 0 50px #000}
+.stone-ring:before,.stone-ring:after{content:"";position:absolute;border-radius:50%;inset:16px;border:1px solid #c4a2d533;box-shadow:0 0 25px #a97ac322}.stone-ring:after{inset:7%;border-style:dashed;animation:rotate 35s linear infinite}
+.crystal{width:100%;height:100%;border-radius:50%;padding:14px;background:radial-gradient(circle at 42% 30%,#a884bb,#4c3261 30%,#1b1025 63%,#07050a 82%);box-shadow:0 0 75px #c08bdf66,0 0 0 6px #17111d,inset 0 0 70px #000;transition:.5s;animation:flicker 8s infinite}
+.crystal:before{content:"";position:absolute;inset:9%;border-radius:50%;background:linear-gradient(125deg,#fff4 0 2%,transparent 14% 65%,#fff1 72%,transparent 78%);filter:blur(5px);pointer-events:none}
+.crystal-glass{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 50% 43%,#382247,#120b19 73%);box-shadow:inset 0 0 90px #000;color:var(--violet)}
+.crystal-glass:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,#fff0,#caa3dc12 45%,#fff0 55%);animation:sheen 8s linear infinite;pointer-events:none}
+.crystal.sealed{filter:brightness(.08) saturate(.3);box-shadow:0 0 15px #000,0 0 0 6px #17111d}
+.vision-meta{position:absolute;z-index:5;top:10%;left:11%;right:11%;display:flex;justify-content:space-between;font:8px monospace;letter-spacing:.12em;color:#b9a7bf}
+.vision{position:absolute;inset:0;padding:15% 13%;z-index:2;overflow:hidden}
+.page{height:100%;display:flex;flex-direction:column;justify-content:center;animation:appear .7s ease}
+.page small{font:400 9px "Voltaire",Arial,sans-serif;letter-spacing:.24em;color:#bca8c2;text-transform:uppercase}
+.page h1{margin:18px 0;font-family:"Voltaire",Arial,sans-serif;font-size:clamp(42px,6.1vw,86px);font-weight:700;line-height:.78;letter-spacing:-.035em;text-transform:uppercase;color:#eee2d5;text-shadow:0 0 28px #c6a1dc22}
+.page h1 em{font-style:normal;color:#caa8df}
+.page p{max-width:690px;color:#b9a9ba;font-family:"Voltaire",Arial,sans-serif;font-size:15px;font-weight:500;line-height:1.48;letter-spacing:.015em}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.grid article,.wide{padding:14px;border:1px solid #9e7bb333;background:#130c1baa;backdrop-filter:blur(3px)}
+.grid b,.wide b{display:block;font:400 8px "Voltaire",Arial,sans-serif;letter-spacing:.16em;color:#d8b9e3;text-transform:uppercase}
+.grid p,.wide p{font-size:12px;margin:8px 0 0}
+.meter{display:block;height:3px;margin:13px 0 7px;background:#33223d}.meter i{display:block;height:100%;background:#c7a0dd;box-shadow:0 0 12px #c7a0dd}
+.list{display:grid;gap:6px;margin-top:18px}.list div{display:flex;justify-content:space-between;gap:20px;padding:9px 0;border-bottom:1px dashed #9b7eaa44;font:400 8px "Voltaire",Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase}.list b{color:#d0c0d2;font-weight:400;text-align:right;font-family:"Voltaire",Arial,sans-serif;font-size:12px;letter-spacing:.01em;text-transform:none}
+.omen-large{font-family:"Voltaire",Arial,sans-serif!important;font-size:17px!important;font-weight:700;letter-spacing:.14em;color:#d9b7e6!important;text-transform:uppercase}
+.visual-page{padding-left:11%;padding-right:11%}
+.vision-image{height:min(35vh,280px);margin:15px 0;display:flex;align-items:center;justify-content:center;flex-direction:column;position:relative;overflow:hidden;border:1px solid #b08ac033;background:#0b0710;box-shadow:inset 0 0 50px #000}
+.vision-image:before{content:"";position:absolute;inset:10%;border:1px solid #c3a1d422;transform:rotate(-2deg)}
+.vision-image span{font:400 8px "Voltaire",Arial,sans-serif;letter-spacing:.25em;color:#a993ae;text-transform:uppercase}.vision-image b{font-family:"Voltaire",Arial,sans-serif;font-size:clamp(42px,7.2vw,88px);font-weight:700;line-height:.8;letter-spacing:-.035em;color:#e3d3df;text-transform:uppercase;text-shadow:0 0 25px #c69bdc44}.vision-image i{font-size:28px;font-style:normal;color:#c5a0d8;margin-top:12px}
+.jungle{background:linear-gradient(145deg,#3e513f,#30203e 45%,#09060d)}.jungle:after{content:"RIVER · RUINS · RAPTORS · RAIN";position:absolute;bottom:12px;font:7px monospace;letter-spacing:.16em;color:#a494a5}
+.tomb{background:radial-gradient(circle,#655744,#241c22 50%,#08060b 75%)}.tomb b{text-align:center}.tomb:after{content:"NO RETURN · NO RESURRECTION";position:absolute;bottom:12px;font:7px monospace;letter-spacing:.16em;color:#c5b18f}
+.vision-time{position:absolute;z-index:5;bottom:9%;right:11%;font:400 8px "Voltaire",Arial,sans-serif;letter-spacing:.08em;color:#a996ae}
+
+.stand{display:flex;justify-content:space-between;padding:12px 28px;color:#716675;font:400 7px "Voltaire",Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase}
+
+.ritual-panel{padding:22px;background:linear-gradient(145deg,#29212e,#0d0910);border:1px solid #675271;border-radius:14px;box-shadow:18px 30px 55px #000,inset 0 0 30px #000;transform:rotateY(-3deg)}
+.panel-title{display:flex;justify-content:space-between;align-items:center;padding-bottom:15px;border-bottom:1px solid #5c496355;font:400 9px "Voltaire",Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase}.panel-title small{color:#756979}
+.vision-list{display:grid;gap:3px;margin:14px 0}
+.vision-button{display:grid;grid-template-columns:28px 1fr 15px;align-items:center;text-align:left;width:100%;padding:10px 7px;border:0;border-left:2px solid transparent;background:transparent;color:#8e8292;cursor:pointer;font:400 8px "Voltaire",Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;transition:.25s}
+.vision-button small{color:#665b6b}.vision-button i{font-style:normal;color:#544657}.vision-button:hover{background:#34283b;color:#cbb7cf}.vision-button.active{border-left-color:#c7a0da;background:#382a40;color:#eaddeb}.vision-button.active i{color:#c7a0da}
+.divider{height:1px;background:#5d4a6655;margin:15px 0}
+.ritual-button,.sub-button{width:100%;padding:12px;margin-bottom:7px;border:1px solid #765b82;background:linear-gradient(#5b4265,#241827);color:#e1d2e4;font:400 8px "Voltaire",Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}.ritual-button:hover,.sub-button:hover{filter:brightness(1.25)}
+.sub-button{background:#16101b;color:#95859a;border-color:#4e3e55}
+.omen{margin-top:18px;padding-top:13px;border-top:1px solid #5c496355}.omen span{font:7px monospace;color:#756a7b}.omen b{display:block;margin-top:7px;color:#cdb4d3;font:400 8px "Voltaire",Arial,sans-serif;letter-spacing:.08em;line-height:1.55}
+
+footer{padding:22px;text-align:center;border-top:1px solid #49394e;color:#756b7b;font:400 7px "Voltaire",Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+
+@keyframes noise{to{transform:translate(3%,2%)}}@keyframes fogDriftA{0%{transform:translate(-7%,-3%) scale(1.2) rotate(-4deg)}50%{transform:translate(5%,4%) scale(1.27) rotate(1deg)}100%{transform:translate(9%,-2%) scale(1.2) rotate(5deg)}}@keyframes fogDriftB{0%{transform:translate(8%,-4%) scale(1.35) rotate(7deg)}50%{transform:translate(-4%,6%) scale(1.45) rotate(1deg)}100%{transform:translate(-10%,-3%) scale(1.35) rotate(-5deg)}}@keyframes fogDriftC{0%{transform:translate(-5%,7%) scale(1.5)}100%{transform:translate(7%,-6%) scale(1.6)}}@keyframes rotate{to{transform:rotate(360deg)}}@keyframes sheen{from{transform:translateX(-140%) rotate(2deg)}to{transform:translateX(140%) rotate(2deg)}}@keyframes flicker{0%,18%,20%,42%,44%,64%,66%,100%{opacity:1;filter:brightness(1)}19%,43%,65%{opacity:.78;filter:brightness(1.22) saturate(1.2)}}@keyframes appear{from{opacity:0;transform:scale(1.13) rotate(.8deg);filter:blur(14px) saturate(1.7)}45%{opacity:.7;transform:scale(.98) rotate(-.4deg);filter:blur(3px) saturate(1.4)}to{opacity:1;transform:none;filter:none}}
+
+@media(max-width:1000px){.sanctum{grid-template-columns:1fr;gap:30px}.stone-ring{width:min(720px,90vw)}.ritual-panel{width:min(620px,92vw);margin:auto;transform:none}}
+@media(max-width:600px){header{height:58px}.status{display:none!important}.sanctum{padding:28px 2vw}.stone-ring{padding:18px}.crystal{padding:9px}.vision{padding:18% 13%}.page h1{font-size:38px}.page p{font-size:10px}.grid{grid-template-columns:1fr}.list div{font-size:7px}.stand{padding:10px;font-size:6px}}
+\n/* heightened scrying effects */\n.crystal{animation:flicker 5.5s infinite,crystalPulse 6s ease-in-out infinite}.crystal-glass{box-shadow:inset 0 0 90px #000,0 0 35px #c49bdf22}.crystal-glass:before{content:"";position:absolute;inset:-15%;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 12%,#d8b3ed18 15%,transparent 20% 37%,#fff2 40%,transparent 45% 70%,#bd8edb18 74%,transparent 80%);animation:arcaneSpin 14s linear infinite;mix-blend-mode:screen}.crystal-glass:after{animation:sheen 5s linear infinite}.stone-ring{animation:altarPulse 5s ease-in-out infinite}.stone-ring:before{animation:haloPulse 3.5s ease-in-out infinite}.stone-ring:after{animation:rotate 20s linear infinite}.vision:after{content:"";position:absolute;inset:-10%;background:repeating-linear-gradient(0deg,transparent 0 5px,#d9b6ed08 6px,#0000 8px);mix-blend-mode:screen;pointer-events:none;animation:scan 2.8s linear infinite}.vision-image:after{filter:blur(.2px)}@keyframes crystalPulse{50%{box-shadow:0 0 105px #c08bdf99,0 0 0 6px #17111d,inset 0 0 90px #000}}@keyframes altarPulse{50%{box-shadow:0 35px 80px #000,0 0 55px #9c70b944,inset 0 0 0 4px #90739a,inset 0 0 50px #000}}@keyframes haloPulse{50%{box-shadow:0 0 55px #c08bdf55;transform:scale(1.015)}}@keyframes arcaneSpin{to{transform:rotate(360deg)}}@keyframes scan{to{transform:translateY(12%)}}
+/* Additional crystal distortion: vertical refresh, while preserving horizontal refresh */
+.vision:before{content:"";position:absolute;inset:-8%;z-index:8;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 5px,#d9b6ed07 6px,#0000 8px);mix-blend-mode:screen;animation:verticalRefresh 2.15s linear infinite}
+@keyframes verticalRefresh{0%{transform:translateX(-8%)}100%{transform:translateX(8%)}}
+
+
+/* Experiment 03 — depth, scrying transition and vision-specific behavior */
+:root{--mx:0;--my:0}
+.sanctum{perspective:1400px}
+.altar{transform:translate3d(calc(var(--mx)*-5px),calc(var(--my)*-5px),0);transition:transform .35s ease-out}
+.stone-ring{transform:translate3d(calc(var(--mx)*-7px),calc(var(--my)*-7px),0) rotateX(calc(var(--my)*-1deg)) rotateY(calc(var(--mx)*1deg));transition:transform .3s ease-out}
+.crystal{transform:translate3d(calc(var(--mx)*-10px),calc(var(--my)*-10px),18px);transition:transform .25s ease-out}
+.crystal-glass{transform:translate3d(calc(var(--mx)*-4px),calc(var(--my)*-4px),25px);transition:transform .25s ease-out}
+.vision{transform:translate3d(calc(var(--mx)*-7px),calc(var(--my)*-7px),35px);transition:transform .2s ease-out}
+.vision:after{background:repeating-linear-gradient(0deg,transparent 0 5px,#d9b6ed0b 6px,#0000 8px)}
+.vision:before{background:repeating-linear-gradient(90deg,transparent 0 6px,#d9b6ed09 7px,#0000 9px)}
+.scry-orbit{position:absolute;inset:-4%;border-radius:50%;z-index:9;pointer-events:none;opacity:.45;mix-blend-mode:screen}
+.scry-orbit i{position:absolute;left:50%;top:50%;width:7px;height:7px;border-radius:50%;background:#dcb8ed;box-shadow:0 0 18px #c995e8;transform-origin:0 0}
+.scry-orbit i:nth-child(1){animation:orbitOne 7s linear infinite}
+.scry-orbit i:nth-child(2){animation:orbitTwo 11s linear infinite reverse}
+.scry-orbit i:nth-child(3){animation:orbitThree 15s linear infinite}
+.crystal.scrying{animation:scryIn 1.5s cubic-bezier(.2,.8,.2,1),flicker 5.5s infinite,crystalPulse 6s ease-in-out infinite}
+.crystal.scrying .vision{animation:scryVision 1.5s ease-out}
+.crystal.scrying .crystal-glass:after{animation:scrySheen 1.5s ease-in-out}
+.ritual-progress{margin:10px 0 4px;color:#74687a;font:7px monospace;letter-spacing:.12em}
+.ritual-progress>div{height:2px;background:#302337;margin-top:7px}.ritual-progress i{display:block;height:100%;width:11%;background:#c7a0dd;box-shadow:0 0 10px #c7a0dd;transition:width .5s}
+.vision-button.seen:not(.active) i{color:#9d7daf}.vision-button.seen:not(.active):after{content:"•";position:absolute;right:5px;color:#8e6da0}.vision-button{position:relative}
+.ritual-panel{transform:rotateY(-3deg) translate3d(calc(var(--mx)*4px),calc(var(--my)*4px),0);transition:transform .35s ease-out}
+body[data-vision="6"] .crystal{box-shadow:0 0 110px #8e4fc6aa,0 0 0 6px #17111d,inset 0 0 110px #000}
+body[data-vision="6"] .fog{filter:blur(26px) contrast(1.25);opacity:.5}
+body[data-vision="7"] .fog{opacity:.58}
+body[data-vision="7"] .jungle{animation:jungleBreath 4s ease-in-out infinite}
+body[data-vision="7"] .vision-image.jungle:before{animation:jungleRain 1.2s linear infinite}
+body[data-vision="8"] .tomb{box-shadow:inset 0 0 70px #000,0 0 45px #c9a86633}
+.vision-image.tomb.opening b{animation:doorOpen 2.8s ease-in-out forwards;transform-origin:center}
+.complete{position:fixed;inset:0;z-index:50;display:grid;place-items:center;align-content:center;gap:8px;background:#050409eF;backdrop-filter:blur(12px);opacity:0;pointer-events:none;transition:opacity 1s}
+.complete.show{opacity:1;pointer-events:auto}.complete span{font:9px Voltaire;letter-spacing:.3em;color:#c7a0dd}.complete b{font:clamp(30px,6vw,80px) Voltaire;color:#eee2d5}.complete small{font:7px monospace;color:#83768a;letter-spacing:.2em}
+@keyframes scryIn{0%{filter:brightness(.05) saturate(.2);transform:scale(.94)}35%{filter:brightness(1.5) saturate(1.7);transform:scale(1.03)}100%{filter:brightness(1) saturate(1);transform:translate3d(calc(var(--mx)*-10px),calc(var(--my)*-10px),18px) scale(1)}}
+@keyframes scryVision{0%{opacity:0;filter:blur(25px);transform:scale(1.14)}45%{opacity:.35;filter:blur(7px);transform:scale(.99)}100%{opacity:1;filter:blur(0);transform:scale(1)}}
+@keyframes scrySheen{0%{transform:translateX(-140%)}100%{transform:translateX(140%)}}
+@keyframes orbitOne{to{transform:rotate(360deg) translateX(300px) rotate(-360deg)}}@keyframes orbitTwo{to{transform:rotate(360deg) translateX(255px) rotate(-360deg)}}@keyframes orbitThree{to{transform:rotate(360deg) translateX(330px) rotate(-360deg)}}
+@keyframes jungleBreath{50%{filter:saturate(1.35) brightness(1.12)}}@keyframes jungleRain{to{transform:rotate(-2deg) translateY(10px);opacity:.5}}
+@keyframes doorOpen{0%{letter-spacing:-.05em;filter:blur(5px)}100%{letter-spacing:.02em;filter:blur(0);text-shadow:0 0 50px #d2a66b88}}
+@media(max-width:600px){.ritual-progress{display:none}.scry-orbit{inset:-1%}}
