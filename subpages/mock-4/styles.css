@@ -69,3 +69,7 @@ footer{display:flex;justify-content:space-between;padding:24px 5vw;background:va
 .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:40}.modal.open{display:flex}.modal-backdrop{position:absolute;inset:0;background:rgba(10,20,23,.78)}.modal-card{position:relative;width:min(680px,90vw);max-height:80vh;overflow:auto;background:var(--marble);color:var(--ink);padding:45px;border-top:4px solid var(--gold);z-index:1}.modal-card h2{font:500 42px Cinzel,serif;margin:12px 0}.modal-subtitle{color:var(--terracotta);font-style:italic}
 @media(max-width:900px){.hero,.dossier-layout,.split-section,.map-section{grid-template-columns:1fr}.hero-art{min-height:430px}.district-grid,.religion-grid,.campaign-timeline{grid-template-columns:1fr}.district-card.featured{grid-column:auto}.portrait-dossier{grid-template-columns:1fr}.portrait{min-height:360px}.location-file{grid-column:auto}.case-meta{display:none}}
 @media(max-width:560px){.masthead{grid-template-columns:52px 1fr}.masthead-center{text-align:left}.paper-section,.dark-section,.map-section{padding:70px 5vw}.hero-copy{padding:55px 7vw}.paper-section:before{inset:12px}footer{display:grid;gap:8px}}
+
+/* Sticky campaign chrome */
+.masthead{position:sticky;top:0;z-index:100}
+footer{position:sticky;bottom:0;z-index:100}
