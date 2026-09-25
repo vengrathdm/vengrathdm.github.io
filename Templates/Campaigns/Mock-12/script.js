@@ -1,1 +1,262 @@
-const channels={1:{name:"Field_Name",html:'<div class="page"><small>VTV-01 / LIVE FROM Field_Name</small><h1>Field_Name<br><em>OF THE Field_Name</em></h1><p>Field_Name centuries after the Field_Name defeated the Field_Name, the Field_Name defines the age. The signal begins here.</p><div class="grid2"><div class="box"><b>Field_Name</b><div class="bar"><i></i></div><p>Integrity: unstable.</p></div><div class="box"><b>Field_Name</b><p>Field_Name · Field_Name · Field_Name · Field_Name · Field_Name</p></div></div></div>'},2:{name:"HISTORY",html:'<div class="page"><small>VTV-02 / ARCHIVAL DOCUMENTARY</small><h1>THE<br><em>Field_Name</em></h1><p>Ancient gods and Field_Name. The Field_Name. Their victory. The Field_Name. A Field_Name-century-old settlement now entering a new chapter.</p><div class="list"><div><span>BEFORE</span><b>GODS & Field_Name</b></div><div><span>THE TURN</span><b>Field_Name</b></div><div><span>500 YEARS</span><b>Field_Name</b></div></div></div>'},3:{name:"WORLD",html:'<div class="page"><small>VTV-03 / FIELD REPORT</small><h1>Field_Name<br><em>Field_Name</em></h1><p>The Field_Name world, presented as television field reports.</p><div class="grid2"><div class="box"><b>Field_Name</b><p>Political centre and major Field_Name theatre.</p></div><div class="box"><b>Field_Name</b><p>Settlement record for scenes, NPCs and consequences.</p></div><div class="box"><b>Field_Name</b><p>Sacred site for prophecy and Field_Name threads.</p></div><div class="box"><b>Field_Name</b><p>Legendary destination for heroic material.</p></div></div></div>'},4:{name:"Field_Name",html:'<div class="page"><small>VTV-04 / LIVE STUDIO</small><h1>THE<br><em>Field_Name</em></h1><div class="list"><div><span>01</span><b>Field_Name / Field_Name</b></div><div><span>02</span><b>Field_Name / Field_Name</b></div><div><span>03</span><b>Field_Name / Field_Name</b></div><div><span>04</span><b>Field_Name / Field_Name</b></div><div><span>05</span><b>Field_Name / Field_Name</b></div></div></div>'},5:{name:"Field_Name",html:'<div class="page"><small>VTV-05 / UNAUTHORIZED TRANSMISSION</small><h1>DM<br><em>FEED</em></h1><p>Unresolved threads, future reveals and continuity records bleed into the broadcast.</p><div class="box"><b>OPEN THREADS</b><p>07 active · 03 dormant · 09 unresolved.</p></div></div>'},6:{name:"SESSIONS",html:'<div class="page"><small>VTV-06 / Field_Name CHRONICLE</small><h1>SESSION<br><em>ARCHIVE</em></h1><p>Session recaps, decisions, consequences, NPCs encountered and discoveries made.</p><div class="list"><div><span>REC 01</span><b>THE BEGINNING</b></div><div><span>REC 02</span><b>THE ROAD</b></div><div><span>REC 03</span><b>THE CONSEQUENCE</b></div></div></div>'},7:{name:"Field_Name",html:'<div class="page Field_Name"><small>VTV-07 / Field_Name TRANSMISSION</small><h1>THE<br><em>Field_Name</em></h1><p id="omen">SIGNAL INTERPRETATION: WAIT.</p><div class="box"><b>OMEN GENERATOR</b><p>Press OK on the remote to receive a transmission.</p></div></div>'},8:{name:"GIF BROADCAST",html:'<div class="media-page"><div class="media-label">VTV-08 / ARCHIVAL MOVING IMAGE</div><h1>THE<br><em>Field_Name</em></h1><div class="media-frame"><img src="#" alt="Field_Name archival animation"></div><p>EXTERNAL SIGNAL / ARCHIVE MOTION / ANALOG RECEPTION</p></div>'},9:{name:"IMAGE ARCHIVE",html:'<div class="media-page"><div class="media-label">VTV-09 / Field_Name ARCHIVE</div><h1>THE<br><em>Field_Name</em></h1><div class="media-frame still"><img src="#" alt="Dungeons and Dragons Field_Name at a Field_Name"></div><p>EXTERNAL IMAGE / FIELD ARCHIVE / Field_Name CONTEXT REEL</p></div>'}};let current=1,powered=true;const program=document.getElementById("program"),channel=document.getElementById("channel"),remoteCh=document.getElementById("remoteCh"),remote=document.querySelector(".remote");function tune(n){n=((n-1+9)%9)+1;current=n;channel.textContent="CH "+String(n).padStart(2,"0");remoteCh.textContent=String(n).padStart(2,"0");program.animate([{opacity:1,filter:"blur(0)"},{opacity:0,filter:"blur(12px) scaleX(1.05)"},{opacity:1,filter:"blur(0)"}],500);setTimeout(()=>program.innerHTML=channels[n].html,190)}program.innerHTML=channels[1].html;document.querySelectorAll(".numeric [data-ch]").forEach(b=>b.onclick=()=>tune(+b.dataset.ch));document.getElementById("chUp").onclick=()=>tune(current%9+1);document.getElementById("chDown").onclick=()=>tune((current+7)%9+1);document.getElementById("power").onclick=()=>{powered=!powered;document.getElementById("screen").classList.toggle("off",!powered);remote.classList.toggle("off",!powered)};document.getElementById("menu").onclick=()=>tune(7);document.getElementById("input").onclick=()=>tune(6);document.querySelectorAll(".tapes button").forEach(b=>b.onclick=()=>{document.getElementById("tapeStatus").textContent="PLAYING / "+b.textContent.trim();document.getElementById("cassetteLabel").textContent=b.querySelector("b").textContent;document.getElementById("cassette").animate([{transform:"translateY(10px) scaleX(.96)"},{transform:"none"}],350);const map={oath:1,Field_Name:2,lords:2,world:3,Field_Name:4,sessions:6};tune(map[b.dataset.tape]||1)});document.getElementById("play").onclick=()=>{document.getElementById("tapeStatus").textContent="PLAY / "+document.getElementById("cassetteLabel").textContent;document.querySelectorAll(".reel").forEach(x=>x.style.animationPlayState="running")};document.getElementById("stop").onclick=()=>{document.getElementById("tapeStatus").textContent="STOP";document.querySelectorAll(".reel").forEach(x=>x.style.animationPlayState="paused")};document.getElementById("rew").onclick=()=>{document.getElementById("tapeStatus").textContent="REWIND";document.querySelectorAll(".reel").forEach(x=>x.style.animationDirection="reverse")};document.getElementById("ff").onclick=()=>{document.getElementById("tapeStatus").textContent="FAST FORWARD";document.querySelectorAll(".reel").forEach(x=>x.style.animationDuration=".45s")};document.getElementById("eject").onclick=()=>{document.getElementById("tapeStatus").textContent="NO CASSETTE";document.getElementById("cassetteLabel").textContent="INSERT TAPE";};document.getElementById("volUp").onclick=()=>document.getElementById("screen").animate([{filter:"brightness(1)"},{filter:"brightness(1.5)"},{filter:"brightness(1)"}],250);document.getElementById("volDown").onclick=()=>document.getElementById("screen").animate([{filter:"brightness(1)"},{filter:"brightness(.45)"},{filter:"brightness(1)"}],250);document.querySelectorAll(".dpad button").forEach(b=>b.onclick=()=>document.getElementById("screen").animate([{transform:"translateX(0)"},{transform:"translateX(5px)"},{transform:"translateX(0)"}],220));let t=0;setInterval(()=>{t++;document.getElementById("clock").textContent=[Math.floor(t/3600),Math.floor(t/60)%60,t%60].map(x=>String(x).padStart(2,"0")).join(":")},1000);
+// Mock 12 — Interactive television template
+
+const channels = {
+  1: {
+    name: "Channel_Name_01",
+    html: `<div class="page">
+      <small>Channel_Label_01</small>
+      <h1>Channel_Title_01<br><em>Channel_Subtitle_01</em></h1>
+      <p>This is the field where the actual channel introduction would go.</p>
+      <div class="grid2">
+        <div class="box"><b>Metric_Label_01</b><div class="bar"><i></i></div><p>This is the field where the actual metric description would go.</p></div>
+        <div class="box"><b>Metric_Label_02</b><p>Metric_Value_01 · Metric_Value_02 · Metric_Value_03</p></div>
+      </div>
+    </div>`
+  },
+  2: {
+    name: "Channel_Name_02",
+    html: `<div class="page">
+      <small>Channel_Label_02</small>
+      <h1>Channel_Title_02<br><em>Channel_Subtitle_02</em></h1>
+      <p>This is the field where the actual historical overview would go.</p>
+      <div class="list">
+        <div><span>Timeline_Label_01</span><b>Timeline_Value_01</b></div>
+        <div><span>Timeline_Label_02</span><b>Timeline_Value_02</b></div>
+        <div><span>Timeline_Label_03</span><b>Timeline_Value_03</b></div>
+      </div>
+    </div>`
+  },
+  3: {
+    name: "Channel_Name_03",
+    html: `<div class="page">
+      <small>Channel_Label_03</small>
+      <h1>Channel_Title_03<br><em>Channel_Subtitle_03</em></h1>
+      <p>This is the field where the actual world overview would go.</p>
+      <div class="grid2">
+        <div class="box"><b>Location_Name_01</b><p>This is the field where the actual location description would go.</p></div>
+        <div class="box"><b>Location_Name_02</b><p>This is the field where the actual location description would go.</p></div>
+        <div class="box"><b>Location_Name_03</b><p>This is the field where the actual location description would go.</p></div>
+        <div class="box"><b>Location_Name_04</b><p>This is the field where the actual location description would go.</p></div>
+      </div>
+    </div>`
+  },
+  4: {
+    name: "Channel_Name_04",
+    html: `<div class="page">
+      <small>Channel_Label_04</small>
+      <h1>Channel_Title_04<br><em>Channel_Subtitle_04</em></h1>
+      <div class="list">
+        <div><span>Character_Index_01</span><b>Character_Name_01 / Character_Player_01</b></div>
+        <div><span>Character_Index_02</span><b>Character_Name_02 / Character_Player_02</b></div>
+        <div><span>Character_Index_03</span><b>Character_Name_03 / Character_Player_03</b></div>
+        <div><span>Character_Index_04</span><b>Character_Name_04 / Character_Player_04</b></div>
+        <div><span>Character_Index_05</span><b>Character_Name_05 / Character_Player_05</b></div>
+      </div>
+    </div>`
+  },
+  5: {
+    name: "Channel_Name_05",
+    html: `<div class="page">
+      <small>Channel_Label_05</small>
+      <h1>Channel_Title_05<br><em>Channel_Subtitle_05</em></h1>
+      <p>This is the field where the actual DM-facing notes or private campaign feed would go.</p>
+      <div class="box"><b>Thread_List_Title</b><p>This is the field where the actual open-thread summary would go.</p></div>
+    </div>`
+  },
+  6: {
+    name: "Channel_Name_06",
+    html: `<div class="page">
+      <small>Channel_Label_06</small>
+      <h1>Channel_Title_06<br><em>Channel_Subtitle_06</em></h1>
+      <p>This is the field where the actual session archive introduction would go.</p>
+      <div class="list">
+        <div><span>Session_Number_01</span><b>Session_Title_01</b></div>
+        <div><span>Session_Number_02</span><b>Session_Title_02</b></div>
+        <div><span>Session_Number_03</span><b>Session_Title_03</b></div>
+      </div>
+    </div>`
+  },
+  7: {
+    name: "Channel_Name_07",
+    html: `<div class="page">
+      <small>Channel_Label_07</small>
+      <h1>Channel_Title_07<br><em>Channel_Subtitle_07</em></h1>
+      <p id="omen">Transmission_Status_01</p>
+      <div class="box"><b>Generator_Title_01</b><p>This is the field where the actual generated transmission or omen would go.</p></div>
+    </div>`
+  },
+  8: {
+    name: "Channel_Name_08",
+    html: `<div class="media-page">
+      <div class="media-label">Channel_Label_08</div>
+      <h1>Channel_Title_08<br><em>Channel_Subtitle_08</em></h1>
+      <div class="media-frame"><img src="https://placehold.co/1200x800?text=Moving_Image_08" alt="Moving_Image_Alt_08"></div>
+      <p>This is the field where the actual external moving-image description would go.</p>
+    </div>`
+  },
+  9: {
+    name: "Channel_Name_09",
+    html: `<div class="media-page">
+      <div class="media-label">Channel_Label_09</div>
+      <h1>Channel_Title_09<br><em>Channel_Subtitle_09</em></h1>
+      <div class="media-frame still"><img src="https://placehold.co/1200x800?text=Archive_Image_09" alt="Archive_Image_Alt_09"></div>
+      <p>This is the field where the actual external image description would go.</p>
+    </div>`
+  }
+};
+
+let currentChannel = 1;
+let isPoweredOn = true;
+let clockSeconds = 0;
+
+const program = document.getElementById("program");
+const channelDisplay = document.getElementById("channel");
+const remoteChannelDisplay = document.getElementById("remoteCh");
+const screen = document.getElementById("screen");
+const remote = document.querySelector(".remote");
+const tapeStatus = document.getElementById("tapeStatus");
+const cassetteLabel = document.getElementById("cassetteLabel");
+
+function tune(channelNumber) {
+  currentChannel = ((channelNumber - 1 + 9) % 9) + 1;
+
+  channelDisplay.textContent = "CH " + String(currentChannel).padStart(2, "0");
+  remoteChannelDisplay.textContent = String(currentChannel).padStart(2, "0");
+
+  program.animate(
+    [
+      { opacity: 1, filter: "blur(0)" },
+      { opacity: 0, filter: "blur(12px) scaleX(1.05)" },
+      { opacity: 1, filter: "blur(0)" }
+    ],
+    500
+  );
+
+  window.setTimeout(() => {
+    program.innerHTML = channels[currentChannel].html;
+  }, 190);
+}
+
+function togglePower() {
+  isPoweredOn = !isPoweredOn;
+  screen.classList.toggle("off", !isPoweredOn);
+  remote.classList.toggle("off", !isPoweredOn);
+}
+
+document.querySelectorAll(".numeric [data-ch]").forEach(button => {
+  button.addEventListener("click", () => tune(Number(button.dataset.ch)));
+});
+
+document.getElementById("chUp").addEventListener("click", () => tune(currentChannel + 1));
+document.getElementById("chDown").addEventListener("click", () => tune(currentChannel - 1));
+document.getElementById("power").addEventListener("click", togglePower);
+document.getElementById("menu").addEventListener("click", () => tune(7));
+document.getElementById("input").addEventListener("click", () => tune(6));
+
+const tapeToChannel = {
+  tape_01: 1,
+  tape_02: 2,
+  tape_03: 2,
+  tape_04: 3,
+  tape_05: 4,
+  tape_06: 6
+};
+
+document.querySelectorAll(".tapes button").forEach(button => {
+  button.addEventListener("click", () => {
+    const title = button.querySelector("b").textContent;
+
+    tapeStatus.textContent = "Playing / " + title;
+    cassetteLabel.textContent = title;
+
+    document.getElementById("cassette").animate(
+      [
+        { transform: "translateY(10px) scaleX(.96)" },
+        { transform: "none" }
+      ],
+      350
+    );
+
+    tune(tapeToChannel[button.dataset.tape] || 1);
+  });
+});
+
+document.getElementById("play").addEventListener("click", () => {
+  tapeStatus.textContent = "Play / " + cassetteLabel.textContent;
+  setReelState("running");
+});
+
+document.getElementById("stop").addEventListener("click", () => {
+  tapeStatus.textContent = "Stop";
+  setReelState("paused");
+});
+
+document.getElementById("rew").addEventListener("click", () => {
+  tapeStatus.textContent = "Rewind";
+  setReelDirection("reverse");
+});
+
+document.getElementById("ff").addEventListener("click", () => {
+  tapeStatus.textContent = "Fast_Forward";
+  setReelSpeed(".45s");
+});
+
+document.getElementById("eject").addEventListener("click", () => {
+  tapeStatus.textContent = "No_Tape_Status";
+  cassetteLabel.textContent = "Cassette_Prompt";
+});
+
+function setReelState(state) {
+  document.querySelectorAll(".reel").forEach(reel => {
+    reel.style.animationPlayState = state;
+  });
+}
+
+function setReelDirection(direction) {
+  document.querySelectorAll(".reel").forEach(reel => {
+    reel.style.animationDirection = direction;
+  });
+}
+
+function setReelSpeed(duration) {
+  document.querySelectorAll(".reel").forEach(reel => {
+    reel.style.animationDuration = duration;
+  });
+}
+
+document.getElementById("volUp").addEventListener("click", () => {
+  screen.animate(
+    [{ filter: "brightness(1)" }, { filter: "brightness(1.5)" }, { filter: "brightness(1)" }],
+    250
+  );
+});
+
+document.getElementById("volDown").addEventListener("click", () => {
+  screen.animate(
+    [{ filter: "brightness(1)" }, { filter: "brightness(.45)" }, { filter: "brightness(1)" }],
+    250
+  );
+});
+
+document.querySelectorAll(".dpad button").forEach(button => {
+  button.addEventListener("click", () => {
+    screen.animate(
+      [{ transform: "translateX(0)" }, { transform: "translateX(5px)" }, { transform: "translateX(0)" }],
+      220
+    );
+  });
+});
+
+window.setInterval(() => {
+  clockSeconds += 1;
+
+  const hours = Math.floor(clockSeconds / 3600);
+  const minutes = Math.floor(clockSeconds / 60) % 60;
+  const seconds = clockSeconds % 60;
+
+  document.getElementById("clock").textContent = [hours, minutes, seconds]
+    .map(value => String(value).padStart(2, "0"))
+    .join(":");
+}, 1000);
+
+program.innerHTML = channels[1].html;
