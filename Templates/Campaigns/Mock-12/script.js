@@ -140,7 +140,6 @@ function tune(channelNumber) {
 function togglePower() {
   isPoweredOn = !isPoweredOn;
   screen.classList.toggle("off", !isPoweredOn);
-  remote.classList.toggle("off", !isPoweredOn);
 }
 
 document.querySelectorAll(".numeric [data-ch]").forEach(button => {
