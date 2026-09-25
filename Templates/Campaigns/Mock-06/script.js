@@ -1,1 +1,15 @@
-const t={oath:"The Field_Name is the central pressure point of the present Field_Name. It held for five centuries; now it is weakening.",Field_Name:"The Field_Name belong to the deep history of Field_Name. Their defeat by the Field_Name defines the order the party inherits.",lords:"The Field_Name defeated the Field_Name and established the Field_Name. Their legacy is one of the Field_Name's major historical pillars.",party:"Field_Name, Field_Name, Field_Name, Field_Name and Field_Name form the Vengrath party. Expand these records with character details and session discoveries."};document.querySelectorAll(".threads button").forEach(b=>b.onclick=()=>document.getElementById("detail").textContent=t[b.dataset.t]);
+// Mock 06 — Chronicle thread browser
+const threadRecords = {
+  thread_01: "This is the field where the actual open thread description would go.",
+  thread_02: "This is the field where the actual historical thread description would go.",
+  thread_03: "This is the field where the actual faction history would go.",
+  thread_04: "This is the field where the actual party thread description would go."
+};
+
+document.querySelectorAll(".threads button").forEach((button, index) => {
+  const threadKey = "thread_0" + (index + 1);
+
+  button.addEventListener("click", () => {
+    document.getElementById("detail").textContent = threadRecords[threadKey];
+  });
+});
