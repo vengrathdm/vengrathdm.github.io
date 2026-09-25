@@ -139,7 +139,19 @@ function tune(channelNumber) {
 
 function togglePower() {
   isPoweredOn = !isPoweredOn;
-  screen.classList.toggle("off", !isPoweredOn);
+
+  if (isPoweredOn) {
+    screen.classList.remove("off");
+    screen.style.visibility = "visible";
+    screen.style.opacity = "1";
+  } else {
+    screen.classList.add("off");
+    screen.style.visibility = "hidden";
+    screen.style.opacity = "0";
+  }
+
+  document.getElementById("power").textContent =
+    isPoweredOn ? "Power_Label" : "Power_On_Label";
 }
 
 document.querySelectorAll(".numeric [data-ch]").forEach(button => {
