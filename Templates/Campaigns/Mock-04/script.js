@@ -1,109 +1,63 @@
-const $ = (s, root=document) => root.querySelector(s);
-const $$ = (s, root=document) => [...root.querySelectorAll(s)];
+// Mock 04 — Interactive dossier
+const modal = document.getElementById("modal");
+const modalTitle = document.getElementById("modalTitle");
+const modalSubtitle = document.getElementById("modalSubtitle");
+const modalBody = document.getElementById("modalBody");
+const modalTag = document.getElementById("modalTag");
 
-const drawer = $("#drawer");
-$("#menuButton").addEventListener("click", () => {
-  drawer.classList.add("open");
-  drawer.setAttribute("aria-hidden", "false");
-});
-$("#closeButton").addEventListener("click", closeDrawer);
-$$(".drawer a").forEach(a => a.addEventListener("click", closeDrawer));
-function closeDrawer(){
-  drawer.classList.remove("open");
-  drawer.setAttribute("aria-hidden", "true");
-}
-
-$$("[data-scroll]").forEach(btn => {
-  btn.addEventListener("click", () => document.querySelector(btn.dataset.scroll)?.scrollIntoView({behavior:"smooth"}));
-});
-
-const modal = $("#modal");
-const modalTitle = $("#modalTitle");
-const modalTag = $("#modalTag");
-const modalSubtitle = $("#modalSubtitle");
-const modalBody = $("#modalBody");
-
-const files = {
-  Field_Name: {
-    tag:"RESTRICTED FILE · Field_Name",
-    title:"Field_Name Lysander Ignatius Field_Name",
-    subtitle:"The Eternal Gentleman · Pride",
-    body:`<p>Field_Name is Field_Name's public face of perfection: aristocrat, archmage and chairman of the Council of Princes.</p>
-    <p>His private obsession is the transfer of age. He requires beautiful victims and uses the psychiatric asylum as a source of people whose disappearance can be quietly explained.</p>
-    <p>He prefers to threaten with a smile. His greatest fear is not death, but the public collapse of the image he has constructed.</p>`
+const modalRecords = {
+  restricted_file_01: {
+    tag: "Restricted_File_Type_01",
+    title: "Restricted_File_Title_01",
+    subtitle: "Restricted_File_Subtitle_01",
+    body: "This is the field where the actual restricted file description would go."
   },
-  Field_Name: {
-    tag:"FILE 02-A · Field_Name",
-    title:"Field_Name Field_Name",
-    subtitle:"Medical district · Field_Name",
-    body:`<p>The Field_Name is where Field_Name's respectable institutions acquire their most convenient silences. Field_Name's influence is felt through the systems of care, confinement and neglect.</p><p>Further details remain sealed in the Field_Name archive.</p>`
+  restricted_file_02: {
+    tag: "Restricted_File_Type_02",
+    title: "Restricted_File_Title_02",
+    subtitle: "Restricted_File_Subtitle_02",
+    body: "This is the field where the actual restricted file description would go."
   },
-  Field_Name: {
-    tag:"FILE 02-B · WISIELCZE WZGÓRZE",
-    title:"Field_Name Field_Name",
-    subtitle:"Military-j judicial district · Field_Name",
-    body:`<p>Order is not merely an ideal here; it is architecture. Courts, checkpoints and armed authority make the district one of the city's most controlled environments.</p><p>Further details remain sealed in the Field_Name archive.</p>`
-  },
-  Field_Name: {
-    tag:"FILE 02-C · Field_Name",
-    title:"Field_Name Field_Name",
-    subtitle:"Financial-industrial district · Field_Name",
-    body:`<p>Debt is a second geography in Field_Name. Those who owe are permitted to travel only as far as the collectors allow.</p><p>Further details remain sealed in the Field_Name archive.</p>`
+  restricted_file_03: {
+    tag: "Restricted_File_Type_03",
+    title: "Restricted_File_Title_03",
+    subtitle: "Restricted_File_Subtitle_03",
+    body: "This is the field where the actual restricted file description would go."
   }
 };
 
-function openModal(key){
-  const f = files[key];
-  if(!f) return;
-  modalTag.textContent = f.tag;
-  modalTitle.textContent = f.title;
-  modalSubtitle.textContent = f.subtitle;
-  modalBody.innerHTML = f.body;
+function openModal(recordKey) {
+  const record = modalRecords[recordKey] || modalRecords.restricted_file_01;
+  modalTag.textContent = record.tag;
+  modalTitle.textContent = record.title;
+  modalSubtitle.textContent = record.subtitle;
+  modalBody.textContent = record.body;
+  modal.setAttribute("aria-hidden", "false");
   modal.classList.add("open");
-  modal.setAttribute("aria-hidden","false");
 }
-$$("[data-modal]").forEach(el => el.addEventListener("click", () => openModal(el.dataset.modal)));
-$$(".modal-close, .modal-backdrop").forEach(el => el.addEventListener("click", closeModal));
-function closeModal(){
+
+function closeModal() {
+  modal.setAttribute("aria-hidden", "true");
   modal.classList.remove("open");
-  modal.setAttribute("aria-hidden","true");
 }
-document.addEventListener("keydown", e => {
-  if(e.key === "Escape"){ closeModal(); closeDrawer(); }
+
+document.getElementById("menuButton")?.addEventListener("click", () => {
+  document.getElementById("drawer")?.classList.add("open");
 });
 
-const locations = {
-  asylum:["Field_Name PSYCHIATRIC ASYLUM","A respectable institution with an inconvenient relationship to disappearance.","The place where the Field_Name begins."],
-  pharmacy:["Field_Name","A shop of remedies, ingredients and things that should not be prescribed.","Look beneath the counter."],
-  opera:["Field_Name","Culture, spectacle and aristocratic appetite beneath gas and electric light.","A perfect place for someone who needs an audience."],
-  palace:["Field_Name","The public seat of Field_Name Field_Name and the entrance to the Field_Name.","Nothing beneath it is merely architectural."],
-  cathedral:["Field_Name","The spiritual heart of the Field_Name.","Its archives may contain more truth than its sermons."]
-};
-const locationFile = $("#locationFile");
-function selectLocation(key){
-  const [title, desc, note] = locations[key];
-  locationFile.innerHTML = `<span class="tag">LOCATION FILE</span><h3>${title}</h3><p>${desc}</p><p class="eyebrow">${note}</p>`;
-  $$(".pin").forEach(p => p.classList.toggle("active", p.dataset.location === key));
-  $$(".location-list button").forEach(p => p.classList.toggle("active", p.dataset.location === key));
-}
-$$("[data-location]").forEach(el => el.addEventListener("click", () => selectLocation(el.dataset.location)));
-
-const hero = $(".hero-art");
-window.addEventListener("mousemove", e => {
-  const x = (e.clientX / innerWidth - .5) * 10;
-  const y = (e.clientY / innerHeight - .5) * 6;
-  hero.style.transform = `perspective(900px) rotateY(${x*.08}deg) rotateX(${-y*.05}deg)`;
+document.getElementById("closeButton")?.addEventListener("click", () => {
+  document.getElementById("drawer")?.classList.remove("open");
 });
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.animate(
-        [{opacity:0, transform:"translateY(24px)"},{opacity:1, transform:"translateY(0)"}],
-        {duration:900, easing:"cubic-bezier(.2,.8,.2,1)", fill:"forwards"}
-      );
-      observer.unobserve(entry.target);
-    }
+document.querySelectorAll("[data-scroll]").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelector(button.dataset.scroll)?.scrollIntoView({ behavior: "smooth" });
   });
-},{threshold:.12});
-$$(".district-card,.faith-card,.evidence-card,.Field_Name-timeline article,.section-heading").forEach(el => observer.observe(el));
+});
+
+document.querySelectorAll("[data-modal]").forEach(button => {
+  button.addEventListener("click", () => openModal(button.dataset.modal));
+});
+
+document.querySelector(".modal-close")?.addEventListener("click", closeModal);
+document.querySelector(".modal-backdrop")?.addEventListener("click", closeModal);
