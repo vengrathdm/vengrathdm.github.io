@@ -96,3 +96,19 @@ header,main,footer{position:relative;z-index:2}
 @keyframes ritualFogB{0%{transform:translate(8%,4%) scale(1.25)}100%{transform:translate(-8%,-5%) scale(1.4)}}
 @media(max-width:1000px){.sanctum{grid-template-columns:1fr}.ritual-panel{width:min(620px,92vw);opacity:.82;transform:none}.orb-nav{inset:-8px}}
 @media(max-width:600px){.orb-nav{inset:2px}.orb-nav button{width:25px;height:25px;margin:-12.5px;font-size:7px}}
+
+/* EXPERIMENT 03 — interfejs owinięty wokół kuli */
+.sanctum{position:relative;isolation:isolate}
+.crystal{z-index:20}
+.orb-nav{z-index:25}
+.ritual-panel{position:absolute;z-index:12;right:-5px;top:50%;width:230px;transform:translate(145px,-50%) scale(.82);transform-origin:center left;opacity:.06;filter:blur(2px);pointer-events:none;transition:transform .65s cubic-bezier(.2,.8,.2,1),opacity .45s ease,filter .45s ease;will-change:transform,opacity}
+.sanctum:hover .ritual-panel,.ritual-panel:hover{transform:translate(0,-50%) scale(.94);opacity:.9;filter:blur(0);pointer-events:auto}
+.ritual-panel:before{content:"";position:absolute;inset:-35px -70px -35px -25px;z-index:-1;border-radius:50%;background:radial-gradient(ellipse at left,#20152a99 0,#0b081000 68%);filter:blur(18px);opacity:.8}
+.orb-nav button{transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .3s,box-shadow .3s}
+.orb-nav{transition:transform .55s ease}
+.sanctum:not(:hover) .orb-nav{transform:scale(.96)}
+.ritual-panel .vision-list{max-height:58vh;overflow:auto;scrollbar-width:thin}
+@media(max-width:1000px){
+  .ritual-panel{position:relative;right:auto;top:auto;width:min(620px,92vw);transform:translateY(8px) scale(.98);opacity:.72;filter:none;pointer-events:auto;margin:0 auto}
+  .sanctum:hover .ritual-panel,.ritual-panel:hover{transform:translateY(0) scale(1);opacity:.92}
+}
