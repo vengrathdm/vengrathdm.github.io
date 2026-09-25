@@ -1,101 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Field_Name</title>
-<link rel="preconnect" href="#">
-<link rel="preconnect" href="#" crossorigin>
-<link href="#" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campaign_Name</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="crt">
-  <div class="scanlines"></div>
-  <div class="noise"></div>
-  <div class="vignette"></div>
-  <div class="rgb-shift"></div>
-</div>
-
-<header class="topbar">
-  <div class="brand"><span class="dot"></span>Field_Name</div>
-  <div class="status"><span>Field_Name</span>Field_Name<i></i> <span>Field_Name</span> <b id="clock">Field_Name</b></div>
-</header>
-
-<main>
-  <section class="mast">
-    <div>
-      <p class="eyebrow">Field_Name</p>
-      <h1>Field_Name<br><em>Field_Name</em></h1>
-      <p class="warning">Field_Name</p>
-    </div>
-    <div class="system-readout">
-      <span>Field_Name</span><strong>Field_Name</strong>
-      <small>Field_Name<b id="integrity">Field_Name</b></small>
-      <small>Field_Name<b class="amber">Field_Name</b></small>
-      <small>Field_Name<b class="red">Field_Name</b></small>
-    </div>
-  </section>
-
-  <section class="network">
-    <aside class="camera-list">
-      <div class="section-label">Field_Name<span>Field_Name</span></div>
-      <button class="cam active" data-cam="Field_Name"><span>Field_Name</span><b>Field_Name</b><i>Field_Name</i></button>
-      <button class="cam" data-cam="Field_Name"><span>Field_Name</span><b>Field_Name</b><i>Field_Name</i></button>
-      <button class="cam" data-cam="Field_Name"><span>Field_Name</span><b>Field_Name</b><i>Field_Name</i></button>
-      <button class="cam" data-cam="gate"><span>Field_Name</span><b>Field_Name</b><i>Field_Name</i></button>
-      <button class="cam compromised" data-cam="unknown"><span>Field_Name</span><b>Field_Name</b><i>Field_Name</i></button>
-      <div class="feed-note">Field_Name<br>Field_Name<br>Field_Name</div>
-    </aside>
-
-    <div class="viewport">
-      <div class="camera-meta"><span id="camName">Field_Name</span><span id="camTime">Field_Name</span></div>
-      <div class="feed-image" id="feed">
-        <img src="#" alt="Field_Name">
-        <div class="reticle"></div>
-        <div class="tracking-box"><span>Field_Name</span><b>Field_Name</b></div>
-        <div class="hud-corner tl"></div><div class="hud-corner tr"></div><div class="hud-corner bl"></div><div class="hud-corner br"></div>
-        <div class="feed-copy" id="feedCopy">Field_Name</div>
+  <div class="crt" aria-hidden="true"><div class="scanlines"></div><div class="noise"></div><div class="vignette"></div><div class="rgb-shift"></div></div>
+  <header class="topbar">
+    <div class="brand"><span class="dot"></span>Site_Name</div>
+    <div class="status"><span>Connection_Label</span> Connection_State <i></i> <span>Time_Label</span> <b id="clock">00:00:00</b></div>
+  </header>
+  <main>
+    <section class="mast">
+      <div><p class="eyebrow">Node_Label_01 / Access_Label_01</p><h1>Campaign_Name<br><em>Surveillance_Interface</em></h1><p class="warning">This is the field where the actual security notice or interface warning would go.</p></div>
+      <div class="system-readout"><span>System_State_Label</span><strong>System_State_Value</strong><small>Integrity_Label: <b id="integrity">Integrity_Value</b></small><small>Link_Label: <b class="amber">Link_Status</b></small><small>Signature_Label: <b class="red">Signature_Status</b></small></div>
+    </section>
+    <section class="network">
+      <aside class="camera-list">
+        <div class="section-label">Feed_List_Title <span>Feed_Count</span></div>
+        <button class="cam active" data-cam="feed_01"><span>Feed_01</span><b>Feed_Name_01</b><i>Feed_Status_01</i></button>
+        <button class="cam" data-cam="feed_02"><span>Feed_02</span><b>Feed_Name_02</b><i>Feed_Status_02</i></button>
+        <button class="cam" data-cam="feed_03"><span>Feed_03</span><b>Feed_Name_03</b><i>Feed_Status_03</i></button>
+        <button class="cam" data-cam="feed_04"><span>Feed_04</span><b>Feed_Name_04</b><i>Feed_Status_04</i></button>
+        <button class="cam compromised" data-cam="feed_05"><span>Feed_05</span><b>Feed_Name_05</b><i>Feed_Status_05</i></button>
+        <div class="feed-note">This is the field where the actual monitoring notes would go.<br>Recognition_Status<br>Matching_Status</div>
+      </aside>
+      <div class="viewport">
+        <div class="camera-meta"><span id="camName">Feed_Name_01</span><span id="camTime">00:00:00</span></div>
+        <div class="feed-image" id="feed">
+          <img src="https://placehold.co/1200x800?text=Feed_Image_01" alt="Feed_Image_Alt_01">
+          <div class="reticle"></div><div class="tracking-box"><span>Entity_Label_01</span><b>Tracking_Status</b></div>
+          <div class="hud-corner tl"></div><div class="hud-corner tr"></div><div class="hud-corner bl"></div><div class="hud-corner br"></div>
+          <div class="feed-copy" id="feedCopy">This is the field where the actual live-feed caption would go.</div>
+        </div>
+        <div class="telemetry"><span>Frame <b id="frame">000000</b></span><span>Sync_Value</span><span>Latitude_Value</span><span>Longitude_Value</span><span>Recording_Status</span></div>
       </div>
-      <div class="telemetry"><span>Field_Name<b id="frame">Field_Name</b></span><span>Field_Name</span><span>Field_Name</span><span>Field_Name</span><span>Field_Name</span></div>
-    </div>
-
-    <aside class="entity">
-      <div class="section-label">Field_Name</div>
-      <div class="entity-main">
-        <div class="portrait">Field_Name</div>
-        <div><span>Field_Name</span><h2 id="entityName">Field_Name</h2><small>Field_Name</small></div>
+      <aside class="entity">
+        <div class="section-label">Entity_Register_Title</div>
+        <div class="entity-main"><div class="portrait">Entity_Index_01</div><div><span>Designation_Label</span><h2 id="entityName">Entity_Name_01</h2><small>Entity_Group_01</small></div></div>
+        <dl><dt>Status_Label</dt><dd class="red">Status_Value</dd><dt>Associates_Label</dt><dd>Associates_Value</dd><dt>Last_Seen_Label</dt><dd id="lastSeen">Time_Value</dd><dt>Proximity_Label</dt><dd>Proximity_Value</dd><dt>Threat_Label</dt><dd>Threat_Value</dd></dl>
+        <div class="entity-tabs"><button class="selected">Tab_Label_01</button><button>Tab_Label_02</button><button>Tab_Label_03</button></div>
+        <div class="log" id="log"><p><time>Time_01</time>Log_Event_01</p><p><time>Time_02</time>Log_Event_02</p><p><time>Time_03</time>Log_Event_03</p><p class="alert"><time>Time_04</time>Log_Event_04</p></div>
+      </aside>
+    </section>
+    <section class="party">
+      <div class="section-label">Entity_Roster_Title</div>
+      <div class="party-grid">
+        <button data-person="Entity_Name_01"><b>01</b><span>Entity_Name_01</span><small>Entity_Metadata_01</small><i>Entity_Status_01</i></button>
+        <button data-person="Entity_Name_02"><b>02</b><span>Entity_Name_02</span><small>Entity_Metadata_02</small><i>Entity_Status_02</i></button>
+        <button data-person="Entity_Name_03"><b>03</b><span>Entity_Name_03</span><small>Entity_Metadata_03</small><i>Entity_Status_03</i></button>
+        <button data-person="Entity_Name_04"><b>04</b><span>Entity_Name_04</span><small>Entity_Metadata_04</small><i>Entity_Status_04</i></button>
+        <button data-person="Entity_Name_05"><b>05</b><span>Entity_Name_05</span><small>Entity_Metadata_05</small><i>Entity_Status_05</i></button>
       </div>
-      <dl>
-        <dt>Field_Name</dt><dd class="red">Field_Name</dd>
-        <dt>Field_Name</dt><dd>Field_Name</dd>
-        <dt>Field_Name</dt><dd id="lastSeen">Field_Name</dd>
-        <dt>Field_Name</dt><dd>Field_Name</dd>
-        <dt>Field_Name</dt><dd>Field_Name</dd>
-      </dl>
-      <div class="entity-tabs">
-        <button class="selected">Field_Name</button><button>Field_Name</button><button>Field_Name</button>
-      </div>
-      <div class="log" id="log">
-        <p><time>Field_Name</time>Field_Name</p>
-        <p><time>Field_Name</time>Field_Name</p>
-        <p><time>Field_Name</time>Field_Name</p>
-        <p class="alert"><time>Field_Name</time>Field_Name</p>
-      </div>
-    </aside>
-  </section>
-
-  <section class="party">
-    <div class="section-label">Field_Name</div>
-    <div class="party-grid">
-      <button data-person="Field_Name"><b>Field_Name</b><span>Field_Name</span><small>Field_Name</small><i>Field_Name</i></button>
-      <button data-person="Field_Name"><b>Field_Name</b><span>Field_Name</span><small>Field_Name</small><i>Field_Name</i></button>
-      <button data-person="Field_Name"><b>Field_Name</b><span>Field_Name</span><small>Field_Name</small><i>Field_Name</i></button>
-      <button data-person="Field_Name"><b>Field_Name</b><span>Field_Name</span><small>Field_Name</small><i>Field_Name</i></button>
-      <button data-person="Field_Name"><b>Field_Name</b><span>Field_Name</span><small>Field_Name</small><i>Field_Name</i></button>
-    </div>
-  </section>
-</main>
-
-<footer><span>Field_Name</span><span>Field_Name<b>Field_Name</b></span><span id="footerMsg">Field_Name</span></footer>Field_Name</body>
+    </section>
+  </main>
+  <footer><span>Site_Footer_Label</span><span>Encryption_Label: <b>Encryption_Status</b></span><span id="footerMsg">System_Message_01</span></footer>
+  <script src="script.js"></script>
+</body>
 </html>
