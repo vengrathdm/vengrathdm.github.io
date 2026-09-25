@@ -223,3 +223,17 @@ header,main,footer{position:relative;z-index:2}
 .crystal:after{
   z-index:28;
 }
+
+
+/* Hover corridor: the trigger lives OUTSIDE the sphere, while the ring may
+   visually overlap the crystal. Moving from the sphere to the ring therefore
+   never requires entering a dead zone. */
+.crystal{
+  overflow:visible;
+}
+.crystal .orb-nav{
+  pointer-events:none;
+}
+.crystal .orb-nav button{
+  pointer-events:auto;
+}
