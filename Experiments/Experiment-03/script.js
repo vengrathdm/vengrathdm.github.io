@@ -133,6 +133,9 @@ const visionNumber=document.getElementById("visionNumber");
 const visionName=document.getElementById("visionName");
 const list=document.getElementById("visions");
 const omenText=document.getElementById("omenText");
+const progressText=document.getElementById("progressText");
+const progressBar=document.getElementById("progressBar");
+const complete=document.getElementById("complete");
 
 visions.forEach((item,index)=>{
   const button=document.createElement("button");
@@ -153,6 +156,10 @@ function scryTransition(){
 function openVision(index){
   currentVision=(index+visions.length)%visions.length;
   visited.add(currentVision);
+  const count=visited.size;
+  progressText.textContent=`WIZJE ODWIEDZONE ${count} / 9`;
+  progressBar.style.width=`${count/9*100}%`;
+  if(count===9) setTimeout(()=>complete.classList.add("show"),900);
   document.body.dataset.vision=currentVision;
   document.querySelectorAll(".vision-button").forEach((button,i)=>button.classList.toggle("seen",visited.has(i)));
   const item=visions[currentVision];
@@ -178,6 +185,11 @@ function toggleAwaken(){
 }
 
 document.getElementById("awaken").addEventListener("click",toggleAwaken);
+document.getElementById("reveal").addEventListener("click",()=>{
+  omenText.animate([{opacity:0,filter:"blur(8px)"},{opacity:1,filter:"blur(0)"}],{duration:500});
+  omenText.textContent=currentVision===6?"SOULMONGER JEST GŁODNY.":currentVision===8?"DRZWI JUŻ SIĘ OTWORZYŁY.":visions[currentVision].kicker;
+});
+complete.addEventListener("click",()=>complete.classList.remove("show"));
 
 document.getElementById("dim").addEventListener("click",()=>{
   crystal.animate(
