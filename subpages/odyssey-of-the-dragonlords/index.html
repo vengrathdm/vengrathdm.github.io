@@ -39,6 +39,7 @@
     .node:hover .node-core,.node.selected .node-core{transform:scale(1.65);background:var(--gold);box-shadow:0 0 0 9px #c9a86612,0 0 35px #c9a86677}
     .node.blue .node-core{border-color:var(--blue);box-shadow:0 0 0 6px #7898ad0c,0 0 25px #7898ad33}.node.blue:hover .node-core,.node.blue.selected .node-core{background:var(--blue);box-shadow:0 0 0 9px #7898ad12,0 0 35px #7898ad77}
     .node.red .node-core{border-color:var(--red);box-shadow:0 0 0 6px #9c47470d,0 0 25px #9c474733}.node.red:hover .node-core,.node.red.selected .node-core{background:var(--red);box-shadow:0 0 0 9px #9c474712,0 0 35px #9c474777}
+    .constellation-caption{position:absolute;z-index:8;color:#747d80;font:9px "Fira Sans Extra Condensed";letter-spacing:3px;text-transform:uppercase;opacity:.65;pointer-events:none}.world-caption{left:50%;top:20%;transform:translateX(-50%)}.party-caption{left:50%;top:65%;transform:translateX(-50%);color:#7898ad}
     .node-label{position:absolute;top:27px;left:50%;transform:translateX(-50%);white-space:nowrap;padding:5px 8px;border:1px solid #454a4a;background:#080b0dd9;box-shadow:0 5px 18px #0008;font:10px/1 "Fira Sans Extra Condensed";letter-spacing:1.7px;text-transform:uppercase;color:#d3d1ca}.node-label:before{content:"";position:absolute;left:50%;bottom:100%;height:10px;border-left:1px solid #777b7766}
     .node:hover .node-label,.node.selected .node-label{color:#fff}
     .central{left:50%;top:54%;z-index:17}.central .node-core{width:42px;height:42px;border-width:2px;box-shadow:0 0 0 10px #c9a8660b,0 0 65px #c9a86666}.central .node-label{top:58px;font:400 21px Voltaire;letter-spacing:1px;color:#eee6d5}
@@ -90,22 +91,27 @@
     <div class="stars" id="stars"></div><div class="orbit"></div><div class="orbit two"></div><div class="orbit three"></div>
     <svg class="constellation-svg" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true" id="lines"></svg>
 
+    <div class="constellation-caption world-caption">THE OLD WORLD</div>
+    <div class="constellation-caption party-caption">THE PARTY</div>
+
     <div class="node central" data-id="thylea"><div class="node-core"></div><div class="node-label">THYLEA</div></div>
 
-    <div class="node" style="left:39%;top:31%" data-id="oath"><div class="node-core"></div><div class="node-label">OATH OF PEACE</div></div>
-    <div class="node" style="left:62%;top:30%" data-id="dragonlords"><div class="node-core"></div><div class="node-label">DRAGONLORDS</div></div>
-    <div class="node red" style="left:75%;top:49%" data-id="titans"><div class="node-core"></div><div class="node-label">TITANS</div></div>
-    <div class="node" style="left:25%;top:50%" data-id="gods"><div class="node-core"></div><div class="node-label">BOGOWIE</div></div>
-    <div class="node" style="left:35%;top:66%" data-id="history"><div class="node-core"></div><div class="node-label">HISTORIA</div></div>
-    <div class="node" style="left:67%;top:67%" data-id="prophecy"><div class="node-core"></div><div class="node-label">PROROCTWA</div></div>
+    <!-- The Old World: a deliberate six-point ring around Thylea -->
+    <div class="node" style="left:42%;top:27%" data-id="oath"><div class="node-core"></div><div class="node-label">OATH OF PEACE</div></div>
+    <div class="node" style="left:58%;top:27%" data-id="dragonlords"><div class="node-core"></div><div class="node-label">DRAGONLORDS</div></div>
+    <div class="node red" style="left:68%;top:43%" data-id="titans"><div class="node-core"></div><div class="node-label">TITANS</div></div>
+    <div class="node" style="left:59%;top:58%" data-id="prophecy"><div class="node-core"></div><div class="node-label">PROROCTWA</div></div>
+    <div class="node" style="left:41%;top:58%" data-id="history"><div class="node-core"></div><div class="node-label">HISTORIA</div></div>
+    <div class="node" style="left:32%;top:43%" data-id="gods"><div class="node-core"></div><div class="node-label">BOGOWIE</div></div>
 
-    <div class="node blue" style="left:29%;top:79%" data-id="rina"><div class="node-core"></div><div class="node-label">RINA</div></div>
-    <div class="node blue" style="left:42%;top:84%" data-id="xavier"><div class="node-core"></div><div class="node-label">XAVIER</div></div>
-    <div class="node blue" style="left:55%;top:85%" data-id="xastar"><div class="node-core"></div><div class="node-label">XASTAR</div></div>
-    <div class="node blue" style="left:68%;top:82%" data-id="vespera"><div class="node-core"></div><div class="node-label">VESPERA</div></div>
-    <div class="node blue" style="left:80%;top:76%" data-id="zander"><div class="node-core"></div><div class="node-label">ZANDER?</div></div>
+    <!-- The Party: an intentional five-star pentagon -->
+    <div class="node blue" style="left:38%;top:76%" data-id="rina"><div class="node-core"></div><div class="node-label">RINA</div></div>
+    <div class="node blue" style="left:46%;top:84%" data-id="xavier"><div class="node-core"></div><div class="node-label">XAVIER</div></div>
+    <div class="node blue" style="left:58%;top:84%" data-id="xastar"><div class="node-core"></div><div class="node-label">XASTAR</div></div>
+    <div class="node blue" style="left:66%;top:76%" data-id="vespera"><div class="node-core"></div><div class="node-label">VESPERA</div></div>
+    <div class="node blue" style="left:52%;top:69%" data-id="zander"><div class="node-core"></div><div class="node-label">ZANDER?</div></div>
 
-    <div class="info-drawer" id="drawer">
+    <div class="info-drawer"/> id="drawer">
       <button class="close" id="close" aria-label="Zamknij">×</button>
       <img class="drawer-image" id="drawerImage" src="../../Home/Graphics/odyssey-of-the-dragonlords.jpg" alt="">
       <div class="drawer-kicker" id="drawerKicker"></div>
@@ -217,11 +223,22 @@
   document.getElementById("close").addEventListener("click",()=>{drawer.classList.remove("open");nodes.forEach(n=>n.classList.remove("selected"))});
   document.querySelectorAll("[data-focus]").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("[data-focus]").forEach(x=>x.classList.remove("active"));b.classList.add("active");open(b.dataset.focus)}));
 
-  const positions={thylea:[50,54],oath:[39,31],dragonlords:[62,30],titans:[75,49],gods:[25,50],history:[35,66],prophecy:[67,67],rina:[29,79],xavier:[42,84],xastar:[55,85],vespera:[68,82],zander:[80,76]};
-  const edges=[["oath","thylea"],["thylea","dragonlords"],["dragonlords","oath"],["dragonlords","history"],["history","gods"],["gods","thylea"],["thylea","prophecy"],["prophecy","titans"],["titans","oath"],["titans","dragonlords"],["titans","history"],["rina","xavier"],["xavier","xastar"],["xastar","vespera"],["vespera","zander"],["zander","rina"],["rina","xastar"],["xavier","vespera"]];
+  const positions={thylea:[50,50],oath:[42,27],dragonlords:[58,27],titans:[68,43],prophecy:[59,58],history:[41,58],gods:[32,43],rina:[38,76],xavier:[46,84],xastar:[58,84],vespera:[66,76],zander:[52,69]};
+  const edges=[
+    // Old World hexagon — a recognizable closed constellation
+    ["oath","dragonlords"],["dragonlords","titans"],["titans","prophecy"],["prophecy","history"],["history","gods"],["gods","oath"],
+    // Inner spokes — the whole old-world constellation points toward Thylea
+    ["thylea","oath"],["thylea","dragonlords"],["thylea","titans"],["thylea","prophecy"],["thylea","history"],["thylea","gods"],
+    // Narrative relationships
+    ["dragonlords","history"],["dragonlords","oath"],["oath","titans"],["titans","history"],
+    // Party pentagon — five players form one continuous constellation
+    ["rina","xavier"],["xavier","xastar"],["xastar","vespera"],["vespera","zander"],["zander","rina"],
+    // Two internal party diagonals make the pentagon read as a star
+    ["rina","xastar"],["xavier","vespera"]
+  ];
   const svg=document.getElementById("lines");
   function draw(){
-    svg.innerHTML=edges.map(([a,b])=>{const A=positions[a],B=positions[b];const cls=(a==="titans"||b==="titans")?"red":(a==="rina"||b==="rina"||a==="xavier"||b==="xavier"||a==="xastar"||b==="xastar"||a==="vespera"||b==="vespera"||a==="zander"||b==="zander")?"blue":"";return '<line class="'+cls+'" x1="'+A[0]+'" y1="'+A[1]+'" x2="'+B[0]+'" y2="'+B[1]+'"></line>'}).join("");
+    svg.innerHTML=edges.map(([a,b])=>{const A=positions[a],B=positions[b];const partyIds=["rina","xavier","xastar","vespera","zander"];const cls=(partyIds.includes(a)&&partyIds.includes(b))?"blue":(a==="titans"||b==="titans")?"red":"";return '<line class="'+cls+'" x1="'+A[0]+'" y1="'+A[1]+'" x2="'+B[0]+'" y2="'+B[1]+'"></line>'}).join("");
   }
   draw();
   const starLayer=document.getElementById("stars");
