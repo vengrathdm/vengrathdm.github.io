@@ -1,1 +1,71 @@
-The requested file reference is not currently visible. Use files.search or files.list to rediscover the file, then retry with a returned ref_id or file_id.
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+:root{
+  --ink:#14252b;
+  --ink-soft:#29434a;
+  --marble:#f2eee3;
+  --paper:#e8e0cf;
+  --white:#faf8f1;
+  --gold:#b18a45;
+  --gold-light:#d1b777;
+  --terracotta:#a6533d;
+  --sea:#345f68;
+  --line:rgba(20,37,43,.22);
+  --shadow:rgba(20,37,43,.16);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--marble);color:var(--ink);font-family:"Cormorant Garamond",serif;font-size:19px;line-height:1.45}
+button,a{font:inherit}
+button{cursor:pointer}
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.055;z-index:20;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
+.fog{display:none}
+.masthead{min-height:96px;padding:18px 4vw;display:grid;grid-template-columns:64px 1fr auto;gap:24px;align-items:center;border-bottom:1px solid var(--line);background:var(--marble);position:relative;z-index:10}
+.seal{width:56px;height:56px;border:1px solid var(--gold);border-radius:50%;background:var(--ink);color:var(--gold-light);font-family:Cinzel,serif;font-size:13px;letter-spacing:.12em}
+.masthead-center{text-align:center}
+.eyebrow,.chapter,.tag,.case-meta,.file-index,.sin,.card-number,.card-footer,.location-list button,.pin,.compass,footer,.stamp{font-family:Cinzel,serif;letter-spacing:.13em;text-transform:uppercase}
+.eyebrow{font-size:10px;color:var(--terracotta)}
+.masthead h1{font-family:Cinzel,serif;font-size:clamp(26px,4vw,48px);letter-spacing:.08em;margin:2px 0 0}
+.masthead p{margin:0;font-size:15px;font-style:italic;color:var(--ink-soft)}
+.case-meta{display:grid;gap:5px;text-align:right;font-size:10px;color:var(--ink-soft)}
+.drawer{position:fixed;inset:0 auto 0 0;width:min(420px,90vw);background:var(--ink);color:var(--white);transform:translateX(-105%);transition:transform .35s ease;z-index:30;border-right:5px solid var(--gold)}
+.drawer.open{transform:none}.drawer-inner{padding:42px}
+.close{background:none;border:0;color:inherit;font-size:32px;line-height:1;position:absolute;right:20px;top:14px}
+.drawer h2,.section-heading h2,.hero h2,.chapter-splash h2{font-family:Cinzel,serif;font-weight:500;letter-spacing:.02em}
+.drawer h2{font-size:42px;margin:20px 0}
+.drawer nav{display:grid;gap:12px}.drawer nav a{color:var(--white);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.16);padding-bottom:8px}
+.drawer-note{margin-top:40px;color:#b9c5c7;font-style:italic}
+.hero{min-height:78vh;display:grid;grid-template-columns:1fr 1fr;background:var(--ink);color:var(--white)}
+.hero-copy{padding:clamp(50px,8vw,110px);display:flex;flex-direction:column;justify-content:center;position:relative}
+.chapter{font-size:11px;color:var(--gold-light)}
+.rule{width:100px;height:1px;background:var(--gold);margin:18px 0}
+.hero h2{font-size:clamp(48px,7vw,94px);line-height:.95;margin:0 0 26px}
+.hero h2 em,.section-heading h2 em,.map-copy h2 em{font-family:"Cormorant Garamond",serif;font-weight:400}
+.lead{max-width:620px;color:#d7dfe0;font-size:22px}
+.file-button,.ghost-button{align-self:flex-start;margin-top:18px;padding:12px 18px;border:1px solid var(--gold);background:transparent;color:var(--gold-light);font-family:Cinzel,serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.hero-art{min-height:600px;background:linear-gradient(90deg,rgba(20,37,43,.2),rgba(20,37,43,.05)),url("/Home/Graphics/odyssey-of-the-dragonlords.jpg") center/cover;position:relative;overflow:hidden}
+.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(20,37,43,.25),transparent 45%,rgba(177,138,69,.12))}
+.moon{position:absolute;width:170px;height:170px;border-radius:50%;right:12%;top:12%;background:#eee7d4;opacity:.85;mix-blend-mode:screen}
+.tower,.smoke,.river{display:none}
+.stamp{position:absolute;right:30px;bottom:30px;border:1px solid var(--gold);padding:13px 17px;color:var(--gold-light);font-size:11px;transform:rotate(-5deg);z-index:2}
+.paper-section{padding:100px 7vw;background:var(--marble);position:relative}
+.paper-section:before{content:"";position:absolute;inset:24px;border:1px solid rgba(177,138,69,.24);pointer-events:none}
+.section-heading{max-width:850px;margin:0 auto 55px}.section-heading h2{font-size:clamp(42px,6vw,76px);line-height:.98;margin:10px 0}.section-heading p{color:var(--ink-soft)}
+.district-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.district-card{position:relative;padding:28px 30px;border:1px solid var(--line);background:rgba(255,255,255,.22);min-height:190px}
+.district-card.featured{grid-column:1/-1;background:var(--white);border-top:4px solid var(--terracotta)}
+.card-number{position:absolute;right:18px;top:15px;color:var(--gold);font-size:18px}
+.district-card h3,.faith-card h3,.portrait-dossier h3,.location-file h3,.campaign-timeline h3{font-family:Cinzel,serif;font-weight:500}
+.district-card h3{font-size:29px;margin:13px 0 5px}.district-card p{max-width:700px;margin:0;color:var(--ink-soft)}.tag{font-size:9px;color:var(--terracotta)}.sin{position:absolute;bottom:17px;right:18px;font-size:9px;color:var(--gold)}
+.dark-section{padding:100px 7vw;background:var(--ink);color:var(--white)}.inverted{color:var(--white)}.inverted p{color:#b9c5c7}
+.dossier-layout{max-width:1150px;margin:auto;display:grid;grid-template-columns:1.5fr .8fr;gap:24px}
+.portrait-dossier{background:var(--white);color:var(--ink);display:grid;grid-template-columns:1fr 1fr}.portrait{min-height:520px;background:linear-gradient(160deg,#345f68,#14252b);position:relative}.portrait-silhouette{position:absolute;inset:18% 22%;border:1px solid var(--gold);opacity:.5}.portrait-caption{position:absolute;bottom:18px;left:18px;color:var(--gold-light);font:10px Cinzel,serif}
+.dossier-content{padding:38px}.dossier-content h3{font-size:31px;line-height:1.05;margin:14px 0}.voice{font-style:italic;color:var(--terracotta)}.stats{display:grid;gap:8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;margin:20px 0}.stats span{display:flex;justify-content:space-between;font-size:15px}.stats b{font:10px Cinzel,serif}
+.side-files{display:grid;gap:10px;align-content:start}.evidence-card{position:relative;text-align:left;padding:22px;background:transparent;border:1px solid rgba(209,183,119,.3);color:var(--white)}.evidence-card strong{display:block;font:18px Cinzel,serif;margin:8px 0}.evidence-card small{color:#b9c5c7}.arrow{position:absolute;right:18px;top:18px;color:var(--gold-light)}.marginal-note{padding:22px;border-left:2px solid var(--terracotta);font-style:italic;color:#c8d1d2}.marginal-note span{font:9px Cinzel,serif;color:var(--gold-light)}
+.split-section{display:grid;grid-template-columns:.6fr 1.4fr;gap:60px}.religion-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.faith-card{padding:34px;background:var(--white);border:1px solid var(--line)}.faith-card.shadow{background:var(--ink);color:var(--white);border-color:rgba(209,183,119,.25)}.symbol{font-size:28px;color:var(--gold)}.faith-card h3{font-size:28px}.card-footer{margin-top:30px;font-size:9px;color:var(--gold)}
+.map-section{padding:100px 7vw;background:#d9d0bd;display:grid;grid-template-columns:.8fr 1.2fr;gap:40px}.map-copy h2{font:500 clamp(44px,6vw,76px)/.95 Cinzel,serif;margin:12px 0}.location-list{display:grid;gap:8px;margin-top:30px}.location-list button{padding:12px;text-align:left;border:0;border-bottom:1px solid var(--line);background:none;color:var(--ink);font-size:10px}.map{min-height:520px;background:#c4b79e;position:relative;border:8px solid #eee8da;box-shadow:0 8px 30px var(--shadow);overflow:hidden}.map-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(20,37,43,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(20,37,43,.08) 1px,transparent 1px);background-size:36px 36px}.river-map{position:absolute;top:-10%;left:42%;width:70px;height:125%;background:#7e9fa3;transform:rotate(12deg);opacity:.55}.pin{position:absolute;border:1px solid var(--gold);background:var(--ink);color:var(--gold-light);border-radius:50%;width:42px;height:42px;font-size:10px}.pin span{display:none}.p1{left:18%;top:25%}.p2{left:62%;top:18%}.p3{left:70%;top:56%}.p4{left:34%;top:63%}.p5{left:78%;top:78%}.compass{position:absolute;right:18px;top:18px;font-size:14px}.location-file{grid-column:2;background:var(--white);padding:24px;border:1px solid var(--line)}
+.campaign{background:var(--paper)}.chapter-splash{text-align:center;max-width:700px;margin:auto}.chapter-splash h2{font-size:clamp(54px,8vw,100px);margin:8px 0}.ornament{color:var(--gold);font-size:28px}.campaign-timeline{max-width:1050px;margin:70px auto 0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}.campaign-timeline article{padding:25px 18px;border-right:1px solid var(--line)}.campaign-timeline span{font:12px Cinzel,serif;color:var(--terracotta)}.campaign-timeline h3{font-size:21px}
+footer{display:flex;justify-content:space-between;padding:24px 5vw;background:var(--ink);color:#9eb0b3;font-size:9px}
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:40}.modal.open{display:flex}.modal-backdrop{position:absolute;inset:0;background:rgba(10,20,23,.78)}.modal-card{position:relative;width:min(680px,90vw);max-height:80vh;overflow:auto;background:var(--marble);color:var(--ink);padding:45px;border-top:4px solid var(--gold);z-index:1}.modal-card h2{font:500 42px Cinzel,serif;margin:12px 0}.modal-subtitle{color:var(--terracotta);font-style:italic}
+@media(max-width:900px){.hero,.dossier-layout,.split-section,.map-section{grid-template-columns:1fr}.hero-art{min-height:430px}.district-grid,.religion-grid,.campaign-timeline{grid-template-columns:1fr}.district-card.featured{grid-column:auto}.portrait-dossier{grid-template-columns:1fr}.portrait{min-height:360px}.location-file{grid-column:auto}.case-meta{display:none}}
+@media(max-width:560px){.masthead{grid-template-columns:52px 1fr}.masthead-center{text-align:left}.paper-section,.dark-section,.map-section{padding:70px 5vw}.hero-copy{padding:55px 7vw}.paper-section:before{inset:12px}footer{display:grid;gap:8px}}
