@@ -320,5 +320,26 @@
     "tag": "Archiwum",
     "graphic": "https://cdn.midjourney.com/f2d52c3c-0e32-4b72-a9a2-5f1fdca9d8ed/0_0.png",
     "link": "../../subpages/wails-from-the-lighthouse/"
+  },
+  {
+    "name": "mock-4.txt",
+    "title": "Mock 4",
+    "tag": "Aktywna Kampania",
+    "graphic": "../Graphics/mock-4.svg",
+    "link": "../../subpages/mock-4/"
+  },
+  {
+    "name": "mock-5.txt",
+    "title": "Mock 5",
+    "tag": "Aktywna Kampania",
+    "graphic": "../Graphics/mock-5.svg",
+    "link": "../../subpages/mock-5/"
+  },
+  {
+    "name": "mock-6.txt",
+    "title": "Mock 6",
+    "tag": "Aktywna Kampania",
+    "graphic": "../Graphics/mock-6.svg",
+    "link": "../../subpages/mock-6/"
   }
 ]
