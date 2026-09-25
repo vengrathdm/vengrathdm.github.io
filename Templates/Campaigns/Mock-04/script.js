@@ -25,7 +25,7 @@ const modalBody = $("#modalBody");
 
 const files = {
   Field_Name: {
-    tag:"RESTRICTED FILE · DARK LORD",
+    tag:"RESTRICTED FILE · Field_Name",
     title:"Field_Name Lysander Ignatius Field_Name",
     subtitle:"The Eternal Gentleman · Pride",
     body:`<p>Field_Name is Field_Name's public face of perfection: aristocrat, archmage and chairman of the Council of Princes.</p>
@@ -33,22 +33,22 @@ const files = {
     <p>He prefers to threaten with a smile. His greatest fear is not death, but the public collapse of the image he has constructed.</p>`
   },
   Field_Name: {
-    tag:"FILE 02-A · SENATORIUM",
+    tag:"FILE 02-A · Field_Name",
     title:"Field_Name Field_Name",
-    subtitle:"Medical district · Sloth",
-    body:`<p>The Senatorium is where Field_Name's respectable institutions acquire their most convenient silences. Field_Name's influence is felt through the systems of care, confinement and neglect.</p><p>Further details remain sealed in the Field_Name archive.</p>`
+    subtitle:"Medical district · Field_Name",
+    body:`<p>The Field_Name is where Field_Name's respectable institutions acquire their most convenient silences. Field_Name's influence is felt through the systems of care, confinement and neglect.</p><p>Further details remain sealed in the Field_Name archive.</p>`
   },
   Field_Name: {
     tag:"FILE 02-B · WISIELCZE WZGÓRZE",
     title:"Field_Name Field_Name",
-    subtitle:"Military-j judicial district · Wrath",
+    subtitle:"Military-j judicial district · Field_Name",
     body:`<p>Order is not merely an ideal here; it is architecture. Courts, checkpoints and armed authority make the district one of the city's most controlled environments.</p><p>Further details remain sealed in the Field_Name archive.</p>`
   },
   Field_Name: {
-    tag:"FILE 02-C · ZABRANIEC",
+    tag:"FILE 02-C · Field_Name",
     title:"Field_Name Field_Name",
-    subtitle:"Financial-industrial district · Greed",
-    body:`<p>Debt is a second geography in Zabraniec. Those who owe are permitted to travel only as far as the collectors allow.</p><p>Further details remain sealed in the Field_Name archive.</p>`
+    subtitle:"Financial-industrial district · Field_Name",
+    body:`<p>Debt is a second geography in Field_Name. Those who owe are permitted to travel only as far as the collectors allow.</p><p>Further details remain sealed in the Field_Name archive.</p>`
   }
 };
 
@@ -74,10 +74,10 @@ document.addEventListener("keydown", e => {
 
 const locations = {
   asylum:["Field_Name PSYCHIATRIC ASYLUM","A respectable institution with an inconvenient relationship to disappearance.","The place where the Field_Name begins."],
-  pharmacy:["BLACK POPPY PHARMACY","A shop of remedies, ingredients and things that should not be prescribed.","Look beneath the counter."],
-  opera:["DORIAN'S OPERA","Culture, spectacle and aristocratic appetite beneath gas and electric light.","A perfect place for someone who needs an audience."],
-  palace:["THE PALACE","The public seat of Field_Name Field_Name and the entrance to the Workshops Below.","Nothing beneath it is merely architectural."],
-  cathedral:["ST. BASIL'S CATHEDRAL","The spiritual heart of the Church of the Bright.","Its archives may contain more truth than its sermons."]
+  pharmacy:["Field_Name","A shop of remedies, ingredients and things that should not be prescribed.","Look beneath the counter."],
+  opera:["Field_Name","Culture, spectacle and aristocratic appetite beneath gas and electric light.","A perfect place for someone who needs an audience."],
+  palace:["Field_Name","The public seat of Field_Name Field_Name and the entrance to the Field_Name.","Nothing beneath it is merely architectural."],
+  cathedral:["Field_Name","The spiritual heart of the Field_Name.","Its archives may contain more truth than its sermons."]
 };
 const locationFile = $("#locationFile");
 function selectLocation(key){
