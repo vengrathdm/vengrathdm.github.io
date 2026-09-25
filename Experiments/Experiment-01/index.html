@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Death Curse — Campaign Archive</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="crt" aria-hidden="true"><div class="scanlines"></div><div class="noise"></div></div>
+  <header>
+    <b>THE DEATH CURSE</b>
+    <span>DM ARCHIVE · CAMPAIGN IN PROGRESS</span>
+    <span class="hint">REMOTE: TUNE CHANNEL · VCR: OPEN ARC</span>
+  </header>
+
+  <main>
+    <section class="station">
+      <div class="tv-column">
+        <div class="tv">
+          <div class="screen" id="screen">
+            <div class="osd">
+              <span id="channel">CH 01</span>
+              <span class="rec"><i></i> CAMPAIGN RECORDING</span>
+            </div>
+            <div id="program" class="program"></div>
+            <div class="timestamp" id="clock">00:00:00</div>
+            <div class="tracking"></div>
+          </div>
+          <div class="tv-controls"><span>ONYX-27 TACTICAL CRT</span><span>CHRONICLE · LIVE FEED</span></div>
+        </div>
+
+        <div class="vcr">
+          <div class="vcr-top">
+            <b>ARCHIVE DECK · TOA-01</b>
+            <span>VHS · FIELD LOG</span>
+            <em id="tapeStatus">NO TAPE</em>
+          </div>
+
+          <div class="slot">
+            <div class="cassette" id="cassette">
+              <div class="reel"></div>
+              <div class="reel"></div>
+              <b id="cassetteLabel">SELECT A CAMPAIGN TAPE</b>
+            </div>
+          </div>
+
+          <div class="vcr-buttons">
+            <button id="rew">REW</button>
+            <button id="play">PLAY</button>
+            <button id="stop">STOP</button>
+            <button id="ff">F.FWD</button>
+            <button id="eject">EJECT</button>
+            <span id="vcrCounter">TOA-00:00</span>
+          </div>
+
+          <div class="tapes">
+            <button data-tape="tape_01"><small>TAPE 01</small><b>Port Nyanzaru</b></button>
+            <button data-tape="tape_02"><small>TAPE 02</small><b>Into Chult</b></button>
+            <button data-tape="tape_03"><small>TAPE 03</small><b>Forbidden City</b></button>
+            <button data-tape="tape_04"><small>TAPE 04</small><b>Nine Tricksters</b></button>
+            <button data-tape="tape_05"><small>TAPE 05</small><b>Tomb Below</b></button>
+            <button data-tape="tape_06"><small>TAPE 06</small><b>Final Descent</b></button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="remote">
+        <div class="remote-brand">ONYX <span>DM REMOTE</span></div>
+        <div class="remote-screen">CH <b id="remoteCh">01</b></div>
+        <button class="power" id="power">POWER</button>
+
+        <div class="numeric">
+          <button data-ch="1">1</button><button data-ch="2">2</button><button data-ch="3">3</button>
+          <button data-ch="4">4</button><button data-ch="5">5</button><button data-ch="6">6</button>
+          <button data-ch="7">7</button><button data-ch="8">8</button><button data-ch="9">9</button>
+          <button data-ch="0">0</button>
+        </div>
+
+        <div class="remote-row"><button id="volDown">VOL −</button><button id="volUp">VOL +</button></div>
+        <div class="remote-row"><button id="chDown">CH −</button><button id="chUp">CH +</button></div>
+
+        <div class="dpad">
+          <button>UP</button><button>LEFT</button><button>OK</button><button>RIGHT</button><button>DOWN</button>
+        </div>
+
+        <div class="remote-row"><button id="menu">MENU</button><button id="input">INPUT</button></div>
+        <div class="led"></div>
+      </aside>
+    </section>
+  </main>
+
+  <footer>CAMPAIGN ARCHIVE · TOMB OF ANNIHILATION · STATUS: THE SOULMONGER HAS NOT BEEN SILENCED</footer>
+  <script src="script.js"></script>
+</body>
+</html>
