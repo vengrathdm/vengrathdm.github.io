@@ -1,154 +1,235 @@
 <!doctype html>
 <html lang="pl">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>
-      Odyssey of the Dragonlords — Vengrath
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../campaign-common.css">
-  </head>
-  <body class="campaign-page" data-campaign-theme="odyssey-of-the-dragonlords">
-    <header class="hero">
-      <div class="hero-inner">
-        <div class="kicker">
-          Thylea · Mythic Fantasy
-        </div>
-        <h1>
-          Odyssey of the Dragonlords
-        </h1>
-        <p class="lead">
-          Wielka wyprawa do zapomnianego kontynentu Thylea — krainy bogów, tytanów, proroctw i Dragonlordów, inspirowanej mitologią starożytnej Grecji.
-        </p>
-      </div>
-    </header>
-    <nav class="nav">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Odyssey of the Dragonlords — Vengrath</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../campaign-common.css">
+  <style>
+    .constellation-page{--gold:#c9a866;--gold-soft:#8e774c;--blue:#7898ad;--red:#9c4747;--paper:#ddd4c0;background:#07090b;color:#e9e5dc;min-height:100vh;overflow-x:hidden}
+    .constellation-page *{box-sizing:border-box}
+    .starfield{position:relative;min-height:100vh;overflow:hidden;background:radial-gradient(circle at 50% 48%,#17202a 0,#0b1015 30%,#07090b 68%,#030405 100%)}
+    .starfield:before{content:"";position:absolute;inset:0;opacity:.65;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(#fff 1px,transparent 1px);background-size:97px 97px,151px 151px;background-position:13px 31px,71px 9px;pointer-events:none}
+    .starfield:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,transparent 0 26%,#0008 70%,#000d 100%);pointer-events:none}
+    .constellation-nav{position:absolute;top:20px;left:0;right:0;z-index:30}
+    .constellation-nav .nav-inner{width:min(1260px,calc(100% - 36px));margin:auto;display:flex;gap:9px;align-items:center}
+    .constellation-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:8px 16px;border:1px solid #596064;background:#101416dd;color:#eee;text-decoration:none;box-shadow:0 8px 28px #0008;font:700 13px "Fira Sans Extra Condensed";letter-spacing:1.5px}
+    .constellation-nav a:hover{border-color:#b8b4a9;background:#202629}
+    .constellation-nav .home{border-radius:999px;padding-right:20px}
+    .constellation-nav .home img{width:36px;height:36px;object-fit:contain;margin-right:8px}
+    .constellation-nav .playlist{border-radius:999px;background:#c51f1f;border-color:#8d2222;color:#fff}
+    .constellation-nav .playlist:before{content:"YouTube";font:700 17px Arial;margin-right:7px;letter-spacing:-1px}
+    .intro-copy{position:absolute;z-index:10;top:116px;left:max(28px,calc((100vw - 1260px)/2));width:min(520px,calc(100% - 56px));pointer-events:none}
+    .eyebrow{font:11px Voltaire,sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+    .intro-copy h1{font:400 clamp(52px,7vw,98px)/.86 Voltaire,sans-serif;letter-spacing:1px;margin:12px 0 15px;max-width:780px}
+    .intro-copy p{margin:0;max-width:520px;font:18px/1.5 "Brygada 1918",Georgia,serif;color:#c9c6bd}
+    .legend{position:absolute;z-index:12;right:max(28px,calc((100vw - 1260px)/2));top:120px;width:220px;padding:14px 16px;border:1px solid #343a3d;background:#090c0ee8;backdrop-filter:blur(8px);font-size:12px;color:#9ca09e}
+    .legend b{display:block;color:#e7e1d3;font-family:Voltaire;margin-bottom:6px;font-weight:400;font-size:15px}
+    .legend-row{display:flex;gap:8px;align-items:center;margin:5px 0}.dot{width:8px;height:8px;border-radius:50%;display:inline-block}.dot.gold{background:var(--gold)}.dot.blue{background:var(--blue)}.dot.red{background:var(--red)}.dot.white{background:#ddd}
+    .orbit{position:absolute;left:50%;top:54%;width:min(940px,92vw);height:min(940px,92vw);transform:translate(-50%,-50%);border:1px solid #c9a86617;border-radius:50%;box-shadow:0 0 90px #7898ad0b,inset 0 0 90px #7898ad06}
+    .orbit.two{width:min(670px,67vw);height:min(670px,67vw);border-color:#7898ad17}
+    .orbit.three{width:min(420px,42vw);height:min(420px,42vw);border-color:#9c474717}
+    .constellation-svg{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none}
+    .constellation-svg line{stroke:#c9a86638;stroke-width:1}.constellation-svg line.blue{stroke:#7898ad30}.constellation-svg line.red{stroke:#9c474735}
+    .node{position:absolute;z-index:15;transform:translate(-50%,-50%);cursor:pointer;text-align:center;user-select:none}
+    .node-core{width:18px;height:18px;border-radius:50%;border:1px solid var(--gold);background:#090c10;box-shadow:0 0 0 6px #c9a8660d,0 0 25px #c9a86633;transition:.22s}
+    .node:hover .node-core,.node.selected .node-core{transform:scale(1.65);background:var(--gold);box-shadow:0 0 0 9px #c9a86612,0 0 35px #c9a86677}
+    .node.blue .node-core{border-color:var(--blue);box-shadow:0 0 0 6px #7898ad0c,0 0 25px #7898ad33}.node.blue:hover .node-core,.node.blue.selected .node-core{background:var(--blue);box-shadow:0 0 0 9px #7898ad12,0 0 35px #7898ad77}
+    .node.red .node-core{border-color:var(--red);box-shadow:0 0 0 6px #9c47470d,0 0 25px #9c474733}.node.red:hover .node-core,.node.red.selected .node-core{background:var(--red);box-shadow:0 0 0 9px #9c474712,0 0 35px #9c474777}
+    .node-label{position:absolute;top:28px;left:50%;transform:translateX(-50%);white-space:nowrap;font:10px/1 "Fira Sans Extra Condensed";letter-spacing:1.7px;text-transform:uppercase;color:#bfc0bc}
+    .node:hover .node-label,.node.selected .node-label{color:#fff}
+    .central{left:50%;top:54%;z-index:17}.central .node-core{width:42px;height:42px;border-width:2px;box-shadow:0 0 0 10px #c9a8660b,0 0 65px #c9a86666}.central .node-label{top:58px;font:400 21px Voltaire;letter-spacing:1px;color:#eee6d5}
+    .info-drawer{position:absolute;z-index:25;right:max(28px,calc((100vw - 1260px)/2));bottom:34px;width:min(430px,calc(100% - 56px));max-height:56vh;overflow:auto;padding:24px;background:#0a0d10eF;border:1px solid #4a4e4d;box-shadow:0 20px 80px #000b;backdrop-filter:blur(16px);transform:translateY(20px);opacity:0;pointer-events:none;transition:.25s}
+    .info-drawer.open{transform:none;opacity:1;pointer-events:auto}
+    .drawer-kicker{font:10px Voltaire;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:7px}.info-drawer h2{font:400 34px/1 Voltaire;margin:0 0 12px}.info-drawer p{font:16px/1.55 "Brygada 1918",Georgia,serif;color:#c9c7c0;margin:0 0 12px}
+    .drawer-meta{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:17px 0}.meta-box{border:1px solid #303638;padding:10px;background:#111518}.meta-box small{display:block;color:#7f8582;text-transform:uppercase;letter-spacing:1px;font-size:9px}.meta-box strong{display:block;margin-top:3px;color:#e6e1d6;font:17px Voltaire}
+    .drawer-list{margin:10px 0 0;padding:0;list-style:none}.drawer-list li{border-top:1px solid #292d2e;padding:9px 0;color:#aaa;font-size:14px}.drawer-list b{color:#ddd}
+    .close{position:absolute;right:12px;top:10px;background:transparent;border:0;color:#999;font-size:22px;cursor:pointer}
+    .data-strip{position:absolute;z-index:20;left:max(28px,calc((100vw - 1260px)/2));bottom:34px;width:min(560px,calc(100% - 56px));display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+    .data-strip button{appearance:none;border:1px solid #2f3435;background:#0a0d0fdd;color:#b3b4b0;padding:12px 10px;text-align:left;cursor:pointer;font:11px "Fira Sans Extra Condensed";letter-spacing:1px;text-transform:uppercase}
+    .data-strip button:hover,.data-strip button.active{border-color:var(--gold);color:#f0e9d9;background:#171b1d}
+    .data-strip strong{display:block;color:#eee8dc;font:21px Voltaire;letter-spacing:0;text-transform:none}
+    .scroll-hint{position:absolute;z-index:20;left:50%;bottom:11px;transform:translateX(-50%);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#656a68}
+    .below{position:relative;z-index:40;background:#090b0d;border-top:1px solid #24292a;padding:80px 0}
+    .below-inner{width:min(1260px,calc(100% - 56px));margin:auto}
+    .below h2{font:400 46px/1 Voltaire;margin:0 0 10px}.below .sub{color:#8e938f;max-width:760px;margin-bottom:32px}
+    .archive-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.archive-panel{border:1px solid #303536;background:linear-gradient(145deg,#151819,#101213);padding:26px}.archive-panel h3{font:400 28px Voltaire;color:#dbc18a;margin:0 0 15px}.archive-panel p{color:#b9bbb7;font-size:16px;line-height:1.6}.archive-panel ul{padding-left:19px;color:#aeb1ad;line-height:1.65}
+    .timeline{display:grid;gap:10px}.timeline-item{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:12px 0;border-top:1px solid #2b3030}.timeline-item strong{font:20px Voltaire;color:#e5ddcb}.timeline-item span{color:#a9aca8;font-size:15px}
+    .party-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.party-card{border:1px solid #303536;padding:15px;background:#101416}.party-card strong{display:block;font:22px Voltaire;color:#eee8dc}.party-card span{color:#989d9a;font-size:14px}
+    .resources{display:flex;flex-wrap:wrap;gap:9px}.resources a{border:1px solid #424746;padding:10px 13px;color:#d4c6a4;text-decoration:none;font-size:13px}.resources a:hover{border-color:#c9a866;color:#fff}
+    @media(max-width:900px){.legend{display:none}.intro-copy{top:100px}.orbit{top:52%}.info-drawer{bottom:18px;max-height:50vh}.data-strip{bottom:auto;top:74vh}.party-grid{grid-template-columns:repeat(2,1fr)}.archive-grid{grid-template-columns:1fr}}
+    @media(max-width:600px){.constellation-nav .playlist{display:none}.intro-copy{top:88px}.intro-copy h1{font-size:53px}.intro-copy p{font-size:15px}.orbit{width:720px;height:720px}.orbit.two{width:510px;height:510px}.orbit.three{width:320px;height:320px}.node-label{font-size:9px}.data-strip{top:auto;bottom:16px;grid-template-columns:repeat(2,1fr);width:calc(100% - 28px);left:14px}.data-strip button{padding:9px}.data-strip strong{font-size:18px}.info-drawer{left:14px;right:14px;width:auto;bottom:126px;max-height:48vh}.scroll-hint{display:none}.party-grid{grid-template-columns:1fr}.timeline-item{grid-template-columns:82px 1fr}}
+  </style>
+</head>
+<body class="campaign-page constellation-page" data-campaign-theme="odyssey-of-the-dragonlords">
+  <div class="starfield" id="constellation">
+    <nav class="constellation-nav">
       <div class="nav-inner">
-        <a class="site-home-button" href="https://vengrathdm.github.io/">
-          <img src="../../Home/Graphics/mg-logo.png" alt="MG">
-          <span>
-            VENGRATH
-          </span>
-        </a>
-        <a class="youtube" href="https://www.youtube.com/playlist?list=PL-Lm83myvu0jPybJxVsDrhvpVm2eMnOUy" target="_blank" rel="noopener" class="campaign-playlist">
-          PLAYLISTA
-        </a>
+        <a class="home" href="https://vengrathdm.github.io/"><img src="../../Home/Graphics/mg-logo.png" alt="MG"><span>VENGRATH</span></a>
+        <a class="playlist" href="https://www.youtube.com/playlist?list=PL-Lm83myvu0jPybJxVsDrhvpVm2eMnOUy" target="_blank" rel="noopener">PLAYLISTA</a>
       </div>
     </nav>
-    <main>
-      <section class="intro">
-        <article class="panel">
-          <h2>
-            O kampanii
-          </h2>
-          <p>
-            <i>
-              Odyssey of the Dragonlords
-            </i>
-            to epicka kampania D&D 5e osadzona w Thylei, nowym kontynencie inspirowanym mitologią grecką. Świat łączy klasyczne fantasy z motywami starożytnych opowieści, a jego historia sięga wojny bogów i tytanów.
-          </p>
-          <p>
-            Pięćset lat przed wydarzeniami kampanii Dragonlordowie pokonali Tytanów i zawarli Oath of Peace. Gdy moc przysięgi słabnie, bohaterowie zostają wciągnięci w konflikt, którego wynik może zmienić los całej Thylei.
-          </p>
-          <div class="actions">
+
+    <div class="intro-copy">
+      <div class="eyebrow">Campaign constellation · Thylea · mythic fantasy</div>
+      <h1>Odyssey of the Dragonlords</h1>
+      <p>Nie kolejna karta kampanii. Cały świat kampanii jest tutaj rozłożony jako sieć: miejsca, postacie, frakcje, historia i najważniejsze motywy są węzłami jednej konstelacji.</p>
+    </div>
+
+    <div class="legend">
+      <b>Jak czytać konstelację</b>
+      <div class="legend-row"><i class="dot gold"></i> świat i historia</div>
+      <div class="legend-row"><i class="dot blue"></i> drużyna i bohaterowie</div>
+      <div class="legend-row"><i class="dot red"></i> konflikt i zagrożenie</div>
+      <div class="legend-row"><i class="dot white"></i> kliknij węzeł, aby otworzyć dossier</div>
+    </div>
+
+    <div class="orbit"></div><div class="orbit two"></div><div class="orbit three"></div>
+    <svg class="constellation-svg" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true" id="lines"></svg>
+
+    <div class="node central" data-id="thylea"><div class="node-core"></div><div class="node-label">THYLEA</div></div>
+
+    <div class="node" style="left:39%;top:31%" data-id="oath"><div class="node-core"></div><div class="node-label">OATH OF PEACE</div></div>
+    <div class="node" style="left:62%;top:30%" data-id="dragonlords"><div class="node-core"></div><div class="node-label">DRAGONLORDS</div></div>
+    <div class="node red" style="left:75%;top:49%" data-id="titans"><div class="node-core"></div><div class="node-label">TITANS</div></div>
+    <div class="node" style="left:25%;top:50%" data-id="gods"><div class="node-core"></div><div class="node-label">BOGOWIE</div></div>
+    <div class="node" style="left:35%;top:66%" data-id="history"><div class="node-core"></div><div class="node-label">HISTORIA</div></div>
+    <div class="node" style="left:67%;top:67%" data-id="prophecy"><div class="node-core"></div><div class="node-label">PROROCTWA</div></div>
+
+    <div class="node blue" style="left:29%;top:79%" data-id="rina"><div class="node-core"></div><div class="node-label">RINA</div></div>
+    <div class="node blue" style="left:42%;top:84%" data-id="xavier"><div class="node-core"></div><div class="node-label">XAVIER</div></div>
+    <div class="node blue" style="left:55%;top:85%" data-id="xastar"><div class="node-core"></div><div class="node-label">XASTAR</div></div>
+    <div class="node blue" style="left:68%;top:82%" data-id="vespera"><div class="node-core"></div><div class="node-label">VESPERA</div></div>
+    <div class="node blue" style="left:80%;top:76%" data-id="zander"><div class="node-core"></div><div class="node-label">ZANDER?</div></div>
+
+    <div class="info-drawer" id="drawer">
+      <button class="close" id="close" aria-label="Zamknij">×</button>
+      <div class="drawer-kicker" id="drawerKicker"></div>
+      <h2 id="drawerTitle"></h2>
+      <p id="drawerText"></p>
+      <div class="drawer-meta" id="drawerMeta"></div>
+      <ul class="drawer-list" id="drawerList"></ul>
+    </div>
+
+    <div class="data-strip">
+      <button class="active" data-focus="thylea"><strong>Thylea</strong>setting</button>
+      <button data-focus="history"><strong>500 lat</strong>od wojny</button>
+      <button data-focus="oath"><strong>Oath</strong>centralny motyw</button>
+      <button data-focus="rina"><strong>5</strong>bohaterów</button>
+    </div>
+    <div class="scroll-hint">konstelacja jest interfejsem · przewiń, aby wejść do archiwum</div>
+  </div>
+
+  <main class="below">
+    <div class="below-inner">
+      <div class="eyebrow">Campaign archive · no spoilers</div>
+      <h2>Co znajduje się w tej konstelacji?</h2>
+      <p class="sub">Węzły są warstwą nawigacyjną, ale pod nimi nadal istnieje pełna karta kampanii: opis świata, oś historii, drużyna, motywy i materiały do dalszego wejścia w kampanię.</p>
+
+      <div class="archive-grid">
+        <section class="archive-panel">
+          <h3>O kampanii</h3>
+          <p><i>Odyssey of the Dragonlords</i> to epicka kampania D&D 5e osadzona w Thylei — nowym kontynencie inspirowanym mitologią starożytnej Grecji. Świat łączy klasyczne fantasy z opowieścią o bogach, tytanach, dawnych bohaterach i zobowiązaniach, które przetrwały pokolenia.</p>
+          <p>Pięćset lat przed wydarzeniami kampanii Dragonlordowie pokonali Tytanów i ustanowili Oath of Peace. Gdy porządek oparty na tej przysiędze zaczyna słabnąć, nowi bohaterowie zostają wciągnięci w historię znacznie starszą od nich samych.</p>
+        </section>
+        <section class="archive-panel">
+          <h3>Campaign DNA</h3>
+          <div class="drawer-meta">
+            <div class="meta-box"><small>Setting</small><strong>Thylea</strong></div>
+            <div class="meta-box"><small>System</small><strong>D&D 5e</strong></div>
+            <div class="meta-box"><small>Inspiracja</small><strong>Mitologia grecka</strong></div>
+            <div class="meta-box"><small>Oś świata</small><strong>Oath of Peace</strong></div>
           </div>
-        </article>
-        <aside class="panel">
-          <div class="stats">
-            <div class="stat">
-              <strong>
-                Thylea
-              </strong>
-              <span>
-                zapomniany kontynent kampanii
-              </span>
-            </div>
-            <div class="stat">
-              <strong>
-                Bogowie i Tytani
-              </strong>
-              <span>
-                siły stojące za historią świata
-              </span>
-            </div>
-            <div class="stat">
-              <strong>
-                Dragonlordowie
-              </strong>
-              <span>
-                legendarny zakon bohaterów
-              </span>
-            </div>
-            <div class="stat">
-              <strong>
-                Oath of Peace
-              </strong>
-              <span>
-                przysięga, której moc zaczyna słabnąć
-              </span>
-            </div>
-          </div>
-        </aside>
-      </section>
-      <section class="panel" class="campaign-section">
-        <h2>
-          Nasza drużyna
-        </h2>
-        <p>
-          W kampanii występowali:
-        </p>
-        <div class="players">
-          <div class="player">
-            <strong>
-              wpoluwiatr
-            </strong>
-            <span>
-              jako Rina
-            </span>
-          </div>
-          <div class="player">
-            <strong>
-              archangelss
-            </strong>
-            <span>
-              jako Xavier
-            </span>
-          </div>
-          <div class="player">
-            <strong>
-              lecpowode
-            </strong>
-            <span>
-              jako Xastar
-            </span>
-          </div>
-          <div class="player">
-            <strong>
-              Maria
-            </strong>
-            <span>
-              jako Vespera
-            </span>
-          </div>
-          <div class="player">
-            <strong>
-              Kuba
-            </strong>
-            <span>
-              jako Zander — nie do końca
-            </span>
-          </div>
+          <p>Kluczowe słowa tej kampanii: <b>podróż</b>, <b>mit</b>, <b>przysięga</b>, <b>dziedzictwo</b>, <b>bogowie</b> i <b>tytani</b>.</p>
+        </section>
+      </div>
+
+      <section class="archive-panel" style="margin-top:18px">
+        <h3>Oś historii świata</h3>
+        <div class="timeline">
+          <div class="timeline-item"><strong>Przed kampanią</strong><span>Thylea jest światem, którego historia została ukształtowana przez konflikt boskich i tytanicznych sił.</span></div>
+          <div class="timeline-item"><strong>~500 lat temu</strong><span>Dragonlordowie pokonują Tytanów i ustanawiają Oath of Peace.</span></div>
+          <div class="timeline-item"><strong>Później</strong><span>Oath of Peace staje się fundamentem porządku politycznego i społecznego Thylei.</span></div>
+          <div class="timeline-item"><strong>Era bohaterów</strong><span>Przysięga zaczyna słabnąć, a nowe pokolenie zostaje wciągnięte w konsekwencje dawnej wojny.</span></div>
         </div>
       </section>
-      <div class="note">
-        Opis kampanii oparty na oficjalnym materiale dla graczy. Bez szczegółów fabularnych i spoilerów.
-      </div>
-    </main>
-    <footer>
-      Archiwum kampanii Vengrath · bez spoilerów fabularnych
-    </footer>
-  </body>
+
+      <section class="archive-panel" style="margin-top:18px">
+        <h3>Nasza drużyna</h3>
+        <div class="party-grid">
+          <div class="party-card"><strong>Rina</strong><span>wpoluwiatr</span></div>
+          <div class="party-card"><strong>Xavier</strong><span>archangelss</span></div>
+          <div class="party-card"><strong>Xastar</strong><span>lecpowode</span></div>
+          <div class="party-card"><strong>Vespera</strong><span>Maria</span></div>
+          <div class="party-card"><strong>Zander?</strong><span>Kuba · nie do końca</span></div>
+        </div>
+      </section>
+
+      <section class="archive-panel" style="margin-top:18px">
+        <h3>Wejdź głębiej</h3>
+        <div class="resources">
+          <a href="https://www.youtube.com/playlist?list=PL-Lm83myvu0jPybJxVsDrhvpVm2eMnOUy" target="_blank" rel="noopener">PLAYLISTA VENGRATH</a>
+          <a href="https://modiphius.net/products/odyssey-of-the-dragonlords-players-guide" target="_blank" rel="noopener">PLAYER'S GUIDE</a>
+          <a href="https://www.kickstarter.com/projects/1172939574/odyssey-of-the-dragonlords" target="_blank" rel="noopener">ODYSSEY · KICKSTARTER</a>
+        </div>
+      </section>
+
+      <p class="note">Opis kampanii bez szczegółów fabularnych i spoilerów. Konstelacja jest interfejsem; archiwum poniżej zachowuje pełną informacyjną warstwę kampanii.</p>
+    </div>
+  </main>
+
+  <footer>Archiwum kampanii Vengrath · Odyssey of the Dragonlords</footer>
+
+<script>
+(() => {
+  const data = {
+    thylea:{kicker:"SETTING",title:"Thylea",text:"Zapomniany kontynent kampanii: mitologiczna kraina, w której historia bogów, tytanów i dawnych bohaterów nadal wpływa na teraźniejszość.",meta:[["System","D&D 5e"],["Ton","Mythic fantasy"],["Inspiracja","Grecja"],["Rola","Świat kampanii"]],list:["Dragonlordowie i Tytani są częścią historii świata.","Oath of Peace jest jednym z głównych fundamentów obecnego porządku.","Podróż po Thylei jest integralną częścią kampanii."]},
+    oath:{kicker:"CENTRAL MOTIF",title:"Oath of Peace",text:"Przysięga zawarta po pokonaniu Tytanów. Przez około pięćset lat stanowiła fundament pokoju; jej słabnięcie uruchamia główny konflikt kampanii.",meta:[["Wiek","~500 lat"],["Zawarli","Dragonlordowie"],["Znaczenie","Pokój Thylei"],["Stan","Słabnie"]],list:["To nie jest tylko historyczny szczegół — wpływ przysięgi rozciąga się na świat kampanii.","Jej rozpad łączy przeszłość Dragonlordów z losami obecnych bohaterów.","Węzeł jest celowo bezspoilerowy."]},
+    dragonlords:{kicker:"FACTION / HISTORY",title:"Dragonlords",text:"Legendarny zakon bohaterów, który pokonał Tytanów i ustanowił Oath of Peace. Ich dziedzictwo jest jednym z filarów historii Thylei.",meta:[["Era","500 lat przed kampanią"],["Czyn","Pokonanie Tytanów"],["Dziedzictwo","Oath of Peace"],["Typ","Dawni bohaterowie"]],list:["Dragonlordowie należą do warstwy historii świata.","Ich decyzje tworzą kontekst dla współczesnej generacji bohaterów.","W konstelacji są połączeni z Oath, historią i Thyleą."]},
+    titans:{kicker:"CONFLICT",title:"Titans",text:"Potężne, pradawne siły stojące po przeciwnej stronie dawnego konfliktu. Ich historia jest bezpośrednio związana z Dragonlordami i Oath of Peace.",meta:[["Typ","Pradawne siły"],["Przeciwko","Dragonlordowie"],["Epoka","Dawna wojna"],["Węzeł","Zagrożenie"]],list:["Ich pokonanie doprowadziło do ustanowienia Oath of Peace.","Powrót napięcia wokół dawnych sił jest jednym z motorów kampanii.","Szczegóły pozostają ukryte, aby nie wprowadzać spoilerów."]},
+    gods:{kicker:"WORLD",title:"Bogowie",text:"Boskie siły są częścią mitologicznego charakteru Thylei i nadają kampanii skalę większą niż zwykła lokalna przygoda.",meta:[["Warstwa","Kosmologia"],["Motyw","Mitologia"],["Relacja","Śmiertelnicy / bogowie"],["Znaczenie","Światotwórcze"]],list:["Bogowie są jednym z głównych elementów tożsamości Thylei.","Ich obecność wzmacnia mitologiczny charakter kampanii.","Konstelacja traktuje ich jako osobną warstwę świata."]},
+    history:{kicker:"TIMELINE",title:"Historia Thylei",text:"Najważniejsza oś czasu prowadzi od wojny Dragonlordów z Tytanami do świata, w którym żyją obecni bohaterowie.",meta:[["Punkt odniesienia","~500 lat"],["Przełom","Pokonanie Tytanów"],["Fundament","Oath of Peace"],["Teraz","Nowe pokolenie"]],list:["Dawna wojna → zwycięstwo Dragonlordów.","Zwycięstwo → Oath of Peace.","Oath → wielopokoleniowy porządek.","Słabnąca przysięga → początek obecnego konfliktu."]},
+    prophecy:{kicker:"MOTIF",title:"Proroctwa",text:"Proroctwo jest naturalnym językiem tej kampanii: łączy bohaterów z większą, mitologiczną historią. Ten węzeł jest miejscem na przyszłe wpisy i odkrycia bez zdradzania fabuły.",meta:[["Warstwa","Motyw"],["Funkcja","Zapowiedź"],["Stan","Otwarty"],["Spoilery","Wyłączone"]],list:["W przyszłości można tu przypinać odkryte przepowiednie.","Każdy wpis może prowadzić do postaci, miejsca lub wydarzenia.","To jeden z miejsc, gdzie interfejs może rosnąć razem z kampanią."]},
+    rina:{kicker:"PLAYER CHARACTER",title:"Rina",text:"Postać gracza w kampanii Vengrath.",meta:[["Gracz","wpoluwiatr"],["Typ","Bohater drużyny"],["Warstwa","Party"],["Status","Aktywna postać"]],list:["Węzeł należy do niebieskiej warstwy drużyny.","Po kliknięciu można w przyszłości rozbudować dossier o klasę, rasę, zdjęcie, cytaty i historię postaci."]},
+    xavier:{kicker:"PLAYER CHARACTER",title:"Xavier",text:"Postać gracza w kampanii Vengrath.",meta:[["Gracz","archangelss"],["Typ","Bohater drużyny"],["Warstwa","Party"],["Status","Aktywna postać"]],list:["Niebieski węzeł oznacza warstwę drużyny.","Dossier jest przygotowane jako miejsce na dalsze informacje."]},
+    xastar:{kicker:"PLAYER CHARACTER",title:"Xastar",text:"Postać gracza w kampanii Vengrath.",meta:[["Gracz","lecpowode"],["Typ","Bohater drużyny"],["Warstwa","Party"],["Status","Aktywna postać"]],list:["Niebieski węzeł oznacza warstwę drużyny.","Dossier można później rozszerzyć o szczegóły postaci."]},
+    vespera:{kicker:"PLAYER CHARACTER",title:"Vespera",text:"Postać gracza w kampanii Vengrath.",meta:[["Gracz","Maria"],["Typ","Bohater drużyny"],["Warstwa","Party"],["Status","Aktywna postać"]],list:["Niebieski węzeł oznacza warstwę drużyny.","Dossier jest przygotowane jako miejsce na dalsze informacje."]},
+    zander:{kicker:"PLAYER CHARACTER",title:"Zander — nie do końca",text:"Węzeł drużyny zachowujący charakterystyczny wpis z archiwum Vengrath.",meta:[["Gracz","Kuba"],["Typ","Bohater drużyny"],["Warstwa","Party"],["Status","Nie do końca"]],list:["Celowo zachowany znak zapytania z istniejącego archiwum.","To może być później zmienione na pełne dossier postaci."]}
+  };
+
+  const root=document.getElementById("constellation");
+  const drawer=document.getElementById("drawer");
+  const nodes=[...document.querySelectorAll(".node[data-id]")];
+  const kicker=document.getElementById("drawerKicker"),title=document.getElementById("drawerTitle"),text=document.getElementById("drawerText"),meta=document.getElementById("drawerMeta"),list=document.getElementById("drawerList");
+  function open(id){
+    const d=data[id]; if(!d)return;
+    nodes.forEach(n=>n.classList.toggle("selected",n.dataset.id===id));
+    kicker.textContent=d.kicker; title.textContent=d.title; text.textContent=d.text;
+    meta.innerHTML=d.meta.map(x=>'<div class="meta-box"><small>'+x[0]+'</small><strong>'+x[1]+'</strong></div>').join("");
+    list.innerHTML=d.list.map(x=>"<li>"+x+"</li>").join("");
+    drawer.classList.add("open");
+  }
+  nodes.forEach(n=>n.addEventListener("click",()=>open(n.dataset.id)));
+  document.getElementById("close").addEventListener("click",()=>{drawer.classList.remove("open");nodes.forEach(n=>n.classList.remove("selected"))});
+  document.querySelectorAll("[data-focus]").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("[data-focus]").forEach(x=>x.classList.remove("active"));b.classList.add("active");open(b.dataset.focus)}));
+
+  const positions={thylea:[50,54],oath:[39,31],dragonlords:[62,30],titans:[75,49],gods:[25,50],history:[35,66],prophecy:[67,67],rina:[29,79],xavier:[42,84],xastar:[55,85],vespera:[68,82],zander:[80,76]};
+  const edges=[["thylea","oath"],["thylea","dragonlords"],["thylea","titans"],["thylea","gods"],["thylea","history"],["thylea","prophecy"],["history","dragonlords"],["history","titans"],["oath","dragonlords"],["oath","titans"],["thylea","rina"],["thylea","xavier"],["thylea","xastar"],["thylea","vespera"],["thylea","zander"],["rina","xavier"],["xavier","xastar"],["xastar","vespera"],["vespera","zander"]];
+  const svg=document.getElementById("lines");
+  function draw(){
+    svg.innerHTML=edges.map(([a,b])=>{const A=positions[a],B=positions[b];const cls=(a==="titans"||b==="titans")?"red":(a==="rina"||b==="rina"||a==="xavier"||b==="xavier"||a==="xastar"||b==="xastar"||a==="vespera"||b==="vespera"||a==="zander"||b==="zander")?"blue":"";return '<line class="'+cls+'" x1="'+A[0]+'" y1="'+A[1]+'" x2="'+B[0]+'" y2="'+B[1]+'"></line>'}).join("");
+  }
+  draw();
+  window.addEventListener("resize",draw);
+
+  let dragging=false,lastX=0,lastY=0,rx=0,ry=0;
+  root.addEventListener("pointerdown",e=>{if(e.target.closest(".node,.info-drawer,.data-strip,.constellation-nav"))return;dragging=true;lastX=e.clientX;lastY=e.clientY;root.setPointerCapture(e.pointerId)});
+  root.addEventListener("pointermove",e=>{if(!dragging)return;rx+=(e.clientX-lastX)*.035;ry+=(e.clientY-lastY)*.02;lastX=e.clientX;lastY=e.clientY;document.querySelectorAll(".orbit").forEach((o,i)=>o.style.transform="translate(-50%,-50%) rotate("+(rx*(i%2?-.5:1))+"deg) scale("+(1+Math.sin(ry/80)*.015)+")")});
+  root.addEventListener("pointerup",()=>dragging=false);
+})();
+</script>
+</body>
 </html>
