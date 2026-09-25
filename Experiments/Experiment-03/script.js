@@ -2,10 +2,10 @@
 
 const visions = [
   {
-    title:"THE DEATH CURSE",
-    kicker:"VISION I · CAMPAIGN MASTER FILE",
+    title:"KLĄTWA ŚMIERCI",
+    kicker:"WIZJA I · CAMPAIGN MASTER FILE",
     html:`<div class="page">
-      <small>THE DEATH CURSE · CURRENT RECORD</small>
+      <small>KLĄTWA ŚMIERCI · CURRENT RECORD</small>
       <h1>THE DEATH<br><em>CURSE</em></h1>
       <p>A five-character expedition into Chult, from the first rumors in Port Nyanzaru to the final descent beneath Omu. The party discovered that the dead are being denied their return by an ancient engine of souls.</p>
       <div class="grid">
@@ -16,7 +16,7 @@ const visions = [
   },
   {
     title:"FROM PORT TO TOMB",
-    kicker:"VISION II · WHAT HAS HAPPENED",
+    kicker:"WIZJA II · WHAT HAS HAPPENED",
     html:`<div class="page">
       <small>THE ROAD SO FAR</small>
       <h1>FROM PORT<br><em>TO THE TOMB</em></h1>
@@ -32,7 +32,7 @@ const visions = [
   },
   {
     title:"LAND OF TEETH",
-    kicker:"VISION III · THE WORLD",
+    kicker:"WIZJA III · THE WORLD",
     html:`<div class="page">
       <small>SCRYING RANGE · CHULT</small>
       <h1>LAND OF<br><em>TEETH</em></h1>
@@ -47,7 +47,7 @@ const visions = [
   },
   {
     title:"THE FIVE",
-    kicker:"VISION IV · PARTY",
+    kicker:"WIZJA IV · PARTY",
     html:`<div class="page">
       <small>ACTIVE PARTY · FIVE SOULS</small>
       <h1>THE FIVE<br><em>WHO WENT IN</em></h1>
@@ -63,7 +63,7 @@ const visions = [
   },
   {
     title:"OPEN THREADS",
-    kicker:"VISION V · DM SIGHT",
+    kicker:"WIZJA V · DM SIGHT",
     html:`<div class="page">
       <small>PRIVATE SCRYING · DM ONLY</small>
       <h1>OPEN<br><em>THREADS</em></h1>
@@ -76,7 +76,7 @@ const visions = [
   },
   {
     title:"THE ROAD DOWN",
-    kicker:"VISION VI · SESSION ARCHIVE",
+    kicker:"WIZJA VI · SESSION ARCHIVE",
     html:`<div class="page">
       <small>RECORDED CAMPAIGN ARCS</small>
       <h1>THE ROAD<br><em>DOWN</em></h1>
@@ -92,18 +92,18 @@ const visions = [
   },
   {
     title:"THE SOULMONGER",
-    kicker:"VISION VII · OMEN",
+    kicker:"WIZJA VII · OMEN",
     html:`<div class="page">
       <small>THE ORACLE SHOWS WHAT IT CAN</small>
       <h1>THE<br><em>SOULMONGER</em></h1>
-      <p class="omen-large">THE DEAD DO NOT SLEEP.</p>
-      <article class="wide"><b>THE VISION</b><p>The curse is not merely preventing resurrection. Something beneath Omu is taking the souls that should have returned to the living. Every day the machine remains active, fewer people can be restored.</p></article>
+      <p class="omen-large">UMARLI NIE ŚPIĄ.</p>
+      <article class="wide"><b>THE WIZJA</b><p>The curse is not merely preventing resurrection. Something beneath Omu is taking the souls that should have returned to the living. Every day the machine remains active, fewer people can be restored.</p></article>
       <article class="wide"><b>THE NAME BEHIND IT</b><p>The Tomb is the lock. The Soulmonger is the weapon. Acererak is the intelligence behind it.</p></article>
     </div>`
   },
   {
     title:"GREEN HELL",
-    kicker:"VISION VIII · FIELD IMPRESSION",
+    kicker:"WIZJA VIII · FIELD IMPRESSION",
     html:`<div class="page visual-page">
       <small>THE JUNGLE AS REMEMBERED BY THE ORACLE</small>
       <div class="vision-image jungle"><span>CHULT</span><b>GREEN HELL</b><i>◆</i></div>
@@ -112,7 +112,7 @@ const visions = [
   },
   {
     title:"THE DOOR BELOW",
-    kicker:"VISION IX · OMU",
+    kicker:"WIZJA IX · OMU",
     html:`<div class="page visual-page">
       <small>THE LAST IMAGE BEFORE THE DESCENT</small>
       <div class="vision-image tomb"><span>THE NINE GODS</span><b>THE DOOR<br>BELOW</b><i>◈</i></div>
@@ -121,7 +121,7 @@ const visions = [
   }
 ];
 
-let currentVision=0;
+let currentWizja=0;
 let seconds=0;
 let awakened=true;
 let visited=new Set();
@@ -132,33 +132,37 @@ const crystal=document.getElementById("crystal");
 const visionNumber=document.getElementById("visionNumber");
 const visionName=document.getElementById("visionName");
 const list=document.getElementById("visions");
+const orbNav=document.getElementById("orbNav");
 const omenText=document.getElementById("omenText");
 const progressText=document.getElementById("progressText");
 const progressBar=document.getElementById("progressBar");
 const complete=document.getElementById("complete");
 
 visions.forEach((item,index)=>{
+  const orb=document.createElement("button");
+  orb.type="button"; orb.textContent=String(index+1).padStart(2,"0"); orb.title=item.title; orb.setAttribute("aria-label",item.title);
+  orb.addEventListener("click",()=>openVision(index)); orbNav.appendChild(orb);
   const button=document.createElement("button");
   button.className="vision-button";
   button.innerHTML=`<small>0${index+1}</small><span>${item.title}</span><i>✦</i>`;
-  button.addEventListener("click",()=>openVision(index));
+  button.addEventListener("click",()=>openWizja(index));
   list.appendChild(button);
 });
 
 function scryTransition(){crystal.classList.remove("scrying");void crystal.offsetWidth;crystal.classList.add("scrying");clearTimeout(scryTimer);scryTimer=setTimeout(()=>crystal.classList.remove("scrying"),1400)}
-function openVision(index){
-  currentVision=(index+visions.length)%visions.length;
-  visited.add(currentVision);
+function openWizja(index){
+  currentWizja=(index+visions.length)%visions.length;
+  visited.add(currentWizja);
   progressText.textContent=`WIZJE ODWIEDZONE ${visited.size} / 9`;
   progressBar.style.width=`${visited.size/9*100}%`;
   if(visited.size===9)setTimeout(()=>complete.classList.add("show"),900);
   scryTransition();
-  const item=visions[currentVision];
+  const item=visions[currentWizja];
 
-  document.querySelectorAll(".vision-button").forEach((button,i)=>button.classList.toggle("active",i===currentVision));
-  visionNumber.textContent="VISION "+["I","II","III","IV","V","VI","VII","VIII","IX"][currentVision];
+  document.querySelectorAll(".vision-button").forEach((button,i)=>button.classList.toggle("active",i===currentWizja));
+  visionNumber.textContent="WIZJA "+["I","II","III","IV","V","VI","VII","VIII","IX"][currentWizja];
   visionName.textContent=item.title;
-  omenText.textContent=currentVision===6?"THE SOULMONGER IS HUNGRY.":currentVision===8?"THE DOOR HAS ALREADY OPENED.":"THE DEAD DO NOT SLEEP.";
+  omenText.textContent=currentWizja===6?"SOULMONGER JEST GŁODNY.":currentWizja===8?"DRZWI JUŻ SIĘ OTWORZYŁY.":"UMARLI NIE ŚPIĄ.";
 
   vision.animate(
     [{opacity:1,filter:"blur(0) scale(1)"},{opacity:0,filter:"blur(18px) scale(1.08)"},{opacity:1,filter:"blur(0) scale(1)"}],
@@ -171,12 +175,12 @@ function openVision(index){
 function toggleAwaken(){
   awakened=!awakened;
   crystal.classList.toggle("sealed",!awakened);
-  document.getElementById("awaken").textContent=awakened?"SEAL THE VISION":"AWAKEN THE VISION";
+  document.getElementById("awaken").textContent=awakened?"SEAL THE WIZJA":"AWAKEN THE WIZJA";
 }
 
 document.getElementById("awaken").addEventListener("click",toggleAwaken);
 
-document.getElementById("reveal").addEventListener("click",()=>{omenText.textContent=currentVision===6?"SOULMONGER JEST GŁODNY.":currentVision===8?"DRZWI JUŻ SIĘ OTWORZYŁY.":visions[currentVision].kicker;});complete.addEventListener("click",()=>complete.classList.remove("show"));
+document.getElementById("reveal").addEventListener("click",()=>{omenText.textContent=currentWizja===6?"SOULMONGER JEST GŁODNY.":currentWizja===8?"DRZWI JUŻ SIĘ OTWORZYŁY.":visions[currentWizja].kicker;});complete.addEventListener("click",()=>complete.classList.remove("show"));
 document.getElementById("dim").addEventListener("click",()=>{
   crystal.animate(
     [{filter:"brightness(1)"},{filter:"brightness(.35) saturate(.5)"},{filter:"brightness(1)"}],
@@ -185,8 +189,8 @@ document.getElementById("dim").addEventListener("click",()=>{
 });
 
 window.addEventListener("keydown",event=>{
-  if(event.key==="ArrowRight"||event.key==="ArrowDown")openVision(currentVision+1);
-  if(event.key==="ArrowLeft"||event.key==="ArrowUp")openVision(currentVision-1);
+  if(event.key==="ArrowRight"||event.key==="ArrowDown")openWizja(currentWizja+1);
+  if(event.key==="ArrowLeft"||event.key==="ArrowUp")openWizja(currentWizja-1);
   if(event.key===" ")toggleAwaken();
 });
 
@@ -196,5 +200,5 @@ setInterval(()=>{
   document.getElementById("clock").textContent=[h,m,s].map(v=>String(v).padStart(2,"0")).join(":");
 },1000);
 
-openVision(0);
+openWizja(0);
 window.addEventListener("pointermove",e=>{document.documentElement.style.setProperty("--mx",((e.clientX/innerWidth-.5)*2).toFixed(3));document.documentElement.style.setProperty("--my",((e.clientY/innerHeight-.5)*2).toFixed(3));});
