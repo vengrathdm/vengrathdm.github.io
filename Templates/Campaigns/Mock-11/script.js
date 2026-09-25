@@ -1,1 +1,68 @@
-const panel=document.getElementById("panel");const info={Field_Name:["Field_Name / Field_Name","Political centre. Use this record for factions, NPCs, scenes and consequences."],Field_Name:["Field_Name / Field_Name NODE","A location record ready for encounters, rumours, allies and local history."],Field_Name:["Field_Name / Field_Name NODE","A site for prophecy, divine knowledge and deeper Field_Name threads."],"Field_Name":["Field_Name / Field_Name NODE","A destination for heroic, Field_Nameic and item-focused Field_Name material."]};document.querySelectorAll(".node").forEach(b=>b.onclick=()=>{panel.style.transform="translateZ(100px) scale(.94)";setTimeout(()=>{panel.innerHTML="<small>"+info[b.dataset.name][0]+"</small><h2>"+info[b.dataset.name][0].split(" / ")[0]+"</h2><p>"+info[b.dataset.name][1]+"</p><div class='meter'><span></span></div><small>Field_Name RECORD / ACTIVE</small>";panel.style.transform="translateZ(100px) scale(1)"},180)});const track=document.querySelector(".carousel-track");document.querySelector(".next").onclick=()=>track.scrollBy({left:300,behavior:"smooth"});document.querySelector(".prev").onclick=()=>track.scrollBy({left:-300,behavior:"smooth"});let down=false,start=0,left=0;track.addEventListener("pointerdown",e=>{down=true;start=e.clientX;left=track.scrollLeft;track.setPointerCapture(e.pointerId)});track.addEventListener("pointermove",e=>{if(down)track.scrollLeft=left-(e.clientX-start)*1.5});track.addEventListener("pointerup",()=>down=false);
+// Mock 11 — Spatial command table interactions
+
+const panel = document.getElementById("panel");
+const carouselTrack = document.querySelector(".carousel-track");
+
+const locationRecords = {
+  Location_Name_01: {
+    title: "Location_Brief_Title_01",
+    description: "This is the field where the actual description of location 01 would go."
+  },
+  Location_Name_02: {
+    title: "Location_Brief_Title_02",
+    description: "This is the field where the actual description of location 02 would go."
+  },
+  Location_Name_03: {
+    title: "Location_Brief_Title_03",
+    description: "This is the field where the actual description of location 03 would go."
+  },
+  Location_Name_04: {
+    title: "Location_Brief_Title_04",
+    description: "This is the field where the actual description of location 04 would go."
+  }
+};
+
+document.querySelectorAll(".node").forEach(node => {
+  node.addEventListener("click", () => {
+    const record = locationRecords[node.dataset.name];
+    if (!record) return;
+
+    panel.querySelector("h2").textContent = record.title;
+    panel.querySelector("p").textContent = record.description;
+  });
+});
+
+document.querySelector(".prev")?.addEventListener("click", () => {
+  carouselTrack.scrollBy({ left: -270, behavior: "smooth" });
+});
+
+document.querySelector(".next")?.addEventListener("click", () => {
+  carouselTrack.scrollBy({ left: 270, behavior: "smooth" });
+});
+
+let isDragging = false;
+let dragStartX = 0;
+let scrollStart = 0;
+
+carouselTrack.addEventListener("pointerdown", event => {
+  isDragging = true;
+  dragStartX = event.clientX;
+  scrollStart = carouselTrack.scrollLeft;
+  carouselTrack.setPointerCapture(event.pointerId);
+  carouselTrack.style.cursor = "grabbing";
+});
+
+carouselTrack.addEventListener("pointermove", event => {
+  if (!isDragging) return;
+  carouselTrack.scrollLeft = scrollStart - (event.clientX - dragStartX);
+});
+
+carouselTrack.addEventListener("pointerup", () => {
+  isDragging = false;
+  carouselTrack.style.cursor = "grab";
+});
+
+carouselTrack.addEventListener("pointercancel", () => {
+  isDragging = false;
+  carouselTrack.style.cursor = "grab";
+});
