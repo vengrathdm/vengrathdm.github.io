@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Death Curse — Scrying Archive</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="arcane-distortion" aria-hidden="true"><div class="rings"></div><div class="grain"></div></div>
+
+  <header>
+    <b>THE DEATH CURSE</b>
+    <span>ARCANE SCRYING ARCHIVE · CAMPAIGN IN PROGRESS</span>
+    <span class="hint">TUNE VISION · OPEN MEMORY · READ OMEN</span>
+  </header>
+
+  <main>
+    <section class="sanctum">
+      <div class="oracle-column">
+        <div class="altar">
+          <div class="crystal-frame">
+            <div class="crystal" id="screen">
+              <div class="scrying-glass">
+                <div class="osd">
+                  <span id="channel">VISION 01</span>
+                  <span class="rec"><i></i> SCRYING ACTIVE</span>
+                </div>
+                <div id="program" class="program"></div>
+                <div class="timestamp" id="clock">00:00:00</div>
+                <div class="distortion"></div>
+              </div>
+            </div>
+          </div>
+          <div class="altar-label"><span>OBSIDIAN SCRYING STAND</span><span>CHULT · OMU · BELOW</span></div>
+        </div>
+
+        <div class="grimoire">
+          <div class="grimoire-top">
+            <b>THE CHRONICLE OF CHULT</b>
+            <span>ARCANE MEMORY REEL</span>
+            <em id="tapeStatus">NO MEMORY SELECTED</em>
+          </div>
+
+          <div class="memory-slot">
+            <div class="memory-orb" id="cassette">
+              <div class="reel"></div>
+              <div class="reel"></div>
+              <b id="cassetteLabel">SELECT A MEMORY</b>
+            </div>
+          </div>
+
+          <div class="grimoire-buttons">
+            <button id="rew">PREVIOUS</button>
+            <button id="play">FOCUS</button>
+            <button id="stop">BREAK</button>
+            <button id="ff">DEEPEN</button>
+            <button id="eject">CLEAR</button>
+            <span id="vcrCounter">TOA-00:00</span>
+          </div>
+
+          <div class="tapes">
+            <button data-tape="tape_01"><small>VISION 01</small><b>Port Nyanzaru</b></button>
+            <button data-tape="tape_02"><small>VISION 02</small><b>Into Chult</b></button>
+            <button data-tape="tape_03"><small>VISION 03</small><b>Forbidden City</b></button>
+            <button data-tape="tape_04"><small>VISION 04</small><b>Nine Tricksters</b></button>
+            <button data-tape="tape_05"><small>VISION 05</small><b>Tomb Below</b></button>
+            <button data-tape="tape_06"><small>VISION 06</small><b>Final Descent</b></button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="oracle">
+        <div class="oracle-brand">THE ORACLE <span>SCRYING FOCUS</span></div>
+        <div class="oracle-screen">VISION <b id="remoteCh">01</b></div>
+        <button class="power" id="power">SEAL / AWAKEN</button>
+
+        <div class="sigils">
+          <button data-ch="1">I</button><button data-ch="2">II</button><button data-ch="3">III</button>
+          <button data-ch="4">IV</button><button data-ch="5">V</button><button data-ch="6">VI</button>
+          <button data-ch="7">VII</button><button data-ch="8">VIII</button><button data-ch="9">IX</button>
+          <button data-ch="0">O</button>
+        </div>
+
+        <div class="oracle-row"><button id="volDown">DIM</button><button id="volUp">AMPLIFY</button></div>
+        <div class="oracle-row"><button id="chDown">PREV</button><button id="chUp">NEXT</button></div>
+
+        <div class="dpad">
+          <button>FOCUS</button><button>WEST</button><button>SEAL</button><button>EAST</button><button>LOWER</button>
+        </div>
+
+        <div class="oracle-row"><button id="menu">OMENS</button><button id="input">ARCHIVE</button></div>
+        <div class="gem"></div>
+      </aside>
+    </section>
+  </main>
+
+  <footer>CAMPAIGN ARCHIVE · TOMB OF ANNIHILATION · STATUS: THE SOULMONGER HAS NOT BEEN SILENCED</footer>
+  <script src="script.js"></script>
+</body>
+</html>
