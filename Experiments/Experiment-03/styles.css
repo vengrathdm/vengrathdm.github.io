@@ -203,3 +203,23 @@ header,main,footer{position:relative;z-index:2}
   .orb-nav button{width:24px;height:24px;margin:-12px;font-size:7px}
   .crystal:after{font-size:6px}
 }
+
+/* Hover bridge — utrzymuje aktywną strefę podczas przejścia kursora na pierścień */
+.crystal{
+  --hover-zone:34px;
+}
+.crystal:before{
+  content:"";
+  position:absolute;
+  inset:calc(-1 * var(--hover-zone));
+  z-index:10;
+  border-radius:50%;
+  pointer-events:auto;
+  background:transparent;
+}
+.orb-nav{
+  z-index:30;
+}
+.crystal:after{
+  z-index:28;
+}
