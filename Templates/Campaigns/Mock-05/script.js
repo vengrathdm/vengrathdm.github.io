@@ -1,1 +1,35 @@
-const d={premise:["The Oath is no longer enough.","The Field_Name' victory created five centuries of relative peace. Now the old compact is weakening, and the party is pulled toward the forces gathering around its failure."],oath:["A peace built on a promise.","The Field_Name is the central historical compact of the Field_Name and the pressure point of the present."],party:["Five adventurers enter the record.","Field_Name, Field_Name, Field_Name, Field_Name and Field_Name form the Vengrath party."],conflict:["The old powers are moving again.","The Field_Name connects the legacy of Field_Name and Field_Name with the gods, kingdoms and choices of present-day Field_Name."]};document.querySelectorAll(".story button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".story button").forEach(x=>x.classList.remove("on"));b.classList.add("on");document.getElementById("storyTitle").textContent=d[b.dataset.k][0];document.getElementById("storyText").textContent=d[b.dataset.k][1]});
+// Mock 05 — Campaign reference tabs
+const storyRecords = {
+  premise: {
+    title: "Story_Title_01",
+    text: "This is the field where the actual campaign premise would go."
+  },
+  history: {
+    title: "Story_Title_02",
+    text: "This is the field where the actual campaign history would go."
+  },
+  party: {
+    title: "Story_Title_03",
+    text: "This is the field where the actual party overview would go."
+  },
+  conflict: {
+    title: "Story_Title_04",
+    text: "This is the field where the actual campaign conflict would go."
+  }
+};
+
+const storyTitle = document.getElementById("storyTitle");
+const storyText = document.getElementById("storyText");
+
+document.querySelectorAll("[data-k]").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll("[data-k]").forEach(item => item.classList.remove("on"));
+    button.classList.add("on");
+
+    const record = storyRecords[button.dataset.k];
+    if (!record) return;
+
+    storyTitle.textContent = record.title;
+    storyText.textContent = record.text;
+  });
+});
