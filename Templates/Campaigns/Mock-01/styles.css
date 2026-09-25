@@ -1,0 +1,256 @@
+/* =========================================================
+   Mock 01 — Campaign Profile
+   Template stylesheet
+   ========================================================= */
+
+:root {
+  --color-background: #0a0b0c;
+  --color-surface: #101213;
+  --color-surface-raised: #111415;
+  --color-foreground: #e9e9e6;
+  --color-muted: #969c9d;
+  --color-muted-light: #b3b8b9;
+  --color-line: #292e30;
+  --color-accent: #9e5547;
+  --color-link: #b99b8e;
+
+  --content-width: 1250px;
+  --navigation-height: 66px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.nav {
+  height: var(--navigation-height);
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 5px;
+}
+
+.back {
+  color: var(--color-muted);
+  font-size: 11px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.back:hover {
+  color: var(--color-foreground);
+}
+
+.hero {
+  min-height: 76vh;
+  display: grid;
+  grid-template-columns: 42% 58%;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.copy {
+  padding: 90px 6vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  color: var(--color-accent);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.copy h1 {
+  margin: 25px 0;
+  font-size: clamp(65px, 10vw, 145px);
+  line-height: 0.72;
+  letter-spacing: -4px;
+}
+
+.copy p {
+  max-width: 480px;
+  color: #b6bbbc;
+  font-size: 19px;
+  line-height: 1.45;
+}
+
+.visual {
+  position: relative;
+  min-height: 500px;
+  background:
+    linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.6)),
+    url("https://placehold.co/1200x800?text=Hero_Image_01") center / cover;
+}
+
+.visual::after {
+  content: "Campaign_Watermark_01";
+  position: absolute;
+  right: 25px;
+  bottom: 20px;
+  color: rgba(255, 255, 255, 0.13);
+  font-size: 15vw;
+  font-weight: 800;
+  line-height: 0.7;
+}
+
+.strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.stat {
+  padding: 25px;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-line);
+}
+
+.stat:last-child {
+  border-right: 0;
+}
+
+.stat small {
+  display: block;
+  color: #6f7677;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.stat b {
+  font-size: 27px;
+}
+
+.content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 65px 5vw 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--color-line);
+}
+
+.panel {
+  min-height: 300px;
+  padding: 35px;
+  background: var(--color-surface-raised);
+}
+
+.panel h2 {
+  margin: 0 0 18px;
+  font-size: 42px;
+}
+
+.panel p {
+  color: var(--color-muted-light);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.panel ul {
+  padding-left: 18px;
+  color: #aeb3b4;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.resources-heading {
+  margin-top: 28px !important;
+}
+
+.links a {
+  display: block;
+  padding: 11px 0;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: 1px solid #323738;
+}
+
+.links a:hover {
+  color: #ffffff;
+}
+
+.gallery {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 5vw 100px;
+}
+
+.gallery h2 {
+  font-size: 42px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 8px;
+}
+
+.shot {
+  height: 190px;
+  padding: 18px;
+  display: flex;
+  align-items: flex-end;
+  background: #171a1b;
+  border: 1px solid var(--color-line);
+  color: #818889;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.shot:first-child {
+  height: 390px;
+  grid-row: span 2;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    min-height: 55vh;
+  }
+
+  .strip {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .shot:first-child {
+    height: 190px;
+    grid-row: auto;
+    grid-column: span 2;
+  }
+}
