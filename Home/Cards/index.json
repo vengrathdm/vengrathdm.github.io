@@ -320,5 +320,26 @@
     "tag": "Zamknięta Kampania",
     "graphic": "../Graphics/KuChwaleTyra.png",
     "link": "../../subpages/ku-chwale-tyra/"
+  },
+  {
+    "name": "mock-1.txt",
+    "title": "Mock 1",
+    "tag": "Aktywna Kampania",
+    "graphic": "../Graphics/mock-1.svg",
+    "link": "../../subpages/mock-1/"
+  },
+  {
+    "name": "mock-2.txt",
+    "title": "Mock 2",
+    "tag": "Aktywna Kampania",
+    "graphic": "../Graphics/mock-2.svg",
+    "link": "../../subpages/mock-2/"
+  },
+  {
+    "name": "mock-3.txt",
+    "title": "Mock 3",
+    "tag": "Aktywna Kampania",
+    "graphic": "../Graphics/mock-3.svg",
+    "link": "../../subpages/mock-3/"
   }
 ]
