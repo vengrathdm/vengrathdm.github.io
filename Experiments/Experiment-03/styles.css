@@ -112,3 +112,94 @@ header,main,footer{position:relative;z-index:2}
   .ritual-panel{position:relative;right:auto;top:auto;width:min(620px,92vw);transform:translateY(8px) scale(.98);opacity:.72;filter:none;pointer-events:auto;margin:0 auto}
   .sanctum:hover .ritual-panel,.ritual-panel:hover{transform:translateY(0) scale(1);opacity:.92}
 }
+
+/* EXPERIMENT 03 — pierścieniowy interfejs WEWNĄTRZ kuli */
+.crystal{overflow:visible}
+.crystal-glass{overflow:visible}
+.orb-nav{
+  position:absolute;
+  inset:9%;
+  z-index:30;
+  border:1px solid #d9b6ed22;
+  border-radius:50%;
+  pointer-events:none;
+  opacity:0;
+  transform:scale(.72) rotate(-8deg);
+  filter:blur(5px);
+  background:radial-gradient(circle,#d9b6ed05 0 48%,#d9b6ed0b 49%,transparent 51%);
+  box-shadow:inset 0 0 22px #c995e811,0 0 28px #c995e808;
+  transition:opacity .45s ease,transform .7s cubic-bezier(.2,.8,.2,1),filter .45s ease;
+}
+.orb-nav:before,.orb-nav:after{
+  content:"";
+  position:absolute;
+  inset:5%;
+  border-radius:50%;
+  border:1px dashed #c7a0dd22;
+  pointer-events:none;
+}
+.orb-nav:after{inset:12%;border-style:solid;border-color:#d9b6ed12;box-shadow:0 0 18px #c995e80d}
+.crystal:hover .orb-nav,.orb-nav:hover{
+  opacity:1;
+  transform:scale(1) rotate(0deg);
+  filter:blur(0);
+  pointer-events:auto;
+}
+.orb-nav button{
+  position:absolute;
+  width:28px;height:28px;margin:-14px;
+  border:1px solid #c7a0dd55;
+  border-radius:50%;
+  background:#0c0812cc;
+  color:#a998af;
+  font:8px Voltaire,Arial,sans-serif;
+  cursor:pointer;
+  box-shadow:0 0 12px #000, inset 0 0 8px #c995e808;
+  transition:transform .25s,background .25s,color .25s,border-color .25s,box-shadow .25s;
+}
+.orb-nav button:hover,.orb-nav button.active{
+  color:#fff0ff;
+  border-color:#e1bdf2;
+  background:#25152dcc;
+  box-shadow:0 0 22px #c995e877,inset 0 0 12px #c995e822;
+  transform:scale(1.2);
+}
+.orb-nav button.seen:after{
+  content:"";
+  position:absolute;inset:5px;border-radius:50%;
+  border:1px solid #c7a0dd55;
+}
+.orb-nav button:nth-child(1){left:50%;top:0}
+.orb-nav button:nth-child(2){left:85.4%;top:14.6%}
+.orb-nav button:nth-child(3){left:100%;top:50%}
+.orb-nav button:nth-child(4){left:85.4%;top:85.4%}
+.orb-nav button:nth-child(5){left:50%;top:100%}
+.orb-nav button:nth-child(6){left:14.6%;top:85.4%}
+.orb-nav button:nth-child(7){left:0;top:50%}
+.orb-nav button:nth-child(8){left:14.6%;top:14.6%}
+.orb-nav button:nth-child(9){left:50%;top:50%}
+
+/* stary boczny panel staje się niewidocznym zapleczem — interfejs żyje na kuli */
+.ritual-panel{
+  display:none !important;
+}
+.crystal:after{
+  content:"DOTKNIJ KULI, ABY UJAWNIĆ WIZJE";
+  position:absolute;
+  left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  z-index:28;
+  pointer-events:none;
+  color:#c9b5cf55;
+  font:7px Voltaire,Arial,sans-serif;
+  letter-spacing:.18em;
+  white-space:nowrap;
+  opacity:.65;
+  transition:opacity .35s,transform .5s;
+}
+.crystal:hover:after{opacity:0;transform:translate(-50%,-50%) scale(1.08)}
+@media(max-width:600px){
+  .orb-nav{inset:7%}
+  .orb-nav button{width:24px;height:24px;margin:-12px;font-size:7px}
+  .crystal:after{font-size:6px}
+}
