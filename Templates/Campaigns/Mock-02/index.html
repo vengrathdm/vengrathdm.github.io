@@ -10,6 +10,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+
+/* Vengrath template navigation */
+.vengrath-template-nav{position:fixed;top:18px;right:18px;z-index:99999;display:flex;gap:8px;align-items:center;font-family:inherit}
+.vengrath-template-nav a,.vengrath-template-nav button{appearance:none;border:1px solid rgba(255,255,255,.22);background:rgba(8,8,12,.72);backdrop-filter:blur(8px);color:inherit;text-decoration:none;padding:8px 13px;border-radius:999px;font:inherit;font-size:12px;line-height:1;cursor:pointer;transition:.2s ease;box-shadow:0 4px 18px rgba(0,0,0,.2)}
+.vengrath-template-nav a:hover,.vengrath-template-nav button:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.5);background:rgba(20,20,28,.88)}
+.vengrath-template-nav button{opacity:.72}
+@media(max-width:600px){.vengrath-template-nav{top:10px;right:10px}.vengrath-template-nav a,.vengrath-template-nav button{padding:7px 10px;font-size:11px}}
+</style>
 </head>
 
 <body>
@@ -167,5 +176,10 @@
       </div>
     </section>
   </div>
+
+  <nav class="vengrath-template-nav" aria-label="Template navigation">
+    <a href="/" aria-label="Powrót do Vengrath">Vengrath</a>
+    <button type="button" aria-label="YouTube — brak przypisanego linku">YouTube</button>
+  </nav>
 </body>
 </html>
