@@ -2429,3 +2429,44 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
     grid-template-columns:1fr;
   }
 }
+
+/* City atlas final layout corrections */
+#page-factions .city-atlas-copy .cover-sub,
+#page-factions .city-hero-facts span,
+#page-factions .map-float-copy,
+#page-factions .map-float-copy p{
+  color:#f1f1ee;
+}
+#page-factions .city-hero-facts strong{
+  color:#e86b6b;
+}
+#page-factions .map-float-copy{
+  border-left-color:#c94a4a;
+}
+#page-factions .tile-power{
+  grid-column:4 / 13;
+  margin-top:35px;
+}
+#page-factions .tile-power .power-machine{
+  width:100%;
+}
+#page-factions .tile-power .power-split{
+  grid-template-columns:1fr 1fr;
+}
+@media (max-width:1050px){
+  #page-factions .tile-power{
+    grid-column:3 / 13;
+    margin-top:30px;
+  }
+}
+@media (max-width:800px){
+  #page-factions .tile-power{
+    grid-column:1 / -1;
+    margin-top:0;
+  }
+}
+@media (max-width:640px){
+  #page-factions .tile-power .power-split{
+    grid-template-columns:1fr;
+  }
+}
