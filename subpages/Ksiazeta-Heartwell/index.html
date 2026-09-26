@@ -1040,6 +1040,119 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   }
 }
 
+/* ============================================================
+   HEARTWELL SMALL FIXES — CONTROLS / STRUCTURE / PARTY
+   ============================================================ */
+#page-overview .stamp-row{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top:8px;
+}
+#page-overview .stamp-row .stamp{
+  flex:0 0 auto;
+  white-space:nowrap;
+}
+#page-overview .stamp-row .btn{
+  flex:0 0 auto;
+  white-space:nowrap;
+}
+
+#page-factions .district-grid{
+  margin-top:10px;
+}
+#page-factions .district-card{
+  background:var(--paper);
+  color:var(--ink);
+}
+#page-factions .district-card h4{
+  color:var(--ink);
+}
+#page-factions .district-card p{
+  color:var(--ink-fade);
+}
+
+.party-card{
+  min-height:620px;
+  padding:0 20px 22px;
+}
+.party-portrait{
+  height:250px;
+  margin:0 -20px 24px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:
+    linear-gradient(135deg,rgba(36,31,46,.96),rgba(26,23,20,.98));
+  border-bottom:2px solid var(--ink);
+}
+.party-portrait::before{
+  content:"PORTRET POSTACI";
+  font-family:"Voltaire",sans-serif;
+  font-size:10px;
+  letter-spacing:.14em;
+  color:#aaa59a;
+}
+.party-portrait::after{
+  content:"";
+  position:absolute;
+  inset:12px;
+  border:1px dashed rgba(241,241,238,.22);
+  pointer-events:none;
+}
+.party-portrait.has-image::before{
+  display:none;
+}
+.party-portrait img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.party-card-top{
+  margin-bottom:10px;
+  font-size:10px;
+}
+.party-card h3{
+  font-size:15px;
+  color:var(--ink-fade);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px;
+}
+.party-label{
+  color:var(--stamp-red);
+  font-size:10px;
+  letter-spacing:.14em;
+  margin-bottom:5px;
+}
+.party-card h4{
+  font-size:30px;
+  line-height:1.02;
+  margin:0 0 14px;
+  color:var(--ink);
+}
+.party-card p{
+  font-size:13px;
+  line-height:1.55;
+}
+.party-link{
+  margin-top:20px;
+}
+@media (max-width:900px){
+  .party-card{min-height:600px;}
+  .party-portrait{height:230px;}
+}
+@media (max-width:640px){
+  .party-card{min-height:540px;}
+  .party-portrait{height:220px;}
+  #page-overview .stamp-row{
+    align-items:flex-start;
+  }
+}
 </style>
 </head>
 <body>
@@ -1103,12 +1216,6 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 <cite>AKTA KAMPANII · HEARTWELL</cite>
 </div>
 </div>
-<div class="section-head"><h2>Miasto w skrócie</h2><div class="rule"></div></div>
-<div class="district-grid">
-<div class="district-card"><div class="tag">MIASTO</div><h4>Czarny kamień</h4><p>Heartwell zbudowano wokół rzeki i czarnego kamienia; nad miastem niemal stale zalegają chmury.</p></div>
-<div class="district-card"><div class="tag">TECHNOLOGIA</div><h4>Diesel i magia</h4><p>Tramwaje, koleje, fabryki i infrastruktura działają w dieslowym rytmie, a magia jest rzadsza i bardziej niepokojąca.</p></div>
-<div class="district-card"><div class="tag">SPOŁECZEŃSTWO</div><h4>Arystokracja i klasa pracująca</h4><p>Miasto ma wyraźny podział klasowy. Arystokracja i klasa pracująca żyją w dwóch różnych porządkach społecznym i ekonomicznym.</p></div>
-</div>
 <div class="page-foot">
 <span>Heartwell</span>
 <span>Heartwell</span>
@@ -1128,6 +1235,12 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 <div class="intel-row"><div class="name">KLASA PRACUJĄCA</div><div class="desc">Druga strona wyraźnego podziału społecznego miasta.</div><div class="status watched">OBSERWOWANA</div></div>
 <div class="intel-row"><div class="name">Heartwell</div><div class="desc">Materia kampanii Heartwell.</div><div class="status hostile">Heartwell</div></div>
 </div>
+<div class="section-head"><h2>Miasto w skrócie</h2><div class="rule"></div></div>
+<div class="district-grid">
+<div class="district-card"><div class="tag">MIASTO</div><h4>Czarny kamień</h4><p>Heartwell zbudowano wokół rzeki i czarnego kamienia; nad miastem niemal stale zalegają chmury.</p></div>
+<div class="district-card"><div class="tag">TECHNOLOGIA</div><h4>Diesel i magia</h4><p>Tramwaje, koleje, fabryki i infrastruktura działają w dieslowym rytmie, a magia jest rzadsza i bardziej niepokojąca.</p></div>
+<div class="district-card"><div class="tag">SPOŁECZEŃSTWO</div><h4>Arystokracja i klasa pracująca</h4><p>Miasto ma wyraźny podział klasowy. Arystokracja i klasa pracująca żyją w dwóch różnych porządkach społecznym i ekonomicznym.</p></div>
+</div>
 <div class="section-head"><h2>Ton kampanii</h2><div class="rule"></div></div>
 <div class="intel">
 <div class="intel-row"><div class="name">GOTYCKI HORROR</div><div class="desc">Atmosfera, tajemnica, kontrasty klasowe i ukryta warstwa codziennego życia.</div><div class="status watched">AKTYWNE</div></div>
@@ -1146,47 +1259,43 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 <div class="party-grid">
   <article class="party-card">
     <div class="party-number">01</div>
-    <div class="party-card-top">GRACZ</div>
-    <h3>Zuzia</h3>
-    <div class="party-divider"></div>
-    <div class="party-label">POSTAĆ</div>
+    <div class="party-portrait"><span></span></div>
+    <div class="party-card-top">GRACZ · ZUZIA</div>
+    <h3>POSTAĆ</h3>
     <h4>Polter von Geist</h4>
     <p>Postać posiada osobną kartę w katalogu player-characters.</p>
     <a class="party-link" href="player-characters/polter-von-geist.html">OTWÓRZ KARTĘ →</a>
-    <div class="party-tags"><span>ZUZIA</span><span>POLTER VON GEIST</span></div>
+    <div class="party-tags"><span>POLTER VON GEIST</span></div>
   </article>
 
   <article class="party-card">
     <div class="party-number">02</div>
-    <div class="party-card-top">GRACZ</div>
-    <h3>wpoluwiatr</h3>
-    <div class="party-divider"></div>
-    <div class="party-label">POSTAĆ</div>
+    <div class="party-portrait"><span></span></div>
+    <div class="party-card-top">GRACZ · WPOLUWIATR</div>
+    <h3>POSTAĆ</h3>
     <h4>???</h4>
     <p>Postać nie została jeszcze uzupełniona na stronie kampanii.</p>
-    <div class="party-tags"><span>WPOLUWIATR</span><span>DO UZUPEŁNIENIA</span></div>
+    <div class="party-tags"><span>DO UZUPEŁNIENIA</span></div>
   </article>
 
   <article class="party-card">
     <div class="party-number">03</div>
-    <div class="party-card-top">GRACZ</div>
-    <h3>Daniel</h3>
-    <div class="party-divider"></div>
-    <div class="party-label">POSTAĆ</div>
+    <div class="party-portrait"><span></span></div>
+    <div class="party-card-top">GRACZ · DANIEL</div>
+    <h3>POSTAĆ</h3>
     <h4>???</h4>
     <p>Postać nie została jeszcze uzupełniona na stronie kampanii.</p>
-    <div class="party-tags"><span>DANIEL</span><span>DO UZUPEŁNIENIA</span></div>
+    <div class="party-tags"><span>DO UZUPEŁNIENIA</span></div>
   </article>
 
   <article class="party-card">
     <div class="party-number">04</div>
-    <div class="party-card-top">GRACZ</div>
-    <h3>???</h3>
-    <div class="party-divider"></div>
-    <div class="party-label">POSTAĆ</div>
+    <div class="party-portrait"><span></span></div>
+    <div class="party-card-top">GRACZ · ???</div>
+    <h3>POSTAĆ</h3>
     <h4>???</h4>
     <p>Czwarte miejsce w drużynie jest obecnie nieuzupełnione.</p>
-    <div class="party-tags"><span>???</span><span>DO UZUPEŁNIENIA</span></div>
+    <div class="party-tags"><span>DO UZUPEŁNIENIA</span></div>
   </article>
 </div>
 </section>
