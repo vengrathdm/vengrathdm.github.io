@@ -1,54 +1,52 @@
 # Książęta Heartwell
 
-Ta wersja strony jest celowo rozdzielona na kilka prostych plików, żeby łatwiej było ją ręcznie rozwijać.
+Strona kampanii jest rozdzielona na kilka prostych plików, żeby łatwiej było ją ręcznie rozwijać.
 
 ## Struktura
 
-- `index.html` — główna struktura i cała treść kampanii.
+- `index.html` — Akta Miasta / strona główna Heartwell.
+- `miasto.html` — atlas miasta: mapa, anatomia, dzielnice, władza, technologia, codzienność i historia.
+- `druzyna.html` — Drużyna i karty postaci.
+- `zapisy.html` — Zapiski z Kampanii i otwarte wątki.
 - `heartwell.css` — wygląd, układ, typografia, kolory i responsive design.
-- `heartwell.js` — interakcje strony: zakładki i elementy rozwijane.
+- `heartwell.js` — interakcje strony oraz stan motywu audio.
 - `HeartwellWiki/` — materiały wiki kampanii.
 - `player-characters/` — osobne karty postaci graczy.
 
 ## Gdzie co edytować
 
-### Treść kampanii
+### Strona główna
 Edytuj `index.html`.
 
-Sekcje są oznaczone komentarzami:
-- OVERVIEW / AKTA MIASTA
-- FACTIONS / STRUKTURA
-- CASE / DRUŻYNA
-- CAMPAIGN NOTES / ZAPISKI Z KAMPANII
+### Atlas miasta
+Edytuj `miasto.html`.
 
-Jeżeli dodajesz tekst, NPC, informacje o mieście, sesje albo postać, rób to tutaj.
+To jest osobna strona poświęcona Heartwell jako miejscu: mapa referencyjna, sześć dzielnic, mury, Aorta, Morze, infrastruktura, struktura władzy i codzienne życie.
+
+### Drużyna
+Edytuj `druzyna.html`.
+
+### Zapiski z kampanii
+Edytuj `zapisy.html`.
 
 ### Wygląd
 Edytuj `heartwell.css`.
 
-Na końcu pliku znajdują się reguły specyficzne dla Heartwell oraz poprawki responsywne. Warto dodawać nowe zmiany w osobnych, opisanych sekcjach zamiast mieszać je z bazowymi stylami.
+Na końcu pliku znajdują się reguły specyficzne dla Heartwell oraz poprawki responsywne. Nowe zmiany warto dodawać w osobnych, opisanych sekcjach.
 
 ### Interakcje
 Edytuj `heartwell.js`.
 
-Obecnie odpowiada za:
-- przełączanie kart bocznego menu,
-- otwieranie/zamykanie zapisów sesji.
-
-Nie przenoś tutaj treści strony — dzięki temu `index.html` pozostaje czytelny.
-
-## Obrazy
+### Obrazy
 
 Główny obraz Heartwell jest używany z:
 
 `../../Home/Graphics/ksiazeta-heartwell.jpg`
 
-Portrety postaci można później podłączać w istniejących blokach `.party-portrait` w `index.html`.
+Portrety postaci znajdują się w `player-characters/`.
 
 ## Zasada
 
 **HTML = co jest na stronie.**  
 **CSS = jak wygląda.**  
 **JS = jak działa.**
-
-Dzięki temu większość zmian kampanii można wykonywać bez grzebania w pozostałych warstwach.
