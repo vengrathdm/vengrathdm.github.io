@@ -1490,3 +1490,31 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   background:rgba(201,74,74,.10);
   transform:none;
 }
+
+/* GLOBAL VENGRATH BACKLINK */
+.global-vengrath{
+  width:56px;
+  min-height:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:7px 4px;
+  margin-bottom:18px;
+  border:1px solid rgba(212,160,60,.7);
+  color:var(--amber);
+  background:rgba(26,23,20,.35);
+  font-family:var(--display);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.08em;
+  line-height:1;
+  text-decoration:none;
+  transition:color .15s ease, background .15s ease, border-color .15s ease, transform .15s ease;
+  flex-shrink:0;
+}
+.global-vengrath:hover{
+  color:#f1f1ee;
+  background:var(--stamp-red);
+  border-color:var(--stamp-red);
+  transform:translateY(-1px);
+}
