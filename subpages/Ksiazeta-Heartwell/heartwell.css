@@ -2627,3 +2627,37 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
     order:1;
   }
 }
+
+/* Final detail: map quote is independent from the plan accent */
+#page-factions .map-float-copy{
+  border-left:2px solid var(--stamp-red);
+  padding-left:20px;
+}
+#page-factions .map-float-copy .map-quote{
+  border-left:0;
+  padding-left:0;
+}
+#page-factions .map-float-copy .map-quote .mark{
+  display:none;
+}
+
+/* Technology labels: boxed initial + word on the same line */
+#page-factions .tech-card{
+  display:grid;
+  grid-template-columns:35px 1fr;
+  column-gap:12px;
+  align-content:start;
+}
+#page-factions .tech-card .tech-icon{
+  grid-row:1 / span 2;
+  margin:0;
+}
+#page-factions .tech-card strong{
+  display:inline;
+  align-self:center;
+  margin:5px 0 0;
+}
+#page-factions .tech-card p{
+  grid-column:2;
+  margin-top:7px;
+}
