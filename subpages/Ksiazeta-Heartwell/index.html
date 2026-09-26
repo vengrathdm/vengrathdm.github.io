@@ -704,6 +704,127 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   color:#deded8;
 }
 
+
+/* ============================================================
+   PARTY — FOUR VERTICAL DOSSIER CARDS
+   ============================================================ */
+.party-grid{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:18px;
+  align-items:stretch;
+}
+.party-card{
+  position:relative;
+  min-height:430px;
+  display:flex;
+  flex-direction:column;
+  background:var(--paper);
+  color:var(--ink);
+  border:2px solid var(--ink);
+  border-radius:2px;
+  padding:24px 20px 20px;
+  box-shadow:5px 5px 0 rgba(20,17,14,.55);
+  overflow:hidden;
+}
+.party-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.16),transparent 28%);
+}
+.party-number{
+  position:absolute;
+  top:12px;
+  right:14px;
+  font-family:"Voltaire",sans-serif;
+  font-size:28px;
+  line-height:1;
+  color:var(--stamp-red);
+  opacity:.9;
+}
+.party-card-top{
+  font-family:"Voltaire",sans-serif;
+  font-size:10px;
+  letter-spacing:.14em;
+  color:var(--stamp-red);
+  font-weight:700;
+  margin-bottom:42px;
+}
+.party-card h3{
+  font-family:"Voltaire",sans-serif;
+  font-size:27px;
+  line-height:1.05;
+  color:var(--ink);
+  margin:0;
+}
+.party-divider{
+  width:100%;
+  height:2px;
+  background:var(--kraft-dark);
+  margin:15px 0 18px;
+}
+.party-label{
+  font-family:"Voltaire",sans-serif;
+  font-size:10px;
+  letter-spacing:.12em;
+  color:var(--ink-fade);
+  margin-bottom:5px;
+}
+.party-card h4{
+  font-family:"Voltaire",sans-serif;
+  font-size:21px;
+  line-height:1.1;
+  color:var(--ink);
+  margin:0 0 13px;
+}
+.party-card p{
+  font-family:"Voltaire",sans-serif;
+  font-size:13px;
+  line-height:1.5;
+  color:var(--ink-fade);
+  margin:0;
+}
+.party-link{
+  display:inline-block;
+  margin-top:18px;
+  font-family:"Voltaire",sans-serif;
+  font-size:11px;
+  letter-spacing:.07em;
+  color:var(--stamp-red);
+  text-decoration:none;
+  border:2px solid var(--stamp-red);
+  padding:7px 10px;
+  align-self:flex-start;
+}
+.party-link:hover{
+  background:rgba(139,32,32,.08);
+}
+.party-tags{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  margin-top:auto;
+  padding-top:20px;
+}
+.party-tags span{
+  font-family:"Voltaire",sans-serif;
+  font-size:9px;
+  letter-spacing:.06em;
+  color:var(--stamp-red);
+  border:1px solid rgba(139,32,32,.28);
+  background:rgba(139,32,32,.08);
+  padding:4px 7px;
+}
+@media (max-width:900px){
+  .party-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:640px){
+  .party-grid{grid-template-columns:1fr;}
+  .party-card{min-height:360px;}
+}
+
 </style>
 </head>
 <body>
@@ -738,7 +859,7 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 <p class="cover-lede">Heartwell wygląda jak miejsce, w którym wszystko działa — i właśnie dlatego coś w nim nie daje spokoju. Miasto zbudowano wokół rzeki i czarnego kamienia. Prawie nieustanne chmury, gazowe i dieslowe światła, fabryki, tramwaje i kolej tworzą przemysłowe tło dla gotyckiego horroru.</p>
 <div class="stamp-row">
 <span class="stamp">DIESEL + MAGIA</span>
-<button class="btn primary" onclick="goToPage('city')">ZOBACZ MIASTO</button>
+<button class="btn primary" type="button">ZOBACZ MIASTO</button>
 <button class="btn" onclick="goToPage('case')">NASZA DRUŻYNA</button>
 </div>
 </div>
@@ -798,60 +919,53 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 <section class="page" id="page-case">
 <div class="file-strip"><span>AKTA DRUŻYNY · HEARTWELL</span><span class="case-no">PLAYER CHARACTERS</span></div>
 <div class="section-head"><h2>Nasza drużyna</h2><div class="rule"></div></div>
-<p class="section-note">Na obecnej stronie kampanii zapisano cztery miejsca w drużynie; tylko jedna postać ma obecnie podane imię postaci i osobną kartę.</p>
+<p class="section-note">Cztery miejsca w drużynie. Dane, które nie są jeszcze uzupełnione, pozostają oznaczone jako „???”.</p>
 
-<div id="reportLog">
-  <div class="report-entry open">
-    <button class="report-head" type="button">
-      <span class="num">01</span>
-      <h3>Zuzia — Polter von Geist</h3>
-      <span class="date">KARTA POSTACI</span>
-      <span class="chev">›</span>
-    </button>
-    <div class="report-body">
-      <div class="report-body-inner">
-        <p>Zuzia prowadzi postać Polter von Geist. Dla tej postaci istnieje osobna karta w katalogu player-characters.</p>
-        <p><a href="player-characters/polter-von-geist.html">Otwórz kartę Polter von Geist →</a></p>
-        <div class="report-tags"><span>ZUZIA</span><span>POLTER VON GEIST</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="report-entry">
-    <button class="report-head" type="button">
-      <span class="num">02</span>
-      <h3>wpoluwiatr — postać nieujawniona</h3>
-      <span class="date">BRAK DANYCH</span>
-      <span class="chev">›</span>
-    </button>
-    <div class="report-body"><div class="report-body-inner">
-      <p>Na stronie głównej gracz jest wpisany jako „wpoluwiatr”, ale postać pozostaje oznaczona jako „???”.</p>
-      <div class="report-tags"><span>WPOLUWIATR</span><span>DO UZUPEŁNIENIA</span></div>
-    </div></div>
-  </div>
-  <div class="report-entry">
-    <button class="report-head" type="button">
-      <span class="num">03</span>
-      <h3>Daniel — postać nieujawniona</h3>
-      <span class="date">BRAK DANYCH</span>
-      <span class="chev">›</span>
-    </button>
-    <div class="report-body"><div class="report-body-inner">
-      <p>Na stronie głównej gracz jest wpisany jako „Daniel”, ale postać pozostaje oznaczona jako „???”.</p>
-      <div class="report-tags"><span>DANIEL</span><span>DO UZUPEŁNIENIA</span></div>
-    </div></div>
-  </div>
-  <div class="report-entry">
-    <button class="report-head" type="button">
-      <span class="num">04</span>
-      <h3>??? — postać nieujawniona</h3>
-      <span class="date">BRAK DANYCH</span>
-      <span class="chev">›</span>
-    </button>
-    <div class="report-body"><div class="report-body-inner">
-      <p>Czwarte miejsce w drużynie jest obecnie nieuzupełnione na stronie kampanii.</p>
-      <div class="report-tags"><span>???</span><span>DO UZUPEŁNIENIA</span></div>
-    </div></div>
-  </div>
+<div class="party-grid">
+  <article class="party-card">
+    <div class="party-number">01</div>
+    <div class="party-card-top">GRACZ</div>
+    <h3>Zuzia</h3>
+    <div class="party-divider"></div>
+    <div class="party-label">POSTAĆ</div>
+    <h4>Polter von Geist</h4>
+    <p>Postać posiada osobną kartę w katalogu player-characters.</p>
+    <a class="party-link" href="player-characters/polter-von-geist.html">OTWÓRZ KARTĘ →</a>
+    <div class="party-tags"><span>ZUZIA</span><span>POLTER VON GEIST</span></div>
+  </article>
+
+  <article class="party-card">
+    <div class="party-number">02</div>
+    <div class="party-card-top">GRACZ</div>
+    <h3>wpoluwiatr</h3>
+    <div class="party-divider"></div>
+    <div class="party-label">POSTAĆ</div>
+    <h4>???</h4>
+    <p>Postać nie została jeszcze uzupełniona na stronie kampanii.</p>
+    <div class="party-tags"><span>WPOLUWIATR</span><span>DO UZUPEŁNIENIA</span></div>
+  </article>
+
+  <article class="party-card">
+    <div class="party-number">03</div>
+    <div class="party-card-top">GRACZ</div>
+    <h3>Daniel</h3>
+    <div class="party-divider"></div>
+    <div class="party-label">POSTAĆ</div>
+    <h4>???</h4>
+    <p>Postać nie została jeszcze uzupełniona na stronie kampanii.</p>
+    <div class="party-tags"><span>DANIEL</span><span>DO UZUPEŁNIENIA</span></div>
+  </article>
+
+  <article class="party-card">
+    <div class="party-number">04</div>
+    <div class="party-card-top">GRACZ</div>
+    <h3>???</h3>
+    <div class="party-divider"></div>
+    <div class="party-label">POSTAĆ</div>
+    <h4>???</h4>
+    <p>Czwarte miejsce w drużynie jest obecnie nieuzupełnione.</p>
+    <div class="party-tags"><span>???</span><span>DO UZUPEŁNIENIA</span></div>
+  </article>
 </div>
 </section>
 <!-- ---------- THREADS ---------- -->
@@ -962,19 +1076,7 @@ document.getElementById('tabList').addEventListener('click', (e) => {
 /* ============================================================
    CASE LOG ACCORDION
    ============================================================ */
-document.getElementById('reportLog').addEventListener('click', (e) => {
-  const head = e.target.closest('.report-head');
-  if(!head) return;
-  const entry = head.closest('.report-entry');
-  const wasOpen = entry.classList.contains('open');
-  document.querySelectorAll('.report-entry.open').forEach(el => el.classList.remove('open'));
-  if(!wasOpen){ entry.classList.add('open'); }
-});
 </script>
 
-<footer style="position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:0 5.5vw 28px;font-family:var(--mono);font-size:11px;color:#777;">
-  <a href="HeartwellWiki/">Heartwell Wiki</a> ·
-  <a href="player-characters/polter-von-geist.html">Polter von Geist</a>
-</footer>
 </body>
 </html>
