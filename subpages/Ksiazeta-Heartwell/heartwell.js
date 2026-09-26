@@ -21,11 +21,19 @@ document.querySelectorAll('.report-head').forEach(button => {
   const TIME_KEY='heartwellThemeTime';
   const MUTED_KEY='heartwellThemeMuted';
   const PLAYING_KEY='heartwellThemePlaying';
+
   let userMuted=sessionStorage.getItem(MUTED_KEY)==='true';
+  let restored=false;
   let restoring=true;
   audio.volume=0.55;
 
+  function getSavedTime(){
+    const saved=parseFloat(sessionStorage.getItem(TIME_KEY));
+    return Number.isFinite(saved) && saved >= 0 ? saved : 0;
+  }
+
   function saveState(){
+    if(!restored) return;
     try{
       sessionStorage.setItem(TIME_KEY,String(audio.currentTime || 0));
       sessionStorage.setItem(MUTED_KEY,String(audio.muted || userMuted));
@@ -42,15 +50,22 @@ document.querySelectorAll('.report-head').forEach(button => {
   }
 
   function restorePosition(){
-    const saved=parseFloat(sessionStorage.getItem(TIME_KEY));
-    if(Number.isFinite(saved) && saved >= 0){
-      try{
-        audio.currentTime=saved;
-      }catch(_){}
+    if(restored) return;
+    const saved=getSavedTime();
+
+    if(audio.duration && saved >= audio.duration){
+      audio.currentTime=saved % audio.duration;
+    }else{
+      audio.currentTime=saved;
     }
+
+    restored=true;
+    restoring=false;
   }
 
   async function startAudio(){
+    if(!restored) restorePosition();
+
     try{
       audio.muted=userMuted;
       await audio.play();
@@ -58,22 +73,31 @@ document.querySelectorAll('.report-head').forEach(button => {
       saveState();
       return true;
     }catch(error){
+      /* Browser autoplay policy: keep the saved position while muted. */
       audio.muted=true;
       try{ await audio.play(); }catch(_){}
       syncButton();
-      saveState();
+      if(restored) saveState();
       return false;
     }
   }
 
+  /*
+   * Save before normal navigation so the next HTML document gets
+   * the exact position at which the user changed tabs.
+   */
+  document.querySelectorAll('.tab-btn').forEach(link=>{
+    link.addEventListener('click',()=>{
+      saveState();
+    });
+  });
+
   audio.addEventListener('loadedmetadata',()=>{
     restorePosition();
-    if(restoring){
-      restoring=false;
-      const shouldPlay=sessionStorage.getItem(PLAYING_KEY)!=='false' && !userMuted;
-      if(shouldPlay) startAudio();
-      else syncButton();
-    }
+
+    const shouldPlay=sessionStorage.getItem(PLAYING_KEY)!=='false' && !userMuted;
+    if(shouldPlay) startAudio();
+    else syncButton();
   });
 
   toggle.addEventListener('click',async()=>{
@@ -96,7 +120,6 @@ document.querySelectorAll('.report-head').forEach(button => {
     saveState();
   });
 
-  /* Save the exact position immediately before leaving the page. */
   window.addEventListener('pagehide',saveState);
   window.addEventListener('beforeunload',saveState);
   document.addEventListener('visibilitychange',()=>{
@@ -108,10 +131,9 @@ document.querySelectorAll('.report-head').forEach(button => {
     await startAudio();
   },{once:false,passive:true});
 
-  /* Wait for metadata before restoring currentTime. */
+  /* Metadata may already be available from cache. */
   if(audio.readyState>=1){
     restorePosition();
-    restoring=false;
     const shouldPlay=sessionStorage.getItem(PLAYING_KEY)!=='false' && !userMuted;
     if(shouldPlay) startAudio();
     else syncButton();
