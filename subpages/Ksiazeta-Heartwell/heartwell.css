@@ -2478,3 +2478,113 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 #page-factions .city-metro-grid .city-section-title{
   display:none;
 }
+
+/* Dense metro shuffle */
+#page-factions .map-float-layout{
+  grid-template-columns:minmax(0,1.05fr) minmax(220px,.55fr);
+  min-height:340px;
+  gap:30px;
+}
+#page-factions .map-floating{
+  width:min(82%,560px);
+}
+#page-factions .city-metro-grid{
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  grid-auto-flow:row;
+  gap:26px 22px;
+}
+#page-factions .tile-districts{
+  grid-column:1 / 9;
+}
+#page-factions .tile-power{
+  grid-column:9 / 13;
+  margin-top:0;
+}
+#page-factions .tile-tech{
+  grid-column:1 / 7;
+  margin-top:0;
+}
+#page-factions .tile-street{
+  grid-column:7 / 13;
+  margin-top:0;
+}
+#page-factions .tile-smog{
+  grid-column:1 / 8;
+  margin-top:0;
+}
+#page-factions .tile-history{
+  grid-column:8 / 13;
+  margin-top:0;
+}
+#page-factions .tile-districts .district-atlas-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+#page-factions .tile-districts .district-atlas-card{
+  min-height:230px;
+}
+#page-factions .tile-power .power-machine{
+  height:100%;
+  box-sizing:border-box;
+}
+#page-factions .tile-tech .technology-board{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+#page-factions .tile-street .street-life{
+  height:100%;
+  box-sizing:border-box;
+}
+#page-factions .tile-smog .smog-panel{
+  min-height:270px;
+  box-sizing:border-box;
+}
+#page-factions .tile-history .city-timeline{
+  min-height:270px;
+  box-sizing:border-box;
+}
+@media (max-width:1050px){
+  #page-factions .map-floating{width:min(86%,500px);}
+  #page-factions .city-metro-grid{gap:24px 18px;}
+  #page-factions .tile-districts{grid-column:1 / 9;}
+  #page-factions .tile-power{grid-column:9 / 13;}
+  #page-factions .tile-tech{grid-column:1 / 7;}
+  #page-factions .tile-street{grid-column:7 / 13;}
+  #page-factions .tile-smog{grid-column:1 / 8;}
+  #page-factions .tile-history{grid-column:8 / 13;}
+}
+@media (max-width:800px){
+  #page-factions .map-float-layout{
+    grid-template-columns:1fr 250px;
+    min-height:0;
+  }
+  #page-factions .map-floating{width:100%;}
+  #page-factions .city-metro-grid{
+    grid-template-columns:1fr 1fr;
+  }
+  #page-factions .tile-districts{grid-column:1 / -1;}
+  #page-factions .tile-power{grid-column:1 / 2;}
+  #page-factions .tile-tech{grid-column:2 / 3;}
+  #page-factions .tile-street{grid-column:1 / -1;}
+  #page-factions .tile-smog{grid-column:1 / 2;}
+  #page-factions .tile-history{grid-column:2 / 3;}
+}
+@media (max-width:640px){
+  #page-factions .map-float-layout{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+  #page-factions .map-floating{
+    width:min(100%,440px);
+  }
+  #page-factions .city-metro-grid{
+    grid-template-columns:1fr;
+    gap:38px;
+  }
+  #page-factions .tile-districts,
+  #page-factions .tile-power,
+  #page-factions .tile-tech,
+  #page-factions .tile-street,
+  #page-factions .tile-smog,
+  #page-factions .tile-history{
+    grid-column:1;
+  }
+}
