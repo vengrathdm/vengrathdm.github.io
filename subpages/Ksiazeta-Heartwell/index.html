@@ -825,6 +825,118 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   .party-card{min-height:360px;}
 }
 
+
+/* ============================================================
+   WIDE SCREEN / ULTRAWIDE LAYOUT
+   ============================================================ */
+.pages{
+  min-width:0;
+}
+.page{
+  width:min(100%, 1480px);
+  max-width:1480px;
+  margin-inline:auto;
+  padding-left:clamp(28px, 4vw, 76px);
+  padding-right:clamp(28px, 4vw, 76px);
+}
+.cover-grid{
+  grid-template-columns:minmax(0,1.02fr) minmax(380px,.98fr);
+  gap:clamp(32px,4vw,72px);
+  align-items:stretch;
+}
+.cover-title-block{
+  max-width:760px;
+}
+.evidence-card{
+  min-width:0;
+}
+.district-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+.party-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.intel-row{
+  grid-template-columns:minmax(170px,220px) minmax(0,1fr) 150px;
+}
+@media (min-width:1800px){
+  .page{
+    width:min(100%, 1580px);
+    max-width:1580px;
+    padding-left:64px;
+    padding-right:64px;
+  }
+}
+@media (min-width:2400px){
+  .page{
+    width:min(100%, 1680px);
+    max-width:1680px;
+    padding-left:70px;
+    padding-right:70px;
+  }
+}
+
+/* ============================================================
+   HEARTWELL HERO IMAGE
+   ============================================================ */
+.heartwell-hero-art{
+  position:relative;
+  margin-top:28px;
+  width:100%;
+  min-height:360px;
+  overflow:hidden;
+  border:2px solid #2a2620;
+  background:#1a1714;
+  box-shadow:7px 7px 0 rgba(20,17,14,.55);
+}
+.heartwell-hero-art img{
+  display:block;
+  width:100%;
+  height:clamp(300px, 32vw, 560px);
+  object-fit:cover;
+  object-position:center;
+  filter:saturate(.86) contrast(1.04);
+}
+.heartwell-hero-art::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(15,13,11,.05),rgba(15,13,11,0) 55%,rgba(15,13,11,.18)),
+             linear-gradient(180deg,rgba(15,13,11,0) 55%,rgba(15,13,11,.38));
+  pointer-events:none;
+}
+.heartwell-hero-caption{
+  position:absolute;
+  left:18px;
+  bottom:16px;
+  z-index:1;
+  color:#f1f1ee;
+  font-family:"Voltaire",sans-serif;
+  font-size:11px;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  text-shadow:0 2px 5px #000;
+}
+@media (max-width:900px){
+  .page{
+    width:100%;
+    padding-left:24px;
+    padding-right:24px;
+  }
+  .cover-grid{
+    grid-template-columns:1fr;
+  }
+}
+@media (max-width:640px){
+  .page{
+    padding-left:16px;
+    padding-right:16px;
+  }
+  .heartwell-hero-art img{
+    height:260px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -857,6 +969,10 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 <h1>Książęta<br>Heartwell</h1>
 <p class="cover-sub">Miasto dieslowego dymu, wiecznych chmur, arystokracji i siedmiu dzielnic.</p>
 <p class="cover-lede">Heartwell wygląda jak miejsce, w którym wszystko działa — i właśnie dlatego coś w nim nie daje spokoju. Miasto zbudowano wokół rzeki i czarnego kamienia. Prawie nieustanne chmury, gazowe i dieslowe światła, fabryki, tramwaje i kolej tworzą przemysłowe tło dla gotyckiego horroru.</p>
+<div class="heartwell-hero-art">
+  <img src="../../Home/Graphics/ksiazeta-heartwell.jpg" alt="Heartwell — miasto dieslowego dymu, chmur i gotyckiej architektury">
+  <span class="heartwell-hero-caption">HEARTWELL · DIESEL · RAVENLOFT</span>
+</div>
 <div class="stamp-row">
 <span class="stamp">DIESEL + MAGIA</span>
 <button class="btn primary" type="button">ZOBACZ MIASTO</button>
