@@ -2588,3 +2588,42 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
     grid-column:1;
   }
 }
+
+/* Plan miasta — left copy, right floating map */
+#page-factions .map-float-layout{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  align-items:center;
+  gap:42px;
+  min-height:330px;
+}
+#page-factions .map-float-copy{
+  max-width:100%;
+}
+#page-factions .map-float-copy .map-quote{
+  margin:28px 0 0;
+}
+#page-factions .map-quote{
+  border-left-color:var(--stamp-red);
+}
+#page-factions .map-quote p{
+  font-size:13px;
+  line-height:1.5;
+}
+#page-factions .map-quote cite{
+  font-size:10px;
+}
+#page-factions .map-floating{
+  width:min(100%,500px);
+  justify-self:center;
+}
+@media (max-width:800px){
+  #page-factions .map-float-layout{
+    grid-template-columns:1fr;
+  }
+  #page-factions .map-float-copy{
+    order:0;
+  }
+  #page-factions .map-floating{
+    order:1;
+  }
+}
