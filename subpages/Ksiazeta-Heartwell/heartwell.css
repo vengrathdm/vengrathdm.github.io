@@ -1434,3 +1434,44 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
     font-size:9px;
   }
 }
+
+/* Session title on the left; date + YouTube stay together on the right. */
+#page-sessions .report-head{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center;
+  column-gap:18px;
+}
+#page-sessions .report-head h3{
+  min-width:0;
+  margin:0;
+}
+#page-sessions .session-meta{
+  display:grid;
+  grid-template-columns:72px 112px 20px;
+  align-items:center;
+  column-gap:12px;
+  justify-content:end;
+}
+#page-sessions .session-youtube-slot{
+  width:112px;
+  flex:none;
+  margin:0;
+}
+#page-sessions .session-youtube{
+  width:112px;
+}
+@media (max-width:640px){
+  #page-sessions .report-head{
+    grid-template-columns:auto minmax(0,1fr) auto;
+    column-gap:10px;
+  }
+  #page-sessions .session-meta{
+    grid-template-columns:58px 92px 14px;
+    column-gap:7px;
+  }
+  #page-sessions .session-youtube-slot,
+  #page-sessions .session-youtube{
+    width:92px;
+  }
+}
