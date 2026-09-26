@@ -2470,3 +2470,11 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
     grid-template-columns:1fr;
   }
 }
+
+/* Final city atlas typography */
+#page-factions .city-atlas-copy h1{
+  color:var(--stamp-red);
+}
+#page-factions .city-metro-grid .city-section-title{
+  display:none;
+}
