@@ -1153,6 +1153,86 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
     align-items:flex-start;
   }
 }
+
+/* ============================================================
+   FINAL PARTY CARD / PORTRAIT GEOMETRY
+   ============================================================ */
+.party-card{
+  min-height:620px;
+}
+.party-portrait{
+  height:auto;
+  min-height:0;
+  margin:0 -20px 24px;
+  padding:14px;
+  position:relative;
+  display:block;
+  overflow:hidden;
+  background:linear-gradient(135deg,rgba(36,31,46,.96),rgba(26,23,20,.98));
+  border-bottom:2px solid var(--ink);
+}
+.party-portrait::before{
+  display:none;
+}
+.party-portrait::after{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border:1px dashed rgba(241,241,238,.32);
+  pointer-events:none;
+}
+.party-portrait img{
+  display:block;
+  width:100%;
+  max-width:100%;
+  height:auto;
+  aspect-ratio:auto;
+  object-fit:initial;
+  object-position:left top;
+  position:relative;
+  z-index:0;
+}
+.party-card-top{
+  margin-bottom:10px;
+}
+.party-card h3{
+  font-size:15px;
+  color:var(--ink-fade);
+  letter-spacing:.08em;
+  text-transform:none;
+  margin:0 0 6px;
+}
+.party-card h4{
+  font-size:30px;
+  line-height:1.02;
+  margin:0 0 14px;
+}
+.party-card p{
+  font-size:13px;
+  line-height:1.55;
+}
+.party-tag-link{
+  display:inline-block;
+  font-family:"Voltaire",sans-serif;
+  font-size:9px;
+  letter-spacing:.06em;
+  color:var(--stamp-red);
+  border:1px solid rgba(139,32,32,.28);
+  background:rgba(139,32,32,.08);
+  padding:4px 7px;
+  text-decoration:none;
+}
+.party-tag-link:hover{
+  background:rgba(139,32,32,.16);
+}
+@media (max-width:900px){
+  .party-card{min-height:600px;}
+  .party-portrait{height:auto;}
+}
+@media (max-width:640px){
+  .party-card{min-height:540px;}
+  .party-portrait{height:auto;}
+}
 </style>
 </head>
 <body>
@@ -1260,18 +1340,17 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 <article class="party-card">
 <div class="party-number">01</div>
 <div class="party-portrait"><img src="player-characters/Placeholder_Character_1.png" alt="Portret postaci — Polter von Geist"></div>
-<div class="party-card-top">GRACZ · ZUZIA</div>
-<h3>POSTAĆ</h3>
+<div class="party-card-top">ZUZIA</div>
+<h3>Bard, Kolegium Duchów</h3>
 <h4>Polter von Geist</h4>
-<p>Postać posiada osobną kartę w katalogu player-characters.</p>
-<a class="party-link" href="player-characters/polter-von-geist.html">OTWÓRZ KARTĘ →</a>
-<div class="party-tags"><span>POLTER VON GEIST</span></div>
+<p>Półelfka, która nauczyła się słuchać tego, czego inni wolą nie słyszeć. Duchy mówią przez nią pieśnią — a ona nie zawsze ma wybór, by milczeć.</p>
+<div class="party-tags"><a class="party-tag-link" href="player-characters/polter-von-geist.html">POLTER VON GEIST</a></div>
 </article>
 <article class="party-card">
 <div class="party-number">02</div>
 <div class="party-portrait"><img src="player-characters/Placeholder_Character_2.png" alt="Placeholder portretu postaci — wpoluwiatr"></div>
-<div class="party-card-top">GRACZ · WPOLUWIATR</div>
-<h3>POSTAĆ</h3>
+<div class="party-card-top">WPOLUWIATR</div>
+<h3>???</h3>
 <h4>???</h4>
 <p>Postać nie została jeszcze uzupełniona na stronie kampanii.</p>
 <div class="party-tags"><span>DO UZUPEŁNIENIA</span></div>
@@ -1279,8 +1358,8 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 <article class="party-card">
 <div class="party-number">03</div>
 <div class="party-portrait"><img src="player-characters/Placeholder_Character_3.png" alt="Placeholder portretu postaci — Daniel"></div>
-<div class="party-card-top">GRACZ · DANIEL</div>
-<h3>POSTAĆ</h3>
+<div class="party-card-top">DANIEL</div>
+<h3>???</h3>
 <h4>???</h4>
 <p>Postać nie została jeszcze uzupełniona na stronie kampanii.</p>
 <div class="party-tags"><span>DO UZUPEŁNIENIA</span></div>
@@ -1288,10 +1367,10 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 <article class="party-card">
 <div class="party-number">04</div>
 <div class="party-portrait"><img src="player-characters/Placeholder_Character_4.png" alt="Placeholder portretu czwartej postaci drużyny"></div>
-<div class="party-card-top">GRACZ · ???</div>
-<h3>POSTAĆ</h3>
+<div class="party-card-top">???</div>
+<h3>???</h3>
 <h4>???</h4>
-<p>Czwarte miejsce w drużynie jest obecnie nieuzupełnione.</p>
+<p>Postać nie została jeszcze uzupełniona na stronie kampanii.</p>
 <div class="party-tags"><span>DO UZUPEŁNIENIA</span></div>
 </article>
 </div>
