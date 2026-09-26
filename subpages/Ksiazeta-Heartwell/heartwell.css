@@ -1475,3 +1475,18 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
     width:92px;
   }
 }
+
+#page-sessions .playlist-youtube{
+  width:auto;
+  min-width:150px;
+  margin:0;
+  color:#c94a4a;
+  border-color:#c94a4a;
+  background:transparent;
+}
+#page-sessions .playlist-youtube:hover{
+  color:#e86b6b;
+  border-color:#e86b6b;
+  background:rgba(201,74,74,.10);
+  transform:none;
+}
