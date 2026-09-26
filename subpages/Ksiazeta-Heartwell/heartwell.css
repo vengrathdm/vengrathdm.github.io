@@ -2198,3 +2198,234 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 @media (max-width:640px){
   #page-factions .map-frame{width:100%;}
 }
+
+
+/* ============================================================
+   HEARTWELL — FLOATING MAP + METRO GRID
+   ============================================================ */
+#page-factions .map-float-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr);
+  gap:42px;
+  align-items:center;
+  min-height:420px;
+  margin:10px 0 20px;
+}
+#page-factions .map-floating{
+  width:min(100%,720px);
+  justify-self:center;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  transform:rotate(-1deg);
+  transition:transform .25s ease;
+}
+#page-factions .map-floating:hover{
+  transform:rotate(0deg) translateY(-3px);
+}
+#page-factions .map-floating img{
+  display:block;
+  width:100%;
+  height:auto;
+  filter:saturate(.78) contrast(1.06) brightness(.9);
+  box-shadow:0 18px 35px rgba(0,0,0,.34);
+}
+#page-factions .map-float-copy{
+  max-width:330px;
+  padding:20px 8px;
+  border-left:2px solid var(--stamp-red);
+}
+#page-factions .map-float-copy h3{
+  font-size:34px;
+  line-height:.98;
+  margin:8px 0 14px;
+}
+#page-factions .map-float-copy p{
+  color:#2a2620;
+  font-size:12.5px;
+  line-height:1.65;
+  margin:0;
+}
+
+/* invisible metro-style page composition */
+#page-factions .city-metro-grid{
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  gap:34px 24px;
+  align-items:start;
+  margin-top:18px;
+}
+#page-factions .metro-tile{
+  min-width:0;
+}
+#page-factions .metro-tile .city-section-title{
+  margin-top:0;
+  margin-bottom:20px;
+}
+#page-factions .tile-districts{
+  grid-column:1 / 9;
+}
+#page-factions .tile-power{
+  grid-column:9 / 13;
+  margin-top:95px;
+}
+#page-factions .tile-tech{
+  grid-column:1 / 6;
+  margin-top:12px;
+}
+#page-factions .tile-street{
+  grid-column:6 / 13;
+  margin-top:12px;
+}
+#page-factions .tile-smog{
+  grid-column:2 / 9;
+  margin-top:20px;
+}
+#page-factions .tile-history{
+  grid-column:9 / 13;
+  margin-top:100px;
+}
+#page-factions .tile-districts .district-atlas-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+#page-factions .tile-districts .district-atlas-card{
+  min-height:255px;
+}
+#page-factions .tile-power .power-machine{
+  padding:18px;
+}
+#page-factions .tile-power .power-split{
+  grid-template-columns:1fr;
+}
+#page-factions .tile-tech .technology-board{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+#page-factions .tile-tech .tech-card{
+  min-height:150px;
+}
+#page-factions .tile-street .street-life{
+  grid-template-columns:1fr;
+}
+#page-factions .tile-street .street-life-stats{
+  border-left:0;
+  border-top:1px solid var(--kraft-dark);
+  padding:10px 0 0;
+}
+#page-factions .tile-smog .smog-panel{
+  grid-template-columns:minmax(0,1fr) 220px;
+  padding:25px;
+}
+#page-factions .tile-history .city-timeline{
+  margin-left:10px;
+  padding-left:25px;
+}
+#page-factions .tile-history .timeline-item{
+  grid-template-columns:52px 1fr;
+  gap:12px;
+  padding-bottom:23px;
+}
+#page-factions .tile-history .timeline-item::before{
+  left:-33px;
+}
+#page-factions .tile-history .timeline-item > span{
+  font-size:20px;
+}
+
+/* let the modules breathe rather than looking like cards */
+#page-factions .city-metro-grid .metro-tile{
+  background:transparent;
+  border:0;
+  box-shadow:none;
+}
+#page-factions .city-metro-grid .section-head .rule{
+  opacity:.55;
+}
+#page-factions .city-metro-grid .section-note{
+  margin-top:-7px;
+  margin-bottom:20px;
+}
+@media (max-width:1050px){
+  #page-factions .map-float-layout{
+    grid-template-columns:minmax(0,1fr) 280px;
+    gap:28px;
+  }
+  #page-factions .tile-districts{grid-column:1 / 9;}
+  #page-factions .tile-power{grid-column:9 / 13;margin-top:55px;}
+  #page-factions .tile-tech{grid-column:1 / 7;}
+  #page-factions .tile-street{grid-column:7 / 13;}
+  #page-factions .tile-smog{grid-column:1 / 9;}
+  #page-factions .tile-history{grid-column:9 / 13;margin-top:65px;}
+}
+@media (max-width:800px){
+  #page-factions .map-float-layout{
+    grid-template-columns:1fr;
+    gap:20px;
+    min-height:0;
+  }
+  #page-factions .map-floating{
+    width:min(100%,620px);
+    order:0;
+  }
+  #page-factions .map-float-copy{
+    max-width:100%;
+    padding:0 0 0 18px;
+  }
+  #page-factions .city-metro-grid{
+    grid-template-columns:1fr 1fr;
+    gap:38px 18px;
+  }
+  #page-factions .tile-districts,
+  #page-factions .tile-power,
+  #page-factions .tile-tech,
+  #page-factions .tile-street,
+  #page-factions .tile-smog,
+  #page-factions .tile-history{
+    grid-column:auto;
+    margin-top:0;
+  }
+  #page-factions .tile-districts{
+    grid-column:1 / -1;
+  }
+  #page-factions .tile-districts .district-atlas-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+  #page-factions .tile-power{grid-column:1 / 2;}
+  #page-factions .tile-tech{grid-column:2 / 3;}
+  #page-factions .tile-street{grid-column:1 / -1;}
+  #page-factions .tile-smog{grid-column:1 / 2;}
+  #page-factions .tile-history{grid-column:2 / 3;}
+}
+@media (max-width:640px){
+  #page-factions .map-float-layout{
+    margin-top:0;
+  }
+  #page-factions .map-floating{
+    transform:none;
+  }
+  #page-factions .map-floating img{
+    box-shadow:0 10px 24px rgba(0,0,0,.3);
+  }
+  #page-factions .city-metro-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:48px;
+  }
+  #page-factions .tile-districts,
+  #page-factions .tile-power,
+  #page-factions .tile-tech,
+  #page-factions .tile-street,
+  #page-factions .tile-smog,
+  #page-factions .tile-history{
+    grid-column:1;
+  }
+  #page-factions .tile-districts .district-atlas-grid,
+  #page-factions .tile-tech .technology-board{
+    grid-template-columns:1fr;
+  }
+  #page-factions .tile-districts .district-atlas-card{
+    min-height:0;
+  }
+  #page-factions .tile-smog .smog-panel{
+    grid-template-columns:1fr;
+  }
+}
