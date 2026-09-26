@@ -2161,3 +2161,40 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   }
   .timeline-item::before{left:-33px;}
 }
+
+/* CITY ATLAS — readability and compact map */
+#page-factions .city-atlas-copy .cover-sub,
+#page-factions .city-hero-facts span,
+#page-factions .section-note,
+#page-factions .anatomy-card p,
+#page-factions .district-atlas-card p,
+#page-factions .tech-card p,
+#page-factions .street-life-main p,
+#page-factions .street-life-stats span,
+#page-factions .city-closing p{
+  color:#2a2620;
+}
+#page-factions .map-dossier{
+  display:block;
+}
+#page-factions .map-frame{
+  width:min(66%,760px);
+  margin:0 auto;
+}
+#page-factions .heartwell-map img{
+  width:100%;
+  height:auto;
+}
+#page-factions .map-frame-top,
+#page-factions .map-frame-bottom{
+  color:#c8c0b2;
+}
+#page-factions .map-frame{
+  box-shadow:5px 5px 0 rgba(20,17,14,.28);
+}
+@media (max-width:900px){
+  #page-factions .map-frame{width:min(78%,760px);}
+}
+@media (max-width:640px){
+  #page-factions .map-frame{width:100%;}
+}
