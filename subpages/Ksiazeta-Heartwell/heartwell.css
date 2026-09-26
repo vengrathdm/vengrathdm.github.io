@@ -1074,28 +1074,13 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   padding:0 20px 22px;
 }
 .party-portrait{
-  min-height:clamp(430px,34vw,560px);
   margin:0 -20px 24px;
-  padding:18px;
+  padding:14px;
   position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
   overflow:hidden;
   background:linear-gradient(135deg,rgba(36,31,46,.96),rgba(26,23,20,.98));
   border-bottom:2px solid var(--ink);
-}
-.party-portrait::before{
-  content:"PORTRET POSTACI";
-  position:absolute;
-  inset:auto 0 9px;
-  z-index:1;
-  text-align:center;
-  font-family:"Voltaire",sans-serif;
-  font-size:9px;
-  letter-spacing:.14em;
-  color:#aaa59a;
-  pointer-events:none;
+  box-sizing:border-box;
 }
 .party-portrait::after{
   content:"";
@@ -1106,12 +1091,11 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 }
 .party-portrait img{
   display:block;
-  width:auto;
+  width:100%;
   height:auto;
-  max-width:100%;
-  max-height:100%;
   aspect-ratio:2 / 3;
   object-fit:contain;
+  object-position:left top;
   position:relative;
   z-index:0;
 }
@@ -1148,11 +1132,11 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 }
 @media (max-width:900px){
   .party-card{min-height:600px;}
-  .party-portrait{min-height:460px;}
+  
 }
 @media (max-width:640px){
   .party-card{min-height:540px;}
-  .party-portrait{min-height:400px;padding:14px;}
+  
   #page-overview .stamp-row{
     align-items:flex-start;
   }
