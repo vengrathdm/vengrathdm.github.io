@@ -1368,3 +1368,69 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   color:var(--paper);
   transform:translateY(-1px);
 }
+
+/* ============================================================
+   CAMPAIGN NOTES — refined session header layout
+   ============================================================ */
+#page-sessions .campaign-section-title{
+  margin-top:0;
+  margin-bottom:26px;
+}
+#page-sessions .campaign-section-title .rule{
+  display:none;
+}
+#page-sessions .testimony-strip{
+  margin-bottom:42px;
+}
+#page-sessions .open-threads-title{
+  margin-top:56px;
+  margin-bottom:24px;
+}
+#page-sessions .session-youtube-slot{
+  flex:0 0 112px;
+  width:112px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  margin-left:20px;
+}
+#page-sessions .session-youtube{
+  box-sizing:border-box;
+  width:100%;
+  min-height:32px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin:0;
+  padding:0 10px;
+  border:1px solid #c94a4a;
+  background:transparent;
+  color:#c94a4a;
+  font-family:"Voltaire",sans-serif;
+  font-size:10px;
+  letter-spacing:.08em;
+  text-decoration:none;
+  line-height:1;
+}
+#page-sessions .session-youtube:hover{
+  background:rgba(201,74,74,.10);
+  color:#e86b6b;
+  border-color:#e86b6b;
+  transform:none;
+}
+#page-sessions .session-youtube::before{
+  content:"▶";
+  margin-right:6px;
+  font-size:9px;
+}
+@media (max-width:640px){
+  #page-sessions .session-youtube-slot{
+    flex-basis:92px;
+    width:92px;
+    margin-left:10px;
+  }
+  #page-sessions .session-youtube{
+    padding:0 6px;
+    font-size:9px;
+  }
+}
