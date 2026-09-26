@@ -1339,3 +1339,32 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
     height:31px;
   }
 }
+
+/* SESSION YOUTUBE MOCK BUTTON */
+.session-youtube{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:30px;
+  padding:0 10px;
+  margin-left:auto;
+  border:1px solid var(--ink);
+  background:transparent;
+  color:var(--ink);
+  font-family:"Voltaire",sans-serif;
+  font-size:10px;
+  letter-spacing:.08em;
+  text-decoration:none;
+  line-height:1;
+  transition:background .15s ease,color .15s ease,transform .15s ease;
+}
+.session-youtube::before{
+  content:"▶";
+  margin-right:6px;
+  font-size:9px;
+}
+.session-youtube:hover{
+  background:var(--ink);
+  color:var(--paper);
+  transform:translateY(-1px);
+}
