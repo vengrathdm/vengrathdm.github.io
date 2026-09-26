@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campaign Journal — Template</title>
+<meta name="description" content="A reusable campaign journal template.">
+
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ============ SIDE TAB NAVIGATION ============ -->
+  <nav class="tabs" aria-label="Campaign sections">
+    <div class="crest">SC</div>
+    <div class="tab-list" id="tabList">
+      <button class="tab-btn active" data-page="overview"><span>OVERVIEW</span></button>
+      <button class="tab-btn" data-page="world"><span>WORLD</span></button>
+      <button class="tab-btn" data-page="party"><span>PARTY</span></button>
+      <button class="tab-btn" data-page="sessions"><span>SESSIONS</span></button>
+      <button class="tab-btn" data-page="threads"><span>THREADS</span></button>
+    </div>
+    <div class="tabs-foot"><span>DM FIELD JOURNAL</span></div>
+  </nav>
+
+  <!-- ============ PAGES ============ -->
+  <main class="pages">
+
+    <!-- ---------- OVERVIEW ---------- -->
+    <section class="page active" id="page-overview">
+      <div class="folio"><span>THE SALTED COAST</span><span>ENTRY NO. 001</span></div>
+
+      <div class="cover-grid">
+        <div class="cover-title-block">
+          <div class="kicker">CAMPAIGN JOURNAL</div>
+          <h1>The Salted<br>Coast <em>Accord</em></h1>
+          <p class="cover-sub">A trade war, a drowned god, and five people who owe each other nothing — yet.</p>
+          <p class="cover-lede">Three free ports once split the coastal trade evenly under a century-old accord. That accord died with the Merchant Prince last spring, and the ports have spent the season arming, bribing, and quietly dredging the harbor for something the treaty was written to keep buried. This journal tracks the world, the table, and the record of what's actually happened — replace anything below with your own.</p>
+          <div class="cover-actions">
+            <button class="btn primary" onclick="goToPage('world')">Open the world</button>
+            <button class="btn" onclick="goToPage('sessions')">Session log</button>
+          </div>
+        </div>
+
+        <div class="seal-card">
+          <div class="wax-seal">SC</div>
+          <h3>CAMPAIGN AT A GLANCE</h3>
+          <div class="fact-row"><span>System</span><span>D&amp;D 5e</span></div>
+          <div class="fact-row"><span>Setting</span><span>The Salted Coast</span></div>
+          <div class="fact-row"><span>Party size</span><span>5 adventurers</span></div>
+          <div class="fact-row"><span>Sessions played</span><span>14</span></div>
+          <div class="fact-row"><span>Current arc</span><span>The Dredging</span></div>
+          <div class="fact-row"><span>Table cadence</span><span>Biweekly, Sundays</span></div>
+        </div>
+      </div>
+
+      <div class="pull-strip">
+        <div class="mark">&ldquo;</div>
+        <div>
+          <p>Nobody in this port has clean hands. We just haven't decided yet whose hands we're willing to hold.</p>
+          <cite>— First mate Odalys Vane, on being asked to pick a side</cite>
+        </div>
+      </div>
+
+      <div class="section-head"><h2>What's true right now</h2><div class="rule"></div></div>
+      <div class="region-grid">
+        <div class="region-card">
+          <div class="tag">STATUS</div>
+          <h3>The Accord is void</h3>
+          <p>No treaty governs the harbor tariffs. Each port is setting its own rates, and smugglers are the only ones happy about it.</p>
+        </div>
+        <div class="region-card">
+          <div class="tag">RUMOR</div>
+          <h3>Something moved in the trench</h3>
+          <p>Divers sent to survey the old harbor floor haven't come back with straight stories. Two haven't come back at all.</p>
+        </div>
+        <div class="region-card">
+          <div class="tag">PARTY</div>
+          <h3>Hired by three different clients</h3>
+          <p>Each party member took a job from a different port before realizing the others had too. Nobody's told their employer yet.</p>
+        </div>
+      </div>
+
+      <div class="page-foot">
+        <span>The Salted Coast Accord — a campaign journal template</span>
+        <span>Edit freely: swap the copy, keep the bones</span>
+      </div>
+    </section>
+
+    <!-- ---------- WORLD ---------- -->
+    <section class="page" id="page-world">
+      <div class="folio"><span>THE SALTED COAST</span><span>ENTRY NO. 002 — WORLD</span></div>
+
+      <div class="section-head"><h2>The three ports</h2><div class="rule"></div></div>
+      <p class="section-note">Everything downstream of the plot starts here — who holds power, and what they're afraid of losing.</p>
+      <div class="region-grid">
+        <div class="region-card">
+          <div class="tag">NORTH HARBOR</div>
+          <h3>Cindral</h3>
+          <p>Old money, older grudges. The Cindral shipping houses funded the original Accord and have the most to lose now that it's gone. Their navy is the coast's largest — and its most idle.</p>
+        </div>
+        <div class="region-card">
+          <div class="tag">SOUTH HARBOR</div>
+          <h3>Thessy's Landing</h3>
+          <p>Built by refugees two generations ago, now the coast's manufacturing heart. Thessy's has the labor and the grievances; it lacks ships of its own and resents needing Cindral's.</p>
+        </div>
+        <div class="region-card">
+          <div class="tag">MID HARBOR</div>
+          <h3>Farrow Cay</h3>
+          <p>A free port in name, a smugglers' clearinghouse in practice. Farrow Cay profits from the other two fighting and has quietly funded both sides' worst decisions.</p>
+        </div>
+      </div>
+
+      <div class="section-head"><h2>Factions &amp; standing</h2><div class="rule"></div></div>
+      <p class="section-note">How each power bloc currently regards the party. Update the disposition tag as relationships shift at the table.</p>
+      <div class="ledger">
+        <div class="ledger-row">
+          <div class="name">The Dredging Company</div>
+          <div class="desc">Cindral-funded outfit surveying the harbor trench. Publicly a salvage operation; privately searching for something the Accord's authors sealed away.</div>
+          <div class="disposition neutral">WATCHING</div>
+        </div>
+        <div class="ledger-row">
+          <div class="name">The Longshore Union</div>
+          <div class="desc">Thessy's Landing's dockworkers, organized and armed after last month's wage cuts. They trust the party more than they trust any port official.</div>
+          <div class="disposition ally">FRIENDLY</div>
+        </div>
+        <div class="ledger-row">
+          <div class="name">The Undertow</div>
+          <div class="desc">Farrow Cay's smuggling network. They've made two offers and one threat so far. The party has accepted neither and answered neither.</div>
+          <div class="disposition neutral">UNRESOLVED</div>
+        </div>
+        <div class="ledger-row">
+          <div class="name">The Drowned Choir</div>
+          <div class="desc">A cult operating from a scuttled cathedral below the trench, worshipping whatever the Accord was written to contain. They know the party's names.</div>
+          <div class="disposition hostile">HOSTILE</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- PARTY ---------- -->
+    <section class="page" id="page-party">
+      <div class="folio"><span>THE SALTED COAST</span><span>ENTRY NO. 003 — PARTY</span></div>
+
+      <div class="section-head"><h2>The table</h2><div class="rule"></div></div>
+      <p class="section-note">Five hired hands who took overlapping jobs from three different employers. Swap in your own party's names, classes, and hooks.</p>
+      <div class="party-grid">
+        <div class="char-card">
+          <div class="portrait">R</div>
+          <h3>Rin Ashcombe</h3>
+          <div class="role">HALF-ELF RANGER</div>
+          <p>Hired by Cindral to escort the divers. Doesn't trust her employer and hasn't told the party why.</p>
+          <div class="player">Played by Maya</div>
+        </div>
+        <div class="char-card">
+          <div class="portrait">B</div>
+          <h3>Boro Talwick</h3>
+          <div class="role">DWARF FIGHTER</div>
+          <p>Ex-navy, quietly still loyal to Cindral. Carries a debt to the Longshore Union he hasn't paid off.</p>
+          <div class="player">Played by Dev</div>
+        </div>
+        <div class="char-card">
+          <div class="portrait">S</div>
+          <h3>Sable Quinn</h3>
+          <div class="role">TIEFLING WARLOCK</div>
+          <p>Patron has opinions about the Drowned Choir. Sable hasn't asked what those opinions are based on.</p>
+          <div class="player">Played by Priya</div>
+        </div>
+        <div class="char-card">
+          <div class="portrait">O</div>
+          <h3>Otto Fenn</h3>
+          <div class="role">HUMAN CLERIC</div>
+          <p>Sent by Thessy's Landing to keep the workers' faith alive. Increasingly unsure the gods are listening.</p>
+          <div class="player">Played by Chester</div>
+        </div>
+        <div class="char-card">
+          <div class="portrait">V</div>
+          <h3>Vess Okonkwo</h3>
+          <div class="role">GNOME ROGUE</div>
+          <p>Working for the Undertow, officially as a courier. Unofficially skimming information for a fourth, unnamed buyer.</p>
+          <div class="player">Played by Amara</div>
+        </div>
+      </div>
+
+      <div class="section-head"><h2>Who owes whom</h2><div class="rule"></div></div>
+      <p class="section-note">Click a name to trace their ties across the party and the wider cast.</p>
+      <div class="relmap-wrap">
+        <svg viewBox="0 0 760 360" id="relSvg" role="img" aria-label="Relationship diagram of party and key NPCs">
+          <!-- lines drawn by JS -->
+          <g id="relLines"></g>
+          <g id="relNodes"></g>
+        </svg>
+        <div id="relCaption">Select a node to see how it connects to the rest of the table.</div>
+      </div>
+    </section>
+
+    <!-- ---------- SESSIONS ---------- -->
+    <section class="page" id="page-sessions">
+      <div class="folio"><span>THE SALTED COAST</span><span>ENTRY NO. 004 — SESSION LOG</span></div>
+
+      <div class="section-head"><h2>The record so far</h2><div class="rule"></div></div>
+      <p class="section-note">A running ledger of what actually happened at the table. Click an entry to expand the recap.</p>
+
+      <div id="sessionLog">
+        <div class="session-entry open">
+          <button class="session-head" type="button">
+            <span class="num">14</span>
+            <h3>The trench gives something back</h3>
+            <span class="date">This week</span>
+            <span class="chev">▸</span>
+          </button>
+          <div class="session-body">
+            <div class="session-body-inner">
+              <p>The party followed the Dredging Company's second survey team into the trench and found the first team's equipment stacked in neat, deliberate piles — no bodies. Sable's patron went silent the moment they touched the sealed hatch at the bottom.</p>
+              <p>Ended on a cliffhanger: something knocked twice from the other side of the hatch.</p>
+              <div class="session-tags"><span>Dredging Company</span><span>Drowned Choir</span><span>Cliffhanger</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="session-entry">
+          <button class="session-head" type="button">
+            <span class="num">13</span>
+            <h3>Farrow Cay makes an offer</h3>
+            <span class="date">2 weeks ago</span>
+            <span class="chev">▸</span>
+          </button>
+          <div class="session-body">
+            <div class="session-body-inner">
+              <p>The Undertow approached Vess with a courier job that would put the party on a smuggling vessel bound past the trench. The party accepted the job but not the cargo, planning to swap it en route.</p>
+              <div class="session-tags"><span>Farrow Cay</span><span>The Undertow</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="session-entry">
+          <button class="session-head" type="button">
+            <span class="num">12</span>
+            <h3>The Longshore Union asks for proof</h3>
+            <span class="date">4 weeks ago</span>
+            <span class="chev">▸</span>
+          </button>
+          <div class="session-body">
+            <div class="session-body-inner">
+              <p>Otto's standing with the dockworkers bought the party a meeting, but the Union wants evidence Cindral is behind the wage cuts before committing to anything more than words.</p>
+              <div class="session-tags"><span>Longshore Union</span><span>Cindral</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- THREADS ---------- -->
+    <section class="page" id="page-threads">
+      <div class="folio"><span>THE SALTED COAST</span><span>ENTRY NO. 005 — THREADS</span></div>
+
+      <div class="section-head"><h2>Open threads</h2><div class="rule"></div></div>
+      <p class="section-note">A working quest board. Move cards between columns as the table's priorities shift.</p>
+
+      <div class="thread-board">
+        <div class="thread-col">
+          <h4>SEEDED</h4>
+          <div class="thread-card">
+            <h5>The fourth buyer</h5>
+            <p>Someone besides the three ports wants what's in the trench. Vess has been paid twice by a contact she's never met in person.</p>
+          </div>
+          <div class="thread-card">
+            <h5>Boro's debt</h5>
+            <p>The Longshore Union has never called it in. That's starting to feel less like generosity and more like leverage.</p>
+          </div>
+        </div>
+        <div class="thread-col">
+          <h4>ACTIVE</h4>
+          <div class="thread-card active">
+            <h5>What's behind the hatch</h5>
+            <p>Something knocked back. The party needs to decide whether to open it, seal it further, or report it to any of their three employers.</p>
+          </div>
+          <div class="thread-card active">
+            <h5>Union proof</h5>
+            <p>Otto needs to find evidence linking Cindral to the wage cuts before the Union commits to anything.</p>
+          </div>
+          <div class="thread-card active">
+            <h5>The swapped cargo</h5>
+            <p>The Undertow will notice the courier cargo was swapped eventually. It's a question of when, not if.</p>
+          </div>
+        </div>
+        <div class="thread-col">
+          <h4>RESOLVED</h4>
+          <div class="thread-card resolved">
+            <h5>Rin's employer, revealed</h5>
+            <p>Rin confirmed Cindral hired her specifically to report on the other party members. She hasn't told them she's stopped.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+
+  <nav class="vengrath-template-nav" aria-label="Template navigation">
+    <a href="/" aria-label="Powrót do Vengrath">Vengrath</a>
+    <button type="button" aria-label="YouTube — brak przypisanego linku">YouTube</button>
+  </nav>
+</body>
+</html>
