@@ -2980,3 +2980,16 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 #page-factions .city-closing p{
   font-family:'Voltaire', sans-serif;
 }
+
+
+/* Timeline — blue headings, red notes, vertically centered */
+#page-factions .city-top-trio > .tile-history .timeline-item strong{
+  color:#5d6470;
+}
+#page-factions .city-top-trio > .tile-history .timeline-item p{
+  color:var(--stamp-red);
+}
+#page-factions .city-top-trio > .tile-history{
+  display:flex;
+  align-items:center;
+}
