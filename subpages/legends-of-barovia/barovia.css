@@ -230,3 +230,102 @@
 .barovia-page .barovia-card-inner-title span{font:400 24px Voltaire,sans-serif;color:var(--bar-gold)}
 .barovia-page .barovia-card-inner-title strong{font:700 11px Voltaire,sans-serif;letter-spacing:2px;color:#aaa69d}
 @media(max-width:620px){.barovia-page .barovia-card-body{padding:18px}.barovia-page .barovia-card-title{padding:16px 18px}}
+
+
+/* Campaign mini-site navigation */
+.barovia-page .barovia-page-links{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex-wrap:wrap;
+}
+.barovia-page .barovia-page-link{
+  min-height:42px;
+  padding:10px 13px;
+  display:inline-flex;
+  align-items:center;
+  border:1px solid #4b4e52;
+  background:#111317;
+  color:#c9c5bc;
+  text-decoration:none;
+  font:700 10px Voltaire,sans-serif;
+  letter-spacing:1.5px;
+  transition:.2s;
+}
+.barovia-page .barovia-page-link:hover,
+.barovia-page .barovia-page-link.active{
+  border-color:var(--bar-gold);
+  color:var(--bar-gold);
+  background:#191a1d;
+}
+.barovia-page .character-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+}
+.barovia-page .character-card{
+  min-width:0;
+  background:linear-gradient(145deg,#191c21,#0f1114);
+  border:1px solid #373a3e;
+  box-shadow:0 16px 45px #0006;
+}
+.barovia-page .character-portrait{
+  height:420px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding:15px;
+  background:
+    radial-gradient(circle at 50% 30%,#34383d 0,transparent 38%),
+    linear-gradient(180deg,#24282d,#0b0d10);
+  border-bottom:1px solid #3e4145;
+  position:relative;
+  overflow:hidden;
+}
+.barovia-page .character-portrait:before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px dashed #66635b;
+  opacity:.35;
+}
+.barovia-page .character-portrait span{
+  position:relative;
+  z-index:1;
+  font:10px Voltaire,sans-serif;
+  letter-spacing:3px;
+  color:#817e76;
+}
+.barovia-page .character-info{padding:22px}
+.barovia-page .character-label{font:700 10px Voltaire,sans-serif;letter-spacing:2px;color:var(--bar-red-bright)}
+.barovia-page .character-info h4{font:400 30px Voltaire,sans-serif;color:#e0dbd0;margin:7px 0 2px}
+.barovia-page .character-info strong{font-size:14px;color:#aaa8a1;font-weight:500}
+.barovia-page .character-info p{margin-top:15px!important;font-size:13px!important;line-height:1.5!important;color:#858883!important}
+.barovia-page .page-intro{margin-bottom:28px}
+.barovia-page .page-intro h2{margin-bottom:12px}
+.barovia-page .recordings-panel{
+  margin-top:34px;
+  padding:30px;
+  border:1px solid #383b3f;
+  background:#0e1013;
+}
+.barovia-page .recordings-panel h3{
+  margin:0 0 8px!important;
+  color:#ddd8cc!important;
+}
+.barovia-page .recordings-panel p{
+  margin:0!important;
+  color:#858883!important;
+}
+@media(max-width:1050px){
+  .barovia-page .character-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:900px){
+  .barovia-page .barovia-page-links{order:3;width:100%;justify-content:center}
+  .barovia-page .barovia-nav-inner{flex-wrap:wrap}
+}
+@media(max-width:620px){
+  .barovia-page .character-grid{grid-template-columns:1fr}
+  .barovia-page .character-portrait{height:360px}
+  .barovia-page .barovia-page-link{flex:1;justify-content:center}
+}
