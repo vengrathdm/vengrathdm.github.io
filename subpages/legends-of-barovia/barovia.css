@@ -35,13 +35,6 @@
 .barovia-nav{position:absolute!important;top:20px;left:0;right:0;z-index:10;background:transparent!important;border:0!important;pointer-events:none}
 .barovia-nav-inner{width:min(1220px,calc(100% - 48px));margin:auto;display:flex;align-items:center;gap:10px;pointer-events:none}
 .barovia-nav-inner>*{pointer-events:auto}
-.barovia-nav-links{display:flex;gap:4px;flex:1}
-.barovia-nav-links a{
-  padding:12px 14px!important;min-height:42px!important;border:1px solid #5b5c60!important;
-  background:#090b0ddd!important;color:#d7d2c8!important;font-size:12px!important;letter-spacing:1.5px!important;
-}
-.barovia-nav-links a:hover{border-color:var(--bar-gold)!important;color:#fff!important}
-.barovia-nav .campaign-playlist{width:155px!important;min-height:58px!important;height:58px!important}
 .barovia-hero-inner{
   position:relative;z-index:2;width:min(1220px,calc(100% - 48px));margin:auto;
   padding:110px 0 75px;display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:70px;align-items:end;
