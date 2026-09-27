@@ -2933,3 +2933,20 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
     grid-row:auto !important;
   }
 }
+
+
+/* City page — quote is an independent full-width section, atmosphere follows below */
+#page-factions .city-quote-fullwidth{
+  width:100%;
+  grid-column:1 / -1;
+  margin:0 0 28px;
+}
+#page-factions .city-quote-fullwidth .city-quote{
+  width:100%;
+  box-sizing:border-box;
+}
+#page-factions .city-atmosphere-free{
+  width:100%;
+  grid-column:1 / -1;
+  margin:0 0 36px;
+}
