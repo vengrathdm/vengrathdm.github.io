@@ -2974,3 +2974,9 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   grid-column:1 / -1;
   width:100%;
 }
+
+
+/* Closing quote — Voltaire */
+#page-factions .city-closing p{
+  font-family:'Voltaire', sans-serif;
+}
