@@ -519,3 +519,13 @@
   background:var(--bar-gold);
   color:#101114;
 }
+
+.barovia-page .dead-character-portrait img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  filter:grayscale(.8);
+}
