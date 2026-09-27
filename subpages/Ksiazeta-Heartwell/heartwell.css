@@ -1196,10 +1196,6 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   line-height:1.02;
   margin:0 0 14px;
 }
-.party-card p{
-  font-size:13px;
-  line-height:1.55;
-}
 .party-tag-link{
   display:inline-block;
   font-family:"Voltaire",sans-serif;
@@ -1305,40 +1301,7 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   -webkit-backdrop-filter:blur(5px);
   backdrop-filter:blur(5px);
 }
-.heartwell-audio-toggle:hover{
-  transform:scale(1.06);
-  background:rgba(139,32,32,.94);
-  box-shadow:0 7px 24px rgba(0,0,0,.58),0 0 0 2px rgba(241,241,238,.25);
-}
-.heartwell-audio-toggle:focus-visible{
-  outline:3px solid #f1f1ee;
-  outline-offset:4px;
-}
-.heartwell-audio-toggle .audio-icon{
-  width:34px;
-  height:34px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:3.2;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-.heartwell-audio-toggle .audio-icon-playing{display:none;}
-.heartwell-audio-toggle.is-playing .audio-icon-muted{display:none;}
-.heartwell-audio-toggle.is-playing .audio-icon-playing{display:block;}
 .tab-btn{text-decoration:none;}
-@media (max-width:640px){
-  .heartwell-audio-toggle{
-    right:16px;
-    bottom:16px;
-    width:58px;
-    height:58px;
-  }
-  .heartwell-audio-toggle .audio-icon{
-    width:31px;
-    height:31px;
-  }
-}
 
 /* SESSION YOUTUBE MOCK BUTTON */
 .session-youtube{
@@ -2493,9 +2456,6 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   grid-auto-flow:row;
   gap:26px 22px;
 }
-#page-factions .tile-districts{
-  grid-column:1 / 9;
-}
 #page-factions .tile-power{
   grid-column:9 / 13;
   margin-top:0;
@@ -2516,18 +2476,12 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   grid-column:8 / 13;
   margin-top:0;
 }
-#page-factions .tile-districts .district-atlas-grid{
-  grid-template-columns:repeat(2,minmax(0,1fr));
-}
 #page-factions .tile-districts .district-atlas-card{
   min-height:230px;
 }
 #page-factions .tile-power .power-machine{
   height:100%;
   box-sizing:border-box;
-}
-#page-factions .tile-tech .technology-board{
-  grid-template-columns:repeat(2,minmax(0,1fr));
 }
 #page-factions .tile-street .street-life{
   height:100%;
@@ -2671,9 +2625,6 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 #page-factions .tile-districts .district-atlas-grid{
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:16px;
-}
-#page-factions .tile-districts .district-atlas-card{
-  min-height:255px;
 }
 @media (max-width:1050px){
   #page-factions .tile-districts{
