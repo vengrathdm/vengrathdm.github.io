@@ -418,3 +418,41 @@
 }
 @media(max-width:1050px){.barovia-page .dead-character-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.barovia-page .dead-character-grid{grid-template-columns:1fr}}
+
+.barovia-page .recordings-list{
+  margin-top:22px;
+  border-top:1px solid #3c3e42;
+}
+.barovia-page .recording-row{
+  display:grid;
+  grid-template-columns:60px minmax(0,1fr) auto;
+  gap:18px;
+  align-items:center;
+  padding:16px 8px;
+  border-bottom:1px solid #303338;
+  color:inherit;
+  text-decoration:none;
+  transition:.2s;
+}
+.barovia-page .recording-row:hover{
+  background:#181a1e;
+  padding-left:14px;
+}
+.barovia-page .recording-row span{
+  font:400 25px Voltaire,sans-serif;
+  color:var(--bar-red);
+}
+.barovia-page .recording-row strong{
+  font:400 21px Voltaire,sans-serif;
+  color:#ddd8cc;
+}
+.barovia-page .recording-row em{
+  font:700 10px Voltaire,sans-serif;
+  letter-spacing:1.5px;
+  color:var(--bar-gold);
+  font-style:normal;
+}
+@media(max-width:620px){
+  .barovia-page .recording-row{grid-template-columns:42px minmax(0,1fr);gap:12px}
+  .barovia-page .recording-row em{grid-column:2}
+}
