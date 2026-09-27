@@ -2849,3 +2849,11 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
     grid-template-columns:1fr;
   }
 }
+
+/* City quote corrections */
+#page-factions .city-closing p{
+  color:var(--stamp-red);
+}
+#page-factions .district-quote{
+  margin:44px 0 28px;
+}
