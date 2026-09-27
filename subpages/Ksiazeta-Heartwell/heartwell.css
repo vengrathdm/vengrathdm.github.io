@@ -3147,3 +3147,49 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
     width:100% !important;
   }
 }
+
+/* Fresh two-column atmosphere section */
+#page-factions .heartwell-atmosphere-pair{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:24px;
+  width:100%;
+  max-width:100%;
+  margin:10px 0 36px;
+  min-width:0;
+}
+#page-factions .heartwell-atmosphere-panel{
+  width:100%;
+  min-width:0;
+  box-sizing:border-box;
+  padding:30px;
+  background:
+    linear-gradient(135deg,#25221e,#11100e);
+  color:var(--paper);
+  border:2px solid #080706;
+  box-shadow:8px 8px 0 rgba(0,0,0,.32);
+}
+#page-factions .heartwell-atmosphere-panel .district-tag{
+  color:#c94a4a;
+}
+#page-factions .heartwell-atmosphere-panel h3{
+  font-size:34px;
+  line-height:1;
+  margin:8px 0 15px;
+  max-width:17ch;
+}
+#page-factions .heartwell-atmosphere-panel p{
+  margin:0 0 16px;
+  max-width:none;
+  color:#c5c0b5;
+  font-size:13px;
+  line-height:1.6;
+}
+#page-factions .heartwell-atmosphere-panel p:last-child{
+  margin-bottom:0;
+}
+@media (max-width:640px){
+  #page-factions .heartwell-atmosphere-pair{
+    grid-template-columns:1fr;
+  }
+}
