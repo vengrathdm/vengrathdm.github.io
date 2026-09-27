@@ -3062,3 +3062,15 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 #page-factions .city-atmosphere-row .street-life-main{
   min-width:0;
 }
+
+/* Final timeline alignment: center the content, not an artificial 100% timeline height */
+#page-factions .city-top-trio > .tile-history .city-timeline{
+  height:auto;
+  align-self:center;
+}
+#page-factions .city-top-trio > .tile-history .timeline-item strong{
+  color:var(--amber);
+}
+#page-factions .city-top-trio > .tile-history .timeline-item p{
+  color:#f1f1ee;
+}
