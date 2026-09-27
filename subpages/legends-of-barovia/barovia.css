@@ -498,3 +498,24 @@
   letter-spacing:2px;
   color:#d0cbc0;
 }
+
+.barovia-page .recording-row em a,
+.barovia-page .session-log summary em a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:116px;
+  padding:9px 13px;
+  border:1px solid var(--bar-gold);
+  background:#111216;
+  color:var(--bar-gold);
+  text-decoration:none;
+  font:700 10px Voltaire,sans-serif;
+  letter-spacing:1.5px;
+  transition:.2s;
+}
+.barovia-page .recording-row em a:hover,
+.barovia-page .session-log summary em a:hover{
+  background:var(--bar-gold);
+  color:#101114;
+}
