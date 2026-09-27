@@ -3039,3 +3039,26 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
     grid-template-columns:1fr;
   }
 }
+
+/* Keep atmosphere and everyday-life panels side by side without overflow */
+#page-factions .city-atmosphere-row{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  width:100%;
+  min-width:0;
+}
+#page-factions .city-atmosphere-row > .city-atmosphere-free,
+#page-factions .city-atmosphere-row > .tile-street{
+  min-width:0;
+}
+#page-factions .city-atmosphere-row .smog-panel,
+#page-factions .city-atmosphere-row .street-life{
+  min-width:0;
+  width:100%;
+}
+#page-factions .city-atmosphere-row .smog-panel{
+  grid-template-columns:minmax(0,1fr);
+}
+#page-factions .city-atmosphere-row .smog-panel-copy,
+#page-factions .city-atmosphere-row .street-life-main{
+  min-width:0;
+}
