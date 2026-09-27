@@ -3074,3 +3074,34 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 #page-factions .city-top-trio > .tile-history .timeline-item p{
   color:#f1f1ee;
 }
+
+/* Atmosphere + everyday life: exactly two half-width columns */
+#page-factions .city-atmosphere-row{
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
+  gap:24px !important;
+  width:100% !important;
+  max-width:100% !important;
+  align-items:stretch !important;
+}
+#page-factions .city-atmosphere-row > .city-atmosphere-free,
+#page-factions .city-atmosphere-row > .tile-street{
+  display:block !important;
+  grid-column:auto !important;
+  width:100% !important;
+  max-width:none !important;
+  min-width:0 !important;
+  margin:0 !important;
+}
+#page-factions .city-atmosphere-row .city-atmosphere-float,
+#page-factions .city-atmosphere-row .street-life{
+  width:100% !important;
+  max-width:none !important;
+  min-width:0 !important;
+  box-sizing:border-box;
+}
+@media (max-width:900px){
+  #page-factions .city-atmosphere-row{
+    grid-template-columns:1fr !important;
+  }
+}
