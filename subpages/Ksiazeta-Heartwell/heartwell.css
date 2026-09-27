@@ -2993,3 +2993,49 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   display:flex;
   align-items:center;
 }
+
+/* City page — atmosphere beside everyday life; technology in four columns */
+#page-factions .city-atmosphere-row{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+  align-items:stretch;
+  margin:10px 0 36px;
+}
+#page-factions .city-atmosphere-row .city-atmosphere-free,
+#page-factions .city-atmosphere-row .tile-street{
+  width:100%;
+  margin:0;
+}
+#page-factions .city-atmosphere-row .city-atmosphere-float{
+  width:100%;
+  height:100%;
+  min-height:0;
+}
+#page-factions .city-atmosphere-row .street-life{
+  height:100%;
+  grid-template-columns:1fr;
+}
+#page-factions .city-atmosphere-row .street-life-stats{
+  display:none;
+}
+#page-factions .city-metro-grid > .tile-tech{
+  grid-column:1 / -1;
+  width:100%;
+}
+#page-factions .city-metro-grid > .tile-tech .technology-board{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+@media (max-width:900px){
+  #page-factions .city-atmosphere-row{
+    grid-template-columns:1fr;
+  }
+  #page-factions .city-metro-grid > .tile-tech .technology-board{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+@media (max-width:640px){
+  #page-factions .city-metro-grid > .tile-tech .technology-board{
+    grid-template-columns:1fr;
+  }
+}
