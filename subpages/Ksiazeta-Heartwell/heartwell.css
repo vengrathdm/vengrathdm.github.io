@@ -3105,3 +3105,10 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
     grid-template-columns:1fr !important;
   }
 }
+
+/* The atmosphere row spans the full metro grid; its children then split 50/50 */
+#page-factions .city-metro-grid > .city-atmosphere-row{
+  grid-column:1 / -1 !important;
+  width:100% !important;
+  max-width:none !important;
+}
