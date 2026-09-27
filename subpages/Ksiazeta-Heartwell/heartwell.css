@@ -2958,3 +2958,10 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   grid-column:1 / -1;
   width:100%;
 }
+
+
+/* Reymont quote — full width inside the metro grid */
+#page-factions .city-metro-grid > .city-quote{
+  grid-column:1 / -1;
+  width:100%;
+}
