@@ -2950,3 +2950,15 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   grid-column:1 / -1;
   margin:0 0 36px;
 }
+
+
+/* Wyjątek: cytat mapy zajmuje trzecią kolumnę obok mapy */
+#page-factions .city-top-trio .map-atmosphere-quote{
+  grid-column:3 !important;
+  grid-row:1 !important;
+  align-self:center;
+  width:100%;
+}
+#page-factions .city-top-trio .map-atmosphere-quote .testimony-strip{
+  width:100%;
+}
