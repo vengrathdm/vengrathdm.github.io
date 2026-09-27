@@ -2857,3 +2857,79 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 #page-factions .district-quote{
   margin:44px 0 28px;
 }
+
+/* Final opening composition: Timeline | Map | Quote */
+#page-factions .city-top-trio{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  grid-template-rows:1fr !important;
+  gap:24px !important;
+  align-items:stretch !important;
+  margin:10px 0 36px;
+}
+#page-factions .city-top-trio > .tile-history{
+  grid-column:auto !important;
+  grid-row:1 !important;
+  width:100% !important;
+  min-width:0;
+  margin:0 !important;
+  padding:0 !important;
+}
+#page-factions .city-top-trio > .tile-history .city-timeline{
+  height:100%;
+  min-height:0;
+  margin:0;
+}
+#page-factions .city-top-trio > .map-floating{
+  grid-column:auto !important;
+  grid-row:1 !important;
+  width:100% !important;
+  margin:0 !important;
+  align-self:center;
+}
+#page-factions .city-top-trio > .map-atmosphere-quote{
+  grid-column:auto !important;
+  grid-row:1 !important;
+  width:100% !important;
+  margin:0 !important;
+  align-self:stretch;
+}
+#page-factions .city-atmosphere-free{
+  width:100%;
+  margin:10px 0 36px;
+}
+#page-factions .city-atmosphere-free .city-atmosphere-float{
+  width:100%;
+  min-height:260px;
+  box-sizing:border-box;
+}
+@media (max-width:900px){
+  #page-factions .city-top-trio{
+    grid-template-columns:1fr 1fr !important;
+    grid-template-rows:auto auto !important;
+  }
+  #page-factions .city-top-trio > .tile-history{
+    grid-column:1 / -1 !important;
+    grid-row:1 !important;
+  }
+  #page-factions .city-top-trio > .map-floating{
+    grid-column:1 !important;
+    grid-row:2 !important;
+  }
+  #page-factions .city-top-trio > .map-atmosphere-quote{
+    grid-column:2 !important;
+    grid-row:2 !important;
+  }
+}
+@media (max-width:640px){
+  #page-factions .city-top-trio{
+    grid-template-columns:1fr !important;
+    grid-template-rows:auto !important;
+  }
+  #page-factions .city-top-trio > .tile-history,
+  #page-factions .city-top-trio > .map-floating,
+  #page-factions .city-top-trio > .map-atmosphere-quote{
+    grid-column:1 !important;
+    grid-row:auto !important;
+  }
+}
