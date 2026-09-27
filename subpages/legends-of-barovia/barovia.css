@@ -1,0 +1,191 @@
+/* Legends of Barovia — standalone campaign skin */
+.barovia-page{
+  --bar-bg:#090a0d;
+  --bar-panel:#12151a;
+  --bar-panel-2:#181b20;
+  --bar-paper:#ddd8cb;
+  --bar-muted:#9d9a92;
+  --bar-red:#8e2631;
+  --bar-red-bright:#b73b48;
+  --bar-gold:#bca06a;
+  --bar-line:#373a3e;
+  --bar-blue:#566b79;
+  background:
+    radial-gradient(circle at 75% 8%,#242b31 0,transparent 32%),
+    radial-gradient(circle at 10% 70%,#1a171a 0,transparent 30%),
+    #08090b;
+  font-family:"Fira Sans Extra Condensed",sans-serif;
+}
+.barovia-page::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.14;
+  background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,255,255,.025) 4px);
+}
+.barovia-hero{
+  min-height:88vh;position:relative;display:flex;align-items:flex-end;overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(5,7,9,.92) 0,rgba(5,7,9,.56) 52%,rgba(5,7,9,.3)),
+    linear-gradient(180deg,rgba(0,0,0,.05) 35%,#08090b 100%),
+    url("../../Home/Graphics/legends-of-barovia.jpg") center/cover no-repeat;
+}
+.barovia-hero:before{
+  content:"";position:absolute;inset:-10%;
+  background:radial-gradient(ellipse at 70% 40%,transparent 0,rgba(0,0,0,.34) 52%,rgba(0,0,0,.8) 100%);
+  pointer-events:none;
+}
+.barovia-nav{position:absolute!important;top:20px;left:0;right:0;z-index:10;background:transparent!important;border:0!important;pointer-events:none}
+.barovia-nav-inner{width:min(1220px,calc(100% - 48px));margin:auto;display:flex;align-items:center;gap:10px;pointer-events:none}
+.barovia-nav-inner>*{pointer-events:auto}
+.barovia-nav-links{display:flex;gap:4px;flex:1}
+.barovia-nav-links a{
+  padding:12px 14px!important;min-height:42px!important;border:1px solid #5b5c60!important;
+  background:#090b0ddd!important;color:#d7d2c8!important;font-size:12px!important;letter-spacing:1.5px!important;
+}
+.barovia-nav-links a:hover{border-color:var(--bar-gold)!important;color:#fff!important}
+.barovia-nav .campaign-playlist{width:155px!important;min-height:58px!important;height:58px!important}
+.barovia-hero-inner{
+  position:relative;z-index:2;width:min(1220px,calc(100% - 48px));margin:auto;
+  padding:110px 0 75px;display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:70px;align-items:end;
+}
+.barovia-kicker,.section-mark,.barovia-small-label{
+  font-family:Voltaire,sans-serif;text-transform:uppercase;letter-spacing:3px;color:var(--bar-gold);font-size:13px
+}
+.barovia-hero h1{
+  font-family:Voltaire,sans-serif;font-size:clamp(68px,10vw,142px);font-weight:400;line-height:.82;
+  letter-spacing:2px;margin:15px 0 28px;color:#eee9dc;text-shadow:0 12px 40px #000;
+}
+.barovia-hero h1 em{font-style:normal;color:#b9b1a1}
+.barovia-lead{max-width:800px!important;font-family:"Brygada 1918",Georgia,serif!important;font-size:21px!important;line-height:1.55!important;color:#d7d2c8!important}
+.barovia-hero-meta{display:flex;gap:28px;margin-top:32px;color:#aaa59b;font-size:13px;letter-spacing:1px;text-transform:uppercase}
+.barovia-hero-meta b{display:block;font-family:Voltaire,sans-serif;color:var(--bar-red-bright);font-size:25px;line-height:1}
+.barovia-seal{
+  width:235px;height:235px;border:1px solid #8f8b80;border-radius:50%;display:flex;flex-direction:column;justify-content:center;
+  align-items:center;gap:4px;transform:rotate(-7deg);background:#08090bcc;box-shadow:0 0 0 8px #08090b66,0 20px 50px #0009;
+}
+.barovia-seal:before{content:"";position:absolute;inset:14px;border:1px solid #635f56;border-radius:50%}
+.barovia-seal span,.barovia-seal small{font-size:10px;letter-spacing:4px;color:#aaa397}
+.barovia-seal strong{font:400 34px Voltaire,sans-serif;color:#d6cbb5;letter-spacing:2px}
+.mist-line{position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--bar-gold),transparent);opacity:.7}
+.barovia-page main{width:min(1220px,calc(100% - 48px));padding:70px 0 100px}
+.barovia-intro-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:26px;align-items:stretch}
+.barovia-paper,.barovia-case,.barovia-section,.barovia-manifesto,.source-panel{position:relative}
+.barovia-paper{
+  padding:40px;background:linear-gradient(135deg,#17191d,#101215);border:1px solid var(--bar-line);
+  box-shadow:0 20px 70px #0007;
+}
+.barovia-paper:after{content:"";position:absolute;top:0;right:35px;width:1px;height:100%;background:#292c30}
+.barovia-paper h2,.barovia-section h2,.source-panel h2{font:400 clamp(36px,4vw,58px)/.95 Voltaire,sans-serif;color:#ece7dc;margin:12px 0 20px}
+.barovia-paper p{max-width:72ch!important}
+.barovia-case{padding:28px;background:#0d0f12;border:1px solid #46484b;box-shadow:8px 8px 0 #050608}
+.case-label{color:var(--bar-red-bright);font:700 12px Voltaire,sans-serif;letter-spacing:3px;border-bottom:1px solid #4b3a3c;padding-bottom:12px;margin-bottom:5px}
+.case-row{display:flex;justify-content:space-between;gap:15px;padding:15px 0;border-bottom:1px solid #292c30;font-size:13px}
+.case-row span{color:#85827c;letter-spacing:1px}.case-row strong{font-family:Voltaire,sans-serif;font-size:16px;color:#ddd7ca;text-align:right}
+.case-row .active{color:#b94a55}
+.barovia-manifesto{
+  margin:28px 0 75px;padding:27px 35px;display:grid;grid-template-columns:60px 1fr;gap:20px;
+  border-top:1px solid #6b5b40;border-bottom:1px solid #6b5b40;background:#111216
+}
+.manifesto-symbol{font-size:48px;color:var(--bar-red);text-align:center}
+.manifesto-symbol+div p{font:italic 25px "Brygada 1918",serif;color:#d8d2c7;margin:4px 0 10px}
+.manifesto-symbol+div span{font-size:10px;letter-spacing:3px;color:#817d76}
+.barovia-section{margin-top:82px}
+.barovia-section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:28px}
+.barovia-section-head>div{min-width:0}.barovia-section-head p{max-width:470px!important;margin:0!important;color:#8f918e!important;font-size:15px!important}
+.atlas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.atlas-card{
+  min-height:260px;padding:28px;background:linear-gradient(145deg,#191c21,#101216);border:1px solid #35383d;
+  position:relative;overflow:hidden;transition:transform .2s,border-color .2s;
+}
+.atlas-card:hover{transform:translateY(-3px);border-color:#746c5d}
+.atlas-card.dark{background:linear-gradient(145deg,#111317,#090b0e)}
+.atlas-card-large{grid-row:span 2;min-height:532px;background:linear-gradient(150deg,#171a1f99,#080a0d),url("../../Home/Graphics/legends-of-barovia.jpg") center/cover}
+.atlas-card-wide{grid-column:span 2;min-height:230px}
+.atlas-no{position:absolute;right:20px;top:18px;font:400 40px Voltaire,sans-serif;color:#34373c}
+.atlas-type{color:var(--bar-red-bright);font:700 11px Voltaire,sans-serif;letter-spacing:2px}
+.atlas-card h3{font-size:32px!important;color:#e4ded2!important;margin:12px 0 12px!important}
+.atlas-card p{font-size:15px!important;line-height:1.55!important;color:#a8aaa6!important;max-width:44ch}
+.atlas-tag{position:absolute;bottom:22px;left:28px;color:#777872;font-size:10px;letter-spacing:2px;border-left:2px solid var(--bar-gold);padding-left:8px}
+.fey-section{padding:38px;background:linear-gradient(120deg,#14161b,#0d0f12);border:1px solid #3a3b3f}
+.fey-heading{display:flex;justify-content:space-between;align-items:start}
+.fey-stamp{border:2px solid var(--bar-red);color:#a63845;padding:8px 14px;transform:rotate(-4deg);font:700 11px Voltaire,sans-serif;letter-spacing:2px}
+.fey-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:30px;margin-top:28px}
+.fey-main{display:grid;grid-template-columns:72px 1fr;gap:20px}
+.fey-gem{width:58px;height:58px;display:grid;place-items:center;border:1px solid var(--bar-gold);color:var(--bar-gold);transform:rotate(45deg);font-size:23px}
+.fey-gem::first-letter{display:block}
+.fey-main h3{font-size:37px!important;color:#ded8cc!important;margin:4px 0 18px!important}
+.fey-main p{font-family:"Brygada 1918",Georgia,serif!important;font-size:16px!important;color:#aaa9a3!important}
+.fey-triad{display:grid;gap:8px}
+.fey-triad article{padding:17px 18px;background:#0a0c0f;border-left:2px solid var(--bar-red)}
+.fey-triad span{font:400 24px Voltaire,sans-serif;color:var(--bar-gold);float:left;margin-right:14px}
+.fey-triad strong{font:700 13px Voltaire,sans-serif;color:#ddd7ca;letter-spacing:2px}
+.fey-triad p{clear:both;margin:8px 0 0!important;font-size:13px!important;color:#858783!important}
+.people-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.person-card{padding:25px;border:1px solid #34373b;background:#111317;min-height:275px;position:relative}
+.person-card.sovereign{background:linear-gradient(145deg,#211519,#111216);border-color:#5c3439}
+.person-card.fey-person{grid-column:span 2}
+.portrait-mark{font:400 58px Voltaire,sans-serif;color:#3b3e43;line-height:1}
+.person-role{margin-top:18px;font:700 10px Voltaire,sans-serif;letter-spacing:2px;color:var(--bar-red-bright)}
+.person-card h3{font-size:29px!important;color:#ddd8cc!important;margin:7px 0 12px!important}
+.person-card p{font-size:14px!important;color:#999c98!important}
+.horror-section{display:grid;grid-template-columns:.7fr 1.3fr;gap:50px;padding:40px 0;border-top:1px solid #34363a;border-bottom:1px solid #34363a}
+.horror-copy p{font-family:"Brygada 1918",serif!important;color:#9f9f9a!important}
+.horror-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.horror-grid>div{padding:22px;background:#111317;border:1px solid #2d3034}
+.horror-grid span{display:block;font:400 27px Voltaire,sans-serif;color:var(--bar-red)}
+.horror-grid strong{font:700 13px Voltaire,sans-serif;letter-spacing:2px;color:#ded8ce}
+.horror-grid p{font-size:13px!important;color:#888b87!important}
+.path-line{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid #555}
+.path-line article{padding:24px 15px;border-right:1px solid #34363a;position:relative}
+.path-line article:last-child{border-right:0}
+.path-line span{font:400 35px Voltaire,sans-serif;color:var(--bar-red)}
+.path-line strong{display:block;font:700 12px Voltaire,sans-serif;letter-spacing:2px;color:#ddd7ca;margin-top:7px}
+.path-line p{font-size:13px!important;color:#888b88!important}
+.chronicle-section{padding-bottom:10px}
+.party-board{display:grid;grid-template-columns:.8fr 1.2fr;border:1px solid #3a3c40;background:#101216}
+.party-lead{padding:35px;background:linear-gradient(145deg,#1b171a,#101114)}
+.party-lead h3{font-size:34px!important;color:#ddd7cc!important;margin:10px 0!important}
+.party-lead p{color:#92948f!important}
+.party-list{display:grid;grid-template-columns:1fr 1fr}
+.party-list div{padding:24px;border-left:1px solid #303338;border-bottom:1px solid #303338}
+.party-list span{display:block;color:var(--bar-red);font:400 24px Voltaire,sans-serif}
+.party-list strong{display:block;color:#e0dbd0;font:400 24px Voltaire,sans-serif}
+.party-list em{font-style:normal;color:#858883;font-size:13px}
+.session-log{margin-top:20px;border-top:1px solid #3c3e42}
+.session-log details{border-bottom:1px solid #34363a}
+.session-log summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:100px 1fr auto;gap:15px;padding:19px 5px;align-items:center}
+.session-log summary::-webkit-details-marker{display:none}
+.session-log summary span{color:var(--bar-red);font:400 16px Voltaire,sans-serif}
+.session-log summary strong{font:400 19px Voltaire,sans-serif;color:#ddd8cc}
+.session-log summary em{font-style:normal;color:#686b67;font-size:11px;letter-spacing:1px}
+.session-log details p{padding:0 5px 20px 105px!important;color:#888b86!important;font-size:14px!important}
+.source-panel{
+  margin-top:80px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:30px;
+  border:1px solid #383b3f;background:#0e1013
+}
+.source-panel h2{font-size:30px;margin:7px 0!important}.source-panel p{margin:0!important;color:#858883!important}
+.source-panel a{flex:0 0 auto;padding:13px 17px;border:1px solid var(--bar-gold);color:var(--bar-gold);text-decoration:none;font:700 11px Voltaire,sans-serif;letter-spacing:2px}
+.source-panel a:hover{background:var(--bar-gold);color:#101114}
+.barovia-page footer{display:flex;justify-content:space-between;gap:20px;padding:24px 30px;background:#07080a;border-top:1px solid #2f3135;color:#6f726f}
+.barovia-page footer a{color:#a99a7b;text-decoration:none}
+@media(max-width:900px){
+  .barovia-nav-links{display:none}.barovia-hero-inner{grid-template-columns:1fr}.barovia-seal{display:none}
+  .barovia-intro-grid,.fey-grid,.horror-section,.party-board{grid-template-columns:1fr}
+  .atlas-grid{grid-template-columns:1fr 1fr}.atlas-card-large{grid-row:auto;min-height:330px}.atlas-card-wide{grid-column:span 2}
+  .people-grid{grid-template-columns:1fr 1fr}.person-card.fey-person{grid-column:span 2}
+  .path-line{grid-template-columns:1fr 1fr}.path-line article:nth-child(odd){border-right:1px solid #34363a}
+  .party-list div{border-left:0}
+}
+@media(max-width:620px){
+  .barovia-nav-inner,.barovia-hero-inner,.barovia-page main{width:calc(100% - 28px)}
+  .barovia-hero{min-height:90vh}.barovia-hero h1{font-size:65px}.barovia-lead{font-size:18px!important}
+  .barovia-hero-meta{gap:16px;flex-wrap:wrap}.barovia-hero-meta span{font-size:11px}
+  .barovia-paper{padding:25px}.barovia-manifesto{grid-template-columns:1fr;padding:22px}.manifesto-symbol{text-align:left}
+  .barovia-section{margin-top:55px}.barovia-section-head{display:block}.barovia-section-head p{margin-top:15px!important}
+  .atlas-grid,.people-grid,.horror-grid{grid-template-columns:1fr}.atlas-card-wide,.person-card.fey-person{grid-column:auto}
+  .atlas-card{min-height:230px}.atlas-card-large{min-height:290px}
+  .fey-section{padding:25px}.fey-main{grid-template-columns:1fr}.fey-gem{margin-bottom:10px}
+  .path-line{grid-template-columns:1fr}.path-line article{border-right:0!important;border-bottom:1px solid #34363a}
+  .party-list{grid-template-columns:1fr}
+  .session-log summary{grid-template-columns:1fr}.session-log details p{padding-left:5px!important}
+  .source-panel{display:block}.source-panel a{display:inline-block;margin-top:20px}
+  .barovia-page footer{display:block}.barovia-page footer a{display:block;margin-top:8px}
+}
