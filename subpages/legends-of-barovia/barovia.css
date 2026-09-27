@@ -529,3 +529,55 @@
   object-position:center top;
   filter:grayscale(.8);
 }
+
+.barovia-page .party-portrait-panel{
+  margin:0 0 28px;
+  display:grid;
+  grid-template-columns:.55fr 1.45fr;
+  gap:0;
+  border:1px solid #383b3f;
+  background:#0e1013;
+  box-shadow:0 20px 70px #0007;
+  overflow:hidden;
+}
+.barovia-page .party-portrait-copy{
+  padding:36px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:linear-gradient(145deg,#17191d,#0e1013);
+}
+.barovia-page .party-portrait-copy h2{
+  margin:10px 0 16px;
+  font:400 clamp(34px,3.5vw,50px)/.95 Voltaire,sans-serif;
+  color:#ece7dc;
+}
+.barovia-page .party-portrait-copy p{
+  color:#92948f!important;
+  font-size:16px!important;
+  margin:0!important;
+}
+.barovia-page .party-portrait-figure{
+  margin:0;
+  min-height:390px;
+  background:#08090b;
+}
+.barovia-page .party-portrait-figure img{
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:390px;
+  object-fit:cover;
+  object-position:center;
+}
+.barovia-page .barovia-hero{
+  background:
+    linear-gradient(90deg,rgba(5,7,9,.92) 0,rgba(5,7,9,.56) 52%,rgba(5,7,9,.3)),
+    linear-gradient(180deg,rgba(0,0,0,.05) 35%,#08090b 100%),
+    url("./images/hero-image.jpg") center top/cover no-repeat;
+}
+@media(max-width:760px){
+  .barovia-page .party-portrait-panel{grid-template-columns:1fr}
+  .barovia-page .party-portrait-figure,.barovia-page .party-portrait-figure img{min-height:300px}
+  .barovia-page .party-portrait-copy{padding:28px}
+}
