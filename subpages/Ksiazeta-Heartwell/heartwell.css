@@ -1196,10 +1196,6 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   line-height:1.02;
   margin:0 0 14px;
 }
-.party-card p{
-  font-size:13px;
-  line-height:1.55;
-}
 .party-tag-link{
   display:inline-block;
   font-family:"Voltaire",sans-serif;
@@ -1215,12 +1211,12 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   background:rgba(139,32,32,.16);
 }
 @media (max-width:900px){
-  .party-card{min-height:600px;}
+
   .party-portrait{height:auto;}
 }
 @media (max-width:640px){
-  .party-card{min-height:540px;}
-  .party-portrait{height:auto;}
+
+
 }
 
 /* ============================================================
@@ -1284,61 +1280,8 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 /* ============================================================
    HEARTWELL — THEME AUDIO
    ============================================================ */
-.heartwell-audio-toggle{
-  position:fixed;
-  right:24px;
-  bottom:24px;
-  z-index:700;
-  width:64px;
-  height:64px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:0;
-  border:2px solid rgba(241,241,238,.9);
-  border-radius:50%;
-  background:rgba(26,23,20,.88);
-  color:#f5f4ef;
-  box-shadow:0 5px 20px rgba(0,0,0,.5),0 0 0 1px rgba(139,32,32,.45);
-  cursor:pointer;
-  transition:transform .15s ease,background .15s ease,box-shadow .15s ease;
-  -webkit-backdrop-filter:blur(5px);
-  backdrop-filter:blur(5px);
-}
-.heartwell-audio-toggle:hover{
-  transform:scale(1.06);
-  background:rgba(139,32,32,.94);
-  box-shadow:0 7px 24px rgba(0,0,0,.58),0 0 0 2px rgba(241,241,238,.25);
-}
-.heartwell-audio-toggle:focus-visible{
-  outline:3px solid #f1f1ee;
-  outline-offset:4px;
-}
-.heartwell-audio-toggle .audio-icon{
-  width:34px;
-  height:34px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:3.2;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-.heartwell-audio-toggle .audio-icon-playing{display:none;}
-.heartwell-audio-toggle.is-playing .audio-icon-muted{display:none;}
-.heartwell-audio-toggle.is-playing .audio-icon-playing{display:block;}
+
 .tab-btn{text-decoration:none;}
-@media (max-width:640px){
-  .heartwell-audio-toggle{
-    right:16px;
-    bottom:16px;
-    width:58px;
-    height:58px;
-  }
-  .heartwell-audio-toggle .audio-icon{
-    width:31px;
-    height:31px;
-  }
-}
 
 /* SESSION YOUTUBE MOCK BUTTON */
 .session-youtube{
@@ -2349,7 +2292,7 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
     grid-template-columns:minmax(0,1fr) 280px;
     gap:28px;
   }
-  #page-factions .tile-districts{grid-column:1 / 9;}
+
   #page-factions .tile-power{grid-column:9 / 13;margin-top:55px;}
   #page-factions .tile-tech{grid-column:1 / 7;}
   #page-factions .tile-street{grid-column:7 / 13;}
@@ -2466,9 +2409,7 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   }
 }
 @media (max-width:640px){
-  #page-factions .tile-power .power-split{
-    grid-template-columns:1fr;
-  }
+
 }
 
 /* Final city atlas typography */
@@ -2493,9 +2434,6 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   grid-auto-flow:row;
   gap:26px 22px;
 }
-#page-factions .tile-districts{
-  grid-column:1 / 9;
-}
 #page-factions .tile-power{
   grid-column:9 / 13;
   margin-top:0;
@@ -2516,18 +2454,12 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   grid-column:8 / 13;
   margin-top:0;
 }
-#page-factions .tile-districts .district-atlas-grid{
-  grid-template-columns:repeat(2,minmax(0,1fr));
-}
 #page-factions .tile-districts .district-atlas-card{
   min-height:230px;
 }
 #page-factions .tile-power .power-machine{
   height:100%;
   box-sizing:border-box;
-}
-#page-factions .tile-tech .technology-board{
-  grid-template-columns:repeat(2,minmax(0,1fr));
 }
 #page-factions .tile-street .street-life{
   height:100%;
@@ -2544,10 +2476,10 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 @media (max-width:1050px){
   #page-factions .map-floating{width:min(86%,500px);}
   #page-factions .city-metro-grid{gap:24px 18px;}
-  #page-factions .tile-districts{grid-column:1 / 9;}
+
   #page-factions .tile-power{grid-column:9 / 13;}
-  #page-factions .tile-tech{grid-column:1 / 7;}
-  #page-factions .tile-street{grid-column:7 / 13;}
+
+
   #page-factions .tile-smog{grid-column:1 / 8;}
   #page-factions .tile-history{grid-column:8 / 13;}
 }
@@ -2560,12 +2492,12 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   #page-factions .city-metro-grid{
     grid-template-columns:1fr 1fr;
   }
-  #page-factions .tile-districts{grid-column:1 / -1;}
-  #page-factions .tile-power{grid-column:1 / 2;}
-  #page-factions .tile-tech{grid-column:2 / 3;}
-  #page-factions .tile-street{grid-column:1 / -1;}
-  #page-factions .tile-smog{grid-column:1 / 2;}
-  #page-factions .tile-history{grid-column:2 / 3;}
+
+
+
+
+
+
 }
 @media (max-width:640px){
   #page-factions .map-float-layout{
@@ -2584,9 +2516,7 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   #page-factions .tile-tech,
   #page-factions .tile-street,
   #page-factions .tile-smog,
-  #page-factions .tile-history{
-    grid-column:1;
-  }
+
 }
 
 /* Plan miasta — left copy, right floating map */
@@ -2672,24 +2602,15 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:16px;
 }
-#page-factions .tile-districts .district-atlas-card{
-  min-height:255px;
-}
 @media (max-width:1050px){
   #page-factions .tile-districts{
     grid-column:1 / 13;
   }
-  #page-factions .tile-districts .district-atlas-grid{
-    grid-template-columns:repeat(3,minmax(0,1fr));
-  }
+
 }
 @media (max-width:800px){
-  #page-factions .tile-districts{
-    grid-column:1 / -1;
-  }
-  #page-factions .tile-districts .district-atlas-grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
+
+
 }
 @media (max-width:640px){
   #page-factions .tile-districts .district-atlas-grid{
@@ -2989,10 +2910,7 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 #page-factions .city-top-trio > .tile-history .timeline-item p{
   color:var(--stamp-red);
 }
-#page-factions .city-top-trio > .tile-history{
-  display:flex;
-  align-items:center;
-}
+
 
 /* City page — atmosphere beside everyday life; technology in four columns */
 #page-factions .city-atmosphere-row{
