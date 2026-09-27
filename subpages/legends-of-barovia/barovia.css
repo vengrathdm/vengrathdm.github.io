@@ -207,3 +207,26 @@
 .barovia-page .session-log{border-top:1px solid #3c3e42}
 @media(max-width:1050px){.barovia-page .character-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.barovia-page .character-grid{grid-template-columns:1fr}.barovia-page .character-portrait{height:360px}}
+
+/* Main campaign cards */
+.barovia-page .barovia-card{
+  margin-top:70px;
+  border:1px solid #3a3d42;
+  background:linear-gradient(145deg,#13161a,#0d0f12);
+  box-shadow:0 20px 65px #0007;
+}
+.barovia-page .barovia-card-title{
+  display:flex;align-items:center;gap:18px;padding:18px 28px;
+  border-bottom:1px solid #34373b;background:#0a0c0f;
+}
+.barovia-page .barovia-card-title span{font:400 30px Voltaire,sans-serif;color:var(--bar-red)}
+.barovia-page .barovia-card-title strong{font:700 12px Voltaire,sans-serif;letter-spacing:3px;color:#d9d3c7}
+.barovia-page .barovia-card-body{padding:28px}
+.barovia-page .barovia-card-main .barovia-intro-grid{margin:0}
+.barovia-page .barovia-card-chronicle{margin-top:70px}
+.barovia-page .barovia-card-inner-title{
+  display:flex;align-items:center;gap:14px;margin:8px 0 24px;padding-bottom:10px;border-bottom:1px solid #34373b;
+}
+.barovia-page .barovia-card-inner-title span{font:400 24px Voltaire,sans-serif;color:var(--bar-gold)}
+.barovia-page .barovia-card-inner-title strong{font:700 11px Voltaire,sans-serif;letter-spacing:2px;color:#aaa69d}
+@media(max-width:620px){.barovia-page .barovia-card-body{padding:18px}.barovia-page .barovia-card-title{padding:16px 18px}}
