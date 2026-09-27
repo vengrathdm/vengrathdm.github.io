@@ -2935,6 +2935,15 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
 }
 
 
+/* Center the timeline vertically inside the opening trio column */
+#page-factions .city-top-trio > .tile-history{
+  display:flex;
+  align-items:center;
+}
+#page-factions .city-top-trio > .tile-history .city-timeline{
+  width:100%;
+}
+
 /* City page — quote is an independent full-width section, atmosphere follows below */
 #page-factions .city-quote-fullwidth{
   width:100%;
