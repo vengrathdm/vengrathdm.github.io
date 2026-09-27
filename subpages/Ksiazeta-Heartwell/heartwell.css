@@ -2950,3 +2950,11 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   grid-column:1 / -1;
   margin:0 0 36px;
 }
+
+
+/* Standard city quote: full 3/3 width */
+#page-factions .district-quote,
+#page-factions .city-quote.district-quote{
+  grid-column:1 / -1;
+  width:100%;
+}
