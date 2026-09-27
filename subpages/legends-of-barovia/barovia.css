@@ -182,3 +182,28 @@
   .source-panel{display:block}.source-panel a{display:inline-block;margin-top:20px}
   .barovia-page footer{display:block}.barovia-page footer a{display:block;margin-top:8px}
 }
+/* Chronicle / character cards */
+.barovia-page .chronicle-subsection{margin-top:38px}
+.barovia-page .chronicle-subhead{display:flex;align-items:baseline;gap:15px;margin-bottom:20px;border-bottom:1px solid #35383c;padding-bottom:12px}
+.barovia-page .chronicle-subhead span{font:400 31px Voltaire,sans-serif;color:var(--bar-red)}
+.barovia-page .chronicle-subhead h3{margin:0!important;font-size:34px!important;color:#ddd8cc!important}
+.barovia-page .character-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.barovia-page .character-card{min-width:0;background:linear-gradient(145deg,#191c21,#0f1114);border:1px solid #373a3e;box-shadow:0 16px 45px #0006}
+.barovia-page .character-portrait{
+  height:340px;display:flex;align-items:flex-end;justify-content:center;padding:15px;
+  background:
+    radial-gradient(circle at 50% 30%,#34383d 0,transparent 38%),
+    linear-gradient(180deg,#24282d,#0b0d10);
+  border-bottom:1px solid #3e4145;position:relative;overflow:hidden;
+}
+.barovia-page .character-portrait:before{content:"";position:absolute;inset:18px;border:1px dashed #66635b;opacity:.35}
+.barovia-page .character-portrait span{position:relative;z-index:1;font:10px Voltaire,sans-serif;letter-spacing:3px;color:#817e76}
+.barovia-page .character-info{padding:22px}
+.barovia-page .character-label{font:700 10px Voltaire,sans-serif;letter-spacing:2px;color:var(--bar-red-bright)}
+.barovia-page .character-info h4{font:400 30px Voltaire,sans-serif;color:#e0dbd0;margin:7px 0 2px}
+.barovia-page .character-info strong{font-size:14px;color:#aaa8a1;font-weight:500}
+.barovia-page .character-info p{margin-top:15px!important;font-size:13px!important;line-height:1.5!important;color:#858883!important}
+.barovia-page .notes-section{margin-top:52px}
+.barovia-page .session-log{border-top:1px solid #3c3e42}
+@media(max-width:1050px){.barovia-page .character-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.barovia-page .character-grid{grid-template-columns:1fr}.barovia-page .character-portrait{height:360px}}
