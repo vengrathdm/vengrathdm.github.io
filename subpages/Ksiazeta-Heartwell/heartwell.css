@@ -3100,7 +3100,7 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
   min-width:0 !important;
   box-sizing:border-box;
 }
-@media (max-width:900px){
+@media (max-width:640px){
   #page-factions .city-atmosphere-row{
     grid-template-columns:1fr !important;
   }
