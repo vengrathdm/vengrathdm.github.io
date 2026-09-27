@@ -2758,3 +2758,63 @@ h1,h2,h3,h4{ margin:0; font-family: var(--display); font-weight:700; }
     grid-column:1;
   }
 }
+
+/* Force the opening city composition into one desktop row:
+   atmosphere | map | quote */
+#page-factions .map-atmosphere-quote-grid{
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) !important;
+  grid-template-rows:1fr !important;
+  align-items:stretch !important;
+  gap:24px !important;
+}
+#page-factions .map-atmosphere-quote-grid > .city-atmosphere-float,
+#page-factions .map-atmosphere-quote-grid > .map-floating,
+#page-factions .map-atmosphere-quote-grid > .map-atmosphere-quote{
+  grid-column:auto !important;
+  grid-row:1 !important;
+  width:100% !important;
+  min-width:0 !important;
+  margin:0 !important;
+}
+#page-factions .map-atmosphere-quote-grid > .map-floating{
+  justify-self:stretch;
+  align-self:center;
+}
+#page-factions .map-atmosphere-quote-grid > .map-floating img{
+  width:100%;
+  height:auto;
+}
+#page-factions .map-atmosphere-quote-grid > .map-atmosphere-quote{
+  align-self:stretch;
+}
+@media (max-width:900px){
+  #page-factions .map-atmosphere-quote-grid{
+    grid-template-columns:1fr 1fr !important;
+    grid-template-rows:auto auto !important;
+  }
+  #page-factions .map-atmosphere-quote-grid > .city-atmosphere-float{
+    grid-column:1 / -1 !important;
+    grid-row:1 !important;
+  }
+  #page-factions .map-atmosphere-quote-grid > .map-floating{
+    grid-column:1 !important;
+    grid-row:2 !important;
+  }
+  #page-factions .map-atmosphere-quote-grid > .map-atmosphere-quote{
+    grid-column:2 !important;
+    grid-row:2 !important;
+  }
+}
+@media (max-width:640px){
+  #page-factions .map-atmosphere-quote-grid{
+    grid-template-columns:1fr !important;
+    grid-template-rows:auto !important;
+  }
+  #page-factions .map-atmosphere-quote-grid > .city-atmosphere-float,
+  #page-factions .map-atmosphere-quote-grid > .map-floating,
+  #page-factions .map-atmosphere-quote-grid > .map-atmosphere-quote{
+    grid-column:1 !important;
+    grid-row:auto !important;
+  }
+}
