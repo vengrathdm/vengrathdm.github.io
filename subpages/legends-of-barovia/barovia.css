@@ -329,3 +329,92 @@
   .barovia-page .character-portrait{height:360px}
   .barovia-page .barovia-page-link{flex:1;justify-content:center}
 }
+
+.barovia-page .barovia-character-quote{
+  margin:55px 0 70px;
+  padding:30px 38px;
+  border-top:1px solid #6b5b40;
+  border-bottom:1px solid #6b5b40;
+  background:linear-gradient(90deg,#111216,#171419,#111216);
+  text-align:center;
+}
+.barovia-page .barovia-character-quote p{
+  max-width:900px!important;
+  margin:8px auto 12px!important;
+  font:italic 25px/1.5 "Brygada 1918",Georgia,serif!important;
+  color:#d8d2c7!important;
+}
+.barovia-page .barovia-character-quote span{
+  color:#817d76;
+  font-size:11px;
+  letter-spacing:1.5px;
+}
+.barovia-page .dead-characters{
+  margin-top:90px;
+  padding-top:10px;
+}
+.barovia-page .dead-character-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+}
+.barovia-page .dead-character-card{
+  min-width:0;
+  border:1px solid #44383a;
+  background:linear-gradient(145deg,#19171a,#0d0f12);
+  box-shadow:0 16px 45px #0006;
+}
+.barovia-page .dead-character-portrait{
+  height:300px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding:15px;
+  background:
+    radial-gradient(circle at 50% 30%,#393338 0,transparent 38%),
+    linear-gradient(180deg,#242025,#0b0d10);
+  border-bottom:1px solid #4b3a3d;
+  filter:grayscale(.8);
+}
+.barovia-page .dead-character-portrait:before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px dashed #75666a;
+  opacity:.3;
+}
+.barovia-page .dead-character-portrait span{
+  position:relative;
+  z-index:1;
+  font:10px Voltaire,sans-serif;
+  letter-spacing:2px;
+  color:#817e76;
+}
+.barovia-page .dead-character-portrait b{
+  position:absolute;
+  top:18px;
+  right:22px;
+  font:400 34px "Brygada 1918",serif;
+  color:#9b4b55;
+}
+.barovia-page .dead-character-info{padding:22px}
+.barovia-page .dead-character-info h4{
+  font:400 27px Voltaire,sans-serif;
+  color:#c9c2b7;
+  margin:7px 0 2px;
+}
+.barovia-page .dead-character-info strong{
+  font-size:14px;
+  color:#928c89;
+  font-weight:500;
+}
+.barovia-page .dead-character-info p{
+  margin-top:15px!important;
+  font-size:13px!important;
+  line-height:1.5!important;
+  color:#797b78!important;
+}
+@media(max-width:1050px){.barovia-page .dead-character-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.barovia-page .dead-character-grid{grid-template-columns:1fr}}
