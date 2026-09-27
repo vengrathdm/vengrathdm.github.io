@@ -74,3 +74,13 @@
 /* Navigation: keep links above decorative hero layers and make the mobile bar usable. */
 .shards-nav{z-index:100}.shards-nav-inner,.shards-nav-meta,.shards-links{position:relative;z-index:101}.shards-links a{pointer-events:auto;cursor:pointer}.shards-links{position:relative;z-index:102}.shards-links a{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
 @media(max-width:800px){.shards-nav-meta{width:100%;gap:8px}.shards-links{width:100%;order:3;overflow-x:auto;justify-content:flex-start;padding-top:6px}.shards-links a{flex:0 0 auto}.shards-nav-inner{flex-wrap:wrap}}
+
+/* FIX: navigation must own the top stacking context. */
+.shards-page{position:relative;isolation:isolate}
+.shards-nav{position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:9999!important}
+.shards-nav:before{content:"";position:absolute;inset:0;z-index:-1;background:#06101af2;backdrop-filter:blur(12px)}
+.shards-nav-inner{position:relative!important;z-index:10000!important}
+.shards-nav-meta{position:relative!important;z-index:10001!important}
+.shards-links,.shards-links a,.shards-nav .campaign-pdf,.shards-nav .site-home-button{position:relative!important;z-index:10002!important}
+.scanlines{z-index:100!important}
+.shards-hero,.subpage-hero{z-index:1}
