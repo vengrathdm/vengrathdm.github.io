@@ -175,7 +175,7 @@ h1,h2,h3{ margin:0; font-family: var(--display); font-weight:400; letter-spacing
 .plague-text b{ color: var(--blood-bright); }
 
 /* -------- nawigacja: robaki-zakładki -------- */
-.grimoire-nav{ display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin: 28px 0 6px; }
+.grimoire-nav{ display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin:28px 0 6px; }
 .nav-worm-btn{
   font-family: var(--small-caps);
   font-size:14px; letter-spacing:1px;
@@ -340,7 +340,13 @@ h1,h2,h3{ margin:0; font-family: var(--display); font-weight:400; letter-spacing
   .plague-text{ text-align:center; }
 }
 
-/* -------- szybkie odnośniki kampanii -------- */
+/* -------- header kampanii -------- */
+.campaign-header-links{display:flex;justify-content:flex-end;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:22px;position:relative;z-index:2}
+.campaign-header-links a{display:inline-flex;align-items:center;justify-content:center;padding:9px 15px;border:1px solid var(--swamp);background:var(--rot-black);color:var(--bone);font-family:var(--small-caps);font-size:12px;letter-spacing:1px;text-decoration:none;border-radius:3px 10px 3px 10px;transition:.2s ease}
+.campaign-header-links a:hover{border-color:var(--mold);color:var(--pus);transform:translateY(-1px)}
+.campaign-header-links .pdf{border-color:var(--blood)}
+.campaign-header-links .youtube{border-color:var(--mold)}
+/* -------- stare odnośniki kampanii — usunięte z wnętrza okładki -------- */
 .campaign-links{
   display:flex;
   justify-content:center;
@@ -390,6 +396,11 @@ h1,h2,h3{ margin:0; font-family: var(--display); font-weight:400; letter-spacing
 
   <!-- ============ OKŁADKA ============ -->
   <div class="cover">
+    <div class="campaign-header-links" aria-label="Odnośniki kampanii">
+      <a class="pdf" href="https://drive.google.com/file/d/1tBhB3ENS8tPKc8ENQZPz-VibU1otmLlB/view?usp=sharing" target="_blank" rel="noopener">PDF ↗</a>
+      <a class="youtube" href="https://www.youtube.com/playlist?list=PL-Lm83myvu0ihHC4GFEJggfLn0YfdVbZg" target="_blank" rel="noopener">YOUTUBE ↗</a>
+      <a href="https://vengrathdm.github.io/" target="_blank" rel="noopener">VENGRATH ↗</a>
+    </div>
     <div class="cover-eyebrow">Zapiski skażone przez Gloomforest</div>
     <div class="drip-wrap">
       <h1 class="cover-title">The Rotting Grimoire</h1>
@@ -414,11 +425,6 @@ h1,h2,h3{ margin:0; font-family: var(--display); font-weight:400; letter-spacing
       <button class="nav-worm-btn" data-page="cast">POSTACIE</button>
       <button class="nav-worm-btn" data-page="log">KRONIKA</button>
     </nav>
-    <div class="campaign-links" aria-label="Odnośniki kampanii">
-      <a class="campaign-link disabled" href="#" aria-disabled="true" title="Link do PDF zostanie dodany po podaniu adresu">PDF ↗</a>
-      <a class="campaign-link disabled" href="#" aria-disabled="true" title="Link do YouTube zostanie dodany po podaniu adresu">YOUTUBE ↗</a>
-      <a class="campaign-link external" href="https://vengrathdm.github.io/" target="_blank" rel="noopener">VENGRATH ↗</a>
-    </div>
   </div>
 
   <!-- ============ ZAWIĄZANIE / OVERVIEW ============ -->
