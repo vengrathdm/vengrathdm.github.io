@@ -290,6 +290,52 @@ function matches(record){
   return true;
 }
 
+function escapeHtml(value){
+  return String(value??"").replace(/[&<>"']/g,char=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
+  }[char]));
+}
+
+function openCharacter(record){
+  const modal=$("characterModal");
+  const content=$("modalContent");
+  const fate=record.tags.fate[0]||"unknown";
+  const note=String(record.note??"").trim();
+
+  content.innerHTML=
+    '<div class="modal-left">'+
+      '<img class="modal-portrait" src="'+escapeHtml(record.portrait)+'" alt="'+escapeHtml(record.name)+'">'+
+      '<div class="modal-identity">'+
+        '<span class="modal-kicker">REKORD POSTACI</span>'+
+        '<h2 id="modalCharacterName">'+escapeHtml(record.name)+'</h2>'+
+        '<div class="modal-meta">'+
+          '<div class="modal-meta-row"><b>Tagi kampanii</b><span class="modal-tags">'+tagMarkup("campaign",record.tags.campaign)+'</span></div>'+
+          '<div class="modal-meta-row"><b>Tagi klasy</b><span class="modal-tags">'+tagMarkup("class",record.tags.class)+'</span></div>'+
+          '<div class="modal-meta-row"><b>Tagi rasy</b><span class="modal-tags">'+tagMarkup("race",record.tags.race)+'</span></div>'+
+          '<div class="modal-meta-row"><b>Tagi losu</b><span class="modal-tags">'+tagMarkup("fate",record.tags.fate)+'</span></div>'+
+          '<div class="modal-meta-row"><b>Tagi gracza</b><span class="modal-tags">'+tagMarkup("player",record.tags.player)+'</span></div>'+
+        '</div>'+
+      '</div>'+
+    '</div>'+
+    '<div class="modal-right">'+
+      '<span class="modal-right-kicker">ARCHIWUM / NOTATKA</span>'+
+      '<h3>Backstory</h3>'+
+      '<div class="modal-note'+(note?"":" empty-note")+'">'+escapeHtml(note||"Nie ma nic więcej do dodania")+'</div>'+
+      '<div class="modal-fate"><strong>'+escapeHtml(labels[fate]||"")+'</strong><br>'+escapeHtml(record.description||"")+'</div>'+
+    '</div>';
+
+  modal.hidden=false;
+  modal.setAttribute("aria-hidden","false");
+  document.body.classList.add("modal-open");
+}
+
+function closeCharacter(){
+  const modal=$("characterModal");
+  modal.hidden=true;
+  modal.setAttribute("aria-hidden","true");
+  document.body.classList.remove("modal-open");
+}
+
 function render(){
   const rows=characterRegistry.filter(matches);
 
@@ -298,7 +344,7 @@ function render(){
   grid.innerHTML=rows.map(record=>{
     const fate=record.tags.fate[0]||"unknown";
 
-    return '<article class="card" data-fate="'+fate+'">'+
+    return '<article class="card" data-record-index="'+characterRegistry.indexOf(record)+'" data-fate="'+fate+'" tabindex="0" role="button" aria-label="Otwórz kartę postaci '+escapeHtml(record.name)+'">'+
       '<div class="portrait">'+
         '<img src="'+record.portrait+'" alt="'+record.name+'" loading="lazy" onerror="this.remove()">'+
       '</div>'+
@@ -317,6 +363,17 @@ function render(){
   }).join("");
 
   $("empty").hidden=rows.length!==0;
+
+  grid.querySelectorAll(".card").forEach(card=>{
+    const record=characterRegistry[Number(card.dataset.recordIndex)];
+    card.addEventListener("click",()=>openCharacter(record));
+    card.addEventListener("keydown",event=>{
+      if(event.key==="Enter"||event.key===" "){
+        event.preventDefault();
+        openCharacter(record);
+      }
+    });
+  });
 }
 
 [search,...Object.values(filters)].forEach(el=>el.addEventListener("input",render));
@@ -328,3 +385,12 @@ $("clearFilters").addEventListener("click",()=>{
 });
 
 render();
+
+$("modalClose").addEventListener("click",closeCharacter);
+$("characterModal").addEventListener("click",event=>{
+  if(event.target.matches("[data-modal-close]")) closeCharacter();
+});
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape" && !$("characterModal").hidden) closeCharacter();
+});
+
