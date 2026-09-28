@@ -334,26 +334,5 @@
     "tag": "Archiwum",
     "graphic": "https://cdn.midjourney.com/f2d52c3c-0e32-4b72-a9a2-5f1fdca9d8ed/0_0.png",
     "link": "../../subpages/wails-from-the-lighthouse/"
-  },
-  {
-    "name": "heroes-of-drakkenheim.txt",
-    "title": "Heroes of Drakkenheim",
-    "tag": "Zamknięta Kampania",
-    "graphic": "../Graphics/dungeons-of-drakkenheim.jpg",
-    "link": "../../subpages/heroes-of-drakkenheim/"
-  },
-  {
-    "name": "echtra-zima-irgaeli.txt",
-    "title": "Echtra - Zima Irgaeli",
-    "tag": "Aktywna Kampania",
-    "graphic": "../Graphics/echtra-midst-the-sidhe.jpg",
-    "link": "../../subpages/echtra-zima-irgaeli/"
-  },
-  {
-    "name": "menaces-of-gloomforest-legacy.txt",
-    "title": "Menaces of Gloomforest Legacy",
-    "tag": "Zamknięta Kampania",
-    "graphic": "../Graphics/menaces-of-gloomforest.jpg",
-    "link": "../../subpages/menaces-of-gloomforest-legacy/"
   }
 ]
