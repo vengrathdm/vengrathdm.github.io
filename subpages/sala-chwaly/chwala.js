@@ -23,74 +23,205 @@ characters.push(...[
 ["Theia","Rivani","The Sunless Citadel","../sala-chwaly/postaci-graczy/Theia-Rivani-ForgeOfFury.webp","finished","Wraz z towarzyszami ukończyła Zatopioną Cytadelę."],
 ["Theia","Rivani","Barber of Silverymoon","../sala-chwaly/postaci-graczy/Theia-Rivani-ForgeOfFury.webp","finished","Wraz z towarzyszami rozwiązała zagadkę Barbera z Silverymoon."],
 ]);
-const labels={alive:"ŻYJE / LOS OTWARTY",dead:"POLEGŁA / POLEGŁY",finished:"HISTORIA ZAKOŃCZONA",unknown:"LOS NIEUSTALONY"};
+/*
+ * SALA CHWAŁY — unified tag registry
+ *
+ * Każda postać jest jednym rekordem:
+ * {
+ *   name,
+ *   portrait,
+ *   description,
+ *   tags: {
+ *     campaign: [],
+ *     class: [],
+ *     fate: [],
+ *     player: []
+ *   }
+ * }
+ *
+ * Wszystkie osie klasyfikacji są tagami. Jedna postać może mieć
+ * wiele tagów w każdej kategorii.
+ */
+const labels={
+  alive:"ŻYJE / LOS OTWARTY",
+  dead:"POLEGŁA / POLEGŁY",
+  finished:"HISTORIA ZAKOŃCZONA",
+  unknown:"LOS NIEUSTALONY"
+};
 
-// Nowy model archiwum:
-// campaigns = tagi kampanii postaci (jedna postać może mieć wiele kampanii)
-// classes = tagi klas postaci (na start każda postać ma placeholder)
-// playerTags = tagi przypisane graczom, niezależnie od ich postaci
-const playerTags={};
+const TAG_TYPES={
+  campaign:"KAMPANIA",
+  class:"KLASA",
+  fate:"LOS",
+  player:"GRACZ"
+};
 
-const characterRecords=[];
-const byIdentity=new Map();
-for(const x of characters){
-  const key=x[0]+"\\u0000"+x[1];
-  const existing=byIdentity.get(key);
-  const campaigns=Array.isArray(x[2])?x[2]:[x[2]];
-  if(existing){
-    for(const campaign of campaigns) if(campaign && !existing.campaigns.includes(campaign)) existing.campaigns.push(campaign);
-    if(existing.path.includes("Placeholder") && x[3] && !x[3].includes("Placeholder")) existing.path=x[3];
-    if(existing.fate==="unknown" && x[4]!=="unknown") existing.fate=x[4];
-    if(existing.description.startsWith("Portret dodany") && x[5] && !x[5].startsWith("Portret dodany")) existing.description=x[5];
-  }else{
-    const record={
-      name:x[0],
-      player:x[1],
-      campaigns:[...campaigns.filter(Boolean)],
-      path:x[3],
-      fate:x[4],
-      description:x[5],
-      classes:["placeholder"]
+const records=[];
+const identity=new Map();
+
+function addLegacyCharacter(row){
+  const [name,player,campaign,portrait,fate,description]=row;
+  const key=name+"\u0000"+player;
+  let record=identity.get(key);
+
+  if(!record){
+    record={
+      name,
+      portrait,
+      description,
+      tags:{
+        campaign:[],
+        class:["placeholder"],
+        fate:[],
+        player:[player]
+      }
     };
-    byIdentity.set(key,record);
-    characterRecords.push(record);
+    identity.set(key,record);
+    records.push(record);
+  }
+
+  if(campaign && !record.tags.campaign.includes(campaign)) record.tags.campaign.push(campaign);
+  if(player && !record.tags.player.includes(player)) record.tags.player.push(player);
+  if(fate && !record.tags.fate.includes(fate)) record.tags.fate.push(fate);
+
+  if(record.portrait.includes("Placeholder") && portrait && !portrait.includes("Placeholder")){
+    record.portrait=portrait;
+  }
+
+  if(
+    description &&
+    record.description &&
+    record.description.startsWith("Portret dodany") &&
+    !description.startsWith("Portret dodany")
+  ){
+    record.description=description;
   }
 }
 
-const $=id=>document.getElementById(id),norm=s=>s.toLocaleLowerCase("pl-PL").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"");
-const grid=$("hallGrid"),search=$("search"),cf=$("campaignFilter"),ff=$("fateFilter"),clf=$("classFilter");
-const allCampaigns=[...new Set(characterRecords.flatMap(x=>x.campaigns))].sort((a,b)=>a.localeCompare(b,"pl"));
-allCampaigns.forEach(c=>{const o=document.createElement("option");o.value=c;o.textContent=c;cf.append(o)});
-const allClasses=[...new Set(characterRecords.flatMap(x=>x.classes))].sort((a,b)=>a.localeCompare(b,"pl"));
-allClasses.forEach(c=>{const o=document.createElement("option");o.value=c;o.textContent=c;clf.append(o)});
+for(const row of characters) addLegacyCharacter(row);
 
-$("countAll").textContent=characterRecords.length;
-$("countDead").textContent=characterRecords.filter(x=>x.fate==="dead").length;
-$("countCampaigns").textContent=allCampaigns.length;
-$("countPlayers").textContent=new Set(characterRecords.map(x=>x.player).filter(x=>x!=="NPC"&&x!=="Nie podano")).size;
+/*
+ * Tagi graczy są osobnym rejestrem. Na start każdy gracz istnieje
+ * jako własny tag; później można tu dopisywać kolejne tagi gracza
+ * bez modyfikowania postaci.
+ */
+const playerTagRegistry={};
+for(const record of records){
+  for(const player of record.tags.player){
+    if(!playerTagRegistry[player]){
+      playerTagRegistry[player]=[];
+    }
+  }
+}
 
-function tagMarkup(tags,kind){
-  return tags.map(tag=>'<span class="tag tag-'+kind+'">'+tag+'</span>').join("");
+/* Alias danych do dalszego rozszerzania archiwum. */
+const characterRegistry=records;
+
+const $=id=>document.getElementById(id);
+const norm=s=>String(s??"")
+  .toLocaleLowerCase("pl-PL")
+  .normalize("NFD")
+  .replace(/[\u0300-\u036f]/g,"");
+
+const grid=$("hallGrid");
+const search=$("search");
+const filters={
+  campaign:$("campaignFilter"),
+  class:$("classFilter"),
+  fate:$("fateFilter"),
+  player:$("playerFilter")
+};
+
+function allTags(type){
+  return [...new Set(characterRegistry.flatMap(record=>record.tags[type]||[]))]
+    .filter(Boolean)
+    .sort((a,b)=>a.localeCompare(b,"pl"));
+}
+
+function populateFilter(select,type,emptyLabel){
+  select.innerHTML="";
+  const first=document.createElement("option");
+  first.value="";
+  first.textContent=emptyLabel;
+  select.append(first);
+
+  for(const tag of allTags(type)){
+    const option=document.createElement("option");
+    option.value=tag;
+    option.textContent=tag;
+    select.append(option);
+  }
+}
+
+populateFilter(filters.campaign,"campaign","Wszystkie kampanie");
+populateFilter(filters.class,"class","Wszystkie klasy");
+populateFilter(filters.fate,"fate","Wszystkie losy");
+populateFilter(filters.player,"player","Wszyscy gracze");
+
+$("countAll").textContent=characterRegistry.length;
+$("countDead").textContent=characterRegistry.filter(x=>x.tags.fate.includes("dead")).length;
+$("countCampaigns").textContent=allTags("campaign").length;
+$("countPlayers").textContent=allTags("player").filter(x=>x!=="NPC"&&x!=="Nie podano").length;
+
+function tagMarkup(type,tags){
+  return (tags||[]).map(tag=>
+    '<span class="tag tag-'+type+'">'+tag+'</span>'
+  ).join("");
+}
+
+function matches(record){
+  const query=norm(search.value.trim());
+  if(query){
+    const searchable=[
+      record.name,
+      record.description,
+      ...Object.values(record.tags).flat()
+    ].join(" ");
+    if(!norm(searchable).includes(query)) return false;
+  }
+
+  for(const type of Object.keys(filters)){
+    const value=filters[type].value;
+    if(value && !record.tags[type].includes(value)) return false;
+  }
+
+  return true;
 }
 
 function render(){
-  const q=norm(search.value.trim()), campaign=cf.value, fate=ff.value, cls=clf.value;
-  const rows=characterRecords.filter(x=>
-    (!q||norm([x.name,x.player,...x.campaigns,...x.classes,x.description].join(" ")).includes(q)) &&
-    (!campaign||x.campaigns.includes(campaign)) &&
-    (!fate||x.fate===fate) &&
-    (!cls||x.classes.includes(cls))
-  );
-  $("resultCount").textContent=rows.length+" / "+characterRecords.length;
-  grid.innerHTML=rows.map(x=>'<article class="card" data-fate="'+x.fate+'">'+
-    '<div class="portrait"><img src="'+x.path+'" alt="'+x.name+'" loading="lazy" onerror="this.remove()"></div>'+
-    '<div class="card-body"><h3>'+x.name+'</h3>'+
-    '<div class="meta"><div><b>Gracz</b><span>'+x.player+'</span></div>'+
-    '<div><b>Kampanie</b><span class="tags">'+tagMarkup(x.campaigns,"campaign")+'</span></div>'+
-    '<div><b>Klasy</b><span class="tags">'+tagMarkup(x.classes,"class")+'</span></div>'+
-    '</div><div class="fate"><strong>'+labels[x.fate]+'</strong><br>'+x.description+'</div></div></article>').join("");
+  const rows=characterRegistry.filter(matches);
+
+  $("resultCount").textContent=rows.length+" / "+characterRegistry.length;
+
+  grid.innerHTML=rows.map(record=>{
+    const fate=record.tags.fate[0]||"unknown";
+
+    return '<article class="card" data-fate="'+fate+'">'+
+      '<div class="portrait">'+
+        '<img src="'+record.portrait+'" alt="'+record.name+'" loading="lazy" onerror="this.remove()">'+
+      '</div>'+
+      '<div class="card-body">'+
+        '<h3>'+record.name+'</h3>'+
+        '<div class="meta">'+
+          '<div><b>Tagi kampanii</b><span class="tags">'+tagMarkup("campaign",record.tags.campaign)+'</span></div>'+
+          '<div><b>Tagi klasy</b><span class="tags">'+tagMarkup("class",record.tags.class)+'</span></div>'+
+          '<div><b>Tagi losu</b><span class="tags">'+tagMarkup("fate",record.tags.fate)+'</span></div>'+
+          '<div><b>Tagi gracza</b><span class="tags">'+tagMarkup("player",record.tags.player)+'</span></div>'+
+        '</div>'+
+        '<div class="fate"><strong>'+labels[fate]+'</strong><br>'+record.description+'</div>'+
+      '</div>'+
+    '</article>';
+  }).join("");
+
   $("empty").hidden=rows.length!==0;
 }
-[search,cf,ff,clf].forEach(el=>el.addEventListener("input",render));
-$("clearFilters").addEventListener("click",()=>{search.value="";cf.value="";ff.value="";clf.value="";render()});
+
+[search,...Object.values(filters)].forEach(el=>el.addEventListener("input",render));
+
+$("clearFilters").addEventListener("click",()=>{
+  search.value="";
+  for(const select of Object.values(filters)) select.value="";
+  render();
+});
+
 render();
