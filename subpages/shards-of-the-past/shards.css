@@ -84,3 +84,22 @@
 .shards-links,.shards-links a,.shards-nav .campaign-pdf,.shards-nav .site-home-button{position:relative!important;z-index:10002!important}
 .scanlines{z-index:100!important}
 .shards-hero,.subpage-hero{z-index:1}
+
+/* FINAL NAVIGATION FIX: campaign-common disables pointer events on campaign navs. */
+.shards-nav,
+.shards-nav .shards-nav-inner,
+.shards-nav .shards-nav-meta,
+.shards-nav .site-home-button,
+.shards-nav .shards-links,
+.shards-nav .shards-links a,
+.shards-nav .campaign-pdf{
+  pointer-events:auto!important;
+}
+.shards-nav{
+  cursor:default;
+}
+.shards-nav .site-home-button,
+.shards-nav .shards-links a,
+.shards-nav .campaign-pdf{
+  cursor:pointer!important;
+}
