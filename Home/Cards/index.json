@@ -7,13 +7,6 @@
     "link": "../../subpages/assault-on-castle-blackrose/"
   },
   {
-    "name": "character-ayla.txt",
-    "title": "Ayla Brokengulf",
-    "tag": "Postać",
-    "graphic": "../Graphics/ayla.webp",
-    "link": "../../subpages/character-ayla/"
-  },
-  {
     "name": "barber-of-silverymoon.txt",
     "title": "Barber of Silverymoon",
     "tag": "Zamknięta Kampania",
@@ -33,6 +26,20 @@
     "tag": "Archiwum",
     "graphic": "https://cdn.midjourney.com/dd7584b6-fb31-4a57-ac17-ce1f8a1c5a3e/0_2.png",
     "link": "../../subpages/cemetery-of-dragons/"
+  },
+  {
+    "name": "character-ayla.txt",
+    "title": "Ayla Brokengulf",
+    "tag": "Postać",
+    "graphic": "../Graphics/ayla.webp",
+    "link": "../../subpages/character-ayla/"
+  },
+  {
+    "name": "character-shiney.txt",
+    "title": "Shiney, Różowa Paladynka",
+    "tag": "Postać",
+    "graphic": "../Graphics/Shiney.png",
+    "link": "../../subpages/character-shiney/"
   },
   {
     "name": "charactermancer.txt",
@@ -266,13 +273,6 @@
     "link": "../../subpages/shards-of-the-past/"
   },
   {
-    "name": "character-shiney.txt",
-    "title": "Shiney, Różowa Paladynka",
-    "tag": "Postać",
-    "graphic": "../Graphics/Shiney.png",
-    "link": "../../subpages/character-shiney/"
-  },
-  {
     "name": "sons-of-azalin.txt",
     "title": "Sons of Azalin",
     "tag": "Zamknięta Kampania",
@@ -294,18 +294,18 @@
     "link": "../../subpages/the-sunless-citadel/"
   },
   {
-    "name": "tower-of-the-veiled-star.txt",
-    "title": "The Tower of the Veiled Star",
-    "tag": "Archiwum",
-    "graphic": "https://i.imgur.com/T5JE3IL.jpeg",
-    "link": "../../subpages/tower-of-the-veiled-star/"
-  },
-  {
     "name": "tomb-of-annihilation.txt",
     "title": "Tomb of Annihilation",
     "tag": "Zamknięta Kampania",
     "graphic": "../Graphics/tomb-of-annihilation.jpg",
     "link": "../../subpages/tomb-of-annihilation/"
+  },
+  {
+    "name": "tower-of-the-veiled-star.txt",
+    "title": "The Tower of the Veiled Star",
+    "tag": "Archiwum",
+    "graphic": "https://i.imgur.com/T5JE3IL.jpeg",
+    "link": "../../subpages/tower-of-the-veiled-star/"
   },
   {
     "name": "trouble-below-the-mountains-of-ash.txt",
