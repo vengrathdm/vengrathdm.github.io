@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Almendra:ital,wght@0,400;0,600;0,700;1,400&family=Almendra+SC&family=Cinzel:wght@500;600;700&display=swap');
 
 :root {
+  --snow: #f3f5ed;
+  --ice: #c9e4e5;
+  --frost: #91b8bd;
+  --night: #0d1514;
+  --fir: #183329;
+  --holly: #526b53;
+  --ash: #a9aa9a;
+  --silver: #d9ded7;
   --bog: #171b16;
   --peat: #22271f;
   --moss: #596f4f;
@@ -10,10 +18,10 @@
   --ink: #302f25;
   --gold: #beb4a0;
   --mist: #5f959b;
-  --mist-pale: #b9e1e4;
+  --mist-pale: #d8f0f0;
   --fomor: #849e58;
   --blood: #7a3936;
-  --line: rgba(190,180,160,.35);
+  --line: rgba(201,228,229,.28);
   --display: "Uncial Antiqua", serif;
   --chapter: "Almendra SC", serif;
   --body: "Almendra", serif;
@@ -28,9 +36,9 @@ body {
   margin: 0;
   color: var(--vellum);
   background:
-    radial-gradient(circle at 50% -10%, rgba(95,149,155,.18), transparent 38rem),
-    radial-gradient(circle at 10% 35%, rgba(89,115,83,.12), transparent 30rem),
-    linear-gradient(135deg, #11150f 0%, #1b2018 48%, #10140f 100%);
+    radial-gradient(circle at 50% -15%, rgba(201,228,229,.15), transparent 34rem),
+    radial-gradient(circle at 12% 35%, rgba(82,107,83,.15), transparent 30rem),
+    linear-gradient(135deg, #0a1110 0%, #14211d 48%, #0a100f 100%);
   font-family: var(--body);
   font-size: 18px;
   line-height: 1.65;
@@ -44,9 +52,9 @@ body::before {
   pointer-events: none;
   opacity: .24;
   background-image:
-    radial-gradient(rgba(232,228,210,.08) 1px, transparent 1px),
-    radial-gradient(rgba(0,0,0,.22) 1px, transparent 1px);
-  background-size: 23px 23px, 37px 37px;
+    radial-gradient(rgba(216,240,240,.12) 1px, transparent 1px),
+    linear-gradient(120deg, transparent 48%, rgba(216,240,240,.035) 49%, transparent 50%);
+  background-size: 29px 29px, 97px 97px;
   background-position: 0 0, 11px 7px;
   mix-blend-mode: overlay;
 }
@@ -62,8 +70,8 @@ a { color: inherit; }
   overflow: hidden;
   border-bottom: 1px solid var(--line);
   background:
-    linear-gradient(180deg, rgba(12,17,12,.25), rgba(12,17,12,.92)),
-    linear-gradient(90deg, rgba(12,17,12,.95) 0%, rgba(12,17,12,.35) 46%, rgba(12,17,12,.85) 100%),
+    linear-gradient(180deg, rgba(8,17,16,.08), rgba(8,15,14,.9)),
+    linear-gradient(90deg, rgba(7,14,13,.94) 0%, rgba(9,25,23,.32) 48%, rgba(7,14,13,.9) 100%),
     url('../../Home/Graphics/echtra-midst-the-sidhe.jpg') center/cover;
 }
 
@@ -73,7 +81,7 @@ a { color: inherit; }
   left: 50%;
   top: 8%;
   transform: translateX(-50%);
-  color: rgba(190,180,160,.7);
+  color: rgba(216,240,240,.75);
   font-family: var(--display);
   font-size: clamp(1rem, 2vw, 1.6rem);
   letter-spacing: .8em;
@@ -491,4 +499,220 @@ footer {
   .step:last-child { border-bottom: 0; }
   .party { grid-template-columns: 1fr; }
   .section { padding: 3.5rem 0; }
+}
+
+
+/* WINTER LAYER */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 30;
+  opacity: .12;
+  background:
+    linear-gradient(115deg, transparent 48%, rgba(255,255,255,.12) 49%, transparent 50%),
+    linear-gradient(65deg, transparent 48%, rgba(255,255,255,.08) 49%, transparent 50%);
+  background-size: 83px 83px, 121px 121px;
+}
+
+.hero {
+  box-shadow: inset 0 -80px 100px rgba(8,15,14,.85);
+}
+
+.hero::before {
+  content: "᚛ ᚉ ᚐ ᚔ ᚂ ᚂ ᚓ ᚐ ᚉ ᚇ   ᚉ ᚐ ᚔ ᚂ ᚂ ᚓ ᚐ ᚉ ᚇ ᚜";
+  text-shadow: 0 0 24px rgba(201,228,229,.22);
+}
+
+.hero-inner::before,
+.hero-inner::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: min(24vw, 260px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,228,229,.55));
+}
+
+.hero-inner::before { right: calc(100% - 40px); }
+.hero-inner::after { left: calc(100% - 40px); transform: rotate(180deg); }
+
+.hero h1 {
+  color: #f0f3eb;
+  text-shadow: 0 4px 0 rgba(11,30,25,.8), 0 0 55px rgba(201,228,229,.16), 0 20px 55px rgba(0,0,0,.9);
+}
+
+.hero h1::after {
+  color: var(--ice);
+  text-shadow: 0 0 32px rgba(145,184,189,.7);
+}
+
+.hero-rune {
+  color: var(--ice);
+  text-shadow: 0 0 18px rgba(201,228,229,.55);
+}
+
+.section::before {
+  background: var(--night);
+  color: var(--ice);
+}
+
+.seal {
+  border-color: rgba(201,228,229,.48);
+  background:
+    radial-gradient(circle, rgba(201,228,229,.15), transparent 60%),
+    radial-gradient(circle, transparent 47%, rgba(201,228,229,.05) 48%, transparent 50%);
+  box-shadow: 0 0 70px rgba(145,184,189,.08), inset 0 0 60px rgba(201,228,229,.05);
+}
+
+.seal::before,
+.seal::after {
+  border-color: rgba(201,228,229,.34);
+}
+
+.chapter-card {
+  background:
+    linear-gradient(135deg, rgba(243,245,237,.07), rgba(82,107,83,.1)),
+    rgba(10,20,18,.82);
+  border-color: rgba(201,228,229,.3);
+}
+
+.breaking {
+  border-color: rgba(145,184,189,.6);
+  background:
+    radial-gradient(circle at 80% 15%, rgba(201,228,229,.18), transparent 31%),
+    linear-gradient(135deg, rgba(82,107,83,.13), transparent 65%),
+    rgba(11,25,22,.9);
+}
+
+.breaking::after {
+  content: "❄";
+  position: absolute;
+  right: 1.2rem;
+  bottom: .7rem;
+  color: rgba(201,228,229,.12);
+  font-size: 7rem;
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,228,229,.55), transparent);
+}
+
+.step::before {
+  border-color: var(--ice);
+  box-shadow: 0 0 12px rgba(201,228,229,.3);
+}
+
+.step:last-child {
+  background: linear-gradient(180deg, rgba(201,228,229,.08), transparent);
+}
+
+.character {
+  background:
+    linear-gradient(135deg, rgba(201,228,229,.04), transparent 45%),
+    #111d1a;
+}
+
+.character:hover {
+  background:
+    linear-gradient(135deg, rgba(201,228,229,.09), transparent 45%),
+    #183027;
+}
+
+.status {
+  border-color: rgba(145,184,189,.45);
+  background: rgba(145,184,189,.07);
+}
+
+.frost-divider {
+  height: 55px;
+  margin: 0 auto;
+  max-width: 720px;
+  opacity: .55;
+  background:
+    linear-gradient(135deg, transparent 49%, rgba(201,228,229,.65) 50%, transparent 51%) left center/18px 18px repeat-x;
+}
+
+.sessions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 1px;
+  background: rgba(201,228,229,.22);
+  border: 1px solid rgba(201,228,229,.22);
+}
+
+.session {
+  position: relative;
+  display: grid;
+  grid-template-columns: 62px 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  min-height: 92px;
+  padding: 1rem 1.15rem;
+  background: rgba(12,24,21,.92);
+  text-decoration: none;
+  transition: .25s ease;
+}
+
+.session:hover {
+  background: rgba(25,48,41,.95);
+  transform: translateX(4px);
+}
+
+.session-number {
+  font-family: var(--display);
+  font-size: 1.8rem;
+  color: rgba(201,228,229,.7);
+  text-align: center;
+}
+
+.session-title {
+  font-family: var(--body);
+  font-weight: 600;
+  color: var(--vellum);
+}
+
+.session-meta {
+  display: block;
+  font-family: var(--accent);
+  font-size: .56rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--frost);
+  margin-bottom: .25rem;
+}
+
+.session-arrow {
+  color: var(--ice);
+  font-size: 1.2rem;
+}
+
+.archive-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.archive-head p {
+  max-width: 480px;
+  color: rgba(232,228,210,.62);
+}
+
+@media (max-width: 760px) {
+  .sessions { grid-template-columns: 1fr; }
+  .session { grid-template-columns: 48px 1fr auto; }
+  .hero-inner::before, .hero-inner::after { display: none; }
+  .archive-head { display: block; }
 }
