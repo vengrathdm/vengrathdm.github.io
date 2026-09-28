@@ -178,6 +178,23 @@ for(const record of records){
   }
 }
 
+/* CoC 7e — investigatorzy. */
+const COC7E_INVESTIGATORS=new Set([
+  "Mattia",
+  "Samuel Wokulski",
+  "Vincent Campbell",
+  "Lorenzo Dal",
+  "Audrey Fulton",
+  "Dan Whelan",
+  "Patty Graham"
+]);
+for(const record of records){
+  if(COC7E_INVESTIGATORS.has(record.name)){
+    record.tags.class=["CoC7e Investigator"];
+    record.tags.race=["CoC7e Investigator"];
+  }
+}
+
 /* Rasa Cala była zgłoszona jako HalfElf; zachowujemy ją również przy ewentualnych wariantach aliasu gracza. */
 for(const record of records){
   if(record.name==="Cal" && canonicalPlayer(record.tags.player[0])==="lexonis"){
