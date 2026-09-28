@@ -59,8 +59,26 @@ const TAG_TYPES={
 const records=[];
 const identity=new Map();
 
+const PLAYER_ALIASES={
+  "wpoluwiatr":"wpoluwiatr",
+  "Wpoluwiatr":"wpoluwiatr",
+  "lexonis":"lexonis",
+  "Lexonis":"lexonis",
+  "Jeesoo":"Jeesso",
+  "Jeesso":"Jeesso",
+  "Jeeso":"Jeesso",
+  "Zuzanna":"Zuza",
+  "Zuzia":"Zuza"
+};
+
+function canonicalPlayer(value){
+  const raw=String(value??"").trim();
+  return PLAYER_ALIASES[raw]||raw;
+}
+
 function addLegacyCharacter(row){
-  const [name,player,campaign,portrait,fate,description]=row;
+  const [name,rawPlayer,campaign,portrait,fate,description]=row;
+  const player=canonicalPlayer(rawPlayer);
   const key=name+"\u0000"+player;
   let record=identity.get(key);
 
@@ -98,7 +116,12 @@ function addLegacyCharacter(row){
   }
 }
 
-for(const row of characters) addLegacyCharacter(row);
+for(const row of characters) addLegacyCharacter(row);\nfor(const record of records){
+  if(record.name==="Pchełka" || record.name==="Polter von Geist"){
+    record.tags.player=["Zuza"];
+  }
+}
+
 
 /*
  * Tagi graczy są osobnym rejestrem. Na start każdy gracz istnieje
