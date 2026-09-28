@@ -3,54 +3,51 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Sala Chwały Vengrath — archiwum postaci, które przeszły przez kampanie.">
-<title>Necropolis — Sala Chwały / Vengrath</title>
+<title>VENGRATH / MEMORY MACHINE 002</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./chwala.css">
 </head>
 <body>
-<div class="noise"></div>
+<div class="scanlines"></div><div class="noise"></div><div class="grid"></div>
 <header class="hero" id="top">
-  <nav><a href="../../" class="back">← VENGRATH</a><span class="edition">NEKROPOLIA / ARCHIWUM 002</span></nav>
-  <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
-  <div class="hero-copy">
-    <span class="eyebrow">VENGRATH NECROPOLIS · THE HALL BELOW</span>
-    <h1>OGRÓD<br><i>UMARŁYCH</i></h1>
-    <p>Między mogiłami zapisano tych, którzy przeszli przez stoły Vengrath. Pod kamieniem nie ma hierarchii. Są tylko imiona, losy i ślady pozostawione przez historie.</p>
-  </div>
-    <div class="hero-bottom"><span>VENGRATH / NECROPOLIS</span><a href="#catacombs">ZEJDŹ DO KATAKUMB ↓</a></div>
-
+<nav><a href="../../" class="back">VENGRATH<span>↗</span></a><span>MEMORY MACHINE / 002</span><span class="live"><i></i> ARCHIVE ONLINE</span></nav>
+<div class="hero-stage">
+  <div class="orbital orbital-1"></div><div class="orbital orbital-2"></div><div class="orbital orbital-3"></div>
+  <div class="machine-label">MEMORY<br><b>002</b></div>
+  <div class="hero-title"><small>ALL STORIES ARE DATA</small><h1>THE<br><em>MEMORY</em><br>MACHINE</h1><p>Nie przechowujemy pomników. Przechowujemy ślady.</p></div>
+  <div class="side-code">VGR_002<br>STATUS: ACTIVE<br>MEMORY: OPEN<br>INDEX: ALL</div>
+</div>
+<div class="hero-ticker"><span>CHARACTERS — CAMPAIGNS — PLAYERS — FATES — CHARACTERS — CAMPAIGNS — PLAYERS — FATES — </span></div>
+<div class="hero-bottom"><span>INSERT STORY / ↓</span><a href="#registry">ACCESS MEMORY</a></div>
 </header>
-
 <main>
-  <section class="manifest cemetery-intro">
-    <div class="manifest-title"><span>01 / CMENTARZ</span><h2>Każdy nagrobek<br><em>pamięta historię.</em></h2></div>
-    <div class="manifest-copy"><p>To nie jest lista zwycięzców. To nekropolia wszystkich postaci — tych, które poległy, tych, które odeszły, i tych, których historia wciąż trwa.</p><div class="descent" aria-hidden="true"><span></span><span></span><span></span><span></span><b>↓ KATAKUMBY</b></div><div class="signature">— VENGRATH NECROPOLIS</div></div>
-  </section>
-
-  <section class="stats crypt-stats" aria-label="Statystyki nekropolii">
-    <div class="stat"><span>POSTACIE</span><b id="countAll">—</b></div>
-    <div class="stat"><span>POLEGLI</span><b id="countDead">—</b></div>
-    <div class="stat"><span>KAMPANIE</span><b id="countCampaigns">—</b></div>
-    <div class="stat"><span>GRACZE</span><b id="countPlayers">—</b></div>
-  </section>
-
-  <section class="registry" id="catacombs">
-    <div class="registry-head"><div><span>02 / PODZIEMIA</span><h2>Katakumby</h2><p class="registry-sub">Imiona wyryte w kamieniu. Otwórz rejestr i zejdź głębiej.</p></div><span class="result" id="resultCount">—</span></div>
-    <div class="controls">
-      <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Szukaj imienia, gracza, tagu kampanii lub klasy…" autocomplete="off"></label>
-      <div class="filters">
-        <label><small>KAMPANIA</small><select id="campaignFilter"><option value="">Wszystkie kampanie</option></select></label>
-        <label><small>KLASA</small><select id="classFilter"><option value="">Wszystkie klasy</option></select></label>
-        <label><small>LOS</small><select id="fateFilter"><option value="">Wszystkie losy</option><option value="alive">Żyje / los otwarty</option><option value="dead">Poległa / poległy</option><option value="finished">Historia zakończona</option><option value="unknown">Nieustalony</option></select></label>
-        <label><small>GRACZ</small><select id="playerFilter"><option value="">Wszyscy gracze</option></select></label>
-        <button id="clearFilters">RESET</button>
-      </div>
-    </div>
-    <div class="crypt-entrance" aria-hidden="true"><div class="arch"><i></i><i></i><i></i></div><span>KOMORA PAMIĘCI</span></div><div id="hallGrid" class="hall-grid" aria-live="polite"></div>
-    <div id="empty" class="empty" hidden>NIE ZNALEZIONO WPISÓW / ZMIEŃ KRYTERIA</div>
-  </section>
+<section class="manifest">
+  <div class="manifest-visual"><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><div class="core">V<br>G</div><span class="orbit-text">EVERY NAME MATTERS · EVERY NAME MATTERS ·</span></div>
+  <div class="manifest-copy"><small>01 / SYSTEM PURPOSE</small><h2>Nie jesteś<br>w <i>archiwum.</i><br>Jesteś w maszynie.</h2><p>Sala Chwały zbiera postacie z różnych stołów w jedno archiwum. Żyjący, polegli, ci których historie dobiegły końca i ci, których los pozostawiono otwarty.</p><b>VENGRATH MEMORY SYSTEM / NODE 002</b></div>
+</section>
+<section class="stats" aria-label="Statystyki archiwum">
+<div class="stat"><small>NODE 01 / POSTACIE</small><strong id="countAll">—</strong><span>MEMORIES</span></div>
+<div class="stat"><small>NODE 02 / POLEGLI</small><strong id="countDead">—</strong><span>LOST SIGNALS</span></div>
+<div class="stat"><small>NODE 03 / KAMPANIE</small><strong id="countCampaigns">—</strong><span>WORLDS</span></div>
+<div class="stat"><small>NODE 04 / GRACZE</small><strong id="countPlayers">—</strong><span>AUTHORS</span></div>
+</section>
+<section class="registry" id="registry">
+<div class="registry-top"><div><small>02 / MEMORY BANK</small><h2>RECALL<br><em>EVERYONE.</em></h2></div><div class="result-box"><span id="resultCount">—</span><i>RESULTS</i></div></div>
+<div class="controls">
+<label class="search"><span>QUERY //</span><input id="search" type="search" placeholder="imię / gracz / kampania / klasa / tag…" autocomplete="off"><b>↵</b></label>
+<div class="filters">
+<label><small>CAMPAIGN</small><select id="campaignFilter"><option value="">Wszystkie kampanie</option></select></label>
+<label><small>CLASS</small><select id="classFilter"><option value="">Wszystkie klasy</option></select></label>
+<label><small>FATE</small><select id="fateFilter"><option value="">Wszystkie losy</option><option value="alive">Żyje / los otwarty</option><option value="dead">Poległa / poległy</option><option value="finished">Historia zakończona</option><option value="unknown">Nieustalony</option></select></label>
+<label><small>PLAYER</small><select id="playerFilter"><option value="">Wszyscy gracze</option></select></label>
+<button id="clearFilters">PURGE / RESET</button>
+</div></div>
+<div class="memory-gate" aria-hidden="true"><span>MEMORY BANK</span><i></i><b>↓</b><i></i><span>OPEN</span></div>
+<div id="hallGrid" class="hall-grid" aria-live="polite"></div>
+<div id="empty" class="empty" hidden>MEMORY NOT FOUND / ALTER QUERY</div>
+</section>
 </main>
-<footer><a href="#top">↑ WYJDŹ Z KATAKUMB</a><span>VENGRATH NECROPOLIS / ARCHIVE II</span><span>NO STORY IS BURIED</span></footer>
+<footer><a href="#top">↑ REBOOT VIEW</a><span>VENGRATH / MEMORY MACHINE 002</span><span>NOTHING IS FORGOTTEN</span></footer>
 <script src="./chwala.js"></script>
 </body></html>
