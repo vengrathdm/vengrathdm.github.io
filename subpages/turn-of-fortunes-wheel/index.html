@@ -1,140 +1,32 @@
 <!doctype html>
 <html lang="pl">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>
-      Turn of Fortune's Wheel — Vengrath
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../campaign-common.css">
-  </head>
-  <body class="campaign-page" data-campaign-theme="turn-of-fortunes-wheel">
-    <header class="hero">
-      <div class="hero-inner">
-        <div class="kicker">
-          Planescape · Sigil i Outlands
-        </div>
-        <h1>
-          Turn of Fortune's Wheel
-        </h1>
-        <p class="lead">
-          Planarna przygoda, w której rzeczywistość przestaje być stabilna, a bohaterowie ruszają przez Sigil i Outlands w poszukiwaniu odpowiedzi.
-        </p>
-      </div>
-    </header>
-    <nav class="nav">
-      <div class="nav-inner">
-        <a class="site-home-button" href="https://vengrathdm.github.io/">
-          <img src="../../Home/Graphics/mg-logo.png" alt="MG">
-          <span>
-            VENGRATH
-          </span>
-        </a>
-        <a class="button youtube" href="https://www.youtube.com/playlist?list=PL-Lm83myvu0iF90tWn8K2VemjLk5gbGLq" target="_blank" rel="noopener" class="campaign-playlist">
-          PLAYLISTA
-        </a>
-      </div>
-    </nav>
-    <main>
-      <section class="intro">
-        <article class="panel">
-          <h2>
-            O kampanii
-          </h2>
-          <p>
-            Turn of Fortune's Wheel to wyprawa przez wieloświat Planescape. Punktem wyjścia jest Sigil i niezwykły problem związany z samą naturą bohaterów; dalsza podróż prowadzi przez różne zakątki Outlands i kolejne planar­ne zagadki.
-          </p>
-          <div class="actions">
-            <a class="button youtube" href="https://www.youtube.com/playlist?list=PL-Lm83myvu0iF90tWn8K2VemjLk5gbGLq" target="_blank" rel="noopener" class="campaign-playlist">
-              PLAYLISTA
-            </a>
-          </div>
-        </article>
-        <aside class="panel">
-          <div class="stats">
-            <div class="stat">
-              <strong>
-                Sigil
-              </strong>
-              <span>
-                Miasto Drzwi i punkt wyjścia
-              </span>
-            </div>
-            <div class="stat">
-              <strong>
-                Outlands
-              </strong>
-              <span>
-                planarna przestrzeń podróży
-              </span>
-            </div>
-            <div class="stat">
-              <strong>
-                Reality glitch
-              </strong>
-              <span>
-                rzeczywistość ulega zaburzeniom
-              </span>
-            </div>
-            <div class="stat">
-              <strong>
-                Kampania ukończona
-              </strong>
-              <span>
-                pełna kampania rozegrana
-              </span>
-            </div>
-          </div>
-        </aside>
-      </section>
-      <section class="panel" class="campaign-section">
-        <h2>
-          Nasza drużyna
-        </h2>
-        <p>
-          Kampania została przez nas ukończona. Poniżej zapis graczy i postaci z tej rozgrywki.
-        </p>
-        <div class="players">
-          <div class="player">
-            <strong>
-              Viking
-            </strong>
-            <span>
-              jako Varok Nightshade
-            </span>
-          </div>
-          <div class="player">
-            <strong>
-              Rezus
-            </strong>
-            <span>
-              jako Roderick
-            </span>
-          </div>
-          <div class="player">
-            <strong>
-              Lexonis
-            </strong>
-            <span>
-              jako Kelan
-            </span>
-          </div>
-          <div class="player">
-            <strong>
-              Koksuvi
-            </strong>
-            <span>
-              jako Oorim
-            </span>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer>
-      Archiwum kampanii Vengrath · bez spoilerów fabularnych
-    </footer>
-  </body>
-</html>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Turn of Fortune's Wheel — archiwum ukończonej kampanii Vengrath.">
+<title>Turn of Fortune's Wheel — Vengrath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=DM+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fortune.css">
+</head>
+<body>
+<audio id="fortuneTheme" src="./turn-of-the-wheel.mp3" loop preload="auto" playsinline></audio>
+<button class="audio-toggle" id="fortuneAudioToggle" type="button" aria-label="Włącz muzykę" aria-pressed="false" title="Włącz muzykę">
+<svg class="audio-icon muted" viewBox="0 0 48 48" aria-hidden="true"><path d="M7 19h8l10-8v26l-10-8H7z"/><path d="M31 18l10 12M41 18L31 30"/></svg>
+<svg class="audio-icon playing" viewBox="0 0 48 48" aria-hidden="true"><path d="M7 19h8l10-8v26l-10-8H7z"/><path d="M32 18c3 3 3 9 0 12M37 13c6 6 6 16 0 22"/></svg>
+</button>
+<header class="hero" id="gora">
+<nav><a class="home" href="https://vengrathdm.github.io/">VENGRATH</a><div class="navlinks"><a href="#kampania">KAMPANIA</a><a href="#druzyna">DRUŻYNA</a><a href="#kronika">KRONIKA</a><a href="https://www.youtube.com/playlist?list=PL-Lm83myvu0iF90tWn8K2VemjLk5gbGLq" target="_blank" rel="noopener">YOUTUBE ↗</a></div></nav>
+<div class="hero-grid"><div class="hero-copy"><div class="eyebrow">PLANESCAPE · ARCHIWUM KAMPANII · VENGRATH</div><h1>TURN OF<br><span>FORTUNE'S WHEEL</span></h1><p>Wieloświat staje się stołem do gry. Sigil rozdaje karty, Rubieże obracają koło, a stawką jest odzyskanie własnego miejsca w rzeczywistości.</p><div class="chips"><span>14 SESJI</span><span>KAMPANIA ZAKOŃCZONA</span><span class="win">ZWYCIĘSTWO</span></div></div><div class="wheel" aria-hidden="true"><div class="wheel-ring"><div class="wheel-center">FORTUNA<small>VENGRATH</small></div></div></div></div>
+</header>
+<main>
+<section class="casino-section" id="kampania"><div class="section-no">01</div><div class="section-head"><span>AKTA STOŁU</span><h2>Kampania</h2></div><div class="two-col"><article class="card"><div class="card-suit">♦</div><h3>Koło się obraca</h3><p>Kampania osadzona w wieloświecie Planescape. Rozpoczyna się w Kostnicy w Sigil, a dalsza droga prowadzi przez kolejne bramy i niezwykłe miejsca Rubieży.</p><p>To zapis naszej ukończonej rozgrywki — od pierwszej sesji aż po finał i odkrycie sekretów Koła Fortuny.</p></article><aside class="ledger"><div><span>STATUS</span><strong>ZAKOŃCZONA</strong></div><div><span>WYNIK</span><strong class="gold">ZWYCIĘSTWO</strong></div><div><span>SESJE</span><strong>14</strong></div><div><span>GRACZE</span><strong>5</strong></div><div><span>ŚWIAT</span><strong>PLANESCAPE</strong></div></aside></div></section>
+<section class="casino-section" id="druzyna"><div class="section-no">02</div><div class="section-head"><span>GRACZE PRZY STOLE</span><h2>Drużyna</h2><p>Pięć postaci, pięciu graczy. Portrety są ładowane z folderu <code>portrety-postaci</code>.</p></div><div class="players">
+<article class="player"><div class="portrait"><img src="./portrety-postaci/Oorim.png" alt="Oorim" onerror="this.closest('.portrait').classList.add('missing');this.remove()"><span>PORTRET<br>OORIM</span></div><div class="player-index">01</div><h3>Oorim</h3><p>koksuvi</p></article><article class="player"><div class="portrait"><img src="./portrety-postaci/Kelan.png" alt="Kelan" onerror="this.closest('.portrait').classList.add('missing');this.remove()"><span>PORTRET<br>KELAN</span></div><div class="player-index">02</div><h3>Kelan</h3><p>lexonis</p></article><article class="player"><div class="portrait"><img src="./portrety-postaci/Roderick.png" alt="Roderick" onerror="this.closest('.portrait').classList.add('missing');this.remove()"><span>PORTRET<br>RODERICK</span></div><div class="player-index">03</div><h3>Roderick</h3><p>rezus</p></article><article class="player"><div class="portrait"><img src="./portrety-postaci/Adria.png" alt="Adria" onerror="this.closest('.portrait').classList.add('missing');this.remove()"><span>PORTRET<br>ADRIA</span></div><div class="player-index">04</div><h3>Adria</h3><p>vissara</p></article><article class="player"><div class="portrait"><img src="./portrety-postaci/Varok Nightshade.png" alt="Varok Nightshade" onerror="this.closest('.portrait').classList.add('missing');this.remove()"><span>PORTRET<br>VAROK NIGHTSHADE</span></div><div class="player-index">05</div><h3>Varok Nightshade</h3><p>Viking</p></article>
+</div></section>
+<section class="casino-section" id="kronika"><div class="section-no">03</div><div class="section-head"><span>ZAPIS ROZGRYWKI</span><h2>Kronika sesji</h2><p>Pełny przebieg kampanii w kolejności rozegranych spotkań.</p></div><div class="sessions">
+<article class="session "><span class="chip">01</span><div><small>TURN OF FORTUNE'S WHEEL #01</small><h3>Kostnica Sigil</h3></div></article><article class="session "><span class="chip">02</span><div><small>TURN OF FORTUNE'S WHEEL #02</small><h3>Przestępcy w Multiversum!</h3></div></article><article class="session "><span class="chip">03</span><div><small>TURN OF FORTUNE'S WHEEL #03</small><h3>Koło Fortuny</h3></div></article><article class="session "><span class="chip">04</span><div><small>TURN OF FORTUNE'S WHEEL #04</small><h3>Automata</h3></div></article><article class="session "><span class="chip">05</span><div><small>TURN OF FORTUNE'S WHEEL #05</small><h3>Excelsior</h3></div></article><article class="session "><span class="chip">06</span><div><small>TURN OF FORTUNE'S WHEEL #06</small><h3>Faunel</h3></div></article><article class="session "><span class="chip">07</span><div><small>TURN OF FORTUNE'S WHEEL #07</small><h3>Glorium</h3></div></article><article class="session "><span class="chip">07</span><div><small>TURN OF FORTUNE'S WHEEL #07</small><h3>Bramy Carceri</h3></div></article><article class="session "><span class="chip">07</span><div><small>TURN OF FORTUNE'S WHEEL #07</small><h3>Ucieczka z Curst</h3></div></article><article class="session "><span class="chip">09</span><div><small>TURN OF FORTUNE'S WHEEL #09</small><h3>Mauzoleum</h3></div></article><article class="session "><span class="chip">10</span><div><small>TURN OF FORTUNE'S WHEEL #10</small><h3>MauzoleumP2</h3></div></article><article class="session "><span class="chip">11</span><div><small>TURN OF FORTUNE'S WHEEL #11</small><h3>Rigus</h3></div></article><article class="session "><span class="chip">12</span><div><small>TURN OF FORTUNE'S WHEEL #12</small><h3>Platynowy Szton</h3></div></article><article class="session "><span class="chip">13</span><div><small>TURN OF FORTUNE'S WHEEL #13</small><h3>Sekrety Koła Fortuny</h3></div></article><article class="session final"><span class="chip">14</span><div><small>TURN OF FORTUNE'S WHEEL #14</small><h3>Finał</h3></div><strong>ZWYCIĘSTWO</strong></article>
+</div><div class="victory"><span>♠</span><div><small>OSTATNIE ROZDANIE</small><h2>Kampania zakończona zwycięstwem.</h2></div><span>♦</span></div></section>
+</main>
+<footer><span>ARCHIWUM KAMPANII VENGRATH · TURN OF FORTUNE'S WHEEL</span><a href="#gora">POWRÓT NA GÓRĘ ↑</a></footer>
+<script src="fortune.js"></script>
+</body></html>
