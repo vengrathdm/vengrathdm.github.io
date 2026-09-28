@@ -265,6 +265,7 @@ function render(){
         '<div class="meta">'+
           '<div><b>Tagi kampanii</b><span class="tags">'+tagMarkup("campaign",record.tags.campaign)+'</span></div>'+
           '<div><b>Tagi klasy</b><span class="tags">'+tagMarkup("class",record.tags.class)+'</span></div>'+
+          '<div><b>Tagi rasy</b><span class="tags">'+tagMarkup("race",record.tags.race)+'</span></div>'+
           '<div><b>Tagi losu</b><span class="tags">'+tagMarkup("fate",record.tags.fate)+'</span></div>'+
           '<div><b>Tagi gracza</b><span class="tags">'+tagMarkup("player",record.tags.player)+'</span></div>'+
         '</div>'+
