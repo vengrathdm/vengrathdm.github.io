@@ -103,3 +103,7 @@
 .shards-nav .campaign-pdf{
   cursor:pointer!important;
 }
+
+
+.player-portrait{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;margin-top:22px;border:1px solid #244657;background:#050b10;filter:saturate(.9) contrast(1.04)}
+.team-grid article{overflow:hidden}
