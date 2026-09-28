@@ -2,55 +2,52 @@
 <html lang="pl">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Sala Chwały Vengrath — archiwum postaci, które przeszły przez kampanie.">
-<title>Darkest Archives — Vengrath</title>
+<meta name="description" content="Sala Chwały Vengrath — generatywna mapa postaci i historii.">
+<title>Vengrath / The Living Necropolis</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./chwala.css">
 </head>
 <body>
 <div class="noise"></div>
 <header class="hero" id="top">
-  <nav><a href="../../" class="back">← VENGRATH</a><span class="edition">DARK ARCHIVES / 003</span></nav>
-  <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
-  <div class="hero-copy">
-    <span class="eyebrow">VENGRATH · DARKEST ARCHIVES</span>
-    <h1>BEZDENNA<br><i>KRONIKA</i></h1>
-    <p>Każda wyprawa zostawia ślad. Każde imię ma swoją cenę. Otwórz archiwum i zobacz tych, którzy wrócili z mroku — oraz tych, których mrok zatrzymał.</p>
-  </div>
-    <div class="hero-bottom"><span>VENGRATH / DARKEST ARCHIVES</span><span>WE ARE THE LAST LIGHT · ↓</span></div>
-
+<nav><a href="../../" class="back">← VENGRATH</a><span>THE LIVING NECROPOLIS / 003</span><span class="edition">GENERATIVE ARCHIVE</span></nav>
+<div class="hero-map"><div class="moon"></div><div class="constellation c1"></div><div class="constellation c2"></div><div class="spire s1"></div><div class="spire s2"></div><div class="spire s3"></div></div>
+<div class="hero-copy">
+<span class="eyebrow">VENGRATH · GENERATIVE NECROPOLIS</span>
+<h1>OGRÓD<br><i>ŻYWYCH.</i></h1>
+<p>Nie ma tu siatki. Nie ma kolejności. Każde imię dostaje własne miejsce — wyliczone z historii, którą zostawiło za sobą.</p>
+</div>
+<div class="hero-equation">VORONOI × DELAUNAY<br><b>EVERY STORY NEEDS A PLACE</b></div>
+<div class="hero-bottom"><span>ARCHIVE / 003</span><a href="#archives">WEJDŹ DO NEKROPOLII ↓</a></div>
 </header>
-
 <main>
-  <section class="manifest">
-    <div class="manifest-title"><span>01 / THE ESTATE</span><h2>Nie każda wyprawa<br><em>kończy się powrotem.</em></h2></div>
-    <div class="manifest-copy"><p>To archiwum nie ocenia. Rejestruje. Bohaterów, poległych, tych którzy odeszli oraz tych, których los nadal pozostaje poza zasięgiem światła.</p><div class="torchline"><span></span><i>IN TENEBRIS LUX</i><span></span></div><div class="signature">— DARKEST ARCHIVES / VENGRATH</div></div>
-  </section>
-
-  <section class="stats" aria-label="Statystyki wypraw">
-    <div class="stat"><span>POSTACIE</span><b id="countAll">—</b></div>
-    <div class="stat"><span>POLEGLI</span><b id="countDead">—</b></div>
-    <div class="stat"><span>KAMPANIE</span><b id="countCampaigns">—</b></div>
-    <div class="stat"><span>GRACZE</span><b id="countPlayers">—</b></div>
-  </section>
-
-  <section class="registry" id="archives">
-    <div class="registry-head"><div><span>02 / THE RECORDS</span><h2>Rejestr wypraw</h2><p class="registry-sub">Zapiski są niekompletne. Atrament starzeje się szybciej niż pamięć.</p></div><span class="result" id="resultCount">—</span></div>
-    <div class="controls">
-      <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Szukaj imienia, gracza, tagu kampanii lub klasy…" autocomplete="off"></label>
-      <div class="filters">
-        <label><small>KAMPANIA</small><select id="campaignFilter"><option value="">Wszystkie kampanie</option></select></label>
-        <label><small>KLASA</small><select id="classFilter"><option value="">Wszystkie klasy</option></select></label>
-        <label><small>LOS</small><select id="fateFilter"><option value="">Wszystkie losy</option><option value="alive">Żyje / los otwarty</option><option value="dead">Poległa / poległy</option><option value="finished">Historia zakończona</option><option value="unknown">Nieustalony</option></select></label>
-        <label><small>GRACZ</small><select id="playerFilter"><option value="">Wszyscy gracze</option></select></label>
-        <button id="clearFilters">RESET</button>
-      </div>
-    </div>
-    <div class="ruin-divider" aria-hidden="true"><span></span><b>✦</b><span></span></div><div id="hallGrid" class="hall-grid" aria-live="polite"></div>
-    <div id="empty" class="empty" hidden>NIE ZNALEZIONO WPISÓW / ZMIEŃ KRYTERIA</div>
-  </section>
+<section class="manifest">
+<div class="manifest-art"><div class="diagram"><span></span><span></span><span></span><span></span><b>∞</b></div><small>THE GEOMETRY OF MEMORY</small></div>
+<div class="manifest-copy"><span>01 / ZASADA</span><h2>Cmentarz<br>który <em>myśli.</em></h2><p>Układ tej galerii jest generowany matematycznie. Punkty reprezentują postacie, triangulacja Delaunaya buduje ich sąsiedztwa, a diagram Voronoi dzieli przestrzeń na ich terytoria.</p><p class="tiny">Zmiana filtrów zmienia zbiór punktów. Zbiór punktów zmienia geometrię. Geometria zmienia mapę.</p><b>NO TWO VISITS NEED TO LOOK THE SAME</b></div>
+</section>
+<section class="stats" aria-label="Statystyki nekropolii">
+<div class="stat"><small>01 / POSTACIE</small><strong id="countAll">—</strong><i>POINTS</i></div>
+<div class="stat"><small>02 / POLEGLI</small><strong id="countDead">—</strong><i>FALLEN</i></div>
+<div class="stat"><small>03 / KAMPANIE</small><strong id="countCampaigns">—</strong><i>REALMS</i></div>
+<div class="stat"><small>04 / GRACZE</small><strong id="countPlayers">—</strong><i>KEEPERS</i></div>
+</section>
+<section class="registry" id="archives">
+<div class="registry-head"><div><span>02 / THE NECROPOLIS</span><h2>MAPA<br><em>PAMIĘCI</em></h2><p>Każdy punkt jest człowiekiem. Każda krawędź jest relacją przestrzeni. Każda komórka należy do jednego imienia.</p></div><span class="result" id="resultCount">—</span></div>
+<div class="controls">
+<label class="search"><span>⌕</span><input id="search" type="search" placeholder="Szukaj imienia, gracza, tagu kampanii lub klasy…" autocomplete="off"></label>
+<div class="filters">
+<label><small>KAMPANIA</small><select id="campaignFilter"><option value="">Wszystkie kampanie</option></select></label>
+<label><small>KLASA</small><select id="classFilter"><option value="">Wszystkie klasy</option></select></label>
+<label><small>LOS</small><select id="fateFilter"><option value="">Wszystkie losy</option><option value="alive">Żyje / los otwarty</option><option value="dead">Poległa / poległy</option><option value="finished">Historia zakończona</option><option value="unknown">Nieustalony</option></select></label>
+<label><small>GRACZ</small><select id="playerFilter"><option value="">Wszyscy gracze</option></select></label>
+<button id="clearFilters">RESET MAPY</button>
+</div></div>
+<div class="map-key"><span><i class="point"></i> POSTAĆ</span><span><i class="edge"></i> SĄSIEDZTWO</span><span><i class="cell"></i> TERYTORIUM</span><b id="mapStatus">CALCULATING…</b></div>
+<div id="hallGrid" class="hall-grid" aria-live="polite"></div>
+<div id="empty" class="empty" hidden>MAPA PUSTA / ZMIEŃ KRYTERIA</div>
+</section>
 </main>
-<footer><a href="#top">↑ BACK TO THE ESTATE</a><span>VENGRATH / DARKEST ARCHIVES</span><span>REMEMBER THE FALLEN</span></footer>
-<script src="./chwala.js"></script>
+<footer><a href="#top">↑ WRÓĆ NAD MAPĘ</a><span>VENGRATH / LIVING NECROPOLIS</span><span>GENERATED FROM MEMORY</span></footer>
+<script src="./chwala.js"></script><script src="./geometry.js"></script>
 </body></html>
