@@ -3,54 +3,51 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Sala Chwały Vengrath — archiwum postaci, które przeszły przez kampanie.">
-<title>Sala Chwały — Vengrath</title>
+<title>Sala Chwały — Vengrath / 004</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./chwala.css">
 </head>
 <body>
-<div class="noise"></div>
+<div class="fx-grid"></div><div class="noise"></div><div class="cursor-orb"></div>
 <header class="hero" id="top">
-  <nav><a href="../../" class="back">← VENGRATH</a><span class="edition">ARCHIWUM V / 001</span></nav>
-  <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
+  <nav><a href="../../" class="back">VENGRATH ↗</a><span class="edition">ARCHIVE / 004 / 2026</span></nav>
+  <div class="hero-index">004</div>
   <div class="hero-copy">
-    <span class="eyebrow">THE HALL OF LEGENDS</span>
-    <h1>SALA<br><i>CHWAŁY</i></h1>
-    <p>Galeria tych, którzy mieli imię, twarz i historię. Nie pomnik zwycięzców — rejestr wszystkich, którzy zostawili ślad.</p>
+    <div class="eyebrow"><span>VENGRATH</span><i></i><span>HALL OF FAME</span><i></i><span>LIVE ARCHIVE</span></div>
+    <h1>NO<br><span>SAINTS.</span></h1>
+    <p>Nie ma tu pomników. Są tylko ślady ludzi, którzy weszli do historii kampanii.</p>
   </div>
-    <div class="hero-bottom"><span>VENGRATH / ARCHIWUM POSTACI</span><span>SCROLL TO EXPLORE ↓</span></div>
-
+  <div class="hero-marquee"><span>CHARACTERS / PLAYERS / CAMPAIGNS / FATES / CHARACTERS / PLAYERS / CAMPAIGNS / FATES / </span></div>
+  <div class="hero-bottom"><span>THE ARCHIVE IS ALIVE</span><a href="#registry">ENTER THE COLLECTION ↓</a></div>
 </header>
-
 <main>
   <section class="manifest">
-    <div class="manifest-title"><span>01 / MANIFEST</span><h2>Każda kampania<br><em>ma swoich bohaterów.</em></h2></div>
-    <div class="manifest-copy"><p>Sala Chwały zbiera postacie z różnych stołów w jedno archiwum. Żyjący, polegli, ci których historie dobiegły końca i ci, których los pozostawiono otwarty.</p><div class="signature">— VENGRATH ARCHIVES</div></div>
+    <div class="manifest-big"><span>THE</span><strong>COLLECTION</strong><em>004</em></div>
+    <div class="manifest-copy"><span class="section-kicker">01 — PRINCIPLE</span><h2>Każda historia<br>zostawia <i>znak.</i></h2><p>Sala Chwały zbiera postacie z różnych stołów w jedno archiwum. Żyjący, polegli, ci których historie dobiegły końca i ci, których los pozostawiono otwarty.</p><b>VENGRATH / ARCHIVE DIVISION</b></div>
   </section>
-
   <section class="stats" aria-label="Statystyki">
-    <div class="stat"><span>POSTACIE</span><b id="countAll">—</b></div>
-    <div class="stat"><span>POLEGLI</span><b id="countDead">—</b></div>
-    <div class="stat"><span>KAMPANIE</span><b id="countCampaigns">—</b></div>
-    <div class="stat"><span>GRACZE</span><b id="countPlayers">—</b></div>
+    <div class="stat"><small>01 / POSTACIE</small><strong id="countAll">—</strong><i>RECORDS</i></div>
+    <div class="stat"><small>02 / POLEGLI</small><strong id="countDead">—</strong><i>FALLEN</i></div>
+    <div class="stat"><small>03 / KAMPANIE</small><strong id="countCampaigns">—</strong><i>WORLDS</i></div>
+    <div class="stat"><small>04 / GRACZE</small><strong id="countPlayers">—</strong><i>AUTHORS</i></div>
   </section>
-
-  <section class="registry">
-    <div class="registry-head"><div><span>03 / REJESTR</span><h2>Galeria postaci</h2></div><span class="result" id="resultCount">—</span></div>
+  <section class="registry" id="registry">
+    <div class="registry-head"><div><span class="section-kicker">02 — THE COLLECTION</span><h2>THE<br><i>PEOPLE.</i></h2></div><div class="result" id="resultCount">—</div></div>
     <div class="controls">
-      <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Szukaj imienia, gracza, tagu kampanii lub klasy…" autocomplete="off"></label>
+      <label class="search"><span>SEARCH_</span><input id="search" type="search" placeholder="imię / gracz / kampania / klasa / tag…" autocomplete="off"></label>
       <div class="filters">
         <label><small>KAMPANIA</small><select id="campaignFilter"><option value="">Wszystkie kampanie</option></select></label>
         <label><small>KLASA</small><select id="classFilter"><option value="">Wszystkie klasy</option></select></label>
         <label><small>LOS</small><select id="fateFilter"><option value="">Wszystkie losy</option><option value="alive">Żyje / los otwarty</option><option value="dead">Poległa / poległy</option><option value="finished">Historia zakończona</option><option value="unknown">Nieustalony</option></select></label>
         <label><small>GRACZ</small><select id="playerFilter"><option value="">Wszyscy gracze</option></select></label>
-        <button id="clearFilters">RESET</button>
+        <button id="clearFilters">CLEAR ×</button>
       </div>
     </div>
     <div id="hallGrid" class="hall-grid" aria-live="polite"></div>
-    <div id="empty" class="empty" hidden>NIE ZNALEZIONO WPISÓW / ZMIEŃ KRYTERIA</div>
+    <div id="empty" class="empty" hidden>NO MATCH / ZMIEŃ KRYTERIA</div>
   </section>
 </main>
-<footer><a href="#top">↑ GÓRA</a><span>SALA CHWAŁY / VENGRATH ARCHIVES</span><span>EST. FOR EVERY STORY</span></footer>
+<footer><a href="#top">↑ TOP</a><span>VENGRATH / 004</span><span>EVERY STORY LEAVES A MARK</span></footer>
 <script src="./chwala.js"></script>
 </body></html>
