@@ -161,6 +161,12 @@ for(const record of records){
   }
 }
 
+/* Korekty graczy wynikające z najnowszej kartoteki. */
+for(const record of records){
+  if(record.name==="Erro") record.tags.player=["Marcin"];
+  if(record.name==="Theron") record.tags.player=["Tomasz"];
+}
+
 /* Elorin — Michał został usunięty z kartoteki na życzenie. */
 for(let i=records.length-1;i>=0;i--){
   if(records[i].name==="Elorin") records.splice(i,1);
