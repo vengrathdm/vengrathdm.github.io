@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Sala Chwały Vengrath — archiwum postaci, które przeszły przez kampanie.">
-<title>Sala Chwały — Vengrath</title>
+<title>Necropolis — Sala Chwały / Vengrath</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./chwala.css">
@@ -11,32 +11,32 @@
 <body>
 <div class="noise"></div>
 <header class="hero" id="top">
-  <nav><a href="../../" class="back">← VENGRATH</a><span class="edition">ARCHIWUM V / 001</span></nav>
+  <nav><a href="../../" class="back">← VENGRATH</a><span class="edition">NEKROPOLIA / ARCHIWUM 002</span></nav>
   <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
   <div class="hero-copy">
-    <span class="eyebrow">THE HALL OF LEGENDS</span>
-    <h1>SALA<br><i>CHWAŁY</i></h1>
-    <p>Galeria tych, którzy mieli imię, twarz i historię. Nie pomnik zwycięzców — rejestr wszystkich, którzy zostawili ślad.</p>
+    <span class="eyebrow">VENGRATH NECROPOLIS · THE HALL BELOW</span>
+    <h1>OGRÓD<br><i>UMARŁYCH</i></h1>
+    <p>Między mogiłami zapisano tych, którzy przeszli przez stoły Vengrath. Pod kamieniem nie ma hierarchii. Są tylko imiona, losy i ślady pozostawione przez historie.</p>
   </div>
-    <div class="hero-bottom"><span>VENGRATH / ARCHIWUM POSTACI</span><span>SCROLL TO EXPLORE ↓</span></div>
+    <div class="hero-bottom"><span>VENGRATH / NECROPOLIS</span><a href="#catacombs">ZEJDŹ DO KATAKUMB ↓</a></div>
 
 </header>
 
 <main>
-  <section class="manifest">
-    <div class="manifest-title"><span>01 / MANIFEST</span><h2>Każda kampania<br><em>ma swoich bohaterów.</em></h2></div>
-    <div class="manifest-copy"><p>Sala Chwały zbiera postacie z różnych stołów w jedno archiwum. Żyjący, polegli, ci których historie dobiegły końca i ci, których los pozostawiono otwarty.</p><div class="signature">— VENGRATH ARCHIVES</div></div>
+  <section class="manifest cemetery-intro">
+    <div class="manifest-title"><span>01 / CMENTARZ</span><h2>Każdy nagrobek<br><em>pamięta historię.</em></h2></div>
+    <div class="manifest-copy"><p>To nie jest lista zwycięzców. To nekropolia wszystkich postaci — tych, które poległy, tych, które odeszły, i tych, których historia wciąż trwa.</p><div class="descent" aria-hidden="true"><span></span><span></span><span></span><span></span><b>↓ KATAKUMBY</b></div><div class="signature">— VENGRATH NECROPOLIS</div></div>
   </section>
 
-  <section class="stats" aria-label="Statystyki">
+  <section class="stats crypt-stats" aria-label="Statystyki nekropolii">
     <div class="stat"><span>POSTACIE</span><b id="countAll">—</b></div>
     <div class="stat"><span>POLEGLI</span><b id="countDead">—</b></div>
     <div class="stat"><span>KAMPANIE</span><b id="countCampaigns">—</b></div>
     <div class="stat"><span>GRACZE</span><b id="countPlayers">—</b></div>
   </section>
 
-  <section class="registry">
-    <div class="registry-head"><div><span>03 / REJESTR</span><h2>Galeria postaci</h2></div><span class="result" id="resultCount">—</span></div>
+  <section class="registry" id="catacombs">
+    <div class="registry-head"><div><span>02 / PODZIEMIA</span><h2>Katakumby</h2><p class="registry-sub">Imiona wyryte w kamieniu. Otwórz rejestr i zejdź głębiej.</p></div><span class="result" id="resultCount">—</span></div>
     <div class="controls">
       <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Szukaj imienia, gracza, tagu kampanii lub klasy…" autocomplete="off"></label>
       <div class="filters">
@@ -47,10 +47,10 @@
         <button id="clearFilters">RESET</button>
       </div>
     </div>
-    <div id="hallGrid" class="hall-grid" aria-live="polite"></div>
+    <div class="crypt-entrance" aria-hidden="true"><div class="arch"><i></i><i></i><i></i></div><span>KOMORA PAMIĘCI</span></div><div id="hallGrid" class="hall-grid" aria-live="polite"></div>
     <div id="empty" class="empty" hidden>NIE ZNALEZIONO WPISÓW / ZMIEŃ KRYTERIA</div>
   </section>
 </main>
-<footer><a href="#top">↑ GÓRA</a><span>SALA CHWAŁY / VENGRATH ARCHIVES</span><span>EST. FOR EVERY STORY</span></footer>
+<footer><a href="#top">↑ WYJDŹ Z KATAKUMB</a><span>VENGRATH NECROPOLIS / ARCHIVE II</span><span>NO STORY IS BURIED</span></footer>
 <script src="./chwala.js"></script>
 </body></html>
