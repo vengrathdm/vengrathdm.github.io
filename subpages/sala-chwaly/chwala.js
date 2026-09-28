@@ -116,7 +116,8 @@ function addLegacyCharacter(row){
   }
 }
 
-for(const row of characters) addLegacyCharacter(row);\nfor(const record of records){
+for(const row of characters) addLegacyCharacter(row);
+for(const record of records){
   if(record.name==="Pchełka" || record.name==="Polter von Geist"){
     record.tags.player=["Zuza"];
   }
