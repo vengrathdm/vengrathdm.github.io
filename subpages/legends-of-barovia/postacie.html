@@ -12,6 +12,11 @@
   <link rel="stylesheet" href="barovia.css">
 </head>
 <body class="campaign-page barovia-page" data-campaign-theme="legends-of-barovia">
+<audio id="baroviaTheme" src="./into-the-mists.mp3" loop preload="auto" playsinline></audio>
+<button class="barovia-audio-toggle" id="baroviaAudioToggle" type="button" aria-label="Włącz dźwięk" aria-pressed="false" title="Włącz dźwięk">
+  <svg class="audio-icon audio-icon-muted" viewBox="0 0 48 48" aria-hidden="true"><path d="M7 19h8l10-8v26l-10-8H7z"></path><path d="M31 18l10 12M41 18L31 30"></path></svg>
+  <svg class="audio-icon audio-icon-playing" viewBox="0 0 48 48" aria-hidden="true"><path d="M7 19h8l10-8v26l-10-8H7z"></path><path d="M32 18c3 3 3 9 0 12M37 13c6 6 6 16 0 22"></path></svg>
+</button>
 <header class="barovia-hero" id="top">
   <nav class="nav barovia-nav" aria-label="Nawigacja kampanii"><div class="nav-inner barovia-nav-inner">
     <a class="site-home-button" href="https://vengrathdm.github.io/" aria-label="Powrót do Vengrath"><img src="../../Home/Graphics/mg-logo.png" alt="MG"><span>VENGRATH</span></a>
@@ -61,4 +66,5 @@
 
 </main>
 <footer><span>VENGRATH · LEGENDS OF BAROVIA</span><a href="#top">POWRÓT NA GÓRĘ ↑</a></footer>
+<script src="./barovia-audio.js"></script>
 </body></html>
