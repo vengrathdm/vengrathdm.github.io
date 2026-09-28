@@ -339,6 +339,46 @@ h1,h2,h3{ margin:0; font-family: var(--display); font-weight:400; letter-spacing
   .plague-meter{ flex-direction:column; text-align:center; }
   .plague-text{ text-align:center; }
 }
+
+/* -------- szybkie odnośniki kampanii -------- */
+.campaign-links{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:16px 0 0;
+}
+.campaign-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:108px;
+  padding:9px 16px;
+  border:2px solid var(--swamp);
+  border-radius:3px 12px 3px 12px;
+  background:var(--rot-black);
+  color:var(--bone);
+  font-family:var(--small-caps);
+  font-size:12px;
+  letter-spacing:1px;
+  text-decoration:none;
+  transition:background .2s ease,color .2s ease,border-color .2s ease,transform .15s ease;
+}
+.campaign-link:hover{
+  transform:translateY(-2px) rotate(-1deg);
+  border-color:var(--mold);
+  color:var(--pus);
+}
+.campaign-link.external{border-color:var(--blood);}
+.campaign-link.disabled{
+  opacity:.6;
+  cursor:not-allowed;
+}
+.campaign-link.disabled:hover{
+  transform:none;
+  border-color:var(--swamp);
+  color:var(--bone);
+}
 </style>
 </head>
 <body>
@@ -374,6 +414,11 @@ h1,h2,h3{ margin:0; font-family: var(--display); font-weight:400; letter-spacing
       <button class="nav-worm-btn" data-page="cast">POSTACIE</button>
       <button class="nav-worm-btn" data-page="log">KRONIKA</button>
     </nav>
+    <div class="campaign-links" aria-label="Odnośniki kampanii">
+      <a class="campaign-link disabled" href="#" aria-disabled="true" title="Link do PDF zostanie dodany po podaniu adresu">PDF ↗</a>
+      <a class="campaign-link disabled" href="#" aria-disabled="true" title="Link do YouTube zostanie dodany po podaniu adresu">YOUTUBE ↗</a>
+      <a class="campaign-link external" href="https://vengrathdm.github.io/" target="_blank" rel="noopener">VENGRATH ↗</a>
+    </div>
   </div>
 
   <!-- ============ ZAWIĄZANIE / OVERVIEW ============ -->
@@ -399,7 +444,7 @@ h1,h2,h3{ margin:0; font-family: var(--display); font-weight:400; letter-spacing
         <div class="map-caption">kliknij punkt na mapie, by przejść do tej części kroniki</div>
       </div>
 
-      <div class="page-foot"><span>THE ROTTING GRIMOIRE</span><span>diegetyczny szablon kampanii — Menaces of Irensberg</span></div>
+      <div class="page-foot"><span>THE ROTTING GRIMOIRE</span><span>Archiwum kampanii Vengrath · aktualna kampania · bez spoilerów</span></div>
     </div>
   </section>
 
@@ -435,6 +480,16 @@ h1,h2,h3{ margin:0; font-family: var(--display); font-weight:400; letter-spacing
         <div class="place-card"><div class="tag">OSADA</div><h4>Drachenend</h4><p>Miejsce, gdzie niegdyś pokonano Wormira. Teraz opustoszałe — jego mieszkańcy zniknęli bez śladu, prócz przypalonych garnków na piecach.</p></div>
         <div class="place-card"><div class="tag">LAS</div><h4>Gloomforest</h4><p>Nekrotyczna aura sączy się z bagna w jego sercu, wzmacniając nieumarłych i osłabiając wszystko, co żywe, co odważy się wejść między drzewa.</p></div>
         <div class="place-card"><div class="tag">GŁĘBIA</div><h4>Bagno Wormira</h4><p>Zatopione jaskinie pod lasem, gdzie jednoskrzydły smok od dekad hoduje swoją zemstę wśród ciał i eksperymentów.</p></div>
+      </div>
+
+      <div class="page-title" style="font-size:26px; margin-top:30px;">Nasza drużyna</div>
+      <div class="page-body">
+        <p>W kampanii występują:</p>
+        <p><strong>wpoluwiatr</strong> jako Zwada</p>
+        <p><strong>Dawid</strong> jako Oxie</p>
+        <p><strong>Anemo</strong> jako Keto</p>
+        <p><strong>Szymon</strong> jako Thorgir</p>
+        <p><strong>Kampania w toku.</strong> Podstrona celowo nie zawiera spoilerów ani informacji o dalszych wydarzeniach.</p>
       </div>
 
       <div class="page-title" style="font-size:26px; margin-top:30px;">Frakcje Doliny</div>
@@ -498,7 +553,7 @@ h1,h2,h3{ margin:0; font-family: var(--display); font-weight:400; letter-spacing
         <div class="thread-row"><span class="mark">☠</span><div><b>Skrzydło Wormira</b><span>Rytuał w Kamiennych Megalitach wciąż trwa. Czasu zostało niewiele.</span></div></div>
       </div>
 
-      <div class="page-foot"><span>THE ROTTING GRIMOIRE</span><span>Treść fanowska dla Menaces of Irensberg — niezwiązana z Wizards of the Coast</span></div>
+      <div class="page-foot"><span>THE ROTTING GRIMOIRE</span><span>Archiwum kampanii Vengrath · aktualna kampania · bez spoilerów</span></div>
     </div>
   </section>
 
