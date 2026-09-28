@@ -1,53 +1,7 @@
-<!doctype html>
-<html lang="pl">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Sala Chwały Vengrath — generatywna mapa postaci i historii.">
-<title>Vengrath / The Living Necropolis</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./chwala.css">
-</head>
-<body>
-<div class="noise"></div>
-<header class="hero" id="top">
-<nav><a href="../../" class="back">← VENGRATH</a><span>THE LIVING NECROPOLIS / 003</span><span class="edition">GENERATIVE ARCHIVE</span></nav>
-<div class="hero-map"><div class="moon"></div><div class="constellation c1"></div><div class="constellation c2"></div><div class="spire s1"></div><div class="spire s2"></div><div class="spire s3"></div></div>
-<div class="hero-copy">
-<span class="eyebrow">VENGRATH · GENERATIVE NECROPOLIS</span>
-<h1>OGRÓD<br><i>ŻYWYCH.</i></h1>
-<p>Nie ma tu siatki. Nie ma kolejności. Każde imię dostaje własne miejsce — wyliczone z historii, którą zostawiło za sobą.</p>
-</div>
-<div class="hero-equation">VORONOI × DELAUNAY<br><b>EVERY STORY NEEDS A PLACE</b></div>
-<div class="hero-bottom"><span>ARCHIVE / 003</span><a href="#archives">WEJDŹ DO NEKROPOLII ↓</a></div>
-</header>
-<main>
-<section class="manifest">
-<div class="manifest-art"><div class="diagram"><span></span><span></span><span></span><span></span><b>∞</b></div><small>THE GEOMETRY OF MEMORY</small></div>
-<div class="manifest-copy"><span>01 / ZASADA</span><h2>Cmentarz<br>który <em>myśli.</em></h2><p>Układ tej galerii jest generowany matematycznie. Punkty reprezentują postacie, triangulacja Delaunaya buduje ich sąsiedztwa, a diagram Voronoi dzieli przestrzeń na ich terytoria.</p><p class="tiny">Zmiana filtrów zmienia zbiór punktów. Zbiór punktów zmienia geometrię. Geometria zmienia mapę.</p><b>NO TWO VISITS NEED TO LOOK THE SAME</b></div>
-</section>
-<section class="stats" aria-label="Statystyki nekropolii">
-<div class="stat"><small>01 / POSTACIE</small><strong id="countAll">—</strong><i>POINTS</i></div>
-<div class="stat"><small>02 / POLEGLI</small><strong id="countDead">—</strong><i>FALLEN</i></div>
-<div class="stat"><small>03 / KAMPANIE</small><strong id="countCampaigns">—</strong><i>REALMS</i></div>
-<div class="stat"><small>04 / GRACZE</small><strong id="countPlayers">—</strong><i>KEEPERS</i></div>
-</section>
-<section class="registry" id="archives">
-<div class="registry-head"><div><span>02 / THE NECROPOLIS</span><h2>MAPA<br><em>PAMIĘCI</em></h2><p>Każdy punkt jest człowiekiem. Każda krawędź jest relacją przestrzeni. Każda komórka należy do jednego imienia.</p></div><span class="result" id="resultCount">—</span></div>
-<div class="controls">
-<label class="search"><span>⌕</span><input id="search" type="search" placeholder="Szukaj imienia, gracza, tagu kampanii lub klasy…" autocomplete="off"></label>
-<div class="filters">
-<label><small>KAMPANIA</small><select id="campaignFilter"><option value="">Wszystkie kampanie</option></select></label>
-<label><small>KLASA</small><select id="classFilter"><option value="">Wszystkie klasy</option></select></label>
-<label><small>LOS</small><select id="fateFilter"><option value="">Wszystkie losy</option><option value="alive">Żyje / los otwarty</option><option value="dead">Poległa / poległy</option><option value="finished">Historia zakończona</option><option value="unknown">Nieustalony</option></select></label>
-<label><small>GRACZ</small><select id="playerFilter"><option value="">Wszyscy gracze</option></select></label>
-<button id="clearFilters">RESET MAPY</button>
-</div></div>
-<div class="map-key"><span><i class="point"></i> POSTAĆ</span><span><i class="edge"></i> SĄSIEDZTWO</span><span><i class="cell"></i> TERYTORIUM</span><b id="mapStatus">CALCULATING…</b></div>
-<div id="hallGrid" class="hall-grid" aria-live="polite"></div>
-<div id="empty" class="empty" hidden>MAPA PUSTA / ZMIEŃ KRYTERIA</div>
-</section>
-</main>
-<footer><a href="#top">↑ WRÓĆ NAD MAPĘ</a><span>VENGRATH / LIVING NECROPOLIS</span><span>GENERATED FROM MEMORY</span></footer>
-<script src="./chwala.js"></script><script src="./geometry.js"></script>
-</body></html>
+<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VENGRATH / ADVENTURE JOURNAL III</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Almendra:wght@400;700&family=Cinzel:wght@500;600;700&family=Karla:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="./chwala.css"></head><body>
+<header class="hero" id="top"><nav><a href="../../">VENGRATH</a><div><a href="#journal">DZIENNIK</a><a href="#party">DRUŻYNA</a><a href="#find">SZUKAJ</a></div><span>JOURNAL / III</span></nav><div class="hero-copy"><small>ADVENTURE JOURNAL · LIVING ARCHIVE</small><h1>KAŻDA DROGA<br>MA SWOICH<br><em>BOHATERÓW.</em></h1><p>Przeglądaj historię jak dziennik podróży: przez rozdziały, drużyny, kampanie i pojedyncze wpisy.</p><a class="hero-cta" href="#journal">OTWÓRZ DZIENNIK ↓</a></div><div class="map-scribble">✦<span>VENGRATH<br>FIELD NOTES</span></div></header>
+<main><section class="journal-intro" id="journal"><div class="chapter-mark">III<br><b>✦</b></div><div><small>ROZDZIAŁ 01 · NOTATKI Z PODRÓŻY</small><h2>Nie wybierasz<br>karty.<br><em>Wybierasz drogę.</em></h2><p>To archiwum zachowuje charakter dziennika przygody. Filtry są drogowskazami, a wpisy — kolejnymi spotkaniami na trasie.</p></div></section>
+<section class="stats" id="party"><div><small>BOHATEROWIE</small><b id="countAll">—</b></div><div><small>POLEGLI</small><b id="countDead">—</b></div><div><small>KAMPANIE</small><b id="countCampaigns">—</b></div><div><small>GRACZE</small><b id="countPlayers">—</b></div></section>
+<section class="registry" id="find"><div class="trail"><span>START</span><i></i><span>ARCHIWUM</span><i></i><strong>BOHATEROWIE</strong></div><div class="registry-head"><div><small>ROZDZIAŁ 02</small><h2>DZIENNIK<br><em>POSTACI</em></h2></div><p id="resultCount">—</p></div>
+<div class="filter-map"><label><small>NOTATKA</small><input id="search" type="search" placeholder="Szukaj imienia, gracza, kampanii…" autocomplete="off"></label><label><small>KAMPANIA</small><select id="campaignFilter"><option value="">Wszystkie</option></select></label><label><small>KLASA</small><select id="classFilter"><option value="">Wszystkie</option></select></label><label><small>LOS</small><select id="fateFilter"><option value="">Wszystkie</option><option value="alive">Żyje / los otwarty</option><option value="dead">Poległa / poległy</option><option value="finished">Historia zakończona</option><option value="unknown">Nieustalony</option></select></label><label><small>GRACZ</small><select id="playerFilter"><option value="">Wszyscy</option></select></label><button id="clearFilters">WRÓĆ NA SZLAK</button></div>
+<div class="waypoint"><span>✦</span><i></i><span>NASTĘPNY WPIS</span></div><div id="hallGrid" class="hall-grid" aria-live="polite"></div><div id="empty" class="empty" hidden>Szlak nie prowadzi tutaj.</div></section></main><footer><a href="#top">↑ POCZĄTEK DZIENNIKA</a><span>VENGRATH / JOURNAL III</span><span>THE ROAD REMEMBERS</span></footer><script src="./chwala.js"></script></body></html>
