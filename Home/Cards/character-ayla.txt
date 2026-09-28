@@ -1,0 +1,4 @@
+Ayla, Mścicielka Hoara
+Postać
+../Graphics/ayla.webp
+../../subpages/character-ayla/
