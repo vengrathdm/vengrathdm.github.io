@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Rotting Grimoire — Menaces of Irensberg</title>
+<title>The Menaces of Irensberg — Menaces of Irensberg</title>
 <meta name="description" content="Żywy, zainfekowany grimuar prezentujący kampanię Menaces of Irensberg.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -385,6 +385,8 @@ h1,h2,h3{ margin:0; font-family: var(--display); font-weight:400; letter-spacing
   border-color:var(--swamp);
   color:var(--bone);
 }
+.player-portrait{display:block;width:calc(100% + 32px);height:300px;object-fit:cover;margin:-16px -16px 16px;border-bottom:1px solid var(--swamp);background:var(--rot-black)}
+@media(max-width:560px){.player-portrait{height:260px}}
 </style>
 </head>
 <body>
@@ -399,7 +401,7 @@ h1,h2,h3{ margin:0; font-family: var(--display); font-weight:400; letter-spacing
     <div class="campaign-header-links" aria-label="Odnośniki kampanii">
       <a class="pdf" href="https://drive.google.com/file/d/1tBhB3ENS8tPKc8ENQZPz-VibU1otmLlB/view?usp=sharing" target="_blank" rel="noopener">PDF ↗</a>
       <a class="youtube" href="https://www.youtube.com/playlist?list=PL-Lm83myvu0ihHC4GFEJggfLn0YfdVbZg" target="_blank" rel="noopener">YOUTUBE ↗</a>
-      <a href="https://vengrathdm.github.io/" target="_blank" rel="noopener">VENGRATH ↗</a>
+      <a href="https://vengrathdm.github.io/">VENGRATH ↗</a>
     </div>
     <div class="cover-eyebrow">Zapiski skażone przez Gloomforest</div>
     <div class="drip-wrap">
@@ -513,19 +515,18 @@ h1,h2,h3{ margin:0; font-family: var(--display); font-weight:400; letter-spacing
   <!-- ============ POSTACIE / CAST ============ -->
   <section class="page" id="page-cast">
     <div class="parchment">
-      <div class="page-head"><span class="tag">ZAPIS 04 — DUSZE DOLINY</span><span class="ref">SPRZYMIERZEŃCY I WROGOWIE</span></div>
-      <div class="page-title">Postacie Niezależne</div>
-      <p class="page-sub">Nikt w tej dolinie nie gra w otwarte karty — nawet ci, którzy wydają się sojusznikami.</p>
+      <div class="page-head"><span class="tag">ZAPIS 04 — DRUŻYNA</span><span class="ref">BOHATEROWIE KAMPANII</span></div>
+      <div class="page-title">Postacie Graczy</div>
+      <p class="page-sub">Cztery postacie przemierzające dolinę Irensberg. Każda karta zawiera portret bohatera oraz gracza, który prowadzi go przy stole.</p>
 
       <div class="npc-grid">
-        <div class="npc-card"><span class="npc-role">Baronowa</span><h4>Cynthia von Irensberg</h4><p>Młoda, niedoświadczona władczyni, rozdarta między obowiązkiem a rozpaczą po zniknięciu męża. Nie wie, komu może zaufać.</p><span class="threat unknown">ZAGUBIONA</span></div>
-        <div class="npc-card"><span class="npc-role">Agent Harperów</span><h4>Sot Onik</h4><p>Ekscentryczny wróżbita ukrywający swoją prawdziwą lojalność. Pomoże drużynie — ale tylko w sprawach dotyczących naprawy Osnowy.</p><span class="threat ally">TAJEMNICZY</span></div>
-        <div class="npc-card"><span class="npc-role">Kapitan straży</span><h4>Sir Kasimir Kalashar</h4><p>Surowy, znienawidzony przez podwładnych — ale niezłomnie lojalny wobec prawowitych władców baronii.</p><span class="threat ally">LOJALNY</span></div>
-        <div class="npc-card"><span class="npc-role">Kapłan-zdrajca</span><h4>Ojciec Adon</h4><p>Od lat spiskuje przeciw Baronowi Kladowi, przekonany, że działa dla dobra ludu. To on naprowadził ser Malefa na trop zdrady.</p><span class="threat hostile">SPISKOWIEC</span></div>
-        <div class="npc-card"><span class="npc-role">Kapłanka Zarazy</span><h4>Erika Wagner</h4><p>Prowadzi sierociniec w Smallburrow jako przykrywkę dla kultu Talony, oddając najsilniejsze dzieci Pani Zarazy.</p><span class="threat hostile">UKRYTA</span></div>
+        <div class="npc-card"><img class="player-portrait" src="./postaci-graczy/Zwada.webp" alt="Zwada"><span class="npc-role">Gracz</span><h4>Zwada</h4><p>wpoluwiatr</p></div>
+        <div class="npc-card"><img class="player-portrait" src="./postaci-graczy/Thorgir.webp" alt="Thorgir"><span class="npc-role">Gracz</span><h4>Thorgir</h4><p>Szymon</p></div>
+        <div class="npc-card"><img class="player-portrait" src="./postaci-graczy/Oxie.webp" alt="Oxie"><span class="npc-role">Gracz</span><h4>Oxie</h4><p>Dawid</p></div>
+        <div class="npc-card"><img class="player-portrait" src="./postaci-graczy/Keto.webp" alt="Keto"><span class="npc-role">Gracz</span><h4>Keto</h4><p>Anemo</p></div>
       </div>
 
-      <div class="page-foot"><span>ROZDZIAŁ IV — WAŻNE POSTACIE</span><span>zaufanie to waluta, której nikt tu nie posiada</span></div>
+      <div class="page-foot"><span>ROZDZIAŁ IV — DRUŻYNA</span><span>bohaterowie prowadzeni przy stole</span></div>
     </div>
   </section>
 
