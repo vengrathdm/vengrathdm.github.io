@@ -28,6 +28,13 @@
     "link": "../../subpages/cemetery-of-dragons/"
   },
   {
+    "name": "character-ayla.txt",
+    "title": "Ayla, Mścicielka Hoara",
+    "tag": "Postać",
+    "graphic": "../Graphics/ayla.webp",
+    "link": "../../subpages/character-ayla/"
+  },
+  {
     "name": "character-shiney.txt",
     "title": "Shiney, Różowa Paladynka",
     "tag": "Postać",
