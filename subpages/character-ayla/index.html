@@ -8,6 +8,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
+  .vengrath-home{position:fixed;top:18px;left:18px;z-index:1000;display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border:1px solid rgba(212,175,106,0.65);border-radius:999px;background:linear-gradient(135deg,rgba(42,31,51,0.96),rgba(138,35,50,0.92));color:var(--gold-bright);text-decoration:none;font-family:'Cinzel Decorative',serif;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;box-shadow:0 6px 18px rgba(11,8,16,0.35);backdrop-filter:blur(6px);transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+  .vengrath-home:hover{transform:translateY(-2px);box-shadow:0 9px 24px rgba(11,8,16,0.5);background:linear-gradient(135deg,rgba(138,35,50,1),rgba(42,31,51,1))}
+  .vengrath-home:focus-visible{outline:3px solid rgba(240,210,154,0.8);outline-offset:3px}
+  @media(max-width:700px){.vengrath-home{top:12px;left:12px;padding:8px 14px;font-size:0.68rem}}
+
   :root{
     --night: #14101a;
     --night-deep: #0b0810;
@@ -339,6 +344,7 @@
 </style>
 </head>
 <body>
+<a class="vengrath-home" href="../../" aria-label="Wróć do strony głównej Vengrath">VENGRATH</a>
 
 <div class="ember-field" id="emberField" aria-hidden="true"></div>
 
