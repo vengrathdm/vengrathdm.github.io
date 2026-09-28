@@ -35,3 +35,13 @@ const grid=$("hallGrid"), search=$("search"), cf=$("campaignFilter"), ff=$("fate
 $("countAll").textContent=characters.length;$("countDead").textContent=characters.filter(x=>x[4]=="dead").length;$("countCampaigns").textContent=new Set(characters.map(x=>x[2])).size;$("countPlayers").textContent=new Set(characters.map(x=>x[1]).filter(x=>x!=="—")).size;
 function render(){const q=norm(search.value.trim()),a=cf.value,b=ff.value;const rows=characters.filter(x=>(!q||norm(x.join(" ")).includes(q))&&(!a||x[2]===a)&&(!b||x[4]===b));$("resultCount").textContent=rows.length+" / "+characters.length;grid.innerHTML=rows.map((x,i)=>'<article class="card" data-fate="'+x[4]+'"><div class="portrait"><img src="'+x[3]+'" alt="'+x[0]+'" loading="lazy" onerror="this.remove()"></div><div class="card-body"><div class="card-no">AKTA '+String(i+1).padStart(2,"0")+'</div><h3>'+x[0]+'</h3><div class="meta"><div><b>Gracz</b><span>'+x[1]+'</span></div><div><b>Kampania</b><span>'+x[2]+'</span></div></div><div class="fate"><strong>'+labels[x[4]]+'</strong><br>'+x[5]+'</div></div></article>').join("");$("empty").hidden=rows.length!==0}
 [search,cf,ff].forEach(el=>el.addEventListener("input",render));$("clearFilters").addEventListener("click",()=>{search.value="";cf.value="";ff.value="";render()});render();
+function updateSpotlight(rows){
+ const x=rows.length?rows[Math.floor(Math.random()*rows.length)]:characters[0];
+ $("spotName").textContent=x[0]; $("spotStory").textContent=x[5];
+ $("spotPlayer").textContent="GRACZ / "+x[1]; $("spotCampaign").textContent=x[2];
+ $("spotNumber").textContent=String(characters.indexOf(x)+1).padStart(2,"0");
+ const img=$("spotImg"); img.src=x[3]; img.alt=x[0]; img.onerror=()=>img.style.visibility="hidden"; img.style.visibility="visible";
+}
+const oldRender=render;
+render=function(){oldRender();const q=norm(search.value.trim()),a=cf.value,b=ff.value;const rows=characters.filter(x=>(!q||norm(x.join(" ")).includes(q))&&(!a||x[2]===a)&&(!b||x[4]===b));$("heroCount").textContent=rows.length;updateSpotlight(rows)};
+render();
