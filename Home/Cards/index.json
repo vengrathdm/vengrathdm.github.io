@@ -98,6 +98,13 @@
     "link": "../../subpages/echtra-midst-the-sidhe/"
   },
   {
+    "name": "echtra-zima-irgaeli.txt",
+    "title": "Echtra - Zima Irgaeli",
+    "tag": "Aktywna Kampania",
+    "graphic": "../Graphics/echtra-midst-the-sidhe.jpg",
+    "link": "../../subpages/echtra-zima-irgaeli/"
+  },
+  {
     "name": "forge-of-fury.txt",
     "title": "Forge of Fury",
     "tag": "Zamknięta Kampania",
@@ -124,6 +131,13 @@
     "tag": "Archiwum",
     "graphic": "../Graphics/hand-of-glory.jpg",
     "link": "../../subpages/hand-of-glory/"
+  },
+  {
+    "name": "heroes-of-drakkenheim.txt",
+    "title": "Heroes of Drakkenheim",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/dungeons-of-drakkenheim.jpg",
+    "link": "../../subpages/heroes-of-drakkenheim/"
   },
   {
     "name": "klatwa-strahda.txt",
@@ -173,6 +187,13 @@
     "tag": "Zamknięta Kampania",
     "graphic": "../Graphics/mayhem-in-earthspur-mines.webp",
     "link": "../../subpages/mayhem-in-earthspur-mines/"
+  },
+  {
+    "name": "menaces-of-gloomforest-legacy.txt",
+    "title": "Menaces of Gloomforest Legacy",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/menaces-of-gloomforest.jpg",
+    "link": "../../subpages/menaces-of-gloomforest-legacy/"
   },
   {
     "name": "menaces-of-gloomforest.txt",
