@@ -139,3 +139,7 @@ footer a{text-decoration:none;color:var(--brass)}
  footer{display:block}footer a{display:block;margin-top:10px}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.fallen-portrait.no-portrait{display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,rgba(125,44,45,.22),transparent 42%),linear-gradient(145deg,#181313,#090808);border-bottom:1px solid rgba(125,44,45,.35)}
+.fallen-portrait.no-portrait span{font:600 72px Cinzel;color:rgba(179,74,67,.5)}
+.fallen-body p{margin:9px 0 0;font:500 10px "DM Mono";line-height:1.5;color:#676861}
