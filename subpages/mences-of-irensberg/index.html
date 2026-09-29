@@ -2,634 +2,99 @@
 <html lang="pl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Menaces of Irensberg — Menaces of Irensberg</title>
-<meta name="description" content="Żywy, zainfekowany grimuar prezentujący kampanię Menaces of Irensberg.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Eater&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
-<style>
-/* ============================================================
-   TOKENS — rozkładające się bagno, robactwo, zaraza
-   ============================================================ */
-:root{
-  --swamp: #2a3620;
-  --swamp-dk: #151a10;
-  --rot-black: #0a0d07;
-  --mold: #8a9440;
-  --mold-bright: #a8c94a;
-  --blood: #6e2020;
-  --blood-bright: #942d2d;
-  --bone: #d4c9a8;
-  --bone-dim: #b8ab84;
-  --pus: #c9d97a;
-  --display: "Eater", serif;
-  --serif: "Crimson Text", serif;
-  --small-caps: "IM Fell English SC", serif;
-}
-@media (prefers-reduced-motion: reduce){ *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; } }
-*{ box-sizing:border-box; }
-html,body{ margin:0; padding:0; overflow-x:hidden; }
-body{
-  min-height:100vh;
-  background:
-    radial-gradient(ellipse 1000px 700px at 50% 20%, var(--swamp) 0%, var(--swamp-dk) 55%, var(--rot-black) 100%);
-  color: var(--bone);
-  font-family: var(--serif);
-  position:relative;
-}
-/* pulsująca pleśń w tle - oddycha */
-body::before{
-  content:"";
-  position:fixed; inset:0; z-index:0; pointer-events:none;
-  background:
-    radial-gradient(circle at 15% 25%, rgba(138,148,64,0.12), transparent 30%),
-    radial-gradient(circle at 85% 70%, rgba(110,32,32,0.10), transparent 35%),
-    radial-gradient(circle at 50% 90%, rgba(138,148,64,0.10), transparent 30%);
-  animation: breathe 6s ease-in-out infinite;
-}
-@keyframes breathe{ 0%,100%{ opacity:0.7; } 50%{ opacity:1; } }
-/* wilgotna, ziarnista tekstura */
-body::after{
-  content:"";
-  position:fixed; inset:0; z-index:500; pointer-events:none;
-  opacity:0.35; mix-blend-mode:multiply;
-  background-image:
-    repeating-linear-gradient(0deg, rgba(0,0,0,0.03) 0px, transparent 1px, transparent 3px),
-    radial-gradient(circle at 30% 60%, rgba(0,0,0,0.15), transparent 40%);
-}
-a{ color: var(--mold-bright); }
-:focus-visible{ outline: 2px solid var(--pus); outline-offset:3px; }
-h1,h2,h3{ margin:0; font-family: var(--display); font-weight:400; letter-spacing:1px; }
-
-/* ============================================================
-   WARSTWA ROBACTWA — pełza po całym ekranie, ponad wszystkim
-   ============================================================ */
-.worm-layer{
-  position:fixed; inset:0; z-index:600; pointer-events:none;
-  overflow:hidden;
-}
-.worm{
-  position:absolute;
-  width:26px; height:6px;
-  opacity:0.85;
-}
-.worm svg{ width:100%; height:100%; display:block; filter: drop-shadow(0 0 3px rgba(168,201,74,0.5)); }
-/* każdy robak ma własną trasę i czas - generowane przez JS jako inline style, animacja to squirm + drift */
-.worm{ animation: squirm 0.6s ease-in-out infinite; }
-@keyframes squirm{
-  0%,100%{ transform: scaleX(1) rotate(0deg); }
-  50%{ transform: scaleX(0.85) rotate(3deg); }
-}
-
-/* ============================================================
-   SCENA
-   ============================================================ */
-.scene{ max-width:1180px; margin:0 auto; padding: 50px 18px 110px; position:relative; z-index:1; }
-
-/* -------- okładka grimuara -------- */
-.cover{
-  background: linear-gradient(160deg, var(--swamp), var(--swamp-dk));
-  border: 3px solid var(--mold);
-  border-radius: 4px;
-  padding: 40px clamp(20px,5vw,60px) 34px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 0 60px rgba(0,0,0,0.5);
-  position:relative;
-  overflow:hidden;
-}
-/* pleśń rosnąca po krawędziach okładki */
-.cover::before, .cover::after{
-  content:"";
-  position:absolute;
-  width:220px; height:220px;
-  background: radial-gradient(circle, rgba(138,148,64,0.35), transparent 70%);
-  border-radius:50%;
-  pointer-events:none;
-}
-.cover::before{ top:-100px; left:-100px; animation: moldpulse 5s ease-in-out infinite; }
-.cover::after{ bottom:-100px; right:-100px; animation: moldpulse 5s ease-in-out infinite 2.5s; }
-@keyframes moldpulse{ 0%,100%{ opacity:0.5; transform:scale(1); } 50%{ opacity:0.9; transform:scale(1.15); } }
-
-.cover-eyebrow{
-  font-family: var(--small-caps);
-  font-size: 14px; letter-spacing:3px; color: var(--mold-bright);
-  text-align:center;
-}
-.cover-title{
-  text-align:center;
-  font-size: clamp(40px, 8vw, 84px);
-  color: var(--bone);
-  margin: 12px 0 4px;
-  position:relative;
-  text-shadow: 0 0 18px rgba(168,201,74,0.4);
-  filter: drop-shadow(0 4px 2px rgba(0,0,0,0.5));
-}
-/* efekt "ociekania" pod tytułem */
-.drip-wrap{ position:relative; text-align:center; margin-bottom:8px; }
-.drip{
-  position:absolute; top:100%; width:3px; background: var(--mold);
-  border-radius: 0 0 3px 3px;
-  animation: dripgrow 4s ease-in infinite;
-  transform-origin: top;
-}
-@keyframes dripgrow{
-  0%{ height:0; opacity:0.9; }
-  70%{ height:38px; opacity:0.7; }
-  100%{ height:52px; opacity:0; }
-}
-.cover-sub{
-  text-align:center;
-  font-style: italic;
-  font-size:17px;
-  color: var(--bone-dim);
-  max-width: 58ch;
-  margin: 4px auto 0;
-  line-height:1.6;
-}
-.gm-line{
-  text-align:center;
-  font-family: var(--small-caps);
-  font-size:13px;
-  color: var(--mold-bright);
-  margin-top:16px;
-}
-
-/* -------- licznik zarazy (Sewer Plague) -------- */
-.plague-meter{
-  display:flex; align-items:center; gap:18px; flex-wrap:wrap; justify-content:center;
-  background: rgba(0,0,0,0.35);
-  border: 1px solid var(--mold);
-  border-radius: 4px;
-  padding: 16px 22px;
-  margin-top: 26px;
-}
-.plague-orb{
-  width:64px; height:64px; border-radius:50%;
-  background: radial-gradient(circle at 35% 30%, var(--pus), var(--mold) 60%, var(--swamp-dk) 100%);
-  box-shadow: 0 0 20px 4px rgba(168,201,74,0.5), inset 0 0 12px rgba(0,0,0,0.4);
-  animation: orbpulse 2.4s ease-in-out infinite;
-  flex-shrink:0;
-}
-@keyframes orbpulse{ 0%,100%{ transform:scale(1); box-shadow: 0 0 20px 4px rgba(168,201,74,0.5), inset 0 0 12px rgba(0,0,0,0.4); } 50%{ transform:scale(1.08); box-shadow: 0 0 28px 8px rgba(168,201,74,0.7), inset 0 0 12px rgba(0,0,0,0.4); } }
-.plague-text{ font-family: var(--small-caps); font-size:13px; color: var(--bone); line-height:1.7; text-align:left; }
-.plague-text b{ color: var(--blood-bright); }
-
-/* -------- nawigacja: robaki-zakładki -------- */
-.grimoire-nav{ display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin:28px 0 6px; }
-.nav-worm-btn{
-  font-family: var(--small-caps);
-  font-size:14px; letter-spacing:1px;
-  background: var(--rot-black);
-  color: var(--bone-dim);
-  border: 2px solid var(--swamp);
-  padding: 10px 20px;
-  border-radius: 3px 14px 3px 14px;
-  cursor:pointer;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
-  position:relative;
-}
-.nav-worm-btn:hover{ transform: translateY(-2px) rotate(-1deg); border-color: var(--mold); color: var(--bone); }
-.nav-worm-btn.active{ background: var(--blood); border-color: var(--blood-bright); color: var(--bone); }
-
-/* ============================================================
-   STRONY
-   ============================================================ */
-.page{ display:none; margin-top:30px; }
-.page.active{ display:block; animation: pageturn 0.5s ease both; }
-@keyframes pageturn{
-  from{ opacity:0; transform: perspective(800px) rotateY(-8deg) translateX(-10px); }
-  to{ opacity:1; transform: perspective(800px) rotateY(0) translateX(0); }
-}
-
-.parchment{
-  background: linear-gradient(170deg, var(--bone), var(--bone-dim));
-  color: var(--rot-black);
-  border-radius: 3px;
-  padding: 36px clamp(20px,4.5vw,56px) 44px;
-  box-shadow: 0 20px 46px rgba(0,0,0,0.55);
-  position:relative;
-  border-top: 5px solid var(--blood);
-}
-/* plamy pleśni wżarte w pergamin */
-.parchment::before, .parchment::after{
-  content:"";
-  position:absolute;
-  width:140px; height:140px;
-  background: radial-gradient(circle, rgba(138,148,64,0.25), transparent 70%);
-  border-radius:50%;
-  pointer-events:none;
-}
-.parchment::before{ top:10px; right:20px; }
-.parchment::after{ bottom:20px; left:30px; }
-
-.page-head{
-  display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:10px;
-  border-bottom: 1px solid rgba(10,13,7,0.25);
-  padding-bottom:12px; margin-bottom:24px;
-}
-.page-head .tag{ font-family: var(--small-caps); font-size:12px; letter-spacing:1.5px; color: var(--blood); }
-.page-head .ref{ font-family: var(--small-caps); font-size:11px; color: #5a5340; }
-.page-title{
-  font-size: clamp(30px, 4.4vw, 46px);
-  color: var(--swamp-dk);
-  margin-bottom:10px;
-  position:relative;
-}
-.page-sub{ font-style:italic; font-size:16px; color:#4a4530; max-width:62ch; margin-bottom:26px; line-height:1.6; }
-.page-body p{ font-size:15px; line-height:1.75; color:#2a2515; max-width:68ch; margin:0 0 14px; }
-.page-body p.gm-note{
-  font-family: var(--small-caps);
-  font-size:13px; color: var(--blood);
-  background: rgba(110,32,32,0.06);
-  border-left: 3px solid var(--blood);
-  padding: 10px 14px; line-height:1.6;
-}
-
-/* -------- karty miejsc -------- */
-.place-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:16px; margin-top:8px; }
-.place-card{
-  background: rgba(42,54,32,0.08);
-  border: 1px solid rgba(42,54,32,0.3);
-  border-radius:4px;
-  padding: 16px 16px 14px;
-}
-.place-card .tag{ font-family:var(--small-caps); font-size:10.5px; letter-spacing:1px; color: var(--swamp); }
-.place-card h4{ font-family:var(--display); font-size:19px; color: var(--swamp-dk); margin:6px 0 8px; }
-.place-card p{ font-size:13px; line-height:1.55; color:#3a3520; margin:0; }
-
-/* -------- karty NPC (jak zainfekowane karty) -------- */
-.npc-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:18px; margin-top:8px; }
-.npc-card{
-  background: var(--bone);
-  border: 2px solid var(--swamp);
-  border-radius: 4px;
-  padding: 16px 16px 18px;
-  position:relative;
-  box-shadow: 3px 4px 0 rgba(10,13,7,0.15);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.npc-card:hover{ transform: translateY(-3px) rotate(-0.5deg); box-shadow: 4px 6px 0 rgba(110,32,32,0.25); }
-.npc-card .npc-role{ font-family: var(--small-caps); font-size:11px; letter-spacing:1px; color: var(--blood); text-transform:uppercase; }
-.npc-card h4{ font-family: var(--display); font-size:20px; color: var(--swamp-dk); margin: 6px 0 8px; }
-.npc-card p{ font-size:12.5px; line-height:1.55; color:#3a3520; margin:0; }
-.npc-card .threat{
-  display:inline-block; margin-top:9px; font-family:var(--small-caps); font-size:10px; letter-spacing:1px;
-  padding:3px 9px; border-radius:2px;
-}
-.threat.hostile{ background: rgba(110,32,32,0.15); color: var(--blood); }
-.threat.ally{ background: rgba(42,54,32,0.15); color: var(--swamp); }
-.threat.unknown{ background: rgba(138,148,64,0.2); color: #6a7434; }
-
-/* -------- mapa doliny -------- */
-.map-wrap{
-  background: var(--rot-black); border-radius:4px; border: 2px solid var(--mold);
-  padding: 20px; margin-bottom:30px;
-}
-.map-wrap svg{ width:100%; height:auto; display:block; }
-.map-node circle.dot{ fill: var(--blood-bright); stroke: var(--bone); stroke-width:1.5; }
-.map-node.mold circle.dot{ fill: var(--mold-bright); }
-.map-node text{ font-family: var(--small-caps); font-size:10px; fill: var(--bone); text-anchor:middle; }
-.map-route{ stroke: var(--mold); stroke-width:1.3; stroke-dasharray:5 4; fill:none; opacity:0.55; }
-.map-caption{ margin-top:12px; font-family:var(--small-caps); font-size:11px; color:#8a9a6a; text-align:center; }
-
-/* -------- ledger frakcji -------- */
-.faction-ledger{ border-top:2px solid var(--rot-black); border-bottom:2px solid var(--rot-black); margin-top:8px; }
-.faction-row{ display:grid; grid-template-columns: 160px 1fr 130px; gap:16px; align-items:center; padding:14px 4px; border-bottom:1px dashed rgba(10,13,7,0.2); }
-.faction-row:last-child{ border-bottom:none; }
-.faction-row .fname{ font-family: var(--display); font-size:16px; color: var(--swamp-dk); }
-.faction-row .fdesc{ font-size:13px; color:#4a4530; line-height:1.5; }
-.faction-row .fstatus{ text-align:right; font-family:var(--small-caps); font-size:11px; letter-spacing:1px; justify-self:end; padding:3px 9px; border-radius:2px; }
-.fstatus.ally{ background: rgba(42,54,32,0.15); color: var(--swamp); }
-.fstatus.hostile{ background: rgba(110,32,32,0.15); color: var(--blood); }
-.fstatus.neutral{ background: rgba(138,148,64,0.2); color: #6a7434; }
-
-/* -------- kronika sesji -------- */
-.log-entry{ margin-bottom:20px; padding-bottom:18px; border-bottom:1px dashed rgba(10,13,7,0.2); }
-.log-entry:last-child{ border-bottom:none; }
-.log-meta{ display:flex; gap:14px; align-items:baseline; margin-bottom:8px; flex-wrap:wrap; }
-.log-num{ font-family: var(--display); font-size:22px; color: var(--blood); }
-.log-date{ font-family: var(--small-caps); font-size:11px; color:#5a5340; }
-.log-entry h4{ font-family: var(--display); font-size:19px; color: var(--swamp-dk); margin-bottom:8px; }
-.log-entry p{ font-size:14px; line-height:1.65; color:#2a2515; max-width:64ch; margin:0 0 8px; }
-
-/* -------- wątki -------- */
-.thread-list{ display:grid; gap:12px; margin-top:6px; }
-.thread-row{ display:flex; gap:12px; align-items:flex-start; font-size:14px; }
-.thread-row .mark{ font-size:15px; color: var(--blood); }
-.thread-row b{ color: var(--swamp-dk); font-family: var(--display); font-size:15px; }
-.thread-row span{ color:#4a4530; display:block; margin-top:2px; line-height:1.5; }
-
-.page-foot{
-  margin-top:44px; padding-top:16px; border-top:1px solid rgba(10,13,7,0.2);
-  font-family: var(--small-caps); font-size:11px; color:#5a5340;
-  display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
-}
-
-/* ============================================================
-   RESPONSYWNOŚĆ
-   ============================================================ */
-@media (max-width: 820px){
-  .place-grid{ grid-template-columns: 1fr 1fr; }
-  .faction-row{ grid-template-columns:1fr; gap:6px; }
-  .faction-row .fstatus{ justify-self:start; }
-}
-@media (max-width: 560px){
-  .place-grid{ grid-template-columns: 1fr; }
-  .nav-worm-btn{ font-size:12px; padding:8px 14px; }
-  .plague-meter{ flex-direction:column; text-align:center; }
-  .plague-text{ text-align:center; }
-}
-
-/* -------- header kampanii -------- */
-.campaign-header-links{display:flex;justify-content:flex-end;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:22px;position:relative;z-index:2}
-.campaign-header-links a{display:inline-flex;align-items:center;justify-content:center;padding:9px 15px;border:1px solid var(--swamp);background:var(--rot-black);color:var(--bone);font-family:var(--small-caps);font-size:12px;letter-spacing:1px;text-decoration:none;border-radius:3px 10px 3px 10px;transition:.2s ease}
-.campaign-header-links a:hover{border-color:var(--mold);color:var(--pus);transform:translateY(-1px)}
-.campaign-header-links .pdf{border-color:var(--blood)}
-.campaign-header-links .youtube{border-color:var(--mold)}
-/* -------- stare odnośniki kampanii — usunięte z wnętrza okładki -------- */
-.campaign-links{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin:16px 0 0;
-}
-.campaign-link{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:108px;
-  padding:9px 16px;
-  border:2px solid var(--swamp);
-  border-radius:3px 12px 3px 12px;
-  background:var(--rot-black);
-  color:var(--bone);
-  font-family:var(--small-caps);
-  font-size:12px;
-  letter-spacing:1px;
-  text-decoration:none;
-  transition:background .2s ease,color .2s ease,border-color .2s ease,transform .15s ease;
-}
-.campaign-link:hover{
-  transform:translateY(-2px) rotate(-1deg);
-  border-color:var(--mold);
-  color:var(--pus);
-}
-.campaign-link.external{border-color:var(--blood);}
-.campaign-link.disabled{
-  opacity:.6;
-  cursor:not-allowed;
-}
-.campaign-link.disabled:hover{
-  transform:none;
-  border-color:var(--swamp);
-  color:var(--bone);
-}
-.player-portrait{display:block;width:calc(100% + 32px);height:300px;object-fit:cover;margin:-16px -16px 16px;border-bottom:1px solid var(--swamp);background:var(--rot-black)}
-@media(max-width:560px){.player-portrait{height:260px}}
-</style>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Menaces of Irensberg — archiwum kampanii Vengrath. Baronía, Gloomforest i drużyna Keto, Thorgir, Oxie oraz Zwada.">
+<title>Menaces of Irensberg — Vengrath</title>
+<link rel="stylesheet" href="./irensberg.css">
 </head>
 <body>
-
-<!-- warstwa robactwa wypełniana przez JS -->
-<div class="worm-layer" id="wormLayer"></div>
-
-<div class="scene">
-
-  <!-- ============ OKŁADKA ============ -->
-  <div class="cover">
-    <div class="campaign-header-links" aria-label="Odnośniki kampanii">
-      <a class="pdf" href="https://drive.google.com/file/d/1tBhB3ENS8tPKc8ENQZPz-VibU1otmLlB/view?usp=sharing" target="_blank" rel="noopener">PDF ↗</a>
-      <a class="youtube" href="https://www.youtube.com/playlist?list=PL-Lm83myvu0ihHC4GFEJggfLn0YfdVbZg" target="_blank" rel="noopener">YOUTUBE ↗</a>
-      <a href="https://vengrathdm.github.io/">VENGRATH ↗</a>
-    </div>
-    <div class="cover-eyebrow">Zapiski skażone przez Gloomforest</div>
-    <div class="drip-wrap">
-      <h1 class="cover-title">The Rotting Grimoire</h1>
-      <div class="drip" style="left:22%;"></div>
-      <div class="drip" style="left:48%; animation-delay:1.3s;"></div>
-      <div class="drip" style="left:71%; animation-delay:2.6s;"></div>
-    </div>
-    <p class="cover-sub">Kronika kampanii Menaces of Irensberg — baronii dławionej przez Gloomforest, robactwo Barona Klada i cierpliwość jednoskrzydłego smoka Wormira.</p>
-    <p class="gm-line">PROWADZONE PRZEZ MISTRZA GRY, KTÓRY PRZEŻYŁ TĘ KAMPANIĘ</p>
-
-    <div class="plague-meter">
-      <div class="plague-orb"></div>
-      <div class="plague-text">
-        <b>ZARAZA SIĘ ROZPRZESTRZENIA.</b> Gloomforest rośnie w siłę z każdym dniem — bagno pochłania kolejne akry lasu, a robactwo Barona Klada mnoży się szybciej, niż ktokolwiek zdąży je policzyć.
-      </div>
-    </div>
-
-    <nav class="grimoire-nav" id="grimoireNav">
-      <button class="nav-worm-btn active" data-page="overview">ZAWIĄZANIE</button>
-      <button class="nav-worm-btn" data-page="turmoil">ZAMĘT</button>
-      <button class="nav-worm-btn" data-page="valley">DOLINA</button>
-      <button class="nav-worm-btn" data-page="cast">POSTACIE</button>
-      <button class="nav-worm-btn" data-page="log">KRONIKA</button>
-    </nav>
-  </div>
-
-  <!-- ============ ZAWIĄZANIE / OVERVIEW ============ -->
-  <section class="page active" id="page-overview">
-    <div class="parchment">
-      <div class="page-head"><span class="tag">ZAPIS 01 — POCZĄTEK</span><span class="ref">BARONIA IRENSBERG</span></div>
-      <div class="page-title">Zawiązanie Przygody</div>
-      <p class="page-sub">Grupa najemników trafia do Zamku Irensberg, gdzie baronowa Cynthia szuka pomocy — jej mąż zniknął, a dolina tonie w chaosie.</p>
-      <div class="page-body">
-        <p>Baronia Irensberg leży w dolinie ściśniętej między Górami Srebrnych Zębów a <strong>Gloomforest</strong> — gęstym, wilgotnym lasem skrywającym w sercu mroczne bagno. Od czasu, gdy większość wojsk baronii wyruszyła na wojnę, dolina osłabła, a to, co czaiło się w lesie, zaczęło się budzić.</p>
-        <p>Baron Klad zniknął podczas polowania w północnym Gloomforest. To, co z niego zostało, wróciło — nie jako człowiek, lecz jako <strong>Rojący-się-Robak</strong>, świadomość rozproszona w tysiącach pasożytów, żądna zemsty na swoim zabójcy. Tymczasem głęboko pod bagnem, jednoskrzydły czarny smok <strong>Wormir</strong> od dekad knuje w milczeniu, studiując nekromancję, by odzyskać to, co stracił.</p>
-        <p class="gm-note">PROWADZĄC TO JAKO WŁASNĄ KAMPANIĘ: licznik zarazy, kronika sesji i losy postaci poniżej są przykładowe — podmień je na przebieg własnej rozgrywki, a format sam się dostosuje.</p>
-      </div>
-
-      <div class="map-wrap">
-        <svg viewBox="0 0 760 300" role="img" aria-label="Mapa baronii Irensberg">
-          <path class="map-route" d="M100,240 L260,200 L420,150 L600,90"/>
-          <g class="map-node" data-goto="turmoil" transform="translate(100,240)"><circle class="dot" r="9"/><text y="24">ZAMEK IRENSBERG</text></g>
-          <g class="map-node" data-goto="valley" transform="translate(260,200)"><circle class="dot" r="9"/><text y="24">SMALLBURROW</text></g>
-          <g class="map-node mold" data-goto="valley" transform="translate(420,150)"><circle class="dot" r="9"/><text y="24">GLOOMFOREST</text></g>
-          <g class="map-node" data-goto="valley" transform="translate(600,90)"><circle class="dot" r="9"/><text y="24">JASKINIA WORMIRA</text></g>
-        </svg>
-        <div class="map-caption">kliknij punkt na mapie, by przejść do tej części kroniki</div>
-      </div>
-
-      <div class="page-foot"><span>THE ROTTING GRIMOIRE</span><span>Archiwum kampanii Vengrath · aktualna kampania · bez spoilerów</span></div>
-    </div>
-  </section>
-
-  <!-- ============ ZAMĘT / TURMOIL ============ -->
-  <section class="page" id="page-turmoil">
-    <div class="parchment">
-      <div class="page-head"><span class="tag">ZAPIS 02 — SIŁY W GRZE</span><span class="ref">BARONIA</span></div>
-      <div class="page-title">Zamęt w Dolinie</div>
-      <p class="page-sub">Cztery siły ciągną baronię w cztery różne strony. Żadna z nich nie wygra bez kosztów.</p>
-
-      <div class="npc-grid">
-        <div class="npc-card"><span class="npc-role">Zdrajca w złotej zbroi</span><h4>Ser Malef Gelt</h4><p>Marszałek baronii, uwielbiany przez lud — i osobiście odpowiedzialny za śmierć Barona Klada. Dąży do władzy, ukrywając zbrodnię pod płaszczem dobroci.</p><span class="threat hostile">KŁAMCA</span></div>
-        <div class="npc-card"><span class="npc-role">Rojący-się-Robak</span><h4>Baron Klad</h4><p>Zamordowany, pozostawiony na pożarcie robactwu Gloomforest — i przez nie wskrzeszony. Pragnie tylko zemsty na swoim zabójcy, choćby miał zatopić dolinę we krwi.</p><span class="threat hostile">PRZEKLĘTY</span></div>
-        <div class="npc-card"><span class="npc-role">Jednoskrzydły smok</span><h4>Wormir</h4><p>Okaleczony przed wiekami, cierpliwie odbudowuje moc w mokrej jaskini pod bagnem. Studiuje nekromancję, by odzyskać skrzydło — i władzę nad doliną.</p><span class="threat hostile">CIERPLIWY</span></div>
-        <div class="npc-card"><span class="npc-role">Buntowniczka</span><h4>Ina "Czerwona"</h4><p>Prowadzi Zbirów przeciw niesprawiedliwości szlachty — lecz powstanie wymyka się jej spod kontroli, a jej ludzie stają się gorsi od tych, których miała powstrzymać.</p><span class="threat unknown">NIEPEWNA</span></div>
-      </div>
-
-      <div class="page-foot"><span>ROZDZIAŁ II — ZAMĘT</span><span>cztery siły, jedna umierająca dolina</span></div>
-    </div>
-  </section>
-
-  <!-- ============ DOLINA / VALLEY ============ -->
-  <section class="page" id="page-valley">
-    <div class="parchment">
-      <div class="page-head"><span class="tag">ZAPIS 03 — MIEJSCA SKAŻONE</span><span class="ref">GLOOMFOREST</span></div>
-      <div class="page-title">Dolina i Las</div>
-      <p class="page-sub">Każda osada w baronii dźwiga własny ciężar — a las na horyzoncie dźwiga je wszystkie razem.</p>
-
-      <div class="place-grid">
-        <div class="place-card"><div class="tag">ZAMEK</div><h4>Irensberg</h4><p>Serce baronii, gdzie baronowa Cynthia rządzi bez doświadczenia, a spisek przeciw niej dojrzewa w cieniu tronu zrobionego ze skrzydła Wormira.</p></div>
-        <div class="place-card"><div class="tag">WIOSKA</div><h4>Smallburrow</h4><p>Nękana przez Zbirów i zarazę Talony, ukrytą pod płaszczykiem sierocińca. Najbliższa granicy głodu i rozpaczy.</p></div>
-        <div class="place-card"><div class="tag">STRAŻNICA</div><h4>Geltrum</h4><p>Najszybciej rozwijająca się osada baronii — i cel nieustających najazdów kobold pod wodzą sług Wormira.</p></div>
-        <div class="place-card"><div class="tag">OSADA</div><h4>Drachenend</h4><p>Miejsce, gdzie niegdyś pokonano Wormira. Teraz opustoszałe — jego mieszkańcy zniknęli bez śladu, prócz przypalonych garnków na piecach.</p></div>
-        <div class="place-card"><div class="tag">LAS</div><h4>Gloomforest</h4><p>Nekrotyczna aura sączy się z bagna w jego sercu, wzmacniając nieumarłych i osłabiając wszystko, co żywe, co odważy się wejść między drzewa.</p></div>
-        <div class="place-card"><div class="tag">GŁĘBIA</div><h4>Bagno Wormira</h4><p>Zatopione jaskinie pod lasem, gdzie jednoskrzydły smok od dekad hoduje swoją zemstę wśród ciał i eksperymentów.</p></div>
-      </div>
-
-      <div class="page-title" style="font-size:26px; margin-top:30px;">Nasza drużyna</div>
-      <div class="page-body">
-        <p>W kampanii występują:</p>
-        <p><strong>wpoluwiatr</strong> jako Zwada</p>
-        <p><strong>Dawid</strong> jako Oxie</p>
-        <p><strong>Anemo</strong> jako Keto</p>
-        <p><strong>Szymon</strong> jako Thorgir</p>
-        <p><strong>Kampania w toku.</strong> Podstrona celowo nie zawiera spoilerów ani informacji o dalszych wydarzeniach.</p>
-      </div>
-
-      <div class="page-title" style="font-size:26px; margin-top:30px;">Frakcje Doliny</div>
-      <div class="faction-ledger">
-        <div class="faction-row"><div class="fname">Rycerze Doliny</div><div class="fdesc">Lojalni wobec ser Malefa — nieświadomi, że służą zabójcy własnego pana.</div><div class="fstatus neutral">ZWIEDZENI</div></div>
-        <div class="faction-row"><div class="fname">Zbiry Iny</div><div class="fdesc">Powstanie, które wymknęło się spod kontroli własnej przywódczyni.</div><div class="fstatus neutral">NIESTABILNI</div></div>
-        <div class="faction-row"><div class="fname">Kult Talony</div><div class="fdesc">Ukryta świątynia w Gloomforest, zbierająca dzieci z sierocińca Smallburrow w imię Zarazy.</div><div class="fstatus hostile">WROGOWIE</div></div>
-        <div class="faction-row"><div class="fname">Bracia Brukenbarer</div><div class="fdesc">Krasnoludzcy zarządcy kopalni w Silvercreek, oczernieni przez fałszywe oskarżenia.</div><div class="fstatus ally">SOJUSZNICY</div></div>
-      </div>
-
-      <div class="page-foot"><span>ROZDZIAŁ III — BARONIA IRENSBERG</span><span>każde miejsce ma swój ciężar</span></div>
-    </div>
-  </section>
-
-  <!-- ============ POSTACIE / CAST ============ -->
-  <section class="page" id="page-cast">
-    <div class="parchment">
-      <div class="page-head"><span class="tag">ZAPIS 04 — DRUŻYNA</span><span class="ref">BOHATEROWIE KAMPANII</span></div>
-      <div class="page-title">Postacie Graczy</div>
-      <p class="page-sub">Cztery postacie przemierzające dolinę Irensberg. Każda karta zawiera portret bohatera oraz gracza, który prowadzi go przy stole.</p>
-
-      <div class="npc-grid">
-        <div class="npc-card"><img class="player-portrait" src="./postaci-graczy/Zwada.webp" alt="Zwada"><span class="npc-role">Gracz</span><h4>Zwada</h4><p>wpoluwiatr</p></div>
-        <div class="npc-card"><img class="player-portrait" src="./postaci-graczy/Thorgir.webp" alt="Thorgir"><span class="npc-role">Gracz</span><h4>Thorgir</h4><p>Szymon</p></div>
-        <div class="npc-card"><img class="player-portrait" src="./postaci-graczy/Oxie.webp" alt="Oxie"><span class="npc-role">Gracz</span><h4>Oxie</h4><p>Dawid</p></div>
-        <div class="npc-card"><img class="player-portrait" src="./postaci-graczy/Keto.webp" alt="Keto"><span class="npc-role">Gracz</span><h4>Keto</h4><p>Anemo</p></div>
-      </div>
-
-      <div class="page-foot"><span>ROZDZIAŁ IV — DRUŻYNA</span><span>bohaterowie prowadzeni przy stole</span></div>
-    </div>
-  </section>
-
-  <!-- ============ KRONIKA / LOG ============ -->
-  <section class="page" id="page-log">
-    <div class="parchment">
-      <div class="page-head"><span class="tag">ZAPIS 05 — KRONIKA SESJI</span><span class="ref">WSZYSTKIE ROZDZIAŁY</span></div>
-      <div class="page-title">Kronika Rozgrywki</div>
-      <p class="page-sub">Co naprawdę wydarzyło się przy stole — sesja po sesji, prowadzone przez Mistrza Gry, który to poprowadził.</p>
-
-      <div class="log-entry">
-        <div class="log-meta"><span class="log-num">SESJA 9</span><span class="log-date">ten tydzień</span></div>
-        <h4>Robactwo w Geltrum</h4>
-        <p>Drużyna odparła atak kobold Wormira na Strażnicę Geltrum, ledwo ratując rannego kapłana Pelliusa. W katakumbach pod miastem znaleziono ślady rytuału mającego przywrócić smokowi skrzydło.</p>
-      </div>
-      <div class="log-entry">
-        <div class="log-meta"><span class="log-num">SESJA 8</span><span class="log-date">dwa tygodnie temu</span></div>
-        <h4>Prawda o Smallburrow</h4>
-        <p>Śledztwo w sprawie zamordowanego kapłana doprowadziło drużynę do Eriki Wagner i jej powiązań z kultem Talony. Sierociniec wciąż działa — na razie.</p>
-      </div>
-      <div class="log-entry">
-        <div class="log-meta"><span class="log-num">SESJA 7</span><span class="log-date">cztery tygodnie temu</span></div>
-        <h4>Cień w Drachenend</h4>
-        <p>Drużyna znalazła opuszczoną wioskę Drachenend — bez śladu walki, bez ciał, jedynie zastygłe posiłki na piecach. Coś zabrało wszystkich naraz.</p>
-      </div>
-
-      <div class="page-title" style="font-size:24px; margin-top:32px;">Nierozwiązane Wątki</div>
-      <div class="thread-list">
-        <div class="thread-row"><span class="mark">☠</span><div><b>Zdrada ser Malefa</b><span>Wciąż nieudowodniona. Jeśli wyjdzie na jaw, dolina pogrąży się w wojnie domowej.</span></div></div>
-        <div class="thread-row"><span class="mark">☠</span><div><b>Zemsta Barona Klada</b><span>Rojący-się-Robak gromadzi armię nieumarłych, czekając na dogodny moment.</span></div></div>
-        <div class="thread-row"><span class="mark">☠</span><div><b>Skrzydło Wormira</b><span>Rytuał w Kamiennych Megalitach wciąż trwa. Czasu zostało niewiele.</span></div></div>
-      </div>
-
-      <div class="page-foot"><span>THE ROTTING GRIMOIRE</span><span>Archiwum kampanii Vengrath · aktualna kampania · bez spoilerów</span></div>
-    </div>
-  </section>
-
+<div class="site" id="top">
+<header class="hero">
+<nav class="topbar">
+<a class="brand" href="https://vengrathdm.github.io/"><span class="brand-mark">V</span><span>VENGRATH</span></a>
+<div class="toplinks"><a href="#kampania">AKTA</a><a href="#zagrozenia">ZAGROŻENIA</a><a href="#druzyna">DRUŻYNA</a><a href="#polegli">POKONANI</a><a href="https://www.youtube.com/playlist?list=PL-Lm83myvu0ihHC4GFEJggfLn0YfdVbZg" target="_blank" rel="noopener">YOUTUBE ↗</a></div>
+</nav>
+<div class="hero-grid">
+<div>
+<div class="kicker">IRENSBERG · GLOOMFOREST · AKTA KAMPANII</div>
+<h1>MENACES<br><span>OF IRENSBERG</span></h1>
+<p class="hero-lead">Baronia na granicy rozkładu. Las, który nie powinien rosnąć tak blisko. Cztery postacie w samym środku historii, która zostawia za sobą zarówno wrogów, jak i tych, którzy nie są już częścią drużyny.</p>
+<div class="hero-actions">
+<a href="#kampania">OTWÓRZ AKTA</a>
+<a href="https://drive.google.com/file/d/1tBhB3ENS8tPKc8ENQZPz-VibU1otmLlB/view?usp=sharing" target="_blank" rel="noopener">PDF ↗</a>
+<a href="https://www.youtube.com/playlist?list=PL-Lm83myvu0ihHC4GFEJggfLn0YfdVbZg" target="_blank" rel="noopener">NAGRANIA ↗</a>
 </div>
+</div>
+<div class="dossier-seal" aria-hidden="true"><span class="seal-symbol">✦</span><strong>IRENSBERG</strong><small>BARONIA · AKTA · GLOOMFOREST</small></div>
+</div>
+</header>
 
-<script>
-/* ============================================================
-   NAWIGACJA
-   ============================================================ */
-function goToPage(name){
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-worm-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('page-' + name)?.classList.add('active');
-  document.querySelector('.nav-worm-btn[data-page="' + name + '"]')?.classList.add('active');
-  window.scrollTo({top:0, behavior:'smooth'});
-}
-document.getElementById('grimoireNav').addEventListener('click', (e) => {
-  const btn = e.target.closest('.nav-worm-btn');
-  if(!btn) return;
-  goToPage(btn.dataset.page);
-});
-document.querySelectorAll('.map-node').forEach(node => {
-  node.addEventListener('click', () => goToPage(node.dataset.goto));
-});
+<main class="wrap">
+<section class="section" id="kampania">
+<div class="section-head"><div><div class="section-index">01 / AKTA</div><h2>Baronia Irensberg</h2></div><p class="section-intro">Kampania osadzona w dolinie pomiędzy Górami Srebrnych Zębów a Gloomforest. Poniżej zostają tylko elementy świata i stanu kampanii, które należą do jej obecnego archiwum.</p></div>
+<div class="case-grid">
+<article class="case-file"><h3>Kraina pod presją</h3><p>Baronia Irensberg leży w dolinie ściśniętej między Górami Srebrnych Zębów a <strong>Gloomforest</strong> — gęstym, wilgotnym lasem skrywającym w sercu mroczne bagno.</p><p>Historia baronii splata się z losem Barona Klada, Baronowej Cynthii, ser Malefa Gelta, Iny „Czerwonej” oraz jednoskrzydłego Wormira. W centrum tych wydarzeń znajduje się drużyna, która przemierza dolinę i konfrontuje się z jej zagrożeniami.</p></article>
+<aside class="status-board">
+<div class="status-row"><span>REGION</span><strong>Baronia Irensberg</strong></div>
+<div class="status-row"><span>LAS</span><strong>Gloomforest</strong></div>
+<div class="status-row"><span>GŁÓWNE ZAGROŻENIE</span><strong>Wormir</strong></div>
+<div class="status-row"><span>STATUS</span><strong class="active">KAMPANIA AKTYWNA</strong></div>
+</aside>
+</div>
+<div class="map-panel">
+<svg viewBox="0 0 900 310" role="img" aria-label="Schematyczna mapa baronii Irensberg">
+<path class="route" d="M100 235 C220 210 250 170 370 185 S550 250 650 175 S760 100 820 75"/>
+<circle class="node safe" cx="100" cy="235" r="9"/><circle class="node" cx="370" cy="185" r="9"/><circle class="node" cx="650" cy="175" r="9"/><circle class="node" cx="820" cy="75" r="9"/>
+<text x="100" y="260">IRENSBERG</text><text x="370" y="210">SMALLBURROW</text><text x="650" y="200">GLOOMFOREST</text><text x="820" y="100">WORMIR</text>
+</svg>
+<div class="map-caption">SCHEMAT REGIONU · NIE JEST MAPĄ TOPOGRAFICZNĄ</div>
+</div>
+</section>
 
-/* ============================================================
-   GENEROWANIE ŻYWEGO ROBACTWA — pełzającego po ekranie
-   ============================================================ */
-function makeWormSVG(){
-  return `<svg viewBox="0 0 26 6" xmlns="http://www.w3.org/2000/svg">
-    <path d="M1,3 Q4,0 7,3 T13,3 T19,3 T25,3" stroke="#a8c94a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-  </svg>`;
-}
+<section class="section" id="zagrozenia">
+<div class="section-head"><div><div class="section-index">02 / SIŁY</div><h2>Zagrożenia i gracze</h2></div><p class="section-intro">Cztery figury, które definiują napięcie w historii Irensbergu. Opis zachowuje dotychczasowy materiał kampanii.</p></div>
+<div class="threat-grid">
+<article class="threat"><div class="glyph">♜</div><small>ZDRAJCA W ZŁOTEJ ZBROI</small><h3>Ser Malef Gelt</h3><p>Marszałek baronii, uwielbiany przez lud. W dotychczasowym zapisie kampanii pozostaje związany ze śmiercią Barona Klada i walką o władzę.</p><span class="state">ZAGROŻENIE</span></article>
+<article class="threat"><div class="glyph">☠</div><small>ROJĄCY-SIĘ-ROBAK</small><h3>Baron Klad</h3><p>Baron, którego śmierć i późniejszy powrót jako świadomości rozproszonej w robactwie stały się jednym z centralnych elementów historii.</p><span class="state">PRZEKLĘTY</span></article>
+<article class="threat"><div class="glyph">◈</div><small>JEDNOSKRZYDŁY SMOK</small><h3>Wormir</h3><p>Okaleczony smok ukryty pod bagnem Gloomforest. W dotychczasowym zapisie prowadzi eksperymenty związane z nekromancją i próbą odzyskania utraconego skrzydła.</p><span class="state">AKTYWNY</span></article>
+<article class="threat"><div class="glyph">⚔</div><small>BUNTOWNICZKA</small><h3>Ina „Czerwona”</h3><p>Przywódczyni Zbirów przeciw niesprawiedliwości szlachty. Jej powstanie jest jedną z sił destabilizujących dolinę.</p><span class="state">NIEPEWNA</span></article>
+</div>
+</section>
 
-function spawnWorm(){
-  const layer = document.getElementById('wormLayer');
-  const worm = document.createElement('div');
-  worm.className = 'worm';
-  worm.innerHTML = makeWormSVG();
+<section class="section party-section" id="druzyna">
+<div class="section-head"><div><div class="section-index">03 / REJESTR</div><h2>Drużyna</h2></div><p class="section-intro">Cztery postacie, czterech graczy. Każda karta jest traktowana identycznie — bez wyróżniania jednej postaci ponad pozostałe.</p></div>
+<div class="party-grid">
+<article class="character"><div class="character-portrait"><img src="./postaci-graczy/Zwada.webp" alt="Zwada"></div><div class="character-index">01</div><div class="character-body"><div class="character-label">GRACZ</div><h3>Zwada</h3><p>wpoluwiatr</p></div></article>
+<article class="character"><div class="character-portrait"><img src="./postaci-graczy/Oxie.webp" alt="Oxie"></div><div class="character-index">02</div><div class="character-body"><div class="character-label">GRACZ</div><h3>Oxie</h3><p>Dawid</p></div></article>
+<article class="character"><div class="character-portrait"><img src="./postaci-graczy/Keto.webp" alt="Keto"></div><div class="character-index">03</div><div class="character-body"><div class="character-label">GRACZ</div><h3>Keto</h3><p>Anemo</p></div></article>
+<article class="character"><div class="character-portrait"><img src="./postaci-graczy/Thorgir.webp" alt="Thorgir"></div><div class="character-index">04</div><div class="character-body"><div class="character-label">GRACZ</div><h3>Thorgir</h3><p>Szymon</p></div></article>
+</div>
+<div class="roster-note">AKTUALNY SKŁAD · Keto · Thorgir · Oxie · Zwada</div>
+</section>
 
-  const startEdge = Math.floor(Math.random() * 4); // 0=top,1=right,2=bottom,3=left
-  const vw = window.innerWidth, vh = window.innerHeight;
-  let startX, startY, endX, endY;
+<section class="section" id="polegli">
+<div class="section-head"><div><div class="section-index">04 / ARCHIWUM</div><h2>Pokonani i przegonieni</h2></div><p class="section-intro">Postacie, które były częścią historii drużyny, ale nie należą już do jej obecnego składu.</p></div>
+<div class="fallen-grid">
+<article class="fallen"><div class="fallen-portrait"><img src="./postaci-graczy/Kirion.webp" alt="Kirion"></div><div class="fallen-body"><div class="fallen-label">POKONANY / PRZEGONIONY</div><h3>Kirion</h3></div></article>
+<article class="fallen"><div class="fallen-portrait"><img src="./postaci-graczy/Andirion.webp" alt="Andirion"></div><div class="fallen-body"><div class="fallen-label">POKONANY / PRZEGONIONY</div><h3>Andirion</h3></div></article>
+<article class="fallen"><div class="fallen-portrait"><img src="./postaci-graczy/Flavia.webp" alt="Flavia"></div><div class="fallen-body"><div class="fallen-label">POKONANA / PRZEGONIONA</div><h3>Flavia</h3></div></article>
+<article class="fallen"><div class="fallen-portrait"><img src="./postaci-graczy/Erro.webp" alt="Erro"></div><div class="fallen-body"><div class="fallen-label">POKONANY / PRZEGONIONY</div><h3>Erro</h3></div></article>
+<article class="fallen"><div class="fallen-portrait"><img src="./postaci-graczy/Etaire.webp" alt="Etaire"></div><div class="fallen-body"><div class="fallen-label">POKONANA / PRZEGONIONA</div><h3>Etaire</h3></div></article>
+</div>
+</section>
 
-  if(startEdge === 0){ startX = Math.random()*vw; startY = -10; endX = startX + (Math.random()*200-100); endY = vh*0.15 + Math.random()*100; }
-  else if(startEdge === 1){ startX = vw+10; startY = Math.random()*vh; endX = vw*0.85 - Math.random()*100; endY = startY + (Math.random()*200-100); }
-  else if(startEdge === 2){ startX = Math.random()*vw; startY = vh+10; endX = startX + (Math.random()*200-100); endY = vh*0.85 - Math.random()*100; }
-  else { startX = -10; startY = Math.random()*vh; endX = vw*0.15 + Math.random()*100; endY = startY + (Math.random()*200-100); }
-
-  worm.style.left = startX + 'px';
-  worm.style.top = startY + 'px';
-  worm.style.transform = `rotate(${Math.random()*360}deg)`;
-
-  layer.appendChild(worm);
-
-  const duration = 9000 + Math.random()*8000;
-  const anim = worm.animate([
-    { left: startX + 'px', top: startY + 'px', opacity: 0 },
-    { opacity: 0.85, offset: 0.1 },
-    { left: endX + 'px', top: endY + 'px', opacity: 0.85, offset: 0.85 },
-    { opacity: 0 }
-  ], { duration: duration, easing: 'ease-in-out' });
-
-  anim.onfinish = () => worm.remove();
-}
-
-// utrzymuj stałą, umiarkowaną populację robactwa (subtelne, nie przytłaczające)
-setInterval(spawnWorm, 900);
-for(let i=0;i<4;i++){ setTimeout(spawnWorm, i*300); }
-</script>
+<section class="section">
+<div class="section-head"><div><div class="section-index">05 / KAMPANIA</div><h2>Materiały</h2></div><p class="section-intro">Wejścia do istniejących materiałów kampanii, bez udawania kompletnej kroniki tam, gdzie jej dane nie są obecnie zapisane na stronie.</p></div>
+<div class="archive">
+<div class="archive-row"><div class="archive-no">PDF</div><div><small>DOKUMENT KAMPANII</small><h3>Materiały Menaces of Irensberg</h3></div><a href="https://drive.google.com/file/d/1tBhB3ENS8tPKc8ENQZPz-VibU1otmLlB/view?usp=sharing" target="_blank" rel="noopener">OTWÓRZ ↗</a></div>
+<div class="archive-row"><div class="archive-no">YT</div><div><small>ARCHIWUM NAGRAŃ</small><h3>Playlista kampanii</h3></div><a href="https://www.youtube.com/playlist?list=PL-Lm83myvu0ihHC4GFEJggfLn0YfdVbZg" target="_blank" rel="noopener">OTWÓRZ ↗</a></div>
+<div class="archive-row"><div class="archive-no">V</div><div><small>ARCHIWUM</small><h3>Vengrath</h3></div><a href="https://vengrathdm.github.io/">WRÓĆ ↗</a></div>
+</div>
+<div class="endnote"><strong>Historia nadal trwa.</strong><p>Obecny rejestr kończy się na aktualnej drużynie i postaciach, które zostały pokonane lub przegonione. Dalsza kronika może zostać dołączona bez zmiany struktury archiwum.</p></div>
+</section>
+</main>
+<footer><span>VENGRATH · MENACES OF IRENSBERG · AKTA BARONII</span><a href="#top">POWRÓT NA GÓRĘ ↑</a></footer>
+<script src="./irensberg.js"></script>
+</div>
 </body>
 </html>
