@@ -11,6 +11,21 @@ main{padding:82px 0 110px}.intro{display:grid;grid-template-columns:1.3fr .7fr;g
 .closing{margin-top:26px;border:1px solid #5a342b;background:linear-gradient(115deg,#130c09,#0b110d);padding:28px;display:flex;justify-content:space-between;gap:25px;align-items:center}.closing strong{font:700 11px "DM Mono";color:var(--rust);letter-spacing:.16em}.closing h2{margin:7px 0 0;font:700 42px/.9 "Barlow Condensed";text-transform:uppercase}.closing p{margin:7px 0 0;color:#818c85;line-height:1.5}.closing .stamp{font:700 42px "DM Mono";color:rgba(184,200,105,.35)}
 footer{border-top:1px solid var(--line);padding:24px 0;display:flex;justify-content:space-between;font:8px "DM Mono";letter-spacing:.15em;color:#627067}footer a{text-decoration:none;color:var(--lime)}
 @media(max-width:850px){.hero{grid-template-columns:1fr}.hero-art{height:420px;border-left:0;border-top:1px solid var(--line);order:-1}.hero-copy{padding:70px 0}.intro{grid-template-columns:1fr}.sectors{grid-template-columns:1fr 1fr}.party{grid-template-columns:1fr 1fr}}@media(max-width:560px){.wrap{width:min(100% - 24px,1220px)}.navlinks{display:none}.hero h1{font-size:80px}.hero-art{height:330px}.sectors,.party{grid-template-columns:1fr}.section-title h2{font-size:48px}.section-title{display:block}.section-title span{display:block;margin-top:10px}}
+
+/* Campaign episode archive */
+.drk-episodes{margin-top:88px}
+.drk-episode-head{display:flex;justify-content:space-between;align-items:end;gap:30px;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:18px}
+.drk-episode-head h2{margin:8px 0 0;font:700 58px/.82 "Barlow Condensed";text-transform:uppercase}
+.drk-episode-head p{max-width:620px;margin:12px 0 0;color:#8e9991;font-size:14px;line-height:1.65}
+.drk-episode-count{border:1px solid #46523e;padding:11px 13px;color:var(--lime);font:9px "DM Mono";letter-spacing:.16em;white-space:nowrap}
+.drk-episode-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.drk-episode{display:grid;grid-template-columns:58px 1fr 34px;align-items:center;gap:15px;min-height:88px;padding:14px 16px;border:1px solid var(--line);background:linear-gradient(145deg,#0f1511,#0a0e0c);text-decoration:none;transition:.18s ease}
+.drk-episode:hover{border-color:#59684b;transform:translateY(-2px);background:#111811}
+.drk-ep-no{width:45px;height:45px;display:grid;place-items:center;border:1px solid #46523e;color:var(--lime);font:16px "DM Mono"}
+.drk-ep-copy small{display:block;color:#667269;font:8px "DM Mono";letter-spacing:.15em;margin-bottom:5px}
+.drk-ep-copy strong{display:block;color:var(--ink);font:500 19px/1.12 "Barlow Condensed";text-transform:uppercase}
+.drk-ep-play{width:32px;height:32px;border:1px solid #46523e;border-radius:50%;display:grid;place-items:center;color:var(--lime);font-size:10px}
+@media(max-width:700px){.drk-episode-head{display:block}.drk-episode-count{display:inline-block;margin-top:16px}.drk-episode-grid{grid-template-columns:1fr}.drk-episode-head h2{font-size:48px}}
 </style></head><body><div class="drk"><div class="wrap">
 <nav><a class="home" href="https://vengrathdm.github.io/">VENGRATH / ARCHIWUM</a><div class="navlinks"><a href="#miasto">MIASTO</a><a href="#sektory">SEKTORY</a><a href="#druzyna">DRUŻYNA</a><a href="#nagrania">NAGRANIA</a></div><a class="playlist" href="https://www.youtube.com/playlist?list=PL-Lm83myvu0hf6i-R8MW7tut0N5h3jIwF" target="_blank" rel="noopener">PLAYLISTA ↗</a></nav>
 <header class="hero"><div class="hero-copy"><div class="kicker">CITY RECOVERY DOSSIER · HAZE / RUIN / EXPEDITION</div><h1>Drakken<span>heim</span></h1><p class="lead">Nowa wyprawa do miasta, którego ruiny są jednocześnie terenem, zagrożeniem i problemem, którego nie da się rozwiązać jednym wejściem.</p><div class="hero-meta"><span>NOWA DRUŻYNA</span><span>EKSPOLORACJA</span><span>HAZE</span><span>FIELD FILE 01</span></div></div><figure class="hero-art"><img src="../../Home/Graphics/drakkenheim.png" alt="Drakkenheim"></figure></header>
