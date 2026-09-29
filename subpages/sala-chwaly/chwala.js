@@ -15,7 +15,7 @@ const addedCharacters3=[
 ["Puff","Jakubek","Dragon of Icespire Peak","../sala-chwaly/postaci-graczy/Puff-Jakubek-DragonOfIcespirePeak.webp","finished","Pokonał Cryoveina podczas jego pierwszego przelotu nad Górami Miecza."],
 ["Sentinel","Jakubek","Rime of the Frostmaiden","../sala-chwaly/postaci-graczy/Sentinel-Jakubek-RimeOfTheFrostmaiden.webp","dead","Został pokonany w Termalaine przez Chardarynowego Smoka."],
 ["Theia","Rivani","Forge of Fury","../sala-chwaly/postaci-graczy/Theia-Rivani-ForgeOfFury.webp","finished","Wraz z towarzyszami odzyskała Kuźnię Gniewu i rozwiązała zagadkę Barbera z Silverymoon."],
-["Torg'dal","Viking","Heroes of Drakkenheim","../sala-chwaly/postaci-graczy/Torg'dal-Viking-X.webp","dead","Zginął na ulicach Drakkenheim."],
+["Torg'dal","Viking","Heroes of Drakkenheim","../sala-chwaly/postaci-graczy/Torg'dal-Viking-X.jpg","dead","Zginął na ulicach Drakkenheim."],
 
 ];
 characters.push(...addedCharacters3);
