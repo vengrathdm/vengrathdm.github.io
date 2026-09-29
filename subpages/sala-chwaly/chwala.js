@@ -26,6 +26,10 @@ const freshGraphics4=[
 ["Lyanna Redglaive","wpoluwiatr","Dragon of Icespire Peak","../sala-chwaly/postaci-graczy/Lyanna Redglaive-wpoluwiatr-DragonOfIcespirePeak-Cleric-Human-Dead.jpg","dead","Portret dodany do archiwum."]
 ];
 characters.push(...freshGraphics4);
+const freshGraphics5=[
+["Zwada","wpoluwiatr","Shards of the Past","../sala-chwaly/postaci-graczy/Zwada-wpoluwiatr-ShardsOfThePast-Sorcerer-Tiefling-Dead.jpg","dead","Portret dodany do archiwum."]
+];
+characters.push(...freshGraphics5);
 const elalenCharacter=["Elalen","koksuvi","Heroes of Drakkenheim","../red-blood-snow-white/portrety-postaci/Elalen-koksuvi-sorcerer-harengon-HeroesOfDrakkenheim.png","alive","Postać z kampanii Heroes of Drakkenheim; dalsze losy pozostają otwarte."];
 addedCharacters.push(elalenCharacter);
 characters.push(...addedCharacters);
@@ -108,7 +112,7 @@ function canonicalPlayer(value){
 function addLegacyCharacter(row){
   const [name,rawPlayer,campaign,portrait,fate,description]=row;
   const player=canonicalPlayer(rawPlayer);
-  const key=name==="Xavier"
+  const key=(name==="Xavier" || name==="Zwada")
     ? name+"\u0000"+player+"\u0000"+campaign
     : name+"\u0000"+player;
   let record=identity.get(key);
@@ -182,6 +186,8 @@ for(const line of CHARACTER_META_SOURCE.split("\n")){
 }
 
 const GRAPHIC_META_OVERRIDES=new Map();
+GRAPHIC_META_OVERRIDES.set("Zwada\\u0000wpoluwiatr\\u0000Shards of the Past",{classes:["Sorcerer"],race:"Tiefling"});
+
 GRAPHIC_META_OVERRIDES.set("Alyss\\u0000DKJowler\\u0000Menaces of Gloomforest Legacy",{classes:["Cleric"],race:"Half-Elf"});
 GRAPHIC_META_OVERRIDES.set("Aylin\\u0000Rawiea\\u0000Menaces of Gloomforest Legacy",{classes:["Sorcerer"],race:"HalfElf"});
 GRAPHIC_META_OVERRIDES.set("Carric Tallstag\\u0000Boulton\\u0000Menaces of Gloomforest Legacy",{classes:["Paladin"],race:"Human"});
