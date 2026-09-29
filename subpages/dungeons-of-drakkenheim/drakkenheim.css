@@ -613,3 +613,123 @@
   .drakkenheim-page .drakkenheim-loss{grid-template-columns:1fr}
   .drakkenheim-page .fey-section{padding:24px}
 }
+
+/* POLISH EPISODE ARCHIVE */
+.drakkenheim-page .episodes{
+  margin-top:78px;
+}
+.drakkenheim-page .episodes-head{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:24px;
+  align-items:end;
+  margin-bottom:24px;
+}
+.drakkenheim-page .episodes-head h2{
+  margin:0;
+  font-family:Voltaire,sans-serif;
+  font-size:46px;
+  font-weight:400;
+  line-height:1;
+  color:#eee5f2;
+}
+.drakkenheim-page .episodes-head p{
+  max-width:560px;
+  margin:0;
+  color:#96899e;
+  font-size:14px;
+  line-height:1.55;
+}
+.drakkenheim-page .episodes-count{
+  padding:11px 14px;
+  border:1px solid #4b3656;
+  background:#100a16;
+  color:var(--drk-violet-bright);
+  font:700 11px Voltaire,sans-serif;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.drakkenheim-page .episodes-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+.drakkenheim-page .episode{
+  display:grid;
+  grid-template-columns:70px 1fr 42px;
+  gap:16px;
+  align-items:center;
+  min-height:104px;
+  padding:16px 18px;
+  border:1px solid #3b2d47;
+  background:linear-gradient(145deg,#17111d,#0e0a12);
+  text-decoration:none;
+  transition:transform .18s ease,border-color .18s ease,background .18s ease;
+}
+.drakkenheim-page .episode:hover{
+  transform:translateY(-2px);
+  border-color:#73518a;
+  background:linear-gradient(145deg,#1b1321,#100b14);
+}
+.drakkenheim-page .episode-number{
+  width:54px;
+  height:54px;
+  display:grid;
+  place-items:center;
+  border:1px solid #60446f;
+  color:#c17bec;
+  font:400 20px "IM Fell English SC",serif;
+  background:#0b0710;
+}
+.drakkenheim-page .episode-info small{
+  display:block;
+  margin-bottom:6px;
+  color:#806e89;
+  font:700 8px Voltaire,sans-serif;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+.drakkenheim-page .episode-info strong{
+  display:block;
+  color:#e5dbe8;
+  font:400 20px Voltaire,sans-serif;
+  line-height:1.12;
+}
+.drakkenheim-page .episode-play{
+  width:36px;
+  height:36px;
+  border:1px solid #654574;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#c17bec;
+  font-size:13px;
+  background:#0c0711;
+}
+.drakkenheim-page .episodes-note{
+  margin-top:12px;
+  padding:15px 17px;
+  border-left:2px solid var(--drk-delirium);
+  background:#0d0812;
+  color:#938798;
+  font-size:13px;
+  line-height:1.55;
+}
+@media(max-width:760px){
+  .drakkenheim-page .episodes-head{
+    grid-template-columns:1fr;
+    align-items:start;
+  }
+  .drakkenheim-page .episodes-count{width:max-content}
+  .drakkenheim-page .episodes-list{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .drakkenheim-page .episode{
+    grid-template-columns:56px 1fr 36px;
+    gap:11px;
+    padding:13px;
+  }
+  .drakkenheim-page .episode-number{width:46px;height:46px}
+  .drakkenheim-page .episode-info strong{font-size:17px}
+}
