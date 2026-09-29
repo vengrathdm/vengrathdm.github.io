@@ -3,196 +3,60 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Neverwinter: Intrygi Północnego Wybrzeża Mieczy — kampania Vengrath w formie wiktoriańskiej gazety.">
+<meta name="description" content="Noce Neverwinter — Intrygi Północnego Wybrzeża Mieczy.">
 <title>Noce Neverwinter — Intrygi Północnego Wybrzeża Mieczy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Libre+Baskerville:wght@400;700&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 <style>
-:root{
- --paper:#ede5d2;--paper2:#e3d8c0;--paper3:#f4eedf;--ink:#171513;--soft:#4c473f;--faded:#756e62;
- --red:#7f2f2c;--red2:#a4493f;--green:#485e45;--rule:#25221e;--gold:#8a6a37;--shadow:rgba(34,26,16,.18);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#22201c;color:var(--ink);font-family:"Libre Baskerville",Georgia,serif}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.16;background-image:repeating-linear-gradient(0deg,rgba(30,25,18,.08) 0 1px,transparent 1px 4px),radial-gradient(circle at 30% 20%,rgba(130,100,55,.09),transparent 34%),radial-gradient(circle at 70% 80%,rgba(90,65,40,.08),transparent 30%)}
-a{color:inherit}
-.paper{width:min(1320px,calc(100% - 28px));margin:22px auto;min-height:100vh;background:linear-gradient(100deg,var(--paper2),var(--paper) 36%,var(--paper3) 68%,var(--paper2));box-shadow:0 12px 60px rgba(0,0,0,.42);position:relative}
-.inner{padding:0 30px 52px}
-.utility{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:9px 0;border-bottom:1px solid var(--rule);font:10px "Special Elite";letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
-.utility a{text-decoration:none}.utility .home{font-weight:700}.utility .playlist{color:var(--red)}
-.masthead{padding:14px 0 12px;border-bottom:5px double var(--rule);display:grid;grid-template-columns:170px 1fr 190px;align-items:center;gap:18px}
-.mast-side{font:10px "Special Elite";line-height:1.45;text-transform:uppercase}.mast-side strong{font:14px "IM Fell English SC";display:block;margin-bottom:4px}.mast-side.right{text-align:right}.mast-title{text-align:center}.mast-title .over{font:11px "Special Elite";letter-spacing:.26em;text-transform:uppercase}.mast-title h1{font:clamp(56px,8vw,112px)/.7 "UnifrakturMaguntia";font-weight:400;margin:10px 0 5px}.mast-title .under{font:12px "Special Elite";letter-spacing:.25em;text-transform:uppercase;border-top:2px solid var(--rule);padding-top:7px;display:inline-block}
-.subnav{display:flex;justify-content:center;gap:24px;padding:10px 0;border-bottom:1px solid var(--rule);font:9px "Special Elite";letter-spacing:.15em;text-transform:uppercase}.subnav a{text-decoration:none}.subnav a:hover{color:var(--red)}
-.front-grid{display:grid;grid-template-columns:1.65fr .95fr .7fr;gap:18px;padding:20px 0;border-bottom:3px solid var(--rule)}
-.kicker{font:10px "Special Elite";letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
-.lead-story{padding-right:16px;border-right:1px solid var(--rule)}.lead-story h2{font:700 clamp(40px,5.3vw,78px)/.92 "Libre Baskerville";text-transform:uppercase;letter-spacing:-.04em;margin:9px 0 12px}.lead-story .dek{font-size:16px;line-height:1.65;margin:0 0 13px}.dateline{display:flex;justify-content:space-between;gap:15px;border-top:2px solid var(--rule);border-bottom:2px solid var(--rule);padding:7px 0;margin:12px 0;font:9px "Special Elite";text-transform:uppercase}.column-text{column-count:2;column-gap:22px;font-size:12px;line-height:1.58;text-align:justify}.column-text p{margin:0 0 11px;break-inside:avoid}.column-text p:first-child:first-letter{font:700 42px/0.75 "Libre Baskerville";float:left;padding:4px 7px 0 0;color:var(--red)}
-.hero-engraving{position:relative;border:1px solid var(--rule);background:#cfc4ad;min-height:560px;padding:10px;box-shadow:5px 5px 0 var(--shadow);overflow:hidden}.hero-engraving img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) sepia(.32) contrast(1.08) brightness(.9);mix-blend-mode:multiply}.hero-engraving:before{content:"WOODCUT / NEVERWINTER";position:absolute;left:18px;top:18px;background:var(--paper3);border:1px solid var(--rule);padding:5px 7px;font:9px "Special Elite";letter-spacing:.1em;z-index:2}.hero-engraving:after{content:"NOCE NEVERWINTER · ARCHIVE PLATE";position:absolute;bottom:14px;left:14px;right:14px;text-align:center;font:9px "Special Elite";letter-spacing:.12em;background:rgba(237,229,210,.88);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:7px 4px}
-.notice-rail{border-left:1px solid var(--rule);padding-left:17px}.notice{border:2px solid var(--rule);padding:13px;margin-bottom:13px;background:rgba(255,255,255,.16)}.notice h3{font:700 19px "Libre Baskerville";margin:0 0 8px;text-transform:uppercase}.notice p{font-size:11px;line-height:1.55;margin:0}.notice .price{font:12px "Special Elite";color:var(--green);text-transform:uppercase;letter-spacing:.11em}
-.rule{border-top:1px solid var(--rule);margin:14px 0}.double-rule{border-top:4px double var(--rule);margin:18px 0}
-.headline{margin:18px 0 10px;text-align:center;border-top:4px double var(--rule);border-bottom:4px double var(--rule);padding:11px 8px}.headline h2{font:700 clamp(28px,4vw,51px)/.98 "Libre Baskerville";margin:0;text-transform:uppercase}.headline p{margin:7px auto 0;max-width:900px;font-size:12px;line-height:1.5}
-.section-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--rule)}.article{min-width:0}.article h3{font:700 25px "Libre Baskerville";text-transform:uppercase;margin:0 0 8px}.article .body{column-count:3;column-gap:20px;font-size:11.5px;line-height:1.6;text-align:justify}.article .body p{margin:0 0 10px}.side-box{border-left:1px solid var(--rule);padding-left:17px}.side-box h3{font:700 20px "Libre Baskerville";text-transform:uppercase;margin:0 0 10px}.fact-table{width:100%;border-collapse:collapse;font:10px "Special Elite"}.fact-table td{border-top:1px solid var(--rule);padding:8px 4px;vertical-align:top}.fact-table td:first-child{width:36%;text-transform:uppercase;color:var(--faded)}.fact-table td:last-child{text-align:right}.quote{margin-top:14px;border-top:3px solid var(--rule);border-bottom:3px solid var(--rule);padding:13px 8px;text-align:center;font-size:15px;line-height:1.45;font-style:italic}.quote cite{display:block;font:9px "Special Elite";font-style:normal;text-transform:uppercase;letter-spacing:.09em;color:var(--faded);margin-top:8px}
-.section-bar{display:flex;justify-content:space-between;align-items:end;gap:15px;border-top:4px double var(--rule);border-bottom:1px solid var(--rule);padding:9px 0;margin-top:18px}.section-bar h2{margin:0;font:700 28px "Libre Baskerville";text-transform:uppercase}.section-bar span{font:9px "Special Elite";text-transform:uppercase;letter-spacing:.12em}
-.chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:13px}.chapter{padding:15px 16px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);min-height:175px}.chapter:nth-child(3n){border-right:0}.chapter .n{font:9px "Special Elite";color:var(--red);letter-spacing:.16em}.chapter h3{font:700 20px "Libre Baskerville";margin:15px 0 7px}.chapter p{font-size:10.5px;line-height:1.55;color:var(--soft);margin:0}.chapter .tag{display:inline-block;margin-top:10px;border:1px solid var(--rule);padding:4px 6px;font:8px "Special Elite";text-transform:uppercase}
-.people{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}.people-col{columns:2;column-gap:16px}.person-list{break-inside:avoid;border-bottom:1px solid var(--rule);padding:8px 0}.person-list strong{display:block;font:700 13px "Libre Baskerville";text-transform:uppercase}.person-list span{display:block;font:9px "Special Elite";color:var(--faded);margin-top:2px}.factions{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule)}.faction{padding:13px 14px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);min-height:115px}.faction:nth-child(3n){border-right:0}.faction h4{margin:0 0 5px;font:700 16px "Libre Baskerville"}.faction p{margin:0;font-size:10px;line-height:1.45;color:var(--soft)}
-.campaign-brief{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;padding:18px 0;border-bottom:3px double var(--rule)}.brief-box{border:2px solid var(--rule);padding:18px;background:rgba(255,255,255,.14)}.brief-box h3{font:700 23px "Libre Baskerville";text-transform:uppercase;margin:0 0 10px}.brief-box p{font-size:11.5px;line-height:1.65;margin:0 0 10px}.brief-list{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule)}.brief-item{padding:8px;border-bottom:1px solid var(--rule);border-right:1px solid var(--rule);font:10px "Special Elite"}.brief-item:nth-child(2n){border-right:0}.brief-item b{display:block;font-size:12px;margin-bottom:2px}.classifieds{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:16px}.ad{border:2px solid var(--rule);padding:13px;text-align:center;min-height:155px;background:rgba(255,255,255,.12)}.ad h3{font:700 18px "Libre Baskerville";margin:0 0 8px;text-transform:uppercase}.ad p{font-size:10.5px;line-height:1.5;margin:0}.ad .seal{display:inline-block;border:2px solid var(--green);color:var(--green);font:9px "Special Elite";letter-spacing:.14em;padding:5px 8px;margin-top:10px;transform:rotate(-3deg)}
-.team{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--rule);margin-top:13px}.member{padding:16px 12px;min-height:160px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}.member:last-child{border-right:0}.member .number{font:9px "Special Elite";color:var(--red)}.member h3{font:700 22px "Libre Baskerville";margin:28px 0 5px}.member p{font:9px "Special Elite";letter-spacing:.07em;color:var(--faded);text-transform:uppercase;margin:0}.member .note{font-size:9.5px;line-height:1.4;color:var(--soft);margin-top:12px}
-.nights{margin-top:18px;border:2px solid var(--rule);padding:15px;background:rgba(255,255,255,.13)}.nights-top{display:flex;justify-content:space-between;gap:18px;border-bottom:3px double var(--rule);padding-bottom:9px;align-items:end}.nights-top strong{font:400 clamp(35px,5vw,65px)/.75 "UnifrakturMaguntia"}.nights-top span{font:9px "Special Elite";letter-spacing:.1em;text-align:right}.nights-main{display:grid;grid-template-columns:1.6fr .8fr;gap:16px;padding-top:13px}.nights-main h3{font:700 33px "Libre Baskerville";margin:0 0 9px;text-transform:uppercase}.nights-main p{font-size:11px;line-height:1.63;text-align:justify}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mini{border:1px solid var(--rule);padding:11px}.mini h4{margin:0 0 6px;font:700 14px "Libre Baskerville";text-transform:uppercase}.mini p{font-size:9.5px;line-height:1.48;text-align:left;margin:0}
-.footer{border-top:5px double var(--rule);margin-top:22px;padding:16px 0 0;display:flex;justify-content:space-between;gap:18px;font:9px "Special Elite";letter-spacing:.12em;text-transform:uppercase;color:var(--faded)}.footer a{text-decoration:none;color:var(--red)}
-@media(max-width:1020px){.masthead{grid-template-columns:1fr}.mast-side{display:none}.front-grid{grid-template-columns:1.25fr .75fr}.notice-rail{display:none}.team{grid-template-columns:repeat(3,1fr)}.member:nth-child(3n){border-right:0}.section-grid,.campaign-brief{grid-template-columns:1fr}.side-box{border-left:0;border-top:1px solid var(--rule);padding:15px 0 0}.chapters{grid-template-columns:1fr 1fr}.chapter:nth-child(3n){border-right:1px solid var(--rule)}.chapter:nth-child(2n){border-right:0}}
-@media(max-width:720px){.paper{width:min(100% - 10px,1320px);margin:5px auto}.inner{padding:0 14px 35px}.utility,.subnav{font-size:8px}.subnav{gap:12px;overflow:auto;justify-content:flex-start}.front-grid{grid-template-columns:1fr}.lead-story{border-right:0;padding-right:0}.hero-engraving{min-height:360px}.column-text{column-count:1}.article .body{column-count:1}.chapters{grid-template-columns:1fr}.chapter,.chapter:nth-child(3n),.chapter:nth-child(2n){border-right:0}.factions,.classifieds{grid-template-columns:1fr}.faction{border-right:0}.team{grid-template-columns:1fr 1fr}.member:nth-child(3n){border-right:1px solid var(--rule)}.member:nth-child(2n){border-right:0}.nights-main{grid-template-columns:1fr}.people{grid-template-columns:1fr}.people-col{columns:1}.mast-title h1{font-size:64px}.mast-title .under{font-size:9px}.lead-story h2{font-size:42px}}
+:root{--paper:#eee6d3;--paper2:#e3d8bf;--ink:#171513;--muted:#756d60;--red:#7c302d;--green:#4d6349;--rule:#24211d;--soft:#4d4942}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#28251f;color:var(--ink);font-family:"Libre Baskerville",Georgia,serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.13;background:repeating-linear-gradient(0deg,rgba(50,35,20,.09) 0 1px,transparent 1px 4px);z-index:20}
+a{color:inherit}.paper{width:min(1280px,calc(100% - 16px));margin:8px auto;background:linear-gradient(100deg,var(--paper2),var(--paper) 42%,#f3eddc 72%,var(--paper2));box-shadow:0 10px 50px #0008;min-height:100vh}.inner{padding:0 24px 40px}
+.top{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--rule);font:9px "Special Elite";letter-spacing:.08em;text-transform:uppercase}.top a{text-decoration:none}.top .home{color:var(--green)}
+.mast{padding:12px 0 11px;text-align:center;border-bottom:5px double var(--rule)}.mast small{font:9px "Special Elite";letter-spacing:.23em;text-transform:uppercase}.mast h1{font:clamp(58px,9vw,118px)/.72 "UnifrakturMaguntia";font-weight:400;margin:9px 0 6px}.mast .subtitle{font:11px "Special Elite";letter-spacing:.22em;text-transform:uppercase;border-top:2px solid var(--rule);padding-top:7px;display:inline-block}
+.nav{display:flex;justify-content:center;gap:22px;padding:9px 0;border-bottom:1px solid var(--rule);font:8px "Special Elite";letter-spacing:.13em;text-transform:uppercase}.nav a{text-decoration:none}.nav a:hover{color:var(--red)}
+.datebar{display:flex;justify-content:space-between;gap:15px;border-bottom:3px solid var(--rule);padding:8px 0;font:9px "Special Elite";text-transform:uppercase}
+.lead{display:grid;grid-template-columns:1.4fr .82fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--rule)}.story{padding-right:18px;border-right:1px solid var(--rule)}.kicker{font:9px "Special Elite";letter-spacing:.17em;color:var(--red);text-transform:uppercase}.story h2{font:700 clamp(38px,5.6vw,70px)/.95 "Libre Baskerville";text-transform:uppercase;letter-spacing:-.035em;margin:9px 0 14px}.story .dek{font-size:15px;line-height:1.7;margin:0 0 13px}.story-copy{font-size:11.5px;line-height:1.68;text-align:justify;column-count:2;column-gap:22px}.story-copy p{margin:0 0 11px}
+.hero{padding:8px;border:1px solid var(--rule);background:#cdbfa4;align-self:start}.hero img{width:100%;height:100%;min-height:480px;object-fit:cover;display:block;filter:grayscale(1) sepia(.32) contrast(1.08) brightness(.88);mix-blend-mode:multiply}.hero figcaption{text-align:center;border-top:1px solid var(--rule);padding:7px 4px 1px;font:8px "Special Elite";letter-spacing:.1em;text-transform:uppercase}
+.section{padding:18px 0;border-bottom:1px solid var(--rule)}.section-head{display:flex;justify-content:space-between;align-items:end;border-top:4px double var(--rule);border-bottom:1px solid var(--rule);padding:8px 0;margin-bottom:13px}.section-head h2{font:700 28px "Libre Baskerville";margin:0;text-transform:uppercase}.section-head span{font:8px "Special Elite";letter-spacing:.12em}
+.team{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--rule)}.member{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);min-height:310px;background:rgba(255,255,255,.11)}.member:last-child{border-right:0}.member .portrait{height:205px;overflow:hidden;border-bottom:1px solid var(--rule);background:linear-gradient(145deg,#d3c6aa,#b5a78d);position:relative}.portrait img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.25) sepia(.12) contrast(1.04)}.portrait.missing:after{content:"PORTRET NIEOBECNY W KARTOTECE";position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;font:9px "Special Elite";letter-spacing:.12em;color:#5a5349;background:repeating-linear-gradient(135deg,#d3c6aa,#d3c6aa 8px,#cabca1 8px,#cabca1 16px)}.member-body{padding:12px}.member .n{font:8px "Special Elite";color:var(--red);letter-spacing:.15em}.member h3{font:700 20px "Libre Baskerville";margin:12px 0 4px}.member p{margin:0;color:var(--muted);font:9px "Special Elite";text-transform:uppercase;letter-spacing:.08em}.member .fate{margin-top:9px;font-size:9.5px;line-height:1.4;color:var(--soft)}
+.columns{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.article h3,.box h3{font:700 22px "Libre Baskerville";text-transform:uppercase;margin:0 0 8px}.article-text{column-count:2;column-gap:22px;font-size:11.5px;line-height:1.68;text-align:justify}.article-text p{margin:0 0 11px}.box{border-left:1px solid var(--rule);padding-left:18px}.fact{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--rule);padding:7px 2px;font:9px "Special Elite"}.fact span{color:var(--muted)}.fact b{text-align:right}.ad{margin-top:14px;border:2px solid var(--rule);padding:13px;text-align:center;background:rgba(255,255,255,.11)}.ad .stamp{display:inline-block;border:2px solid var(--green);color:var(--green);padding:5px 7px;font:8px "Special Elite";letter-spacing:.13em;transform:rotate(-3deg)}.ad h4{font:700 18px "Libre Baskerville";margin:10px 0 6px;text-transform:uppercase}.ad p{font-size:9.5px;line-height:1.45;margin:0}
+.footer{border-top:5px double var(--rule);padding-top:13px;margin-top:20px;display:flex;justify-content:space-between;font:8px "Special Elite";letter-spacing:.11em;color:var(--muted)}.footer a{text-decoration:none;color:var(--red)}
+@media(max-width:940px){.lead{grid-template-columns:1fr}.story{border-right:0;padding-right:0}.hero img{min-height:380px}.team{grid-template-columns:repeat(3,1fr)}.member:nth-child(3n){border-right:0}.columns{grid-template-columns:1fr}.box{border-left:0;border-top:1px solid var(--rule);padding:14px 0 0}}
+@media(max-width:680px){.paper{width:100%;margin:0}.inner{padding:0 12px 28px}.top{font-size:8px;display:block}.top span{display:none}.nav{justify-content:flex-start;overflow:auto;gap:14px}.datebar{display:block}.datebar span{display:block;margin:4px 0}.story-copy,.article-text{column-count:1}.team{grid-template-columns:1fr 1fr}.member:nth-child(3n){border-right:1px solid var(--rule)}.member:nth-child(2n){border-right:0}.member{min-height:300px}.hero img{min-height:300px}.mast h1{font-size:65px}}
+@media(max-width:440px){.team{grid-template-columns:1fr}.member,.member:nth-child(2n),.member:nth-child(3n){border-right:0}.member .portrait{height:290px}}
 </style>
 </head>
 <body>
-<div class="paper" id="top">
-<div class="inner">
-<div class="utility"><a class="home" href="https://vengrathdm.github.io/">VENGRATH · ARCHIWUM</a><span>WYDANIE SPECJALNE · PÓŁNOCNE WYBRZEŻE MIECZY</span><a class="playlist" href="https://www.youtube.com/playlist?list=PL-Lm83myvu0gYTerajwJlxi2yqRupuj9c" target="_blank" rel="noopener">PLAYLISTA ↗</a></div>
-<header class="masthead">
-<div class="mast-side"><strong>ROK 1492 DR</strong>Miasto, które odbudowało mury, lecz nie pozbyło się polityki.</div>
-<div class="mast-title"><div class="over">Niezależny dziennik miasta i Północnego Wybrzeża</div><h1>Noce Neverwinter</h1><div class="under">Intrygi Północnego Wybrzeża Mieczy</div></div>
-<div class="mast-side right"><strong>WYDANIE SPECJALNE</strong>2 sztuki miedzi · Nakład nocny · Archiwum Vengrath</div>
-</header>
-<nav class="subnav" aria-label="Sekcje kampanii"><a href="#front">Front</a><a href="#polityka">Polityka</a><a href="#miasto">Miasto</a><a href="#stronnictwa">Stronnictwa</a><a href="#druzyna">Drużyna</a><a href="#brief">Brief</a><a href="#kronika">Noce Neverwinter</a></nav>
+<div class="paper" id="top"><div class="inner">
+<div class="top"><a class="home" href="https://vengrathdm.github.io/">Vengrath</a><span>Wydanie kampanijne · Północne Wybrzeże Mieczy</span><a href="https://www.youtube.com/playlist?list=PL-Lm83myvu0gYTerajwJlxi2yqRupuj9c" target="_blank" rel="noopener">Nagrania ↗</a></div>
+<header class="mast"><small>Niezależny dziennik miasta i Północnego Wybrzeża</small><h1>Noce Neverwinter</h1><div class="subtitle">Intrygi Północnego Wybrzeża Mieczy</div></header>
+<nav class="nav"><a href="#front">Wydanie</a><a href="#miasto">Miasto</a><a href="#druzyna">Drużyna</a><a href="#kampania">Kampania</a></nav>
 
-<section class="front-grid" id="front">
-<article class="lead-story">
-<div class="kicker">GŁÓWNY TYTUŁ · WYDARZENIE PÓŁNOCY</div>
-<h2>Wojna na Północnym Wybrzeżu Mieczy!</h2>
-<div class="dateline"><span>Neverwinter · Numer archiwalny</span><span>Rok 1492 · Rachuba Dolin</span></div>
-<p class="dek">Nadchodzi kres spokojnego życia mieszkańców Północnego Wybrzeża Mieczy. Lord Dagult Neverember, namiestnik Neverwinter, pragnie korony króla, a zaniepokojone tą ambicją Luskan i Mirabar szykują się do wojny.</p>
-<div class="column-text">
-<p>Niniejsze archiwum opisuje kampanię zaprojektowaną jako przygoda, w której polityka nie jest dekoracją. Drużyna zaczyna w Neverwinter, a dalej porusza się przez Północne Wybrzeże, gdzie sojusze, miasta, frakcje i stare konflikty tworzą sieć decyzji.</p>
-<p>Wojna nie musi oznaczać jednej wielkiej bitwy. Może być plotką, zmianą sojuszu, naciskiem gospodarczym, zamkniętymi bramami, zniknięciem człowieka lub jednym dokumentem, który trafia w niepowołane ręce.</p>
-<p>To nie miał być ścisły sandbox ani podróż po szynach. W oryginalnym briefie kampania została pomyślana jako „tort” złożony warstwami śledztw, podróży, politycznych układów, eksploracji oraz badania ruin i grobowców.</p>
-<p>Decyzje graczy miały zmieniać drogę dojścia do celu, nawet jeśli sama kampania zachowywała ogólną trajektorię. Ten konflikt między planem a swobodą jest jednym z najważniejszych elementów charakteru tej rozgrywki.</p>
-</div>
-</article>
-<figure class="hero-engraving"><img src="../../Home/Graphics/neverwinter.webp" alt="Neverwinter"></figure>
-<aside class="notice-rail">
-<div class="notice"><h3>Łuskan zbiera siły</h3><p>Luskan, bastion piractwa, przygotowuje się do konfrontacji z Neverwinter. Tymczasem rośnie w siłę królestwo Wielu-Strzał.</p><div class="price">Wiadomości z północy</div></div>
-<div class="notice"><h3>Mirabar się waha</h3><p>Mirabar grozi opuszczeniem Sojuszu Lordów. Napięcie między miastami może przynieść katastrofę albo nowe porozumienie.</p></div>
-<div class="notice"><h3>Poszukiwana drużyna</h3><p>Poszukiwani byli gracze nastawieni na historię, role-play, konsekwencje i długą rozgrywkę. Rekrutacja wymagała zgody na publikację nagrań.</p></div>
-</aside>
+<section id="front" class="lead">
+<article class="story"><div class="kicker">Główny artykuł · Neverwinter</div><h2>Wojna na Północnym Wybrzeżu Mieczy!</h2><div class="datebar"><span>Neverwinter</span><span>1492 DR · numer archiwalny</span></div><p class="dek">Dagult Neverember pragnie korony. Luskan i Mirabar obserwują każdy ruch. W mieście, gdzie polityka spotyka się z ulicą, nawet zwykłe śledztwo może stać się częścią większego konfliktu.</p><div class="story-copy"><p>Ta kampania została pomyślana jako wielowarstwowa przygoda: śledztwa, podróże, polityczne układy, eksploracja ruin i badanie grobowców miały działać obok siebie, zamiast zamykać drużynę w jednym rodzaju aktywności.</p><p>Start następował w Neverwinter, a ogólna trajektoria prowadziła przez Północne Wybrzeże Mieczy. Gracze nie mieli jednak poruszać się po jednej ustalonej ścieżce: sposób docierania do celów zależał od ich decyzji i działania drużyny.</p><p>W centrum konfliktu znajdowały się trzy wielkie punkty nacisku — Neverwinter, Luskan i Mirabar — oraz siły i frakcje działające wewnątrz tych miast.</p><p>Archiwum tej rozgrywki zachowuje ją jako historię zamkniętą. Jej ostatnim aktem był TPK po serii wydarzeń związanych z działalnością drużyny w Neverwinter.</p></div></article>
+<figure class="hero"><img src="../../Home/Graphics/neverwinter.webp" alt="Neverwinter"><figcaption>Rycina miasta · Neverwinter</figcaption></figure>
 </section>
 
-<section id="polityka" class="headline"><h2>Między koroną a wojną</h2><p>Neverwinter, Luskan i Mirabar są punktami nacisku. Przymierze Lordów stoi pomiędzy ambicją władzy a rozpadem dotychczasowego porządku.</p></section>
+<section id="miasto" class="section"><div class="section-head"><h2>Miasto mówi pierwsze</h2><span>01 · SETTING</span></div><div class="columns">
+<article class="article"><h3>Północne Wybrzeże Mieczy</h3><div class="article-text"><p>Neverwinter jest punktem wyjścia, ale kampania od początku patrzy szerzej: na Knieję Neverwinter, Wysoką Drogę, Luskan, Trakt Czarnego Brodu, Mirabar, Wielu-Strzał, Merdelain i Zamek Never.</p><p>Polityka jest tu częścią geografii. W mieście działają Gwardia Neverwinter, Straż Zimowej Tarczy, Synowie Alagondara, Gwiezdny Płaszcz i Zakon Rękawicy; obok nich pojawiają się świątynie Tyra, Oghmy i Helma.</p><p>Kampania miała pozwalać na życie pomiędzy sesjami: planowanie kolejnych kroków, budowanie relacji i własnej małej społeczności wokół stołu.</p></div></article>
+<aside class="box"><h3>Akta wydania</h3><div class="fact"><span>System</span><b>D&D 5e</b></div><div class="fact"><span>Setting</span><b>Zapomniane Krainy</b></div><div class="fact"><span>Start</span><b>Neverwinter</b></div><div class="fact"><span>Region</span><b>Północne Wybrzeże Mieczy</b></div><div class="fact"><span>Status</span><b>TPK · zamknięta</b></div><div class="ad"><span class="stamp">OGŁOSZENIE</span><h4>Potrzebni świadkowie!</h4><p>Miasto potrzebuje ludzi, którzy potrafią patrzeć na fakty, rozmawiać z mieszkańcami i wrócić z ruin z czymś więcej niż nową historią do opowiedzenia.</p></div></aside></div></section>
 
-<section class="section-grid">
-<article class="article">
-<div class="kicker">WIADOMOŚCI · PÓŁNOC</div>
-<h3>Kiedy sojusz zaczyna pękać</h3>
-<div class="body">
-<p>Nadciągająca zawierucha jest jednym z głównych tonów kampanii. Luskan ma własne interesy, Mirabar rozważa niezależność, a Neverwinter jest miejscem, w którym ambicje Lorda Protektora zderzają się z interesami sąsiadów.</p>
-<p>Północne Wybrzeże Mieczy nie zostało zaprojektowane jako jeden punkt na mapie. Każde miasto ma własny ciężar polityczny, własne frakcje i własne sposoby reagowania na kryzys.</p>
-<p>W tym sensie kampania zaczyna się od pytania o władzę, ale szybko prowadzi do pytań o zaufanie, lojalność, handel, religię i to, kto ma prawo decydować o przyszłości regionu.</p>
-<p>To właśnie dlatego śledztwo, podróż i polityczny układ są traktowane jako równie istotne warstwy przygody.</p>
-</div>
-</article>
-<aside class="side-box">
-<h3>Akta kampanii</h3>
-<table class="fact-table">
-<tr><td>System</td><td>D&D 5e</td></tr>
-<tr><td>Setting</td><td>Zapomniane Krainy</td></tr>
-<tr><td>Region</td><td>Północne Wybrzeże Mieczy</td></tr>
-<tr><td>Start</td><td>Neverwinter · 1492 DR</td></tr>
-<tr><td>Stół</td><td>Foundry VTT</td></tr>
-<tr><td>Komunikacja</td><td>Discord</td></tr>
-<tr><td>Sesje</td><td>Piątki · 3–5 h</td></tr>
-<tr><td>Forma</td><td>HOMEBREW</td></tr>
-<tr><td>Finał</td><td>TPK · archiwum zamknięte</td></tr>
-</table>
-<div class="quote">„Decyzje ukształtują losy całych królestw.”<cite>Ton kampanii · materiał rekrutacyjny</cite></div>
-</aside>
-</section>
-
-<section id="miasto">
-<div class="section-bar"><h2>Miasto i droga przez północ</h2><span>09 rozdziałów · dossier kampanii</span></div>
-<div class="chapters">
-<article class="chapter"><div class="n">ROZDZIAŁ 01</div><h3>Neverwinter</h3><p>Polityczne centrum kampanii: frakcje, religie, plotki, Enklawa Obrońcy, Trzy Mosty i miejsca, które pozwalają miastu działać jak żywy organizm.</p><span class="tag">Miasto</span></article>
-<article class="chapter"><div class="n">ROZDZIAŁ 02</div><h3>Knieja Neverwinter</h3><p>Rozszerzenie przestrzeni poza murami: podróż, kluczowe postacie i lokacje oraz kolejny krok w głąb Północnego Wybrzeża.</p><span class="tag">Dzicz</span></article>
-<article class="chapter"><div class="n">ROZDZIAŁ 03</div><h3>Wysoka Droga</h3><p>Szlak, który łączy politykę z podróżą. Kolejny odcinek historii osadzony między miastami i zagrożeniami regionu.</p><span class="tag">Droga</span></article>
-<article class="chapter"><div class="n">ROZDZIAŁ 04</div><h3>Luskan</h3><p>Bastion piractwa i jeden z biegunów napięcia. Frakcje miasta, porty i Dwór Kapitanów budują osobną warstwę kampanii.</p><span class="tag">Port</span></article>
-<article class="chapter"><div class="n">ROZDZIAŁ 05</div><h3>Trakt Czarnego Brodu</h3><p>Podróż w poprzek Północnego Wybrzeża. Rozdział przejściowy między polityką miast i kolejnymi konsekwencjami.</p><span class="tag">Szlak</span></article>
-<article class="chapter"><div class="n">ROZDZIAŁ 06</div><h3>Mirabar</h3><p>Miasto potęgi i nieugiętości, zagrożone rozpadem relacji z Przymierzem Lordów. Enklawy mieszkańców, kupców i żołnierzy tworzą drugi wielki ośrodek polityczny.</p><span class="tag">Miasto</span></article>
-<article class="chapter"><div class="n">ROZDZIAŁ 07</div><h3>Wielu-Strzał</h3><p>Plemienna siła narastająca na obrzeżach konfliktu. Zmiana równowagi sił jest częścią większego napięcia północy.</p><span class="tag">Zagrożenie</span></article>
-<article class="chapter"><div class="n">ROZDZIAŁ 08</div><h3>Merdelain</h3><p>Kolejny rozdział podróży, kluczowych postaci i lokacji, wpisany w rozrastającą się mapę całej kampanii.</p><span class="tag">Ekspedycja</span></article>
-<article class="chapter"><div class="n">ROZDZIAŁ 09</div><h3>Zamek Never</h3><p>Finałowa lokacja głównej trasy. Miejsce, w którym wcześniejsze polityczne i fabularne nici mogą spotkać się w jednym punkcie.</p><span class="tag">Finał</span></article>
-</div>
-</section>
-
-<section id="stronnictwa">
-<div class="section-bar"><h2>Stronnictwa i symbole miasta</h2><span>Frakcje · religie · wpływy</span></div>
-<div class="factions">
-<article class="faction"><h4>Nowe Neverwinter</h4><p>Władza i odbudowa miasta. Jedna z najważniejszych struktur politycznych Neverwinter.</p></article>
-<article class="faction"><h4>Gwardia Neverwinter</h4><p>Siła porządkowa miasta i codzienny kontakt z jego mieszkańcami.</p></article>
-<article class="faction"><h4>Straż Zimowej Tarczy</h4><p>Formacja obecna w miejskich wątkach i śledztwach.</p></article>
-<article class="faction"><h4>Synowie Alagondara</h4><p>Dziedzictwo dawnego Neverwinter i jego własna wizja miasta.</p></article>
-<article class="faction"><h4>Gwiezdny Płaszcz</h4><p>Frakcja łącząca politykę, tajemnicę i zaplecze magiczne kampanii.</p></article>
-<article class="faction"><h4>Zakon Rękawicy</h4><p>Religijno-militarny element układu sił Neverwinter.</p></article>
-<article class="faction"><h4>Tyr</h4><p>Jedna z religii obecnych w miejskim pejzażu kampanii.</p></article>
-<article class="faction"><h4>Oghma</h4><p>Świątynia wiedzy i kolejny punkt styku bohaterów z miastem.</p></article>
-<article class="faction"><h4>Helm</h4><p>Religijny porządek obecny w zestawie instytucji Neverwinter.</p></article>
-</div>
-</section>
-
-<section id="druzyna">
-<div class="section-bar"><h2>Ludzie przy stole</h2><span>Party dossier · archived</span></div>
+<section id="druzyna" class="section"><div class="section-head"><h2>Drużyna przy stole</h2><span>02 · PORTRETY Z SALI CHWAŁY</span></div>
 <div class="team">
-<article class="member"><div class="number">01 / MICHAŁ</div><h3>Elorin</h3><p>Gracz · Michał</p><div class="note">Jedna z pięciu postaci zapisanych w archiwum kampanii.</div></article>
-<article class="member"><div class="number">02 / PRZEMEK</div><h3>Satrius</h3><p>Gracz · Przemek</p><div class="note">Dossier zachowany jako część zamkniętej rozgrywki.</div></article>
-<article class="member"><div class="number">03 / KAROLINA</div><h3>Adeline</h3><p>Gracz · Karolina</p><div class="note">Postać z miejskiego okresu kampanii.</div></article>
-<article class="member"><div class="number">04 / MATEUSZ</div><h3>Ozros</h3><p>Gracz · Mateusz</p><div class="note">Archiwum nie dopisuje dalszego losu poza zapisanym finałem.</div></article>
-<article class="member"><div class="number">05 / ALEK</div><h3>Mullder</h3><p>Gracz · Alek</p><div class="note">Ostatnie nazwisko w dossier pierwotnej drużyny.</div></article>
-</div>
-</section>
+<article class="member"><div class="portrait missing"></div><div class="member-body"><div class="n">01 · MICHAŁ</div><h3>Elorin</h3><p>Michał</p><div class="fate">W kartotece Sali Chwały brak osobnego portretu tej postaci.</div></div></article>
+<article class="member"><div class="portrait"><img src="../sala-chwaly/postaci-graczy/Satrius Nevermore-Przemysław Król-NeverwinterIngrygi.png" alt="Satrius Nevermore"></div><div class="member-body"><div class="n">02 · PRZEMYSŁAW KRÓL</div><h3>Satrius Nevermore</h3><p>Przemysław Król</p><div class="fate">Zginął po konflikcie z Gwardią Neverwinter podczas aresztowania.</div></div></article>
+<article class="member"><div class="portrait"><img src="../sala-chwaly/postaci-graczy/Adeline-Karolina Z-NeverwinterIntrygi.jpg" alt="Adeline"></div><div class="member-body"><div class="n">03 · KAROLINA Z</div><h3>Adeline</h3><p>Karolina Z</p><div class="fate">Zginęła po konflikcie z Gwardią Neverwinter podczas aresztowania.</div></div></article>
+<article class="member"><div class="portrait"><img src="../sala-chwaly/postaci-graczy/Ozros-Mateusz-NeverwinterIntrygi.webp" alt="Ozros"></div><div class="member-body"><div class="n">04 · MATEUSZ</div><h3>Ozros</h3><p>Mateusz</p><div class="fate">Zginął w konflikcie związanym z działalnością drużyny w Neverwinter.</div></div></article>
+<article class="member"><div class="portrait"><img src="../sala-chwaly/postaci-graczy/Mullder-Alek-Neverwinter-Intrygi.jpg" alt="Mullder"></div><div class="member-body"><div class="n">05 · ALEK</div><h3>Mullder</h3><p>Alek</p><div class="fate">Ostatni członek tej kartoteki; finał kampanii zapisano jako TPK.</div></div></article>
+</div></section>
 
-<section id="brief">
-<div class="section-bar"><h2>Pierwotny brief kampanii</h2><span>Dokument rekrutacyjny · 2024</span></div>
-<div class="campaign-brief">
-<article class="brief-box">
-<h3>Jak miało to działać?</h3>
-<p>Przygoda została opisana jako „tort”: warstwy śledztw, podróży, politycznych układów, eksploracji i badania ruin oraz grobowców.</p>
-<p>Nie miał to być ani pełny sandbox, ani podróż po szynach. Ogólna trajektoria była przygotowana przez prowadzącego, lecz sposób docierania do celów miał zależeć od drużyny.</p>
-<p>Najważniejsze miały być historia, role-play, konsekwencje decyzji i stworzenie społeczności działającej także pomiędzy sesjami.</p>
-</article>
-<article class="brief-box">
-<h3>Warunki stołu</h3>
-<div class="brief-list">
-<div class="brief-item"><b>D&D 5e</b>System kampanii</div>
-<div class="brief-item"><b>Foundry VTT</b>Wirtualny stół</div>
-<div class="brief-item"><b>Discord</b>Komunikacja</div>
-<div class="brief-item"><b>Piątki</b>Start między 18:00 a 20:00</div>
-<div class="brief-item"><b>3–5 h</b>Długość sesji</div>
-<div class="brief-item"><b>Kamery</b>Wymagane</div>
-<div class="brief-item"><b>YouTube</b>Zgoda na publikację nagrań</div>
-<div class="brief-item"><b>Bez multiclassingu</b>Zasada buildów</div>
-</div>
-</article>
-</div>
-</section>
-
-<section id="kronika" class="nights">
-<div class="nights-top"><strong>Noce Neverwinter</strong><span>WYDANIE SPECJALNE NOCY NEVERWINTER<br>10 FLAMERULE'A 1492 DR</span></div>
-<div class="nights-main">
-<article>
-<h3>Morderstwo w Neverwinter!</h3>
-<p><strong>Umevalur Szept Brzozy</strong>, elf kupiec z Mirabaru, został odnaleziony martwy na ulicy Rzemieślniczej. Jako główny podejrzany wskazany został krasnoludzki kowal <strong>Magdhur Miedziany Młot</strong>.</p>
-<p>Sprawa szybko przerodziła się w miejskie wydarzenie: Trybunał, świadkowie, dowody i pytanie, czy za prostym oskarżeniem nie kryje się coś większego. W późniejszym numerze gazety pojawiają się nowe informacje sugerujące możliwość fałszywego oskarżenia i powiązań handlowych.</p>
-<p>Ta fikcyjna gazeta jest częścią świata kampanii: plotki, procesy, ogłoszenia i skandale tworzą warstwę, przez którą Neverwinter może być czytane także poza stołem.</p>
-</article>
-<aside class="mini-grid">
-<div class="mini"><h4>Ogłoszenie</h4><p><strong>IDZIE LUTY, KUJ BUTY!</strong><br>Eleganckie, wytrzymałe i wygodne. Nie szukajcie dalej niż warsztat Zurina Gładkie-Ręce!</p></div>
-<div class="mini"><h4>Wyprzedaż</h4><p>Wszystko musi wyjść — nawet dokumenty. Sklepowe ogłoszenie zachowane w archiwum jako część atmosfery miasta.</p></div>
-<div class="mini"><h4>Plotki</h4><p>„Czy gobliny zjedzą nasze dzieci?” — odpowiedź miała ukazać się w kolejnym wydaniu „Nocy Neverwinter”.</p></div>
-<div class="mini"><h4>Redakcja</h4><p>Miasto żyje szybciej niż papier. Właśnie dlatego gazeta pozostaje jednym z języków tej kampanii.</p></div>
-</aside>
-</div>
-</section>
+<section id="kampania" class="section"><div class="section-head"><h2>Jak działała ta kampania?</h2><span>03 · O ARCHITEKTURZE</span></div><div class="columns"><article class="article"><h3>Warstwy zamiast torów</h3><div class="article-text"><p>Pierwotny brief opisywał kampanię jako „tort” przełożony warstwami śledztw, podróży, politycznych układów, eksploracji oraz badania ruin i grobowców.</p><p>Nie był to prawdziwy sandbox, ale nie była to również podróż po szynach. Prowadzący miał ogólny scenariusz i trajektorię, natomiast droga do celów miała zależeć od drużyny.</p><p>Duży nacisk kładziono na stworzenie historii, role-play i konsekwencje decyzji. To dlatego miejskie plotki, sojusze i sprawy lokalne były równie ważne jak sama walka.</p></div></article><aside class="box"><h3>Wydanie końcowe</h3><p style="font-size:11px;line-height:1.65;margin:0 0 9px">Kampania została przerwana przed pełnym przebiegiem. Archiwum zachowuje ją jako zamkniętą historię z finałem TPK.</p><div class="ad"><span class="stamp">CASE CLOSED</span><h4>Miasto pamięta</h4><p>Nie wszystkie nazwiska trafiły do kronik z takim samym obrazem. Wszystkie jednak zostały częścią historii Neverwinter.</p></div></aside></div></section>
 
 <div class="double-rule"></div>
 <footer class="footer"><span>VENGRATH · NOCE NEVERWINTER · INTRYGI PÓŁNOCNEGO WYBRZEŻA MIECZY</span><a href="#top">POWRÓT NA GÓRĘ ↑</a></footer>
-</div>
-</div>
+</div></div>
 </body>
 </html>
