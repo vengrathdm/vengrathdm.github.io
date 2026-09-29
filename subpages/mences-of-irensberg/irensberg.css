@@ -26,9 +26,9 @@ button{font:inherit}
 .toplinks a:hover{border-color:var(--brass2);color:var(--brass2);background:#151a14}
 
 .hero{min-height:94vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:130px clamp(20px,7vw,100px) 80px;background:
- linear-gradient(90deg,rgba(5,8,5,.98) 0%,rgba(5,8,5,.78) 48%,rgba(5,8,5,.3) 100%),
- radial-gradient(circle at 76% 44%,rgba(181,200,106,.16),transparent 25%),
- linear-gradient(160deg,#172117,#080b08 68%)}
+ linear-gradient(90deg,rgba(5,8,5,.98) 0%,rgba(5,8,5,.86) 42%,rgba(5,8,5,.34) 100%),
+ linear-gradient(0deg,rgba(5,8,5,.72),transparent 48%),
+ url("../../Home/Graphics/mences-of-irensberg.jpg") center/cover no-repeat}
 .hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:
  linear-gradient(115deg,transparent 0 49%,rgba(185,155,98,.09) 49.1% 49.2%,transparent 49.3%),
  linear-gradient(20deg,transparent 0 68%,rgba(181,200,106,.06) 68.1% 68.25%,transparent 68.3%)}
@@ -143,3 +143,13 @@ footer a{text-decoration:none;color:var(--brass)}
 .fallen-portrait.no-portrait{display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,rgba(125,44,45,.22),transparent 42%),linear-gradient(145deg,#181313,#090808);border-bottom:1px solid rgba(125,44,45,.35)}
 .fallen-portrait.no-portrait span{font:600 72px Cinzel;color:rgba(179,74,67,.5)}
 .fallen-body p{margin:9px 0 0;font:500 10px "DM Mono";line-height:1.5;color:#676861}
+
+.recordings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.recording{display:grid;grid-template-columns:62px minmax(0,1fr) auto;align-items:center;gap:16px;min-height:76px;padding:13px 16px;border:1px solid rgba(185,155,98,.18);background:linear-gradient(120deg,#111711,#0b0f0b);text-decoration:none;transition:transform .2s,border-color .2s,background .2s}
+.recording:hover{transform:translateX(4px);border-color:rgba(223,197,139,.62);background:#151c15}
+.recording-no{font:600 18px Cinzel;color:var(--brass)}
+.recording-title{font:600 16px Cinzel;color:#d5cebc}
+.recording-open{font:500 8px "DM Mono";letter-spacing:.13em;color:var(--acid);white-space:nowrap}
+.materials-archive{margin-top:16px}
+@media(max-width:1000px){.recordings{grid-template-columns:1fr}}
+@media(max-width:650px){.recording{grid-template-columns:50px minmax(0,1fr);gap:11px;padding:12px}.recording-open{grid-column:2}.recording-title{font-size:14px}}
