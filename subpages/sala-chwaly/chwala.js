@@ -57,7 +57,7 @@ characters.push(...[
 ]);
 const freshGraphics6=[
 ["Bella","Ula","BadRomanceStrahd","../sala-chwaly/postaci-graczy/BellaWarlockTabaxi.jpg","dead","Poległa podczas kampanii."],
-["Cynka","Ula","Shards Of The Past Legacy","../sala-chwaly/postaci-graczy/Cynka Fairy Artificer.jpg","dead","Poległa podczas kampanii."],
+["Cynka","Ula","Shards of the Past Legacy","../sala-chwaly/postaci-graczy/Cynka Fairy Artificer.jpg","dead","Poległa podczas kampanii."],
 ["M'rissi","Ula","Menaces of Gloomforest Legacy","../sala-chwaly/postaci-graczy/M'rissi Warlock Tabaxi.jpg","dead","Poległa podczas kampanii."],
 ["Okri Elderhorn","Shaggy","BadRomanceStrahd","../sala-chwaly/postaci-graczy/Okri Elderhorn-Shaggy-BadRomanceBarovia-Fighter-Dwarf-Dead.webp","dead","Poległ podczas kampanii."],
 ["Tarnos Phylund","Viking","BadRomanceStrahd","../sala-chwaly/postaci-graczy/Tarnos Phylund-Viking-BadRomanceBarovia-Ranger-Human.webp","abandoned","Kampania została porzucona."]
