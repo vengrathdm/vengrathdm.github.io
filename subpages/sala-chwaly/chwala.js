@@ -82,7 +82,9 @@ function canonicalPlayer(value){
 function addLegacyCharacter(row){
   const [name,rawPlayer,campaign,portrait,fate,description]=row;
   const player=canonicalPlayer(rawPlayer);
-  const key=name+"\u0000"+player;
+  const key=name==="Xavier"
+    ? name+"\u0000"+player+"\u0000"+campaign
+    : name+"\u0000"+player;
   let record=identity.get(key);
 
   if(!record){
@@ -168,9 +170,13 @@ function normalizeRaceTag(value){
   return raw||"Placeholder";
 }
 
+/* Xavier występuje dwukrotnie z tym samym graczem, ale są to dwie różne postaci. */
+CHARACTER_META.set("Xavier\\u0000archangelss\\u0000Echtra - Zima Irgaeli",{classes:["Monk"],race:"Dragonborn"});
+
 for(const record of records){
   const key=record.name+"\u0000"+canonicalPlayer(record.tags.player[0]||"");
-  const meta=CHARACTER_META.get(key);
+  const campaignKey=record.name+"\u0000"+canonicalPlayer(record.tags.player[0]||"")+"\u0000"+(record.tags.campaign[0]||"");
+  const meta=CHARACTER_META.get(campaignKey)||CHARACTER_META.get(key);
   if(meta){
     record.tags.class=(meta.classes.length?meta.classes:["Placeholder"]).map(normalizeClassTag);
     record.tags.race=[normalizeRaceTag(meta.race)];
