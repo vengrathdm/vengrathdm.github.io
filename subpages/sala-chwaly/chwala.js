@@ -64,24 +64,24 @@ const freshGraphics6=[
 ];
 characters.push(...freshGraphics6);
 const freshGraphics7=[
-["Alma","Weronika","Shards of the Past","../sala-chwaly/postaci-graczy/Alma - Loxodon Cleric - Weronika -Shards of the past.jpg","unknown","Portret dodany do archiwum; dalszy los postaci nie został określony."],
+["Alma","Weronika","Shards of the Past Legacy","../sala-chwaly/postaci-graczy/Alma - Loxodon Cleric - Weronika -Shards of the past.jpg","unknown","Portret dodany do archiwum; dalszy los postaci nie został określony."],
 ["Amarika","DianaS","Shadow of the Sword Coast","../sala-chwaly/postaci-graczy/Amarika.jpg","finished","Udało jej się odzyskać duszę."],
 ["Aralee Shaldont","neiiska","Forge of Fury","../sala-chwaly/postaci-graczy/Aralee Shaldont-neiiska-ForgeOfFury-Cleric-Shaddar-Kai-Succeeded.webp","finished","Portret dodany do archiwum."],
 ["Artemis","ParrotNetwork","Epic Odyssey of the Dragonlords","../sala-chwaly/postaci-graczy/Artemis-ParrotNetwork-EpicOdysseyOfTheDragonlords-Warlock-Aasimar-Abandoned.webp","abandoned","Kampania została porzucona."],
 ["Bronn","Viking","Rise of Tiamat","../sala-chwaly/postaci-graczy/Bronn.png","finished","Wspólnie z drużyną pokonał Kult Smoka, zanim zdołał on w pełni przywołać Tiamat na Faerun."],
-["Cardan","keero","Shards of the Past","../sala-chwaly/postaci-graczy/Cardan-keero-ShardsOfThePast-Druid-Fairy.webp","unknown","Portret dodany do archiwum; dalszy los postaci nie został określony."],
-["Cassandra","neiiska","Shards of the Past","../sala-chwaly/postaci-graczy/Cassandra-neiiska-ShardsOfThePast-Cleric-Human-Dead.png","dead","Poległa podczas kampanii."],
+["Cardan","keero","Shards of the Past Legacy","../sala-chwaly/postaci-graczy/Cardan-keero-ShardsOfThePast-Druid-Fairy.webp","unknown","Portret dodany do archiwum; dalszy los postaci nie został określony."],
+["Cassandra","neiiska","Shards of the Past Legacy","../sala-chwaly/postaci-graczy/Cassandra-neiiska-ShardsOfThePast-Cleric-Human-Dead.png","dead","Poległa podczas kampanii."],
 ["Dura Kahkadoshz","neeiska","Lost Mine of Phandelver","../sala-chwaly/postaci-graczy/Dura Kahkadoshz-neeiska-LostMineOfPhandelver-Fighter-Half-Orc-Dead.webp","dead","Poległa podczas kampanii."],
 ["Erde","neiiska","The Sunless Citadel","../sala-chwaly/postaci-graczy/Erde-neiiska-SunlessCitadel-Cleric-Genasi-Succeeded.png","finished","Postać z ukończonej przygody."],
 ["Flare","Maria","Shadow of the Sword Coast","../sala-chwaly/postaci-graczy/Flare.png","finished","Udało jej się odzyskać duszę."],
-["Miriam","Nie podano","Menaces of Gloomforest","../sala-chwaly/postaci-graczy/Miriam - Dwarf - Rogue - Menaces Of Gloomforest - dead.jpg","dead","Poległa podczas kampanii."],
+["Miriam","Nie podano","Menaces of Gloomforest Legacy","../sala-chwaly/postaci-graczy/Miriam - Dwarf - Rogue - Menaces Of Gloomforest - dead.jpg","dead","Poległa podczas kampanii."],
 ["Naina","Olek","Epic Odyssey of the Dragonlords","../sala-chwaly/postaci-graczy/Naina-Olek-EpicOdysseyOfTheDragonlords-Paladin-Nymph-Abandoned.png","abandoned","Kampania została porzucona."],
 ["Nozzara","neiiska","Forge of Fury","../sala-chwaly/postaci-graczy/Nozzara-neiiska-ForgeOfFury-Cleric-Half-Orc-Succeeded.png","finished","Postać z ukończonej przygody."],
 ["Orelius","Mags","Epic Odyssey of the Dragonlords","../sala-chwaly/postaci-graczy/Orelius- Mags-EpicOdysseyOfTheDragonlords-Warlock-Medusa-Abandoned.jpg","abandoned","Kampania została porzucona."],
 ["Orythia","neiiska","Epic Odyssey of the Dragonlords","../sala-chwaly/postaci-graczy/Orythia - neiiska - EpicOdysseyOfTheDragonlords-Cleric-Nymph-Abandoned.jpg","abandoned","Kampania została porzucona."],
 ["Ryuji","Route","Rise of Tiamat","../sala-chwaly/postaci-graczy/Ryuji.png","finished","Wspólnie z drużyną pokonał Kult Smoka, zanim zdołał on w pełni przywołać Tiamat na Faerun."],
 ["Saki","neiiska","Shadow of the Sword Coast","../sala-chwaly/postaci-graczy/Saki.png","finished","Udało mu się odzyskać duszę."],
-["Serene Evergreen","neiiska","Shards of the Past","../sala-chwaly/postaci-graczy/Serene Evergreen-neiiska-ShardsOfThePast-Druid-Fairy-Dead.webp","dead","Poległa podczas kampanii."],
+["Serene Evergreen","neiiska","Shards of the Past Legacy","../sala-chwaly/postaci-graczy/Serene Evergreen-neiiska-ShardsOfThePast-Druid-Fairy-Dead.webp","dead","Poległa podczas kampanii."],
 ["Teiresias","Neo","Epic Odyssey of the Dragonlords","../sala-chwaly/postaci-graczy/Teiresias-Neo-EpicOdysseyOfTheDragonlords-Warlock-Medusa-Abandoned.webp","abandoned","Kampania została porzucona."],
 ["Tirias","Bartp","Epic Odyssey of the Dragonlords","../sala-chwaly/postaci-graczy/Tirias-Bartp-EpicOdysseyOfTheDragonlords-Fighter-Aasimar-Abandoned.webp","abandoned","Kampania została porzucona."]
 ];
