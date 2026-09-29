@@ -90,12 +90,12 @@ characters.push(...freshGraphics7);
 const freshGraphics8=[
 ["Aqe","keero","Dragons of Stormwreck Isle","../sala-chwaly/postaci-graczy/Aqe-keero-DragonsOfStormwreckIsle-ranger-aarakocra-dead.png","dead","Poległ podczas kampanii."],
 ["Brog","keero","The Sunless Citadel","../sala-chwaly/postaci-graczy/Brog - Keero - Sunless Citadel-Barbarian-Goliath-Succeeded.webp","finished","Ukończył przygodę w Zatopionej Cytadeli."],
-["Ebris","keero","Shards of the Past","../sala-chwaly/postaci-graczy/Ebris-keero-ShardsOfThePast-Rogue-Tiefling-Dead.png","dead","Poległ podczas kampanii."],
+["Ebris","keero","Shards of the Past Legacy","../sala-chwaly/postaci-graczy/Ebris-keero-ShardsOfThePast-Rogue-Tiefling-Dead.png","dead","Poległ podczas kampanii."],
 ["Erdar Morbor","keero","Kampania nieznana","../sala-chwaly/postaci-graczy/Erdar Morbor-Keero-Kampania Nieznana-Cleric-Dragonborn .png","unknown","Dalszy los postaci nie został określony."],
-["Joaher Redleaf","keero","Shards of the Past","../sala-chwaly/postaci-graczy/Joaher Redleaf-keero-ShardsOfThePast-Monk-Elf-Dead.png","dead","Poległ podczas kampanii."],
+["Joaher Redleaf","keero","Shards of the Past Legacy","../sala-chwaly/postaci-graczy/Joaher Redleaf-keero-ShardsOfThePast-Monk-Elf-Dead.png","dead","Poległ podczas kampanii."],
 ["Kaelos","keero","Epic Odyssey of the Dragonlords","../sala-chwaly/postaci-graczy/Kaelos-keero-EpicOdysseyOfTheDragonlords-Warlock-Medusa-Abandoned.jpg","abandoned","Kampania została porzucona."],
 ["Neldar","keero","Drakkenheim","../sala-chwaly/postaci-graczy/Neldar-keero-Drakkenheim-fighter-dwarf-dead.png","dead","Poległ podczas kampanii."],
-["Thive","keero","Shards of the Past","../sala-chwaly/postaci-graczy/Thive-keero-ShardsOfThePast-Paladin-Aasimar-Dead.jpg","dead","Poległ podczas kampanii."],
+["Thive","keero","Shards of the Past Legacy","../sala-chwaly/postaci-graczy/Thive-keero-ShardsOfThePast-Paladin-Aasimar-Dead.jpg","dead","Poległ podczas kampanii."],
 ["Valeria Shadowglen","keero","Shards of the Past Legacy","../sala-chwaly/postaci-graczy/Valeria Shadowglen-keero-ShardsOfThePastLegacy-Warlock-Human.png","finished","Postać z ukończonej kampanii."]
 ];
 characters.push(...freshGraphics8);
@@ -114,9 +114,9 @@ const freshGraphics11=[
 ["Lailisa","MartynaS","Dragon of Icespire Peak","../sala-chwaly/postaci-graczy/Lailisa-MartynaS-DragonOfIcespire-Peak-.jpg","unknown","Portret dodany do archiwum; dalszy los postaci nie został określony."],
 ["Mirelinda","Nympheria","Dragon of Icespire Peak","../sala-chwaly/postaci-graczy/Mirelinda-Nympheria-DragonOfIcespirePeak-Wizard-Human-Dead.jpg","dead","Poległa podczas kampanii."],
 ["Nasir Shatterbow","XXX","Rise of Tiamat","../sala-chwaly/postaci-graczy/Nasir Shatterbow-XXX-RiseOfTiamat-Ranger-Dwarf-Abandoned.png","abandoned","Kampania została porzucona."],
-["Voks","RadekK","Shards of the Past","../sala-chwaly/postaci-graczy/Voks-RadekK-ShardsOfThePast-Kobold-Bard-Dead.jpg","dead","Poległ podczas kampanii."],
+["Voks","RadekK","Shards of the Past Legacy","../sala-chwaly/postaci-graczy/Voks-RadekK-ShardsOfThePast-Kobold-Bard-Dead.jpg","dead","Poległ podczas kampanii."],
 ["XXX","MartynaŚ","Dragon of Icespire Peak","../sala-chwaly/postaci-graczy/XXX-MartynaŚ-DragonOfIcespirePeak-Warlock-Tiefling.jpg","unknown","Portret dodany do archiwum; dalszy los postaci nie został określony."],
-["Yelli","RadekK","Shards of the Past","../sala-chwaly/postaci-graczy/Yelli-RadekK-ShardsOfThePast-Barbarian-Human-Dead.jpg","dead","Poległ podczas kampanii."]
+["Yelli","RadekK","Shards of the Past Legacy","../sala-chwaly/postaci-graczy/Yelli-RadekK-ShardsOfThePast-Barbarian-Human-Dead.jpg","dead","Poległ podczas kampanii."]
 ];
 characters.push(...freshGraphics11);
 
