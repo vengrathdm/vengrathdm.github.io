@@ -93,7 +93,7 @@ const freshGraphics8=[
 ["Ebris","keero","Shards of the Past Legacy","../sala-chwaly/postaci-graczy/Ebris-keero-ShardsOfThePast-Rogue-Tiefling-Dead.png","dead","Poległ podczas kampanii."],
 ["Erdar Morbor","keero","Kampania nieznana","../sala-chwaly/postaci-graczy/Erdar Morbor-Keero-Kampania Nieznana-Cleric-Dragonborn .png","unknown","Dalszy los postaci nie został określony."],
 ["Joaher Redleaf","keero","Shards of the Past Legacy","../sala-chwaly/postaci-graczy/Joaher Redleaf-keero-ShardsOfThePast-Monk-Elf-Dead.png","dead","Poległ podczas kampanii."],
-["Kaelos","keero","Epic Odyssey of the Dragonlords","../sala-chwaly/postaci-graczy/Kaelos-keero-EpicOdysseyOfTheDragonlords-Warlock-Medusa-Abandoned.jpg","abandoned","Kampania została porzucona."],
+["Kaelos","keero","Mythic Odyssey of the Dragonlords","../sala-chwaly/postaci-graczy/Kaelos-keero-EpicOdysseyOfTheDragonlords-Warlock-Medusa-Abandoned.jpg","abandoned","Kampania została porzucona."],
 ["Neldar","keero","Drakkenheim","../sala-chwaly/postaci-graczy/Neldar-keero-Drakkenheim-fighter-dwarf-dead.png","dead","Poległ podczas kampanii."],
 ["Thive","keero","Shards of the Past Legacy","../sala-chwaly/postaci-graczy/Thive-keero-ShardsOfThePast-Paladin-Aasimar-Dead.jpg","dead","Poległ podczas kampanii."],
 ["Valeria Shadowglen","keero","Shards of the Past Legacy","../sala-chwaly/postaci-graczy/Valeria Shadowglen-keero-ShardsOfThePastLegacy-Warlock-Human.png","finished","Postać z ukończonej kampanii."]
