@@ -733,3 +733,50 @@
   .drakkenheim-page .episode-number{width:46px;height:46px}
   .drakkenheim-page .episode-info strong{font-size:17px}
 }
+
+/* Polish campaign chrome + YouTube playlist */
+.drakkenheim-page .youtube-playlist{
+  position:relative;
+  padding-left:38px!important;
+  border-color:#7b1f2a!important;
+  background:linear-gradient(135deg,#8f1828,#5d0f1a)!important;
+  color:#fff!important;
+  box-shadow:0 8px 24px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.14);
+  font-weight:700;
+}
+.drakkenheim-page .youtube-playlist::before{
+  content:"";
+  position:absolute;
+  left:13px;
+  top:50%;
+  width:17px;
+  height:12px;
+  transform:translateY(-50%);
+  border-radius:4px;
+  background:#fff;
+}
+.drakkenheim-page .youtube-playlist::after{
+  content:"";
+  position:absolute;
+  left:20px;
+  top:50%;
+  transform:translateY(-50%);
+  border-left:5px solid #8f1828;
+  border-top:3px solid transparent;
+  border-bottom:3px solid transparent;
+}
+.drakkenheim-page .youtube-playlist:hover{
+  background:linear-gradient(135deg,#aa1d31,#74121f)!important;
+  border-color:#d45a69!important;
+  transform:translateY(-1px);
+}
+.drakkenheim-page .drakkenheim-kicker,
+.drakkenheim-page .atlas-type,
+.drakkenheim-page .episode-info small,
+.drakkenheim-page .episodes-count{
+  letter-spacing:1.7px;
+}
+.drakkenheim-page .drakkenheim-seal span,
+.drakkenheim-page .drakkenheim-seal small{
+  letter-spacing:2px;
+}
