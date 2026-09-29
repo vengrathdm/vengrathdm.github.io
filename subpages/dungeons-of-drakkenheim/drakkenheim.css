@@ -833,3 +833,45 @@
     letter-spacing:3px!important;
   }
 }
+
+/* ============================================================
+   DUNGEONS OF DRAKKENHEIM — CAMPAIGN AUDIO
+   ============================================================ */
+.drakkenheim-audio-toggle{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  z-index:700;
+  width:64px;
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+  border:2px solid rgba(225,214,231,.9);
+  border-radius:50%;
+  background:rgba(31,17,39,.92);
+  color:#f3eaf5;
+  box-shadow:0 5px 20px rgba(0,0,0,.5),0 0 0 1px rgba(154,87,197,.48);
+  cursor:pointer;
+  transition:transform .15s ease,background .15s ease,box-shadow .15s ease;
+  -webkit-backdrop-filter:blur(5px);
+  backdrop-filter:blur(5px);
+}
+.drakkenheim-audio-toggle:hover{
+  transform:scale(1.06);
+  background:rgba(91,48,121,.96);
+  box-shadow:0 7px 24px rgba(0,0,0,.58),0 0 0 2px rgba(193,123,236,.28);
+}
+.drakkenheim-audio-toggle:focus-visible{outline:3px solid #c17bec;outline-offset:4px}
+.drakkenheim-audio-toggle .audio-icon{
+  width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:3.2;
+  stroke-linecap:round;stroke-linejoin:round
+}
+.drakkenheim-audio-toggle .audio-icon-playing{display:none}
+.drakkenheim-audio-toggle.is-playing .audio-icon-muted{display:none}
+.drakkenheim-audio-toggle.is-playing .audio-icon-playing{display:block}
+@media(max-width:640px){
+  .drakkenheim-audio-toggle{right:16px;bottom:16px;width:58px;height:58px}
+  .drakkenheim-audio-toggle .audio-icon{width:31px;height:31px}
+}
