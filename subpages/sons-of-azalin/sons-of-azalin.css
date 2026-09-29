@@ -356,6 +356,53 @@
   font-size:12.5px!important;
   line-height:1.5!important;
 }
+.sons-page .recordings-list{
+  border-top:1px solid #343b3f;
+  border-bottom:1px solid #343b3f;
+}
+.sons-page .recording-row{
+  display:grid;
+  grid-template-columns:76px 1fr auto;
+  align-items:center;
+  gap:20px;
+  padding:18px 20px;
+  border-bottom:1px solid #292f33;
+  color:#ddd8ce;
+  text-decoration:none;
+  background:#0d1013;
+  transition:background .15s ease,border-color .15s ease;
+}
+.sons-page .recording-row:last-child{border-bottom:0}
+.sons-page .recording-row:hover{
+  background:#171c20;
+  border-color:#4a5257;
+}
+.sons-page .recording-row span{
+  color:var(--az-red-bright);
+  font:400 24px Voltaire,sans-serif;
+  letter-spacing:1px;
+}
+.sons-page .recording-row strong{
+  font:400 19px Voltaire,sans-serif;
+  color:#ddd8ce;
+}
+.sons-page .recording-row em{
+  font:700 10px Voltaire,sans-serif;
+  letter-spacing:2px;
+  color:#7f878a;
+  font-style:normal;
+}
+@media(max-width:700px){
+  .sons-page .recording-row{
+    grid-template-columns:52px 1fr;
+    gap:12px;
+    padding:15px 14px;
+  }
+  .sons-page .recording-row em{
+    grid-column:2;
+  }
+}
+
 .sons-page .sources{
   margin-top:78px;
   padding:26px 30px;
