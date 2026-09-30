@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-turn-of-fortunes-wheel",
+  "slug": "turn-of-fortunes-wheel",
+  "layout": "custom",
+  "theme": "turn-wheel",
+  "identity": {
+    "title": "Turn of Fortune's Wheel"
+  },
+  "hero": {
+    "background": "/Home/Graphics/turn-of-fortunes-wheel.jpg"
+  },
+  "characters": [
+    "char-0029",
+    "char-0030",
+    "char-0031",
+    "char-0032",
+    "char-0033"
+  ],
+  "sections": [
+    "Kampania",
+    "Koło się obraca",
+    "Drużyna",
+    "Kronika sesji"
+  ]
+}
