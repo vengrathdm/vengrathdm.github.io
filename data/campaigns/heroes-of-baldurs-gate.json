@@ -117,29 +117,29 @@
   "chronicle": {
     "title": "Rekord kampanii",
     "lead": "Rozwijane akta głównych wątków.",
-    "records": [
+    "cards": [
       [
         "01",
-        "Wrota Baldura",
         "START",
+        "Wrota Baldura",
         "Drużyna rozpoczyna przygodę w Baldur's Gate."
       ],
       [
         "02",
-        "Żelazny Tron i Zhentarimowie",
         "WĄTEK",
+        "Żelazny Tron i Zhentarimowie",
         "Polityczne i kryminalne konflikty miasta stają się tłem osobistych historii."
       ],
       [
         "03",
-        "Dziedzictwo Bhaala",
         "WĄTEK",
+        "Dziedzictwo Bhaala",
         "Motyw Child of Bhaal staje się jednym z centralnych punktów historii Kyle'a i Kylie."
       ],
       [
         "04",
-        "Koniec drużyny",
         "ARCHIWUM",
+        "Koniec drużyny",
         "Sala Chwały zachowuje różne finały kampanii."
       ]
     ]
