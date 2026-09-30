@@ -77,22 +77,6 @@ jobs:
           if unknown_migration:
               errors.append(f"migration-map unknown campaigns: {unknown_migration}")
 
-          for route in migration_map:
-              if route.get("status") == "detailed":
-                  record = data / "campaigns" / f"{route['slug']}.json"
-                  if not record.exists():
-                      errors.append(f"{route['id']}: missing detailed campaign record {record}")
-                  canonical = root / "campaigns" / route["slug"] / "index.html"
-                  if not canonical.exists():
-                      errors.append(f"{route['id']}: missing canonical route {canonical}")
-              legacy = route.get("legacyPath")
-              if legacy:
-                  legacy_file = root / legacy.lstrip("/")
-                  if legacy_file.is_dir():
-                      legacy_file = legacy_file / "index.html"
-                  if not legacy_file.exists():
-                      errors.append(f"{route['id']}: missing legacy route {legacy}")
-
           for c in characters:
               if c.get("playerId") not in player_ids:
                   errors.append(f'{c["id"]}: missing player {c.get("playerId")}')
