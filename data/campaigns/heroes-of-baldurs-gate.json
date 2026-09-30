@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-heroes-of-baldur-s-gate",
+  "slug": "heroes-of-baldurs-gate",
+  "layout": "dossier",
+  "theme": "baldur",
+  "hero": {
+    "background": "/Home/Graphics/legends-of-barovia.jpg",
+    "kicker": "HEROES OF BALDUR'S GATE · FORGOTTEN REALMS",
+    "title": [
+      "BOHATEROWIE",
+      "WRÓT BALDURA"
+    ],
+    "lead": "Sześć postaci, jedna drużyna i kampania oparta na Heroes of Baldur's Gate.",
+    "chips": [
+      "FORGOTTEN REALMS",
+      "BALDUR'S GATE",
+      "1–6 POZIOM",
+      "ZAMKNIĘTA"
+    ]
+  },
+  "nav": [
+    [
+      "GŁÓWNA",
+      "#top"
+    ],
+    [
+      "ŚWIAT",
+      "#swiat"
+    ],
+    [
+      "POSTACI",
+      "#postacie"
+    ],
+    [
+      "KRONIKA",
+      "#kronika"
+    ],
+    [
+      "PLAYLISTA",
+      "#kronika"
+    ]
+  ],
+  "dossier": {
+    "title": "Miasto, dziedzictwo i sześć historii.",
+    "paragraphs": [
+      "Heroes of Baldur's Gate to przygoda Arcanum Worlds osadzona w Forgotten Realms. Ta strona zapisuje konkretną kampanię Vengrath.",
+      "Każdy wpis łączy postać z Sali Chwały, gracza oraz wskazany przez Ciebie premade background."
+    ],
+    "rows": [
+      [
+        "MODUŁ",
+        "Heroes of Baldur's Gate"
+      ],
+      [
+        "SETTING",
+        "Forgotten Realms"
+      ],
+      [
+        "DRUŻYNA",
+        "6 postaci"
+      ],
+      [
+        "POZIOMY",
+        "1–6"
+      ],
+      [
+        "STATUS",
+        "ZAMKNIĘTA",
+        "active"
+      ]
+    ]
+  },
+  "world": {
+    "title": "Dziedzictwa",
+    "lead": "Premade backgrounds jako osobne rekordy.",
+    "cards": [
+      [
+        "01",
+        "VERA",
+        "Reincarnated Green Dragon",
+        "Odrodzona zielona smoczyca."
+      ],
+      [
+        "02",
+        "VERAI",
+        "The Awakened Clone",
+        "Przebudzony klon."
+      ],
+      [
+        "03",
+        "KYLE / KYLIE",
+        "Child of Bhaal",
+        "Dwoje rodzeństwa dzielących dziedzictwo Bhaala.",
+        "wide"
+      ],
+      [
+        "04",
+        "SAEV / AERION",
+        "The Last Emperor",
+        "Ten sam background, dwie drogi."
+      ]
+    ]
+  },
+  "characters": {
+    "title": "Sala Chwały",
+    "lead": "Rejestr postaci przypisanych do kampanii.",
+    "ids": [
+      "char-0109",
+      "char-0221",
+      "char-0110",
+      "char-0111",
+      "char-0108",
+      "char-0107"
+    ]
+  },
+  "chronicle": {
+    "title": "Rekord kampanii",
+    "lead": "Rozwijane akta głównych wątków.",
+    "records": [
+      [
+        "01",
+        "Wrota Baldura",
+        "START",
+        "Drużyna rozpoczyna przygodę w Baldur's Gate."
+      ],
+      [
+        "02",
+        "Żelazny Tron i Zhentarimowie",
+        "WĄTEK",
+        "Polityczne i kryminalne konflikty miasta stają się tłem osobistych historii."
+      ],
+      [
+        "03",
+        "Dziedzictwo Bhaala",
+        "WĄTEK",
+        "Motyw Child of Bhaal staje się jednym z centralnych punktów historii Kyle'a i Kylie."
+      ],
+      [
+        "04",
+        "Koniec drużyny",
+        "ARCHIWUM",
+        "Sala Chwały zachowuje różne finały kampanii."
+      ]
+    ]
+  },
+  "quote": {
+    "label": "ZAPIS Z BALDUR'S GATE",
+    "text": "W tym mieście każdy ma jakieś dziedzictwo. Nie każdy ma wybór, co z nim zrobi.",
+    "source": "HEROES OF BALDUR'S GATE · VENGRATH"
+  }
+}
