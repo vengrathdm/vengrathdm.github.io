@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-dragon-of-dampen-depths",
+  "slug": "dragon-of-dampen-depths",
+  "layout": "custom",
+  "theme": "dragon-of-dampen-depths",
+  "identity": {
+    "title": "Dragon of Dampen Depths",
+    "status": "completed",
+    "setting": "Sword Coast",
+    "region": "Amanita"
+  },
+  "hero": {
+    "title": "DRAGON OF DAMPEN DEPTHS",
+    "lead": "W Amanicie, niewielkiej osadzie żyjącej z leśnych zbiorów, spokojne życie zostaje zachwiane przez zniknięcia mieszkańców, tajemnicze grzyby i ślady prowadzące coraz głębiej w las."
+  },
+  "characters": {
+    "ids": []
+  },
+  "sections": [
+    {
+      "id": "campaign",
+      "title": "O kampanii"
+    }
+  ]
+}
