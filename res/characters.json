@@ -7,9 +7,9 @@
       "Legends of Barovia"
     ],
     "classes": [
-      "Placeholder"
+      "Ranger"
     ],
-    "race": "Placeholder",
+    "race": "Halfling",
     "status": "alive",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -52,9 +52,9 @@
       "Legends of Barovia"
     ],
     "classes": [
-      "Placeholder"
+      "Druid"
     ],
-    "race": "Placeholder",
+    "race": "Human",
     "status": "alive",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -1100,15 +1100,15 @@
   {
     "portrait": "/res/portraits/char-0090.png",
     "character": "Elorin",
-    "player": "panterq",
+    "player": "Michał Kraus",
     "campaigns": [
       "Neverwinter: Intrygi Północnego Wybrzeża Mieczy"
     ],
     "classes": [
-      "Placeholder"
+      "Paladin"
     ],
-    "race": "Placeholder",
-    "status": "finished",
+    "race": "Half-Elf",
+    "status": "abandoned",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -1301,9 +1301,9 @@
       "Samotnie Przeciw Jedności"
     ],
     "classes": [
-      "Placeholder"
+      "CoC7e Investigator"
     ],
-    "race": "Placeholder",
+    "race": "CoC7e Investigator",
     "status": "finished",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -1316,9 +1316,9 @@
       "Samotnie Przeciw Jedności"
     ],
     "classes": [
-      "Placeholder"
+      "CoC7e Investigator"
     ],
-    "race": "Placeholder",
+    "race": "CoC7e Investigator",
     "status": "finished",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -1331,9 +1331,9 @@
       "Samotnie Przeciw Jedności"
     ],
     "classes": [
-      "Placeholder"
+      "CoC7e Investigator"
     ],
-    "race": "Placeholder",
+    "race": "CoC7e Investigator",
     "status": "finished",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -1346,9 +1346,9 @@
       "Samotnie Przeciw Jedności"
     ],
     "classes": [
-      "Placeholder"
+      "CoC7e Investigator"
     ],
-    "race": "Placeholder",
+    "race": "CoC7e Investigator",
     "status": "finished",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -1529,7 +1529,7 @@
       "The Sunless Citadel"
     ],
     "classes": [
-      "Placeholder"
+      "Sorcerer"
     ],
     "race": "Yuan-Ti",
     "status": "dead",
@@ -1786,7 +1786,7 @@
       "Turn Back the Endless Night"
     ],
     "classes": [
-      "Placeholder"
+      "Cleric"
     ],
     "race": "Dwarf",
     "status": "finished",
@@ -1801,9 +1801,9 @@
       "Książęta Heartwell"
     ],
     "classes": [
-      "Placeholder"
+      "Bard"
     ],
-    "race": "Placeholder",
+    "race": "Half-Elf",
     "status": "alive",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -1936,7 +1936,7 @@
       "Kampania Nieznana"
     ],
     "classes": [
-      "Placeholder"
+      "Wizard"
     ],
     "race": "Elf",
     "status": "unknown",
@@ -2087,9 +2087,9 @@
       "Heroes of Drakkenheim"
     ],
     "classes": [
-      "Placeholder"
+      "Rogue"
     ],
-    "race": "Placeholder",
+    "race": "Elf",
     "status": "dead",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2102,10 +2102,10 @@
       "Shards of the Past"
     ],
     "classes": [
-      "Placeholder"
+      "Artificer"
     ],
-    "race": "Placeholder",
-    "status": "dead",
+    "race": "Elf",
+    "status": "abandoned",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -2148,10 +2148,10 @@
       "Shards of the Past"
     ],
     "classes": [
-      "Placeholder"
+      "Bard"
     ],
-    "race": "Placeholder",
-    "status": "dead",
+    "race": "Fairy",
+    "status": "abandoned",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -2163,9 +2163,9 @@
       "Lost Mine of Phandelver"
     ],
     "classes": [
-      "Placeholder"
+      "Sorcerer"
     ],
-    "race": "Placeholder",
+    "race": "Autognome",
     "status": "finished",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2178,9 +2178,9 @@
       "Shards of the Past Legacy"
     ],
     "classes": [
-      "Placeholder"
+      "Ranger"
     ],
-    "race": "Placeholder",
+    "race": "Half-Elf",
     "status": "dead",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2193,9 +2193,9 @@
       "Heroes of Drakkenheim"
     ],
     "classes": [
-      "Placeholder"
+      "Ranger"
     ],
-    "race": "Placeholder",
+    "race": "Elf",
     "status": "dead",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2208,9 +2208,9 @@
       "Menaces of Gloomforest Legacy"
     ],
     "classes": [
-      "Placeholder"
+      "Barbarian"
     ],
-    "race": "Placeholder",
+    "race": "Human",
     "status": "finished",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2223,9 +2223,9 @@
       "Heroes of Drakkenheim"
     ],
     "classes": [
-      "Placeholder"
+      "Warlock", "Sorcerer"
     ],
-    "race": "Placeholder",
+    "race": "Shaddar-Kai",
     "status": "dead",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2238,9 +2238,9 @@
       "Menaces of Gloomforest Legacy"
     ],
     "classes": [
-      "Placeholder"
+      "Cleric"
     ],
-    "race": "Placeholder",
+    "race": "Tiefling",
     "status": "dead",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2253,9 +2253,9 @@
       "Heroes of Drakkenheim"
     ],
     "classes": [
-      "Placeholder"
+      "Barbarian"
     ],
-    "race": "Placeholder",
+    "race": "Goliath",
     "status": "dead",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2268,9 +2268,9 @@
       "Menaces of Gloomforest Legacy"
     ],
     "classes": [
-      "Placeholder"
+      "Bard", "Warlock"
     ],
-    "race": "Placeholder",
+    "race": "Half-Elf",
     "status": "dead",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2283,9 +2283,9 @@
       "Ku chwale Tyra!"
     ],
     "classes": [
-      "Placeholder"
+      "Wizard"
     ],
-    "race": "Placeholder",
+    "race": "Tiefling",
     "status": "finished",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2313,9 +2313,9 @@
       "Shards of the Past Legacy"
     ],
     "classes": [
-      "Placeholder"
+      "Druid"
     ],
-    "race": "Placeholder",
+    "race": "Human",
     "status": "dead",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2328,9 +2328,9 @@
       "Ku chwale Tyra!"
     ],
     "classes": [
-      "Placeholder"
+      "Rogue"
     ],
-    "race": "Placeholder",
+    "race": "Half-Elf",
     "status": "finished",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2343,9 +2343,9 @@
       "Shards of the Past"
     ],
     "classes": [
-      "Placeholder"
+      "Elf"
     ],
-    "race": "Placeholder",
+    "race": "Cleric",
     "status": "dead",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2358,9 +2358,9 @@
       "Shards of the Past Legacy"
     ],
     "classes": [
-      "Placeholder"
+      "Ranger"
     ],
-    "race": "Placeholder",
+    "race": "Dwarf",
     "status": "dead",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2373,9 +2373,9 @@
       "Heroes of Drakkenheim"
     ],
     "classes": [
-      "Placeholder"
+      "Cleric"
     ],
-    "race": "Placeholder",
+    "race": "Human",
     "status": "finished",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2388,9 +2388,9 @@
       "Heroes of Drakkenheim"
     ],
     "classes": [
-      "Placeholder"
+      "Rogue"
     ],
-    "race": "Placeholder",
+    "race": "Shaddar-Kai",
     "status": "dead",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2403,9 +2403,9 @@
       "Menaces of Gloomforest Legacy"
     ],
     "classes": [
-      "Placeholder"
+      "Cleric"
     ],
-    "race": "Placeholder",
+    "race": "Half-Elf",
     "status": "dead",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2418,9 +2418,9 @@
       "Menaces of Gloomforest Legacy"
     ],
     "classes": [
-      "Placeholder"
+      "Sorcerer"
     ],
-    "race": "Placeholder",
+    "race": "Half-Elf",
     "status": "dead",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2433,9 +2433,9 @@
       "Menaces of Gloomforest Legacy"
     ],
     "classes": [
-      "Placeholder"
+      "Paladin"
     ],
-    "race": "Placeholder",
+    "race": "Human",
     "status": "dead",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2448,9 +2448,9 @@
       "Menaces of Gloomforest Legacy"
     ],
     "classes": [
-      "Placeholder"
+      "Paladin"
     ],
-    "race": "Placeholder",
+    "race": "Human",
     "status": "dead",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2463,10 +2463,10 @@
       "Menaces of Gloomforest Legacy"
     ],
     "classes": [
-      "Placeholder"
+      "Druid"
     ],
-    "race": "Placeholder",
-    "status": "finished",
+    "race": "Elf",
+    "status": "abandoned",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -2478,9 +2478,9 @@
       "W Pogoni za PiórOwcą"
     ],
     "classes": [
-      "Placeholder"
+      "Rogue"
     ],
-    "race": "Placeholder",
+    "race": "Half-Orc",
     "status": "finished",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -2493,9 +2493,9 @@
       "Menaces of Gloomforest Legacy"
     ],
     "classes": [
-      "Placeholder"
+      "Bard"
     ],
-    "race": "Placeholder",
+    "race": "Tiefling",
     "status": "finished",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -3861,9 +3861,9 @@
       "Dragon of Icespire Peak"
     ],
     "classes": [
-      "Placeholder"
+      "Ranger"
     ],
-    "race": "Placeholder",
+    "race": "Half-Elf",
     "status": "unknown",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
