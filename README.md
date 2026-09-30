@@ -7,7 +7,7 @@ GitHub Pages site for Vengrath: tabletop RPG campaigns, graphic projects and web
 The repository is being migrated from page-owned data toward a layered architecture:
 
 - `data/` — central registries and campaign records.
-- `core/` — shared runtime helpers and transitional resolvers.
+- `core/` — shared runtime helpers, data loaders, stable-ID resolvers and transitional bridges.
 - `subpages/` — campaign/project presentation layers and intentionally unique mini-sites.
 - `Home/` — homepage presentation and legacy card sources.
 - `.github/workflows/` — generated manifests and data validation.
@@ -44,7 +44,7 @@ There are two supported patterns:
 
 The custom pattern is used for visually distinctive mini-sites such as Legends of Barovia, Shards of the Past, Książęta Heartwell and other legacy campaigns.
 
-`core/character-assets.js` is a transitional portrait resolver. Explicit `data-character-id` attributes are authoritative. Name/alt matching remains only as a compatibility fallback while legacy pages are migrated.
+`core/data.js` and `core/resolver.js` provide shared registry access and stable-ID lookup. `core/character-assets.js` is a transitional portrait bridge; explicit `data-character-id` attributes are authoritative. Explicit `data-character-id` attributes are authoritative. Name/alt matching remains only as a compatibility fallback while legacy pages are migrated.
 
 ## Homepage
 
@@ -125,4 +125,4 @@ Current major completed layers include:
 - world/tool registries for Heartwell and Charactermancer;
 - repository-level data validation.
 
-The remaining work is primarily explicit stable-ID migration across the remaining legacy pages, asset consolidation, URL compatibility mapping, cleanup of obsolete mock/legacy files, and final end-to-end QA.
+The campaign registry currently covers 43 campaign entries: 35 with detailed records, 6 historical/no-page entries, 1 archived legacy entry and 1 world entry. Canonical `/campaigns/<slug>/` compatibility routes now point at the existing presentation paths. Remaining work is asset consolidation, explicit ID cleanup where source pages contain incomplete rosters, URL/asset QA, and final end-to-end validation.
