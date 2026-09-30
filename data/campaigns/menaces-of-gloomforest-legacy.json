@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-menaces-of-gloomforest-legacy",
+  "slug": "menaces-of-gloomforest-legacy",
+  "layout": "custom",
+  "theme": "menaces-of-gloomforest-legacy",
+  "identity": {
+    "title": "Menaces of Gloomforest Legacy",
+    "status": "completed",
+    "type": "campaign",
+    "setting": "Homebrew"
+  },
+  "hero": {
+    "title": "MENACES OF GLOOMFOREST LEGACY",
+    "lead": "Archiwalna odsłona Menaces of Gloomforest, zachowana jako osobna rozgrywka w tym samym świecie."
+  },
+  "characters": {
+    "ids": [
+      "char-0131",
+      "char-0175",
+      "char-0176",
+      "char-0177",
+      "char-0178",
+      "char-0179",
+      "char-0180",
+      "char-0181",
+      "char-0183"
+    ]
+  },
+  "sections": [
+    {
+      "id": "campaign",
+      "title": "O kampanii"
+    },
+    {
+      "id": "team",
+      "title": "Drużyna"
+    }
+  ]
+}
