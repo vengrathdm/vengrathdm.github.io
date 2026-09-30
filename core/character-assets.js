@@ -1,38 +1,21 @@
-/* Central character portrait resolver.
- * Explicit data-character-id is authoritative; alt/name matching remains only as a migration fallback.
+/* Transitional portrait bridge. Explicit data-character-id is authoritative.
+ * Name matching remains only for legacy markup that has not yet been converted.
  */
 (async()=>{
- const imgs=[...document.querySelectorAll('img')];
- if(!imgs.length)return;
+ const imgs=[...document.querySelectorAll("img")]; if(!imgs.length)return;
  try{
-  const [c,a]=await Promise.all([
-   fetch('/data/characters.json').then(r=>r.json()),
-   fetch('/data/assets.json').then(r=>r.json())
-  ]);
   const campaignId=document.body.dataset.campaignId||"";
-  const assets=new Map(a.assets.map(x=>[x.id,x]));
-  const characters=c.characters.filter(x=>!campaignId||x.campaignIds?.includes(campaignId));
-  const byId=new Map(characters.map(x=>[x.id,x]));
+  const [chars,assets]=await Promise.all([VengrathData.characters(),VengrathData.assets()]);
+  const eligible=chars.characters.filter(x=>!campaignId||x.campaignIds?.includes(campaignId));
+  const byId=new Map(eligible.map(x=>[x.id,x]));
   const byName=new Map();
-  for(const ch of characters){
-   const key=(ch.name||"").trim().toLocaleLowerCase('pl-PL');
-   if(!key)continue;
-   const list=byName.get(key)||[];
-   list.push(ch); byName.set(key,list);
-  }
+  for(const ch of eligible){const k=(ch.name||"").trim().toLocaleLowerCase("pl-PL");if(k){const a=byName.get(k)||[];a.push(ch);byName.set(k,a)}}
   for(const img of imgs){
-   let ch=img.dataset.characterId ? byId.get(img.dataset.characterId) : null;
-   if(!ch){
-    const key=(img.alt||"").trim().toLocaleLowerCase('pl-PL');
-    const matches=byName.get(key)||[];
-    if(matches.length===1) ch=matches[0];
-   }
+   let ch=img.dataset.characterId?byId.get(img.dataset.characterId):null;
+   if(!ch){const m=byName.get((img.alt||"").trim().toLocaleLowerCase("pl-PL"))||[];if(m.length===1)ch=m[0]}
    if(!ch)continue;
-   const asset=assets.get(ch.portraitId);
-   if(asset?.path){
-    img.src=asset.path;
-    img.dataset.characterId=ch.id;
-   }
+   const asset=await VengrathResolver.asset(ch.portraitId);
+   if(asset?.path){img.src=asset.path;img.dataset.characterId=ch.id}
   }
- }catch(e){console.error('Centralny rejestr portretów niedostępny',e)}
+ }catch(e){console.error("Centralny rejestr portretów niedostępny",e)}
 })();
