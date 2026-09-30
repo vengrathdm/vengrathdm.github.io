@@ -28,6 +28,20 @@ main{max-width:1440px;margin:auto;padding:76px 42px 100px}
 .section-label,.count-label{font:9px "DM Mono",monospace;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
 .archive-head h2{font:400 clamp(38px,5vw,60px)/.9 "Voltaire",serif;letter-spacing:.01em;margin:10px 0 0}
 .archive-count{text-align:right}.count-label{display:block;color:var(--muted2);margin-bottom:6px}.result{font:600 12px "DM Mono",monospace;color:var(--silver);letter-spacing:.08em}
+
+.archive-stats{margin:0 0 34px;padding:22px 24px;background:var(--surface);border:1px solid var(--line)}
+.stats-row{display:flex;align-items:stretch;justify-content:center}
+.stats-primary{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:18px}
+.stat{flex:1;min-width:0;text-align:center;padding:0 18px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat strong{display:block;font:400 clamp(34px,4vw,54px)/.9 "Voltaire",serif;color:var(--gold)}
+.stat span{display:block;margin-top:7px;font:8px "DM Mono",monospace;letter-spacing:.18em;color:var(--muted2)}
+.stats-status .stat strong{font-size:30px;color:var(--silver)}
+.stats-status .stat:nth-child(1) strong{color:#b9c7bd}
+.stats-status .stat:nth-child(2) strong{color:#b9aaa6}
+.stats-status .stat:nth-child(3) strong{color:#aeb3b0}
+.stats-status .stat:nth-child(4) strong{color:#858b87}
+
 .controls{background:var(--surface);border:1px solid var(--line);padding:17px;margin-bottom:34px}
 .search{display:flex;align-items:center;gap:12px;border:1px solid rgba(233,232,226,.1);background:#0d100e;padding:0 14px;height:54px}
 .search span{font:25px "DM Mono";color:var(--gold)}.search input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:var(--text);font:16px "Voltaire",serif;letter-spacing:.01em}.search input::placeholder{color:#686f69}
@@ -118,3 +132,13 @@ footer a{color:var(--gold);text-decoration:none}
   footer{padding:22px 18px;flex-direction:column;line-height:1.6}
 }
 @media(max-width:400px){.grid{grid-template-columns:1fr}.card{display:grid;grid-template-columns:38% 62%}.portrait{height:100%;min-height:180px}.card-body{padding:13px}.card-name{font-size:25px}}
+
+@media(max-width:680px){
+  .archive-stats{padding:18px 10px;margin-bottom:26px}
+  .stats-primary{padding-bottom:15px;margin-bottom:15px}
+  .stat{padding:0 7px}
+  .stat strong{font-size:32px}
+  .stats-status{display:grid;grid-template-columns:repeat(2,1fr);row-gap:16px}
+  .stats-status .stat:nth-child(2){border-right:0}
+  .stats-status .stat strong{font-size:25px}
+}
