@@ -3632,7 +3632,7 @@
     {
       "id": "char-0242",
       "name": "Aqe",
-      "playerId": "player-keero-2",
+      "playerId": "player-keero",
       "campaignIds": [
         "campaign-dragons-of-stormwreck-isle"
       ],
@@ -3647,7 +3647,7 @@
     {
       "id": "char-0243",
       "name": "Brog",
-      "playerId": "player-keero-2",
+      "playerId": "player-keero",
       "campaignIds": [
         "campaign-the-sunless-citadel"
       ],
@@ -3662,7 +3662,7 @@
     {
       "id": "char-0244",
       "name": "Ebris",
-      "playerId": "player-keero-2",
+      "playerId": "player-keero",
       "campaignIds": [
         "campaign-shards-of-the-past-legacy"
       ],
@@ -3677,7 +3677,7 @@
     {
       "id": "char-0245",
       "name": "Erdar Morbor",
-      "playerId": "player-keero-2",
+      "playerId": "player-keero",
       "campaignIds": [
         "campaign-kampania-nieznana"
       ],
@@ -3692,7 +3692,7 @@
     {
       "id": "char-0246",
       "name": "Joaher Redleaf",
-      "playerId": "player-keero-2",
+      "playerId": "player-keero",
       "campaignIds": [
         "campaign-shards-of-the-past-legacy"
       ],
@@ -3707,7 +3707,7 @@
     {
       "id": "char-0247",
       "name": "Kaelos",
-      "playerId": "player-keero-2",
+      "playerId": "player-keero",
       "campaignIds": [
         "campaign-mythic-odyssey-of-the-dragonlords"
       ],
@@ -3722,7 +3722,7 @@
     {
       "id": "char-0248",
       "name": "Neldar",
-      "playerId": "player-keero-2",
+      "playerId": "player-keero",
       "campaignIds": [
         "campaign-drakkenheim"
       ],
@@ -3737,7 +3737,7 @@
     {
       "id": "char-0249",
       "name": "Thive",
-      "playerId": "player-keero-2",
+      "playerId": "player-keero",
       "campaignIds": [
         "campaign-shards-of-the-past-legacy"
       ],
@@ -3752,7 +3752,7 @@
     {
       "id": "char-0250",
       "name": "Valeria Shadowglen",
-      "playerId": "player-keero-2",
+      "playerId": "player-keero",
       "campaignIds": [
         "campaign-shards-of-the-past-legacy"
       ],
