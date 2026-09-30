@@ -231,6 +231,38 @@ function addLegacyCharacter(row){
 }
 
 for(const row of characters) addLegacyCharacter(row);
+
+async function applyCanonicalPortraits(){
+  try{
+    const response=await fetch("../../res/characters.json",{cache:"no-store"});
+    if(!response.ok) throw new Error("characters.json ("+response.status+")");
+    const registry=await response.json();
+    const normalize=value=>String(value??"").trim().toLocaleLowerCase("pl-PL").normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+    const samePlayer=(a,b)=>normalize(canonicalPlayer(a))===normalize(canonicalPlayer(b));
+    const sameCampaign=(record,entry)=>Array.isArray(entry.campaigns)&&entry.campaigns.some(campaign=>
+      record.tags.campaign.some(recordCampaign=>normalize(recordCampaign)===normalize(campaign))
+    );
+
+    for(const record of records){
+      const player=record.tags.player[0]||"";
+      const exact=registry.find(entry=>
+        normalize(entry.character)===normalize(record.name) &&
+        samePlayer(entry.player,player) &&
+        sameCampaign(record,entry)
+      );
+      const fallback=registry.find(entry=>
+        normalize(entry.character)===normalize(record.name) &&
+        samePlayer(entry.player,player)
+      );
+      const match=exact||fallback;
+      if(match && typeof match.portrait==="string" && match.portrait.trim()){
+        record.portrait=match.portrait;
+      }
+    }
+  }catch(error){
+    console.warn("Nie udało się wczytać kanonicznych portretów z res/characters.json:",error);
+  }
+}
 for(const record of records){
   if(record.name==="Pchełka" || record.name==="Polter von Geist"){
     record.tags.player=["Zuza"];
@@ -543,7 +575,7 @@ $("clearFilters").addEventListener("click",()=>{
   render();
 });
 
-render();
+applyCanonicalPortraits().then(render);
 
 $("modalClose").addEventListener("click",closeCharacter);
 $("characterModal").addEventListener("click",event=>{
