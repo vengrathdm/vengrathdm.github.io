@@ -115,7 +115,7 @@
     },
     {
       "id": "player-keero",
-      "name": "Keero"
+      "name": "keero"
     },
     {
       "id": "player-panterq",
@@ -368,10 +368,6 @@
     {
       "id": "player-parrotnetwork",
       "name": "ParrotNetwork"
-    },
-    {
-      "id": "player-keero-2",
-      "name": "keero"
     },
     {
       "id": "player-olek",
