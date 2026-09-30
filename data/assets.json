@@ -3,1282 +3,1282 @@
   "assets": [
     {
       "id": "asset-0001",
-      "path": "/subpages/legends-of-barovia/character-portraits/char-0001.png",
+      "path": "/res/portraits/char-0001.png",
       "type": "portrait"
     },
     {
       "id": "asset-0002",
-      "path": "/subpages/legends-of-barovia/character-portraits/char-0002.png",
+      "path": "/res/portraits/char-0002.png",
       "type": "portrait"
     },
     {
       "id": "asset-0003",
-      "path": "/subpages/legends-of-barovia/character-portraits/char-0003.png",
+      "path": "/res/portraits/char-0003.png",
       "type": "portrait"
     },
     {
       "id": "asset-0004",
-      "path": "/subpages/legends-of-barovia/character-portraits/char-0004.png",
+      "path": "/res/portraits/char-0004.png",
       "type": "portrait"
     },
     {
       "id": "asset-0005",
-      "path": "/subpages/legends-of-barovia/character-portraits/char-0005.png",
+      "path": "/res/portraits/char-0005.png",
       "type": "portrait"
     },
     {
       "id": "asset-0006",
-      "path": "/subpages/mences-of-irensberg/postaci-graczy/char-0006.webp",
+      "path": "/res/portraits/char-0006.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0007",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0007.webp",
+      "path": "/res/portraits/char-0007.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0008",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0008.webp",
+      "path": "/res/portraits/char-0008.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0009",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0009.jpg",
+      "path": "/res/portraits/char-0009.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0010",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0010.jpg",
+      "path": "/res/portraits/char-0010.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0011",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0011.jpg",
+      "path": "/res/portraits/char-0011.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0012",
-      "path": "/subpages/mences-of-irensberg/postaci-graczy/char-0012.webp",
+      "path": "/res/portraits/char-0012.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0013",
-      "path": "/subpages/mences-of-irensberg/postaci-graczy/char-0013.webp",
+      "path": "/res/portraits/char-0013.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0014",
-      "path": "/subpages/mences-of-irensberg/postaci-graczy/char-0014.webp",
+      "path": "/res/portraits/char-0014.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0015",
-      "path": "/subpages/blood-red-snow-white/portrety-postaci/char-0015.png",
+      "path": "/res/portraits/char-0015.png",
       "type": "portrait"
     },
     {
       "id": "asset-0016",
-      "path": "/subpages/blood-red-snow-white/portrety-postaci/char-0016.png",
+      "path": "/res/portraits/char-0016.png",
       "type": "portrait"
     },
     {
       "id": "asset-0017",
-      "path": "/subpages/blood-red-snow-white/portrety-postaci/char-0017.png",
+      "path": "/res/portraits/char-0017.png",
       "type": "portrait"
     },
     {
       "id": "asset-0018",
-      "path": "/subpages/blood-red-snow-white/portrety-postaci/char-0018.png",
+      "path": "/res/portraits/char-0018.png",
       "type": "portrait"
     },
     {
       "id": "asset-0019",
-      "path": "/subpages/sands-of-doom/portrety-postaci/char-0019.png",
+      "path": "/res/portraits/char-0019.png",
       "type": "portrait"
     },
     {
       "id": "asset-0020",
-      "path": "/subpages/sands-of-doom/portrety-postaci/char-0020.png",
+      "path": "/res/portraits/char-0020.png",
       "type": "portrait"
     },
     {
       "id": "asset-0021",
-      "path": "/subpages/sands-of-doom/portrety-postaci/char-0021.png",
+      "path": "/res/portraits/char-0021.png",
       "type": "portrait"
     },
     {
       "id": "asset-0022",
-      "path": "/subpages/sands-of-doom/portrety-postaci/char-0022.png",
+      "path": "/res/portraits/char-0022.png",
       "type": "portrait"
     },
     {
       "id": "asset-0023",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0023.webp",
+      "path": "/res/portraits/char-0023.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0024",
-      "path": "/subpages/sands-of-doom/portrety-postaci/char-0024.png",
+      "path": "/res/portraits/char-0024.png",
       "type": "portrait"
     },
     {
       "id": "asset-0025",
-      "path": "/subpages/shards-of-the-past/postaci-graczy/char-0025.jpg",
+      "path": "/res/portraits/char-0025.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0026",
-      "path": "/subpages/shards-of-the-past/postaci-graczy/char-0026.png",
+      "path": "/res/portraits/char-0026.png",
       "type": "portrait"
     },
     {
       "id": "asset-0027",
-      "path": "/subpages/shards-of-the-past/postaci-graczy/char-0027.jpg",
+      "path": "/res/portraits/char-0027.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0028",
-      "path": "/subpages/shards-of-the-past/postaci-graczy/char-0028.png",
+      "path": "/res/portraits/char-0028.png",
       "type": "portrait"
     },
     {
       "id": "asset-0029",
-      "path": "/subpages/turn-of-fortunes-wheel/portrety-postaci/char-0029.png",
+      "path": "/res/portraits/char-0029.png",
       "type": "portrait"
     },
     {
       "id": "asset-0030",
-      "path": "/subpages/turn-of-fortunes-wheel/portrety-postaci/char-0030.png",
+      "path": "/res/portraits/char-0030.png",
       "type": "portrait"
     },
     {
       "id": "asset-0031",
-      "path": "/subpages/turn-of-fortunes-wheel/portrety-postaci/char-0031.png",
+      "path": "/res/portraits/char-0031.png",
       "type": "portrait"
     },
     {
       "id": "asset-0032",
-      "path": "/subpages/turn-of-fortunes-wheel/portrety-postaci/char-0032.png",
+      "path": "/res/portraits/char-0032.png",
       "type": "portrait"
     },
     {
       "id": "asset-0033",
-      "path": "/subpages/turn-of-fortunes-wheel/portrety-postaci/char-0033.png",
+      "path": "/res/portraits/char-0033.png",
       "type": "portrait"
     },
     {
       "id": "asset-0034",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0034.webp",
+      "path": "/res/portraits/char-0034.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0035",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0035.png",
+      "path": "/res/portraits/char-0035.png",
       "type": "portrait"
     },
     {
       "id": "asset-0036",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0036.png",
+      "path": "/res/portraits/char-0036.png",
       "type": "portrait"
     },
     {
       "id": "asset-0037",
-      "path": "/subpages/Ksiazeta-Heartwell/player-characters/char-0090.png",
+      "path": "/res/portraits/char-0090.png",
       "type": "portrait"
     },
     {
       "id": "asset-0038",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0038.png",
+      "path": "/res/portraits/char-0038.png",
       "type": "portrait"
     },
     {
       "id": "asset-0039",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0039.webp",
+      "path": "/res/portraits/char-0039.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0040",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0040.webp",
+      "path": "/res/portraits/char-0040.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0041",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0041.jpg",
+      "path": "/res/portraits/char-0041.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0042",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0042.webp",
+      "path": "/res/portraits/char-0042.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0043",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0044.png",
+      "path": "/res/portraits/char-0044.png",
       "type": "portrait"
     },
     {
       "id": "asset-0044",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0045.webp",
+      "path": "/res/portraits/char-0045.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0045",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0046.webp",
+      "path": "/res/portraits/char-0046.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0046",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0047.webp",
+      "path": "/res/portraits/char-0047.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0047",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0048.webp",
+      "path": "/res/portraits/char-0048.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0048",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0049.webp",
+      "path": "/res/portraits/char-0049.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0049",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0050.webp",
+      "path": "/res/portraits/char-0050.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0050",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0051.jpg",
+      "path": "/res/portraits/char-0051.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0051",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0052.webp",
+      "path": "/res/portraits/char-0052.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0052",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0053.jpg",
+      "path": "/res/portraits/char-0053.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0053",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0054.webp",
+      "path": "/res/portraits/char-0054.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0054",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0055.jpg",
+      "path": "/res/portraits/char-0055.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0055",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0056.png",
+      "path": "/res/portraits/char-0056.png",
       "type": "portrait"
     },
     {
       "id": "asset-0056",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0057.webp",
+      "path": "/res/portraits/char-0057.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0057",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0058.png",
+      "path": "/res/portraits/char-0058.png",
       "type": "portrait"
     },
     {
       "id": "asset-0058",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0059.webp",
+      "path": "/res/portraits/char-0059.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0059",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0060.webp",
+      "path": "/res/portraits/char-0060.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0060",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0061.png",
+      "path": "/res/portraits/char-0061.png",
       "type": "portrait"
     },
     {
       "id": "asset-0061",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0062.png",
+      "path": "/res/portraits/char-0062.png",
       "type": "portrait"
     },
     {
       "id": "asset-0062",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0063.png",
+      "path": "/res/portraits/char-0063.png",
       "type": "portrait"
     },
     {
       "id": "asset-0063",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0064.jpg",
+      "path": "/res/portraits/char-0064.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0064",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0065.jpg",
+      "path": "/res/portraits/char-0065.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0065",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0066.webp",
+      "path": "/res/portraits/char-0066.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0066",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0067.webp",
+      "path": "/res/portraits/char-0067.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0067",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0068.jpg",
+      "path": "/res/portraits/char-0068.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0068",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0069.png",
+      "path": "/res/portraits/char-0069.png",
       "type": "portrait"
     },
     {
       "id": "asset-0069",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0070.png",
+      "path": "/res/portraits/char-0070.png",
       "type": "portrait"
     },
     {
       "id": "asset-0070",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0071.webp",
+      "path": "/res/portraits/char-0071.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0071",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0072.webp",
+      "path": "/res/portraits/char-0072.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0072",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0073.png",
+      "path": "/res/portraits/char-0073.png",
       "type": "portrait"
     },
     {
       "id": "asset-0073",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0075.png",
+      "path": "/res/portraits/char-0075.png",
       "type": "portrait"
     },
     {
       "id": "asset-0074",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0076.jpg",
+      "path": "/res/portraits/char-0076.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0075",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0077.webp",
+      "path": "/res/portraits/char-0077.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0076",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0078.jpg",
+      "path": "/res/portraits/char-0078.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0077",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0079.png",
+      "path": "/res/portraits/char-0079.png",
       "type": "portrait"
     },
     {
       "id": "asset-0078",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0080.png",
+      "path": "/res/portraits/char-0080.png",
       "type": "portrait"
     },
     {
       "id": "asset-0079",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0081.png",
+      "path": "/res/portraits/char-0081.png",
       "type": "portrait"
     },
     {
       "id": "asset-0080",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0082.png",
+      "path": "/res/portraits/char-0082.png",
       "type": "portrait"
     },
     {
       "id": "asset-0081",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0083.webp",
+      "path": "/res/portraits/char-0083.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0082",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0084.png",
+      "path": "/res/portraits/char-0084.png",
       "type": "portrait"
     },
     {
       "id": "asset-0083",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0085.png",
+      "path": "/res/portraits/char-0085.png",
       "type": "portrait"
     },
     {
       "id": "asset-0084",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0086.png",
+      "path": "/res/portraits/char-0086.png",
       "type": "portrait"
     },
     {
       "id": "asset-0085",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0091.png",
+      "path": "/res/portraits/char-0091.png",
       "type": "portrait"
     },
     {
       "id": "asset-0086",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0092.jpg",
+      "path": "/res/portraits/char-0092.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0087",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0093.png",
+      "path": "/res/portraits/char-0093.png",
       "type": "portrait"
     },
     {
       "id": "asset-0088",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0094.jpg",
+      "path": "/res/portraits/char-0094.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0089",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0095.png",
+      "path": "/res/portraits/char-0095.png",
       "type": "portrait"
     },
     {
       "id": "asset-0090",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0096.webp",
+      "path": "/res/portraits/char-0096.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0091",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0097.webp",
+      "path": "/res/portraits/char-0097.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0092",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0098.png",
+      "path": "/res/portraits/char-0098.png",
       "type": "portrait"
     },
     {
       "id": "asset-0093",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0099.png",
+      "path": "/res/portraits/char-0099.png",
       "type": "portrait"
     },
     {
       "id": "asset-0094",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0100.webp",
+      "path": "/res/portraits/char-0100.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0095",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0101.webp",
+      "path": "/res/portraits/char-0101.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0096",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0102.png",
+      "path": "/res/portraits/char-0102.png",
       "type": "portrait"
     },
     {
       "id": "asset-0097",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0103.webp",
+      "path": "/res/portraits/char-0103.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0098",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0104.png",
+      "path": "/res/portraits/char-0104.png",
       "type": "portrait"
     },
     {
       "id": "asset-0099",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0105.jpg",
+      "path": "/res/portraits/char-0105.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0100",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0106.webp",
+      "path": "/res/portraits/char-0106.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0101",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0107.jpg",
+      "path": "/res/portraits/char-0107.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0102",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0108.webp",
+      "path": "/res/portraits/char-0108.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0103",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0109.webp",
+      "path": "/res/portraits/char-0109.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0104",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0110.webp",
+      "path": "/res/portraits/char-0110.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0105",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0111.webp",
+      "path": "/res/portraits/char-0111.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0106",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0112.webp",
+      "path": "/res/portraits/char-0112.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0107",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0113.webp",
+      "path": "/res/portraits/char-0113.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0108",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0114.webp",
+      "path": "/res/portraits/char-0114.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0109",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0115.webp",
+      "path": "/res/portraits/char-0115.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0110",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0116.webp",
+      "path": "/res/portraits/char-0116.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0111",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0117.webp",
+      "path": "/res/portraits/char-0117.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0112",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0118.webp",
+      "path": "/res/portraits/char-0118.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0113",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0119.webp",
+      "path": "/res/portraits/char-0119.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0114",
-      "path": "/subpages/Ksiazeta-Heartwell/player-characters/char-0120.png",
+      "path": "/res/portraits/char-0120.png",
       "type": "portrait"
     },
     {
       "id": "asset-0115",
-      "path": "/subpages/Ksiazeta-Heartwell/player-characters/char-0121.png",
+      "path": "/res/portraits/char-0121.png",
       "type": "portrait"
     },
     {
       "id": "asset-0116",
-      "path": "/subpages/Ksiazeta-Heartwell/player-characters/char-0122.png",
+      "path": "/res/portraits/char-0122.png",
       "type": "portrait"
     },
     {
       "id": "asset-0117",
-      "path": "/subpages/Ksiazeta-Heartwell/player-characters/char-0123.png",
+      "path": "/res/portraits/char-0123.png",
       "type": "portrait"
     },
     {
       "id": "asset-0118",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0124.webp",
+      "path": "/res/portraits/char-0124.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0119",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0125.webp",
+      "path": "/res/portraits/char-0125.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0120",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0126.webp",
+      "path": "/res/portraits/char-0126.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0121",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0127.webp",
+      "path": "/res/portraits/char-0127.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0122",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0128.webp",
+      "path": "/res/portraits/char-0128.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0123",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0129.webp",
+      "path": "/res/portraits/char-0129.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0124",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0130.webp",
+      "path": "/res/portraits/char-0130.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0125",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0131.webp",
+      "path": "/res/portraits/char-0131.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0126",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0132.webp",
+      "path": "/res/portraits/char-0132.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0127",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0133.webp",
+      "path": "/res/portraits/char-0133.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0128",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0134.webp",
+      "path": "/res/portraits/char-0134.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0129",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0135.png",
+      "path": "/res/portraits/char-0135.png",
       "type": "portrait"
     },
     {
       "id": "asset-0130",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0136.webp",
+      "path": "/res/portraits/char-0136.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0131",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0137.webp",
+      "path": "/res/portraits/char-0137.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0132",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0138.webp",
+      "path": "/res/portraits/char-0138.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0133",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0139.webp",
+      "path": "/res/portraits/char-0139.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0134",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0140.webp",
+      "path": "/res/portraits/char-0140.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0135",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0141.webp",
+      "path": "/res/portraits/char-0141.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0136",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0142.webp",
+      "path": "/res/portraits/char-0142.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0137",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0143.webp",
+      "path": "/res/portraits/char-0143.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0138",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0144.webp",
+      "path": "/res/portraits/char-0144.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0139",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0145.webp",
+      "path": "/res/portraits/char-0145.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0140",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0146.webp",
+      "path": "/res/portraits/char-0146.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0141",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0147.webp",
+      "path": "/res/portraits/char-0147.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0142",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0148.webp",
+      "path": "/res/portraits/char-0148.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0143",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0149.webp",
+      "path": "/res/portraits/char-0149.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0144",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0150.webp",
+      "path": "/res/portraits/char-0150.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0145",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0151.png",
+      "path": "/res/portraits/char-0151.png",
       "type": "portrait"
     },
     {
       "id": "asset-0146",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0152.webp",
+      "path": "/res/portraits/char-0152.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0147",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0153.webp",
+      "path": "/res/portraits/char-0153.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0148",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0154.png",
+      "path": "/res/portraits/char-0154.png",
       "type": "portrait"
     },
     {
       "id": "asset-0149",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0155.webp",
+      "path": "/res/portraits/char-0155.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0150",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0156.webp",
+      "path": "/res/portraits/char-0156.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0151",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0157.webp",
+      "path": "/res/portraits/char-0157.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0152",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0158.webp",
+      "path": "/res/portraits/char-0158.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0153",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0159.jpg",
+      "path": "/res/portraits/char-0159.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0154",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0160.webp",
+      "path": "/res/portraits/char-0160.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0155",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0161.webp",
+      "path": "/res/portraits/char-0161.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0156",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0162.png",
+      "path": "/res/portraits/char-0162.png",
       "type": "portrait"
     },
     {
       "id": "asset-0157",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0163.webp",
+      "path": "/res/portraits/char-0163.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0158",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0164.webp",
+      "path": "/res/portraits/char-0164.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0159",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0165.webp",
+      "path": "/res/portraits/char-0165.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0160",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0166.webp",
+      "path": "/res/portraits/char-0166.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0161",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0167.png",
+      "path": "/res/portraits/char-0167.png",
       "type": "portrait"
     },
     {
       "id": "asset-0162",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0168.png",
+      "path": "/res/portraits/char-0168.png",
       "type": "portrait"
     },
     {
       "id": "asset-0163",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0169.png",
+      "path": "/res/portraits/char-0169.png",
       "type": "portrait"
     },
     {
       "id": "asset-0164",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0170.png",
+      "path": "/res/portraits/char-0170.png",
       "type": "portrait"
     },
     {
       "id": "asset-0165",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0171.jpg",
+      "path": "/res/portraits/char-0171.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0166",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0172.jpg",
+      "path": "/res/portraits/char-0172.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0167",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0173.jpg",
+      "path": "/res/portraits/char-0173.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0168",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0174.jpg",
+      "path": "/res/portraits/char-0174.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0169",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0175.webp",
+      "path": "/res/portraits/char-0175.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0170",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0176.webp",
+      "path": "/res/portraits/char-0176.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0171",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0177.webp",
+      "path": "/res/portraits/char-0177.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0172",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0178.webp",
+      "path": "/res/portraits/char-0178.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0173",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0179.jpg",
+      "path": "/res/portraits/char-0179.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0174",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0180.webp",
+      "path": "/res/portraits/char-0180.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0175",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0181.jpg",
+      "path": "/res/portraits/char-0181.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0176",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0182.png",
+      "path": "/res/portraits/char-0182.png",
       "type": "portrait"
     },
     {
       "id": "asset-0177",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0183.webp",
+      "path": "/res/portraits/char-0183.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0178",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0184.webp",
+      "path": "/res/portraits/char-0184.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0179",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0185.webp",
+      "path": "/res/portraits/char-0185.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0180",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0186.webp",
+      "path": "/res/portraits/char-0186.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0181",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0187.webp",
+      "path": "/res/portraits/char-0187.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0182",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0188.webp",
+      "path": "/res/portraits/char-0188.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0183",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0189.webp",
+      "path": "/res/portraits/char-0189.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0184",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0190.webp",
+      "path": "/res/portraits/char-0190.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0185",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0191.webp",
+      "path": "/res/portraits/char-0191.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0186",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0192.webp",
+      "path": "/res/portraits/char-0192.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0187",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0193.webp",
+      "path": "/res/portraits/char-0193.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0188",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0194.jpg",
+      "path": "/res/portraits/char-0194.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0189",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0195.png",
+      "path": "/res/portraits/char-0195.png",
       "type": "portrait"
     },
     {
       "id": "asset-0190",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0196.webp",
+      "path": "/res/portraits/char-0196.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0191",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0197.webp",
+      "path": "/res/portraits/char-0197.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0192",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0198.jpg",
+      "path": "/res/portraits/char-0198.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0193",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0199.jpg",
+      "path": "/res/portraits/char-0199.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0194",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0200.webp",
+      "path": "/res/portraits/char-0200.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0195",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0201.webp",
+      "path": "/res/portraits/char-0201.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0196",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0202.webp",
+      "path": "/res/portraits/char-0202.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0197",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0203.webp",
+      "path": "/res/portraits/char-0203.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0198",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0204.jpg",
+      "path": "/res/portraits/char-0204.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0199",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0205.webp",
+      "path": "/res/portraits/char-0205.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0200",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0206.webp",
+      "path": "/res/portraits/char-0206.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0201",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0207.webp",
+      "path": "/res/portraits/char-0207.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0202",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0208.webp",
+      "path": "/res/portraits/char-0208.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0203",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0209.webp",
+      "path": "/res/portraits/char-0209.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0204",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0210.webp",
+      "path": "/res/portraits/char-0210.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0205",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0211.webp",
+      "path": "/res/portraits/char-0211.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0206",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0212.png",
+      "path": "/res/portraits/char-0212.png",
       "type": "portrait"
     },
     {
       "id": "asset-0207",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0213.jpg",
+      "path": "/res/portraits/char-0213.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0208",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0214.png",
+      "path": "/res/portraits/char-0214.png",
       "type": "portrait"
     },
     {
       "id": "asset-0209",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0215.jpeg",
+      "path": "/res/portraits/char-0215.jpeg",
       "type": "portrait"
     },
     {
       "id": "asset-0210",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0216.webp",
+      "path": "/res/portraits/char-0216.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0211",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0217.png",
+      "path": "/res/portraits/char-0217.png",
       "type": "portrait"
     },
     {
       "id": "asset-0212",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0218.webp",
+      "path": "/res/portraits/char-0218.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0213",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0219.webp",
+      "path": "/res/portraits/char-0219.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0214",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0220.webp",
+      "path": "/res/portraits/char-0220.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0215",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0221.jpg",
+      "path": "/res/portraits/char-0221.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0216",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0222.jpg",
+      "path": "/res/portraits/char-0222.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0217",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0223.jpg",
+      "path": "/res/portraits/char-0223.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0218",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0224.jpg",
+      "path": "/res/portraits/char-0224.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0219",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0225.webp",
+      "path": "/res/portraits/char-0225.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0220",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0226.webp",
+      "path": "/res/portraits/char-0226.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0221",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0227.jpg",
+      "path": "/res/portraits/char-0227.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0222",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0228.webp",
+      "path": "/res/portraits/char-0228.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0223",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0229.webp",
+      "path": "/res/portraits/char-0229.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0224",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0230.webp",
+      "path": "/res/portraits/char-0230.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0225",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0231.png",
+      "path": "/res/portraits/char-0231.png",
       "type": "portrait"
     },
     {
       "id": "asset-0226",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0232.webp",
+      "path": "/res/portraits/char-0232.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0227",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0233.png",
+      "path": "/res/portraits/char-0233.png",
       "type": "portrait"
     },
     {
       "id": "asset-0228",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0234.jpg",
+      "path": "/res/portraits/char-0234.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0229",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0235.png",
+      "path": "/res/portraits/char-0235.png",
       "type": "portrait"
     },
     {
       "id": "asset-0230",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0236.png",
+      "path": "/res/portraits/char-0236.png",
       "type": "portrait"
     },
     {
       "id": "asset-0231",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0237.jpg",
+      "path": "/res/portraits/char-0237.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0232",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0238.jpg",
+      "path": "/res/portraits/char-0238.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0233",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0239.webp",
+      "path": "/res/portraits/char-0239.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0234",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0240.webp",
+      "path": "/res/portraits/char-0240.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0235",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0241.webp",
+      "path": "/res/portraits/char-0241.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0236",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0242.png",
+      "path": "/res/portraits/char-0242.png",
       "type": "portrait"
     },
     {
       "id": "asset-0237",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0243.webp",
+      "path": "/res/portraits/char-0243.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0238",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0244.png",
+      "path": "/res/portraits/char-0244.png",
       "type": "portrait"
     },
     {
       "id": "asset-0239",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0245.png",
+      "path": "/res/portraits/char-0245.png",
       "type": "portrait"
     },
     {
       "id": "asset-0240",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0246.png",
+      "path": "/res/portraits/char-0246.png",
       "type": "portrait"
     },
     {
       "id": "asset-0241",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0247.jpg",
+      "path": "/res/portraits/char-0247.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0242",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0248.png",
+      "path": "/res/portraits/char-0248.png",
       "type": "portrait"
     },
     {
       "id": "asset-0243",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0249.jpg",
+      "path": "/res/portraits/char-0249.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0244",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0250.png",
+      "path": "/res/portraits/char-0250.png",
       "type": "portrait"
     },
     {
       "id": "asset-0245",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0251.png",
+      "path": "/res/portraits/char-0251.png",
       "type": "portrait"
     },
     {
       "id": "asset-0246",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0252.png",
+      "path": "/res/portraits/char-0252.png",
       "type": "portrait"
     },
     {
       "id": "asset-0247",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0253.png",
+      "path": "/res/portraits/char-0253.png",
       "type": "portrait"
     },
     {
       "id": "asset-0248",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0254.jpg",
+      "path": "/res/portraits/char-0254.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0249",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0255.jpg",
+      "path": "/res/portraits/char-0255.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0250",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0256.jpg",
+      "path": "/res/portraits/char-0256.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0251",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0257.jpg",
+      "path": "/res/portraits/char-0257.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0252",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0258.jpg",
+      "path": "/res/portraits/char-0258.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0253",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0259.png",
+      "path": "/res/portraits/char-0259.png",
       "type": "portrait"
     },
     {
       "id": "asset-0254",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0260.jpg",
+      "path": "/res/portraits/char-0260.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0255",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0261.jpg",
+      "path": "/res/portraits/char-0261.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0256",
-      "path": "/subpages/sala-chwaly/postaci-graczy/char-0262.jpg",
+      "path": "/res/portraits/char-0262.jpg",
       "type": "portrait"
     }
   ]
