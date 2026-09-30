@@ -106,14 +106,14 @@
       "slug": "ku-chwale-tyra",
       "canonicalPath": "/campaigns/ku-chwale-tyra/",
       "legacyPath": "/subpages/ku-chwale-tyra/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-menaces-of-gloomforest",
       "slug": "menaces-of-gloomforest",
       "canonicalPath": "/campaigns/menaces-of-gloomforest/",
       "legacyPath": "/subpages/menaces-of-gloomforest/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-mythic-odyssey-of-the-dragonlords",
@@ -155,7 +155,7 @@
       "slug": "shadow-of-the-sword-coast",
       "canonicalPath": "/campaigns/shadow-of-the-sword-coast/",
       "legacyPath": "/subpages/shadow-of-the-sword-coast/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-sons-of-azalin",
@@ -197,7 +197,7 @@
       "slug": "turn-back-the-endless-night",
       "canonicalPath": "/campaigns/turn-back-the-endless-night/",
       "legacyPath": "/subpages/turn-back-the-endless-night/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-ksiazeta-heartwell",
@@ -225,7 +225,7 @@
       "slug": "echtra-zima-irgaeli",
       "canonicalPath": "/campaigns/echtra-zima-irgaeli/",
       "legacyPath": "/subpages/echtra-zima-irgaeli/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-kampania-nieznana",
