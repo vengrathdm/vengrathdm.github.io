@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-lost-mine-of-phandelver",
+  "slug": "lost-mine-of-phandelver",
+  "layout": "custom",
+  "theme": "lost-mine-of-phandelver",
+  "identity": {
+    "title": "Lost Mine of Phandelver",
+    "status": "completed",
+    "setting": "Forgotten Realms",
+    "region": "Sword Coast"
+  },
+  "hero": {
+    "title": "LOST MINE OF PHANDELVER",
+    "lead": "Przygoda o drodze, która zaczyna się od transportu ładunku, a kończy w miejscu, którego mapa przez długi czas nie chciała zdradzić."
+  },
+  "characters": {
+    "ids": [
+      "char-0066",
+      "char-0142",
+      "char-0144",
+      "char-0036",
+      "char-0209"
+    ]
+  },
+  "sections": [
+    {
+      "id": "route",
+      "title": "Notatki z wyprawy"
+    },
+    {
+      "id": "team",
+      "title": "Lista drużyny"
+    }
+  ],
+  "links": {
+    "playlist": "https://www.youtube.com/playlist?list=PL-Lm83myvu0hwOP6JZayYMd2bGWEkP1UV"
+  }
+}
