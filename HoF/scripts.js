@@ -37,13 +37,16 @@
     "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
   }[char]));
 
-  const displayStatus = status => ({
-    alive: "Żyje",
-    dead: "Poległa / poległy",
-    finished: "Zakończona",
-    abandoned: "Porzucona",
-    unknown: "Nieustalony"
-  }[status] || status || "Nie podano");
+  const STATUS_META = {
+    "Aktywna": { key: "active", icon: "✦" },
+    "Zwycięska": { key: "finished", icon: "♕" },
+    "Martwa": { key: "dead", icon: "†" },
+    "Wycofana": { key: "retired", icon: "↩" },
+    "Porzucona": { key: "abandoned", icon: "∅" }
+  };
+
+  const statusMeta = status => STATUS_META[status];
+  const displayStatus = status => status;
 
   const uniqueSorted = values => [...new Set(values.filter(Boolean))]
     .sort((a,b) => String(a).localeCompare(String(b), "pl"));
@@ -94,9 +97,10 @@
   }
 
   function card(record, index) {
-    const status = record.status || "unknown";
-    return '<article class="card" tabindex="0" role="button" data-index="' + index + '" data-status="' + escapeHtml(status) + '" aria-label="Otwórz rekord ' + escapeHtml(record.character) + '">' +
-      '<div class="portrait"><img src="' + escapeHtml(record.portrait) + '" alt="' + escapeHtml(record.character) + '" loading="lazy" onerror="this.remove()"></div>' +
+    const status = record.status;
+    const meta = statusMeta(status);
+    return '<article class="card" tabindex="0" role="button" data-index="' + index + '" data-status="' + meta.key + '" aria-label="Otwórz rekord ' + escapeHtml(record.character) + '">' +
+      '<div class="portrait"><img src="' + escapeHtml(record.portrait) + '" alt="' + escapeHtml(record.character) + '" loading="lazy" onerror="this.remove()"><span class="status-badge" aria-hidden="true">' + meta.icon + '</span></div>' +
       '<div class="card-body">' +
         '<h3 class="card-name">' + escapeHtml(record.character) + '</h3>' +
         '<div class="meta">' +
@@ -145,7 +149,7 @@
     const history = String(record["Historia"] ?? "Brak zapisków.").trim() || "Brak zapisków.";
     $("modalContent").innerHTML =
       '<div class="modal-visual">' +
-        '<img class="modal-portrait" src="' + escapeHtml(record.portrait) + '" alt="' + escapeHtml(record.character) + '">' +
+        '<div class="modal-portrait-wrap" data-status="' + statusMeta(record.status).key + '"><img class="modal-portrait" src="' + escapeHtml(record.portrait) + '" alt="' + escapeHtml(record.character) + '"><span class="status-badge" aria-hidden="true">' + statusMeta(record.status).icon + '</span></div>' +
         '<span class="modal-kicker">PEŁNY REKORD POSTACI</span>' +
         '<h2 id="modalName">' + escapeHtml(record.character) + '</h2>' +
       '</div>' +
