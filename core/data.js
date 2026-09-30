@@ -1,0 +1,2 @@
+/* Shared data loader. Keeps registry access in one place and caches each JSON resource. */
+const VengrathData=globalThis.VengrathData||(()=>{const cache=new Map();async function load(path){if(!cache.has(path))cache.set(path,fetch(path).then(r=>{if(!r.ok)throw new Error("Nie można załadować "+path);return r.json()}));return cache.get(path)}return{load,campaigns:()=>load("/data/campaigns.json"),characters:()=>load("/data/characters.json"),assets:()=>load("/data/assets.json"),players:()=>load("/data/players.json")}})();globalThis.VengrathData=VengrathData;
