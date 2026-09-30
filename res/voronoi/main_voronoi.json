@@ -6,7 +6,7 @@
       "Archiwum"
     ],
     "graphic": "https://cdn.midjourney.com/47c79b31-a4ac-4c58-8cf8-f5d95ab3a959/0_0.png",
-    "link": "/p/assault-on-castle-blackrose/",
+    "link": "/p/works/assault-on-castle-blackrose/",
     "name": "Assault on Castle Blackrose"
   },
   {
@@ -16,7 +16,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/barber-of-silverymoon.jpg",
-    "link": "/p/barber-of-silverymoon/",
+    "link": "/p/adventures/barber-of-silverymoon/",
     "name": "Barber of Silverymoon"
   },
   {
@@ -36,7 +36,7 @@
       "Archiwum"
     ],
     "graphic": "https://cdn.midjourney.com/dd7584b6-fb31-4a57-ac17-ce1f8a1c5a3e/0_2.png",
-    "link": "/p/cemetery-of-dragons/",
+    "link": "/p/works/cemetery-of-dragons/",
     "name": "Cemetery of Dragons"
   },
   {
@@ -46,7 +46,7 @@
       "Postać"
     ],
     "graphic": "/res/voronoi/graphics/ayla.webp",
-    "link": "/p/character-ayla/",
+    "link": "/p/characters/character-ayla/",
     "name": "Ayla Brokengulf"
   },
   {
@@ -56,7 +56,7 @@
       "Postać"
     ],
     "graphic": "/res/voronoi/graphics/Shiney.png",
-    "link": "/p/character-shiney/",
+    "link": "/p/characters/character-shiney/",
     "name": "Shiney, Różowa Paladynka"
   },
   {
@@ -66,7 +66,7 @@
       "Narzędzie"
     ],
     "graphic": "/res/voronoi/graphics/charactermancer.png",
-    "link": "/p/Charactermancer/",
+    "link": "/p/tools/charactermancer/",
     "name": "Charactermancer"
   },
   {
@@ -76,7 +76,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/curse-of-strahd.jpg",
-    "link": "/p/curse-of-strahd/",
+    "link": "/p/campaigns/curse-of-strahd/",
     "name": "Curse of Strahd"
   },
   {
@@ -86,7 +86,7 @@
       "Archiwum"
     ],
     "graphic": "/res/voronoi/graphics/dom-malowanych-luster.jpg",
-    "link": "/p/dom-malowanych-luster/",
+    "link": "/p/works/dom-malowanych-luster/",
     "name": "Dom Malowanych Luster"
   },
   {
@@ -96,7 +96,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/dragon-of-dampen-depths.jpg",
-    "link": "/p/dragon-of-dampen-depths/",
+    "link": "/p/homebrew/dragon-of-dampen-depths/",
     "name": "Dragon of Dampen Depths"
   },
   {
@@ -106,7 +106,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/dragon-of-icespire-peak.avif",
-    "link": "/p/dragon-of-icespire-peak/",
+    "link": "/p/adventures/dragon-of-icespire-peak/",
     "name": "Dragon of Icespire Peak"
   },
   {
@@ -116,7 +116,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/drakkenheim.png",
-    "link": "/p/drakkenheim/",
+    "link": "/p/campaigns/drakkenheim/",
     "name": "Drakkenheim"
   },
   {
@@ -126,7 +126,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/dungeons-of-drakkenheim.jpg",
-    "link": "/p/dungeons-of-drakkenheim/",
+    "link": "/p/campaigns/dungeons-of-drakkenheim/",
     "name": "Dungeons of Drakkenheim"
   },
   {
@@ -136,7 +136,7 @@
       "Aktywna Kampania"
     ],
     "graphic": "/res/voronoi/graphics/echtra-midst-the-sidhe.jpg",
-    "link": "/p/echtra-midst-the-sidhe/",
+    "link": "/p/homebrew/echtra-midst-the-sidhe/",
     "name": "Echtra midst the Sidhe"
   },
   {
@@ -146,7 +146,7 @@
       "Aktywna Kampania"
     ],
     "graphic": "/res/voronoi/graphics/echtra-midst-the-sidhe.jpg",
-    "link": "/p/echtra-zima-irgaeli/",
+    "link": "/p/homebrew/echtra-zima-irgaeli/",
     "name": "Echtra - Zima Irgaeli"
   },
   {
@@ -156,7 +156,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/forge-of-fury.png",
-    "link": "/p/forge-of-fury/",
+    "link": "/p/adventures/forge-of-fury/",
     "name": "Forge of Fury"
   },
   {
@@ -166,7 +166,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/ghoul-hour.png",
-    "link": "/p/ghoul-hour/",
+    "link": "/p/homebrew/ghoul-hour/",
     "name": "Ghoul Hour"
   },
   {
@@ -176,7 +176,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/Gold-for-Fools-and-Princes.jpg",
-    "link": "/p/gold-for-fools-and-princes/",
+    "link": "/p/adventures/gold-for-fools-and-princes/",
     "name": "Gold for Fools and Princes"
   },
   {
@@ -186,7 +186,7 @@
       "Archiwum"
     ],
     "graphic": "/res/voronoi/graphics/hand-of-glory.jpg",
-    "link": "/p/hand-of-glory/",
+    "link": "/p/adventures/hand-of-glory/",
     "name": "Hand of Glory"
   },
   {
@@ -196,7 +196,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/heroes-of-baldurs-gate.svg",
-    "link": "/p/heroes-of-baldurs-gate/",
+    "link": "/p/adventures/heroes-of-baldurs-gate/",
     "name": "Bohaterowie Wrót Baldura"
   },
   {
@@ -206,7 +206,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/dungeons-of-drakkenheim.jpg",
-    "link": "/p/heroes-of-drakkenheim/",
+    "link": "/p/campaigns/heroes-of-drakkenheim/",
     "name": "Heroes of Drakkenheim"
   },
   {
@@ -216,7 +216,7 @@
       "Aktywna Kampania"
     ],
     "graphic": "/res/voronoi/graphics/klatwa-strahda.webp",
-    "link": "/p/klatwa-strahda/",
+    "link": "/p/campaigns/klatwa-strahda/",
     "name": "Klątwa Strahda"
   },
   {
@@ -236,7 +236,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/KuChwaleTyra.png",
-    "link": "/p/ku-chwale-tyra/",
+    "link": "/p/homebrew/ku-chwale-tyra/",
     "name": "Ku chwale Tyra!"
   },
   {
@@ -246,7 +246,7 @@
       "Aktywna Kampania"
     ],
     "graphic": "/res/voronoi/graphics/legends-of-barovia.jpg",
-    "link": "/p/legends-of-barovia/",
+    "link": "/p/campaigns/legends-of-barovia/",
     "name": "Legends of Barovia"
   },
   {
@@ -256,7 +256,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/lost-mine-of-phandelver.jpg",
-    "link": "/p/lost-mine-of-phandelver/",
+    "link": "/p/adventures/lost-mine-of-phandelver/",
     "name": "Lost Mine of Phandelver"
   },
   {
@@ -266,7 +266,7 @@
       "Archiwum"
     ],
     "graphic": "/res/voronoi/graphics/maski-nyarlotepa.jpg",
-    "link": "/p/maski-nyarlotepa/",
+    "link": "/p/campaigns/maski-nyarlotepa/",
     "name": "Maski Nyarlathotepa - Peru"
   },
   {
@@ -276,7 +276,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/mayhem-in-earthspur-mines.webp",
-    "link": "/p/mayhem-in-earthspur-mines/",
+    "link": "/p/adventures/mayhem-in-earthspur-mines/",
     "name": "Mayhem in Earthspur Mines"
   },
   {
@@ -286,7 +286,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/menaces-of-gloomforest.jpg",
-    "link": "/p/menaces-of-gloomforest-legacy/",
+    "link": "/p/homebrew/menaces-of-gloomforest-legacy/",
     "name": "Menaces of Gloomforest Legacy"
   },
   {
@@ -296,7 +296,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/menaces-of-gloomforest.jpg",
-    "link": "/p/menaces-of-gloomforest/",
+    "link": "/p/homebrew/menaces-of-gloomforest/",
     "name": "Menaces of Gloomforest"
   },
   {
@@ -306,7 +306,7 @@
       "Aktywna Kampania"
     ],
     "graphic": "/res/voronoi/graphics/mences-of-irensberg.jpg",
-    "link": "/p/mences-of-irensberg/",
+    "link": "/p/homebrew/mences-of-irensberg/",
     "name": "Mences of Irensberg"
   },
   {
@@ -316,7 +316,7 @@
       "Grafika"
     ],
     "graphic": "/res/voronoi/graphics/moje-prace-graficzne.jpg",
-    "link": "/p/moje-prace-graficzne/",
+    "link": "/p/works/moje-prace-graficzne/",
     "name": "Moje Rysunki 2026"
   },
   {
@@ -326,7 +326,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/mythic-odyssey-of-the-dragonlords.jpg",
-    "link": "/p/mythic-odyssey-of-the-dragonlords/",
+    "link": "/p/campaigns/mythic-odyssey-of-the-dragonlords/",
     "name": "Mythic Odyssey of the Dragonlords"
   },
   {
@@ -336,7 +336,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/neverwinter.webp",
-    "link": "/p/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/",
+    "link": "/p/homebrew/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/",
     "name": "Neverwinter: Intrygi Północnego Wybrzeża Mieczy"
   },
   {
@@ -346,7 +346,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/odyssey-of-the-dragonlords.jpg",
-    "link": "/p/odyssey-of-the-dragonlords/",
+    "link": "/p/campaigns/odyssey-of-the-dragonlords/",
     "name": "Odyssey of the Dragonlords"
   },
   {
@@ -366,7 +366,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/rime-of-the-frostmaiden.jpg",
-    "link": "/p/rime-of-the-frostmaiden/",
+    "link": "/p/campaigns/rime-of-the-frostmaiden/",
     "name": "Rime of the Frostmaiden"
   },
   {
@@ -376,7 +376,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/rise-of-tiamat.jpg",
-    "link": "/p/rise-of-tiamat/",
+    "link": "/p/campaigns/rise-of-tiamat/",
     "name": "Rise of Tiamat"
   },
   {
@@ -396,7 +396,7 @@
       "Aktywna Kampania"
     ],
     "graphic": "/res/voronoi/graphics/sands-of-doom.jpg",
-    "link": "/p/sands-of-doom/",
+    "link": "/p/campaigns/sands-of-doom/",
     "name": "Sands of Doom"
   },
   {
@@ -406,7 +406,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/shadow-of-the-sword-coast.jpg",
-    "link": "/p/shadow-of-the-sword-coast/",
+    "link": "/p/adventures/shadow-of-the-sword-coast/",
     "name": "Shadow of the Sword Coast"
   },
   {
@@ -416,7 +416,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/shards-of-the-past.png",
-    "link": "/p/shards-of-the-past/",
+    "link": "/p/adventures/shards-of-the-past/",
     "name": "Shards of the Past"
   },
   {
@@ -426,7 +426,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/sons-of-azalin.jpg",
-    "link": "/p/sons-of-azalin/",
+    "link": "/p/adventures/sons-of-azalin/",
     "name": "Sons of Azalin"
   },
   {
@@ -436,7 +436,7 @@
       "Archiwum"
     ],
     "graphic": "https://cdn.midjourney.com/233c92ad-8ba9-45f1-be79-1ea5bbc2f4d1/0_3.png",
-    "link": "/p/the-dragon-and-the-kraken/",
+    "link": "/p/works/the-dragon-and-the-kraken/",
     "name": "The Dragon and the Kraken"
   },
   {
@@ -446,7 +446,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/the-sunless-citadel.jpg",
-    "link": "/p/the-sunless-citadel/",
+    "link": "/p/adventures/the-sunless-citadel/",
     "name": "The Sunless Citadel"
   },
   {
@@ -456,7 +456,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/tomb-of-annihilation.jpg",
-    "link": "/p/tomb-of-annihilation/",
+    "link": "/p/campaigns/tomb-of-annihilation/",
     "name": "Tomb of Annihilation"
   },
   {
@@ -466,7 +466,7 @@
       "Archiwum"
     ],
     "graphic": "https://i.imgur.com/T5JE3IL.jpeg",
-    "link": "/p/tower-of-the-veiled-star/",
+    "link": "/p/works/tower-of-the-veiled-star/",
     "name": "The Tower of the Veiled Star"
   },
   {
@@ -476,7 +476,7 @@
       "Archiwum"
     ],
     "graphic": "https://cdn.midjourney.com/d1fed19a-e4f0-482d-9db8-54ecad204628/0_0.png",
-    "link": "/p/trouble-below-the-mountains-of-ash/",
+    "link": "/p/works/trouble-below-the-mountains-of-ash/",
     "name": "Trouble Below the Mountains of Ash"
   },
   {
@@ -486,7 +486,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/turn-back-the-endless-night.webp",
-    "link": "/p/turn-back-the-endless-night/",
+    "link": "/p/adventures/turn-back-the-endless-night/",
     "name": "Turn Back the Endless Night"
   },
   {
@@ -496,7 +496,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/turn-of-fortunes-wheel.jpg",
-    "link": "/p/turn-of-fortunes-wheel/",
+    "link": "/p/campaigns/turn-of-fortunes-wheel/",
     "name": "Turn of Fortune's Wheel"
   },
   {
@@ -506,7 +506,7 @@
       "Archiwum"
     ],
     "graphic": "https://cdn.midjourney.com/f2d52c3c-0e32-4b72-a9a2-5f1fdca9d8ed/0_0.png",
-    "link": "/p/wails-from-the-lighthouse/",
+    "link": "/p/works/wails-from-the-lighthouse/",
     "name": "Wails from the Lighthouse"
   },
   {
