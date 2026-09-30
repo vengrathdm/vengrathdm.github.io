@@ -50,21 +50,21 @@
       "slug": "barber-of-silverymoon",
       "canonicalPath": "/campaigns/barber-of-silverymoon/",
       "legacyPath": "/subpages/barber-of-silverymoon/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-lost-mine-of-phandelver",
       "slug": "lost-mine-of-phandelver",
       "canonicalPath": "/campaigns/lost-mine-of-phandelver/",
       "legacyPath": "/subpages/lost-mine-of-phandelver/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-curse-of-strahd",
       "slug": "curse-of-strahd",
       "canonicalPath": "/campaigns/curse-of-strahd/",
       "legacyPath": "/subpages/curse-of-strahd/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-drakkenheim",
@@ -92,7 +92,7 @@
       "slug": "ghoul-hour",
       "canonicalPath": "/campaigns/ghoul-hour/",
       "legacyPath": "/subpages/ghoul-hour/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-hand-of-glory",
