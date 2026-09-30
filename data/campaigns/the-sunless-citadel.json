@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-the-sunless-citadel",
+  "slug": "the-sunless-citadel",
+  "layout": "dossier",
+  "theme": "citadel",
+  "hero": {
+    "background": "/Home/Graphics/the-sunless-citadel.jpg",
+    "kicker": "THE SUNLESS CITADEL · AKTA WYPRAWY",
+    "title": [
+      "THE SUNLESS",
+      "CITADEL"
+    ],
+    "lead": "Forteca pod lasem, dwa walczące plemiona i zejście, z którego główna drużyna już nie wróciła.",
+    "chips": [
+      "ZATOPIONA CYTADELA",
+      "KOBOLDY",
+      "GULTHIAS",
+      "ZAMKNIĘTA"
+    ]
+  },
+  "nav": [
+    [
+      "GŁÓWNA",
+      "#top"
+    ],
+    [
+      "ŚWIAT",
+      "#swiat"
+    ],
+    [
+      "POSTACI",
+      "#postacie"
+    ],
+    [
+      "KRONIKA",
+      "#kronika"
+    ],
+    [
+      "PLAYLISTA",
+      "#kronika"
+    ]
+  ],
+  "dossier": {
+    "title": "Ruiny, które nie były puste.",
+    "paragraphs": [
+      "Drużyna zeszła do starożytnej fortecy i weszła pomiędzy koboldy, gobliny oraz historię związaną z Gulthiasem.",
+      "Sala Chwały zapisuje finał głównej grupy w Zatopionej Cytadeli."
+    ],
+    "rows": [
+      [
+        "PRZECIWNICY",
+        "Koboldy / gobliny"
+      ],
+      [
+        "WĄTEK",
+        "Gulthias"
+      ],
+      [
+        "STATUS",
+        "ZAMKNIĘTA",
+        "active"
+      ]
+    ]
+  },
+  "world": {
+    "title": "Warstwy cytadeli",
+    "lead": "Od powierzchni do korzeni.",
+    "cards": [
+      [
+        "01",
+        "PRÓG",
+        "Ruiny",
+        "Las, kamień i wejście do miejsca, które dawno powinno być martwe."
+      ],
+      [
+        "02",
+        "KONFLIKT",
+        "Koboldy i gobliny",
+        "Wewnętrzna wojna cytadeli."
+      ],
+      [
+        "03",
+        "GŁĘBIA",
+        "Korzenie Gulthiasa",
+        "Przeklęte drzewo wyznacza najciemniejszy punkt wyprawy.",
+        "wide"
+      ]
+    ]
+  },
+  "characters": {
+    "title": "Sala Chwały",
+    "lead": "Rejestr postaci przypisanych do kampanii.",
+    "ids": [
+      "char-0102",
+      "char-0103",
+      "char-0104",
+      "char-0105"
+    ]
+  },
+  "chronicle": {
+    "title": "Rekord kampanii",
+    "lead": "Akta wyprawy.",
+    "records": [
+      [
+        "01",
+        "Wejście do cytadeli",
+        "AKTA",
+        "Drużyna schodzi do ruin i zaczyna eksplorację fortecy."
+      ],
+      [
+        "02",
+        "Ostatnia walka",
+        "FINAŁ",
+        "Historia głównej drużyny kończy się z rąk koboldów."
+      ]
+    ]
+  },
+  "quote": {
+    "label": "ZAPIS ARCHIWALNY",
+    "text": "Cytadela nie potrzebowała potworów, żeby być groźna. Potrzebowała tylko drzwi, które zamykały się od środka.",
+    "source": "THE SUNLESS CITADEL"
+  }
+}
