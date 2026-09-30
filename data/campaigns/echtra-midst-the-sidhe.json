@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-echtra-midst-the-sidhe",
+  "slug": "echtra-midst-the-sidhe",
+  "layout": "custom",
+  "theme": "echtra-midst-the-sidhe",
+  "identity": {
+    "title": "Echtra midst the Sidhe",
+    "status": "active",
+    "type": "campaign",
+    "setting": "Homebrew"
+  },
+  "hero": {
+    "title": "ECHTRA MIDST THE SIDHE",
+    "lead": "Irgaelia to kraina celtyckich legend, dawnych bogów, druidów i Sidhe — istot z Drugiego Świata. Tutaj zmiana pór roku nie jest jedynie częścią natury. Jest częścią porządku świata."
+  },
+  "characters": {
+    "ids": [
+      "char-0050",
+      "char-0051",
+      "char-0052",
+      "char-0053",
+      "char-0054",
+      "char-0055"
+    ]
+  },
+  "sections": [
+    {
+      "id": "campaign",
+      "title": "O kampanii"
+    },
+    {
+      "id": "team",
+      "title": "Drużyna"
+    }
+  ]
+}
