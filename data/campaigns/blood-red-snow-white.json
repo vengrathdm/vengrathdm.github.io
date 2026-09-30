@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-blood-red-snow-white",
+  "slug": "blood-red-snow-white",
+  "layout": "custom",
+  "theme": "blood-red-snow-white",
+  "identity": {
+    "title": "Blood Red Snow White"
+  },
+  "hero": {
+    "background": "/Home/Graphics/blood-red-snow-white.jpg"
+  },
+  "characters": [
+    "char-0015",
+    "char-0016",
+    "char-0017",
+    "char-0018"
+  ],
+  "sections": [
+    "We Mgły",
+    "Dziewczynka z Zapałkami",
+    "Zmienne Skóry",
+    "Wolfsnarbe",
+    "Komplikacje"
+  ]
+}
