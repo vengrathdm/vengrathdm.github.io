@@ -1,7 +1,7 @@
 (() => {
   "use strict";
   const viewport=document.getElementById("viewport"),board=document.getElementById("board"),filters=document.getElementById("filters"),search=document.getElementById("search");
-  const DATA_URL="/voronoi/main_voronoi.json";
+  const DATA_URL="/res/voronoi/main_voronoi.json";
   const FILTERS=[["Wszystko","Wszystko"],["Aktywna Kampania","Aktywna Kampania"],["Zamknięta Kampania","Zamknięta Kampania"],["Archiwum","Archiwum"],["Blog","Blog"],["Grafika","Grafika"],["Narzędzie","Narzędzie"],["Postać","Postać"]];
   let records=[],shuffled=[],activeTag="Wszystko",drag={active:false,startX:0,lastX:0,lastTime:0,velocity:0,moved:false},momentum=0,resizeFrame=0,suppressClickUntil=0;
   function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}

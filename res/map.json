@@ -1,5 +1,5 @@
 {
   "site": {"home": "/", "hallOfFame": "/HoF/", "pages": "/p/"},
-  "resources": {"commonGraphics": "/res/commGraph/", "mainVoronoiGraphics": "/res/voronoiMain/", "characters": "/res/characters.json"},
-  "voronoi": {"script": "/voronoi/voronoi.js", "styles": "/voronoi/voronoi_styles.css", "main": "/voronoi/main_voronoi.json", "mypaintings2026": "/voronoi/mypaintings2026_voronoi.json"}
+  "resources": {"commonGraphics": "/res/commGraph/", "mainVoronoiGraphics": "/res/voronoi/graphics/", "characters": "/res/characters.json"},
+  "voronoi": {"script": "/res/voronoi/voronoi.js", "styles": "/res/voronoi/voronoi_styles.css", "main": "/res/voronoi/main_voronoi.json", "mypaintings2026": "/res/voronoi/mypaintings2026_voronoi.json"}
 }
