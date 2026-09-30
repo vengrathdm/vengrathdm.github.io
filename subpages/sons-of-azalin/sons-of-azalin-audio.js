@@ -1,7 +1,4 @@
-/* ============================================================
-   SONS OF AZALIN — CAMPAIGN AUDIO
-   Odtwarzacz z zachowaniem pozycji i stanu między stronami.
-   ============================================================ */
+/* AZALIN — CAMPAIGN AUDIO */
 (function(){
   const audio=document.getElementById('azalinTheme');
   const toggle=document.getElementById('azalinAudioToggle');
@@ -13,21 +10,20 @@
 
   let userMuted=sessionStorage.getItem(MUTED_KEY)==='true';
   let restored=false;
-
   audio.volume=0.55;
 
   function getSavedTime(){
     const saved=parseFloat(sessionStorage.getItem(TIME_KEY));
-    return Number.isFinite(saved) && saved >= 0 ? saved : 0;
+    return Number.isFinite(saved)&&saved>=0?saved:0;
   }
 
   function saveState(){
     if(!restored) return;
     try{
-      sessionStorage.setItem(TIME_KEY,String(audio.currentTime || 0));
-      sessionStorage.setItem(MUTED_KEY,String(audio.muted || userMuted));
-      sessionStorage.setItem(PLAYING_KEY,String(!audio.paused && !audio.muted));
-    }catch(_) {}
+      sessionStorage.setItem(TIME_KEY,String(audio.currentTime||0));
+      sessionStorage.setItem(MUTED_KEY,String(audio.muted||userMuted));
+      sessionStorage.setItem(PLAYING_KEY,String(!audio.paused&&!audio.muted));
+    }catch(_){}
   }
 
   function syncButton(){
@@ -41,8 +37,8 @@
   function restorePosition(){
     if(restored) return;
     const saved=getSavedTime();
-    if(audio.duration && saved >= audio.duration) audio.currentTime=saved % audio.duration;
-    else audio.currentTime=saved;
+    if(audio.duration&&saved>=audio.duration) audio.currentTime=saved%audio.duration;
+    else if(audio.readyState>=1) audio.currentTime=saved;
     restored=true;
   }
 
@@ -55,25 +51,29 @@
       saveState();
       return true;
     }catch(error){
-      audio.muted=true;
-      try{ await audio.play(); }catch(_) {}
+      console.warn('azalin: audio playback was blocked or unavailable.',error);
       syncButton();
-      saveState();
       return false;
     }
   }
 
   audio.addEventListener('loadedmetadata',()=>{
     restorePosition();
-    const shouldPlay=sessionStorage.getItem(PLAYING_KEY)!=='false' && !userMuted;
+    const shouldPlay=sessionStorage.getItem(PLAYING_KEY)!=='false'&&!userMuted;
     if(shouldPlay) startAudio();
     else syncButton();
+  });
+
+  audio.addEventListener('error',()=>{
+    console.warn('azalin: audio file could not be loaded.',audio.currentSrc);
+    toggle.classList.remove('is-playing');
+    toggle.setAttribute('aria-pressed','false');
   });
 
   toggle.addEventListener('click',async()=>{
     if(audio.paused||audio.muted){
       userMuted=false;
-      try{ sessionStorage.setItem(MUTED_KEY,'false'); }catch(_) {}
+      try{sessionStorage.setItem(MUTED_KEY,'false');}catch(_){}
       await startAudio();
     }else{
       userMuted=true;
@@ -103,7 +103,7 @@
 
   if(audio.readyState>=1){
     restorePosition();
-    const shouldPlay=sessionStorage.getItem(PLAYING_KEY)!=='false' && !userMuted;
+    const shouldPlay=sessionStorage.getItem(PLAYING_KEY)!=='false'&&!userMuted;
     if(shouldPlay) startAudio();
     else syncButton();
   }
