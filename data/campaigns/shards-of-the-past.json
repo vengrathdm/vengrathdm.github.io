@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-shards-of-the-past",
+  "slug": "shards-of-the-past",
+  "layout": "custom",
+  "theme": "shards-of-the-past",
+  "identity": {
+    "title": "Shards of the Past"
+  },
+  "hero": {
+    "background": "/Home/Graphics/shards-of-the-past.jpg"
+  },
+  "characters": [
+    "char-0025",
+    "char-0026",
+    "char-0027",
+    "char-0028",
+    "char-0140",
+    "char-0143",
+    "char-0156",
+    "char-0171",
+    "char-0174"
+  ],
+  "sections": [
+    "Wyprawa",
+    "Trop",
+    "Świat",
+    "Drużyna",
+    "Archiwum"
+  ]
+}
