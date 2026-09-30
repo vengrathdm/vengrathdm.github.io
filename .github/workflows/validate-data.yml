@@ -45,6 +45,7 @@ jobs:
           worlds = load("worlds.json")["worlds"]
           modules = load("modules.json")["modules"]
           home_cards = load("home-cards.json")["cards"]
+          migration_map = load("migration-map.json")["campaigns"]
 
           def unique(items, key, label):
               values = [x.get(key) for x in items]
@@ -59,13 +60,22 @@ jobs:
           unique(worlds, "id", "world IDs")
           unique(modules, "id", "module IDs")
           unique(home_cards, "id", "home card IDs")
+          unique(migration_map, "id", "migration campaign IDs")
 
           campaign_ids = {x["id"] for x in campaigns}
           player_ids = {x["id"] for x in players}
           asset_ids = {x["id"] for x in assets}
           character_ids = {x["id"] for x in characters}
+          migration_ids = {x["id"] for x in migration_map}
 
           errors = []
+
+          missing_migration = sorted(campaign_ids - migration_ids)
+          unknown_migration = sorted(migration_ids - campaign_ids)
+          if missing_migration:
+              errors.append(f"migration-map missing campaigns: {missing_migration}")
+          if unknown_migration:
+              errors.append(f"migration-map unknown campaigns: {unknown_migration}")
 
           for c in characters:
               if c.get("playerId") not in player_ids:
@@ -111,6 +121,7 @@ jobs:
               f"Validated {len(campaigns)} campaigns, "
               f"{len(characters)} characters, {len(players)} players, "
               f"{len(assets)} assets, {len(worlds)} worlds, "
-              f"{len(modules)} modules, {len(home_cards)} home cards."
+              f"{len(modules)} modules, {len(home_cards)} home cards, "
+              f"{len(migration_map)} migration routes."
           )
           PY
