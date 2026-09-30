@@ -1,7 +1,7 @@
 /* Transitional portrait bridge. Explicit data-character-id is authoritative.
  * Name matching remains only for legacy markup that has not yet been converted.
  */
-(async()=>{
+(async()=>{\n const loadScript=src=>new Promise((resolve,reject)=>{const s=document.createElement("script");s.src=src;s.onload=resolve;s.onerror=reject;document.head.appendChild(s)});\n if(!globalThis.VengrathData)await loadScript("/core/data.js");\n if(!globalThis.VengrathResolver)await loadScript("/core/resolver.js");
  const imgs=[...document.querySelectorAll("img")]; if(!imgs.length)return;
  try{
   const campaignId=document.body.dataset.campaignId||"";
