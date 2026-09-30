@@ -17,8 +17,8 @@ nav{position:relative;z-index:5;max-width:1440px;margin:auto;padding:27px 42px;d
 .hero-copy{position:relative;z-index:4;max-width:1440px;margin:86px auto 0;padding:0 42px}
 .hero-kicker{display:flex;gap:22px;color:var(--gold);font:10px "DM Mono",monospace;letter-spacing:.2em;text-transform:uppercase}
 .hero-kicker span+span{color:var(--muted)}
-.hero h1{margin:20px 0 24px;font:800 clamp(72px,12vw,170px)/.82 "Space Grotesk",sans-serif;letter-spacing:-.075em;color:#f0eee8}
-.hero h1 span{font-weight:400;color:var(--gold);font-size:.62em;letter-spacing:-.04em;margin:0 .04em}
+.hero h1{margin:20px 0 24px;font:400 clamp(72px,12vw,170px)/.82 "Voltaire",serif;letter-spacing:-.075em;color:#f0eee8}
+.hero h1 span{font-weight:400;color:var(--gold);font-size:.62em;letter-spacing:0;margin:0 .04em}
 .hero-foot{display:flex;align-items:center;justify-content:space-between;max-width:740px;border-top:1px solid var(--line);padding-top:17px}
 .hero-foot p{margin:0;color:#a8ada7;font-size:13px;letter-spacing:.01em}
 .hero-mark{font:24px "DM Mono";color:var(--gold)}
@@ -26,21 +26,21 @@ nav{position:relative;z-index:5;max-width:1440px;margin:auto;padding:27px 42px;d
 main{max-width:1440px;margin:auto;padding:76px 42px 100px}
 .archive-head{display:flex;align-items:end;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:20px}
 .section-label,.count-label{font:9px "DM Mono",monospace;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
-.archive-head h2{font:600 clamp(38px,5vw,60px)/.9 "Space Grotesk",sans-serif;letter-spacing:-.045em;margin:10px 0 0}
+.archive-head h2{font:400 clamp(38px,5vw,60px)/.9 "Voltaire",serif;letter-spacing:.01em;margin:10px 0 0}
 .archive-count{text-align:right}.count-label{display:block;color:var(--muted2);margin-bottom:6px}.result{font:600 12px "DM Mono",monospace;color:var(--silver);letter-spacing:.08em}
 .controls{background:var(--surface);border:1px solid var(--line);padding:17px;margin-bottom:34px}
 .search{display:flex;align-items:center;gap:12px;border:1px solid rgba(233,232,226,.1);background:#0d100e;padding:0 14px;height:54px}
-.search span{font:25px "DM Mono";color:var(--gold)}.search input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:var(--text);font:14px "Manrope";letter-spacing:.01em}.search input::placeholder{color:#686f69}
+.search span{font:25px "DM Mono";color:var(--gold)}.search input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:var(--text);font:16px "Voltaire",serif;letter-spacing:.01em}.search input::placeholder{color:#686f69}
 .search kbd{border:1px solid rgba(233,232,226,.14);color:var(--muted2);padding:4px 7px;font:10px "DM Mono";background:#141815}
 .filters{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:9px;margin-top:12px}
 .filters label{min-width:0}.filters small{display:block;margin:0 0 6px 1px;font:8px "DM Mono";letter-spacing:.15em;color:var(--muted2)}
-.filters select,.filters button{width:100%;height:40px;border:1px solid rgba(233,232,226,.1);background:#171b18;padding:0 10px;font:9px "DM Mono";letter-spacing:.04em;text-transform:uppercase;color:#d9dbd7}
+.filters select,.filters button{width:100%;height:40px;border:1px solid rgba(233,232,226,.1);background:#171b18;padding:0 10px;font:15px "Voltaire",serif;letter-spacing:.03em;color:#d9dbd7}
 .filters select:focus,.filters button:focus,.search input:focus{outline:1px solid rgba(200,168,95,.7);outline-offset:2px}
-.filters button{cursor:pointer;background:#d7d6d0;color:#101210;border-color:#d7d6d0;font-weight:500}
-.filters button:hover{background:#fff;color:#0b0d0c}
+.filters button{cursor:pointer;background:#252a27;color:#d9dbd7;border-color:rgba(233,232,226,.14);font-weight:400}
+.filters button:hover{background:#343a36;color:#fff}
 .grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
-.card{min-width:0;background:var(--card);color:var(--ink);border:1px solid rgba(255,255,255,.05);overflow:hidden;cursor:pointer;box-shadow:0 10px 28px rgba(0,0,0,.18);transition:transform .22s,box-shadow .22s}
-.card:hover,.card:focus-visible{transform:translateY(-5px);box-shadow:0 20px 38px rgba(0,0,0,.3);outline:none}
+.card{min-width:0;background:linear-gradient(180deg,#171b18 0,#111512 100%);color:#e8e7e1;border:1px solid rgba(233,232,226,.11);overflow:hidden;cursor:pointer;box-shadow:0 10px 28px rgba(0,0,0,.22);transition:transform .22s,box-shadow .22s,border-color .22s}
+.card:hover,.card:focus-visible{transform:translateY(-5px);box-shadow:0 20px 38px rgba(0,0,0,.34);border-color:rgba(200,168,95,.25);outline:none}
 .portrait{aspect-ratio:4/5;background:#969991;position:relative;overflow:hidden;border:2px solid var(--silver)}
 .portrait:before{content:"";position:absolute;inset:8px;border:1px solid rgba(255,255,255,.22);z-index:2;pointer-events:none}
 .portrait img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s,filter .3s}
@@ -65,14 +65,14 @@ main{max-width:1440px;margin:auto;padding:76px 42px 100px}
 .card[data-status="retired"] .status-badge{color:#aeb3b0;border-color:rgba(174,179,176,.4)}
 .card[data-status="abandoned"] .status-badge{color:#858b87;border-color:rgba(133,139,135,.35)}
 .card-body{padding:14px 14px 16px}
-.card-name{font:700 25px/.94 "Space Grotesk",sans-serif;letter-spacing:-.035em;text-transform:uppercase;overflow-wrap:anywhere;margin:3px 0 13px}
-.meta{display:grid;gap:7px;border-top:1px solid rgba(23,26,24,.12);padding-top:11px}
-.meta-row{min-width:0}.meta-label{display:block;font:8px "DM Mono";letter-spacing:.12em;text-transform:uppercase;color:#737872;margin-bottom:3px}
-.meta-value{font:10px/1.4 "Manrope";font-weight:600;overflow-wrap:anywhere}
-.pills{display:flex;flex-wrap:wrap;gap:4px}.pill{display:inline-block;padding:3px 6px;border:1px solid rgba(23,26,24,.14);font:8px/1.15 "DM Mono";background:rgba(200,168,95,.07);overflow-wrap:anywhere}
-.status{display:inline-flex;padding:4px 7px;font:8px "DM Mono";letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(79,119,95,.3);background:rgba(79,119,95,.08);color:#45634d}
-.card[data-status="dead"] .status{border-color:rgba(130,72,59,.3);background:rgba(130,72,59,.08);color:#7a4036}
-.card[data-status="finished"] .status{border-color:rgba(199,165,91,.35);background:rgba(199,165,91,.1);color:#806626}
+.card-name{font:400 28px/.94 "Voltaire",serif;letter-spacing:.01em;text-transform:uppercase;overflow-wrap:anywhere;margin:3px 0 13px;color:#eeeae0}
+.meta{display:grid;gap:7px;border-top:1px solid rgba(233,232,226,.1);padding-top:11px}
+.meta-row{min-width:0}.meta-label{display:block;font:8px "DM Mono";letter-spacing:.12em;text-transform:uppercase;color:#777f79;margin-bottom:3px}
+.meta-value{font:10px/1.4 "Manrope";font-weight:600;overflow-wrap:anywhere;color:#c9ccc7}
+.pills{display:flex;flex-wrap:wrap;gap:4px}.pill{display:inline-block;padding:4px 7px;border:1px solid rgba(200,168,95,.2);font:11px/1.05 "Voltaire",serif;background:rgba(200,168,95,.055);color:#c9b77d;overflow-wrap:anywhere}
+.status{display:inline-flex;padding:5px 8px;font:11px "Voltaire",serif;letter-spacing:.02em;border:1px solid rgba(79,119,95,.3);background:rgba(79,119,95,.08);color:#91a997}
+.card[data-status="dead"] .status{border-color:rgba(150,120,115,.25);background:rgba(130,72,59,.08);color:#b9aaa6}
+.card[data-status="finished"] .status{border-color:rgba(199,165,91,.35);background:rgba(199,165,91,.1);color:#d5bd78}
 .empty{text-align:center;padding:80px;border:1px dashed rgba(233,232,226,.15);font:10px "DM Mono";letter-spacing:.1em;color:var(--muted)}
 footer{background:#070908;color:#636963;padding:25px 42px;display:flex;justify-content:space-between;gap:20px;font:9px "DM Mono";letter-spacing:.15em;border-top:1px solid var(--line)}
 footer a{color:var(--gold);text-decoration:none}
