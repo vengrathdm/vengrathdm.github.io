@@ -402,7 +402,7 @@ body.campaign-page {
 }
 
 .campaign-page[data-campaign-theme="barber-of-silverymoon"] {
-  --campaign-hero-image: url("../res/voronoiMain/barber-of-silverymoon.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/barber-of-silverymoon.jpg");
 }
 
 .campaign-page[data-campaign-theme="cemetery-of-dragons"] {
@@ -412,108 +412,108 @@ body.campaign-page {
 
 .campaign-page[data-campaign-theme="curse-of-strahd"] {
   --campaign-accent: #9c4747;
-  --campaign-hero-image: url("../res/voronoiMain/curse-of-strahd.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/curse-of-strahd.jpg");
 }
 
 .campaign-page[data-campaign-theme="dom-malowanych-luster"] {
-  --campaign-hero-image: url("../res/voronoiMain/dom-malowanych-luster.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/dom-malowanych-luster.jpg");
 }
 
 .campaign-page[data-campaign-theme="dragon-of-dampen-depths"] {
-  --campaign-hero-image: url("../res/voronoiMain/dragon-of-dampen-depths.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/dragon-of-dampen-depths.jpg");
 }
 
 .campaign-page[data-campaign-theme="dragon-of-icespire-peak"] {
-  --campaign-hero-image: url("../res/voronoiMain/dragon-of-icespire-peak.avif");
+  --campaign-hero-image: url("../res/voronoi/graphics/dragon-of-icespire-peak.avif");
 }
 
 .campaign-page[data-campaign-theme="dungeons-of-drakkenheim"] {
-  --campaign-hero-image: url("../res/voronoiMain/dungeons-of-drakkenheim.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/dungeons-of-drakkenheim.jpg");
 }
 
 .campaign-page[data-campaign-theme="echtra-midst-the-sidhe"] {
   --campaign-accent: #c5d68a;
-  --campaign-hero-image: url("../res/voronoiMain/echtra-midst-the-sidhe.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/echtra-midst-the-sidhe.jpg");
 }
 
 .campaign-page[data-campaign-theme="ghoul-hour"] {
   --campaign-accent: #aebbc4;
-  --campaign-hero-image: url("../res/voronoiMain/ghoul-hour.png");
+  --campaign-hero-image: url("../res/voronoi/graphics/ghoul-hour.png");
 }
 
 .campaign-page[data-campaign-theme="klatwa-strahda"] {
   --campaign-accent: #9c4747;
-  --campaign-hero-image: url("../res/voronoiMain/Default.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/Default.jpg");
 }
 
 .campaign-page[data-campaign-theme="ksiazeta-heartwell"] {
-  --campaign-hero-image: url("../res/voronoiMain/ksiazeta-heartwell.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/ksiazeta-heartwell.jpg");
 }
 
 .campaign-page[data-campaign-theme="legends-of-barovia"] {
-  --campaign-hero-image: url("../res/voronoiMain/legends-of-barovia.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/legends-of-barovia.jpg");
 }
 
 .campaign-page[data-campaign-theme="lost-mine-of-phandelver"] {
-  --campaign-hero-image: url("../res/voronoiMain/lost-mine-of-phandelver.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/lost-mine-of-phandelver.jpg");
 }
 
 .campaign-page[data-campaign-theme="maski-nyarlotepa"] {
-  --campaign-hero-image: url("../res/voronoiMain/maski-nyarlotepa.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/maski-nyarlotepa.jpg");
 }
 
 .campaign-page[data-campaign-theme="menaces-of-gloomforest"] {
   --campaign-accent: #b87333;
-  --campaign-hero-image: url("../res/voronoiMain/menaces-of-gloomforest.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/menaces-of-gloomforest.jpg");
 }
 
 .campaign-page[data-campaign-theme="mences-of-irensberg"] {
   --campaign-accent: #b87333;
-  --campaign-hero-image: url("../res/voronoiMain/mences-of-irensberg.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/mences-of-irensberg.jpg");
 }
 
 .campaign-page[data-campaign-theme="mythic-odyssey-of-the-dragonlords"] {
-  --campaign-hero-image: url("../res/voronoiMain/mythic-odyssey-of-the-dragonlords.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/mythic-odyssey-of-the-dragonlords.jpg");
 }
 
 .campaign-page[data-campaign-theme="neverwinter-intrygi-polnocnego-wybrzeza-mieczy"] {
-  --campaign-hero-image: url("../res/voronoiMain/neverwinter.webp");
+  --campaign-hero-image: url("../res/voronoi/graphics/neverwinter.webp");
 }
 
 .campaign-page[data-campaign-theme="odyssey-of-the-dragonlords"] {
-  --campaign-hero-image: url("../res/voronoiMain/odyssey-of-the-dragonlords.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/odyssey-of-the-dragonlords.jpg");
 }
 
 .campaign-page[data-campaign-theme="red-blood-snow-white"] {
-  --campaign-hero-image: url("../res/voronoiMain/blood-red-snow-white.png");
+  --campaign-hero-image: url("../res/voronoi/graphics/blood-red-snow-white.png");
 }
 
 .campaign-page[data-campaign-theme="rime-of-the-frostmaiden"] {
-  --campaign-hero-image: url("../res/voronoiMain/rime-of-the-frostmaiden.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/rime-of-the-frostmaiden.jpg");
 }
 
 .campaign-page[data-campaign-theme="rise-of-tiamat"] {
-  --campaign-hero-image: url("../res/voronoiMain/rise-of-tiamat.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/rise-of-tiamat.jpg");
 }
 
 .campaign-page[data-campaign-theme="samotnie-przeciw-jednosci"] {
-  --campaign-hero-image: url("../res/voronoiMain/samotnie-przeciw-jednosci.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/samotnie-przeciw-jednosci.jpg");
 }
 
 .campaign-page[data-campaign-theme="sands-of-doom"] {
-  --campaign-hero-image: url("../res/voronoiMain/sands-of-doom.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/sands-of-doom.jpg");
 }
 
 .campaign-page[data-campaign-theme="shadow-of-the-sword-coast"] {
-  --campaign-hero-image: url("../res/voronoiMain/shadow-of-the-sword-coast.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/shadow-of-the-sword-coast.jpg");
 }
 
 .campaign-page[data-campaign-theme="shards-of-the-past"] {
-  --campaign-hero-image: url("../res/voronoiMain/shards-of-the-past.png");
+  --campaign-hero-image: url("../res/voronoi/graphics/shards-of-the-past.png");
 }
 
 .campaign-page[data-campaign-theme="sons-of-azalin"] {
-  --campaign-hero-image: url("../res/voronoiMain/sons-of-azalin.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/sons-of-azalin.jpg");
 }
 
 .campaign-page[data-campaign-theme="the-dragon-and-the-kraken"] {
@@ -521,11 +521,11 @@ body.campaign-page {
 }
 
 .campaign-page[data-campaign-theme="the-sunless-citadel"] {
-  --campaign-hero-image: url("../res/voronoiMain/the-sunless-citadel.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/the-sunless-citadel.jpg");
 }
 
 .campaign-page[data-campaign-theme="tomb-of-annihilation"] {
-  --campaign-hero-image: url("../res/voronoiMain/tomb-of-annihilation.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/tomb-of-annihilation.jpg");
 }
 
 .campaign-page[data-campaign-theme="tower-of-the-veiled-star"] {
@@ -537,7 +537,7 @@ body.campaign-page {
 }
 
 .campaign-page[data-campaign-theme="turn-of-fortunes-wheel"] {
-  --campaign-hero-image: url("../res/voronoiMain/turn-of-fortunes-wheel.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/turn-of-fortunes-wheel.jpg");
 }
 
 .campaign-page[data-campaign-theme="wails-from-the-lighthouse"] {
@@ -718,27 +718,27 @@ body.campaign-page {
   }
 }
 
-.campaign-page[data-campaign-theme="turn-back-the-endless-night"]{--campaign-accent:#b88a4a;--campaign-hero-image:url("../res/voronoiMain/turn-back-the-endless-night.webp");}
-.campaign-page[data-campaign-theme="hand-of-glory"]{--campaign-accent:#9a6a58;--campaign-hero-image:url("../res/voronoiMain/hand-of-glory.jpg");}
+.campaign-page[data-campaign-theme="turn-back-the-endless-night"]{--campaign-accent:#b88a4a;--campaign-hero-image:url("../res/voronoi/graphics/turn-back-the-endless-night.webp");}
+.campaign-page[data-campaign-theme="hand-of-glory"]{--campaign-accent:#9a6a58;--campaign-hero-image:url("../res/voronoi/graphics/hand-of-glory.jpg");}
 
-.campaign-page[data-campaign-theme="drakkenheim"]{--campaign-accent:#b87333;--campaign-hero-image:url("../res/voronoiMain/drakkenheim.png");}
+.campaign-page[data-campaign-theme="drakkenheim"]{--campaign-accent:#b87333;--campaign-hero-image:url("../res/voronoi/graphics/drakkenheim.png");}
 
 .campaign-page[data-campaign-theme="forge-of-fury"] {
   --campaign-accent: #b87333;
-  --campaign-hero-image: url("../res/voronoiMain/forge-of-fury.png");
+  --campaign-hero-image: url("../res/voronoi/graphics/forge-of-fury.png");
 }
 
 .campaign-page[data-campaign-theme="gold-for-fools-and-princes"] {
   --campaign-accent: #c4a36a;
-  --campaign-hero-image: url("../res/voronoiMain/Gold-for-Fools-and-Princes.jpg");
+  --campaign-hero-image: url("../res/voronoi/graphics/Gold-for-Fools-and-Princes.jpg");
 }
 
 .campaign-page[data-campaign-theme="mayhem-in-earthspur-mines"] {
   --campaign-accent: #8d6f4b;
-  --campaign-hero-image: url("../res/voronoiMain/mayhem-in-earthspur-mines.webp");
+  --campaign-hero-image: url("../res/voronoi/graphics/mayhem-in-earthspur-mines.webp");
 }
 
 .campaign-page[data-campaign-theme="ku-chwale-tyra"] {
   --campaign-accent: #c4a36a;
-  --campaign-hero-image: url("../res/voronoiMain/KuChwaleTyra.png");
+  --campaign-hero-image: url("../res/voronoi/graphics/KuChwaleTyra.png");
 }
