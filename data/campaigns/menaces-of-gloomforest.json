@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-menaces-of-gloomforest",
+  "slug": "menaces-of-gloomforest",
+  "layout": "custom",
+  "theme": "menaces-of-gloomforest",
+  "identity": {
+    "title": "Menaces of Gloomforest",
+    "status": "completed",
+    "type": "campaign",
+    "setting": "Homebrew"
+  },
+  "hero": {
+    "title": "MENACES OF GLOOMFOREST",
+    "lead": "Druga, osobna grupa w tej samej autorskiej kampanii co Menaces of Irensberg. Tym razem bohaterowie trafiają do Gloomforest — lasu pełnego zagrożeń, tajemnic i istot, których lepiej nie spotkać po zmroku."
+  },
+  "characters": {
+    "ids": [
+      "char-0067",
+      "char-0068",
+      "char-0069",
+      "char-0204"
+    ]
+  },
+  "sections": [
+    {
+      "id": "campaign",
+      "title": "O kampanii"
+    },
+    {
+      "id": "team",
+      "title": "Nasza drużyna"
+    }
+  ],
+  "links": {
+    "pdf": "https://drive.google.com/file/d/1tBhB3ENS8tPKc8ENQZPz-VibU1otmLlB/view?usp=sharing",
+    "playlist": "https://www.youtube.com/playlist?list=PL-Lm83myvu0jY8sPEuRlBdlXIFw9WJlEL"
+  }
+}
