@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-tomb-of-annihilation",
+  "slug": "tomb-of-annihilation",
+  "layout": "custom",
+  "theme": "tomb-of-annihilation",
+  "identity": {
+    "title": "Tomb of Annihilation",
+    "status": "completed",
+    "setting": "Forgotten Realms",
+    "region": "Chult"
+  },
+  "hero": {
+    "title": "TOMB OF ANNIHILATION",
+    "lead": "W Chult śmierć była częścią mapy."
+  },
+  "characters": {
+    "ids": [
+      "char-0112",
+      "char-0113",
+      "char-0114",
+      "char-0128",
+      "char-0136",
+      "char-0137",
+      "char-0190",
+      "char-0196",
+      "char-0202"
+    ]
+  },
+  "sections": [
+    {
+      "id": "curse",
+      "title": "Klątwa Śmierci",
+      "contentKey": "death-curse"
+    },
+    {
+      "id": "route",
+      "title": "Droga przez Chult",
+      "contentKey": "expedition"
+    },
+    {
+      "id": "characters",
+      "title": "Jedna drużyna, dziewięć twarzy",
+      "contentKey": "team"
+    },
+    {
+      "id": "finale",
+      "title": "Grobowiec Dziewięciu Bóstw",
+      "contentKey": "finale"
+    }
+  ],
+  "audio": "./Tomb-Of-Annihilation.mp3"
+}
