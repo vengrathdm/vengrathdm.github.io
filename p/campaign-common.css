@@ -1,6 +1,3 @@
 
-.campx .cx-nav,.campx .cx-nav-inner,.campx .cx-nav-inner>*{pointer-events:auto}
-.campaign-hero{min-height:78vh;background:linear-gradient(180deg,rgba(5,10,9,.1),rgba(5,10,9,.88)),linear-gradient(90deg,rgba(5,10,9,.82),rgba(5,10,9,.2)),var(--campaign-hero) center/cover no-repeat}
-.campx .cx-people{grid-template-columns:repeat(3,minmax(0,1fr))}
-.campx .campaign-player-portrait{width:calc(100% + 36px);height:320px;object-fit:cover;object-position:center top;display:block;margin:-18px -18px 16px;border-bottom:1px solid rgba(255,255,255,.12)}
-@media(max-width:900px){.campx .cx-people{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.campx .cx-people{grid-template-columns:1fr}.campaign-hero{min-height:70vh}}
+/* Campaign portrait rule: all canonical character portraits are 4:5. */
+.campx .cx-person img,.campx .campaign-player-portrait{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block}
