@@ -4,78 +4,125 @@ GitHub Pages site for Vengrath: tabletop RPG campaigns, graphic projects and web
 
 ## Architecture
 
-- `index.html` — homepage shell, metadata, filters and search controls.
-- `Home/Code/app.js` — homepage application logic.
-- `Home/Code/styles.css` — homepage layout and visual styling.
-- `Home/Graphics/` — images used by cards and pages.
-- `Home/Cards/*.txt` — card source files.
-- `Home/Cards/index.json` — generated card manifest consumed by the homepage.
-- `subpages/` — campaign and project pages.
-- `subpages/campaign-common.css` — shared campaign-page layout, navigation, typography, themes and reusable buttons.
-- `subpages/moje-prace-graficzne/` — `Moje Rysunki 2026` gallery and its `Pictures/` image collection.
-- `.github/workflows/generate-card-manifest.yml` — generates the card and gallery manifests.
+The repository is being migrated from page-owned data toward a layered architecture:
+
+- `data/` — central registries and campaign records.
+- `core/` — shared runtime helpers and transitional resolvers.
+- `subpages/` — campaign/project presentation layers and intentionally unique mini-sites.
+- `Home/` — homepage presentation and legacy card sources.
+- `.github/workflows/` — generated manifests and data validation.
+
+The target dependency direction is:
+
+`DATA → IDENTIFIERS → RESOLVERS → COMPONENTS → CAMPAIGN LAYOUT → THEME / ART DIRECTION`
+
+A campaign is not required to use a single renderer. Unique campaign layouts remain valid; the central data layer exists to prevent identity, portrait, player and asset data from being duplicated inside presentation code.
+
+## Central data
+
+Current registries:
+
+- `data/campaigns.json` — campaign identity registry.
+- `data/characters.json` — stable character IDs, players, campaigns, fate and portraits.
+- `data/players.json` — stable player IDs.
+- `data/assets.json` — stable asset IDs and canonical asset paths.
+- `data/campaigns/*.json` — detailed campaign records used by data-driven or transitional campaign layouts.
+- `data/worlds.json` — world/wiki registry, currently including Książęta Heartwell.
+- `data/modules.json` — standalone application/tool registry, currently including Charactermancer.
+- `data/home-cards.json` — centralized homepage card records.
+
+Stable IDs are preferred over display names. Names and `alt` text are presentation metadata, not primary identity.
+
+## Campaign pages
+
+Campaign pages deliberately retain their visual individuality.
+
+There are two supported patterns:
+
+1. Data-driven pages using shared renderers such as `core/campaign-renderer.js`.
+2. Custom campaign pages whose existing HTML/CSS/JS/audio remain intact while identity and reusable data are moved into `data/`.
+
+The custom pattern is used for visually distinctive mini-sites such as Legends of Barovia, Shards of the Past, Książęta Heartwell and other legacy campaigns.
+
+`core/character-assets.js` is a transitional portrait resolver. Explicit `data-character-id` attributes are authoritative. Name/alt matching remains only as a compatibility fallback while legacy pages are migrated.
 
 ## Homepage
 
-The homepage is a client-side JavaScript application. Cards are loaded primarily from `Home/Cards/index.json`; if the manifest is missing or incomplete, `app.js` falls back to the GitHub Contents API.
+`Home/Code/app.js` renders the homepage's interactive shard/Voronoi board.
 
-Cards are filtered by category and search text. The visible cards are placed into a Voronoi-style layout. Polygon vertices are processed to create the irregular shard appearance, and point placement uses `Math.random()` so the arrangement changes when the board is rebuilt. The board supports horizontal dragging with momentum, responsive rebuilding, hover/focus states and direct navigation through each card's link.
+The homepage now loads `data/home-cards.json` first. `Home/Cards/index.json` remains a generated compatibility manifest, and `Home/Cards/*.txt` remains the editable legacy source while the migration is completed.
 
-Each card source file uses exactly four data lines:
+The `.txt` card format is:
 
 1. Title
 2. Tag/category
 3. Graphic path or URL
 4. Destination link
 
-Example:
+The fallback chain is intentionally retained so the homepage remains usable during migration.
 
-```text
-Campaign Name
-Aktywna Kampania
-../Graphics/campaign.jpg
-../../subpages/campaign-name/
-```
+## Heartwell
 
-## Campaign pages
+Książęta Heartwell is treated as a world/wiki application rather than a generic campaign page.
 
-Campaign pages keep content in their individual `index.html` files and share presentation through `subpages/campaign-common.css`.
+- Presentation remains in `subpages/Ksiazeta-Heartwell/`.
+- The wiki dynamically indexes its article files.
+- `data/worlds.json` registers the world and its entrypoints.
+- Existing wiki/article structure is preserved instead of being flattened into campaign templates.
 
-The shared stylesheet provides:
+## Charactermancer
 
-- hero section and campaign artwork
-- typography and responsive layout
-- campaign navigation
-- VENGRATH home button
-- YouTube playlist button
-- PDF button
-- panels, player cards, statistics and footer
-- per-campaign visual themes through `data-campaign-theme`
+Charactermancer is treated as a standalone tool.
 
-Reusable action buttons are styled centrally. Individual campaign pages only provide their destination URL. A missing YouTube or PDF link is represented by omitting that button from the page.
+Its application code remains modular:
 
-## Graphic gallery
+- `data.js` / `racial-choices.js` — tool data.
+- `rules.js` — rules logic.
+- `state.js` — application state.
+- `events.js` — interaction wiring.
+- `render.js` — presentation.
+- `app.js` — application orchestration.
 
-`subpages/moje-prace-graficzne/index.html` is the `Moje Rysunki 2026` gallery. Images are stored in:
+`data/modules.json` registers the tool without forcing its internal rules model into the campaign data model.
 
-`subpages/moje-prace-graficzne/Pictures/`
+## Assets and URLs
 
-`Pictures/index.json` contains the image filenames. The gallery loads the manifest, creates a Voronoi-style SVG layout, clips each image to its polygon and opens the selected image in a full-screen viewer.
+Physical asset relocation is intentionally deferred until references are mapped. Existing filenames and directories therefore remain valid during the migration.
 
-## Automation
+Before any mass move/rename:
 
-`.github/workflows/generate-card-manifest.yml` runs on changes to:
+1. create an old → new URL/asset map;
+2. migrate references;
+3. validate local assets and internal links;
+4. preserve compatibility paths where practical.
 
-- `Home/Cards/**`
-- `subpages/moje-prace-graficzne/Pictures/**`
-- the workflow itself
+Do not rename large groups of images or campaign directories without completing those steps.
 
-It validates card TXT files, regenerates `Home/Cards/index.json`, regenerates `Pictures/index.json`, and commits changed manifests back to `main`.
+## Validation
 
-## Conventions
+`.github/workflows/validate-data.yml` validates:
 
-- Keep campaign content in the individual campaign HTML file.
-- Put shared campaign styling in `campaign-common.css`.
-- Add homepage cards through a four-line TXT file; do not manually maintain the generated manifest unless the GitHub Action is unavailable.
-- Keep image and destination paths relative to the file that uses them unless an external URL is intentional.
-- Preserve existing HTML/JS behavior when making visual or readability-only changes.
+- duplicate campaign, character, player, asset, world, module and homepage-card IDs;
+- character → player, campaign and portrait relations;
+- local asset paths;
+- character references in detailed campaign records;
+- campaign audio files;
+- explicit `data-character-id` references in HTML.
+
+`.github/workflows/generate-card-manifest.yml` continues to generate the legacy homepage and gallery manifests.
+
+## Migration status
+
+The migration is incremental. Existing visual layouts are preserved while data ownership moves toward the central registries.
+
+Current major completed layers include:
+
+- Sala Chwały central data migration;
+- data-driven migration of Rime of the Frostmaiden, The Sunless Citadel, Heroes of Baldur's Gate and Samotnie Przeciw Jedności;
+- central data extraction for multiple legacy campaigns;
+- stable character/portrait resolution for migrated legacy pages;
+- central homepage card registry;
+- world/tool registries for Heartwell and Charactermancer;
+- repository-level data validation.
+
+The remaining work is primarily explicit stable-ID migration across the remaining legacy pages, asset consolidation, URL compatibility mapping, cleanup of obsolete mock/legacy files, and final end-to-end QA.
