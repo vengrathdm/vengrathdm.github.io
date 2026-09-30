@@ -1,4 +1,2986 @@
 {
   "schemaVersion": 1,
-  "characters": []
+  "characters": [
+    {
+      "id": "char-0001",
+      "name": "Pelagietta",
+      "playerId": "player-miauriusz",
+      "campaignIds": [
+        "campaign-legends-of-barovia"
+      ],
+      "fate": "alive",
+      "description": "Bohaterka aktualnej kampanii; jej historia pozostaje otwarta.",
+      "portraitId": "asset-0001"
+    },
+    {
+      "id": "char-0002",
+      "name": "Luekher",
+      "playerId": "player-aureli",
+      "campaignIds": [
+        "campaign-legends-of-barovia"
+      ],
+      "fate": "alive",
+      "description": "Bohater aktualnej kampanii; dalsze losy pozostają otwarte.",
+      "portraitId": "asset-0002"
+    },
+    {
+      "id": "char-0003",
+      "name": "Damira",
+      "playerId": "player-kajetan",
+      "campaignIds": [
+        "campaign-legends-of-barovia"
+      ],
+      "fate": "alive",
+      "description": "Bohaterka aktualnej kampanii; historia nie została zamknięta.",
+      "portraitId": "asset-0003"
+    },
+    {
+      "id": "char-0004",
+      "name": "Pchełka",
+      "playerId": "player-zuzanna",
+      "campaignIds": [
+        "campaign-legends-of-barovia"
+      ],
+      "fate": "alive",
+      "description": "Bohaterka aktualnej kampanii; historia nie została zamknięta.",
+      "portraitId": "asset-0004"
+    },
+    {
+      "id": "char-0005",
+      "name": "Eliasz",
+      "playerId": "player-miauriusz",
+      "campaignIds": [
+        "campaign-legends-of-barovia"
+      ],
+      "fate": "dead",
+      "description": "Poległ podczas kampanii.",
+      "portraitId": "asset-0005"
+    },
+    {
+      "id": "char-0006",
+      "name": "Zwada",
+      "playerId": "player-wpoluwiatr",
+      "campaignIds": [
+        "campaign-menaces-of-irensberg"
+      ],
+      "fate": "alive",
+      "description": "Postać aktywnej kampanii; los pozostaje otwarty.",
+      "portraitId": "asset-0006"
+    },
+    {
+      "id": "char-0007",
+      "name": "Kirion",
+      "playerId": "player-szymon",
+      "campaignIds": [
+        "campaign-menaces-of-irensberg"
+      ],
+      "fate": "dead",
+      "description": "Zginął podczas kampanii.",
+      "portraitId": "asset-0007"
+    },
+    {
+      "id": "char-0008",
+      "name": "Andirion",
+      "playerId": "player-dawid",
+      "campaignIds": [
+        "campaign-menaces-of-irensberg"
+      ],
+      "fate": "dead",
+      "description": "Zginął podczas kampanii.",
+      "portraitId": "asset-0008"
+    },
+    {
+      "id": "char-0009",
+      "name": "Erro",
+      "playerId": "player-marcin",
+      "campaignIds": [
+        "campaign-menaces-of-irensberg"
+      ],
+      "fate": "dead",
+      "description": "Zginął podczas kampanii.",
+      "portraitId": "asset-0009"
+    },
+    {
+      "id": "char-0010",
+      "name": "Etaire",
+      "playerId": "player-anemo",
+      "campaignIds": [
+        "campaign-menaces-of-irensberg"
+      ],
+      "fate": "dead",
+      "description": "Zginął podczas kampanii.",
+      "portraitId": "asset-0010"
+    },
+    {
+      "id": "char-0011",
+      "name": "Flavia",
+      "playerId": "player-wpoluwiatr",
+      "campaignIds": [
+        "campaign-menaces-of-irensberg"
+      ],
+      "fate": "dead",
+      "description": "Zginęła podczas kampanii.",
+      "portraitId": "asset-0011"
+    },
+    {
+      "id": "char-0012",
+      "name": "Oxie",
+      "playerId": "player-dawid",
+      "campaignIds": [
+        "campaign-menaces-of-irensberg"
+      ],
+      "fate": "alive",
+      "description": "Postać aktywnej kampanii; los pozostaje otwarty.",
+      "portraitId": "asset-0012"
+    },
+    {
+      "id": "char-0013",
+      "name": "Keto",
+      "playerId": "player-anemo",
+      "campaignIds": [
+        "campaign-menaces-of-irensberg"
+      ],
+      "fate": "alive",
+      "description": "Postać aktywnej kampanii; los pozostaje otwarty.",
+      "portraitId": "asset-0013"
+    },
+    {
+      "id": "char-0014",
+      "name": "Thorgir",
+      "playerId": "player-szymon",
+      "campaignIds": [
+        "campaign-menaces-of-irensberg"
+      ],
+      "fate": "alive",
+      "description": "Postać aktywnej kampanii; los pozostaje otwarty.",
+      "portraitId": "asset-0014"
+    },
+    {
+      "id": "char-0015",
+      "name": "Belle de Beaumont",
+      "playerId": "player-wpoluwiatr",
+      "campaignIds": [
+        "campaign-blood-red-snow-white"
+      ],
+      "fate": "unknown",
+      "description": "Kampania przerwana po pięciu sesjach; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0015"
+    },
+    {
+      "id": "char-0016",
+      "name": "Vespera Hexbound",
+      "playerId": "player-mat",
+      "campaignIds": [
+        "campaign-blood-red-snow-white"
+      ],
+      "fate": "unknown",
+      "description": "Kampania przerwana po pięciu sesjach; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0016"
+    },
+    {
+      "id": "char-0017",
+      "name": "Seryth T'sarran",
+      "playerId": "player-sandra",
+      "campaignIds": [
+        "campaign-blood-red-snow-white"
+      ],
+      "fate": "unknown",
+      "description": "Kampania przerwana po pięciu sesjach; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0017"
+    },
+    {
+      "id": "char-0018",
+      "name": "Araina Windmere",
+      "playerId": "player-maria",
+      "campaignIds": [
+        "campaign-blood-red-snow-white"
+      ],
+      "fate": "unknown",
+      "description": "Kampania przerwana po pięciu sesjach; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0018"
+    },
+    {
+      "id": "char-0019",
+      "name": "Vaelor",
+      "playerId": "player-rezus",
+      "campaignIds": [
+        "campaign-sands-of-doom"
+      ],
+      "fate": "alive",
+      "description": "Postać trwającej kampanii; los pozostaje otwarty.",
+      "portraitId": "asset-0019"
+    },
+    {
+      "id": "char-0020",
+      "name": "Bromli",
+      "playerId": "player-koksuvi",
+      "campaignIds": [
+        "campaign-sands-of-doom"
+      ],
+      "fate": "alive",
+      "description": "Postać trwającej kampanii; los pozostaje otwarty.",
+      "portraitId": "asset-0020"
+    },
+    {
+      "id": "char-0021",
+      "name": "Gromar",
+      "playerId": "player-lexonis",
+      "campaignIds": [
+        "campaign-sands-of-doom"
+      ],
+      "fate": "alive",
+      "description": "Postać trwającej kampanii; los pozostaje otwarty.",
+      "portraitId": "asset-0021"
+    },
+    {
+      "id": "char-0022",
+      "name": "Samira",
+      "playerId": "player-jeesoo",
+      "campaignIds": [
+        "campaign-sands-of-doom"
+      ],
+      "fate": "alive",
+      "description": "Postać trwającej kampanii; los pozostaje otwarty.",
+      "portraitId": "asset-0022"
+    },
+    {
+      "id": "char-0023",
+      "name": "Busto",
+      "playerId": "player-lexonis",
+      "campaignIds": [
+        "campaign-sands-of-doom"
+      ],
+      "fate": "dead",
+      "description": "Poległ na Wielkim Pustkowiu.",
+      "portraitId": "asset-0023"
+    },
+    {
+      "id": "char-0024",
+      "name": "Nefira",
+      "playerId": "player-jeesoo",
+      "campaignIds": [
+        "campaign-sands-of-doom"
+      ],
+      "fate": "dead",
+      "description": "Poległa na Wielkim Pustkowiu.",
+      "portraitId": "asset-0024"
+    },
+    {
+      "id": "char-0025",
+      "name": "Miriadae",
+      "playerId": "player-wpoluwiatr",
+      "campaignIds": [
+        "campaign-shards-of-the-past"
+      ],
+      "fate": "finished",
+      "description": "Kampania zakończyła się na około 2/3 materiału; indywidualny finał nie został opisany.",
+      "portraitId": "asset-0025"
+    },
+    {
+      "id": "char-0026",
+      "name": "Zog",
+      "playerId": "player-koar",
+      "campaignIds": [
+        "campaign-shards-of-the-past"
+      ],
+      "fate": "finished",
+      "description": "Kampania zakończyła się na około 2/3 materiału; indywidualny finał nie został opisany.",
+      "portraitId": "asset-0026"
+    },
+    {
+      "id": "char-0027",
+      "name": "Styx",
+      "playerId": "player-ezu",
+      "campaignIds": [
+        "campaign-shards-of-the-past"
+      ],
+      "fate": "finished",
+      "description": "Kampania zakończyła się na około 2/3 materiału; indywidualny finał nie został opisany.",
+      "portraitId": "asset-0027"
+    },
+    {
+      "id": "char-0028",
+      "name": "Kukdu",
+      "playerId": "player-micha-wodziczko",
+      "campaignIds": [
+        "campaign-shards-of-the-past"
+      ],
+      "fate": "finished",
+      "description": "Kampania zakończyła się na około 2/3 materiału; indywidualny finał nie został opisany.",
+      "portraitId": "asset-0028"
+    },
+    {
+      "id": "char-0029",
+      "name": "Oorim",
+      "playerId": "player-koksuvi",
+      "campaignIds": [
+        "campaign-turn-of-fortune-s-wheel"
+      ],
+      "fate": "finished",
+      "description": "Dotarł do finału ukończonej kampanii.",
+      "portraitId": "asset-0029"
+    },
+    {
+      "id": "char-0030",
+      "name": "Kelan",
+      "playerId": "player-lexonis",
+      "campaignIds": [
+        "campaign-turn-of-fortune-s-wheel"
+      ],
+      "fate": "finished",
+      "description": "Dotarł do finału ukończonej kampanii.",
+      "portraitId": "asset-0030"
+    },
+    {
+      "id": "char-0031",
+      "name": "Roderick",
+      "playerId": "player-rezus",
+      "campaignIds": [
+        "campaign-turn-of-fortune-s-wheel"
+      ],
+      "fate": "finished",
+      "description": "Dotarł do finału ukończonej kampanii.",
+      "portraitId": "asset-0031"
+    },
+    {
+      "id": "char-0032",
+      "name": "Adria",
+      "playerId": "player-vissara",
+      "campaignIds": [
+        "campaign-turn-of-fortune-s-wheel"
+      ],
+      "fate": "finished",
+      "description": "Dotarła do finału ukończonej kampanii.",
+      "portraitId": "asset-0032"
+    },
+    {
+      "id": "char-0033",
+      "name": "Varok Nightshade",
+      "playerId": "player-viking",
+      "campaignIds": [
+        "campaign-turn-of-fortune-s-wheel"
+      ],
+      "fate": "finished",
+      "description": "Dotarł do finału ukończonej kampanii.",
+      "portraitId": "asset-0033"
+    },
+    {
+      "id": "char-0034",
+      "name": "Elric",
+      "playerId": "player-rezus",
+      "campaignIds": [
+        "campaign-barber-of-silverymoon"
+      ],
+      "fate": "finished",
+      "description": "Postać z rozegranej przygody; brak portretu na stronie kampanii.",
+      "portraitId": "asset-0034"
+    },
+    {
+      "id": "char-0035",
+      "name": "Cindic",
+      "playerId": "player-goku94",
+      "campaignIds": [
+        "campaign-barber-of-silverymoon"
+      ],
+      "fate": "finished",
+      "description": "Postać z rozegranej przygody; brak portretu na stronie kampanii.",
+      "portraitId": "asset-0035"
+    },
+    {
+      "id": "char-0036",
+      "name": "Dain Gorumn",
+      "playerId": "player-goku94",
+      "campaignIds": [
+        "campaign-barber-of-silverymoon"
+      ],
+      "fate": "finished",
+      "description": "Postać z rozegranej przygody; brak portretu na stronie kampanii.",
+      "portraitId": "asset-0036"
+    },
+    {
+      "id": "char-0037",
+      "name": "Nailef",
+      "playerId": "player-musthard",
+      "campaignIds": [
+        "campaign-barber-of-silverymoon"
+      ],
+      "fate": "finished",
+      "description": "Postać z rozegranej przygody; brak portretu na stronie kampanii.",
+      "portraitId": "asset-0037"
+    },
+    {
+      "id": "char-0038",
+      "name": "Asta Caemor",
+      "playerId": "player-agata",
+      "campaignIds": [
+        "campaign-curse-of-strahd"
+      ],
+      "fate": "dead",
+      "description": "Zginęła zabita przez Babę Lysagę na Księżycu.",
+      "portraitId": "asset-0038"
+    },
+    {
+      "id": "char-0039",
+      "name": "Rais",
+      "playerId": "player-krystian",
+      "campaignIds": [
+        "campaign-curse-of-strahd"
+      ],
+      "fate": "dead",
+      "description": "Zginął zabity przez Babę Lysagę na Księżycu.",
+      "portraitId": "asset-0039"
+    },
+    {
+      "id": "char-0040",
+      "name": "Rune",
+      "playerId": "player-ukasz",
+      "campaignIds": [
+        "campaign-curse-of-strahd"
+      ],
+      "fate": "dead",
+      "description": "Zginął zabity przez Babę Lysagę na Księżycu.",
+      "portraitId": "asset-0040"
+    },
+    {
+      "id": "char-0041",
+      "name": "Urien",
+      "playerId": "player-raevell",
+      "campaignIds": [
+        "campaign-curse-of-strahd"
+      ],
+      "fate": "finished",
+      "description": "Opuścił drużynę przedwcześnie.",
+      "portraitId": "asset-0041"
+    },
+    {
+      "id": "char-0042",
+      "name": "Val'Athelvrak",
+      "playerId": "player-raevell",
+      "campaignIds": [
+        "campaign-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Poległ w finałowej walce o Koronę Drakkenheimu.",
+      "portraitId": "asset-0042"
+    },
+    {
+      "id": "char-0043",
+      "name": "Arik",
+      "playerId": "player-amadeusz",
+      "campaignIds": [
+        "campaign-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Poległ w finałowej walce o Koronę Drakkenheimu.",
+      "portraitId": "asset-0037"
+    },
+    {
+      "id": "char-0044",
+      "name": "Alem",
+      "playerId": "player-keero",
+      "campaignIds": [
+        "campaign-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Poległ w finałowej walce o Koronę Drakkenheimu.",
+      "portraitId": "asset-0043"
+    },
+    {
+      "id": "char-0045",
+      "name": "Thomos",
+      "playerId": "player-aureli",
+      "campaignIds": [
+        "campaign-dungeons-of-drakkenheim"
+      ],
+      "fate": "finished",
+      "description": "Postać z ukończonej kampanii.",
+      "portraitId": "asset-0044"
+    },
+    {
+      "id": "char-0046",
+      "name": "Zemir",
+      "playerId": "player-kajetan",
+      "campaignIds": [
+        "campaign-dungeons-of-drakkenheim"
+      ],
+      "fate": "finished",
+      "description": "Postać z ukończonej kampanii.",
+      "portraitId": "asset-0045"
+    },
+    {
+      "id": "char-0047",
+      "name": "Nicu",
+      "playerId": "player-miauriusz",
+      "campaignIds": [
+        "campaign-dungeons-of-drakkenheim"
+      ],
+      "fate": "finished",
+      "description": "Postać z ukończonej kampanii.",
+      "portraitId": "asset-0046"
+    },
+    {
+      "id": "char-0048",
+      "name": "Corben",
+      "playerId": "player-panterq",
+      "campaignIds": [
+        "campaign-dungeons-of-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Zginął w walce na ulicach Drakkenheimu.",
+      "portraitId": "asset-0047"
+    },
+    {
+      "id": "char-0049",
+      "name": "Kamyk",
+      "playerId": "player-panterq",
+      "campaignIds": [
+        "campaign-dungeons-of-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Zdradził drużynę i uciekł ulicami Drakkenheimu; został zabity przez Minazoronda.",
+      "portraitId": "asset-0048"
+    },
+    {
+      "id": "char-0050",
+      "name": "Caden Argall",
+      "playerId": "player-viking",
+      "campaignIds": [
+        "campaign-echtra-midst-the-sidhe"
+      ],
+      "fate": "finished",
+      "description": "Opuścił drużynę, by wrócić do rodziny.",
+      "portraitId": "asset-0049"
+    },
+    {
+      "id": "char-0051",
+      "name": "Drogon Na'ar",
+      "playerId": "player-rivani",
+      "campaignIds": [
+        "campaign-echtra-midst-the-sidhe"
+      ],
+      "fate": "alive",
+      "description": "Postać aktualnie projektowanej kampanii.",
+      "portraitId": "asset-0050"
+    },
+    {
+      "id": "char-0052",
+      "name": "Sigrun",
+      "playerId": "player-maria",
+      "campaignIds": [
+        "campaign-echtra-midst-the-sidhe"
+      ],
+      "fate": "alive",
+      "description": "Postać aktualnie projektowanej kampanii.",
+      "portraitId": "asset-0051"
+    },
+    {
+      "id": "char-0053",
+      "name": "Grunmor",
+      "playerId": "player-daniel",
+      "campaignIds": [
+        "campaign-echtra-midst-the-sidhe"
+      ],
+      "fate": "alive",
+      "description": "Postać aktualnie projektowanej kampanii.",
+      "portraitId": "asset-0052"
+    },
+    {
+      "id": "char-0054",
+      "name": "Feichin",
+      "playerId": "player-mat",
+      "campaignIds": [
+        "campaign-echtra-midst-the-sidhe"
+      ],
+      "fate": "alive",
+      "description": "Postać aktualnie projektowanej kampanii.",
+      "portraitId": "asset-0053"
+    },
+    {
+      "id": "char-0055",
+      "name": "Maeve",
+      "playerId": "player-wpoluwiatr",
+      "campaignIds": [
+        "campaign-echtra-midst-the-sidhe"
+      ],
+      "fate": "alive",
+      "description": "Postać aktualnie projektowanej kampanii.",
+      "portraitId": "asset-0054"
+    },
+    {
+      "id": "char-0056",
+      "name": "Lyanna Steelheart",
+      "playerId": "player-natalia",
+      "campaignIds": [
+        "campaign-ghoul-hour"
+      ],
+      "fate": "finished",
+      "description": "Postać z rozegranej kampanii.",
+      "portraitId": "asset-0055"
+    },
+    {
+      "id": "char-0057",
+      "name": "Briala",
+      "playerId": "player-maria",
+      "campaignIds": [
+        "campaign-ghoul-hour"
+      ],
+      "fate": "finished",
+      "description": "Postać z rozegranej kampanii.",
+      "portraitId": "asset-0056"
+    },
+    {
+      "id": "char-0058",
+      "name": "Migotka",
+      "playerId": "player-martyna",
+      "campaignIds": [
+        "campaign-ghoul-hour"
+      ],
+      "fate": "finished",
+      "description": "Postać z rozegranej kampanii.",
+      "portraitId": "asset-0057"
+    },
+    {
+      "id": "char-0059",
+      "name": "Yen Airon",
+      "playerId": "player-kuba",
+      "campaignIds": [
+        "campaign-ghoul-hour"
+      ],
+      "fate": "finished",
+      "description": "Postać z rozegranej kampanii.",
+      "portraitId": "asset-0058"
+    },
+    {
+      "id": "char-0060",
+      "name": "Vornis",
+      "playerId": "player-viking",
+      "campaignIds": [
+        "campaign-ghoul-hour"
+      ],
+      "fate": "finished",
+      "description": "Postać z rozegranej kampanii.",
+      "portraitId": "asset-0059"
+    },
+    {
+      "id": "char-0061",
+      "name": "Audrey Fulton",
+      "playerId": "player-sandra",
+      "campaignIds": [
+        "campaign-hand-of-glory"
+      ],
+      "fate": "finished",
+      "description": "Postać z rozegranego scenariusza.",
+      "portraitId": "asset-0060"
+    },
+    {
+      "id": "char-0062",
+      "name": "Dan Whelan",
+      "playerId": "player-mat",
+      "campaignIds": [
+        "campaign-hand-of-glory"
+      ],
+      "fate": "finished",
+      "description": "Postać z rozegranego scenariusza.",
+      "portraitId": "asset-0061"
+    },
+    {
+      "id": "char-0063",
+      "name": "Patty Graham",
+      "playerId": "player-maria",
+      "campaignIds": [
+        "campaign-hand-of-glory"
+      ],
+      "fate": "finished",
+      "description": "Postać z rozegranego scenariusza.",
+      "portraitId": "asset-0062"
+    },
+    {
+      "id": "char-0064",
+      "name": "Lugash",
+      "playerId": "player-aleksander",
+      "campaignIds": [
+        "campaign-ku-chwale-tyra"
+      ],
+      "fate": "finished",
+      "description": "Postać z rozegranego one-shota.",
+      "portraitId": "asset-0063"
+    },
+    {
+      "id": "char-0065",
+      "name": "Eltris",
+      "playerId": "player-ewa",
+      "campaignIds": [
+        "campaign-ku-chwale-tyra"
+      ],
+      "fate": "finished",
+      "description": "Postać z rozegranego one-shota.",
+      "portraitId": "asset-0064"
+    },
+    {
+      "id": "char-0066",
+      "name": "Olgi",
+      "playerId": "player-viking",
+      "campaignIds": [
+        "campaign-lost-mine-of-phandelver"
+      ],
+      "fate": "finished",
+      "description": "Postać z ukończonej kampanii.",
+      "portraitId": "asset-0065"
+    },
+    {
+      "id": "char-0067",
+      "name": "Barbiel",
+      "playerId": "player-diana",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest"
+      ],
+      "fate": "dead",
+      "description": "Zdecydowała się na walkę z Istramem, wampirzym arcymagiem, i poniosła tego konsekwencje.",
+      "portraitId": "asset-0066"
+    },
+    {
+      "id": "char-0068",
+      "name": "Elran",
+      "playerId": "player-daniel",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest"
+      ],
+      "fate": "finished",
+      "description": "Opuścił drużynę, by strzec Smoczykresu przed potworami.",
+      "portraitId": "asset-0067"
+    },
+    {
+      "id": "char-0069",
+      "name": "Vivienne",
+      "playerId": "player-maria",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest"
+      ],
+      "fate": "dead",
+      "description": "Zdecydowała się na walkę z Istramem, wampirzym arcymagiem, i poniosła tego konsekwencje.",
+      "portraitId": "asset-0068"
+    },
+    {
+      "id": "char-0070",
+      "name": "Nyxallia",
+      "playerId": "player-martyna",
+      "campaignIds": [
+        "campaign-mythic-odyssey-of-the-dragonlords"
+      ],
+      "fate": "finished",
+      "description": "Porzuciła swoją misję przed końcem.",
+      "portraitId": "asset-0069"
+    },
+    {
+      "id": "char-0071",
+      "name": "Diana",
+      "playerId": "player-diana",
+      "campaignIds": [
+        "campaign-mythic-odyssey-of-the-dragonlords"
+      ],
+      "fate": "finished",
+      "description": "Porzuciła swoją misję przed końcem.",
+      "portraitId": "asset-0070"
+    },
+    {
+      "id": "char-0072",
+      "name": "Axel",
+      "playerId": "player-mariusz",
+      "campaignIds": [
+        "campaign-mythic-odyssey-of-the-dragonlords"
+      ],
+      "fate": "finished",
+      "description": "Porzucił swoją misję przed końcem.",
+      "portraitId": "asset-0071"
+    },
+    {
+      "id": "char-0073",
+      "name": "Quill",
+      "playerId": "player-shaggy",
+      "campaignIds": [
+        "campaign-mythic-odyssey-of-the-dragonlords"
+      ],
+      "fate": "finished",
+      "description": "Porzucił swoją misję przed końcem.",
+      "portraitId": "asset-0072"
+    },
+    {
+      "id": "char-0074",
+      "name": "Elorin",
+      "playerId": "player-panterq",
+      "campaignIds": [
+        "campaign-neverwinter-intrygi-po-nocnego-wybrzeza-mieczy"
+      ],
+      "fate": "finished",
+      "description": "Postać z rozegranej kampanii.",
+      "portraitId": "asset-0037"
+    },
+    {
+      "id": "char-0075",
+      "name": "Satrius Nevermore",
+      "playerId": "player-przemys-aw-krol",
+      "campaignIds": [
+        "campaign-neverwinter-intrygi-po-nocnego-wybrzeza-mieczy"
+      ],
+      "fate": "dead",
+      "description": "Wpadł w konflikt z Gwardią Neverwinter i został zabity po stawianiu oporu podczas aresztowania.",
+      "portraitId": "asset-0073"
+    },
+    {
+      "id": "char-0076",
+      "name": "Adeline",
+      "playerId": "player-pompon",
+      "campaignIds": [
+        "campaign-neverwinter-intrygi-po-nocnego-wybrzeza-mieczy"
+      ],
+      "fate": "dead",
+      "description": "Wpadła w konflikt z Gwardią Neverwinter i została zabita po stawianiu oporu podczas aresztowania.",
+      "portraitId": "asset-0074"
+    },
+    {
+      "id": "char-0077",
+      "name": "Ozros",
+      "playerId": "player-keero",
+      "campaignIds": [
+        "campaign-neverwinter-intrygi-po-nocnego-wybrzeza-mieczy"
+      ],
+      "fate": "dead",
+      "description": "Wpadł w konflikt z Gwardią Neverwinter i został zabity po stawianiu oporu podczas aresztowania.",
+      "portraitId": "asset-0075"
+    },
+    {
+      "id": "char-0078",
+      "name": "Mullder",
+      "playerId": "player-alek",
+      "campaignIds": [
+        "campaign-neverwinter-intrygi-po-nocnego-wybrzeza-mieczy"
+      ],
+      "fate": "dead",
+      "description": "Wpadł w konflikt z Gwardią Neverwinter i został zabity po stawianiu oporu podczas aresztowania.",
+      "portraitId": "asset-0076"
+    },
+    {
+      "id": "char-0079",
+      "name": "Rina",
+      "playerId": "player-wpoluwiatr",
+      "campaignIds": [
+        "campaign-odyssey-of-the-dragonlords"
+      ],
+      "fate": "finished",
+      "description": "Uratowała Thyleę przed Tytanami, pokonując ich i ich armie oraz przywracając pokój.",
+      "portraitId": "asset-0077"
+    },
+    {
+      "id": "char-0080",
+      "name": "Theron",
+      "playerId": "player-shrimphead",
+      "campaignIds": [
+        "campaign-odyssey-of-the-dragonlords"
+      ],
+      "fate": "finished",
+      "description": "Odszedł z kampanii, by pozostać z rodziną.",
+      "portraitId": "asset-0078"
+    },
+    {
+      "id": "char-0081",
+      "name": "Xavier",
+      "playerId": "player-archangelss",
+      "campaignIds": [
+        "campaign-odyssey-of-the-dragonlords"
+      ],
+      "fate": "finished",
+      "description": "Uratował Thyleę przed Tytanami, pokonując ich i ich armie oraz przywracając pokój.",
+      "portraitId": "asset-0079"
+    },
+    {
+      "id": "char-0082",
+      "name": "Xastar",
+      "playerId": "player-lecpowode",
+      "campaignIds": [
+        "campaign-odyssey-of-the-dragonlords"
+      ],
+      "fate": "finished",
+      "description": "Uratował Thyleę przed Tytanami, pokonując ich i ich armie oraz przywracając pokój.",
+      "portraitId": "asset-0080"
+    },
+    {
+      "id": "char-0083",
+      "name": "Vespera",
+      "playerId": "player-maria",
+      "campaignIds": [
+        "campaign-odyssey-of-the-dragonlords"
+      ],
+      "fate": "finished",
+      "description": "Uratowała Thyleę przed Tytanami, pokonując ich i ich armie oraz przywracając pokój.",
+      "portraitId": "asset-0081"
+    },
+    {
+      "id": "char-0084",
+      "name": "Zander",
+      "playerId": "player-koar",
+      "campaignIds": [
+        "campaign-odyssey-of-the-dragonlords"
+      ],
+      "fate": "unknown",
+      "description": "Wpis zachowany w archiwum jako postać gracza; kampania nie ma tu pełnego epilogu.",
+      "portraitId": "asset-0082"
+    },
+    {
+      "id": "char-0085",
+      "name": "Ryuji",
+      "playerId": "player-route",
+      "campaignIds": [
+        "campaign-rise-of-tiamat"
+      ],
+      "fate": "finished",
+      "description": "Wspólnie z drużyną pokonał Kult Smoka, zanim zdołał on w pełni przywołać Tiamat na Faerun.",
+      "portraitId": "asset-0037"
+    },
+    {
+      "id": "char-0086",
+      "name": "Bronn",
+      "playerId": "player-viking",
+      "campaignIds": [
+        "campaign-rise-of-tiamat"
+      ],
+      "fate": "finished",
+      "description": "Wspólnie z drużyną pokonał Kult Smoka, zanim zdołał on w pełni przywołać Tiamat na Faerun.",
+      "portraitId": "asset-0037"
+    },
+    {
+      "id": "char-0087",
+      "name": "Lorenzo Dal",
+      "playerId": "player-domono",
+      "campaignIds": [
+        "campaign-samotnie-przeciw-jednosci"
+      ],
+      "fate": "finished",
+      "description": "Wspólnie z drużyną odnalazł Świątynię Seta i uciekł z walącego się budynku, kończąc przygodę sukcesem.",
+      "portraitId": "asset-0037"
+    },
+    {
+      "id": "char-0088",
+      "name": "Mattia",
+      "playerId": "player-kurde-bele",
+      "campaignIds": [
+        "campaign-samotnie-przeciw-jednosci"
+      ],
+      "fate": "finished",
+      "description": "Wspólnie z drużyną odnalazł Świątynię Seta i uciekł z walącego się budynku, kończąc przygodę sukcesem.",
+      "portraitId": "asset-0037"
+    },
+    {
+      "id": "char-0089",
+      "name": "Samuel Wokulski",
+      "playerId": "player-staryborsuk",
+      "campaignIds": [
+        "campaign-samotnie-przeciw-jednosci"
+      ],
+      "fate": "finished",
+      "description": "Wspólnie z drużyną odnalazł Świątynię Seta i uciekł z walącego się budynku, kończąc przygodę sukcesem.",
+      "portraitId": "asset-0037"
+    },
+    {
+      "id": "char-0090",
+      "name": "Vincent Campbell",
+      "playerId": "player-vexu",
+      "campaignIds": [
+        "campaign-samotnie-przeciw-jednosci"
+      ],
+      "fate": "finished",
+      "description": "Wspólnie z drużyną odnalazł Świątynię Seta i uciekł z walącego się budynku, kończąc przygodę sukcesem.",
+      "portraitId": "asset-0037"
+    },
+    {
+      "id": "char-0091",
+      "name": "Saki",
+      "playerId": "player-neiiska",
+      "campaignIds": [
+        "campaign-shadow-of-the-sword-coast"
+      ],
+      "fate": "finished",
+      "description": "Udało mu się odzyskać duszę.",
+      "portraitId": "asset-0037"
+    },
+    {
+      "id": "char-0092",
+      "name": "Amarika",
+      "playerId": "player-leftpinky",
+      "campaignIds": [
+        "campaign-shadow-of-the-sword-coast"
+      ],
+      "fate": "finished",
+      "description": "Udało jej się odzyskać duszę.",
+      "portraitId": "asset-0037"
+    },
+    {
+      "id": "char-0093",
+      "name": "Flare",
+      "playerId": "player-maria",
+      "campaignIds": [
+        "campaign-shadow-of-the-sword-coast"
+      ],
+      "fate": "finished",
+      "description": "Udało jej się odzyskać duszę.",
+      "portraitId": "asset-0037"
+    },
+    {
+      "id": "char-0094",
+      "name": "Cor’avel Asteria Solthar [Cassy]",
+      "playerId": "player-rivani",
+      "campaignIds": [
+        "campaign-shadow-of-the-sword-coast"
+      ],
+      "fate": "finished",
+      "description": "Udało jej się odzyskać duszę; później poległa w finałowej walce o Koronę Drakkenheimu.",
+      "portraitId": "asset-0083"
+    },
+    {
+      "id": "char-0095",
+      "name": "Cor’avel Asteria Solthar [Cassy]",
+      "playerId": "player-rivani",
+      "campaignIds": [
+        "campaign-drakkenheim"
+      ],
+      "fate": "finished",
+      "description": "Udało jej się odzyskać duszę; później poległa w finałowej walce o Koronę Drakkenheimu.",
+      "portraitId": "asset-0083"
+    },
+    {
+      "id": "char-0096",
+      "name": "Sel'avel Annora Solthar (Saskia)",
+      "playerId": "player-natalia-p",
+      "campaignIds": [
+        "campaign-shadow-of-the-sword-coast"
+      ],
+      "fate": "finished",
+      "description": "Udało jej się odzyskać duszę, ale pozostała na zawsze w Shadowfell, ucząc się od Iggwilv.",
+      "portraitId": "asset-0084"
+    },
+    {
+      "id": "char-0097",
+      "name": "Emrys",
+      "playerId": "player-viking",
+      "campaignIds": [
+        "campaign-sons-of-azalin"
+      ],
+      "fate": "finished",
+      "description": "Porzucił swoje zadanie w Darkon.",
+      "portraitId": "asset-0085"
+    },
+    {
+      "id": "char-0098",
+      "name": "Fauve",
+      "playerId": "player-wpoluwiatr",
+      "campaignIds": [
+        "campaign-sons-of-azalin"
+      ],
+      "fate": "unknown",
+      "description": "Po umniejszeniu drużyny jej dalsze starania w Darkon są niejasne.",
+      "portraitId": "asset-0086"
+    },
+    {
+      "id": "char-0099",
+      "name": "Vivienne",
+      "playerId": "player-natalia",
+      "campaignIds": [
+        "campaign-sons-of-azalin"
+      ],
+      "fate": "finished",
+      "description": "Porzuciła swoje zadanie w Darkon.",
+      "portraitId": "asset-0087"
+    },
+    {
+      "id": "char-0100",
+      "name": "Kiara",
+      "playerId": "player-maria",
+      "campaignIds": [
+        "campaign-sons-of-azalin"
+      ],
+      "fate": "unknown",
+      "description": "Po umniejszeniu drużyny jej dalsze starania w Darkon są niejasne.",
+      "portraitId": "asset-0088"
+    },
+    {
+      "id": "char-0101",
+      "name": "Zenthyra",
+      "playerId": "player-diana",
+      "campaignIds": [
+        "campaign-sons-of-azalin"
+      ],
+      "fate": "abandoned",
+      "description": "Po umniejszeniu drużyny jej dalsze starania w Darkon są niejasne.",
+      "portraitId": "asset-0089"
+    },
+    {
+      "id": "char-0102",
+      "name": "Sappho",
+      "playerId": "player-monika",
+      "campaignIds": [
+        "campaign-sons-of-azalin"
+      ],
+      "fate": "finished",
+      "description": "Porzuciła swoje zadanie w Darkon.",
+      "portraitId": "asset-0090"
+    },
+    {
+      "id": "char-0103",
+      "name": "Mobius",
+      "playerId": "player-mobius",
+      "campaignIds": [
+        "campaign-the-sunless-citadel"
+      ],
+      "fate": "dead",
+      "description": "Zginął z rąk koboldów w Zatopionej Cytadeli.",
+      "portraitId": "asset-0091"
+    },
+    {
+      "id": "char-0104",
+      "name": "Bambik",
+      "playerId": "player-killyox",
+      "campaignIds": [
+        "campaign-the-sunless-citadel"
+      ],
+      "fate": "dead",
+      "description": "Zginął z rąk koboldów w Zatopionej Cytadeli.",
+      "portraitId": "asset-0092"
+    },
+    {
+      "id": "char-0105",
+      "name": "Magnus",
+      "playerId": "player-viking",
+      "campaignIds": [
+        "campaign-the-sunless-citadel"
+      ],
+      "fate": "dead",
+      "description": "Zginął z rąk koboldów w Zatopionej Cytadeli.",
+      "portraitId": "asset-0093"
+    },
+    {
+      "id": "char-0106",
+      "name": "Zani",
+      "playerId": "player-princess-molesta",
+      "campaignIds": [
+        "campaign-the-sunless-citadel"
+      ],
+      "fate": "dead",
+      "description": "Zginęła z rąk koboldów w Zatopionej Cytadeli.",
+      "portraitId": "asset-0094"
+    },
+    {
+      "id": "char-0107",
+      "name": "Halfyr",
+      "playerId": "player-rezus",
+      "campaignIds": [
+        "campaign-rime-of-the-frostmaiden"
+      ],
+      "fate": "dead",
+      "description": "Został pokonany w Termalaine przez Chardarynowego Smoka.",
+      "portraitId": "asset-0095"
+    },
+    {
+      "id": "char-0108",
+      "name": "Aerion",
+      "playerId": "player-jakub-perkowski",
+      "campaignIds": [
+        "campaign-heroes-of-baldur-s-gate"
+      ],
+      "fate": "finished",
+      "description": "Porzucił kampanię.",
+      "portraitId": "asset-0096"
+    },
+    {
+      "id": "char-0109",
+      "name": "Saev",
+      "playerId": "player-amadeusz",
+      "campaignIds": [
+        "campaign-heroes-of-baldur-s-gate"
+      ],
+      "fate": "finished",
+      "description": "Uciekł po tym, jak pozostali towarzysze zginęli.",
+      "portraitId": "asset-0097"
+    },
+    {
+      "id": "char-0110",
+      "name": "Vera",
+      "playerId": "player-samanta",
+      "campaignIds": [
+        "campaign-heroes-of-baldur-s-gate"
+      ],
+      "fate": "dead",
+      "description": "Zginęła z ręki Kagaina, najemnika na usługach Zhentarrimów.",
+      "portraitId": "asset-0098"
+    },
+    {
+      "id": "char-0111",
+      "name": "Kyle Dewgras",
+      "playerId": "player-ukasz-bywalec",
+      "campaignIds": [
+        "campaign-heroes-of-baldur-s-gate"
+      ],
+      "fate": "dead",
+      "description": "Zginął z ręki Kagaina, najemnika na usługach Zhentarrimów.",
+      "portraitId": "asset-0099"
+    },
+    {
+      "id": "char-0112",
+      "name": "Kylie Dewgras",
+      "playerId": "player-wiktoria-bywalec",
+      "campaignIds": [
+        "campaign-heroes-of-baldur-s-gate"
+      ],
+      "fate": "dead",
+      "description": "Zginęła z ręki Kagaina, najemnika na usługach Zhentarrimów.",
+      "portraitId": "asset-0100"
+    },
+    {
+      "id": "char-0113",
+      "name": "Balris",
+      "playerId": "player-rezus",
+      "campaignIds": [
+        "campaign-tomb-of-annihilation"
+      ],
+      "fate": "dead",
+      "description": "Zginął podczas eksploracji Chult.",
+      "portraitId": "asset-0101"
+    },
+    {
+      "id": "char-0114",
+      "name": "Estelar",
+      "playerId": "player-koksuvi",
+      "campaignIds": [
+        "campaign-tomb-of-annihilation"
+      ],
+      "fate": "finished",
+      "description": "Postać z ukończonej kampanii.",
+      "portraitId": "asset-0102"
+    },
+    {
+      "id": "char-0115",
+      "name": "Blaine",
+      "playerId": "player-lexonis",
+      "campaignIds": [
+        "campaign-tomb-of-annihilation"
+      ],
+      "fate": "finished",
+      "description": "Postać z ukończonej kampanii.",
+      "portraitId": "asset-0103"
+    },
+    {
+      "id": "char-0116",
+      "name": "Shuko",
+      "playerId": "player-panterq",
+      "campaignIds": [
+        "campaign-turn-back-the-endless-night"
+      ],
+      "fate": "finished",
+      "description": "Wspólnie z drużyną powstrzymali powrót Dendar, Nocnego Węża.",
+      "portraitId": "asset-0104"
+    },
+    {
+      "id": "char-0117",
+      "name": "Elyannor",
+      "playerId": "player-mat",
+      "campaignIds": [
+        "campaign-turn-back-the-endless-night"
+      ],
+      "fate": "finished",
+      "description": "Wspólnie z drużyną powstrzymali powrót Dendar, Nocnego Węża.",
+      "portraitId": "asset-0105"
+    },
+    {
+      "id": "char-0118",
+      "name": "Hiala Evergreen",
+      "playerId": "player-diana",
+      "campaignIds": [
+        "campaign-turn-back-the-endless-night"
+      ],
+      "fate": "finished",
+      "description": "Wspólnie z drużyną powstrzymali powrót Dendar, Nocnego Węża.",
+      "portraitId": "asset-0106"
+    },
+    {
+      "id": "char-0119",
+      "name": "Petril",
+      "playerId": "player-koksuvi",
+      "campaignIds": [
+        "campaign-turn-back-the-endless-night"
+      ],
+      "fate": "finished",
+      "description": "Wspólnie z drużyną powstrzymali powrót Dendar, Nocnego Węża.",
+      "portraitId": "asset-0107"
+    },
+    {
+      "id": "char-0120",
+      "name": "Gondam Thunderbrew",
+      "playerId": "player-viking",
+      "campaignIds": [
+        "campaign-turn-back-the-endless-night"
+      ],
+      "fate": "finished",
+      "description": "Wspólnie z drużyną powstrzymali powrót Dendar, Nocnego Węża.",
+      "portraitId": "asset-0108"
+    },
+    {
+      "id": "char-0121",
+      "name": "Polter von Geist",
+      "playerId": "player-zuzia",
+      "campaignIds": [
+        "campaign-ksiazeta-heartwell"
+      ],
+      "fate": "alive",
+      "description": "Półelfka, bardka z Kolegium Duchów; postać kampanii Heartwell.",
+      "portraitId": "asset-0109"
+    },
+    {
+      "id": "char-0122",
+      "name": "Postać nieuzupełniona — wpoluwiatr",
+      "playerId": "player-wpoluwiatr",
+      "campaignIds": [
+        "campaign-ksiazeta-heartwell"
+      ],
+      "fate": "alive",
+      "description": "Miejsce drużyny istnieje w archiwum Heartwell, ale postać nie została jeszcze opisana.",
+      "portraitId": "asset-0110"
+    },
+    {
+      "id": "char-0123",
+      "name": "Postać nieuzupełniona — Daniel",
+      "playerId": "player-daniel",
+      "campaignIds": [
+        "campaign-ksiazeta-heartwell"
+      ],
+      "fate": "alive",
+      "description": "Miejsce drużyny istnieje w archiwum Heartwell, ale postać nie została jeszcze opisana.",
+      "portraitId": "asset-0111"
+    },
+    {
+      "id": "char-0124",
+      "name": "Postać nieuzupełniona — ???",
+      "playerId": "player-nie-podano",
+      "campaignIds": [
+        "campaign-ksiazeta-heartwell"
+      ],
+      "fate": "alive",
+      "description": "Czwarty slot drużyny istnieje w archiwum, ale postać nie została jeszcze opisana.",
+      "portraitId": "asset-0112"
+    },
+    {
+      "id": "char-0125",
+      "name": "Aetherleaf",
+      "playerId": "player-koksuvi",
+      "campaignIds": [
+        "campaign-the-unlikely-five"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0113"
+    },
+    {
+      "id": "char-0126",
+      "name": "Balin",
+      "playerId": "player-lexonis",
+      "campaignIds": [
+        "campaign-dragon-of-icespire-peak"
+      ],
+      "fate": "finished",
+      "description": "Pokonał Cryoveina podczas jego pierwszego przelotu nad Górami Miecza.",
+      "portraitId": "asset-0114"
+    },
+    {
+      "id": "char-0127",
+      "name": "Cal",
+      "playerId": "player-lexonis",
+      "campaignIds": [
+        "campaign-the-unlikely-five"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0115"
+    },
+    {
+      "id": "char-0128",
+      "name": "Cerys",
+      "playerId": "player-maria",
+      "campaignIds": [
+        "campaign-echtra-zima-irgaeli"
+      ],
+      "fate": "dead",
+      "description": "Została pokonana przez Osmandiasa na jego Czarnej Arce.",
+      "portraitId": "asset-0116"
+    },
+    {
+      "id": "char-0129",
+      "name": "Cloud Fang",
+      "playerId": "player-koksuvi",
+      "campaignIds": [
+        "campaign-tomb-of-annihilation"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0117"
+    },
+    {
+      "id": "char-0130",
+      "name": "Eldamir Velithar",
+      "playerId": "player-rezus",
+      "campaignIds": [
+        "campaign-kampania-nieznana"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0118"
+    },
+    {
+      "id": "char-0131",
+      "name": "Galvan Bestia Waveseater",
+      "playerId": "player-rezus",
+      "campaignIds": [
+        "campaign-the-unlikely-five"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0119"
+    },
+    {
+      "id": "char-0132",
+      "name": "Kildrak",
+      "playerId": "player-koksuvi",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0120"
+    },
+    {
+      "id": "char-0133",
+      "name": "Korrak Orphanmaker",
+      "playerId": "player-lexonis",
+      "campaignIds": [
+        "campaign-dragon-of-icespire-peak"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0121"
+    },
+    {
+      "id": "char-0134",
+      "name": "Leoynor",
+      "playerId": "player-rezus",
+      "campaignIds": [
+        "campaign-lost-mine-of-phandelver"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0122"
+    },
+    {
+      "id": "char-0135",
+      "name": "Maragul",
+      "playerId": "player-rezus",
+      "campaignIds": [
+        "campaign-heroes-of-drakkenheim"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0123"
+    },
+    {
+      "id": "char-0136",
+      "name": "Naetoris",
+      "playerId": "player-koksuvi",
+      "campaignIds": [
+        "campaign-the-unlikely-five"
+      ],
+      "fate": "dead",
+      "description": "Poległ podczas kampanii.",
+      "portraitId": "asset-0124"
+    },
+    {
+      "id": "char-0137",
+      "name": "Valdos",
+      "playerId": "player-lexonis",
+      "campaignIds": [
+        "campaign-tomb-of-annihilation"
+      ],
+      "fate": "dead",
+      "description": "Zginął podczas eksploracji Chult.",
+      "portraitId": "asset-0125"
+    },
+    {
+      "id": "char-0138",
+      "name": "Vurlarn",
+      "playerId": "player-rezus",
+      "campaignIds": [
+        "campaign-tomb-of-annihilation"
+      ],
+      "fate": "dead",
+      "description": "Utopił się w winie w pułapce w Grobowcu Dziewięciu Bóstw.",
+      "portraitId": "asset-0126"
+    },
+    {
+      "id": "char-0139",
+      "name": "Xalrae",
+      "playerId": "player-jeesoo",
+      "campaignIds": [
+        "campaign-rime-of-the-frostmaiden"
+      ],
+      "fate": "dead",
+      "description": "Została pokonana w Termalaine przez Chardarynowego Smoka.",
+      "portraitId": "asset-0127"
+    },
+    {
+      "id": "char-0140",
+      "name": "Aldori",
+      "playerId": "player-killyox",
+      "campaignIds": [
+        "campaign-heroes-of-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0128"
+    },
+    {
+      "id": "char-0141",
+      "name": "Aravelthir Orleneldth",
+      "playerId": "player-raevell",
+      "campaignIds": [
+        "campaign-shards-of-the-past"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0129"
+    },
+    {
+      "id": "char-0142",
+      "name": "Ari",
+      "playerId": "player-chinczyk",
+      "campaignIds": [
+        "campaign-shards-of-the-past-legacy"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0130"
+    },
+    {
+      "id": "char-0143",
+      "name": "Arson",
+      "playerId": "player-dharmaeye",
+      "campaignIds": [
+        "campaign-lost-mine-of-phandelver"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0131"
+    },
+    {
+      "id": "char-0144",
+      "name": "Arson",
+      "playerId": "player-dharmaeye",
+      "campaignIds": [
+        "campaign-rise-of-tiamat"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0131"
+    },
+    {
+      "id": "char-0145",
+      "name": "Błysk",
+      "playerId": "player-ezu",
+      "campaignIds": [
+        "campaign-shards-of-the-past"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0132"
+    },
+    {
+      "id": "char-0146",
+      "name": "Chronius Mk. III",
+      "playerId": "player-route",
+      "campaignIds": [
+        "campaign-lost-mine-of-phandelver"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0133"
+    },
+    {
+      "id": "char-0147",
+      "name": "Dain Gorumn",
+      "playerId": "player-goku94",
+      "campaignIds": [
+        "campaign-lost-mine-of-phandelver"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0036"
+    },
+    {
+      "id": "char-0148",
+      "name": "Damrien",
+      "playerId": "player-wiktoria-red",
+      "campaignIds": [
+        "campaign-shards-of-the-past-legacy"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0134"
+    },
+    {
+      "id": "char-0149",
+      "name": "Faeyra",
+      "playerId": "player-goku94",
+      "campaignIds": [
+        "campaign-heroes-of-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0135"
+    },
+    {
+      "id": "char-0150",
+      "name": "Galen Teller",
+      "playerId": "player-dartax4",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0136"
+    },
+    {
+      "id": "char-0151",
+      "name": "Kairos",
+      "playerId": "player-killyox",
+      "campaignIds": [
+        "campaign-heroes-of-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0137"
+    },
+    {
+      "id": "char-0152",
+      "name": "Kay",
+      "playerId": "player-wiktoria-red",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0138"
+    },
+    {
+      "id": "char-0153",
+      "name": "Korghos Khul",
+      "playerId": "player-killyox",
+      "campaignIds": [
+        "campaign-heroes-of-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0139"
+    },
+    {
+      "id": "char-0154",
+      "name": "Korre",
+      "playerId": "player-wiktoria-red",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0140"
+    },
+    {
+      "id": "char-0155",
+      "name": "Livianna",
+      "playerId": "player-jasmine",
+      "campaignIds": [
+        "campaign-ku-chwale-tyra"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0141"
+    },
+    {
+      "id": "char-0156",
+      "name": "Michał",
+      "playerId": "player-nie-podano",
+      "campaignIds": [
+        "campaign-neverwinter-intrygi-po-nocnego-wybrzeza-mieczy"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0142"
+    },
+    {
+      "id": "char-0157",
+      "name": "Petra",
+      "playerId": "player-wiktoria-red",
+      "campaignIds": [
+        "campaign-shards-of-the-past-legacy"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0143"
+    },
+    {
+      "id": "char-0158",
+      "name": "Shaitis",
+      "playerId": "player-ryokis",
+      "campaignIds": [
+        "campaign-ku-chwale-tyra"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0144"
+    },
+    {
+      "id": "char-0159",
+      "name": "Soleilien",
+      "playerId": "player-ezu",
+      "campaignIds": [
+        "campaign-shards-of-the-past"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0145"
+    },
+    {
+      "id": "char-0160",
+      "name": "Torlek",
+      "playerId": "player-dartax4",
+      "campaignIds": [
+        "campaign-shards-of-the-past-legacy"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0146"
+    },
+    {
+      "id": "char-0161",
+      "name": "Henry",
+      "playerId": "player-mckimono",
+      "campaignIds": [
+        "campaign-heroes-of-drakkenheim"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0147"
+    },
+    {
+      "id": "char-0162",
+      "name": "x",
+      "playerId": "player-przemek",
+      "campaignIds": [
+        "campaign-heroes-of-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0148"
+    },
+    {
+      "id": "char-0163",
+      "name": "Alyss",
+      "playerId": "player-dkjowler",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0149"
+    },
+    {
+      "id": "char-0164",
+      "name": "Aylin",
+      "playerId": "player-rawiea",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0150"
+    },
+    {
+      "id": "char-0165",
+      "name": "Carric Tallstag",
+      "playerId": "player-boulton",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0151"
+    },
+    {
+      "id": "char-0166",
+      "name": "Damien",
+      "playerId": "player-arus",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0152"
+    },
+    {
+      "id": "char-0167",
+      "name": "Fin",
+      "playerId": "player-sajko",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0153"
+    },
+    {
+      "id": "char-0168",
+      "name": "Kaela Mensha Khaine",
+      "playerId": "player-kot",
+      "campaignIds": [
+        "campaign-w-pogoni-za-piorowca"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0154"
+    },
+    {
+      "id": "char-0169",
+      "name": "Kasius",
+      "playerId": "player-arus",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0155"
+    },
+    {
+      "id": "char-0170",
+      "name": "Blareinn",
+      "playerId": "player-raevell",
+      "campaignIds": [
+        "campaign-mayhem-in-earthspur-mines"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0156"
+    },
+    {
+      "id": "char-0171",
+      "name": "Corsio",
+      "playerId": "player-raevell",
+      "campaignIds": [
+        "campaign-forge-of-fury"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0157"
+    },
+    {
+      "id": "char-0172",
+      "name": "Corsio",
+      "playerId": "player-raevell",
+      "campaignIds": [
+        "campaign-barber-of-silverymoon"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0157"
+    },
+    {
+      "id": "char-0173",
+      "name": "Dawa",
+      "playerId": "player-raevell",
+      "campaignIds": [
+        "campaign-the-sunless-citadel"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0158"
+    },
+    {
+      "id": "char-0174",
+      "name": "Naeren Starshade",
+      "playerId": "player-raevell",
+      "campaignIds": [
+        "campaign-drakkenheim"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0159"
+    },
+    {
+      "id": "char-0175",
+      "name": "Aribeth Cassandra Olyrnn-Whitespire",
+      "playerId": "player-wpoluwiatr",
+      "campaignIds": [
+        "campaign-shards-of-the-past"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0160"
+    },
+    {
+      "id": "char-0176",
+      "name": "Faylen",
+      "playerId": "player-wpoluwiatr",
+      "campaignIds": [
+        "campaign-dragon-of-icespire-peak"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0161"
+    },
+    {
+      "id": "char-0177",
+      "name": "Lyanna Redglaive",
+      "playerId": "player-wpoluwiatr",
+      "campaignIds": [
+        "campaign-dragon-of-icespire-peak"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0162"
+    },
+    {
+      "id": "char-0178",
+      "name": "Zwada",
+      "playerId": "player-wpoluwiatr",
+      "campaignIds": [
+        "campaign-shards-of-the-past"
+      ],
+      "fate": "dead",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0163"
+    },
+    {
+      "id": "char-0179",
+      "name": "Aelar",
+      "playerId": "player-koksuvi",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0164"
+    },
+    {
+      "id": "char-0180",
+      "name": "Ajadres",
+      "playerId": "player-neiiska",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "dead",
+      "description": "Został pokonany przez Wormira, Czarnego Smoka, podczas finałowej konfrontacji w jego leżu.",
+      "portraitId": "asset-0165"
+    },
+    {
+      "id": "char-0181",
+      "name": "Alan'Dir",
+      "playerId": "player-chinczyk",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "dead",
+      "description": "Zginął, poświęcając się, by pomóc drużynie uciec przed Istramem, wampirzym Arcymagiem.",
+      "portraitId": "asset-0166"
+    },
+    {
+      "id": "char-0182",
+      "name": "Daer",
+      "playerId": "player-amadeusz",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "dead",
+      "description": "Został pokonany przez Wormira, Czarnego Smoka, podczas finałowej konfrontacji w jego leżu.",
+      "portraitId": "asset-0167"
+    },
+    {
+      "id": "char-0183",
+      "name": "Deldrach",
+      "playerId": "player-rezus",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "dead",
+      "description": "Zginął w przydrożnej walce z Istramem, Wampirzym Arcymagiem.",
+      "portraitId": "asset-0168"
+    },
+    {
+      "id": "char-0184",
+      "name": "Felian",
+      "playerId": "player-hansik",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "dead",
+      "description": "Zginął w przydrożnej walce z Istramem, Wampirzym Arcymagiem.",
+      "portraitId": "asset-0169"
+    },
+    {
+      "id": "char-0185",
+      "name": "Kia",
+      "playerId": "player-zuza-cuban",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "dead",
+      "description": "Została pokonana przez Wormira, Czarnego Smoka, podczas finałowej konfrontacji w jego leżu.",
+      "portraitId": "asset-0170"
+    },
+    {
+      "id": "char-0186",
+      "name": "Maro",
+      "playerId": "player-amadeusz",
+      "campaignIds": [
+        "campaign-kampania-nieznana"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0171"
+    },
+    {
+      "id": "char-0187",
+      "name": "Meldar",
+      "playerId": "player-keero",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "dead",
+      "description": "Został pokonany przez Wormira, Czarnego Smoka, podczas finałowej konfrontacji w jego leżu.",
+      "portraitId": "asset-0172"
+    },
+    {
+      "id": "char-0188",
+      "name": "Narn",
+      "playerId": "player-amadeusz",
+      "campaignIds": [
+        "campaign-kampania-nieznana"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0173"
+    },
+    {
+      "id": "char-0189",
+      "name": "Yoor Benz",
+      "playerId": "player-amadeusz",
+      "campaignIds": [
+        "campaign-mythic-odyssey-of-the-dragonlords"
+      ],
+      "fate": "finished",
+      "description": "Porzucił swoją misję przed końcem.",
+      "portraitId": "asset-0174"
+    },
+    {
+      "id": "char-0190",
+      "name": "Anduine",
+      "playerId": "player-vissara",
+      "campaignIds": [
+        "campaign-heroes-of-drakkenheim"
+      ],
+      "fate": "finished",
+      "description": "Kopalnie Phandelver zostały odnalezione.",
+      "portraitId": "asset-0175"
+    },
+    {
+      "id": "char-0191",
+      "name": "AuriEl",
+      "playerId": "player-rivani",
+      "campaignIds": [
+        "campaign-shards-of-the-past-legacy"
+      ],
+      "fate": "finished",
+      "description": "Został uratowany i powrócił do swojego codziennego życia.",
+      "portraitId": "asset-0176"
+    },
+    {
+      "id": "char-0192",
+      "name": "Eris",
+      "playerId": "player-vissara",
+      "campaignIds": [
+        "campaign-heroes-of-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Została zabita na ulicach Drakkenheim.",
+      "portraitId": "asset-0177"
+    },
+    {
+      "id": "char-0193",
+      "name": "Itzianna Nendrescel Rosewhisper",
+      "playerId": "player-neiiska",
+      "campaignIds": [
+        "campaign-drakkenheim"
+      ],
+      "fate": "finished",
+      "description": "Porzuciła drużynę na początku kampanii.",
+      "portraitId": "asset-0178"
+    },
+    {
+      "id": "char-0194",
+      "name": "Lourelin",
+      "playerId": "player-vissara",
+      "campaignIds": [
+        "campaign-tomb-of-annihilation"
+      ],
+      "fate": "finished",
+      "description": "Pokonała Acereraka i Atropala w Grobowcu Dziewięciu Bóstw.",
+      "portraitId": "asset-0179"
+    },
+    {
+      "id": "char-0195",
+      "name": "Puff",
+      "playerId": "player-jakubek",
+      "campaignIds": [
+        "campaign-dragon-of-icespire-peak"
+      ],
+      "fate": "finished",
+      "description": "Pokonał Cryoveina podczas jego pierwszego przelotu nad Górami Miecza.",
+      "portraitId": "asset-0180"
+    },
+    {
+      "id": "char-0196",
+      "name": "Sentinel",
+      "playerId": "player-jakubek",
+      "campaignIds": [
+        "campaign-rime-of-the-frostmaiden"
+      ],
+      "fate": "dead",
+      "description": "Został pokonany w Termalaine przez Chardarynowego Smoka.",
+      "portraitId": "asset-0181"
+    },
+    {
+      "id": "char-0197",
+      "name": "Theia",
+      "playerId": "player-rivani",
+      "campaignIds": [
+        "campaign-forge-of-fury"
+      ],
+      "fate": "finished",
+      "description": "Wraz z towarzyszami odzyskała Kuźnię Gniewu i rozwiązała zagadkę Barbera z Silverymoon.",
+      "portraitId": "asset-0182"
+    },
+    {
+      "id": "char-0198",
+      "name": "Torg'dal",
+      "playerId": "player-viking",
+      "campaignIds": [
+        "campaign-heroes-of-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Zginął na ulicach Drakkenheim.",
+      "portraitId": "asset-0183"
+    },
+    {
+      "id": "char-0199",
+      "name": "Aevianna",
+      "playerId": "player-martyna",
+      "campaignIds": [
+        "campaign-bad-romance-barovia"
+      ],
+      "fate": "finished",
+      "description": "Porzuciła swoje zadanie w Barovii; kampania została porzucona z powodu konfliktu interpersonalnego.",
+      "portraitId": "asset-0184"
+    },
+    {
+      "id": "char-0200",
+      "name": "Agash",
+      "playerId": "player-hansik",
+      "campaignIds": [
+        "campaign-tomb-of-annihilation"
+      ],
+      "fate": "finished",
+      "description": "Postać z ukończonej kampanii.",
+      "portraitId": "asset-0185"
+    },
+    {
+      "id": "char-0201",
+      "name": "Alaric",
+      "playerId": "player-shaggy",
+      "campaignIds": [
+        "campaign-bad-romance-barovia"
+      ],
+      "fate": "finished",
+      "description": "Porzucił swoje zadanie w Barovii; kampania została porzucona z powodu konfliktu interpersonalnego.",
+      "portraitId": "asset-0186"
+    },
+    {
+      "id": "char-0202",
+      "name": "Asael",
+      "playerId": "player-fennec",
+      "campaignIds": [
+        "campaign-bad-romance-barovia"
+      ],
+      "fate": "finished",
+      "description": "Porzucił swoje zadanie w Barovii; kampania została porzucona z powodu konfliktu interpersonalnego.",
+      "portraitId": "asset-0187"
+    },
+    {
+      "id": "char-0203",
+      "name": "Bran Pinekeep",
+      "playerId": "player-mateuszwijas",
+      "campaignIds": [
+        "campaign-neverwinter-intrygi-po-nocnego-wybrzeza-mieczy"
+      ],
+      "fate": "finished",
+      "description": "Postać z rozegranej kampanii.",
+      "portraitId": "asset-0188"
+    },
+    {
+      "id": "char-0204",
+      "name": "Bungo Barkmaw",
+      "playerId": "player-amazur",
+      "campaignIds": [
+        "campaign-dragon-of-icespire-peak"
+      ],
+      "fate": "finished",
+      "description": "Postać z ukończonej kampanii.",
+      "portraitId": "asset-0189"
+    },
+    {
+      "id": "char-0205",
+      "name": "Corvan Draemir",
+      "playerId": "player-hansik",
+      "campaignIds": [
+        "campaign-the-unlikely-five"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0190"
+    },
+    {
+      "id": "char-0206",
+      "name": "Dafinios",
+      "playerId": "player-hansik",
+      "campaignIds": [
+        "campaign-tomb-of-annihilation"
+      ],
+      "fate": "finished",
+      "description": "Postać z ukończonej kampanii.",
+      "portraitId": "asset-0191"
+    },
+    {
+      "id": "char-0207",
+      "name": "Divina",
+      "playerId": "player-natalia",
+      "campaignIds": [
+        "campaign-bad-romance-barovia"
+      ],
+      "fate": "dead",
+      "description": "Została rozerwana na strzępy przez Wampirze Pomioty.",
+      "portraitId": "asset-0192"
+    },
+    {
+      "id": "char-0208",
+      "name": "Fintana",
+      "playerId": "player-leftpinky",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest"
+      ],
+      "fate": "dead",
+      "description": "Zdecydowała się na walkę z Istramem, wampirzym arcymagiem, i poniosła tego konsekwencje.",
+      "portraitId": "asset-0193"
+    },
+    {
+      "id": "char-0209",
+      "name": "Gunnar Ravenfall",
+      "playerId": "player-ukasz",
+      "campaignIds": [
+        "campaign-ghoul-hour"
+      ],
+      "fate": "finished",
+      "description": "Postać z rozegranej kampanii.",
+      "portraitId": "asset-0194"
+    },
+    {
+      "id": "char-0210",
+      "name": "Gustav",
+      "playerId": "player-hansik",
+      "campaignIds": [
+        "campaign-heroes-of-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Został zabity na ulicach Drakkenheim.",
+      "portraitId": "asset-0195"
+    },
+    {
+      "id": "char-0211",
+      "name": "Hogall",
+      "playerId": "player-amazur",
+      "campaignIds": [
+        "campaign-rime-of-the-frostmaiden"
+      ],
+      "fate": "dead",
+      "description": "Został pokonany w Termalaine przez Chardarynowego Smoka.",
+      "portraitId": "asset-0196"
+    },
+    {
+      "id": "char-0212",
+      "name": "Jacob",
+      "playerId": "player-keero",
+      "campaignIds": [
+        "campaign-bad-romance-barovia"
+      ],
+      "fate": "finished",
+      "description": "Porzucił swoje zadanie w Barovii; kampania została porzucona z powodu konfliktu interpersonalnego.",
+      "portraitId": "asset-0197"
+    },
+    {
+      "id": "char-0213",
+      "name": "Nailef",
+      "playerId": "player-hansik",
+      "campaignIds": [
+        "campaign-lost-mine-of-phandelver"
+      ],
+      "fate": "finished",
+      "description": "Postać z ukończonej kampanii.",
+      "portraitId": "asset-0198"
+    },
+    {
+      "id": "char-0214",
+      "name": "Raric",
+      "playerId": "player-hansik",
+      "campaignIds": [
+        "campaign-heroes-of-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Został zabity na ulicach Drakkenheim.",
+      "portraitId": "asset-0199"
+    },
+    {
+      "id": "char-0215",
+      "name": "Tarkin Kirhoff",
+      "playerId": "player-hansik",
+      "campaignIds": [
+        "campaign-heroes-of-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Został zabity na ulicach Drakkenheim.",
+      "portraitId": "asset-0200"
+    },
+    {
+      "id": "char-0216",
+      "name": "Tonie Scam",
+      "playerId": "player-amazur",
+      "campaignIds": [
+        "campaign-dragon-of-icespire-peak"
+      ],
+      "fate": "finished",
+      "description": "Postać z ukończonej kampanii.",
+      "portraitId": "asset-0201"
+    },
+    {
+      "id": "char-0217",
+      "name": "Velia",
+      "playerId": "player-natalia",
+      "campaignIds": [
+        "campaign-bad-romance-barovia"
+      ],
+      "fate": "finished",
+      "description": "Porzuciła swoje zadanie w Barovii; kampania została porzucona z powodu konfliktu interpersonalnego.",
+      "portraitId": "asset-0202"
+    },
+    {
+      "id": "char-0218",
+      "name": "Batturs",
+      "playerId": "player-viking",
+      "campaignIds": [
+        "campaign-menaces-of-irensberg"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0203"
+    },
+    {
+      "id": "char-0219",
+      "name": "Brian",
+      "playerId": "player-radek",
+      "campaignIds": [
+        "campaign-echtra-zima-irgaeli"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0204"
+    },
+    {
+      "id": "char-0220",
+      "name": "Eamon",
+      "playerId": "player-miko-aj",
+      "campaignIds": [
+        "campaign-echtra-zima-irgaeli"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0205"
+    },
+    {
+      "id": "char-0221",
+      "name": "Eryn",
+      "playerId": "player-tylkomatti",
+      "campaignIds": [
+        "campaign-rime-of-the-frostmaiden"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0206"
+    },
+    {
+      "id": "char-0222",
+      "name": "Kailan Vael Rhaen",
+      "playerId": "player-aleksandra",
+      "campaignIds": [
+        "campaign-echtra-zima-irgaeli"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0207"
+    },
+    {
+      "id": "char-0223",
+      "name": "Gerwilda Stitchbite",
+      "playerId": "player-cezary",
+      "campaignIds": [
+        "campaign-echtra-zima-irgaeli"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0208"
+    },
+    {
+      "id": "char-0224",
+      "name": "Indis",
+      "playerId": "player-diana",
+      "campaignIds": [
+        "campaign-echtra-zima-irgaeli"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0209"
+    },
+    {
+      "id": "char-0225",
+      "name": "Verai",
+      "playerId": "player-bezokasroka",
+      "campaignIds": [
+        "campaign-heroes-of-baldur-s-gate"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0210"
+    },
+    {
+      "id": "char-0226",
+      "name": "Bella",
+      "playerId": "player-ula",
+      "campaignIds": [
+        "campaign-bad-romance-barovia"
+      ],
+      "fate": "dead",
+      "description": "Poległa podczas kampanii.",
+      "portraitId": "asset-0211"
+    },
+    {
+      "id": "char-0227",
+      "name": "Cynka",
+      "playerId": "player-ula",
+      "campaignIds": [
+        "campaign-shards-of-the-past-legacy"
+      ],
+      "fate": "dead",
+      "description": "Poległa podczas kampanii.",
+      "portraitId": "asset-0212"
+    },
+    {
+      "id": "char-0228",
+      "name": "M'rissi",
+      "playerId": "player-ula",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "dead",
+      "description": "Poległa podczas kampanii.",
+      "portraitId": "asset-0213"
+    },
+    {
+      "id": "char-0229",
+      "name": "Okri Elderhorn",
+      "playerId": "player-shaggy",
+      "campaignIds": [
+        "campaign-bad-romance-barovia"
+      ],
+      "fate": "dead",
+      "description": "Poległ podczas kampanii.",
+      "portraitId": "asset-0214"
+    },
+    {
+      "id": "char-0230",
+      "name": "Tarnos Phylund",
+      "playerId": "player-viking",
+      "campaignIds": [
+        "campaign-bad-romance-barovia"
+      ],
+      "fate": "abandoned",
+      "description": "Kampania została porzucona.",
+      "portraitId": "asset-0215"
+    },
+    {
+      "id": "char-0231",
+      "name": "Alma",
+      "playerId": "player-weronika",
+      "campaignIds": [
+        "campaign-shards-of-the-past-legacy"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0216"
+    },
+    {
+      "id": "char-0232",
+      "name": "Amarika",
+      "playerId": "player-leftpinky",
+      "campaignIds": [
+        "campaign-shadow-of-the-sword-coast"
+      ],
+      "fate": "finished",
+      "description": "Udało jej się odzyskać duszę.",
+      "portraitId": "asset-0217"
+    },
+    {
+      "id": "char-0233",
+      "name": "Aralee Shaldont",
+      "playerId": "player-neiiska",
+      "campaignIds": [
+        "campaign-forge-of-fury"
+      ],
+      "fate": "finished",
+      "description": "Portret dodany do archiwum.",
+      "portraitId": "asset-0218"
+    },
+    {
+      "id": "char-0234",
+      "name": "Artemis",
+      "playerId": "player-parrotnetwork",
+      "campaignIds": [
+        "campaign-epic-odyssey-of-the-dragonlords"
+      ],
+      "fate": "abandoned",
+      "description": "Kampania została porzucona.",
+      "portraitId": "asset-0219"
+    },
+    {
+      "id": "char-0235",
+      "name": "Bronn",
+      "playerId": "player-viking",
+      "campaignIds": [
+        "campaign-rise-of-tiamat"
+      ],
+      "fate": "finished",
+      "description": "Wspólnie z drużyną pokonał Kult Smoka, zanim zdołał on w pełni przywołać Tiamat na Faerun.",
+      "portraitId": "asset-0220"
+    },
+    {
+      "id": "char-0236",
+      "name": "Cardan",
+      "playerId": "player-keero",
+      "campaignIds": [
+        "campaign-shards-of-the-past-legacy"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0221"
+    },
+    {
+      "id": "char-0237",
+      "name": "Cassandra",
+      "playerId": "player-neiiska",
+      "campaignIds": [
+        "campaign-shards-of-the-past-legacy"
+      ],
+      "fate": "dead",
+      "description": "Poległa podczas kampanii.",
+      "portraitId": "asset-0222"
+    },
+    {
+      "id": "char-0238",
+      "name": "Dura Kahkadoshz",
+      "playerId": "player-neeiska",
+      "campaignIds": [
+        "campaign-lost-mine-of-phandelver"
+      ],
+      "fate": "dead",
+      "description": "Poległa podczas kampanii.",
+      "portraitId": "asset-0223"
+    },
+    {
+      "id": "char-0239",
+      "name": "Erde",
+      "playerId": "player-neiiska",
+      "campaignIds": [
+        "campaign-the-sunless-citadel"
+      ],
+      "fate": "finished",
+      "description": "Postać z ukończonej przygody.",
+      "portraitId": "asset-0224"
+    },
+    {
+      "id": "char-0240",
+      "name": "Flare",
+      "playerId": "player-maria",
+      "campaignIds": [
+        "campaign-shadow-of-the-sword-coast"
+      ],
+      "fate": "finished",
+      "description": "Udało jej się odzyskać duszę.",
+      "portraitId": "asset-0225"
+    },
+    {
+      "id": "char-0241",
+      "name": "Miriam",
+      "playerId": "player-weronika",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "dead",
+      "description": "Poległa podczas kampanii.",
+      "portraitId": "asset-0226"
+    },
+    {
+      "id": "char-0242",
+      "name": "Naina",
+      "playerId": "player-olek",
+      "campaignIds": [
+        "campaign-epic-odyssey-of-the-dragonlords"
+      ],
+      "fate": "abandoned",
+      "description": "Kampania została porzucona.",
+      "portraitId": "asset-0227"
+    },
+    {
+      "id": "char-0243",
+      "name": "Nozzara",
+      "playerId": "player-neiiska",
+      "campaignIds": [
+        "campaign-forge-of-fury"
+      ],
+      "fate": "finished",
+      "description": "Postać z ukończonej przygody.",
+      "portraitId": "asset-0228"
+    },
+    {
+      "id": "char-0244",
+      "name": "Orelius",
+      "playerId": "player-mags",
+      "campaignIds": [
+        "campaign-epic-odyssey-of-the-dragonlords"
+      ],
+      "fate": "abandoned",
+      "description": "Kampania została porzucona.",
+      "portraitId": "asset-0229"
+    },
+    {
+      "id": "char-0245",
+      "name": "Orythia",
+      "playerId": "player-neiiska",
+      "campaignIds": [
+        "campaign-epic-odyssey-of-the-dragonlords"
+      ],
+      "fate": "abandoned",
+      "description": "Kampania została porzucona.",
+      "portraitId": "asset-0230"
+    },
+    {
+      "id": "char-0246",
+      "name": "Ryuji",
+      "playerId": "player-route",
+      "campaignIds": [
+        "campaign-rise-of-tiamat"
+      ],
+      "fate": "finished",
+      "description": "Wspólnie z drużyną pokonał Kult Smoka, zanim zdołał on w pełni przywołać Tiamat na Faerun.",
+      "portraitId": "asset-0231"
+    },
+    {
+      "id": "char-0247",
+      "name": "Saki",
+      "playerId": "player-neiiska",
+      "campaignIds": [
+        "campaign-shadow-of-the-sword-coast"
+      ],
+      "fate": "finished",
+      "description": "Udało mu się odzyskać duszę.",
+      "portraitId": "asset-0232"
+    },
+    {
+      "id": "char-0248",
+      "name": "Serene Evergreen",
+      "playerId": "player-neiiska",
+      "campaignIds": [
+        "campaign-shards-of-the-past-legacy"
+      ],
+      "fate": "dead",
+      "description": "Poległa podczas kampanii.",
+      "portraitId": "asset-0233"
+    },
+    {
+      "id": "char-0249",
+      "name": "Teiresias",
+      "playerId": "player-neo",
+      "campaignIds": [
+        "campaign-epic-odyssey-of-the-dragonlords"
+      ],
+      "fate": "abandoned",
+      "description": "Kampania została porzucona.",
+      "portraitId": "asset-0234"
+    },
+    {
+      "id": "char-0250",
+      "name": "Tirias",
+      "playerId": "player-bartp",
+      "campaignIds": [
+        "campaign-epic-odyssey-of-the-dragonlords"
+      ],
+      "fate": "abandoned",
+      "description": "Kampania została porzucona.",
+      "portraitId": "asset-0235"
+    },
+    {
+      "id": "char-0251",
+      "name": "Aqe",
+      "playerId": "player-keero",
+      "campaignIds": [
+        "campaign-dragons-of-stormwreck-isle"
+      ],
+      "fate": "dead",
+      "description": "Poległ podczas kampanii.",
+      "portraitId": "asset-0236"
+    },
+    {
+      "id": "char-0252",
+      "name": "Brog",
+      "playerId": "player-keero",
+      "campaignIds": [
+        "campaign-the-sunless-citadel"
+      ],
+      "fate": "finished",
+      "description": "Ukończył przygodę w Zatopionej Cytadeli.",
+      "portraitId": "asset-0237"
+    },
+    {
+      "id": "char-0253",
+      "name": "Ebris",
+      "playerId": "player-keero",
+      "campaignIds": [
+        "campaign-shards-of-the-past-legacy"
+      ],
+      "fate": "dead",
+      "description": "Poległ podczas kampanii.",
+      "portraitId": "asset-0238"
+    },
+    {
+      "id": "char-0254",
+      "name": "Erdar Morbor",
+      "playerId": "player-keero",
+      "campaignIds": [
+        "campaign-kampania-nieznana"
+      ],
+      "fate": "unknown",
+      "description": "Dalszy los postaci nie został określony.",
+      "portraitId": "asset-0239"
+    },
+    {
+      "id": "char-0255",
+      "name": "Joaher Redleaf",
+      "playerId": "player-keero",
+      "campaignIds": [
+        "campaign-shards-of-the-past-legacy"
+      ],
+      "fate": "dead",
+      "description": "Poległ podczas kampanii.",
+      "portraitId": "asset-0240"
+    },
+    {
+      "id": "char-0256",
+      "name": "Kaelos",
+      "playerId": "player-keero",
+      "campaignIds": [
+        "campaign-mythic-odyssey-of-the-dragonlords"
+      ],
+      "fate": "abandoned",
+      "description": "Kampania została porzucona.",
+      "portraitId": "asset-0241"
+    },
+    {
+      "id": "char-0257",
+      "name": "Neldar",
+      "playerId": "player-keero",
+      "campaignIds": [
+        "campaign-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Poległ podczas kampanii.",
+      "portraitId": "asset-0242"
+    },
+    {
+      "id": "char-0258",
+      "name": "Thive",
+      "playerId": "player-keero",
+      "campaignIds": [
+        "campaign-shards-of-the-past-legacy"
+      ],
+      "fate": "dead",
+      "description": "Poległ podczas kampanii.",
+      "portraitId": "asset-0243"
+    },
+    {
+      "id": "char-0259",
+      "name": "Valeria Shadowglen",
+      "playerId": "player-keero",
+      "campaignIds": [
+        "campaign-shards-of-the-past-legacy"
+      ],
+      "fate": "finished",
+      "description": "Postać z ukończonej kampanii.",
+      "portraitId": "asset-0244"
+    },
+    {
+      "id": "char-0260",
+      "name": "Memnith",
+      "playerId": "player-koksuvi",
+      "campaignIds": [
+        "campaign-heroes-of-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Poległ podczas kampanii.",
+      "portraitId": "asset-0245"
+    },
+    {
+      "id": "char-0261",
+      "name": "Serrell Allemard",
+      "playerId": "player-koksuvi",
+      "campaignIds": [
+        "campaign-heroes-of-drakkenheim"
+      ],
+      "fate": "dead",
+      "description": "Poległ podczas kampanii.",
+      "portraitId": "asset-0246"
+    },
+    {
+      "id": "char-0262",
+      "name": "Abraham Rootspringer",
+      "playerId": "player-kubaszczesniak",
+      "campaignIds": [
+        "campaign-shards-of-the-past-legacy"
+      ],
+      "fate": "dead",
+      "description": "Poległ podczas kampanii.",
+      "portraitId": "asset-0247"
+    },
+    {
+      "id": "char-0263",
+      "name": "Aria Alpenfee",
+      "playerId": "player-nataliamelcherowska",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "dead",
+      "description": "Poległa podczas kampanii.",
+      "portraitId": "asset-0248"
+    },
+    {
+      "id": "char-0264",
+      "name": "Destiny Grimstone",
+      "playerId": "player-martas",
+      "campaignIds": [
+        "campaign-dragon-of-dampen-depths"
+      ],
+      "fate": "finished",
+      "description": "Postać z ukończonej kampanii.",
+      "portraitId": "asset-0249"
+    },
+    {
+      "id": "char-0265",
+      "name": "Hagard",
+      "playerId": "player-andrzejc",
+      "campaignIds": [
+        "campaign-menaces-of-gloomforest-legacy"
+      ],
+      "fate": "dead",
+      "description": "Poległ podczas kampanii.",
+      "portraitId": "asset-0250"
+    },
+    {
+      "id": "char-0266",
+      "name": "Lailisa",
+      "playerId": "player-martynas",
+      "campaignIds": [
+        "campaign-dragon-of-icespire-peak"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0251"
+    },
+    {
+      "id": "char-0267",
+      "name": "Mirelinda",
+      "playerId": "player-nympheria",
+      "campaignIds": [
+        "campaign-dragon-of-icespire-peak"
+      ],
+      "fate": "dead",
+      "description": "Poległa podczas kampanii.",
+      "portraitId": "asset-0252"
+    },
+    {
+      "id": "char-0268",
+      "name": "Nasir Shatterbow",
+      "playerId": "player-xxx",
+      "campaignIds": [
+        "campaign-rise-of-tiamat"
+      ],
+      "fate": "abandoned",
+      "description": "Kampania została porzucona.",
+      "portraitId": "asset-0253"
+    },
+    {
+      "id": "char-0269",
+      "name": "Voks",
+      "playerId": "player-radekk",
+      "campaignIds": [
+        "campaign-shards-of-the-past-legacy"
+      ],
+      "fate": "dead",
+      "description": "Poległ podczas kampanii.",
+      "portraitId": "asset-0254"
+    },
+    {
+      "id": "char-0270",
+      "name": "XXX",
+      "playerId": "player-martynas",
+      "campaignIds": [
+        "campaign-dragon-of-icespire-peak"
+      ],
+      "fate": "unknown",
+      "description": "Portret dodany do archiwum; dalszy los postaci nie został określony.",
+      "portraitId": "asset-0255"
+    },
+    {
+      "id": "char-0271",
+      "name": "Yelli",
+      "playerId": "player-radekk",
+      "campaignIds": [
+        "campaign-shards-of-the-past-legacy"
+      ],
+      "fate": "dead",
+      "description": "Poległ podczas kampanii.",
+      "portraitId": "asset-0256"
+    }
+  ]
 }
