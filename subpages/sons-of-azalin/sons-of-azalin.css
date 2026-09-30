@@ -457,3 +457,44 @@
   .sons-page footer{display:block}
   .sons-page footer a{display:block;margin-top:8px}
 }
+
+
+/* Campaign audio control */
+.sons-audio-toggle{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  z-index:700;
+  width:64px;
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+  border:2px solid rgba(241,241,238,.9);
+  border-radius:50%;
+  background:rgba(18,22,24,.9);
+  color:#f5f4ef;
+  box-shadow:0 5px 20px rgba(0,0,0,.5),0 0 0 1px rgba(180,59,73,.45);
+  cursor:pointer;
+  transition:transform .15s ease,background .15s ease,box-shadow .15s ease;
+  -webkit-backdrop-filter:blur(5px);
+  backdrop-filter:blur(5px);
+}
+.sons-audio-toggle:hover{
+  transform:scale(1.06);
+  background:rgba(143,39,52,.94);
+  box-shadow:0 7px 24px rgba(0,0,0,.58),0 0 0 2px rgba(241,241,238,.25);
+}
+.sons-audio-toggle:focus-visible{outline:3px solid #f1f1ee;outline-offset:4px}
+.sons-audio-toggle .audio-icon{
+  width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:3.2;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.sons-audio-toggle .audio-icon-playing{display:none}
+.sons-audio-toggle.is-playing .audio-icon-muted{display:none}
+.sons-audio-toggle.is-playing .audio-icon-playing{display:block}
+@media(max-width:640px){
+  .sons-audio-toggle{right:16px;bottom:16px;width:58px;height:58px}
+  .sons-audio-toggle .audio-icon{width:31px;height:31px}
+}
