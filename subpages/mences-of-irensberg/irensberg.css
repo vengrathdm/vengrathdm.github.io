@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=DM+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root{
+  --void:#080b08;--ink:#101610;--panel:#151c15;--panel2:#1b241b;
+  --moss:#526746;--moss2:#7f995d;--acid:#b5c86a;
+  --bone:#ddd7c5;--muted:#999887;--brass:#b99b62;--brass2:#dfc58b;
+  --blood:#7d2c2d;--blood2:#b34a43;--line:rgba(185,155,98,.25);
+  --paper:#d7cfb8;--paper2:#b8b09b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+ radial-gradient(circle at 80% 8%,rgba(82,103,70,.28),transparent 32%),
+ radial-gradient(circle at 12% 55%,rgba(125,44,45,.12),transparent 30%),
+ #070a07;color:var(--bone);font-family:"Libre Baskerville",Georgia,serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.18;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.025) 4px),radial-gradient(circle at 20% 30%,rgba(255,255,255,.05),transparent 30%)}
+a{color:inherit}
+button{font:inherit}
+:focus-visible{outline:2px solid var(--acid);outline-offset:4px}
+.site{position:relative;z-index:1}
+.topbar{position:absolute;top:0;left:0;right:0;z-index:10;height:82px;border-bottom:1px solid rgba(185,155,98,.22);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,72px);background:linear-gradient(180deg,rgba(5,8,5,.7),transparent)}
+.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font:700 11px "DM Mono";letter-spacing:.18em}
+.brand-mark{width:34px;height:34px;border:1px solid var(--brass);display:grid;place-items:center;color:var(--brass2);font-family:Cinzel;border-radius:50%}
+.toplinks{display:flex;gap:8px}
+.toplinks a{padding:10px 13px;border:1px solid rgba(185,155,98,.3);text-decoration:none;font:500 10px "DM Mono";letter-spacing:.13em;color:#c9c3b1;transition:.2s}
+.toplinks a:hover{border-color:var(--brass2);color:var(--brass2);background:#151a14}
+
+.hero{min-height:94vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:130px clamp(20px,7vw,100px) 80px;background:
+ linear-gradient(90deg,rgba(5,8,5,.98) 0%,rgba(5,8,5,.86) 42%,rgba(5,8,5,.34) 100%),
+ linear-gradient(0deg,rgba(5,8,5,.72),transparent 48%),
+ url("../../Home/Graphics/mences-of-irensberg.jpg") center/cover no-repeat}
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:
+ linear-gradient(115deg,transparent 0 49%,rgba(185,155,98,.09) 49.1% 49.2%,transparent 49.3%),
+ linear-gradient(20deg,transparent 0 68%,rgba(181,200,106,.06) 68.1% 68.25%,transparent 68.3%)}
+.hero-grid{position:relative;z-index:2;width:min(1320px,100%);margin:auto;display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:60px;align-items:end}
+.kicker{font:500 10px "DM Mono";letter-spacing:.26em;color:var(--acid);text-transform:uppercase}
+.hero h1{font:600 clamp(68px,11vw,160px)/.78 Cinzel,serif;letter-spacing:-.04em;margin:22px 0 28px;color:#e7e0ce;text-transform:uppercase;text-shadow:0 20px 50px #000}
+.hero h1 span{display:block;color:var(--brass2);font-size:.58em;letter-spacing:.02em;margin-top:16px}
+.hero-lead{max-width:760px;font-size:19px;line-height:1.75;color:#c2bdaa;margin:0}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}
+.hero-actions a{display:inline-flex;padding:12px 16px;border:1px solid var(--brass);text-decoration:none;font:500 10px "DM Mono";letter-spacing:.14em;color:var(--brass2);transition:.2s}
+.hero-actions a:hover{background:var(--brass);color:#0b0d09}
+.dossier-seal{width:310px;height:310px;border:1px solid rgba(185,155,98,.6);border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;background:rgba(8,11,8,.5);box-shadow:0 0 0 12px rgba(185,155,98,.035),0 30px 100px #000}
+.dossier-seal:before,.dossier-seal:after{content:"";position:absolute;border:1px solid rgba(181,200,106,.22);border-radius:50%}
+.dossier-seal:before{inset:22px}.dossier-seal:after{inset:54px;border-style:dashed}
+.seal-symbol{font-size:55px;color:var(--acid);line-height:1}
+.dossier-seal strong{font:600 25px Cinzel;color:var(--bone);letter-spacing:.12em;margin-top:13px}
+.dossier-seal small{font:500 9px "DM Mono";letter-spacing:.2em;color:var(--brass);margin-top:7px}
+
+.wrap{width:min(1320px,calc(100% - 40px));margin:auto}
+.section{padding:110px 0;border-top:1px solid rgba(185,155,98,.15)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
+.section-index{font:500 10px "DM Mono";letter-spacing:.2em;color:var(--brass);margin-bottom:9px}
+.section h2{font:600 clamp(38px,5vw,68px)/.95 Cinzel;margin:0;color:var(--bone)}
+.section-intro{max-width:520px;color:#96988d;font-size:15px;line-height:1.75;margin:0}
+
+.case-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:18px}
+.case-file,.status-board{border:1px solid var(--line);background:linear-gradient(145deg,#151c15,#0e130e);position:relative}
+.case-file{padding:42px}
+.case-file:before{content:"AKTA / IRENSBERG";position:absolute;top:18px;right:20px;font:500 9px "DM Mono";letter-spacing:.18em;color:#59604f}
+.case-file h3{font:600 32px Cinzel;color:var(--brass2);margin:0 0 18px}
+.case-file p{max-width:70ch;color:#bdb8a8;font-size:15px;line-height:1.9;margin:0 0 16px}
+.case-file p:last-child{margin-bottom:0}
+.status-board{padding:10px}
+.status-row{padding:21px 18px;border-bottom:1px solid rgba(185,155,98,.15);display:flex;flex-direction:column;gap:6px}
+.status-row:last-child{border-bottom:0}
+.status-row span{font:500 9px "DM Mono";letter-spacing:.16em;color:#74786d}
+.status-row strong{font:600 16px Cinzel;color:#d7d0bc}
+.status-row .active{color:var(--acid)}
+
+.map-panel{margin-top:18px;border:1px solid var(--line);background:#090d09;padding:20px;overflow:hidden}
+.map-panel svg{width:100%;height:auto;display:block}
+.map-panel .route{fill:none;stroke:rgba(185,155,98,.35);stroke-width:1;stroke-dasharray:5 6}
+.map-panel .node{fill:var(--blood2);stroke:#d6c9a8;stroke-width:1}
+.map-panel .node.safe{fill:var(--moss2)}
+.map-panel text{fill:#cfc7b2;font:500 10px "DM Mono";letter-spacing:.08em;text-anchor:middle}
+.map-caption{text-align:center;font:500 9px "DM Mono";letter-spacing:.16em;color:#666d5d;padding-top:14px}
+
+.threat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.threat{min-height:300px;padding:26px;border:1px solid rgba(185,155,98,.2);background:linear-gradient(160deg,#171d16,#0e120e);position:relative;overflow:hidden}
+.threat:after{content:"";position:absolute;right:-50px;bottom:-50px;width:150px;height:150px;border:1px solid rgba(181,200,106,.08);border-radius:50%}
+.threat .glyph{font-size:32px;color:var(--blood2)}
+.threat small{display:block;margin-top:25px;font:500 9px "DM Mono";letter-spacing:.18em;color:var(--brass)}
+.threat h3{font:600 25px Cinzel;color:var(--bone);margin:8px 0 12px}
+.threat p{font-size:13px;line-height:1.7;color:#92968a;margin:0}
+.threat .state{position:absolute;bottom:20px;left:26px;font:500 9px "DM Mono";letter-spacing:.14em;color:var(--blood2)}
+
+.party-section{background:linear-gradient(180deg,transparent,#0b100b 50%,transparent)}
+.party-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.character{border:1px solid rgba(185,155,98,.23);background:#0e130e;overflow:hidden;position:relative;transition:transform .25s,border-color .25s,box-shadow .25s}
+.character:hover{transform:translateY(-5px);border-color:rgba(223,197,139,.6);box-shadow:0 20px 55px #000}
+.character-portrait{aspect-ratio:4/5;background:linear-gradient(145deg,#283326,#080b08);position:relative;overflow:hidden}
+.character-portrait img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85)}
+.character-portrait:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,10,7,.8))}
+.character-body{padding:20px}
+.character-label{font:500 9px "DM Mono";letter-spacing:.17em;color:var(--acid)}
+.character h3{font:600 27px Cinzel;color:var(--bone);margin:8px 0 4px}
+.character p{font:500 10px "DM Mono";letter-spacing:.12em;color:#858b7e;margin:0}
+.character-index{position:absolute;right:12px;top:12px;padding:6px 8px;background:rgba(7,10,7,.8);border:1px solid rgba(223,197,139,.35);font:500 9px "DM Mono";color:var(--brass2)}
+.roster-note{margin-top:18px;padding:18px;border-left:2px solid var(--brass);background:#111711;color:#8e9387;font-size:13px;line-height:1.7}
+
+.fallen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.fallen{border:1px solid rgba(125,44,45,.55);background:linear-gradient(145deg,#181212,#0c0b0b);padding:0;overflow:hidden;position:relative;filter:saturate(.55)}
+.fallen-portrait{aspect-ratio:4/5;background:#080707;overflow:hidden}
+.fallen-portrait img{width:100%;height:100%;object-fit:cover;filter:grayscale(.7) contrast(1.05);opacity:.72}
+.fallen-body{padding:18px 18px 22px}
+.fallen-label{font:500 9px "DM Mono";letter-spacing:.17em;color:var(--blood2)}
+.fallen h3{font:600 23px Cinzel;color:#c8c1b0;margin:8px 0 0}
+.fallen:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 65%,rgba(100,20,20,.18))}
+
+.archive{border:1px solid var(--line);background:#0d120d}
+.archive-row{display:grid;grid-template-columns:90px minmax(0,1fr) 130px;gap:20px;align-items:center;padding:22px;border-bottom:1px solid rgba(185,155,98,.14)}
+.archive-row:last-child{border-bottom:0}
+.archive-no{font:600 22px Cinzel;color:var(--brass)}
+.archive-row small{font:500 9px "DM Mono";letter-spacing:.14em;color:#6e7567}
+.archive-row h3{font:600 20px Cinzel;color:#d5cebc;margin:5px 0 0}
+.archive-row a{justify-self:end;border:1px solid rgba(185,155,98,.4);padding:10px 12px;text-decoration:none;font:500 9px "DM Mono";letter-spacing:.12em;color:var(--brass2)}
+.archive-row a:hover{background:var(--brass);color:#090b08}
+
+.endnote{margin-top:20px;border:1px solid rgba(181,200,106,.16);padding:28px;background:radial-gradient(circle at 80% 20%,rgba(181,200,106,.08),transparent 30%),#101610}
+.endnote strong{font:600 22px Cinzel;color:var(--acid)}
+.endnote p{max-width:75ch;color:#8d9385;line-height:1.8;margin:10px 0 0;font-size:14px}
+
+footer{border-top:1px solid rgba(185,155,98,.18);padding:30px clamp(20px,5vw,72px);display:flex;justify-content:space-between;gap:20px;font:500 9px "DM Mono";letter-spacing:.13em;color:#686e63}
+footer a{text-decoration:none;color:var(--brass)}
+
+@media(max-width:1000px){
+ .hero-grid{grid-template-columns:1fr}.dossier-seal{display:none}
+ .case-grid{grid-template-columns:1fr}.threat-grid,.party-grid,.fallen-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:650px){
+ .topbar{height:72px}.toplinks a:not(:last-child){display:none}
+ .hero{min-height:88vh;padding-top:110px}.hero h1{font-size:58px}.hero-lead{font-size:16px}
+ .wrap{width:min(100% - 28px,1320px)}.section{padding:75px 0}.section-head{display:block}.section-intro{margin-top:18px}
+ .case-file{padding:28px 22px}.case-file h3{font-size:27px}
+ .threat-grid,.party-grid,.fallen-grid{grid-template-columns:1fr}
+ .archive-row{grid-template-columns:55px 1fr}.archive-row a{grid-column:2;justify-self:start}
+ .hero-actions a{flex:1;justify-content:center}
+ footer{display:block}footer a{display:block;margin-top:10px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.fallen-portrait.no-portrait{display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,rgba(125,44,45,.22),transparent 42%),linear-gradient(145deg,#181313,#090808);border-bottom:1px solid rgba(125,44,45,.35)}
+.fallen-portrait.no-portrait span{font:600 72px Cinzel;color:rgba(179,74,67,.5)}
+.fallen-body p{margin:9px 0 0;font:500 10px "DM Mono";line-height:1.5;color:#676861}
+
+.recordings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.recording{display:grid;grid-template-columns:62px minmax(0,1fr) auto;align-items:center;gap:16px;min-height:76px;padding:13px 16px;border:1px solid rgba(185,155,98,.18);background:linear-gradient(120deg,#111711,#0b0f0b);text-decoration:none;transition:transform .2s,border-color .2s,background .2s}
+.recording:hover{transform:translateX(4px);border-color:rgba(223,197,139,.62);background:#151c15}
+.recording-no{font:600 18px Cinzel;color:var(--brass)}
+.recording-title{font:600 16px Cinzel;color:#d5cebc}
+.recording-open{font:500 8px "DM Mono";letter-spacing:.13em;color:var(--acid);white-space:nowrap}
+.materials-archive{margin-top:16px}
+@media(max-width:1000px){.recordings{grid-template-columns:1fr}}
+@media(max-width:650px){.recording{grid-template-columns:50px minmax(0,1fr);gap:11px;padding:12px}.recording-open{grid-column:2}.recording-title{font-size:14px}}

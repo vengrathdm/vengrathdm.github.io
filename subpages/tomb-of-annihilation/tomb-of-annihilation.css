@@ -1,0 +1,493 @@
+/* ============================================================
+   TOMB OF ANNIHILATION — CHULT ARCHIVE SKIN
+   ============================================================ */
+.tomb-page{
+  --tomb-bg:#080b09;
+  --tomb-panel:#101611;
+  --tomb-panel-2:#171e17;
+  --tomb-ink:#e8e2d3;
+  --tomb-muted:#929a91;
+  --tomb-line:#354037;
+  --tomb-gold:#c3a565;
+  --tomb-gold-dim:#806b3e;
+  --tomb-red:#8d2d34;
+  --tomb-red-bright:#bd4a54;
+  --tomb-jungle:#2f5b42;
+  background:
+    radial-gradient(circle at 15% 5%,rgba(65,104,69,.17),transparent 30%),
+    radial-gradient(circle at 82% 36%,rgba(120,71,31,.11),transparent 31%),
+    #070a08;
+  color:var(--tomb-ink);
+}
+.tomb-page::before{
+  content:"";
+  position:fixed;inset:0;pointer-events:none;z-index:40;opacity:.12;
+  background:
+    repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,255,255,.025) 4px),
+    radial-gradient(circle at 15% 80%,rgba(0,0,0,.3),transparent 38%);
+}
+.tomb-page .tomb-hero{
+  min-height:91vh;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(4,7,5,.92) 0,rgba(4,7,5,.63) 46%,rgba(4,7,5,.22)),
+    linear-gradient(180deg,rgba(0,0,0,.03) 38%,#070a08 100%),
+    url("../../Home/Graphics/tomb-of-annihilation.jpg") center/cover no-repeat;
+}
+.tomb-page .tomb-hero::after{
+  content:"";
+  position:absolute;inset:0;
+  box-shadow:inset 0 0 150px #000d;
+  pointer-events:none;
+}
+.tomb-page .tomb-nav{
+  position:absolute!important;left:0;right:0;top:20px;z-index:10;
+  background:transparent!important;border:0!important;backdrop-filter:none!important;
+}
+.tomb-page .tomb-nav .nav-inner{
+  width:min(1220px,calc(100% - 48px));
+}
+.tomb-page .tomb-nav .campaign-playlist{width:220px!important}
+.tomb-page .tomb-hero-inner{
+  position:relative;z-index:1;
+  width:min(1220px,calc(100% - 48px));margin:auto;
+  padding:125px 0 72px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 270px;
+  gap:70px;
+  align-items:end;
+}
+.tomb-page .tomb-kicker,.tomb-page .section-mark{
+  font:400 13px Voltaire,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  color:var(--tomb-gold);
+}
+.tomb-page .tomb-hero h1{
+  margin:14px 0 24px;
+  font:400 clamp(57px,8.8vw,128px)/.83 Voltaire,sans-serif;
+  letter-spacing:1px;
+  color:#f0eadd;
+  text-shadow:0 14px 45px #000;
+}
+.tomb-page .tomb-hero h1 em{font-style:normal;color:#b8b2a4}
+.tomb-page .tomb-lead{
+  max-width:820px!important;
+  margin:0!important;
+  font:400 clamp(19px,2.2vw,24px)/1.55 "Brygada 1918",Georgia,serif!important;
+  color:#d9d5cb!important;
+}
+.tomb-page .tomb-seal{
+  width:240px;height:240px;
+  border:1px solid #7c8a7d;
+  border-radius:50%;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  gap:5px;
+  transform:rotate(-7deg);
+  background:#071008d9;
+  box-shadow:0 0 0 8px #07100866,0 24px 55px #000a;
+}
+.tomb-page .tomb-seal::before{
+  content:"";position:absolute;inset:14px;border:1px solid #4a5a4d;border-radius:50%;
+}
+.tomb-page .tomb-seal span,.tomb-page .tomb-seal small{
+  font-size:10px;letter-spacing:4px;color:#a7b0a5;
+}
+.tomb-page .tomb-seal strong{
+  font:400 31px/1 Voltaire,sans-serif;
+  color:#d7c8a3;letter-spacing:2px;
+}
+.tomb-page .tomb-mist-line{
+  position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--tomb-gold),transparent);
+  opacity:.8;
+}
+.tomb-page main{
+  width:min(1220px,calc(100% - 48px));
+  margin:auto;
+  padding:72px 0 105px;
+}
+.tomb-page .tomb-card{
+  border:1px solid #343d35;
+  background:linear-gradient(145deg,#141914,#0b0f0c);
+  box-shadow:0 22px 75px #0008;
+}
+.tomb-page .tomb-card-head{
+  display:flex;align-items:center;gap:18px;
+  padding:18px 28px;
+  border-bottom:1px solid #303930;
+  background:#080c09;
+}
+.tomb-page .tomb-card-head span{font:400 31px Voltaire,sans-serif;color:var(--tomb-gold)}
+.tomb-page .tomb-card-head strong{font:700 12px Voltaire,sans-serif;letter-spacing:3px;color:#d9d4c8}
+.tomb-page .tomb-card-body{padding:30px}
+.tomb-page .overview-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.28fr) minmax(300px,.72fr);
+  gap:26px;
+}
+.tomb-page .tomb-paper{
+  padding:34px;
+  background:
+    linear-gradient(145deg,#192019,#0e130f);
+  border:1px solid #344137;
+}
+.tomb-page .tomb-paper h2,.tomb-page .tomb-section h2{
+  margin:10px 0 18px;
+  font:400 clamp(39px,4vw,58px)/.95 Voltaire,sans-serif;
+  color:#e8e2d5;
+}
+.tomb-page .tomb-paper p{
+  max-width:74ch!important;
+  margin:0 0 15px!important;
+  color:#b9c0b9!important;
+  font-size:16px!important;
+  line-height:1.7!important;
+}
+.tomb-page .tomb-stamp{
+  display:inline-block;
+  margin-top:8px;
+  padding:7px 14px;
+  border:2px solid var(--tomb-red-bright);
+  color:#c75560;
+  font:700 11px Voltaire,sans-serif;
+  letter-spacing:2px;
+  transform:rotate(-3deg);
+}
+.tomb-page .tomb-dossier{
+  padding:27px;
+  background:#0b100c;
+  border:1px solid #485148;
+  box-shadow:8px 8px 0 #030504;
+}
+.tomb-page .dossier-label{
+  color:var(--tomb-red-bright);
+  border-bottom:1px solid #4a353a;
+  padding-bottom:12px;margin-bottom:5px;
+  font:700 12px Voltaire,sans-serif;letter-spacing:3px;
+}
+.tomb-page .dossier-row{
+  display:flex;justify-content:space-between;gap:14px;
+  padding:15px 0;border-bottom:1px solid #283129;
+  font-size:13px;
+}
+.tomb-page .dossier-row span{color:#788277;letter-spacing:1px}
+.tomb-page .dossier-row strong{
+  color:#ddd7ca;text-align:right;font:400 16px Voltaire,sans-serif;
+}
+.tomb-page .dossier-row .complete{color:#c7b276}
+.tomb-page .death-curse{
+  margin-top:26px;
+  display:grid;
+  grid-template-columns:68px 1fr;
+  gap:20px;
+  padding:25px 28px;
+  border-top:1px solid var(--tomb-red);
+  border-bottom:1px solid var(--tomb-red);
+  background:
+    radial-gradient(circle at 15% 50%,rgba(133,35,44,.14),transparent 34%),
+    #111511;
+}
+.tomb-page .death-curse-symbol{
+  width:56px;height:56px;
+  border:1px solid var(--tomb-red-bright);
+  border-radius:50%;
+  display:grid;place-items:center;
+  color:var(--tomb-red-bright);
+  font:400 30px Voltaire,sans-serif;
+}
+.tomb-page .death-curse h3{
+  margin:0 0 7px!important;
+  font:400 31px/1 Voltaire,sans-serif!important;
+  color:#e3ddd1!important;
+}
+.tomb-page .death-curse p{
+  margin:0!important;
+  font-size:14px!important;
+  color:#9ea69f!important;
+}
+.tomb-page .tomb-section{margin-top:82px}
+.tomb-page .tomb-section-head{
+  display:flex;justify-content:space-between;align-items:end;gap:40px;
+  margin-bottom:25px;
+}
+.tomb-page .tomb-section-head h2{margin:8px 0 0!important}
+.tomb-page .tomb-section-head p{
+  max-width:500px!important;margin:0!important;
+  color:#858e87!important;font-size:15px!important;line-height:1.55!important;
+}
+.tomb-page .expedition-map{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  border-top:1px solid #485248;
+  border-bottom:1px solid #485248;
+  background:#0c110d;
+}
+.tomb-page .expedition-step{
+  min-width:0;
+  padding:25px 20px 28px;
+  border-right:1px solid #2d352f;
+  position:relative;
+}
+.tomb-page .expedition-step:last-child{border-right:0}
+.tomb-page .expedition-step::after{
+  content:"";
+  position:absolute;left:20px;right:20px;top:-2px;height:3px;
+  background:var(--tomb-jungle);
+  opacity:.8;
+}
+.tomb-page .expedition-step.final::after{background:var(--tomb-red-bright)}
+.tomb-page .expedition-no{
+  color:var(--tomb-gold);
+  font:400 34px Voltaire,sans-serif;
+}
+.tomb-page .expedition-step.final .expedition-no{color:var(--tomb-red-bright)}
+.tomb-page .expedition-step h3{
+  margin:9px 0 7px!important;
+  font:400 28px/1 Voltaire,sans-serif!important;
+  color:#ded9cf!important;
+}
+.tomb-page .expedition-step p{
+  margin:0!important;color:#828b84!important;
+  font-size:13px!important;line-height:1.55!important;
+}
+.tomb-page .spoiler-bar{
+  margin-top:24px;
+  padding:14px 18px;
+  background:#141817;
+  border:1px solid #414b44;
+  color:#9da49f;
+  font:700 10px Voltaire,sans-serif;
+  letter-spacing:2px;
+}
+.tomb-page .character-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.tomb-page .character-card{
+  min-width:0;
+  overflow:hidden;
+  border:1px solid #354037;
+  background:linear-gradient(145deg,#171d18,#0c110e);
+  box-shadow:0 17px 48px #0007;
+  position:relative;
+}
+.tomb-page .character-card.dead{
+  border-color:#50373b;
+  background:linear-gradient(145deg,#1b1517,#0e0f10);
+}
+.tomb-page .character-portrait{
+  height:390px;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 28%,#405347 0,transparent 38%),
+    linear-gradient(180deg,#25332a,#080d09);
+  border-bottom:1px solid #3b463d;
+}
+.tomb-page .character-card.dead .character-portrait{
+  background:
+    radial-gradient(circle at 50% 28%,#403a3a 0,transparent 38%),
+    linear-gradient(180deg,#2a2325,#090b0b);
+  filter:saturate(.72);
+}
+.tomb-page .character-portrait::before{
+  content:"";
+  position:absolute;inset:17px;
+  border:1px dashed #7a827c;
+  opacity:.26;
+  z-index:2;
+  pointer-events:none;
+}
+.tomb-page .character-portrait img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center top;
+}
+.tomb-page .character-status{
+  position:absolute;
+  top:18px;right:18px;z-index:3;
+  padding:6px 9px;
+  background:#090c0ad9;
+  border:1px solid #5a665c;
+  color:#c2c7c0;
+  font:700 10px Voltaire,sans-serif;
+  letter-spacing:2px;
+}
+.tomb-page .character-card.dead .character-status{
+  border-color:#74404a;color:#cb6570;
+}
+.tomb-page .character-info{padding:21px 22px 24px}
+.tomb-page .character-player{
+  color:var(--tomb-gold);
+  font:700 10px Voltaire,sans-serif;
+  letter-spacing:2px;
+}
+.tomb-page .character-info h3{
+  margin:7px 0 3px!important;
+  font:400 32px/1 Voltaire,sans-serif!important;
+  color:#e4dfd4!important;
+}
+.tomb-page .character-class{
+  color:#aeb6af;
+  font-size:14px;
+}
+.tomb-page .character-fate{
+  margin-top:13px!important;
+  color:#858d87!important;
+  font-size:13px!important;
+  line-height:1.55!important;
+}
+.tomb-page .character-card.dead .character-fate{color:#969093!important}
+.tomb-page .character-ribbon{
+  padding:9px 22px;
+  border-top:1px solid #303a32;
+  background:#0a0e0b;
+  color:#68716b;
+  font:700 9px Voltaire,sans-serif;
+  letter-spacing:2px;
+}
+.tomb-page .finale{
+  display:grid;
+  grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
+  gap:35px;
+  padding:39px;
+  border:1px solid #4b4440;
+  background:
+    radial-gradient(circle at 82% 20%,rgba(146,43,52,.18),transparent 31%),
+    linear-gradient(145deg,#171718,#0d1010);
+  box-shadow:0 22px 75px #0008;
+}
+.tomb-page .finale-copy h2{
+  margin:8px 0 16px;
+  font:400 clamp(40px,4vw,59px)/.92 Voltaire,sans-serif;
+  color:#eee7db;
+}
+.tomb-page .finale-copy p{
+  margin:0!important;color:#9ba19c!important;
+  font-size:15px!important;line-height:1.7!important;
+}
+.tomb-page .finale-quote{
+  padding:26px;
+  border:1px solid #41393a;
+  background:#0c0e0f;
+}
+.tomb-page .finale-quote .quote-mark{
+  color:var(--tomb-red-bright);
+  font:400 46px/0.7 Voltaire,sans-serif;
+}
+.tomb-page .finale-quote p{
+  margin:8px 0 11px!important;
+  font:italic 22px/1.45 "Brygada 1918",Georgia,serif!important;
+  color:#ddd8cf!important;
+}
+.tomb-page .finale-quote span{
+  color:#777f7b;font-size:10px;letter-spacing:2px;
+}
+.tomb-page .milestones{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:18px;
+}
+.tomb-page .milestone{
+  padding:18px;
+  border:1px solid #30383a;
+  background:#111516;
+}
+.tomb-page .milestone span{
+  display:block;
+  color:var(--tomb-gold);
+  font:400 29px Voltaire,sans-serif;
+  margin-bottom:5px;
+}
+.tomb-page .milestone strong{
+  display:block;
+  color:#d9d5ca;
+  font:700 11px Voltaire,sans-serif;
+  letter-spacing:2px;
+}
+.tomb-page .milestone p{
+  margin:7px 0 0!important;
+  color:#7f8781!important;
+  font-size:12.5px!important;
+  line-height:1.5!important;
+}
+.tomb-page .sources{
+  margin-top:80px;
+  padding:26px 30px;
+  display:flex;align-items:center;justify-content:space-between;gap:25px;
+  border:1px solid #353e37;
+  background:#0b100c;
+}
+.tomb-page .sources h3{
+  margin:6px 0 4px!important;
+  font:400 29px/1 Voltaire,sans-serif!important;
+  color:#ddd8cc!important;
+}
+.tomb-page .sources p{margin:0!important;color:#7c857e!important}
+.tomb-page .sources a{
+  flex:0 0 auto;
+  padding:13px 16px;
+  border:1px solid var(--tomb-gold);
+  color:var(--tomb-gold);
+  text-decoration:none;
+  font:700 11px Voltaire,sans-serif;
+  letter-spacing:2px;
+}
+.tomb-page .sources a:hover{background:var(--tomb-gold);color:#10120f}
+.tomb-page footer{
+  display:flex;justify-content:space-between;gap:20px;
+  padding:24px 30px;border-top:1px solid #2d352f;
+  background:#060907;color:#656e68;
+}
+.tomb-page footer a{color:#aa9b75;text-decoration:none}
+.tomb-audio-toggle{
+  position:fixed;right:24px;bottom:24px;z-index:700;
+  width:64px;height:64px;
+  display:flex;align-items:center;justify-content:center;
+  padding:0;border:2px solid rgba(232,226,211,.9);
+  border-radius:50%;background:rgba(19,28,21,.9);
+  color:#f4f0e7;box-shadow:0 5px 20px rgba(0,0,0,.5),0 0 0 1px rgba(141,45,52,.45);
+  cursor:pointer;transition:transform .15s ease,background .15s ease,box-shadow .15s ease;
+  backdrop-filter:blur(5px);
+}
+.tomb-audio-toggle:hover{transform:scale(1.06);background:rgba(141,45,52,.94);box-shadow:0 7px 24px rgba(0,0,0,.58),0 0 0 2px rgba(240,235,223,.25)}
+.tomb-audio-toggle:focus-visible{outline:3px solid #efe9dc;outline-offset:4px}
+.tomb-audio-toggle .audio-icon{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.tomb-audio-toggle .audio-icon-playing{display:none}
+.tomb-audio-toggle.is-playing .audio-icon-muted{display:none}
+.tomb-audio-toggle.is-playing .audio-icon-playing{display:block}
+@media(max-width:1000px){
+  .tomb-page .tomb-hero-inner{grid-template-columns:1fr}
+  .tomb-page .tomb-seal{display:none}
+  .tomb-page .overview-grid,.tomb-page .finale{grid-template-columns:1fr}
+  .tomb-page .character-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tomb-page .expedition-map{grid-template-columns:1fr 1fr}
+  .tomb-page .expedition-step:nth-child(odd){border-right:1px solid #2d352f}
+  .tomb-page .expedition-step:nth-child(even){border-right:0}
+}
+@media(max-width:700px){
+  .tomb-page .tomb-nav .nav-inner{width:calc(100% - 28px)}
+  .tomb-page .tomb-nav .campaign-playlist{width:180px!important}
+  .tomb-page .tomb-hero-inner,.tomb-page main{width:calc(100% - 28px)}
+  .tomb-page .tomb-hero{min-height:91vh}
+  .tomb-page .tomb-hero h1{font-size:57px}
+  .tomb-page .tomb-card-body{padding:18px}
+  .tomb-page .tomb-paper,.tomb-page .tomb-dossier,.tomb-page .finale{padding:23px}
+  .tomb-page .character-grid,.tomb-page .expedition-map,.tomb-page .milestones{grid-template-columns:1fr}
+  .tomb-page .expedition-step{border-right:0!important;border-bottom:1px solid #2d352f}
+  .tomb-page .expedition-step:last-child{border-bottom:0}
+  .tomb-page .death-curse{grid-template-columns:1fr;padding:22px}
+  .tomb-page .sources{display:block}
+  .tomb-page .sources a{display:inline-block;margin-top:18px}
+  .tomb-page footer{display:block}
+  .tomb-page footer a{display:block;margin-top:8px}
+  .tomb-audio-toggle{right:16px;bottom:16px;width:58px;height:58px}
+  .tomb-audio-toggle .audio-icon{width:31px;height:31px}
+}

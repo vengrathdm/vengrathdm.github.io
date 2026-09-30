@@ -1,0 +1,4 @@
+Barber of Silverymoon
+Zamknięta Kampania
+../Graphics/barber-of-silverymoon.jpg
+../../subpages/barber-of-silverymoon/

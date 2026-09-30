@@ -1,0 +1,3684 @@
+[
+  {
+    "portrait": "/res/portraits/char-0001.png",
+    "character": "Pelagietta",
+    "player": "Miauriusz",
+    "campaigns": [
+      "Legends of Barovia"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0002.png",
+    "character": "Luekher",
+    "player": "Aureli",
+    "campaigns": [
+      "Legends of Barovia"
+    ],
+    "classes": [
+      "Paladin"
+    ],
+    "race": "Elf",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0003.png",
+    "character": "Damira",
+    "player": "Kajetan",
+    "campaigns": [
+      "Legends of Barovia"
+    ],
+    "classes": [
+      "Bard"
+    ],
+    "race": "Changeling",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0004.png",
+    "character": "Pchełka",
+    "player": "Zuza",
+    "campaigns": [
+      "Legends of Barovia"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0005.png",
+    "character": "Eliasz",
+    "player": "Miauriusz",
+    "campaigns": [
+      "Legends of Barovia"
+    ],
+    "classes": [
+      "Sorcerer",
+      "Cleric"
+    ],
+    "race": "Aasimar",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0006.webp",
+    "character": "Zwada",
+    "player": "wpoluwiatr",
+    "campaigns": [
+      "Menaces of Irensberg"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Tiefling",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0007.webp",
+    "character": "Kirion",
+    "player": "Szymon",
+    "campaigns": [
+      "Menaces of Irensberg"
+    ],
+    "classes": [
+      "Paladin"
+    ],
+    "race": "Human",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0008.webp",
+    "character": "Andirion",
+    "player": "Dawid",
+    "campaigns": [
+      "Menaces of Irensberg"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0009.jpg",
+    "character": "Erro",
+    "player": "Marcin",
+    "campaigns": [
+      "Menaces of Irensberg"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Dragonborn",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0010.jpg",
+    "character": "Etaire",
+    "player": "Anemo",
+    "campaigns": [
+      "Menaces of Irensberg"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0011.jpg",
+    "character": "Flavia",
+    "player": "wpoluwiatr",
+    "campaigns": [
+      "Menaces of Irensberg"
+    ],
+    "classes": [
+      "Druid"
+    ],
+    "race": "Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0012.webp",
+    "character": "Oxie",
+    "player": "Dawid",
+    "campaigns": [
+      "Menaces of Irensberg"
+    ],
+    "classes": [
+      "Ranger",
+      "Rogue"
+    ],
+    "race": "Dragonborn",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0013.webp",
+    "character": "Keto",
+    "player": "Anemo",
+    "campaigns": [
+      "Menaces of Irensberg"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Yokai",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0014.webp",
+    "character": "Thorgir",
+    "player": "Szymon",
+    "campaigns": [
+      "Menaces of Irensberg"
+    ],
+    "classes": [
+      "Paladin"
+    ],
+    "race": "Dwarf",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0015.png",
+    "character": "Belle de Beaumont",
+    "player": "wpoluwiatr",
+    "campaigns": [
+      "Blood Red Snow White"
+    ],
+    "classes": [
+      "Bloodhunter"
+    ],
+    "race": "Human",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0016.png",
+    "character": "Vespera Hexbound",
+    "player": "Mat",
+    "campaigns": [
+      "Blood Red Snow White"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Human",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0017.png",
+    "character": "Seryth T'sarran",
+    "player": "Sandra",
+    "campaigns": [
+      "Blood Red Snow White"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Drow",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0018.png",
+    "character": "Araina Windmere",
+    "player": "Maria",
+    "campaigns": [
+      "Blood Red Snow White"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Human",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0019.png",
+    "character": "Vaelor",
+    "player": "Rezus",
+    "campaigns": [
+      "Sands of Doom"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Half-Elf",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0020.png",
+    "character": "Bromli",
+    "player": "koksuvi",
+    "campaigns": [
+      "Sands of Doom"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Dwarf",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0021.png",
+    "character": "Gromar",
+    "player": "lexonis",
+    "campaigns": [
+      "Sands of Doom"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Half-Orc",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0022.png",
+    "character": "Samira",
+    "player": "Jeesoo",
+    "campaigns": [
+      "Sands of Doom"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Human",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0023.webp",
+    "character": "Busto",
+    "player": "lexonis",
+    "campaigns": [
+      "Sands of Doom"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Half-Orc",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0024.png",
+    "character": "Nefira",
+    "player": "Jeesoo",
+    "campaigns": [
+      "Sands of Doom"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Yuan-Ti",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0025.jpg",
+    "character": "Miriadae",
+    "player": "wpoluwiatr",
+    "campaigns": [
+      "Shards of the Past"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0026.png",
+    "character": "Zog",
+    "player": "Koar",
+    "campaigns": [
+      "Shards of the Past"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Half-Orc",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0027.jpg",
+    "character": "Styx",
+    "player": "Ezu",
+    "campaigns": [
+      "Shards of the Past"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Tiefling",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0028.png",
+    "character": "Kukdu",
+    "player": "Michał Wodziczko",
+    "campaigns": [
+      "Shards of the Past"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Kenku",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0029.png",
+    "character": "Oorim",
+    "player": "koksuvi",
+    "campaigns": [
+      "Turn of Fortune's Wheel"
+    ],
+    "classes": [
+      "Monk"
+    ],
+    "race": "Plasmoid",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0030.png",
+    "character": "Kelan",
+    "player": "lexonis",
+    "campaigns": [
+      "Turn of Fortune's Wheel"
+    ],
+    "classes": [
+      "Druid"
+    ],
+    "race": "Tiefling",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0031.png",
+    "character": "Roderick",
+    "player": "Rezus",
+    "campaigns": [
+      "Turn of Fortune's Wheel"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0032.png",
+    "character": "Adria",
+    "player": "vissara",
+    "campaigns": [
+      "Turn of Fortune's Wheel"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Drow",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0033.png",
+    "character": "Varok Nightshade",
+    "player": "Viking",
+    "campaigns": [
+      "Turn of Fortune's Wheel"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Shaddar-Kai",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0034.webp",
+    "character": "Elric",
+    "player": "Rezus",
+    "campaigns": [
+      "Barber of Silverymoon"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0035.png",
+    "character": "Cindic",
+    "player": "Goku94",
+    "campaigns": [
+      "Barber of Silverymoon"
+    ],
+    "classes": [
+      "Bard"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0036.png",
+    "character": "Dain Gorumn",
+    "player": "Goku94",
+    "campaigns": [
+      "Barber of Silverymoon",
+      "Lost Mine of Phandelver"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Dwarf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0090.png",
+    "character": "Nailef",
+    "player": "Musthard",
+    "campaigns": [
+      "Barber of Silverymoon"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0038.png",
+    "character": "Asta Caemor",
+    "player": "Agata",
+    "campaigns": [
+      "Curse of Strahd"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Human",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0039.webp",
+    "character": "Rais",
+    "player": "Krystian",
+    "campaigns": [
+      "Curse of Strahd"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Human",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0040.webp",
+    "character": "Rune",
+    "player": "Łukasz",
+    "campaigns": [
+      "Curse of Strahd"
+    ],
+    "classes": [
+      "Druid"
+    ],
+    "race": "Human",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0041.jpg",
+    "character": "Urien",
+    "player": "Raevell",
+    "campaigns": [
+      "Curse of Strahd"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0042.webp",
+    "character": "Val'Athelvrak",
+    "player": "Raevell",
+    "campaigns": [
+      "Drakkenheim"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Dragonborn",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0090.png",
+    "character": "Arik",
+    "player": "Amadeusz",
+    "campaigns": [
+      "Drakkenheim"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Shaddar-Kai",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0044.png",
+    "character": "Alem",
+    "player": "keero",
+    "campaigns": [
+      "Drakkenheim"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Aasimar",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0045.webp",
+    "character": "Thomos",
+    "player": "Aureli",
+    "campaigns": [
+      "Dungeons of Drakkenheim"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Tiefling",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0046.webp",
+    "character": "Zemir",
+    "player": "Kajetan",
+    "campaigns": [
+      "Dungeons of Drakkenheim"
+    ],
+    "classes": [
+      "Apothecary"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0047.webp",
+    "character": "Nicu",
+    "player": "Miauriusz",
+    "campaigns": [
+      "Dungeons of Drakkenheim"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Kenku",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0048.webp",
+    "character": "Corben",
+    "player": "panterq",
+    "campaigns": [
+      "Dungeons of Drakkenheim"
+    ],
+    "classes": [
+      "Artificer"
+    ],
+    "race": "Gnome",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0049.webp",
+    "character": "Kamyk",
+    "player": "panterq",
+    "campaigns": [
+      "Dungeons of Drakkenheim"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Half-Orc",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0050.webp",
+    "character": "Caden Argall",
+    "player": "Viking",
+    "campaigns": [
+      "Echtra midst the Sidhe"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0051.jpg",
+    "character": "Drogon Na'ar",
+    "player": "Rivani",
+    "campaigns": [
+      "Echtra midst the Sidhe"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Dragonborn",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0052.webp",
+    "character": "Sigrun",
+    "player": "Maria",
+    "campaigns": [
+      "Echtra midst the Sidhe"
+    ],
+    "classes": [
+      "Druid"
+    ],
+    "race": "Elf",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0053.jpg",
+    "character": "Grunmor",
+    "player": "Daniel",
+    "campaigns": [
+      "Echtra midst the Sidhe"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Dwarf",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0054.webp",
+    "character": "Feichin",
+    "player": "Mat",
+    "campaigns": [
+      "Echtra midst the Sidhe"
+    ],
+    "classes": [
+      "Paladin"
+    ],
+    "race": "Bogborn",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0055.jpg",
+    "character": "Maeve",
+    "player": "wpoluwiatr",
+    "campaigns": [
+      "Echtra midst the Sidhe"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Hexblood",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0056.png",
+    "character": "Lyanna Steelheart",
+    "player": "Natalia",
+    "campaigns": [
+      "Ghoul Hour"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Half-Orc",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0057.webp",
+    "character": "Briala",
+    "player": "Maria",
+    "campaigns": [
+      "Ghoul Hour"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Halfling",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0058.png",
+    "character": "Migotka",
+    "player": "Martyna",
+    "campaigns": [
+      "Ghoul Hour"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Tiefling",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0059.webp",
+    "character": "Yen Airon",
+    "player": "Kuba",
+    "campaigns": [
+      "Ghoul Hour"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0060.webp",
+    "character": "Vornis",
+    "player": "Viking",
+    "campaigns": [
+      "Ghoul Hour"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0061.png",
+    "character": "Audrey Fulton",
+    "player": "Sandra",
+    "campaigns": [
+      "Hand of Glory"
+    ],
+    "classes": [
+      "Antykwariusz"
+    ],
+    "race": "Brytyjczyk",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0062.png",
+    "character": "Dan Whelan",
+    "player": "Mat",
+    "campaigns": [
+      "Hand of Glory"
+    ],
+    "classes": [
+      "Profesor"
+    ],
+    "race": "Brytyjczyk",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0063.png",
+    "character": "Patty Graham",
+    "player": "Maria",
+    "campaigns": [
+      "Hand of Glory"
+    ],
+    "classes": [
+      "Księgarz"
+    ],
+    "race": "Brytyjczyk",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0064.jpg",
+    "character": "Lugash",
+    "player": "Aleksander",
+    "campaigns": [
+      "Ku chwale Tyra!"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Half-Orc",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0065.jpg",
+    "character": "Eltris",
+    "player": "Ewa",
+    "campaigns": [
+      "Ku chwale Tyra!"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0066.webp",
+    "character": "Olgi",
+    "player": "Viking",
+    "campaigns": [
+      "Lost Mine of Phandelver"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0067.webp",
+    "character": "Barbiel",
+    "player": "Diana",
+    "campaigns": [
+      "Menaces of Gloomforest"
+    ],
+    "classes": [
+      "Paladin"
+    ],
+    "race": "Aasimar",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0068.jpg",
+    "character": "Elran",
+    "player": "Daniel",
+    "campaigns": [
+      "Menaces of Gloomforest"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0069.png",
+    "character": "Vivienne",
+    "player": "Maria",
+    "campaigns": [
+      "Menaces of Gloomforest"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Half-Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0070.png",
+    "character": "Nyxallia",
+    "player": "Martyna",
+    "campaigns": [
+      "Mythic Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Nymph",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0071.webp",
+    "character": "Diana",
+    "player": "Diana",
+    "campaigns": [
+      "Mythic Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0072.webp",
+    "character": "Axel",
+    "player": "Mariusz",
+    "campaigns": [
+      "Mythic Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Bard"
+    ],
+    "race": "Satyr",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0073.png",
+    "character": "Quill",
+    "player": "Shaggy",
+    "campaigns": [
+      "Mythic Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Changeling",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0090.png",
+    "character": "Elorin",
+    "player": "panterq",
+    "campaigns": [
+      "Neverwinter: Intrygi Północnego Wybrzeża Mieczy"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0075.png",
+    "character": "Satrius Nevermore",
+    "player": "Przemysław Król",
+    "campaigns": [
+      "Neverwinter: Intrygi Północnego Wybrzeża Mieczy"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Halfling",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0076.jpg",
+    "character": "Adeline",
+    "player": "pompon",
+    "campaigns": [
+      "Neverwinter: Intrygi Północnego Wybrzeża Mieczy"
+    ],
+    "classes": [
+      "Bard"
+    ],
+    "race": "Human",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0077.webp",
+    "character": "Ozros",
+    "player": "keero",
+    "campaigns": [
+      "Neverwinter: Intrygi Północnego Wybrzeża Mieczy"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Tiefling",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0078.jpg",
+    "character": "Mullder",
+    "player": "Alek",
+    "campaigns": [
+      "Neverwinter: Intrygi Północnego Wybrzeża Mieczy"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Human",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0079.png",
+    "character": "Rina",
+    "player": "wpoluwiatr",
+    "campaigns": [
+      "Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Sorcerer",
+      "Warlock"
+    ],
+    "race": "Siren",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0080.png",
+    "character": "Theron",
+    "player": "shrimphead",
+    "campaigns": [
+      "Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Paladin"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0081.png",
+    "character": "Xavier",
+    "player": "archangelss",
+    "campaigns": [
+      "Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Siren",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0082.png",
+    "character": "Xastar",
+    "player": "lecpowode",
+    "campaigns": [
+      "Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Minotaur",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0083.webp",
+    "character": "Vespera",
+    "player": "Maria",
+    "campaigns": [
+      "Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Paladin"
+    ],
+    "race": "Nymph",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0084.png",
+    "character": "Zander",
+    "player": "Koar",
+    "campaigns": [
+      "Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Bard"
+    ],
+    "race": "Half-Orc",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0085.png",
+    "character": "Ryuji",
+    "player": "Route",
+    "campaigns": [
+      "Rise of Tiamat"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0086.png",
+    "character": "Bronn",
+    "player": "Viking",
+    "campaigns": [
+      "Rise of Tiamat"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Dwarf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0090.png",
+    "character": "Lorenzo Dal",
+    "player": "Domono",
+    "campaigns": [
+      "Samotnie Przeciw Jedności"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0090.png",
+    "character": "Mattia",
+    "player": "Kurde Bele",
+    "campaigns": [
+      "Samotnie Przeciw Jedności"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0090.png",
+    "character": "Samuel Wokulski",
+    "player": "StaryBorsuk",
+    "campaigns": [
+      "Samotnie Przeciw Jedności"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0090.png",
+    "character": "Vincent Campbell",
+    "player": "Vexu",
+    "campaigns": [
+      "Samotnie Przeciw Jedności"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0091.png",
+    "character": "Saki",
+    "player": "neiiska",
+    "campaigns": [
+      "Shadow of the Sword Coast"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Tiefling",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0092.jpg",
+    "character": "Amarika",
+    "player": "leftpinky",
+    "campaigns": [
+      "Shadow of the Sword Coast"
+    ],
+    "classes": [
+      "Ranger",
+      "Wizard"
+    ],
+    "race": "Half-Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0093.png",
+    "character": "Flare",
+    "player": "Maria",
+    "campaigns": [
+      "Shadow of the Sword Coast"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Tiefling",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0094.jpg",
+    "character": "Cor’avel Asteria Solthar [Cassy]",
+    "player": "Rivani",
+    "campaigns": [
+      "Shadow of the Sword Coast",
+      "Drakkenheim"
+    ],
+    "classes": [
+      "Paladin",
+      "Sorcerer"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0095.png",
+    "character": "Sel'avel Annora Solthar (Saskia)",
+    "player": "Natalia P",
+    "campaigns": [
+      "Shadow of the Sword Coast"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0096.webp",
+    "character": "Emrys",
+    "player": "Viking",
+    "campaigns": [
+      "Sons of Azalin"
+    ],
+    "classes": [
+      "Druid"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0097.webp",
+    "character": "Fauve",
+    "player": "wpoluwiatr",
+    "campaigns": [
+      "Sons of Azalin"
+    ],
+    "classes": [
+      "Paladin"
+    ],
+    "race": "Drow",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0098.png",
+    "character": "Vivienne",
+    "player": "Natalia",
+    "campaigns": [
+      "Sons of Azalin"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0099.png",
+    "character": "Kiara",
+    "player": "Maria",
+    "campaigns": [
+      "Sons of Azalin"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Human",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0100.webp",
+    "character": "Zenthyra",
+    "player": "Diana",
+    "campaigns": [
+      "Sons of Azalin"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Dragonborn",
+    "status": "abandoned",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0101.webp",
+    "character": "Sappho",
+    "player": "Monika",
+    "campaigns": [
+      "Sons of Azalin"
+    ],
+    "classes": [
+      "Bard"
+    ],
+    "race": "Half-Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0102.png",
+    "character": "Mobius",
+    "player": "Mobius",
+    "campaigns": [
+      "The Sunless Citadel"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Yuan-Ti",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0103.webp",
+    "character": "Bambik",
+    "player": "killyox",
+    "campaigns": [
+      "The Sunless Citadel"
+    ],
+    "classes": [
+      "Artificer"
+    ],
+    "race": "Gnome",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0104.png",
+    "character": "Magnus",
+    "player": "Viking",
+    "campaigns": [
+      "The Sunless Citadel"
+    ],
+    "classes": [
+      "Bloodhunter"
+    ],
+    "race": "Custom",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0105.jpg",
+    "character": "Zani",
+    "player": "Princess Molesta",
+    "campaigns": [
+      "The Sunless Citadel"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Tiefling",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0106.webp",
+    "character": "Halfyr",
+    "player": "Rezus",
+    "campaigns": [
+      "Rime of the Frostmaiden"
+    ],
+    "classes": [
+      "Paladin",
+      "Warlock"
+    ],
+    "race": "Half-Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0107.jpg",
+    "character": "Aerion",
+    "player": "Jakub Perkowski",
+    "campaigns": [
+      "Heroes of Baldur's Gate"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0108.webp",
+    "character": "Saev",
+    "player": "Amadeusz",
+    "campaigns": [
+      "Heroes of Baldur's Gate"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0109.webp",
+    "character": "Vera",
+    "player": "Samanta",
+    "campaigns": [
+      "Heroes of Baldur's Gate"
+    ],
+    "classes": [
+      "Druid"
+    ],
+    "race": "Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0110.webp",
+    "character": "Kyle Dewgras",
+    "player": "Łukasz Bywalec",
+    "campaigns": [
+      "Heroes of Baldur's Gate"
+    ],
+    "classes": [
+      "Bard"
+    ],
+    "race": "Half-Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0111.webp",
+    "character": "Kylie Dewgras",
+    "player": "Wiktoria Bywalec",
+    "campaigns": [
+      "Heroes of Baldur's Gate"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Half-Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0112.webp",
+    "character": "Balris",
+    "player": "Rezus",
+    "campaigns": [
+      "Tomb of Annihilation"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0113.webp",
+    "character": "Estelar",
+    "player": "koksuvi",
+    "campaigns": [
+      "Tomb of Annihilation"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0114.webp",
+    "character": "Blaine",
+    "player": "lexonis",
+    "campaigns": [
+      "Tomb of Annihilation"
+    ],
+    "classes": [
+      "Paladin",
+      "Warlock"
+    ],
+    "race": "Tortle",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0115.webp",
+    "character": "Shuko",
+    "player": "panterq",
+    "campaigns": [
+      "Turn Back the Endless Night"
+    ],
+    "classes": [
+      "Artificer"
+    ],
+    "race": "Gnome",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0116.webp",
+    "character": "Elyannor",
+    "player": "Mat",
+    "campaigns": [
+      "Turn Back the Endless Night"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0117.webp",
+    "character": "Hiala Evergreen",
+    "player": "Diana",
+    "campaigns": [
+      "Turn Back the Endless Night"
+    ],
+    "classes": [
+      "Druid"
+    ],
+    "race": "Halfling",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0118.webp",
+    "character": "Petril",
+    "player": "koksuvi",
+    "campaigns": [
+      "Turn Back the Endless Night"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0119.webp",
+    "character": "Gondam Thunderbrew",
+    "player": "Viking",
+    "campaigns": [
+      "Turn Back the Endless Night"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Dwarf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0120.png",
+    "character": "Polter von Geist",
+    "player": "Zuza",
+    "campaigns": [
+      "Książęta Heartwell"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0121.png",
+    "character": "Postać nieuzupełniona — wpoluwiatr",
+    "player": "wpoluwiatr",
+    "campaigns": [
+      "Książęta Heartwell"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0122.png",
+    "character": "Postać nieuzupełniona — Daniel",
+    "player": "Daniel",
+    "campaigns": [
+      "Książęta Heartwell"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0123.png",
+    "character": "Postać nieuzupełniona — ???",
+    "player": "Nie podano",
+    "campaigns": [
+      "Książęta Heartwell"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "alive",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0124.webp",
+    "character": "Aetherleaf",
+    "player": "koksuvi",
+    "campaigns": [
+      "The Unlikely Five"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Half-Elf",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0125.webp",
+    "character": "Balin",
+    "player": "lexonis",
+    "campaigns": [
+      "Dragon of Icespire Peak"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Dwarf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0126.webp",
+    "character": "Cal",
+    "player": "lexonis",
+    "campaigns": [
+      "The Unlikely Five"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Half-Elf",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0127.webp",
+    "character": "Cerys",
+    "player": "Maria",
+    "campaigns": [
+      "Echtra - Zima Irgaeli"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Half-Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0128.webp",
+    "character": "Cloud Fang",
+    "player": "koksuvi",
+    "campaigns": [
+      "Tomb of Annihilation"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Tabaxi",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0129.webp",
+    "character": "Eldamir Velithar",
+    "player": "Rezus",
+    "campaigns": [
+      "Kampania Nieznana"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Elf",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0130.webp",
+    "character": "Galvan Bestia Waveseater",
+    "player": "Rezus",
+    "campaigns": [
+      "The Unlikely Five"
+    ],
+    "classes": [
+      "Barbarian",
+      "Druid"
+    ],
+    "race": "Half-Elf",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0131.webp",
+    "character": "Kildrak",
+    "player": "koksuvi",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Dwarf",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0132.webp",
+    "character": "Korrak Orphanmaker",
+    "player": "lexonis",
+    "campaigns": [
+      "Dragon of Icespire Peak"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Goliath",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0133.webp",
+    "character": "Leoynor",
+    "player": "Rezus",
+    "campaigns": [
+      "Lost Mine of Phandelver"
+    ],
+    "classes": [
+      "Paladin"
+    ],
+    "race": "Human",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0134.webp",
+    "character": "Maragul",
+    "player": "Rezus",
+    "campaigns": [
+      "Heroes of Drakkenheim"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Half-Orc",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0135.png",
+    "character": "Naetoris",
+    "player": "koksuvi",
+    "campaigns": [
+      "The Unlikely Five"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0136.webp",
+    "character": "Valdos",
+    "player": "lexonis",
+    "campaigns": [
+      "Tomb of Annihilation"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Tiefling",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0137.webp",
+    "character": "Vurlarn",
+    "player": "Rezus",
+    "campaigns": [
+      "Tomb of Annihilation"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Dwarf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0138.webp",
+    "character": "Xalrae",
+    "player": "Jeesoo",
+    "campaigns": [
+      "Rime of the Frostmaiden"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Drow",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0139.webp",
+    "character": "Aldori",
+    "player": "killyox",
+    "campaigns": [
+      "Heroes of Drakkenheim"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0140.webp",
+    "character": "Aravelthir Orleneldth",
+    "player": "Raevell",
+    "campaigns": [
+      "Shards of the Past"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0141.webp",
+    "character": "Ari",
+    "player": "chinczyk",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Half-Orc",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0142.webp",
+    "character": "Arson",
+    "player": "DharmaEye",
+    "campaigns": [
+      "Lost Mine of Phandelver",
+      "Rise of Tiamat"
+    ],
+    "classes": [
+      "Druid"
+    ],
+    "race": "Genasi",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0143.webp",
+    "character": "Błysk",
+    "player": "Ezu",
+    "campaigns": [
+      "Shards of the Past"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0144.webp",
+    "character": "Chronius Mk. III",
+    "player": "Route",
+    "campaigns": [
+      "Lost Mine of Phandelver"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0145.webp",
+    "character": "Damrien",
+    "player": "Wiktoria Red",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0146.webp",
+    "character": "Faeyra",
+    "player": "Goku94",
+    "campaigns": [
+      "Heroes of Drakkenheim"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0147.webp",
+    "character": "Galen Teller",
+    "player": "dartax4",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0148.webp",
+    "character": "Kairos",
+    "player": "killyox",
+    "campaigns": [
+      "Heroes of Drakkenheim"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0149.webp",
+    "character": "Kay",
+    "player": "Wiktoria Red",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0150.webp",
+    "character": "Korghos Khul",
+    "player": "killyox",
+    "campaigns": [
+      "Heroes of Drakkenheim"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0151.png",
+    "character": "Korre",
+    "player": "Wiktoria Red",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0152.webp",
+    "character": "Livianna",
+    "player": "Jasmine",
+    "campaigns": [
+      "Ku chwale Tyra!"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0153.webp",
+    "character": "Michał",
+    "player": "Nie podano",
+    "campaigns": [
+      "Neverwinter: Intrygi Północnego Wybrzeża Mieczy"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0154.png",
+    "character": "Petra",
+    "player": "Wiktoria Red",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0155.webp",
+    "character": "Shaitis",
+    "player": "Ryokis",
+    "campaigns": [
+      "Ku chwale Tyra!"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0156.webp",
+    "character": "Soleilien",
+    "player": "Ezu",
+    "campaigns": [
+      "Shards of the Past"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0157.webp",
+    "character": "Torlek",
+    "player": "dartax4",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0158.webp",
+    "character": "Henry",
+    "player": "McKimono",
+    "campaigns": [
+      "Heroes of Drakkenheim"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0159.jpg",
+    "character": "x",
+    "player": "Przemek",
+    "campaigns": [
+      "Heroes of Drakkenheim"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0160.webp",
+    "character": "Alyss",
+    "player": "DKJowler",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0161.webp",
+    "character": "Aylin",
+    "player": "Rawiea",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0162.png",
+    "character": "Carric Tallstag",
+    "player": "Boulton",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0163.webp",
+    "character": "Damien",
+    "player": "Aruś",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0164.webp",
+    "character": "Fin",
+    "player": "Sajko",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0165.webp",
+    "character": "Kaela Mensha Khaine",
+    "player": "Kot",
+    "campaigns": [
+      "W Pogoni za PiórOwcą"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0166.webp",
+    "character": "Kasius",
+    "player": "Aruś",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0167.png",
+    "character": "Blareinn",
+    "player": "Raevell",
+    "campaigns": [
+      "Mayhem in Earthspur Mines"
+    ],
+    "classes": [
+      "Druid"
+    ],
+    "race": "Genasi",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0168.png",
+    "character": "Corsio",
+    "player": "Raevell",
+    "campaigns": [
+      "Forge of Fury",
+      "Barber of Silverymoon"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0169.png",
+    "character": "Dawa",
+    "player": "Raevell",
+    "campaigns": [
+      "The Sunless Citadel"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Goliath",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0170.png",
+    "character": "Naeren Starshade",
+    "player": "Raevell",
+    "campaigns": [
+      "Drakkenheim"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0171.jpg",
+    "character": "Aribeth Cassandra Olyrnn-Whitespire",
+    "player": "wpoluwiatr",
+    "campaigns": [
+      "Shards of the Past"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Half-Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0172.jpg",
+    "character": "Faylen",
+    "player": "wpoluwiatr",
+    "campaigns": [
+      "Dragon of Icespire Peak"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0173.jpg",
+    "character": "Lyanna Redglaive",
+    "player": "wpoluwiatr",
+    "campaigns": [
+      "Dragon of Icespire Peak"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Human",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0174.jpg",
+    "character": "Zwada",
+    "player": "wpoluwiatr",
+    "campaigns": [
+      "Shards of the Past"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Tiefling",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0175.webp",
+    "character": "Aelar",
+    "player": "koksuvi",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Elf",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0176.webp",
+    "character": "Ajadres",
+    "player": "neiiska",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Lizardman",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0177.webp",
+    "character": "Alan'Dir",
+    "player": "chinczyk",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0178.webp",
+    "character": "Daer",
+    "player": "Amadeusz",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Tiefling",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0179.jpg",
+    "character": "Deldrach",
+    "player": "Rezus",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0180.webp",
+    "character": "Felian",
+    "player": "Hansik",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Human",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0181.jpg",
+    "character": "Kia",
+    "player": "Zuza Cuban",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Drow",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0182.png",
+    "character": "Maro",
+    "player": "Amadeusz",
+    "campaigns": [
+      "Kampania Nieznana"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Human",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0183.webp",
+    "character": "Meldar",
+    "player": "keero",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Dwarf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0184.webp",
+    "character": "Narn",
+    "player": "Amadeusz",
+    "campaigns": [
+      "Kampania Nieznana"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Drow",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0185.webp",
+    "character": "Yoor Benz",
+    "player": "Amadeusz",
+    "campaigns": [
+      "Mythic Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0186.webp",
+    "character": "Anduine",
+    "player": "vissara",
+    "campaigns": [
+      "Heroes of Drakkenheim"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0187.webp",
+    "character": "AuriEl",
+    "player": "Rivani",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Tiefling",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0188.webp",
+    "character": "Eris",
+    "player": "vissara",
+    "campaigns": [
+      "Heroes of Drakkenheim"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Harengon",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0189.webp",
+    "character": "Itzianna Nendrescel Rosewhisper",
+    "player": "neiiska",
+    "campaigns": [
+      "Drakkenheim"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Half-Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0190.webp",
+    "character": "Lourelin",
+    "player": "vissara",
+    "campaigns": [
+      "Tomb of Annihilation"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Drow",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0191.webp",
+    "character": "Puff",
+    "player": "Jakubek",
+    "campaigns": [
+      "Dragon of Icespire Peak"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0192.webp",
+    "character": "Sentinel",
+    "player": "Jakubek",
+    "campaigns": [
+      "Rime of the Frostmaiden"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Human",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0193.webp",
+    "character": "Theia",
+    "player": "Rivani",
+    "campaigns": [
+      "Forge of Fury"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0194.jpg",
+    "character": "Torg'dal",
+    "player": "Viking",
+    "campaigns": [
+      "Heroes of Drakkenheim"
+    ],
+    "classes": [
+      "Bloodhunter"
+    ],
+    "race": "Hobgoblin",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0195.png",
+    "character": "Aevianna",
+    "player": "Martyna",
+    "campaigns": [
+      "Bad Romance Barovia"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Half-Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0196.webp",
+    "character": "Agash",
+    "player": "Hansik",
+    "campaigns": [
+      "Tomb of Annihilation"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Half-Orc",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0197.webp",
+    "character": "Alaric",
+    "player": "Shaggy",
+    "campaigns": [
+      "Bad Romance Barovia"
+    ],
+    "classes": [
+      "Paladin"
+    ],
+    "race": "Aasimar",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0198.jpg",
+    "character": "Asael",
+    "player": "Fennec",
+    "campaigns": [
+      "Bad Romance Barovia"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Aasimar",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0199.jpg",
+    "character": "Bran Pinekeep",
+    "player": "MateuszWijas",
+    "campaigns": [
+      "Neverwinter: Intrygi Północnego Wybrzeża Mieczy"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0200.webp",
+    "character": "Bungo Barkmaw",
+    "player": "Amazur",
+    "campaigns": [
+      "Dragon of Icespire Peak"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Halfling",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0201.webp",
+    "character": "Corvan Draemir",
+    "player": "Hansik",
+    "campaigns": [
+      "The Unlikely Five"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Human",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0202.webp",
+    "character": "Dafinios",
+    "player": "Hansik",
+    "campaigns": [
+      "Tomb of Annihilation"
+    ],
+    "classes": [
+      "Bard"
+    ],
+    "race": "Satyr",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0203.webp",
+    "character": "Divina",
+    "player": "Natalia",
+    "campaigns": [
+      "Bad Romance Barovia"
+    ],
+    "classes": [
+      "Paladin"
+    ],
+    "race": "Tiefling",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0204.jpg",
+    "character": "Fintana",
+    "player": "leftpinky",
+    "campaigns": [
+      "Menaces of Gloomforest"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Dragonborn",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0205.webp",
+    "character": "Gunnar Ravenfall",
+    "player": "Łukasz",
+    "campaigns": [
+      "Ghoul Hour"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0206.webp",
+    "character": "Gustav",
+    "player": "Hansik",
+    "campaigns": [
+      "Heroes of Drakkenheim"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Human",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0207.webp",
+    "character": "Hogall",
+    "player": "Amazur",
+    "campaigns": [
+      "Rime of the Frostmaiden"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Half-Orc",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0208.webp",
+    "character": "Jacob",
+    "player": "keero",
+    "campaigns": [
+      "Bad Romance Barovia"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0209.webp",
+    "character": "Nailef",
+    "player": "Hansik",
+    "campaigns": [
+      "Lost Mine of Phandelver"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0210.webp",
+    "character": "Raric",
+    "player": "Hansik",
+    "campaigns": [
+      "Heroes of Drakkenheim"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Human",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0211.webp",
+    "character": "Tarkin Kirhoff",
+    "player": "Hansik",
+    "campaigns": [
+      "Heroes of Drakkenheim"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Human",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0212.png",
+    "character": "Tonie Scam",
+    "player": "Amazur",
+    "campaigns": [
+      "Dragon of Icespire Peak"
+    ],
+    "classes": [
+      "Bard"
+    ],
+    "race": "Half-Elf",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0213.jpg",
+    "character": "Velia",
+    "player": "Natalia",
+    "campaigns": [
+      "Bad Romance Barovia"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Aasimar",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0214.png",
+    "character": "Batturs",
+    "player": "Viking",
+    "campaigns": [
+      "Menaces of Irensberg"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Gnome",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0215.jpeg",
+    "character": "Brian",
+    "player": "Radek",
+    "campaigns": [
+      "Echtra - Zima Irgaeli"
+    ],
+    "classes": [
+      "Wizard",
+      "Rogue"
+    ],
+    "race": "Half-Elf",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0216.webp",
+    "character": "Eamon",
+    "player": "Mikołaj",
+    "campaigns": [
+      "Echtra - Zima Irgaeli"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Half-Orc",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0217.png",
+    "character": "Eryn",
+    "player": "tylkomatti",
+    "campaigns": [
+      "Rime of the Frostmaiden"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Human",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0218.webp",
+    "character": "Kailan Vael Rhaen",
+    "player": "Aleksandra",
+    "campaigns": [
+      "Echtra - Zima Irgaeli"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Elf",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0219.webp",
+    "character": "Gerwilda Stitchbite",
+    "player": "Cezary",
+    "campaigns": [
+      "Echtra - Zima Irgaeli"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Human",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0220.webp",
+    "character": "Indis",
+    "player": "Diana",
+    "campaigns": [
+      "Echtra - Zima Irgaeli"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Half-Elf",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0221.jpg",
+    "character": "Verai",
+    "player": "bezokasroka",
+    "campaigns": [
+      "Heroes of Baldur's Gate"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Half-Elf",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0222.jpg",
+    "character": "Bella",
+    "player": "Ula",
+    "campaigns": [
+      "Bad Romance Barovia"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Tabaxi",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0223.jpg",
+    "character": "Cynka",
+    "player": "Ula",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Artificer"
+    ],
+    "race": "Fairy",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0224.jpg",
+    "character": "M'rissi",
+    "player": "Ula",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Tabaxi",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0225.webp",
+    "character": "Okri Elderhorn",
+    "player": "Shaggy",
+    "campaigns": [
+      "Bad Romance Barovia"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Dwarf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0226.webp",
+    "character": "Tarnos Phylund",
+    "player": "Viking",
+    "campaigns": [
+      "Bad Romance Barovia"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Human",
+    "status": "abandoned",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0227.jpg",
+    "character": "Alma",
+    "player": "Weronika",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Loxodon",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0228.webp",
+    "character": "Aralee Shaldont",
+    "player": "neiiska",
+    "campaigns": [
+      "Forge of Fury"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Shaddar-Kai",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0229.webp",
+    "character": "Artemis",
+    "player": "ParrotNetwork",
+    "campaigns": [
+      "Epic Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Aasimar",
+    "status": "abandoned",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0230.webp",
+    "character": "Cardan",
+    "player": "keero",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Druid"
+    ],
+    "race": "Fairy",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0231.png",
+    "character": "Cassandra",
+    "player": "neiiska",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Human",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0232.webp",
+    "character": "Dura Kahkadoshz",
+    "player": "neiiska",
+    "campaigns": [
+      "Lost Mine of Phandelver"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Half-Orc",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0233.png",
+    "character": "Erde",
+    "player": "neiiska",
+    "campaigns": [
+      "The Sunless Citadel"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Genasi",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0234.jpg",
+    "character": "Miriam",
+    "player": "Weronika",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Dwarf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0235.png",
+    "character": "Naina",
+    "player": "Olek",
+    "campaigns": [
+      "Epic Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Paladin"
+    ],
+    "race": "Nymph",
+    "status": "abandoned",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0236.png",
+    "character": "Nozzara",
+    "player": "neiiska",
+    "campaigns": [
+      "Forge of Fury"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Half-Orc",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0237.jpg",
+    "character": "Orelius",
+    "player": "Mags",
+    "campaigns": [
+      "Epic Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Medusa",
+    "status": "abandoned",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0238.jpg",
+    "character": "Orythia",
+    "player": "neiiska",
+    "campaigns": [
+      "Epic Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Nymph",
+    "status": "abandoned",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0239.webp",
+    "character": "Serene Evergreen",
+    "player": "neiiska",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Druid"
+    ],
+    "race": "Fairy",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0240.webp",
+    "character": "Teiresias",
+    "player": "Neo",
+    "campaigns": [
+      "Epic Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Medusa",
+    "status": "abandoned",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0241.webp",
+    "character": "Tirias",
+    "player": "Bartp",
+    "campaigns": [
+      "Epic Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Aasimar",
+    "status": "abandoned",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0242.png",
+    "character": "Aqe",
+    "player": "keero",
+    "campaigns": [
+      "Dragons of Stormwreck Isle"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Aarakocra",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0243.webp",
+    "character": "Brog",
+    "player": "keero",
+    "campaigns": [
+      "The Sunless Citadel"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Goliath",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0244.png",
+    "character": "Ebris",
+    "player": "keero",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Tiefling",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0245.png",
+    "character": "Erdar Morbor",
+    "player": "keero",
+    "campaigns": [
+      "Kampania Nieznana"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Dragonborn",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0246.png",
+    "character": "Joaher Redleaf",
+    "player": "keero",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Monk"
+    ],
+    "race": "Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0247.jpg",
+    "character": "Kaelos",
+    "player": "keero",
+    "campaigns": [
+      "Mythic Odyssey of the Dragonlords"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Medusa",
+    "status": "abandoned",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0248.png",
+    "character": "Neldar",
+    "player": "keero",
+    "campaigns": [
+      "Drakkenheim"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Dwarf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0249.jpg",
+    "character": "Thive",
+    "player": "keero",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Paladin"
+    ],
+    "race": "Aasimar",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0250.png",
+    "character": "Valeria Shadowglen",
+    "player": "keero",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Human",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0251.png",
+    "character": "Memnith",
+    "player": "koksuvi",
+    "campaigns": [
+      "Heroes of Drakkenheim"
+    ],
+    "classes": [
+      "Bard"
+    ],
+    "race": "Fairy",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0252.png",
+    "character": "Serrell Allemard",
+    "player": "koksuvi",
+    "campaigns": [
+      "Heroes of Drakken"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Human",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0253.png",
+    "character": "Abraham Rootspringer",
+    "player": "KubaSzczesniak",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Half-Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0254.jpg",
+    "character": "Aria Alpenfee",
+    "player": "NataliaMelcherowska",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Paladin",
+      "Sorcerer"
+    ],
+    "race": "Half-Elf",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0255.jpg",
+    "character": "Destiny Grimstone",
+    "player": "MartaS",
+    "campaigns": [
+      "Dragon of Dampen Depths"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Tiefling",
+    "status": "finished",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0256.jpg",
+    "character": "Hagard",
+    "player": "AndrzejC",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Half-Orc",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0257.jpg",
+    "character": "Lailisa",
+    "player": "MartynaŚ",
+    "campaigns": [
+      "Dragon of Icespire Peak"
+    ],
+    "classes": [
+      "Placeholder"
+    ],
+    "race": "Placeholder",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0258.jpg",
+    "character": "Mirelinda",
+    "player": "Nympheria",
+    "campaigns": [
+      "Dragon of Icespire Peak"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Human",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0259.png",
+    "character": "Nasir Shatterbow",
+    "player": "XXX",
+    "campaigns": [
+      "Rise of Tiamat"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Dwarf",
+    "status": "abandoned",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0260.jpg",
+    "character": "Voks",
+    "player": "RadekK",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Bard"
+    ],
+    "race": "Kobold",
+    "status": "dead",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0261.jpg",
+    "character": "XXX",
+    "player": "MartynaŚ",
+    "campaigns": [
+      "Dragon of Icespire Peak"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Tiefling",
+    "status": "unknown",
+    "Campaign Code": "unset"
+  },
+  {
+    "portrait": "/res/portraits/char-0262.jpg",
+    "character": "Yelli",
+    "player": "RadekK",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Human",
+    "status": "dead",
+    "Campaign Code": "unset"
+  }
+]

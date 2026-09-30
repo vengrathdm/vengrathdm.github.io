@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MYTROS // SURVEILLANCE NETWORK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="crt">
+  <div class="scanlines"></div>
+  <div class="noise"></div>
+  <div class="vignette"></div>
+  <div class="rgb-shift"></div>
+</div>
+
+<header class="topbar">
+  <div class="brand"><span class="dot"></span> THYLEA // CIVIC SECURITY NETWORK</div>
+  <div class="status"><span>UPLINK</span> STABLE <i></i> <span>TIME</span> <b id="clock">03:17:42</b></div>
+</header>
+
+<main>
+  <section class="mast">
+    <div>
+      <p class="eyebrow">NODE MYTROS-03 / RESTRICTED ACCESS</p>
+      <h1>MYTROS<br><em>SURVEILLANCE NETWORK</em></h1>
+      <p class="warning">UNAUTHORIZED ACCESS IS A CIVIC OFFENSE. ALL OBSERVED ACTIVITY IS LOGGED.</p>
+    </div>
+    <div class="system-readout">
+      <span>SYSTEM STATE</span><strong>DEGRADED</strong>
+      <small>OATH INTEGRITY: <b id="integrity">62%</b></small>
+      <small>ORACLE LINK: <b class="amber">UNSTABLE</b></small>
+      <small>DRAGON SIGNATURE: <b class="red">UNRESOLVED</b></small>
+    </div>
+  </section>
+
+  <section class="network">
+    <aside class="camera-list">
+      <div class="section-label">ACTIVE FEEDS <span>05</span></div>
+      <button class="cam active" data-cam="harbor"><span>CAM 01</span><b>MYTROS HARBOR</b><i>LIVE</i></button>
+      <button class="cam" data-cam="palace"><span>CAM 02</span><b>PALACE DISTRICT</b><i>LIVE</i></button>
+      <button class="cam" data-cam="temple"><span>CAM 03</span><b>TEMPLE OF HELIOS</b><i>LIVE</i></button>
+      <button class="cam" data-cam="gate"><span>CAM 04</span><b>NORTHERN GATE</b><i>LIVE</i></button>
+      <button class="cam compromised" data-cam="unknown"><span>CAM 05</span><b>UNKNOWN LOCATION</b><i>ERR</i></button>
+      <div class="feed-note">AUTO-TRACK ENABLED<br>FACIAL RECOGNITION: OFFLINE<br>ENTITY MATCHING: PARTIAL</div>
+    </aside>
+
+    <div class="viewport">
+      <div class="camera-meta"><span id="camName">CAM 01 // MYTROS HARBOR</span><span id="camTime">03:17:42</span></div>
+      <div class="feed-image" id="feed">
+        <img src="../../Home/Graphics/odyssey-of-the-dragonlords.jpg" alt="Thylea surveillance feed">
+        <div class="reticle"></div>
+        <div class="tracking-box"><span>ENTITY 05</span><b>TRACKING</b></div>
+        <div class="hud-corner tl"></div><div class="hud-corner tr"></div><div class="hud-corner bl"></div><div class="hud-corner br"></div>
+        <div class="feed-copy" id="feedCopy">MOVEMENT DETECTED / EASTERN QUAY</div>
+      </div>
+      <div class="telemetry"><span>FRAME <b id="frame">019482</b></span><span>SYNC 97.2%</span><span>LAT 37.4</span><span>LNG 23.7</span><span>REC ●</span></div>
+    </div>
+
+    <aside class="entity">
+      <div class="section-label">ENTITY REGISTER</div>
+      <div class="entity-main">
+        <div class="portrait">05</div>
+        <div><span>DESIGNATION</span><h2 id="entityName">RINA</h2><small>VENGRATH PARTY</small></div>
+      </div>
+      <dl>
+        <dt>STATUS</dt><dd class="red">UNRESOLVED</dd>
+        <dt>ASSOCIATES</dt><dd>04</dd>
+        <dt>LAST SEEN</dt><dd id="lastSeen">03:14:09</dd>
+        <dt>OATH PROXIMITY</dt><dd>HIGH</dd>
+        <dt>THREAT MODEL</dt><dd>INCOMPLETE</dd>
+      </dl>
+      <div class="entity-tabs">
+        <button class="selected">TRACK</button><button>LOG</button><button>ASSOCIATES</button>
+      </div>
+      <div class="log" id="log">
+        <p><time>03:17:41</time> ENTITY ENTERED FEED</p>
+        <p><time>03:17:18</time> MOTION VECTOR UPDATED</p>
+        <p><time>03:16:02</time> OATH SIGNAL SPIKE</p>
+        <p class="alert"><time>03:14:09</time> UNREGISTERED SIGNATURE</p>
+      </div>
+    </aside>
+  </section>
+
+  <section class="party">
+    <div class="section-label">VENGRATH PARTY / CROSS-NODE TRACKING</div>
+    <div class="party-grid">
+      <button data-person="RINA"><b>01</b><span>RINA</span><small>wpoluwiatr</small><i>TRACKED</i></button>
+      <button data-person="XAVIER"><b>02</b><span>XAVIER</span><small>archangelss</small><i>TRACKED</i></button>
+      <button data-person="XASTAR"><b>03</b><span>XASTAR</span><small>lecpowode</small><i>TRACKED</i></button>
+      <button data-person="VESPERA"><b>04</b><span>VESPERA</span><small>Maria</small><i>TRACKED</i></button>
+      <button data-person="ZANDER"><b>05</b><span>ZANDER</span><small>Kuba</small><i>TRACKED</i></button>
+    </div>
+  </section>
+</main>
+
+<footer><span>THYLEA CIVIC DEFENSE // NODE 03</span><span>FEED ENCRYPTION: <b>ACTIVE</b></span><span id="footerMsg">AWAITING EVENT</span></footer>
+<script src="script.js"></script>
+</body>
+</html>

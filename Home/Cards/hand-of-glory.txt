@@ -1,0 +1,4 @@
+Hand of Glory
+Archiwum
+../Graphics/hand-of-glory.jpg
+../../subpages/hand-of-glory/

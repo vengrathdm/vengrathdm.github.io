@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Tomb of Annihilation — archiwum ukończonej kampanii Vengrath w Chult.">
+  <title>Tomb of Annihilation — Vengrath</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../campaign-common.css">
+  <link rel="stylesheet" href="./tomb-of-annihilation.css">
+</head>
+<body class="campaign-page tomb-page" data-campaign-theme="tomb-of-annihilation">
+  <audio id="tombTheme" src="./Tomb-Of-Annihilation.mp3" loop preload="auto" playsinline></audio>
+  <button class="tomb-audio-toggle" id="tombAudioToggle" type="button" aria-label="Włącz dźwięk" aria-pressed="false" title="Włącz dźwięk">
+    <svg class="audio-icon audio-icon-muted" viewBox="0 0 48 48" aria-hidden="true"><path d="M7 19h8l10-8v26l-10-8H7z"></path><path d="M31 18l10 12M41 18L31 30"></path></svg>
+    <svg class="audio-icon audio-icon-playing" viewBox="0 0 48 48" aria-hidden="true"><path d="M7 19h8l10-8v26l-10-8H7z"></path><path d="M32 18c3 3 3 9 0 12M37 13c6 6 6 16 0 22"></path></svg>
+  </button>
+
+  <header class="tomb-hero" id="top">
+    <nav class="nav tomb-nav" aria-label="Nawigacja kampanii">
+      <div class="nav-inner">
+        <a class="site-home-button" href="https://vengrathdm.github.io/" aria-label="Powrót do Vengrath">
+          <img src="../../Home/Graphics/mg-logo.png" alt="MG">
+          <span>VENGRATH</span>
+        </a>
+        <a class="campaign-playlist" href="https://www.youtube.com/playlist?list=PL-Lm83myvu0iLn7o3rQ04w36k2iO6803q" target="_blank" rel="noopener">PLAYLISTA</a>
+      </div>
+    </nav>
+
+    <div class="tomb-hero-inner">
+      <div>
+        <div class="tomb-kicker">FORGOTTEN REALMS · CHULT · ARCHIWUM WYPRAWY</div>
+        <h1>TOMB<br>OF ANNIHILATION</h1>
+        <p class="tomb-lead">Wyprawa przez parną dżunglę Chult, tropienie źródła Klątwy Śmierci, utrata kolejnych twarzy drużyny i zejście do miejsca, z którego nie każdy miał wrócić.</p>
+      </div>
+      <div class="tomb-seal" aria-hidden="true">
+        <span>CHULT</span>
+        <strong>THE TOMB</strong>
+        <small>CASE CLOSED</small>
+      </div>
+    </div>
+    <div class="tomb-mist-line"></div>
+  </header>
+
+  <main>
+    <section class="tomb-card">
+      <div class="tomb-card-head"><span>01</span><strong>AKTA WYPRAWY</strong></div>
+      <div class="tomb-card-body">
+        <div class="overview-grid">
+          <article class="tomb-paper">
+            <div class="section-mark">DOSSIER / DEATH CURSE</div>
+            <h2>W Chult śmierć była częścią mapy.</h2>
+            <p><em>Tomb of Annihilation</em> to kampania o wyprawie, której pierwszy cel był większy niż jeden grobowiec: trzeba było odnaleźć źródło Klątwy Śmierci i przerwać jej działanie. W oficjalnym module droga prowadzi przez Port Nyanzaru, dzikie tereny Chult, Omu, Fane of the Night Serpent i wreszcie Tomb of the Nine Gods.</p>
+            <p>W naszej kampanii ta sama drużyna zmieniała się po drodze. Kolejne postaci przejmowały wyprawę, gdy poprzednie ginęły — aż do finału.</p>
+            <div class="tomb-stamp">KAMPANIA UKOŃCZONA</div>
+          </article>
+
+          <aside class="tomb-dossier">
+            <div class="dossier-label">CASE FILE</div>
+            <div class="dossier-row"><span>SETTING</span><strong>Forgotten Realms</strong></div>
+            <div class="dossier-row"><span>REGION</span><strong>Chult</strong></div>
+            <div class="dossier-row"><span>GŁÓWNE ZAGROŻENIE</span><strong>Klątwa Śmierci</strong></div>
+            <div class="dossier-row"><span>FINAŁ</span><strong>Tomb of the Nine Gods</strong></div>
+            <div class="dossier-row"><span>STATUS</span><strong class="complete">KAMPANIA UKOŃCZONA</strong></div>
+          </aside>
+        </div>
+
+        <div class="death-curse">
+          <div class="death-curse-symbol">†</div>
+          <div>
+            <h3>Klątwa Śmierci</h3>
+            <p>Klątwa uniemożliwiała przywracanie zmarłych do życia i dotykała tych, których wcześniej wskrzeszono. W naszej historii oznaczało to, że śmierć kolejnych bohaterów naprawdę zmieniała skład wyprawy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tomb-section">
+      <div class="tomb-section-head">
+        <div><div class="section-mark">AKTA / 02</div><h2>Droga przez Chult</h2></div>
+        <p>Pięć etapów oficjalnej konstrukcji przygody — od szerokiej ekspedycji po klaustrofobiczną pułapkę w sercu grobowca.</p>
+      </div>
+
+      <div class="expedition-map">
+        <article class="expedition-step">
+          <div class="expedition-no">01</div>
+          <h3>Port Nyanzaru</h3>
+          <p>Punkt wejścia do Chult, przygotowania do wyprawy i pierwsze tropy prowadzące w głąb półwyspu.</p>
+        </article>
+        <article class="expedition-step">
+          <div class="expedition-no">02</div>
+          <h3>Dzika kraina</h3>
+          <p>Eksploracja dżungli, ruiny, niebezpieczeństwa i coraz wyraźniejszy trop prowadzący do zagubionego Omu.</p>
+        </article>
+        <article class="expedition-step">
+          <div class="expedition-no">03</div>
+          <h3>Omu</h3>
+          <p>Zaginione miasto, dziewięć świątyń i zagadka, która otwiera drogę dalej.</p>
+        </article>
+        <article class="expedition-step">
+          <div class="expedition-no">04</div>
+          <h3>Fane</h3>
+          <p>Fane of the Night Serpent, Yuan-ti i droga do miejsca, gdzie śledztwo przestaje być wyprawą, a staje się zejściem.</p>
+        </article>
+        <article class="expedition-step final">
+          <div class="expedition-no">05</div>
+          <h3>Grobowiec</h3>
+          <p>Tomb of the Nine Gods: pułapki, duchy dziewięciu bóstw i finał przeciwko Acererakowi.</p>
+        </article>
+      </div>
+
+      <div class="spoiler-bar">UWAGA · OD TEGO MIEJSCA STRONA ZAWIERA SPOILERY Z UKOŃCZONEJ KAMPANII</div>
+    </section>
+
+    <section class="tomb-section">
+      <div class="tomb-section-head">
+        <div><div class="section-mark">AKTA / 03</div><h2>Jedna drużyna, dziewięć twarzy</h2></div>
+        <p>Wszystkie poniższe postaci należały do tej samej grupy. Skład zmieniał się w trakcie kampanii wraz ze śmiercią kolejnych bohaterów.</p>
+      </div>
+
+      <div class="character-grid">
+        <article class="character-card dead">
+          <div class="character-portrait"><img src="../sala-chwaly/postaci-graczy/Balris-Rezus-TombOfAnnihilation_cropped.webp" alt="Balris"><span class="character-status">† POLEGŁ</span></div>
+          <div class="character-info"><div class="character-player">GRACZ · Rezus</div><h3>Balris</h3><div class="character-class">Ranger · Elf</div><p class="character-fate">Zginął podczas eksploracji Chult.</p></div>
+          <div class="character-ribbon">PIERWSZE POKOLENIE WYPRAWY</div>
+        </article>
+
+        <article class="character-card">
+          <div class="character-portrait"><img src="../sala-chwaly/postaci-graczy/Estellar-koksuvi-TombOfAnnihilation_cropped.webp" alt="Estelar"><span class="character-status">UKOŃCZYŁ</span></div>
+          <div class="character-info"><div class="character-player">GRACZ · koksuvi</div><h3>Estelar</h3><div class="character-class">Wizard · Human</div><p class="character-fate">Postać z ukończonej kampanii.</p></div>
+          <div class="character-ribbon">KARTA W ARCHIWUM</div>
+        </article>
+
+        <article class="character-card">
+          <div class="character-portrait"><img src="../sala-chwaly/postaci-graczy/Blaine-lexonis-TombOfAnnihilation_cropped.webp" alt="Blaine"><span class="character-status">UKOŃCZYŁ</span></div>
+          <div class="character-info"><div class="character-player">GRACZ · Lexonis</div><h3>Blaine</h3><div class="character-class">Paladin · Warlock · Tortle</div><p class="character-fate">Postać z ukończonej kampanii.</p></div>
+          <div class="character-ribbon">KARTA W ARCHIWUM</div>
+        </article>
+
+        <article class="character-card">
+          <div class="character-portrait"><img src="../sala-chwaly/postaci-graczy/Cloud Fang -koksuvi-TombOfAnnihilation_cropped.webp" alt="Cloud Fang"><span class="character-status">LOS NIEZNANY</span></div>
+          <div class="character-info"><div class="character-player">GRACZ · koksuvi</div><h3>Cloud Fang</h3><div class="character-class">Rogue · Tabaxi</div><p class="character-fate">Portret zachowany w archiwum; dalszy los postaci nie został określony.</p></div>
+          <div class="character-ribbon">KARTA W ARCHIWUM</div>
+        </article>
+
+        <article class="character-card dead">
+          <div class="character-portrait"><img src="../sala-chwaly/postaci-graczy/Valdos-lexonis-Tomb-of-Annihilation_cropped.webp" alt="Valdos"><span class="character-status">† POLEGŁ</span></div>
+          <div class="character-info"><div class="character-player">GRACZ · lexonis</div><h3>Valdos</h3><div class="character-class">Warlock · Tiefling</div><p class="character-fate">Zginął podczas eksploracji Chult.</p></div>
+          <div class="character-ribbon">KARTA POŚMIERTNA</div>
+        </article>
+
+        <article class="character-card dead">
+          <div class="character-portrait"><img src="../sala-chwaly/postaci-graczy/Vurlarn-Rezus-TombOfAnnihilation_cropped.webp" alt="Vurlarn"><span class="character-status">† POLEGŁ</span></div>
+          <div class="character-info"><div class="character-player">GRACZ · Rezus</div><h3>Vurlarn</h3><div class="character-class">Wizard · Dwarf</div><p class="character-fate">Utopił się w winie w pułapce w Grobowcu Dziewięciu Bóstw.</p></div>
+          <div class="character-ribbon">KARTA POŚMIERTNA</div>
+        </article>
+
+        <article class="character-card">
+          <div class="character-portrait"><img src="../sala-chwaly/postaci-graczy/Lourelin-vissara-TombOfAnnihilation.webp" alt="Lourelin"><span class="character-status">UKOŃCZYŁA</span></div>
+          <div class="character-info"><div class="character-player">GRACZ · vissara</div><h3>Lourelin</h3><div class="character-class">Sorcerer · Drow</div><p class="character-fate">Pokonała Acereraka i Atropala w Grobowcu Dziewięciu Bóstw.</p></div>
+          <div class="character-ribbon">KARTA FINAŁOWA</div>
+        </article>
+
+        <article class="character-card">
+          <div class="character-portrait"><img src="../sala-chwaly/postaci-graczy/Agash-Hansik-TombOfAnnihhilation.webp" alt="Agash"><span class="character-status">UKOŃCZYŁ</span></div>
+          <div class="character-info"><div class="character-player">GRACZ · Hansik</div><h3>Agash</h3><div class="character-class">Barbarian · Half-Orc</div><p class="character-fate">Postać z ukończonej kampanii.</p></div>
+          <div class="character-ribbon">KARTA W ARCHIWUM</div>
+        </article>
+
+        <article class="character-card">
+          <div class="character-portrait"><img src="../sala-chwaly/postaci-graczy/Dafinios-Hansik-TombOfAnnihilation.webp" alt="Dafinios"><span class="character-status">UKOŃCZYŁ</span></div>
+          <div class="character-info"><div class="character-player">GRACZ · Hansik</div><h3>Dafinios</h3><div class="character-class">Bard · Satyr</div><p class="character-fate">Postać z ukończonej kampanii.</p></div>
+          <div class="character-ribbon">KARTA W ARCHIWUM</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="tomb-section">
+      <div class="tomb-section-head">
+        <div><div class="section-mark">AKTA / 04</div><h2>Grobowiec Dziewięciu Bóstw</h2></div>
+        <p>Finał kampanii — miejsce, w którym oficjalna przygoda zawęża się do śmiertelnej łamigłówki pełnej pułapek, duchów i Acereraka.</p>
+      </div>
+
+      <div class="finale">
+        <div class="finale-copy">
+          <div class="section-mark">CASE CLOSED · SPOILERY</div>
+          <h2>Ostatnie zejście.</h2>
+          <p>W module finał prowadzi do Tomb of the Nine Gods, sześciopoziomowego labiryntu, którego historia i pułapki są integralną częścią rozwiązania zagadki Klątwy Śmierci. W naszej kampanii zejście zakończyło się pokonaniem Acereraka i Atropala przez Lourelin.</p>
+          <div class="milestones">
+            <article class="milestone"><span>01</span><strong>Omu</strong><p>Zaginione miasto i dziewięć świątyń otworzyły drogę do dalszego etapu.</p></article>
+            <article class="milestone"><span>02</span><strong>Tomb of the Nine Gods</strong><p>Finałowa lokacja kampanii, pełna pułapek i duchów trickster gods.</p></article>
+            <article class="milestone"><span>03</span><strong>Acererak</strong><p>Archlich stojący za konstrukcją finałowego grobowca.</p></article>
+            <article class="milestone"><span>04</span><strong>Atropal</strong><p>Istota, którą Acererak próbował doprowadzić do boskości.</p></article>
+          </div>
+        </div>
+        <div class="finale-quote">
+          <div class="quote-mark">“</div>
+          <p>„Pokonała Acereraka i Atropala w Grobowcu Dziewięciu Bóstw.”</p>
+          <span>ARCHIWUM VENGRATH · LOURELIN · FINAŁ KAMPANII</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sources">
+      <div>
+        <div class="section-mark">ŹRÓDŁO MODUŁU</div>
+        <h3>Dungeons & Dragons · Tomb of Annihilation</h3>
+        <p>Układ przygody i podstawowe informacje o Chult, Klątwie Śmierci oraz finale zostały oparte na oficjalnym materiale modułu.</p>
+      </div>
+      <a href="https://www.dndbeyond.com/sources/dnd/toa" target="_blank" rel="noopener">OFICJALNY MATERIAŁ →</a>
+    </section>
+  </main>
+
+  <footer>
+    <span>VENGRATH · TOMB OF ANNIHILATION</span>
+    <a href="#top">POWRÓT NA GÓRĘ ↑</a>
+  </footer>
+
+  <script src="./tomb-of-annihilation-audio.js"></script>
+</body>
+</html>

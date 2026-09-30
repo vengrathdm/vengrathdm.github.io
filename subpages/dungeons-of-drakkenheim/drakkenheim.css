@@ -1,0 +1,877 @@
+/* ============================================================
+   DUNGEONS OF DRAKKENHEIM — CAMPAIGN SKIN
+   Architectural DNA: Legends of Barovia
+   Visual language: Haze / Delerium / Gothic ruin / Cosmic horror
+   ============================================================ */
+
+.drakkenheim-page{
+  --drk-bg:#07040b;
+  --drk-bg-2:#0d0813;
+  --drk-panel:#141019;
+  --drk-panel-2:#19121f;
+  --drk-ink:#eee5f1;
+  --drk-muted:#9d92a4;
+  --drk-line:#45324f;
+  --drk-violet:#9a57c5;
+  --drk-violet-bright:#c17bec;
+  --drk-delirium:#b7d36a;
+  --drk-red:#98505c;
+  --drk-blue:#667aa0;
+  background:
+    radial-gradient(circle at 82% 8%,rgba(154,87,197,.17),transparent 30%),
+    radial-gradient(circle at 8% 70%,rgba(183,211,106,.05),transparent 24%),
+    #06030a;
+  font-family:"Fira Sans Extra Condensed",sans-serif;
+}
+
+.drakkenheim-page::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:30;
+  opacity:.14;
+  background:
+    radial-gradient(circle at 18% 22%,rgba(193,123,236,.17) 0 1px,transparent 1.6px),
+    radial-gradient(circle at 68% 78%,rgba(183,211,106,.1) 0 1px,transparent 1.7px),
+    repeating-linear-gradient(0deg,transparent 0,transparent 4px,rgba(255,255,255,.017) 5px);
+  background-size:190px 190px,250px 250px,100% 100%;
+}
+
+.drakkenheim-page a{color:inherit}
+
+.drakkenheim-hero{
+  min-height:92vh;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(6,3,10,.95) 0,rgba(6,3,10,.7) 43%,rgba(6,3,10,.25) 100%),
+    linear-gradient(180deg,rgba(6,3,10,.1) 33%,#06030a 100%),
+    url("../../Home/Graphics/dungeons-of-drakkenheim.jpg") center/cover no-repeat;
+}
+.drakkenheim-hero::before{
+  content:"";
+  position:absolute;
+  inset:-12%;
+  background:
+    radial-gradient(ellipse at 73% 40%,transparent 0 17%,rgba(154,87,197,.09) 31%,rgba(22,8,28,.2) 47%,rgba(0,0,0,.66) 78%),
+    radial-gradient(circle at 72% 27%,rgba(183,211,106,.11) 0 2px,transparent 4px);
+  pointer-events:none;
+}
+.drakkenheim-hero::after{
+  content:"DRAKKENHEIM";
+  position:absolute;
+  right:-70px;
+  top:16%;
+  font:400 clamp(100px,15vw,245px) "IM Fell English SC",serif;
+  color:rgba(193,123,236,.038);
+  letter-spacing:.01em;
+  transform:rotate(-7deg);
+  pointer-events:none;
+}
+
+.drakkenheim-nav{
+  position:absolute!important;
+  top:20px;
+  left:0;
+  right:0;
+  z-index:10;
+  background:transparent!important;
+  border:0!important;
+  pointer-events:none;
+}
+.drakkenheim-nav-inner{
+  width:min(1220px,calc(100% - 48px));
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  pointer-events:none;
+}
+.drakkenheim-nav-inner>*{pointer-events:auto}
+.drakkenheim-page .site-home-button{
+  border-color:#5a4569!important;
+  background:#0e0814eb!important;
+  box-shadow:0 10px 34px #0009!important;
+}
+.drakkenheim-page .site-home-button:hover{
+  background:#1b1023!important;
+  border-color:var(--drk-violet)!important;
+}
+.drakkenheim-page .campaign-playlist{
+  border-color:#684274!important;
+  background:#3c164f!important;
+}
+.drakkenheim-page .campaign-playlist:hover{
+  background:#59226f!important;
+  border-color:var(--drk-violet-bright)!important;
+}
+
+.drakkenheim-page .barovia-page-links{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex-wrap:wrap;
+}
+.drakkenheim-page .barovia-page-link{
+  min-height:42px;
+  padding:10px 13px;
+  display:inline-flex;
+  align-items:center;
+  border:1px solid #4a3854;
+  background:#100a16d9;
+  color:#c8bccd;
+  text-decoration:none;
+  font:700 10px Voltaire,sans-serif;
+  letter-spacing:1.5px;
+  transition:.2s;
+}
+.drakkenheim-page .barovia-page-link:hover,
+.drakkenheim-page .barovia-page-link.active{
+  border-color:var(--drk-violet);
+  color:var(--drk-violet-bright);
+  background:#1a1021;
+}
+
+.drakkenheim-hero-inner{
+  position:relative;
+  z-index:2;
+  width:min(1220px,calc(100% - 48px));
+  margin:auto;
+  padding:115px 0 72px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 270px;
+  gap:70px;
+  align-items:end;
+}
+.drakkenheim-kicker{
+  font:13px Voltaire,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  color:var(--drk-violet-bright);
+}
+.drakkenheim-page .drakkenheim-hero h1{
+  font:400 clamp(70px,10vw,148px)/.77 "IM Fell English SC",Georgia,serif;
+  letter-spacing:1px;
+  margin:16px 0 26px;
+  color:#f0e8f2;
+  text-shadow:0 16px 55px #000;
+}
+.drakkenheim-page .drakkenheim-hero h1 em{
+  color:#bf91d5;
+  font-style:normal;
+}
+.drakkenheim-lead{
+  max-width:790px!important;
+  margin:0!important;
+  font:21px/1.55 "Brygada 1918",Georgia,serif!important;
+  color:#d9cfe0!important;
+}
+.drakkenheim-hero-meta{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+  margin-top:30px;
+  color:#aaa0b0;
+  font-size:13px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+.drakkenheim-hero-meta b{
+  display:block;
+  font:23px/1 Voltaire,sans-serif;
+  color:var(--drk-delirium);
+}
+.drakkenheim-seal{
+  width:245px;
+  height:245px;
+  border:1px solid #75518a;
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  position:relative;
+  transform:rotate(5deg);
+  background:#08050ddd;
+  box-shadow:0 0 0 9px #0c071255,0 25px 70px #000b,0 0 45px rgba(154,87,197,.18);
+}
+.drakkenheim-seal::before,
+.drakkenheim-seal::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  border:1px solid #60416f77;
+}
+.drakkenheim-seal::before{inset:16px}
+.drakkenheim-seal::after{inset:47px}
+.drakkenheim-seal span,
+.drakkenheim-seal small{
+  font:10px Voltaire,sans-serif;
+  letter-spacing:4px;
+  color:#a89eac;
+}
+.drakkenheim-seal strong{
+  font:400 33px Voltaire,sans-serif;
+  color:#ddd0e5;
+  letter-spacing:3px;
+}
+.drakkenheim-seal .crystal{
+  width:38px;
+  height:38px;
+  border:1px solid var(--drk-delirium);
+  transform:rotate(45deg);
+  box-shadow:0 0 24px rgba(183,211,106,.45),inset 0 0 15px rgba(183,211,106,.18);
+  background:linear-gradient(135deg,rgba(183,211,106,.33),rgba(154,87,197,.05));
+}
+.drakkenheim-page .mist-line{
+  background:linear-gradient(90deg,transparent,var(--drk-violet),var(--drk-delirium),var(--drk-violet),transparent);
+  opacity:.85;
+}
+
+.drakkenheim-page main{
+  width:min(1220px,calc(100% - 48px));
+  padding:70px 0 100px;
+}
+.drakkenheim-page .barovia-card{
+  margin-top:0;
+  border-color:#3b2c45;
+  background:linear-gradient(145deg,#13101a,#0a0710);
+  box-shadow:0 25px 80px #0009;
+}
+.drakkenheim-page .barovia-card-title{
+  background:#09060d;
+  border-color:#362841;
+}
+.drakkenheim-page .barovia-card-title span{color:var(--drk-violet-bright)}
+.drakkenheim-page .barovia-card-title strong{color:#ded4e2}
+.drakkenheim-page .barovia-card-body{padding:32px}
+.drakkenheim-page .barovia-intro-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:26px}
+.drakkenheim-page .barovia-paper{
+  background:linear-gradient(135deg,#18121d,#0f0b14);
+  border-color:#403047;
+}
+.drakkenheim-page .barovia-paper::after{background:#2c2234}
+.drakkenheim-page .barovia-paper h2{color:#eee5f2}
+.drakkenheim-page .barovia-paper p{color:#b4a8b9}
+.drakkenheim-page .section-mark{color:var(--drk-violet-bright)!important}
+.drakkenheim-page .barovia-case{
+  background:linear-gradient(145deg,#100914,#09070d);
+  border-color:#493653;
+  box-shadow:8px 8px 0 #050307;
+}
+.drakkenheim-page .case-label{
+  color:var(--drk-violet-bright);
+  border-color:#4a3653;
+}
+.drakkenheim-page .case-row{border-color:#2b2033}
+.drakkenheim-page .case-row span{color:#807383}
+.drakkenheim-page .case-row strong{color:#ded4e2}
+.drakkenheim-page .case-row .active{color:var(--drk-delirium)}
+
+.drakkenheim-page .barovia-manifesto{
+  margin:28px 0 75px;
+  border-top-color:#5f4770;
+  border-bottom-color:#5f4770;
+  background:linear-gradient(90deg,#0f0814,#17101d,#0f0814);
+}
+.drakkenheim-page .manifesto-symbol{color:var(--drk-delirium)}
+.drakkenheim-page .manifesto-symbol+div p{color:#d6cadc}
+.drakkenheim-page .manifesto-symbol+div span{color:#86768d}
+
+.drakkenheim-page .barovia-section{margin-top:78px}
+.drakkenheim-page .barovia-section-head{margin-bottom:26px}
+.drakkenheim-page .barovia-section-head h2{color:#eee5f2}
+.drakkenheim-page .barovia-section-head p{color:#8e8494!important}
+
+.drakkenheim-page .atlas-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.drakkenheim-page .atlas-card{
+  min-height:285px;
+  padding:28px;
+  border:1px solid #3b2c46;
+  background:
+    radial-gradient(circle at 90% 12%,rgba(154,87,197,.11),transparent 31%),
+    linear-gradient(145deg,#17101f,#0d0912);
+  position:relative;
+  overflow:hidden;
+}
+.drakkenheim-page .atlas-card::before{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border:1px dashed #7554872f;
+  pointer-events:none;
+}
+.drakkenheim-page .atlas-card::after{
+  content:"";
+  position:absolute;
+  right:-25px;
+  bottom:-28px;
+  width:120px;
+  height:120px;
+  border:1px solid #8e54bd30;
+  transform:rotate(45deg);
+}
+.drakkenheim-page .atlas-card-large{
+  grid-row:span 2;
+  min-height:582px;
+  background:
+    linear-gradient(160deg,#171020a8,#07050bbb),
+    url("../../Home/Graphics/dungeons-of-drakkenheim.jpg") center/cover;
+}
+.drakkenheim-page .atlas-card-wide{
+  grid-column:span 2;
+  min-height:265px;
+}
+.drakkenheim-page .atlas-no{
+  position:absolute;
+  top:17px;
+  right:20px;
+  color:#463355;
+  font:400 42px Voltaire,sans-serif;
+}
+.drakkenheim-page .atlas-type{
+  position:relative;
+  z-index:1;
+  color:var(--drk-violet-bright);
+  font:700 10px Voltaire,sans-serif;
+  letter-spacing:2px;
+}
+.drakkenheim-page .atlas-card h3{
+  position:relative;
+  z-index:1;
+  color:#e7dce9!important;
+  font:400 32px Voltaire,sans-serif!important;
+  margin:13px 0 12px!important;
+}
+.drakkenheim-page .atlas-card p{
+  position:relative;
+  z-index:1;
+  color:#9e92a3!important;
+  font-size:15px!important;
+  max-width:38ch;
+  line-height:1.55!important;
+}
+.drakkenheim-page .atlas-tag{
+  position:absolute;
+  z-index:1;
+  left:28px;
+  bottom:22px;
+  padding-left:9px;
+  border-left:2px solid var(--drk-delirium);
+  color:#837487;
+  font-size:9px;
+  letter-spacing:2px;
+}
+
+.drakkenheim-page .haze-panel{
+  margin-top:22px;
+  padding:33px;
+  border:1px solid #503a5d;
+  background:
+    radial-gradient(circle at 78% 18%,rgba(154,87,197,.14),transparent 31%),
+    linear-gradient(135deg,#150c1c,#0b0710);
+}
+.drakkenheim-page .haze-panel-inner{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:28px;
+  align-items:center;
+}
+.drakkenheim-page .haze-panel h3{
+  margin:6px 0 12px!important;
+  color:#e3d8e8!important;
+  font:400 38px Voltaire,sans-serif!important;
+}
+.drakkenheim-page .haze-panel p{
+  color:#9f92a6!important;
+  font-size:15px!important;
+  line-height:1.68!important;
+}
+.drakkenheim-page .haze-meter{
+  border:1px solid #4d3b57;
+  padding:20px;
+  background:#0a0710;
+}
+.drakkenheim-page .haze-meter .meter-label{
+  font:9px "JetBrains Mono";
+  color:#897895;
+  letter-spacing:.14em;
+}
+.drakkenheim-page .meter-bars{
+  display:flex;
+  gap:5px;
+  margin-top:14px;
+}
+.drakkenheim-page .meter-bars i{
+  height:8px;
+  flex:1;
+  border:1px solid #45334f;
+  background:#21192a;
+}
+.drakkenheim-page .meter-bars i.on{
+  background:linear-gradient(90deg,#75419a,#bd79ef);
+  box-shadow:0 0 12px rgba(189,121,239,.28);
+}
+.drakkenheim-page .haze-meter small{
+  display:block;
+  margin-top:12px;
+  color:#998ba0;
+  font:8px "JetBrains Mono";
+  letter-spacing:.12em;
+}
+.drakkenheim-page .haze-meter small strong{color:var(--drk-red)}
+
+.drakkenheim-page .character-grid{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:13px;
+}
+.drakkenheim-page .character-card{
+  min-width:0;
+  background:linear-gradient(145deg,#19111f,#0e0a13);
+  border:1px solid #3b2d47;
+  box-shadow:0 18px 55px #0008;
+}
+.drakkenheim-page .character-card.dead{
+  border-color:#4f333b;
+}
+.drakkenheim-page .character-card.dead .character-portrait{
+  filter:grayscale(.8) brightness(.76);
+}
+.drakkenheim-page .character-card.dead .character-label{color:#b16a76}
+.drakkenheim-page .character-portrait{
+  height:360px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  background:
+    radial-gradient(circle at 50% 25%,#342442 0,transparent 40%),
+    linear-gradient(180deg,#22162b,#09070d);
+  border-bottom:1px solid #40314a;
+}
+.drakkenheim-page .character-portrait::before{
+  content:"";
+  position:absolute;
+  inset:17px;
+  border:1px dashed #7a5b8d;
+  opacity:.22;
+}
+.drakkenheim-page .character-portrait img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+}
+.drakkenheim-page .character-info{
+  padding:18px;
+  background:linear-gradient(180deg,#15101b,#0e0a12);
+}
+.drakkenheim-page .character-label{
+  font:700 9px Voltaire,sans-serif;
+  letter-spacing:2px;
+  color:var(--drk-violet-bright);
+}
+.drakkenheim-page .character-info h4{
+  font:400 26px Voltaire,sans-serif;
+  color:#e1d7e5;
+  margin:8px 0 2px;
+}
+.drakkenheim-page .character-info strong{
+  color:#a59aa9;
+  font-size:13px;
+  font-weight:500;
+}
+.drakkenheim-page .character-info p{
+  margin-top:14px!important;
+  color:#85808a!important;
+  font-size:12px!important;
+  line-height:1.5!important;
+}
+
+.drakkenheim-page .drakkenheim-loss{
+  margin-top:20px;
+  padding:26px;
+  border:1px solid #59353d;
+  background:linear-gradient(115deg,#170b10,#0c0810);
+  display:grid;
+  grid-template-columns:90px 1fr;
+  gap:20px;
+  align-items:center;
+}
+.drakkenheim-page .drakkenheim-loss .loss-mark{
+  width:70px;height:70px;border:1px solid #9d4658;border-radius:50%;
+  display:grid;place-items:center;color:#bd6875;
+  font:29px "IM Fell English SC";
+  box-shadow:0 0 22px rgba(157,70,88,.15);
+}
+.drakkenheim-page .drakkenheim-loss h3{
+  margin:0 0 7px!important;
+  font:400 29px Voltaire,sans-serif;
+  color:#d1a0aa!important;
+}
+.drakkenheim-page .drakkenheim-loss p{
+  margin:0!important;
+  color:#958a91!important;
+  font-size:14px!important;
+  line-height:1.6!important;
+}
+
+.drakkenheim-page .fey-section{
+  padding:33px;
+  border:1px solid #493652;
+  background:linear-gradient(125deg,#120a17,#0b0710);
+}
+.drakkenheim-page .fey-heading h2{color:#e3d7e8}
+.drakkenheim-page .fey-stamp{
+  border-color:var(--drk-delirium);
+  color:var(--drk-delirium);
+  transform:rotate(3deg);
+}
+.drakkenheim-page .fey-main h3{color:#e1d4e7!important}
+.drakkenheim-page .fey-main p{color:#a097a7!important}
+.drakkenheim-page .fey-gem{
+  border-color:var(--drk-delirium);
+  box-shadow:0 0 19px rgba(184,211,106,.17);
+}
+.drakkenheim-page .fey-triad article{background:#0a0710;border-left-color:var(--drk-violet)}
+.drakkenheim-page .fey-triad span{color:var(--drk-delirium)}
+.drakkenheim-page .fey-triad strong{color:#ded3e4}
+.drakkenheim-page .fey-triad p{color:#89808e!important}
+
+.drakkenheim-page .horror-section{
+  border-color:#3a2b43;
+  background:linear-gradient(120deg,#100a15,#09070d);
+}
+.drakkenheim-page .horror-copy h2{color:#e3d8e8}
+.drakkenheim-page .horror-copy p{color:#9e95a3!important}
+.drakkenheim-page .horror-grid>div{
+  background:#0d0912;
+  border-color:#302439;
+}
+.drakkenheim-page .horror-grid span{color:var(--drk-violet-bright)}
+.drakkenheim-page .horror-grid strong{color:#ded3e4}
+.drakkenheim-page .horror-grid p{color:#87808e!important}
+
+.drakkenheim-page .source-panel{
+  margin-top:60px;
+  border-color:#3d2d48;
+  background:#0e0912;
+}
+.drakkenheim-page .source-panel a{
+  border-color:var(--drk-violet);
+  color:var(--drk-violet-bright);
+}
+.drakkenheim-page .source-panel a:hover{
+  background:var(--drk-violet);
+  color:#0e0912;
+}
+.drakkenheim-page footer{
+  background:#060409;
+  border-top-color:#2d2235;
+  color:#6f6474;
+}
+.drakkenheim-page footer a{color:var(--drk-violet-bright)}
+
+@media(max-width:1080px){
+  .drakkenheim-hero-inner{grid-template-columns:1fr}
+  .drakkenheim-seal{display:none}
+  .drakkenheim-page .character-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .drakkenheim-page .atlas-grid{grid-template-columns:1fr 1fr}
+  .drakkenheim-page .atlas-card-large{grid-row:auto;min-height:340px}
+  .drakkenheim-page .atlas-card-wide{grid-column:span 2}
+  .drakkenheim-page .haze-panel-inner{grid-template-columns:1fr}
+}
+@media(max-width:900px){
+  .drakkenheim-page .barovia-intro-grid{grid-template-columns:1fr}
+  .drakkenheim-page .barovia-page-links{order:3;width:100%;justify-content:center}
+  .drakkenheim-nav-inner{flex-wrap:wrap}
+}
+@media(max-width:650px){
+  .drakkenheim-page main,.drakkenheim-hero-inner{width:calc(100% - 28px)}
+  .drakkenheim-hero{min-height:92vh}
+  .drakkenheim-page .barovia-page-links{display:none}
+  .drakkenheim-page .drakkenheim-hero h1{font-size:64px}
+  .drakkenheim-lead{font-size:18px!important}
+  .drakkenheim-page .barovia-card-body{padding:19px}
+  .drakkenheim-page .barovia-manifesto{grid-template-columns:1fr}
+  .drakkenheim-page .barovia-manifesto .manifesto-symbol{text-align:left}
+  .drakkenheim-page .atlas-grid,.drakkenheim-page .character-grid{grid-template-columns:1fr}
+  .drakkenheim-page .atlas-card-wide{grid-column:auto}
+  .drakkenheim-page .character-portrait{height:400px}
+  .drakkenheim-page .drakkenheim-loss{grid-template-columns:1fr}
+  .drakkenheim-page .fey-section{padding:24px}
+}
+
+/* POLISH EPISODE ARCHIVE */
+.drakkenheim-page .episodes{
+  margin-top:78px;
+}
+.drakkenheim-page .episodes-head{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:24px;
+  align-items:end;
+  margin-bottom:24px;
+}
+.drakkenheim-page .episodes-head h2{
+  margin:0;
+  font-family:Voltaire,sans-serif;
+  font-size:46px;
+  font-weight:400;
+  line-height:1;
+  color:#eee5f2;
+}
+.drakkenheim-page .episodes-head p{
+  max-width:560px;
+  margin:0;
+  color:#96899e;
+  font-size:14px;
+  line-height:1.55;
+}
+.drakkenheim-page .episodes-count{
+  padding:11px 14px;
+  border:1px solid #4b3656;
+  background:#100a16;
+  color:var(--drk-violet-bright);
+  font:700 11px Voltaire,sans-serif;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.drakkenheim-page .episodes-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+.drakkenheim-page .episode{
+  display:grid;
+  grid-template-columns:70px 1fr 42px;
+  gap:16px;
+  align-items:center;
+  min-height:104px;
+  padding:16px 18px;
+  border:1px solid #3b2d47;
+  background:linear-gradient(145deg,#17111d,#0e0a12);
+  text-decoration:none;
+  transition:transform .18s ease,border-color .18s ease,background .18s ease;
+}
+.drakkenheim-page .episode:hover{
+  transform:translateY(-2px);
+  border-color:#73518a;
+  background:linear-gradient(145deg,#1b1321,#100b14);
+}
+.drakkenheim-page .episode-number{
+  width:54px;
+  height:54px;
+  display:grid;
+  place-items:center;
+  border:1px solid #60446f;
+  color:#c17bec;
+  font:400 20px "IM Fell English SC",serif;
+  background:#0b0710;
+}
+.drakkenheim-page .episode-info small{
+  display:block;
+  margin-bottom:6px;
+  color:#806e89;
+  font:700 8px Voltaire,sans-serif;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+.drakkenheim-page .episode-info strong{
+  display:block;
+  color:#e5dbe8;
+  font:400 20px Voltaire,sans-serif;
+  line-height:1.12;
+}
+.drakkenheim-page .episode-play{
+  width:36px;
+  height:36px;
+  border:1px solid #654574;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#c17bec;
+  font-size:13px;
+  background:#0c0711;
+}
+.drakkenheim-page .episodes-note{
+  margin-top:12px;
+  padding:15px 17px;
+  border-left:2px solid var(--drk-delirium);
+  background:#0d0812;
+  color:#938798;
+  font-size:13px;
+  line-height:1.55;
+}
+@media(max-width:760px){
+  .drakkenheim-page .episodes-head{
+    grid-template-columns:1fr;
+    align-items:start;
+  }
+  .drakkenheim-page .episodes-count{width:max-content}
+  .drakkenheim-page .episodes-list{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .drakkenheim-page .episode{
+    grid-template-columns:56px 1fr 36px;
+    gap:11px;
+    padding:13px;
+  }
+  .drakkenheim-page .episode-number{width:46px;height:46px}
+  .drakkenheim-page .episode-info strong{font-size:17px}
+}
+
+/* Polish campaign chrome + YouTube playlist */
+.drakkenheim-page .youtube-playlist{
+  position:relative;
+  padding-left:38px!important;
+  border-color:#7b1f2a!important;
+  background:linear-gradient(135deg,#8f1828,#5d0f1a)!important;
+  color:#fff!important;
+  box-shadow:0 8px 24px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.14);
+  font-weight:700;
+}
+.drakkenheim-page .youtube-playlist::before{
+  content:"";
+  position:absolute;
+  left:13px;
+  top:50%;
+  width:17px;
+  height:12px;
+  transform:translateY(-50%);
+  border-radius:4px;
+  background:#fff;
+}
+.drakkenheim-page .youtube-playlist::after{
+  content:"";
+  position:absolute;
+  left:20px;
+  top:50%;
+  transform:translateY(-50%);
+  border-left:5px solid #8f1828;
+  border-top:3px solid transparent;
+  border-bottom:3px solid transparent;
+}
+.drakkenheim-page .youtube-playlist:hover{
+  background:linear-gradient(135deg,#aa1d31,#74121f)!important;
+  border-color:#d45a69!important;
+  transform:translateY(-1px);
+}
+.drakkenheim-page .drakkenheim-kicker,
+.drakkenheim-page .atlas-type,
+.drakkenheim-page .episode-info small,
+.drakkenheim-page .episodes-count{
+  letter-spacing:1.7px;
+}
+.drakkenheim-page .drakkenheim-seal span,
+.drakkenheim-page .drakkenheim-seal small{
+  letter-spacing:2px;
+}
+
+/* YouTube playlist button */
+.drakkenheim-page .youtube-playlist{position:relative;padding-left:38px!important;border-color:#7b1f2a!important;background:linear-gradient(135deg,#8f1828,#5d0f1a)!important;color:#fff!important;box-shadow:0 8px 24px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.14);font-weight:700}
+.drakkenheim-page .youtube-playlist::before{content:"";position:absolute;left:13px;top:50%;width:17px;height:12px;transform:translateY(-50%);border-radius:4px;background:#fff}
+.drakkenheim-page .youtube-playlist::after{content:"";position:absolute;left:20px;top:50%;transform:translateY(-50%);border-left:5px solid #8f1828;border-top:3px solid transparent;border-bottom:3px solid transparent}
+.drakkenheim-page .youtube-playlist:hover{background:linear-gradient(135deg,#aa1d31,#74121f)!important;border-color:#d45a69!important;transform:translateY(-1px)}
+
+
+/* Playlist button — compact VENGRATH-style pill */
+.drakkenheim-page .youtube-playlist{
+  width:220px!important;
+  height:56px!important;
+  min-height:56px!important;
+  padding:0 22px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border:1px solid #7d58a0!important;
+  border-radius:999px!important;
+  background:linear-gradient(180deg,#6b3d8f,#51296f)!important;
+  color:#f7effb!important;
+  text-decoration:none!important;
+  box-shadow:0 5px 18px #0007,0 0 20px rgba(154,87,197,.14)!important;
+  text-align:center!important;
+  font-family:"Fira Sans Extra Condensed",sans-serif!important;
+  font-size:16px!important;
+  font-weight:700!important;
+  line-height:1!important;
+  letter-spacing:4px!important;
+  text-transform:uppercase!important;
+  white-space:nowrap;
+}
+.drakkenheim-page .youtube-playlist::before,
+.drakkenheim-page .youtube-playlist::after{
+  display:none!important;
+  content:none!important;
+}
+.drakkenheim-page .youtube-playlist:hover{
+  background:linear-gradient(180deg,#8049a5,#60347e)!important;
+  border-color:#b58bd0!important;
+  color:#fff!important;
+  transform:translateY(-1px);
+}
+@media(max-width:650px){
+  .drakkenheim-page .youtube-playlist{
+    width:170px!important;
+    height:50px!important;
+    min-height:50px!important;
+    padding:0 16px!important;
+    font-size:14px!important;
+    letter-spacing:3px!important;
+  }
+}
+
+/* ============================================================
+   DUNGEONS OF DRAKKENHEIM — CAMPAIGN AUDIO
+   ============================================================ */
+.drakkenheim-audio-toggle{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  z-index:700;
+  width:64px;
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+  border:2px solid rgba(225,214,231,.9);
+  border-radius:50%;
+  background:rgba(31,17,39,.92);
+  color:#f3eaf5;
+  box-shadow:0 5px 20px rgba(0,0,0,.5),0 0 0 1px rgba(154,87,197,.48);
+  cursor:pointer;
+  transition:transform .15s ease,background .15s ease,box-shadow .15s ease;
+  -webkit-backdrop-filter:blur(5px);
+  backdrop-filter:blur(5px);
+}
+.drakkenheim-audio-toggle:hover{
+  transform:scale(1.06);
+  background:rgba(91,48,121,.96);
+  box-shadow:0 7px 24px rgba(0,0,0,.58),0 0 0 2px rgba(193,123,236,.28);
+}
+.drakkenheim-audio-toggle:focus-visible{outline:3px solid #c17bec;outline-offset:4px}
+.drakkenheim-audio-toggle .audio-icon{
+  width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:3.2;
+  stroke-linecap:round;stroke-linejoin:round
+}
+.drakkenheim-audio-toggle .audio-icon-playing{display:none}
+.drakkenheim-audio-toggle.is-playing .audio-icon-muted{display:none}
+.drakkenheim-audio-toggle.is-playing .audio-icon-playing{display:block}
+@media(max-width:640px){
+  .drakkenheim-audio-toggle{right:16px;bottom:16px;width:58px;height:58px}
+  .drakkenheim-audio-toggle .audio-icon{width:31px;height:31px}
+}

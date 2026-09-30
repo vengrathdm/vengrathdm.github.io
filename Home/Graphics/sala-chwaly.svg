@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+<defs>
+  <radialGradient id="bg" cx="50%" cy="42%" r="75%"><stop offset="0" stop-color="#24372d"/><stop offset="1" stop-color="#0b120f"/></radialGradient>
+  <linearGradient id="gold" x1="0" x2="1"><stop stop-color="#8e6a2d"/><stop offset=".5" stop-color="#d8b35a"/><stop offset="1" stop-color="#765523"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="700" fill="url(#bg)"/>
+<g fill="none" stroke="url(#gold)" opacity=".8">
+ <circle cx="600" cy="315" r="230" stroke-width="3"/><circle cx="600" cy="315" r="205" stroke-width="1"/>
+ <path d="M600 65v500M350 315h500" stroke-width="1" opacity=".35"/>
+ <path d="M420 135l180-70 180 70 75 180-75 180-180 70-180-70-75-180z" stroke-width="1" opacity=".3"/>
+</g>
+<g transform="translate(600 315)" filter="url(#glow)">
+ <path d="M0-128 L28-45 116-42 47 10 72 96 0 48-72 96-47 10-116-42-28-45Z" fill="none" stroke="#d8b35a" stroke-width="5"/>
+ <circle r="19" fill="#d8b35a"/>
+</g>
+<text x="600" y="585" text-anchor="middle" fill="#ead7a0" font-family="Georgia,serif" font-size="58" letter-spacing="7">SALA CHWAŁY</text>
+<text x="600" y="625" text-anchor="middle" fill="#9eaa9f" font-family="Arial,sans-serif" font-size="17" letter-spacing="4">ARCHIWUM POSTACI VENGRATH</text>
+</svg>
