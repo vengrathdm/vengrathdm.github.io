@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-hand-of-glory",
+  "slug": "hand-of-glory",
+  "layout": "custom",
+  "theme": "hand",
+  "identity": {
+    "title": "Ręka Chwały"
+  },
+  "hero": {
+    "background": "/Home/Graphics/hand-of-glory.jpg"
+  },
+  "characters": [
+    "char-0061",
+    "char-0062",
+    "char-0063"
+  ],
+  "sections": [
+    "Śledczy w Wych Elm",
+    "Drużyna",
+    "Wych Elm",
+    "Jedna noc",
+    "Ręka Chwały — pełny one-shot"
+  ]
+}
