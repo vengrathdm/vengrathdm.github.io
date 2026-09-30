@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 1,
+  "players": [
+    {
+      "id": "player-miauriusz",
+      "name": "Miauriusz"
+    },
+    {
+      "id": "player-aureli",
+      "name": "Aureli"
+    },
+    {
+      "id": "player-kajetan",
+      "name": "Kajetan"
+    },
+    {
+      "id": "player-zuza",
+      "name": "Zuza"
+    },
+    {
+      "id": "player-wpoluwiatr",
+      "name": "wpoluwiatr"
+    },
+    {
+      "id": "player-szymon",
+      "name": "Szymon"
+    },
+    {
+      "id": "player-dawid",
+      "name": "Dawid"
+    },
+    {
+      "id": "player-marcin",
+      "name": "Marcin"
+    },
+    {
+      "id": "player-anemo",
+      "name": "Anemo"
+    },
+    {
+      "id": "player-mat",
+      "name": "Mat"
+    },
+    {
+      "id": "player-sandra",
+      "name": "Sandra"
+    },
+    {
+      "id": "player-maria",
+      "name": "Maria"
+    },
+    {
+      "id": "player-rezus",
+      "name": "Rezus"
+    },
+    {
+      "id": "player-koksuvi",
+      "name": "koksuvi"
+    },
+    {
+      "id": "player-lexonis",
+      "name": "lexonis"
+    },
+    {
+      "id": "player-jeesoo",
+      "name": "Jeesoo"
+    },
+    {
+      "id": "player-koar",
+      "name": "Koar"
+    },
+    {
+      "id": "player-ezu",
+      "name": "Ezu"
+    },
+    {
+      "id": "player-micha-wodziczko",
+      "name": "Michał Wodziczko"
+    },
+    {
+      "id": "player-vissara",
+      "name": "vissara"
+    },
+    {
+      "id": "player-viking",
+      "name": "Viking"
+    },
+    {
+      "id": "player-goku94",
+      "name": "Goku94"
+    },
+    {
+      "id": "player-musthard",
+      "name": "Musthard"
+    },
+    {
+      "id": "player-agata",
+      "name": "Agata"
+    },
+    {
+      "id": "player-krystian",
+      "name": "Krystian"
+    },
+    {
+      "id": "player-ukasz",
+      "name": "Łukasz"
+    },
+    {
+      "id": "player-raevell",
+      "name": "Raevell"
+    },
+    {
+      "id": "player-amadeusz",
+      "name": "Amadeusz"
+    },
+    {
+      "id": "player-keero",
+      "name": "Keero"
+    },
+    {
+      "id": "player-panterq",
+      "name": "panterq"
+    },
+    {
+      "id": "player-rivani",
+      "name": "Rivani"
+    },
+    {
+      "id": "player-daniel",
+      "name": "Daniel"
+    },
+    {
+      "id": "player-natalia",
+      "name": "Natalia"
+    },
+    {
+      "id": "player-martyna",
+      "name": "Martyna"
+    },
+    {
+      "id": "player-kuba",
+      "name": "Kuba"
+    },
+    {
+      "id": "player-aleksander",
+      "name": "Aleksander"
+    },
+    {
+      "id": "player-ewa",
+      "name": "Ewa"
+    },
+    {
+      "id": "player-diana",
+      "name": "Diana"
+    },
+    {
+      "id": "player-mariusz",
+      "name": "Mariusz"
+    },
+    {
+      "id": "player-shaggy",
+      "name": "Shaggy"
+    },
+    {
+      "id": "player-przemys-aw-krol",
+      "name": "Przemysław Król"
+    },
+    {
+      "id": "player-pompon",
+      "name": "pompon"
+    },
+    {
+      "id": "player-alek",
+      "name": "Alek"
+    },
+    {
+      "id": "player-shrimphead",
+      "name": "shrimphead"
+    },
+    {
+      "id": "player-archangelss",
+      "name": "archangelss"
+    },
+    {
+      "id": "player-lecpowode",
+      "name": "lecpowode"
+    },
+    {
+      "id": "player-route",
+      "name": "Route"
+    },
+    {
+      "id": "player-domono",
+      "name": "Domono"
+    },
+    {
+      "id": "player-kurde-bele",
+      "name": "Kurde Bele"
+    },
+    {
+      "id": "player-staryborsuk",
+      "name": "StaryBorsuk"
+    },
+    {
+      "id": "player-vexu",
+      "name": "Vexu"
+    },
+    {
+      "id": "player-neiiska",
+      "name": "neiiska"
+    },
+    {
+      "id": "player-leftpinky",
+      "name": "leftpinky"
+    },
+    {
+      "id": "player-natalia-p",
+      "name": "Natalia P"
+    },
+    {
+      "id": "player-monika",
+      "name": "Monika"
+    },
+    {
+      "id": "player-mobius",
+      "name": "Mobius"
+    },
+    {
+      "id": "player-killyox",
+      "name": "killyox"
+    },
+    {
+      "id": "player-princess-molesta",
+      "name": "Princess Molesta"
+    },
+    {
+      "id": "player-jakub-perkowski",
+      "name": "Jakub Perkowski"
+    },
+    {
+      "id": "player-samanta",
+      "name": "Samanta"
+    },
+    {
+      "id": "player-ukasz-bywalec",
+      "name": "Łukasz Bywalec"
+    },
+    {
+      "id": "player-wiktoria-bywalec",
+      "name": "Wiktoria Bywalec"
+    },
+    {
+      "id": "player-nie-podano",
+      "name": "Nie podano"
+    },
+    {
+      "id": "player-chinczyk",
+      "name": "chinczyk"
+    },
+    {
+      "id": "player-dharmaeye",
+      "name": "DharmaEye"
+    },
+    {
+      "id": "player-wiktoria-red",
+      "name": "Wiktoria Red"
+    },
+    {
+      "id": "player-dartax4",
+      "name": "dartax4"
+    },
+    {
+      "id": "player-jasmine",
+      "name": "Jasmine"
+    },
+    {
+      "id": "player-ryokis",
+      "name": "Ryokis"
+    },
+    {
+      "id": "player-mckimono",
+      "name": "McKimono"
+    },
+    {
+      "id": "player-przemek",
+      "name": "Przemek"
+    },
+    {
+      "id": "player-dkjowler",
+      "name": "DKJowler"
+    },
+    {
+      "id": "player-rawiea",
+      "name": "Rawiea"
+    },
+    {
+      "id": "player-boulton",
+      "name": "Boulton"
+    },
+    {
+      "id": "player-arus",
+      "name": "Aruś"
+    },
+    {
+      "id": "player-sajko",
+      "name": "Sajko"
+    },
+    {
+      "id": "player-kot",
+      "name": "Kot"
+    },
+    {
+      "id": "player-hansik",
+      "name": "Hansik"
+    },
+    {
+      "id": "player-zuza-cuban",
+      "name": "Zuza Cuban"
+    },
+    {
+      "id": "player-jakubek",
+      "name": "Jakubek"
+    },
+    {
+      "id": "player-fennec",
+      "name": "Fennec"
+    },
+    {
+      "id": "player-mateuszwijas",
+      "name": "MateuszWijas"
+    },
+    {
+      "id": "player-amazur",
+      "name": "Amazur"
+    },
+    {
+      "id": "player-radek",
+      "name": "Radek"
+    },
+    {
+      "id": "player-miko-aj",
+      "name": "Mikołaj"
+    },
+    {
+      "id": "player-tylkomatti",
+      "name": "tylkomatti"
+    },
+    {
+      "id": "player-aleksandra",
+      "name": "Aleksandra"
+    },
+    {
+      "id": "player-cezary",
+      "name": "Cezary"
+    },
+    {
+      "id": "player-bezokasroka",
+      "name": "bezokasroka"
+    },
+    {
+      "id": "player-ula",
+      "name": "Ula"
+    },
+    {
+      "id": "player-weronika",
+      "name": "Weronika"
+    },
+    {
+      "id": "player-parrotnetwork",
+      "name": "ParrotNetwork"
+    },
+    {
+      "id": "player-keero",
+      "name": "keero"
+    },
+    {
+      "id": "player-olek",
+      "name": "Olek"
+    },
+    {
+      "id": "player-mags",
+      "name": "Mags"
+    },
+    {
+      "id": "player-neo",
+      "name": "Neo"
+    },
+    {
+      "id": "player-bartp",
+      "name": "Bartp"
+    },
+    {
+      "id": "player-kubaszczesniak",
+      "name": "KubaSzczesniak"
+    },
+    {
+      "id": "player-nataliamelcherowska",
+      "name": "NataliaMelcherowska"
+    },
+    {
+      "id": "player-martas",
+      "name": "MartaS"
+    },
+    {
+      "id": "player-andrzejc",
+      "name": "AndrzejC"
+    },
+    {
+      "id": "player-martynas",
+      "name": "MartynaS"
+    },
+    {
+      "id": "player-nympheria",
+      "name": "Nympheria"
+    },
+    {
+      "id": "player-xxx",
+      "name": "XXX"
+    },
+    {
+      "id": "player-radekk",
+      "name": "RadekK"
+    },
+    {
+      "id": "player-martynas",
+      "name": "MartynaŚ"
+    }
+  ]
+}
