@@ -3632,7 +3632,7 @@
     {
       "id": "char-0242",
       "name": "Aqe",
-      "playerId": "player-keero",
+      "playerId": "player-keero-2",
       "campaignIds": [
         "campaign-dragons-of-stormwreck-isle"
       ],
@@ -3647,7 +3647,7 @@
     {
       "id": "char-0243",
       "name": "Brog",
-      "playerId": "player-keero",
+      "playerId": "player-keero-2",
       "campaignIds": [
         "campaign-the-sunless-citadel"
       ],
@@ -3662,7 +3662,7 @@
     {
       "id": "char-0244",
       "name": "Ebris",
-      "playerId": "player-keero",
+      "playerId": "player-keero-2",
       "campaignIds": [
         "campaign-shards-of-the-past-legacy"
       ],
@@ -3677,7 +3677,7 @@
     {
       "id": "char-0245",
       "name": "Erdar Morbor",
-      "playerId": "player-keero",
+      "playerId": "player-keero-2",
       "campaignIds": [
         "campaign-kampania-nieznana"
       ],
@@ -3692,7 +3692,7 @@
     {
       "id": "char-0246",
       "name": "Joaher Redleaf",
-      "playerId": "player-keero",
+      "playerId": "player-keero-2",
       "campaignIds": [
         "campaign-shards-of-the-past-legacy"
       ],
@@ -3707,7 +3707,7 @@
     {
       "id": "char-0247",
       "name": "Kaelos",
-      "playerId": "player-keero",
+      "playerId": "player-keero-2",
       "campaignIds": [
         "campaign-mythic-odyssey-of-the-dragonlords"
       ],
@@ -3722,7 +3722,7 @@
     {
       "id": "char-0248",
       "name": "Neldar",
-      "playerId": "player-keero",
+      "playerId": "player-keero-2",
       "campaignIds": [
         "campaign-drakkenheim"
       ],
@@ -3737,7 +3737,7 @@
     {
       "id": "char-0249",
       "name": "Thive",
-      "playerId": "player-keero",
+      "playerId": "player-keero-2",
       "campaignIds": [
         "campaign-shards-of-the-past-legacy"
       ],
@@ -3752,7 +3752,7 @@
     {
       "id": "char-0250",
       "name": "Valeria Shadowglen",
-      "playerId": "player-keero",
+      "playerId": "player-keero-2",
       "campaignIds": [
         "campaign-shards-of-the-past-legacy"
       ],
@@ -3858,7 +3858,7 @@
     {
       "id": "char-0257",
       "name": "Lailisa",
-      "playerId": "player-martynas",
+      "playerId": "player-martynas-2",
       "campaignIds": [
         "campaign-dragon-of-icespire-peak"
       ],
@@ -3918,7 +3918,7 @@
     {
       "id": "char-0261",
       "name": "XXX",
-      "playerId": "player-martynas",
+      "playerId": "player-martynas-2",
       "campaignIds": [
         "campaign-dragon-of-icespire-peak"
       ],
