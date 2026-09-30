@@ -7,7 +7,7 @@
       "title": "Assault on Castle Blackrose",
       "tag": "Archiwum",
       "graphic": "https://cdn.midjourney.com/47c79b31-a4ac-4c58-8cf8-f5d95ab3a959/0_0.png",
-      "link": "../../subpages/assault-on-castle-blackrose/",
+      "link": "/subpages/assault-on-castle-blackrose/",
       "targetType": "campaign"
     },
     {
@@ -15,8 +15,8 @@
       "source": "barber-of-silverymoon.txt",
       "title": "Barber of Silverymoon",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/barber-of-silverymoon.jpg",
-      "link": "../../subpages/barber-of-silverymoon/",
+      "graphic": "/Home/Graphics/barber-of-silverymoon.jpg",
+      "link": "/subpages/barber-of-silverymoon/",
       "targetType": "campaign"
     },
     {
@@ -24,8 +24,8 @@
       "source": "blog.txt",
       "title": "Blog",
       "tag": "Blog",
-      "graphic": "../Graphics/Blog001.png",
-      "link": "../../subpages/blog/",
+      "graphic": "/Home/Graphics/Blog001.png",
+      "link": "/subpages/blog/",
       "targetType": "blog"
     },
     {
@@ -34,7 +34,7 @@
       "title": "Cemetery of Dragons",
       "tag": "Archiwum",
       "graphic": "https://cdn.midjourney.com/dd7584b6-fb31-4a57-ac17-ce1f8a1c5a3e/0_2.png",
-      "link": "../../subpages/cemetery-of-dragons/",
+      "link": "/subpages/cemetery-of-dragons/",
       "targetType": "campaign"
     },
     {
@@ -42,8 +42,8 @@
       "source": "character-ayla.txt",
       "title": "Ayla Brokengulf",
       "tag": "Postać",
-      "graphic": "../Graphics/ayla.webp",
-      "link": "../../subpages/character-ayla/",
+      "graphic": "/Home/Graphics/ayla.webp",
+      "link": "/subpages/character-ayla/",
       "targetType": "character"
     },
     {
@@ -51,8 +51,8 @@
       "source": "character-shiney.txt",
       "title": "Shiney, Różowa Paladynka",
       "tag": "Postać",
-      "graphic": "../Graphics/Shiney.png",
-      "link": "../../subpages/character-shiney/",
+      "graphic": "/Home/Graphics/Shiney.png",
+      "link": "/subpages/character-shiney/",
       "targetType": "character"
     },
     {
@@ -60,8 +60,8 @@
       "source": "charactermancer.txt",
       "title": "Charactermancer",
       "tag": "Narzędzie",
-      "graphic": "../Graphics/charactermancer.png",
-      "link": "../../subpages/Charactermancer/",
+      "graphic": "/Home/Graphics/charactermancer.png",
+      "link": "/subpages/Charactermancer/",
       "targetType": "module"
     },
     {
@@ -69,8 +69,8 @@
       "source": "curse-of-strahd.txt",
       "title": "Curse of Strahd",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/curse-of-strahd.jpg",
-      "link": "../../subpages/curse-of-strahd/",
+      "graphic": "/Home/Graphics/curse-of-strahd.jpg",
+      "link": "/subpages/curse-of-strahd/",
       "targetType": "campaign"
     },
     {
@@ -78,8 +78,8 @@
       "source": "dom-malowanych-luster.txt",
       "title": "Dom Malowanych Luster",
       "tag": "Archiwum",
-      "graphic": "../Graphics/dom-malowanych-luster.jpg",
-      "link": "../../subpages/dom-malowanych-luster/",
+      "graphic": "/Home/Graphics/dom-malowanych-luster.jpg",
+      "link": "/subpages/dom-malowanych-luster/",
       "targetType": "campaign"
     },
     {
@@ -87,8 +87,8 @@
       "source": "dragon-of-dampen-depths.txt",
       "title": "Dragon of Dampen Depths",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/dragon-of-dampen-depths.jpg",
-      "link": "../../subpages/dragon-of-dampen-depths/",
+      "graphic": "/Home/Graphics/dragon-of-dampen-depths.jpg",
+      "link": "/subpages/dragon-of-dampen-depths/",
       "targetType": "campaign"
     },
     {
@@ -96,8 +96,8 @@
       "source": "dragon-of-icespire-peak.txt",
       "title": "Dragon of Icespire Peak",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/dragon-of-icespire-peak.avif",
-      "link": "../../subpages/dragon-of-icespire-peak/",
+      "graphic": "/Home/Graphics/dragon-of-icespire-peak.avif",
+      "link": "/subpages/dragon-of-icespire-peak/",
       "targetType": "campaign"
     },
     {
@@ -105,8 +105,8 @@
       "source": "drakkenheim.txt",
       "title": "Drakkenheim",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/drakkenheim.png",
-      "link": "../../subpages/drakkenheim/",
+      "graphic": "/Home/Graphics/drakkenheim.png",
+      "link": "/subpages/drakkenheim/",
       "targetType": "campaign"
     },
     {
@@ -114,8 +114,8 @@
       "source": "dungeons-of-drakkenheim.txt",
       "title": "Dungeons of Drakkenheim",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/dungeons-of-drakkenheim.jpg",
-      "link": "../../subpages/dungeons-of-drakkenheim/",
+      "graphic": "/Home/Graphics/dungeons-of-drakkenheim.jpg",
+      "link": "/subpages/dungeons-of-drakkenheim/",
       "targetType": "campaign"
     },
     {
@@ -123,8 +123,8 @@
       "source": "echtra-midst-the-sidhe.txt",
       "title": "Echtra midst the Sidhe",
       "tag": "Aktywna Kampania",
-      "graphic": "../Graphics/echtra-midst-the-sidhe.jpg",
-      "link": "../../subpages/echtra-midst-the-sidhe/",
+      "graphic": "/Home/Graphics/echtra-midst-the-sidhe.jpg",
+      "link": "/subpages/echtra-midst-the-sidhe/",
       "targetType": "campaign"
     },
     {
@@ -132,8 +132,8 @@
       "source": "echtra-zima-irgaeli.txt",
       "title": "Echtra - Zima Irgaeli",
       "tag": "Aktywna Kampania",
-      "graphic": "../Graphics/echtra-midst-the-sidhe.jpg",
-      "link": "../../subpages/echtra-zima-irgaeli/",
+      "graphic": "/Home/Graphics/echtra-midst-the-sidhe.jpg",
+      "link": "/subpages/echtra-zima-irgaeli/",
       "targetType": "campaign"
     },
     {
@@ -141,8 +141,8 @@
       "source": "forge-of-fury.txt",
       "title": "Forge of Fury",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/forge-of-fury.png",
-      "link": "../../subpages/forge-of-fury/",
+      "graphic": "/Home/Graphics/forge-of-fury.png",
+      "link": "/subpages/forge-of-fury/",
       "targetType": "campaign"
     },
     {
@@ -150,8 +150,8 @@
       "source": "ghoul-hour.txt",
       "title": "Ghoul Hour",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/ghoul-hour.png",
-      "link": "../../subpages/ghoul-hour/",
+      "graphic": "/Home/Graphics/ghoul-hour.png",
+      "link": "/subpages/ghoul-hour/",
       "targetType": "campaign"
     },
     {
@@ -159,8 +159,8 @@
       "source": "gold-for-fools-and-princes.txt",
       "title": "Gold for Fools and Princes",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/Gold-for-Fools-and-Princes.jpg",
-      "link": "../../subpages/gold-for-fools-and-princes/",
+      "graphic": "/Home/Graphics/Gold-for-Fools-and-Princes.jpg",
+      "link": "/subpages/gold-for-fools-and-princes/",
       "targetType": "campaign"
     },
     {
@@ -168,8 +168,8 @@
       "source": "hand-of-glory.txt",
       "title": "Hand of Glory",
       "tag": "Archiwum",
-      "graphic": "../Graphics/hand-of-glory.jpg",
-      "link": "../../subpages/hand-of-glory/",
+      "graphic": "/Home/Graphics/hand-of-glory.jpg",
+      "link": "/subpages/hand-of-glory/",
       "targetType": "campaign"
     },
     {
@@ -177,8 +177,8 @@
       "source": "heroes-of-baldurs-gate.txt",
       "title": "Bohaterowie Wrót Baldura",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/heroes-of-baldurs-gate.svg",
-      "link": "../../subpages/heroes-of-baldurs-gate/",
+      "graphic": "/Home/Graphics/heroes-of-baldurs-gate.svg",
+      "link": "/subpages/heroes-of-baldurs-gate/",
       "targetType": "campaign"
     },
     {
@@ -186,8 +186,8 @@
       "source": "heroes-of-drakkenheim.txt",
       "title": "Heroes of Drakkenheim",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/dungeons-of-drakkenheim.jpg",
-      "link": "../../subpages/heroes-of-drakkenheim/",
+      "graphic": "/Home/Graphics/dungeons-of-drakkenheim.jpg",
+      "link": "/subpages/heroes-of-drakkenheim/",
       "targetType": "campaign"
     },
     {
@@ -195,8 +195,8 @@
       "source": "klatwa-strahda.txt",
       "title": "Klątwa Strahda",
       "tag": "Aktywna Kampania",
-      "graphic": "../Graphics/klatwa-strahda.webp",
-      "link": "../../subpages/klatwa-strahda/",
+      "graphic": "/Home/Graphics/klatwa-strahda.webp",
+      "link": "/subpages/klatwa-strahda/",
       "targetType": "campaign"
     },
     {
@@ -204,8 +204,8 @@
       "source": "ksiazeta-heartwell.txt",
       "title": "Książęta Heartwell",
       "tag": "Aktywna Kampania",
-      "graphic": "../Graphics/ksiazeta-heartwell.jpg",
-      "link": "../../subpages/Ksiazeta-Heartwell/",
+      "graphic": "/Home/Graphics/ksiazeta-heartwell.jpg",
+      "link": "/subpages/Ksiazeta-Heartwell/",
       "targetType": "campaign"
     },
     {
@@ -213,8 +213,8 @@
       "source": "ku-chwale-tyra.txt",
       "title": "Ku chwale Tyra!",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/KuChwaleTyra.png",
-      "link": "../../subpages/ku-chwale-tyra/",
+      "graphic": "/Home/Graphics/KuChwaleTyra.png",
+      "link": "/subpages/ku-chwale-tyra/",
       "targetType": "campaign"
     },
     {
@@ -222,8 +222,8 @@
       "source": "legends-of-barovia.txt",
       "title": "Legends of Barovia",
       "tag": "Aktywna Kampania",
-      "graphic": "../Graphics/legends-of-barovia.jpg",
-      "link": "../../subpages/legends-of-barovia/",
+      "graphic": "/Home/Graphics/legends-of-barovia.jpg",
+      "link": "/subpages/legends-of-barovia/",
       "targetType": "campaign"
     },
     {
@@ -231,8 +231,8 @@
       "source": "lost-mine-of-phandelver.txt",
       "title": "Lost Mine of Phandelver",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/lost-mine-of-phandelver.jpg",
-      "link": "../../subpages/lost-mine-of-phandelver/",
+      "graphic": "/Home/Graphics/lost-mine-of-phandelver.jpg",
+      "link": "/subpages/lost-mine-of-phandelver/",
       "targetType": "campaign"
     },
     {
@@ -240,8 +240,8 @@
       "source": "maski-nyarlotepa.txt",
       "title": "Maski Nyarlathotepa - Peru",
       "tag": "Archiwum",
-      "graphic": "../Graphics/maski-nyarlotepa.jpg",
-      "link": "../../subpages/maski-nyarlotepa/",
+      "graphic": "/Home/Graphics/maski-nyarlotepa.jpg",
+      "link": "/subpages/maski-nyarlotepa/",
       "targetType": "campaign"
     },
     {
@@ -249,8 +249,8 @@
       "source": "mayhem-in-earthspur-mines.txt",
       "title": "Mayhem in Earthspur Mines",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/mayhem-in-earthspur-mines.webp",
-      "link": "../../subpages/mayhem-in-earthspur-mines/",
+      "graphic": "/Home/Graphics/mayhem-in-earthspur-mines.webp",
+      "link": "/subpages/mayhem-in-earthspur-mines/",
       "targetType": "campaign"
     },
     {
@@ -258,8 +258,8 @@
       "source": "menaces-of-gloomforest-legacy.txt",
       "title": "Menaces of Gloomforest Legacy",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/menaces-of-gloomforest.jpg",
-      "link": "../../subpages/menaces-of-gloomforest-legacy/",
+      "graphic": "/Home/Graphics/menaces-of-gloomforest.jpg",
+      "link": "/subpages/menaces-of-gloomforest-legacy/",
       "targetType": "campaign"
     },
     {
@@ -267,8 +267,8 @@
       "source": "menaces-of-gloomforest.txt",
       "title": "Menaces of Gloomforest",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/menaces-of-gloomforest.jpg",
-      "link": "../../subpages/menaces-of-gloomforest/",
+      "graphic": "/Home/Graphics/menaces-of-gloomforest.jpg",
+      "link": "/subpages/menaces-of-gloomforest/",
       "targetType": "campaign"
     },
     {
@@ -276,8 +276,8 @@
       "source": "mences-of-irensberg.txt",
       "title": "Mences of Irensberg",
       "tag": "Aktywna Kampania",
-      "graphic": "../Graphics/mences-of-irensberg.jpg",
-      "link": "../../subpages/mences-of-irensberg/",
+      "graphic": "/Home/Graphics/mences-of-irensberg.jpg",
+      "link": "/subpages/mences-of-irensberg/",
       "targetType": "campaign"
     },
     {
@@ -285,8 +285,8 @@
       "source": "moje-prace-graficzne.txt",
       "title": "Moje Rysunki 2026",
       "tag": "Grafika",
-      "graphic": "../Graphics/moje-prace-graficzne.jpg",
-      "link": "../../subpages/moje-prace-graficzne/",
+      "graphic": "/Home/Graphics/moje-prace-graficzne.jpg",
+      "link": "/subpages/moje-prace-graficzne/",
       "targetType": "gallery"
     },
     {
@@ -294,8 +294,8 @@
       "source": "mythic-odyssey-of-the-dragonlords.txt",
       "title": "Mythic Odyssey of the Dragonlords",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/mythic-odyssey-of-the-dragonlords.jpg",
-      "link": "../../subpages/mythic-odyssey-of-the-dragonlords/",
+      "graphic": "/Home/Graphics/mythic-odyssey-of-the-dragonlords.jpg",
+      "link": "/subpages/mythic-odyssey-of-the-dragonlords/",
       "targetType": "campaign"
     },
     {
@@ -303,8 +303,8 @@
       "source": "neverwinter-intrygi-polnocnego-wybrzeza-mieczy.txt",
       "title": "Neverwinter: Intrygi Północnego Wybrzeża Mieczy",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/neverwinter.webp",
-      "link": "../../subpages/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/",
+      "graphic": "/Home/Graphics/neverwinter.webp",
+      "link": "/subpages/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/",
       "targetType": "campaign"
     },
     {
@@ -312,8 +312,8 @@
       "source": "odyssey-of-the-dragonlords.txt",
       "title": "Odyssey of the Dragonlords",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/odyssey-of-the-dragonlords.jpg",
-      "link": "../../subpages/odyssey-of-the-dragonlords/",
+      "graphic": "/Home/Graphics/odyssey-of-the-dragonlords.jpg",
+      "link": "/subpages/odyssey-of-the-dragonlords/",
       "targetType": "campaign"
     },
     {
@@ -321,8 +321,8 @@
       "source": "red-blood-snow-white.txt",
       "title": "Blood Red Snow White",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/blood-red-snow-white.png",
-      "link": "../../subpages/blood-red-snow-white/",
+      "graphic": "/Home/Graphics/blood-red-snow-white.png",
+      "link": "/subpages/blood-red-snow-white/",
       "targetType": "campaign"
     },
     {
@@ -330,8 +330,8 @@
       "source": "rime-of-the-frostmaiden.txt",
       "title": "Rime of the Frostmaiden",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/rime-of-the-frostmaiden.jpg",
-      "link": "../../subpages/rime-of-the-frostmaiden/",
+      "graphic": "/Home/Graphics/rime-of-the-frostmaiden.jpg",
+      "link": "/subpages/rime-of-the-frostmaiden/",
       "targetType": "campaign"
     },
     {
@@ -339,8 +339,8 @@
       "source": "rise-of-tiamat.txt",
       "title": "Rise of Tiamat",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/rise-of-tiamat.jpg",
-      "link": "../../subpages/rise-of-tiamat/",
+      "graphic": "/Home/Graphics/rise-of-tiamat.jpg",
+      "link": "/subpages/rise-of-tiamat/",
       "targetType": "campaign"
     },
     {
@@ -348,8 +348,8 @@
       "source": "sala-chwaly.txt",
       "title": "Sala Chwały",
       "tag": "Archiwum",
-      "graphic": "../Graphics/sala-chwaly.svg",
-      "link": "../../subpages/sala-chwaly/",
+      "graphic": "/Home/Graphics/sala-chwaly.svg",
+      "link": "/subpages/sala-chwaly/",
       "targetType": "campaign"
     },
     {
@@ -357,8 +357,8 @@
       "source": "samotnie-przeciw-jednosci.txt",
       "title": "Samotnie przeciw Jedności",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/samotnie-przeciw-jednosci.jpg",
-      "link": "../../subpages/samotnie-przeciw-jednosci/",
+      "graphic": "/Home/Graphics/samotnie-przeciw-jednosci.jpg",
+      "link": "/subpages/samotnie-przeciw-jednosci/",
       "targetType": "campaign"
     },
     {
@@ -366,8 +366,8 @@
       "source": "sands-of-doom.txt",
       "title": "Sands of Doom",
       "tag": "Aktywna Kampania",
-      "graphic": "../Graphics/sands-of-doom.jpg",
-      "link": "../../subpages/sands-of-doom/",
+      "graphic": "/Home/Graphics/sands-of-doom.jpg",
+      "link": "/subpages/sands-of-doom/",
       "targetType": "campaign"
     },
     {
@@ -375,8 +375,8 @@
       "source": "shadow-of-the-sword-coast.txt",
       "title": "Shadow of the Sword Coast",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/shadow-of-the-sword-coast.jpg",
-      "link": "../../subpages/shadow-of-the-sword-coast/",
+      "graphic": "/Home/Graphics/shadow-of-the-sword-coast.jpg",
+      "link": "/subpages/shadow-of-the-sword-coast/",
       "targetType": "campaign"
     },
     {
@@ -384,8 +384,8 @@
       "source": "shards-of-the-past.txt",
       "title": "Shards of the Past",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/shards-of-the-past.png",
-      "link": "../../subpages/shards-of-the-past/",
+      "graphic": "/Home/Graphics/shards-of-the-past.png",
+      "link": "/subpages/shards-of-the-past/",
       "targetType": "campaign"
     },
     {
@@ -393,8 +393,8 @@
       "source": "sons-of-azalin.txt",
       "title": "Sons of Azalin",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/sons-of-azalin.jpg",
-      "link": "../../subpages/sons-of-azalin/",
+      "graphic": "/Home/Graphics/sons-of-azalin.jpg",
+      "link": "/subpages/sons-of-azalin/",
       "targetType": "campaign"
     },
     {
@@ -403,7 +403,7 @@
       "title": "The Dragon and the Kraken",
       "tag": "Archiwum",
       "graphic": "https://cdn.midjourney.com/233c92ad-8ba9-45f1-be79-1ea5bbc2f4d1/0_3.png",
-      "link": "../../subpages/the-dragon-and-the-kraken/",
+      "link": "/subpages/the-dragon-and-the-kraken/",
       "targetType": "campaign"
     },
     {
@@ -411,8 +411,8 @@
       "source": "the-sunless-citadel.txt",
       "title": "The Sunless Citadel",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/the-sunless-citadel.jpg",
-      "link": "../../subpages/the-sunless-citadel/",
+      "graphic": "/Home/Graphics/the-sunless-citadel.jpg",
+      "link": "/subpages/the-sunless-citadel/",
       "targetType": "campaign"
     },
     {
@@ -420,8 +420,8 @@
       "source": "tomb-of-annihilation.txt",
       "title": "Tomb of Annihilation",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/tomb-of-annihilation.jpg",
-      "link": "../../subpages/tomb-of-annihilation/",
+      "graphic": "/Home/Graphics/tomb-of-annihilation.jpg",
+      "link": "/subpages/tomb-of-annihilation/",
       "targetType": "campaign"
     },
     {
@@ -430,7 +430,7 @@
       "title": "The Tower of the Veiled Star",
       "tag": "Archiwum",
       "graphic": "https://i.imgur.com/T5JE3IL.jpeg",
-      "link": "../../subpages/tower-of-the-veiled-star/",
+      "link": "/subpages/tower-of-the-veiled-star/",
       "targetType": "campaign"
     },
     {
@@ -439,7 +439,7 @@
       "title": "Trouble Below the Mountains of Ash",
       "tag": "Archiwum",
       "graphic": "https://cdn.midjourney.com/d1fed19a-e4f0-482d-9db8-54ecad204628/0_0.png",
-      "link": "../../subpages/trouble-below-the-mountains-of-ash/",
+      "link": "/subpages/trouble-below-the-mountains-of-ash/",
       "targetType": "campaign"
     },
     {
@@ -447,8 +447,8 @@
       "source": "turn-back-the-endless-night.txt",
       "title": "Turn Back the Endless Night",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/turn-back-the-endless-night.webp",
-      "link": "../../subpages/turn-back-the-endless-night/",
+      "graphic": "/Home/Graphics/turn-back-the-endless-night.webp",
+      "link": "/subpages/turn-back-the-endless-night/",
       "targetType": "campaign"
     },
     {
@@ -456,8 +456,8 @@
       "source": "turn-of-fortunes-wheel.txt",
       "title": "Turn of Fortune's Wheel",
       "tag": "Zamknięta Kampania",
-      "graphic": "../Graphics/turn-of-fortunes-wheel.jpg",
-      "link": "../../subpages/turn-of-fortunes-wheel/",
+      "graphic": "/Home/Graphics/turn-of-fortunes-wheel.jpg",
+      "link": "/subpages/turn-of-fortunes-wheel/",
       "targetType": "campaign"
     },
     {
@@ -466,7 +466,7 @@
       "title": "Wails from the Lighthouse",
       "tag": "Archiwum",
       "graphic": "https://cdn.midjourney.com/f2d52c3c-0e32-4b72-a9a2-5f1fdca9d8ed/0_0.png",
-      "link": "../../subpages/wails-from-the-lighthouse/",
+      "link": "/subpages/wails-from-the-lighthouse/",
       "targetType": "campaign"
     }
   ]
