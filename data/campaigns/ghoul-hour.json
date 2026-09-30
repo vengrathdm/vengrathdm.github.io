@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-ghoul-hour",
+  "slug": "ghoul-hour",
+  "layout": "custom",
+  "theme": "ghoul-hour",
+  "identity": {
+    "title": "Ghoul Hour",
+    "status": "active",
+    "type": "campaign",
+    "setting": "Dark Fantasy"
+  },
+  "hero": {
+    "title": "GHOUL HOUR",
+    "lead": "Campowa kampania klasycznego siekania i bohaterowania: mroczne fantasy, nieumarli, lochy i drużyna, która ma przede wszystkim przeżywać kolejne przygody."
+  },
+  "characters": {
+    "ids": [
+      "char-0056",
+      "char-0057",
+      "char-0058",
+      "char-0059",
+      "char-0060"
+    ]
+  },
+  "sections": [
+    {
+      "id": "campaign",
+      "title": "O kampanii"
+    },
+    {
+      "id": "team",
+      "title": "Nasza drużyna"
+    }
+  ],
+  "links": {
+    "playlist": "https://www.youtube.com/watch?v=CEkAJipghZw"
+  }
+}
