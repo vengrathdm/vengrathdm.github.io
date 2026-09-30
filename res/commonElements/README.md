@@ -9,3 +9,4 @@ Reusable visual components live here as small, independently includable CSS file
 - `common.css` — convenience stylesheet importing the individual components.
 
 Use root-relative resource paths so the same component can be included from any `/p/...` page.
+- `chronicle.css` — reusable expandable campaign/session chronicle. Supports semantic `<details>` entries and the existing JS/button-style accordion pattern. Includes session number, title, date, YouTube link, expandable notes, tags, and responsive behavior.
