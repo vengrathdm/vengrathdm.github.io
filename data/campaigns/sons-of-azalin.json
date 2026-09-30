@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-sons-of-azalin",
+  "slug": "sons-of-azalin",
+  "layout": "custom",
+  "theme": "sons",
+  "identity": {
+    "title": "Sons of Azalin"
+  },
+  "hero": {
+    "background": "/Home/Graphics/sons-of-azalin.jpg"
+  },
+  "characters": [
+    "char-0096",
+    "char-0097",
+    "char-0098",
+    "char-0099",
+    "char-0100",
+    "char-0101"
+  ],
+  "sections": [
+    "Nasza drużyna",
+    "Nagrania sesji",
+    "Zamknięcie sprawy"
+  ]
+}
