@@ -1,0 +1,7 @@
+.sound-player-toggle{position:fixed;right:20px;bottom:20px;z-index:1000;width:56px;height:56px;border:1px solid #596064;border-radius:50%;display:grid;place-items:center;background:#111415;color:#fff;box-shadow:0 8px 28px #0009;cursor:pointer;transition:transform 140ms ease,background 140ms ease,border-color 140ms ease}
+.sound-player-toggle:hover{transform:scale(1.05);background:#25292a;border-color:#aeb3b5}
+.sound-player-toggle:focus-visible{outline:2px solid #d9ddde;outline-offset:3px}
+.sound-player-toggle svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.sound-player-toggle .sound-icon-playing{display:none}
+.sound-player-toggle.is-playing .sound-icon-muted{display:none}
+.sound-player-toggle.is-playing .sound-icon-playing{display:block}

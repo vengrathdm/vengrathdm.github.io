@@ -1,0 +1,5 @@
+{
+  "site": {"home": "/", "hallOfFame": "/HoF/", "pages": "/p/"},
+  "resources": {"commonGraphics": "/res/commGraph/", "mainVoronoiGraphics": "/res/voronoiMain/", "characters": "/res/characters.json"},
+  "voronoi": {"script": "/voronoi/voronoi.js", "styles": "/voronoi/voronoi_styles.css", "main": "/voronoi/main_voronoi.json", "mypaintings2026": "/voronoi/mypaintings2026_voronoi.json"}
+}

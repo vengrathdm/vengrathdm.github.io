@@ -1,4 +1,0 @@
-Blog
-Blog
-../Graphics/Blog001.png
-../../subpages/blog/

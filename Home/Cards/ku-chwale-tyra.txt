@@ -1,4 +1,0 @@
-Ku chwale Tyra!
-Zamknięta Kampania
-../Graphics/KuChwaleTyra.png
-../../subpages/ku-chwale-tyra/

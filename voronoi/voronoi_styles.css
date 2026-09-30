@@ -1,0 +1,9 @@
+.shatter{display:block}
+.shard{cursor:pointer;text-decoration:none;transform-box:fill-box;transform-origin:center center;transition:transform 180ms ease,filter 180ms ease}
+.shard-image{filter:none}
+.shard:hover{transform:scale(1.04);filter:drop-shadow(0 0 12px rgba(255,255,255,.22))}
+.shard:hover .shard-image{filter:none}
+.shard:focus-visible{outline:2px solid #f1f2f2;outline-offset:4px}
+.shard-tint{fill:#0c0e0f;fill-opacity:.28}
+.shard-title{fill:#fff;paint-order:stroke;stroke:#080909;stroke-width:4px;stroke-linejoin:round;filter:drop-shadow(0 2px 3px #000b);font-size:clamp(14px,1.55vw,25px);font-weight:600;letter-spacing:.2px;text-anchor:middle;pointer-events:none}
+.shard-tag{fill:#d4d7d8;paint-order:stroke;stroke:#080909;stroke-width:2px;filter:drop-shadow(0 1px 2px #0009);font-size:10px;letter-spacing:1.8px;text-transform:uppercase;text-anchor:middle;opacity:.86;pointer-events:none}

@@ -1,0 +1,6 @@
+.vengrath-button{--vengrath-button-logo:url("/res/commGraph/mg-logo.png");min-height:62px;padding:5px 20px 5px 8px;display:inline-flex;align-items:center;gap:10px;border:1px solid #596064;border-radius:999px;background:#111415;color:#f5f5f3;text-decoration:none;box-shadow:0 6px 22px #0007;font-family:"Fira Sans Extra Condensed",sans-serif;position:relative;z-index:6;transition:background 140ms ease,border-color 140ms ease,color 140ms ease}
+.vengrath-button::before{content:"";width:48px;height:48px;display:block;background:var(--vengrath-button-logo) center/contain no-repeat;filter:brightness(1.08) contrast(1.05);mix-blend-mode:screen;flex:0 0 48px}
+.vengrath-button>span{font-size:23px;font-weight:700;line-height:1;letter-spacing:4px;white-space:nowrap}
+.vengrath-button:hover{background:#25292a;border-color:#aeb3b5;color:#fff}
+.vengrath-button:focus-visible{outline:2px solid #d9ddde;outline-offset:3px}
+@media(max-width:700px){.vengrath-button{min-height:50px;padding:4px 13px 4px 6px;gap:7px}.vengrath-button::before{width:40px;height:40px;flex-basis:40px}.vengrath-button>span{font-size:18px;letter-spacing:3px}}
