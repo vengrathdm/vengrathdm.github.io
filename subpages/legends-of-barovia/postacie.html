@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../campaign-common.css">
   <link rel="stylesheet" href="barovia.css">
 </head>
-<body class="campaign-page barovia-page" data-campaign-theme="legends-of-barovia">
+<body data-campaign-id="campaign-legends-of-barovia" class="campaign-page barovia-page" data-campaign-theme="legends-of-barovia">
 <audio id="baroviaTheme" src="./into-the-mists.mp3" loop preload="auto" playsinline></audio>
 <button class="barovia-audio-toggle" id="baroviaAudioToggle" type="button" aria-label="Włącz dźwięk" aria-pressed="false" title="Włącz dźwięk">
   <svg class="audio-icon audio-icon-muted" viewBox="0 0 48 48" aria-hidden="true"><path d="M7 19h8l10-8v26l-10-8H7z"></path><path d="M31 18l10 12M41 18L31 30"></path></svg>
@@ -41,10 +41,10 @@
     <span>— zapis znaleziony pośród rzeczy tych, którzy nie wrócili</span>
   </section>
   <section class="character-grid">
-    <article class="character-card"><div class="character-portrait"><img src="./character-portraits/Pela.png" alt="Pelagietta"></div><div class="character-info"><div class="character-label">GRACZ</div><h4>Miauriusz</h4><strong>Pelagietta</strong><p>Opis postaci, historia, motywacja i najważniejsze wydarzenia z kampanii.</p></div></article>
-    <article class="character-card"><div class="character-portrait"><img src="./character-portraits/Luekher.png" alt="Luekher"></div><div class="character-info"><div class="character-label">GRACZ</div><h4>Aureli</h4><strong>Luekher</strong><p>Opis postaci, historia, motywacja i najważniejsze wydarzenia z kampanii.</p></div></article>
-    <article class="character-card"><div class="character-portrait"><img src="./character-portraits/Damira.png" alt="Damira"></div><div class="character-info"><div class="character-label">GRACZ</div><h4>Kajetan</h4><strong>Damira</strong><p>Opis postaci, historia, motywacja i najważniejsze wydarzenia z kampanii.</p></div></article>
-    <article class="character-card"><div class="character-portrait"><img src="./character-portraits/Pchełka.png" alt="Pchełka"></div><div class="character-info"><div class="character-label">GRACZ</div><h4>Zuzanna</h4><strong>Pchełka</strong><p>Opis postaci, historia, motywacja i najważniejsze wydarzenia z kampanii.</p></div></article>
+    <article class="character-card"><div class="character-portrait"><img src="./character-portraits/Pela.png" alt="Pelagietta" data-character-id="char-0001"></div><div class="character-info"><div class="character-label">GRACZ</div><h4>Miauriusz</h4><strong>Pelagietta</strong><p>Opis postaci, historia, motywacja i najważniejsze wydarzenia z kampanii.</p></div></article>
+    <article class="character-card"><div class="character-portrait"><img src="./character-portraits/Luekher.png" alt="Luekher" data-character-id="char-0002"></div><div class="character-info"><div class="character-label">GRACZ</div><h4>Aureli</h4><strong>Luekher</strong><p>Opis postaci, historia, motywacja i najważniejsze wydarzenia z kampanii.</p></div></article>
+    <article class="character-card"><div class="character-portrait"><img src="./character-portraits/Damira.png" alt="Damira" data-character-id="char-0003"></div><div class="character-info"><div class="character-label">GRACZ</div><h4>Kajetan</h4><strong>Damira</strong><p>Opis postaci, historia, motywacja i najważniejsze wydarzenia z kampanii.</p></div></article>
+    <article class="character-card"><div class="character-portrait"><img src="./character-portraits/Pchełka.png" alt="Pchełka" data-character-id="char-0004"></div><div class="character-info"><div class="character-label">GRACZ</div><h4>Zuzanna</h4><strong>Pchełka</strong><p>Opis postaci, historia, motywacja i najważniejsze wydarzenia z kampanii.</p></div></article>
   </section>
   <section class="dead-characters">
     <div class="barovia-section-head">
@@ -53,7 +53,7 @@
     </div>
     <div class="dead-character-grid">
       <article class="dead-character-card">
-        <div class="dead-character-portrait"><img src="./character-portraits/Eliasz.png" alt="Eliasz"><b>†</b></div>
+        <div class="dead-character-portrait"><img src="./character-portraits/Eliasz.png" alt="Eliasz" data-character-id="char-0005"><b>†</b></div>
         <div class="dead-character-info">
           <div class="character-label">POLEGŁY</div>
           <h4>Eliasz</h4>
@@ -67,4 +67,4 @@
 </main>
 <footer><span>VENGRATH · LEGENDS OF BAROVIA</span><a href="#top">POWRÓT NA GÓRĘ ↑</a></footer>
 <script src="./barovia-audio.js"></script>
-</body></html>
+<script src="../../core/character-assets.js"></script></body></html>
