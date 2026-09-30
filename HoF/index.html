@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Vengrath Hall of Fame — archiwum postaci z kampanii.">
+  <meta name="theme-color" content="#0a100d">
+  <title>Hall of Fame — Vengrath</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="hero">
+    <nav>
+      <a class="back" href="../">← VENGRATH</a>
+      <span class="edition">ARCHIWUM / HOF</span>
+    </nav>
+    <div class="hero-orbit orbit-a"></div>
+    <div class="hero-orbit orbit-b"></div>
+    <div class="hero-copy">
+      <span class="eyebrow">VENGRATH CHARACTER ARCHIVE</span>
+      <h1>HALL<br><i>OF FAME</i></h1>
+      <p>Jedno archiwum dla wszystkich postaci, które pojawiły się przy stołach Vengratha. Wyszukuj, filtruj i otwieraj pełne rekordy postaci.</p>
+    </div>
+    <div class="hero-bottom"><span>VENGRATH / CHARACTER ARCHIVE</span><span>262 RECORDS · EST. FOR EVERY STORY</span></div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div>
+        <span class="section-label">01 / REJESTR</span>
+        <h2>POSTACIE<br><em>BEZ GRANIC.</em></h2>
+      </div>
+      <p>Każda karta jest generowana bezpośrednio z <code>res/characters.json</code>. Portret, dane kampanii i pozostałe informacje pozostają w jednym źródle danych, dzięki czemu strona nie wymaga ręcznego aktualizowania kart.</p>
+    </section>
+
+    <section class="archive" aria-label="Archiwum postaci">
+      <div class="archive-head">
+        <div>
+          <span class="section-label">02 / ARCHIWUM</span>
+          <h2>Galeria</h2>
+        </div>
+        <span id="resultCount" class="result">ŁADOWANIE…</span>
+      </div>
+
+      <div class="controls">
+        <label class="search">
+          <span>⌕</span>
+          <input id="search" type="search" placeholder="Szukaj w postaci, graczu, kampanii, klasie, rasie lub statusie…" autocomplete="off">
+        </label>
+        <div class="filters">
+          <label><small>POSTAĆ</small><select id="characterFilter"><option value="">Wszystkie postacie</option></select></label>
+          <label><small>GRACZ</small><select id="playerFilter"><option value="">Wszyscy gracze</option></select></label>
+          <label><small>KAMPANIA</small><select id="campaignFilter"><option value="">Wszystkie kampanie</option></select></label>
+          <label><small>KLASA</small><select id="classFilter"><option value="">Wszystkie klasy</option></select></label>
+          <label><small>RASA</small><select id="raceFilter"><option value="">Wszystkie rasy</option></select></label>
+          <label><small>STATUS</small><select id="statusFilter"><option value="">Wszystkie statusy</option></select></label>
+          <button id="clearFilters" type="button">RESET</button>
+        </div>
+      </div>
+
+      <div id="grid" class="grid" aria-live="polite"></div>
+      <div id="empty" class="empty" hidden>NIE ZNALEZIONO POSTACI / ZMIEŃ KRYTERIA</div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" hidden aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalName">
+      <button id="modalClose" class="modal-close" type="button" aria-label="Zamknij">×</button>
+      <div id="modalContent" class="modal-content"></div>
+    </section>
+  </div>
+
+  <footer>
+    <a href="#">↑ GÓRA</a>
+    <span>HALL OF FAME / VENGRATH ARCHIVES</span>
+    <span>EVERY STORY LEAVES A TRACE</span>
+  </footer>
+  <script src="./scripts.js"></script>
+</body>
+</html>
