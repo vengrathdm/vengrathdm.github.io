@@ -71,7 +71,7 @@
       "slug": "drakkenheim",
       "canonicalPath": "/campaigns/drakkenheim/",
       "legacyPath": "/subpages/drakkenheim/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-dungeons-of-drakkenheim",
@@ -85,7 +85,7 @@
       "slug": "echtra-midst-the-sidhe",
       "canonicalPath": "/campaigns/echtra-midst-the-sidhe/",
       "legacyPath": "/subpages/echtra-midst-the-sidhe/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-ghoul-hour",
@@ -120,21 +120,21 @@
       "slug": "mythic-odyssey-of-the-dragonlords",
       "canonicalPath": "/campaigns/mythic-odyssey-of-the-dragonlords/",
       "legacyPath": "/subpages/mythic-odyssey-of-the-dragonlords/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-neverwinter-intrygi-po-nocnego-wybrzeza-mieczy",
       "slug": "neverwinter-intrygi-polnocnego-wybrzeza-mieczy",
       "canonicalPath": "/campaigns/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/",
       "legacyPath": "/subpages/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-odyssey-of-the-dragonlords",
       "slug": "odyssey-of-the-dragonlords",
       "canonicalPath": "/campaigns/odyssey-of-the-dragonlords/",
       "legacyPath": "/subpages/odyssey-of-the-dragonlords/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-rise-of-tiamat",
@@ -239,14 +239,14 @@
       "slug": "menaces-of-gloomforest-legacy",
       "canonicalPath": "/campaigns/menaces-of-gloomforest-legacy/",
       "legacyPath": "/subpages/menaces-of-gloomforest-legacy/",
-      "status": "legacy-archive"
+      "status": "detailed"
     },
     {
       "id": "campaign-heroes-of-drakkenheim",
       "slug": "heroes-of-drakkenheim",
       "canonicalPath": "/campaigns/heroes-of-drakkenheim/",
       "legacyPath": "/subpages/heroes-of-drakkenheim/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-shards-of-the-past-legacy",
