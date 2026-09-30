@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-mythic-odyssey-of-the-dragonlords",
+  "slug": "mythic-odyssey-of-the-dragonlords",
+  "layout": "custom",
+  "theme": "mythic-odyssey-of-the-dragonlords",
+  "identity": {
+    "title": "Mythic Odyssey of the Dragonlords",
+    "status": "completed",
+    "type": "campaign",
+    "setting": "Thylea"
+  },
+  "hero": {
+    "title": "MYTHIC ODYSSEY OF THE DRAGONLORDS",
+    "lead": "Mitologiczna podróż przez Thyleę, gdzie bohaterowie stają wobec bogów, przeznaczenia i dziedzictwa Dragonlordów."
+  },
+  "characters": {
+    "ids": [
+      "char-0070",
+      "char-0071",
+      "char-0072",
+      "char-0073"
+    ]
+  },
+  "sections": [
+    {
+      "id": "campaign",
+      "title": "O kampanii"
+    },
+    {
+      "id": "team",
+      "title": "Drużyna"
+    }
+  ]
+}
