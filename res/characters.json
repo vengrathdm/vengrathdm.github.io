@@ -3974,4 +3974,19 @@
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   }
+  {
+    "portrait": "/res/portraits/char-0266.jpg",
+    "character": "Galena",
+    "player": "Maria",
+    "campaigns": [
+      "Posiadłość Lugosi"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Dwarf",
+    "status": "Zwycięska",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
+  }
 ]
