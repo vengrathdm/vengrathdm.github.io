@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-neverwinter-intrygi-po-nocnego-wybrzeza-mieczy",
+  "slug": "neverwinter-intrygi-polnocnego-wybrzeza-mieczy",
+  "layout": "custom",
+  "theme": "neverwinter-intrygi-polnocnego-wybrzeza-mieczy",
+  "identity": {
+    "title": "Neverwinter — Intrygi Północnego Wybrzeża Mieczy",
+    "status": "completed",
+    "type": "campaign",
+    "setting": "Forgotten Realms"
+  },
+  "hero": {
+    "title": "NEVERWINTER",
+    "lead": "Kampania osadzona wokół intryg i zagrożeń Północnego Wybrzeża Mieczy."
+  },
+  "characters": {
+    "ids": [
+      "char-0074",
+      "char-0075",
+      "char-0076",
+      "char-0077",
+      "char-0078"
+    ]
+  },
+  "sections": [
+    {
+      "id": "campaign",
+      "title": "O kampanii"
+    },
+    {
+      "id": "team",
+      "title": "Drużyna"
+    }
+  ]
+}
