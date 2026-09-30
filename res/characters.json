@@ -3663,7 +3663,7 @@
     "character": "Erdar Morbor",
     "player": "keero",
     "campaigns": [
-      "Dragon Of Icespire Peak"
+      "Dragon of Icespire Peak"
     ],
     "classes": [
       "Cleric"
@@ -3926,6 +3926,51 @@
     ],
     "race": "Human",
     "status": "Porzucona",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
+  },
+  {
+    "portrait": "/res/portraits/char-0263.jpg",
+    "character": "Theran",
+    "player": "Mat",
+    "campaigns": [
+      "Dragon of Icespire Peak"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Genasi",
+    "status": "Martwa",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
+  },
+  {
+    "portrait": "/res/portraits/char-0264.jpg",
+    "character": "Xavier",
+    "player": "archangelss",
+    "campaigns": [
+      "Echtra - Zima Irgaeli"
+    ],
+    "classes": [
+      "Monk"
+    ],
+    "race": "Dragonborn",
+    "status": "Porzucona",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
+  },
+  {
+    "portrait": "/res/portraits/char-0262.webp",
+    "character": "Anathea",
+    "player": "Mat",
+    "campaigns": [
+      "Dragon of Icespire Peak"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Half-Elf",
+    "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   }
