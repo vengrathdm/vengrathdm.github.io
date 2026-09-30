@@ -3,1282 +3,1282 @@
   "assets": [
     {
       "id": "asset-0001",
-      "path": "/subpages/sala-chwaly/legends-of-barovia/character-portraits/Pela.png",
+      "path": "/subpages/legends-of-barovia/character-portraits/Pela.png",
       "type": "portrait"
     },
     {
       "id": "asset-0002",
-      "path": "/subpages/sala-chwaly/legends-of-barovia/character-portraits/Luekher.png",
+      "path": "/subpages/legends-of-barovia/character-portraits/Luekher.png",
       "type": "portrait"
     },
     {
       "id": "asset-0003",
-      "path": "/subpages/sala-chwaly/legends-of-barovia/character-portraits/Damira.png",
+      "path": "/subpages/legends-of-barovia/character-portraits/Damira.png",
       "type": "portrait"
     },
     {
       "id": "asset-0004",
-      "path": "/subpages/sala-chwaly/legends-of-barovia/character-portraits/Pchełka.png",
+      "path": "/subpages/legends-of-barovia/character-portraits/Pchełka.png",
       "type": "portrait"
     },
     {
       "id": "asset-0005",
-      "path": "/subpages/sala-chwaly/legends-of-barovia/character-portraits/Eliasz.png",
+      "path": "/subpages/legends-of-barovia/character-portraits/Eliasz.png",
       "type": "portrait"
     },
     {
       "id": "asset-0006",
-      "path": "/subpages/sala-chwaly/mences-of-irensberg/postaci-graczy/Zwada.webp",
+      "path": "/subpages/mences-of-irensberg/postaci-graczy/Zwada.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0007",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Kirion_Art.webp",
+      "path": "/subpages/postaci-graczy/Kirion_Art.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0008",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Andiron_Art.webp",
+      "path": "/subpages/postaci-graczy/Andiron_Art.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0009",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Erro_Art.jpg",
+      "path": "/subpages/postaci-graczy/Erro_Art.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0010",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Etaire_Art.jpg",
+      "path": "/subpages/postaci-graczy/Etaire_Art.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0011",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Flavia_Art.jpg",
+      "path": "/subpages/postaci-graczy/Flavia_Art.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0012",
-      "path": "/subpages/sala-chwaly/mences-of-irensberg/postaci-graczy/Oxie.webp",
+      "path": "/subpages/mences-of-irensberg/postaci-graczy/Oxie.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0013",
-      "path": "/subpages/sala-chwaly/mences-of-irensberg/postaci-graczy/Keto.webp",
+      "path": "/subpages/mences-of-irensberg/postaci-graczy/Keto.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0014",
-      "path": "/subpages/sala-chwaly/mences-of-irensberg/postaci-graczy/Thorgir.webp",
+      "path": "/subpages/mences-of-irensberg/postaci-graczy/Thorgir.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0015",
-      "path": "/subpages/sala-chwaly/blood-red-snow-white/portrety-postaci/Belle.png",
+      "path": "/subpages/blood-red-snow-white/portrety-postaci/Belle.png",
       "type": "portrait"
     },
     {
       "id": "asset-0016",
-      "path": "/subpages/sala-chwaly/blood-red-snow-white/portrety-postaci/Vespera.png",
+      "path": "/subpages/blood-red-snow-white/portrety-postaci/Vespera.png",
       "type": "portrait"
     },
     {
       "id": "asset-0017",
-      "path": "/subpages/sala-chwaly/blood-red-snow-white/portrety-postaci/Seryth.png",
+      "path": "/subpages/blood-red-snow-white/portrety-postaci/Seryth.png",
       "type": "portrait"
     },
     {
       "id": "asset-0018",
-      "path": "/subpages/sala-chwaly/blood-red-snow-white/portrety-postaci/Ariana.png",
+      "path": "/subpages/blood-red-snow-white/portrety-postaci/Ariana.png",
       "type": "portrait"
     },
     {
       "id": "asset-0019",
-      "path": "/subpages/sala-chwaly/sands-of-doom/portrety-postaci/Vaelor.png",
+      "path": "/subpages/sands-of-doom/portrety-postaci/Vaelor.png",
       "type": "portrait"
     },
     {
       "id": "asset-0020",
-      "path": "/subpages/sala-chwaly/sands-of-doom/portrety-postaci/Bromli.png",
+      "path": "/subpages/sands-of-doom/portrety-postaci/Bromli.png",
       "type": "portrait"
     },
     {
       "id": "asset-0021",
-      "path": "/subpages/sala-chwaly/sands-of-doom/portrety-postaci/Gromar.png",
+      "path": "/subpages/sands-of-doom/portrety-postaci/Gromar.png",
       "type": "portrait"
     },
     {
       "id": "asset-0022",
-      "path": "/subpages/sala-chwaly/sands-of-doom/portrety-postaci/Samira.png",
+      "path": "/subpages/sands-of-doom/portrety-postaci/Samira.png",
       "type": "portrait"
     },
     {
       "id": "asset-0023",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Busto.webp",
+      "path": "/subpages/postaci-graczy/Busto.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0024",
-      "path": "/subpages/sala-chwaly/sands-of-doom/portrety-postaci/Nefira.png",
+      "path": "/subpages/sands-of-doom/portrety-postaci/Nefira.png",
       "type": "portrait"
     },
     {
       "id": "asset-0025",
-      "path": "/subpages/sala-chwaly/shards-of-the-past/postaci-graczy/Miriadae.jpg",
+      "path": "/subpages/shards-of-the-past/postaci-graczy/Miriadae.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0026",
-      "path": "/subpages/sala-chwaly/shards-of-the-past/postaci-graczy/Zog.png",
+      "path": "/subpages/shards-of-the-past/postaci-graczy/Zog.png",
       "type": "portrait"
     },
     {
       "id": "asset-0027",
-      "path": "/subpages/sala-chwaly/shards-of-the-past/postaci-graczy/Styx.jpg",
+      "path": "/subpages/shards-of-the-past/postaci-graczy/Styx.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0028",
-      "path": "/subpages/sala-chwaly/shards-of-the-past/postaci-graczy/Kukdu.png",
+      "path": "/subpages/shards-of-the-past/postaci-graczy/Kukdu.png",
       "type": "portrait"
     },
     {
       "id": "asset-0029",
-      "path": "/subpages/sala-chwaly/turn-of-fortunes-wheel/portrety-postaci/Oorim.png",
+      "path": "/subpages/turn-of-fortunes-wheel/portrety-postaci/Oorim.png",
       "type": "portrait"
     },
     {
       "id": "asset-0030",
-      "path": "/subpages/sala-chwaly/turn-of-fortunes-wheel/portrety-postaci/Kelan.png",
+      "path": "/subpages/turn-of-fortunes-wheel/portrety-postaci/Kelan.png",
       "type": "portrait"
     },
     {
       "id": "asset-0031",
-      "path": "/subpages/sala-chwaly/turn-of-fortunes-wheel/portrety-postaci/Roderick.png",
+      "path": "/subpages/turn-of-fortunes-wheel/portrety-postaci/Roderick.png",
       "type": "portrait"
     },
     {
       "id": "asset-0032",
-      "path": "/subpages/sala-chwaly/turn-of-fortunes-wheel/portrety-postaci/Adria.png",
+      "path": "/subpages/turn-of-fortunes-wheel/portrety-postaci/Adria.png",
       "type": "portrait"
     },
     {
       "id": "asset-0033",
-      "path": "/subpages/sala-chwaly/turn-of-fortunes-wheel/portrety-postaci/Varok Nightshade.png",
+      "path": "/subpages/turn-of-fortunes-wheel/portrety-postaci/Varok Nightshade.png",
       "type": "portrait"
     },
     {
       "id": "asset-0034",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Elric Springfall-Rezus-BarberOfSilverymoon_cropped.webp",
+      "path": "/subpages/postaci-graczy/Elric Springfall-Rezus-BarberOfSilverymoon_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0035",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Cindic Ruma.png",
+      "path": "/subpages/postaci-graczy/Cindic Ruma.png",
       "type": "portrait"
     },
     {
       "id": "asset-0036",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Dain Gorumn-Goku94-LostMineOfPhandelver-Fighter-Dwarf-Finished.png",
+      "path": "/subpages/postaci-graczy/Dain Gorumn-Goku94-LostMineOfPhandelver-Fighter-Dwarf-Finished.png",
       "type": "portrait"
     },
     {
       "id": "asset-0037",
-      "path": "/subpages/sala-chwaly/Ksiazeta-Heartwell/player-characters/Placeholder_Character_1.png",
+      "path": "/subpages/Ksiazeta-Heartwell/player-characters/Placeholder_Character_1.png",
       "type": "portrait"
     },
     {
       "id": "asset-0038",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Asta Caemor-Agata-Curse of Strahd.png",
+      "path": "/subpages/postaci-graczy/Asta Caemor-Agata-Curse of Strahd.png",
       "type": "portrait"
     },
     {
       "id": "asset-0039",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Rais-Krystian-CurseOfStrahd-Warlock-Human-Dead.webp",
+      "path": "/subpages/postaci-graczy/Rais-Krystian-CurseOfStrahd-Warlock-Human-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0040",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Rune-Łukasz-CurseOfStrahd.webp",
+      "path": "/subpages/postaci-graczy/Rune-Łukasz-CurseOfStrahd.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0041",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Urien.jpg",
+      "path": "/subpages/postaci-graczy/Urien.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0042",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Val'Athelvrak-Artur-Drakkenheim-Ranger-Dragonborn-Dead.webp",
+      "path": "/subpages/postaci-graczy/Val'Athelvrak-Artur-Drakkenheim-Ranger-Dragonborn-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0043",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Alem-Mateusz-Drakkenheim.png",
+      "path": "/subpages/postaci-graczy/Alem-Mateusz-Drakkenheim.png",
       "type": "portrait"
     },
     {
       "id": "asset-0044",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Thomos-Aureli-DungeonsOfDrakkenheim.webp",
+      "path": "/subpages/postaci-graczy/Thomos-Aureli-DungeonsOfDrakkenheim.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0045",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Zemir-Kajetan-DungeonsOfDrakkenheim_cropped.webp",
+      "path": "/subpages/postaci-graczy/Zemir-Kajetan-DungeonsOfDrakkenheim_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0046",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Nicu-Miauriusz-DungeonsOfDrakkenheim_cropped.webp",
+      "path": "/subpages/postaci-graczy/Nicu-Miauriusz-DungeonsOfDrakkenheim_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0047",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Corben-Michał-DungeonsOfDrakkenheim.webp",
+      "path": "/subpages/postaci-graczy/Corben-Michał-DungeonsOfDrakkenheim.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0048",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Kamyk.webp",
+      "path": "/subpages/postaci-graczy/Kamyk.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0049",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Caden.webp",
+      "path": "/subpages/postaci-graczy/Caden.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0050",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Drogon.jpg",
+      "path": "/subpages/postaci-graczy/Drogon.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0051",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Sigrun.webp",
+      "path": "/subpages/postaci-graczy/Sigrun.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0052",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Grunmor.jpg",
+      "path": "/subpages/postaci-graczy/Grunmor.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0053",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Feichin.webp",
+      "path": "/subpages/postaci-graczy/Feichin.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0054",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Maeve.jpg",
+      "path": "/subpages/postaci-graczy/Maeve.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0055",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Lyanna Steelheart-Natalia-GhoulHour.png",
+      "path": "/subpages/postaci-graczy/Lyanna Steelheart-Natalia-GhoulHour.png",
       "type": "portrait"
     },
     {
       "id": "asset-0056",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Briala Twinklebrush-Maria-GhoulHour_cropped.webp",
+      "path": "/subpages/postaci-graczy/Briala Twinklebrush-Maria-GhoulHour_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0057",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Migotka-Martyna-GhoulHour.png",
+      "path": "/subpages/postaci-graczy/Migotka-Martyna-GhoulHour.png",
       "type": "portrait"
     },
     {
       "id": "asset-0058",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Yen Airon-Kuba-GhoulHour.webp",
+      "path": "/subpages/postaci-graczy/Yen Airon-Kuba-GhoulHour.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0059",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Vornis-Viking-GhoulHour-Ranger.webp",
+      "path": "/subpages/postaci-graczy/Vornis-Viking-GhoulHour-Ranger.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0060",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Audrey_Fulton.png",
+      "path": "/subpages/postaci-graczy/Audrey_Fulton.png",
       "type": "portrait"
     },
     {
       "id": "asset-0061",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Dan_Whelan.png",
+      "path": "/subpages/postaci-graczy/Dan_Whelan.png",
       "type": "portrait"
     },
     {
       "id": "asset-0062",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Patty_Graham.png",
+      "path": "/subpages/postaci-graczy/Patty_Graham.png",
       "type": "portrait"
     },
     {
       "id": "asset-0063",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Lugash.jpg",
+      "path": "/subpages/postaci-graczy/Lugash.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0064",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Eltris.jpg",
+      "path": "/subpages/postaci-graczy/Eltris.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0065",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Olgi-Viking-LostMineOfPhandelver.webp",
+      "path": "/subpages/postaci-graczy/Olgi-Viking-LostMineOfPhandelver.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0066",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Barbiel Angela Barbaresca-Diana-MenacesOfGloomforest.webp",
+      "path": "/subpages/postaci-graczy/Barbiel Angela Barbaresca-Diana-MenacesOfGloomforest.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0067",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Elran-Daniel-MenacesOfGloomforest_cropped.jpg",
+      "path": "/subpages/postaci-graczy/Elran-Daniel-MenacesOfGloomforest_cropped.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0068",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Vivienne Blackthorn-Maria-MenacesOfGloomforest.png",
+      "path": "/subpages/postaci-graczy/Vivienne Blackthorn-Maria-MenacesOfGloomforest.png",
       "type": "portrait"
     },
     {
       "id": "asset-0069",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Nyxallia-Martyna-MythicOdysseyOfTheDragonlords.png",
+      "path": "/subpages/postaci-graczy/Nyxallia-Martyna-MythicOdysseyOfTheDragonlords.png",
       "type": "portrait"
     },
     {
       "id": "asset-0070",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Diana-Diana-MythicOdysseyOfTheDragonlords.webp",
+      "path": "/subpages/postaci-graczy/Diana-Diana-MythicOdysseyOfTheDragonlords.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0071",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Axel-Mariusz-MythicOdysseyOfTheDragonlords-Bard-Satyr-Abandoned.webp",
+      "path": "/subpages/postaci-graczy/Axel-Mariusz-MythicOdysseyOfTheDragonlords-Bard-Satyr-Abandoned.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0072",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Quill-Shaggy-MythicOdysseyOfTheDragonlords.png",
+      "path": "/subpages/postaci-graczy/Quill-Shaggy-MythicOdysseyOfTheDragonlords.png",
       "type": "portrait"
     },
     {
       "id": "asset-0073",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Satrius Nevermore-Przemysław Król-NeverwinterIngrygi.png",
+      "path": "/subpages/postaci-graczy/Satrius Nevermore-Przemysław Król-NeverwinterIngrygi.png",
       "type": "portrait"
     },
     {
       "id": "asset-0074",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Adeline-Karolina Z-NeverwinterIntrygi.jpg",
+      "path": "/subpages/postaci-graczy/Adeline-Karolina Z-NeverwinterIntrygi.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0075",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Ozros-Mateusz-NeverwinterIntrygi.webp",
+      "path": "/subpages/postaci-graczy/Ozros-Mateusz-NeverwinterIntrygi.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0076",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Mullder-Alek-Neverwinter-Intrygi.jpg",
+      "path": "/subpages/postaci-graczy/Mullder-Alek-Neverwinter-Intrygi.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0077",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Rina.png",
+      "path": "/subpages/postaci-graczy/Rina.png",
       "type": "portrait"
     },
     {
       "id": "asset-0078",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Theron.png",
+      "path": "/subpages/postaci-graczy/Theron.png",
       "type": "portrait"
     },
     {
       "id": "asset-0079",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Xavier-archangelss-OdysseyOfTheDragonlords-Cleric-Siren.png",
+      "path": "/subpages/postaci-graczy/Xavier-archangelss-OdysseyOfTheDragonlords-Cleric-Siren.png",
       "type": "portrait"
     },
     {
       "id": "asset-0080",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Xastar.png",
+      "path": "/subpages/postaci-graczy/Xastar.png",
       "type": "portrait"
     },
     {
       "id": "asset-0081",
-      "path": "/subpages/sala-chwaly/postaci-graczy/vespera-art.webp",
+      "path": "/subpages/postaci-graczy/vespera-art.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0082",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Zander Art.png",
+      "path": "/subpages/postaci-graczy/Zander Art.png",
       "type": "portrait"
     },
     {
       "id": "asset-0083",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Ryuji.png",
+      "path": "/subpages/postaci-graczy/Ryuji.png",
       "type": "portrait"
     },
     {
       "id": "asset-0084",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Bronn.png",
+      "path": "/subpages/postaci-graczy/Bronn.png",
       "type": "portrait"
     },
     {
       "id": "asset-0085",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Saki.png",
+      "path": "/subpages/postaci-graczy/Saki.png",
       "type": "portrait"
     },
     {
       "id": "asset-0086",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Amarika.jpg",
+      "path": "/subpages/postaci-graczy/Amarika.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0087",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Flare.png",
+      "path": "/subpages/postaci-graczy/Flare.png",
       "type": "portrait"
     },
     {
       "id": "asset-0088",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Cassy-Rivani-Drakkenheim.jpg",
+      "path": "/subpages/postaci-graczy/Cassy-Rivani-Drakkenheim.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0089",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Sel'avel Annora Solthar (Saskia).png",
+      "path": "/subpages/postaci-graczy/Sel'avel Annora Solthar (Saskia).png",
       "type": "portrait"
     },
     {
       "id": "asset-0090",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Emrys-Viking-SonsOfAzalin.webp",
+      "path": "/subpages/postaci-graczy/Emrys-Viking-SonsOfAzalin.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0091",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Fauve Portrait.webp",
+      "path": "/subpages/postaci-graczy/Fauve Portrait.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0092",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Vivienne Portrait.png",
+      "path": "/subpages/postaci-graczy/Vivienne Portrait.png",
       "type": "portrait"
     },
     {
       "id": "asset-0093",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Kiara Portrait.png",
+      "path": "/subpages/postaci-graczy/Kiara Portrait.png",
       "type": "portrait"
     },
     {
       "id": "asset-0094",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Zenthyra Nyxis-Diana-Sons of Azalin-Wizard - Dragonborn-Abandoned.webp",
+      "path": "/subpages/postaci-graczy/Zenthyra Nyxis-Diana-Sons of Azalin-Wizard - Dragonborn-Abandoned.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0095",
-      "path": "/subpages/sala-chwaly/postaci-graczy/sappho.webp",
+      "path": "/subpages/postaci-graczy/sappho.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0096",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Mobius.png",
+      "path": "/subpages/postaci-graczy/Mobius.png",
       "type": "portrait"
     },
     {
       "id": "asset-0097",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Bambik-Killyox-SunlessCitadel-Artificer-Gnome-Dead.webp",
+      "path": "/subpages/postaci-graczy/Bambik-Killyox-SunlessCitadel-Artificer-Gnome-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0098",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Magnus-Viking-SunlessCitadel.png",
+      "path": "/subpages/postaci-graczy/Magnus-Viking-SunlessCitadel.png",
       "type": "portrait"
     },
     {
       "id": "asset-0099",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Zani.jpg",
+      "path": "/subpages/postaci-graczy/Zani.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0100",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Halfyr.webp",
+      "path": "/subpages/postaci-graczy/Halfyr.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0101",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Aerion.jpg",
+      "path": "/subpages/postaci-graczy/Aerion.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0102",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Saev.webp",
+      "path": "/subpages/postaci-graczy/Saev.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0103",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Vera.webp",
+      "path": "/subpages/postaci-graczy/Vera.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0104",
-      "path": "/subpages/sala-chwaly/postaci-graczy/kyle_dewgras.webp",
+      "path": "/subpages/postaci-graczy/kyle_dewgras.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0105",
-      "path": "/subpages/sala-chwaly/postaci-graczy/kylie_dewgras.webp",
+      "path": "/subpages/postaci-graczy/kylie_dewgras.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0106",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Balris-Rezus-TombOfAnnihilation_cropped.webp",
+      "path": "/subpages/postaci-graczy/Balris-Rezus-TombOfAnnihilation_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0107",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Estellar-koksuvi-TombOfAnnihilation_cropped.webp",
+      "path": "/subpages/postaci-graczy/Estellar-koksuvi-TombOfAnnihilation_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0108",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Blaine-lexonis-TombOfAnnihilation_cropped.webp",
+      "path": "/subpages/postaci-graczy/Blaine-lexonis-TombOfAnnihilation_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0109",
-      "path": "/subpages/sala-chwaly/postaci-graczy/turnbacktheendlessnightGnome.webp",
+      "path": "/subpages/postaci-graczy/turnbacktheendlessnightGnome.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0110",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Elynnor.webp",
+      "path": "/subpages/postaci-graczy/Elynnor.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0111",
-      "path": "/subpages/sala-chwaly/postaci-graczy/HialaEvergreen.webp",
+      "path": "/subpages/postaci-graczy/HialaEvergreen.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0112",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Petril-koksuvi-TurnBackTheEndlessNight-Warlock-Elf.webp",
+      "path": "/subpages/postaci-graczy/Petril-koksuvi-TurnBackTheEndlessNight-Warlock-Elf.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0113",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Gondam Thunderbrew.webp",
+      "path": "/subpages/postaci-graczy/Gondam Thunderbrew.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0114",
-      "path": "/subpages/sala-chwaly/Ksiazeta-Heartwell/player-characters/Character_1.png",
+      "path": "/subpages/Ksiazeta-Heartwell/player-characters/Character_1.png",
       "type": "portrait"
     },
     {
       "id": "asset-0115",
-      "path": "/subpages/sala-chwaly/Ksiazeta-Heartwell/player-characters/Placeholder_Character_2.png",
+      "path": "/subpages/Ksiazeta-Heartwell/player-characters/Placeholder_Character_2.png",
       "type": "portrait"
     },
     {
       "id": "asset-0116",
-      "path": "/subpages/sala-chwaly/Ksiazeta-Heartwell/player-characters/Placeholder_Character_3.png",
+      "path": "/subpages/Ksiazeta-Heartwell/player-characters/Placeholder_Character_3.png",
       "type": "portrait"
     },
     {
       "id": "asset-0117",
-      "path": "/subpages/sala-chwaly/Ksiazeta-Heartwell/player-characters/Placeholder_Character_4.png",
+      "path": "/subpages/Ksiazeta-Heartwell/player-characters/Placeholder_Character_4.png",
       "type": "portrait"
     },
     {
       "id": "asset-0118",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Aetherleaf-koksuvi-DungeonsOfDrakkenheim_cropped.webp",
+      "path": "/subpages/postaci-graczy/Aetherleaf-koksuvi-DungeonsOfDrakkenheim_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0119",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Balin-lexonis-DragonOfIcespirePeak_cropped.webp",
+      "path": "/subpages/postaci-graczy/Balin-lexonis-DragonOfIcespirePeak_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0120",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Cal-lexonis-TheUnlikelyFive_cropped.webp",
+      "path": "/subpages/postaci-graczy/Cal-lexonis-TheUnlikelyFive_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0121",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Cerys-Maria-Echtra_cropped.webp",
+      "path": "/subpages/postaci-graczy/Cerys-Maria-Echtra_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0122",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Cloud Fang -koksuvi-TombOfAnnihilation_cropped.webp",
+      "path": "/subpages/postaci-graczy/Cloud Fang -koksuvi-TombOfAnnihilation_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0123",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Eldamir Velithar-Rezus-TheUnlikelyFive_cropped.webp",
+      "path": "/subpages/postaci-graczy/Eldamir Velithar-Rezus-TheUnlikelyFive_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0124",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Galvan Bestia Waveseater-Rezus-TheUnlikelyFive_cropped.webp",
+      "path": "/subpages/postaci-graczy/Galvan Bestia Waveseater-Rezus-TheUnlikelyFive_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0125",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Kildrak-koksuvi-MenacesOfGloomforest_cropped.webp",
+      "path": "/subpages/postaci-graczy/Kildrak-koksuvi-MenacesOfGloomforest_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0126",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Korrak Orphanmaker-lexonis-DragonOfIcespirePeak_cropped.webp",
+      "path": "/subpages/postaci-graczy/Korrak Orphanmaker-lexonis-DragonOfIcespirePeak_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0127",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Leoynor-Rezus-LostMineOfPhandelver_cropped.webp",
+      "path": "/subpages/postaci-graczy/Leoynor-Rezus-LostMineOfPhandelver_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0128",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Maragul-Rezus-DungeonsOfDrakkenheim_cropped.webp",
+      "path": "/subpages/postaci-graczy/Maragul-Rezus-DungeonsOfDrakkenheim_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0129",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Naetoris Kedre-koksuvi-TheUnlikelyFive-Wizard-Elf-Dead.png",
+      "path": "/subpages/postaci-graczy/Naetoris Kedre-koksuvi-TheUnlikelyFive-Wizard-Elf-Dead.png",
       "type": "portrait"
     },
     {
       "id": "asset-0130",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Valdos-lexonis-Tomb-of-Annihilation_cropped.webp",
+      "path": "/subpages/postaci-graczy/Valdos-lexonis-Tomb-of-Annihilation_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0131",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Vurlarn-Rezus-TombOfAnnihilation_cropped.webp",
+      "path": "/subpages/postaci-graczy/Vurlarn-Rezus-TombOfAnnihilation_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0132",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Xelrae-Jeesoo-RimeOfTheFrostmaiden_cropped.webp",
+      "path": "/subpages/postaci-graczy/Xelrae-Jeesoo-RimeOfTheFrostmaiden_cropped.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0133",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Aldori-killyox-HeroesOfDrakkenheim-Rogue-HalfElf-Dead.webp",
+      "path": "/subpages/postaci-graczy/Aldori-killyox-HeroesOfDrakkenheim-Rogue-HalfElf-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0134",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Aravelthir Orleneldth-Artur-ShardsOfThePast-Artificer-Elf-Dead.webp",
+      "path": "/subpages/postaci-graczy/Aravelthir Orleneldth-Artur-ShardsOfThePast-Artificer-Elf-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0135",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Ari-Dominik X-ShardsOfThePast-Wizard-HalfOrc-Dead.webp",
+      "path": "/subpages/postaci-graczy/Ari-Dominik X-ShardsOfThePast-Wizard-HalfOrc-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0136",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Arson-DharmaEye-LostMineOfPhandelver TyrannyOfDragons-Druid-Genasi-CampaignsComplete.webp",
+      "path": "/subpages/postaci-graczy/Arson-DharmaEye-LostMineOfPhandelver TyrannyOfDragons-Druid-Genasi-CampaignsComplete.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0137",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Bysk-Ezu-ShardsOfThePast-Bard-Fairy-Dead.webp",
+      "path": "/subpages/postaci-graczy/Bysk-Ezu-ShardsOfThePast-Bard-Fairy-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0138",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Chronius Mk. III- Route-LostMineOfPhandelver-Sorcerer-Autognome-Completed.webp",
+      "path": "/subpages/postaci-graczy/Chronius Mk. III- Route-LostMineOfPhandelver-Sorcerer-Autognome-Completed.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0139",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Damrien-Wiktoria Red-ShardsOfThePastLegacy-Ranger-Human-Dead.webp",
+      "path": "/subpages/postaci-graczy/Damrien-Wiktoria Red-ShardsOfThePastLegacy-Ranger-Human-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0140",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Faeyra-Goku-HeroesOfDrakkenheim-Ranger-HalfElf-Dead.webp",
+      "path": "/subpages/postaci-graczy/Faeyra-Goku-HeroesOfDrakkenheim-Ranger-HalfElf-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0141",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Galen Teller-dartax4-MenacesOfGloomforestLegacy-Barbarian-Human-Abandoned.webp",
+      "path": "/subpages/postaci-graczy/Galen Teller-dartax4-MenacesOfGloomforestLegacy-Barbarian-Human-Abandoned.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0142",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Hairos-Killyox-HeroesOfDrakkenheim-Warlock Sorcerer-ShaddarKai-Dead.webp",
+      "path": "/subpages/postaci-graczy/Hairos-Killyox-HeroesOfDrakkenheim-Warlock Sorcerer-ShaddarKai-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0143",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Kay-Wiktoria Red-MenacesOfGloomforest-Cleric-Tiefling-Dead.webp",
+      "path": "/subpages/postaci-graczy/Kay-Wiktoria Red-MenacesOfGloomforest-Cleric-Tiefling-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0144",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Korghos Khul-killyox-HeroesOfDrakkenheim-Fighter-Goliath-Dead.webp",
+      "path": "/subpages/postaci-graczy/Korghos Khul-killyox-HeroesOfDrakkenheim-Fighter-Goliath-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0145",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Korre-Viktoria Red-MenacesOfGloomforest-Warlock Bard- Dead.png",
+      "path": "/subpages/postaci-graczy/Korre-Viktoria Red-MenacesOfGloomforest-Warlock Bard- Dead.png",
       "type": "portrait"
     },
     {
       "id": "asset-0146",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Livianna-Jasmine-KuChwaleTyra-Wizard-Tiefling-Solved.webp",
+      "path": "/subpages/postaci-graczy/Livianna-Jasmine-KuChwaleTyra-Wizard-Tiefling-Solved.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0147",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Michał-NeverwinterIntrygi-Paladin-HalfElf-Porzucony.webp",
+      "path": "/subpages/postaci-graczy/Michał-NeverwinterIntrygi-Paladin-HalfElf-Porzucony.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0148",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Petra-Wiktoria Red-ShardsOfThePastLegacy-Druid-Human-Dead.png",
+      "path": "/subpages/postaci-graczy/Petra-Wiktoria Red-ShardsOfThePastLegacy-Druid-Human-Dead.png",
       "type": "portrait"
     },
     {
       "id": "asset-0149",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Shaitis-Ryokis-KuChwaleTyra-Rogue-HalfElf-Solved.webp",
+      "path": "/subpages/postaci-graczy/Shaitis-Ryokis-KuChwaleTyra-Rogue-HalfElf-Solved.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0150",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Soleilien-Ezu-ShardsOfThePast-Cleric-Elf-Dead.webp",
+      "path": "/subpages/postaci-graczy/Soleilien-Ezu-ShardsOfThePast-Cleric-Elf-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0151",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Torlek-dartax4-ShardsOfThePastLegacy-Ranger-Dwarf-Dead.webp",
+      "path": "/subpages/postaci-graczy/Torlek-dartax4-ShardsOfThePastLegacy-Ranger-Dwarf-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0152",
-      "path": "/subpages/sala-chwaly/postaci-graczy/ktos-McKimono-HeroesOfDrakkenheim-Paladin-Human-AbandonedQuest.webp",
+      "path": "/subpages/postaci-graczy/ktos-McKimono-HeroesOfDrakkenheim-Paladin-Human-AbandonedQuest.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0153",
-      "path": "/subpages/sala-chwaly/postaci-graczy/x-Przemek-HeroesOfDrakkenheim-Sorcerer-ShaddarKai-Dead.jpg",
+      "path": "/subpages/postaci-graczy/x-Przemek-HeroesOfDrakkenheim-Sorcerer-ShaddarKai-Dead.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0154",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Alyss-DKJowler-MenacesOfGloomforestLegacy-Cleric-Half-Elf-Dead.webp",
+      "path": "/subpages/postaci-graczy/Alyss-DKJowler-MenacesOfGloomforestLegacy-Cleric-Half-Elf-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0155",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Aylin-Rawiea-MenacesOfGloomforestLegacy-Sorcerer-HalfElf-Dead.webp",
+      "path": "/subpages/postaci-graczy/Aylin-Rawiea-MenacesOfGloomforestLegacy-Sorcerer-HalfElf-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0156",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Carric Tallstag-Boulton-MenacesOfGloomforestLegacy-Paladin-Human-Dead.png",
+      "path": "/subpages/postaci-graczy/Carric Tallstag-Boulton-MenacesOfGloomforestLegacy-Paladin-Human-Dead.png",
       "type": "portrait"
     },
     {
       "id": "asset-0157",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Damien-Aruś-MenacesOfGloomforestLegacy-Paladin-Human-Dead.webp",
+      "path": "/subpages/postaci-graczy/Damien-Aruś-MenacesOfGloomforestLegacy-Paladin-Human-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0158",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Fin-Sajko-MenacesOfGloomforestLegacy-Druid-Elf-Abandoned.webp",
+      "path": "/subpages/postaci-graczy/Fin-Sajko-MenacesOfGloomforestLegacy-Druid-Elf-Abandoned.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0159",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Kaela_Mensha_Khaine-Kot-WPogoniZaPiórOwcą-Rogue-HalfOrc-CompletedAdventure.webp",
+      "path": "/subpages/postaci-graczy/Kaela_Mensha_Khaine-Kot-WPogoniZaPiórOwcą-Rogue-HalfOrc-CompletedAdventure.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0160",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Kasius-Aruś-MenacesOfGloomforestLegacy-Bard-Tiefling-Abandoned.webp",
+      "path": "/subpages/postaci-graczy/Kasius-Aruś-MenacesOfGloomforestLegacy-Bard-Tiefling-Abandoned.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0161",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Blareinn-Artur-MayhemInEarthspurMines-Druid-Air-Genasi-Succeeded.png",
+      "path": "/subpages/postaci-graczy/Blareinn-Artur-MayhemInEarthspurMines-Druid-Air-Genasi-Succeeded.png",
       "type": "portrait"
     },
     {
       "id": "asset-0162",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Corsio-Artur-ForgeOfFury BarberOfSilverymoon-Ranger-Human-Succeeded.png",
+      "path": "/subpages/postaci-graczy/Corsio-Artur-ForgeOfFury BarberOfSilverymoon-Ranger-Human-Succeeded.png",
       "type": "portrait"
     },
     {
       "id": "asset-0163",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Dawa-Artur-Sunless Citadel-Cleric-Goliath-Succeeded.png",
+      "path": "/subpages/postaci-graczy/Dawa-Artur-Sunless Citadel-Cleric-Goliath-Succeeded.png",
       "type": "portrait"
     },
     {
       "id": "asset-0164",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Naeren-Starshade-Artur-Drakkenheim-Ranger-Wood-Elf-Succeeded.png",
+      "path": "/subpages/postaci-graczy/Naeren-Starshade-Artur-Drakkenheim-Ranger-Wood-Elf-Succeeded.png",
       "type": "portrait"
     },
     {
       "id": "asset-0165",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Aribeth Cassandra Olyrnn-Whitespire-wpoluwiatr-ShardsOfThePast-Wizard-HalfElf-Dead.jpg",
+      "path": "/subpages/postaci-graczy/Aribeth Cassandra Olyrnn-Whitespire-wpoluwiatr-ShardsOfThePast-Wizard-HalfElf-Dead.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0166",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Faylen-wpoluwiatr-DragonOfIcespirePeak-Ranger-Elf-Dead.jpg",
+      "path": "/subpages/postaci-graczy/Faylen-wpoluwiatr-DragonOfIcespirePeak-Ranger-Elf-Dead.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0167",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Lyanna Redglaive-wpoluwiatr-DragonOfIcespirePeak-Cleric-Human-Dead.jpg",
+      "path": "/subpages/postaci-graczy/Lyanna Redglaive-wpoluwiatr-DragonOfIcespirePeak-Cleric-Human-Dead.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0168",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Zwada-wpoluwiatr-ShardsOfThePast-Sorcerer-Tiefling-Dead.jpg",
+      "path": "/subpages/postaci-graczy/Zwada-wpoluwiatr-ShardsOfThePast-Sorcerer-Tiefling-Dead.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0169",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Aelar-koksuvi-MenacesOfGloomforest.webp",
+      "path": "/subpages/postaci-graczy/Aelar-koksuvi-MenacesOfGloomforest.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0170",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Ajadres-neiiska-MenacesOfGloomforest.webp",
+      "path": "/subpages/postaci-graczy/Ajadres-neiiska-MenacesOfGloomforest.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0171",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Alan'Dir-Dominik X-MenacesOfGloomforest.webp",
+      "path": "/subpages/postaci-graczy/Alan'Dir-Dominik X-MenacesOfGloomforest.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0172",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Daer-Amadeusz-MenacesOfGloomforest.webp",
+      "path": "/subpages/postaci-graczy/Daer-Amadeusz-MenacesOfGloomforest.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0173",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Deldrach-Rezus-MenacesOfGloomforest.jpg",
+      "path": "/subpages/postaci-graczy/Deldrach-Rezus-MenacesOfGloomforest.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0174",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Felian-Hansik-MenacesOfGloomforest.webp",
+      "path": "/subpages/postaci-graczy/Felian-Hansik-MenacesOfGloomforest.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0175",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Kia-Zuza Cuban-MenacesOfGloomforest.jpg",
+      "path": "/subpages/postaci-graczy/Kia-Zuza Cuban-MenacesOfGloomforest.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0176",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Maro-Amadeusz-KampaniaNieznana.png",
+      "path": "/subpages/postaci-graczy/Maro-Amadeusz-KampaniaNieznana.png",
       "type": "portrait"
     },
     {
       "id": "asset-0177",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Meldar-Mateusz-MenacesOfGloomforest.webp",
+      "path": "/subpages/postaci-graczy/Meldar-Mateusz-MenacesOfGloomforest.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0178",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Narn-Amadeusz-Kampania Nieznana.webp",
+      "path": "/subpages/postaci-graczy/Narn-Amadeusz-Kampania Nieznana.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0179",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Yoor Benz-Amadeusz-MythicOdysseyOfTheDragonlords.webp",
+      "path": "/subpages/postaci-graczy/Yoor Benz-Amadeusz-MythicOdysseyOfTheDragonlords.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0180",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Anduine-vissara-LostMineOfPhandelver.webp",
+      "path": "/subpages/postaci-graczy/Anduine-vissara-LostMineOfPhandelver.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0181",
-      "path": "/subpages/sala-chwaly/postaci-graczy/AuriEl-Rivani-ShardsOfThePast.webp",
+      "path": "/subpages/postaci-graczy/AuriEl-Rivani-ShardsOfThePast.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0182",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Eris-vissara-HeroesOfDrakkenheim.webp",
+      "path": "/subpages/postaci-graczy/Eris-vissara-HeroesOfDrakkenheim.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0183",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Itzianna_Nendrescel_Rosewhisper-neiiska-Drakkenheim.webp",
+      "path": "/subpages/postaci-graczy/Itzianna_Nendrescel_Rosewhisper-neiiska-Drakkenheim.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0184",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Lourelin-vissara-TombOfAnnihilation.webp",
+      "path": "/subpages/postaci-graczy/Lourelin-vissara-TombOfAnnihilation.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0185",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Puff-Jakubek-DragonOfIcespirePeak.webp",
+      "path": "/subpages/postaci-graczy/Puff-Jakubek-DragonOfIcespirePeak.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0186",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Sentinel-Jakubek-RimeOfTheFrostmaiden.webp",
+      "path": "/subpages/postaci-graczy/Sentinel-Jakubek-RimeOfTheFrostmaiden.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0187",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Theia-Rivani-ForgeOfFury.webp",
+      "path": "/subpages/postaci-graczy/Theia-Rivani-ForgeOfFury.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0188",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Torg'dal-Viking-X.jpg",
+      "path": "/subpages/postaci-graczy/Torg'dal-Viking-X.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0189",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Aeviana-Martyna-BadRomanceBarovia.png",
+      "path": "/subpages/postaci-graczy/Aeviana-Martyna-BadRomanceBarovia.png",
       "type": "portrait"
     },
     {
       "id": "asset-0190",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Agash-Hansik-TombOfAnnihhilation.webp",
+      "path": "/subpages/postaci-graczy/Agash-Hansik-TombOfAnnihhilation.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0191",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Alaric-Shaggy-BadRomanceBarovia.webp",
+      "path": "/subpages/postaci-graczy/Alaric-Shaggy-BadRomanceBarovia.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0192",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Asael-Fennec-BadRomanceBarovia.jpg",
+      "path": "/subpages/postaci-graczy/Asael-Fennec-BadRomanceBarovia.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0193",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Bran Pinekeep-MateuszWijas-NeverwinterIntrygi.jpg",
+      "path": "/subpages/postaci-graczy/Bran Pinekeep-MateuszWijas-NeverwinterIntrygi.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0194",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Bungo Barkmaw-Amazur-DragonOfIcespirePeak.webp",
+      "path": "/subpages/postaci-graczy/Bungo Barkmaw-Amazur-DragonOfIcespirePeak.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0195",
-      "path": "/subpages/sala-chwaly/postaci-graczy/CorvanDraemir-Hansik-TheUnlikelyFive.webp",
+      "path": "/subpages/postaci-graczy/CorvanDraemir-Hansik-TheUnlikelyFive.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0196",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Dafinios-Hansik-TombOfAnnihilation.webp",
+      "path": "/subpages/postaci-graczy/Dafinios-Hansik-TombOfAnnihilation.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0197",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Divina-Natalia-BadRomanceBarovia.webp",
+      "path": "/subpages/postaci-graczy/Divina-Natalia-BadRomanceBarovia.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0198",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Fintana-leftpinky-MenacesOfGloomforest.jpg",
+      "path": "/subpages/postaci-graczy/Fintana-leftpinky-MenacesOfGloomforest.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0199",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Gunnar Ravenfall-Łukasz-GhoulHour.webp",
+      "path": "/subpages/postaci-graczy/Gunnar Ravenfall-Łukasz-GhoulHour.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0200",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Gustav-Hansik-HeroesOfDrakkenheim.webp",
+      "path": "/subpages/postaci-graczy/Gustav-Hansik-HeroesOfDrakkenheim.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0201",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Hogall-Amazur-RimeOfTheFrostmaiden.webp",
+      "path": "/subpages/postaci-graczy/Hogall-Amazur-RimeOfTheFrostmaiden.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0202",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Jacob-Mateusz-BadRomanceBarovia.webp",
+      "path": "/subpages/postaci-graczy/Jacob-Mateusz-BadRomanceBarovia.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0203",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Nailef-Hansik-LostMineOfPhandelver.webp",
+      "path": "/subpages/postaci-graczy/Nailef-Hansik-LostMineOfPhandelver.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0204",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Raric-Hansik-HeroesOfDrakkenheim.webp",
+      "path": "/subpages/postaci-graczy/Raric-Hansik-HeroesOfDrakkenheim.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0205",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Tarkin Kirhoff-Hansik-HeroesOfDrakkenheim.webp",
+      "path": "/subpages/postaci-graczy/Tarkin Kirhoff-Hansik-HeroesOfDrakkenheim.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0206",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Tonie Scam-Amazur-DragonOfIcespirePeak.png",
+      "path": "/subpages/postaci-graczy/Tonie Scam-Amazur-DragonOfIcespirePeak.png",
       "type": "portrait"
     },
     {
       "id": "asset-0207",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Velia-Natalia-BadRomanceBarovia.jpg",
+      "path": "/subpages/postaci-graczy/Velia-Natalia-BadRomanceBarovia.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0208",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Batturs-Viking-MenacesOfIrensberg-Rogue-Gnome.png",
+      "path": "/subpages/postaci-graczy/Batturs-Viking-MenacesOfIrensberg-Rogue-Gnome.png",
       "type": "portrait"
     },
     {
       "id": "asset-0209",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Brian-Radek-EchtraZima-Wizard Rogue.jpeg",
+      "path": "/subpages/postaci-graczy/Brian-Radek-EchtraZima-Wizard Rogue.jpeg",
       "type": "portrait"
     },
     {
       "id": "asset-0210",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Eamon-Mikołaj-EchtraZima-Barbarian-HalfOrc.webp",
+      "path": "/subpages/postaci-graczy/Eamon-Mikołaj-EchtraZima-Barbarian-HalfOrc.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0211",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Eryn-XXX-RimeOfTheFrostmaiden-Ranger-Human.png",
+      "path": "/subpages/postaci-graczy/Eryn-XXX-RimeOfTheFrostmaiden-Ranger-Human.png",
       "type": "portrait"
     },
     {
       "id": "asset-0212",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Kailan Vael Rhaen-Aleksandra-EchtraZima-Fighter-Elf.webp",
+      "path": "/subpages/postaci-graczy/Kailan Vael Rhaen-Aleksandra-EchtraZima-Fighter-Elf.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0213",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Gerwilda Stitchbite-Cezary-EchtraZima-Warlock.webp",
+      "path": "/subpages/postaci-graczy/Gerwilda Stitchbite-Cezary-EchtraZima-Warlock.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0214",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Indis-Diana-EchtraZima-Cleric.webp",
+      "path": "/subpages/postaci-graczy/Indis-Diana-EchtraZima-Cleric.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0215",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Verai-bezokasroka-HeroesOfBaldursGate-Wizard-HalfElf.jpg",
+      "path": "/subpages/postaci-graczy/Verai-bezokasroka-HeroesOfBaldursGate-Wizard-HalfElf.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0216",
-      "path": "/subpages/sala-chwaly/postaci-graczy/BellaWarlockTabaxi.jpg",
+      "path": "/subpages/postaci-graczy/BellaWarlockTabaxi.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0217",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Cynka Fairy Artificer.jpg",
+      "path": "/subpages/postaci-graczy/Cynka Fairy Artificer.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0218",
-      "path": "/subpages/sala-chwaly/postaci-graczy/M'rissi Warlock Tabaxi.jpg",
+      "path": "/subpages/postaci-graczy/M'rissi Warlock Tabaxi.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0219",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Okri Elderhorn-Shaggy-BadRomanceBarovia-Fighter-Dwarf-Dead.webp",
+      "path": "/subpages/postaci-graczy/Okri Elderhorn-Shaggy-BadRomanceBarovia-Fighter-Dwarf-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0220",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Tarnos Phylund-Viking-BadRomanceBarovia-Ranger-Human.webp",
+      "path": "/subpages/postaci-graczy/Tarnos Phylund-Viking-BadRomanceBarovia-Ranger-Human.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0221",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Alma - Loxodon Cleric - Weronika -Shards of the past.jpg",
+      "path": "/subpages/postaci-graczy/Alma - Loxodon Cleric - Weronika -Shards of the past.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0222",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Aralee Shaldont-neiiska-ForgeOfFury-Cleric-Shaddar-Kai-Succeeded.webp",
+      "path": "/subpages/postaci-graczy/Aralee Shaldont-neiiska-ForgeOfFury-Cleric-Shaddar-Kai-Succeeded.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0223",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Artemis-ParrotNetwork-EpicOdysseyOfTheDragonlords-Warlock-Aasimar-Abandoned.webp",
+      "path": "/subpages/postaci-graczy/Artemis-ParrotNetwork-EpicOdysseyOfTheDragonlords-Warlock-Aasimar-Abandoned.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0224",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Cardan-keero-ShardsOfThePast-Druid-Fairy.webp",
+      "path": "/subpages/postaci-graczy/Cardan-keero-ShardsOfThePast-Druid-Fairy.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0225",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Cassandra-neiiska-ShardsOfThePast-Cleric-Human-Dead.png",
+      "path": "/subpages/postaci-graczy/Cassandra-neiiska-ShardsOfThePast-Cleric-Human-Dead.png",
       "type": "portrait"
     },
     {
       "id": "asset-0226",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Dura Kahkadoshz-neeiska-LostMineOfPhandelver-Fighter-Half-Orc-Dead.webp",
+      "path": "/subpages/postaci-graczy/Dura Kahkadoshz-neeiska-LostMineOfPhandelver-Fighter-Half-Orc-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0227",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Erde-neiiska-SunlessCitadel-Cleric-Genasi-Succeeded.png",
+      "path": "/subpages/postaci-graczy/Erde-neiiska-SunlessCitadel-Cleric-Genasi-Succeeded.png",
       "type": "portrait"
     },
     {
       "id": "asset-0228",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Miriam - Dwarf - Rogue - Menaces Of Gloomforest - dead.jpg",
+      "path": "/subpages/postaci-graczy/Miriam - Dwarf - Rogue - Menaces Of Gloomforest - dead.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0229",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Naina-Olek-EpicOdysseyOfTheDragonlords-Paladin-Nymph-Abandoned.png",
+      "path": "/subpages/postaci-graczy/Naina-Olek-EpicOdysseyOfTheDragonlords-Paladin-Nymph-Abandoned.png",
       "type": "portrait"
     },
     {
       "id": "asset-0230",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Nozzara-neiiska-ForgeOfFury-Cleric-Half-Orc-Succeeded.png",
+      "path": "/subpages/postaci-graczy/Nozzara-neiiska-ForgeOfFury-Cleric-Half-Orc-Succeeded.png",
       "type": "portrait"
     },
     {
       "id": "asset-0231",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Orelius- Mags-EpicOdysseyOfTheDragonlords-Warlock-Medusa-Abandoned.jpg",
+      "path": "/subpages/postaci-graczy/Orelius- Mags-EpicOdysseyOfTheDragonlords-Warlock-Medusa-Abandoned.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0232",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Orythia - neiiska - EpicOdysseyOfTheDragonlords-Cleric-Nymph-Abandoned.jpg",
+      "path": "/subpages/postaci-graczy/Orythia - neiiska - EpicOdysseyOfTheDragonlords-Cleric-Nymph-Abandoned.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0233",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Serene Evergreen-neiiska-ShardsOfThePast-Druid-Fairy-Dead.webp",
+      "path": "/subpages/postaci-graczy/Serene Evergreen-neiiska-ShardsOfThePast-Druid-Fairy-Dead.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0234",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Teiresias-Neo-EpicOdysseyOfTheDragonlords-Warlock-Medusa-Abandoned.webp",
+      "path": "/subpages/postaci-graczy/Teiresias-Neo-EpicOdysseyOfTheDragonlords-Warlock-Medusa-Abandoned.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0235",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Tirias-Bartp-EpicOdysseyOfTheDragonlords-Fighter-Aasimar-Abandoned.webp",
+      "path": "/subpages/postaci-graczy/Tirias-Bartp-EpicOdysseyOfTheDragonlords-Fighter-Aasimar-Abandoned.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0236",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Aqe-keero-DragonsOfStormwreckIsle-ranger-aarakocra-dead.png",
+      "path": "/subpages/postaci-graczy/Aqe-keero-DragonsOfStormwreckIsle-ranger-aarakocra-dead.png",
       "type": "portrait"
     },
     {
       "id": "asset-0237",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Brog - Keero - Sunless Citadel-Barbarian-Goliath-Succeeded.webp",
+      "path": "/subpages/postaci-graczy/Brog - Keero - Sunless Citadel-Barbarian-Goliath-Succeeded.webp",
       "type": "portrait"
     },
     {
       "id": "asset-0238",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Ebris-keero-ShardsOfThePast-Rogue-Tiefling-Dead.png",
+      "path": "/subpages/postaci-graczy/Ebris-keero-ShardsOfThePast-Rogue-Tiefling-Dead.png",
       "type": "portrait"
     },
     {
       "id": "asset-0239",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Erdar Morbor-Keero-Kampania Nieznana-Cleric-Dragonborn .png",
+      "path": "/subpages/postaci-graczy/Erdar Morbor-Keero-Kampania Nieznana-Cleric-Dragonborn .png",
       "type": "portrait"
     },
     {
       "id": "asset-0240",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Joaher Redleaf-keero-ShardsOfThePast-Monk-Elf-Dead.png",
+      "path": "/subpages/postaci-graczy/Joaher Redleaf-keero-ShardsOfThePast-Monk-Elf-Dead.png",
       "type": "portrait"
     },
     {
       "id": "asset-0241",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Kaelos-keero-EpicOdysseyOfTheDragonlords-Warlock-Medusa-Abandoned.jpg",
+      "path": "/subpages/postaci-graczy/Kaelos-keero-EpicOdysseyOfTheDragonlords-Warlock-Medusa-Abandoned.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0242",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Neldar-keero-Drakkenheim-fighter-dwarf-dead.png",
+      "path": "/subpages/postaci-graczy/Neldar-keero-Drakkenheim-fighter-dwarf-dead.png",
       "type": "portrait"
     },
     {
       "id": "asset-0243",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Thive-keero-ShardsOfThePast-Paladin-Aasimar-Dead.jpg",
+      "path": "/subpages/postaci-graczy/Thive-keero-ShardsOfThePast-Paladin-Aasimar-Dead.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0244",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Valeria Shadowglen-keero-ShardsOfThePastLegacy-Warlock-Human.png",
+      "path": "/subpages/postaci-graczy/Valeria Shadowglen-keero-ShardsOfThePastLegacy-Warlock-Human.png",
       "type": "portrait"
     },
     {
       "id": "asset-0245",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Memnith-koksuvi-HeroesOfDrakkenheim-Bard-Fairy-Dead.png",
+      "path": "/subpages/postaci-graczy/Memnith-koksuvi-HeroesOfDrakkenheim-Bard-Fairy-Dead.png",
       "type": "portrait"
     },
     {
       "id": "asset-0246",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Serrell Allemard-koksuvi-HeroesOfDrakkenheim-Fighter-Human-Dead.png",
+      "path": "/subpages/postaci-graczy/Serrell Allemard-koksuvi-HeroesOfDrakkenheim-Fighter-Human-Dead.png",
       "type": "portrait"
     },
     {
       "id": "asset-0247",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Abraham Rootspringer-KubaSzczesniak-ShardsOfThePastLegacy-Warlock-Half-Elf-Dead.png",
+      "path": "/subpages/postaci-graczy/Abraham Rootspringer-KubaSzczesniak-ShardsOfThePastLegacy-Warlock-Half-Elf-Dead.png",
       "type": "portrait"
     },
     {
       "id": "asset-0248",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Aria Alpenfee-NataliaMelcherowska-MenacesOfGloomforestLegacy-Paladin Sorcerer-Half-Elf-Dead.jpg",
+      "path": "/subpages/postaci-graczy/Aria Alpenfee-NataliaMelcherowska-MenacesOfGloomforestLegacy-Paladin Sorcerer-Half-Elf-Dead.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0249",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Destiny Grimstone-MartaS-DragonOfDampenDepths-Warlock-Tiefling-Succeded.jpg",
+      "path": "/subpages/postaci-graczy/Destiny Grimstone-MartaS-DragonOfDampenDepths-Warlock-Tiefling-Succeded.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0250",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Hagard-AndrzejC-MenacesOfGloomforestLegacy-Fighter-Half-Orc-Dead.jpg",
+      "path": "/subpages/postaci-graczy/Hagard-AndrzejC-MenacesOfGloomforestLegacy-Fighter-Half-Orc-Dead.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0251",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Lailisa-MartynaS-DragonOfIcespire-Peak-.jpg",
+      "path": "/subpages/postaci-graczy/Lailisa-MartynaS-DragonOfIcespire-Peak-.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0252",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Mirelinda-Nympheria-DragonOfIcespirePeak-Wizard-Human-Dead.jpg",
+      "path": "/subpages/postaci-graczy/Mirelinda-Nympheria-DragonOfIcespirePeak-Wizard-Human-Dead.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0253",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Nasir Shatterbow-XXX-RiseOfTiamat-Ranger-Dwarf-Abandoned.png",
+      "path": "/subpages/postaci-graczy/Nasir Shatterbow-XXX-RiseOfTiamat-Ranger-Dwarf-Abandoned.png",
       "type": "portrait"
     },
     {
       "id": "asset-0254",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Voks-RadekK-ShardsOfThePast-Kobold-Bard-Dead.jpg",
+      "path": "/subpages/postaci-graczy/Voks-RadekK-ShardsOfThePast-Kobold-Bard-Dead.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0255",
-      "path": "/subpages/sala-chwaly/postaci-graczy/XXX-MartynaŚ-DragonOfIcespirePeak-Warlock-Tiefling.jpg",
+      "path": "/subpages/postaci-graczy/XXX-MartynaŚ-DragonOfIcespirePeak-Warlock-Tiefling.jpg",
       "type": "portrait"
     },
     {
       "id": "asset-0256",
-      "path": "/subpages/sala-chwaly/postaci-graczy/Yelli-RadekK-ShardsOfThePast-Barbarian-Human-Dead.jpg",
+      "path": "/subpages/postaci-graczy/Yelli-RadekK-ShardsOfThePast-Barbarian-Human-Dead.jpg",
       "type": "portrait"
     }
   ]
