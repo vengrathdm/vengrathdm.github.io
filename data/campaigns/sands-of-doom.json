@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-sands-of-doom",
+  "slug": "sands-of-doom",
+  "layout": "custom",
+  "theme": "sands-of-doom",
+  "identity": {
+    "title": "Sands of Doom",
+    "status": "completed",
+    "setting": "Kirat",
+    "region": "Wielkie Pustkowie"
+  },
+  "hero": {
+    "title": "SANDS OF DOOM",
+    "lead": "Piasek pamięta. Grobowce czekają."
+  },
+  "characters": {
+    "ids": [
+      "char-0019",
+      "char-0020",
+      "char-0021",
+      "char-0022",
+      "char-0023",
+      "char-0024"
+    ]
+  },
+  "sections": [
+    {
+      "id": "campaign",
+      "title": "O kampanii",
+      "contentKey": "campaign"
+    },
+    {
+      "id": "team",
+      "title": "Nasza drużyna",
+      "contentKey": "team"
+    },
+    {
+      "id": "fallen",
+      "title": "Postacie poległe",
+      "contentKey": "fallen"
+    },
+    {
+      "id": "recordings",
+      "title": "Nagrania",
+      "contentKey": "recordings"
+    },
+    {
+      "id": "awakening",
+      "title": "Wielkie Przebudzenie",
+      "contentKey": "awakening"
+    },
+    {
+      "id": "anubian",
+      "title": "Powstanie Anubian",
+      "contentKey": "anubian"
+    }
+  ],
+  "audio": "./Sands-Of-Doom.mp3"
+}
