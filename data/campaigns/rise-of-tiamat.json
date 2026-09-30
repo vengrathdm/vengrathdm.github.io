@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-rise-of-tiamat",
+  "slug": "rise-of-tiamat",
+  "layout": "custom",
+  "theme": "rise-of-tiamat",
+  "identity": {
+    "title": "Rise of Tiamat",
+    "status": "completed",
+    "setting": "Forgotten Realms",
+    "region": "Sword Coast"
+  },
+  "hero": {
+    "title": "RISE OF TIAMAT",
+    "lead": "Narastające zagrożenie ze strony Kultu Smoka prowadzi bohaterów ku konfliktowi, którego stawką jest los całego Faerûnu."
+  },
+  "characters": {
+    "ids": [
+      "char-0085",
+      "char-0086",
+      "char-0142"
+    ]
+  },
+  "sections": [
+    {
+      "id": "campaign",
+      "title": "O kampanii"
+    },
+    {
+      "id": "team",
+      "title": "Nasza drużyna"
+    }
+  ],
+  "links": {
+    "playlist": "https://www.youtube.com/playlist?list=PL-Lm83myvu0iz9O9RL33Hj8bInGf89VFD"
+  }
+}
