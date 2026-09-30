@@ -111,6 +111,19 @@
     '</article>';
   }
 
+  function updateArchiveStats() {
+    const records = state.records;
+    const unique = values => new Set(values.filter(Boolean)).size;
+    const campaigns = records.flatMap(record => asArray(record.campaigns));
+    $("statCharacters").textContent = records.length;
+    $("statPlayers").textContent = unique(records.map(record => record.player));
+    $("statCampaigns").textContent = unique(campaigns);
+    $("statActive").textContent = records.filter(record => record.status === "Aktywna").length;
+    $("statDead").textContent = records.filter(record => record.status === "Martwa").length;
+    $("statRetired").textContent = records.filter(record => record.status === "Wycofana").length;
+    $("statAbandoned").textContent = records.filter(record => record.status === "Porzucona").length;
+  }
+
   function render() {
     const rows = state.records.filter(matches);
     $("resultCount").textContent = rows.length + " / " + state.records.length;
@@ -186,6 +199,7 @@
       if (!Array.isArray(data)) throw new Error("characters.json nie zawiera tablicy rekordów.");
       state.records = data;
       setupFilters();
+      updateArchiveStats();
       render();
     } catch (error) {
       console.error(error);
