@@ -118,10 +118,11 @@
     $("statCharacters").textContent = records.length;
     $("statPlayers").textContent = unique(records.map(record => record.player));
     $("statCampaigns").textContent = unique(campaigns);
+    $("statWinning").textContent = records.filter(record => record.status === "Zwycięska").length;
     $("statActive").textContent = records.filter(record => record.status === "Aktywna").length;
-    $("statDead").textContent = records.filter(record => record.status === "Martwa").length;
     $("statRetired").textContent = records.filter(record => record.status === "Wycofana").length;
     $("statAbandoned").textContent = records.filter(record => record.status === "Porzucona").length;
+    $("statDead").textContent = records.filter(record => record.status === "Martwa").length;
   }
 
   function render() {
