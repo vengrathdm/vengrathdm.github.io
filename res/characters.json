@@ -258,7 +258,7 @@
   },
   {
     "portrait": "/res/portraits/char-0018.png",
-    "character": "Araina Windmere",
+    "character": "Ariana Windmere",
     "player": "Maria",
     "campaigns": [
       "Blood Red Snow White"
@@ -1032,7 +1032,7 @@
     "classes": [
       "Sorcerer"
     ],
-    "race": "Half-Elf",
+    "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
@@ -1392,7 +1392,7 @@
       "Shadow of the Sword Coast"
     ],
     "classes": [
-      "Warlock"
+      "Bard"
     ],
     "race": "Tiefling",
     "status": "Zwycięska",
