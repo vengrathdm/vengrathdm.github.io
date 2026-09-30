@@ -126,3 +126,8 @@ Current major completed layers include:
 - repository-level data validation.
 
 The campaign registry currently covers 43 campaign entries: 35 with detailed records, 6 historical/no-page entries, 1 archived legacy entry and 1 world entry. Canonical `/campaigns/<slug>/` compatibility routes now point at the existing presentation paths. Remaining work is asset consolidation, explicit ID cleanup where source pages contain incomplete rosters, URL/asset QA, and final end-to-end validation.
+
+
+## Portrait assets
+
+All character portraits are stored in `/res/portraits/` and named by stable character ID.
