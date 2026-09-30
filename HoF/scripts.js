@@ -7,7 +7,6 @@
   const state = {
     records: [],
     filters: {
-      character: $("characterFilter"),
       player: $("playerFilter"),
       campaign: $("campaignFilter"),
       class: $("classFilter"),
@@ -68,7 +67,6 @@
 
   function setupFilters() {
     const records = state.records;
-    populateFilter(state.filters.character, records.map(r => r.character), "Wszystkie postacie");
     populateFilter(state.filters.player, records.map(r => r.player), "Wszyscy gracze");
     populateFilter(state.filters.campaign, records.flatMap(r => asArray(r.campaigns)), "Wszystkie kampanie");
     populateFilter(state.filters.class, records.flatMap(r => asArray(r.classes)), "Wszystkie klasy");
@@ -80,7 +78,6 @@
     const query = normalize($("search").value);
     if (query && !normalize(textOf(record)).includes(query)) return false;
 
-    if (state.filters.character.value && record.character !== state.filters.character.value) return false;
     if (state.filters.player.value && record.player !== state.filters.player.value) return false;
     if (state.filters.campaign.value && !asArray(record.campaigns).includes(state.filters.campaign.value)) return false;
     if (state.filters.class.value && !asArray(record.classes).includes(state.filters.class.value)) return false;
@@ -198,6 +195,13 @@
   }
 
   $("search").addEventListener("input", render);
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "/" && document.activeElement !== $("search")) {
+      event.preventDefault();
+      $("search").focus();
+    }
+  });
   Object.values(state.filters).forEach(select => select.addEventListener("change", render));
 
   $("clearFilters").addEventListener("click", () => {
