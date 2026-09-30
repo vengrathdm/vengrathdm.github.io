@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "canonicalRoot": "/campaigns/",
+  "note": "Mapa migracyjna. Nie przenosi jeszcze plików; służy do zachowania kompatybilności URL podczas refaktoru.",
+  "campaigns": [
+    {
+      "id": "campaign-legends-of-barovia",
+      "slug": "legends-of-barovia",
+      "canonicalPath": "/campaigns/legends-of-barovia/",
+      "legacyPath": "/subpages/legends-of-barovia/",
+      "status": "detailed"
+    },
+    {
+      "id": "campaign-menaces-of-irensberg",
+      "slug": "menaces-of-irensberg",
+      "canonicalPath": "/campaigns/menaces-of-irensberg/",
+      "legacyPath": "/subpages/mences-of-irensberg/",
+      "status": "detailed"
+    },
+    {
+      "id": "campaign-blood-red-snow-white",
+      "slug": "blood-red-snow-white",
+      "canonicalPath": "/campaigns/blood-red-snow-white/",
+      "legacyPath": "/subpages/blood-red-snow-white/",
+      "status": "detailed"
+    },
+    {
+      "id": "campaign-sands-of-doom",
+      "slug": "sands-of-doom",
+      "canonicalPath": "/campaigns/sands-of-doom/",
+      "legacyPath": "/subpages/sands-of-doom/",
+      "status": "detailed"
+    },
+    {
+      "id": "campaign-shards-of-the-past",
+      "slug": "shards-of-the-past",
+      "canonicalPath": "/campaigns/shards-of-the-past/",
+      "legacyPath": "/subpages/shards-of-the-past/",
+      "status": "detailed"
+    },
+    {
+      "id": "campaign-turn-of-fortune-s-wheel",
+      "slug": "turn-of-fortunes-wheel",
+      "canonicalPath": "/campaigns/turn-of-fortunes-wheel/",
+      "legacyPath": "/subpages/turn-of-fortunes-wheel/",
+      "status": "detailed"
+    },
+    {
+      "id": "campaign-barber-of-silverymoon",
+      "slug": "barber-of-silverymoon",
+      "canonicalPath": "/campaigns/barber-of-silverymoon/",
+      "legacyPath": "/subpages/barber-of-silverymoon/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-lost-mine-of-phandelver",
+      "slug": "lost-mine-of-phandelver",
+      "canonicalPath": "/campaigns/lost-mine-of-phandelver/",
+      "legacyPath": "/subpages/lost-mine-of-phandelver/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-curse-of-strahd",
+      "slug": "curse-of-strahd",
+      "canonicalPath": "/campaigns/curse-of-strahd/",
+      "legacyPath": "/subpages/curse-of-strahd/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-drakkenheim",
+      "slug": "drakkenheim",
+      "canonicalPath": "/campaigns/drakkenheim/",
+      "legacyPath": "/subpages/drakkenheim/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-dungeons-of-drakkenheim",
+      "slug": "dungeons-of-drakkenheim",
+      "canonicalPath": "/campaigns/dungeons-of-drakkenheim/",
+      "legacyPath": "/subpages/dungeons-of-drakkenheim/",
+      "status": "detailed"
+    },
+    {
+      "id": "campaign-echtra-midst-the-sidhe",
+      "slug": "echtra-midst-the-sidhe",
+      "canonicalPath": "/campaigns/echtra-midst-the-sidhe/",
+      "legacyPath": "/subpages/echtra-midst-the-sidhe/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-ghoul-hour",
+      "slug": "ghoul-hour",
+      "canonicalPath": "/campaigns/ghoul-hour/",
+      "legacyPath": "/subpages/ghoul-hour/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-hand-of-glory",
+      "slug": "hand-of-glory",
+      "canonicalPath": "/campaigns/hand-of-glory/",
+      "legacyPath": "/subpages/hand-of-glory/",
+      "status": "detailed"
+    },
+    {
+      "id": "campaign-ku-chwale-tyra",
+      "slug": "ku-chwale-tyra",
+      "canonicalPath": "/campaigns/ku-chwale-tyra/",
+      "legacyPath": "/subpages/ku-chwale-tyra/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-menaces-of-gloomforest",
+      "slug": "menaces-of-gloomforest",
+      "canonicalPath": "/campaigns/menaces-of-gloomforest/",
+      "legacyPath": "/subpages/menaces-of-gloomforest/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-mythic-odyssey-of-the-dragonlords",
+      "slug": "mythic-odyssey-of-the-dragonlords",
+      "canonicalPath": "/campaigns/mythic-odyssey-of-the-dragonlords/",
+      "legacyPath": "/subpages/mythic-odyssey-of-the-dragonlords/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-neverwinter-intrygi-po-nocnego-wybrzeza-mieczy",
+      "slug": "neverwinter-intrygi-polnocnego-wybrzeza-mieczy",
+      "canonicalPath": "/campaigns/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/",
+      "legacyPath": "/subpages/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-odyssey-of-the-dragonlords",
+      "slug": "odyssey-of-the-dragonlords",
+      "canonicalPath": "/campaigns/odyssey-of-the-dragonlords/",
+      "legacyPath": "/subpages/odyssey-of-the-dragonlords/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-rise-of-tiamat",
+      "slug": "rise-of-tiamat",
+      "canonicalPath": "/campaigns/rise-of-tiamat/",
+      "legacyPath": "/subpages/rise-of-tiamat/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-samotnie-przeciw-jednosci",
+      "slug": "samotnie-przeciw-jednosci",
+      "canonicalPath": "/campaigns/samotnie-przeciw-jednosci/",
+      "legacyPath": "/subpages/samotnie-przeciw-jednosci/",
+      "status": "detailed"
+    },
+    {
+      "id": "campaign-shadow-of-the-sword-coast",
+      "slug": "shadow-of-the-sword-coast",
+      "canonicalPath": "/campaigns/shadow-of-the-sword-coast/",
+      "legacyPath": "/subpages/shadow-of-the-sword-coast/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-sons-of-azalin",
+      "slug": "sons-of-azalin",
+      "canonicalPath": "/campaigns/sons-of-azalin/",
+      "legacyPath": "/subpages/sons-of-azalin/",
+      "status": "detailed"
+    },
+    {
+      "id": "campaign-the-sunless-citadel",
+      "slug": "the-sunless-citadel",
+      "canonicalPath": "/campaigns/the-sunless-citadel/",
+      "legacyPath": "/subpages/the-sunless-citadel/",
+      "status": "detailed"
+    },
+    {
+      "id": "campaign-rime-of-the-frostmaiden",
+      "slug": "rime-of-the-frostmaiden",
+      "canonicalPath": "/campaigns/rime-of-the-frostmaiden/",
+      "legacyPath": "/subpages/rime-of-the-frostmaiden/",
+      "status": "detailed"
+    },
+    {
+      "id": "campaign-heroes-of-baldur-s-gate",
+      "slug": "heroes-of-baldurs-gate",
+      "canonicalPath": "/campaigns/heroes-of-baldurs-gate/",
+      "legacyPath": "/subpages/heroes-of-baldurs-gate/",
+      "status": "detailed"
+    },
+    {
+      "id": "campaign-tomb-of-annihilation",
+      "slug": "tomb-of-annihilation",
+      "canonicalPath": "/campaigns/tomb-of-annihilation/",
+      "legacyPath": "/subpages/tomb-of-annihilation/",
+      "status": "detailed"
+    },
+    {
+      "id": "campaign-turn-back-the-endless-night",
+      "slug": "turn-back-the-endless-night",
+      "canonicalPath": "/campaigns/turn-back-the-endless-night/",
+      "legacyPath": "/subpages/turn-back-the-endless-night/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-ksiazeta-heartwell",
+      "slug": "ksiazeta-heartwell",
+      "canonicalPath": "/campaigns/ksiazeta-heartwell/",
+      "legacyPath": "/subpages/Ksiazeta-Heartwell/",
+      "status": "world"
+    },
+    {
+      "id": "campaign-the-unlikely-five",
+      "slug": "the-unlikely-five",
+      "canonicalPath": "/campaigns/the-unlikely-five/",
+      "legacyPath": null,
+      "status": "no-page"
+    },
+    {
+      "id": "campaign-dragon-of-icespire-peak",
+      "slug": "dragon-of-icespire-peak",
+      "canonicalPath": "/campaigns/dragon-of-icespire-peak/",
+      "legacyPath": "/subpages/dragon-of-icespire-peak/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-echtra-zima-irgaeli",
+      "slug": "echtra-zima-irgaeli",
+      "canonicalPath": "/campaigns/echtra-zima-irgaeli/",
+      "legacyPath": "/subpages/echtra-zima-irgaeli/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-kampania-nieznana",
+      "slug": "kampania-nieznana",
+      "canonicalPath": "/campaigns/kampania-nieznana/",
+      "legacyPath": null,
+      "status": "no-page"
+    },
+    {
+      "id": "campaign-menaces-of-gloomforest-legacy",
+      "slug": "menaces-of-gloomforest-legacy",
+      "canonicalPath": "/campaigns/menaces-of-gloomforest-legacy/",
+      "legacyPath": "/subpages/menaces-of-gloomforest-legacy/",
+      "status": "legacy-archive"
+    },
+    {
+      "id": "campaign-heroes-of-drakkenheim",
+      "slug": "heroes-of-drakkenheim",
+      "canonicalPath": "/campaigns/heroes-of-drakkenheim/",
+      "legacyPath": "/subpages/heroes-of-drakkenheim/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-shards-of-the-past-legacy",
+      "slug": "shards-of-the-past-legacy",
+      "canonicalPath": "/campaigns/shards-of-the-past-legacy/",
+      "legacyPath": null,
+      "status": "legacy-archive"
+    },
+    {
+      "id": "campaign-w-pogoni-za-piorowca",
+      "slug": "w-pogoni-za-piorowca",
+      "canonicalPath": "/campaigns/w-pogoni-za-piorowca/",
+      "legacyPath": null,
+      "status": "no-page"
+    },
+    {
+      "id": "campaign-mayhem-in-earthspur-mines",
+      "slug": "mayhem-in-earthspur-mines",
+      "canonicalPath": "/campaigns/mayhem-in-earthspur-mines/",
+      "legacyPath": "/subpages/mayhem-in-earthspur-mines/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-forge-of-fury",
+      "slug": "forge-of-fury",
+      "canonicalPath": "/campaigns/forge-of-fury/",
+      "legacyPath": "/subpages/forge-of-fury/",
+      "status": "legacy"
+    },
+    {
+      "id": "campaign-bad-romance-barovia",
+      "slug": "bad-romance-barovia",
+      "canonicalPath": "/campaigns/bad-romance-barovia/",
+      "legacyPath": null,
+      "status": "no-page"
+    },
+    {
+      "id": "campaign-epic-odyssey-of-the-dragonlords",
+      "slug": "epic-odyssey-of-the-dragonlords",
+      "canonicalPath": "/campaigns/epic-odyssey-of-the-dragonlords/",
+      "legacyPath": null,
+      "status": "no-page"
+    },
+    {
+      "id": "campaign-dragons-of-stormwreck-isle",
+      "slug": "dragons-of-stormwreck-isle",
+      "canonicalPath": "/campaigns/dragons-of-stormwreck-isle/",
+      "legacyPath": null,
+      "status": "no-page"
+    },
+    {
+      "id": "campaign-dragon-of-dampen-depths",
+      "slug": "dragon-of-dampen-depths",
+      "canonicalPath": "/campaigns/dragon-of-dampen-depths/",
+      "legacyPath": "/subpages/dragon-of-dampen-depths/",
+      "status": "legacy"
+    }
+  ]
+}
