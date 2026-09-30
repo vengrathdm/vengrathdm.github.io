@@ -42,6 +42,8 @@ jobs:
           characters = load("characters.json")["characters"]
           players = load("players.json")["players"]
           assets = load("assets.json")["assets"]
+          worlds = load("worlds.json")["worlds"]
+          modules = load("modules.json")["modules"]
 
           def unique(items, key, label):
               values = [x.get(key) for x in items]
@@ -53,6 +55,8 @@ jobs:
           unique(characters, "id", "character IDs")
           unique(players, "id", "player IDs")
           unique(assets, "id", "asset IDs")
+          unique(worlds, "id", "world IDs")
+          unique(modules, "id", "module IDs")
 
           campaign_ids = {x["id"] for x in campaigns}
           player_ids = {x["id"] for x in players}
@@ -104,6 +108,7 @@ jobs:
           print(
               f"Validated {len(campaigns)} campaigns, "
               f"{len(characters)} characters, {len(players)} players, "
-              f"{len(assets)} assets."
+              f"{len(assets)} assets, {len(worlds)} worlds, "
+              f"{len(modules)} modules."
           )
           PY
