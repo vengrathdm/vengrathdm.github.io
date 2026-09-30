@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-turn-back-the-endless-night",
+  "slug": "turn-back-the-endless-night",
+  "layout": "custom",
+  "theme": "turn-back-the-endless-night",
+  "identity": {
+    "title": "Turn Back the Endless Night",
+    "status": "completed",
+    "type": "module",
+    "setting": "Forgotten Realms",
+    "region": "Chult"
+  },
+  "hero": {
+    "title": "TURN BACK THE ENDLESS NIGHT",
+    "lead": "Peaks of Flame. Maze of Ubtao. Iron Door. Trasa tej przygody prowadzi w dół, ku miejscom, gdzie noc przestaje być porą dnia i staje się zagrożeniem."
+  },
+  "characters": {
+    "ids": [
+      "char-0115",
+      "char-0116",
+      "char-0117",
+      "char-0118",
+      "char-0119"
+    ]
+  },
+  "sections": [
+    {
+      "id": "adventure",
+      "title": "Odwrócić noc"
+    },
+    {
+      "id": "route",
+      "title": "Droga w głąb"
+    },
+    {
+      "id": "team",
+      "title": "Drużyna"
+    }
+  ],
+  "links": {
+    "episode": "https://youtu.be/1_M1nEU9eOA"
+  },
+  "assets": [
+    "/Home/Graphics/turn-back-the-endless-night.webp"
+  ]
+}
