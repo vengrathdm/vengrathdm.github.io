@@ -226,7 +226,7 @@
       "Aktywna Kampania"
     ],
     "graphic": "/res/voronoi/graphics/ksiazeta-heartwell.jpg",
-    "link": "/p/Ksiazeta-Heartwell/",
+    "link": "/p/homebrew/ksiazeta-heartwell/",
     "name": "Książęta Heartwell"
   },
   {
@@ -356,7 +356,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/blood-red-snow-white.png",
-    "link": "/p/blood-red-snow-white/",
+    "link": "/p/homebrew/blood-red-snow-white/",
     "name": "Blood Red Snow White"
   },
   {
@@ -386,7 +386,7 @@
       "Zamknięta Kampania"
     ],
     "graphic": "/res/voronoi/graphics/samotnie-przeciw-jednosci.jpg",
-    "link": "/p/samotnie-przeciw-jednosci/",
+    "link": "/p/homebrew/samotnie-przeciw-jednosci/",
     "name": "Samotnie przeciw Jedności"
   },
   {
