@@ -117,9 +117,15 @@ jobs:
 
               audio = record.get("audio")
               if audio and not audio.startswith(("http://", "https://", "/")):
-                  local = path.parent.parent.parent / "subpages" / path.stem / audio.lstrip("./")
-                  if not local.exists():
-                      errors.append(f'{path}: missing campaign audio {audio}')
+                  route = next((x for x in migration_map if x.get("slug") == record.get("slug")), None)
+                  legacy = route.get("legacyPath") if route else None
+                  base = root / legacy.lstrip("/") if legacy else root / "subpages" / path.stem
+                  if base.is_dir():
+                      base = base / audio.lstrip("./")
+                  else:
+                      base = root / "subpages" / path.stem / audio.lstrip("./")
+                  if not base.exists():
+                      errors.append(f'{path}: missing campaign audio {audio} (checked {base})')
 
           # Any explicit stable character reference in HTML must resolve centrally.
           for html in sorted(root.glob("subpages/**/*.html")):
