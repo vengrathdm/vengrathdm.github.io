@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-sands-of-doom",
+  "slug": "sands-of-doom",
+  "layout": "custom",
+  "theme": "sands",
+  "identity": {
+    "title": "Sands of Doom"
+  },
+  "hero": {
+    "background": "/Home/Graphics/sands-of-doom.jpg"
+  },
+  "characters": [
+    "char-0019",
+    "char-0020",
+    "char-0021",
+    "char-0022",
+    "char-0023",
+    "char-0024"
+  ],
+  "sections": [
+    "O kampanii",
+    "Nasza drużyna",
+    "Postacie poległe",
+    "Nagrania",
+    "Kronika"
+  ]
+}
