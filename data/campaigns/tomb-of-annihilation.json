@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-tomb-of-annihilation",
+  "slug": "tomb-of-annihilation",
+  "layout": "custom",
+  "theme": "tomb",
+  "identity": {
+    "title": "Tomb of Annihilation"
+  },
+  "hero": {
+    "background": "/Home/Graphics/tomb-of-annihilation.jpg"
+  },
+  "characters": [
+    "char-0112",
+    "char-0113",
+    "char-0114",
+    "char-0128",
+    "char-0136",
+    "char-0137",
+    "char-0190",
+    "char-0196",
+    "char-0202"
+  ],
+  "sections": [
+    "Klątwa Śmierci",
+    "Droga przez Chult",
+    "Port Nyanzaru",
+    "Dzika kraina",
+    "Omu",
+    "Fane",
+    "Grobowiec",
+    "Ostatnie zejście"
+  ]
+}
