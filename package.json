@@ -1,0 +1,6 @@
+{
+  "name":"vengrathdm.github.io",
+  "private":true,
+  "version":"1.0.0",
+  "scripts":{"validate:data":"node tools/validate-data.mjs"}
+}
