@@ -101,17 +101,17 @@
   "chronicle": {
     "title": "Rekord kampanii",
     "lead": "Akta wyprawy.",
-    "records": [
+    "cards": [
       [
         "01",
-        "Wejście do cytadeli",
         "AKTA",
+        "Wejście do cytadeli",
         "Drużyna schodzi do ruin i zaczyna eksplorację fortecy."
       ],
       [
         "02",
-        "Ostatnia walka",
         "FINAŁ",
+        "Ostatnia walka",
         "Historia głównej drużyny kończy się z rąk koboldów."
       ]
     ]
