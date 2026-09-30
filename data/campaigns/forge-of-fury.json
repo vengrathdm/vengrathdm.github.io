@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-forge-of-fury",
+  "slug": "forge-of-fury",
+  "layout": "custom",
+  "theme": "forge-of-fury",
+  "identity": {
+    "title": "Forge of Fury",
+    "status": "completed",
+    "setting": "Dungeons & Dragons"
+  },
+  "hero": {
+    "title": "FORGE OF FURY",
+    "lead": "Wyprawa do zrujnowanej twierdzy Khundrukar, gdzie w głębinach dawnej siedziby krasnoludzkiego kowala Durgeddina Czarnego wciąż czekają jego słynne ostrza, skarby i zamieszkujące ruiny potwory."
+  },
+  "characters": {
+    "ids": []
+  },
+  "sections": [
+    {
+      "id": "adventure",
+      "title": "O przygodzie"
+    },
+    {
+      "id": "team",
+      "title": "Nasza drużyna"
+    }
+  ]
+}
