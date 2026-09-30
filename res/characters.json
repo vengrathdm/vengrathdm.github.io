@@ -11,7 +11,8 @@
     ],
     "race": "Placeholder",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0002.png",
@@ -25,7 +26,8 @@
     ],
     "race": "Elf",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0003.png",
@@ -39,7 +41,8 @@
     ],
     "race": "Changeling",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0004.png",
@@ -53,7 +56,8 @@
     ],
     "race": "Placeholder",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0005.png",
@@ -68,7 +72,8 @@
     ],
     "race": "Aasimar",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0006.webp",
@@ -82,7 +87,8 @@
     ],
     "race": "Tiefling",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0007.webp",
@@ -96,7 +102,8 @@
     ],
     "race": "Human",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0008.webp",
@@ -110,7 +117,8 @@
     ],
     "race": "Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0009.jpg",
@@ -124,7 +132,8 @@
     ],
     "race": "Dragonborn",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0010.jpg",
@@ -138,7 +147,8 @@
     ],
     "race": "Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0011.jpg",
@@ -152,7 +162,8 @@
     ],
     "race": "Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0012.webp",
@@ -167,7 +178,8 @@
     ],
     "race": "Dragonborn",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0013.webp",
@@ -181,7 +193,8 @@
     ],
     "race": "Yokai",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0014.webp",
@@ -195,7 +208,8 @@
     ],
     "race": "Dwarf",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0015.png",
@@ -209,7 +223,8 @@
     ],
     "race": "Human",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0016.png",
@@ -223,7 +238,8 @@
     ],
     "race": "Human",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0017.png",
@@ -237,7 +253,8 @@
     ],
     "race": "Drow",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0018.png",
@@ -251,7 +268,8 @@
     ],
     "race": "Human",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0019.png",
@@ -265,7 +283,8 @@
     ],
     "race": "Half-Elf",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0020.png",
@@ -279,7 +298,8 @@
     ],
     "race": "Dwarf",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0021.png",
@@ -293,7 +313,8 @@
     ],
     "race": "Half-Orc",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0022.png",
@@ -307,7 +328,8 @@
     ],
     "race": "Human",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0023.webp",
@@ -321,7 +343,8 @@
     ],
     "race": "Half-Orc",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0024.png",
@@ -335,7 +358,8 @@
     ],
     "race": "Yuan-Ti",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0025.jpg",
@@ -349,7 +373,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0026.png",
@@ -363,7 +388,8 @@
     ],
     "race": "Half-Orc",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0027.jpg",
@@ -377,7 +403,8 @@
     ],
     "race": "Tiefling",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0028.png",
@@ -391,7 +418,8 @@
     ],
     "race": "Kenku",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0029.png",
@@ -405,7 +433,8 @@
     ],
     "race": "Plasmoid",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0030.png",
@@ -419,7 +448,8 @@
     ],
     "race": "Tiefling",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0031.png",
@@ -433,7 +463,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0032.png",
@@ -447,7 +478,8 @@
     ],
     "race": "Drow",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0033.png",
@@ -461,7 +493,8 @@
     ],
     "race": "Shaddar-Kai",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0034.webp",
@@ -475,7 +508,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0035.png",
@@ -489,7 +523,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0036.png",
@@ -504,7 +539,8 @@
     ],
     "race": "Dwarf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0090.png",
@@ -518,7 +554,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0038.png",
@@ -532,7 +569,8 @@
     ],
     "race": "Human",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0039.webp",
@@ -546,7 +584,8 @@
     ],
     "race": "Human",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0040.webp",
@@ -560,7 +599,8 @@
     ],
     "race": "Human",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0041.jpg",
@@ -574,7 +614,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0042.webp",
@@ -588,7 +629,8 @@
     ],
     "race": "Dragonborn",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0090.png",
@@ -602,7 +644,8 @@
     ],
     "race": "Shaddar-Kai",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0044.png",
@@ -616,7 +659,8 @@
     ],
     "race": "Aasimar",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0045.webp",
@@ -630,7 +674,8 @@
     ],
     "race": "Tiefling",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0046.webp",
@@ -644,7 +689,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0047.webp",
@@ -658,7 +704,8 @@
     ],
     "race": "Kenku",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0048.webp",
@@ -672,7 +719,8 @@
     ],
     "race": "Gnome",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0049.webp",
@@ -686,7 +734,8 @@
     ],
     "race": "Half-Orc",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0050.webp",
@@ -700,7 +749,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0051.jpg",
@@ -714,7 +764,8 @@
     ],
     "race": "Dragonborn",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0052.webp",
@@ -728,7 +779,8 @@
     ],
     "race": "Elf",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0053.jpg",
@@ -742,7 +794,8 @@
     ],
     "race": "Dwarf",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0054.webp",
@@ -756,7 +809,8 @@
     ],
     "race": "Bogborn",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0055.jpg",
@@ -770,7 +824,8 @@
     ],
     "race": "Hexblood",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0056.png",
@@ -784,7 +839,8 @@
     ],
     "race": "Half-Orc",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0057.webp",
@@ -798,7 +854,8 @@
     ],
     "race": "Halfling",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0058.png",
@@ -812,7 +869,8 @@
     ],
     "race": "Tiefling",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0059.webp",
@@ -826,7 +884,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0060.webp",
@@ -840,7 +899,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0061.png",
@@ -854,7 +914,8 @@
     ],
     "race": "Brytyjczyk",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0062.png",
@@ -868,7 +929,8 @@
     ],
     "race": "Brytyjczyk",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0063.png",
@@ -882,7 +944,8 @@
     ],
     "race": "Brytyjczyk",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0064.jpg",
@@ -896,7 +959,8 @@
     ],
     "race": "Half-Orc",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0065.jpg",
@@ -910,7 +974,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0066.webp",
@@ -924,7 +989,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0067.webp",
@@ -938,7 +1004,8 @@
     ],
     "race": "Aasimar",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0068.jpg",
@@ -952,7 +1019,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0069.png",
@@ -966,7 +1034,8 @@
     ],
     "race": "Half-Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0070.png",
@@ -980,7 +1049,8 @@
     ],
     "race": "Nymph",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0071.webp",
@@ -994,7 +1064,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0072.webp",
@@ -1008,7 +1079,8 @@
     ],
     "race": "Satyr",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0073.png",
@@ -1022,7 +1094,8 @@
     ],
     "race": "Changeling",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0090.png",
@@ -1036,7 +1109,8 @@
     ],
     "race": "Placeholder",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0075.png",
@@ -1050,7 +1124,8 @@
     ],
     "race": "Halfling",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0076.jpg",
@@ -1064,7 +1139,8 @@
     ],
     "race": "Human",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0077.webp",
@@ -1078,7 +1154,8 @@
     ],
     "race": "Tiefling",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0078.jpg",
@@ -1092,7 +1169,8 @@
     ],
     "race": "Human",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0079.png",
@@ -1107,7 +1185,8 @@
     ],
     "race": "Siren",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0080.png",
@@ -1121,7 +1200,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0081.png",
@@ -1135,7 +1215,8 @@
     ],
     "race": "Siren",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0082.png",
@@ -1149,7 +1230,8 @@
     ],
     "race": "Minotaur",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0083.webp",
@@ -1163,7 +1245,8 @@
     ],
     "race": "Nymph",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0084.png",
@@ -1177,7 +1260,8 @@
     ],
     "race": "Half-Orc",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0085.png",
@@ -1191,7 +1275,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0086.png",
@@ -1205,7 +1290,8 @@
     ],
     "race": "Dwarf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0090.png",
@@ -1219,7 +1305,8 @@
     ],
     "race": "Placeholder",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0090.png",
@@ -1233,7 +1320,8 @@
     ],
     "race": "Placeholder",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0090.png",
@@ -1247,7 +1335,8 @@
     ],
     "race": "Placeholder",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0090.png",
@@ -1261,7 +1350,8 @@
     ],
     "race": "Placeholder",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0091.png",
@@ -1275,7 +1365,8 @@
     ],
     "race": "Tiefling",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0092.jpg",
@@ -1290,7 +1381,8 @@
     ],
     "race": "Half-Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0093.png",
@@ -1304,7 +1396,8 @@
     ],
     "race": "Tiefling",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0094.jpg",
@@ -1320,7 +1413,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0095.png",
@@ -1334,7 +1428,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0096.webp",
@@ -1348,7 +1443,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0097.webp",
@@ -1362,7 +1458,8 @@
     ],
     "race": "Drow",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0098.png",
@@ -1376,7 +1473,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0099.png",
@@ -1390,7 +1488,8 @@
     ],
     "race": "Human",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0100.webp",
@@ -1404,7 +1503,8 @@
     ],
     "race": "Dragonborn",
     "status": "abandoned",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0101.webp",
@@ -1418,7 +1518,8 @@
     ],
     "race": "Half-Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0102.png",
@@ -1432,7 +1533,8 @@
     ],
     "race": "Yuan-Ti",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0103.webp",
@@ -1446,7 +1548,8 @@
     ],
     "race": "Gnome",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0104.png",
@@ -1460,7 +1563,8 @@
     ],
     "race": "Custom",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0105.jpg",
@@ -1474,7 +1578,8 @@
     ],
     "race": "Tiefling",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0106.webp",
@@ -1489,7 +1594,8 @@
     ],
     "race": "Half-Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0107.jpg",
@@ -1503,7 +1609,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0108.webp",
@@ -1517,7 +1624,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0109.webp",
@@ -1531,7 +1639,8 @@
     ],
     "race": "Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0110.webp",
@@ -1545,7 +1654,8 @@
     ],
     "race": "Half-Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0111.webp",
@@ -1559,7 +1669,8 @@
     ],
     "race": "Half-Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0112.webp",
@@ -1573,7 +1684,8 @@
     ],
     "race": "Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0113.webp",
@@ -1587,7 +1699,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0114.webp",
@@ -1602,7 +1715,8 @@
     ],
     "race": "Tortle",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0115.webp",
@@ -1616,7 +1730,8 @@
     ],
     "race": "Gnome",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0116.webp",
@@ -1630,7 +1745,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0117.webp",
@@ -1644,7 +1760,8 @@
     ],
     "race": "Halfling",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0118.webp",
@@ -1658,7 +1775,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0119.webp",
@@ -1672,7 +1790,8 @@
     ],
     "race": "Dwarf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0120.png",
@@ -1686,7 +1805,8 @@
     ],
     "race": "Placeholder",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0121.png",
@@ -1700,7 +1820,8 @@
     ],
     "race": "Placeholder",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0122.png",
@@ -1714,7 +1835,8 @@
     ],
     "race": "Placeholder",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0123.png",
@@ -1728,7 +1850,8 @@
     ],
     "race": "Placeholder",
     "status": "alive",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0124.webp",
@@ -1742,7 +1865,8 @@
     ],
     "race": "Half-Elf",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0125.webp",
@@ -1756,7 +1880,8 @@
     ],
     "race": "Dwarf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0126.webp",
@@ -1770,7 +1895,8 @@
     ],
     "race": "Half-Elf",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0127.webp",
@@ -1784,7 +1910,8 @@
     ],
     "race": "Half-Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0128.webp",
@@ -1798,7 +1925,8 @@
     ],
     "race": "Tabaxi",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0129.webp",
@@ -1812,7 +1940,8 @@
     ],
     "race": "Elf",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0130.webp",
@@ -1827,7 +1956,8 @@
     ],
     "race": "Half-Elf",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0131.webp",
@@ -1841,7 +1971,8 @@
     ],
     "race": "Dwarf",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0132.webp",
@@ -1855,7 +1986,8 @@
     ],
     "race": "Goliath",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0133.webp",
@@ -1869,7 +2001,8 @@
     ],
     "race": "Human",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0134.webp",
@@ -1883,7 +2016,8 @@
     ],
     "race": "Half-Orc",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0135.png",
@@ -1897,7 +2031,8 @@
     ],
     "race": "Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0136.webp",
@@ -1911,7 +2046,8 @@
     ],
     "race": "Tiefling",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0137.webp",
@@ -1925,7 +2061,8 @@
     ],
     "race": "Dwarf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0138.webp",
@@ -1939,7 +2076,8 @@
     ],
     "race": "Drow",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0139.webp",
@@ -1953,7 +2091,8 @@
     ],
     "race": "Placeholder",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0140.webp",
@@ -1967,7 +2106,8 @@
     ],
     "race": "Placeholder",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0141.webp",
@@ -1981,7 +2121,8 @@
     ],
     "race": "Half-Orc",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0142.webp",
@@ -1996,7 +2137,8 @@
     ],
     "race": "Genasi",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0143.webp",
@@ -2010,7 +2152,8 @@
     ],
     "race": "Placeholder",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0144.webp",
@@ -2024,7 +2167,8 @@
     ],
     "race": "Placeholder",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0145.webp",
@@ -2038,7 +2182,8 @@
     ],
     "race": "Placeholder",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0146.webp",
@@ -2052,7 +2197,8 @@
     ],
     "race": "Placeholder",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0147.webp",
@@ -2066,7 +2212,8 @@
     ],
     "race": "Placeholder",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0148.webp",
@@ -2080,7 +2227,8 @@
     ],
     "race": "Placeholder",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0149.webp",
@@ -2094,7 +2242,8 @@
     ],
     "race": "Placeholder",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0150.webp",
@@ -2108,7 +2257,8 @@
     ],
     "race": "Placeholder",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0151.png",
@@ -2122,7 +2272,8 @@
     ],
     "race": "Placeholder",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0152.webp",
@@ -2136,7 +2287,8 @@
     ],
     "race": "Placeholder",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0153.webp",
@@ -2150,7 +2302,8 @@
     ],
     "race": "Placeholder",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0154.png",
@@ -2164,7 +2317,8 @@
     ],
     "race": "Placeholder",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0155.webp",
@@ -2178,7 +2332,8 @@
     ],
     "race": "Placeholder",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0156.webp",
@@ -2192,7 +2347,8 @@
     ],
     "race": "Placeholder",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0157.webp",
@@ -2206,7 +2362,8 @@
     ],
     "race": "Placeholder",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0158.webp",
@@ -2220,7 +2377,8 @@
     ],
     "race": "Placeholder",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0159.jpg",
@@ -2234,7 +2392,8 @@
     ],
     "race": "Placeholder",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0160.webp",
@@ -2248,7 +2407,8 @@
     ],
     "race": "Placeholder",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0161.webp",
@@ -2262,7 +2422,8 @@
     ],
     "race": "Placeholder",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0162.png",
@@ -2276,7 +2437,8 @@
     ],
     "race": "Placeholder",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0163.webp",
@@ -2290,7 +2452,8 @@
     ],
     "race": "Placeholder",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0164.webp",
@@ -2304,7 +2467,8 @@
     ],
     "race": "Placeholder",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0165.webp",
@@ -2318,7 +2482,8 @@
     ],
     "race": "Placeholder",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0166.webp",
@@ -2332,7 +2497,8 @@
     ],
     "race": "Placeholder",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0167.png",
@@ -2346,7 +2512,8 @@
     ],
     "race": "Genasi",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0168.png",
@@ -2361,7 +2528,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0169.png",
@@ -2375,7 +2543,8 @@
     ],
     "race": "Goliath",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0170.png",
@@ -2389,7 +2558,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0171.jpg",
@@ -2403,7 +2573,8 @@
     ],
     "race": "Half-Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0172.jpg",
@@ -2417,7 +2588,8 @@
     ],
     "race": "Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0173.jpg",
@@ -2431,7 +2603,8 @@
     ],
     "race": "Human",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0174.jpg",
@@ -2445,7 +2618,8 @@
     ],
     "race": "Tiefling",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0175.webp",
@@ -2459,7 +2633,8 @@
     ],
     "race": "Elf",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0176.webp",
@@ -2473,7 +2648,8 @@
     ],
     "race": "Lizardman",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0177.webp",
@@ -2487,7 +2663,8 @@
     ],
     "race": "Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0178.webp",
@@ -2501,7 +2678,8 @@
     ],
     "race": "Tiefling",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0179.jpg",
@@ -2515,7 +2693,8 @@
     ],
     "race": "Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0180.webp",
@@ -2529,7 +2708,8 @@
     ],
     "race": "Human",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0181.jpg",
@@ -2543,7 +2723,8 @@
     ],
     "race": "Drow",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0182.png",
@@ -2557,7 +2738,8 @@
     ],
     "race": "Human",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0183.webp",
@@ -2571,7 +2753,8 @@
     ],
     "race": "Dwarf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0184.webp",
@@ -2585,7 +2768,8 @@
     ],
     "race": "Drow",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0185.webp",
@@ -2599,7 +2783,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0186.webp",
@@ -2613,7 +2798,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0187.webp",
@@ -2627,7 +2813,8 @@
     ],
     "race": "Tiefling",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0188.webp",
@@ -2641,7 +2828,8 @@
     ],
     "race": "Harengon",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0189.webp",
@@ -2655,7 +2843,8 @@
     ],
     "race": "Half-Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0190.webp",
@@ -2669,7 +2858,8 @@
     ],
     "race": "Drow",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0191.webp",
@@ -2683,7 +2873,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0192.webp",
@@ -2697,7 +2888,8 @@
     ],
     "race": "Human",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0193.webp",
@@ -2711,7 +2903,8 @@
     ],
     "race": "Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0194.jpg",
@@ -2725,7 +2918,8 @@
     ],
     "race": "Hobgoblin",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0195.png",
@@ -2739,7 +2933,8 @@
     ],
     "race": "Half-Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0196.webp",
@@ -2753,7 +2948,8 @@
     ],
     "race": "Half-Orc",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0197.webp",
@@ -2767,7 +2963,8 @@
     ],
     "race": "Aasimar",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0198.jpg",
@@ -2781,7 +2978,8 @@
     ],
     "race": "Aasimar",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0199.jpg",
@@ -2795,7 +2993,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0200.webp",
@@ -2809,7 +3008,8 @@
     ],
     "race": "Halfling",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0201.webp",
@@ -2823,7 +3023,8 @@
     ],
     "race": "Human",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0202.webp",
@@ -2837,7 +3038,8 @@
     ],
     "race": "Satyr",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0203.webp",
@@ -2851,7 +3053,8 @@
     ],
     "race": "Tiefling",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0204.jpg",
@@ -2865,7 +3068,8 @@
     ],
     "race": "Dragonborn",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0205.webp",
@@ -2879,7 +3083,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0206.webp",
@@ -2893,7 +3098,8 @@
     ],
     "race": "Human",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0207.webp",
@@ -2907,7 +3113,8 @@
     ],
     "race": "Half-Orc",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0208.webp",
@@ -2921,7 +3128,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0209.webp",
@@ -2935,7 +3143,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0210.webp",
@@ -2949,7 +3158,8 @@
     ],
     "race": "Human",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0211.webp",
@@ -2963,7 +3173,8 @@
     ],
     "race": "Human",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0212.png",
@@ -2977,7 +3188,8 @@
     ],
     "race": "Half-Elf",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0213.jpg",
@@ -2991,7 +3203,8 @@
     ],
     "race": "Aasimar",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0214.png",
@@ -3005,7 +3218,8 @@
     ],
     "race": "Gnome",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0215.jpeg",
@@ -3020,7 +3234,8 @@
     ],
     "race": "Half-Elf",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0216.webp",
@@ -3034,7 +3249,8 @@
     ],
     "race": "Half-Orc",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0217.png",
@@ -3048,7 +3264,8 @@
     ],
     "race": "Human",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0218.webp",
@@ -3062,7 +3279,8 @@
     ],
     "race": "Elf",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0219.webp",
@@ -3076,7 +3294,8 @@
     ],
     "race": "Human",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0220.webp",
@@ -3090,7 +3309,8 @@
     ],
     "race": "Half-Elf",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0221.jpg",
@@ -3104,7 +3324,8 @@
     ],
     "race": "Half-Elf",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0222.jpg",
@@ -3118,7 +3339,8 @@
     ],
     "race": "Tabaxi",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0223.jpg",
@@ -3132,7 +3354,8 @@
     ],
     "race": "Fairy",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0224.jpg",
@@ -3146,7 +3369,8 @@
     ],
     "race": "Tabaxi",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0225.webp",
@@ -3160,7 +3384,8 @@
     ],
     "race": "Dwarf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0226.webp",
@@ -3174,7 +3399,8 @@
     ],
     "race": "Human",
     "status": "abandoned",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0227.jpg",
@@ -3188,7 +3414,8 @@
     ],
     "race": "Loxodon",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0228.webp",
@@ -3202,7 +3429,8 @@
     ],
     "race": "Shaddar-Kai",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0229.webp",
@@ -3216,7 +3444,8 @@
     ],
     "race": "Aasimar",
     "status": "abandoned",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0230.webp",
@@ -3230,7 +3459,8 @@
     ],
     "race": "Fairy",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0231.png",
@@ -3244,7 +3474,8 @@
     ],
     "race": "Human",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0232.webp",
@@ -3258,7 +3489,8 @@
     ],
     "race": "Half-Orc",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0233.png",
@@ -3272,7 +3504,8 @@
     ],
     "race": "Genasi",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0234.jpg",
@@ -3286,7 +3519,8 @@
     ],
     "race": "Dwarf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0235.png",
@@ -3300,7 +3534,8 @@
     ],
     "race": "Nymph",
     "status": "abandoned",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0236.png",
@@ -3314,7 +3549,8 @@
     ],
     "race": "Half-Orc",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0237.jpg",
@@ -3328,7 +3564,8 @@
     ],
     "race": "Medusa",
     "status": "abandoned",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0238.jpg",
@@ -3342,7 +3579,8 @@
     ],
     "race": "Nymph",
     "status": "abandoned",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0239.webp",
@@ -3356,7 +3594,8 @@
     ],
     "race": "Fairy",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0240.webp",
@@ -3370,7 +3609,8 @@
     ],
     "race": "Medusa",
     "status": "abandoned",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0241.webp",
@@ -3384,7 +3624,8 @@
     ],
     "race": "Aasimar",
     "status": "abandoned",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0242.png",
@@ -3398,7 +3639,8 @@
     ],
     "race": "Aarakocra",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0243.webp",
@@ -3412,7 +3654,8 @@
     ],
     "race": "Goliath",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0244.png",
@@ -3426,7 +3669,8 @@
     ],
     "race": "Tiefling",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0245.png",
@@ -3440,7 +3684,8 @@
     ],
     "race": "Dragonborn",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0246.png",
@@ -3454,7 +3699,8 @@
     ],
     "race": "Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0247.jpg",
@@ -3468,7 +3714,8 @@
     ],
     "race": "Medusa",
     "status": "abandoned",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0248.png",
@@ -3482,7 +3729,8 @@
     ],
     "race": "Dwarf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0249.jpg",
@@ -3496,7 +3744,8 @@
     ],
     "race": "Aasimar",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0250.png",
@@ -3510,7 +3759,8 @@
     ],
     "race": "Human",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0251.png",
@@ -3524,7 +3774,8 @@
     ],
     "race": "Fairy",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0252.png",
@@ -3538,7 +3789,8 @@
     ],
     "race": "Human",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0253.png",
@@ -3552,7 +3804,8 @@
     ],
     "race": "Half-Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0254.jpg",
@@ -3567,7 +3820,8 @@
     ],
     "race": "Half-Elf",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0255.jpg",
@@ -3581,7 +3835,8 @@
     ],
     "race": "Tiefling",
     "status": "finished",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0256.jpg",
@@ -3595,7 +3850,8 @@
     ],
     "race": "Half-Orc",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0257.jpg",
@@ -3609,7 +3865,8 @@
     ],
     "race": "Placeholder",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0258.jpg",
@@ -3623,7 +3880,8 @@
     ],
     "race": "Human",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0259.png",
@@ -3637,7 +3895,8 @@
     ],
     "race": "Dwarf",
     "status": "abandoned",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0260.jpg",
@@ -3651,7 +3910,8 @@
     ],
     "race": "Kobold",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0261.jpg",
@@ -3665,7 +3925,8 @@
     ],
     "race": "Tiefling",
     "status": "unknown",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   },
   {
     "portrait": "/res/portraits/char-0262.jpg",
@@ -3679,6 +3940,7 @@
     ],
     "race": "Human",
     "status": "dead",
-    "Campaign Code": "unset"
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków."
   }
 ]
