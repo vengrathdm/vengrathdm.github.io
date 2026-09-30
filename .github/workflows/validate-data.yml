@@ -1,0 +1,95 @@
+name: Validate central data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "core/**"
+      - "subpages/**"
+      - ".github/workflows/validate-data.yml"
+  pull_request:
+    paths:
+      - "data/**"
+      - "core/**"
+      - "subpages/**"
+      - ".github/workflows/validate-data.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate IDs, relations and assets
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path(".")
+          data = root / "data"
+
+          def load(name):
+              with (data / name).open(encoding="utf-8") as f:
+                  return json.load(f)
+
+          campaigns = load("campaigns.json")["campaigns"]
+          characters = load("characters.json")["characters"]
+          players = load("players.json")["players"]
+          assets = load("assets.json")["assets"]
+
+          def unique(items, key, label):
+              values = [x.get(key) for x in items]
+              dupes = sorted({v for v in values if values.count(v) > 1})
+              if dupes:
+                  raise SystemExit(f"Duplicate {label}: {dupes}")
+
+          unique(campaigns, "id", "campaign IDs")
+          unique(characters, "id", "character IDs")
+          unique(players, "id", "player IDs")
+          unique(assets, "id", "asset IDs")
+
+          campaign_ids = {x["id"] for x in campaigns}
+          player_ids = {x["id"] for x in players}
+          asset_ids = {x["id"] for x in assets}
+          character_ids = {x["id"] for x in characters}
+
+          errors = []
+
+          for c in characters:
+              if c.get("playerId") not in player_ids:
+                  errors.append(f'{c["id"]}: missing player {c.get("playerId")}')
+              if c.get("portraitId") not in asset_ids:
+                  errors.append(f'{c["id"]}: missing portrait {c.get("portraitId")}')
+              for cid in c.get("campaignIds", []):
+                  if cid not in campaign_ids:
+                      errors.append(f'{c["id"]}: missing campaign {cid}')
+
+          for a in assets:
+              path = a.get("path", "")
+              if path.startswith("/") and not path.startswith("//"):
+                  local = root / path.lstrip("/")
+                  if not local.exists():
+                      errors.append(f'{a["id"]}: missing asset file {path}')
+
+          for path in sorted((data / "campaigns").glob("*.json")):
+              record = json.loads(path.read_text(encoding="utf-8"))
+              for cid in record.get("characters", {}).get("ids", []):
+                  if cid not in character_ids:
+                      errors.append(f'{path}: missing character {cid}')
+
+          if errors:
+              print("\n".join(errors))
+              raise SystemExit(f"Validation failed with {len(errors)} error(s).")
+
+          print(
+              f"Validated {len(campaigns)} campaigns, "
+              f"{len(characters)} characters, {len(players)} players, "
+              f"{len(assets)} assets."
+          )
+          PY
