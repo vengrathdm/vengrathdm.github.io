@@ -1,4 +1,181 @@
 {
   "schemaVersion": 1,
-  "campaigns": []
+  "campaigns": [
+    {
+      "id": "campaign-legends-of-barovia",
+      "name": "Legends of Barovia"
+    },
+    {
+      "id": "campaign-menaces-of-irensberg",
+      "name": "Menaces of Irensberg"
+    },
+    {
+      "id": "campaign-blood-red-snow-white",
+      "name": "Blood Red Snow White"
+    },
+    {
+      "id": "campaign-sands-of-doom",
+      "name": "Sands of Doom"
+    },
+    {
+      "id": "campaign-shards-of-the-past",
+      "name": "Shards of the Past"
+    },
+    {
+      "id": "campaign-turn-of-fortune-s-wheel",
+      "name": "Turn of Fortune's Wheel"
+    },
+    {
+      "id": "campaign-barber-of-silverymoon",
+      "name": "Barber of Silverymoon"
+    },
+    {
+      "id": "campaign-curse-of-strahd",
+      "name": "Curse of Strahd"
+    },
+    {
+      "id": "campaign-drakkenheim",
+      "name": "Drakkenheim"
+    },
+    {
+      "id": "campaign-dungeons-of-drakkenheim",
+      "name": "Dungeons of Drakkenheim"
+    },
+    {
+      "id": "campaign-echtra-midst-the-sidhe",
+      "name": "Echtra midst the Sidhe"
+    },
+    {
+      "id": "campaign-ghoul-hour",
+      "name": "Ghoul Hour"
+    },
+    {
+      "id": "campaign-hand-of-glory",
+      "name": "Hand of Glory"
+    },
+    {
+      "id": "campaign-ku-chwale-tyra",
+      "name": "Ku chwale Tyra!"
+    },
+    {
+      "id": "campaign-lost-mine-of-phandelver",
+      "name": "Lost Mine of Phandelver"
+    },
+    {
+      "id": "campaign-menaces-of-gloomforest",
+      "name": "Menaces of Gloomforest"
+    },
+    {
+      "id": "campaign-mythic-odyssey-of-the-dragonlords",
+      "name": "Mythic Odyssey of the Dragonlords"
+    },
+    {
+      "id": "campaign-neverwinter-intrygi-po-nocnego-wybrzeza-mieczy",
+      "name": "Neverwinter: Intrygi Północnego Wybrzeża Mieczy"
+    },
+    {
+      "id": "campaign-odyssey-of-the-dragonlords",
+      "name": "Odyssey of the Dragonlords"
+    },
+    {
+      "id": "campaign-rise-of-tiamat",
+      "name": "Rise of Tiamat"
+    },
+    {
+      "id": "campaign-samotnie-przeciw-jednosci",
+      "name": "Samotnie Przeciw Jedności"
+    },
+    {
+      "id": "campaign-shadow-of-the-sword-coast",
+      "name": "Shadow of the Sword Coast"
+    },
+    {
+      "id": "campaign-sons-of-azalin",
+      "name": "Sons of Azalin"
+    },
+    {
+      "id": "campaign-the-sunless-citadel",
+      "name": "The Sunless Citadel"
+    },
+    {
+      "id": "campaign-rime-of-the-frostmaiden",
+      "name": "Rime of the Frostmaiden"
+    },
+    {
+      "id": "campaign-heroes-of-baldur-s-gate",
+      "name": "Heroes of Baldur's Gate"
+    },
+    {
+      "id": "campaign-tomb-of-annihilation",
+      "name": "Tomb of Annihilation"
+    },
+    {
+      "id": "campaign-turn-back-the-endless-night",
+      "name": "Turn Back the Endless Night"
+    },
+    {
+      "id": "campaign-ksiazeta-heartwell",
+      "name": "Książęta Heartwell"
+    },
+    {
+      "id": "campaign-the-unlikely-five",
+      "name": "The Unlikely Five"
+    },
+    {
+      "id": "campaign-dragon-of-icespire-peak",
+      "name": "Dragon of Icespire Peak"
+    },
+    {
+      "id": "campaign-echtra-zima-irgaeli",
+      "name": "Echtra - Zima Irgaeli"
+    },
+    {
+      "id": "campaign-kampania-nieznana",
+      "name": "Kampania Nieznana"
+    },
+    {
+      "id": "campaign-menaces-of-gloomforest-legacy",
+      "name": "Menaces of Gloomforest Legacy"
+    },
+    {
+      "id": "campaign-heroes-of-drakkenheim",
+      "name": "Heroes of Drakkenheim"
+    },
+    {
+      "id": "campaign-shards-of-the-past-legacy",
+      "name": "Shards of the Past Legacy"
+    },
+    {
+      "id": "campaign-w-pogoni-za-piorowca",
+      "name": "W Pogoni za PiórOwcą"
+    },
+    {
+      "id": "campaign-mayhem-in-earthspur-mines",
+      "name": "Mayhem in Earthspur Mines"
+    },
+    {
+      "id": "campaign-forge-of-fury",
+      "name": "Forge of Fury"
+    },
+    {
+      "id": "campaign-kampania-nieznana",
+      "name": "Kampania nieznana"
+    },
+    {
+      "id": "campaign-bad-romance-barovia",
+      "name": "Bad Romance Barovia"
+    },
+    {
+      "id": "campaign-epic-odyssey-of-the-dragonlords",
+      "name": "Epic Odyssey of the Dragonlords"
+    },
+    {
+      "id": "campaign-dragons-of-stormwreck-isle",
+      "name": "Dragons of Stormwreck Isle"
+    },
+    {
+      "id": "campaign-dragon-of-dampen-depths",
+      "name": "Dragon of Dampen Depths"
+    }
+  ]
 }
