@@ -264,6 +264,8 @@ for(const line of CHARACTER_META_SOURCE.split("\n")){
 }
 
 const GRAPHIC_META_OVERRIDES=new Map();
+GRAPHIC_META_OVERRIDES.set("Theran\u0000Mat\u0000Dragon of Icespire Peak",{classes:["Barbarian"],race:"Genasi"});
+GRAPHIC_META_OVERRIDES.set("Anathea\u0000Mat\u0000Dragon of Icespire Peak",{classes:["Ranger"],race:"Half-Elf"});
 GRAPHIC_META_OVERRIDES.set("Zwada\u0000wpoluwiatr\u0000Shards of the Past",{classes:["Sorcerer"],race:"Tiefling"});
 
 GRAPHIC_META_OVERRIDES.set("Alyss\u0000DKJowler\u0000Menaces of Gloomforest Legacy",{classes:["Cleric"],race:"Half-Elf"});
