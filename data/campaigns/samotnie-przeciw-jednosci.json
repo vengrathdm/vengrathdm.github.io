@@ -105,17 +105,17 @@
   "chronicle": {
     "title": "Rekord kampanii",
     "lead": "Najważniejsze akta.",
-    "records": [
+    "cards": [
       [
         "01",
-        "Wejście do Trypolitanii",
         "AKTA",
+        "Wejście do Trypolitanii",
         "Drużyna trafia na trop prowadzący przez miasto i zaczyna rozdzielać zwykłą politykę od śladów kultu."
       ],
       [
         "02",
-        "Świątynia Seta",
         "FINAŁ",
+        "Świątynia Seta",
         "Poszukiwania doprowadzają bohaterów do świątyni. Wspólnie odnajdują jej wnętrze i uciekają, zanim budynek zawali się pod nimi."
       ]
     ]
