@@ -133,6 +133,13 @@
     "link": "../../subpages/hand-of-glory/"
   },
   {
+    "name": "heroes-of-baldurs-gate.txt",
+    "title": "Bohaterowie Wrót Baldura",
+    "tag": "Zamknięta Kampania",
+    "graphic": "../Graphics/heroes-of-baldurs-gate.svg",
+    "link": "../../subpages/heroes-of-baldurs-gate/"
+  },
+  {
     "name": "heroes-of-drakkenheim.txt",
     "title": "Heroes of Drakkenheim",
     "tag": "Zamknięta Kampania",
