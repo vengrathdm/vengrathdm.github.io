@@ -380,16 +380,6 @@
     "name": "Rise of Tiamat"
   },
   {
-    "id": "sala-chwaly",
-    "title": "Sala Chwały",
-    "tags": [
-      "Archiwum"
-    ],
-    "graphic": "/res/voronoi/graphics/sala-chwaly.svg",
-    "link": "/p/sala-chwaly/",
-    "name": "Sala Chwały"
-  },
-  {
     "id": "samotnie-przeciw-jednosci",
     "title": "Samotnie przeciw Jedności",
     "tags": [
@@ -518,5 +508,15 @@
     "graphic": "https://cdn.midjourney.com/f2d52c3c-0e32-4b72-a9a2-5f1fdca9d8ed/0_0.png",
     "link": "/p/wails-from-the-lighthouse/",
     "name": "Wails from the Lighthouse"
+  },
+  {
+    "id": "hall-of-fame",
+    "title": "Hall of Fame",
+    "tags": [
+      "Archiwum"
+    ],
+    "graphic": "/res/voronoi/graphics/sala-chwaly.svg",
+    "link": "/HoF/",
+    "name": "Hall of Fame"
   }
 ]
