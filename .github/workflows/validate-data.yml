@@ -83,6 +83,20 @@ jobs:
                   if cid not in character_ids:
                       errors.append(f'{path}: missing character {cid}')
 
+              audio = record.get("audio")
+              if audio and not audio.startswith(("http://", "https://", "/")):
+                  local = path.parent.parent.parent / "subpages" / path.stem / audio.lstrip("./")
+                  if not local.exists():
+                      errors.append(f'{path}: missing campaign audio {audio}')
+
+          # Any explicit stable character reference in HTML must resolve centrally.
+          for html in sorted(root.glob("subpages/**/*.html")):
+              text = html.read_text(encoding="utf-8")
+              import re
+              for cid in re.findall(r'data-character-id="([^"]+)"', text):
+                  if cid not in character_ids:
+                      errors.append(f'{html}: missing character {cid}')
+
           if errors:
               print("\n".join(errors))
               raise SystemExit(f"Validation failed with {len(errors)} error(s).")
