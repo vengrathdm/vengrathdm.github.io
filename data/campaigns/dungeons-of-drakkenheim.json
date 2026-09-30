@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-dungeons-of-drakkenheim",
+  "slug": "dungeons-of-drakkenheim",
+  "layout": "custom",
+  "theme": "drakkenheim",
+  "identity": {
+    "title": "Dungeons of Drakkenheim"
+  },
+  "hero": {
+    "background": "/Home/Graphics/dungeons-of-drakkenheim.jpg"
+  },
+  "characters": [
+    "char-0045",
+    "char-0046",
+    "char-0047",
+    "char-0048",
+    "char-0049"
+  ],
+  "sections": [
+    "Miasto pod fioletowym niebem",
+    "Miasto po meteorycie",
+    "Powietrze nie jest neutralne",
+    "Fiolet, którego chce każdy",
+    "Im dalej, tym mniej pewna jest mapa",
+    "Księga strat",
+    "Kronika wyprawy"
+  ]
+}
