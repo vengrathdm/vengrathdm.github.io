@@ -10,7 +10,7 @@
       "Ranger"
     ],
     "race": "Halfling",
-    "status": "alive",
+    "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -25,7 +25,7 @@
       "Paladin"
     ],
     "race": "Elf",
-    "status": "alive",
+    "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -40,7 +40,7 @@
       "Bard"
     ],
     "race": "Changeling",
-    "status": "alive",
+    "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -55,7 +55,7 @@
       "Druid"
     ],
     "race": "Human",
-    "status": "alive",
+    "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -71,7 +71,7 @@
       "Cleric"
     ],
     "race": "Aasimar",
-    "status": "dead",
+    "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -86,7 +86,7 @@
       "Sorcerer"
     ],
     "race": "Tiefling",
-    "status": "alive",
+    "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -101,7 +101,7 @@
       "Paladin"
     ],
     "race": "Human",
-    "status": "dead",
+    "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -116,7 +116,7 @@
       "Ranger"
     ],
     "race": "Elf",
-    "status": "dead",
+    "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -131,7 +131,7 @@
       "Fighter"
     ],
     "race": "Dragonborn",
-    "status": "dead",
+    "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -146,7 +146,7 @@
       "Rogue"
     ],
     "race": "Elf",
-    "status": "dead",
+    "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -161,7 +161,7 @@
       "Druid"
     ],
     "race": "Elf",
-    "status": "dead",
+    "status": "Wycofana",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -177,7 +177,7 @@
       "Rogue"
     ],
     "race": "Dragonborn",
-    "status": "alive",
+    "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -192,7 +192,7 @@
       "Cleric"
     ],
     "race": "Yokai",
-    "status": "alive",
+    "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -207,7 +207,7 @@
       "Paladin"
     ],
     "race": "Dwarf",
-    "status": "alive",
+    "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -222,7 +222,7 @@
       "Bloodhunter"
     ],
     "race": "Human",
-    "status": "unknown",
+    "status": "Wycofana",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -237,7 +237,7 @@
       "Fighter"
     ],
     "race": "Human",
-    "status": "unknown",
+    "status": "Porzucona",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -252,7 +252,7 @@
       "Rogue"
     ],
     "race": "Drow",
-    "status": "unknown",
+    "status": "Porzucona",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -267,7 +267,7 @@
       "Warlock"
     ],
     "race": "Human",
-    "status": "unknown",
+    "status": "Porzucona",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -282,7 +282,7 @@
       "Warlock"
     ],
     "race": "Half-Elf",
-    "status": "alive",
+    "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -297,7 +297,7 @@
       "Wizard"
     ],
     "race": "Dwarf",
-    "status": "alive",
+    "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -312,7 +312,7 @@
       "Barbarian"
     ],
     "race": "Half-Orc",
-    "status": "alive",
+    "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -327,7 +327,7 @@
       "Fighter"
     ],
     "race": "Human",
-    "status": "alive",
+    "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -342,7 +342,7 @@
       "Barbarian"
     ],
     "race": "Half-Orc",
-    "status": "dead",
+    "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -357,7 +357,7 @@
       "Sorcerer"
     ],
     "race": "Yuan-Ti",
-    "status": "dead",
+    "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -372,7 +372,7 @@
       "Wizard"
     ],
     "race": "Elf",
-    "status": "finished",
+    "status": "Porzucona",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -387,7 +387,7 @@
       "Barbarian"
     ],
     "race": "Half-Orc",
-    "status": "finished",
+    "status": "Porzucona",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -402,7 +402,7 @@
       "Cleric"
     ],
     "race": "Tiefling",
-    "status": "finished",
+    "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -417,7 +417,7 @@
       "Rogue"
     ],
     "race": "Kenku",
-    "status": "finished",
+    "status": "Porzucona",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -432,7 +432,7 @@
       "Monk"
     ],
     "race": "Plasmoid",
-    "status": "finished",
+    "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -447,7 +447,7 @@
       "Druid"
     ],
     "race": "Tiefling",
-    "status": "finished",
+    "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -462,7 +462,7 @@
       "Fighter"
     ],
     "race": "Human",
-    "status": "finished",
+    "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -477,7 +477,7 @@
       "Sorcerer"
     ],
     "race": "Drow",
-    "status": "finished",
+    "status": "Porzucona",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -492,7 +492,7 @@
       "Wizard"
     ],
     "race": "Shaddar-Kai",
-    "status": "finished",
+    "status": "Porzucona",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -507,7 +507,7 @@
       "Ranger"
     ],
     "race": "Elf",
-    "status": "finished",
+    "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -522,7 +522,7 @@
       "Bard"
     ],
     "race": "Elf",
-    "status": "finished",
+    "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -538,7 +538,7 @@
       "Fighter"
     ],
     "race": "Dwarf",
-    "status": "finished",
+    "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -553,7 +553,7 @@
       "Rogue"
     ],
     "race": "Human",
-    "status": "finished",
+    "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -568,7 +568,7 @@
       "Cleric"
     ],
     "race": "Human",
-    "status": "dead",
+    "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
@@ -583,7 +583,7 @@
       "Warlock"
     ],
     "race": "Human",
-    "status": "dead",
+    "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków."
   },
