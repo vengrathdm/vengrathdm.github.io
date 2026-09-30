@@ -1,6 +1,4 @@
-/* ============================================================
-   TOMB OF ANNIHILATION — CAMPAIGN AUDIO
-   ============================================================ */
+/* TOMB — CAMPAIGN AUDIO */
 (function(){
   const audio=document.getElementById('tombTheme');
   const toggle=document.getElementById('tombAudioToggle');
@@ -14,9 +12,9 @@
   let restored=false;
   audio.volume=0.55;
 
-  function savedTime(){
-    const value=parseFloat(sessionStorage.getItem(TIME_KEY));
-    return Number.isFinite(value)&&value>=0 ? value : 0;
+  function getSavedTime(){
+    const saved=parseFloat(sessionStorage.getItem(TIME_KEY));
+    return Number.isFinite(saved)&&saved>=0?saved:0;
   }
 
   function saveState(){
@@ -38,9 +36,9 @@
 
   function restorePosition(){
     if(restored) return;
-    const saved=savedTime();
+    const saved=getSavedTime();
     if(audio.duration&&saved>=audio.duration) audio.currentTime=saved%audio.duration;
-    else audio.currentTime=saved;
+    else if(audio.readyState>=1) audio.currentTime=saved;
     restored=true;
   }
 
@@ -52,11 +50,9 @@
       syncButton();
       saveState();
       return true;
-    }catch(_){
-      audio.muted=true;
-      try{await audio.play();}catch(__){}
+    }catch(error){
+      console.warn('tomb: audio playback was blocked or unavailable.',error);
       syncButton();
-      saveState();
       return false;
     }
   }
@@ -66,6 +62,12 @@
     const shouldPlay=sessionStorage.getItem(PLAYING_KEY)!=='false'&&!userMuted;
     if(shouldPlay) startAudio();
     else syncButton();
+  });
+
+  audio.addEventListener('error',()=>{
+    console.warn('tomb: audio file could not be loaded.',audio.currentSrc);
+    toggle.classList.remove('is-playing');
+    toggle.setAttribute('aria-pressed','false');
   });
 
   toggle.addEventListener('click',async()=>{
