@@ -141,7 +141,7 @@
       "slug": "rise-of-tiamat",
       "canonicalPath": "/campaigns/rise-of-tiamat/",
       "legacyPath": "/subpages/rise-of-tiamat/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-samotnie-przeciw-jednosci",
@@ -218,7 +218,7 @@
       "slug": "dragon-of-icespire-peak",
       "canonicalPath": "/campaigns/dragon-of-icespire-peak/",
       "legacyPath": "/subpages/dragon-of-icespire-peak/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-echtra-zima-irgaeli",
@@ -267,14 +267,14 @@
       "slug": "mayhem-in-earthspur-mines",
       "canonicalPath": "/campaigns/mayhem-in-earthspur-mines/",
       "legacyPath": "/subpages/mayhem-in-earthspur-mines/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-forge-of-fury",
       "slug": "forge-of-fury",
       "canonicalPath": "/campaigns/forge-of-fury/",
       "legacyPath": "/subpages/forge-of-fury/",
-      "status": "legacy"
+      "status": "detailed"
     },
     {
       "id": "campaign-bad-romance-barovia",
@@ -302,7 +302,7 @@
       "slug": "dragon-of-dampen-depths",
       "canonicalPath": "/campaigns/dragon-of-dampen-depths/",
       "legacyPath": "/subpages/dragon-of-dampen-depths/",
-      "status": "legacy"
+      "status": "detailed"
     }
   ]
 }
