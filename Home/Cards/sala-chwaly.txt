@@ -1,0 +1,4 @@
+Sala Chwały
+Archiwum
+../Graphics/sala-chwaly.svg
+../../subpages/sala-chwaly/
