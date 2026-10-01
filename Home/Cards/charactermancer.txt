@@ -1,4 +1,0 @@
-Charactermancer
-Narzędzie
-../Graphics/charactermancer.png
-../../p/Charactermancer/

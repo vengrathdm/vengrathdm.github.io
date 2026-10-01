@@ -1,4 +1,0 @@
-Blood Red Snow White
-Zamknięta Kampania
-../Graphics/blood-red-snow-white.png
-../../p/blood-red-snow-white/
