@@ -1,4 +1,4 @@
 Turn of Fortune's Wheel
 Zamknięta Kampania
 ../Graphics/turn-of-fortunes-wheel.jpg
-../../subpages/turn-of-fortunes-wheel/
+../../p/turn-of-fortunes-wheel/
