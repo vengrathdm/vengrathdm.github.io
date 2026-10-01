@@ -1,0 +1,4 @@
+Curse of Strahd
+Zamknięta Kampania
+../Graphics/curse-of-strahd.jpg
+../../p/curse-of-strahd/
