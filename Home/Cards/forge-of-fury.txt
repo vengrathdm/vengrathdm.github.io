@@ -1,0 +1,4 @@
+Forge of Fury
+Zamknięta Kampania
+../Graphics/forge-of-fury.png
+../../p/forge-of-fury/
