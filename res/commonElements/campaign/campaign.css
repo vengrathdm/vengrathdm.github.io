@@ -1,0 +1,95 @@
+@import url("/res/commonElements/campaign/campaign-nav.css");
+@import url("/res/commonElements/campaign/campaign-hero.css");
+@import url("/res/commonElements/campaign/campaign-dossier.css");
+@import url("/res/commonElements/campaign/campaign-party.css");
+@import url("/res/commonElements/campaign/campaign-chronicle.css");
+@import url("/res/commonElements/campaign/campaign-footer.css");
+
+.campaign{
+  --campaign-bg:#090a0d;
+  --campaign-panel:#12151a;
+  --campaign-panel-alt:#0e1013;
+  --campaign-text:#eeeae0;
+  --campaign-muted:#969893;
+  --campaign-line:#373a3e;
+  --campaign-accent:#bca06a;
+  --campaign-accent-strong:#d0b577;
+  --campaign-shadow:0 20px 65px #0007;
+  min-height:100vh;
+  color:var(--campaign-text);
+  background:var(--campaign-bg);
+  font-family:"Fira Sans Extra Condensed",sans-serif;
+}
+.campaign *{box-sizing:border-box}
+.campaign a{color:inherit}
+.campaign img{max-width:100%}
+.campaign-main,.campaign-hero-inner,.campaign-nav-inner{
+  width:min(1220px,calc(100% - 48px));
+  margin-inline:auto;
+}
+.campaign-main{padding:60px 0 100px}
+.campaign-section{margin-top:70px}
+.campaign-section:first-child{margin-top:0}
+.campaign-section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:25px;
+  margin-bottom:22px;
+}
+.campaign-section-kicker{
+  margin:0;
+  color:var(--campaign-accent);
+  font:700 11px/1 Voltaire,sans-serif;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+}
+.campaign-section-head h2{
+  margin:7px 0 0;
+  color:#ece7dc;
+  font:400 clamp(35px,4vw,56px)/.95 Voltaire,sans-serif;
+}
+.campaign-section-head p{
+  max-width:430px;
+  margin:0;
+  color:var(--campaign-muted);
+  font:400 14px/1.55 "Brygada 1918",Georgia,serif;
+}
+.campaign-card{
+  border:1px solid var(--campaign-line);
+  background:linear-gradient(145deg,var(--campaign-panel),var(--campaign-panel-alt));
+  box-shadow:var(--campaign-shadow);
+}
+.campaign-paper{
+  padding:30px;
+  border:1px solid var(--campaign-line);
+  background:linear-gradient(135deg,#17191d,#101215);
+}
+.campaign-paper h2,.campaign-paper h3{
+  margin:0 0 16px;
+  color:#ece7dc;
+  font:400 clamp(35px,4vw,56px)/.95 Voltaire,sans-serif;
+}
+.campaign-paper p{
+  margin:0 0 12px;
+  color:#c0c2bd;
+  font:400 16px/1.6 "Brygada 1918",Georgia,serif;
+}
+.campaign-paper p:last-child{margin-bottom:0}
+.campaign-columns{
+  display:grid;
+  grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);
+  gap:24px;
+}
+.campaign-stack{display:grid;gap:24px}
+@media(max-width:900px){
+  .campaign-main,.campaign-hero-inner,.campaign-nav-inner{width:calc(100% - 36px)}
+  .campaign-columns{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .campaign-main,.campaign-hero-inner,.campaign-nav-inner{width:calc(100% - 28px)}
+  .campaign-main{padding-top:42px}
+  .campaign-section-head{display:block}
+  .campaign-section-head p{margin-top:14px}
+  .campaign-paper{padding:22px}
+}
