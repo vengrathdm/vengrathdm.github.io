@@ -1,4 +1,4 @@
 Ayla Brokengulf
 Postać
 ../Graphics/ayla.webp
-../../subpages/character-ayla/
+../../p/character-ayla/
