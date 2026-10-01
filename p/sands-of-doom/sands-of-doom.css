@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap");
+
+:root{
+  --theme-base-1:#080706;--theme-base-2:#100b08;--theme-base-3:#15100c;--theme-base-4:#1c130d;--theme-base-5:#24170f;
+  --theme-accent-1:#8a321f;--theme-accent-2:#d7b36a;
+  --theme-text-1:#f0dfb7;--theme-text-2:#d7c6a5;--theme-text-3:#a99a7f;--theme-text-muted:#817663;--theme-title-accent:#b86c38;
+  --theme-line-1:rgba(215,179,106,.35);--theme-line-2:rgba(241,211,139,.55);--theme-nav-background:#110d09;--theme-nav-text:#d7c6a5;--theme-nav-active-background:#25150f;
+  --theme-seal-border:#c89d59;--theme-seal-inner-border:#73512e;--theme-seal-background:#0b0806dd;--theme-seal-small-text:#b49a70;--theme-seal-main-text:#f1d38b;
+  --theme-font-1:"Voltaire",sans-serif;--theme-font-2:"Fira Sans Extra Condensed",sans-serif;--theme-font-3:"Brygada 1918",Georgia,serif;
+}
+html{scroll-behavior:smooth}
+body.sands-of-doom-page{
+  margin:0;min-height:100vh;background:radial-gradient(circle at 50% 0,#3b2413 0,transparent 34%),radial-gradient(circle at 85% 65%,#24130d 0,transparent 28%),#080706;
+  color:var(--theme-text-1);font-family:var(--theme-font-2);line-height:1.6;
+}
+body.sands-of-doom-page::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.12;background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,220,160,.025) 4px)}
+.sands-hero-art{position:absolute;inset:82px 0 0;z-index:0;overflow:hidden;pointer-events:none}
+.sands-hero-art img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.38;filter:saturate(.72) sepia(.2) contrast(1.08)}
+.sands-hero-inner{position:relative;z-index:2}
+.sands-of-doom-page .v-subpage-hero::after{content:"";position:absolute;inset:82px 0 0;background:linear-gradient(90deg,rgba(16,10,6,.94),rgba(16,10,6,.62) 48%,rgba(16,10,6,.28)),linear-gradient(0deg,#100b07,transparent 55%);z-index:1;pointer-events:none}
+.sands-of-doom-page .v-subpage-hero__title{color:#f0d08a;text-shadow:5px 7px 0 #482017}
+.sands-of-doom-page .v-subpage-hero__title-accent{color:#b86c38}
+.sands-sigils{display:flex;gap:20px;margin-top:28px;font-size:31px;color:#f1d38b}
+.sands-sigils span{filter:drop-shadow(0 4px 8px #000)}
+.sands-of-doom-page .ddc-card,.sands-of-doom-page .ddc-party-portrait{border-color:rgba(215,179,106,.35)}
+.sands-of-doom-page .ddc-paper{background:linear-gradient(135deg,#302113,#15100c)}
+.sands-of-doom-page .ddc-case{background:#0f0b08;border-color:rgba(215,179,106,.45);box-shadow:8px 8px 0 #050403}
+.sands-of-doom-page .ddc-case-label{color:#c8793b;border-color:#573021}
+.sands-of-doom-page .ddc-case-row{border-color:rgba(215,179,106,.18)}
+.sands-of-doom-page .ddc-active{color:#f1d38b!important}
+.sands-landscape{min-height:390px;background:#080706}
+.sands-landscape img{display:block;width:100%;height:100%;min-height:390px;object-fit:cover;object-position:center;opacity:.8;filter:saturate(.75) sepia(.15)}
+.sands-of-doom-page .ddc-manifesto{border-color:#80592d;background:#11100d}
+.sands-of-doom-page .ddc-manifesto-symbol{color:#d7b36a}
+.sands-of-doom-page .ddc-source-panel{border-color:rgba(215,179,106,.35)}
+.sands-character-grid .v-character-card{background:#120d09;border-color:rgba(215,179,106,.35)}
+.sands-character-grid .v-character-card__portrait{background:linear-gradient(145deg,#2d1b11,#080706)}
+.sands-character-grid .v-character-card__label{color:#9b6b4d}
+.sands-character-grid .v-character-card__player{color:#aaa08d}
+.sands-character-grid .v-character-card__character{color:#f1d38b}
+.sands-fallen{padding-top:10px}
+.sands-fallen-grid{display:grid;grid-template-columns:repeat(2,minmax(0,320px));gap:18px}
+.sands-of-doom-page .ddc-dead-character{border-color:rgba(145,70,42,.55);background:#100b09}
+.sands-of-doom-page .ddc-dead-portrait{background:linear-gradient(180deg,#24150e,#080706);filter:saturate(.72)}
+.sands-of-doom-page .ddc-dead-info h3{color:#c8a56b}
+.sands-of-doom-page .v-chronicle__entry{border-color:rgba(215,179,106,.35);background:#100c09}
+.sands-of-doom-page .v-chronicle__session{color:#d7b36a}
+.sands-of-doom-page .v-chronicle__title{color:#ead8ac}
+.sands-of-doom-page .v-chronicle__notes a{color:#d7b36a}
+.sands-of-doom-page .ddc-footer{border-color:rgba(215,179,106,.3);background:#070605;color:#817663}
+.sands-of-doom-page .ddc-footer a{color:#d7b36a}
+@media(max-width:700px){.sands-fallen-grid{grid-template-columns:1fr}.sands-of-doom-page .ddc-party-image,.sands-of-doom-page .ddc-party-image img{min-height:300px}}
