@@ -50,3 +50,7 @@ body.sands-of-doom-page::before{content:"";position:fixed;inset:0;pointer-events
 .sands-of-doom-page .ddc-footer{border-color:rgba(215,179,106,.3);background:#070605;color:#817663}
 .sands-of-doom-page .ddc-footer a{color:#d7b36a}
 @media(max-width:700px){.sands-fallen-grid{grid-template-columns:1fr}.sands-of-doom-page .ddc-party-image,.sands-of-doom-page .ddc-party-image img{min-height:300px}}
+
+/* Sands-specific geometry adjustments over the shared D&D template. */
+.sands-fallen-grid{max-width:640px}
+@media(max-width:700px){.sands-fallen-grid{max-width:none}}
