@@ -1,4 +1,4 @@
 Menaces of Gloomforest
 Zamknięta Kampania
 ../Graphics/menaces-of-gloomforest.jpg
-../../subpages/menaces-of-gloomforest/
+../../p/menaces-of-gloomforest/
