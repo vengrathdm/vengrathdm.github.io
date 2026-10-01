@@ -1,4 +1,4 @@
 Ghoul Hour
 Zamknięta Kampania
 ../Graphics/ghoul-hour.png
-../../subpages/ghoul-hour/
+../../p/ghoul-hour/
