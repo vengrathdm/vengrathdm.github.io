@@ -1,0 +1,4 @@
+Ghoul Hour
+Zamknięta Kampania
+../Graphics/ghoul-hour.png
+../../p/ghoul-hour/
