@@ -1,0 +1,17 @@
+.campaign-footer{
+  border-top:1px solid #2f3135;
+  padding:24px;
+  background:#07080a;
+  color:#6f726f;
+  text-align:center;
+}
+.campaign-footer a{color:var(--campaign-accent,#bca06a)}
+.campaign-footer-status{
+  display:inline-block;
+  margin-top:14px;
+  padding:5px 8px;
+  border:1px solid var(--campaign-accent,#bca06a);
+  color:var(--campaign-accent,#bca06a);
+  font:700 9px/1 Voltaire,sans-serif;
+  letter-spacing:1px;
+}
