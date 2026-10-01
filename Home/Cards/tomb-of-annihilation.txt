@@ -1,4 +1,4 @@
 Tomb of Annihilation
 Zamknięta Kampania
 ../Graphics/tomb-of-annihilation.jpg
-../../subpages/tomb-of-annihilation/
+../../p/tomb-of-annihilation/
