@@ -1,4 +1,4 @@
 Bohaterowie Wrót Baldura
 Zamknięta Kampania
 ../Graphics/heroes-of-baldurs-gate.svg
-../../subpages/heroes-of-baldurs-gate/
+../../p/heroes-of-baldurs-gate/
