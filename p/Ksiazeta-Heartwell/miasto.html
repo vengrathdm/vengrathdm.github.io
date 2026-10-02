@@ -1,259 +1,347 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Miasto — Książęta Heartwell</title>
-<meta content="Heartwell — atlas miasta, sześć dzielnic, Aorta, mury, przemysł i codzienność." name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Voltaire&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="heartwell.css" rel="stylesheet"/>
-</head>
-<body>
-
-<audio id="heartwellTheme" src="HeartwellTheme.mp3" loop preload="auto" playsinline></audio>
-<button class="heartwell-audio-toggle" id="heartwellAudioToggle" type="button" aria-label="Włącz dźwięk" aria-pressed="false" title="Włącz dźwięk">
-  <svg class="audio-icon audio-icon-muted" viewBox="0 0 48 48" aria-hidden="true">
-    <path d="M7 19h8l10-8v26l-10-8H7z"></path>
-    <path d="M31 18l10 12M41 18L31 30"></path>
-  </svg>
-  <svg class="audio-icon audio-icon-playing" viewBox="0 0 48 48" aria-hidden="true">
-    <path d="M7 19h8l10-8v26l-10-8H7z"></path>
-    <path d="M32 18c3 3 3 9 0 12M37 13c6 6 6 16 0 22"></path>
-  </svg>
-</button>
-
-<div class="shell">
-<nav aria-label="Nawigacja Heartwell" class="tabs">
-<a class="global-vengrath" href="https://vengrathdm.github.io/" aria-label="Powrót do strony głównej Vengrath">VENGRATH</a>
-<div class="badge">KSIĄŻĘTA<br/>HEARTWELL</div>
-<div class="tab-list">
-<a class="tab-btn" href="index.html"><span>AKTA MIASTA</span></a>
-<a class="tab-btn active" href="miasto.html"><span>MIASTO</span></a>
-<a class="tab-btn" href="druzyna.html"><span>DRUŻYNA</span></a>
-<a class="tab-btn" href="zapisy.html"><span>ZAPISKI Z KAMPANII</span></a>
-</div>
-<div class="tabs-foot"><span>VENGRATH · RAVENLOFT</span></div>
-</nav>
-
-<main class="pages">
-<section class="page active" id="page-factions">
-
-<div class="file-strip">
-  <span>ATLAS MIEJSKI · HEARTWELL</span>
-  <span class="case-no">PLAN / 06 DZIELNIC</span>
-</div>
-
-<header class="city-atlas-hero">
-  <div class="city-atlas-copy">
-    <div class="kicker">MIASTO CZARNEGO KAMIENIA</div>
-    <h1>HEARTWELL</h1>
-    <p class="cover-sub">Miasto zamknięte między lasem, murami i Morzem — przecięte Aortą, zadymione przemysłem i podzielone na sześć dzielnic.</p>
-    <div class="city-hero-facts">
-      <span><strong>06</strong> DZIELNIC</span>
-      <span><strong>02</strong> PIERŚCIENIE MURÓW</span>
-      <span><strong>01</strong> RZEKA · AORTA</span>
-      <span><strong>01</strong> MORZE</span>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Miasto — Książęta Heartwell</title>
+    <meta content="Heartwell — atlas miasta, sześć dzielnic, Aorta, mury, przemysł i codzienność." name="description" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Voltaire&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <link href="heartwell.css" rel="stylesheet" />
+  </head>
+  <body>
+    <audio id="heartwellTheme" src="HeartwellTheme.mp3" loop preload="auto" playsinline></audio>
+    <button class="heartwell-audio-toggle" id="heartwellAudioToggle" type="button" aria-label="Włącz dźwięk" aria-pressed="false" title="Włącz dźwięk">
+      <svg class="audio-icon audio-icon-muted" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M7 19h8l10-8v26l-10-8H7z"></path>
+        <path d="M31 18l10 12M41 18L31 30"></path>
+      </svg>
+      <svg class="audio-icon audio-icon-playing" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M7 19h8l10-8v26l-10-8H7z"></path>
+        <path d="M32 18c3 3 3 9 0 12M37 13c6 6 6 16 0 22"></path>
+      </svg>
+    </button>
+    <div class="shell">
+      <nav aria-label="Nawigacja Heartwell" class="tabs">
+        <a class="global-vengrath" href="https://vengrathdm.github.io/" aria-label="Powrót do strony głównej Vengrath">VENGRATH</a>
+        <div class="badge">KSIĄŻĘTA <br />HEARTWELL </div>
+        <div class="tab-list">
+          <a class="tab-btn" href="index.html">
+            <span>AKTA MIASTA</span>
+          </a>
+          <a class="tab-btn active" href="miasto.html">
+            <span>MIASTO</span>
+          </a>
+          <a class="tab-btn" href="druzyna.html">
+            <span>DRUŻYNA</span>
+          </a>
+          <a class="tab-btn" href="zapisy.html">
+            <span>ZAPISKI Z KAMPANII</span>
+          </a>
+        </div>
+        <div class="tabs-foot">
+          <span>VENGRATH · RAVENLOFT</span>
+        </div>
+      </nav>
+      <main class="pages">
+        <section class="page active" id="page-factions">
+          <div class="file-strip">
+            <span>ATLAS MIEJSKI · HEARTWELL</span>
+            <span class="case-no">PLAN / 06 DZIELNIC</span>
+          </div>
+          <header class="city-atlas-hero">
+            <div class="city-atlas-copy">
+              <div class="kicker">MIASTO CZARNEGO KAMIENIA</div>
+              <h1>HEARTWELL</h1>
+              <p class="cover-sub">Miasto zamknięte między lasem, murami i Morzem — przecięte Aortą, zadymione przemysłem i podzielone na sześć dzielnic.</p>
+              <div class="city-hero-facts">
+                <span>
+                  <strong>06</strong> DZIELNIC </span>
+                <span>
+                  <strong>02</strong> PIERŚCIENIE MURÓW </span>
+                <span>
+                  <strong>01</strong> RZEKA · AORTA </span>
+                <span>
+                  <strong>01</strong> MORZE </span>
+              </div>
+            </div>
+            <div class="city-atlas-stamp">
+              <span>PLAN MIEJSKI</span>
+              <strong>HEARTWELL</strong>
+              <small>DO UŻYTKU WEWNĘTRZNEGO</small>
+            </div>
+          </header>
+          <div class="map-atmosphere-quote-grid city-top-trio">
+            <section class="metro-tile tile-history">
+              <div class="city-timeline">
+                <div class="timeline-item">
+                  <span>01</span>
+                  <div>
+                    <strong>HEARTWELL</strong>
+                    <p>Miasto czarnego kamienia, rzeki Aorta, przemysłu i sześciu dzielnic.</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <span>02</span>
+                  <div>
+                    <strong>ROZWÓJ</strong>
+                    <p>Diesel, kolej, fabryki i coraz cięższa infrastruktura zaczynają wyznaczać rytm miasta.</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <span>03</span>
+                  <div>
+                    <strong>RADA KSIĄŻĄT</strong>
+                    <p>Formalny porządek miasta skupia się wokół Książąt i administracyjnej machiny.</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <span>04</span>
+                  <div>
+                    <strong>MGŁY</strong>
+                    <p>Percival Sinclair i los Heartwell zostają związane ze sobą przez wydarzenie, które sprowadza miasto we mgły.</p>
+                  </div>
+                </div>
+                <div class="timeline-item final">
+                  <span>05</span>
+                  <div>
+                    <strong>DOMENA TERRORU</strong>
+                    <p>Miasto zostaje wciągnięte wraz ze swoim władcą we mgły Ravenloftu.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <div class="heartwell-map map-floating">
+              <img src="https://i.imgur.com/UNrNEJt.jpeg" alt="Mapa Heartwell" />
+            </div>
+            <div class="testimony-strip city-quote map-atmosphere-quote">
+              <div class="mark">“</div>
+              <div>
+                <p>„Był to cały wolumen in folio pergaminowych kart, które, pierwotnie spojone skrawkami płótna, tworzyły ogromną mapę ścienną w kształcie panoramy z ptasiej perspektywy.”</p>
+                <cite>— Bruno Schulz, <em>Sklepy cynamonowe</em>, „Ulica krokodyli” </cite>
+              </div>
+            </div>
+          </div>
+          <div class="heartwell-atmosphere-pair">
+            <section class="heartwell-atmosphere-panel">
+              <div class="district-tag">ATMOSFERA</div>
+              <h3>Wysokie, gęste chmury przemysłowe.</h3>
+              <p>Kominy są tu częścią nieba. Wyrastają ponad dachy jak bardzo brzydkie wieże kościelne i z podobną regularnością wypuszczają ku górze swoje modlitwy. Dym jest gęsty, ciężki i niezwykle demokratyczny — osiada zarówno na pałacach, jak i na nędznych kamienicach.</p>
+              <p>Właściwie trudno powiedzieć, gdzie kończy się architektura, a zaczyna mgła. Jest to jedna z tych granic, których Heartwell nie uważa za konieczne wyznaczać.</p>
+              <p>Poza tym, w czystym powietrzu o wiele ciężej ukryć coś podejrzanego.</p>
+            </section>
+            <section class="heartwell-atmosphere-panel">
+              <div class="district-tag">CODZIENNOŚĆ</div>
+              <h3>Nie każdy mieszkaniec widzi Heartwell z Korony.</h3>
+              <p>Po ulicach jeżdżą dorożki, z rzadka konie i riksze, a pierwsze samochody pojawiają się sporadycznie. Ulice są oświetlone w stylu wiktoriańskiego Londynu. Diesel i industrializacja są wszechobecne, rewolwery powszechne, a magia pozostaje czymś odległym dla większości mieszkańców.</p>
+              <p>Przeciętny mieszkaniec może bać się szesnasto- lub osiemnastogodzinnej zmiany w fabryce, awarii, błędu w zapiskach prowadzącego do niesłusznego aresztowania albo zwykłego napadu. Czasem pojawia się sprawa okultystyczna. Czasem porachunki gangów. Najczęściej — kolejny dzień.</p>
+            </section>
+          </div>
+          <div class="city-anatomy">
+            <div class="anatomy-card anatomy-wide">
+              <span class="anatomy-index">01</span>
+              <div>
+                <div class="district-tag">GRANICA</div>
+                <h3>Dwa pierścienie murów</h3>
+                <p>Heartwell posiada dwa kręgi murów. Zewnętrzny zamyka zasadniczą tkankę miasta; wewnętrzny otacza Koronę i oddziela centrum władzy od reszty miasta.</p>
+              </div>
+            </div>
+            <div class="anatomy-card">
+              <span class="anatomy-index">02</span>
+              <div>
+                <div class="district-tag">WODA</div>
+                <h3>Aorta</h3>
+                <p>Rzeka przecina Heartwell z zachodu na wschód i uchodzi do Morza. Jest naturalną osią miasta.</p>
+              </div>
+            </div>
+            <div class="anatomy-card">
+              <span class="anatomy-index">03</span>
+              <div>
+                <div class="district-tag">WSCHÓD</div>
+                <h3>Morze</h3>
+                <p>Na wschodzie mury ustępują wybrzeżu. Pozostałe strony miasta przechodzą w mroczny las i niewielkie przedmieścia.</p>
+              </div>
+            </div>
+            <div class="anatomy-card">
+              <span class="anatomy-index">04</span>
+              <div>
+                <div class="district-tag">WEJŚCIA</div>
+                <h3>Bramy</h3>
+                <p>Główne przejazdy znajdują się na północy, dwie bramy leżą na południowym zachodzie, a jedna na wschodzie — po północnej stronie Aorty.</p>
+              </div>
+            </div>
+            <div class="anatomy-card">
+              <span class="anatomy-index">05</span>
+              <div>
+                <div class="district-tag">KOLEJ</div>
+                <h3>Dworce</h3>
+                <p>Stacje rozmieszczone są wokół miasta, wewnątrz zewnętrznego pierścienia murów. Kolej jest jednym z mechanicznych układów krążenia Heartwell.</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimony-strip city-quote">
+            <div class="mark">“</div>
+            <div>
+              <p>„Skąpane w ulewie kadłuby wagonów, połyskując pod światło przydrożnych latarń niby wilgotne pancerze, wyrzygiwały rynnami pluszczącą wodę.”</p>
+              <cite>— Stefan Grabiński, <em>Demon ruchu</em>, „Demon ruchu” </cite>
+            </div>
+          </div>
+          <div class="city-metro-grid">
+            <section class="metro-tile tile-tech">
+              <div class="technology-board">
+                <div class="tech-card">
+                  <span class="tech-icon">D</span>
+                  <strong>
+                    <span class="tech-rest">IESEL</span>
+                  </strong>
+                  <p>Czarna ropa zasila przemysł i ciężką mechanikę miasta.</p>
+                </div>
+                <div class="tech-card">
+                  <span class="tech-icon">K</span>
+                  <strong>
+                    <span class="tech-rest">OLEJ</span>
+                  </strong>
+                  <p>Dworce i linie kolejowe wiążą Heartwell z jego otoczeniem.</p>
+                </div>
+                <div class="tech-card">
+                  <span class="tech-icon">R</span>
+                  <strong>
+                    <span class="tech-rest">EWOLWERY</span>
+                  </strong>
+                  <p>Broń palna jest częścią zwyczajnego miejskiego krajobrazu.</p>
+                </div>
+                <div class="tech-card">
+                  <span class="tech-icon">F</span>
+                  <strong>
+                    <span class="tech-rest">OTOGRAFIA</span>
+                  </strong>
+                  <p>Nowoczesna technika obrazu należy do rozwijającej się kultury miasta.</p>
+                </div>
+                <div class="tech-card">
+                  <span class="tech-icon">M</span>
+                  <strong>
+                    <span class="tech-rest">AGIA</span>
+                  </strong>
+                  <p>Jest obecna, ale nie należy do codziennego życia zwykłego motłochu.</p>
+                </div>
+                <div class="tech-card">
+                  <span class="tech-icon">P</span>
+                  <strong>
+                    <span class="tech-rest">EŁZACZE</span>
+                  </strong>
+                  <p>Sześciokołowe kroczące łaziko-czołgi mogą przenosić ciężką broń maszynową.</p>
+                </div>
+                <div class="tech-card">
+                  <span class="tech-icon">F</span>
+                  <strong>
+                    <span class="tech-rest">ABRYKI</span>
+                  </strong>
+                  <p>Wielkie zakłady przemysłowe wyznaczają rytm pracy, transportu i życia całych dzielnic.</p>
+                </div>
+                <div class="tech-card">
+                  <span class="tech-icon">T</span>
+                  <strong>
+                    <span class="tech-rest">ELEGRAF</span>
+                  </strong>
+                  <p>Przewody telegraficzne pozwalają przesyłać wiadomości przez miasto szybciej niż kolej.</p>
+                </div>
+                <div class="tech-card">
+                  <span class="tech-icon">P</span>
+                  <strong>
+                    <span class="tech-rest">RASA</span>
+                  </strong>
+                  <p>Gazety kształtują obraz Heartwell, przynosząc mieszkańcom wiadomości, plotki i miejskie skandale.</p>
+                </div>
+                <div class="tech-card">
+                  <span class="tech-icon">K</span>
+                  <strong>
+                    <span class="tech-rest">AMIENICE</span>
+                  </strong>
+                  <p>Czarne fasady, ciasne mieszkania i wysokie czynsze tworzą codzienny krajobraz robotniczych dzielnic.</p>
+                </div>
+                <div class="tech-card">
+                  <span class="tech-icon">S</span>
+                  <strong>
+                    <span class="tech-rest">YRENY</span>
+                  </strong>
+                  <p>Fabryczne sygnały wyznaczają początek zmian, przerwy i koniec pracy tysiącom mieszkańców.</p>
+                </div>
+                <div class="tech-card">
+                  <span class="tech-icon">Z</span>
+                  <strong>
+                    <span class="tech-rest">EGARY</span>
+                  </strong>
+                  <p>Dworcowe wieże, fabryczne tarcze i kieszonkowe czasomierze odmierzają rytm przemysłowego miasta.</p>
+                </div>
+              </div>
+            </section>
+            <div class="testimony-strip city-quote">
+              <div class="mark">“</div>
+              <div>
+                <p>„Olbrzymie fabryki […] budziły się z wolna, buchały płomieniami ognisk, oddychały kłębami dymów…”</p>
+                <cite>— Władysław Stanisław Reymont, <em>Ziemia obiecana</em>
+                </cite>
+              </div>
+            </div>
+            <section class="metro-tile tile-districts">
+              <div class="district-atlas-grid">
+                <article class="district-atlas-card">
+                  <div class="district-number">01</div>
+                  <div class="district-tag">DZIELNICA-LECZNICA</div>
+                  <h3>Senatorium</h3>
+                  <p>Szpitale, rekonwalescencja i szpital psychiatryczny. Dzielnica jest znieczulona, leniwa i pod wpływem Szumu — potężnego środka otępiającego. Tytularną władzę sprawuje Księżna Isadora Crane; codzienność przecinają gangi narkotykowe i handlarze wizjami.</p>
+                  <span class="district-seal">ISADORA CRANE</span>
+                </article>
+                <article class="district-atlas-card">
+                  <div class="district-number">02</div>
+                  <div class="district-tag">DZIELNICA</div>
+                  <h3>Apetoria</h3>
+                  <p>Dzielnica kulturalno-handlowa. Jej rytm wyznaczają restauracje, winiarnie, rynki, drogi dostaw i miejsca, w których jedzenie oraz rozrywka stają się częścią miejskiego prestiżu.</p>
+                  <span class="district-seal">HELENA CORVUS</span>
+                </article>
+                <article class="district-atlas-card">
+                  <div class="district-number">03</div>
+                  <div class="district-tag">DZIELNICA</div>
+                  <h3>Zabraniec</h3>
+                  <p>Dzielnica finansowo-przemysłowa, w której pieniądz ma własną architekturę: banki, kontrakty, zobowiązania i interesy splatają się w sieć równie twardą jak reszta Heartwell.</p>
+                  <span class="district-seal">SABINE KESSLER</span>
+                </article>
+                <article class="district-atlas-card">
+                  <div class="district-number">04</div>
+                  <div class="district-tag">DZIELNICA</div>
+                  <h3>Erozja</h3>
+                  <p>Dzielnica religijno-rozrywkowa. Katedra św. Bazylego, teatry, opera i salony przyjemności tworzą tu szczególny porządek wiary, widowiska i miejskiego pożądania.</p>
+                  <span class="district-seal">MATTHIAS / VIVIENNE</span>
+                </article>
+                <article class="district-atlas-card">
+                  <div class="district-number">05</div>
+                  <div class="district-tag">DZIELNICA</div>
+                  <h3>Wisielcze Wzgórze</h3>
+                  <p>Dzielnica wojskowo-sądowa: sądy, więzienia, sale przesłuchań, place egzekucji i ciężka infrastruktura porządku skupiają się wokół Żelaznego Sądu.</p>
+                  <span class="district-seal">JAVERT CRANE</span>
+                </article>
+                <article class="district-atlas-card crown">
+                  <div class="district-number">06</div>
+                  <div class="district-tag">CENTRUM · WEWNĘTRZNE MURY</div>
+                  <h3>Korona</h3>
+                  <p>Serce Heartwell. Centrum administracji i elit, dodatkowo zamknięte własnym pierścieniem murów. To tutaj znajduje się uniwersytet magiczny; tutaj też skupia się najbardziej oficjalna twarz miejskiej władzy.</p>
+                  <span class="district-seal">CENTRUM</span>
+                </article>
+              </div>
+            </section>
+          </div>
+          <div class="testimony-strip city-quote city-closing">
+            <div class="mark">“</div>
+            <div>
+              <p>„Każda mijająca chwila coś mi odbiera i daje jemu.”</p>
+              <cite>— Oscar Wilde, <em>Portret Doriana Graya</em>
+              </cite>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
-  </div>
-  <div class="city-atlas-stamp">
-    <span>PLAN MIEJSKI</span>
-    <strong>HEARTWELL</strong>
-    <small>DO UŻYTKU WEWNĘTRZNEGO</small>
-  </div>
-</header>
-
-<div class="map-atmosphere-quote-grid city-top-trio">
-  <section class="metro-tile tile-history">
-  <div class="city-timeline">
-    <div class="timeline-item"><span>01</span><div><strong>HEARTWELL</strong><p>Miasto czarnego kamienia, rzeki Aorta, przemysłu i sześciu dzielnic.</p></div></div>
-    <div class="timeline-item"><span>02</span><div><strong>ROZWÓJ</strong><p>Diesel, kolej, fabryki i coraz cięższa infrastruktura zaczynają wyznaczać rytm miasta.</p></div></div>
-    <div class="timeline-item"><span>03</span><div><strong>RADA KSIĄŻĄT</strong><p>Formalny porządek miasta skupia się wokół Książąt i administracyjnej machiny.</p></div></div>
-    <div class="timeline-item"><span>04</span><div><strong>MGŁY</strong><p>Percival Sinclair i los Heartwell zostają związane ze sobą przez wydarzenie, które sprowadza miasto we mgły.</p></div></div>
-    <div class="timeline-item final"><span>05</span><div><strong>DOMENA TERRORU</strong><p>Miasto zostaje wciągnięte wraz ze swoim władcą we mgły Ravenloftu.</p></div></div>
-  </div>
-</section>
-  <div class="heartwell-map map-floating">
-    <img src="https://i.imgur.com/UNrNEJt.jpeg" alt="Mapa Heartwell"/>
-  </div>
-  <div class="testimony-strip city-quote map-atmosphere-quote">
-  <div class="mark">“</div>
-  <div>
-    <p>„Był to cały wolumen in folio pergaminowych kart, które, pierwotnie spojone skrawkami płótna, tworzyły ogromną mapę ścienną w kształcie panoramy z ptasiej perspektywy.”</p>
-    <cite>— Bruno Schulz, <em>Sklepy cynamonowe</em>, „Ulica krokodyli”</cite>
-  </div>
-</div>
-</div>
-<div class="heartwell-atmosphere-pair">
-  <section class="heartwell-atmosphere-panel">
-    <div class="district-tag">ATMOSFERA</div>
-    <h3>Wysokie, gęste chmury przemysłowe.</h3>
-    <p>Kominy są tu częścią nieba. Wyrastają ponad dachy jak bardzo brzydkie wieże kościelne i z podobną regularnością wypuszczają ku górze swoje modlitwy. Dym jest gęsty, ciężki i niezwykle demokratyczny — osiada zarówno na pałacach, jak i na nędznych kamienicach.</p>
-    <p>Właściwie trudno powiedzieć, gdzie kończy się architektura, a zaczyna mgła. Jest to jedna z tych granic, których Heartwell nie uważa za konieczne wyznaczać.</p>
-    <p>Poza tym, w czystym powietrzu o wiele ciężej ukryć coś podejrzanego.</p>
-  </section>
-
-  <section class="heartwell-atmosphere-panel">
-    <div class="district-tag">CODZIENNOŚĆ</div>
-    <h3>Nie każdy mieszkaniec widzi Heartwell z Korony.</h3>
-    <p>Po ulicach jeżdżą dorożki, z rzadka konie i riksze, a pierwsze samochody pojawiają się sporadycznie. Ulice są oświetlone w stylu wiktoriańskiego Londynu. Diesel i industrializacja są wszechobecne, rewolwery powszechne, a magia pozostaje czymś odległym dla większości mieszkańców.</p>
-    <p>Przeciętny mieszkaniec może bać się szesnasto- lub osiemnastogodzinnej zmiany w fabryce, awarii, błędu w zapiskach prowadzącego do niesłusznego aresztowania albo zwykłego napadu. Czasem pojawia się sprawa okultystyczna. Czasem porachunki gangów. Najczęściej — kolejny dzień.</p>
-  </section>
-</div>
-
-<div class="city-anatomy">
-  <div class="anatomy-card anatomy-wide">
-    <span class="anatomy-index">01</span>
-    <div>
-      <div class="district-tag">GRANICA</div>
-      <h3>Dwa pierścienie murów</h3>
-      <p>Heartwell posiada dwa kręgi murów. Zewnętrzny zamyka zasadniczą tkankę miasta; wewnętrzny otacza Koronę i oddziela centrum władzy od reszty miasta.</p>
-    </div>
-  </div>
-  <div class="anatomy-card">
-    <span class="anatomy-index">02</span>
-    <div>
-      <div class="district-tag">WODA</div>
-      <h3>Aorta</h3>
-      <p>Rzeka przecina Heartwell z zachodu na wschód i uchodzi do Morza. Jest naturalną osią miasta.</p>
-    </div>
-  </div>
-  <div class="anatomy-card">
-    <span class="anatomy-index">03</span>
-    <div>
-      <div class="district-tag">WSCHÓD</div>
-      <h3>Morze</h3>
-      <p>Na wschodzie mury ustępują wybrzeżu. Pozostałe strony miasta przechodzą w mroczny las i niewielkie przedmieścia.</p>
-    </div>
-  </div>
-  <div class="anatomy-card">
-    <span class="anatomy-index">04</span>
-    <div>
-      <div class="district-tag">WEJŚCIA</div>
-      <h3>Bramy</h3>
-      <p>Główne przejazdy znajdują się na północy, dwie bramy leżą na południowym zachodzie, a jedna na wschodzie — po północnej stronie Aorty.</p>
-    </div>
-  </div>
-  <div class="anatomy-card">
-    <span class="anatomy-index">05</span>
-    <div>
-      <div class="district-tag">KOLEJ</div>
-      <h3>Dworce</h3>
-      <p>Stacje rozmieszczone są wokół miasta, wewnątrz zewnętrznego pierścienia murów. Kolej jest jednym z mechanicznych układów krążenia Heartwell.</p>
-    </div>
-  </div>
-</div>
-
-<div class="testimony-strip city-quote">
-  <div class="mark">“</div>
-  <div>
-    <p>„Skąpane w ulewie kadłuby wagonów, połyskując pod światło przydrożnych latarń niby wilgotne pancerze, wyrzygiwały rynnami pluszczącą wodę.”</p>
-    <cite>— Stefan Grabiński, <em>Demon ruchu</em>, „Demon ruchu”</cite>
-  </div>
-</div>
-
-<div class="city-metro-grid">
-
-
-
-
-
-<section class="metro-tile tile-tech">
-  <div class="technology-board">
-    <div class="tech-card"><span class="tech-icon">D</span><strong><span class="tech-rest">IESEL</span></strong><p>Czarna ropa zasila przemysł i ciężką mechanikę miasta.</p></div>
-    <div class="tech-card"><span class="tech-icon">K</span><strong><span class="tech-rest">OLEJ</span></strong><p>Dworce i linie kolejowe wiążą Heartwell z jego otoczeniem.</p></div>
-    <div class="tech-card"><span class="tech-icon">R</span><strong><span class="tech-rest">EWOLWERY</span></strong><p>Broń palna jest częścią zwyczajnego miejskiego krajobrazu.</p></div>
-    <div class="tech-card"><span class="tech-icon">F</span><strong><span class="tech-rest">OTOGRAFIA</span></strong><p>Nowoczesna technika obrazu należy do rozwijającej się kultury miasta.</p></div>
-    <div class="tech-card"><span class="tech-icon">M</span><strong><span class="tech-rest">AGIA</span></strong><p>Jest obecna, ale nie należy do codziennego życia zwykłego motłochu.</p></div>
-    <div class="tech-card"><span class="tech-icon">P</span><strong><span class="tech-rest">EŁZACZE</span></strong><p>Sześciokołowe kroczące łaziko-czołgi mogą przenosić ciężką broń maszynową.</p></div>
-    <div class="tech-card"><span class="tech-icon">F</span><strong><span class="tech-rest">ABRYKI</span></strong><p>Wielkie zakłady przemysłowe wyznaczają rytm pracy, transportu i życia całych dzielnic.</p></div>
-    <div class="tech-card"><span class="tech-icon">T</span><strong><span class="tech-rest">ELEGRAF</span></strong><p>Przewody telegraficzne pozwalają przesyłać wiadomości przez miasto szybciej niż kolej.</p></div>
-    <div class="tech-card"><span class="tech-icon">P</span><strong><span class="tech-rest">RASA</span></strong><p>Gazety kształtują obraz Heartwell, przynosząc mieszkańcom wiadomości, plotki i miejskie skandale.</p></div>
-    <div class="tech-card"><span class="tech-icon">K</span><strong><span class="tech-rest">AMIENICE</span></strong><p>Czarne fasady, ciasne mieszkania i wysokie czynsze tworzą codzienny krajobraz robotniczych dzielnic.</p></div>
-    <div class="tech-card"><span class="tech-icon">S</span><strong><span class="tech-rest">YRENY</span></strong><p>Fabryczne sygnały wyznaczają początek zmian, przerwy i koniec pracy tysiącom mieszkańców.</p></div>
-    <div class="tech-card"><span class="tech-icon">Z</span><strong><span class="tech-rest">EGARY</span></strong><p>Dworcowe wieże, fabryczne tarcze i kieszonkowe czasomierze odmierzają rytm przemysłowego miasta.</p></div>
-  </div>
-</section>
-
-
-
-
-<div class="testimony-strip city-quote">
-  <div class="mark">“</div>
-  <div>
-    <p>„Olbrzymie fabryki […] budziły się z wolna, buchały płomieniami ognisk, oddychały kłębami dymów…”</p>
-    <cite>— Władysław Stanisław Reymont, <em>Ziemia obiecana</em></cite>
-  </div>
-</div>
-
-<section class="metro-tile tile-districts">
-  
-  <div class="district-atlas-grid">
-  <article class="district-atlas-card">
-    <div class="district-number">01</div>
-    <div class="district-tag">DZIELNICA-LECZNICA</div>
-    <h3>Senatorium</h3>
-    <p>Szpitale, rekonwalescencja i szpital psychiatryczny. Dzielnica jest znieczulona, leniwa i pod wpływem Szumu — potężnego środka otępiającego. Tytularną władzę sprawuje Księżna Isadora Crane; codzienność przecinają gangi narkotykowe i handlarze wizjami.</p>
-    <span class="district-seal">ISADORA CRANE</span>
-  </article>
-
-  <article class="district-atlas-card">
-    <div class="district-number">02</div>
-    <div class="district-tag">DZIELNICA</div>
-    <h3>Apetoria</h3>
-    <p>Dzielnica kulturalno-handlowa. Jej rytm wyznaczają restauracje, winiarnie, rynki, drogi dostaw i miejsca, w których jedzenie oraz rozrywka stają się częścią miejskiego prestiżu.</p>
-    <span class="district-seal">HELENA CORVUS</span>
-  </article>
-
-  <article class="district-atlas-card">
-    <div class="district-number">03</div>
-    <div class="district-tag">DZIELNICA</div>
-    <h3>Zabraniec</h3>
-    <p>Dzielnica finansowo-przemysłowa, w której pieniądz ma własną architekturę: banki, kontrakty, zobowiązania i interesy splatają się w sieć równie twardą jak reszta Heartwell.</p>
-    <span class="district-seal">SABINE KESSLER</span>
-  </article>
-
-  <article class="district-atlas-card">
-    <div class="district-number">04</div>
-    <div class="district-tag">DZIELNICA</div>
-    <h3>Erozja</h3>
-    <p>Dzielnica religijno-rozrywkowa. Katedra św. Bazylego, teatry, opera i salony przyjemności tworzą tu szczególny porządek wiary, widowiska i miejskiego pożądania.</p>
-    <span class="district-seal">MATTHIAS / VIVIENNE</span>
-  </article>
-
-  <article class="district-atlas-card">
-    <div class="district-number">05</div>
-    <div class="district-tag">DZIELNICA</div>
-    <h3>Wisielcze Wzgórze</h3>
-    <p>Dzielnica wojskowo-sądowa: sądy, więzienia, sale przesłuchań, place egzekucji i ciężka infrastruktura porządku skupiają się wokół Żelaznego Sądu.</p>
-    <span class="district-seal">JAVERT CRANE</span>
-  </article>
-
-  <article class="district-atlas-card crown">
-    <div class="district-number">06</div>
-    <div class="district-tag">CENTRUM · WEWNĘTRZNE MURY</div>
-    <h3>Korona</h3>
-    <p>Serce Heartwell. Centrum administracji i elit, dodatkowo zamknięte własnym pierścieniem murów. To tutaj znajduje się uniwersytet magiczny; tutaj też skupia się najbardziej oficjalna twarz miejskiej władzy.</p>
-    <span class="district-seal">CENTRUM</span>
-  </article>
-</div>
-</section>
-
-</div>
-
-<div class="testimony-strip city-quote city-closing">
-  <div class="mark">“</div>
-  <div>
-    <p>„Każda mijająca chwila coś mi odbiera i daje jemu.”</p>
-    <cite>— Oscar Wilde, <em>Portret Doriana Graya</em></cite>
-  </div>
-</div>
-
-</section>
-</main>
-</div>
-
-<script src="heartwell.js"></script>
-</body>
+    <script src="heartwell.js"></script>
+  </body>
 </html>
