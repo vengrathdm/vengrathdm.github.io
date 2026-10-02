@@ -1,4 +1,0 @@
-Heroes of Drakkenheim
-Zamknięta Kampania
-../Graphics/dungeons-of-drakkenheim.jpg
-../../p/heroes-of-drakkenheim/

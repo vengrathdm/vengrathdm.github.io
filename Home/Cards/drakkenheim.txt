@@ -1,4 +1,0 @@
-Drakkenheim
-Zamknięta Kampania
-../Graphics/drakkenheim.png
-../../p/drakkenheim/
