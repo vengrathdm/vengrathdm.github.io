@@ -154,42 +154,18 @@
       </section>
       <section class="ddc-tab-panel" id="characters" data-v-tab-panel hidden>
         <section class="ddc-section ddc-character-intro">
-          <div class="ddc-section-mark">AKTA / MATERIAŁY</div>
-          <h2>Postacie i grafiki</h2>
-          <p>Materiały wizualne zachowane ze starej strony bez przenoszenia jej dawnego układu.</p>
+          <div class="ddc-section-mark">AKTA / POSTACIE</div>
+          <h2>Drużyna</h2>
+          <p>Postacie kampanii wraz z aktualnym statusem, klasą, rasą i graczem. Archiwum jest podzielone według stanu postaci.</p>
         </section>
-        <div class="ddc-character-grid">
-          <article class="v-character-card">
-            <div class="v-character-card__portrait"><img src="/res/portraits/char-0045.webp" alt="Materiał kampanii"></div>
-            <div class="v-character-card__info">
-              <div class="v-character-card__label">ARCHIWUM</div><span class="v-character-card__player">Dungeons of Drakkenheim</span><span class="v-character-card__character">Materiał 1</span>
-            </div>
-          </article>
-          <article class="v-character-card">
-            <div class="v-character-card__portrait"><img src="/res/portraits/char-0046.webp" alt="Materiał kampanii"></div>
-            <div class="v-character-card__info">
-              <div class="v-character-card__label">ARCHIWUM</div><span class="v-character-card__player">Dungeons of Drakkenheim</span><span class="v-character-card__character">Materiał 2</span>
-            </div>
-          </article>
-          <article class="v-character-card">
-            <div class="v-character-card__portrait"><img src="/res/portraits/char-0047.webp" alt="Materiał kampanii"></div>
-            <div class="v-character-card__info">
-              <div class="v-character-card__label">ARCHIWUM</div><span class="v-character-card__player">Dungeons of Drakkenheim</span><span class="v-character-card__character">Materiał 3</span>
-            </div>
-          </article>
-          <article class="v-character-card">
-            <div class="v-character-card__portrait"><img src="/res/portraits/char-0048.webp" alt="Materiał kampanii"></div>
-            <div class="v-character-card__info">
-              <div class="v-character-card__label">ARCHIWUM</div><span class="v-character-card__player">Dungeons of Drakkenheim</span><span class="v-character-card__character">Materiał 4</span>
-            </div>
-          </article>
-          <article class="v-character-card">
-            <div class="v-character-card__portrait"><img src="/res/portraits/char-0049.webp" alt="Materiał kampanii"></div>
-            <div class="v-character-card__info">
-              <div class="v-character-card__label">ARCHIWUM</div><span class="v-character-card__player">Dungeons of Drakkenheim</span><span class="v-character-card__character">Materiał 5</span>
-            </div>
-          </article>
-        </div>
+        <section class="ddc-section">
+          <div class="ddc-section-head"><div><div class="ddc-section-mark">AKTA / ŻYJĄCY</div><h2>Żyjący</h2></div><p>Postacie oznaczone w rejestrze jako zwycięskie.</p></div>
+        </section>
+        <div class="ddc-character-grid" id="dungeons-of-drakkenheim-living"></div>
+        <section class="ddc-section">
+          <div class="ddc-section-head"><div><div class="ddc-section-mark">AKTA / POLEGLI</div><h2>Poległe</h2></div><p>Postacie oznaczone w rejestrze jako martwe.</p></div>
+        </section>
+        <div class="ddc-character-grid" id="dungeons-of-drakkenheim-dead"></div>
       </section>
       <section class="ddc-tab-panel ddc-chronicle-panel" id="chronicle" data-v-tab-panel hidden>
         <section class="ddc-section ddc-chronicle-intro">
@@ -319,5 +295,30 @@
     <script src="../../res/common/vengrath-button/vengrath-button.js"></script>
     <script src="../../res/common/youtube-button/youtube-button.js"></script>
     <script src="../../res/common/audio-player/audio-player.js"></script>
-  </body>
+  <script>
+      (async () => {
+        const root = document;
+        const render = (target, characters) => {
+          const el = root.getElementById(target);
+          el.innerHTML = characters.map(character => `
+            <article class="v-character-card">
+              <div class="v-character-card__portrait"><img src="${character.portrait}" alt="${character.character}"></div>
+              <div class="v-character-card__info">
+                <div class="v-character-card__label">${character.status}</div>
+                <span class="v-character-card__player">${character.character}</span>
+                <span class="v-character-card__character">${character.player} · ${character.classes.join(" / ")} · ${character.race}</span>
+                <p class="v-character-card__description">${character.Historia}</p>
+              </div>
+            </article>`).join("");
+        };
+        try {
+          const characters = await fetch("/res/characters.json").then(response => response.json());
+          const campaign = characters.filter(character => (character.campaigns || []).includes("Dungeons of Drakkenheim"));
+          render("dungeons-of-drakkenheim-living", campaign.filter(character => character.status !== "Martwa"));
+          render("dungeons-of-drakkenheim-dead", campaign.filter(character => character.status === "Martwa"));
+        } catch (error) {
+          console.error("Unable to load character registry.", error);
+        }
+      })();
+      </script></body>
 </html>
