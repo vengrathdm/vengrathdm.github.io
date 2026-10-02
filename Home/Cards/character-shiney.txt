@@ -1,4 +1,0 @@
-Shiney, Różowa Paladynka
-Postać
-../Graphics/Shiney.png
-../../p/character-shiney/
