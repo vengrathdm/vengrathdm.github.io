@@ -158,13 +158,7 @@
           <h2>Postacie i grafiki</h2>
           <p>Materiały wizualne zachowane ze starej strony bez przenoszenia jej dawnego układu.</p>
         </section>
-        <div class="ddc-character-grid">
-          <article class="v-character-card"><div class="v-character-card__portrait"><img src="/res/portraits/char-0015.png" alt="Belle de Beaumont"></div><div class="v-character-card__info"><div class="v-character-card__label">ARCHIWUM</div><span class="v-character-card__player">Belle de Beaumont</span><span class="v-character-card__character">wpoluwiatr · Bloodhunter · Human</span><p class="v-character-card__description">Status: Wycofana</p></div></article>
-          <article class="v-character-card"><div class="v-character-card__portrait"><img src="/res/portraits/char-0016.png" alt="Vespera Hexbound"></div><div class="v-character-card__info"><div class="v-character-card__label">ARCHIWUM</div><span class="v-character-card__player">Vespera Hexbound</span><span class="v-character-card__character">Mat · Fighter · Human</span><p class="v-character-card__description">Status: Porzucona</p></div></article>
-          <article class="v-character-card"><div class="v-character-card__portrait"><img src="/res/portraits/char-0017.png" alt="Seryth T'sarran"></div><div class="v-character-card__info"><div class="v-character-card__label">ARCHIWUM</div><span class="v-character-card__player">Seryth T'sarran</span><span class="v-character-card__character">Sandra · Rogue · Drow</span><p class="v-character-card__description">Status: Porzucona</p></div></article>
-          <article class="v-character-card"><div class="v-character-card__portrait"><img src="/res/portraits/char-0018.png" alt="Ariana Windmere"></div><div class="v-character-card__info"><div class="v-character-card__label">ARCHIWUM</div><span class="v-character-card__player">Ariana Windmere</span><span class="v-character-card__character">Maria · Warlock · Human</span><p class="v-character-card__description">Status: Porzucona</p></div></article>
-        </div>
-      </section>
+        <div class="ddc-character-grid" id="blood-red-snow-white-characters"></div>    </section>
       <section class="ddc-tab-panel ddc-chronicle-panel" id="chronicle" data-v-tab-panel hidden>
         <section class="ddc-section ddc-chronicle-intro">
           <div class="ddc-section-mark">AKTA / KRONIKA</div>
@@ -197,5 +191,31 @@
     <script src="../../res/common/vengrath-button/vengrath-button.js"></script>
     <script src="../../res/common/youtube-button/youtube-button.js"></script>
     <script src="../../res/common/audio-player/audio-player.js"></script>
+    <script>
+      (async () => {
+        const grid = document.getElementById("blood-red-snow-white-characters");
+        const characters = await fetch("/res/characters.json").then(response => response.json());
+        characters
+          .filter(character => character.campaigns.includes("Blood Red Snow White"))
+          .forEach(character => {
+            const card = document.createElement("article");
+            card.className = "v-character-card";
+            const classes = character.classes.join(" / ");
+            const history = character.Historia ? `<p class="v-character-card__description">${character.Historia}</p>` : "";
+            card.innerHTML = `
+              <div class="v-character-card__portrait">
+                <img src="${character.portrait}" alt="${character.character}">
+              </div>
+              <div class="v-character-card__info">
+                <div class="v-character-card__label">${character.status}</div>
+                <span class="v-character-card__player">${character.character}</span>
+                <span class="v-character-card__character">${character.player} · ${classes} · ${character.race}</span>
+                ${history}
+              </div>
+            `;
+            grid.appendChild(card);
+          });
+      })();
+    </script>
   </body>
 </html>
