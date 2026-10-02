@@ -36,6 +36,12 @@
     });
     activate(nav,initial,false);
   }
+  function updateScrollState(){
+    const scrolled=window.scrollY>80;
+    document.querySelectorAll(".v-subpage-navbar").forEach(nav=>nav.classList.toggle("is-scrolled",scrolled));
+  }
   document.querySelectorAll(".v-subpage-navbar").forEach(init);
+  updateScrollState();
+  window.addEventListener("scroll",updateScrollState,{passive:true});
   window.VengrathSubpageTabs={init:init};
 })();
