@@ -26,11 +26,7 @@
   }
   function campaignName(){
     const title=document.title.replace(/\s+[—-]\s*Vengrath.*$/i,"").trim();
-    const aliases={
-      "mences-of-irensberg":"Menaces of Irensberg",
-      "klatwa-strahda":"Curse of Strahd"
-    };
-    return aliases[slug(location.pathname.split("/").filter(Boolean).slice(-1)[0])] || title;
+    return title;
   }
   function ensureCharacterStyles(){
     if(document.querySelector('link[data-v-character-card-style]')) return;
@@ -93,12 +89,9 @@
         const wanted=slug(name);
         campaign=all.filter(c=>(c.campaigns||[]).some(campaignName=>slug(campaignName)===wanted));
       }
-      const living=campaign.filter(c=>c.status!=="Martwa");
-      const dead=campaign.filter(c=>c.status==="Martwa");
-      const groups=[];
-      if(living.length) groups.push('<section class="v-character-group"><div class="v-character-group__head"><span>AKTYWNI / POZOSTALI</span><strong>Postaci</strong></div><div class="v-character-grid">'+living.map(card).join("")+'</div></section>');
-      if(dead.length) groups.push('<section class="v-character-group v-character-group--dead"><div class="v-character-group__head"><span>ARCHIWUM</span><strong>Postaci zmarłe</strong></div><div class="v-character-grid">'+dead.map(card).join("")+'</div></section>');
-      panel.querySelector("[data-v-character-groups]").innerHTML=groups.join("")||'<p class="v-character-empty">Brak postaci przypisanych do tej kampanii w <code>/res/characters.json</code>.</p>';
+      panel.querySelector("[data-v-character-groups]").innerHTML=campaign.length
+        ? '<div class="v-character-grid">'+campaign.map(card).join("")+'</div>'
+        : '<p class="v-character-empty">Brak postaci przypisanych do tej kampanii w <code>/res/characters.json</code>.</p>';
     }catch(error){
       panel.querySelector("[data-v-character-groups]").innerHTML='<p class="v-character-empty">Nie udało się wczytać danych postaci.</p>';
       console.error(error);
