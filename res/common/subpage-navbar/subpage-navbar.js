@@ -84,11 +84,7 @@
       const response=await fetch("/res/characters.json",{cache:"no-store"});
       if(!response.ok) throw new Error("characters.json: "+response.status);
       const all=await response.json();
-      let campaign=all.filter(c=>(c.campaigns||[]).includes(name));
-      if(!campaign.length){
-        const wanted=slug(name);
-        campaign=all.filter(c=>(c.campaigns||[]).some(campaignName=>slug(campaignName)===wanted));
-      }
+      const campaign=all.filter(c=>(c.campaigns||[]).includes(name));
       panel.querySelector("[data-v-character-groups]").innerHTML=campaign.length
         ? '<div class="v-character-grid">'+campaign.map(card).join("")+'</div>'
         : '<p class="v-character-empty">Brak postaci przypisanych do tej kampanii w <code>/res/characters.json</code>.</p>';
