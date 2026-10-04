@@ -1,6 +1,7 @@
 (()=>{"use strict";
 const maintenance=location.hash.toLowerCase()==="#maintenance";
 if(maintenance){
+  document.body.classList.add("maintenance-mode");
   document.body.innerHTML='<main class="maintenance"><div class="maintenance__head"><div><div class="maintenance__eyebrow">VENGRATH / MAINTENANCE</div><h1>Pages</h1></div><a href="/" class="maintenance__home">← VENGRATH</a></div><div id="maintenance-table" class="maintenance__table-wrap"><div class="load-error">Ładowanie…</div></div></main>';
   fetch("res/voronoi_data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("voronoi_data.json");return r.json()}).then(rows=>{
     const wrap=document.getElementById("maintenance-table");
