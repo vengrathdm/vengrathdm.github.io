@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Sala Chwały</title>
+  <desc id="desc">Original fantasy hall of fame emblem with a laurel wreath, shield and stars.</desc>
+  <defs>
+    <radialGradient id="bg"><stop offset="0" stop-color="#3a2b16"/><stop offset=".7" stop-color="#17131a"/><stop offset="1" stop-color="#090a10"/></radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1a8"/><stop offset=".5" stop-color="#d2a13b"/><stop offset="1" stop-color="#6b4217"/></linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g fill="none" stroke="url(#gold)" stroke-width="22" stroke-linecap="round">
+    <path d="M430 235 C255 300 245 570 430 650"/>
+    <path d="M770 235 C945 300 955 570 770 650"/>
+  </g>
+  <g fill="url(#gold)" stroke="#5a3716" stroke-width="3">
+    <ellipse cx="340" cy="315" rx="35" ry="15" transform="rotate(-42 340 315)"/>
+    <ellipse cx="295" cy="390" rx="35" ry="15" transform="rotate(-28 295 390)"/>
+    <ellipse cx="285" cy="475" rx="35" ry="15" transform="rotate(-8 285 475)"/>
+    <ellipse cx="315" cy="555" rx="35" ry="15" transform="rotate(22 315 555)"/>
+    <ellipse cx="375" cy="620" rx="35" ry="15" transform="rotate(45 375 620)"/>
+    <ellipse cx="860" cy="315" rx="35" ry="15" transform="rotate(42 860 315)"/>
+    <ellipse cx="905" cy="390" rx="35" ry="15" transform="rotate(28 905 390)"/>
+    <ellipse cx="915" cy="475" rx="35" ry="15" transform="rotate(8 915 475)"/>
+    <ellipse cx="885" cy="555" rx="35" ry="15" transform="rotate(-22 885 555)"/>
+    <ellipse cx="825" cy="620" rx="35" ry="15" transform="rotate(-45 825 620)"/>
+  </g>
+  <path d="M600 170 L760 245 V420 Q750 555 600 625 Q450 555 440 420 V245Z" fill="#111722" stroke="url(#gold)" stroke-width="18"/>
+  <path d="M600 235 L642 325 L740 334 L665 397 L686 495 L600 445 L514 495 L535 397 L460 334 L558 325Z" fill="url(#gold)"/>
+  <g fill="#f8e9ae">
+    <circle cx="600" cy="118" r="12"/><circle cx="545" cy="130" r="8"/><circle cx="655" cy="130" r="8"/>
+  </g>
+  <text x="600" y="705" text-anchor="middle" fill="#f7e7b1" font-family="Georgia,serif" font-size="72" font-weight="700" letter-spacing="6">SALA CHWAŁY</text>
+  <text x="600" y="748" text-anchor="middle" fill="#b89b62" font-family="sans-serif" font-size="21" letter-spacing="7">HALL OF FAME</text>
+</svg>
