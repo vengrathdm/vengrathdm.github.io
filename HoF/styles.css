@@ -142,3 +142,74 @@ footer a{color:var(--gold);text-decoration:none}
   .stats-status .stat:nth-child(2){border-right:0}
   .stats-status .stat strong{font-size:25px}
 }
+
+/* Achievement insignia */
+.card-achievements{
+  position:absolute;
+  z-index:4;
+  top:12px;
+  left:12px;
+  display:grid;
+  grid-template-columns:repeat(2,28px);
+  grid-auto-rows:28px;
+  gap:5px;
+  max-width:61px;
+}
+.achievement{
+  position:relative;
+  width:28px;
+  height:28px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(200,168,95,.42);
+  background:rgba(8,10,9,.82);
+  color:#eee8d8;
+  cursor:help;
+  font:16px/1 "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+  box-shadow:0 4px 10px rgba(0,0,0,.35);
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
+}
+.achievement:hover,.achievement:focus-visible{
+  border-color:var(--gold2);
+  outline:1px solid rgba(234,210,139,.3);
+  outline-offset:1px;
+}
+.achievement-tooltip{
+  position:absolute;
+  left:calc(100% + 9px);
+  top:50%;
+  transform:translateY(-50%);
+  width:210px;
+  padding:10px 12px;
+  display:grid;
+  gap:4px;
+  background:#0d100e;
+  border:1px solid rgba(200,168,95,.45);
+  box-shadow:0 12px 30px rgba(0,0,0,.55);
+  color:#dcdad2;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .12s ease,visibility .12s ease;
+}
+.achievement-tooltip strong{
+  font:11px "DM Mono",monospace;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--gold2);
+}
+.achievement-tooltip span{
+  font:11px/1.45 "Manrope",sans-serif;
+  color:#bfc2bb;
+}
+.achievement:hover .achievement-tooltip,
+.achievement:focus-visible .achievement-tooltip{
+  opacity:1;
+  visibility:visible;
+}
+@media(max-width:680px){
+  .card-achievements{grid-template-columns:repeat(2,25px);grid-auto-rows:25px;gap:4px;max-width:54px;top:9px;left:9px}
+  .achievement{width:25px;height:25px;font-size:14px}
+  .achievement-tooltip{left:auto;right:calc(-100% - 9px);top:calc(100% + 7px);transform:none;width:190px}
+}
