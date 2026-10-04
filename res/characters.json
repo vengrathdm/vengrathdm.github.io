@@ -1839,19 +1839,22 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0123.webp",
-    "character": "Postać nieuzupełniona — ???",
-    "player": "Nie podano",
+    "portrait": "/res/portraits/char-0267.webp",
+    "character": "Alderik Erikson",
+    "player": "Raf",
     "campaigns": [
       "Książęta Heartwell"
     ],
     "classes": [
-      "Placeholder"
+      "Artificer"
     ],
-    "race": "Placeholder",
+    "race": "Dwarf",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Alderik Erikson z klanu Baltimore był pierworodnym swojego ojca Erika, ale z pewnością nie jego jedynym dzieckiem. Mając liczne rodzeństwo, Alderik mierzył się jednak z oczekiwaniami będącymi częścią bycia najstarszym bratem w rodzinie oraz dziedzicem całego klanu. Wiele od niego wymagano, często w imię zasad i tradycji. Jedną z nich było wybranie specjalizacji - każdy w klanie Baltimore miał obowiązek wybrać rzemiosło, które będzie praktykował do perfekcji. Mogła to być sztuka wojenna, rzeźbiarstwo, nawet gra na instrumencie, tak długo jak się oddawał w całości wybranej dziedzinie. Jednak Alderik posiadał niezwykle uniwersalny umysł, który sprawiał, że niezależnie od tego jakie narzędzia chwycił w dłoń, szybko stawał się w nich prawdziwym specjalistą. Jego pradziadek, Alpherik "Srebrny" nazywał to iskrą - formą magii jaką posiadał, która w połączeniu z jego ścisłym umsyłem i talentem sprawiała, że wielkość była mu pisana od urodzin. Chociaż Alderik wolał aby cała zasługa płynęła z jego naturalnej biegłości, faktem było, że był on w stanie korzystać z tej mocy - proponowano mu nawet zostanie czarodziejem jako wybór swojej drogi. Jego serce pragnęło jednak pracy rąk, kucia stali oraz opracowywania mechanizmów bardziej, niż zaczytywania się w księgach. Ale czas jego 50-tych urodzin nachodził, a wraz z nim wybór. Wybrał więc jedyną dostępną dla siebie opcję - uciekł z rodzinnego miasta aby na własną rękę zostać największym rzemieślnikiem, inżynierem i konstruktorem w historii Faerun. 
+Podróżował wielokrotnie z karawanami kupców oraz poszukiwaczami przygód, szukajac swojego miejsca, gdzie jego talenty będa docenione. Mogąc nareszcie skupić się na sobie poczuł się w końcu doceniony za swe zdolności. Niektórym jednak nie w smak były sekrety jakie ukrywał i niejednokrotnie próbowano mu odebrać te radosne chwile smakowania życia i stawiania własnych warunków. Chaos dnia codziennego i dresczyk emocji, kiedy balansował na krawędzi prawa zdawał się dla niego równie uzależniający co mocny trunek i towarzystwo gładkich dam, a kontakty z półświatkiem często skutkowały dobrymi kontraktami i dostępem do materiałów zakazanych w obrocie. Oczywiście, nie zawsze bywało kolorowo... kilka razy otarł się zatrzymanie, czasami próbowano go zniewolić, ale łudem szcześcia zawsze wychodzi obronną ręką.
+Przynajmniej do pewnego czasu, kiedy pewien Lord zażyczył sobie od niego wykonania armii stworzonej z magicznych konstruktów. Alderik odmówił, wiedząc że taka praca zajmie dziesięciolecia w najlepszym wypadku. Nie miał zamiaru zakopywac się w monotonnej pracy od jakiej uciekł, kiedy cały świat czekał na jego odkrycia i dzieła. Lord jednak nie miał zamiaru przyjąć odpowiedzi odmownej i zadecydował skazać Alderika na śmierć, pod pretekstem fałszywych oskrżeń o planowanie zamachu stanu. Upartość krasnoludów nie zna granic, więc Alderik nie miał zamiaru zmienić zdania - nie miał jednak tez nikogo, kto stanąłby w jego obronie na czas, aż do czasu nocnego spotkania pewnej osoby w swojej osamotnionej celi - [...]. Ciekawa wymiana zdań zakończyła się propzycją przybysza "Czy uwolnić Cię z tej sytuacji?". Alderik zgodził się, pewien że na wolności łatwiej będzie mu spłącić zaciągnięty dług.
+[...] sprawił cud i  następnego dnia, Alderika zwyczajnie wypuszczono. Ich drogi jednak nie rozeszły się od razu, ale splatały wielokrotnie przez następne lata, zmieniając czystą relację handlową w przyjaźń, której krasnolud mógł być pewien. Nie zapominając jednak, o długu jako zaciągnął, zawsze czekał na okazję aby go spłacić i zdawało się, że czas ten nadszedł, kiedy odnalazł go list starego przyjaciela aby spotkać się ponownie w karczmie "Nigdzie". Nikt nie przypuszczał, jak ten wieczór jednak miał się zakończyć dla Alderika..."
   },
   {
     "portrait": "/res/portraits/char-0124.webp",
