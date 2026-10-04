@@ -2,7 +2,7 @@
 html,body{margin:0;width:100%;height:100%;overflow:hidden}
 body{background:#0b0d0e;color:#f1f2f2;font-family:"Fira Sans Extra Condensed",sans-serif;user-select:none}
 .app{height:100vh;display:flex;flex-direction:column;background:#0b0d0e}
-.topbar{display:none;height:104px;flex:0 0 104px;align-items:center;gap:24px;padding:0 34px;background:linear-gradient(180deg,#171a1b,#101213 72%,#0d0f10);border-bottom:1px solid #24282a;box-shadow:0 5px 24px #0009;position:relative;z-index:5}
+.topbar{height:104px;flex:0 0 104px;display:flex;align-items:center;gap:24px;padding:0 34px;background:linear-gradient(180deg,#171a1b,#101213 72%,#0d0f10);border-bottom:1px solid #24282a;box-shadow:0 5px 24px #0009;position:relative;z-index:5}
 .brand{display:flex;align-items:center;gap:16px;min-width:0}
 .brand-logo{width:66px;height:66px;object-fit:contain;filter:brightness(1.08) contrast(1.05);mix-blend-mode:screen}
 .brand-copy{min-width:0}
@@ -15,7 +15,7 @@ body{background:#0b0d0e;color:#f1f2f2;font-family:"Fira Sans Extra Condensed",sa
 .filters{min-height:0;flex:1 1 auto;min-width:0;display:flex;align-items:center;justify-content:flex-end;gap:7px;padding:0;background:transparent;border:0;overflow:visible;position:relative;z-index:5}
 .filter{padding:10px 13px;border:1px solid #3a3f41;background:#171a1b;color:#8d9395;cursor:pointer;font-size:12px;border-radius:999px;text-transform:uppercase;white-space:nowrap}
 .filter:hover,.filter.active{color:#fff;background:#292d2f;border-color:#aeb3b5}
-.viewport{touch-action:pan-x;position:relative;flex:1 1 100%;min-height:0;overflow-x:auto;overflow-y:hidden;background:radial-gradient(circle at 50% 45%,#292d2f 0%,#171a1b 44%,#0c0e0f 100%);cursor:grab;scrollbar-width:none}
+.viewport{touch-action:pan-x;position:relative;flex:1;min-height:0;overflow-x:auto;overflow-y:hidden;background:radial-gradient(circle at 50% 45%,#292d2f 0%,#171a1b 44%,#0c0e0f 100%);cursor:grab;scrollbar-width:none}
 .viewport::-webkit-scrollbar{display:none}
 .board{position:relative;height:100%;min-width:100%}
 .shatter{display:block}
