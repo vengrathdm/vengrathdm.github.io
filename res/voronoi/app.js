@@ -8,7 +8,8 @@ if(maintenance){
     const table=document.createElement("table");
     table.innerHTML='<thead><tr><th>Page</th><th>Link</th><th>Content</th><th>Hero</th><th>Style</th><th>Characters</th><th>Chronicle</th><th>Music</th></tr></thead><tbody></tbody>';
     const body=table.querySelector("tbody");
-    rows.forEach(d=>{const tr=document.createElement("tr"),name=document.createElement("td"),link=document.createElement("td"),a=document.createElement("a");name.textContent=d.CardName;a.href=d.CardAdress;a.textContent=d.CardAdress;a.target="_blank";a.rel="noopener";link.appendChild(a);tr.append(name,link);body.appendChild(tr)});
+    const ready={"Książęta Heartwell":{Content:"Ready",Hero:"Ready",Style:"Ready",Characters:"Ready",Chronicle:"Ready",Music:"Ready"},"Legends of Barovia":{Style:"Ready",Characters:"Ready",Chronicle:"Ready",Music:"Ready"},"Sands of Doom":{Music:"Ready"},"Blood Red Snow White":{Music:"Ready"},"Drakkenheim":{Music:"Ready"},"Dungeons of Drakkenheim":{Music:"Ready"},"Heroes of Drakkenheim":{Music:"Ready"}};
+    rows.forEach(d=>{const tr=document.createElement("tr"),name=document.createElement("td"),link=document.createElement("td"),a=document.createElement("a");name.textContent=d.CardName;a.href=d.CardAdress;a.textContent=d.CardAdress;a.target="_blank";a.rel="noopener";link.appendChild(a);tr.append(name,link);["Content","Hero","Style","Characters","Chronicle","Music"].forEach(k=>{const td=document.createElement("td");td.textContent=ready[d.CardName]?.[k]||"No";tr.appendChild(td)});body.appendChild(tr)});
     wrap.replaceChildren(table);
   }).catch(()=>{document.getElementById("maintenance-table").innerHTML='<div class="load-error">Nie udało się wczytać listy stron.</div>'});
   return;
