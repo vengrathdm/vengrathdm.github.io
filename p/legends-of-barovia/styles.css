@@ -8,7 +8,7 @@
   --theme-line-1:#373a3e;--theme-line-2:#4b4e52;--theme-nav-background:#111317;--theme-nav-text:#c9c5bc;--theme-nav-active-background:#191a1d;
   --theme-seal-border:#8f8b80;--theme-seal-inner-border:#635f56;--theme-seal-background:#08090bcc;--theme-seal-small-text:#aaa397;--theme-seal-main-text:#d6cbb5;
   --theme-font-1:"Voltaire",sans-serif;--theme-font-2:"Fira Sans Extra Condensed",sans-serif;--theme-font-3:"Brygada 1918",Georgia,serif;
-  --theme-hero-image:none;
+  --theme-hero-image:url("/res/voronoi/webp/legends-of-barovia.webp");
 }
 
 html{scroll-behavior:smooth}
