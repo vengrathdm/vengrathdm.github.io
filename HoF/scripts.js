@@ -2,10 +2,12 @@
   "use strict";
 
   const DATA_URL = "../res/characters.json";
+  const ACHIEVEMENTS_URL = "../res/achievements.json";
   const $ = id => document.getElementById(id);
 
   const state = {
     records: [],
+    achievements: new Map(),
     filters: {
       player: $("playerFilter"),
       campaign: $("campaignFilter"),
@@ -27,7 +29,8 @@
     ...(Array.isArray(record.campaigns) ? record.campaigns : []),
     ...(Array.isArray(record.classes) ? record.classes : []),
     record.race,
-    record.status
+    record.status,
+    ...(Array.isArray(record.achievements) ? record.achievements : [])
   ].join(" ");
 
   const asArray = value => Array.isArray(value) ? value : (value ? [value] : []);
@@ -93,11 +96,22 @@
     ).join("");
   }
 
+  function achievementMarkup(ids) {
+    return asArray(ids).map(id => {
+      const achievement = state.achievements.get(id);
+      if (!achievement) return "";
+      return '<div class="achievement" tabindex="0" data-achievement="' + escapeHtml(achievement.id) + '" aria-label="' + escapeHtml(achievement.name) + '">' +
+        '<span class="achievement-icon" aria-hidden="true">' + escapeHtml(achievement.icon) + '</span>' +
+        '<span class="achievement-tooltip" role="tooltip"><strong>' + escapeHtml(achievement.name) + '</strong><span>' + escapeHtml(achievement.description) + '</span></span>' +
+      '</div>';
+    }).join("");
+  }
+
   function card(record, index) {
     const status = record.status;
     const meta = statusMeta(status);
     return '<article class="card" tabindex="0" role="button" data-index="' + index + '" data-status="' + meta.key + '" aria-label="Otwórz rekord ' + escapeHtml(record.character) + '">' +
-      '<div class="portrait"><img src="' + escapeHtml(record.portrait) + '" alt="' + escapeHtml(record.character) + '" loading="lazy" onerror="this.remove()"><span class="status-badge" aria-hidden="true">' + meta.icon + '</span></div>' +
+      '<div class="portrait"><div class="card-achievements" aria-label="Osiągnięcia">' + achievementMarkup(record.achievements) + '</div><img src="' + escapeHtml(record.portrait) + '" alt="' + escapeHtml(record.character) + '" loading="lazy" onerror="this.remove()"><span class="status-badge" aria-hidden="true">' + meta.icon + '</span></div>' +
       '<div class="card-body">' +
         '<h3 class="card-name">' + escapeHtml(record.character) + '</h3>' +
         '<div class="meta">' +
@@ -196,9 +210,14 @@
     try {
       const response = await fetch(DATA_URL, { cache: "no-store" });
       if (!response.ok) throw new Error("HTTP " + response.status);
-      const data = await response.json();
+      const [response, achievementResponse] = await Promise.all([fetch(DATA_URL), fetch(ACHIEVEMENTS_URL)]);
+      if (!response.ok) throw new Error("HTTP " + response.status + " przy characters.json");
+      if (!achievementResponse.ok) throw new Error("HTTP " + achievementResponse.status + " przy achievements.json");
+      const [data, achievements] = await Promise.all([response.json(), achievementResponse.json()]);
       if (!Array.isArray(data)) throw new Error("characters.json nie zawiera tablicy rekordów.");
+      if (!Array.isArray(achievements)) throw new Error("achievements.json nie zawiera tablicy definicji.");
       state.records = data;
+      state.achievements = new Map(achievements.map(achievement => [achievement.id, achievement]));
       setupFilters();
       updateArchiveStats();
       render();
