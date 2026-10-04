@@ -13,7 +13,8 @@
       campaign: $("campaignFilter"),
       class: $("classFilter"),
       race: $("raceFilter"),
-      status: $("statusFilter")
+      status: $("statusFilter"),
+      achievement: $("achievementFilter")
     }
   };
 
@@ -75,6 +76,7 @@
     populateFilter(state.filters.class, records.flatMap(r => asArray(r.classes)), "Wszystkie klasy");
     populateFilter(state.filters.race, records.map(r => r.race), "Wszystkie rasy");
     populateFilter(state.filters.status, records.map(r => r.status), "Wszystkie statusy", displayStatus);
+    populateFilter(state.filters.achievement, state.achievements.keys().map(id => id), "Wszystkie tytuły", id => state.achievements.get(id)?.name || id);
   }
 
   function matches(record) {
@@ -86,6 +88,7 @@
     if (state.filters.class.value && !asArray(record.classes).includes(state.filters.class.value)) return false;
     if (state.filters.race.value && record.race !== state.filters.race.value) return false;
     if (state.filters.status.value && record.status !== state.filters.status.value) return false;
+    if (state.filters.achievement.value && !asArray(record.achievements).includes(state.filters.achievement.value)) return false;
 
     return true;
   }
