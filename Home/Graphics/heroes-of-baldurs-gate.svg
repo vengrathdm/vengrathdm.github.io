@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Heroes of Baldur's Gate</title>
+  <desc id="desc">Original fantasy emblem showing a stylized city gate, shield and four heroic stars.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101827"/><stop offset="1" stop-color="#2a1725"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0a6"/><stop offset=".45" stop-color="#d7a943"/><stop offset="1" stop-color="#70451b"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <path d="M0 625 Q150 535 300 610 T600 590 T900 610 T1200 570 V800 H0Z" fill="#080c14"/>
+  <g fill="none" stroke="url(#gold)" stroke-width="18" stroke-linejoin="round">
+    <path d="M265 625 V335 Q265 250 345 205 L600 95 L855 205 Q935 250 935 335 V625"/>
+    <path d="M420 625 V405 Q420 315 500 315 H700 Q780 315 780 405 V625"/>
+    <path d="M490 625 V425 Q490 385 530 385 H670 Q710 385 710 425 V625"/>
+  </g>
+  <path d="M600 150 L632 230 L718 238 L652 293 L671 378 L600 333 L529 378 L548 293 L482 238 L568 230 Z" fill="url(#gold)" filter="url(#glow)"/>
+  <g fill="url(#gold)">
+    <path d="M330 170 l12 29 31 3-24 20 7 31-26-16-27 16 8-31-25-20 31-3z"/>
+    <path d="M870 170 l12 29 31 3-24 20 7 31-26-16-27 16 8-31-25-20 31-3z"/>
+    <path d="M600 55 l9 22 24 2-18 15 6 23-21-13-21 13 6-23-18-15 24-2z"/>
+  </g>
+  <text x="600" y="690" text-anchor="middle" fill="#f7e7b1" font-family="Georgia,serif" font-size="58" font-weight="700" letter-spacing="5">HEROES OF BALDUR'S GATE</text>
+  <text x="600" y="735" text-anchor="middle" fill="#b89b62" font-family="sans-serif" font-size="22" letter-spacing="8">ADVENTURE • HONOR • LEGEND</text>
+</svg>
