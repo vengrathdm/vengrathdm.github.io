@@ -208,9 +208,10 @@
 
   async function init() {
     try {
-      const response = await fetch(DATA_URL, { cache: "no-store" });
-      if (!response.ok) throw new Error("HTTP " + response.status);
-      const [response, achievementResponse] = await Promise.all([fetch(DATA_URL), fetch(ACHIEVEMENTS_URL)]);
+      const [response, achievementResponse] = await Promise.all([
+        fetch(DATA_URL),
+        fetch(ACHIEVEMENTS_URL)
+      ]);
       if (!response.ok) throw new Error("HTTP " + response.status + " przy characters.json");
       if (!achievementResponse.ok) throw new Error("HTTP " + achievementResponse.status + " przy achievements.json");
       const [data, achievements] = await Promise.all([response.json(), achievementResponse.json()]);
