@@ -212,7 +212,8 @@
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": [
-      "zguba-lisza"
+      "zguba-lisza",
+      "blazen"
     ]
   },
   {
@@ -424,7 +425,8 @@
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": [
-      "legenda"
+      "legenda",
+      "blazen"
     ]
   },
   {
@@ -489,7 +491,9 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "blazen"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0031.webp",
@@ -569,7 +573,9 @@
     "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "blazen"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0036.webp",
@@ -738,7 +744,8 @@
     "Historia": "Brak zapisków.",
     "achievements": [
       "krolotworca",
-      "mutant"
+      "mutant",
+      "zguba-swiata"
     ]
   },
   {
@@ -757,7 +764,8 @@
     "Historia": "Brak zapisków.",
     "achievements": [
       "krolotworca",
-      "mutant"
+      "mutant",
+      "zguba-swiata"
     ]
   },
   {
@@ -776,7 +784,8 @@
     "Historia": "Brak zapisków.",
     "achievements": [
       "krolotworca",
-      "mutant"
+      "mutant",
+      "zguba-swiata"
     ]
   },
   {
@@ -893,7 +902,9 @@
     "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "blazen"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0055.webp",
@@ -909,7 +920,9 @@
     "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "blazen"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0056.webp",
@@ -1347,7 +1360,8 @@
     "achievements": [
       "bogobojca",
       "podroznik-w-czasie",
-      "pomazaniec"
+      "pomazaniec",
+      "blazen"
     ]
   },
   {
@@ -1426,7 +1440,8 @@
     "Historia": "Brak zapisków.",
     "achievements": [
       "bogobojca",
-      "pogromca-smokow"
+      "pogromca-smokow",
+      "zaprawiony-bohater"
     ]
   },
   {
@@ -1583,7 +1598,8 @@
     "Historia": "Brak zapisków.",
     "achievements": [
       "zaprawiony-bohater",
-      "mutant"
+      "mutant",
+      "blazen"
     ]
   },
   {
@@ -1827,7 +1843,9 @@
     "status": "Porzucona",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "ten-ktory-nie-powinien-przezyc"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0109.webp",
@@ -1892,7 +1910,8 @@
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": [
-      "lamacz-klatw"
+      "lamacz-klatw",
+      "zguba-lisza"
     ]
   },
   {
@@ -1911,7 +1930,8 @@
     "Historia": "Brak zapisków.",
     "achievements": [
       "pogromca-smokow",
-      "lamacz-klatw"
+      "lamacz-klatw",
+      "zguba-lisza"
     ]
   },
   {
@@ -1931,7 +1951,8 @@
     "Historia": "Brak zapisków.",
     "achievements": [
       "pogromca-smokow",
-      "lamacz-klatw"
+      "lamacz-klatw",
+      "zguba-lisza"
     ]
   },
   {
@@ -2447,7 +2468,9 @@
     "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "blazen"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0144.webp",
@@ -2821,7 +2844,9 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "zguba-swiata"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0168.webp",
@@ -3085,7 +3110,9 @@
     "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "blazen"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0184.webp",
@@ -3118,7 +3145,8 @@
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": [
-      "pomazaniec"
+      "pomazaniec",
+      "blazen"
     ]
   },
   {
@@ -3202,7 +3230,8 @@
     "achievements": [
       "pogromca-smokow",
       "lamacz-klatw",
-      "ostatni-ocalaly"
+      "ostatni-ocalaly",
+      "zguba-lisza"
     ]
   },
   {
@@ -3325,7 +3354,9 @@
     "status": "Porzucona",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "blazen"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0198.webp",
@@ -3413,7 +3444,10 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "zguba-lisza",
+      "lamacz-klatw"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0203.webp",
@@ -3430,7 +3464,8 @@
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": [
-      "meczennik"
+      "meczennik",
+      "blazen"
     ]
   },
   {
@@ -4395,7 +4430,9 @@
     "status": "Porzucona",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "blazen"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0263.webp",
@@ -4428,7 +4465,8 @@
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": [
-      "pogromca-smokow"
+      "pogromca-smokow",
+      "blazen"
     ]
   },
   {
