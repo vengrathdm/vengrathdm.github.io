@@ -6,7 +6,7 @@ if(maintenance){
   fetch("res/voronoi_data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("voronoi_data.json");return r.json()}).then(rows=>{
     const wrap=document.getElementById("maintenance-table");
     const table=document.createElement("table");
-    table.innerHTML='<thead><tr><th>Page</th><th>Link</th></tr></thead><tbody></tbody>';
+    table.innerHTML='<thead><tr><th>Page</th><th>Link</th><th>Content</th><th>Hero</th><th>Style</th><th>Characters</th><th>Chronicle</th><th>Music</th></tr></thead><tbody></tbody>';
     const body=table.querySelector("tbody");
     rows.forEach(d=>{const tr=document.createElement("tr"),name=document.createElement("td"),link=document.createElement("td"),a=document.createElement("a");name.textContent=d.CardName;a.href=d.CardAdress;a.textContent=d.CardAdress;a.target="_blank";a.rel="noopener";link.appendChild(a);tr.append(name,link);body.appendChild(tr)});
     wrap.replaceChildren(table);
