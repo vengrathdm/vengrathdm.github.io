@@ -8,13 +8,13 @@
   {
     "CardName": "Barber of Silverymoon",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/barber-of-silverymoon.webp",
+    "CardGraphic": "/res/voronoi/webp/barber-of-silverymoon.webp",
     "CardAdress": "/p/barber-of-silverymoon/"
   },
   {
     "CardName": "Blog",
     "CardTags": "Blog",
-    "CardGraphic": "/Home/Graphics/webp/Blog001.webp",
+    "CardGraphic": "/res/voronoi/webp/Blog001.webp",
     "CardAdress": "/Blog/blog/"
   },
   {
@@ -26,241 +26,241 @@
   {
     "CardName": "Ayla Brokengulf",
     "CardTags": "Postać",
-    "CardGraphic": "/Home/Graphics/webp/ayla.webp",
+    "CardGraphic": "/res/voronoi/webp/ayla.webp",
     "CardAdress": "/Characters/character-ayla/"
   },
   {
     "CardName": "Shiney, Różowa Paladynka",
     "CardTags": "Postać",
-    "CardGraphic": "/Home/Graphics/webp/Shiney.webp",
+    "CardGraphic": "/res/voronoi/webp/Shiney.webp",
     "CardAdress": "/Characters/character-shiney/"
   },
   {
     "CardName": "Charactermancer",
     "CardTags": "Narzędzie",
-    "CardGraphic": "/Home/Graphics/webp/charactermancer.webp",
+    "CardGraphic": "/res/voronoi/webp/charactermancer.webp",
     "CardAdress": "/Charactermancer/"
   },
   {
     "CardName": "Curse of Strahd",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/curse-of-strahd.webp",
+    "CardGraphic": "/res/voronoi/webp/curse-of-strahd.webp",
     "CardAdress": "/p/curse-of-strahd/"
   },
   {
     "CardName": "Dom Malowanych Luster",
     "CardTags": "Archiwum",
-    "CardGraphic": "/Home/Graphics/webp/dom-malowanych-luster.webp",
+    "CardGraphic": "/res/voronoi/webp/dom-malowanych-luster.webp",
     "CardAdress": "/p/dom-malowanych-luster/"
   },
   {
     "CardName": "Dragon of Dampen Depths",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/dragon-of-dampen-depths.webp",
+    "CardGraphic": "/res/voronoi/webp/dragon-of-dampen-depths.webp",
     "CardAdress": "/p/dragon-of-dampen-depths/"
   },
   {
     "CardName": "Dragon of Icespire Peak",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/dragon-of-icespire-peak.webp",
+    "CardGraphic": "/res/voronoi/webp/dragon-of-icespire-peak.webp",
     "CardAdress": "/p/dragon-of-icespire-peak/"
   },
   {
     "CardName": "Drakkenheim",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/drakkenheim.webp",
+    "CardGraphic": "/res/voronoi/webp/drakkenheim.webp",
     "CardAdress": "/p/drakkenheim/"
   },
   {
     "CardName": "Dungeons of Drakkenheim",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/dungeons-of-drakkenheim.webp",
+    "CardGraphic": "/res/voronoi/webp/dungeons-of-drakkenheim.webp",
     "CardAdress": "/p/dungeons-of-drakkenheim/"
   },
   {
     "CardName": "Echtra midst the Sidhe",
     "CardTags": "Aktywna Kampania",
-    "CardGraphic": "/Home/Graphics/webp/echtra-midst-the-sidhe.webp",
+    "CardGraphic": "/res/voronoi/webp/echtra-midst-the-sidhe.webp",
     "CardAdress": "/p/echtra-midst-the-sidhe/"
   },
   {
     "CardName": "Echtra - Zima Irgaeli",
     "CardTags": "Aktywna Kampania",
-    "CardGraphic": "/Home/Graphics/webp/echtra-midst-the-sidhe.webp",
+    "CardGraphic": "/res/voronoi/webp/echtra-midst-the-sidhe.webp",
     "CardAdress": "/p/echtra-zima-irgaeli/"
   },
   {
     "CardName": "Forge of Fury",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/forge-of-fury.webp",
+    "CardGraphic": "/res/voronoi/webp/forge-of-fury.webp",
     "CardAdress": "/p/forge-of-fury/"
   },
   {
     "CardName": "Ghoul Hour",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/ghoul-hour.webp",
+    "CardGraphic": "/res/voronoi/webp/ghoul-hour.webp",
     "CardAdress": "/p/ghoul-hour/"
   },
   {
     "CardName": "Gold for Fools and Princes",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/Gold-for-Fools-and-Princes.webp",
+    "CardGraphic": "/res/voronoi/webp/Gold-for-Fools-and-Princes.webp",
     "CardAdress": "/p/gold-for-fools-and-princes/"
   },
   {
     "CardName": "Hand of Glory",
     "CardTags": "Archiwum",
-    "CardGraphic": "/Home/Graphics/webp/hand-of-glory.webp",
+    "CardGraphic": "/res/voronoi/webp/hand-of-glory.webp",
     "CardAdress": "/p/hand-of-glory/"
   },
   {
     "CardName": "Bohaterowie Wrót Baldura",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/heroes-of-baldurs-gate.webp",
+    "CardGraphic": "/res/voronoi/webp/heroes-of-baldurs-gate.webp",
     "CardAdress": "/p/heroes-of-baldurs-gate/"
   },
   {
     "CardName": "Heroes of Drakkenheim",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/dungeons-of-drakkenheim.webp",
+    "CardGraphic": "/res/voronoi/webp/dungeons-of-drakkenheim.webp",
     "CardAdress": "/p/heroes-of-drakkenheim/"
   },
   {
     "CardName": "Klątwa Strahda",
     "CardTags": "Aktywna Kampania",
-    "CardGraphic": "/Home/Graphics/webp/klatwa-strahda.webp",
+    "CardGraphic": "/res/voronoi/webp/klatwa-strahda.webp",
     "CardAdress": "/p/klatwa-strahda/"
   },
   {
     "CardName": "Książęta Heartwell",
     "CardTags": "Aktywna Kampania",
-    "CardGraphic": "/Home/Graphics/webp/ksiazeta-heartwell.webp",
+    "CardGraphic": "/res/voronoi/webp/ksiazeta-heartwell.webp",
     "CardAdress": "/p/Ksiazeta-Heartwell/"
   },
   {
     "CardName": "Ku chwale Tyra!",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/KuChwaleTyra.webp",
+    "CardGraphic": "/res/voronoi/webp/KuChwaleTyra.webp",
     "CardAdress": "/p/ku-chwale-tyra/"
   },
   {
     "CardName": "Legends of Barovia",
     "CardTags": "Aktywna Kampania",
-    "CardGraphic": "/Home/Graphics/webp/legends-of-barovia.webp",
+    "CardGraphic": "/res/voronoi/webp/legends-of-barovia.webp",
     "CardAdress": "/p/legends-of-barovia/"
   },
   {
     "CardName": "Lost Mine of Phandelver",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/lost-mine-of-phandelver.webp",
+    "CardGraphic": "/res/voronoi/webp/lost-mine-of-phandelver.webp",
     "CardAdress": "/p/lost-mine-of-phandelver/"
   },
   {
     "CardName": "Maski Nyarlathotepa - Peru",
     "CardTags": "Archiwum",
-    "CardGraphic": "/Home/Graphics/webp/maski-nyarlotepa.webp",
+    "CardGraphic": "/res/voronoi/webp/maski-nyarlotepa.webp",
     "CardAdress": "/p/maski-nyarlotepa/"
   },
   {
     "CardName": "Mayhem in Earthspur Mines",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/mayhem-in-earthspur-mines.webp",
+    "CardGraphic": "/res/voronoi/webp/mayhem-in-earthspur-mines.webp",
     "CardAdress": "/p/mayhem-in-earthspur-mines/"
   },
   {
     "CardName": "Menaces of Gloomforest Legacy",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/menaces-of-gloomforest.webp",
+    "CardGraphic": "/res/voronoi/webp/menaces-of-gloomforest.webp",
     "CardAdress": "/p/menaces-of-gloomforest-legacy/"
   },
   {
     "CardName": "Menaces of Gloomforest",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/menaces-of-gloomforest.webp",
+    "CardGraphic": "/res/voronoi/webp/menaces-of-gloomforest.webp",
     "CardAdress": "/p/menaces-of-gloomforest/"
   },
   {
     "CardName": "Mences of Irensberg",
     "CardTags": "Aktywna Kampania",
-    "CardGraphic": "/Home/Graphics/webp/mences-of-irensberg.webp",
+    "CardGraphic": "/res/voronoi/webp/mences-of-irensberg.webp",
     "CardAdress": "/p/mences-of-irensberg/"
   },
   {
     "CardName": "Moje Rysunki 2026",
     "CardTags": "Grafika",
-    "CardGraphic": "/Home/Graphics/webp/moje-prace-graficzne.webp",
+    "CardGraphic": "/res/voronoi/webp/moje-prace-graficzne.webp",
     "CardAdress": "/Blog/rysunki2026/"
   },
   {
     "CardName": "Mythic Odyssey of the Dragonlords",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/mythic-odyssey-of-the-dragonlords.webp",
+    "CardGraphic": "/res/voronoi/webp/mythic-odyssey-of-the-dragonlords.webp",
     "CardAdress": "/p/mythic-odyssey-of-the-dragonlords/"
   },
   {
     "CardName": "Neverwinter: Intrygi Północnego Wybrzeża Mieczy",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/neverwinter.webp",
+    "CardGraphic": "/res/voronoi/webp/neverwinter.webp",
     "CardAdress": "/p/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/"
   },
   {
     "CardName": "Odyssey of the Dragonlords",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/odyssey-of-the-dragonlords.webp",
+    "CardGraphic": "/res/voronoi/webp/odyssey-of-the-dragonlords.webp",
     "CardAdress": "/p/odyssey-of-the-dragonlords/"
   },
   {
     "CardName": "Blood Red Snow White",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/blood-red-snow-white.webp",
+    "CardGraphic": "/res/voronoi/webp/blood-red-snow-white.webp",
     "CardAdress": "/p/blood-red-snow-white/"
   },
   {
     "CardName": "Rime of the Frostmaiden",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/rime-of-the-frostmaiden.webp",
+    "CardGraphic": "/res/voronoi/webp/rime-of-the-frostmaiden.webp",
     "CardAdress": "/p/rime-of-the-frostmaiden/"
   },
   {
     "CardName": "Rise of Tiamat",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/rise-of-tiamat.webp",
+    "CardGraphic": "/res/voronoi/webp/rise-of-tiamat.webp",
     "CardAdress": "/p/rise-of-tiamat/"
   },
   {
     "CardName": "Sala Chwały",
     "CardTags": "Archiwum",
-    "CardGraphic": "/Home/Graphics/webp/sala-chwaly.webp",
+    "CardGraphic": "/res/voronoi/webp/sala-chwaly.webp",
     "CardAdress": "https://vengrathdm.github.io/HoF/"
   },
   {
     "CardName": "Samotnie przeciw Jedności",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/samotnie-przeciw-jednosci.webp",
+    "CardGraphic": "/res/voronoi/webp/samotnie-przeciw-jednosci.webp",
     "CardAdress": "/p/samotnie-przeciw-jednosci/"
   },
   {
     "CardName": "Sands of Doom",
     "CardTags": "Aktywna Kampania",
-    "CardGraphic": "/Home/Graphics/webp/sands-of-doom.webp",
+    "CardGraphic": "/res/voronoi/webp/sands-of-doom.webp",
     "CardAdress": "/p/sands-of-doom/"
   },
   {
     "CardName": "Shadow of the Sword Coast",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/shadow-of-the-sword-coast.webp",
+    "CardGraphic": "/res/voronoi/webp/shadow-of-the-sword-coast.webp",
     "CardAdress": "/p/shadow-of-the-sword-coast/"
   },
   {
     "CardName": "Shards of the Past",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/shards-of-the-past.webp",
+    "CardGraphic": "/res/voronoi/webp/shards-of-the-past.webp",
     "CardAdress": "/p/shards-of-the-past/"
   },
   {
     "CardName": "Sons of Azalin",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/sons-of-azalin.webp",
+    "CardGraphic": "/res/voronoi/webp/sons-of-azalin.webp",
     "CardAdress": "/p/sons-of-azalin/"
   },
   {
@@ -272,13 +272,13 @@
   {
     "CardName": "The Sunless Citadel",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/the-sunless-citadel.webp",
+    "CardGraphic": "/res/voronoi/webp/the-sunless-citadel.webp",
     "CardAdress": "/p/the-sunless-citadel/"
   },
   {
     "CardName": "Tomb of Annihilation",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/tomb-of-annihilation.webp",
+    "CardGraphic": "/res/voronoi/webp/tomb-of-annihilation.webp",
     "CardAdress": "/p/tomb-of-annihilation/"
   },
   {
@@ -296,13 +296,13 @@
   {
     "CardName": "Turn Back the Endless Night",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/turn-back-the-endless-night.webp",
+    "CardGraphic": "/res/voronoi/webp/turn-back-the-endless-night.webp",
     "CardAdress": "/p/turn-back-the-endless-night/"
   },
   {
     "CardName": "Turn of Fortune's Wheel",
     "CardTags": "Zamknięta Kampania",
-    "CardGraphic": "/Home/Graphics/webp/turn-of-fortunes-wheel.webp",
+    "CardGraphic": "/res/voronoi/webp/turn-of-fortunes-wheel.webp",
     "CardAdress": "/p/turn-of-fortunes-wheel/"
   },
   {

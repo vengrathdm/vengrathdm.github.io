@@ -1,6 +1,6 @@
 [
   {
-    "portrait": "/res/portraits/char-0001.png",
+    "portrait": "/res/portraits/char-0001.webp",
     "character": "Pelagietta",
     "player": "Miauriusz",
     "campaigns": [
@@ -15,7 +15,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0002.png",
+    "portrait": "/res/portraits/char-0002.webp",
     "character": "Luekher",
     "player": "Aureli",
     "campaigns": [
@@ -30,7 +30,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0003.png",
+    "portrait": "/res/portraits/char-0003.webp",
     "character": "Damira",
     "player": "Kajetan",
     "campaigns": [
@@ -45,7 +45,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0004.png",
+    "portrait": "/res/portraits/char-0004.webp",
     "character": "Pchełka",
     "player": "Zuza",
     "campaigns": [
@@ -60,7 +60,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0005.png",
+    "portrait": "/res/portraits/char-0005.webp",
     "character": "Eliasz",
     "player": "Miauriusz",
     "campaigns": [
@@ -121,7 +121,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0009.jpg",
+    "portrait": "/res/portraits/char-0009.webp",
     "character": "Erro",
     "player": "Marcin",
     "campaigns": [
@@ -136,7 +136,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0010.jpg",
+    "portrait": "/res/portraits/char-0010.webp",
     "character": "Etaire",
     "player": "Anemo",
     "campaigns": [
@@ -151,7 +151,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0011.jpg",
+    "portrait": "/res/portraits/char-0011.webp",
     "character": "Flavia",
     "player": "wpoluwiatr",
     "campaigns": [
@@ -212,7 +212,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0015.png",
+    "portrait": "/res/portraits/char-0015.webp",
     "character": "Belle de Beaumont",
     "player": "wpoluwiatr",
     "campaigns": [
@@ -227,7 +227,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0016.png",
+    "portrait": "/res/portraits/char-0016.webp",
     "character": "Vespera Hexbound",
     "player": "Mat",
     "campaigns": [
@@ -242,7 +242,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0017.png",
+    "portrait": "/res/portraits/char-0017.webp",
     "character": "Seryth T'sarran",
     "player": "Sandra",
     "campaigns": [
@@ -257,7 +257,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0018.png",
+    "portrait": "/res/portraits/char-0018.webp",
     "character": "Ariana Windmere",
     "player": "Maria",
     "campaigns": [
@@ -272,7 +272,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0019.png",
+    "portrait": "/res/portraits/char-0019.webp",
     "character": "Vaelor",
     "player": "Rezus",
     "campaigns": [
@@ -287,7 +287,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0020.png",
+    "portrait": "/res/portraits/char-0020.webp",
     "character": "Bromli",
     "player": "koksuvi",
     "campaigns": [
@@ -302,7 +302,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0021.png",
+    "portrait": "/res/portraits/char-0021.webp",
     "character": "Gromar",
     "player": "lexonis",
     "campaigns": [
@@ -317,7 +317,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0022.png",
+    "portrait": "/res/portraits/char-0022.webp",
     "character": "Samira",
     "player": "Jeesoo",
     "campaigns": [
@@ -347,7 +347,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0024.png",
+    "portrait": "/res/portraits/char-0024.webp",
     "character": "Nefira",
     "player": "Jeesoo",
     "campaigns": [
@@ -362,7 +362,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0025.jpg",
+    "portrait": "/res/portraits/char-0025.webp",
     "character": "Miriadae",
     "player": "wpoluwiatr",
     "campaigns": [
@@ -377,7 +377,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0026.png",
+    "portrait": "/res/portraits/char-0026.webp",
     "character": "Zog",
     "player": "Koar",
     "campaigns": [
@@ -392,7 +392,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0027.jpg",
+    "portrait": "/res/portraits/char-0027.webp",
     "character": "Styx",
     "player": "Ezu",
     "campaigns": [
@@ -407,7 +407,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0028.png",
+    "portrait": "/res/portraits/char-0028.webp",
     "character": "Kukdu",
     "player": "Michał Wodziczko",
     "campaigns": [
@@ -422,7 +422,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0029.png",
+    "portrait": "/res/portraits/char-0029.webp",
     "character": "Oorim",
     "player": "koksuvi",
     "campaigns": [
@@ -437,7 +437,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0030.png",
+    "portrait": "/res/portraits/char-0030.webp",
     "character": "Kelan",
     "player": "lexonis",
     "campaigns": [
@@ -452,7 +452,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0031.png",
+    "portrait": "/res/portraits/char-0031.webp",
     "character": "Roderick",
     "player": "Rezus",
     "campaigns": [
@@ -467,7 +467,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0032.png",
+    "portrait": "/res/portraits/char-0032.webp",
     "character": "Adria",
     "player": "vissara",
     "campaigns": [
@@ -482,7 +482,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0033.png",
+    "portrait": "/res/portraits/char-0033.webp",
     "character": "Varok Nightshade",
     "player": "Viking",
     "campaigns": [
@@ -512,7 +512,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0035.png",
+    "portrait": "/res/portraits/char-0035.webp",
     "character": "Cindic",
     "player": "Goku94",
     "campaigns": [
@@ -527,7 +527,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0036.png",
+    "portrait": "/res/portraits/char-0036.webp",
     "character": "Dain Gorumn",
     "player": "Goku94",
     "campaigns": [
@@ -543,7 +543,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0090.png",
+    "portrait": "/res/portraits/char-0090.webp",
     "character": "Nailef",
     "player": "Musthard",
     "campaigns": [
@@ -558,7 +558,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0038.png",
+    "portrait": "/res/portraits/char-0038.webp",
     "character": "Asta Caemor",
     "player": "Agata",
     "campaigns": [
@@ -603,7 +603,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0041.jpg",
+    "portrait": "/res/portraits/char-0041.webp",
     "character": "Urien",
     "player": "Raevell",
     "campaigns": [
@@ -633,7 +633,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0090.png",
+    "portrait": "/res/portraits/char-0090.webp",
     "character": "Arik",
     "player": "Amadeusz",
     "campaigns": [
@@ -648,7 +648,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0044.png",
+    "portrait": "/res/portraits/char-0044.webp",
     "character": "Alem",
     "player": "keero",
     "campaigns": [
@@ -753,7 +753,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0051.jpg",
+    "portrait": "/res/portraits/char-0051.webp",
     "character": "Drogon Na'ar",
     "player": "Rivani",
     "campaigns": [
@@ -783,7 +783,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0053.jpg",
+    "portrait": "/res/portraits/char-0053.webp",
     "character": "Grunmor",
     "player": "Daniel",
     "campaigns": [
@@ -813,7 +813,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0055.jpg",
+    "portrait": "/res/portraits/char-0055.webp",
     "character": "Maeve",
     "player": "wpoluwiatr",
     "campaigns": [
@@ -828,7 +828,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0056.png",
+    "portrait": "/res/portraits/char-0056.webp",
     "character": "Lyanna Steelheart",
     "player": "Natalia",
     "campaigns": [
@@ -858,7 +858,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0058.png",
+    "portrait": "/res/portraits/char-0058.webp",
     "character": "Migotka",
     "player": "Martyna",
     "campaigns": [
@@ -903,7 +903,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0061.png",
+    "portrait": "/res/portraits/char-0061.webp",
     "character": "Audrey Fulton",
     "player": "Sandra",
     "campaigns": [
@@ -918,7 +918,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0062.png",
+    "portrait": "/res/portraits/char-0062.webp",
     "character": "Dan Whelan",
     "player": "Mat",
     "campaigns": [
@@ -933,7 +933,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0063.png",
+    "portrait": "/res/portraits/char-0063.webp",
     "character": "Patty Graham",
     "player": "Maria",
     "campaigns": [
@@ -948,7 +948,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0064.jpg",
+    "portrait": "/res/portraits/char-0064.webp",
     "character": "Lugash",
     "player": "Aleksander",
     "campaigns": [
@@ -963,7 +963,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0065.jpg",
+    "portrait": "/res/portraits/char-0065.webp",
     "character": "Eltris",
     "player": "Ewa",
     "campaigns": [
@@ -1008,7 +1008,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0068.jpg",
+    "portrait": "/res/portraits/char-0068.webp",
     "character": "Elran",
     "player": "Daniel",
     "campaigns": [
@@ -1023,7 +1023,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0069.png",
+    "portrait": "/res/portraits/char-0069.webp",
     "character": "Vivienne",
     "player": "Maria",
     "campaigns": [
@@ -1038,7 +1038,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0070.png",
+    "portrait": "/res/portraits/char-0070.webp",
     "character": "Nyxallia",
     "player": "Martyna",
     "campaigns": [
@@ -1083,7 +1083,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0073.png",
+    "portrait": "/res/portraits/char-0073.webp",
     "character": "Quill",
     "player": "Shaggy",
     "campaigns": [
@@ -1098,7 +1098,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0090.png",
+    "portrait": "/res/portraits/char-0090.webp",
     "character": "Elorin",
     "player": "Michał Kraus",
     "campaigns": [
@@ -1113,7 +1113,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0075.png",
+    "portrait": "/res/portraits/char-0075.webp",
     "character": "Satrius Nevermore",
     "player": "Przemysław Król",
     "campaigns": [
@@ -1128,7 +1128,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0076.jpg",
+    "portrait": "/res/portraits/char-0076.webp",
     "character": "Adeline",
     "player": "pompon",
     "campaigns": [
@@ -1158,7 +1158,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0078.jpg",
+    "portrait": "/res/portraits/char-0078.webp",
     "character": "Mullder",
     "player": "Alek",
     "campaigns": [
@@ -1173,7 +1173,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0079.png",
+    "portrait": "/res/portraits/char-0079.webp",
     "character": "Rina",
     "player": "wpoluwiatr",
     "campaigns": [
@@ -1189,7 +1189,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0080.png",
+    "portrait": "/res/portraits/char-0080.webp",
     "character": "Theron",
     "player": "shrimphead",
     "campaigns": [
@@ -1204,7 +1204,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0081.png",
+    "portrait": "/res/portraits/char-0081.webp",
     "character": "Xavier",
     "player": "archangelss",
     "campaigns": [
@@ -1219,7 +1219,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0082.png",
+    "portrait": "/res/portraits/char-0082.webp",
     "character": "Xastar",
     "player": "lecpowode",
     "campaigns": [
@@ -1249,7 +1249,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0084.png",
+    "portrait": "/res/portraits/char-0084.webp",
     "character": "Zander",
     "player": "Koar",
     "campaigns": [
@@ -1264,7 +1264,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0085.png",
+    "portrait": "/res/portraits/char-0085.webp",
     "character": "Ryuji",
     "player": "Route",
     "campaigns": [
@@ -1279,7 +1279,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0086.png",
+    "portrait": "/res/portraits/char-0086.webp",
     "character": "Bronn",
     "player": "Viking",
     "campaigns": [
@@ -1294,7 +1294,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0090.png",
+    "portrait": "/res/portraits/char-0090.webp",
     "character": "Lorenzo Dal",
     "player": "Domono",
     "campaigns": [
@@ -1309,7 +1309,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0090.png",
+    "portrait": "/res/portraits/char-0090.webp",
     "character": "Mattia",
     "player": "Kurde Bele",
     "campaigns": [
@@ -1324,7 +1324,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0090.png",
+    "portrait": "/res/portraits/char-0090.webp",
     "character": "Samuel Wokulski",
     "player": "StaryBorsuk",
     "campaigns": [
@@ -1339,7 +1339,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0090.png",
+    "portrait": "/res/portraits/char-0090.webp",
     "character": "Vincent Campbell",
     "player": "Vexu",
     "campaigns": [
@@ -1354,7 +1354,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0091.png",
+    "portrait": "/res/portraits/char-0091.webp",
     "character": "Saki",
     "player": "neiiska",
     "campaigns": [
@@ -1369,7 +1369,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0092.jpg",
+    "portrait": "/res/portraits/char-0092.webp",
     "character": "Amarika",
     "player": "leftpinky",
     "campaigns": [
@@ -1385,7 +1385,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0093.png",
+    "portrait": "/res/portraits/char-0093.webp",
     "character": "Flare",
     "player": "Maria",
     "campaigns": [
@@ -1400,7 +1400,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0094.jpg",
+    "portrait": "/res/portraits/char-0094.webp",
     "character": "Cor’avel Asteria Solthar [Cassy]",
     "player": "Rivani",
     "campaigns": [
@@ -1417,7 +1417,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0095.png",
+    "portrait": "/res/portraits/char-0095.webp",
     "character": "Sel'avel Annora Solthar (Saskia)",
     "player": "Natalia P",
     "campaigns": [
@@ -1462,7 +1462,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0098.png",
+    "portrait": "/res/portraits/char-0098.webp",
     "character": "Vivienne",
     "player": "Natalia",
     "campaigns": [
@@ -1477,7 +1477,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0099.png",
+    "portrait": "/res/portraits/char-0099.webp",
     "character": "Kiara",
     "player": "Maria",
     "campaigns": [
@@ -1522,7 +1522,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0102.png",
+    "portrait": "/res/portraits/char-0102.webp",
     "character": "Mobius",
     "player": "Mobius",
     "campaigns": [
@@ -1552,7 +1552,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0104.png",
+    "portrait": "/res/portraits/char-0104.webp",
     "character": "Magnus",
     "player": "Viking",
     "campaigns": [
@@ -1567,7 +1567,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0105.jpg",
+    "portrait": "/res/portraits/char-0105.webp",
     "character": "Zani",
     "player": "Princess Molesta",
     "campaigns": [
@@ -1598,7 +1598,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0107.jpg",
+    "portrait": "/res/portraits/char-0107.webp",
     "character": "Aerion",
     "player": "Jakub Perkowski",
     "campaigns": [
@@ -1794,7 +1794,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0120.png",
+    "portrait": "/res/portraits/char-0120.webp",
     "character": "Polter von Geist",
     "player": "Zuza",
     "campaigns": [
@@ -1809,7 +1809,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0121.png",
+    "portrait": "/res/portraits/char-0121.webp",
     "character": "Delilah Brooke",
     "player": "wpoluwiatr",
     "campaigns": [
@@ -1824,7 +1824,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0122.png",
+    "portrait": "/res/portraits/char-0122.webp",
     "character": "James Blackwood",
     "player": "Daniel",
     "campaigns": [
@@ -1839,19 +1839,22 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0123.png",
-    "character": "Postać nieuzupełniona — ???",
-    "player": "Nie podano",
+    "portrait": "/res/portraits/char-0267.webp",
+    "character": "Alderik Erikson",
+    "player": "Raf",
     "campaigns": [
       "Książęta Heartwell"
     ],
     "classes": [
-      "Placeholder"
+      "Artificer"
     ],
-    "race": "Placeholder",
+    "race": "Dwarf",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Alderik Erikson z klanu Baltimore był pierworodnym swojego ojca Erika, ale z pewnością nie jego jedynym dzieckiem. Mając liczne rodzeństwo, Alderik mierzył się jednak z oczekiwaniami będącymi częścią bycia najstarszym bratem w rodzinie oraz dziedzicem całego klanu. Wiele od niego wymagano, często w imię zasad i tradycji. Jedną z nich było wybranie specjalizacji - każdy w klanie Baltimore miał obowiązek wybrać rzemiosło, które będzie praktykował do perfekcji. Mogła to być sztuka wojenna, rzeźbiarstwo, nawet gra na instrumencie, tak długo jak się oddawał w całości wybranej dziedzinie. Jednak Alderik posiadał niezwykle uniwersalny umysł, który sprawiał, że niezależnie od tego jakie narzędzia chwycił w dłoń, szybko stawał się w nich prawdziwym specjalistą. Jego pradziadek, Alpherik "Srebrny" nazywał to iskrą - formą magii jaką posiadał, która w połączeniu z jego ścisłym umsyłem i talentem sprawiała, że wielkość była mu pisana od urodzin. Chociaż Alderik wolał aby cała zasługa płynęła z jego naturalnej biegłości, faktem było, że był on w stanie korzystać z tej mocy - proponowano mu nawet zostanie czarodziejem jako wybór swojej drogi. Jego serce pragnęło jednak pracy rąk, kucia stali oraz opracowywania mechanizmów bardziej, niż zaczytywania się w księgach. Ale czas jego 50-tych urodzin nachodził, a wraz z nim wybór. Wybrał więc jedyną dostępną dla siebie opcję - uciekł z rodzinnego miasta aby na własną rękę zostać największym rzemieślnikiem, inżynierem i konstruktorem w historii Faerun. 
+Podróżował wielokrotnie z karawanami kupców oraz poszukiwaczami przygód, szukajac swojego miejsca, gdzie jego talenty będa docenione. Mogąc nareszcie skupić się na sobie poczuł się w końcu doceniony za swe zdolności. Niektórym jednak nie w smak były sekrety jakie ukrywał i niejednokrotnie próbowano mu odebrać te radosne chwile smakowania życia i stawiania własnych warunków. Chaos dnia codziennego i dresczyk emocji, kiedy balansował na krawędzi prawa zdawał się dla niego równie uzależniający co mocny trunek i towarzystwo gładkich dam, a kontakty z półświatkiem często skutkowały dobrymi kontraktami i dostępem do materiałów zakazanych w obrocie. Oczywiście, nie zawsze bywało kolorowo... kilka razy otarł się zatrzymanie, czasami próbowano go zniewolić, ale łudem szcześcia zawsze wychodzi obronną ręką.
+Przynajmniej do pewnego czasu, kiedy pewien Lord zażyczył sobie od niego wykonania armii stworzonej z magicznych konstruktów. Alderik odmówił, wiedząc że taka praca zajmie dziesięciolecia w najlepszym wypadku. Nie miał zamiaru zakopywac się w monotonnej pracy od jakiej uciekł, kiedy cały świat czekał na jego odkrycia i dzieła. Lord jednak nie miał zamiaru przyjąć odpowiedzi odmownej i zadecydował skazać Alderika na śmierć, pod pretekstem fałszywych oskrżeń o planowanie zamachu stanu. Upartość krasnoludów nie zna granic, więc Alderik nie miał zamiaru zmienić zdania - nie miał jednak tez nikogo, kto stanąłby w jego obronie na czas, aż do czasu nocnego spotkania pewnej osoby w swojej osamotnionej celi - [...]. Ciekawa wymiana zdań zakończyła się propzycją przybysza "Czy uwolnić Cię z tej sytuacji?". Alderik zgodził się, pewien że na wolności łatwiej będzie mu spłącić zaciągnięty dług.
+[...] sprawił cud i  następnego dnia, Alderika zwyczajnie wypuszczono. Ich drogi jednak nie rozeszły się od razu, ale splatały wielokrotnie przez następne lata, zmieniając czystą relację handlową w przyjaźń, której krasnolud mógł być pewien. Nie zapominając jednak, o długu jako zaciągnął, zawsze czekał na okazję aby go spłacić i zdawało się, że czas ten nadszedł, kiedy odnalazł go list starego przyjaciela aby spotkać się ponownie w karczmie "Nigdzie". Nikt nie przypuszczał, jak ten wieczór jednak miał się zakończyć dla Alderika..."
   },
   {
     "portrait": "/res/portraits/char-0124.webp",
@@ -2020,7 +2023,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0135.png",
+    "portrait": "/res/portraits/char-0135.webp",
     "character": "Naetoris",
     "player": "koksuvi",
     "campaigns": [
@@ -2223,7 +2226,8 @@
       "Heroes of Drakkenheim"
     ],
     "classes": [
-      "Warlock", "Sorcerer"
+      "Warlock",
+      "Sorcerer"
     ],
     "race": "Shaddar-Kai",
     "status": "Martwa",
@@ -2261,14 +2265,15 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0151.png",
+    "portrait": "/res/portraits/char-0151.webp",
     "character": "Korre",
     "player": "Wiktoria Red",
     "campaigns": [
       "Menaces of Gloomforest Legacy"
     ],
     "classes": [
-      "Bard", "Warlock"
+      "Bard",
+      "Warlock"
     ],
     "race": "Half-Elf",
     "status": "Martwa",
@@ -2291,7 +2296,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0154.png",
+    "portrait": "/res/portraits/char-0154.webp",
     "character": "Petra",
     "player": "Wiktoria Red",
     "campaigns": [
@@ -2366,7 +2371,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0159.jpg",
+    "portrait": "/res/portraits/char-0159.webp",
     "character": "x",
     "player": "Przemek",
     "campaigns": [
@@ -2411,7 +2416,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0162.png",
+    "portrait": "/res/portraits/char-0162.webp",
     "character": "Carric Tallstag",
     "player": "Boulton",
     "campaigns": [
@@ -2486,7 +2491,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0167.png",
+    "portrait": "/res/portraits/char-0167.webp",
     "character": "Blareinn",
     "player": "Raevell",
     "campaigns": [
@@ -2501,7 +2506,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0168.png",
+    "portrait": "/res/portraits/char-0168.webp",
     "character": "Corsio",
     "player": "Raevell",
     "campaigns": [
@@ -2517,7 +2522,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0169.png",
+    "portrait": "/res/portraits/char-0169.webp",
     "character": "Dawa",
     "player": "Raevell",
     "campaigns": [
@@ -2532,7 +2537,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0170.png",
+    "portrait": "/res/portraits/char-0170.webp",
     "character": "Naeren Starshade",
     "player": "Raevell",
     "campaigns": [
@@ -2547,7 +2552,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0171.jpg",
+    "portrait": "/res/portraits/char-0171.webp",
     "character": "Aribeth Cassandra Olyrnn-Whitespire",
     "player": "wpoluwiatr",
     "campaigns": [
@@ -2562,7 +2567,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0172.jpg",
+    "portrait": "/res/portraits/char-0172.webp",
     "character": "Faylen",
     "player": "wpoluwiatr",
     "campaigns": [
@@ -2577,7 +2582,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0173.jpg",
+    "portrait": "/res/portraits/char-0173.webp",
     "character": "Lyanna Redglaive",
     "player": "wpoluwiatr",
     "campaigns": [
@@ -2592,7 +2597,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0174.jpg",
+    "portrait": "/res/portraits/char-0174.webp",
     "character": "Zwada",
     "player": "wpoluwiatr",
     "campaigns": [
@@ -2667,7 +2672,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0179.jpg",
+    "portrait": "/res/portraits/char-0179.webp",
     "character": "Deldrach",
     "player": "Rezus",
     "campaigns": [
@@ -2697,7 +2702,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0181.jpg",
+    "portrait": "/res/portraits/char-0181.webp",
     "character": "Kia",
     "player": "Zuza Cuban",
     "campaigns": [
@@ -2712,7 +2717,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0182.png",
+    "portrait": "/res/portraits/char-0182.webp",
     "character": "Maro",
     "player": "Amadeusz",
     "campaigns": [
@@ -2893,7 +2898,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0194.jpg",
+    "portrait": "/res/portraits/char-0194.webp",
     "character": "Torg'dal",
     "player": "Viking",
     "campaigns": [
@@ -2908,7 +2913,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0195.png",
+    "portrait": "/res/portraits/char-0195.webp",
     "character": "Aevianna",
     "player": "Martyna",
     "campaigns": [
@@ -2953,7 +2958,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0198.jpg",
+    "portrait": "/res/portraits/char-0198.webp",
     "character": "Asael",
     "player": "Fennec",
     "campaigns": [
@@ -2968,7 +2973,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0199.jpg",
+    "portrait": "/res/portraits/char-0199.webp",
     "character": "Bran Pinekeep",
     "player": "MateuszWijas",
     "campaigns": [
@@ -3043,7 +3048,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0204.jpg",
+    "portrait": "/res/portraits/char-0204.webp",
     "character": "Fintana",
     "player": "leftpinky",
     "campaigns": [
@@ -3163,7 +3168,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0212.png",
+    "portrait": "/res/portraits/char-0212.webp",
     "character": "Tonie Scam",
     "player": "Amazur",
     "campaigns": [
@@ -3178,7 +3183,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0213.jpg",
+    "portrait": "/res/portraits/char-0213.webp",
     "character": "Velia",
     "player": "Natalia",
     "campaigns": [
@@ -3193,7 +3198,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0214.png",
+    "portrait": "/res/portraits/char-0214.webp",
     "character": "Batturs",
     "player": "Viking",
     "campaigns": [
@@ -3208,7 +3213,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0215.jpeg",
+    "portrait": "/res/portraits/char-0215.webp",
     "character": "Brian",
     "player": "Radek",
     "campaigns": [
@@ -3239,7 +3244,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0217.png",
+    "portrait": "/res/portraits/char-0217.webp",
     "character": "Eryn",
     "player": "tylkomatti",
     "campaigns": [
@@ -3299,7 +3304,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0221.jpg",
+    "portrait": "/res/portraits/char-0221.webp",
     "character": "Verai",
     "player": "bezokasroka",
     "campaigns": [
@@ -3314,7 +3319,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0222.jpg",
+    "portrait": "/res/portraits/char-0222.webp",
     "character": "Bella",
     "player": "Ula",
     "campaigns": [
@@ -3329,7 +3334,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0223.jpg",
+    "portrait": "/res/portraits/char-0223.webp",
     "character": "Cynka",
     "player": "Ula",
     "campaigns": [
@@ -3344,7 +3349,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0224.jpg",
+    "portrait": "/res/portraits/char-0224.webp",
     "character": "M'rissi",
     "player": "Ula",
     "campaigns": [
@@ -3389,7 +3394,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0227.jpg",
+    "portrait": "/res/portraits/char-0227.webp",
     "character": "Alma",
     "player": "Weronika",
     "campaigns": [
@@ -3449,7 +3454,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0231.png",
+    "portrait": "/res/portraits/char-0231.webp",
     "character": "Cassandra",
     "player": "neiiska",
     "campaigns": [
@@ -3479,7 +3484,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0233.png",
+    "portrait": "/res/portraits/char-0233.webp",
     "character": "Erde",
     "player": "neiiska",
     "campaigns": [
@@ -3494,7 +3499,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0234.jpg",
+    "portrait": "/res/portraits/char-0234.webp",
     "character": "Miriam",
     "player": "Weronika",
     "campaigns": [
@@ -3509,7 +3514,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0235.png",
+    "portrait": "/res/portraits/char-0235.webp",
     "character": "Naina",
     "player": "Olek",
     "campaigns": [
@@ -3524,7 +3529,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0236.png",
+    "portrait": "/res/portraits/char-0236.webp",
     "character": "Nozzara",
     "player": "neiiska",
     "campaigns": [
@@ -3539,7 +3544,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0237.jpg",
+    "portrait": "/res/portraits/char-0237.webp",
     "character": "Orelius",
     "player": "Mags",
     "campaigns": [
@@ -3554,7 +3559,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0238.jpg",
+    "portrait": "/res/portraits/char-0238.webp",
     "character": "Orythia",
     "player": "neiiska",
     "campaigns": [
@@ -3614,7 +3619,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0242.png",
+    "portrait": "/res/portraits/char-0242.webp",
     "character": "Aqe",
     "player": "keero",
     "campaigns": [
@@ -3644,7 +3649,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0244.png",
+    "portrait": "/res/portraits/char-0244.webp",
     "character": "Ebris",
     "player": "keero",
     "campaigns": [
@@ -3659,7 +3664,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0245.png",
+    "portrait": "/res/portraits/char-0245.webp",
     "character": "Erdar Morbor",
     "player": "keero",
     "campaigns": [
@@ -3674,7 +3679,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0246.png",
+    "portrait": "/res/portraits/char-0246.webp",
     "character": "Joaher Redleaf",
     "player": "keero",
     "campaigns": [
@@ -3689,7 +3694,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0247.jpg",
+    "portrait": "/res/portraits/char-0247.webp",
     "character": "Kaelos",
     "player": "keero",
     "campaigns": [
@@ -3704,7 +3709,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0248.png",
+    "portrait": "/res/portraits/char-0248.webp",
     "character": "Neldar",
     "player": "keero",
     "campaigns": [
@@ -3719,7 +3724,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0249.jpg",
+    "portrait": "/res/portraits/char-0249.webp",
     "character": "Thive",
     "player": "keero",
     "campaigns": [
@@ -3734,7 +3739,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0250.png",
+    "portrait": "/res/portraits/char-0250.webp",
     "character": "Valeria Shadowglen",
     "player": "keero",
     "campaigns": [
@@ -3749,7 +3754,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0251.png",
+    "portrait": "/res/portraits/char-0251.webp",
     "character": "Memnith",
     "player": "koksuvi",
     "campaigns": [
@@ -3764,7 +3769,7 @@
     "Historia": "Zmarł na pierwszej sesji, uwięziony w zatkanej studni, oblężony przez zombie Oscara Yorena."
   },
   {
-    "portrait": "/res/portraits/char-0252.png",
+    "portrait": "/res/portraits/char-0252.webp",
     "character": "Serrell Allemard",
     "player": "koksuvi",
     "campaigns": [
@@ -3779,7 +3784,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0253.png",
+    "portrait": "/res/portraits/char-0253.webp",
     "character": "Abraham Rootspringer",
     "player": "KubaSzczesniak",
     "campaigns": [
@@ -3794,7 +3799,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0254.jpg",
+    "portrait": "/res/portraits/char-0254.webp",
     "character": "Aria Alpenfee",
     "player": "NataliaMelcherowska",
     "campaigns": [
@@ -3810,7 +3815,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0255.jpg",
+    "portrait": "/res/portraits/char-0255.webp",
     "character": "Destiny Grimstone",
     "player": "MartaS",
     "campaigns": [
@@ -3825,7 +3830,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0256.jpg",
+    "portrait": "/res/portraits/char-0256.webp",
     "character": "Hagard",
     "player": "AndrzejC",
     "campaigns": [
@@ -3840,7 +3845,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0257.jpg",
+    "portrait": "/res/portraits/char-0257.webp",
     "character": "Lailisa",
     "player": "MartynaŚ",
     "campaigns": [
@@ -3855,7 +3860,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0258.jpg",
+    "portrait": "/res/portraits/char-0258.webp",
     "character": "Mirelinda",
     "player": "Nympheria",
     "campaigns": [
@@ -3870,7 +3875,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0259.png",
+    "portrait": "/res/portraits/char-0259.webp",
     "character": "Nasir Shatterbow",
     "player": "Greg",
     "campaigns": [
@@ -3885,7 +3890,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0260.jpg",
+    "portrait": "/res/portraits/char-0260.webp",
     "character": "Voks",
     "player": "RadekK",
     "campaigns": [
@@ -3900,7 +3905,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0261.jpg",
+    "portrait": "/res/portraits/char-0261.webp",
     "character": "XXX",
     "player": "MartynaŚ",
     "campaigns": [
@@ -3915,7 +3920,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0262.jpg",
+    "portrait": "/res/portraits/char-0262.webp",
     "character": "Yelli",
     "player": "RadekK",
     "campaigns": [
@@ -3930,7 +3935,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0263.jpg",
+    "portrait": "/res/portraits/char-0263.webp",
     "character": "Theran",
     "player": "Mat",
     "campaigns": [
@@ -3960,7 +3965,7 @@
     "Historia": "Brak zapisków."
   },
   {
-    "portrait": "/res/portraits/char-0265.jpg",
+    "portrait": "/res/portraits/char-0265.webp",
     "character": "Anathea",
     "player": "Mat",
     "campaigns": [
