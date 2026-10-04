@@ -1361,7 +1361,8 @@
       "bogobojca",
       "podroznik-w-czasie",
       "pomazaniec",
-      "blazen"
+      "blazen",
+      "pogromca-smokow"
     ]
   },
   {
@@ -4465,7 +4466,6 @@
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": [
-      "pogromca-smokow",
       "blazen"
     ]
   },
