@@ -140,7 +140,13 @@
   {
     "id": "wyniesienie",
     "name": "Wyniesienie",
-    "icon": "🧬",
+    "icon": "🔮",
     "description": "Permanentnie odmień swoją naturę."
+  },
+  {
+    "id": "blazen",
+    "name": "Błazen",
+    "icon": "🤡",
+    "description": "Zrób lub powiedz coś niezwykle zabawnego"
   }
 ]
