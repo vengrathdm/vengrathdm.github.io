@@ -130,5 +130,17 @@
     "name": "Zguba Świata",
     "icon": "☄️",
     "description": "Doprowadź do zagłady świata lub cywilizacji."
+  },
+  {
+    "id": "im-in-charge-now",
+    "name": "I'm in charge now!",
+    "icon": "🗡️",
+    "description": "Pokonaj swojego patrona."
+  },
+  {
+    "id": "wyniesienie",
+    "name": "Wyniesienie",
+    "icon": "🧬",
+    "description": "Permanentnie odmień swoją naturę."
   }
 ]
