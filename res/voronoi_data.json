@@ -15,7 +15,7 @@
     "CardName": "Blog",
     "CardTags": "Blog",
     "CardGraphic": "/Home/Graphics/Blog001.png",
-    "CardAdress": "/p/blog/"
+    "CardAdress": "/Blog/blog/"
   },
   {
     "CardName": "Cemetery of Dragons",
@@ -27,19 +27,19 @@
     "CardName": "Ayla Brokengulf",
     "CardTags": "Postać",
     "CardGraphic": "/Home/Graphics/ayla.webp",
-    "CardAdress": "/p/character-ayla/"
+    "CardAdress": "/Characters/character-ayla/"
   },
   {
     "CardName": "Shiney, Różowa Paladynka",
     "CardTags": "Postać",
     "CardGraphic": "/Home/Graphics/Shiney.png",
-    "CardAdress": "/p/character-shiney/"
+    "CardAdress": "/Characters/character-shiney/"
   },
   {
     "CardName": "Charactermancer",
     "CardTags": "Narzędzie",
     "CardGraphic": "/Home/Graphics/charactermancer.png",
-    "CardAdress": "/p/Charactermancer/"
+    "CardAdress": "/Charactermancer/"
   },
   {
     "CardName": "Curse of Strahd",
@@ -189,7 +189,7 @@
     "CardName": "Moje Rysunki 2026",
     "CardTags": "Grafika",
     "CardGraphic": "/Home/Graphics/moje-prace-graficzne.jpg",
-    "CardAdress": "/p/moje-prace-graficzne/"
+    "CardAdress": "/Blog/rysunki2026/"
   },
   {
     "CardName": "Mythic Odyssey of the Dragonlords",
