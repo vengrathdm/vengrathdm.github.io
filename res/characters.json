@@ -61,30 +61,7 @@
     "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": [
-      "ostatni-ocalaly",
-      "pomazaniec",
-      "powrocony",
-      "zaprawiony-bohater",
-      "ten-ktory-nie-powinien-przezyc",
-      "meczennik",
-      "pogromca-smokow",
-      "krolotworca",
-      "zguba-lisza",
-      "van-helsing",
-      "bogobojca",
-      "podroznik-w-czasie",
-      "mutant",
-      "lamacz-klatw",
-      "dluznik-piekiel",
-      "mistrz-dwudziestego-kregu",
-      "kapitan",
-      "pan-na-wlosciach",
-      "gospodarz",
-      "nosiciel-relikwii",
-      "legenda",
-      "zguba-swiata"
-    ]
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0005.webp",
@@ -117,7 +94,9 @@
     "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "zguba-lisza",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0007.webp",
@@ -214,7 +193,9 @@
     "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "zguba-lisza",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0013.webp",
@@ -230,7 +211,9 @@
     "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "zguba-lisza",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0014.webp",
@@ -246,7 +229,9 @@
     "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "zguba-lisza",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0015.webp",
@@ -743,7 +728,9 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "krolotworca",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0046.webp",
@@ -759,7 +746,9 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "krolotworca",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0047.webp",
@@ -775,7 +764,9 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "krolotworca",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0048.webp",
@@ -1288,7 +1279,10 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "bogobojca",
+      "podroznik-w-czasie",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0080.webp",
@@ -1320,7 +1314,10 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "bogobojca",
+      "podroznik-w-czasie",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0082.webp",
@@ -1336,7 +1333,10 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "bogobojca",
+      "podroznik-w-czasie",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0083.webp",
@@ -1352,7 +1352,10 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "bogobojca",
+      "podroznik-w-czasie",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0084.webp",
@@ -1384,7 +1387,9 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "bogobojca",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0086.webp",
@@ -1400,7 +1405,9 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "bogobojca",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0090.webp",
@@ -1480,7 +1487,9 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "dluznik-piekiel",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0092.webp",
@@ -1513,7 +1522,9 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "dluznik-piekiel",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0094.webp",
@@ -1531,7 +1542,9 @@
     "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "zaprawiony-bohater",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0095.webp",
@@ -1547,7 +1560,9 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "dluznik-piekiel",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0096.webp",
@@ -1563,7 +1578,9 @@
     "status": "Wycofana",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "van-helsing",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0097.webp",
@@ -1579,7 +1596,10 @@
     "status": "Porzucona",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "zguba-lisza",
+      "van-helsing",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0098.webp",
@@ -1595,7 +1615,10 @@
     "status": "Porzucona",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "zguba-lisza",
+      "van-helsing",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0099.webp",
@@ -1611,7 +1634,10 @@
     "status": "Porzucona",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "zguba-lisza",
+      "van-helsing",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0100.webp",
@@ -1627,7 +1653,10 @@
     "status": "Porzucona",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "zguba-lisza",
+      "van-helsing",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0101.webp",
@@ -1643,7 +1672,9 @@
     "status": "Porzucona",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "zguba-lisza",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0102.webp",
@@ -1869,7 +1900,9 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "mistrz-dwudziestego-kregu",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0116.webp",
@@ -1885,7 +1918,9 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "mistrz-dwudziestego-kregu",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0117.webp",
@@ -1901,7 +1936,9 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "mistrz-dwudziestego-kregu",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0118.webp",
@@ -1917,7 +1954,9 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "mistrz-dwudziestego-kregu",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0119.webp",
@@ -1933,7 +1972,9 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "mistrz-dwudziestego-kregu",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0120.webp",
@@ -2084,7 +2125,7 @@
     "character": "Eldamir Velithar",
     "player": "Rezus",
     "campaigns": [
-      "Tomb Of Annihilation"
+      "Tomb of Annihilation"
     ],
     "classes": [
       "Wizard"
@@ -2303,7 +2344,10 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "bogobojca",
+      "pogromca-smokow",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0143.webp",
@@ -2850,7 +2894,9 @@
     "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "meczennik",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0178.webp",
@@ -3107,7 +3153,9 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "zaprawiony-bohater",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0194.webp",
@@ -3636,7 +3684,9 @@
     "status": "Wycofana",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "zaprawiony-bohater",
+    ]
   },
   {
     "portrait": "/res/portraits/char-0227.webp",
