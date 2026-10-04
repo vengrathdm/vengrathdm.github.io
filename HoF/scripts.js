@@ -111,7 +111,8 @@
     const status = record.status;
     const meta = statusMeta(status);
     return '<article class="card" tabindex="0" role="button" data-index="' + index + '" data-status="' + meta.key + '" aria-label="Otwórz rekord ' + escapeHtml(record.character) + '">' +
-      '<div class="portrait"><div class="card-achievements" aria-label="Osiągnięcia">' + achievementMarkup(record.achievements) + '</div><img src="' + escapeHtml(record.portrait) + '" alt="' + escapeHtml(record.character) + '" loading="lazy" onerror="this.remove()"><span class="status-badge" aria-hidden="true">' + meta.icon + '</span></div>' +
+      '<div class="card-achievements" aria-label="Osiągnięcia">' + achievementMarkup(record.achievements) + '</div>' +
+      '<div class="portrait"><img src="' + escapeHtml(record.portrait) + '" alt="' + escapeHtml(record.character) + '" loading="lazy" onerror="this.remove()"><span class="status-badge" aria-hidden="true">' + meta.icon + '</span></div>' +
       '<div class="card-body">' +
         '<h3 class="card-name">' + escapeHtml(record.character) + '</h3>' +
         '<div class="meta">' +
