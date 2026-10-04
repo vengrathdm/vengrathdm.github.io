@@ -12,7 +12,8 @@
     "race": "Halfling",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0002.webp",
@@ -27,7 +28,8 @@
     "race": "Elf",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0003.webp",
@@ -42,7 +44,8 @@
     "race": "Changeling",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0004.webp",
@@ -57,7 +60,31 @@
     "race": "Human",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": [
+      "ostatni-ocalaly",
+      "pomazaniec",
+      "powrocony",
+      "zaprawiony-bohater",
+      "ten-ktory-nie-powinien-przezyc",
+      "meczennik",
+      "pogromca-smokow",
+      "krolotworca",
+      "zguba-lisza",
+      "van-helsing",
+      "bogobojca",
+      "podroznik-w-czasie",
+      "mutant",
+      "lamacz-klatw",
+      "dluznik-piekiel",
+      "mistrz-dwudziestego-kregu",
+      "kapitan",
+      "pan-na-wlosciach",
+      "gospodarz",
+      "nosiciel-relikwii",
+      "legenda",
+      "zguba-swiata"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0005.webp",
@@ -73,7 +100,8 @@
     "race": "Aasimar",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0006.webp",
@@ -88,7 +116,8 @@
     "race": "Tiefling",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0007.webp",
@@ -103,7 +132,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0008.webp",
@@ -118,7 +148,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0009.webp",
@@ -133,7 +164,8 @@
     "race": "Dragonborn",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0010.webp",
@@ -148,7 +180,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0011.webp",
@@ -163,7 +196,8 @@
     "race": "Elf",
     "status": "Wycofana",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0012.webp",
@@ -179,7 +213,8 @@
     "race": "Dragonborn",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0013.webp",
@@ -194,7 +229,8 @@
     "race": "Yokai",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0014.webp",
@@ -209,7 +245,8 @@
     "race": "Dwarf",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0015.webp",
@@ -224,7 +261,8 @@
     "race": "Human",
     "status": "Wycofana",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0016.webp",
@@ -239,7 +277,8 @@
     "race": "Human",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0017.webp",
@@ -254,7 +293,8 @@
     "race": "Drow",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0018.webp",
@@ -269,7 +309,8 @@
     "race": "Human",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0019.webp",
@@ -284,7 +325,8 @@
     "race": "Half-Elf",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0020.webp",
@@ -299,7 +341,8 @@
     "race": "Dwarf",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0021.webp",
@@ -314,7 +357,8 @@
     "race": "Half-Orc",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0022.webp",
@@ -329,7 +373,8 @@
     "race": "Human",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0023.webp",
@@ -344,7 +389,8 @@
     "race": "Half-Orc",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0024.webp",
@@ -359,7 +405,8 @@
     "race": "Yuan-Ti",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0025.webp",
@@ -374,7 +421,8 @@
     "race": "Elf",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0026.webp",
@@ -389,7 +437,8 @@
     "race": "Half-Orc",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0027.webp",
@@ -404,7 +453,8 @@
     "race": "Tiefling",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0028.webp",
@@ -419,7 +469,8 @@
     "race": "Kenku",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0029.webp",
@@ -434,7 +485,8 @@
     "race": "Plasmoid",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0030.webp",
@@ -449,7 +501,8 @@
     "race": "Tiefling",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0031.webp",
@@ -464,7 +517,8 @@
     "race": "Human",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0032.webp",
@@ -479,7 +533,8 @@
     "race": "Drow",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0033.webp",
@@ -494,7 +549,8 @@
     "race": "Shaddar-Kai",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0034.webp",
@@ -509,7 +565,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0035.webp",
@@ -524,7 +581,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0036.webp",
@@ -540,7 +598,8 @@
     "race": "Dwarf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0090.webp",
@@ -555,7 +614,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0038.webp",
@@ -570,7 +630,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0039.webp",
@@ -585,7 +646,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0040.webp",
@@ -600,7 +662,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0041.webp",
@@ -615,7 +678,8 @@
     "race": "Human",
     "status": "Wycofana",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0042.webp",
@@ -630,7 +694,8 @@
     "race": "Dragonborn",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0090.webp",
@@ -645,7 +710,8 @@
     "race": "Shaddar-Kai",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0044.webp",
@@ -660,7 +726,8 @@
     "race": "Aasimar",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0045.webp",
@@ -675,7 +742,8 @@
     "race": "Tiefling",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0046.webp",
@@ -690,7 +758,8 @@
     "race": "Elf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0047.webp",
@@ -705,7 +774,8 @@
     "race": "Kenku",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0048.webp",
@@ -720,7 +790,8 @@
     "race": "Gnome",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0049.webp",
@@ -735,7 +806,8 @@
     "race": "Half-Orc",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0050.webp",
@@ -750,7 +822,8 @@
     "race": "Human",
     "status": "Wycofana",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0051.webp",
@@ -765,7 +838,8 @@
     "race": "Dragonborn",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0052.webp",
@@ -780,7 +854,8 @@
     "race": "Elf",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0053.webp",
@@ -795,7 +870,8 @@
     "race": "Dwarf",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0054.webp",
@@ -810,7 +886,8 @@
     "race": "Bogborn",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0055.webp",
@@ -825,7 +902,8 @@
     "race": "Hexblood",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0056.webp",
@@ -840,7 +918,8 @@
     "race": "Half-Orc",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0057.webp",
@@ -855,7 +934,8 @@
     "race": "Halfling",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0058.webp",
@@ -870,7 +950,8 @@
     "race": "Tiefling",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0059.webp",
@@ -885,7 +966,8 @@
     "race": "Elf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0060.webp",
@@ -900,7 +982,8 @@
     "race": "Elf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0061.webp",
@@ -915,7 +998,8 @@
     "race": "CoC7e Investigator",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0062.webp",
@@ -930,7 +1014,8 @@
     "race": "CoC7e Investigator",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0063.webp",
@@ -945,7 +1030,8 @@
     "race": "CoC7e Investigator",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0064.webp",
@@ -960,7 +1046,8 @@
     "race": "Half-Orc",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0065.webp",
@@ -975,7 +1062,8 @@
     "race": "Elf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0066.webp",
@@ -990,7 +1078,8 @@
     "race": "Human",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0067.webp",
@@ -1005,7 +1094,8 @@
     "race": "Aasimar",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0068.webp",
@@ -1020,7 +1110,8 @@
     "race": "Elf",
     "status": "Wycofana",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0069.webp",
@@ -1035,7 +1126,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0070.webp",
@@ -1050,7 +1142,8 @@
     "race": "Nymph",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0071.webp",
@@ -1065,7 +1158,8 @@
     "race": "Human",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0072.webp",
@@ -1080,7 +1174,8 @@
     "race": "Satyr",
     "status": "Wycofana",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0073.webp",
@@ -1095,7 +1190,8 @@
     "race": "Changeling",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0090.webp",
@@ -1110,7 +1206,8 @@
     "race": "Half-Elf",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0075.webp",
@@ -1125,7 +1222,8 @@
     "race": "Halfling",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0076.webp",
@@ -1140,7 +1238,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0077.webp",
@@ -1155,7 +1254,8 @@
     "race": "Tiefling",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0078.webp",
@@ -1170,7 +1270,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0079.webp",
@@ -1186,7 +1287,8 @@
     "race": "Siren",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0080.webp",
@@ -1201,7 +1303,8 @@
     "race": "Human",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0081.webp",
@@ -1216,7 +1319,8 @@
     "race": "Siren",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0082.webp",
@@ -1231,7 +1335,8 @@
     "race": "Minotaur",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0083.webp",
@@ -1246,7 +1351,8 @@
     "race": "Nymph",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0084.webp",
@@ -1261,7 +1367,8 @@
     "race": "Half-Orc",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0085.webp",
@@ -1276,7 +1383,8 @@
     "race": "Elf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0086.webp",
@@ -1291,7 +1399,8 @@
     "race": "Dwarf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0090.webp",
@@ -1306,7 +1415,8 @@
     "race": "CoC7e Investigator",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0090.webp",
@@ -1321,7 +1431,8 @@
     "race": "CoC7e Investigator",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0090.webp",
@@ -1336,7 +1447,8 @@
     "race": "CoC7e Investigator",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0090.webp",
@@ -1351,7 +1463,8 @@
     "race": "CoC7e Investigator",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0091.webp",
@@ -1366,7 +1479,8 @@
     "race": "Tiefling",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0092.webp",
@@ -1382,7 +1496,8 @@
     "race": "Half-Elf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0093.webp",
@@ -1397,7 +1512,8 @@
     "race": "Tiefling",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0094.webp",
@@ -1414,7 +1530,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0095.webp",
@@ -1429,7 +1546,8 @@
     "race": "Elf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0096.webp",
@@ -1444,7 +1562,8 @@
     "race": "Human",
     "status": "Wycofana",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0097.webp",
@@ -1459,7 +1578,8 @@
     "race": "Drow",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0098.webp",
@@ -1474,7 +1594,8 @@
     "race": "Human",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0099.webp",
@@ -1489,7 +1610,8 @@
     "race": "Human",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0100.webp",
@@ -1504,7 +1626,8 @@
     "race": "Dragonborn",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0101.webp",
@@ -1519,7 +1642,8 @@
     "race": "Half-Elf",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0102.webp",
@@ -1534,7 +1658,8 @@
     "race": "Yuan-Ti",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0103.webp",
@@ -1549,7 +1674,8 @@
     "race": "Gnome",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0104.webp",
@@ -1564,7 +1690,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0105.webp",
@@ -1579,7 +1706,8 @@
     "race": "Tiefling",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0106.webp",
@@ -1595,7 +1723,8 @@
     "race": "Half-Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0107.webp",
@@ -1610,7 +1739,8 @@
     "race": "Human",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0108.webp",
@@ -1625,7 +1755,8 @@
     "race": "Elf",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0109.webp",
@@ -1640,7 +1771,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0110.webp",
@@ -1655,7 +1787,8 @@
     "race": "Half-Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0111.webp",
@@ -1670,7 +1803,8 @@
     "race": "Half-Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0112.webp",
@@ -1685,7 +1819,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0113.webp",
@@ -1700,7 +1835,8 @@
     "race": "Human",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0114.webp",
@@ -1716,7 +1852,8 @@
     "race": "Tortle",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0115.webp",
@@ -1731,7 +1868,8 @@
     "race": "Gnome",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0116.webp",
@@ -1746,7 +1884,8 @@
     "race": "Elf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0117.webp",
@@ -1761,7 +1900,8 @@
     "race": "Halfling",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0118.webp",
@@ -1776,7 +1916,8 @@
     "race": "Elf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0119.webp",
@@ -1791,7 +1932,8 @@
     "race": "Dwarf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0120.webp",
@@ -1806,7 +1948,8 @@
     "race": "Half-Elf",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0121.webp",
@@ -1821,7 +1964,8 @@
     "race": "Placeholder",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0122.webp",
@@ -1836,7 +1980,8 @@
     "race": "Human",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0267.webp",
@@ -1851,7 +1996,8 @@
     "race": "Dwarf",
     "status": "Aktywna",
     "Campaign Code": "unset",
-    "Historia": "Alderik Erikson z klanu Baltimore był pierworodnym swojego ojca Erika, ale z pewnością nie jego jedynym dzieckiem. Mając liczne rodzeństwo, Alderik mierzył się jednak z oczekiwaniami będącymi częścią bycia najstarszym bratem w rodzinie oraz dziedzicem całego klanu. Wiele od niego wymagano, często w imię zasad i tradycji. Jedną z nich było wybranie specjalizacji - każdy w klanie Baltimore miał obowiązek wybrać rzemiosło, które będzie praktykował do perfekcji. Mogła to być sztuka wojenna, rzeźbiarstwo, nawet gra na instrumencie, tak długo jak się oddawał w całości wybranej dziedzinie. Jednak Alderik posiadał niezwykle uniwersalny umysł, który sprawiał, że niezależnie od tego jakie narzędzia chwycił w dłoń, szybko stawał się w nich prawdziwym specjalistą. Jego pradziadek, Alpherik \"Srebrny\" nazywał to iskrą - formą magii jaką posiadał, która w połączeniu z jego ścisłym umsyłem i talentem sprawiała, że wielkość była mu pisana od urodzin. Chociaż Alderik wolał aby cała zasługa płynęła z jego naturalnej biegłości, faktem było, że był on w stanie korzystać z tej mocy - proponowano mu nawet zostanie czarodziejem jako wybór swojej drogi. Jego serce pragnęło jednak pracy rąk, kucia stali oraz opracowywania mechanizmów bardziej, niż zaczytywania się w księgach. Ale czas jego 50-tych urodzin nachodził, a wraz z nim wybór. Wybrał więc jedyną dostępną dla siebie opcję - uciekł z rodzinnego miasta aby na własną rękę zostać największym rzemieślnikiem, inżynierem i konstruktorem w historii Faerun.  Podróżował wielokrotnie z karawanami kupców oraz poszukiwaczami przygód, szukajac swojego miejsca, gdzie jego talenty będa docenione. Mogąc nareszcie skupić się na sobie poczuł się w końcu doceniony za swe zdolności. Niektórym jednak nie w smak były sekrety jakie ukrywał i niejednokrotnie próbowano mu odebrać te radosne chwile smakowania życia i stawiania własnych warunków. Chaos dnia codziennego i dresczyk emocji, kiedy balansował na krawędzi prawa zdawał się dla niego równie uzależniający co mocny trunek i towarzystwo gładkich dam, a kontakty z półświatkiem często skutkowały dobrymi kontraktami i dostępem do materiałów zakazanych w obrocie. Oczywiście, nie zawsze bywało kolorowo... kilka razy otarł się zatrzymanie, czasami próbowano go zniewolić, ale łudem szcześcia zawsze wychodzi obronną ręką. Przynajmniej do pewnego czasu, kiedy pewien Lord zażyczył sobie od niego wykonania armii stworzonej z magicznych konstruktów. Alderik odmówił, wiedząc że taka praca zajmie dziesięciolecia w najlepszym wypadku. Nie miał zamiaru zakopywac się w monotonnej pracy od jakiej uciekł, kiedy cały świat czekał na jego odkrycia i dzieła. Lord jednak nie miał zamiaru przyjąć odpowiedzi odmownej i zadecydował skazać Alderika na śmierć, pod pretekstem fałszywych oskrżeń o planowanie zamachu stanu. Upartość krasnoludów nie zna granic, więc Alderik nie miał zamiaru zmienić zdania - nie miał jednak tez nikogo, kto stanąłby w jego obronie na czas, aż do czasu nocnego spotkania pewnej osoby w swojej osamotnionej celi - [...]. Ciekawa wymiana zdań zakończyła się propzycją przybysza \"Czy uwolnić Cię z tej sytuacji?\". Alderik zgodził się, pewien że na wolności łatwiej będzie mu spłącić zaciągnięty dług. [...] sprawił cud i  następnego dnia, Alderika zwyczajnie wypuszczono. Ich drogi jednak nie rozeszły się od razu, ale splatały wielokrotnie przez następne lata, zmieniając czystą relację handlową w przyjaźń, której krasnolud mógł być pewien. Nie zapominając jednak, o długu jako zaciągnął, zawsze czekał na okazję aby go spłacić i zdawało się, że czas ten nadszedł, kiedy odnalazł go list starego przyjaciela aby spotkać się ponownie w karczmie \"Nigdzie\". Nikt nie przypuszczał, jak ten wieczór jednak miał się zakończyć dla Alderika..."
+    "Historia": "Alderik Erikson z klanu Baltimore był pierworodnym swojego ojca Erika, ale z pewnością nie jego jedynym dzieckiem. Mając liczne rodzeństwo, Alderik mierzył się jednak z oczekiwaniami będącymi częścią bycia najstarszym bratem w rodzinie oraz dziedzicem całego klanu. Wiele od niego wymagano, często w imię zasad i tradycji. Jedną z nich było wybranie specjalizacji - każdy w klanie Baltimore miał obowiązek wybrać rzemiosło, które będzie praktykował do perfekcji. Mogła to być sztuka wojenna, rzeźbiarstwo, nawet gra na instrumencie, tak długo jak się oddawał w całości wybranej dziedzinie. Jednak Alderik posiadał niezwykle uniwersalny umysł, który sprawiał, że niezależnie od tego jakie narzędzia chwycił w dłoń, szybko stawał się w nich prawdziwym specjalistą. Jego pradziadek, Alpherik \"Srebrny\" nazywał to iskrą - formą magii jaką posiadał, która w połączeniu z jego ścisłym umsyłem i talentem sprawiała, że wielkość była mu pisana od urodzin. Chociaż Alderik wolał aby cała zasługa płynęła z jego naturalnej biegłości, faktem było, że był on w stanie korzystać z tej mocy - proponowano mu nawet zostanie czarodziejem jako wybór swojej drogi. Jego serce pragnęło jednak pracy rąk, kucia stali oraz opracowywania mechanizmów bardziej, niż zaczytywania się w księgach. Ale czas jego 50-tych urodzin nachodził, a wraz z nim wybór. Wybrał więc jedyną dostępną dla siebie opcję - uciekł z rodzinnego miasta aby na własną rękę zostać największym rzemieślnikiem, inżynierem i konstruktorem w historii Faerun.  Podróżował wielokrotnie z karawanami kupców oraz poszukiwaczami przygód, szukajac swojego miejsca, gdzie jego talenty będa docenione. Mogąc nareszcie skupić się na sobie poczuł się w końcu doceniony za swe zdolności. Niektórym jednak nie w smak były sekrety jakie ukrywał i niejednokrotnie próbowano mu odebrać te radosne chwile smakowania życia i stawiania własnych warunków. Chaos dnia codziennego i dresczyk emocji, kiedy balansował na krawędzi prawa zdawał się dla niego równie uzależniający co mocny trunek i towarzystwo gładkich dam, a kontakty z półświatkiem często skutkowały dobrymi kontraktami i dostępem do materiałów zakazanych w obrocie. Oczywiście, nie zawsze bywało kolorowo... kilka razy otarł się zatrzymanie, czasami próbowano go zniewolić, ale łudem szcześcia zawsze wychodzi obronną ręką. Przynajmniej do pewnego czasu, kiedy pewien Lord zażyczył sobie od niego wykonania armii stworzonej z magicznych konstruktów. Alderik odmówił, wiedząc że taka praca zajmie dziesięciolecia w najlepszym wypadku. Nie miał zamiaru zakopywac się w monotonnej pracy od jakiej uciekł, kiedy cały świat czekał na jego odkrycia i dzieła. Lord jednak nie miał zamiaru przyjąć odpowiedzi odmownej i zadecydował skazać Alderika na śmierć, pod pretekstem fałszywych oskrżeń o planowanie zamachu stanu. Upartość krasnoludów nie zna granic, więc Alderik nie miał zamiaru zmienić zdania - nie miał jednak tez nikogo, kto stanąłby w jego obronie na czas, aż do czasu nocnego spotkania pewnej osoby w swojej osamotnionej celi - [...]. Ciekawa wymiana zdań zakończyła się propzycją przybysza \"Czy uwolnić Cię z tej sytuacji?\". Alderik zgodził się, pewien że na wolności łatwiej będzie mu spłącić zaciągnięty dług. [...] sprawił cud i  następnego dnia, Alderika zwyczajnie wypuszczono. Ich drogi jednak nie rozeszły się od razu, ale splatały wielokrotnie przez następne lata, zmieniając czystą relację handlową w przyjaźń, której krasnolud mógł być pewien. Nie zapominając jednak, o długu jako zaciągnął, zawsze czekał na okazję aby go spłacić i zdawało się, że czas ten nadszedł, kiedy odnalazł go list starego przyjaciela aby spotkać się ponownie w karczmie \"Nigdzie\". Nikt nie przypuszczał, jak ten wieczór jednak miał się zakończyć dla Alderika...",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0124.webp",
@@ -1866,7 +2012,8 @@
     "race": "Half-Elf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0125.webp",
@@ -1881,7 +2028,8 @@
     "race": "Dwarf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0126.webp",
@@ -1896,7 +2044,8 @@
     "race": "Half-Elf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0127.webp",
@@ -1911,7 +2060,8 @@
     "race": "Half-Elf",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0128.webp",
@@ -1926,7 +2076,8 @@
     "race": "Tabaxi",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0129.webp",
@@ -1941,7 +2092,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0130.webp",
@@ -1957,7 +2109,8 @@
     "race": "Half-Elf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0131.webp",
@@ -1972,7 +2125,8 @@
     "race": "Dwarf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0132.webp",
@@ -1987,7 +2141,8 @@
     "race": "Goliath",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0133.webp",
@@ -2002,7 +2157,8 @@
     "race": "Human",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0134.webp",
@@ -2017,7 +2173,8 @@
     "race": "Half-Orc",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0135.webp",
@@ -2032,7 +2189,8 @@
     "race": "Elf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0136.webp",
@@ -2047,7 +2205,8 @@
     "race": "Tiefling",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0137.webp",
@@ -2062,7 +2221,8 @@
     "race": "Dwarf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0138.webp",
@@ -2077,7 +2237,8 @@
     "race": "Drow",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0139.webp",
@@ -2092,7 +2253,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0140.webp",
@@ -2107,7 +2269,8 @@
     "race": "Elf",
     "status": "Wycofana",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0141.webp",
@@ -2122,7 +2285,8 @@
     "race": "Half-Orc",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0142.webp",
@@ -2138,7 +2302,8 @@
     "race": "Genasi",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0143.webp",
@@ -2153,7 +2318,8 @@
     "race": "Fairy",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0144.webp",
@@ -2168,7 +2334,8 @@
     "race": "Autognome",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0145.webp",
@@ -2183,7 +2350,8 @@
     "race": "Half-Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0146.webp",
@@ -2198,7 +2366,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0147.webp",
@@ -2213,7 +2382,8 @@
     "race": "Human",
     "status": "Wycofana",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0148.webp",
@@ -2229,7 +2399,8 @@
     "race": "Shaddar-Kai",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0149.webp",
@@ -2244,7 +2415,8 @@
     "race": "Tiefling",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0150.webp",
@@ -2259,7 +2431,8 @@
     "race": "Goliath",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0151.webp",
@@ -2275,7 +2448,8 @@
     "race": "Half-Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0152.webp",
@@ -2290,7 +2464,8 @@
     "race": "Tiefling",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0154.webp",
@@ -2305,7 +2480,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0155.webp",
@@ -2320,7 +2496,8 @@
     "race": "Half-Elf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0156.webp",
@@ -2335,7 +2512,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0157.webp",
@@ -2350,7 +2528,8 @@
     "race": "Dwarf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0158.webp",
@@ -2365,7 +2544,8 @@
     "race": "Human",
     "status": "Wycofana",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0159.webp",
@@ -2380,7 +2560,8 @@
     "race": "Shaddar-Kai",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0160.webp",
@@ -2395,7 +2576,8 @@
     "race": "Half-Elf",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0161.webp",
@@ -2410,7 +2592,8 @@
     "race": "Half-Elf",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0162.webp",
@@ -2425,7 +2608,8 @@
     "race": "Human",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0163.webp",
@@ -2440,7 +2624,8 @@
     "race": "Human",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0164.webp",
@@ -2455,7 +2640,8 @@
     "race": "Elf",
     "status": "Wycofana",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0165.webp",
@@ -2470,7 +2656,8 @@
     "race": "Half-Orc",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0166.webp",
@@ -2485,7 +2672,8 @@
     "race": "Tiefling",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0167.webp",
@@ -2500,7 +2688,8 @@
     "race": "Genasi",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0168.webp",
@@ -2516,7 +2705,8 @@
     "race": "Human",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0169.webp",
@@ -2531,7 +2721,8 @@
     "race": "Goliath",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0170.webp",
@@ -2546,7 +2737,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0171.webp",
@@ -2561,7 +2753,8 @@
     "race": "Half-Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0172.webp",
@@ -2576,7 +2769,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Faylen to wieczna podróżniczka, niespokojna dusza, która znacznie lepiej czuje się w lesie, pośród roślin i zwierząt niż w ludzkich osadach. Jako łowczyni wciąż szuka wyzwań i stara się polować na bestie, które zagrażają naturalnemu porządkowi. Ten cel zaprowadził ją do Phandalin, gdzie krążą pogłoski o smoku."
+    "Historia": "Faylen to wieczna podróżniczka, niespokojna dusza, która znacznie lepiej czuje się w lesie, pośród roślin i zwierząt niż w ludzkich osadach. Jako łowczyni wciąż szuka wyzwań i stara się polować na bestie, które zagrażają naturalnemu porządkowi. Ten cel zaprowadził ją do Phandalin, gdzie krążą pogłoski o smoku.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0173.webp",
@@ -2591,7 +2785,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0174.webp",
@@ -2606,7 +2801,8 @@
     "race": "Tiefling",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0175.webp",
@@ -2621,7 +2817,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0176.webp",
@@ -2636,7 +2833,8 @@
     "race": "Lizardman",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0177.webp",
@@ -2651,7 +2849,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0178.webp",
@@ -2666,7 +2865,8 @@
     "race": "Tiefling",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0179.webp",
@@ -2681,7 +2881,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0180.webp",
@@ -2696,7 +2897,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0181.webp",
@@ -2711,7 +2913,8 @@
     "race": "Drow",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0182.webp",
@@ -2726,7 +2929,8 @@
     "race": "Human",
     "status": "Zwycięska",
     "Campaign Code": "Lost Mine Of Pahndelver",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0183.webp",
@@ -2741,7 +2945,8 @@
     "race": "Dwarf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0184.webp",
@@ -2756,7 +2961,8 @@
     "race": "Drow",
     "status": "Wycofana",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0185.webp",
@@ -2771,7 +2977,8 @@
     "race": "Human",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0186.webp",
@@ -2786,7 +2993,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0187.webp",
@@ -2801,7 +3009,8 @@
     "race": "Tiefling",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0188.webp",
@@ -2816,7 +3025,8 @@
     "race": "Harengon",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0189.webp",
@@ -2831,7 +3041,8 @@
     "race": "Half-Elf",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0190.webp",
@@ -2846,7 +3057,8 @@
     "race": "Drow",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0191.webp",
@@ -2861,7 +3073,8 @@
     "race": "Elf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0192.webp",
@@ -2876,7 +3089,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0193.webp",
@@ -2892,7 +3106,8 @@
     "race": "Elf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0194.webp",
@@ -2907,7 +3122,8 @@
     "race": "Hobgoblin",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0195.webp",
@@ -2922,7 +3138,8 @@
     "race": "Half-Elf",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0196.webp",
@@ -2937,7 +3154,8 @@
     "race": "Half-Orc",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0197.webp",
@@ -2952,7 +3170,8 @@
     "race": "Aasimar",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0198.webp",
@@ -2967,7 +3186,8 @@
     "race": "Aasimar",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0199.webp",
@@ -2982,7 +3202,8 @@
     "race": "Human",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0200.webp",
@@ -2997,7 +3218,8 @@
     "race": "Halfling",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0201.webp",
@@ -3012,7 +3234,8 @@
     "race": "Human",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0202.webp",
@@ -3027,7 +3250,8 @@
     "race": "Satyr",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0203.webp",
@@ -3042,7 +3266,8 @@
     "race": "Tiefling",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0204.webp",
@@ -3057,7 +3282,8 @@
     "race": "Dragonborn",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0205.webp",
@@ -3072,7 +3298,8 @@
     "race": "Human",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0206.webp",
@@ -3087,7 +3314,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0207.webp",
@@ -3102,7 +3330,8 @@
     "race": "Half-Orc",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0208.webp",
@@ -3117,7 +3346,8 @@
     "race": "Human",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0209.webp",
@@ -3132,7 +3362,8 @@
     "race": "Human",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0210.webp",
@@ -3147,7 +3378,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0211.webp",
@@ -3162,7 +3394,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0212.webp",
@@ -3177,7 +3410,8 @@
     "race": "Half-Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0213.webp",
@@ -3192,7 +3426,8 @@
     "race": "Aasimar",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0214.webp",
@@ -3207,7 +3442,8 @@
     "race": "Gnome",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0215.webp",
@@ -3223,7 +3459,8 @@
     "race": "Half-Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0216.webp",
@@ -3238,7 +3475,8 @@
     "race": "Half-Orc",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0217.webp",
@@ -3253,7 +3491,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0218.webp",
@@ -3268,7 +3507,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0219.webp",
@@ -3283,7 +3523,8 @@
     "race": "Human",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0220.webp",
@@ -3298,7 +3539,8 @@
     "race": "Half-Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0221.webp",
@@ -3313,7 +3555,8 @@
     "race": "Half-Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0222.webp",
@@ -3328,7 +3571,8 @@
     "race": "Tabaxi",
     "status": "Wycofana",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0223.webp",
@@ -3343,7 +3587,8 @@
     "race": "Fairy",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0224.webp",
@@ -3358,7 +3603,8 @@
     "race": "Tabaxi",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0225.webp",
@@ -3373,7 +3619,8 @@
     "race": "Dwarf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0226.webp",
@@ -3388,7 +3635,8 @@
     "race": "Human",
     "status": "Wycofana",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0227.webp",
@@ -3403,7 +3651,8 @@
     "race": "Loxodon",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0228.webp",
@@ -3418,7 +3667,8 @@
     "race": "Shaddar-Kai",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0229.webp",
@@ -3433,7 +3683,8 @@
     "race": "Aasimar",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0230.webp",
@@ -3448,7 +3699,8 @@
     "race": "Fairy",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0231.webp",
@@ -3463,7 +3715,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0232.webp",
@@ -3478,7 +3731,8 @@
     "race": "Half-Orc",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0233.webp",
@@ -3493,7 +3747,8 @@
     "race": "Genasi",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0234.webp",
@@ -3508,7 +3763,8 @@
     "race": "Dwarf",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0235.webp",
@@ -3523,7 +3779,8 @@
     "race": "Nymph",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0236.webp",
@@ -3538,7 +3795,8 @@
     "race": "Half-Orc",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0237.webp",
@@ -3553,7 +3811,8 @@
     "race": "Medusa",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0238.webp",
@@ -3568,7 +3827,8 @@
     "race": "Nymph",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0239.webp",
@@ -3583,7 +3843,8 @@
     "race": "Fairy",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0240.webp",
@@ -3598,7 +3859,8 @@
     "race": "Medusa",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0241.webp",
@@ -3613,7 +3875,8 @@
     "race": "Aasimar",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0242.webp",
@@ -3628,7 +3891,8 @@
     "race": "Aarakocra",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0243.webp",
@@ -3643,7 +3907,8 @@
     "race": "Goliath",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0244.webp",
@@ -3658,7 +3923,8 @@
     "race": "Tiefling",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0245.webp",
@@ -3673,7 +3939,8 @@
     "race": "Dragonborn",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0246.webp",
@@ -3688,7 +3955,8 @@
     "race": "Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0247.webp",
@@ -3703,7 +3971,8 @@
     "race": "Medusa",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0248.webp",
@@ -3718,7 +3987,8 @@
     "race": "Dwarf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0249.webp",
@@ -3733,7 +4003,8 @@
     "race": "Aasimar",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0250.webp",
@@ -3748,7 +4019,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0251.webp",
@@ -3763,7 +4035,8 @@
     "race": "Fairy",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Zmarł na pierwszej sesji, uwięziony w zatkanej studni, oblężony przez zombie Oscara Yorena."
+    "Historia": "Zmarł na pierwszej sesji, uwięziony w zatkanej studni, oblężony przez zombie Oscara Yorena.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0252.webp",
@@ -3778,7 +4051,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0253.webp",
@@ -3793,7 +4067,8 @@
     "race": "Half-Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0254.webp",
@@ -3809,7 +4084,8 @@
     "race": "Half-Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0255.webp",
@@ -3824,7 +4100,8 @@
     "race": "Tiefling",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0256.webp",
@@ -3839,7 +4116,8 @@
     "race": "Half-Orc",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Hagard urodził się w małym miasteczku gdzieś na orczym zadupiu. Żeby nie skończyć jak większość orków na jakiejś bezsensownej wojence lub w karczemnej zadymie uciekł stamtąd i zaciągnął się do profesjonalnej armii. Dzięki wrodzonemu sprytowi osiągnął nawet stopień oficerski i szacunek. Jednak potrzeba wykazania się i możliwe korzyści materialne skłoniły go do zostania poszukiwaczem przygód."
+    "Historia": "Hagard urodził się w małym miasteczku gdzieś na orczym zadupiu. Żeby nie skończyć jak większość orków na jakiejś bezsensownej wojence lub w karczemnej zadymie uciekł stamtąd i zaciągnął się do profesjonalnej armii. Dzięki wrodzonemu sprytowi osiągnął nawet stopień oficerski i szacunek. Jednak potrzeba wykazania się i możliwe korzyści materialne skłoniły go do zostania poszukiwaczem przygód.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0257.webp",
@@ -3854,7 +4132,8 @@
     "race": "Half-Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0258.webp",
@@ -3869,7 +4148,8 @@
     "race": "Human",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0259.webp",
@@ -3884,7 +4164,8 @@
     "race": "Dwarf",
     "status": "Wycofana",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0260.webp",
@@ -3899,7 +4180,8 @@
     "race": "Kobold",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0261.webp",
@@ -3914,7 +4196,8 @@
     "race": "Tiefling",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0262.webp",
@@ -3929,7 +4212,8 @@
     "race": "Human",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0263.webp",
@@ -3944,7 +4228,8 @@
     "race": "Genasi",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0264.webp",
@@ -3959,7 +4244,8 @@
     "race": "Dragonborn",
     "status": "Porzucona",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0265.webp",
@@ -3974,7 +4260,8 @@
     "race": "Half-Elf",
     "status": "Martwa",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0266.webp",
@@ -3989,6 +4276,7 @@
     "race": "Dwarf",
     "status": "Zwycięska",
     "Campaign Code": "unset",
-    "Historia": "Brak zapisków."
+    "Historia": "Brak zapisków.",
+    "achievements": []
   }
 ]
