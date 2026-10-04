@@ -1,0 +1,134 @@
+[
+  {
+    "id": "ostatni-ocalaly",
+    "name": "Ostatni Ocalały",
+    "icon": "👤",
+    "description": "Bądź jedynym oryginalnym członkiem drużyny, który dotrwa do końca kampanii."
+  },
+  {
+    "id": "pomazaniec",
+    "name": "Pomazaniec",
+    "icon": "🌟",
+    "description": "Zostań wybrany przez bóstwo do wyjątkowej roli."
+  },
+  {
+    "id": "powrocony",
+    "name": "Powrócony",
+    "icon": "✝️",
+    "description": "Umrzyj i zostań przywrócony do życia."
+  },
+  {
+    "id": "zaprawiony-bohater",
+    "name": "Zaprawiony Bohater",
+    "icon": "🎖️",
+    "description": "Ukończ więcej niż jedną kampanię."
+  },
+  {
+    "id": "ten-ktory-nie-powinien-przezyc",
+    "name": "Ten, Który Nie Powinien Przeżyć",
+    "icon": "🩸",
+    "description": "Przeżyj sytuację, w której śmierć wydawała się nieunikniona."
+  },
+  {
+    "id": "meczennik",
+    "name": "Męczennik",
+    "icon": "🕯️",
+    "description": "Poświęć swoje życie, aby inni mogli żyć."
+  },
+  {
+    "id": "pogromca-smokow",
+    "name": "Pogromca Smoków",
+    "icon": "🐉",
+    "description": "Zabij smoka."
+  },
+  {
+    "id": "krolotworca",
+    "name": "Królotwórca",
+    "icon": "👑",
+    "description": "Zadecyduj o tym, kto zasiądzie na tronie."
+  },
+  {
+    "id": "zguba-lisza",
+    "name": "Zguba Lisza",
+    "icon": "💀",
+    "description": "Zniszcz lisza."
+  },
+  {
+    "id": "van-helsing",
+    "name": "Van Helsing",
+    "icon": "🧛‍♂️",
+    "description": "Pokonaj wampira."
+  },
+  {
+    "id": "bogobojca",
+    "name": "Bogobójca",
+    "icon": "⚡",
+    "description": "Pokonaj boską istotę."
+  },
+  {
+    "id": "podroznik-w-czasie",
+    "name": "Podróżnik w Czasie",
+    "icon": "⏳",
+    "description": "Podróżuj w czasie, wbrew jego naturalnemu biegowi."
+  },
+  {
+    "id": "mutant",
+    "name": "Mutant",
+    "icon": "🧬",
+    "description": "Doznaj mutacji."
+  },
+  {
+    "id": "lamacz-klatw",
+    "name": "Łamacz Klątw",
+    "icon": "🪄",
+    "description": "Zdejmij większą klątwę."
+  },
+  {
+    "id": "dluznik-piekiel",
+    "name": "Dłużnik Piekieł",
+    "icon": "⛤",
+    "description": "Zawrzyj pakt z diabłem."
+  },
+  {
+    "id": "mistrz-dwudziestego-kregu",
+    "name": "Mistrz Dwudziestego Kręgu",
+    "icon": "⭐",
+    "description": "Osiągnij 20. poziom."
+  },
+  {
+    "id": "kapitan",
+    "name": "Kapitan",
+    "icon": "⚓",
+    "description": "Zostań kapitanem statku."
+  },
+  {
+    "id": "pan-na-wlosciach",
+    "name": "Pan na Włościach",
+    "icon": "🏰",
+    "description": "Posiadaj zamek."
+  },
+  {
+    "id": "gospodarz",
+    "name": "Gospodarz",
+    "icon": "🏡",
+    "description": "Posiadaj własne mieszkanie lub dom."
+  },
+  {
+    "id": "nosiciel-relikwii",
+    "name": "Nosiciel Relikwii",
+    "icon": "🗝️",
+    "description": "Posiadaj artefakt niosący znaczenie dla całego świata."
+  },
+  {
+    "id": "legenda",
+    "name": "Legenda",
+    "icon": "📜",
+    "description": "Dokonaj unikalnie heroicznych czynów."
+  },
+  {
+    "id": "zguba-swiata",
+    "name": "Zguba Świata",
+    "icon": "☄️",
+    "description": "Doprowadź do zagłady świata lub cywilizacji."
+  }
+]
