@@ -1140,7 +1140,7 @@
   {
     "portrait": "/res/portraits/char-0069.webp",
     "character": "Vivienne",
-    "player": "Persephone",
+    "player": "Maria",
     "campaigns": [
       "Menaces of Gloomforest"
     ],
@@ -1666,7 +1666,7 @@
   {
     "portrait": "/res/portraits/char-0098.webp",
     "character": "Vivienne",
-    "player": "Natalia",
+    "player": "Persephone",
     "campaigns": [
       "Sons of Azalin"
     ],
