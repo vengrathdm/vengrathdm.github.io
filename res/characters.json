@@ -598,7 +598,7 @@
   {
     "portrait": "/res/portraits/char-0090.webp",
     "character": "Nailef",
-    "player": "Musthard",
+    "player": "MustHard",
     "campaigns": [
       "Barber of Silverymoon"
     ],
@@ -4564,7 +4564,7 @@
   {
     "portrait": "/res/portraits/char-0273.webp",
     "character": "Orianna Stromridge",
-    "player": "Parrot Network",
+    "player": "ParrotNetwork",
     "campaigns": [
       "Heartwell Asylum"
     ],
