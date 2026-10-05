@@ -1731,7 +1731,7 @@
       "Bard"
     ],
     "race": "Half-Elf",
-    "status": "Porzucona",
+    "status": "Wycofana",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": [
@@ -3282,7 +3282,7 @@
     "campaigns": [
       "Forge of Fury",
       "Barber of Silverymoon",
-      "Sunless Citadel"
+      "The Sunless Citadel"
     ],
     "classes": [
       "Warlock"
@@ -4438,7 +4438,7 @@
       "Barbarian"
     ],
     "race": "Human",
-    "status": "Porzucona",
+    "status": "Wycofana",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": [
@@ -4540,7 +4540,7 @@
       "Ranger"
     ],
     "race": "Human",
-    "status": "Martwa",
+    "status": "Wycofana",
     "Campaign Code": "shards-of-the-past-legacy",
     "Historia": "Brak zapisków.",
     "achievements": []
@@ -4655,7 +4655,7 @@
       "Rogue"
     ],
     "race": "Elf",
-    "status": "Martwa",
+    "status": "Wycofana",
     "Campaign Code": "shards-of-the-past-legacy",
     "Historia": "Brak zapisków.",
     "achievements": []
