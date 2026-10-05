@@ -4676,7 +4676,9 @@
     "status": "Zwycięska",
     "Campaign Code": "gold-for-fools-and-princes",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "zaprawiony-bohater"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0280.webp",
