@@ -91,7 +91,7 @@ button,input,select{font:inherit}
 .orbit-b{width:245px;height:245px;right:12px;top:88px}
 
 /* Archive */
-main{max-width:1440px;margin:auto;padding:58px 34px 86px}
+main{width:100%;max-width:1920px;margin:auto;padding:58px clamp(24px,3vw,52px) 86px}
 .archive-head{
   display:flex;align-items:end;justify-content:space-between;gap:24px;
   border-bottom:1px solid var(--line);padding-bottom:15px;margin-bottom:16px;
@@ -355,12 +355,12 @@ footer a:hover{color:#fff}
 
 
 /* Wide archive layout: sticky controls left, gallery center, sticky statistics right. */
-.archive-layout{display:grid;grid-template-columns:minmax(210px,240px) minmax(0,1fr) minmax(210px,240px);gap:18px;align-items:start}
+.archive-layout{display:grid;grid-template-columns:minmax(250px,280px) minmax(0,1fr) minmax(250px,280px);gap:24px;align-items:start}
 .archive-center{min-width:0}
 .archive-sidebar{min-width:0}
 .archive-sidebar-left .controls,
 .archive-sidebar-right .archive-stats{position:sticky;top:18px;margin:0}
-.archive-sidebar-left .controls{padding:12px}
+.archive-sidebar-left .controls{padding:14px}
 .archive-sidebar-left .search{height:46px}
 .archive-sidebar-left .filters{grid-template-columns:1fr;gap:9px;margin-top:12px}
 .archive-sidebar-left .filters select,
@@ -373,7 +373,7 @@ footer a:hover{color:#fff}
 .archive-sidebar-right .stat strong{font-size:34px}
 .archive-sidebar-right .stats-status .stat strong{font-size:25px}
 .archive-sidebar-right .stat span{font-size:9px}
-@media(max-width:1499px){
+@media(max-width:1340px){
   .archive-layout{display:block}
   .archive-sidebar-left .controls,.archive-sidebar-right .archive-stats{position:static}
   .archive-sidebar-left .controls{margin-bottom:24px}
