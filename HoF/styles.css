@@ -402,3 +402,78 @@ footer a:hover{color:#fff}
   .archive-layout{grid-template-columns:minmax(250px,280px) minmax(0,1fr) minmax(250px,280px);gap:28px}
   .grid{grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:13px}
 }
+
+
+/* Character cards — denser visual hierarchy, larger readable metadata. */
+.card{
+  background:
+    linear-gradient(180deg,#171b1d 0%,#121617 100%);
+  border-color:#303638;
+}
+.card-body{padding:15px 15px 17px}
+.card-name{
+  margin:1px 0 14px;
+  font-size:30px;
+  line-height:.92;
+  letter-spacing:.01em;
+}
+.meta{
+  gap:0;
+  border-top:1px solid #353b3e;
+  padding-top:0;
+}
+.meta-row{
+  display:grid;
+  grid-template-columns:68px minmax(0,1fr);
+  gap:10px;
+  align-items:start;
+  padding:9px 0;
+  border-bottom:1px solid rgba(255,255,255,.055);
+}
+.meta-row:last-child{border-bottom:0}
+.meta-label{
+  margin:2px 0 0;
+  font-size:9px;
+  line-height:1.1;
+  letter-spacing:1.35px;
+  color:#858c8f;
+}
+.meta-value{
+  font-size:13px;
+  line-height:1.35;
+  font-weight:600;
+  color:#e0e3e3;
+}
+.pills{gap:5px}
+.pill{
+  padding:5px 8px;
+  border-radius:999px;
+  font-size:11px;
+  line-height:1.05;
+  border-color:#424a4d;
+  background:#1c2224;
+  color:#d0d4d5;
+}
+.status{
+  padding:5px 9px;
+  font-size:11px;
+  line-height:1;
+}
+.card:hover .card-name{color:#fff}
+.card:hover .meta-value{color:#f0f1f1}
+.card:hover .meta-row{border-color:rgba(188,160,106,.18)}
+
+@media(max-width:680px){
+  .card-body{padding:12px 12px 14px}
+  .card-name{font-size:25px;margin-bottom:12px}
+  .meta-row{grid-template-columns:62px minmax(0,1fr);gap:8px;padding:8px 0}
+  .meta-label{font-size:8px}
+  .meta-value{font-size:11px}
+  .pill{font-size:10px;padding:4px 7px}
+}
+@media(min-width:1921px){
+  .card-body{padding:14px 14px 16px}
+  .card-name{font-size:29px}
+  .meta-row{grid-template-columns:64px minmax(0,1fr)}
+  .meta-value{font-size:12px}
+}
