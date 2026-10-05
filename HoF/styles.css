@@ -477,3 +477,39 @@ footer a:hover{color:#fff}
   .meta-row{grid-template-columns:64px minmax(0,1fr)}
   .meta-value{font-size:12px}
 }
+
+
+/* Refined character-card treatment: centered identity, restrained metadata. */
+.card-name{
+  text-align:center;
+  margin:2px 0 15px;
+  padding-bottom:13px;
+  border-bottom:1px solid #353b3e;
+}
+.meta{border-top:0}
+.meta-row{grid-template-columns:68px minmax(0,1fr)}
+.pills{display:block}
+.pill{
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:none;
+  color:#d0d4d5;
+  font:600 13px/1.35 "Fira Sans Extra Condensed",sans-serif;
+}
+.pill + .pill:before{
+  content:" · ";
+  color:#737a7d;
+  margin:0 3px;
+}
+@media(max-width:680px){
+  .card-name{
+    text-align:center;
+    padding-bottom:11px;
+  }
+  .pill{font-size:11px}
+}
+@media(min-width:1921px){
+  .card-name{text-align:center}
+  .pill{font-size:12px}
+}
