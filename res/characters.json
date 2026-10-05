@@ -930,7 +930,7 @@
   {
     "portrait": "/res/portraits/char-0056.webp",
     "character": "Lyanna Steelheart",
-    "player": "Natalia",
+    "player": "Persephone",
     "campaigns": [
       "Ghoul Hour"
     ],
@@ -1140,7 +1140,7 @@
   {
     "portrait": "/res/portraits/char-0069.webp",
     "character": "Vivienne",
-    "player": "Maria",
+    "player": "Persephone",
     "campaigns": [
       "Menaces of Gloomforest"
     ],
@@ -3460,7 +3460,7 @@
   {
     "portrait": "/res/portraits/char-0203.webp",
     "character": "Divina",
-    "player": "Natalia",
+    "player": "Persephone",
     "campaigns": [
       "Bad Romance Barovia"
     ],
@@ -3625,7 +3625,7 @@
   {
     "portrait": "/res/portraits/char-0213.webp",
     "character": "Velia",
-    "player": "Natalia",
+    "player": "Persephone",
     "campaigns": [
       "Bad Romance Barovia"
     ],
