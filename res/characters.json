@@ -4518,7 +4518,7 @@
       "Cleric"
     ],
     "race": "Dwarf",
-    "status": "Dead",
+    "status": "Martwa",
     "Campaign Code": "drakkenheim",
     "Historia": "Brak zapisków.",
     "achievements": [
@@ -4584,7 +4584,7 @@
       "Paladin"
     ],
     "race": "Dragonborn",
-    "status": "Dead",
+    "status": "Martwa",
     "Campaign Code": "heroes-of-drakkenheim",
     "Historia": "Brak zapisków.",
     "achievements": [
@@ -4619,7 +4619,7 @@
       "Rogue"
     ],
     "race": "Human",
-    "status": "Dead",
+    "status": "Martwa",
     "Campaign Code": "drakkenheim",
     "Historia": "Brak zapisków.",
     "achievements": []
@@ -4651,7 +4651,7 @@
       "Rogue"
     ],
     "race": "Elf",
-    "status": "Dead",
+    "status": "Martwa",
     "Campaign Code": "shards-of-the-past-legacy",
     "Historia": "Brak zapisków.",
     "achievements": []
