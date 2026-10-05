@@ -4530,7 +4530,7 @@
     ]
   },
   {
-    "portrait": "/res/portraits/char-0267.webp",
+    "portrait": "/res/portraits/placeholder_ref.webp",
     "character": "Bill Frankson",
     "player": "Dominik",
     "campaigns": [
@@ -4562,7 +4562,7 @@
     "achievements": []
   },
   {
-    "portrait": "/res/portraits/char-0269.webp",
+    "portrait": "/res/portraits/placeholder_ref.webp",
     "character": "Orianna Stromridge",
     "player": "ParrotNetwork",
     "campaigns": [
