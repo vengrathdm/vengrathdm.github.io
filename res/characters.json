@@ -4508,7 +4508,7 @@
     "achievements": []
   },
   {
-    "portrait": "",
+    "portrait": "/res/portraits/placeholder.webp",
     "character": "Uvdar Emberhood",
     "player": "Mateusz",
     "campaigns": [
@@ -4526,7 +4526,7 @@
     ]
   },
   {
-    "portrait": "",
+    "portrait": "/res/portraits/placeholder.webp",
     "character": "Bill Frankson",
     "player": "Dominik",
     "campaigns": [
@@ -4536,13 +4536,13 @@
       "Ranger"
     ],
     "race": "Human",
-    "status": "Dead",
+    "status": "Martwa",
     "Campaign Code": "shards-of-the-past-legacy",
     "Historia": "Brak zapisków.",
     "achievements": []
   },
   {
-    "portrait": "",
+    "portrait": "/res/portraits/placeholder.webp",
     "character": "Miraele Srebrnystrumień",
     "player": "Selene (Meg)",
     "campaigns": [
@@ -4558,7 +4558,7 @@
     "achievements": []
   },
   {
-    "portrait": "",
+    "portrait": "/res/portraits/placeholder.webp",
     "character": "Orianna Stromridge",
     "player": "Parrot Network",
     "campaigns": [
@@ -4574,7 +4574,7 @@
     "achievements": []
   },
   {
-    "portrait": "",
+    "portrait": "/res/portraits/placeholder.webp",
     "character": "Irrhin Medxiros",
     "player": "MustHard",
     "campaigns": [
@@ -4592,7 +4592,7 @@
     ]
   },
   {
-    "portrait": "",
+    "portrait": "/res/portraits/placeholder.webp",
     "character": "Shava Nalio",
     "player": "Ula",
     "campaigns": [
@@ -4608,7 +4608,7 @@
     "achievements": []
   },
   {
-    "portrait": "",
+    "portrait": "/res/portraits/placeholder.webp",
     "character": "Seth Morder",
     "player": "Amadeusz",
     "campaigns": [
@@ -4625,7 +4625,7 @@
     "achievements": []
   },
   {
-    "portrait": "",
+    "portrait": "/res/portraits/placeholder.webp",
     "character": "Joel",
     "player": "Amadeusz",
     "campaigns": [
@@ -4641,7 +4641,7 @@
     "achievements": []
   },
   {
-    "portrait": "",
+    "portrait": "/res/portraits/placeholder.webp",
     "character": "Alanis Echorn",
     "player": "Mateusz",
     "campaigns": [
@@ -4657,7 +4657,7 @@
     "achievements": []
   },
   {
-    "portrait": "",
+    "portrait": "/res/portraits/placeholder.webp",
     "character": "Niko Nix",
     "player": "Amadeusz",
     "campaigns": [
@@ -4675,7 +4675,7 @@
     "achievements": []
   },
   {
-    "portrait": "",
+    "portrait": "/res/portraits/placeholder.webp",
     "character": "Mord",
     "player": "Amadeusz",
     "campaigns": [
