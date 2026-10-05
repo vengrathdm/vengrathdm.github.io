@@ -352,3 +352,39 @@ footer a:hover{color:#fff}
   .portrait{height:100%;min-height:180px}
   .card-body{padding:12px}.card-name{font-size:24px}
 }
+
+
+/* Wide archive layout: sticky controls left, gallery center, sticky statistics right. */
+.archive-layout{display:grid;grid-template-columns:minmax(210px,240px) minmax(0,1fr) minmax(210px,240px);gap:18px;align-items:start}
+.archive-center{min-width:0}
+.archive-sidebar{min-width:0}
+.archive-sidebar-left .controls,
+.archive-sidebar-right .archive-stats{position:sticky;top:18px;margin:0}
+.archive-sidebar-left .controls{padding:12px}
+.archive-sidebar-left .search{height:46px}
+.archive-sidebar-left .filters{grid-template-columns:1fr;gap:9px;margin-top:12px}
+.archive-sidebar-left .filters select,
+.archive-sidebar-left .filters button{height:38px}
+.archive-sidebar-right .archive-stats{padding:16px 12px}
+.archive-sidebar-right .stats-row{display:grid;grid-template-columns:1fr}
+.archive-sidebar-right .stats-primary{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:14px}
+.archive-sidebar-right .stat{border-right:0;border-bottom:1px solid rgba(255,255,255,.045);padding:10px 4px}
+.archive-sidebar-right .stat:last-child{border-bottom:0}
+.archive-sidebar-right .stat strong{font-size:34px}
+.archive-sidebar-right .stats-status .stat strong{font-size:25px}
+.archive-sidebar-right .stat span{font-size:9px}
+@media(max-width:1499px){
+  .archive-layout{display:block}
+  .archive-sidebar-left .controls,.archive-sidebar-right .archive-stats{position:static}
+  .archive-sidebar-left .controls{margin-bottom:24px}
+  .archive-sidebar-right .archive-stats{margin:0 0 28px}
+  .archive-sidebar-right .stats-row{display:flex}
+  .archive-sidebar-right .stat{border-right:1px solid var(--line);border-bottom:0;padding:0 15px}
+  .archive-sidebar-right .stat:last-child{border-right:0}
+}
+@media(max-width:680px){
+  .archive-sidebar-right .stats-row{display:flex}
+  .archive-sidebar-right .stats-status{display:grid}
+  .archive-sidebar-right .stats-status .stat{border-right:1px solid var(--line);border-bottom:0}
+  .archive-sidebar-right .stats-status .stat:nth-child(2){border-right:0}
+}
