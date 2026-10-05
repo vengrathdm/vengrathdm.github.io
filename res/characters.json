@@ -593,7 +593,9 @@
     "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "zaprawiony-bohater"
+    ]
   },
   {
     "portrait": "/res/portraits/placeholder_ref.webp",
@@ -1446,8 +1448,7 @@
     "Historia": "Brak zapisków.",
     "achievements": [
       "bogobojca",
-      "pogromca-smokow",
-      "zaprawiony-bohater"
+      "pogromca-smokow"
     ]
   },
   {
@@ -2458,7 +2459,8 @@
     "Historia": "Brak zapisków.",
     "achievements": [
       "bogobojca",
-      "pogromca-smokow"
+      "pogromca-smokow",
+      "zaprawiony-bohater"
     ]
   },
   {
