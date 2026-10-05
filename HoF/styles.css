@@ -400,5 +400,5 @@ footer a:hover{color:#fff}
 @media(min-width:1921px){
   main{max-width:none}
   .archive-layout{grid-template-columns:minmax(250px,280px) minmax(0,1fr) minmax(250px,280px);gap:28px}
-  .grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:13px}
+  .grid{grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:13px}
 }
