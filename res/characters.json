@@ -596,7 +596,7 @@
     "achievements": []
   },
   {
-    "portrait": "/res/portraits/char-0090.webp",
+    "portrait": "/res/portraits/placeholder_ref.webp",
     "character": "Nailef",
     "player": "MustHard",
     "campaigns": [
@@ -1226,7 +1226,7 @@
     ]
   },
   {
-    "portrait": "/res/portraits/char-0090.webp",
+    "portrait": "/res/portraits/placeholder_ref.webp",
     "character": "Elorin",
     "player": "Michał Kraus",
     "campaigns": [
@@ -1470,7 +1470,7 @@
     ]
   },
   {
-    "portrait": "/res/portraits/char-0090.webp",
+    "portrait": "/res/portraits/placeholder_ref.webp",
     "character": "Lorenzo Dal",
     "player": "Domono",
     "campaigns": [
@@ -1486,7 +1486,7 @@
     "achievements": []
   },
   {
-    "portrait": "/res/portraits/char-0090.webp",
+    "portrait": "/res/portraits/placeholder_ref.webp",
     "character": "Mattia",
     "player": "Kurde Bele",
     "campaigns": [
@@ -1502,7 +1502,7 @@
     "achievements": []
   },
   {
-    "portrait": "/res/portraits/char-0090.webp",
+    "portrait": "/res/portraits/placeholder_ref.webp",
     "character": "Samuel Wokulski",
     "player": "StaryBorsuk",
     "campaigns": [
