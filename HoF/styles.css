@@ -157,7 +157,8 @@ main{width:100%;max-width:1920px;margin:auto;padding:58px clamp(24px,3vw,52px) 8
 }
 
 /* Character grid */
-.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;justify-items:center}
+.card{width:100%;max-width:300px}
 .card{
   position:relative;min-width:0;background:#141819;color:#e8e9e9;
   border:1px solid #292e31;overflow:visible;cursor:pointer;
