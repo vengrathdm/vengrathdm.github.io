@@ -696,7 +696,7 @@
   {
     "portrait": "/res/portraits/char-0043.webp",
     "character": "Arik",
-    "player": "Amadeusz",
+    "player": "Deus",
     "campaigns": [
       "Drakkenheim"
     ],
@@ -1518,7 +1518,7 @@
     "achievements": []
   },
   {
-    "portrait": "/res/portraits/char-0090.webp",
+    "portrait": "/res/portraits/placeholder_ref.webp",
     "character": "Vincent Campbell",
     "player": "Vexu",
     "campaigns": [
@@ -1838,7 +1838,7 @@
   {
     "portrait": "/res/portraits/char-0108.webp",
     "character": "Saev",
-    "player": "Amadeusz",
+    "player": "Deus",
     "campaigns": [
       "Heroes of Baldur's Gate"
     ],
@@ -2711,7 +2711,7 @@
   },
   {
     "portrait": "/res/portraits/char-0158.webp",
-    "character": "x",
+    "character": "Haldir",
     "player": "Przemek",
     "campaigns": [
       "Heroes of Drakkenheim"
@@ -3026,7 +3026,7 @@
   {
     "portrait": "/res/portraits/char-0177.webp",
     "character": "Daer",
-    "player": "Amadeusz",
+    "player": "Deus",
     "campaigns": [
       "Menaces of Gloomforest Legacy"
     ],
@@ -3090,7 +3090,7 @@
   {
     "portrait": "/res/portraits/char-0181.webp",
     "character": "Maro",
-    "player": "Amadeusz",
+    "player": "Deus",
     "campaigns": [
       "Lost Mine of Phandelver"
     ],
@@ -3124,7 +3124,7 @@
   {
     "portrait": "/res/portraits/char-0183.webp",
     "character": "Narn",
-    "player": "Amadeusz",
+    "player": "Deus",
     "campaigns": [
       "Kampania Nieznana"
     ],
@@ -3140,7 +3140,7 @@
   {
     "portrait": "/res/portraits/char-0184.webp",
     "character": "Yoor Benz",
-    "player": "Amadeusz",
+    "player": "Deus",
     "campaigns": [
       "Mythic Odyssey of the Dragonlords"
     ],
@@ -3649,7 +3649,7 @@
       "Rogue"
     ],
     "race": "Gnome",
-    "status": "Porzucona",
+    "status": "Wycofana",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": []
@@ -3730,7 +3730,7 @@
       "Warlock"
     ],
     "race": "Human",
-    "status": "Porzucona",
+    "status": "Wycofana",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": []
@@ -4614,7 +4614,7 @@
   {
     "portrait": "/res/portraits/char-0272.webp",
     "character": "Seth Morder",
-    "player": "Amadeusz",
+    "player": "Deus",
     "campaigns": [
       "Drakkenheim"
     ],
@@ -4631,7 +4631,7 @@
   {
     "portrait": "/res/portraits/char-0273.webp",
     "character": "Joel",
-    "player": "Amadeusz",
+    "player": "Deus",
     "campaigns": [
       "Drakkenheim"
     ],
@@ -4663,7 +4663,7 @@
   {
     "portrait": "/res/portraits/char-0275.webp",
     "character": "Niko Nix",
-    "player": "Amadeusz",
+    "player": "Deus",
     "campaigns": [
       "Gold for Fools and Princes",
       "Mayhem in Earthspur Mines"
@@ -4685,7 +4685,7 @@
   {
     "portrait": "/res/portraits/char-0276.webp",
     "character": "Mord",
-    "player": "Amadeusz",
+    "player": "Deus",
     "campaigns": [
       "Lost Mine of Phandelver"
     ],
@@ -4702,7 +4702,7 @@
   {
     "portrait": "/res/portraits/char-0277.webp",
     "character": "Tic",
-    "player": "Amadeusz",
+    "player": "Deus",
     "campaigns": [
       "Dragon of Dampen Depths"
     ],
