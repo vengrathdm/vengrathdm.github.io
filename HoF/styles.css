@@ -394,3 +394,11 @@ footer a:hover{color:#fff}
   .archive-sidebar-right .stats-status .stat{border-right:1px solid var(--line);border-bottom:0}
   .archive-sidebar-right .stats-status .stat:nth-child(2){border-right:0}
 }
+
+
+/* Extra-wide displays only: give the gallery more horizontal room and increase card density. */
+@media(min-width:1921px){
+  main{max-width:none}
+  .archive-layout{grid-template-columns:minmax(250px,280px) minmax(0,1fr) minmax(250px,280px);gap:28px}
+  .grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:13px}
+}
