@@ -4506,5 +4506,189 @@
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": []
+  },
+  {
+    "portrait": "",
+    "character": "Uvdar Emberhood",
+    "player": "Mateusz",
+    "campaigns": [
+      "Drakkenheim"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Dwarf",
+    "status": "Dead",
+    "Campaign Code": "drakkenheim",
+    "Historia": "Brak zapisków.",
+    "achievements": [
+      "mutant"
+    ]
+  },
+  {
+    "portrait": "",
+    "character": "Bill Frankson",
+    "player": "Dominik",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Ranger"
+    ],
+    "race": "Human",
+    "status": "Dead",
+    "Campaign Code": "shards-of-the-past-legacy",
+    "Historia": "Brak zapisków.",
+    "achievements": []
+  },
+  {
+    "portrait": "",
+    "character": "Miraele Srebrnystrumień",
+    "player": "Selene (Meg)",
+    "campaigns": [
+      "Shards of the Past"
+    ],
+    "classes": [
+      "Druid"
+    ],
+    "race": "Half-Elf",
+    "status": "Porzucona",
+    "Campaign Code": "shards-of-the-past",
+    "Historia": "Brak zapisków.",
+    "achievements": []
+  },
+  {
+    "portrait": "",
+    "character": "Orianna Stromridge",
+    "player": "Parrot Network",
+    "campaigns": [
+      "Heartwell Asylum"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Tiefling",
+    "status": "Zwycięska",
+    "Campaign Code": "heartwell-asylum",
+    "Historia": "Brak zapisków.",
+    "achievements": []
+  },
+  {
+    "portrait": "",
+    "character": "Irrhin Medxiros",
+    "player": "MustHard",
+    "campaigns": [
+      "Heroes of Drakkenheim"
+    ],
+    "classes": [
+      "Paladin"
+    ],
+    "race": "Dragonborn",
+    "status": "Dead",
+    "Campaign Code": "heroes-of-drakkenheim",
+    "Historia": "Brak zapisków.",
+    "achievements": [
+      "mutant"
+    ]
+  },
+  {
+    "portrait": "",
+    "character": "Shava Nalio",
+    "player": "Ula",
+    "campaigns": [
+      "Bad Romance Barovia"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Aasimar",
+    "status": "Wycofana",
+    "Campaign Code": "bad-romance-barovia",
+    "Historia": "Brak zapisków.",
+    "achievements": []
+  },
+  {
+    "portrait": "",
+    "character": "Seth Morder",
+    "player": "Amadeusz",
+    "campaigns": [
+      "Drakkenheim"
+    ],
+    "classes": [
+      "Fighter",
+      "Rogue"
+    ],
+    "race": "Human",
+    "status": "Dead",
+    "Campaign Code": "drakkenheim",
+    "Historia": "Brak zapisków.",
+    "achievements": []
+  },
+  {
+    "portrait": "",
+    "character": "Joel",
+    "player": "Amadeusz",
+    "campaigns": [
+      "Mayhem in Earthspur Mines"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Elf",
+    "status": "Zwycięska",
+    "Campaign Code": "mayhem-in-earthspur-mines",
+    "Historia": "Brak zapisków.",
+    "achievements": []
+  },
+  {
+    "portrait": "",
+    "character": "Alanis Echorn",
+    "player": "Mateusz",
+    "campaigns": [
+      "Shards of the Past Legacy"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Elf",
+    "status": "Dead",
+    "Campaign Code": "shards-of-the-past-legacy",
+    "Historia": "Brak zapisków.",
+    "achievements": []
+  },
+  {
+    "portrait": "",
+    "character": "Niko Nix",
+    "player": "Amadeusz",
+    "campaigns": [
+      "Gold for Fools and Princes"
+    ],
+    "classes": [
+      "Paladin",
+      "Warlock",
+      "Bard"
+    ],
+    "race": "Half-Elf",
+    "status": "Zwycięska",
+    "Campaign Code": "gold-for-fools-and-princes",
+    "Historia": "Brak zapisków.",
+    "achievements": []
+  },
+  {
+    "portrait": "",
+    "character": "Mord",
+    "player": "Amadeusz",
+    "campaigns": [
+      "Lost Mine of Phandelver"
+    ],
+    "classes": [
+      "Fighter",
+      "Cleric"
+    ],
+    "race": "Human",
+    "status": "Zwycięska",
+    "Campaign Code": "lost-mine-of-phandelver",
+    "Historia": "Brak zapisków.",
+    "achievements": []
   }
 ]
