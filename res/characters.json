@@ -4690,5 +4690,21 @@
     "Campaign Code": "lost-mine-of-phandelver",
     "Historia": "Brak zapisków.",
     "achievements": []
+  },
+  {
+    "portrait": "/res/portraits/placeholder.webp",
+    "character": "Tic",
+    "player": "Amadeusz",
+    "campaigns": [
+      "Lost Mine of Phandelver"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Human",
+    "status": "Zwycięska",
+    "Campaign Code": "lost-mine-of-phandelver",
+    "Historia": "Brak zapisków.",
+    "achievements": []
   }
 ]
