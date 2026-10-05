@@ -2086,9 +2086,10 @@
       "Książęta Heartwell"
     ],
     "classes": [
-      "Ranger"
+      "Ranger",
+      "Rogue"
     ],
-    "race": "Human",
+    "race": "Half-Elf",
     "status": "Aktywna",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
