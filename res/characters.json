@@ -4546,14 +4546,14 @@
     "character": "Miraele Srebrnystrumień",
     "player": "Selene (Meg)",
     "campaigns": [
-      "Shards of the Past"
+      "Shards of the Past Legacy"
     ],
     "classes": [
       "Druid"
     ],
     "race": "Half-Elf",
     "status": "Porzucona",
-    "Campaign Code": "shards-of-the-past",
+    "Campaign Code": "shards-of-the-past-legacy",
     "Historia": "Brak zapisków.",
     "achievements": []
   },
@@ -4629,14 +4629,14 @@
     "character": "Joel",
     "player": "Amadeusz",
     "campaigns": [
-      "Mayhem in Earthspur Mines"
+      "Drakkenheim"
     ],
     "classes": [
       "Rogue"
     ],
     "race": "Elf",
-    "status": "Zwycięska",
-    "Campaign Code": "mayhem-in-earthspur-mines",
+    "status": "Martwa",
+    "Campaign Code": "drakkenheim",
     "Historia": "Brak zapisków.",
     "achievements": []
   },
@@ -4661,7 +4661,8 @@
     "character": "Niko Nix",
     "player": "Amadeusz",
     "campaigns": [
-      "Gold for Fools and Princes"
+      "Gold for Fools and Princes",
+      "Mayhem in Earthspur Mines"
     ],
     "classes": [
       "Paladin",
