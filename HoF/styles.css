@@ -374,10 +374,13 @@ footer a:hover{color:#fff}
 .archive-sidebar-right .stats-status .stat strong{font-size:25px}
 .archive-sidebar-right .stat span{font-size:9px}
 @media(max-width:1340px){
-  .archive-layout{display:block}
+  .archive-layout{display:flex;flex-direction:column;gap:0}
+  .archive-sidebar-right{order:1}
+  .archive-sidebar-left{order:2}
+  .archive-center{order:3}
   .archive-sidebar-left .controls,.archive-sidebar-right .archive-stats{position:static}
-  .archive-sidebar-left .controls{margin-bottom:24px}
-  .archive-sidebar-right .archive-stats{margin:0 0 28px}
+  .archive-sidebar-right .archive-stats{margin:0 0 24px}
+  .archive-sidebar-left .controls{margin:0 0 28px}
   .archive-sidebar-right .stats-row{display:flex}
   .archive-sidebar-right .stat{border-right:1px solid var(--line);border-bottom:0;padding:0 15px}
   .archive-sidebar-right .stat:last-child{border-right:0}
