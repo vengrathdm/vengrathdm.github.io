@@ -378,7 +378,10 @@ footer a:hover{color:#fff}
   .archive-sidebar-right{order:1}
   .archive-sidebar-left{order:2}
   .archive-center{order:3}
-  .archive-sidebar-left .controls,.archive-sidebar-right .archive-stats{position:static}
+  .archive-sidebar,
+  .archive-center{width:100%;min-width:0}
+  .archive-sidebar-left .controls,
+  .archive-sidebar-right .archive-stats{position:static;width:100%}
   .archive-sidebar-right .archive-stats{margin:0 0 24px}
   .archive-sidebar-left .controls{margin:0 0 28px}
   .archive-sidebar-right .stats-row{display:flex}
