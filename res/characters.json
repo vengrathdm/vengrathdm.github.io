@@ -4203,7 +4203,8 @@
     "character": "Neldar",
     "player": "keero",
     "campaigns": [
-      "Drakkenheim"
+      "Forge of Fury",
+      "Barber of Silverymoon"
     ],
     "classes": [
       "Fighter"
@@ -4510,7 +4511,7 @@
   {
     "portrait": "/res/portraits/char-0270.webp",
     "character": "Uvdar Emberhood",
-    "player": "Mateusz",
+    "player": "keero",
     "campaigns": [
       "Drakkenheim"
     ],
@@ -4643,7 +4644,7 @@
   {
     "portrait": "/res/portraits/char-0278.webp",
     "character": "Alanis Echorn",
-    "player": "Mateusz",
+    "player": "keero",
     "campaigns": [
       "Shards of the Past Legacy"
     ],
