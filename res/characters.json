@@ -157,7 +157,7 @@
       "Rogue"
     ],
     "race": "Elf",
-    "status": "Martwa",
+    "status": "Wycofana",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": []
@@ -4805,6 +4805,22 @@
     ],
     "race": "Elf",
     "status": "Martwa",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków.",
+    "achievements": []
+  },
+  {
+    "portrait": "/res/portraits/char-0284.webp",
+    "character": "Akarn",
+    "player": "killyox",
+    "campaigns": [
+      "Curse of Strahd"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Human",
+    "status": "Wycofana",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": []
