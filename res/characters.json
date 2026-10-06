@@ -4824,5 +4824,21 @@
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": []
+  },
+  {
+    "portrait": "/res/portraits/char-0285.webp",
+    "character": "Bellatrix",
+    "player": "Bellatrix",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Human",
+    "status": "Porzucona",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków.",
+    "achievements": []
   }
 ]
