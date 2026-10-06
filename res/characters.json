@@ -2231,7 +2231,9 @@
     "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": []
+    "achievements": [
+      "pogromca-smokow"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0130.webp",
