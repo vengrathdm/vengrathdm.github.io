@@ -4718,5 +4718,23 @@
     "Campaign Code": "dragon-of-dampen-depths",
     "Historia": "Brak zapisków.",
     "achievements": []
+  },
+  {
+    "portrait": "/res/portraits/placeholder_ref.webp",
+    "character": "Selene Lunaris",
+    "player": "Jeesso",
+    "campaigns": [
+      "Dragon of Icespire Peak"
+    ],
+    "classes": [
+      "Paladin"
+    ],
+    "race": "Elf",
+    "status": "Zwycięska",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków.",
+    "achievements": [
+      "pogromca-smokow"
+    ]
   }
 ]
