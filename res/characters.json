@@ -4856,5 +4856,53 @@
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": []
+  },
+  {
+    "portrait": "/res/portraits/char-0287.webp",
+    "character": "Eaveth Gathakanakhi",
+    "player": "Barto",
+    "campaigns": [
+      "Heartwell Asylum"
+    ],
+    "classes": [
+      "Fighter"
+    ],
+    "race": "Goliath",
+    "status": "Zwycięska",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków.",
+    "achievements": []
+  },
+  {
+    "portrait": "/res/portraits/char-0288.webp",
+    "character": "Lossiel",
+    "player": "Nessi",
+    "campaigns": [
+      "Heartwell Asylum"
+    ],
+    "classes": [
+      "Druid"
+    ],
+    "race": "Dhampir",
+    "status": "Zwycięska",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków.",
+    "achievements": []
+  },
+  {
+    "portrait": "/res/portraits/char-0289.webp",
+    "character": "Zelia",
+    "player": "Olek",
+    "campaigns": [
+      "Heartwell Asylum"
+    ],
+    "classes": [
+      "Warlock"
+    ],
+    "race": "Tiefling",
+    "status": "Zwycięska",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków.",
+    "achievements": []
   }
 ]
