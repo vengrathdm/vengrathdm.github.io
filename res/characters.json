@@ -4792,5 +4792,21 @@
     "achievements": [
       "van-helsing"
     ]
+  },
+  {
+    "portrait": "/res/portraits/char-0283.webp",
+    "character": "Aurene",
+    "player": "Rivani",
+    "campaigns": [
+      "Drakkenheim"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Elf",
+    "status": "Martwa",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków.",
+    "achievements": []
   }
 ]
