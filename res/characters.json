@@ -563,7 +563,7 @@
   {
     "portrait": "/res/portraits/char-0035.webp",
     "character": "Cindic",
-    "player": "Goku94",
+    "player": "MustHard",
     "campaigns": [
       "Barber of Silverymoon"
     ],
@@ -600,9 +600,10 @@
   {
     "portrait": "/res/portraits/placeholder_ref.webp",
     "character": "Nailef",
-    "player": "MustHard",
+    "player": "Hansik",
     "campaigns": [
-      "Barber of Silverymoon"
+      "Barber of Silverymoon",
+      "Lost Mine of Phandelver"
     ],
     "classes": [
       "Rogue"
