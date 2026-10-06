@@ -598,7 +598,7 @@
     ]
   },
   {
-    "portrait": "/res/portraits/placeholder_ref.webp",
+    "portrait": "/res/portraits/char-0208.webp",
     "character": "Nailef",
     "player": "Hansik",
     "campaigns": [
@@ -3558,22 +3558,6 @@
     ],
     "race": "Human",
     "status": "Porzucona",
-    "Campaign Code": "unset",
-    "Historia": "Brak zapisków.",
-    "achievements": []
-  },
-  {
-    "portrait": "/res/portraits/char-0208.webp",
-    "character": "Nailef",
-    "player": "Hansik",
-    "campaigns": [
-      "Lost Mine of Phandelver"
-    ],
-    "classes": [
-      "Rogue"
-    ],
-    "race": "Human",
-    "status": "Zwycięska",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": []
