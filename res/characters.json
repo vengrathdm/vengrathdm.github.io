@@ -4904,5 +4904,53 @@
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": []
+  },
+  {
+    "portrait": "/res/portraits/char-0290.webp",
+    "character": "Nerthirl Danann",
+    "player": "neiiska",
+    "campaigns": [
+      "Dragons of Stormwreck Isle"
+    ],
+    "classes": [
+      "Druid"
+    ],
+    "race": "Dragonborn",
+    "status": "Zwycięska",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków.",
+    "achievements": []
+  },
+  {
+    "portrait": "/res/portraits/char-0291.webp",
+    "character": "Dilfiri",
+    "player": "neeiiska",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Bard"
+    ],
+    "race": "Elf",
+    "status": "Martwa",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków.",
+    "achievements": []
+  },
+  {
+    "portrait": "/res/portraits/char-0292.webp",
+    "character": "Violet",
+    "player": "neiiiska",
+    "campaigns": [
+      "Menaces of Gloomforest Legacy"
+    ],
+    "classes": [
+      "Bard"
+    ],
+    "race": "Elf",
+    "status": "Martwa",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków.",
+    "achievements": []
   }
 ]
