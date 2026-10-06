@@ -4840,5 +4840,21 @@
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
     "achievements": []
+  },
+  {
+    "portrait": "/res/portraits/char-2086.webp",
+    "character": "Maewyrn Goldbooby",
+    "player": "Koput",
+    "campaigns": [
+      "Barber of Silverymoon"
+    ],
+    "classes": [
+      "Monk"
+    ],
+    "race": "Halfling",
+    "status": "Wycofana",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków.",
+    "achievements": []
   }
 ]
