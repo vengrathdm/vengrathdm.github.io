@@ -2159,12 +2159,10 @@
       "Cleric"
     ],
     "race": "Dwarf",
-    "status": "Zwycięska",
+    "status": "Martwa",
     "Campaign Code": "unset",
     "Historia": "Brak zapisków.",
-    "achievements": [
-      "pogromca-smokow"
-    ]
+    "achievements": []
   },
   {
     "portrait": "/res/portraits/char-0126.webp",
