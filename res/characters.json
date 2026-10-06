@@ -4736,5 +4736,77 @@
     "achievements": [
       "pogromca-smokow"
     ]
+  },
+  {
+    "portrait": "/res/portraits/placeholder_ref.webp",
+    "character": "Talryn",
+    "player": "Artur",
+    "campaigns": [
+      "Posiadłość Lugosi"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Aasimar",
+    "status": "Zwycięska",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków.",
+    "achievements": [
+      "van-helsing"
+    ]
+  },
+  {
+    "portrait": "/res/portraits/placeholder_ref.webp",
+    "character": "Iris",
+    "player": "Rivani",
+    "campaigns": [
+      "Posiadłość Lugosi"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Aasimar",
+    "status": "Zwycięska",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków.",
+    "achievements": [
+      "van-helsing"
+    ]
+  },
+  {
+    "portrait": "/res/portraits/placeholder_ref.webp",
+    "character": "Vir-vir",
+    "player": "keero",
+    "campaigns": [
+      "Posiadłość Lugosi"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Kobold",
+    "status": "Zwycięska",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków.",
+    "achievements": [
+      "van-helsing"
+    ]
+  },
+  {
+    "portrait": "/res/portraits/placeholder_ref.webp",
+    "character": "Keth Thad",
+    "player": "Deus",
+    "campaigns": [
+      "Posiadłość Lugosi"
+    ],
+    "classes": [
+      "Sorcerer"
+    ],
+    "race": "Half-Elf",
+    "status": "Zwycięska",
+    "Campaign Code": "unset",
+    "Historia": "Brak zapisków.",
+    "achievements": [
+      "van-helsing"
+    ]
   }
 ]
