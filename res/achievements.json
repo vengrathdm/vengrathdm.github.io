@@ -3,156 +3,182 @@
     "id": "ostatni-ocalaly",
     "name": "Ostatni Ocalały",
     "icon": "👤",
-    "description": "Bądź jedynym oryginalnym członkiem drużyny, który dotrwa do końca kampanii."
+    "description": "Bądź jedynym oryginalnym członkiem drużyny, który dotrwa do końca kampanii.",
+    "category": "przetrwanie"
   },
   {
     "id": "pomazaniec",
     "name": "Pomazaniec",
     "icon": "🌟",
-    "description": "Zostań wybrany przez bóstwo do wyjątkowej roli."
+    "description": "Zostań wybrany przez bóstwo do wyjątkowej roli.",
+    "category": "fabula"
   },
   {
     "id": "powrocony",
     "name": "Powrócony",
     "icon": "✝️",
-    "description": "Umrzyj i zostań przywrócony do życia."
+    "description": "Umrzyj i zostań przywrócony do życia.",
+    "category": "przemiana"
   },
   {
     "id": "zaprawiony-bohater",
     "name": "Zaprawiony Bohater",
     "icon": "🎖️",
-    "description": "Ukończ więcej niż jedną kampanię."
+    "description": "Ukończ więcej niż jedną kampanię.",
+    "category": "osiagniecia"
   },
   {
     "id": "ten-ktory-nie-powinien-przezyc",
     "name": "Ten, Który Nie Powinien Przeżyć",
     "icon": "🩸",
-    "description": "Przeżyj sytuację, w której śmierć wydawała się nieunikniona."
+    "description": "Przeżyj sytuację, w której śmierć wydawała się nieunikniona.",
+    "category": "przetrwanie"
   },
   {
     "id": "meczennik",
     "name": "Męczennik",
     "icon": "🕯️",
-    "description": "Poświęć swoje życie, aby inni mogli żyć."
+    "description": "Poświęć swoje życie, aby inni mogli żyć.",
+    "category": "poswiecenie"
   },
   {
     "id": "pogromca-smokow",
     "name": "Pogromca Smoków",
     "icon": "🐉",
-    "description": "Zabij smoka."
+    "description": "Zabij smoka.",
+    "category": "walka"
   },
   {
     "id": "krolotworca",
     "name": "Królotwórca",
     "icon": "👑",
-    "description": "Zadecyduj o tym, kto zasiądzie na tronie."
+    "description": "Zadecyduj o tym, kto zasiądzie na tronie.",
+    "category": "fabula"
   },
   {
     "id": "zguba-lisza",
     "name": "Zguba Lisza",
     "icon": "💀",
-    "description": "Zniszcz lisza."
+    "description": "Zniszcz lisza.",
+    "category": "walka"
   },
   {
     "id": "van-helsing",
     "name": "Van Helsing",
     "icon": "🧛‍♂️",
-    "description": "Pokonaj wampira."
+    "description": "Pokonaj wampira.",
+    "category": "walka"
   },
   {
     "id": "bogobojca",
     "name": "Bogobójca",
     "icon": "⚡",
-    "description": "Pokonaj boską istotę."
+    "description": "Pokonaj boską istotę.",
+    "category": "walka"
   },
   {
     "id": "podroznik-w-czasie",
     "name": "Podróżnik w Czasie",
     "icon": "⏳",
-    "description": "Podróżuj w czasie, wbrew jego naturalnemu biegowi."
+    "description": "Podróżuj w czasie, wbrew jego naturalnemu biegowi.",
+    "category": "przemiana"
   },
   {
     "id": "mutant",
     "name": "Mutant",
     "icon": "🧬",
-    "description": "Doznaj mutacji."
+    "description": "Doznaj mutacji.",
+    "category": "przemiana"
   },
   {
     "id": "lamacz-klatw",
     "name": "Łamacz Klątw",
     "icon": "🪄",
-    "description": "Zdejmij większą klątwę."
+    "description": "Zdejmij większą klątwę.",
+    "category": "magia"
   },
   {
     "id": "dluznik-piekiel",
     "name": "Dłużnik Piekieł",
     "icon": "⛤",
-    "description": "Zawrzyj pakt z diabłem."
+    "description": "Zawrzyj pakt z diabłem.",
+    "category": "pakt"
   },
   {
     "id": "mistrz-dwudziestego-kregu",
     "name": "Mistrz Dwudziestego Kręgu",
     "icon": "⭐",
-    "description": "Osiągnij 20. poziom."
+    "description": "Osiągnij 20. poziom.",
+    "category": "osiagniecia"
   },
   {
     "id": "kapitan",
     "name": "Kapitan",
     "icon": "⚓",
-    "description": "Zostań kapitanem statku."
+    "description": "Zostań kapitanem statku.",
+    "category": "wplywy"
   },
   {
     "id": "pan-na-wlosciach",
     "name": "Pan na Włościach",
     "icon": "🏰",
-    "description": "Posiadaj zamek."
+    "description": "Posiadaj zamek.",
+    "category": "majetek"
   },
   {
     "id": "gospodarz",
     "name": "Gospodarz",
     "icon": "🏡",
-    "description": "Posiadaj własne mieszkanie lub dom."
+    "description": "Posiadaj własne mieszkanie lub dom.",
+    "category": "majetek"
   },
   {
     "id": "nosiciel-relikwii",
     "name": "Nosiciel Relikwii",
     "icon": "🗝️",
-    "description": "Posiadaj artefakt niosący znaczenie dla całego świata."
+    "description": "Posiadaj artefakt niosący znaczenie dla całego świata.",
+    "category": "artefakty"
   },
   {
     "id": "legenda",
     "name": "Legenda",
     "icon": "📜",
-    "description": "Dokonaj unikalnie heroicznych czynów."
+    "description": "Dokonaj unikalnie heroicznych czynów.",
+    "category": "osiagniecia"
   },
   {
     "id": "zguba-swiata",
     "name": "Zguba Świata",
     "icon": "☄️",
-    "description": "Doprowadź do zagłady świata lub cywilizacji."
+    "description": "Doprowadź do zagłady świata lub cywilizacji.",
+    "category": "katastrofa"
   },
   {
     "id": "im-in-charge-now",
     "name": "I'm in charge now!",
     "icon": "🗡️",
-    "description": "Pokonaj swojego patrona."
+    "description": "Pokonaj swojego patrona.",
+    "category": "walka"
   },
   {
     "id": "wyniesienie",
     "name": "Wyniesienie",
     "icon": "🔮",
-    "description": "Permanentnie odmień swoją naturę."
+    "description": "Permanentnie odmień swoją naturę.",
+    "category": "przemiana"
   },
   {
     "id": "blazen",
     "name": "Błazen",
     "icon": "🤡",
-    "description": "Zrób lub powiedz coś niezwykle zabawnego"
+    "description": "Zrób lub powiedz coś niezwykle zabawnego",
+    "category": "humor"
   },
   {
     "id": "kolekcjoner-klatw",
     "name": "Kolekcjoner Klątw",
     "icon": "☠️",
-    "description": "Wejdź w posiadanie kilku przeklętych przedmiotów i ponieś konsekwencje ich używania."
+    "description": "Wejdź w posiadanie kilku przeklętych przedmiotów i ponieś konsekwencje ich używania.",
+    "category": "przedmioty"
   }
 ]
