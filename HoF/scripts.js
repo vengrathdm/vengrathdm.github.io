@@ -11,6 +11,7 @@
     filters: {
       player: $("playerFilter"),
       campaign: $("campaignFilter"),
+      module: $("moduleFilter"),
       class: $("classFilter"),
       race: $("raceFilter"),
       status: $("statusFilter"),
@@ -28,6 +29,7 @@
     record.character,
     record.player,
     ...(Array.isArray(record.campaigns) ? record.campaigns : []),
+    ...(Array.isArray(record.modules) ? record.modules : []),
     ...(Array.isArray(record.classes) ? record.classes : []),
     record.race,
     record.status,
@@ -74,6 +76,7 @@
     const records = state.records;
     populateFilter(state.filters.player, records.map(r => r.player), "Wszyscy gracze");
     populateFilter(state.filters.campaign, records.flatMap(r => asArray(r.campaigns)), "Wszystkie kampanie");
+    populateFilter(state.filters.module, records.flatMap(r => asArray(r.modules)), "Wszystkie moduły");
     populateFilter(state.filters.class, records.flatMap(r => asArray(r.classes)), "Wszystkie klasy");
     populateFilter(state.filters.race, records.map(r => r.race), "Wszystkie rasy");
     populateFilter(state.filters.status, records.map(r => r.status), "Wszystkie statusy", displayStatus);
@@ -86,6 +89,7 @@
 
     if (state.filters.player.value && record.player !== state.filters.player.value) return false;
     if (state.filters.campaign.value && !asArray(record.campaigns).includes(state.filters.campaign.value)) return false;
+    if (state.filters.module.value && !asArray(record.modules).includes(state.filters.module.value)) return false;
     if (state.filters.class.value && !asArray(record.classes).includes(state.filters.class.value)) return false;
     if (state.filters.race.value && record.race !== state.filters.race.value) return false;
     if (state.filters.status.value && record.status !== state.filters.status.value) return false;
@@ -247,7 +251,7 @@
 
   function validateData(records, achievements) {
     const errors = [];
-    const required = ["id", "portrait", "character", "player", "campaigns", "classes", "race", "status", "history", "campaignCode", "achievements"];
+    const required = ["id", "portrait", "character", "player", "campaigns", "classes", "race", "status", "history", "modules", "achievements"];
     const achievementIds = new Set(achievements.map(item => item.id));
     const recordIds = new Set();
     const validStatuses = new Set(Object.keys(STATUS_META));
@@ -255,7 +259,7 @@
       required.forEach(key => { if (!(key in record)) errors.push("Postać #" + (index + 1) + ": brak pola " + key); });
       if (recordIds.has(record.id)) errors.push("Powtórzone ID postaci: " + record.id);
       recordIds.add(record.id);
-      if (!Array.isArray(record.campaigns) || !Array.isArray(record.classes) || !Array.isArray(record.achievements)) errors.push("Postać " + (record.id || "#" + (index + 1)) + ": campaigns/classes/achievements muszą być tablicami");
+      if (!Array.isArray(record.campaigns) || !Array.isArray(record.modules) || !Array.isArray(record.classes) || !Array.isArray(record.achievements)) errors.push("Postać " + (record.id || "#" + (index + 1)) + ": campaigns/modules/classes/achievements muszą być tablicami");
       if (!validStatuses.has(record.status)) errors.push("Nieznany status: " + record.status);
       asArray(record.achievements).forEach(id => { if (!achievementIds.has(id)) errors.push("Nieznane osiągnięcie " + id + " w " + record.id); });
     });
