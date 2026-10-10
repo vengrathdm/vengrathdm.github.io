@@ -148,5 +148,11 @@
     "name": "Błazen",
     "icon": "🤡",
     "description": "Zrób lub powiedz coś niezwykle zabawnego"
+  },
+  {
+    "id": "kolekcjoner-klatw",
+    "name": "Kolekcjoner Klątw",
+    "icon": "☠️",
+    "description": "Wejdź w posiadanie kilku przeklętych przedmiotów i ponieś konsekwencje ich używania."
   }
 ]
