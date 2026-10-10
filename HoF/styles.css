@@ -514,3 +514,18 @@ footer a:hover{color:#fff}
   .card-name{text-align:center}
   .pill{font-size:12px}
 }
+
+/* Achievement detail, category and dynamically calculated rarity */
+.achievement.rarity-legendary,.modal-achievement.rarity-legendary{--rarity-color:#d5a8ff}
+.achievement.rarity-rare,.modal-achievement.rarity-rare{--rarity-color:#e3bd72}
+.achievement.rarity-uncommon,.modal-achievement.rarity-uncommon{--rarity-color:#8ec9a0}
+.achievement.rarity-common,.modal-achievement.rarity-common{--rarity-color:#aab3b8}
+.achievement{border-color:color-mix(in srgb,var(--rarity-color,#aab3b8) 55%,transparent)}
+.achievement-tooltip small{display:block;margin-top:5px;color:var(--rarity-color,#aab3b8);font-size:.72rem}
+.modal-achievements{display:grid;gap:10px}
+.modal-achievement{display:flex;align-items:flex-start;gap:12px;padding:12px;border:1px solid color-mix(in srgb,var(--rarity-color,#aab3b8) 45%,var(--line));background:var(--surface2)}
+.modal-achievement-icon{font-size:1.5rem;line-height:1.2}
+.modal-achievement strong{display:block;color:var(--text)}
+.modal-achievement p{margin:4px 0;color:var(--muted)}
+.modal-achievement small{color:var(--rarity-color,#aab3b8);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em}
+.muted-detail{color:var(--muted);font-style:italic}
