@@ -31,6 +31,7 @@
     ...(Array.isArray(record.classes) ? record.classes : []),
     record.race,
     record.status,
+    record.history,
     ...(Array.isArray(record.achievements) ? record.achievements : [])
   ].join(" ");
 
@@ -103,9 +104,10 @@
     return asArray(ids).map(id => {
       const achievement = state.achievements.get(id);
       if (!achievement) return "";
-      return '<div class="achievement" tabindex="0" data-achievement="' + escapeHtml(achievement.id) + '" aria-label="' + escapeHtml(achievement.name) + '">' +
+      const rarity = achievementRarity(achievement.id);
+      return '<div class="achievement rarity-' + rarity + '" tabindex="0" data-achievement="' + escapeHtml(achievement.id) + '" aria-label="' + escapeHtml(achievement.name) + '">' +
         '<span class="achievement-icon" aria-hidden="true">' + escapeHtml(achievement.icon) + '</span>' +
-        '<span class="achievement-tooltip" role="tooltip"><strong>' + escapeHtml(achievement.name) + '</strong><span>' + escapeHtml(achievement.description) + '</span></span>' +
+        '<span class="achievement-tooltip" role="tooltip"><strong>' + escapeHtml(achievement.name) + '</strong><span>' + escapeHtml(achievement.description) + '</span><small>' + escapeHtml(categoryLabel(achievement.category)) + ' · ' + escapeHtml(rarityLabel(rarity)) + '</small></span>' +
       '</div>';
     }).join("");
   }
@@ -129,8 +131,39 @@
     '</article>';
   }
 
-  function updateArchiveStats() {
-    const records = state.records;
+  const CATEGORY_LABELS = {
+    "przetrwanie":"Przetrwanie", "fabula":"Fabuła", "osiagniecia":"Osiągnięcia",
+    "poswiecenie":"Poświęcenie", "walka":"Walka", "przemiana":"Przemiana",
+    "magia":"Magia", "pakt":"Pakty", "wplywy":"Wpływy", "majetek":"Majątek",
+    "artefakty":"Artefakty", "katastrofa":"Katastrofa", "humor":"Humor",
+    "przedmioty":"Przedmioty", "inne":"Inne"
+  };
+  const categoryLabel = category => CATEGORY_LABELS[category] || "Inne";
+  function achievementRarity(id) {
+    const count = state.records.filter(record => asArray(record.achievements).includes(id)).length;
+    if (count <= 1) return "legendary";
+    if (count <= 5) return "rare";
+    if (count <= 15) return "uncommon";
+    return "common";
+  }
+  const rarityLabel = rarity => ({
+    legendary:"Legendarne", rare:"Rzadkie", uncommon:"Niepospolite", common:"Pospolite"
+  })[rarity] || "Nieznana";
+  function achievementDetailMarkup(ids) {
+    const known = asArray(ids).map(id => state.achievements.get(id)).filter(Boolean);
+    if (!known.length) return '<span class="muted-detail">Brak zdobytych osiągnięć</span>';
+    return '<div class="modal-achievements">' + known.map(achievement => {
+      const rarity = achievementRarity(achievement.id);
+      return '<div class="modal-achievement rarity-' + rarity + '">' +
+        '<span class="modal-achievement-icon" aria-hidden="true">' + escapeHtml(achievement.icon) + '</span>' +
+        '<div><strong>' + escapeHtml(achievement.name) + '</strong>' +
+        '<p>' + escapeHtml(achievement.description) + '</p>' +
+        '<small>' + escapeHtml(categoryLabel(achievement.category)) + ' · ' + escapeHtml(rarityLabel(rarity)) + '</small></div>' +
+      '</div>';
+    }).join('') + '</div>';
+  }
+
+  function updateArchiveStats(records = state.records) {
     const unique = values => new Set(values.filter(Boolean)).size;
     const campaigns = records.flatMap(record => asArray(record.campaigns));
     $("statCharacters").textContent = records.length;
@@ -145,6 +178,7 @@
 
   function render() {
     const rows = state.records.filter(matches);
+    updateArchiveStats(rows);
     $("resultCount").textContent = rows.length + " / " + state.records.length;
     $("grid").innerHTML = rows.map((record) => card(record, state.records.indexOf(record))).join("");
     $("empty").hidden = rows.length !== 0;
@@ -175,7 +209,7 @@
   }
 
   function openModal(record) {
-    const history = String(record["Historia"] ?? "Brak zapisków.").trim() || "Brak zapisków.";
+    const history = String(record.history ?? "Brak zapisków.").trim() || "Brak zapisków.";
     $("modalContent").innerHTML =
       '<div class="modal-visual">' +
         '<div class="modal-portrait-wrap" data-status="' + statusMeta(record.status).key + '"><img class="modal-portrait" src="' + escapeHtml(record.portrait) + '" alt="' + escapeHtml(record.character) + '"><span class="status-badge" aria-hidden="true">' + statusMeta(record.status).icon + '</span></div>' +
@@ -190,6 +224,7 @@
           detailItem("Klasy", detailPills(record.classes), true) +
           detailItem("Rasa", escapeHtml(record.race || "Nie podano")) +
           detailItem("Status", '<span class="status">' + escapeHtml(displayStatus(record.status)) + '</span>') +
+          detailItem("Osiągnięcia", achievementDetailMarkup(record.achievements), true) +
         '</div>' +
         '<section class="history">' +
           '<span class="history-label">HISTORIA</span>' +
@@ -210,6 +245,29 @@
     document.body.classList.remove("modal-open");
   }
 
+  function validateData(records, achievements) {
+    const errors = [];
+    const required = ["id", "portrait", "character", "player", "campaigns", "classes", "race", "status", "history", "campaignCode", "achievements"];
+    const achievementIds = new Set(achievements.map(item => item.id));
+    const recordIds = new Set();
+    const validStatuses = new Set(Object.keys(STATUS_META));
+    records.forEach((record, index) => {
+      required.forEach(key => { if (!(key in record)) errors.push("Postać #" + (index + 1) + ": brak pola " + key); });
+      if (recordIds.has(record.id)) errors.push("Powtórzone ID postaci: " + record.id);
+      recordIds.add(record.id);
+      if (!Array.isArray(record.campaigns) || !Array.isArray(record.classes) || !Array.isArray(record.achievements)) errors.push("Postać " + (record.id || "#" + (index + 1)) + ": campaigns/classes/achievements muszą być tablicami");
+      if (!validStatuses.has(record.status)) errors.push("Nieznany status: " + record.status);
+      asArray(record.achievements).forEach(id => { if (!achievementIds.has(id)) errors.push("Nieznane osiągnięcie " + id + " w " + record.id); });
+    });
+    const seen = new Set();
+    achievements.forEach(item => {
+      if (!item.id || !item.name || !item.icon || !item.description || !item.category) errors.push("Niekompletna definicja osiągnięcia: " + (item.id || "(brak ID)"));
+      if (seen.has(item.id)) errors.push("Powtórzone ID osiągnięcia: " + item.id);
+      seen.add(item.id);
+    });
+    return errors.slice(0, 12);
+  }
+
   async function init() {
     try {
       const [response, achievementResponse] = await Promise.all([
@@ -221,6 +279,8 @@
       const [data, achievements] = await Promise.all([response.json(), achievementResponse.json()]);
       if (!Array.isArray(data)) throw new Error("characters.json nie zawiera tablicy rekordów.");
       if (!Array.isArray(achievements)) throw new Error("achievements.json nie zawiera tablicy definicji.");
+      const errors = validateData(data, achievements);
+      if (errors.length) throw new Error("Błędy danych: " + errors.join(" | "));
       state.records = data;
       state.achievements = new Map(achievements.map(achievement => [achievement.id, achievement]));
       setupFilters();
