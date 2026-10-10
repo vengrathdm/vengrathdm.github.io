@@ -14,7 +14,9 @@
     "achievements": [],
     "id": "char-0001",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0002.webp",
@@ -31,7 +33,9 @@
     "achievements": [],
     "id": "char-0002",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0003.webp",
@@ -48,7 +52,9 @@
     "achievements": [],
     "id": "char-0003",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0004.webp",
@@ -65,7 +71,9 @@
     "achievements": [],
     "id": "char-0004",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0005.webp",
@@ -83,7 +91,9 @@
     "achievements": [],
     "id": "char-0005",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0006.webp",
@@ -102,7 +112,9 @@
     ],
     "id": "char-0006",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Irensberg"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0007.webp",
@@ -119,7 +131,9 @@
     "achievements": [],
     "id": "char-0007",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Irensberg"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0008.webp",
@@ -136,7 +150,9 @@
     "achievements": [],
     "id": "char-0008",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Irensberg"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0009.webp",
@@ -153,7 +169,9 @@
     "achievements": [],
     "id": "char-0009",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Irensberg"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0010.webp",
@@ -170,7 +188,9 @@
     "achievements": [],
     "id": "char-0010",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Irensberg"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0011.webp",
@@ -187,7 +207,9 @@
     "achievements": [],
     "id": "char-0011",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Irensberg"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0012.webp",
@@ -207,7 +229,9 @@
     ],
     "id": "char-0012",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Irensberg"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0013.webp",
@@ -229,7 +253,9 @@
     ],
     "id": "char-0013",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Irensberg"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0014.webp",
@@ -248,7 +274,9 @@
     ],
     "id": "char-0014",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Irensberg"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0015.webp",
@@ -265,7 +293,9 @@
     "achievements": [],
     "id": "char-0015",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Blood Red Snow White"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0016.webp",
@@ -282,7 +312,9 @@
     "achievements": [],
     "id": "char-0016",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Blood Red Snow White"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0017.webp",
@@ -299,7 +331,9 @@
     "achievements": [],
     "id": "char-0017",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Blood Red Snow White"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0018.webp",
@@ -316,7 +350,9 @@
     "achievements": [],
     "id": "char-0018",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Blood Red Snow White"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0019.webp",
@@ -333,7 +369,9 @@
     "achievements": [],
     "id": "char-0019",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Sands of Doom"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0020.webp",
@@ -350,7 +388,9 @@
     "achievements": [],
     "id": "char-0020",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Sands of Doom"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0021.webp",
@@ -367,7 +407,9 @@
     "achievements": [],
     "id": "char-0021",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Sands of Doom"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0022.webp",
@@ -384,7 +426,9 @@
     "achievements": [],
     "id": "char-0022",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Sands of Doom"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0023.webp",
@@ -401,7 +445,9 @@
     "achievements": [],
     "id": "char-0023",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Sands of Doom"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0024.webp",
@@ -418,7 +464,9 @@
     "achievements": [],
     "id": "char-0024",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Sands of Doom"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0025.webp",
@@ -435,7 +483,9 @@
     "achievements": [],
     "id": "char-0025",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0026.webp",
@@ -455,7 +505,9 @@
     ],
     "id": "char-0026",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0027.webp",
@@ -472,7 +524,9 @@
     "achievements": [],
     "id": "char-0027",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0028.webp",
@@ -489,7 +543,9 @@
     "achievements": [],
     "id": "char-0028",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0029.webp",
@@ -506,7 +562,9 @@
     "achievements": [],
     "id": "char-0029",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Turn of Fortune's Wheel"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0030.webp",
@@ -525,7 +583,9 @@
     ],
     "id": "char-0030",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Turn of Fortune's Wheel"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0031.webp",
@@ -542,7 +602,9 @@
     "achievements": [],
     "id": "char-0031",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Turn of Fortune's Wheel"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0032.webp",
@@ -559,7 +621,9 @@
     "achievements": [],
     "id": "char-0032",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Turn of Fortune's Wheel"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0033.webp",
@@ -576,7 +640,9 @@
     "achievements": [],
     "id": "char-0033",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Turn of Fortune's Wheel"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0034.webp",
@@ -593,7 +659,9 @@
     "achievements": [],
     "id": "char-0034",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Barber of Silverymoon"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0035.webp",
@@ -612,7 +680,9 @@
     ],
     "id": "char-0035",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Barber of Silverymoon"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0036.webp",
@@ -632,7 +702,10 @@
     ],
     "id": "char-0036",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Barber of Silverymoon",
+      "Lost Mine of Phandelver"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0208.webp",
@@ -650,7 +723,10 @@
     "achievements": [],
     "id": "char-0208",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Barber of Silverymoon",
+      "Lost Mine of Phandelver"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0038.webp",
@@ -667,7 +743,9 @@
     "achievements": [],
     "id": "char-0038",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0039.webp",
@@ -684,7 +762,9 @@
     "achievements": [],
     "id": "char-0039",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0040.webp",
@@ -701,7 +781,9 @@
     "achievements": [],
     "id": "char-0040",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0041.webp",
@@ -718,7 +800,9 @@
     "achievements": [],
     "id": "char-0041",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0042.webp",
@@ -737,7 +821,9 @@
     ],
     "id": "char-0042",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0043.webp",
@@ -756,7 +842,9 @@
     ],
     "id": "char-0043",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0044.webp",
@@ -775,7 +863,9 @@
     ],
     "id": "char-0044",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0045.webp",
@@ -796,7 +886,9 @@
     ],
     "id": "char-0045",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0046.webp",
@@ -817,7 +909,9 @@
     ],
     "id": "char-0046",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0047.webp",
@@ -838,7 +932,9 @@
     ],
     "id": "char-0047",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0048.webp",
@@ -857,7 +953,9 @@
     ],
     "id": "char-0048",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0049.webp",
@@ -876,7 +974,9 @@
     ],
     "id": "char-0049",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0050.webp",
@@ -893,7 +993,9 @@
     "achievements": [],
     "id": "char-0050",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Echtra midst the Sidhe"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0051.webp",
@@ -910,7 +1012,9 @@
     "achievements": [],
     "id": "char-0051",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Echtra midst the Sidhe"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0052.webp",
@@ -927,7 +1031,9 @@
     "achievements": [],
     "id": "char-0052",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Echtra midst the Sidhe"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0053.webp",
@@ -946,7 +1052,9 @@
     ],
     "id": "char-0053",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Echtra midst the Sidhe"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0054.webp",
@@ -965,7 +1073,9 @@
     ],
     "id": "char-0054",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Echtra midst the Sidhe"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0055.webp",
@@ -984,7 +1094,9 @@
     ],
     "id": "char-0055",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Echtra midst the Sidhe"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0056.webp",
@@ -1001,7 +1113,9 @@
     "achievements": [],
     "id": "char-0056",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Ghoul Hour"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0057.webp",
@@ -1018,7 +1132,9 @@
     "achievements": [],
     "id": "char-0057",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Ghoul Hour"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0058.webp",
@@ -1035,7 +1151,9 @@
     "achievements": [],
     "id": "char-0058",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Ghoul Hour"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0059.webp",
@@ -1052,7 +1170,9 @@
     "achievements": [],
     "id": "char-0059",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Ghoul Hour"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0060.webp",
@@ -1069,7 +1189,9 @@
     "achievements": [],
     "id": "char-0060",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Ghoul Hour"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0061.webp",
@@ -1086,7 +1208,9 @@
     "achievements": [],
     "id": "char-0061",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Hand of Glory"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0062.webp",
@@ -1103,7 +1227,9 @@
     "achievements": [],
     "id": "char-0062",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Hand of Glory"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0063.webp",
@@ -1120,7 +1246,9 @@
     "achievements": [],
     "id": "char-0063",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Hand of Glory"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0064.webp",
@@ -1137,7 +1265,9 @@
     "achievements": [],
     "id": "char-0064",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Ku chwale Tyra!"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0065.webp",
@@ -1154,7 +1284,9 @@
     "achievements": [],
     "id": "char-0065",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Ku chwale Tyra!"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0066.webp",
@@ -1173,7 +1305,9 @@
     ],
     "id": "char-0066",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Lost Mine of Phandelver"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0067.webp",
@@ -1190,7 +1324,9 @@
     "achievements": [],
     "id": "char-0067",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0068.webp",
@@ -1207,7 +1343,9 @@
     "achievements": [],
     "id": "char-0068",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0069.webp",
@@ -1224,7 +1362,9 @@
     "achievements": [],
     "id": "char-0069",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0070.webp",
@@ -1243,7 +1383,9 @@
     ],
     "id": "char-0070",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0071.webp",
@@ -1262,7 +1404,9 @@
     ],
     "id": "char-0071",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0072.webp",
@@ -1281,7 +1425,9 @@
     ],
     "id": "char-0072",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0073.webp",
@@ -1300,7 +1446,9 @@
     ],
     "id": "char-0073",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0074.webp",
@@ -1317,7 +1465,9 @@
     "achievements": [],
     "id": "char-0074",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Neverwinter: Intrygi Północnego Wybrzeża Mieczy"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0075.webp",
@@ -1334,7 +1484,9 @@
     "achievements": [],
     "id": "char-0075",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Neverwinter: Intrygi Północnego Wybrzeża Mieczy"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0076.webp",
@@ -1351,7 +1503,9 @@
     "achievements": [],
     "id": "char-0076",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Neverwinter: Intrygi Północnego Wybrzeża Mieczy"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0077.webp",
@@ -1368,7 +1522,9 @@
     "achievements": [],
     "id": "char-0077",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Neverwinter: Intrygi Północnego Wybrzeża Mieczy"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0078.webp",
@@ -1385,7 +1541,9 @@
     "achievements": [],
     "id": "char-0078",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Neverwinter: Intrygi Północnego Wybrzeża Mieczy"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0079.webp",
@@ -1411,7 +1569,9 @@
     ],
     "id": "char-0079",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0080.webp",
@@ -1430,7 +1590,9 @@
     ],
     "id": "char-0080",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0081.webp",
@@ -1453,7 +1615,9 @@
     ],
     "id": "char-0081",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0082.webp",
@@ -1475,7 +1639,9 @@
     ],
     "id": "char-0082",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0083.webp",
@@ -1497,7 +1663,9 @@
     ],
     "id": "char-0083",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0084.webp",
@@ -1516,7 +1684,9 @@
     ],
     "id": "char-0084",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0085.webp",
@@ -1536,7 +1706,9 @@
     ],
     "id": "char-0085",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Rise of Tiamat"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0086.webp",
@@ -1556,7 +1728,9 @@
     ],
     "id": "char-0086",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Rise of Tiamat"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0087.webp",
@@ -1573,7 +1747,9 @@
     "achievements": [],
     "id": "char-0087",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Samotnie Przeciw Jedności"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0088.webp",
@@ -1590,7 +1766,9 @@
     "achievements": [],
     "id": "char-0088",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Samotnie Przeciw Jedności"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0089.webp",
@@ -1607,7 +1785,9 @@
     "achievements": [],
     "id": "char-0089",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Samotnie Przeciw Jedności"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0090.webp",
@@ -1624,7 +1804,9 @@
     "achievements": [],
     "id": "char-0090",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Samotnie Przeciw Jedności"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0091.webp",
@@ -1643,7 +1825,9 @@
     ],
     "id": "char-0091",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shadow of the Sword Coast"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0092.webp",
@@ -1661,7 +1845,9 @@
     "achievements": [],
     "id": "char-0092",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shadow of the Sword Coast"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0093.webp",
@@ -1680,7 +1866,9 @@
     ],
     "id": "char-0093",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shadow of the Sword Coast"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0094.webp",
@@ -1703,7 +1891,10 @@
     ],
     "id": "char-0094",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shadow of the Sword Coast",
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0095.webp",
@@ -1722,7 +1913,9 @@
     ],
     "id": "char-0095",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shadow of the Sword Coast"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0096.webp",
@@ -1741,7 +1934,9 @@
     ],
     "id": "char-0096",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Sons of Azalin"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0097.webp",
@@ -1761,7 +1956,9 @@
     ],
     "id": "char-0097",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Sons of Azalin"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0098.webp",
@@ -1781,7 +1978,9 @@
     ],
     "id": "char-0098",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Sons of Azalin"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0099.webp",
@@ -1801,7 +2000,9 @@
     ],
     "id": "char-0099",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Sons of Azalin"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0100.webp",
@@ -1821,7 +2022,9 @@
     ],
     "id": "char-0100",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Sons of Azalin"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0101.webp",
@@ -1840,7 +2043,9 @@
     ],
     "id": "char-0101",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Sons of Azalin"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0102.webp",
@@ -1857,7 +2062,9 @@
     "achievements": [],
     "id": "char-0102",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "The Sunless Citadel"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0103.webp",
@@ -1874,7 +2081,9 @@
     "achievements": [],
     "id": "char-0103",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "The Sunless Citadel"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0104.webp",
@@ -1891,7 +2100,9 @@
     "achievements": [],
     "id": "char-0104",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "The Sunless Citadel"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0105.webp",
@@ -1908,7 +2119,9 @@
     "achievements": [],
     "id": "char-0105",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "The Sunless Citadel"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0106.webp",
@@ -1926,7 +2139,9 @@
     "achievements": [],
     "id": "char-0106",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Rime of the Frostmaiden"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0107.webp",
@@ -1943,7 +2158,9 @@
     "achievements": [],
     "id": "char-0107",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Heroes of Baldur's Gate"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0108.webp",
@@ -1962,7 +2179,9 @@
     ],
     "id": "char-0108",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Heroes of Baldur's Gate"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0109.webp",
@@ -1979,7 +2198,9 @@
     "achievements": [],
     "id": "char-0109",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Heroes of Baldur's Gate"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0110.webp",
@@ -1996,7 +2217,9 @@
     "achievements": [],
     "id": "char-0110",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Heroes of Baldur's Gate"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0111.webp",
@@ -2013,7 +2236,9 @@
     "achievements": [],
     "id": "char-0111",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Heroes of Baldur's Gate"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0112.webp",
@@ -2033,7 +2258,9 @@
     ],
     "id": "char-0112",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Tomb of Annihilation"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0113.webp",
@@ -2054,7 +2281,9 @@
     ],
     "id": "char-0113",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Tomb of Annihilation"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0114.webp",
@@ -2076,7 +2305,9 @@
     ],
     "id": "char-0114",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Tomb of Annihilation"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0115.webp",
@@ -2097,7 +2328,9 @@
     ],
     "id": "char-0115",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Turn Back the Endless Night"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0116.webp",
@@ -2118,7 +2351,9 @@
     ],
     "id": "char-0116",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Turn Back the Endless Night"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0117.webp",
@@ -2139,7 +2374,9 @@
     ],
     "id": "char-0117",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Turn Back the Endless Night"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0118.webp",
@@ -2160,7 +2397,9 @@
     ],
     "id": "char-0118",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Turn Back the Endless Night"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0119.webp",
@@ -2181,7 +2420,9 @@
     ],
     "id": "char-0119",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Turn Back the Endless Night"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0120.webp",
@@ -2198,7 +2439,9 @@
     "achievements": [],
     "id": "char-0120",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Princes of Heartwell"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0121.webp",
@@ -2216,7 +2459,9 @@
     "achievements": [],
     "id": "char-0121",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Princes of Heartwell"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0122.webp",
@@ -2233,7 +2478,9 @@
     "achievements": [],
     "id": "char-0122",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Princes of Heartwell"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0123.webp",
@@ -2250,7 +2497,9 @@
     "achievements": [],
     "id": "char-0123",
     "history": "Alderik Erikson z klanu Baltimore był pierworodnym swojego ojca Erika, ale z pewnością nie jego jedynym dzieckiem. Mając liczne rodzeństwo, Alderik mierzył się jednak z oczekiwaniami będącymi częścią bycia najstarszym bratem w rodzinie oraz dziedzicem całego klanu. Wiele od niego wymagano, często w imię zasad i tradycji. Jedną z nich było wybranie specjalizacji - każdy w klanie Baltimore miał obowiązek wybrać rzemiosło, które będzie praktykował do perfekcji. Mogła to być sztuka wojenna, rzeźbiarstwo, nawet gra na instrumencie, tak długo jak się oddawał w całości wybranej dziedzinie. Jednak Alderik posiadał niezwykle uniwersalny umysł, który sprawiał, że niezależnie od tego jakie narzędzia chwycił w dłoń, szybko stawał się w nich prawdziwym specjalistą. Jego pradziadek, Alpherik \"Srebrny\" nazywał to iskrą - formą magii jaką posiadał, która w połączeniu z jego ścisłym umsyłem i talentem sprawiała, że wielkość była mu pisana od urodzin. Chociaż Alderik wolał aby cała zasługa płynęła z jego naturalnej biegłości, faktem było, że był on w stanie korzystać z tej mocy - proponowano mu nawet zostanie czarodziejem jako wybór swojej drogi. Jego serce pragnęło jednak pracy rąk, kucia stali oraz opracowywania mechanizmów bardziej, niż zaczytywania się w księgach. Ale czas jego 50-tych urodzin nachodził, a wraz z nim wybór. Wybrał więc jedyną dostępną dla siebie opcję - uciekł z rodzinnego miasta aby na własną rękę zostać największym rzemieślnikiem, inżynierem i konstruktorem w historii Faerun.  Podróżował wielokrotnie z karawanami kupców oraz poszukiwaczami przygód, szukajac swojego miejsca, gdzie jego talenty będa docenione. Mogąc nareszcie skupić się na sobie poczuł się w końcu doceniony za swe zdolności. Niektórym jednak nie w smak były sekrety jakie ukrywał i niejednokrotnie próbowano mu odebrać te radosne chwile smakowania życia i stawiania własnych warunków. Chaos dnia codziennego i dresczyk emocji, kiedy balansował na krawędzi prawa zdawał się dla niego równie uzależniający co mocny trunek i towarzystwo gładkich dam, a kontakty z półświatkiem często skutkowały dobrymi kontraktami i dostępem do materiałów zakazanych w obrocie. Oczywiście, nie zawsze bywało kolorowo... kilka razy otarł się zatrzymanie, czasami próbowano go zniewolić, ale łudem szcześcia zawsze wychodzi obronną ręką. Przynajmniej do pewnego czasu, kiedy pewien Lord zażyczył sobie od niego wykonania armii stworzonej z magicznych konstruktów. Alderik odmówił, wiedząc że taka praca zajmie dziesięciolecia w najlepszym wypadku. Nie miał zamiaru zakopywac się w monotonnej pracy od jakiej uciekł, kiedy cały świat czekał na jego odkrycia i dzieła. Lord jednak nie miał zamiaru przyjąć odpowiedzi odmownej i zadecydował skazać Alderika na śmierć, pod pretekstem fałszywych oskrżeń o planowanie zamachu stanu. Upartość krasnoludów nie zna granic, więc Alderik nie miał zamiaru zmienić zdania - nie miał jednak tez nikogo, kto stanąłby w jego obronie na czas, aż do czasu nocnego spotkania pewnej osoby w swojej osamotnionej celi - [...]. Ciekawa wymiana zdań zakończyła się propzycją przybysza \"Czy uwolnić Cię z tej sytuacji?\". Alderik zgodził się, pewien że na wolności łatwiej będzie mu spłącić zaciągnięty dług. [...] sprawił cud i  następnego dnia, Alderika zwyczajnie wypuszczono. Ich drogi jednak nie rozeszły się od razu, ale splatały wielokrotnie przez następne lata, zmieniając czystą relację handlową w przyjaźń, której krasnolud mógł być pewien. Nie zapominając jednak, o długu jako zaciągnął, zawsze czekał na okazję aby go spłacić i zdawało się, że czas ten nadszedł, kiedy odnalazł go list starego przyjaciela aby spotkać się ponownie w karczmie \"Nigdzie\". Nikt nie przypuszczał, jak ten wieczór jednak miał się zakończyć dla Alderika...",
-    "campaignCode": "unset"
+    "modules": [
+      "Princes of Heartwell"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0124.webp",
@@ -2271,7 +2520,9 @@
     ],
     "id": "char-0124",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "The Unlikely Five"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0125.webp",
@@ -2288,7 +2539,9 @@
     "achievements": [],
     "id": "char-0125",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dragon of Icespire Peak"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0126.webp",
@@ -2310,7 +2563,9 @@
     ],
     "id": "char-0126",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "The Unlikely Five"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0127.webp",
@@ -2327,7 +2582,9 @@
     "achievements": [],
     "id": "char-0127",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Echtra midst the Sidhe"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0128.webp",
@@ -2344,7 +2601,9 @@
     "achievements": [],
     "id": "char-0128",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Tomb of Annihilation"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0129.webp",
@@ -2363,7 +2622,9 @@
     ],
     "id": "char-0129",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dragon of Icespire Peak"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0130.webp",
@@ -2386,7 +2647,9 @@
     ],
     "id": "char-0130",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "The Unlikely Five"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0131.webp",
@@ -2403,7 +2666,9 @@
     "achievements": [],
     "id": "char-0131",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0132.webp",
@@ -2422,7 +2687,9 @@
     ],
     "id": "char-0132",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dragon of Icespire Peak"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0133.webp",
@@ -2439,7 +2706,9 @@
     "achievements": [],
     "id": "char-0133",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Lost Mine of Phandelver"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0134.webp",
@@ -2456,7 +2725,9 @@
     "achievements": [],
     "id": "char-0134",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0135.webp",
@@ -2478,7 +2749,9 @@
     ],
     "id": "char-0135",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "The Unlikely Five"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0136.webp",
@@ -2495,7 +2768,9 @@
     "achievements": [],
     "id": "char-0136",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Tomb of Annihilation"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0137.webp",
@@ -2514,7 +2789,9 @@
     ],
     "id": "char-0137",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Tomb of Annihilation"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0138.webp",
@@ -2531,7 +2808,9 @@
     "achievements": [],
     "id": "char-0138",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Rime of the Frostmaiden"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0139.webp",
@@ -2550,7 +2829,9 @@
     ],
     "id": "char-0139",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0140.webp",
@@ -2567,7 +2848,9 @@
     "achievements": [],
     "id": "char-0140",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0141.webp",
@@ -2584,7 +2867,9 @@
     "achievements": [],
     "id": "char-0141",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0142.webp",
@@ -2606,7 +2891,10 @@
     ],
     "id": "char-0142",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Lost Mine of Phandelver",
+      "Rise of Tiamat"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0143.webp",
@@ -2625,7 +2913,9 @@
     ],
     "id": "char-0143",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0144.webp",
@@ -2644,7 +2934,9 @@
     ],
     "id": "char-0144",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Lost Mine of Phandelver"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0145.webp",
@@ -2661,7 +2953,9 @@
     "achievements": [],
     "id": "char-0145",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0146.webp",
@@ -2678,7 +2972,9 @@
     "achievements": [],
     "id": "char-0146",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0147.webp",
@@ -2695,7 +2991,9 @@
     "achievements": [],
     "id": "char-0147",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0148.webp",
@@ -2715,7 +3013,9 @@
     ],
     "id": "char-0148",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0149.webp",
@@ -2732,7 +3032,9 @@
     "achievements": [],
     "id": "char-0149",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0150.webp",
@@ -2749,7 +3051,9 @@
     "achievements": [],
     "id": "char-0150",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0151.webp",
@@ -2767,7 +3071,9 @@
     "achievements": [],
     "id": "char-0151",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0152.webp",
@@ -2784,7 +3090,9 @@
     "achievements": [],
     "id": "char-0152",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Ku chwale Tyra!"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0153.webp",
@@ -2801,7 +3109,9 @@
     "achievements": [],
     "id": "char-0153",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0154.webp",
@@ -2818,7 +3128,9 @@
     "achievements": [],
     "id": "char-0154",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Ku chwale Tyra!"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0155.webp",
@@ -2835,7 +3147,9 @@
     "achievements": [],
     "id": "char-0155",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0156.webp",
@@ -2852,7 +3166,9 @@
     "achievements": [],
     "id": "char-0156",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0157.webp",
@@ -2869,7 +3185,9 @@
     "achievements": [],
     "id": "char-0157",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0158.webp",
@@ -2886,7 +3204,9 @@
     "achievements": [],
     "id": "char-0158",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0159.webp",
@@ -2903,7 +3223,9 @@
     "achievements": [],
     "id": "char-0159",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0160.webp",
@@ -2920,7 +3242,9 @@
     "achievements": [],
     "id": "char-0160",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0161.webp",
@@ -2937,7 +3261,9 @@
     "achievements": [],
     "id": "char-0161",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0162.webp",
@@ -2954,7 +3280,9 @@
     "achievements": [],
     "id": "char-0162",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0163.webp",
@@ -2971,7 +3299,9 @@
     "achievements": [],
     "id": "char-0163",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0164.webp",
@@ -2988,7 +3318,9 @@
     "achievements": [],
     "id": "char-0164",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "W Pogoni za PiórOwcą"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0165.webp",
@@ -3005,7 +3337,9 @@
     "achievements": [],
     "id": "char-0165",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0166.webp",
@@ -3024,7 +3358,9 @@
     ],
     "id": "char-0166",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Mayhem in Earthspur Mines"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0167.webp",
@@ -3045,7 +3381,10 @@
     ],
     "id": "char-0167",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Forge of Fury",
+      "Barber of Silverymoon"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0168.webp",
@@ -3062,7 +3401,9 @@
     "achievements": [],
     "id": "char-0168",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "The Sunless Citadel"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0169.webp",
@@ -3081,7 +3422,9 @@
     ],
     "id": "char-0169",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0170.webp",
@@ -3098,7 +3441,9 @@
     "achievements": [],
     "id": "char-0170",
     "history": "To była historia szczęśliwej miłości. Ona była bogatą posiadaczką ziemską ze Srebrnych Marchii, a on elfim poszukiwaczem przygód i odkrywcą, który swą trzystuletnią tułaczkę postanowił zakończyć właśnie w jej progach. Delsaran Olyrnn oraz Diana Whitespire przez kilkanaście lat cieszyli się spokojem i sielanką, a w międzyczasie na świat przyszła ich córka - Aribeth. Półelfia dziewczynka, jakich w Luruar było wiele po matce odziedziczyła bystry umysł i burzę ciemnych loków, a po ojcu nieposkromioną ciekawość świata i odległych krain. Aribeth Cassandra Olyrnn-Whitespire dorastała w dostatku i bez niepokojów - każdą z jej potrzeb życiowych zaspokajała matka oraz nieskończone zastępy sługów i pracowników. Czas umilały jej regularne wycieczki z ojcem do Silverymoon, zamieszkanej przez ludzi i elfy stolicy Luruaru. Ze względu na szybkość myśli i naturalne talenty już w wieku kilkunastu lat zaczęła pobierać nauki u elfich mistrzów magii, ucząc się kontrolować siły i energie dla większości niewidoczne okiem. Ojciec Aribeth mimo miłości, jaką darzył żonę oraz córkę wciąż nocami marzył o odległych horyzontach i krainach, które skrywają w sobie mroczne sekrety i tajemnice. Coraz częściej zahaczał o tawerny lubiane przez poszukiwaczy przygód, słuchając o nowych odkryciach geograficznych, o konfliktach i niepokojach oraz o wyprawach, które przyniosły śmiałkom skarby, sławę i magiczne artefakty. Delsaran coraz częściej swe tęsknoty przenosił na córkę, opowiadając jej o swoich dawnych przygodach i krainach, które zwiedził. Szkolenie magiczne zostało poszerzone o znajomość niezwykłych językach. Aribeth chłonęła jego historie niczym wyschnięty kwiat, który właśnie ktoś podlał. W jej młodym, zapalczywym umyśle szybko narodziły się myśli o porzuceniu bezpiecznej farmy i poszukiwaniu przygód. Gdy Aribeth miała 18 lat, jej ojciec zniknął bez słowa. Pozostawił po sobie jedynie chaos w gabinecie, stosy porozrzucanych ksiąg i niemal cały swój dobytek. Zniknął jedynie jego łuk oraz kilka magicznych drobiazgów. Diana pogrążyła się w rozpaczy, a Aribeth postanowiła być silna dla matki. Porzuciła nauki magii na rzecz rachunków sprzedaży, rozliczeń wypłat i kalendarza upraw. Przejęła prowadzenie rodzinnej farmy, starając się zapewnić matce byt, kiedy ta coraz częściej nie wychodziła nawet ze swych komnat. Taki stan rzeczy trwał przez następnych dziesięć lat, podczas których Aribeth od rana do wieczora pracowała i zarządzała. Po zmroku analizowała księgi ojca, starając się ustalić, gdzie mógł się udać. Coraz częściej zdarzało jej się również wymykać poza rodzinne gospodarstwo i znikać w tawernach Silverymoon, gdzie zbierała wieści ze świata. Coraz częściej docierały do niej pogłoski o lądzie zwanym Antarriah, który ponoć miał odkrywcom wiele do zaoferowania. Ląd ten pojawiał się nie raz również w zapiskach ojca. Po dziesięciu latach Aribeth znalazła trop. W sercu młodej, ambitnej kobiety wykiełkowało ziarenko nadziei, a budowany od lat pancerz zaciętości i rozgoryczenia zaczął powoli pękać, gdy usilna potrzeba zaspokojenia ciekawości nabierała siły. Tymczasem lady Diana Whitespire zaczęła coraz częściej opuszczać sypialnię. Stan rodzinnego majątku nie zaprzątał jednak jej głowy - wyprawiała się za to chętnie na rajdy po lokalnych krawcach, jubilerach i alchemikach specjalizujących się w balsamach i pachnidłach. Z zaciekłością godną orczej kompanii łupieżczej znosiła do posiadłości torby pełne nowych zdobyczy. Coraz częściej zwiedzała wyszynki i zajazdy w lokalnych wioskach i miastach w towarzystwie służby, a jej celem było poszukiwanie nowego męża. Nawet jako kobieta po pięćdziesiątce ze względu na swój pokaźny majątek oraz wciąż nieprzemijającą urodę zdołała szybko przyciągnąć wielu adoratorów. Diana zakochała się dość szybko w pochodzącym z Everlundu rycerzu Reynoldzie Hightowerze, który sam przedstawiał się jej jako człowiek zamożny, honorowy i zasłużony w obronie kraju poprzez wieloletnią przynależność do Armii z Doliny. Szybko znalazła dla niego miejsce w swoim domu i sercu. Zwiedzali razem bale możnych i uroczystości, chodzili na drogie obiady, a Sir Reynold coraz częściej zostawał w posiadłości Whitespire’ów na kilka lub kilkanaście dni. Aribeth nieco sceptycznie patrzyła na nowego wybranka swej matki, jednak dla dobra rodzicielki postanowiła zignorować wiele sygnałów ostrzegawczych. Jej znajomi z Silverymoon donosili jej o tym, że Hightower pod płaszczykiem szarmanckości skrywa bukiet wad - brutalność, niecierpliwość oraz umiłowanie alkoholu i hazardu. Nie minął nawet rok, kiedy nowo rozkwitła miłość została potwierdzona ślubem. Diana zdawała się być pogodzona z myślą, że jej dawny mąż prawdopodobnie nie żyje - taki scenariusz nabierał wiarygodności również w świetle ostatnich wieści ze świata. Coraz częściej mówiono o wzmożonej aktywności band orków, które zdawały się zapominać o pokoju pomiędzy ich nowo powstałym państwem a srebrnymi marchiami. Lokalni możni i rycerze ginęli w niewyjaśnionych okolicznościach, a wieści o dużych, zbrojnych oddziałach i splądrowanych wioskach powoli stawały codziennością. Sir Reynold wykorzystał moment, aby złożyć lady Dianie propozycję - należało poszukać odpowiedniego małżonka dla jej córki. Odpowiednim kandydatem miał być jeden ze starszych synów potężnego, lecz owianego złą sławą rodu Goldsongów z miasta Sundabar. Diana szybko przystała na ten pomysł, nie wiedząc jednak, że w planowanym dla jej córki małżeństwie było ukryte dno. Pogłoski o hazardowych słabościach Reynolda były w pełni prawdziwe, a u rodu Goldsongów miał wielki dług. Wydanie Aribeth za mąż miało być transakcją czysto handlową, a majątek Whitespire’ów miał posłużyć do spłaty należności. Nie wiedział jednak o tym, że Aribeth sama była dość dobra w zbieraniu informacji i odkryła jego plan, zanim został on zrealizowany. Jej matka jednak nie przyjmowała do wiadomości nawet słowa o złych intencjach jej męża. Młoda półelfka stwierdziła, że nadszedł czas, aby sama zadecydowała o własnym życiu. Odświeżyła więc magiczną księgę ucznia, zebrała kilka pamiątek i kosztowności, które łatwo było sprzedać i, dość ironicznie, poszła w ślady ojca, znikając z domu pod osłoną nocy. I tak oto Aribeth Cassandra Olyrnn-Whitespire stała się Cass - najemniczką do wynajęcia. Przećwiczyła kilka czarów w praktyce, pracując jako ochrona karawany. Za ostatnie pieniądze zakupiła bilet na statek Aid Namron płynący do miasta Sorsaler, na którego pokład wsiada w Luskanie - mieście, w którym nikt nie zadaje pytań. Wiedziała jedno: zrobi wszystko, aby odnaleźć swojego zaginionego ojca i z jego pomocą przemówić matce do rozsądku. A jeśli jej się to nie uda, wróci do domu dopiero wtedy, gdy będzie pewna, że nie ma w Srebrnych Marchiach takich sił, które mogą jej narzucić swoją wolę.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0171.webp",
@@ -3115,7 +3460,9 @@
     "achievements": [],
     "id": "char-0171",
     "history": "Faylen to wieczna podróżniczka, niespokojna dusza, która znacznie lepiej czuje się w lesie, pośród roślin i zwierząt niż w ludzkich osadach. Jako łowczyni wciąż szuka wyzwań i stara się polować na bestie, które zagrażają naturalnemu porządkowi. Ten cel zaprowadził ją do Phandalin, gdzie krążą pogłoski o smoku.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dragon of Icespire Peak"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0172.webp",
@@ -3132,7 +3479,9 @@
     "achievements": [],
     "id": "char-0172",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dragon of Icespire Peak"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0173.webp",
@@ -3149,7 +3498,9 @@
     "achievements": [],
     "id": "char-0173",
     "history": "Stukot kopyt po bruku. Krew zalewająca oczy. Przerażone oczy dziecka, których matczyna dłoń nie zdążyła zasłonić. Życie nigdy nie było łatwe dla Zwady. Jako mała i nieporadna sierota, która często dawała się porwać emocjom nie potrafiła znaleźć sobie nikogo bliskiego - nawet w Clearcoast, gdzie rzadko brakowało miejsca dla najbiedniejszych. Nie pomagały jej w tym z pewnością mroczne siły, które w niej drzemały i często dawały o sobie znać, przyciągając tym samym zainteresowanych jej talentami patronów z półświatka. Mimo braku rasowej stygmy wobec diabelstw w tym regionie kłopoty zdawały się być jej przeznaczeniem. Imię nadali jej kapłani Pelora, którzy od czasu do czasu pozwalali jej żebrać o jedzenie. Nie wiedziała jeszcze, jak bliski jej ścieżce kariery będzie ten pseudonim. Stukot kopyt po bruku. Koszmarny ból wybitego barku, który przypominał o sobie przy odbijaniu się od licznych wybojów ulicy. Kiedy Zwada poznała Wróżbę, życie stało się lepsze. Dwie buntownicze nastolatki, które miały skłonność do agresji szybko połączyła przyjaźń, która miała trwać aż do śmierci. Siła i refleks Wróżby w połączeniu z magicznymi sztuczkami i bezczelnością Zwady szybko pozwoliły im zaznaczyć swoją obecność na rzecznych i lądowych traktach w okolicach Clearcoast. Młodzi bandyci ciągnęli do nich niczym ćmy do lampy oliwnej. Kradzieże, napady i brutalność szybko pozwoliła im zapracować na renomę i niejeden list gończy. To wszystko dla Zwady mogło trwać wiecznie - Wróżba jednak miała inna ambicje. Stukot kopyt po bruku. Biała kość wystająca ze złamanej nogi spiętej mocnym, skórzanym pasem. Głosy wzywające straż. Szary Człowiek pojawił się znikąd. Schludny, starszy pan wszedł niczym stały bywalec do obozu bandytów. Mamił ich obietnicami bogactwa, własnej gildii w Sorsaler, armią magów i zbrojnych ramion. \"To pułapka\", mówiła Zwada. \"Wykorzysta nas, a potem pozabija\". Wróżba niestety już nie słuchała. Rano wyruszyli do Sorsaler, na spotkanie z tajemniczym patronem, który malował przed nimi obrazy przedstawiające świetlaną przestępczą przyszłość. Stukot kopyt po bruku. Ślad krwi, który pozostawiały rozdarte kamiennym traktem plecy, wycierany brunatnym zlepkiem włosów i resztkami koszuli. Łoskot garnków, które z przerażenia upuścił kupiec rozkładający swój kram. Nieufność pomiędzy Alexandrem Grisseaux a Zwadą kwitła niczym mięsożerny kwiat, z czasem przeradzając się w nienawiść z jej strony - i pogardę z jego. Wróżba była zapatrzona w swojego nowego sponsora, słuchając wszystkich jego podszeptów. Pozwalał jej na agresję i brutalne pokazy siły. Nie kręcił nosem, gdy po raz kolejny pozwoliła sobie na skatowanie jednego z dawnych kamratów za krzywe spojrzenie. Wróżba nie chciała już słuchać Zwady ani spędzać z nią czasu - upojona nową potęgą wydawała już tylko polecenia. Młoda zaklinaczka wiedziała, że dobre czasy już minęły i trudno będzie jej odzyskać przyjaciółkę, jeśli nie rozgryzie Szarego Człowieka i nie ujawni jego złych zamiarów wobec świeżo zatrudnionych bandytów. Stukot kopyt po bruku. Świat tonący w szarej, bolesnej mgle, która niechybnie oznaczała koniec. Był późny, zimowy wieczór, kiedy śledziła Grisseaux po ciemnych uliczkach Sorsaler. Wydawał się jej nie słyszeć, gdy szedł zatopiony w swoich myślach, a jego eleganckie trzewiki skrzypiały na świeżym śniegu. Była zbyt pewna siebie - i to był prawdopodobnie jej ostatni błąd w życiu. Nie zdążyła nawet rzucić zaklęcia, gdy ciężki młot spadł na jej ramię, wytrącając z ręki kryształ. Topory i sztylety dokończyły dzieła. Wlekli ją ledwo żywą przez miasto, gdy jej własna magia, jak na ironię, nie pozwoliła jej przedwcześnie wyzionąć ducha. W oczach Wróżby nie było zrozumienia ani wybaczenia. Własnoręcznie przywiązała ledwo żywą Zwadę do przerażonego konia. Diabelstwo ledwie słyszało jej słowa, gdy dawna przyjaciółka mówiła o zdradzie i spiskowaniu przeciwko niej. Nie miała nawet siły, aby zaprzeczać. Wiedziała, że jej los był przypieczętowany. Ostatnim dźwiękiem, który jej towarzyszył był przeklęty stukot kopyt po bruku, gdy czarna klacz ciągnęła jej dogorywające ciało przez miasto. W Sorsaler nastawał właśnie nowy dzień, jednak Zwadzie już nie było dane się nim cieszyć. Nie spodziewała się, że jeszcze kiedykolwiek się obudzi. A na pewno, że będzie to w świątyni Tyra. Okazało się, że pewien tajemniczy sponsor postanowił zagwarantować jej drugą szansę. Miał w tym oczywiście swój interes - według niego również działania Alexandra Grisseaux w Sorsaler muszą dobiec końca. Pech chciał, że wraz ze wskrzeszeniem przyplątał się do niej niespodziewany towarzysz - kapłana Tyra, Styxa, który z niewiadomych powodów stwierdził, że musi ją nawrócić na ścieżkę prawości. Postanowiła skorzystać z tego tymczasowego sojuszu i zbrojnego ramienia. Chwilowo zrobi wszystko, aby rozliczyć się z Szarym Człowiekiem i Wróżbą. Oczywiście po tym, jak już zwiedzi kilka spelun i przypomni Sorsaler o swoim istnieniu.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0174.webp",
@@ -3166,7 +3517,9 @@
     "achievements": [],
     "id": "char-0174",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0175.webp",
@@ -3183,7 +3536,9 @@
     "achievements": [],
     "id": "char-0175",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0176.webp",
@@ -3202,7 +3557,9 @@
     ],
     "id": "char-0176",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0177.webp",
@@ -3219,7 +3576,9 @@
     "achievements": [],
     "id": "char-0177",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0178.webp",
@@ -3236,7 +3595,9 @@
     "achievements": [],
     "id": "char-0178",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0179.webp",
@@ -3253,7 +3614,9 @@
     "achievements": [],
     "id": "char-0179",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0180.webp",
@@ -3270,7 +3633,9 @@
     "achievements": [],
     "id": "char-0180",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0181.webp",
@@ -3287,7 +3652,9 @@
     "achievements": [],
     "id": "char-0181",
     "history": "Brak zapisków.",
-    "campaignCode": "Lost Mine Of Pahndelver"
+    "modules": [
+      "Lost Mine of Phandelver"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0182.webp",
@@ -3307,7 +3674,9 @@
     ],
     "id": "char-0182",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0183.webp",
@@ -3324,7 +3693,9 @@
     "achievements": [],
     "id": "char-0183",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Kampania Nieznana"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0184.webp",
@@ -3344,7 +3715,9 @@
     ],
     "id": "char-0184",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0185.webp",
@@ -3361,7 +3734,9 @@
     "achievements": [],
     "id": "char-0185",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Lost Mine of Phandelver"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0186.webp",
@@ -3378,7 +3753,9 @@
     "achievements": [],
     "id": "char-0186",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0187.webp",
@@ -3395,7 +3772,9 @@
     "achievements": [],
     "id": "char-0187",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0188.webp",
@@ -3412,7 +3791,9 @@
     "achievements": [],
     "id": "char-0188",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0189.webp",
@@ -3434,7 +3815,9 @@
     ],
     "id": "char-0189",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Tomb of Annihilation"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0190.webp",
@@ -3453,7 +3836,9 @@
     ],
     "id": "char-0190",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dragon of Icespire Peak"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0191.webp",
@@ -3470,7 +3855,9 @@
     "achievements": [],
     "id": "char-0191",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Rime of the Frostmaiden"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0192.webp",
@@ -3492,7 +3879,11 @@
     ],
     "id": "char-0192",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Forge of Fury",
+      "Barber of Silverymoon",
+      "The Sunless Citadel"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0193.webp",
@@ -3511,7 +3902,9 @@
     ],
     "id": "char-0193",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0194.webp",
@@ -3528,7 +3921,9 @@
     "achievements": [],
     "id": "char-0194",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0195.webp",
@@ -3547,7 +3942,9 @@
     ],
     "id": "char-0195",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Tomb of Annihilation"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0196.webp",
@@ -3566,7 +3963,9 @@
     ],
     "id": "char-0196",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0197.webp",
@@ -3585,7 +3984,9 @@
     ],
     "id": "char-0197",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0198.webp",
@@ -3602,7 +4003,9 @@
     "achievements": [],
     "id": "char-0198",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Neverwinter: Intrygi Północnego Wybrzeża Mieczy"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0199.webp",
@@ -3621,7 +4024,9 @@
     ],
     "id": "char-0199",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dragon of Icespire Peak"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0200.webp",
@@ -3642,7 +4047,9 @@
     ],
     "id": "char-0200",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "The Unlikely Five"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0201.webp",
@@ -3662,7 +4069,9 @@
     ],
     "id": "char-0201",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Tomb of Annihilation"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0202.webp",
@@ -3682,7 +4091,9 @@
     ],
     "id": "char-0202",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0203.webp",
@@ -3699,7 +4110,9 @@
     "achievements": [],
     "id": "char-0203",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0204.webp",
@@ -3716,7 +4129,9 @@
     "achievements": [],
     "id": "char-0204",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Ghoul Hour"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0205.webp",
@@ -3735,7 +4150,9 @@
     ],
     "id": "char-0205",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0206.webp",
@@ -3752,7 +4169,9 @@
     "achievements": [],
     "id": "char-0206",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Rime of the Frostmaiden"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0207.webp",
@@ -3769,7 +4188,9 @@
     "achievements": [],
     "id": "char-0207",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0209.webp",
@@ -3786,7 +4207,9 @@
     "achievements": [],
     "id": "char-0209",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0210.webp",
@@ -3803,7 +4226,9 @@
     "achievements": [],
     "id": "char-0210",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0211.webp",
@@ -3820,7 +4245,9 @@
     "achievements": [],
     "id": "char-0211",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dragon of Icespire Peak"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0212.webp",
@@ -3837,7 +4264,9 @@
     "achievements": [],
     "id": "char-0212",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0213.webp",
@@ -3854,7 +4283,9 @@
     "achievements": [],
     "id": "char-0213",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Irensberg"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0214.webp",
@@ -3872,7 +4303,9 @@
     "achievements": [],
     "id": "char-0214",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Echtra midst the Sidhe"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0215.webp",
@@ -3889,7 +4322,9 @@
     "achievements": [],
     "id": "char-0215",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Echtra midst the Sidhe"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0216.webp",
@@ -3906,7 +4341,9 @@
     "achievements": [],
     "id": "char-0216",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Rime of the Frostmaiden"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0217.webp",
@@ -3923,7 +4360,9 @@
     "achievements": [],
     "id": "char-0217",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Echtra midst the Sidhe"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0218.webp",
@@ -3940,7 +4379,9 @@
     "achievements": [],
     "id": "char-0218",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Echtra midst the Sidhe"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0219.webp",
@@ -3957,7 +4398,9 @@
     "achievements": [],
     "id": "char-0219",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Echtra midst the Sidhe"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0220.webp",
@@ -3974,7 +4417,9 @@
     "achievements": [],
     "id": "char-0220",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Heroes of Baldur's Gate"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0221.webp",
@@ -3991,7 +4436,9 @@
     "achievements": [],
     "id": "char-0221",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0222.webp",
@@ -4008,7 +4455,9 @@
     "achievements": [],
     "id": "char-0222",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0223.webp",
@@ -4025,7 +4474,9 @@
     "achievements": [],
     "id": "char-0223",
     "history": "M'rissi pchana przez swą kocią ciekawość, opuściła klan, aby zwiedzać świat i zdobyć historie do opowiedzenia. Podczas swojej podróży nawiązała pakt z Babą Jagą, przez co stała się Warlockiem. Od tamtej pory połowa jej twarzy i włosów zmieniła kolor, aby jej więź z Arcyfey była dla każdego oczywista. W ten sposób zdobyła unikalny i niepowtarzalny wygląd.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0224.webp",
@@ -4042,7 +4493,9 @@
     "achievements": [],
     "id": "char-0224",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0225.webp",
@@ -4061,7 +4514,9 @@
     ],
     "id": "char-0225",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0226.webp",
@@ -4078,7 +4533,9 @@
     "achievements": [],
     "id": "char-0226",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0227.webp",
@@ -4095,7 +4552,9 @@
     "achievements": [],
     "id": "char-0227",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Forge of Fury"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0228.webp",
@@ -4114,7 +4573,9 @@
     ],
     "id": "char-0228",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0229.webp",
@@ -4131,7 +4592,9 @@
     "achievements": [],
     "id": "char-0229",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0230.webp",
@@ -4148,7 +4611,9 @@
     "achievements": [],
     "id": "char-0230",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0231.webp",
@@ -4165,7 +4630,9 @@
     "achievements": [],
     "id": "char-0231",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Lost Mine of Phandelver"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0232.webp",
@@ -4182,7 +4649,9 @@
     "achievements": [],
     "id": "char-0232",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "The Sunless Citadel"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0233.webp",
@@ -4199,7 +4668,9 @@
     "achievements": [],
     "id": "char-0233",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0234.webp",
@@ -4218,7 +4689,9 @@
     ],
     "id": "char-0234",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0235.webp",
@@ -4235,7 +4708,9 @@
     "achievements": [],
     "id": "char-0235",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Forge of Fury"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0236.webp",
@@ -4254,7 +4729,9 @@
     ],
     "id": "char-0236",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0237.webp",
@@ -4273,7 +4750,9 @@
     ],
     "id": "char-0237",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0238.webp",
@@ -4290,7 +4769,9 @@
     "achievements": [],
     "id": "char-0238",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0239.webp",
@@ -4309,7 +4790,9 @@
     ],
     "id": "char-0239",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0240.webp",
@@ -4328,7 +4811,9 @@
     ],
     "id": "char-0240",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0241.webp",
@@ -4345,7 +4830,9 @@
     "achievements": [],
     "id": "char-0241",
     "history": "Jako młody Aarakocra, nasz bohater, któremu nadano imię Aqe, był częścią plemienia żyjącego na wysokim klifie, skąd miał piękne widoki na otaczające okolice. Aqe był zawsze zafascynowany tajemniczymi smokami, które przelatywały nad klifem w celu polowania na swoje ofiary. Fascynacja ta spowodowała, że Aqe zaczął studiować i poznawać wszystko, co było związane z tymi potężnymi stworzeniami. Jego pasja i zainteresowanie w końcu przyciągnęło uwagę starożytnego smoka, który zaczął go szkolić w sztuce polowania i ochrony terytorium. Aqe poświęcił wiele lat na trening i nauczył się jak polować i walczyć z różnymi niebezpieczeństwami, które mogły zagrażać jego plemieniu. Po wielu latach nauki, Aqe wyruszył w samotną podróż, by zdobywać doświadczenie i poszerzać swoją wiedzę o smokach i innych potworach. Podczas swojej podróży odkrył, że smoki, które tak bardzo fascynowały go w młodości, są w rzeczywistości zagrożeniem dla ludzi i innych stworzeń. Zdecydował się wtedy nauczyć się, jak chronić te stworzenia, a jednocześnie zapobiegać im szkodzeniu. Po wielu latach samotnej wędrówki, Aqe dołączył do grupy podróżników, którzy walczyli z różnymi potworami, dbali o bezpieczeństwo mieszkańców i chronili zagrożone gatunki. Wraz z nimi wyruszył w kolejne niebezpieczne misje i odnosił zwycięstwa dzięki swoim umiejętnościom polowania i ochrony. Ostatecznie, Aqe został powołany przez swoje plemię, by pomagać w ochronie ich terytorium. Dzięki swojej wiedzy i doświadczeniu w walce z potworami oraz smokami, stał się jednym z najważniejszych obrońców swojego plemienia. Wciąż jednak podróżuje i poznaje nowe stworzenia, by stać się jeszcze lepszym rangerem i chronić wszystkie istoty, których los zależy od jego umiejętności.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dragons of Stormwreck Isle"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0242.webp",
@@ -4362,7 +4849,9 @@
     "achievements": [],
     "id": "char-0242",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "The Sunless Citadel"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0243.webp",
@@ -4379,7 +4868,9 @@
     "achievements": [],
     "id": "char-0243",
     "history": "Nazywam się Ebris, zaczynam ten dziennik w sumie dla samego siebie. Terapia czy egoizm, nie ja to będę oceniać. Będę zapisywać tutaj swoje postępy w misji, ale od początku. Urodziłem się w mieście Morgis, a dokładnie w gettcie dla diabląt, czartów czy jak tam nas ludzie nazywają. No i co, matka alkoholik, ojciec alkoholik, żyjemy w slumsach. Rodzice... pff ludzie mnie \"wychowujący\" wydają wszystko na tanią wódę i wina, ale coś trzeba jeść, więc wysyłają mnie już w wieku 4 lat, żebym żebrał i na koniec dnia kupował jedzenie. I tak dostawałem resztki, ale im to nie wystarczało. Powiedzieli mi, że mam kraść, więc jako 6 letnie dziecko szedłem na targ o porze gdzie było najwięcej ludu i kradłem żarcie dla tych pasożytów społeczeństwa. Oczywiście dałem się przyłapać parę razy, ale udawało mi się zawsze uciec. Aż do pewnego feralnego dnia kiedy akurat duża grupa osób się przerzedziła i zostałem złapany przez właściciela straganu. Nieźle wtedy oberwałem, wtedy nagle przestał bić, ale usłyszałem jego jęki bólu. Pewien mężczyzna obijał handlarzowi mordę i nikt nie reagował. Potem wziął mnie na ręce i uciekliśmy do jakiejś jego kryjówki. Przedstawił się, miał na imię Karn i był leśnym pół elfem. Był naprawdę miły. Okazało się, że wczasie gdy handlarz mnie gonił to podpieprzył mu pół świniaka skubany. Dał mi zjeść pół. Pół! Nie po tym, aż on się naje. Okazał mi wtedy coś czego nigdy nie doznałem. Miłosierdzie? Powiedzmy, że potraktował mnie jak przyjaciela. Po krótkiej i niezbyt wylewnej rozmowie wysłał mnie do domu. I jak sklepikarz bił mnie dość mocno to ojciec chyba chciał mnie tego dnia zabić. Wcześniej bił mnie dla rozrywki, albo jak przyniosłem za mało żarcia, a jak jeden dzień miałem spokój to było święto. Teraz wpadł w szał tak wielki jakby czuł tylko żądzę krwi. \"Cuchnie od Ciebie jedzeniem, nic nie przyniosłeś a sam się nażarłeś darmozjadzie\". Po chyba 20 minutach okładania mnie pięściami i kopania po brzuchu wyrzucił mnie za drzwi. Matka splunęła mi wtedy w twarz. Rodziny się nie wybiera prawda? Szanuj ojca i matkę tak? Ja nie miałem rodziny. Byłem niewolnikiem od 4 roku życia do teraz, gdy mam 10. Więc leżę sobie ze złamanymi żebrami i pogruchtanymi rękami na środku ulicy. Inni moi pobratymcy mnie omijają. Czułem jak odpływam i oczami wyobraźni byłem już w 9 piekłach. Obudziłem się w wilgotnym miejscu na pryczy. Mimo bólu odczuwałem taki komfort z leżenia na czymś wygodniejszym niż podłoga. Próbowałem się podnieść, ale wydałem tylko jęk bólu. Usłyszałem kroki i drzwi od pokoju otworzyły się. To był Karn. Po tym jak zemdlałem wziął mnie do kryjówki, większej i miał tam przyjaciół. Szajka złodziei i to nie byle jakich. Jeśli chodzi o rasy to był tam całkowity chaos. Krasnolud, Owlin, Lizardfolk, nawet parę moich się tam znalazło. Wychowywali mnie przez parę lat. Uczyli sztuki złodziejskiej, pisania, czytania i modlenia się. Modlili się do Tymory. Bogini, która zawsze przynosiła im szczęście, może dlatego nigdy żaden z nich nie został złapany. Rozpisałem się trochę, trzeba trochę przyspieszyć, bo nie dotrę do tego co się dzieje teraz. Cholera jak ten statek buja~. A więc tak. Całkiem mi nieźle szło złodziejstwo. Nawet walka wychodziła mi na dobrym poziomie. Karn mówił, że mam talent i duży potencjał. Mówił nawet, że za rok czy dwa powinienem się udać do Wrót Baldura, bo tam jest więcej łupów do zgarnięcia i ma tam znajomych, którzy by mnie przyjęli do siebie. Los chciał inaczej. A raczej Tymora. Miałem wizję. Sen w którym przekazała mi, że mam się udać do krainy Antarriah. Dlaczego? Otóż ma być tam coś co jest warte fortunę. Fortunę na tyle dużą, że mógłbym do końca życia leżeć do góry brzuchem, mieć służbę we własnej posiadłości i nigdy nie przejmować się brakiem środków. Miałem też tam znaleźć szczęście, ale nie że fart. Szczęście w znaczeniu mojego uczucia szczęścia. Miałbym być spokojny i szczęśliwy właśnie tam. Takiej okazji przepuścić nie można. No i bogini też się nie odmawia. Karn oczywiście zrozumiał i pożegnał. Dał swój najlepszy ekwipunek jaki miał. Tyle kasy ile mógł i odprowadził na statek. Wzruszyłem się bo był nie tylko przyjacielem i mentorem. Był dla mnie jak ojciec. Chłop co ma 22 lata i płacze na pożegnanie. Szybko przetarłem oczy, uścisnąłem go, podziękowałem za wszystko i wszedłem na statek. No i to było na tyle jeśli chodzi o moją historię, teraz tylko przyszłość. Niech Tymora wskazuje mi drogę teraz. Poznałem tu ciekawych towarzyszy. Napiszę o nich trochę później, tak żebym mógł ich lepiej poznać, ale zebraliśmy się w grupkę. Razem mamy zwiedzać tę krainę bo w kupie raźniej. Nie jestem z tych gadatliwych więc pewnie jestem dla nich tajemnicą, ale chyba mnie polubili. Ten rasowy miszmasz przypomina mi o domu i czuję komfort. Zobaczymy co przyniesie dalsza droga.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0244.webp",
@@ -4396,7 +4887,9 @@
     "achievements": [],
     "id": "char-0244",
     "history": "Erdar trafił do zakonu Kelemvora jako jajo porzucone i pozbawione matczynego ciepła. Po około 11 miesiącach dzięki pomocy i opiece zakonników wykluł się jako mały biały dragonborn. Erdar dorastał w zakonie trenowany na paladyna zakonu, gdyż był silnym, charyzmatycznym młodzieńcem, innej opcji nie było. To znaczy była, mógł zostać klerykiem, ale zgłębianie dużej ilości wiedzy z ksiąg i zwojów zakonnych nie było jego ulubionym zajęciem. Na szczęście zakon miał już młodą kandydatkę na kleryczkę, która dorastała w zakonie w podobnym czasie co Erdar. Nazywała się . i z czasem Erdar i ona zaprzyjaźnili się tak bardzo, że uznali się przybranym rodzeństwem. Lata treningu owej dwójki trwały, Erdar miał na ten moment 20 lat. Zakon został zaatakowany przez hordy nieumarłych kierowanych przez jakiegoś potężnego nekromantę. Ironicznie zakon Boga śmierci i umarłych został zniszczony przez nieumarłych. Erdarowi i . udało się uciec po ciężkich walkach. Nie było już kogo ratować, musieli ratować siebie. Uciekli daleko i postanowili, że nie będą się wychylać przez jakiś czas gdyż sam zakon nie był uważany za dobry i święty przez pospólstwo. 2 lata później...",
-    "campaignCode": "unset"
+    "modules": [
+      "Dragon of Icespire Peak"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0245.webp",
@@ -4413,7 +4906,9 @@
     "achievements": [],
     "id": "char-0245",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0246.webp",
@@ -4432,7 +4927,9 @@
     ],
     "id": "char-0246",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Odyssey of the Dragonlords"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0247.webp",
@@ -4452,7 +4949,10 @@
     ],
     "id": "char-0247",
     "history": "W ciemnych podziemiach miasta Karak Ankor narodził się Neldar, syn znanego kowala. Od najmłodszych lat chłopiec fascynował się tajemniczymi runami, które zdobiły miecze i tarcze jego ojca. Kiedy tylko miał okazję, towarzyszył mu w warsztacie i uczył się sztuki kowalstwa. Jednak Neldar zawsze pragnął czegoś więcej niż tylko bycia zwykłym kowalem. Chciał poznać tajniki magii, która kryła się za rytualnymi runami. Pewnego dnia, gdy miał już 80 lat, opuścił rodzinną kuźnię i wyruszył w poszukiwaniu wiedzy. Podczas swojej wędrówki Neldar spotkał starszego krasnoluda, który zaoferował mu naukę sztuki rytualnej magii run. Neldar zaczął intensywnie pracować, aby opanować sztukę łączenia magii z kowalstwem. W końcu osiągnął cel i został jednym z najpotężniejszych rycerzy runicznych. Jako Rune Knight, Neldar został powołany do służby w armii Karak Ankor. Wielokrotnie dowodził oddziałami krasnoludzkich żołnierzy, a jego umiejętności w walce i magii run przynosiły decydujące zwycięstwa w bitwach. Jednak Neldar nie był zadowolony z życia w wojsku i marzył o powrocie do kowalstwa. Postanowił odejść ze służby i założyć własną kuźnię, gdzie mógłby kontynuować swoją pracę nad połączeniem magii z kowalstwem. Teraz Neldar przemierza świat, szukając nowych tajemnic magii run i tworząc najpotężniejsze bronie dla swoich klientów. W jego warsztacie można znaleźć miecze zdolne pokonać smoka oraz tarcze, które wytrzymają każdą potężną siłę uderzenia.",
-    "campaignCode": "unset"
+    "modules": [
+      "Forge of Fury",
+      "Barber of Silverymoon"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0248.webp",
@@ -4469,7 +4969,9 @@
     "achievements": [],
     "id": "char-0248",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0249.webp",
@@ -4486,7 +4988,9 @@
     "achievements": [],
     "id": "char-0249",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0250.webp",
@@ -4503,7 +5007,9 @@
     "achievements": [],
     "id": "char-0250",
     "history": "Memnith żył w Drakkenheim, po jego zniszczeniu uciekł do Tonsberga. Po ustabilizowaniu swojego życia poprzez oszukiwanie lokalnej szlachty oraz kradzieże wyruszył on spowrotem by odzyskać magiczną lutnię – heirloom jego rodziny. Ma on w Drakkenheim kontakty z  ludźmi z Queen’s Men ze względu na jego działania w Tonsbergu. Skarby i złoto są dla niego priorytetem i kolejnym celem w Drakkenheim. Zmarł na pierwszej sesji, uwięziony w zatkanej studni, oblężony przez zombie Oscara Yorena.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0251.webp",
@@ -4520,7 +5026,9 @@
     "achievements": [],
     "id": "char-0251",
     "history": "Serrell, ostatni z rodu Allemard, powrócił do Drakkenheim by odzyskać rodowy miecz, który pozostał w mieście i podobno był bardzo potężny, oraz odzyskać skarby które mogły pozostać w pozostałościach posiadłości jego rodu. Chce użyć tego miecza, by zdobyć zasługi, złoto i odbudować swój ród. Jego ród wymarł gdy w drakkenheim uderzył meteoryt. Miał on znajomości w srebrnym zakonie co dało mu pracę jako najemnik u nich po dotarciu do miasta. ",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0252.webp",
@@ -4537,7 +5045,9 @@
     "achievements": [],
     "id": "char-0252",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0253.webp",
@@ -4555,7 +5065,9 @@
     "achievements": [],
     "id": "char-0253",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0254.webp",
@@ -4572,7 +5084,9 @@
     "achievements": [],
     "id": "char-0254",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dragon of Dampen Depths"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0255.webp",
@@ -4589,7 +5103,9 @@
     "achievements": [],
     "id": "char-0255",
     "history": "Hagard urodził się w małym miasteczku gdzieś na orczym zadupiu. Żeby nie skończyć jak większość orków na jakiejś bezsensownej wojence lub w karczemnej zadymie uciekł stamtąd i zaciągnął się do profesjonalnej armii. Dzięki wrodzonemu sprytowi osiągnął nawet stopień oficerski i szacunek. Jednak potrzeba wykazania się i możliwe korzyści materialne skłoniły go do zostania poszukiwaczem przygód.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0256.webp",
@@ -4606,7 +5122,9 @@
     "achievements": [],
     "id": "char-0256",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dragon of Icespire Peak"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0257.webp",
@@ -4623,7 +5141,9 @@
     "achievements": [],
     "id": "char-0257",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dragon of Icespire Peak"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0258.webp",
@@ -4640,7 +5160,9 @@
     "achievements": [],
     "id": "char-0258",
     "history": "Rodzina Shatterbrowów nie była zbyt pospolita… Ojciec Argus Shatterbrow. Krasnoludzki kupiec w czasie jednej z eskapad poznał elfią Pannę. Chalia Elafir, była piękną szlachcianką. Zakochali się w sobie od pierwszego wejrzenia. Rodzina panny młodej z początku niechętna z czasem przekonała się do zaradnego mężczyzny jak tylko zaczął pomnażać ich majątek. Co mogło pójść nie tak? Ich syn urodził się z boskim błogosławieństwem. Silny i barczysty po ojcu, Zręczny urodziwy i wysoki po matce. Od najmłodszych lat przewyższał swoich rówieśników we wszystkim czego się dotknął i szybko został wysłany na nauki do szkoły oficerskiej. Widząc w nim boską wolę rodzice postarali się o kolejne dziecko. Co mogło pójść nie tak? Drugi syn również urodził się pod szczęśliwą gwiazdą. Niesamowicie bystry, o przenikliwym spojrzeniu i charyzmie matki od razu wykazał niezwykłe zdolności magiczne. Oddany na nauki do samego Arcymaga z zaskakującą szybkością przegonił innych uczniów. Przy tak wspaniałym potomstwie Chalia i Argus nie mogli poprzestać na dwójce. W końcu co mogło pójść nie tak? No cóż… Nasir mógł pójść nie tak… Wzrost ojca z posturą matki. Krasnoludzkie rysy przy długich elfich uszach i słabym zaroście przywodziły raczej na myśl gnoma niż potomka wspaniałego rodu. Umysł i siłę odziedziczył po rodzinie matki a zwinność i urodę po ojcu. Przez kilka pierwszych lat był celem drwin starszego rodzeństwa, które na szczęście szybko udało się na nauki opuszczając dom. Rodzice nie wiedzieli co z nim zrobić. Pene było że nie zostanie wielkim dowódcą jak Adamar, czy potężnym magiem jak Vulmer.  Na szczęście chłopca, Argus w czasie jednej z wypraw trafił na magiczny diadem. Wtedy uznał, że jest jakaś szansa dla jego syna. Podarował mu go na urodziny i wysłał do uniwersytetu magicznego. Może nie będzie potężny, ale z pomocą diademu i po szkoleniu wśród najlepszych umysłów ścisłych domu Quindrix, może będzie mógł przejąć biznes rodzinny…   Niestety rówieśnicy szybko zorientowali się że jedynie magia przedmiotu pozwala mu opanować najbardziej podstawowe zaklęcia i znowu wróciły drwiny i wyżywanie się na nim. Jednemu z nauczycieli łowiectwa zrobiło się szkoda chłopa i zaczął udzielać mu prywatnych lekcji zmuszając do większego wysiłku niż innych. Przez lata udało mu się wytrenować ciało, mimo że przychodziło mu to ciężej niż innym. Jednak to w czym przewyższał braci to zaciętość i pracowitość. Nawet momentami czuł się ze sobą dobrze.   Po studiach wrócił do domu. Dumny z osiągnięć szybko został sprowadzony na ziemię. Całe miasto żyło kultem jego braci. Co dzień słuchał o ich legendarnych osiągnięciach podczas kiedy on utknął w księgach rodzinnej kompanii. Z dnia na dzień, z miesiąca na miesiąc coraz bardziej niknął w cieniu braci. Nie widząc ich nawet, z każdym dniem czuł się coraz mniej wartościowy i ten stan pogłębiałby się, gdyby nie doszły go pogłoski o panoszącym się kulcie smoka. Porozmawiał z rodzicami i wytłumaczył im, że musi coś zrobić, żeby poczuć się godny nazwiska. Ojciec dał mu list do polecający do znajomemu w Neverwinter który miał pomóc mu dołączyć do ofensywy…",
-    "campaignCode": "unset"
+    "modules": [
+      "Rise of Tiamat"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0259.webp",
@@ -4657,7 +5179,9 @@
     "achievements": [],
     "id": "char-0259",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0260.webp",
@@ -4674,7 +5198,9 @@
     "achievements": [],
     "id": "char-0260",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dragon of Icespire Peak"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0261.webp",
@@ -4693,7 +5219,9 @@
     ],
     "id": "char-0261",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0262.webp",
@@ -4710,7 +5238,9 @@
     "achievements": [],
     "id": "char-0262",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dragon of Icespire Peak"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0263.webp",
@@ -4729,7 +5259,9 @@
     ],
     "id": "char-0263",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Echtra midst the Sidhe"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0264.webp",
@@ -4746,7 +5278,9 @@
     "achievements": [],
     "id": "char-0264",
     "history": "Ponad dwadzieścia lat temu straciła męża oraz swojego syna w intencjonalnym pożarze wywołanym przez mieszkańców wioski w której przebywała z rodziną. Jej mąż był wioskowym zielarzem i kiedy jego mikstura spowodowała śmierć syna wójta, oburzeni mieszkańcy wzięli sprawy w swoje ręce i postanowili się zemścić. Z pożaru cało wyszła jedynie ona, po tym wydarzeniu Anathea przez lata błąkała się sama, zazwyczaj unikając cywilizacji, żyjąc z tego co upolowała i na nowo ucząc się ufać ludziom. Anathea nie jest już w kwiecie wieku, ale dalej próbuje odnaleźć swoje miejsce na świecie po traumatycznej przeszłości, która dalej ją prześladuje.",
-    "campaignCode": "lost-mine-of-phandelver"
+    "modules": [
+      "Lost Mine of Phandelver"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0265.webp",
@@ -4763,7 +5297,9 @@
     "achievements": [],
     "id": "char-0265",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Posiadłość Lugosi"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0266.webp",
@@ -4782,7 +5318,9 @@
     ],
     "id": "char-0266",
     "history": "Brak zapisków.",
-    "campaignCode": "drakkenheim"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/placeholder_ref.webp",
@@ -4799,7 +5337,9 @@
     "achievements": [],
     "id": "placeholder_ref",
     "history": "Brak zapisków.",
-    "campaignCode": "shards-of-the-past-legacy"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0268.webp",
@@ -4816,7 +5356,9 @@
     "achievements": [],
     "id": "char-0268",
     "history": "Brak zapisków.",
-    "campaignCode": "shards-of-the-past-legacy"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0037.webp",
@@ -4833,7 +5375,9 @@
     "achievements": [],
     "id": "char-0037",
     "history": "Brak zapisków.",
-    "campaignCode": "heartwell-asylum"
+    "modules": [
+      "Heartwell Asylum"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0270.webp",
@@ -4852,7 +5396,9 @@
     ],
     "id": "char-0270",
     "history": "Brak zapisków.",
-    "campaignCode": "heroes-of-drakkenheim"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0271.webp",
@@ -4869,7 +5415,9 @@
     "achievements": [],
     "id": "char-0271",
     "history": "Brak zapisków.",
-    "campaignCode": "bad-romance-barovia"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0272.webp",
@@ -4887,7 +5435,9 @@
     "achievements": [],
     "id": "char-0272",
     "history": "Brak zapisków.",
-    "campaignCode": "drakkenheim"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0273.webp",
@@ -4904,7 +5454,9 @@
     "achievements": [],
     "id": "char-0273",
     "history": "Brak zapisków.",
-    "campaignCode": "drakkenheim"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0274.webp",
@@ -4921,7 +5473,9 @@
     "achievements": [],
     "id": "char-0274",
     "history": "Brak zapisków.",
-    "campaignCode": "shards-of-the-past-legacy"
+    "modules": [
+      "Shards of the Past"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0275.webp",
@@ -4944,7 +5498,10 @@
     ],
     "id": "char-0275",
     "history": "Brak zapisków.",
-    "campaignCode": "gold-for-fools-and-princes"
+    "modules": [
+      "Gold for Fools and Princes",
+      "Mayhem in Earthspur Mines"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0276.webp",
@@ -4962,7 +5519,9 @@
     "achievements": [],
     "id": "char-0276",
     "history": "Brak zapisków.",
-    "campaignCode": "lost-mine-of-phandelver"
+    "modules": [
+      "Lost Mine of Phandelver"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0277.webp",
@@ -4979,7 +5538,9 @@
     "achievements": [],
     "id": "char-0277",
     "history": "Brak zapisków.",
-    "campaignCode": "dragon-of-dampen-depths"
+    "modules": [
+      "Dragon of Dampen Depths"
+    ]
   },
   {
     "portrait": "/res/portraits/char-278.webp",
@@ -4998,7 +5559,9 @@
     ],
     "id": "char-278",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dragon of Icespire Peak"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0279.webp",
@@ -5017,7 +5580,9 @@
     ],
     "id": "char-0279",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Posiadłość Lugosi"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0280.webp",
@@ -5036,7 +5601,9 @@
     ],
     "id": "char-0280",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Posiadłość Lugosi"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0281.webp",
@@ -5055,7 +5622,9 @@
     ],
     "id": "char-0281",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Posiadłość Lugosi"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0282.webp",
@@ -5074,7 +5643,9 @@
     ],
     "id": "char-0282",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Posiadłość Lugosi"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0283.webp",
@@ -5091,7 +5662,9 @@
     "achievements": [],
     "id": "char-0283",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dungeons of Drakkenheim"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0284.webp",
@@ -5108,7 +5681,9 @@
     "achievements": [],
     "id": "char-0284",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Curse of Strahd"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0285.webp",
@@ -5125,7 +5700,9 @@
     "achievements": [],
     "id": "char-0285",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0286.webp",
@@ -5142,7 +5719,9 @@
     "achievements": [],
     "id": "char-0286",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Barber of Silverymoon"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0287.webp",
@@ -5159,7 +5738,9 @@
     "achievements": [],
     "id": "char-0287",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Heartwell Asylum"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0288.webp",
@@ -5176,7 +5757,9 @@
     "achievements": [],
     "id": "char-0288",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Heartwell Asylum"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0289.webp",
@@ -5193,7 +5776,9 @@
     "achievements": [],
     "id": "char-0289",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Heartwell Asylum"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0290.webp",
@@ -5210,7 +5795,9 @@
     "achievements": [],
     "id": "char-0290",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Dragons of Stormwreck Isle"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0291.webp",
@@ -5227,7 +5814,9 @@
     "achievements": [],
     "id": "char-0291",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0292.webp",
@@ -5244,6 +5833,8 @@
     "achievements": [],
     "id": "char-0292",
     "history": "Brak zapisków.",
-    "campaignCode": "unset"
+    "modules": [
+      "Menaces of Gloomforest"
+    ]
   }
 ]
