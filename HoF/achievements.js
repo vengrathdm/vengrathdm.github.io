@@ -2,7 +2,7 @@
   "use strict";
   const DATA_URL = "../res/achievements.json";
   const $ = id => document.getElementById(id);
-  const normalize = value => String(value ?? "").trim().toLocaleLowerCase("pl-PL").normalize("NFD").replace(/[\\u0300-\\u036f]/g, "");
+  const normalize = value => String(value ?? "").trim().toLocaleLowerCase("pl-PL").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
   const CATEGORY_LABELS = {
     "przetrwanie":"Przetrwanie","fabula":"Fabuła","osiagniecia":"Osiągnięcia",
