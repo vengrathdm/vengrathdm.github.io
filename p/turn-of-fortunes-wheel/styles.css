@@ -97,3 +97,137 @@ body.default-dd-campaign-page::before{
   .ddc-source-panel{display:block}.ddc-source-panel a{display:inline-block;margin-top:20px}
   .ddc-footer{display:block}.ddc-footer a{display:block;margin-top:8px}
 }
+
+
+
+/* Turn of Fortune's Wheel — thematic treatment for the existing campaign cards.
+   Deliberately styles existing content only; no new sections or destinations. */
+body.default-dd-campaign-page{
+  --theme-accent-1:#9a72c5;
+  --theme-accent-2:#d0b276;
+  background:
+    radial-gradient(ellipse at 78% 22%,#39234b45 0,transparent 35%),
+    radial-gradient(ellipse at 8% 66%,#39234b24 0,transparent 32%),
+    var(--theme-base-1);
+}
+.ddc-card{
+  position:relative;
+  overflow:hidden;
+  border-color:#80674470;
+  background:linear-gradient(145deg,#17131d,#0b0c11 68%);
+  box-shadow:0 24px 75px #0008, inset 0 1px #d0b27614;
+}
+.ddc-card:before{
+  content:"";position:absolute;inset:8px;pointer-events:none;z-index:0;
+  border:1px solid #d0b27620;
+}
+.ddc-card-title{
+  position:relative;
+  background:linear-gradient(90deg,#21192b,#0b0c10 75%);
+  border-bottom-color:#8c704c66;
+}
+.ddc-card-title span{color:#b28bd8;text-shadow:0 0 20px #9a72c533}
+.ddc-card-title strong{color:#e6d5ae}
+.ddc-card-body{position:relative}
+.ddc-paper{
+  border-color:#6d5b7c;
+  background:
+    radial-gradient(ellipse at 100% 0,#54366a26,transparent 45%),
+    linear-gradient(135deg,#1b1722,#101116);
+}
+.ddc-paper:after{background:#d0b27616}
+.ddc-section-mark{color:#d0b276}
+.ddc-case{
+  border-color:#8b704d;
+  background:radial-gradient(ellipse at 100% 0,#5b3c702b,transparent 58%),#0e0d13;
+  box-shadow:7px 7px 0 #050508, inset 0 0 35px #9a72c50a;
+}
+.ddc-case-label{color:#c49be6;border-bottom-color:#70527d}
+.ddc-case-row{border-bottom-color:#3c3045}
+.ddc-case-row strong{color:#e3d7c4}
+.ddc-case-row .ddc-active{color:#d0b276}
+.ddc-party-portrait{
+  position:relative;
+  border-color:#796143;
+  background:#100e15;
+  box-shadow:0 24px 75px #0008;
+  transition:border-color .25s,box-shadow .25s;
+}
+.ddc-party-portrait:hover{border-color:#d0b276;box-shadow:0 28px 85px #000a,0 0 36px #9a72c51a}
+.ddc-party-copy{background:radial-gradient(ellipse at 0 50%,#4b326027,transparent 65%),linear-gradient(145deg,#1b1721,#0d0e12)}
+.ddc-party-image{position:relative}
+.ddc-party-image:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#0d0e12aa,transparent 45%),linear-gradient(0deg,#0b0c1099,transparent 40%)}
+.ddc-party-image img{transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .4s}
+.ddc-party-portrait:hover .ddc-party-image img{transform:scale(1.025);filter:saturate(1.08)}
+.ddc-manifesto{
+  border-color:#8b704d;
+  background:radial-gradient(ellipse at 50% 50%,#422b502b,transparent 70%),linear-gradient(90deg,#111016,#19131e,#111016);
+}
+.ddc-manifesto-symbol{color:#c49be6;text-shadow:0 0 28px #9a72c555}
+.ddc-manifesto p{color:#e1d4bd}
+.ddc-section{position:relative}
+.ddc-section-head{
+  padding-bottom:20px;
+  border-bottom:1px solid #8b704d55;
+}
+.ddc-section-head h2{color:#eee4d2}
+.ddc-character-grid{gap:20px}
+.v-character-card{
+  position:relative;
+  overflow:hidden;
+  border-color:#6e587d;
+  background:linear-gradient(155deg,#211a2a,#0c0d12 72%);
+  box-shadow:0 18px 50px #0007;
+  transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+}
+.v-character-card:hover,.v-character-card:focus-within{
+  transform:translateY(-6px);
+  border-color:#d0b276;
+  box-shadow:0 26px 58px #0009,0 0 32px #9a72c51c;
+}
+.v-character-card__portrait{
+  height:clamp(280px,30vw,420px);
+  background:radial-gradient(circle at 50% 30%,#493558 0,transparent 42%),linear-gradient(180deg,#28202f,#0b0c11);
+  border-bottom-color:#8b704d88;
+}
+.v-character-card__portrait:before{inset:12px;border:1px solid #d0b27670;opacity:.55;transition:inset .3s,opacity .3s}
+.v-character-card:hover .v-character-card__portrait:before{inset:18px;opacity:.9}
+.v-character-card__portrait img{transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .35s}
+.v-character-card:hover .v-character-card__portrait img{transform:scale(1.035);filter:saturate(1.12)}
+.v-character-card__info{background:linear-gradient(180deg,#19151f,#0e0f13)}
+.v-character-card__label{color:#d0b276}
+.v-character-card__player{color:#eee4d2}
+.v-character-card__character{color:#b7a9c2}
+.v-chronicle{margin-top:24px;border-top:1px solid #8b704d88}
+.v-chronicle__entry{
+  margin:10px 0;
+  border:1px solid #51405f;
+  background:linear-gradient(110deg,#1a1521,#0e0f13 70%);
+  transition:border-color .2s,background .2s,box-shadow .2s;
+}
+.v-chronicle__entry:hover,.v-chronicle__entry[open]{
+  border-color:#b18bce;
+  background:linear-gradient(110deg,#251b30,#101015 75%);
+  box-shadow:0 10px 32px #0004;
+}
+.v-chronicle__summary{padding:21px 20px;grid-template-columns:90px minmax(0,1fr) auto}
+.v-chronicle__session{color:#c49be6;letter-spacing:1px}
+.v-chronicle__title{color:#eee4d2;font-size:21px;transition:color .2s}
+.v-chronicle__entry:hover .v-chronicle__title,.v-chronicle__entry[open] .v-chronicle__title{color:#f0d79e}
+.v-chronicle__recording{border-color:#8b704d;background:#17121e;color:#d0b276;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.v-chronicle__recording:hover{border-color:#d0b276;background:#d0b276;color:#17121e;transform:translateY(-1px)}
+.v-chronicle__notes{padding:0 20px 20px;color:#b6acbd;font-family:var(--theme-font-3);line-height:1.7}
+.ddc-footer{border-top-color:#6f5940;background:#08080c}
+.ddc-footer a{color:#d0b276}
+@media(max-width:620px){
+  .ddc-card:before{inset:5px}
+  .v-character-card__portrait{height:340px}
+  .v-chronicle__summary{grid-template-columns:1fr auto;gap:7px 12px;padding:16px}
+  .v-chronicle__session{grid-column:1}
+  .v-chronicle__title{grid-column:1;grid-row:2}
+  .v-chronicle__recordings{grid-column:2;grid-row:1 / span 2}
+  .v-chronicle__recording{min-width:0;padding:9px}
+}
+@media(prefers-reduced-motion:reduce){
+  .ddc-party-portrait,.ddc-party-image img,.v-character-card,.v-character-card__portrait:before,.v-character-card__portrait img,.v-chronicle__entry,.v-chronicle__title,.v-chronicle__recording{transition:none}
+}
