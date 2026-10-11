@@ -98,7 +98,6 @@ body.default-dd-campaign-page::before{
   .ddc-footer{display:block}.ddc-footer a{display:block;margin-top:8px}
 }
 
-
 /* Echtra: woodland green, old gold, and Celtic display typography. */
 .ddc-section-mark,.ddc-case-label,.ddc-card-title strong,.ddc-source-panel a,.ddc-footer a{font-family:"Uncial Antiqua",serif;letter-spacing:.06em}
 .ddc-case-label{color:#c5a96a;border-bottom-color:#405744}
