@@ -2,13 +2,14 @@
 
 /* Default D&D Campaign theme tokens. Common Element geometry stays in res/common/. */
 :root{
+  /* Echtra palette: deep woodland, mist, old gold, and seasonal berry red. */
   --theme-base-1:#080e0b;--theme-base-2:#0c1510;--theme-base-3:#111c15;--theme-base-4:#142019;--theme-base-5:#1a281d;
   --theme-accent-1:#91a978;--theme-accent-2:#c5a96a;
   --theme-text-1:#eee9dc;--theme-text-2:#d7d9ca;--theme-text-3:#a8b3a1;--theme-text-muted:#7d8a79;--theme-title-accent:#c8d2b9;
   --theme-line-1:#344638;--theme-line-2:#4a5d4a;--theme-nav-background:#0d1711;--theme-nav-text:#c9d0c0;--theme-nav-active-background:#1a2a1e;
   --theme-seal-border:#a2b18f;--theme-seal-inner-border:#596d52;--theme-seal-background:#080e0bcc;--theme-seal-small-text:#b3c0a5;--theme-seal-main-text:#e0d6b8;
   --theme-font-1:"Almendra SC",serif;--theme-font-2:"Fira Sans Extra Condensed",sans-serif;--theme-font-3:"Brygada 1918",Georgia,serif;
-  --theme-hero-image:url("/res/voronoi/webp/echtra-midst-the-sidhe.webp");
+  --theme-hero-image:url("/p/echtra-zima-irgaeli/res/hero-image.jpg");
 }
 
 html{scroll-behavior:smooth}
@@ -98,24 +99,61 @@ body.default-dd-campaign-page::before{
   .ddc-footer{display:block}.ddc-footer a{display:block;margin-top:8px}
 }
 
-/* Echtra: woodland green, old gold, and Celtic display typography. */
-.ddc-section-mark,.ddc-case-label,.ddc-card-title strong,.ddc-source-panel a,.ddc-footer a{font-family:"Uncial Antiqua",serif;letter-spacing:.06em}
-.ddc-case-label{color:#c5a96a;border-bottom-color:#405744}
-.ddc-case-row .ddc-active{color:#a8bd8b}
-.ddc-card{border-color:#405744;background:linear-gradient(145deg,#142019,#0b120d);box-shadow:0 20px 65px #0008,inset 0 1px #c5a96a16}
+/* Echtra-specific atmosphere: ancient woodland and the turning of the seasons. */
+body.default-dd-campaign-page{
+  background:
+    radial-gradient(ellipse at 78% 9%,#344a343b 0,transparent 35%),
+    radial-gradient(ellipse at 8% 65%,#6a57301a 0,transparent 32%),
+    var(--theme-base-1);
+}
+body.default-dd-campaign-page::before{opacity:.09}
+.ddc-card{border-color:#405744;background:linear-gradient(145deg,#142019,#0b120d 72%);box-shadow:0 20px 65px #0008,inset 0 1px #c5a96a16}
 .ddc-card-title{border-bottom-color:#354b38;background:linear-gradient(90deg,#19291d,#0b120d)}
+.ddc-card-title span{color:#a8bd8b;text-shadow:0 0 22px #91a97833}
+.ddc-card-title strong{color:#e0d9c2}
 .ddc-paper{border-color:#344a38;background:radial-gradient(ellipse at 100% 0,#78905a17,transparent 45%),linear-gradient(135deg,#17241a,#0d1510)}
-.ddc-case{border-color:#435945;background:radial-gradient(ellipse at 100% 0,#7286501b,transparent 58%),#0d1510}
-.ddc-party-portrait,.ddc-source-panel{border-color:#405744;background:linear-gradient(120deg,#142019,#0c140e)}
-.ddc-manifesto,.ddc-character-quote{border-color:#65734b;background:linear-gradient(90deg,#101a13,#1b281a,#101a13)}
-.v-character-card{border-color:#405744;background:linear-gradient(155deg,#1a281d,#0b120d 72%)}
+.ddc-paper:after{background:#c5a96a18}
+.ddc-case{border-color:#435945;background:radial-gradient(ellipse at 100% 0,#7286501b,transparent 58%),#0d1510;box-shadow:8px 8px 0 #050906}
+.ddc-case-label{color:#c5a96a;border-bottom-color:#3f573f}
+.ddc-case-row{border-bottom-color:#263a2a}
+.ddc-case-row strong{color:#e1e2d2}
+.ddc-case-row .ddc-active{color:#a8bd8b}
+.ddc-party-portrait{border-color:#405744;background:#0d1510}
+.ddc-party-copy{background:radial-gradient(ellipse at 0 50%,#6d83451b,transparent 65%),linear-gradient(145deg,#17241a,#0b120d)}
+.ddc-party-image{background:#0b120d}
+.ddc-manifesto{border-color:#65734b;background:linear-gradient(90deg,#101a13,#1b281a,#101a13)}
+.ddc-manifesto-symbol{color:#a8bd8b;text-shadow:0 0 24px #91a97833}
+.ddc-manifesto p{color:#e0dfcc}
+.ddc-source-panel{border-color:#405744;background:linear-gradient(120deg,#142019,#0c140e)}
+.ddc-source-panel p{color:#a8b3a1}
+.ddc-source-panel a{border-color:#c5a96a;color:#d8c28e}
+.ddc-source-panel a:hover{background:#c5a96a;color:#10170f}
+.ddc-section-mark{color:#c5a96a}
+.ddc-section-head{border-bottom:1px solid #40574466;padding-bottom:16px}
+.ddc-section-head h2,.ddc-paper h2,.ddc-source-panel h2{color:#e7eadb}
+.ddc-character-quote{border-color:#65734b;background:linear-gradient(90deg,#101a13,#1b281a,#101a13)}
+.ddc-character-quote p{color:#e0dfcc}
+.ddc-dead-character{border-color:#4a5944;background:linear-gradient(145deg,#172019,#0b120d)}
+.ddc-dead-portrait{background:radial-gradient(circle at 50% 30%,#384633 0,transparent 38%),linear-gradient(180deg,#202b20,#0b120d);border-bottom-color:#465742}
+.ddc-dead-portrait:before{border-color:#a6b18c}
+.ddc-dead-info h3{color:#d4d9c6}
+.v-character-card{border-color:#405744;background:linear-gradient(155deg,#1a281d,#0b120d 72%);box-shadow:0 18px 50px #0007}
 .v-character-card:hover,.v-character-card:focus-within{border-color:#c5a96a;box-shadow:0 26px 58px #0009,0 0 32px #91a9781c}
+.v-character-card__portrait{background:radial-gradient(circle at 50% 30%,#344a34 0,transparent 42%),linear-gradient(180deg,#1d2b20,#0b120d);border-bottom-color:#52664a}
+.v-character-card__portrait:before{border-color:#c5a96a70}
 .v-character-card__label{color:#c5a96a}
+.v-character-card__player{color:#e7eadb}
+.v-character-card__character{color:#a8b3a1}
 .v-chronicle{border-top-color:#52664a}
 .v-chronicle__entry{border-color:#344a38;background:linear-gradient(110deg,#17241a,#0b120d 70%)}
-.v-chronicle__entry:hover,.v-chronicle__entry[open]{border-color:#91a978;background:linear-gradient(110deg,#203122,#0e1710 75%)}
+.v-chronicle__entry:hover,.v-chronicle__entry[open]{border-color:#91a978;background:linear-gradient(110deg,#203122,#0e1710 75%);box-shadow:0 10px 32px #0005}
 .v-chronicle__session{color:#b7c99a}
+.v-chronicle__title{color:#e7eadb}
+.v-chronicle__entry:hover .v-chronicle__title,.v-chronicle__entry[open] .v-chronicle__title{color:#e0c98d}
 .v-chronicle__recording{border-color:#64784f;background:#111b13;color:#d4bd82}
 .v-chronicle__recording:hover{border-color:#c5a96a;background:#c5a96a;color:#10170f}
 .ddc-footer{border-top-color:#405744;background:#070d09;color:#7d8a79}
 .ddc-footer a{color:#c5a96a}
+
+/* Shared Echtra display typography. */
+.ddc-section-mark,.ddc-case-label,.ddc-card-title strong,.ddc-source-panel a,.ddc-footer a{font-family:"Uncial Antiqua",serif;letter-spacing:.06em}
