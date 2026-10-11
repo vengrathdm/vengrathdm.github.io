@@ -5294,7 +5294,9 @@
     ],
     "race": "Dwarf",
     "status": "Zwycięska",
-    "achievements": [],
+    "achievements": [
+      "van-helsing"
+    ],
     "id": "char-0265",
     "history": "Brak zapisków.",
     "modules": [
