@@ -342,6 +342,40 @@
       </section>
     </main>
     <footer class="ddc-footer"><span>VENGRATH · TURN OF FORTUNE'S WHEEL</span><a href="#top">POWRÓT NA GÓRĘ ↑</a></footer>
+    <script>
+      (() => {
+        const choices = {
+          lands: { kicker: "ŚCIEŻKA / 01", title: "Rubieże", copy: "Od Sigil po granice niezwykłych planów — odkryj miejsca, które nadały tej historii kształt.", href: "#main-content", label: "WEJDŹ DO ARCHIWUM" },
+          people: { kicker: "ŚCIEŻKA / 02", title: "Postacie", copy: "Poznaj pięć postaci, których losy splatają się z obrotami Koła Fortuny.", href: "#characters", label: "POZNAJ DRUŻYNĘ" },
+          mysteries: { kicker: "ŚCIEŻKA / 03", title: "Sekrety Koła", copy: "Ślady, pytania i odkrycia ukryte w opowieści o tożsamości oraz przeznaczeniu.", href: "#main-content", label: "ODKRYJ ARCHIWUM" },
+          story: { kicker: "ŚCIEŻKA / 04", title: "Kronika", copy: "Przejdź przez zapisane sesje i wróć do nagrań z kolejnych etapów kampanii.", href: "#chronicle", label: "OTWÓRZ KRONIKĘ" },
+          path: { kicker: "ŚCIEŻKA / 05", title: "Materiały", copy: "Portrety i materiały wizualne zebrane w jednym miejscu, gotowe do ponownego odkrycia.", href: "#characters", label: "PRZEJRZYJ MATERIAŁY" }
+        };
+        const root = document.querySelector(".fate-wheel");
+        if (!root) return;
+        const title = root.querySelector("#fate-detail-title");
+        const kicker = root.querySelector("#fate-detail-kicker");
+        const copy = root.querySelector("#fate-detail-copy");
+        const link = root.querySelector("#fate-detail-link");
+        root.querySelectorAll("[data-fate-choice]").forEach(button => {
+          button.addEventListener("click", () => {
+            const item = choices[button.dataset.fateChoice];
+            if (!item) return;
+            root.querySelectorAll("[data-fate-choice]").forEach(node => {
+              const active = node === button;
+              node.classList.toggle("is-active", active);
+              node.setAttribute("aria-pressed", String(active));
+            });
+            kicker.textContent = item.kicker;
+            title.textContent = item.title;
+            copy.textContent = item.copy;
+            link.href = item.href;
+            link.querySelector("span") || link.insertAdjacentHTML("beforeend", ' <span aria-hidden="true">↗</span>');
+            link.firstChild.textContent = item.label + " ";
+          });
+        });
+      })();
+    </script>
     <script src="../../res/common/subpage-navbar/subpage-navbar.js"></script>
     <script src="../../res/common/vengrath-button/vengrath-button.js"></script>
     <script src="../../res/common/youtube-button/youtube-button.js"></script>
