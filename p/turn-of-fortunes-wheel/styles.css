@@ -251,3 +251,22 @@ body.default-dd-campaign-page{
 .ddc-campaign-sigil span{font:clamp(50px,8vw,100px)/1 Georgia,serif}
 .ddc-campaign-sigil strong{font:400 clamp(20px,3vw,32px)/1 var(--theme-font-1);letter-spacing:6px}
 .ddc-campaign-sigil small{font:10px var(--theme-font-1);letter-spacing:5px;color:#bda5d0}
+
+
+
+/* Campaign audio toggle: violet outline and glyph on a transparent surface. */
+body.default-dd-campaign-page .v-audio-player__button{
+  color:#b995df;
+  border-color:#9a72c5;
+  background:transparent;
+  box-shadow:0 0 0 1px #9a72c533,0 0 24px #9a72c51a;
+}
+body.default-dd-campaign-page .v-audio-player__button:hover{
+  color:#d6b9f4;
+  border-color:#c2a0e8;
+  background:#9a72c51a;
+  box-shadow:0 0 0 1px #9a72c566,0 0 28px #9a72c533;
+}
+body.default-dd-campaign-page .v-audio-player__button:focus-visible{
+  outline-color:#b995df;
+}
