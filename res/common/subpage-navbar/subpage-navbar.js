@@ -96,15 +96,21 @@
   function init(nav){
     if(nav.dataset.tabsInitialized==="true") return;
     nav.dataset.tabsInitialized="true";
-    const links=[...nav.querySelectorAll(".v-subpage-navbar__link[data-tab-target]")];
+    const getLinks=()=>[...nav.querySelectorAll(".v-subpage-navbar__link[data-tab-target]")];
+    const links=getLinks();
     if(!links.length) return;
     const initial=links.some(link=>link.dataset.tabTarget===location.hash)?location.hash:links[0].dataset.tabTarget;
-    links.forEach(link=>link.addEventListener("click",function(event){
+    // Delegate clicks so tabs added later (e.g. the dynamically generated POSTACI tab) work too.
+    nav.addEventListener("click",function(event){
+      const link=event.target.closest(".v-subpage-navbar__link[data-tab-target]");
+      if(!link || !nav.contains(link)) return;
       event.preventDefault();
       activate(nav,link.dataset.tabTarget,true);
-    }));
+    });
+    // Re-query links on every hash change because the tab list can change after initialization.
     window.addEventListener("hashchange",function(){
-      if(location.hash && links.some(link=>link.dataset.tabTarget===location.hash)) activate(nav,location.hash,false);
+      const currentLinks=getLinks();
+      if(location.hash && currentLinks.some(link=>link.dataset.tabTarget===location.hash)) activate(nav,location.hash,false);
     });
     activate(nav,initial,false);
   }
