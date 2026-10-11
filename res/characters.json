@@ -649,7 +649,7 @@
     "character": "Elric",
     "player": "Rezus",
     "campaigns": [
-      "Barber of Silverymoon"
+      "Barber of Silverymoon 2"
     ],
     "classes": [
       "Ranger"
@@ -659,14 +659,16 @@
     "achievements": [],
     "id": "char-0034",
     "history": "Brak zapisków.",
-    "modules": []
+    "modules": [
+      "Barber of Silverymoon"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0035.webp",
     "character": "Cindic",
     "player": "MustHard",
     "campaigns": [
-      "Barber of Silverymoon"
+      "Barber of Silverymoon 2"
     ],
     "classes": [
       "Bard"
@@ -678,14 +680,16 @@
     ],
     "id": "char-0035",
     "history": "Brak zapisków.",
-    "modules": []
+    "modules": [
+      "Barber of Silverymoon"
+    ]
   },
   {
     "portrait": "/res/portraits/char-0036.webp",
     "character": "Dain Gorumn",
     "player": "Goku94",
     "campaigns": [
-      "Barber of Silverymoon",
+      "Barber of Silverymoon 2",
       "Lost Mine of Phandelver 2"
     ],
     "classes": [
@@ -699,7 +703,8 @@
     "id": "char-0036",
     "history": "Brak zapisków.",
     "modules": [
-      "Lost Mine of Phandelver"
+      "Lost Mine of Phandelver",
+      "Barber of Silverymoon"
     ]
   },
   {
@@ -707,7 +712,7 @@
     "character": "Nailef",
     "player": "Hansik",
     "campaigns": [
-      "Barber of Silverymoon",
+      "Barber of Silverymoon 2",
       "Lost Mine of Phandelver 2"
     ],
     "classes": [
@@ -719,7 +724,8 @@
     "id": "char-0208",
     "history": "Brak zapisków.",
     "modules": [
-      "Lost Mine of Phandelver"
+      "Lost Mine of Phandelver",
+      "Barber of Silverymoon"
     ]
   },
   {
