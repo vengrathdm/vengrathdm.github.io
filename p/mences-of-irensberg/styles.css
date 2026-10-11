@@ -2,10 +2,10 @@
 
 /* Default D&D Campaign theme tokens. Common Element geometry stays in res/common/. */
 :root{
-  --theme-base-1:#08090b;--theme-base-2:#0e1013;--theme-base-3:#111216;--theme-base-4:#12151a;--theme-base-5:#17191d;
-  --theme-accent-1:#8e2631;--theme-accent-2:#bca06a;
-  --theme-text-1:#eee9dc;--theme-text-2:#d7d2c8;--theme-text-3:#aaa59b;--theme-text-muted:#817d76;--theme-title-accent:#b9b1a1;
-  --theme-line-1:#373a3e;--theme-line-2:#4b4e52;--theme-nav-background:#111317;--theme-nav-text:#c9c5bc;--theme-nav-active-background:#191a1d;
+  --theme-base-1:#09090c;--theme-base-2:#100d11;--theme-base-3:#171117;--theme-base-4:#20161c;--theme-base-5:#291b22;
+  --theme-accent-1:#913847;--theme-accent-2:#c1a16c;
+  --theme-text-1:#eee8e5;--theme-text-2:#d7cdca;--theme-text-3:#aaa0a0;--theme-text-muted:#81767b;--theme-title-accent:#c8b7b1;
+  --theme-line-1:#42323b;--theme-line-2:#5b414b;--theme-nav-background:#120f15;--theme-nav-text:#d0c4c5;--theme-nav-active-background:#291b22;
   --theme-seal-border:#8f8b80;--theme-seal-inner-border:#635f56;--theme-seal-background:#08090bcc;--theme-seal-small-text:#aaa397;--theme-seal-main-text:#d6cbb5;
   --theme-font-1:"Voltaire",sans-serif;--theme-font-2:"Fira Sans Extra Condensed",sans-serif;--theme-font-3:"Brygada 1918",Georgia,serif;
   --theme-hero-image:url("/res/voronoi/webp/mences-of-irensberg.webp");
@@ -16,8 +16,8 @@ body.default-dd-campaign-page{
   margin:0;
   min-height:100vh;
   background:
-    radial-gradient(circle at 75% 8%,#242b31 0,transparent 32%),
-    radial-gradient(circle at 10% 70%,#1a171a 0,transparent 30%),
+    radial-gradient(circle at 75% 8%,#2b1c29 0,transparent 32%),
+    radial-gradient(circle at 10% 70%,#271419 0,transparent 30%),
     var(--theme-base-1);
   color:var(--theme-text-1);
   font-family:var(--theme-font-2);
