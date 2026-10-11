@@ -231,3 +231,23 @@ body.default-dd-campaign-page{
 @media(prefers-reduced-motion:reduce){
   .ddc-party-portrait,.ddc-party-image img,.v-character-card,.v-character-card__portrait:before,.v-character-card__portrait img,.v-chronicle__entry,.v-chronicle__title,.v-chronicle__recording{transition:none}
 }
+
+
+/* Fallback artwork for the campaign overview card when no banner asset exists. */
+.ddc-party-image--campaign{
+  position:relative;display:grid;place-items:center;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 50%,#6e477b42 0,transparent 28%),
+    radial-gradient(circle at 50% 50%,transparent 0 24%,#c5a46a18 24.2% 24.6%,transparent 25% 34%,#c5a46a25 34.2% 34.6%,transparent 35%),
+    repeating-conic-gradient(from 9deg at 50% 50%,#d0b2760b 0deg 2deg,transparent 2deg 15deg),
+    radial-gradient(ellipse at center,#20172b 0,#0b0c11 72%);
+}
+.ddc-party-image--campaign:before,.ddc-party-image--campaign:after{
+  content:"";position:absolute;aspect-ratio:1;border:1px solid #d0b27655;border-radius:50%;pointer-events:none;
+}
+.ddc-party-image--campaign:before{width:min(70%,390px);box-shadow:0 0 50px #8b5eac19,inset 0 0 45px #8b5eac12}
+.ddc-party-image--campaign:after{width:min(53%,295px);border-style:dashed;border-color:#b28bd866}
+.ddc-campaign-sigil{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:8px;color:#e2c78c;text-align:center;text-shadow:0 0 24px #b48bce55}
+.ddc-campaign-sigil span{font:clamp(50px,8vw,100px)/1 Georgia,serif}
+.ddc-campaign-sigil strong{font:400 clamp(20px,3vw,32px)/1 var(--theme-font-1);letter-spacing:6px}
+.ddc-campaign-sigil small{font:10px var(--theme-font-1);letter-spacing:5px;color:#bda5d0}
