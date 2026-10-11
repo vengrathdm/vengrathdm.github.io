@@ -893,5 +893,20 @@
     "id": "award-0179",
     "characterId": "char-0083",
     "achievementId": "nieoczekiwany-sojusz"
+  },
+  {
+    "id": "award-0180",
+    "characterId": "char-0192",
+    "achievementId": "zguba-swiata"
+  },
+  {
+    "id": "award-0181",
+    "characterId": "char-0192",
+    "achievementId": "krolotworca"
+  },
+  {
+    "id": "award-0182",
+    "characterId": "char-0275",
+    "achievementId": "krolotworca"
   }
 ]
