@@ -97,3 +97,13 @@ body.default-dd-campaign-page::before{
   .ddc-source-panel{display:block}.ddc-source-panel a{display:inline-block;margin-top:20px}
   .ddc-footer{display:block}.ddc-footer a{display:block;margin-top:8px}
 }
+
+/* Subtle Tomb of Annihilation accents: jungle jade and weathered brass. */
+:root{--theme-accent-1:#668d67;--theme-accent-2:#c4a76a;--theme-line-1:#35483b;--theme-line-2:#4a6250;--theme-nav-active-background:#1b2b20}
+.ddc-card{border-color:#35483b}
+.ddc-card-title{border-bottom-color:#35483b}
+.ddc-section-mark,.ddc-case-label{color:#c4a76a}
+.ddc-case-row .ddc-active{color:#86a77a}
+.v-chronicle__entry:hover,.v-chronicle__entry[open]{border-color:#668d67}
+.v-chronicle__recording{border-color:#526e52}
+.v-chronicle__recording:hover{border-color:#c4a76a;background:#c4a76a;color:#11160f}
