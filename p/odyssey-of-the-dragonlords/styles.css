@@ -2,10 +2,10 @@
 
 /* Default D&D Campaign theme tokens. Common Element geometry stays in res/common/. */
 :root{
-  --theme-base-1:#08090b;--theme-base-2:#0e1013;--theme-base-3:#111216;--theme-base-4:#12151a;--theme-base-5:#17191d;
-  --theme-accent-1:#8e2631;--theme-accent-2:#bca06a;
-  --theme-text-1:#eee9dc;--theme-text-2:#d7d2c8;--theme-text-3:#aaa59b;--theme-text-muted:#817d76;--theme-title-accent:#b9b1a1;
-  --theme-line-1:#373a3e;--theme-line-2:#4b4e52;--theme-nav-background:#111317;--theme-nav-text:#c9c5bc;--theme-nav-active-background:#191a1d;
+  --theme-base-1:#10170b;--theme-base-2:#1a2410;--theme-base-3:#29351a;--theme-base-4:#394824;--theme-base-5:#4b5c2d;
+  --theme-accent-1:#a8783e;--theme-accent-2:#e0bd62;
+  --theme-text-1:#fffdf5;--theme-text-2:#f1ead9;--theme-text-3:#d0c6a9;--theme-text-muted:#a79a7a;--theme-title-accent:#fff8e5;
+  --theme-line-1:#4e5a31;--theme-line-2:#8a6a3d;--theme-nav-background:#151d0d;--theme-nav-text:#f4ecd9;--theme-nav-active-background:#303d1b;
   --theme-seal-border:#8f8b80;--theme-seal-inner-border:#635f56;--theme-seal-background:#08090bcc;--theme-seal-small-text:#aaa397;--theme-seal-main-text:#d6cbb5;
   --theme-font-1:"Voltaire",sans-serif;--theme-font-2:"Fira Sans Extra Condensed",sans-serif;--theme-font-3:"Brygada 1918",Georgia,serif;
   --theme-hero-image:url("/res/voronoi/webp/odyssey-of-the-dragonlords.webp");
@@ -16,8 +16,8 @@ body.default-dd-campaign-page{
   margin:0;
   min-height:100vh;
   background:
-    radial-gradient(circle at 75% 8%,#242b31 0,transparent 32%),
-    radial-gradient(circle at 10% 70%,#1a171a 0,transparent 30%),
+    radial-gradient(circle at 75% 8%,#4a4e25 0,transparent 34%),
+    radial-gradient(circle at 10% 70%,#5b4222 0,transparent 30%),
     var(--theme-base-1);
   color:var(--theme-text-1);
   font-family:var(--theme-font-2);
@@ -30,22 +30,22 @@ body.default-dd-campaign-page::before{
 
 .ddc-content{width:min(1220px,calc(100% - 48px));margin:auto;padding:70px 0 100px}
 .ddc-tab-panel[hidden]{display:none}
-.ddc-card{border:1px solid #3a3d42;background:linear-gradient(145deg,#13161a,#0d0f12);box-shadow:0 20px 65px #0007}
-.ddc-card-title{display:flex;align-items:center;gap:18px;padding:18px 28px;border-bottom:1px solid #34373b;background:#0a0c0f}
+.ddc-card{border:1px solid #6d7040;background:linear-gradient(145deg,#26331a,#12190d);box-shadow:0 20px 65px #0008}
+.ddc-card-title{display:flex;align-items:center;gap:18px;padding:18px 28px;border-bottom:1px solid #4e5a31;background:#151d0d}
 .ddc-card-title span{font:400 30px/1 var(--theme-font-1);color:var(--theme-accent-1)}
 .ddc-card-title strong{font:700 12px/1 var(--theme-font-1);letter-spacing:3px;color:#d9d3c7}
 .ddc-card-body{padding:28px}
 .ddc-intro-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:26px;align-items:stretch}
-.ddc-paper{position:relative;padding:40px;background:linear-gradient(135deg,#17191d,#101215);border:1px solid var(--theme-line-1);box-shadow:0 20px 70px #0007}
+.ddc-paper{position:relative;padding:40px;background:linear-gradient(135deg,#303b20,#1a2410);border:1px solid var(--theme-line-1);box-shadow:0 20px 70px #0008}
 .ddc-paper:after{content:"";position:absolute;top:0;right:35px;width:1px;height:100%;background:#292c30}
 .ddc-section-mark{font:400 13px/1 var(--theme-font-1);text-transform:uppercase;letter-spacing:3px;color:var(--theme-accent-2)}
 .ddc-paper h2,.ddc-source-panel h2,.ddc-section h2,.ddc-section-head h2{font:400 clamp(36px,4vw,58px)/.95 var(--theme-font-1);color:#ece7dc;margin:12px 0 20px}
 .ddc-paper p,.ddc-source-panel p{max-width:72ch;margin:0 0 14px}
-.ddc-paper p{color:#aaa9a3;font-family:var(--theme-font-3);font-size:16px;line-height:1.6}
-.ddc-case{padding:28px;background:#0d0f12;border:1px solid #46484b;box-shadow:8px 8px 0 #050608}
-.ddc-case-label{color:#b73b48;font:700 12px var(--theme-font-1);letter-spacing:3px;border-bottom:1px solid #4b3a3c;padding-bottom:12px;margin-bottom:5px}
-.ddc-case-row{display:flex;justify-content:space-between;gap:15px;padding:15px 0;border-bottom:1px solid #292c30;font-size:13px}
-.ddc-case-row span{color:#85827c;letter-spacing:1px}.ddc-case-row strong{font-family:var(--theme-font-1);font-size:16px;color:#ddd7ca;text-align:right}.ddc-case-row .ddc-active{color:#b94a55}
+.ddc-paper p{color:#eee7d5;font-family:var(--theme-font-3);font-size:16px;line-height:1.7}
+.ddc-case{padding:28px;background:#151d0d;border:1px solid #8a6a3d;box-shadow:8px 8px 0 #080b05}
+.ddc-case-label{color:#e0bd62;font:700 12px var(--theme-font-1);letter-spacing:3px;border-bottom:1px solid #8a6a3d;padding-bottom:12px;margin-bottom:5px}
+.ddc-case-row{display:flex;justify-content:space-between;gap:15px;padding:15px 0;border-bottom:1px solid #394824;font-size:13px}
+.ddc-case-row span{color:#d0c6a9;letter-spacing:1px}.ddc-case-row strong{font-family:var(--theme-font-1);font-size:15px;color:#fff8e5;text-align:right}.ddc-case-row .ddc-active{color:#e0bd62}
 
 .ddc-party-portrait{margin-top:70px;display:grid;grid-template-columns:.55fr 1.45fr;gap:0;border:1px solid #383b3f;background:#0e1013;box-shadow:0 20px 70px #0007;overflow:hidden}
 .ddc-party-copy{padding:36px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(145deg,#17191d,#0e1013)}
@@ -97,3 +97,18 @@ body.default-dd-campaign-page::before{
   .ddc-source-panel{display:block}.ddc-source-panel a{display:inline-block;margin-top:20px}
   .ddc-footer{display:block}.ddc-footer a{display:block;margin-top:8px}
 }
+
+/* Odyssey of the Dragonlords — olive, bronze and ceremonial gold. */
+.ddc-playlist-link{display:inline-flex;align-items:center;gap:10px;padding:13px 18px;border:1px solid #e0bd62;background:linear-gradient(135deg,#4b5c2d,#29351a);color:#fff8e5;text-decoration:none;font:700 13px var(--theme-font-1);letter-spacing:1.5px;transition:transform .2s ease,background .2s ease}
+.ddc-playlist-link:hover{transform:translateY(-2px);background:#5b6734}
+.v-chronicle__entry{border-color:#4e5a31!important;background:linear-gradient(110deg,#202b15,#141d0e)!important}
+.v-chronicle__summary{gap:14px!important}
+.v-chronicle__session{color:#e0bd62!important;border-color:#8a6a3d!important}
+.v-chronicle__title{color:#fffdf5!important}
+.v-chronicle__recordings{color:#e0bd62!important}
+.v-chronicle__notes{color:#eee7d5!important}
+.v-chronicle__notes a{color:#f0cf78!important;text-decoration-color:#8a6a3d}
+.ddc-party-portrait{border-color:#8a6a3d!important}
+.ddc-party-copy{background:linear-gradient(145deg,#303b20,#151d0d)!important}
+.ddc-party-image img{display:block;width:100%;height:100%;object-fit:cover}
+@media(max-width:760px){.ddc-paper{padding:26px}.ddc-case{padding:22px}}
