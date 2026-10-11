@@ -27,7 +27,7 @@
           '<h3>' + escapeHtml(item.name) + '</h3>' +
           '<p>' + escapeHtml(item.description) + '</p>' +
           '<div class="achievement-catalogue-tags"><span>' + escapeHtml(categoryLabel(item.category)) + '</span>' +
-          (item.rarity ? '<span>' + escapeHtml(item.rarity) + '</span>' : '') + '</div>' +
+           '</div>' +
         '</div>' +
       '</article>'
     ).join("");
