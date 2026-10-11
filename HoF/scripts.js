@@ -278,7 +278,7 @@
       awardIds.add(award.id);
       if (!recordIds.has(award.characterId)) errors.push("Nieznana postać w nagrodzie " + award.id + ": " + award.characterId);
       if (!achievementIds.has(award.achievementId)) errors.push("Nieznane osiągnięcie w nagrodzie " + award.id + ": " + award.achievementId);
-      if (award.awardedAt && !/^\d{4}-\\d{2}-\\d{2}$/.test(award.awardedAt)) errors.push("Nieprawidłowa data nagrody: " + award.id);
+      if (award.awardedAt && !/^\d{4}-\d{2}-\d{2}$/.test(award.awardedAt)) errors.push("Nieprawidłowa data nagrody: " + award.id);
     });
     return errors.slice(0, 12);
   }
