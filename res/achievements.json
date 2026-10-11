@@ -182,73 +182,10 @@
     "category": "Eksploracja"
   },
   {
-    "id": "nie-do-zlamania",
-    "name": "Nie do Złamania",
-    "icon": "🛡️",
-    "description": "Przetrwaj starcie, osiągając 0 PW co najmniej dwa razy.",
-    "category": "Walka"
-  },
-  {
-    "id": "ostatni-cios",
-    "name": "Ostatni Cios",
-    "icon": "⚔️",
-    "description": "Zadaj decydujący cios potężnemu przeciwnikowi, gdy przetrwanie drużyny jest zagrożone.",
-    "category": "Walka"
-  },
-  {
-    "id": "aniol-stroz",
-    "name": "Anioł Stróż",
-    "icon": "🩹",
-    "description": "Uratuj sojusznika przed niechybną śmiercią podczas walki.",
-    "category": "Walka"
-  },
-  {
-    "id": "odkrywca-nieznanego",
-    "name": "Odkrywca Nieznanego",
-    "icon": "🗺️",
-    "description": "Odkryj miejsce lub sekret, który w przeciwnym razie pozostałby niezauważony przez drużynę.",
-    "category": "Eksploracja"
-  },
-  {
-    "id": "nic-nie-umknie",
-    "name": "Nic Nie Umknie",
-    "icon": "🔐",
-    "description": "Odkryj ważną ukrytą prawdę, tajne przejście lub spisek.",
-    "category": "Eksploracja"
-  },
-  {
-    "id": "mistrz-manipulacji",
-    "name": "Mistrz Manipulacji",
-    "icon": "🎭",
-    "description": "Przekonaj lub oszukaj wpływowego bohatera niezależnego (BN-a), by zrobił coś, czemu stanowczo się sprzeciwiał.",
-    "category": "Odgrywanie Roli"
-  },
-  {
     "id": "nieoczekiwany-sojusz",
     "name": "Nieoczekiwany Sojusz",
     "icon": "🤝",
     "description": "Przemień dawnego wroga w prawdziwego sojusznika.",
     "category": "Odgrywanie Roli"
-  },
-  {
-    "id": "koniec-pewnej-ery",
-    "name": "Koniec Pewnej Ery",
-    "icon": "🏁",
-    "description": "Doprowadź do zakończenia ważnego wątku fabularnego kampanii.",
-    "category": "Kamienie Milowe"
-  },
-  {
-    "id": "kosci-tak-chcialy",
-    "name": "Kości Tak Chciały",
-    "icon": "🎲",
-    "description": "Odnieś sukces w nieprawdopodobnej sytuacji dzięki wyjątkowo szczęśliwemu rzutowi.",
-    "category": "Specjalne"
-  },
-  {
-    "id": "co-moglo-pojsc-nie-tak",
-    "name": "Co Mogło Pójść Nie Tak?",
-    "icon": "🌀",
-    "description": "Doprowadź do spektakularnej katastrofy wskutek decyzji, której można było uniknąć.",
-    "category": "Specjalne"
   }
 ]
