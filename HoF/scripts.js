@@ -111,10 +111,9 @@
     return asArray(ids).map(id => {
       const achievement = state.achievements.get(id);
       if (!achievement) return "";
-      const rarity = achievementRarity(achievement.id);
-      return '<div class="achievement rarity-' + rarity + '" tabindex="0" data-achievement="' + escapeHtml(achievement.id) + '" aria-label="' + escapeHtml(achievement.name) + '">' +
+      return '<div class="achievement" tabindex="0" data-achievement="' + escapeHtml(achievement.id) + '" aria-label="' + escapeHtml(achievement.name) + '">' +
         '<span class="achievement-icon" aria-hidden="true">' + escapeHtml(achievement.icon) + '</span>' +
-        '<span class="achievement-tooltip" role="tooltip"><strong>' + escapeHtml(achievement.name) + '</strong><span>' + escapeHtml(achievement.description) + '</span><small>' + escapeHtml(categoryLabel(achievement.category)) + ' · ' + escapeHtml(rarityLabel(rarity)) + '</small></span>' +
+        '<span class="achievement-tooltip" role="tooltip"><strong>' + escapeHtml(achievement.name) + '</strong><span>' + escapeHtml(achievement.description) + '</span><small>' + escapeHtml(categoryLabel(achievement.category)) + '</small></span>' +
       '</div>';
     }).join("");
   }
@@ -146,26 +145,15 @@
     "Specjalne": "Specjalne"
   };
   const categoryLabel = category => CATEGORY_LABELS[category] || "Inne";
-  function achievementRarity(id) {
-    const count = new Set(state.awards.filter(award => award.achievementId === id).map(award => award.characterId)).size;
-    if (count <= 1) return "legendary";
-    if (count <= 5) return "rare";
-    if (count <= 15) return "uncommon";
-    return "common";
-  }
-  const rarityLabel = rarity => ({
-    legendary:"Legendarne", rare:"Rzadkie", uncommon:"Niepospolite", common:"Pospolite"
-  })[rarity] || "Nieznana";
   function achievementDetailMarkup(ids) {
     const known = asArray(ids).map(id => state.achievements.get(id)).filter(Boolean);
     if (!known.length) return '<span class="muted-detail">Brak zdobytych osiągnięć</span>';
     return '<div class="modal-achievements">' + known.map(achievement => {
-      const rarity = achievementRarity(achievement.id);
-      return '<div class="modal-achievement rarity-' + rarity + '">' +
+      return '<div class="modal-achievement">' +
         '<span class="modal-achievement-icon" aria-hidden="true">' + escapeHtml(achievement.icon) + '</span>' +
         '<div><strong>' + escapeHtml(achievement.name) + '</strong>' +
         '<p>' + escapeHtml(achievement.description) + '</p>' +
-        '<small>' + escapeHtml(categoryLabel(achievement.category)) + ' · ' + escapeHtml(rarityLabel(rarity)) + '</small></div>' +
+        '<small>' + escapeHtml(categoryLabel(achievement.category)) + '</small></div>' +
       '</div>';
     }).join('') + '</div>';
   }
