@@ -706,7 +706,7 @@ footer a{color:var(--gold)}
 .achievement-catalogue-tags span{border-radius:3px;color:var(--muted);font-family:"Fira Sans Extra Condensed",sans-serif;letter-spacing:.3px}
 
 /* Tablet: controls and stats become compact full-width bands above the gallery. */
-@media(max-width:1450px){
+@media(max-width:1240px){
   .archive-layout{grid-template-columns:minmax(0,1fr);gap:0}
   .archive-sidebar-right{order:1}
   .archive-sidebar-left{order:2}
@@ -786,9 +786,13 @@ footer a{color:var(--gold)}
   .achievement-catalogue-card{padding:16px}
 }
 @media(min-width:1921px){
-  main{max-width:var(--content-max)}
-  .archive-layout{grid-template-columns:250px minmax(0,1fr) 225px;gap:28px}
-  .grid{grid-template-columns:repeat(auto-fit,minmax(205px,1fr))}
+  /* Use the full viewport on wide displays instead of capping the archive at 1840px. */
+  main{max-width:none;padding-inline:clamp(24px,2vw,48px)}
+  .archive-layout{grid-template-columns:250px minmax(0,1fr) 225px;gap:clamp(20px,1.2vw,32px)}
+  .grid{grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:clamp(10px,.65vw,16px)}
+  .card-body{padding:12px}
+  .card-name{font-size:clamp(22px,1.05vw,30px)}
+  .meta-row{grid-template-columns:56px minmax(0,1fr);gap:7px}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
