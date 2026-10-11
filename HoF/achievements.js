@@ -5,11 +5,11 @@
   const normalize = value => String(value ?? "").trim().toLocaleLowerCase("pl-PL").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
   const CATEGORY_LABELS = {
-    "przetrwanie":"Przetrwanie","fabula":"Fabuła","osiagniecia":"Osiągnięcia",
-    "poswiecenie":"Poświęcenie","walka":"Walka","przemiana":"Przemiana",
-    "magia":"Magia","pakt":"Pakty","wplywy":"Wpływy","majetek":"Majątek",
-    "artefakty":"Artefakty","katastrofa":"Katastrofa","humor":"Humor",
-    "przedmioty":"Przedmioty","inne":"Inne"
+    "Walka": "Walka",
+    "Eksploracja": "Eksploracja",
+    "Odgrywanie Roli": "Odgrywanie Roli",
+    "Kamienie Milowe": "Kamienie Milowe",
+    "Specjalne": "Specjalne"
   };
   const categoryLabel = category => CATEGORY_LABELS[category] || "Inne";
   let achievements = [];
