@@ -99,7 +99,6 @@ body.default-dd-campaign-page::before{
   .ddc-footer{display:block}.ddc-footer a{display:block;margin-top:8px}
 }
 
-
 /* Echtra-specific atmosphere: ancient woodland and the turning of the seasons. */
 body.default-dd-campaign-page{
   background:
@@ -155,7 +154,6 @@ body.default-dd-campaign-page::before{opacity:.09}
 .v-chronicle__recording:hover{border-color:#c5a96a;background:#c5a96a;color:#10170f}
 .ddc-footer{border-top-color:#405744;background:#070d09;color:#7d8a79}
 .ddc-footer a{color:#c5a96a}
-
 
 /* Shared Echtra display typography. */
 .ddc-section-mark,.ddc-case-label,.ddc-card-title strong,.ddc-source-panel a,.ddc-footer a{font-family:"Uncial Antiqua",serif;letter-spacing:.06em}
