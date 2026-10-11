@@ -2,10 +2,10 @@
 
 /* Default D&D Campaign theme tokens. Common Element geometry stays in res/common/. */
 :root{
-  --theme-base-1:#08090b;--theme-base-2:#0e1013;--theme-base-3:#111216;--theme-base-4:#12151a;--theme-base-5:#17191d;
-  --theme-accent-1:#8e2631;--theme-accent-2:#bca06a;
-  --theme-text-1:#eee9dc;--theme-text-2:#d7d2c8;--theme-text-3:#aaa59b;--theme-text-muted:#817d76;--theme-title-accent:#b9b1a1;
-  --theme-line-1:#373a3e;--theme-line-2:#4b4e52;--theme-nav-background:#111317;--theme-nav-text:#c9c5bc;--theme-nav-active-background:#191a1d;
+  --theme-base-1:#08090d;--theme-base-2:#0c0e14;--theme-base-3:#11131b;--theme-base-4:#171923;--theme-base-5:#20212b;
+  --theme-accent-1:#8f2639;--theme-accent-2:#c3a66d;
+  --theme-text-1:#eee9e4;--theme-text-2:#d7d0cb;--theme-text-3:#aaa2a3;--theme-text-muted:#81777d;--theme-title-accent:#c9b9b3;
+  --theme-line-1:#3c3039;--theme-line-2:#58404a;--theme-nav-background:#101018;--theme-nav-text:#d0c5c6;--theme-nav-active-background:#251820;
   --theme-seal-border:#8f8b80;--theme-seal-inner-border:#635f56;--theme-seal-background:#08090bcc;--theme-seal-small-text:#aaa397;--theme-seal-main-text:#d6cbb5;
   --theme-font-1:"Voltaire",sans-serif;--theme-font-2:"Fira Sans Extra Condensed",sans-serif;--theme-font-3:"Brygada 1918",Georgia,serif;
   --theme-hero-image:url("/res/voronoi/webp/sons-of-azalin.webp");
@@ -16,8 +16,8 @@ body.default-dd-campaign-page{
   margin:0;
   min-height:100vh;
   background:
-    radial-gradient(circle at 75% 8%,#242b31 0,transparent 32%),
-    radial-gradient(circle at 10% 70%,#1a171a 0,transparent 30%),
+    radial-gradient(circle at 75% 8%,#29202b 0,transparent 32%),
+    radial-gradient(circle at 10% 70%,#211219 0,transparent 30%),
     var(--theme-base-1);
   color:var(--theme-text-1);
   font-family:var(--theme-font-2);
