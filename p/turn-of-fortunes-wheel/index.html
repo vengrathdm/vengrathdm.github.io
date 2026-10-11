@@ -44,6 +44,33 @@
          data-continuation-key="turnOfFortunesWheelTheme"></div>
 
     <main class="ddc-content">
+      <section class="fate-wheel" aria-labelledby="fate-wheel-title">
+        <div class="fate-wheel__intro">
+          <div class="ddc-section-mark">ARCHIWUM / ŚCIEŻKI</div>
+          <h2 id="fate-wheel-title">Koło Fortuny</h2>
+          <p>Każdy wybór prowadzi dalej. Wybierz ścieżkę, by odkryć fragment archiwum kampanii.</p>
+        </div>
+        <div class="fate-wheel__layout">
+          <div class="fate-wheel__diagram" aria-label="Interaktywne Koło Fortuny">
+            <div class="fate-wheel__orbit fate-wheel__orbit--outer"></div>
+            <div class="fate-wheel__orbit fate-wheel__orbit--inner"></div>
+            <div class="fate-wheel__core"><span>VENGRATH</span><strong>✦</strong><small>FORTUNA ROTATUR</small></div>
+            <button class="fate-node fate-node--lands is-active" type="button" data-fate-choice="lands" aria-pressed="true"><span class="fate-node__icon">⌖</span><strong>Rubieże</strong><small>Miejsca i bramy</small></button>
+            <button class="fate-node fate-node--people" type="button" data-fate-choice="people" aria-pressed="false"><span class="fate-node__icon">♙</span><strong>Postacie</strong><small>Drużyna i losy</small></button>
+            <button class="fate-node fate-node--mysteries" type="button" data-fate-choice="mysteries" aria-pressed="false"><span class="fate-node__icon">✧</span><strong>Sekrety</strong><small>Tajemnice Koła</small></button>
+            <button class="fate-node fate-node--story" type="button" data-fate-choice="story" aria-pressed="false"><span class="fate-node__icon">▤</span><strong>Kronika</strong><small>Sesje i nagrania</small></button>
+            <button class="fate-node fate-node--path" type="button" data-fate-choice="path" aria-pressed="false"><span class="fate-node__icon">✥</span><strong>Twoja ścieżka</strong><small>Materiały kampanii</small></button>
+          </div>
+          <aside class="fate-wheel__detail" aria-live="polite">
+            <div class="fate-wheel__detail-kicker" id="fate-detail-kicker">ŚCIEŻKA / 01</div>
+            <h3 id="fate-detail-title">Rubieże</h3>
+            <p id="fate-detail-copy">Od Sigil po granice niezwykłych planów — odkryj miejsca, które nadały tej historii kształt.</p>
+            <a id="fate-detail-link" href="#main-content" class="fate-wheel__link">WEJDŹ DO ARCHIWUM <span aria-hidden="true">↗</span></a>
+          </aside>
+        </div>
+        <div class="fate-wheel__footer"><span>TURN OF FORTUNE'S WHEEL</span><span>LOS NIE STOI W MIEJSCU <i>✦</i></span></div>
+      </section>
+      <div id="main-content"></div>
       <section class="ddc-tab-panel" id="main" data-v-tab-panel>
         <section class="ddc-card">
           <div class="ddc-card-title"><span>01</span><strong>AKTA KAMPANII</strong></div>
