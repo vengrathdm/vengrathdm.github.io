@@ -873,5 +873,25 @@
     "id": "award-0175",
     "characterId": "char-0282",
     "achievementId": "van-helsing"
+  },
+  {
+    "id": "award-0176",
+    "characterId": "char-0079",
+    "achievementId": "nieoczekiwany-sojusz"
+  },
+  {
+    "id": "award-0177",
+    "characterId": "char-0082",
+    "achievementId": "nieoczekiwany-sojusz"
+  },
+  {
+    "id": "award-0178",
+    "characterId": "char-0081",
+    "achievementId": "nieoczekiwany-sojusz"
+  },
+  {
+    "id": "award-0179",
+    "characterId": "char-0083",
+    "achievementId": "nieoczekiwany-sojusz"
   }
 ]
