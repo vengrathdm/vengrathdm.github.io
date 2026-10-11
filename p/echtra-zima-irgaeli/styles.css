@@ -1,13 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Almendra+SC&family=Uncial+Antiqua&family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Brygada+1918:wght@400;500;600;700&display=swap");
 
 /* Default D&D Campaign theme tokens. Common Element geometry stays in res/common/. */
 :root{
-  --theme-base-1:#08090b;--theme-base-2:#0e1013;--theme-base-3:#111216;--theme-base-4:#12151a;--theme-base-5:#17191d;
-  --theme-accent-1:#8e2631;--theme-accent-2:#bca06a;
-  --theme-text-1:#eee9dc;--theme-text-2:#d7d2c8;--theme-text-3:#aaa59b;--theme-text-muted:#817d76;--theme-title-accent:#b9b1a1;
-  --theme-line-1:#373a3e;--theme-line-2:#4b4e52;--theme-nav-background:#111317;--theme-nav-text:#c9c5bc;--theme-nav-active-background:#191a1d;
-  --theme-seal-border:#8f8b80;--theme-seal-inner-border:#635f56;--theme-seal-background:#08090bcc;--theme-seal-small-text:#aaa397;--theme-seal-main-text:#d6cbb5;
-  --theme-font-1:"Voltaire",sans-serif;--theme-font-2:"Fira Sans Extra Condensed",sans-serif;--theme-font-3:"Brygada 1918",Georgia,serif;
+  --theme-base-1:#080e0b;--theme-base-2:#0c1510;--theme-base-3:#111c15;--theme-base-4:#142019;--theme-base-5:#1a281d;
+  --theme-accent-1:#91a978;--theme-accent-2:#c5a96a;
+  --theme-text-1:#eee9dc;--theme-text-2:#d7d9ca;--theme-text-3:#a8b3a1;--theme-text-muted:#7d8a79;--theme-title-accent:#c8d2b9;
+  --theme-line-1:#344638;--theme-line-2:#4a5d4a;--theme-nav-background:#0d1711;--theme-nav-text:#c9d0c0;--theme-nav-active-background:#1a2a1e;
+  --theme-seal-border:#a2b18f;--theme-seal-inner-border:#596d52;--theme-seal-background:#080e0bcc;--theme-seal-small-text:#b3c0a5;--theme-seal-main-text:#e0d6b8;
+  --theme-font-1:"Almendra SC",serif;--theme-font-2:"Fira Sans Extra Condensed",sans-serif;--theme-font-3:"Brygada 1918",Georgia,serif;
   --theme-hero-image:url("/res/voronoi/webp/echtra-midst-the-sidhe.webp");
 }
 
@@ -97,3 +97,26 @@ body.default-dd-campaign-page::before{
   .ddc-source-panel{display:block}.ddc-source-panel a{display:inline-block;margin-top:20px}
   .ddc-footer{display:block}.ddc-footer a{display:block;margin-top:8px}
 }
+
+
+/* Echtra: woodland green, old gold, and Celtic display typography. */
+.ddc-section-mark,.ddc-case-label,.ddc-card-title strong,.ddc-source-panel a,.ddc-footer a{font-family:"Uncial Antiqua",serif;letter-spacing:.06em}
+.ddc-case-label{color:#c5a96a;border-bottom-color:#405744}
+.ddc-case-row .ddc-active{color:#a8bd8b}
+.ddc-card{border-color:#405744;background:linear-gradient(145deg,#142019,#0b120d);box-shadow:0 20px 65px #0008,inset 0 1px #c5a96a16}
+.ddc-card-title{border-bottom-color:#354b38;background:linear-gradient(90deg,#19291d,#0b120d)}
+.ddc-paper{border-color:#344a38;background:radial-gradient(ellipse at 100% 0,#78905a17,transparent 45%),linear-gradient(135deg,#17241a,#0d1510)}
+.ddc-case{border-color:#435945;background:radial-gradient(ellipse at 100% 0,#7286501b,transparent 58%),#0d1510}
+.ddc-party-portrait,.ddc-source-panel{border-color:#405744;background:linear-gradient(120deg,#142019,#0c140e)}
+.ddc-manifesto,.ddc-character-quote{border-color:#65734b;background:linear-gradient(90deg,#101a13,#1b281a,#101a13)}
+.v-character-card{border-color:#405744;background:linear-gradient(155deg,#1a281d,#0b120d 72%)}
+.v-character-card:hover,.v-character-card:focus-within{border-color:#c5a96a;box-shadow:0 26px 58px #0009,0 0 32px #91a9781c}
+.v-character-card__label{color:#c5a96a}
+.v-chronicle{border-top-color:#52664a}
+.v-chronicle__entry{border-color:#344a38;background:linear-gradient(110deg,#17241a,#0b120d 70%)}
+.v-chronicle__entry:hover,.v-chronicle__entry[open]{border-color:#91a978;background:linear-gradient(110deg,#203122,#0e1710 75%)}
+.v-chronicle__session{color:#b7c99a}
+.v-chronicle__recording{border-color:#64784f;background:#111b13;color:#d4bd82}
+.v-chronicle__recording:hover{border-color:#c5a96a;background:#c5a96a;color:#10170f}
+.ddc-footer{border-top-color:#405744;background:#070d09;color:#7d8a79}
+.ddc-footer a{color:#c5a96a}
