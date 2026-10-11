@@ -908,5 +908,10 @@
     "id": "award-0182",
     "characterId": "char-0275",
     "achievementId": "krolotworca"
+  },
+  {
+    "id": "award-0183",
+    "characterId": "char-0192",
+    "achievementId": "legenda"
   }
 ]
