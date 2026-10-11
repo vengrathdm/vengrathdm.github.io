@@ -9,7 +9,7 @@
   --theme-line-1:#344638;--theme-line-2:#4a5d4a;--theme-nav-background:#0d1711;--theme-nav-text:#c9d0c0;--theme-nav-active-background:#1a2a1e;
   --theme-seal-border:#a2b18f;--theme-seal-inner-border:#596d52;--theme-seal-background:#080e0bcc;--theme-seal-small-text:#b3c0a5;--theme-seal-main-text:#e0d6b8;
   --theme-font-1:"Voltaire",sans-serif;--theme-font-2:"Fira Sans Extra Condensed",sans-serif;--theme-font-3:"Brygada 1918",Georgia,serif;
-  --theme-hero-image:url("./res/hero-image.jpg");
+  --theme-hero-image:url("/p/echtra-midst-the-sidhe/res/hero-image.jpg");
 }
 
 html{scroll-behavior:smooth}
