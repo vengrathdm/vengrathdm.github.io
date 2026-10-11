@@ -659,9 +659,7 @@
     "achievements": [],
     "id": "char-0034",
     "history": "Brak zapisków.",
-    "modules": [
-      "Barber of Silverymoon"
-    ]
+    "modules": []
   },
   {
     "portrait": "/res/portraits/char-0035.webp",
@@ -680,9 +678,7 @@
     ],
     "id": "char-0035",
     "history": "Brak zapisków.",
-    "modules": [
-      "Barber of Silverymoon"
-    ]
+    "modules": []
   },
   {
     "portrait": "/res/portraits/char-0036.webp",
@@ -690,7 +686,7 @@
     "player": "Goku94",
     "campaigns": [
       "Barber of Silverymoon",
-      "Lost Mine of Phandelver"
+      "Lost Mine of Phandelver 2"
     ],
     "classes": [
       "Fighter"
@@ -703,7 +699,6 @@
     "id": "char-0036",
     "history": "Brak zapisków.",
     "modules": [
-      "Barber of Silverymoon",
       "Lost Mine of Phandelver"
     ]
   },
@@ -713,7 +708,7 @@
     "player": "Hansik",
     "campaigns": [
       "Barber of Silverymoon",
-      "Lost Mine of Phandelver"
+      "Lost Mine of Phandelver 2"
     ],
     "classes": [
       "Rogue"
@@ -724,7 +719,6 @@
     "id": "char-0208",
     "history": "Brak zapisków.",
     "modules": [
-      "Barber of Silverymoon",
       "Lost Mine of Phandelver"
     ]
   },
@@ -1293,7 +1287,7 @@
     "character": "Olgi",
     "player": "Viking",
     "campaigns": [
-      "Lost Mine of Phandelver"
+      "Lost Mine of Phandelver: Dragons Rising"
     ],
     "classes": [
       "Wizard"
@@ -2052,7 +2046,7 @@
     "character": "Mobius",
     "player": "Mobius",
     "campaigns": [
-      "The Sunless Citadel"
+      "The Sunless Citadel 2"
     ],
     "classes": [
       "Sorcerer"
@@ -2071,7 +2065,7 @@
     "character": "Bambik",
     "player": "killyox",
     "campaigns": [
-      "The Sunless Citadel"
+      "The Sunless Citadel 2"
     ],
     "classes": [
       "Artificer"
@@ -2090,7 +2084,7 @@
     "character": "Magnus",
     "player": "Viking",
     "campaigns": [
-      "The Sunless Citadel"
+      "The Sunless Citadel 2"
     ],
     "classes": [
       "Bloodhunter"
@@ -2109,7 +2103,7 @@
     "character": "Zani",
     "player": "Princess Molesta",
     "campaigns": [
-      "The Sunless Citadel"
+      "The Sunless Citadel 2"
     ],
     "classes": [
       "Warlock"
@@ -2529,7 +2523,7 @@
     "character": "Balin",
     "player": "lexonis",
     "campaigns": [
-      "Dragon of Icespire Peak"
+      "Dragon of Icespire Peak 2"
     ],
     "classes": [
       "Cleric"
@@ -2610,7 +2604,7 @@
     "character": "Eldamir Velithar",
     "player": "Rezus",
     "campaigns": [
-      "Dragon of Icespire Peak"
+      "Dragon of Icespire Peak 2"
     ],
     "classes": [
       "Wizard"
@@ -2675,7 +2669,7 @@
     "character": "Korrak Orphanmaker",
     "player": "lexonis",
     "campaigns": [
-      "Dragon of Icespire Peak"
+      "Dragon of Icespire Peak 2"
     ],
     "classes": [
       "Barbarian"
@@ -2696,7 +2690,7 @@
     "character": "Leoynor",
     "player": "Rezus",
     "campaigns": [
-      "Lost Mine of Phandelver"
+      "Lost Mine of Phandelver 2"
     ],
     "classes": [
       "Paladin"
@@ -2817,7 +2811,7 @@
     "character": "Aldori",
     "player": "killyox",
     "campaigns": [
-      "Heroes of Drakkenheim"
+      "Heroes of Drakkenheim 2"
     ],
     "classes": [
       "Rogue"
@@ -2876,7 +2870,7 @@
     "character": "Arson",
     "player": "DharmaEye",
     "campaigns": [
-      "Lost Mine of Phandelver",
+      "Lost Mine of Phandelver: Dragons Rising",
       "Rise of Tiamat"
     ],
     "classes": [
@@ -2922,7 +2916,7 @@
     "character": "Chronius Mk. III",
     "player": "Route",
     "campaigns": [
-      "Lost Mine of Phandelver"
+      "Lost Mine of Phandelver: Dragons Rising"
     ],
     "classes": [
       "Sorcerer"
@@ -3000,7 +2994,7 @@
     "character": "Kairos",
     "player": "killyox",
     "campaigns": [
-      "Heroes of Drakkenheim"
+      "Heroes of Drakkenheim 2"
     ],
     "classes": [
       "Warlock",
@@ -3041,7 +3035,7 @@
     "character": "Korghos Khul",
     "player": "killyox",
     "campaigns": [
-      "Heroes of Drakkenheim"
+      "Heroes of Drakkenheim 2"
     ],
     "classes": [
       "Barbarian"
@@ -3175,7 +3169,7 @@
     "character": "Henry",
     "player": "McKimono",
     "campaigns": [
-      "Heroes of Drakkenheim"
+      "Heroes of Drakkenheim 2"
     ],
     "classes": [
       "Cleric"
@@ -3194,7 +3188,7 @@
     "character": "Haldir",
     "player": "Przemek",
     "campaigns": [
-      "Heroes of Drakkenheim"
+      "Heroes of Drakkenheim 2"
     ],
     "classes": [
       "Rogue"
@@ -3724,7 +3718,7 @@
     "character": "Anduine",
     "player": "vissara",
     "campaigns": [
-      "Lost Mine of Phandelver"
+      "Lost Mine of Phandelver 2"
     ],
     "classes": [
       "Sorcerer"
@@ -3824,7 +3818,7 @@
     "character": "Puff",
     "player": "Jakubek",
     "campaigns": [
-      "Dragon of Icespire Peak"
+      "Dragon of Icespire Peak 2"
     ],
     "classes": [
       "Ranger"
@@ -3890,7 +3884,7 @@
     "character": "Torg'dal",
     "player": "Viking",
     "campaigns": [
-      "Heroes of Drakkenheim"
+      "Heroes of Drakkenheim 2"
     ],
     "classes": [
       "Bloodhunter"
@@ -4012,7 +4006,7 @@
     "character": "Bungo Barkmaw",
     "player": "Amazur",
     "campaigns": [
-      "Dragon of Icespire Peak"
+      "Dragon of Icespire Peak 2"
     ],
     "classes": [
       "Barbarian"
@@ -4235,7 +4229,7 @@
     "character": "Tonie Scam",
     "player": "Amazur",
     "campaigns": [
-      "Dragon of Icespire Peak"
+      "Dragon of Icespire Peak 2"
     ],
     "classes": [
       "Bard"
@@ -5547,7 +5541,7 @@
     "character": "Selene Lunaris",
     "player": "Jeesso",
     "campaigns": [
-      "Dragon of Icespire Peak"
+      "Dragon of Icespire Peak 2"
     ],
     "classes": [
       "Paladin"
