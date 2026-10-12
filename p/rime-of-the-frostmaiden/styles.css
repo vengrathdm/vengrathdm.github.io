@@ -97,3 +97,9 @@ body.default-dd-campaign-page::before{
   .ddc-source-panel{display:block}.ddc-source-panel a{display:inline-block;margin-top:20px}
   .ddc-footer{display:block}.ddc-footer a{display:block;margin-top:8px}
 }
+
+/* Campaign-specific visual identity */
+:root{--theme-base-1:#071016;--theme-base-2:#0d1b24;--theme-base-3:#0d1b24;--theme-base-4:#0d1b24;--theme-base-5:#0d1b24;--theme-accent-1:#72b8c9;--theme-accent-2:#d0c4a1;--theme-text-1:#e1eff2;--theme-title-accent:#a8dbe6;--theme-line-1:#294653;--theme-line-2:#72b8c9;--theme-nav-background:#0d1b24;--theme-nav-active-background:#0d1b24;--theme-seal-border:#d0c4a1;--theme-seal-inner-border:#294653;--theme-seal-main-text:#a8dbe6;--theme-hero-image:url("/res/voronoi/webp/rime-of-the-frostmaiden.webp")}
+body.default-dd-campaign-page{background:radial-gradient(ellipse at 78% 8%,#143544 0,transparent 35%),radial-gradient(ellipse at 8% 72%,#182a40 0,transparent 32%),var(--theme-base-1)}
+.ddc-card{border-color:#294653;background:linear-gradient(145deg,#0d1b24,#071016)}.ddc-card-title{border-color:#294653;background:#071016}.ddc-card-title span,.ddc-section-mark{color:#d0c4a1}.ddc-paper,.ddc-case{border-color:#294653}.ddc-case-row{border-color:#294653}.ddc-section-head{border-bottom-color:#294653}.v-subpage-hero__title{letter-spacing:.015em;text-shadow:0 3px 24px #000b}.v-subpage-hero__title-accent{color:#a8dbe6}.ddc-playlist-link{display:inline-block;margin-top:10px;padding:10px 15px;border:1px solid #72b8c9;color:#e1eff2;text-decoration:none;letter-spacing:.04em}.ddc-playlist-link:hover{background:#0d1b24;border-color:#d0c4a1}
+@media(max-width:700px){.ddc-content{width:min(100% - 28px,1220px);padding-top:38px}.ddc-card-title{padding:16px 18px}}
