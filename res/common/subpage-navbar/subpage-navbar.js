@@ -79,7 +79,7 @@
       else document.querySelector("main")?.appendChild(panel);
     }
     const name=campaignName();
-    panel.innerHTML='<section class="v-character-intro"><div class="v-character-intro__mark">AKTA / POSTACI</div><h2>Postaci</h2><p>Postaci przypisane do tej kampanii są pobierane bezpośrednio z <code>/res/characters.json</code>.</p></section><div class="v-character-groups" data-v-character-groups><p class="v-character-loading">Ładowanie postaci…</p></div>';
+    panel.innerHTML='<section class="v-character-intro"><div class="v-character-intro__mark">AKTA / POSTACI</div></section><div class="v-character-groups" data-v-character-groups><p class="v-character-loading">Ładowanie postaci…</p></div>';
     try{
       const response=await fetch("/res/characters.json",{cache:"no-store"});
       if(!response.ok) throw new Error("characters.json: "+response.status);
