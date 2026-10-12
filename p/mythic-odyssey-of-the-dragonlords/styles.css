@@ -136,3 +136,38 @@ body.default-dd-campaign-page::before{
     background-attachment: scroll;
   }
 }
+
+
+/* Keep the individual recording action aligned on the right while collapsed. */
+.v-chronicle__entry {
+  position: relative;
+}
+.v-chronicle__summary {
+  padding-right: 150px;
+}
+.v-chronicle__recording--inline {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.v-chronicle__recording--inline:hover {
+  transform: translateY(-50%);
+}
+.v-chronicle__notes:empty {
+  display: none;
+}
+@media (max-width: 620px) {
+  .v-chronicle__summary {
+    padding-right: 5px;
+  }
+  .v-chronicle__recording--inline {
+    position: static;
+    transform: none;
+    margin: 0 5px 16px;
+  }
+  .v-chronicle__recording--inline:hover {
+    transform: none;
+  }
+}
