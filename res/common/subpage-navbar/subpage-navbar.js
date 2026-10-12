@@ -189,12 +189,15 @@
         const grid=document.createElement("div");
         grid.className="v-character-grid";
         campaign.forEach(item=>grid.appendChild(card(item)));
-        groups.replaceChildren(grid);
+        groups.querySelector(".v-character-loading")?.remove();
+        groups.appendChild(grid);
       }else{
-        setMessage(groups,"v-character-empty","Brak postaci przypisanych do tej kampanii.");
+        groups.querySelector(".v-character-loading")?.remove();
+        if(!groups.querySelector(".v-character-empty")) groups.appendChild(textElement("p","v-character-empty","Brak postaci przypisanych do tej kampanii."));
       }
     }catch(error){
-      setMessage(groups,"v-character-empty","Nie udało się wczytać danych postaci.");
+      groups.querySelector(".v-character-loading")?.remove();
+      if(!groups.querySelector(".v-character-empty")) groups.appendChild(textElement("p","v-character-empty","Nie udało się wczytać danych postaci."));
       console.error("Unable to load campaign characters:",error);
     }
   }
