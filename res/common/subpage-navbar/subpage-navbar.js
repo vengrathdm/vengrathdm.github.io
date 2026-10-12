@@ -64,7 +64,7 @@
     const portrait=textElement("div","v-character-card__portrait","");
     const image=document.createElement("img");
     const portraitPath=typeof character.portrait==="string"?character.portrait:"";
-    image.src=portraitPath;
+    if(/^\/res\/portraits\/[a-zA-Z0-9._-]+$/.test(portraitPath) && !portraitPath.split("/").includes("..")) image.src=portraitPath;
     image.alt=String(character.character||"Postać");
     image.loading="lazy";
     image.decoding="async";
