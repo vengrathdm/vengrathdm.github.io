@@ -11,7 +11,7 @@
   --theme-hero-image:url("/res/voronoi/webp/mythic-odyssey-of-the-dragonlords.webp");
 }
 
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 body.default-dd-campaign-page{
   margin:0;
   min-height:100vh;
