@@ -7,7 +7,7 @@
   --theme-text-1:#f7f9ff;--theme-text-2:#dce7fb;--theme-text-3:#a9c0e8;--theme-text-muted:#7c98c7;--theme-title-accent:#ffffff;
   --theme-line-1:#254777;--theme-line-2:#3872b8;--theme-nav-background:#071126;--theme-nav-text:#e0eaff;--theme-nav-active-background:#132b51;
   --theme-seal-border:#8f8b80;--theme-seal-inner-border:#635f56;--theme-seal-background:#08090bcc;--theme-seal-small-text:#aaa397;--theme-seal-main-text:#d6cbb5;
-  --theme-font-1:"Iceberg",sans-serif;--theme-font-2:"Fira Sans Extra Condensed",sans-serif;--theme-font-3:"Iceberg",sans-serif;
+  --theme-font-1:"Iceberg",sans-serif;--theme-font-2:"Fira Sans Extra Condensed",sans-serif;--theme-font-3:"Brygada 1918",Georgia,serif;
   --theme-hero-image:url("/res/voronoi/webp/shards-of-the-past.webp");
 }
 
@@ -108,3 +108,7 @@ body.default-dd-campaign-page::before{
 .ddc-world-panel h3{margin:14px 0 12px;color:#fff;font:400 clamp(25px,2.6vw,34px)/1 var(--theme-font-1)}
 .ddc-world-panel p{margin:0;color:#d0def4;font:15px/1.65 var(--theme-font-3)}
 @media(max-width:760px){.ddc-world-grid{grid-template-columns:1fr}.ddc-audio-row{align-items:flex-start;flex-direction:column}}
+
+
+/* Use Iceberg for the second line of the hero title without changing prose typography. */
+.v-subpage-hero__title-accent{font-family:"Iceberg",sans-serif}
