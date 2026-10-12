@@ -97,3 +97,9 @@ body.default-dd-campaign-page::before{
   .ddc-source-panel{display:block}.ddc-source-panel a{display:inline-block;margin-top:20px}
   .ddc-footer{display:block}.ddc-footer a{display:block;margin-top:8px}
 }
+
+/* Campaign-specific visual identity */
+:root{--theme-base-1:#0d1016;--theme-base-2:#151c25;--theme-base-3:#151c25;--theme-base-4:#151c25;--theme-base-5:#151c25;--theme-accent-1:#d2a85d;--theme-accent-2:#7b9c9c;--theme-text-1:#ece7d9;--theme-title-accent:#e2c17b;--theme-line-1:#394854;--theme-line-2:#d2a85d;--theme-nav-background:#151c25;--theme-nav-active-background:#151c25;--theme-seal-border:#7b9c9c;--theme-seal-inner-border:#394854;--theme-seal-main-text:#e2c17b;--theme-hero-image:url("/res/voronoi/webp/heroes-of-baldurs-gate.webp")}
+body.default-dd-campaign-page{background:radial-gradient(ellipse at 78% 8%,#1b2c3a 0,transparent 35%),radial-gradient(ellipse at 8% 72%,#35281c 0,transparent 32%),var(--theme-base-1)}
+.ddc-card{border-color:#394854;background:linear-gradient(145deg,#151c25,#0d1016)}.ddc-card-title{border-color:#394854;background:#0d1016}.ddc-card-title span,.ddc-section-mark{color:#7b9c9c}.ddc-paper,.ddc-case{border-color:#394854}.ddc-case-row{border-color:#394854}.ddc-section-head{border-bottom-color:#394854}.v-subpage-hero__title{letter-spacing:.015em;text-shadow:0 3px 24px #000b}.v-subpage-hero__title-accent{color:#e2c17b}.ddc-party-image img{filter:saturate(.86) contrast(1.04)}.ddc-playlist-link{display:inline-block;margin-top:10px;padding:10px 15px;border:1px solid #d2a85d;color:#ece7d9;text-decoration:none;letter-spacing:.04em}.ddc-playlist-link:hover{background:#151c25;border-color:#7b9c9c}
+@media(max-width:700px){.ddc-content{width:min(100% - 28px,1220px);padding-top:38px}.ddc-card-title{padding:16px 18px}}
