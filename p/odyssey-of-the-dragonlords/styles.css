@@ -133,3 +133,24 @@ body.default-dd-campaign-page::before{
 
 /* Caesar Dressing on both lines of the campaign title. */
 .v-subpage-hero__title,.v-subpage-hero__title-accent{font-family:"Caesar Dressing","Voltaire",sans-serif!important}
+
+
+/* Constellation field begins below the hero; keep the hero art untouched. */
+body.default-dd-campaign-page {
+  background:
+    linear-gradient(rgba(10, 13, 20, 0.78), rgba(10, 13, 20, 0.88)),
+    url("./res/constellations.jpg") center top / cover fixed no-repeat,
+    var(--theme-base-1);
+}
+.ddc-content {
+  position: relative;
+  isolation: isolate;
+}
+.ddc-content::before {
+  content: "";
+  position: absolute;
+  inset: 0 calc((min(1220px, 100vw - 48px) - 100vw) / 2);
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(rgba(10, 13, 20, 0.25), rgba(10, 13, 20, 0.48));
+}
