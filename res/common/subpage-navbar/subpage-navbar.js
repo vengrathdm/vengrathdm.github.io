@@ -90,6 +90,45 @@
     container.replaceChildren(textElement("p",className,message));
   }
 
+  function keepChronicleCardsInCharacters(nav,panel){
+    const chronicle=document.getElementById("chronicle");
+    if(!chronicle || chronicle.dataset.characterCardsRedirected==="true") return;
+    chronicle.dataset.characterCardsRedirected="true";
+
+    const groups=()=>{
+      let grid=panel.querySelector("[data-v-moved-character-grid]");
+      if(!grid){
+        const host=panel.querySelector("[data-v-character-groups]")||panel;
+        grid=document.createElement("div");
+        grid.className="v-character-grid";
+        grid.dataset.vMovedCharacterGrid="";
+        host.appendChild(grid);
+      }
+      return grid;
+    };
+
+    const moveCards=(root)=>{
+      const cards=[];
+      if(root instanceof Element && root.matches(".v-character-card, .ddc-dead-character")) cards.push(root);
+      if(root instanceof Element) cards.push(...root.querySelectorAll(".v-character-card, .ddc-dead-character"));
+      if(!cards.length) return;
+
+      const destination=groups();
+      cards.forEach(card=>{
+        if(!panel.contains(card)) destination.appendChild(card);
+      });
+      chronicle.querySelectorAll(".v-character-grid, .ddc-character-grid").forEach(grid=>{
+        if(!grid.querySelector(".v-character-card, .ddc-dead-character")) grid.remove();
+      });
+    };
+
+    moveCards(chronicle);
+    const observer=new MutationObserver(records=>{
+      records.forEach(record=>record.addedNodes.forEach(moveCards));
+    });
+    observer.observe(chronicle,{childList:true,subtree:true});
+  }
+
   async function populateCharacters(){
     const nav=document.querySelector(NAV_SELECTOR);
     if(!nav || !location.pathname.startsWith("/p/")) return;
@@ -129,6 +168,7 @@
     if(location.hash==="#characters") activate(nav,"#characters",false);
 
     ensureCharacterStyles();
+    keepChronicleCardsInCharacters(nav,panel);
     panel.replaceChildren();
     const intro=textElement("div","v-character-intro__mark","AKTA / POSTACI");
     const introSection=textElement("section","v-character-intro","");
