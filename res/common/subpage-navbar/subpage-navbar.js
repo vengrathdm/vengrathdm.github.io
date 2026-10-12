@@ -91,11 +91,9 @@
   }
 
   function keepChronicleCardsInCharacters(nav,panel){
-    const chronicle=document.getElementById("chronicle");
-    if(!chronicle || chronicle.dataset.characterCardsRedirected==="true") return;
-    chronicle.dataset.characterCardsRedirected="true";
-
-    const groups=()=>{
+    const otherPanels=[...document.querySelectorAll(PANEL_SELECTOR)].filter(item=>item!==panel);
+    const movedSelector=".v-character-card, .ddc-dead-character";
+    const destination=()=>{
       let grid=panel.querySelector("[data-v-moved-character-grid]");
       if(!grid){
         const host=panel.querySelector("[data-v-character-groups]")||panel;
@@ -106,27 +104,29 @@
       }
       return grid;
     };
-
-    const moveCards=(root)=>{
+    const moveCards=root=>{
+      if(!(root instanceof Element)) return;
       const cards=[];
-      if(root instanceof Element && root.matches(".v-character-card, .ddc-dead-character")) cards.push(root);
-      if(root instanceof Element) cards.push(...root.querySelectorAll(".v-character-card, .ddc-dead-character"));
+      if(root.matches(movedSelector)) cards.push(root);
+      cards.push(...root.querySelectorAll(movedSelector));
       if(!cards.length) return;
-
-      const destination=groups();
+      const grid=destination();
       cards.forEach(card=>{
-        if(!panel.contains(card)) destination.appendChild(card);
+        if(!panel.contains(card)) grid.appendChild(card);
       });
-      chronicle.querySelectorAll(".v-character-grid, .ddc-character-grid").forEach(grid=>{
-        if(!grid.querySelector(".v-character-card, .ddc-dead-character")) grid.remove();
+      otherPanels.forEach(source=>{
+        source.querySelectorAll(".v-character-grid, .ddc-character-grid").forEach(gridEl=>{
+          if(!gridEl.querySelector(movedSelector)) gridEl.remove();
+        });
       });
     };
-
-    moveCards(chronicle);
-    const observer=new MutationObserver(records=>{
-      records.forEach(record=>record.addedNodes.forEach(moveCards));
+    otherPanels.forEach(source=>{
+      moveCards(source);
+      const observer=new MutationObserver(records=>{
+        records.forEach(record=>record.addedNodes.forEach(moveCards));
+      });
+      observer.observe(source,{childList:true,subtree:true});
     });
-    observer.observe(chronicle,{childList:true,subtree:true});
   }
 
   async function populateCharacters(){
