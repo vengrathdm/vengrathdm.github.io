@@ -138,36 +138,83 @@ body.default-dd-campaign-page::before{
 }
 
 
-/* Keep the individual recording action aligned on the right while collapsed. */
+
+/* Recording actions stay visible; only the session explanation expands. */
 .v-chronicle__entry {
-  position: relative;
+  border-bottom: 1px solid var(--theme-line-1, #34363a);
+}
+.v-chronicle__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: 10px 5px;
+}
+.v-chronicle__explanation {
+  min-width: 0;
 }
 .v-chronicle__summary {
-  padding-right: 150px;
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 15px;
+  padding: 9px 0;
+  cursor: pointer;
+  list-style: none;
 }
-.v-chronicle__recording--inline {
-  position: absolute;
-  top: 50%;
-  right: 5px;
-  transform: translateY(-50%);
-  z-index: 1;
-}
-.v-chronicle__recording--inline:hover {
-  transform: translateY(-50%);
-}
-.v-chronicle__notes:empty {
+.v-chronicle__summary::-webkit-details-marker {
   display: none;
 }
+.v-chronicle__session {
+  color: var(--theme-accent-1, #8e2631);
+  font-family: var(--theme-font-1, "Voltaire", sans-serif);
+  font-size: 16px;
+}
+.v-chronicle__title {
+  color: #ddd8cc;
+  font-family: var(--theme-font-1, "Voltaire", sans-serif);
+  font-size: 19px;
+}
+.v-chronicle__expand-label {
+  color: #888b86;
+  font-family: var(--theme-font-2, "Fira Sans Extra Condensed", sans-serif);
+  font-size: 10px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+.v-chronicle__notes {
+  padding: 0 0 16px 115px;
+  margin: 0;
+  color: #888b86;
+  font-family: var(--theme-font-2, "Fira Sans Extra Condensed", sans-serif);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.v-chronicle__recording--inline {
+  position: static;
+  transform: none;
+  white-space: nowrap;
+}
+.v-chronicle__recording--inline:hover {
+  transform: none;
+}
 @media (max-width: 620px) {
+  .v-chronicle__row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
   .v-chronicle__summary {
-    padding-right: 5px;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 10px;
+  }
+  .v-chronicle__expand-label {
+    grid-column: 2;
+  }
+  .v-chronicle__notes {
+    padding-left: 52px;
   }
   .v-chronicle__recording--inline {
-    position: static;
-    transform: none;
-    margin: 0 5px 16px;
-  }
-  .v-chronicle__recording--inline:hover {
-    transform: none;
+    justify-self: start;
+    margin-left: 52px;
   }
 }
