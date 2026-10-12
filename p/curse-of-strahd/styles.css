@@ -97,3 +97,9 @@ body.default-dd-campaign-page::before{
   .ddc-source-panel{display:block}.ddc-source-panel a{display:inline-block;margin-top:20px}
   .ddc-footer{display:block}.ddc-footer a{display:block;margin-top:8px}
 }
+
+/* Campaign-specific visual identity */
+:root{--theme-base-1:#10090d;--theme-base-2:#1b1017;--theme-base-3:#1b1017;--theme-base-4:#1b1017;--theme-base-5:#1b1017;--theme-accent-1:#9b3548;--theme-accent-2:#c6a76a;--theme-text-1:#eee2e1;--theme-title-accent:#c7a7ad;--theme-line-1:#4a2734;--theme-line-2:#9b3548;--theme-nav-background:#1b1017;--theme-nav-active-background:#1b1017;--theme-seal-border:#c6a76a;--theme-seal-inner-border:#4a2734;--theme-seal-main-text:#c7a7ad;--theme-hero-image:url("/res/voronoi/webp/curse-of-strahd.webp")}
+body.default-dd-campaign-page{background:radial-gradient(ellipse at 78% 8%,#351521 0,transparent 35%),radial-gradient(ellipse at 8% 72%,#1c121b 0,transparent 32%),var(--theme-base-1)}
+.ddc-card{border-color:#4a2734;background:linear-gradient(145deg,#1b1017,#10090d)}.ddc-card-title{border-color:#4a2734;background:#10090d}.ddc-card-title span,.ddc-section-mark{color:#c6a76a}.ddc-paper,.ddc-case{border-color:#4a2734}.ddc-case-row{border-color:#4a2734}.ddc-section-head{border-bottom-color:#4a2734}.v-subpage-hero__title{letter-spacing:.015em;text-shadow:0 3px 24px #000b}.v-subpage-hero__title-accent{color:#c7a7ad}.ddc-playlist-link{display:inline-block;margin-top:10px;padding:10px 15px;border:1px solid #9b3548;color:#eee2e1;text-decoration:none;letter-spacing:.04em}.ddc-playlist-link:hover{background:#1b1017;border-color:#c6a76a}
+@media(max-width:700px){.ddc-content{width:min(100% - 28px,1220px);padding-top:38px}.ddc-card-title{padding:16px 18px}}
