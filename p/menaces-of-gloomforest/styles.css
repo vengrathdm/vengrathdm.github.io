@@ -97,3 +97,9 @@ body.default-dd-campaign-page::before{
   .ddc-source-panel{display:block}.ddc-source-panel a{display:inline-block;margin-top:20px}
   .ddc-footer{display:block}.ddc-footer a{display:block;margin-top:8px}
 }
+
+/* Campaign-specific visual identity */
+:root{--theme-base-1:#0b100d;--theme-base-2:#121a14;--theme-base-3:#121a14;--theme-base-4:#121a14;--theme-base-5:#121a14;--theme-accent-1:#78935c;--theme-accent-2:#c1a56b;--theme-text-1:#e5eadb;--theme-title-accent:#8da66e;--theme-line-1:#344637;--theme-line-2:#78935c;--theme-nav-background:#121a14;--theme-nav-active-background:#121a14;--theme-seal-border:#c1a56b;--theme-seal-inner-border:#344637;--theme-seal-main-text:#8da66e;--theme-hero-image:url("/res/voronoi/webp/menaces-of-gloomforest.webp")}
+body.default-dd-campaign-page{background:radial-gradient(ellipse at 78% 8%,#1b2a1c 0,transparent 35%),radial-gradient(ellipse at 8% 72%,#211c15 0,transparent 32%),var(--theme-base-1)}
+.ddc-card{border-color:#344637;background:linear-gradient(145deg,#121a14,#0b100d)}.ddc-card-title{border-color:#344637;background:#0b100d}.ddc-card-title span,.ddc-section-mark{color:#c1a56b}.ddc-paper,.ddc-case{border-color:#344637}.ddc-case-row{border-color:#344637}.ddc-section-head{border-bottom-color:#344637}.v-subpage-hero__title{letter-spacing:.015em;text-shadow:0 3px 24px #000b}.v-subpage-hero__title-accent{color:#8da66e}.ddc-party-image img{filter:saturate(.86) contrast(1.04)}.ddc-playlist-link{display:inline-block;margin-top:10px;padding:10px 15px;border:1px solid #78935c;color:#e5eadb;text-decoration:none;letter-spacing:.04em}.ddc-playlist-link:hover{background:#121a14;border-color:#c1a56b}
+@media(max-width:700px){.ddc-content{width:min(100% - 28px,1220px);padding-top:38px}.ddc-card-title{padding:16px 18px}}
