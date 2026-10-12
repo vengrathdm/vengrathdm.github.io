@@ -97,3 +97,9 @@ body.default-dd-campaign-page::before{
   .ddc-source-panel{display:block}.ddc-source-panel a{display:inline-block;margin-top:20px}
   .ddc-footer{display:block}.ddc-footer a{display:block;margin-top:8px}
 }
+
+/* Campaign-specific visual identity */
+:root{--theme-base-1:#100b0b;--theme-base-2:#1d1210;--theme-base-3:#1d1210;--theme-base-4:#1d1210;--theme-base-5:#1d1210;--theme-accent-1:#b94a3d;--theme-accent-2:#d0a653;--theme-text-1:#f1e7d7;--theme-title-accent:#e1b86a;--theme-line-1:#4c3028;--theme-line-2:#b94a3d;--theme-nav-background:#1d1210;--theme-nav-active-background:#1d1210;--theme-seal-border:#d0a653;--theme-seal-inner-border:#4c3028;--theme-seal-main-text:#e1b86a;--theme-hero-image:url("/res/voronoi/webp/rise-of-tiamat.webp")}
+body.default-dd-campaign-page{background:radial-gradient(ellipse at 78% 8%,#421c17 0,transparent 35%),radial-gradient(ellipse at 8% 72%,#352a12 0,transparent 32%),var(--theme-base-1)}
+.ddc-card{border-color:#4c3028;background:linear-gradient(145deg,#1d1210,#100b0b)}.ddc-card-title{border-color:#4c3028;background:#100b0b}.ddc-card-title span,.ddc-section-mark{color:#d0a653}.ddc-paper,.ddc-case{border-color:#4c3028}.ddc-case-row{border-color:#4c3028}.ddc-section-head{border-bottom-color:#4c3028}.v-subpage-hero__title{letter-spacing:.015em;text-shadow:0 3px 24px #000b}.v-subpage-hero__title-accent{color:#e1b86a}.ddc-playlist-link{display:inline-block;margin-top:10px;padding:10px 15px;border:1px solid #b94a3d;color:#f1e7d7;text-decoration:none;letter-spacing:.04em}.ddc-playlist-link:hover{background:#1d1210;border-color:#d0a653}
+@media(max-width:700px){.ddc-content{width:min(100% - 28px,1220px);padding-top:38px}.ddc-card-title{padding:16px 18px}}
