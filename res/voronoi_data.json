@@ -126,12 +126,6 @@
     "CardAdress": "/p/heroes-of-drakkenheim/"
   },
   {
-    "CardName": "Klątwa Strahda",
-    "CardTags": "Aktywna Kampania",
-    "CardGraphic": "/res/voronoi/webp/klatwa-strahda.webp",
-    "CardAdress": "/p/klatwa-strahda/"
-  },
-  {
     "CardName": "Książęta Heartwell",
     "CardTags": "Aktywna Kampania",
     "CardGraphic": "/res/voronoi/webp/ksiazeta-heartwell.webp",
