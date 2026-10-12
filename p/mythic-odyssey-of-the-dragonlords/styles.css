@@ -104,5 +104,8 @@ body.default-dd-campaign-page::before{
 .ddc-party-portrait{border-color:#d7b45b!important}
 .ddc-party-copy{background:linear-gradient(145deg,#164b6b,#071827)!important}
 .ddc-party-image img{display:block;width:100%;height:100%;object-fit:cover}
-.v-subpage-hero__title,.ddc-paper h2,.ddc-source-panel h2,.ddc-section h2,.ddc-section-head h2,.ddc-party-copy h2,.ddc-card-title strong,.ddc-case-label,.ddc-case-row strong,.ddc-section-mark,.ddc-playlist-link{font-family:"Caesar Dressing","Voltaire",sans-serif!important}
+.v-subpage-hero__title,.v-subpage-hero__title-accent,.ddc-paper h2,.ddc-source-panel h2,.ddc-section h2,.ddc-section-head h2,.ddc-party-copy h2,.ddc-card-title strong,.ddc-case-label,.ddc-case-row strong,.ddc-section-mark,.ddc-playlist-link{font-family:"Caesar Dressing","Voltaire",sans-serif!important}
 .ddc-case-row strong{font-size:14px!important}
+
+/* Caesar Dressing on both lines of the campaign title. */
+.v-subpage-hero__title,.v-subpage-hero__title-accent{font-family:"Caesar Dressing","Voltaire",sans-serif!important}
