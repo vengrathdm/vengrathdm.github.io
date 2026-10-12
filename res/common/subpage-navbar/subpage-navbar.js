@@ -90,6 +90,45 @@
     container.replaceChildren(textElement("p",className,message));
   }
 
+  function keepChronicleCardsInCharacters(nav,panel){
+    const chronicle=document.getElementById("chronicle");
+    if(!chronicle || chronicle.dataset.characterCardsRedirected==="true") return;
+    chronicle.dataset.characterCardsRedirected="true";
+
+    const groups=()=>{
+      let grid=panel.querySelector("[data-v-moved-character-grid]");
+      if(!grid){
+        const host=panel.querySelector("[data-v-character-groups]")||panel;
+        grid=document.createElement("div");
+        grid.className="v-character-grid";
+        grid.dataset.vMovedCharacterGrid="";
+        host.appendChild(grid);
+      }
+      return grid;
+    };
+
+    const moveCards=(root)=>{
+      const cards=[];
+      if(root instanceof Element && root.matches(".v-character-card, .ddc-dead-character")) cards.push(root);
+      if(root instanceof Element) cards.push(...root.querySelectorAll(".v-character-card, .ddc-dead-character"));
+      if(!cards.length) return;
+
+      const destination=groups();
+      cards.forEach(card=>{
+        if(!panel.contains(card)) destination.appendChild(card);
+      });
+      chronicle.querySelectorAll(".v-character-grid, .ddc-character-grid").forEach(grid=>{
+        if(!grid.querySelector(".v-character-card, .ddc-dead-character")) grid.remove();
+      });
+    };
+
+    moveCards(chronicle);
+    const observer=new MutationObserver(records=>{
+      records.forEach(record=>record.addedNodes.forEach(moveCards));
+    });
+    observer.observe(chronicle,{childList:true,subtree:true});
+  }
+
   async function populateCharacters(){
     const nav=document.querySelector(NAV_SELECTOR);
     if(!nav || !location.pathname.startsWith("/p/")) return;
@@ -137,6 +176,7 @@
     groups.dataset.vCharacterGroups="";
     setMessage(groups,"v-character-loading","Ładowanie postaci…");
     panel.append(introSection,groups);
+    keepChronicleCardsInCharacters(nav,panel);
 
     try{
       const response=await fetch("/res/characters.json",{cache:"no-store"});
@@ -149,12 +189,15 @@
         const grid=document.createElement("div");
         grid.className="v-character-grid";
         campaign.forEach(item=>grid.appendChild(card(item)));
-        groups.replaceChildren(grid);
+        groups.querySelector(".v-character-loading")?.remove();
+        groups.appendChild(grid);
       }else{
-        setMessage(groups,"v-character-empty","Brak postaci przypisanych do tej kampanii.");
+        groups.querySelector(".v-character-loading")?.remove();
+        if(!groups.querySelector(".v-character-empty")) groups.appendChild(textElement("p","v-character-empty","Brak postaci przypisanych do tej kampanii."));
       }
     }catch(error){
-      setMessage(groups,"v-character-empty","Nie udało się wczytać danych postaci.");
+      groups.querySelector(".v-character-loading")?.remove();
+      if(!groups.querySelector(".v-character-empty")) groups.appendChild(textElement("p","v-character-empty","Nie udało się wczytać danych postaci."));
       console.error("Unable to load campaign characters:",error);
     }
   }
