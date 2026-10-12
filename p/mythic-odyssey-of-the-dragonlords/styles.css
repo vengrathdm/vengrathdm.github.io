@@ -109,3 +109,30 @@ body.default-dd-campaign-page::before{
 
 /* Caesar Dressing on both lines of the campaign title. */
 .v-subpage-hero__title,.v-subpage-hero__title-accent{font-family:"Caesar Dressing","Voltaire",sans-serif!important}
+
+
+/* Full-width sky background begins below the hero and spans every tab. */
+.ddc-content {
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+}
+.ddc-content::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(5, 17, 29, 0.72), rgba(5, 17, 29, 0.86)),
+    url("./res/sky.jpg") center top / cover fixed no-repeat;
+}
+@media (max-width: 760px) {
+  .ddc-content::before {
+    background-attachment: scroll;
+  }
+}
