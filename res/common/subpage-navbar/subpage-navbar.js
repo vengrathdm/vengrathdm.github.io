@@ -1,33 +1,46 @@
 (function(){ "use strict";
-  function findPanel(target){
-    if(!target) return null;
-    try{return document.querySelector(target)}catch(_){return document.getElementById(target.replace(/^#/,""))}
+  const NAV_SELECTOR=".v-subpage-navbar";
+  const LINK_SELECTOR=".v-subpage-navbar__link[data-tab-target]";
+  const PANEL_SELECTOR="[data-v-tab-panel]";
+
+  function getLinks(nav){
+    return [...nav.querySelectorAll(LINK_SELECTOR)];
   }
-  function activate(nav, target, updateHash){
-    const links=[...nav.querySelectorAll(".v-subpage-navbar__link[data-tab-target]")];
-    const panels=[...document.querySelectorAll("[data-v-tab-panel]")];
-    let chosen=links.find(link=>link.dataset.tabTarget===target) || links[0];
-    if(!chosen) return;
-    target=chosen.dataset.tabTarget;
+
+  function activate(nav,target,updateHash){
+    const links=getLinks(nav);
+    const targetId=String(target||"").replace(/^#/,"");
+    const chosen=links.find(link=>link.dataset.tabTarget.replace(/^#/,"")===targetId)
+      || links.find(link=>document.getElementById(link.dataset.tabTarget.replace(/^#/,"")))
+      || links[0];
+    if(!chosen) return false;
+
+    const chosenId=chosen.dataset.tabTarget.replace(/^#/,"");
+    const panel=document.getElementById(chosenId);
+    if(!panel) return false;
+
     links.forEach(link=>{
       const active=link===chosen;
       link.classList.toggle("is-active",active);
-      if(active) link.setAttribute("aria-current","page"); else link.removeAttribute("aria-current");
+      if(active) link.setAttribute("aria-current","page");
+      else link.removeAttribute("aria-current");
     });
-    panels.forEach(panel=>{
-      panel.hidden=panel.id!==target.replace(/^#/,"");
+    document.querySelectorAll(PANEL_SELECTOR).forEach(item=>{
+      item.hidden=item.id!==chosenId;
     });
-    if(updateHash && history.replaceState){
-      history.replaceState(null,"",target);
+
+    if(updateHash && location.hash!==chosen.dataset.tabTarget){
+      history.replaceState(null,"",chosen.dataset.tabTarget);
     }
+    return true;
   }
-  function slug(value){
-    return String(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
-  }
+
   function campaignName(){
-    const title=document.title.replace(/\s+[—-]\s*Vengrath.*$/i,"").trim();
-    return title;
+    const explicit=document.querySelector("[data-campaign-name]");
+    if(explicit && explicit.dataset.campaignName.trim()) return explicit.dataset.campaignName.trim();
+    return document.title.replace(/\s+[—-]\s*Vengrath.*$/i,"").trim();
   }
+
   function ensureCharacterStyles(){
     if(document.querySelector('link[data-v-character-card-style]')) return;
     const link=document.createElement("link");
@@ -36,27 +49,53 @@
     link.dataset.vCharacterCardStyle="true";
     document.head.appendChild(link);
   }
-  function card(character){
-    const classes=Array.isArray(character.classes)?character.classes.join(" / "):(character.classes||"");
-    const status=character.status||"";
-    const history=character.Historia||"Brak zapisków.";
-    return '<article class="v-character-card">'+
-      '<div class="v-character-card__portrait"><img src="'+String(character.portrait||"").replace(/"/g,"&quot;")+'" alt="'+String(character.character||"Postać").replace(/"/g,"&quot;")+'" loading="lazy"></div>'+
-      '<div class="v-character-card__info">'+
-        '<div class="v-character-card__label">POSTAĆ · '+String(status).toUpperCase()+'</div>'+
-        '<span class="v-character-card__character">'+String(character.character||"Bez imienia")+'</span>'+
-        '<span class="v-character-card__player">'+String(character.player||"Nieznany gracz")+'</span>'+
-        '<div class="v-character-card__meta"><span>'+classes+'</span><span>'+String(character.race||"Rasa nieznana")+'</span></div>'+
-        '<p class="v-character-card__description">'+String(history)+'</p>'+
-      '</div>'+
-    '</article>';
+
+  function textElement(tag,className,value){
+    const element=document.createElement(tag);
+    if(className) element.className=className;
+    element.textContent=value==null?"":String(value);
+    return element;
   }
+
+  function card(character){
+    const article=document.createElement("article");
+    article.className="v-character-card";
+
+    const portrait=textElement("div","v-character-card__portrait","");
+    const image=document.createElement("img");
+    const portraitPath=typeof character.portrait==="string"?character.portrait:"";
+    if(/^\/res\/portraits\/[a-zA-Z0-9._-]+$/.test(portraitPath) && !portraitPath.split("/").includes("..")) image.src=portraitPath;
+    image.alt=String(character.character||"Postać");
+    image.loading="lazy";
+    image.decoding="async";
+    portrait.appendChild(image);
+
+    const info=textElement("div","v-character-card__info","");
+    info.appendChild(textElement("div","v-character-card__label","POSTAĆ · "+String(character.status||"").toUpperCase()));
+    info.appendChild(textElement("span","v-character-card__character",character.character||"Bez imienia"));
+    info.appendChild(textElement("span","v-character-card__player",character.player||"Nieznany gracz"));
+
+    const meta=textElement("div","v-character-card__meta","");
+    const classes=Array.isArray(character.classes)?character.classes.join(" / "):String(character.classes||"");
+    meta.appendChild(textElement("span","",classes));
+    meta.appendChild(textElement("span","",character.race||"Rasa nieznana"));
+    info.appendChild(meta);
+    info.appendChild(textElement("p","v-character-card__description",character.history||character.Historia||"Brak zapisków."));
+
+    article.append(portrait,info);
+    return article;
+  }
+
+  function setMessage(container,className,message){
+    container.replaceChildren(textElement("p",className,message));
+  }
+
   async function populateCharacters(){
-    const nav=document.querySelector(".v-subpage-navbar");
+    const nav=document.querySelector(NAV_SELECTOR);
     if(!nav || !location.pathname.startsWith("/p/")) return;
-    ensureCharacterStyles();
-    let link=nav.querySelector('.v-subpage-navbar__link[data-tab-target="#characters"]');
-    const chronicleLink=nav.querySelector('.v-subpage-navbar__link[data-tab-target="#chronicle"]');
+
+    let link=nav.querySelector(LINK_SELECTOR+'[data-tab-target="#characters"]');
+    const chronicleLink=nav.querySelector(LINK_SELECTOR+'[data-tab-target="#chronicle"]');
     if(!link && chronicleLink){
       link=document.createElement("a");
       link.className="v-subpage-navbar__link";
@@ -68,6 +107,7 @@
       link.textContent="POSTACI";
     }
     if(!link) return;
+
     let panel=document.getElementById("characters");
     const chronicle=document.getElementById("chronicle");
     if(!panel){
@@ -76,49 +116,83 @@
       panel.id="characters";
       panel.dataset.vTabPanel="";
       if(chronicle && chronicle.parentNode) chronicle.parentNode.insertBefore(panel,chronicle);
-      else document.querySelector("main")?.appendChild(panel);
+      else {
+        const main=document.querySelector("main");
+        if(!main) return;
+        main.appendChild(panel);
+      }
+    }else{
+      panel.dataset.vTabPanel="";
     }
-    const name=campaignName();
-    panel.innerHTML='<section class="v-character-intro"><div class="v-character-intro__mark">AKTA / POSTACI</div></section><div class="v-character-groups" data-v-character-groups><p class="v-character-loading">Ładowanie postaci…</p></div>';
+
+    // The character tab may not have existed during initial tab setup.
+    if(location.hash==="#characters") activate(nav,"#characters",false);
+
+    ensureCharacterStyles();
+    panel.replaceChildren();
+    const intro=textElement("div","v-character-intro__mark","AKTA / POSTACI");
+    const introSection=textElement("section","v-character-intro","");
+    introSection.appendChild(intro);
+    const groups=textElement("div","v-character-groups","");
+    groups.dataset.vCharacterGroups="";
+    setMessage(groups,"v-character-loading","Ładowanie postaci…");
+    panel.append(introSection,groups);
+
     try{
       const response=await fetch("/res/characters.json",{cache:"no-store"});
       if(!response.ok) throw new Error("characters.json: "+response.status);
       const all=await response.json();
-      const campaign=all.filter(c=>(c.campaigns||[]).includes(name));
-      panel.querySelector("[data-v-character-groups]").innerHTML=campaign.length
-        ? '<div class="v-character-grid">'+campaign.map(card).join("")+'</div>'
-        : '<p class="v-character-empty">Brak postaci przypisanych do tej kampanii w <code>/res/characters.json</code>.</p>';
+      if(!Array.isArray(all)) throw new Error("characters.json must contain an array");
+      const name=campaignName();
+      const campaign=all.filter(item=>item && Array.isArray(item.campaigns) && item.campaigns.includes(name));
+      if(campaign.length){
+        const grid=document.createElement("div");
+        grid.className="v-character-grid";
+        campaign.forEach(item=>grid.appendChild(card(item)));
+        groups.replaceChildren(grid);
+      }else{
+        setMessage(groups,"v-character-empty","Brak postaci przypisanych do tej kampanii.");
+      }
     }catch(error){
-      panel.querySelector("[data-v-character-groups]").innerHTML='<p class="v-character-empty">Nie udało się wczytać danych postaci.</p>';
-      console.error(error);
+      setMessage(groups,"v-character-empty","Nie udało się wczytać danych postaci.");
+      console.error("Unable to load campaign characters:",error);
     }
   }
+
   function init(nav){
     if(nav.dataset.tabsInitialized==="true") return;
-    nav.dataset.tabsInitialized="true";
-    const getLinks=()=>[...nav.querySelectorAll(".v-subpage-navbar__link[data-tab-target]")];
-    const links=getLinks();
+    const links=getLinks(nav);
     if(!links.length) return;
-    const initial=links.some(link=>link.dataset.tabTarget===location.hash)?location.hash:links[0].dataset.tabTarget;
-    // Delegate clicks so tabs added later (e.g. the dynamically generated POSTACI tab) work too.
+    nav.dataset.tabsInitialized="true";
+
     nav.addEventListener("click",function(event){
-      const link=event.target.closest(".v-subpage-navbar__link[data-tab-target]");
+      const link=event.target.closest(LINK_SELECTOR);
       if(!link || !nav.contains(link)) return;
+      const panelId=link.dataset.tabTarget.replace(/^#/,"");
+      if(!document.getElementById(panelId)) return;
       event.preventDefault();
       activate(nav,link.dataset.tabTarget,true);
     });
-    // Re-query links on every hash change because the tab list can change after initialization.
+
     window.addEventListener("hashchange",function(){
-      const currentLinks=getLinks();
-      if(location.hash && currentLinks.some(link=>link.dataset.tabTarget===location.hash)) activate(nav,location.hash,false);
+      const hash=location.hash;
+      if(hash && getLinks(nav).some(link=>link.dataset.tabTarget===hash)){
+        activate(nav,hash,false);
+      }
     });
+
+    const initial=links.some(link=>link.dataset.tabTarget===location.hash)
+      ?location.hash
+      :links[0].dataset.tabTarget;
     activate(nav,initial,false);
   }
+
   function updateScrollState(){
     const scrolled=window.scrollY>80;
-    document.querySelectorAll(".v-subpage-navbar").forEach(nav=>nav.classList.toggle("is-scrolled",scrolled));
+    document.querySelectorAll(NAV_SELECTOR).forEach(nav=>nav.classList.toggle("is-scrolled",scrolled));
   }
-  document.querySelectorAll(".v-subpage-navbar").forEach(init);
+
+  document.querySelectorAll(NAV_SELECTOR).forEach(init);
   populateCharacters();
   updateScrollState();
   window.addEventListener("scroll",updateScrollState,{passive:true});
