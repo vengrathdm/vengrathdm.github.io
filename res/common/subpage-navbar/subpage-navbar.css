@@ -7,7 +7,7 @@
   background: transparent;
   border: 0;
   pointer-events: none;
-  transition: background-color 0.2s, box-shadow 0.2s;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 .v-subpage-navbar.is-scrolled {
   background: var(--theme-nav-background, #111317);
@@ -48,7 +48,7 @@
   font-weight: 700;
   line-height: 1;
   letter-spacing: 1.5px;
-  transition: 0.2s;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 .v-subpage-navbar__link:hover,
 .v-subpage-navbar__link[aria-current="page"],
@@ -56,6 +56,10 @@
   border-color: var(--theme-accent-2, #bca06a);
   color: var(--theme-accent-2, #bca06a);
   background: var(--theme-nav-active-background, #191a1d);
+}
+.v-subpage-navbar__link:focus-visible {
+  outline: 2px solid var(--theme-accent-2, #bca06a);
+  outline-offset: 3px;
 }
 @media (max-width: 900px) {
   .v-subpage-navbar__inner {
@@ -74,5 +78,11 @@
   }
   .v-subpage-navbar__link {
     flex: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v-subpage-navbar,
+  .v-subpage-navbar__link {
+    transition: none;
   }
 }
