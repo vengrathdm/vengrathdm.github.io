@@ -168,7 +168,6 @@
     if(location.hash==="#characters") activate(nav,"#characters",false);
 
     ensureCharacterStyles();
-    keepChronicleCardsInCharacters(nav,panel);
     panel.replaceChildren();
     const intro=textElement("div","v-character-intro__mark","AKTA / POSTACI");
     const introSection=textElement("section","v-character-intro","");
@@ -177,6 +176,7 @@
     groups.dataset.vCharacterGroups="";
     setMessage(groups,"v-character-loading","Ładowanie postaci…");
     panel.append(introSection,groups);
+    keepChronicleCardsInCharacters(nav,panel);
 
     try{
       const response=await fetch("/res/characters.json",{cache:"no-store"});
