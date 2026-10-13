@@ -130,6 +130,25 @@ try {
           }, id);
           if (!visible) failures.push(file + " @ " + viewport.width + "px: tab did not reveal #" + id);
         }
+        // Regression: a hard refresh on the first tab must not reveal the
+        // dynamically-created character panel or its cards alongside the main panel.
+        const firstTarget = await tabs.first().getAttribute("data-tab-target");
+        if (firstTarget) {
+          await page.goto("http://127.0.0.1:8000" + relativeUrl + firstTarget, { waitUntil: "domcontentloaded", timeout: 20000 });
+          await page.waitForTimeout(150);
+          const tabVisibility = await page.evaluate((target) => {
+            const targetId = target.replace(/^#/, "");
+            const panels = [...document.querySelectorAll("[data-v-tab-panel]")];
+            return {
+              targetVisible: Boolean(document.getElementById(targetId) && !document.getElementById(targetId).hidden && getComputedStyle(document.getElementById(targetId)).display !== "none"),
+              unexpectedVisiblePanels: panels.filter(panel => panel.id !== targetId && !panel.hidden && getComputedStyle(panel).display !== "none").map(panel => panel.id),
+            };
+          }, firstTarget);
+          if (!tabVisibility.targetVisible) failures.push(file + " @ " + viewport.width + "px: first tab panel was not visible after hard refresh");
+          if (tabVisibility.unexpectedVisiblePanels.length) {
+            failures.push(file + " @ " + viewport.width + "px: extra tab panels visible after hard refresh on " + firstTarget + ": " + tabVisibility.unexpectedVisiblePanels.join(", "));
+          }
+        }
         const metrics = await page.evaluate(() => ({
           viewport: window.innerWidth,
           document: document.documentElement.scrollWidth,

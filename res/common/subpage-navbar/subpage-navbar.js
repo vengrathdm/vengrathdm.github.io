@@ -160,6 +160,7 @@
       panel.className="v-character-tab-panel";
       panel.id="characters";
       panel.dataset.vTabPanel="";
+      panel.hidden=true;
       if(chronicle && chronicle.parentNode) chronicle.parentNode.insertBefore(panel,chronicle);
       else {
         const main=document.querySelector("main");
@@ -169,6 +170,14 @@
     }else{
       panel.dataset.vTabPanel="";
     }
+
+    // Reconcile visibility after adding the characters tab/panel. The first tab
+    // initialization runs before this dynamic panel exists on some pages.
+    const currentHash=location.hash;
+    const currentTarget=getLinks(nav).some(item=>item.dataset.tabTarget===currentHash)
+      ?currentHash
+      :getLinks(nav)[0]?.dataset.tabTarget;
+    if(currentTarget) activate(nav,currentTarget,false);
 
     // Preserve campaign-authored markup and any page-specific character renderer.
     // Only generate the shared registry view when the panel has no existing content.
