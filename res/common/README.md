@@ -33,6 +33,6 @@ Legends of Barovia was the visual source of truth for the initial extraction. Re
 
 Run `python scripts/audit_campaign_pages.py` from the repository root to inspect eligible campaign pages. The checker intentionally excludes `p/Ksiazeta-Heartwell/` and verifies the shared navbar/hero integration, component asset references, duplicate IDs, in-page links, tab targets, malformed closing-tag patterns, local asset references, image alternative text, and safe `target="_blank"` links.
 
-The `Campaign page integrity` GitHub Actions workflow runs this checker and validates Python and shared-component JavaScript syntax. Missing local asset references and accessibility/link hygiene findings are reported as warnings so legacy issues remain visible; structural and migration omissions fail the workflow.
+The `Campaign page integrity` GitHub Actions workflow runs this checker, validates Python and shared-component JavaScript syntax, and runs `scripts/browser_smoke.mjs` in Chromium at desktop and mobile widths. The browser smoke test opens every eligible campaign page, exercises every navigation tab, checks runtime errors and failed local requests, checks for horizontal overflow, and exercises any configured manual audio control. Missing local asset references and accessibility/link hygiene findings are reported as warnings so legacy issues remain visible; structural and migration omissions fail the workflow.
 
 Static checks do not replace browser-based visual regression, keyboard navigation, screen-reader review, or playback tests under real browser autoplay policies.
