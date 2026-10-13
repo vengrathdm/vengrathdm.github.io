@@ -62,6 +62,20 @@ try {
         if (file === "p/dungeons-of-drakkenheim/index.html") {
           await page.waitForFunction(() => Boolean(document.querySelector("#dungeons-of-drakkenheim-living .v-character-card")), null, { timeout: 5000 });
         }
+        if (file === "p/PerfectMigrationTemplate/index.html") {
+          const dynamicButton = await page.evaluate(() => {
+            const root = document.createElement("div");
+            root.dataset.vengrathButton = "";
+            window.VengrathButton.init(root);
+            return {
+              link: root.querySelector("a")?.getAttribute("href"),
+              image: root.querySelector("img")?.getAttribute("src"),
+            };
+          });
+          if (dynamicButton.link !== "https://vengrathdm.github.io/" || !dynamicButton.image || !dynamicButton.image.includes("vengrath-button-background.png")) {
+            failures.push(file + ": dynamic Vengrath button initialization produced invalid links or assets");
+          }
+        }
         const tabs = page.locator(".v-subpage-navbar__link[data-tab-target]");
         const tabCount = await tabs.count();
         if (!tabCount) throw new Error("No shared navigation tabs found");
