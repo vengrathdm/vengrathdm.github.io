@@ -41,7 +41,7 @@ class PageParser(HTMLParser):
     def handle_startendtag(self, tag, attrs):
         self.handle_starttag(tag, attrs)
     def handle_data(self, data):
-        if re.search(r"</(?:section|main|div)>\s*n>", data, re.I):
+    if re.search(r"</(?:section|main|div)>\s*n>", text, re.I):
             ERRORS.append(f"{self.path}: suspicious literal 'n>' after closing tag")
 
 def resolve_local(page, raw):
@@ -60,7 +60,7 @@ def check_page(page):
         ERRORS.append(f"{page.relative_to(ROOT)}: cannot read HTML ({exc})")
         return
     rel = page.relative_to(ROOT)
-    if re.search(r"</(?:section|main|div)>\\s*n>", text, re.I):
+    if re.search(r"</(?:section|main|div)>\s*n>", text, re.I):
         ERRORS.append(f"{rel}: suspicious literal 'n>' after a closing tag")
     parser = PageParser(str(rel))
     try:
