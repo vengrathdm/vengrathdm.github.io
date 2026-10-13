@@ -76,11 +76,19 @@ try {
             failures.push(file + ": dynamic Vengrath button initialization produced invalid links or assets");
           }
         }
+        await page.keyboard.press("Tab");
+        const focusedControl = await page.evaluate(() => {
+          const element = document.activeElement;
+          return Boolean(element && element !== document.body && /^(A|BUTTON|INPUT|SELECT|TEXTAREA|SUMMARY)$/.test(element.tagName));
+        });
+        if (!focusedControl) failures.push(file + " @ " + viewport.width + "px: Tab key did not reach a focusable control");
         const tabs = page.locator(".v-subpage-navbar__link[data-tab-target]");
         const tabCount = await tabs.count();
         if (!tabCount) throw new Error("No shared navigation tabs found");
         for (let index = 0; index < tabCount; index++) {
           const tab = tabs.nth(index);
+          const label = (await tab.innerText()).trim();
+          if (!label) failures.push(file + " @ " + viewport.width + "px: navigation tab has no accessible text");
           const target = await tab.getAttribute("data-tab-target");
           const id = (target || "").replace(/^#/, "");
           if (!id) {
