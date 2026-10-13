@@ -21,3 +21,11 @@ jobs:
           python-version: "3.12"
       - name: Validate campaign pages and local references
         run: python scripts/audit_campaign_pages.py
+      - name: Check Python syntax
+        run: python -m py_compile scripts/audit_campaign_pages.py
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check shared component JavaScript syntax
+        run: find res/common -name "*.js" -print0 | xargs -0 -n1 node --check
