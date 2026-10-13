@@ -30,7 +30,7 @@ try {
       const page = await browser.newPage({ viewport });
       const pageErrors = [];
       const localFailures = [];
-      page.on("pageerror", (error) => pageErrors.push(error.message));
+      page.on("pageerror", (error) => pageErrors.push(error.stack || error.message));
       page.on("requestfailed", (request) => {
         if (new URL(request.url()).hostname === "127.0.0.1") {
           localFailures.push(request.url() + " — " + (request.failure()?.errorText || "request failed"));
