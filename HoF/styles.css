@@ -20,7 +20,7 @@ body{
   margin:0;
   background:var(--bg);
   color:var(--text);
-  font-family:"Fira Sans Extra Condensed",sans-serif;
+  font-family:"Voltaire",sans-serif;
   overflow-x:hidden;
 }
 body.modal-open{overflow:hidden}
@@ -61,7 +61,7 @@ button,input,select{font:inherit}
 .brand-logo{width:42px;height:42px;object-fit:contain;filter:brightness(1.08) contrast(1.05);mix-blend-mode:screen}
 .brand-name{font-size:24px;font-weight:700;letter-spacing:4px;line-height:1}
 .nav-meta{
-  margin-left:auto;color:var(--muted2);font:11px "Fira Sans Extra Condensed",sans-serif;
+  margin-left:auto;color:var(--muted2);font:11px "Voltaire",sans-serif;
   font-weight:600;letter-spacing:2px;text-transform:uppercase;
 }
 .nav-dot{color:var(--accent);padding:0 8px}
@@ -83,7 +83,7 @@ button,input,select{font:inherit}
   border-top:1px solid var(--line);padding-top:15px;
 }
 .hero-foot:after{content:"";width:44px;height:2px;background:var(--accent)}
-.hero-mark{font:20px "Fira Sans Extra Condensed";color:var(--accent-bright)}
+.hero-mark{font:20px "Voltaire";color:var(--accent-bright)}
 .hero-orbit{position:absolute;border-radius:50%;border:1px solid rgba(142,38,49,.13);z-index:2}
 .orbit-a{width:390px;height:390px;right:-60px;top:15px}
 .orbit-b{width:245px;height:245px;right:12px;top:88px}
@@ -100,7 +100,7 @@ main{width:100%;max-width:1920px;margin:auto;padding:58px clamp(24px,3vw,52px) 8
 }
 .archive-count{text-align:right}
 .count-label{display:block;color:var(--muted2);font-size:10px;font-weight:600;letter-spacing:2px}
-.result{font:600 13px "Fira Sans Extra Condensed",sans-serif;color:var(--silver);letter-spacing:1px}
+.result{font:600 13px "Voltaire",sans-serif;color:var(--silver);letter-spacing:1px}
 .archive-stats{
   margin:0 0 28px;padding:18px 20px;background:linear-gradient(180deg,#171a1b,#121516);
   border:1px solid var(--line);box-shadow:0 10px 28px #0005;
@@ -130,12 +130,12 @@ main{width:100%;max-width:1920px;margin:auto;padding:58px clamp(24px,3vw,52px) 8
 .search span{font-size:23px;color:var(--accent-bright)}
 .search input{
   width:100%;min-width:0;border:0;outline:0;background:transparent;color:var(--text);
-  font:500 17px "Fira Sans Extra Condensed",sans-serif;letter-spacing:.2px;
+  font:500 17px "Voltaire",sans-serif;letter-spacing:.2px;
 }
 .search input::placeholder{color:#697074}
 .search kbd{
   border:1px solid #353b3e;border-radius:999px;color:#777e81;padding:3px 7px;
-  font:10px "Fira Sans Extra Condensed",sans-serif;background:#171a1b;
+  font:10px "Voltaire",sans-serif;background:#171a1b;
 }
 .filters{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:10px}
 .filters label{min-width:0}
@@ -241,7 +241,7 @@ footer a:hover{color:#fff}
 .modal-close{
   position:absolute;top:13px;right:13px;z-index:4;width:38px;height:38px;
   border:1px solid #4a5154;border-radius:50%;background:#111516;color:#cdd1d2;
-  font:24px/1 "Fira Sans Extra Condensed";cursor:pointer;
+  font:24px/1 "Voltaire";cursor:pointer;
 }
 .modal-close:hover{background:#8e2631;border-color:#b33a47;color:#fff}
 .modal-content{display:grid;grid-template-columns:40% 60%;height:100%;overflow:hidden}
@@ -279,7 +279,7 @@ footer a:hover{color:#fff}
 .history-label{color:#b33a47;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
 .history h3{
   margin:7px 0 14px;color:#eee;text-transform:uppercase;
-  font:600 36px/.92 "Space Grotesk",sans-serif;letter-spacing:-.04em;
+  font:600 36px/.92 "Voltaire",sans-serif;letter-spacing:-.04em;
 }
 .history p{margin:0;color:#b8bdbe;font-size:15px;line-height:1.75;white-space:pre-wrap}
 
@@ -302,7 +302,7 @@ footer a:hover{color:#fff}
   transition:opacity .12s ease,visibility .12s ease;
 }
 .achievement-tooltip strong{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#d5bd80}
-.achievement-tooltip span{font:11px/1.45 "Fira Sans Extra Condensed",sans-serif;color:#bfc2bb}
+.achievement-tooltip span{font:11px/1.45 "Voltaire",sans-serif;color:#bfc2bb}
 .achievement:hover .achievement-tooltip,.achievement:focus-visible .achievement-tooltip{opacity:1;visibility:visible}
 
 /* Responsive */
@@ -494,7 +494,7 @@ footer a:hover{color:#fff}
   border-radius:0;
   background:none;
   color:#d0d4d5;
-  font:600 13px/1.35 "Fira Sans Extra Condensed",sans-serif;
+  font:600 13px/1.35 "Voltaire",sans-serif;
 }
 .pill + .pill:before{
   content:" · ";
@@ -568,8 +568,8 @@ footer a:hover{color:#fff}
   --radius-control:8px;
   --radius-card:3px;
 }
-body{font-family:"Manrope",sans-serif;line-height:1.5}
-button,input,select{font-family:"Manrope",sans-serif}
+body{font-family:"Voltaire",sans-serif;line-height:1.5}
+button,input,select{font-family:"Voltaire",sans-serif}
 main{max-width:var(--content-max);padding-inline:var(--space-page)}
 .hero{min-height:clamp(300px,28vw,410px)}
 .hero-copy{margin-top:clamp(54px,6vw,76px);padding-inline:var(--space-page)}
@@ -577,7 +577,7 @@ main{max-width:var(--content-max);padding-inline:var(--space-page)}
 .hero h1 span{color:var(--gold)}
 .site-nav{padding-inline:var(--space-page);gap:clamp(12px,2vw,28px)}
 .nav-meta,.back,.count-label,.stat span,.meta-label,.detail-label,.history-label,.hero-mark{
-  font-family:"Fira Sans Extra Condensed",sans-serif
+  font-family:"Voltaire",sans-serif
 }
 .nav-meta{color:var(--muted2)}
 .back{font-size:12px}
@@ -643,11 +643,11 @@ main{max-width:var(--content-max);padding-inline:var(--space-page)}
 }
 .meta-row:last-child{border-bottom:0}
 .meta-label{font-size:9px;line-height:1.2;letter-spacing:1px;color:var(--muted2)}
-.meta-value{font-family:"Manrope",sans-serif;font-size:11px;line-height:1.45;font-weight:500;color:#d5d9da}
+.meta-value{font-family:"Voltaire",sans-serif;font-size:11px;line-height:1.45;font-weight:500;color:#d5d9da}
 .pills{display:block}
 .pill{
   padding:0;border:0;border-radius:0;background:none;
-  font:500 11px/1.45 "Manrope",sans-serif;color:#d5d9da
+  font:500 11px/1.45 "Voltaire",sans-serif;color:#d5d9da
 }
 .pill + .pill:before{content:" · ";color:var(--muted2);margin:0 2px}
 .status{font-size:10px;line-height:1.3;padding:3px 7px;border-radius:3px}
@@ -667,9 +667,9 @@ main{max-width:var(--content-max);padding-inline:var(--space-page)}
 .search,.filters select,.filters button,.achievement-gallery-tools input,.achievement-gallery-tools select{
   border-radius:var(--radius-control)
 }
-.search input,.achievement-gallery-tools input{font-family:"Manrope",sans-serif;font-size:14px}
+.search input,.achievement-gallery-tools input{font-family:"Voltaire",sans-serif;font-size:14px}
 .search input::placeholder,.achievement-gallery-tools input::placeholder{color:#9aa1a3}
-.filters select,.filters button,.achievement-gallery-tools select{font-family:"Manrope",sans-serif}
+.filters select,.filters button,.achievement-gallery-tools select{font-family:"Voltaire",sans-serif}
 .filters select:focus-visible,.filters button:focus-visible,
 .search:focus-within,.achievement-gallery-tools input:focus-visible,
 .achievement-gallery-tools select:focus-visible,.modal-close:focus-visible{
@@ -681,17 +681,17 @@ main{max-width:var(--content-max);padding-inline:var(--space-page)}
 .stats-status .stat:first-child strong{color:var(--gold)}
 .stats-status .stat:last-child strong{color:var(--silver)}
 .count-label{color:var(--muted2)}
-.result{font-family:"Fira Sans Extra Condensed",sans-serif}
-footer{font-family:"Fira Sans Extra Condensed",sans-serif;color:var(--muted2)}
+.result{font-family:"Voltaire",sans-serif}
+footer{font-family:"Voltaire",sans-serif;color:var(--muted2)}
 footer a{color:var(--gold)}
 .modal-panel{border-color:var(--line-strong);border-radius:4px}
 .modal-visual h2,.history h3{overflow-wrap:anywhere}
 .modal-kicker,.detail-label{color:var(--muted2)}
-.history p{font-family:"Manrope",sans-serif;font-size:14px;line-height:1.8;color:#c7cccd}
+.history p{font-family:"Voltaire",sans-serif;font-size:14px;line-height:1.8;color:#c7cccd}
 
 /* Achievements share the archive's rhythm without losing their symbolic character. */
 .achievement-gallery-page main{max-width:var(--content-max)}
-.achievement-gallery-intro{font-family:"Manrope",sans-serif;color:#c0c5c6;font-size:16px;line-height:1.75}
+.achievement-gallery-intro{font-family:"Voltaire",sans-serif;color:#c0c5c6;font-size:16px;line-height:1.75}
 .achievement-gallery-tools{grid-template-columns:minmax(0,1fr) minmax(200px,260px)}
 .achievement-gallery-meta{border-color:var(--line)}
 .achievement-gallery-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:12px}
@@ -702,8 +702,8 @@ footer a{color:var(--gold)}
 .achievement-catalogue-card:before{width:2px;background:var(--gold);opacity:.65}
 .achievement-catalogue-icon{flex-basis:52px;width:52px;height:52px;font-size:29px;border-color:var(--line-strong)}
 .achievement-catalogue-copy h3{font-size:clamp(22px,1.7vw,27px);line-height:1.05}
-.achievement-catalogue-copy p{font-family:"Manrope",sans-serif;font-size:13px;line-height:1.6;color:#c0c5c6}
-.achievement-catalogue-tags span{border-radius:3px;color:var(--muted);font-family:"Fira Sans Extra Condensed",sans-serif;letter-spacing:.3px}
+.achievement-catalogue-copy p{font-family:"Voltaire",sans-serif;font-size:13px;line-height:1.6;color:#c0c5c6}
+.achievement-catalogue-tags span{border-radius:3px;color:var(--muted);font-family:"Voltaire",sans-serif;letter-spacing:.3px}
 
 /* Tablet: controls and stats become compact full-width bands above the gallery. */
 @media(max-width:1240px){
