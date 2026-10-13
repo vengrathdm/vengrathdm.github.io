@@ -57,11 +57,20 @@ def check_page(page):
         ERRORS.append(f"{page.relative_to(ROOT)}: cannot read HTML ({exc})")
         return
     rel = page.relative_to(ROOT)
-    if 'class="v-subpage-navbar' in text and "data-tab-target" in text:
-        if "subpage-navbar.css" not in text:
-            ERRORS.append(f"{rel}: shared navbar markup is missing subpage-navbar.css")
-        if "subpage-navbar.js" not in text:
-            ERRORS.append(f"{rel}: shared navbar markup is missing subpage-navbar.js")
+    has_navbar = 'class="v-subpage-navbar' in text and "data-tab-target" in text
+    if has_navbar:
+        required_shared_assets = (
+            "subpage-navbar.css",
+            "subpage-navbar.js",
+            "subpage-hero.css",
+            "character-card.css",
+            "chronicle.css",
+        )
+        for asset_name in required_shared_assets:
+            if asset_name not in text:
+                ERRORS.append(f"{rel}: migrated campaign is missing shared asset {asset_name}")
+    if "data-v-audio-player" in text and "audio-player.css" not in text:
+        ERRORS.append(f"{rel}: audio player markup is missing audio-player.css")
     if "data-v-audio-player" in text and "audio-player.js" not in text:
         ERRORS.append(f"{rel}: audio player markup is missing audio-player.js")
     if "data-v-youtube-button" in text and "youtube-button.js" not in text:
