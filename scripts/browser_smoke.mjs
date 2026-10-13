@@ -91,7 +91,7 @@ try {
         await page.keyboard.press("Tab");
         const focusedControl = await page.evaluate(() => {
           const element = document.activeElement;
-          return Boolean(element && element !== document.body && /^(A|BUTTON|INPUT|SELECT|TEXTAREA|SUMMARY)$/.test(element.tagName));
+          return Boolean(element && element !== document.body && element !== document.documentElement && element.tabIndex >= 0);
         });
         if (!focusedControl) failures.push(file + " @ " + viewport.width + "px: Tab key did not reach a focusable control");
         const tabs = page.locator(".v-subpage-navbar__link[data-tab-target]");
