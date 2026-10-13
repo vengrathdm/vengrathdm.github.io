@@ -43,18 +43,18 @@
 }
 .v-character-card__player {
   display: block;
+  font-family: var(--theme-font-2, "Fira Sans Extra Condensed", sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  color: #aaa8a1;
+}
+.v-character-card__character {
+  display: block;
   font-family: var(--theme-font-1, "Voltaire", sans-serif);
   font-size: 30px;
   font-weight: 400;
   color: #e0dbd0;
   margin: 7px 0 2px;
-}
-.v-character-card__character {
-  display: block;
-  font-family: var(--theme-font-2, "Fira Sans Extra Condensed", sans-serif);
-  font-size: 14px;
-  font-weight: 500;
-  color: #aaa8a1;
 }
 .v-character-card__description {
   margin: 15px 0 0;
@@ -147,20 +147,6 @@
   color: #aaa8a1;
   font-family: var(--theme-font-2, "Fira Sans Extra Condensed", sans-serif);
   font-size: 11px;
-}
-.v-character-card__character {
-  font-family: var(--theme-font-1, "Voltaire", sans-serif);
-  font-size: 30px;
-  font-weight: 400;
-  color: #e0dbd0;
-  margin: 7px 0 2px;
-}
-.v-character-card__player {
-  display: block;
-  font-family: var(--theme-font-2, "Fira Sans Extra Condensed", sans-serif);
-  font-size: 14px;
-  font-weight: 500;
-  color: #aaa8a1;
 }
 .v-character-card__label {
   white-space: nowrap;
