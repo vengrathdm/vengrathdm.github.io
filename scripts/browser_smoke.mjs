@@ -64,6 +64,21 @@ try {
           }, id);
           if (!visible) failures.push(file + " @ " + viewport.width + "px: tab did not reveal #" + id);
         }
+        const audioRoot = page.locator("[data-v-audio-player]");
+        if (await audioRoot.count()) {
+          const audioButton = audioRoot.locator("button").first();
+          if (!(await audioButton.isVisible())) {
+            failures.push(file + " @ " + viewport.width + "px: audio control is not visible");
+          } else if (await audioButton.isDisabled()) {
+            failures.push(file + " @ " + viewport.width + "px: audio control is disabled");
+          } else {
+            await audioButton.click();
+            await page.waitForTimeout(150);
+            if (await audioButton.isDisabled()) {
+              failures.push(file + " @ " + viewport.width + "px: manual audio control became disabled after interaction");
+            }
+          }
+        }
         const metrics = await page.evaluate(() => ({
           viewport: window.innerWidth,
           document: document.documentElement.scrollWidth,
