@@ -1,4 +1,5 @@
 .v-subpage-hero {
+    min-height: 100svh;
     min-height: 100vh;
     position: relative;
     display: flex;
@@ -43,7 +44,8 @@
 
 .v-subpage-hero__title {
     font-family: var(--theme-font-1, "Cinzel", serif);
-    font-size: clamp(70px, 11vw, 155px);
+    font-size: clamp(54px, 9vw, 155px);
+    overflow-wrap: anywhere;
     font-weight: 600;
     line-height: .76;
     letter-spacing: -.055em;
@@ -142,7 +144,7 @@
     }
 
     .v-subpage-hero__title {
-        font-size: 58px
+        font-size: clamp(38px, 10vw, 58px)
     }
 
     .v-subpage-hero__lead {
