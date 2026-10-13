@@ -66,6 +66,10 @@ def check_page(page):
         return
     rel = page.relative_to(ROOT)
     has_navbar = 'class="v-subpage-navbar' in text and "data-tab-target" in text
+    if not has_navbar:
+        ERRORS.append(f"{rel}: eligible campaign page is missing the shared tab navbar")
+    if 'class="v-subpage-hero' not in text:
+        ERRORS.append(f"{rel}: eligible campaign page is missing the shared hero component")
     if has_navbar:
         required_shared_assets = (
             "subpage-navbar.css",
