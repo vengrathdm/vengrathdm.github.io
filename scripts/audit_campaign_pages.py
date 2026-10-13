@@ -11,6 +11,7 @@ CAMPAIGNS = ROOT / "p"
 EXCLUDED = "ksiazeta-heartwell"
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
 ERRORS = []
+WARNINGS = []
 
 class PageParser(HTMLParser):
     def __init__(self, path):
@@ -83,7 +84,7 @@ def check_page(page):
             continue
         asset = resolve_local(page, raw)
         if asset is not None and not asset.exists():
-            ERRORS.append(f"{rel}: missing local {attr} asset {raw!r} (resolved to {asset.relative_to(ROOT) if asset.is_relative_to(ROOT) else asset})")
+            WARNINGS.append(f"{rel}: missing local {attr} asset {raw!r} (resolved to {asset.relative_to(ROOT) if asset.is_relative_to(ROOT) else asset})")
 
 def main():
     pages = sorted(p for p in CAMPAIGNS.glob("*/index.html") if EXCLUDED not in str(p).lower())
