@@ -41,10 +41,6 @@ class PageParser(HTMLParser):
             self.hrefs.append(a["href"][1:])
     def handle_startendtag(self, tag, attrs):
         self.handle_starttag(tag, attrs)
-    def handle_data(self, data):
-    if re.search(r"</(?:section|main|div)>\s*n>", text, re.I):
-            ERRORS.append(f"{self.path}: suspicious literal 'n>' after closing tag")
-
 def resolve_local(page, raw):
     parts = urlsplit(raw.strip())
     if parts.scheme or parts.netloc or not parts.path:
