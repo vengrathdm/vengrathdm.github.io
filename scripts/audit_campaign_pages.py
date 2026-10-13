@@ -68,7 +68,7 @@ def check_page(page):
         ERRORS.append(f"{rel}: YouTube button markup is missing youtube-button.js")
     if "data-vengrath-button" in text and "vengrath-button.js" not in text:
         ERRORS.append(f"{rel}: Vengrath button markup is missing vengrath-button.js")
-    if re.search(r"</(?:section|main|div)>\\s*n>", text, re.I):
+    if re.search(r"</(?:section|main|div)>\s*n>", text, re.I):
         ERRORS.append(f"{rel}: suspicious literal 'n>' after a closing tag")
     parser = PageParser(str(rel))
     try:
