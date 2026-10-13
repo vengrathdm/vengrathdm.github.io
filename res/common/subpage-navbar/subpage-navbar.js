@@ -9,7 +9,7 @@
 
   function getPanels(nav){
     const ids=new Set(getLinks(nav).map(link=>link.dataset.tabTarget.replace(/^#/,"")));
-    return [...document.querySelectorAll(PANEL_SELECTOR)].filter(panel=>ids.has(panel.id) && nav.closest("main")?.contains(panel));
+    return [...document.querySelectorAll(PANEL_SELECTOR)].filter(panel=>ids.has(panel.id));
   }
 
   function activate(nav,target,updateHash){
@@ -21,7 +21,7 @@
     if(!chosen) return false;
 
     const chosenId=chosen.dataset.tabTarget.replace(/^#/,"");
-    const panel=getPanels(nav).find(item=>item.id===chosenId) || document.getElementById(chosenId);
+    const panel=document.getElementById(chosenId);
     if(!panel) return false;
 
     links.forEach(link=>{
@@ -97,7 +97,7 @@
 
   function keepChronicleCardsInCharacters(nav,panel){
     const panelIds=new Set(getLinks(nav).map(link=>link.dataset.tabTarget.replace(/^#/,"")));
-    const otherPanels=[...document.querySelectorAll(PANEL_SELECTOR)].filter(item=>panelIds.has(item.id)&&item!==panel&&nav.closest("main")?.contains(item));
+    const otherPanels=[...document.querySelectorAll(PANEL_SELECTOR)].filter(item=>panelIds.has(item.id)&&item!==panel);
     const movedSelector=".v-character-card, .ddc-dead-character";
     const destination=()=>{
       let grid=panel.querySelector("[data-v-moved-character-grid]");
