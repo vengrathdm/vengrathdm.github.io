@@ -50,6 +50,7 @@
 }
 .v-character-card__character {
   display: block;
+  text-align: center;
   font-family: var(--theme-font-1, "Voltaire", sans-serif);
   font-size: 30px;
   font-weight: 400;
