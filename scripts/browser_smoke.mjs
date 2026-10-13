@@ -88,6 +88,7 @@ try {
             failures.push(file + ": dynamic Vengrath button initialization produced invalid links or assets");
           }
         }
+        await page.locator(".v-subpage-navbar__link[data-tab-target]").first().focus();
         await page.keyboard.press("Tab");
         const focusResult = await page.evaluate(() => {
           const element = document.activeElement;
