@@ -57,7 +57,7 @@
       button.title=playing?"Wycisz muzykę":"Włącz muzykę";
     }
     function restore(){
-      if(restored) return;
+      if(restored || audio.readyState < 1) return;
       const saved=Number.parseFloat(storageGet(timeKey));
       if(Number.isFinite(saved)&&saved>=0){
         const duration=audio.duration;
@@ -82,8 +82,7 @@
 
     audio.addEventListener("loadedmetadata",()=>{
       restore();
-      const shouldResume=key ? storageGet(playingKey)!=="false"&&!muted : !muted;
-      if(shouldResume) play();
+      if(!muted) play();
       else sync();
     });
     audio.addEventListener("error",()=>{
