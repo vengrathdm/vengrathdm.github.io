@@ -1,5 +1,6 @@
 .v-subpage-hero {
     min-height: 100vh;
+    min-height: 100svh;
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -44,6 +45,7 @@
 .v-subpage-hero__title {
     font-family: var(--theme-font-1, "Cinzel", serif);
     font-size: clamp(70px, 11vw, 155px);
+    overflow-wrap: break-word;
     font-weight: 600;
     line-height: .76;
     letter-spacing: -.055em;
@@ -133,7 +135,8 @@
 
 @media(max-width:620px) {
     .v-subpage-hero {
-        min-height: 88vh
+        min-height: 88vh;
+        min-height: 88svh
     }
 
     .v-subpage-hero__inner {
@@ -142,7 +145,7 @@
     }
 
     .v-subpage-hero__title {
-        font-size: 58px
+        font-size: clamp(38px, 10vw, 58px)
     }
 
     .v-subpage-hero__lead {

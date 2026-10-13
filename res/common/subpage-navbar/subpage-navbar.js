@@ -7,6 +7,11 @@
     return [...nav.querySelectorAll(LINK_SELECTOR)];
   }
 
+  function getPanels(nav){
+    const ids=new Set(getLinks(nav).map(link=>link.dataset.tabTarget.replace(/^#/,"")));
+    return [...document.querySelectorAll(PANEL_SELECTOR)].filter(panel=>ids.has(panel.id));
+  }
+
   function activate(nav,target,updateHash){
     const links=getLinks(nav);
     const targetId=String(target||"").replace(/^#/,"");
@@ -25,7 +30,7 @@
       if(active) link.setAttribute("aria-current","page");
       else link.removeAttribute("aria-current");
     });
-    document.querySelectorAll(PANEL_SELECTOR).forEach(item=>{
+    getPanels(nav).forEach(item=>{
       item.hidden=item.id!==chosenId;
     });
 
@@ -91,10 +96,11 @@
   }
 
   function keepChronicleCardsInCharacters(nav,panel){
-    const otherPanels=[...document.querySelectorAll(PANEL_SELECTOR)].filter(item=>item!==panel);
+    const panelIds=new Set(getLinks(nav).map(link=>link.dataset.tabTarget.replace(/^#/,"")));
+    const otherPanels=[...document.querySelectorAll(PANEL_SELECTOR)].filter(item=>panelIds.has(item.id)&&item!==panel);
     const movedSelector=".v-character-card, .ddc-dead-character";
     const destination=()=>{
-      let grid=panel.querySelector("[data-v-moved-character-grid]");
+      let grid=panel.querySelector("[data-v-moved-character-grid], .v-character-grid, .ddc-character-grid");
       if(!grid){
         const host=panel.querySelector("[data-v-character-groups]")||panel;
         grid=document.createElement("div");
@@ -162,6 +168,14 @@
       }
     }else{
       panel.dataset.vTabPanel="";
+    }
+
+    // Preserve campaign-authored markup and any page-specific character renderer.
+    // Only generate the shared registry view when the panel has no existing content.
+    if(panel.children.length){
+      keepChronicleCardsInCharacters(nav,panel);
+      if(location.hash==="#characters") activate(nav,"#characters",false);
+      return;
     }
 
     // The character tab may not have existed during initial tab setup.

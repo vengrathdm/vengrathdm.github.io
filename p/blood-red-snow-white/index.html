@@ -70,7 +70,7 @@
             <h2>Baśń, która odmówiła czekać.</h2>
             <p>To świat krwi, wiary, klątw i rzeczy ukrytych pod powierzchnią dobrze znanych historii. Elegancja dworu spotyka się z tym, co powinno pozostać w lesie, pod ziemią albo za zamkniętymi drzwiami.</p>
           </div>
-          <figure class="ddc-party-image"><img src="/res/portraits/char-0015.png" alt="Blood Red Snow White"></figure>
+          <figure class="ddc-party-image"><img src="/res/portraits/char-0015.webp" alt="Blood Red Snow White"></figure>
         </section>
         <section class="ddc-manifesto">
           <div class="ddc-manifesto-symbol">✦</div>
@@ -223,28 +223,53 @@
     <script>
       (async () => {
         const grid = document.getElementById("blood-red-snow-white-characters");
-        const characters = await fetch("/res/characters.json").then(response => response.json());
-        characters
-          .filter(character => character.campaigns.includes("Blood Red Snow White"))
-          .forEach(character => {
-            const card = document.createElement("article");
-            card.className = "v-character-card";
-            const classes = character.classes.join(" / ");
-            const history = character.Historia ? `<p class="v-character-card__description">${character.Historia}</p>` : "";
-            card.innerHTML = `
-              <div class="v-character-card__portrait">
-                <img src="${character.portrait}" alt="${character.character}">
-              </div>
-              <div class="v-character-card__info">
-                <div class="v-character-card__label">${character.status}</div>
-                <span class="v-character-card__player">${character.character}</span>
-                <span class="v-character-card__character">${character.player} · ${classes} · ${character.race}</span>
-                ${history}
-              </div>
-            `;
-            grid.appendChild(card);
-          });
+        if (!grid) return;
+        try {
+          const response = await fetch("/res/characters.json");
+          if (!response.ok) throw new Error("characters.json: " + response.status);
+          const characters = await response.json();
+          characters
+            .filter(character => character && Array.isArray(character.campaigns) && character.campaigns.includes("Blood Red Snow White"))
+            .forEach(character => {
+              const card = document.createElement("article");
+              card.className = "v-character-card";
+              const portrait = document.createElement("div");
+              portrait.className = "v-character-card__portrait";
+              const image = document.createElement("img");
+              image.src = typeof character.portrait === "string" ? character.portrait : "";
+              image.alt = character.character || "Postać";
+              image.loading = "lazy";
+              image.decoding = "async";
+              portrait.appendChild(image);
+
+              const info = document.createElement("div");
+              info.className = "v-character-card__info";
+              const label = document.createElement("div");
+              label.className = "v-character-card__label";
+              label.textContent = character.status || "";
+              const name = document.createElement("span");
+              name.className = "v-character-card__player";
+              name.textContent = character.character || "Bez imienia";
+              const meta = document.createElement("span");
+              meta.className = "v-character-card__character";
+              const classes = Array.isArray(character.classes) ? character.classes.join(" / ") : "";
+              meta.textContent = [character.player, classes, character.race].filter(Boolean).join(" · ");
+              info.append(label, name, meta);
+              const history = character.Historia || character.history;
+              if (history) {
+                const description = document.createElement("p");
+                description.className = "v-character-card__description";
+                description.textContent = history;
+                info.appendChild(description);
+              }
+              card.append(portrait, info);
+              grid.appendChild(card);
+            });
+        } catch (error) {
+          console.error("Unable to load Blood Red Snow White characters:", error);
+        }
       })();
     </script>
+
   </body>
 </html>
