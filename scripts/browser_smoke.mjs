@@ -56,6 +56,12 @@ try {
             }
           }
         }
+        if (file === "p/blood-red-snow-white/index.html") {
+          await page.waitForFunction(() => Boolean(document.querySelector("#blood-red-snow-white-characters .v-character-card")), null, { timeout: 5000 });
+        }
+        if (file === "p/dungeons-of-drakkenheim/index.html") {
+          await page.waitForFunction(() => Boolean(document.querySelector("#dungeons-of-drakkenheim-living .v-character-card")), null, { timeout: 5000 });
+        }
         const tabs = page.locator(".v-subpage-navbar__link[data-tab-target]");
         const tabCount = await tabs.count();
         if (!tabCount) throw new Error("No shared navigation tabs found");
