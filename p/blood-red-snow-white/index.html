@@ -233,19 +233,36 @@
             .forEach(character => {
               const card = document.createElement("article");
               card.className = "v-character-card";
+              const portrait = document.createElement("div");
+              portrait.className = "v-character-card__portrait";
+              const image = document.createElement("img");
+              image.src = typeof character.portrait === "string" ? character.portrait : "";
+              image.alt = character.character || "Postać";
+              image.loading = "lazy";
+              image.decoding = "async";
+              portrait.appendChild(image);
+
+              const info = document.createElement("div");
+              info.className = "v-character-card__info";
+              const label = document.createElement("div");
+              label.className = "v-character-card__label";
+              label.textContent = character.status || "";
+              const name = document.createElement("span");
+              name.className = "v-character-card__player";
+              name.textContent = character.character || "Bez imienia";
+              const meta = document.createElement("span");
+              meta.className = "v-character-card__character";
               const classes = Array.isArray(character.classes) ? character.classes.join(" / ") : "";
-              const history = character.Historia ? `<p class="v-character-card__description">${character.Historia}</p>` : "";
-              card.innerHTML = `
-                <div class="v-character-card__portrait">
-                  <img src="${character.portrait}" alt="${character.character || "Postać"}" loading="lazy" decoding="async">
-                </div>
-                <div class="v-character-card__info">
-                  <div class="v-character-card__label">${character.status || ""}</div>
-                  <span class="v-character-card__player">${character.character || "Bez imienia"}</span>
-                  <span class="v-character-card__character">${character.player || "Nieznany gracz"} · ${classes} · ${character.race || ""}</span>
-                  ${history}
-                </div>
-              `;
+              meta.textContent = [character.player, classes, character.race].filter(Boolean).join(" · ");
+              info.append(label, name, meta);
+              const history = character.Historia || character.history;
+              if (history) {
+                const description = document.createElement("p");
+                description.className = "v-character-card__description";
+                description.textContent = history;
+                info.appendChild(description);
+              }
+              card.append(portrait, info);
               grid.appendChild(card);
             });
         } catch (error) {
