@@ -36,6 +36,13 @@ jobs:
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
       - name: Start local site server
-        run: python -m http.server 8000 --bind 127.0.0.1 > /tmp/campaign-server.log 2>&1 &
+        run: |
+          python -m http.server 8000 --bind 127.0.0.1 > /tmp/campaign-server.log 2>&1 &
+          for attempt in $(seq 1 20); do
+            if curl --fail --silent http://127.0.0.1:8000/ > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/campaign-server.log
+          exit 1
       - name: Run desktop and mobile browser smoke tests
         run: node scripts/browser_smoke.mjs
