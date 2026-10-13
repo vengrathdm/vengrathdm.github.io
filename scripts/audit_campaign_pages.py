@@ -57,7 +57,18 @@ def check_page(page):
         ERRORS.append(f"{page.relative_to(ROOT)}: cannot read HTML ({exc})")
         return
     rel = page.relative_to(ROOT)
-    if re.search(r"</(?:section|main|div)>\s*n>", text, re.I):
+    if 'class="v-subpage-navbar' in text and "data-tab-target" in text:
+        if "subpage-navbar.css" not in text:
+            ERRORS.append(f"{rel}: shared navbar markup is missing subpage-navbar.css")
+        if "subpage-navbar.js" not in text:
+            ERRORS.append(f"{rel}: shared navbar markup is missing subpage-navbar.js")
+    if "data-v-audio-player" in text and "audio-player.js" not in text:
+        ERRORS.append(f"{rel}: audio player markup is missing audio-player.js")
+    if "data-v-youtube-button" in text and "youtube-button.js" not in text:
+        ERRORS.append(f"{rel}: YouTube button markup is missing youtube-button.js")
+    if "data-vengrath-button" in text and "vengrath-button.js" not in text:
+        ERRORS.append(f"{rel}: Vengrath button markup is missing vengrath-button.js")
+    if re.search(r"</(?:section|main|div)>\\s*n>", text, re.I):
         ERRORS.append(f"{rel}: suspicious literal 'n>' after a closing tag")
     parser = PageParser(str(rel))
     try:
