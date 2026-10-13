@@ -29,3 +29,13 @@ jobs:
           node-version: "22"
       - name: Check shared component JavaScript syntax
         run: find res/common -name "*.js" -print0 | xargs -0 -n1 node --check
+      - name: Check browser test syntax
+        run: node --check scripts/browser_smoke.mjs
+      - name: Install browser test dependencies
+        run: npm install --no-save --no-package-lock playwright
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Start local site server
+        run: python -m http.server 8000 --bind 127.0.0.1 > /tmp/campaign-server.log 2>&1 &
+      - name: Run desktop and mobile browser smoke tests
+        run: node scripts/browser_smoke.mjs
