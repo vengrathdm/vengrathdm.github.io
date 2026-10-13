@@ -220,31 +220,6 @@
     <script src="../../res/common/vengrath-button/vengrath-button.js"></script>
     <script src="../../res/common/youtube-button/youtube-button.js"></script>
     <script src="../../res/common/audio-player/audio-player.js"></script>
-    <script>
-      (async () => {
-        const grid = document.getElementById("blood-red-snow-white-characters");
-        const characters = await fetch("/res/characters.json").then(response => response.json());
-        characters
-          .filter(character => character.campaigns.includes("Blood Red Snow White"))
-          .forEach(character => {
-            const card = document.createElement("article");
-            card.className = "v-character-card";
-            const classes = character.classes.join(" / ");
-            const history = character.Historia ? `<p class="v-character-card__description">${character.Historia}</p>` : "";
-            card.innerHTML = `
-              <div class="v-character-card__portrait">
-                <img src="${character.portrait}" alt="${character.character}">
-              </div>
-              <div class="v-character-card__info">
-                <div class="v-character-card__label">${character.status}</div>
-                <span class="v-character-card__player">${character.character}</span>
-                <span class="v-character-card__character">${character.player} · ${classes} · ${character.race}</span>
-                ${history}
-              </div>
-            `;
-            grid.appendChild(card);
-          });
-      })();
-    </script>
+
   </body>
 </html>
