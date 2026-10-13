@@ -89,11 +89,19 @@ try {
           }
         }
         await page.keyboard.press("Tab");
-        const focusedControl = await page.evaluate(() => {
+        const focusResult = await page.evaluate(() => {
           const element = document.activeElement;
-          return Boolean(element && element !== document.body && element !== document.documentElement && element.tabIndex >= 0);
+          const focusable = [...document.querySelectorAll("a[href], button, input, select, textarea, summary, [tabindex]")].slice(0, 6).map(item => ({
+            tag: item.tagName, id: item.id, className: String(item.className || ""), tabIndex: item.tabIndex,
+            hidden: item.hidden || item.closest("[hidden]") !== null,
+          }));
+          return {
+            focused: Boolean(element && element !== document.body && element !== document.documentElement && element.tabIndex >= 0),
+            active: element ? { tag: element.tagName, id: element.id, className: String(element.className || ""), tabIndex: element.tabIndex } : null,
+            focusable,
+          };
         });
-        if (!focusedControl) failures.push(file + " @ " + viewport.width + "px: Tab key did not reach a focusable control");
+        if (!focusResult.focused) failures.push(file + " @ " + viewport.width + "px: Tab key did not reach a focusable control; " + JSON.stringify(focusResult));
         const tabs = page.locator(".v-subpage-navbar__link[data-tab-target]");
         const tabCount = await tabs.count();
         if (!tabCount) throw new Error("No shared navigation tabs found");
