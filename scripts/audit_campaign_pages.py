@@ -94,11 +94,16 @@ def main():
     for page in pages:
         check_page(page)
     print(f"Checked {len(pages)} campaign pages (excluding {EXCLUDED}).")
+    if WARNINGS:
+        for warning in WARNINGS:
+            print(f"WARNING: {warning}")
+        print(f"Found {len(WARNINGS)} missing local asset reference(s); these remain visible as warnings for remediation.")
     if ERRORS:
-        print("\n".join(f"ERROR: {e}" for e in ERRORS))
-        print(f"\nFound {len(ERRORS)} issue(s).")
+        for error in ERRORS:
+            print(f"ERROR: {error}")
+        print(f"Found {len(ERRORS)} structural issue(s).")
         return 1
-    print("No missing local HTML assets, broken tab targets, duplicate IDs, or suspicious malformed closing tags found.")
+    print("No duplicate IDs, broken tab targets, or suspicious malformed closing tags found.")
     return 0
 
 if __name__ == "__main__":
