@@ -22,6 +22,8 @@ class PageParser(HTMLParser):
         self.panels = set()
         self.assets = []
         self.hrefs = []
+        self.images_missing_alt = []
+        self.external_targets_missing_rel = []
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         ident = a.get("id")
@@ -39,6 +41,12 @@ class PageParser(HTMLParser):
                 self.assets.append((tag, key, value))
         if tag == "a" and a.get("href", "").startswith("#"):
             self.hrefs.append(a["href"][1:])
+        if tag == "img" and "alt" not in a:
+            self.images_missing_alt.append(a.get("src", "(unknown source)"))
+        if tag == "a" and a.get("target", "").lower() == "_blank":
+            rel = {token.lower() for token in a.get("rel", "").split()}
+            if "noopener" not in rel and "noreferrer" not in rel:
+                self.external_targets_missing_rel.append(a.get("href", "(missing href)"))
     def handle_startendtag(self, tag, attrs):
         self.handle_starttag(tag, attrs)
 def resolve_local(page, raw):
@@ -86,6 +94,10 @@ def check_page(page):
     except Exception as exc:
         ERRORS.append(f"{rel}: HTML parser error ({exc})")
         return
+    for src in parser.images_missing_alt:
+        WARNINGS.append(f"{rel}: image missing alt text: {src}")
+    for href in parser.external_targets_missing_rel:
+        WARNINGS.append(f"{rel}: target=_blank link missing rel=noopener/noreferrer: {href}")
     for target in parser.hrefs:
         if target and target not in parser.ids:
             ERRORS.append(f"{rel}: fragment link #{target} has no matching id")
