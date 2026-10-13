@@ -41,6 +41,21 @@ try {
         if (!response || !response.ok()) throw new Error("HTTP response " + (response?.status() ?? "missing"));
         await page.locator(".v-subpage-navbar__link[data-tab-target]").first().waitFor({ state: "visible", timeout: 5000 });
         await page.waitForTimeout(100);
+        const audioRoot = page.locator("[data-v-audio-player]");
+        if (await audioRoot.count()) {
+          const audioButton = audioRoot.locator("button").first();
+          if (!(await audioButton.isVisible())) {
+            failures.push(file + " @ " + viewport.width + "px: audio control is not visible");
+          } else if (await audioButton.isDisabled()) {
+            failures.push(file + " @ " + viewport.width + "px: audio control is disabled");
+          } else {
+            await audioButton.click();
+            await page.waitForTimeout(150);
+            if (await audioButton.isDisabled()) {
+              failures.push(file + " @ " + viewport.width + "px: manual audio control became disabled after interaction");
+            }
+          }
+        }
         const tabs = page.locator(".v-subpage-navbar__link[data-tab-target]");
         const tabCount = await tabs.count();
         if (!tabCount) throw new Error("No shared navigation tabs found");
@@ -63,21 +78,6 @@ try {
             return Boolean(panel && !panel.hidden && getComputedStyle(panel).display !== "none");
           }, id);
           if (!visible) failures.push(file + " @ " + viewport.width + "px: tab did not reveal #" + id);
-        }
-        const audioRoot = page.locator("[data-v-audio-player]");
-        if (await audioRoot.count()) {
-          const audioButton = audioRoot.locator("button").first();
-          if (!(await audioButton.isVisible())) {
-            failures.push(file + " @ " + viewport.width + "px: audio control is not visible");
-          } else if (await audioButton.isDisabled()) {
-            failures.push(file + " @ " + viewport.width + "px: audio control is disabled");
-          } else {
-            await audioButton.click();
-            await page.waitForTimeout(150);
-            if (await audioButton.isDisabled()) {
-              failures.push(file + " @ " + viewport.width + "px: manual audio control became disabled after interaction");
-            }
-          }
         }
         const metrics = await page.evaluate(() => ({
           viewport: window.innerWidth,
