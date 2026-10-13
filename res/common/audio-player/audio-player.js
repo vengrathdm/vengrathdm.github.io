@@ -24,7 +24,6 @@
     const playingKey=key?key+"Playing":"";
     let muted=storageGet(mutedKey)==="true";
     let restored=false;
-    let playRequested=false;
 
     root.style.setProperty("--audio-color",color);
     root.classList.add("v-audio-player");
@@ -43,6 +42,14 @@
       storageSet(playingKey,String(!audio.paused&&!audio.muted));
     }
     function sync(){
+      if(root.dataset.audioError==="true"){
+        root.classList.remove("is-playing");
+        button.setAttribute("aria-pressed","false");
+        button.setAttribute("aria-label","Muzyka niedostępna");
+        button.title="Muzyka niedostępna";
+        button.disabled=true;
+        return;
+      }
       const playing=!audio.muted&&!audio.paused;
       root.classList.toggle("is-playing",playing);
       button.setAttribute("aria-pressed",String(playing));
@@ -59,7 +66,6 @@
       restored=true;
     }
     async function play(){
-      playRequested=true;
       restore();
       audio.muted=false;
       muted=false;
