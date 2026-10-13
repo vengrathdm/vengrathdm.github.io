@@ -28,3 +28,11 @@ Reusable UI components shared by campaign pages. Adoption is incremental: a page
 - Asset paths should be checked against the deployed site structure before being rewritten; root-relative and campaign-relative paths may both be intentional.
 
 Legends of Barovia was the visual source of truth for the initial extraction. Reference themes and component documentation distinguish shared behavior from campaign-specific content.
+
+## Validation
+
+Run `python scripts/audit_campaign_pages.py` from the repository root to inspect eligible campaign pages. The checker intentionally excludes `p/Ksiazeta-Heartwell/` and verifies the shared navbar/hero integration, component asset references, duplicate IDs, in-page links, tab targets, malformed closing-tag patterns, local asset references, image alternative text, and safe `target="_blank"` links.
+
+The `Campaign page integrity` GitHub Actions workflow runs this checker and validates Python and shared-component JavaScript syntax. Missing local asset references and accessibility/link hygiene findings are reported as warnings so legacy issues remain visible; structural and migration omissions fail the workflow.
+
+Static checks do not replace browser-based visual regression, keyboard navigation, screen-reader review, or playback tests under real browser autoplay policies.
