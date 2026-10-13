@@ -197,7 +197,7 @@ main{width:100%;max-width:1920px;margin:auto;padding:58px clamp(24px,3vw,52px) 8
 .card[data-status="abandoned"] .status-badge{color:#737a7d}
 .card-body{padding:13px 13px 15px}
 .card-name{
-  margin:2px 0 12px;color:#f0f1ef;text-transform:uppercase;overflow-wrap:anywhere;
+  margin:2px 0 12px;color:#f0f1ef;text-transform:uppercase;overflow-wrap:anywhere;text-align:center;
   font:400 27px/.94 "Voltaire",sans-serif;letter-spacing:.015em;
 }
 .meta{display:grid;gap:7px;border-top:1px solid var(--line);padding-top:10px}
