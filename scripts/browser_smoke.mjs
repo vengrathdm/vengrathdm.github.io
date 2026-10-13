@@ -49,8 +49,20 @@ try {
           } else if (await audioButton.isDisabled()) {
             failures.push(file + " @ " + viewport.width + "px: audio control is disabled");
           } else {
+            const audio = audioRoot.locator("audio").first();
+            await audio.evaluate(element => {
+              element.pause();
+              element.muted = true;
+            });
             await audioButton.click();
-            await page.waitForTimeout(150);
+            const started = await page.waitForFunction(() => {
+              const player = document.querySelector("[data-v-audio-player]");
+              const element = player && player.querySelector("audio");
+              return Boolean(element && !element.paused && !element.muted);
+            }, null, { timeout: 5000 }).then(() => true).catch(() => false);
+            if (!started) {
+              failures.push(file + " @ " + viewport.width + "px: manual audio playback did not start after clicking the control");
+            }
             if (await audioButton.isDisabled()) {
               failures.push(file + " @ " + viewport.width + "px: manual audio control became disabled after interaction");
             }
