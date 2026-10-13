@@ -37,9 +37,10 @@ try {
         }
       });
       try {
-        const response = await page.goto("http://127.0.0.1:8000" + relativeUrl, { waitUntil: "networkidle", timeout: 20000 });
+        const response = await page.goto("http://127.0.0.1:8000" + relativeUrl, { waitUntil: "domcontentloaded", timeout: 20000 });
         if (!response || !response.ok()) throw new Error("HTTP response " + (response?.status() ?? "missing"));
-        await page.waitForTimeout(250);
+        await page.locator(".v-subpage-navbar__link[data-tab-target]").first().waitFor({ state: "visible", timeout: 5000 });
+        await page.waitForTimeout(100);
         const tabs = page.locator(".v-subpage-navbar__link[data-tab-target]");
         const tabCount = await tabs.count();
         if (!tabCount) throw new Error("No shared navigation tabs found");
