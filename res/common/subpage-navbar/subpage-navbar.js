@@ -7,6 +7,11 @@
     return [...nav.querySelectorAll(LINK_SELECTOR)];
   }
 
+  function getPanels(nav){
+    const ids=new Set(getLinks(nav).map(link=>link.dataset.tabTarget.replace(/^#/,"")));
+    return [...document.querySelectorAll(PANEL_SELECTOR)].filter(panel=>ids.has(panel.id));
+  }
+
   function activate(nav,target,updateHash){
     const links=getLinks(nav);
     const targetId=String(target||"").replace(/^#/,"");
@@ -25,7 +30,7 @@
       if(active) link.setAttribute("aria-current","page");
       else link.removeAttribute("aria-current");
     });
-    document.querySelectorAll(PANEL_SELECTOR).forEach(item=>{
+    getPanels(nav).forEach(item=>{
       item.hidden=item.id!==chosenId;
     });
 
@@ -91,7 +96,8 @@
   }
 
   function keepChronicleCardsInCharacters(nav,panel){
-    const otherPanels=[...document.querySelectorAll(PANEL_SELECTOR)].filter(item=>item!==panel);
+    const panelIds=new Set(getLinks(nav).map(link=>link.dataset.tabTarget.replace(/^#/,"")));
+    const otherPanels=[...document.querySelectorAll(PANEL_SELECTOR)].filter(item=>panelIds.has(item.id)&&item!==panel);
     const movedSelector=".v-character-card, .ddc-dead-character";
     const destination=()=>{
       let grid=panel.querySelector("[data-v-moved-character-grid]");
