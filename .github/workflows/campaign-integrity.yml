@@ -2,7 +2,7 @@ name: Campaign page integrity
 
 on:
   push:
-    branches: [main, "audit/**"]
+    branches: [main]
   pull_request:
   workflow_dispatch:
 
