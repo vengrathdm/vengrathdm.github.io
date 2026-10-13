@@ -82,7 +82,7 @@
 
     audio.addEventListener("loadedmetadata",()=>{
       restore();
-      const shouldResume=key&&storageGet(playingKey)==="true"&&!muted;
+      const shouldResume=key ? storageGet(playingKey)!=="false"&&!muted : !muted;
       if(shouldResume) play();
       else sync();
     });
