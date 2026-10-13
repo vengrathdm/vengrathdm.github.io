@@ -220,6 +220,39 @@
     <script src="../../res/common/vengrath-button/vengrath-button.js"></script>
     <script src="../../res/common/youtube-button/youtube-button.js"></script>
     <script src="../../res/common/audio-player/audio-player.js"></script>
+    <script>
+      (async () => {
+        const grid = document.getElementById("blood-red-snow-white-characters");
+        if (!grid) return;
+        try {
+          const response = await fetch("/res/characters.json");
+          if (!response.ok) throw new Error("characters.json: " + response.status);
+          const characters = await response.json();
+          characters
+            .filter(character => character && Array.isArray(character.campaigns) && character.campaigns.includes("Blood Red Snow White"))
+            .forEach(character => {
+              const card = document.createElement("article");
+              card.className = "v-character-card";
+              const classes = Array.isArray(character.classes) ? character.classes.join(" / ") : "";
+              const history = character.Historia ? `<p class="v-character-card__description">${character.Historia}</p>` : "";
+              card.innerHTML = `
+                <div class="v-character-card__portrait">
+                  <img src="${character.portrait}" alt="${character.character || "Postać"}" loading="lazy" decoding="async">
+                </div>
+                <div class="v-character-card__info">
+                  <div class="v-character-card__label">${character.status || ""}</div>
+                  <span class="v-character-card__player">${character.character || "Bez imienia"}</span>
+                  <span class="v-character-card__character">${character.player || "Nieznany gracz"} · ${classes} · ${character.race || ""}</span>
+                  ${history}
+                </div>
+              `;
+              grid.appendChild(card);
+            });
+        } catch (error) {
+          console.error("Unable to load Blood Red Snow White characters:", error);
+        }
+      })();
+    </script>
 
   </body>
 </html>
