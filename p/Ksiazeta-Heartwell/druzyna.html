@@ -9,6 +9,28 @@
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Voltaire&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet" />
     <link href="heartwell.css" rel="stylesheet" />
+  <style>
+    .youtube-playlist-btn {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 112px;
+      padding: 12px 0;
+      margin-top: 8px;
+      color: var(--amber);
+      border-top: 1px solid rgba(212,160,60,.45);
+      font-family: var(--display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-decoration: none;
+      text-align: center;
+    }
+    .youtube-playlist-btn:hover { color: var(--paper); background: rgba(255,255,255,.04); }
+  </style>
   </head>
   <body>
     <audio id="heartwellTheme" src="HeartwellTheme.mp3" loop preload="auto" playsinline></audio>
@@ -40,6 +62,7 @@
             <span>ZAPISKI Z KAMPANII</span>
           </a>
         </div>
+        <a class="youtube-playlist-btn" href="https://www.youtube.com/playlist?list=PLd6q-Ih5JcOA" target="_blank" rel="noopener noreferrer" aria-label="Otwórz playlistę Książęta Heartwell na YouTube">PLAYLISTA YOUTUBE</a>
         <div class="tabs-foot">
           <span>VENGRATH · RAVENLOFT</span>
         </div>
