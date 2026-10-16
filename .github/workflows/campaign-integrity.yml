@@ -25,8 +25,10 @@ jobs:
           python-version: "3.12"
       - name: Validate campaign pages and local references
         run: python scripts/audit_campaign_pages.py
+      - name: Inventory duplicated campaign CSS
+        run: python scripts/audit_campaign_css.py
       - name: Check Python syntax
-        run: python -m py_compile scripts/audit_campaign_pages.py
+        run: python -m py_compile scripts/audit_campaign_pages.py scripts/audit_campaign_css.py
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
