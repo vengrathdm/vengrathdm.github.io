@@ -23,3 +23,25 @@
   .ddc-content{width:calc(100% - 28px)}
   .ddc-character-grid{grid-template-columns:1fr}
 }
+
+/* Shared card, dossier, editorial, callout and footer geometry. */
+.ddc-card-title{display:flex;align-items:center;gap:18px;padding:18px 28px}
+.ddc-card-body{padding:28px}
+.ddc-paper{position:relative;padding:40px}
+.ddc-case{padding:28px}
+.ddc-case-label{padding-bottom:12px;margin-bottom:5px}
+.ddc-case-row{display:flex;justify-content:space-between;gap:15px;padding:15px 0}
+.ddc-manifesto{margin:28px 0 75px;padding:27px 35px;display:grid;grid-template-columns:60px 1fr;gap:20px}
+.ddc-source-panel{margin-top:80px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.ddc-character-intro{margin-top:0;margin-bottom:28px}
+.ddc-character-quote{margin:55px 0 70px;padding:30px 38px;text-align:center}
+.ddc-footer{display:flex;justify-content:space-between;gap:20px;padding:24px 30px}
+@media(max-width:620px){
+  .ddc-card-body{padding:18px}
+  .ddc-card-title{padding:16px 18px}
+  .ddc-paper{padding:25px}
+  .ddc-manifesto{grid-template-columns:1fr;padding:22px}
+  .ddc-character-quote{padding:24px 20px}
+  .ddc-source-panel{display:block}
+  .ddc-footer{display:block}
+}
