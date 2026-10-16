@@ -37,3 +37,10 @@ Run `python scripts/audit_campaign_pages.py` from the repository root to inspect
 The `Campaign page integrity` GitHub Actions workflow runs this checker, validates Python and shared-component JavaScript syntax, and runs `scripts/browser_smoke.mjs` in Chromium at desktop and mobile widths. The browser smoke test opens every eligible campaign page, exercises every navigation tab, checks runtime errors and failed local requests, checks for horizontal overflow, and exercises any configured manual audio control. Missing local asset references and accessibility/link hygiene findings are reported as warnings so legacy issues remain visible; structural and migration omissions fail the workflow.
 
 Static checks do not replace browser-based visual regression, keyboard navigation, screen-reader review, or playback tests under real browser autoplay policies.
+
+
+## Campaign layout extraction
+
+- `campaign-layout/campaign-layout.css` owns shared `.ddc-*` page geometry and responsive layout primitives. Theme files should not redefine those layout rules; they may style borders, surfaces, color, type, and campaign-specific decorations.
+- The `PerfectMigrationTemplate` imports the shared layout stylesheet as the reference integration. Other campaign migrations should be done in small batches and verified in Chromium before deleting their legacy rules.
+- Do not move selectors merely because their names look similar. Keep component-specific decoration in the owning component or campaign theme, and preserve the `Ksiazeta-Heartwell` exclusion.
