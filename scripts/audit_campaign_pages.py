@@ -13,6 +13,19 @@ VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "met
 ERRORS = []
 WARNINGS = []
 
+SHARED_LAYOUT_SELECTORS = (
+    ".ddc-content", ".ddc-tab-panel[hidden]", ".ddc-intro-grid",
+    ".ddc-party-portrait", ".ddc-party-copy", ".ddc-party-image",
+    ".ddc-party-image img", ".ddc-section", ".ddc-character-grid",
+    ".ddc-section-head", ".ddc-section-head>div",
+    ".ddc-chronicle-panel .ddc-section",
+    ".ddc-chronicle-panel .ddc-section+.ddc-section",
+    ".ddc-card-title", ".ddc-card-body", ".ddc-paper", ".ddc-case",
+    ".ddc-case-label", ".ddc-case-row", ".ddc-manifesto",
+    ".ddc-source-panel", ".ddc-character-intro", ".ddc-character-quote",
+    ".ddc-footer",
+)
+
 class PageParser(HTMLParser):
     def __init__(self, path):
         super().__init__(convert_charrefs=True)
@@ -118,6 +131,74 @@ def check_page(page):
         if asset is not None and not asset.exists():
             WARNINGS.append(f"{rel}: missing local {attr} asset {raw!r} (resolved to {asset.relative_to(ROOT) if asset.is_relative_to(ROOT) else asset})")
 
+def audit_campaign_layout_imports():
+    """Require the canonical layout stylesheet on campaign CSS that uses DDC markup."""
+    candidates = list(CAMPAIGNS.glob("*/styles.css")) + list(CAMPAIGNS.glob("*/default-dd-campaign.css"))
+    for stylesheet in sorted(candidates):
+        if EXCLUDED in str(stylesheet).lower():
+            continue
+        try:
+            css = stylesheet.read_text(encoding="utf-8")
+        except (OSError, UnicodeError) as exc:
+            ERRORS.append(f"{stylesheet.relative_to(ROOT)}: cannot inspect campaign stylesheet ({exc})")
+            continue
+        if ".ddc-" in css and "campaign-layout/campaign-layout.css" not in css:
+            ERRORS.append(
+                f"{stylesheet.relative_to(ROOT)}: uses DDC campaign styles but does not import campaign-layout.css"
+            )
+
+def audit_shared_layout_css():
+    """Report campaign-local layout declarations even when the shared stylesheet is imported."""
+    layout_properties = (
+        "display", "position", "width", "max-width", "min-width", "height",
+        "min-height", "max-height", "margin", "padding", "gap", "grid-template",
+        "flex-direction", "align-items", "justify-content", "object-fit",
+        "object-position", "overflow", "place-items", "place-content",
+    )
+    checked = 0
+    for stylesheet in sorted(CAMPAIGNS.glob("*/*.css")):
+        if EXCLUDED in str(stylesheet).lower():
+            continue
+        try:
+            css = stylesheet.read_text(encoding="utf-8")
+        except (OSError, UnicodeError) as exc:
+            WARNINGS.append(f"{stylesheet.relative_to(ROOT)}: cannot inspect CSS ({exc})")
+            continue
+        rel = stylesheet.relative_to(ROOT)
+        matches = []
+        for selector in SHARED_LAYOUT_SELECTORS:
+            rule = re.search(re.escape(selector) + r"\\s*\\{([^{}]*)\\}", css)
+            if not rule:
+                continue
+            declarations = rule.group(1)
+            if any(re.search(r"(?:^|;)\\s*" + re.escape(prop) + r"[^:]*:", declarations)
+                   for prop in layout_properties):
+                matches.append(selector)
+        if matches:
+            checked += len(matches)
+            WARNINGS.append(
+                f"{rel}: shared layout geometry still defined locally: {', '.join(matches)}"
+            )
+    return checked
+
+def audit_retired_components():
+    """Ensure campaign assets no longer reference the retired subpage-hero2 component."""
+    retired = "subpage-hero2"
+    for folder in (CAMPAIGNS, ROOT / "res" / "common"):
+        for path in folder.rglob("*"):
+            if not path.is_file() or path.suffix.lower() not in {".html", ".css", ".js"}:
+                continue
+            if EXCLUDED in str(path).lower():
+                continue
+            try:
+                source = path.read_text(encoding="utf-8")
+            except (OSError, UnicodeError):
+                continue
+            if retired in source:
+                ERRORS.append(
+                    f"{path.relative_to(ROOT)}: references retired component {retired!r}"
+                )
+
 def main():
     pages = sorted(p for p in CAMPAIGNS.glob("*/index.html") if EXCLUDED not in str(p).lower())
     if not pages:
@@ -125,11 +206,15 @@ def main():
         return 2
     for page in pages:
         check_page(page)
+    duplicated_layout_rules = audit_shared_layout_css()
+    audit_campaign_layout_imports()
+    audit_retired_components()
     print(f"Checked {len(pages)} campaign pages (excluding {EXCLUDED}).")
+    print(f"Shared layout selector definitions still found in campaign CSS: {duplicated_layout_rules}.")
     if WARNINGS:
         for warning in WARNINGS:
             print(f"WARNING: {warning}")
-        print(f"Found {len(WARNINGS)} missing local asset reference(s); these remain visible as warnings for remediation.")
+        print(f"Found {len(WARNINGS)} warning(s) for remediation.")
     if ERRORS:
         for error in ERRORS:
             print(f"ERROR: {error}")

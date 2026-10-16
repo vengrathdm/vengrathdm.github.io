@@ -1,3 +1,4 @@
+@import url("../../res/common/campaign-layout/campaign-layout.css");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap");
 
 /* Default D&D Campaign theme tokens. Common Element geometry stays in res/common/. */
@@ -27,79 +28,58 @@ body.default-dd-campaign-page::before{
   content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.14;
   background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,255,255,.025) 4px);
 }
-
-.ddc-content{width:min(1220px,calc(100% - 48px));margin:auto;padding:70px 0 100px}
-.ddc-tab-panel[hidden]{display:none}
 .ddc-card{border:1px solid #3a3d42;background:linear-gradient(145deg,#13161a,#0d0f12);box-shadow:0 20px 65px #0007}
-.ddc-card-title{display:flex;align-items:center;gap:18px;padding:18px 28px;border-bottom:1px solid #34373b;background:#0a0c0f}
+.ddc-card-title{border-bottom:1px solid #34373b;background:#0a0c0f}
 .ddc-card-title span{font:400 30px/1 var(--theme-font-1);color:var(--theme-accent-1)}
 .ddc-card-title strong{font:700 12px/1 var(--theme-font-1);letter-spacing:3px;color:#d9d3c7}
-.ddc-card-body{padding:28px}
-.ddc-intro-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:26px;align-items:stretch}
-.ddc-paper{position:relative;padding:40px;background:linear-gradient(135deg,#17191d,#101215);border:1px solid var(--theme-line-1);box-shadow:0 20px 70px #0007}
+.ddc-paper{background:linear-gradient(135deg,#17191d,#101215);border:1px solid var(--theme-line-1);box-shadow:0 20px 70px #0007}
 .ddc-paper:after{content:"";position:absolute;top:0;right:35px;width:1px;height:100%;background:#292c30}
 .ddc-section-mark{font:400 13px/1 var(--theme-font-1);text-transform:uppercase;letter-spacing:3px;color:var(--theme-accent-2)}
 .ddc-paper h2,.ddc-source-panel h2,.ddc-section h2,.ddc-section-head h2{font:400 clamp(36px,4vw,58px)/.95 var(--theme-font-1);color:#ece7dc;margin:12px 0 20px}
 .ddc-paper p,.ddc-source-panel p{max-width:72ch;margin:0 0 14px}
 .ddc-paper p{color:#aaa9a3;font-family:var(--theme-font-3);font-size:16px;line-height:1.6}
-.ddc-case{padding:28px;background:#0d0f12;border:1px solid #46484b;box-shadow:8px 8px 0 #050608}
-.ddc-case-label{color:#b73b48;font:700 12px var(--theme-font-1);letter-spacing:3px;border-bottom:1px solid #4b3a3c;padding-bottom:12px;margin-bottom:5px}
-.ddc-case-row{display:flex;justify-content:space-between;gap:15px;padding:15px 0;border-bottom:1px solid #292c30;font-size:13px}
+.ddc-case{background:#0d0f12;border:1px solid #46484b;box-shadow:8px 8px 0 #050608}
+.ddc-case-label{color:#b73b48;font:700 12px var(--theme-font-1);letter-spacing:3px;border-bottom:1px solid #4b3a3c}
+.ddc-case-row{border-bottom:1px solid #292c30;font-size:13px}
 .ddc-case-row span{color:#85827c;letter-spacing:1px}.ddc-case-row strong{font-family:var(--theme-font-1);font-size:16px;color:#ddd7ca;text-align:right}.ddc-case-row .ddc-active{color:#b94a55}
 
-.ddc-party-portrait{margin-top:70px;display:grid;grid-template-columns:.55fr 1.45fr;gap:0;border:1px solid #383b3f;background:#0e1013;box-shadow:0 20px 70px #0007;overflow:hidden}
-.ddc-party-copy{padding:36px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(145deg,#17191d,#0e1013)}
+.ddc-party-portrait{border:1px solid #383b3f;background:#0e1013;box-shadow:0 20px 70px #0007}
+.ddc-party-copy{background:linear-gradient(145deg,#17191d,#0e1013)}
 .ddc-party-copy h2{margin:10px 0 16px;font:400 clamp(34px,3.5vw,50px)/.95 var(--theme-font-1);color:#ece7dc}
 .ddc-party-copy p{margin:0;color:#92948f}
-.ddc-party-image{margin:0;min-height:390px;background:#08090b}
-.ddc-party-image img{display:block;width:100%;height:100%;min-height:390px;object-fit:cover;object-position:center}
+.ddc-party-image{background:#08090b}
 
-.ddc-manifesto{margin:28px 0 75px;padding:27px 35px;display:grid;grid-template-columns:60px 1fr;gap:20px;border-top:1px solid #6b5b40;border-bottom:1px solid #6b5b40;background:#111216}
+.ddc-manifesto{border-top:1px solid #6b5b40;border-bottom:1px solid #6b5b40;background:#111216}
 .ddc-manifesto-symbol{font-size:48px;color:var(--theme-accent-1);text-align:center}
 .ddc-manifesto p{font:italic 25px var(--theme-font-3);color:#d8d2c7;margin:4px 0 10px}
 .ddc-manifesto span{font-size:10px;letter-spacing:3px;color:#817d76}
 
-.ddc-source-panel{margin-top:80px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:30px;border:1px solid #383b3f;background:#0e1013}
+.ddc-source-panel{border:1px solid #383b3f;background:#0e1013}
 .ddc-source-panel p{margin:0;color:#858883}
 .ddc-source-panel a{flex:0 0 auto;padding:13px 17px;border:1px solid var(--theme-accent-2);color:var(--theme-accent-2);text-decoration:none;font:700 11px var(--theme-font-1);letter-spacing:2px}
 .ddc-source-panel a:hover{background:var(--theme-accent-2);color:#101114}
-
-.ddc-section{margin-top:82px}
-.ddc-character-intro{margin-top:0;margin-bottom:28px}
+.ddc-character-intro{margin-bottom:28px}
 .ddc-character-intro p,.ddc-chronicle-intro p{max-width:72ch;margin:0;color:#888b87;font-size:15px}
-.ddc-character-quote{margin:55px 0 70px;padding:30px 38px;border-top:1px solid #6b5b40;border-bottom:1px solid #6b5b40;background:linear-gradient(90deg,#111216,#171419,#111216);text-align:center}
+.ddc-character-quote{border-top:1px solid #6b5b40;border-bottom:1px solid #6b5b40;background:linear-gradient(90deg,#111216,#171419,#111216)}
 .ddc-character-quote p{max-width:900px;margin:8px auto 12px;font:italic 25px/1.5 var(--theme-font-3);color:#d8d2c7}
 .ddc-character-quote span{color:#817d76;font-size:11px;letter-spacing:1.5px}
-.ddc-character-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.ddc-dead-characters{margin-top:90px;padding-top:10px}
-.ddc-section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:28px}
-.ddc-section-head>div{min-width:0}.ddc-section-head p{max-width:470px;margin:0;color:#8f918e;font-size:15px}
+.ddc-dead-characters{margin-top:90px;padding-top:10px}.ddc-section-head p{max-width:470px;margin:0;color:#8f918e;font-size:15px}
 .ddc-dead-character{min-width:0;border:1px solid #44383a;background:linear-gradient(145deg,#19171a,#0d0f12);box-shadow:0 16px 45px #0006;max-width:300px}
 .ddc-dead-portrait{height:300px;position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding:15px;background:radial-gradient(circle at 50% 30%,#393338 0,transparent 38%),linear-gradient(180deg,#242025,#0b0d10);border-bottom:1px solid #4b3a3d;filter:grayscale(.8)}
 .ddc-dead-portrait:before{content:"";position:absolute;inset:18px;border:1px dashed #75666a;opacity:.3}
 .ddc-dead-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(.8)}
 .ddc-dead-portrait b{position:absolute;top:18px;right:22px;font:400 34px var(--theme-font-3);color:#9b4b55}
 .ddc-dead-info{padding:22px}.ddc-dead-info h3{font:400 27px var(--theme-font-1);color:#c9c2b7;margin:7px 0 2px}.ddc-dead-info strong{font-size:14px;color:#928c89;font-weight:500}.ddc-dead-info p{margin-top:15px;color:#797b78;font-size:13px;line-height:1.5}
-
-.ddc-chronicle-panel .ddc-section{margin-top:0}.ddc-chronicle-panel .ddc-section+.ddc-section{margin-top:82px}
-.ddc-footer{display:flex;justify-content:space-between;gap:20px;padding:24px 30px;background:#07080a;border-top:1px solid #2f3135;color:#6f726f}
+.ddc-footer{background:#07080a;border-top:1px solid #2f3135;color:#6f726f}
 .ddc-footer a{color:#a99a7b;text-decoration:none}
 
-@media(max-width:1050px){.ddc-character-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:900px){.ddc-intro-grid,.ddc-party-portrait{grid-template-columns:1fr}.ddc-party-image,.ddc-party-image img{min-height:300px}.ddc-section-head{display:block}.ddc-section-head p{margin-top:15px}}
-@media(max-width:620px){
-  .ddc-content{width:calc(100% - 28px)}
-  .ddc-card-body{padding:18px}.ddc-card-title{padding:16px 18px}
-  .ddc-paper{padding:25px}.ddc-paper:after{display:none}
-  .ddc-party-copy{padding:28px}.ddc-manifesto{grid-template-columns:1fr;padding:22px}.ddc-manifesto-symbol{text-align:left}
-  .ddc-character-grid{grid-template-columns:1fr}.ddc-dead-character{max-width:none}
-  .ddc-character-quote{padding:24px 20px}.ddc-character-quote p{font-size:21px}
-  .ddc-source-panel{display:block}.ddc-source-panel a{display:inline-block;margin-top:20px}
-  .ddc-footer{display:block}.ddc-footer a{display:block;margin-top:8px}
+@media(max-width:1050px){}
+@media(max-width:900px){.ddc-section-head p{margin-top:15px}}
+@media(max-width:620px){.ddc-paper:after{display:none}.ddc-manifesto-symbol{text-align:left}.ddc-dead-character{max-width:none}.ddc-character-quote p{font-size:21px}.ddc-source-panel a{display:inline-block;margin-top:20px}.ddc-footer a{display:block;margin-top:8px}
 }
 
 /* Campaign-specific visual identity */
 :root{--theme-base-1:#0d1016;--theme-base-2:#151c25;--theme-base-3:#151c25;--theme-base-4:#151c25;--theme-base-5:#151c25;--theme-accent-1:#d2a85d;--theme-accent-2:#7b9c9c;--theme-text-1:#ece7d9;--theme-title-accent:#e2c17b;--theme-line-1:#394854;--theme-line-2:#d2a85d;--theme-nav-background:#151c25;--theme-nav-active-background:#151c25;--theme-seal-border:#7b9c9c;--theme-seal-inner-border:#394854;--theme-seal-main-text:#e2c17b;--theme-hero-image:url("/res/voronoi/webp/heroes-of-baldurs-gate.webp")}
 body.default-dd-campaign-page{background:radial-gradient(ellipse at 78% 8%,#1b2c3a 0,transparent 35%),radial-gradient(ellipse at 8% 72%,#35281c 0,transparent 32%),var(--theme-base-1)}
 .ddc-card{border-color:#394854;background:linear-gradient(145deg,#151c25,#0d1016)}.ddc-card-title{border-color:#394854;background:#0d1016}.ddc-card-title span,.ddc-section-mark{color:#7b9c9c}.ddc-paper,.ddc-case{border-color:#394854}.ddc-case-row{border-color:#394854}.ddc-section-head{border-bottom-color:#394854}.v-subpage-hero__title{letter-spacing:.015em;text-shadow:0 3px 24px #000b}.v-subpage-hero__title-accent{color:#e2c17b}.ddc-party-image img{filter:saturate(.86) contrast(1.04)}.ddc-playlist-link{display:inline-block;margin-top:10px;padding:10px 15px;border:1px solid #d2a85d;color:#ece7d9;text-decoration:none;letter-spacing:.04em}.ddc-playlist-link:hover{background:#151c25;border-color:#7b9c9c}
-@media(max-width:700px){.ddc-content{width:min(100% - 28px,1220px);padding-top:38px}.ddc-card-title{padding:16px 18px}}
+@media(max-width:700px){}
