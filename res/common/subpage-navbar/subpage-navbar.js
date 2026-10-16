@@ -174,30 +174,32 @@
   }
 
   function ensureCharacterGrid(panel){
-    const candidates=[...panel.querySelectorAll(
+    // Remove legacy campaign-specific grids so each character is rendered once
+    // from the registry. Keep campaign intro copy and non-character callouts.
+    const oldGrids=[...panel.querySelectorAll(
       ".v-character-grid, .ddc-character-grid, [class*='character-grid']"
     )];
-    let grid=candidates[0]||null;
 
-    candidates.slice(1).forEach(item=>item.remove());
-
-    if(!grid){
-      grid=document.createElement("div");
-      panel.appendChild(grid);
-    }
-
-    const modifiers=[...grid.classList].filter(name=>
-      name!=="v-character-grid" &&
-      name!=="ddc-character-grid" &&
-      name!=="character-grid" &&
-      name!=="lob-character-grid"
-    );
-    grid.className=["v-character-grid",...modifiers].join(" ");
-
-    panel.querySelectorAll(".v-character-card, .ddc-dead-character").forEach(item=>{
-      if(!grid.contains(item)) item.remove();
+    oldGrids.forEach(grid=>{
+      const heading=grid.previousElementSibling;
+      if(
+        heading &&
+        heading.tagName==="SECTION" &&
+        heading.querySelector(".ddc-section-head, .lob-section-head")
+      ){
+        heading.remove();
+      }
+      grid.remove();
     });
-    grid.replaceChildren();
+
+    // Some legacy layouts stored deceased characters outside their grid.
+    // Their registry entries are included in the canonical grid below.
+    panel.querySelectorAll(".lob-dead-characters").forEach(section=>section.remove());
+    panel.querySelectorAll(".v-character-card, .ddc-dead-character").forEach(item=>item.remove());
+
+    const grid=document.createElement("div");
+    grid.className="v-character-grid";
+    panel.appendChild(grid);
     return grid;
   }
 
