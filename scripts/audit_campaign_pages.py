@@ -20,6 +20,10 @@ SHARED_LAYOUT_SELECTORS = (
     ".ddc-section-head", ".ddc-section-head>div",
     ".ddc-chronicle-panel .ddc-section",
     ".ddc-chronicle-panel .ddc-section+.ddc-section",
+    ".ddc-card-title", ".ddc-card-body", ".ddc-paper", ".ddc-case",
+    ".ddc-case-label", ".ddc-case-row", ".ddc-manifesto",
+    ".ddc-source-panel", ".ddc-character-intro", ".ddc-character-quote",
+    ".ddc-footer",
 )
 
 class PageParser(HTMLParser):

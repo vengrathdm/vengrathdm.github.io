@@ -48,3 +48,16 @@ Static checks do not replace browser-based visual regression, keyboard navigatio
 - `campaign-layout/campaign-layout.css` owns shared `.ddc-*` page geometry and responsive layout primitives. Theme files should not redefine those layout rules; they may style borders, surfaces, color, type, and campaign-specific decorations.
 - The `PerfectMigrationTemplate` imports the shared layout stylesheet as the reference integration. Other campaign migrations should be done in small batches and verified in Chromium before deleting their legacy rules.
 - Do not move selectors merely because their names look similar. Keep component-specific decoration in the owning component or campaign theme, and preserve the `Ksiazeta-Heartwell` exclusion.
+
+
+## Campaign theme contract
+
+Theme stylesheets own appearance, not shared geometry. Define the semantic tokens needed by the components used on that page; do not hard-code campaign colors into shared layout rules.
+
+- Surfaces: `--theme-base-1` through `--theme-base-5`
+- Accents and text: `--theme-accent-1`, `--theme-accent-2`, `--theme-text-1`, `--theme-text-2`, `--theme-text-3`, `--theme-text-muted`, `--theme-title-accent`
+- Lines and navigation: `--theme-line-1`, `--theme-line-2`, `--theme-nav-background`, `--theme-nav-text`, `--theme-nav-active-background`
+- Hero seal: `--theme-seal-border`, `--theme-seal-inner-border`, `--theme-seal-background`, `--theme-seal-small-text`, `--theme-seal-main-text`
+- Typography and imagery: `--theme-font-1`, `--theme-font-2`, `--theme-font-3`, `--theme-hero-image`
+
+Tokens are required when a component references them; specialized pages may define only the subset they use. Responsive layout rules belong in `campaign-layout.css`, not in campaign theme files.
