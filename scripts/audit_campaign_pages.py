@@ -142,7 +142,7 @@ def audit_shared_layout_css():
         if "campaign-layout.css" in text:
             continue
         matches = [selector for selector in SHARED_LAYOUT_SELECTORS
-                   if re.search(re.escape(selector) + r"\\s*\\{", text)]
+                   if re.search(re.escape(selector) + r"\s*\{", text)]
         if matches:
             checked += len(matches)
             WARNINGS.append(
