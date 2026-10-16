@@ -13,6 +13,15 @@ VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "met
 ERRORS = []
 WARNINGS = []
 
+SHARED_LAYOUT_SELECTORS = (
+    ".ddc-content", ".ddc-tab-panel[hidden]", ".ddc-intro-grid",
+    ".ddc-party-portrait", ".ddc-party-copy", ".ddc-party-image",
+    ".ddc-party-image img", ".ddc-section", ".ddc-character-grid",
+    ".ddc-section-head", ".ddc-section-head>div",
+    ".ddc-chronicle-panel .ddc-section",
+    ".ddc-chronicle-panel .ddc-section+.ddc-section",
+)
+
 class PageParser(HTMLParser):
     def __init__(self, path):
         super().__init__(convert_charrefs=True)
@@ -118,6 +127,29 @@ def check_page(page):
         if asset is not None and not asset.exists():
             WARNINGS.append(f"{rel}: missing local {attr} asset {raw!r} (resolved to {asset.relative_to(ROOT) if asset.is_relative_to(ROOT) else asset})")
 
+def audit_shared_layout_css():
+    """Report layout primitives that are still duplicated in campaign-owned stylesheets."""
+    checked = 0
+    for stylesheet in sorted(CAMPAIGNS.glob("*/*.css")):
+        if EXCLUDED in str(stylesheet).lower():
+            continue
+        try:
+            text = stylesheet.read_text(encoding="utf-8")
+        except (OSError, UnicodeError) as exc:
+            WARNINGS.append(f"{stylesheet.relative_to(ROOT)}: cannot inspect CSS ({exc})")
+            continue
+        rel = stylesheet.relative_to(ROOT)
+        if "campaign-layout.css" in text:
+            continue
+        matches = [selector for selector in SHARED_LAYOUT_SELECTORS
+                   if re.search(re.escape(selector) + r"\\s*\\{", text)]
+        if matches:
+            checked += len(matches)
+            WARNINGS.append(
+                f"{rel}: shared layout selectors still defined locally: {', '.join(matches)}"
+            )
+    return checked
+
 def main():
     pages = sorted(p for p in CAMPAIGNS.glob("*/index.html") if EXCLUDED not in str(p).lower())
     if not pages:
@@ -125,7 +157,9 @@ def main():
         return 2
     for page in pages:
         check_page(page)
+    duplicated_layout_rules = audit_shared_layout_css()
     print(f"Checked {len(pages)} campaign pages (excluding {EXCLUDED}).")
+    print(f"Shared layout selector definitions still found in campaign CSS: {duplicated_layout_rules}.")
     if WARNINGS:
         for warning in WARNINGS:
             print(f"WARNING: {warning}")
