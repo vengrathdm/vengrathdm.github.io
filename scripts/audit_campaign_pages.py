@@ -131,6 +131,22 @@ def check_page(page):
         if asset is not None and not asset.exists():
             WARNINGS.append(f"{rel}: missing local {attr} asset {raw!r} (resolved to {asset.relative_to(ROOT) if asset.is_relative_to(ROOT) else asset})")
 
+def audit_campaign_layout_imports():
+    """Require the canonical layout stylesheet on campaign CSS that uses DDC markup."""
+    candidates = list(CAMPAIGNS.glob("*/styles.css")) + list(CAMPAIGNS.glob("*/default-dd-campaign.css"))
+    for stylesheet in sorted(candidates):
+        if EXCLUDED in str(stylesheet).lower():
+            continue
+        try:
+            css = stylesheet.read_text(encoding="utf-8")
+        except (OSError, UnicodeError) as exc:
+            ERRORS.append(f"{stylesheet.relative_to(ROOT)}: cannot inspect campaign stylesheet ({exc})")
+            continue
+        if ".ddc-" in css and "campaign-layout/campaign-layout.css" not in css:
+            ERRORS.append(
+                f"{stylesheet.relative_to(ROOT)}: uses DDC campaign styles but does not import campaign-layout.css"
+            )
+
 def audit_shared_layout_css():
     """Report campaign-local layout declarations even when the shared stylesheet is imported."""
     layout_properties = (
@@ -191,6 +207,7 @@ def main():
     for page in pages:
         check_page(page)
     duplicated_layout_rules = audit_shared_layout_css()
+    audit_campaign_layout_imports()
     audit_retired_components()
     print(f"Checked {len(pages)} campaign pages (excluding {EXCLUDED}).")
     print(f"Shared layout selector definitions still found in campaign CSS: {duplicated_layout_rules}.")
