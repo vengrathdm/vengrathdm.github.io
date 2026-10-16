@@ -128,25 +128,36 @@ def check_page(page):
             WARNINGS.append(f"{rel}: missing local {attr} asset {raw!r} (resolved to {asset.relative_to(ROOT) if asset.is_relative_to(ROOT) else asset})")
 
 def audit_shared_layout_css():
-    """Report layout primitives that are still duplicated in campaign-owned stylesheets."""
+    """Report campaign-local layout declarations even when the shared stylesheet is imported."""
+    layout_properties = (
+        "display", "position", "width", "max-width", "min-width", "height",
+        "min-height", "max-height", "margin", "padding", "gap", "grid-template",
+        "flex-direction", "align-items", "justify-content", "object-fit",
+        "object-position", "overflow", "place-items", "place-content",
+    )
     checked = 0
     for stylesheet in sorted(CAMPAIGNS.glob("*/*.css")):
         if EXCLUDED in str(stylesheet).lower():
             continue
         try:
-            text = stylesheet.read_text(encoding="utf-8")
+            css = stylesheet.read_text(encoding="utf-8")
         except (OSError, UnicodeError) as exc:
             WARNINGS.append(f"{stylesheet.relative_to(ROOT)}: cannot inspect CSS ({exc})")
             continue
         rel = stylesheet.relative_to(ROOT)
-        if "campaign-layout.css" in text:
-            continue
-        matches = [selector for selector in SHARED_LAYOUT_SELECTORS
-                   if re.search(re.escape(selector) + r"\s*\{", text)]
+        matches = []
+        for selector in SHARED_LAYOUT_SELECTORS:
+            rule = re.search(re.escape(selector) + r"\\s*\\{([^{}]*)\\}", css)
+            if not rule:
+                continue
+            declarations = rule.group(1)
+            if any(re.search(r"(?:^|;)\\s*" + re.escape(prop) + r"[^:]*:", declarations)
+                   for prop in layout_properties):
+                matches.append(selector)
         if matches:
             checked += len(matches)
             WARNINGS.append(
-                f"{rel}: shared layout selectors still defined locally: {', '.join(matches)}"
+                f"{rel}: shared layout geometry still defined locally: {', '.join(matches)}"
             )
     return checked
 
