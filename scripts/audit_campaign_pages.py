@@ -191,12 +191,13 @@ def main():
     for page in pages:
         check_page(page)
     duplicated_layout_rules = audit_shared_layout_css()
+    audit_retired_components()
     print(f"Checked {len(pages)} campaign pages (excluding {EXCLUDED}).")
     print(f"Shared layout selector definitions still found in campaign CSS: {duplicated_layout_rules}.")
     if WARNINGS:
         for warning in WARNINGS:
             print(f"WARNING: {warning}")
-        print(f"Found {len(WARNINGS)} missing local asset reference(s); these remain visible as warnings for remediation.")
+        print(f"Found {len(WARNINGS)} warning(s) for remediation.")
     if ERRORS:
         for error in ERRORS:
             print(f"ERROR: {error}")
