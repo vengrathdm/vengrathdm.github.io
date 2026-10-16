@@ -56,8 +56,8 @@
     const slug=pathParts[0]==="p"?pathParts[1]:"";
     if(slug && CAMPAIGN_ALIASES[slug]) return CAMPAIGN_ALIASES[slug];
     return document.title
-      .replace(/\\s*[—-]\\s*Vengrath.*$/i,"")
-      .replace(/\\s*\\|\\s*Vengrath.*$/i,"")
+      .replace(/\s*[—-]\s*Vengrath.*$/i,"")
+      .replace(/\s*\|\s*Vengrath.*$/i,"")
       .trim();
   }
 
@@ -80,6 +80,7 @@
   function card(character){
     const article=document.createElement("article");
     article.className="v-character-card";
+    if(character.id) article.dataset.characterId=String(character.id);
 
     const portrait=textElement("div","v-character-card__portrait","");
     const image=document.createElement("img");
@@ -219,6 +220,7 @@
 
     ensureCharacterStyles();
     ensureCharacterIntro(panel);
+    panel.dataset.characterRegistryStatus="loading";
     const grid=ensureCharacterGrid(panel);
 
     let empty=panel.querySelector(".v-character-empty");
@@ -231,12 +233,15 @@
       if(!Array.isArray(all)) throw new Error("characters.json must contain an array");
 
       const name=campaignName();
+      panel.dataset.campaignName=name;
       const campaign=all.filter(item=>
         item &&
         Array.isArray(item.campaigns) &&
         item.campaigns.includes(name)
       );
 
+      panel.dataset.characterCount=String(campaign.length);
+      panel.dataset.characterRegistryStatus="ready";
       if(campaign.length){
         grid.replaceChildren(...campaign.map(item=>card(item)));
       }else{
@@ -245,6 +250,7 @@
         panel.appendChild(empty);
       }
     }catch(error){
+      panel.dataset.characterRegistryStatus="error";
       grid.remove();
       empty=textElement("p","v-character-empty","Nie udało się wczytać danych postaci z rejestru.");
       panel.appendChild(empty);
