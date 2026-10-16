@@ -101,7 +101,6 @@
     meta.appendChild(textElement("span","",classes));
     meta.appendChild(textElement("span","",character.race||"Rasa nieznana"));
     info.appendChild(meta);
-    info.appendChild(textElement("p","v-character-card__description",character.history||character.Historia||"Brak zapisków."));
 
     article.append(portrait,info);
     return article;
