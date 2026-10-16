@@ -81,3 +81,9 @@ body.default-dd-campaign-page::before{
   .ddc-source-panel{display:block}.ddc-source-panel a{display:inline-block;margin-top:20px}
   .ddc-footer{display:block}.ddc-footer a{display:block;margin-top:8px}
 }
+
+
+/* Campaign-specific surface treatment for shared layout primitives. */
+.ddc-party-portrait{border:1px solid #383b3f;background:#0e1013;box-shadow:0 20px 70px #0007}
+.ddc-party-copy{background:linear-gradient(145deg,#17191d,#0e1013)}
+.ddc-party-image{background:#08090b}

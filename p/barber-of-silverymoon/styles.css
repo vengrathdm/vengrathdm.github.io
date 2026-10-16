@@ -98,3 +98,9 @@ body.default-dd-campaign-page::before{
 .ddc-footer a{color:var(--theme-accent-2)}
 .ddc-playlist-link{display:inline-flex;padding:13px 18px;border:1px solid var(--theme-accent-2);background:linear-gradient(135deg,var(--theme-base-4),var(--theme-base-2));color:var(--theme-text-1);text-decoration:none;font:700 13px var(--theme-font-1);letter-spacing:1.2px}
 .ddc-playlist-link:hover{filter:brightness(1.15)}
+
+
+/* Campaign-specific surface treatment for shared layout primitives. */
+.ddc-party-portrait{border:1px solid #383b3f;background:#0e1013;box-shadow:0 20px 70px #0007}
+.ddc-party-copy{background:linear-gradient(145deg,#17191d,#0e1013)}
+.ddc-party-image{background:#08090b}
