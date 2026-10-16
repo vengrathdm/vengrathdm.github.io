@@ -77,11 +77,10 @@ body.default-dd-campaign-page::before{
 @media(max-width:1050px){.ddc-character-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:900px){.ddc-intro-grid,.ddc-party-portrait{grid-template-columns:1fr}.ddc-party-image,.ddc-party-image img{min-height:300px}.ddc-section-head{display:block}.ddc-section-head p{margin-top:15px}}
 @media(max-width:620px){
-  .ddc-content{width:calc(100% - 28px)}
-  .ddc-card-body{padding:18px}.ddc-card-title{padding:16px 18px}
+.ddc-card-body{padding:18px}.ddc-card-title{padding:16px 18px}
   .ddc-paper{padding:25px}.ddc-paper:after{display:none}
-  .ddc-party-copy{padding:28px}.ddc-manifesto{grid-template-columns:1fr;padding:22px}.ddc-manifesto-symbol{text-align:left}
-  .ddc-character-grid{grid-template-columns:1fr}.ddc-dead-character{max-width:none}
+.ddc-manifesto{grid-template-columns:1fr;padding:22px}.ddc-manifesto-symbol{text-align:left}
+.ddc-dead-character{max-width:none}
   .ddc-character-quote{padding:24px 20px}.ddc-character-quote p{font-size:21px}
   .ddc-source-panel{display:block}.ddc-source-panel a{display:inline-block;margin-top:20px}
   .ddc-footer{display:block}.ddc-footer a{display:block;margin-top:8px}
