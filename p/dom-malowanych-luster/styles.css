@@ -1,3 +1,4 @@
+@import url("../../res/common/campaign-layout/campaign-layout.css");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap");
 
 /* Default D&D Campaign theme tokens. Common Element geometry stays in res/common/. */
@@ -27,15 +28,11 @@ body.default-dd-campaign-page::before{
   content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.14;
   background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,255,255,.025) 4px);
 }
-
-.ddc-content{width:min(1220px,calc(100% - 48px));margin:auto;padding:70px 0 100px}
-.ddc-tab-panel[hidden]{display:none}
 .ddc-card{border:1px solid #3a3d42;background:linear-gradient(145deg,#13161a,#0d0f12);box-shadow:0 20px 65px #0007}
 .ddc-card-title{display:flex;align-items:center;gap:18px;padding:18px 28px;border-bottom:1px solid #34373b;background:#0a0c0f}
 .ddc-card-title span{font:400 30px/1 var(--theme-font-1);color:var(--theme-accent-1)}
 .ddc-card-title strong{font:700 12px/1 var(--theme-font-1);letter-spacing:3px;color:#d9d3c7}
 .ddc-card-body{padding:28px}
-.ddc-intro-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:26px;align-items:stretch}
 .ddc-paper{position:relative;padding:40px;background:linear-gradient(135deg,#17191d,#101215);border:1px solid var(--theme-line-1);box-shadow:0 20px 70px #0007}
 .ddc-paper:after{content:"";position:absolute;top:0;right:35px;width:1px;height:100%;background:#292c30}
 .ddc-section-mark{font:400 13px/1 var(--theme-font-1);text-transform:uppercase;letter-spacing:3px;color:var(--theme-accent-2)}
@@ -63,17 +60,13 @@ body.default-dd-campaign-page::before{
 .ddc-source-panel p{margin:0;color:#858883}
 .ddc-source-panel a{flex:0 0 auto;padding:13px 17px;border:1px solid var(--theme-accent-2);color:var(--theme-accent-2);text-decoration:none;font:700 11px var(--theme-font-1);letter-spacing:2px}
 .ddc-source-panel a:hover{background:var(--theme-accent-2);color:#101114}
-
-.ddc-section{margin-top:82px}
 .ddc-character-intro{margin-top:0;margin-bottom:28px}
 .ddc-character-intro p,.ddc-chronicle-intro p{max-width:72ch;margin:0;color:#888b87;font-size:15px}
 .ddc-character-quote{margin:55px 0 70px;padding:30px 38px;border-top:1px solid #6b5b40;border-bottom:1px solid #6b5b40;background:linear-gradient(90deg,#111216,#171419,#111216);text-align:center}
 .ddc-character-quote p{max-width:900px;margin:8px auto 12px;font:italic 25px/1.5 var(--theme-font-3);color:#d8d2c7}
 .ddc-character-quote span{color:#817d76;font-size:11px;letter-spacing:1.5px}
-.ddc-character-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .ddc-dead-characters{margin-top:90px;padding-top:10px}
-.ddc-section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:28px}
-.ddc-section-head>div{min-width:0}.ddc-section-head p{max-width:470px;margin:0;color:#8f918e;font-size:15px}
+.ddc-section-head p{max-width:470px;margin:0;color:#8f918e;font-size:15px}
 .ddc-dead-character{min-width:0;border:1px solid #44383a;background:linear-gradient(145deg,#19171a,#0d0f12);box-shadow:0 16px 45px #0006;max-width:300px}
 .ddc-dead-portrait{height:300px;position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding:15px;background:radial-gradient(circle at 50% 30%,#393338 0,transparent 38%),linear-gradient(180deg,#242025,#0b0d10);border-bottom:1px solid #4b3a3d;filter:grayscale(.8)}
 .ddc-dead-portrait:before{content:"";position:absolute;inset:18px;border:1px dashed #75666a;opacity:.3}
@@ -88,11 +81,10 @@ body.default-dd-campaign-page::before{
 @media(max-width:1050px){.ddc-character-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:900px){.ddc-intro-grid,.ddc-party-portrait{grid-template-columns:1fr}.ddc-party-image,.ddc-party-image img{min-height:300px}.ddc-section-head{display:block}.ddc-section-head p{margin-top:15px}}
 @media(max-width:620px){
-  .ddc-content{width:calc(100% - 28px)}
-  .ddc-card-body{padding:18px}.ddc-card-title{padding:16px 18px}
+.ddc-card-body{padding:18px}.ddc-card-title{padding:16px 18px}
   .ddc-paper{padding:25px}.ddc-paper:after{display:none}
   .ddc-party-copy{padding:28px}.ddc-manifesto{grid-template-columns:1fr;padding:22px}.ddc-manifesto-symbol{text-align:left}
-  .ddc-character-grid{grid-template-columns:1fr}.ddc-dead-character{max-width:none}
+.ddc-dead-character{max-width:none}
   .ddc-character-quote{padding:24px 20px}.ddc-character-quote p{font-size:21px}
   .ddc-source-panel{display:block}.ddc-source-panel a{display:inline-block;margin-top:20px}
   .ddc-footer{display:block}.ddc-footer a{display:block;margin-top:8px}
