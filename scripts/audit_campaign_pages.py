@@ -165,6 +165,24 @@ def audit_shared_layout_css():
             )
     return checked
 
+def audit_retired_components():
+    """Ensure campaign assets no longer reference the retired subpage-hero2 component."""
+    retired = "subpage-hero2"
+    for folder in (CAMPAIGNS, ROOT / "res" / "common"):
+        for path in folder.rglob("*"):
+            if not path.is_file() or path.suffix.lower() not in {".html", ".css", ".js"}:
+                continue
+            if EXCLUDED in str(path).lower():
+                continue
+            try:
+                source = path.read_text(encoding="utf-8")
+            except (OSError, UnicodeError):
+                continue
+            if retired in source:
+                ERRORS.append(
+                    f"{path.relative_to(ROOT)}: references retired component {retired!r}"
+                )
+
 def main():
     pages = sorted(p for p in CAMPAIGNS.glob("*/index.html") if EXCLUDED not in str(p).lower())
     if not pages:
