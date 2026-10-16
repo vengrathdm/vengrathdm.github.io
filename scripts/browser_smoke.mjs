@@ -153,6 +153,10 @@ try {
               } else if (JSON.stringify(characterCheck.expected) !== JSON.stringify(characterCheck.actual)) {
                 failures.push(file + " @ " + viewport.width + "px: character cards do not match res/characters.json for " + characterCheck.campaignName + " (expected " + characterCheck.expected.length + ", rendered " + characterCheck.actual.length + ")");
               }
+              const visibleHistory = await page.locator("#characters .v-character-card .v-character-card__description").count();
+              if (visibleHistory) {
+                failures.push(file + " @ " + viewport.width + "px: campaign character cards must not display history (" + visibleHistory + " history blocks found)");
+              }
             } catch (error) {
               failures.push(file + " @ " + viewport.width + "px: character registry check failed: " + error.message);
             }
