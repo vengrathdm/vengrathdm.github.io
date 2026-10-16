@@ -70,12 +70,6 @@ try {
             }
           }
         }
-        if (file === "p/blood-red-snow-white/index.html") {
-          await page.waitForFunction(() => Boolean(document.querySelector("#blood-red-snow-white-characters .v-character-card")), null, { timeout: 5000 });
-        }
-        if (file === "p/dungeons-of-drakkenheim/index.html") {
-          await page.waitForFunction(() => Boolean(document.querySelector("#dungeons-of-drakkenheim-living .v-character-card")), null, { timeout: 5000 });
-        }
         if (file === "p/PerfectMigrationTemplate/index.html") {
           const dynamicButton = await page.evaluate(() => {
             const root = document.createElement("div");
@@ -129,6 +123,40 @@ try {
             return Boolean(panel && !panel.hidden && getComputedStyle(panel).display !== "none");
           }, id);
           if (!visible) failures.push(file + " @ " + viewport.width + "px: tab did not reveal #" + id);
+          if (id === "characters") {
+            try {
+              await page.waitForFunction(() => {
+                const panel = document.getElementById("characters");
+                return panel && ["ready", "error"].includes(panel.dataset.characterRegistryStatus);
+              }, null, { timeout: 8000 });
+              const characterCheck = await page.evaluate(async () => {
+                const panel = document.getElementById("characters");
+                const response = await fetch("/res/characters.json");
+                if (!response.ok) throw new Error("characters.json returned " + response.status);
+                const registry = await response.json();
+                const campaignName = panel.dataset.campaignName;
+                const expected = registry
+                  .filter(item => item && Array.isArray(item.campaigns) && item.campaigns.includes(campaignName))
+                  .map(item => String(item.id || ""));
+                const actual = [...panel.querySelectorAll(".v-character-card")]
+                  .map(item => item.dataset.characterId || "");
+                return {
+                  status: panel.dataset.characterRegistryStatus,
+                  campaignName,
+                  expected,
+                  actual,
+                  count: panel.dataset.characterCount,
+                };
+              });
+              if (characterCheck.status !== "ready") {
+                failures.push(file + " @ " + viewport.width + "px: character registry failed to load");
+              } else if (JSON.stringify(characterCheck.expected) !== JSON.stringify(characterCheck.actual)) {
+                failures.push(file + " @ " + viewport.width + "px: character cards do not match res/characters.json for " + characterCheck.campaignName + " (expected " + characterCheck.expected.length + ", rendered " + characterCheck.actual.length + ")");
+              }
+            } catch (error) {
+              failures.push(file + " @ " + viewport.width + "px: character registry check failed: " + error.message);
+            }
+          }
         }
         // Regression: a hard refresh on the first tab must not reveal the
         // dynamically-created character panel or its cards alongside the main panel.

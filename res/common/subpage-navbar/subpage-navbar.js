@@ -40,10 +40,25 @@
     return true;
   }
 
+  const CAMPAIGN_ALIASES = {
+    "mences-of-irensberg": "Menaces of Irensberg",
+    "maski-nyarlotepa": "Maski Nyarlotepa - Peru",
+    "hand-of-glory": "Hand of Glory",
+    "heroes-of-baldurs-gate": "Heroes of Baldur's Gate",
+    "neverwinter-intrygi-polnocnego-wybrzeza-mieczy": "Neverwinter: Intrygi Północnego Wybrzeża Mieczy",
+    "echtra-zima-irgaeli": "Echtra - Zima Irgaeli"
+  };
+
   function campaignName(){
     const explicit=document.querySelector("[data-campaign-name]");
     if(explicit && explicit.dataset.campaignName.trim()) return explicit.dataset.campaignName.trim();
-    return document.title.replace(/\s+[—-]\s*Vengrath.*$/i,"").trim();
+    const pathParts=location.pathname.split("/").filter(Boolean);
+    const slug=pathParts[0]==="p"?pathParts[1]:"";
+    if(slug && CAMPAIGN_ALIASES[slug]) return CAMPAIGN_ALIASES[slug];
+    return document.title
+      .replace(/\s*[—-]\s*Vengrath.*$/i,"")
+      .replace(/\s*\|\s*Vengrath.*$/i,"")
+      .trim();
   }
 
   function ensureCharacterStyles(){
@@ -65,6 +80,7 @@
   function card(character){
     const article=document.createElement("article");
     article.className="v-character-card";
+    if(character.id) article.dataset.characterId=String(character.id);
 
     const portrait=textElement("div","v-character-card__portrait","");
     const image=document.createElement("img");
@@ -95,132 +111,151 @@
     container.replaceChildren(textElement("p",className,message));
   }
 
-  function keepChronicleCardsInCharacters(nav,panel){
-    const panelIds=new Set(getLinks(nav).map(link=>link.dataset.tabTarget.replace(/^#/,"")));
-    const otherPanels=[...document.querySelectorAll(PANEL_SELECTOR)].filter(item=>panelIds.has(item.id)&&item!==panel);
-    const movedSelector=".v-character-card, .ddc-dead-character";
-    const destination=()=>{
-      let grid=panel.querySelector("[data-v-moved-character-grid], .v-character-grid, .ddc-character-grid");
-      if(!grid){
-        const host=panel.querySelector("[data-v-character-groups]")||panel;
-        grid=document.createElement("div");
-        grid.className="v-character-grid";
-        grid.dataset.vMovedCharacterGrid="";
-        host.appendChild(grid);
+  function addCharactersTab(nav,chronicleLink){
+    let link=nav.querySelector(LINK_SELECTOR+'[data-tab-target="#characters"]');
+    if(link){
+      link.textContent="POSTACI";
+      return link;
+    }
+
+    link=document.createElement("a");
+    link.className="v-subpage-navbar__link";
+    link.dataset.tabTarget="#characters";
+    link.href="#characters";
+    link.textContent="POSTACI";
+
+    if(chronicleLink){
+      chronicleLink.parentNode.insertBefore(link,chronicleLink);
+    }else{
+      const mainLink=nav.querySelector(LINK_SELECTOR+'[data-tab-target="#main"]');
+      const links=nav.querySelector(".v-subpage-navbar__links");
+      if(mainLink) mainLink.insertAdjacentElement("afterend",link);
+      else if(links) links.appendChild(link);
+      else return null;
+    }
+    return link;
+  }
+
+  function ensureCharacterPanel(nav){
+    let panel=document.getElementById("characters");
+    if(panel){
+      panel.dataset.vTabPanel="";
+      return panel;
+    }
+
+    panel=document.createElement("section");
+    panel.className="v-character-tab-panel";
+    panel.id="characters";
+    panel.dataset.vTabPanel="";
+    panel.hidden=true;
+
+    const chronicle=document.getElementById("chronicle");
+    if(chronicle && chronicle.parentNode){
+      chronicle.parentNode.insertBefore(panel,chronicle);
+    }else{
+      const main=document.querySelector("main");
+      if(!main) return null;
+      main.appendChild(panel);
+    }
+    return panel;
+  }
+
+  function ensureCharacterIntro(panel){
+    let intro=panel.querySelector(".v-character-intro, .ddc-character-intro, .lob-character-intro");
+    if(intro) return intro;
+
+    intro=document.createElement("section");
+    intro.className="v-character-intro";
+    intro.appendChild(textElement("div","v-character-intro__mark","AKTA / POSTACI"));
+    intro.appendChild(textElement("h2","","Postaci"));
+    intro.appendChild(textElement("p","","Postacie przypisane do tej kampanii z rejestru Vengrath."));
+    panel.insertBefore(intro,panel.firstChild);
+    return intro;
+  }
+
+  function ensureCharacterGrid(panel){
+    // Remove legacy campaign-specific grids so each character is rendered once
+    // from the registry. Keep campaign intro copy and non-character callouts.
+    const oldGrids=[...panel.querySelectorAll(
+      ".v-character-grid, .ddc-character-grid, [class*='character-grid']"
+    )];
+
+    oldGrids.forEach(grid=>{
+      const heading=grid.previousElementSibling;
+      if(
+        heading &&
+        heading.tagName==="SECTION" &&
+        heading.querySelector(".ddc-section-head, .lob-section-head")
+      ){
+        heading.remove();
       }
-      return grid;
-    };
-    const moveCards=root=>{
-      if(!(root instanceof Element)) return;
-      const cards=[];
-      if(root.matches(movedSelector)) cards.push(root);
-      cards.push(...root.querySelectorAll(movedSelector));
-      if(!cards.length) return;
-      const grid=destination();
-      cards.forEach(card=>{
-        if(!panel.contains(card)) grid.appendChild(card);
-      });
-      otherPanels.forEach(source=>{
-        source.querySelectorAll(".v-character-grid, .ddc-character-grid").forEach(gridEl=>{
-          if(!gridEl.querySelector(movedSelector)) gridEl.remove();
-        });
-      });
-    };
-    otherPanels.forEach(source=>{
-      moveCards(source);
-      const observer=new MutationObserver(records=>{
-        records.forEach(record=>record.addedNodes.forEach(moveCards));
-      });
-      observer.observe(source,{childList:true,subtree:true});
+      grid.remove();
     });
+
+    // Some legacy layouts stored deceased characters outside their grid.
+    // Their registry entries are included in the canonical grid below.
+    panel.querySelectorAll(".lob-dead-characters").forEach(section=>section.remove());
+    panel.querySelectorAll(".v-character-card, .ddc-dead-character").forEach(item=>item.remove());
+
+    const grid=document.createElement("div");
+    grid.className="v-character-grid";
+    panel.appendChild(grid);
+    return grid;
   }
 
   async function populateCharacters(){
     const nav=document.querySelector(NAV_SELECTOR);
     if(!nav || !location.pathname.startsWith("/p/")) return;
 
-    let link=nav.querySelector(LINK_SELECTOR+'[data-tab-target="#characters"]');
     const chronicleLink=nav.querySelector(LINK_SELECTOR+'[data-tab-target="#chronicle"]');
-    if(!link && chronicleLink){
-      link=document.createElement("a");
-      link.className="v-subpage-navbar__link";
-      link.dataset.tabTarget="#characters";
-      link.href="#characters";
-      link.textContent="POSTACI";
-      chronicleLink.parentNode.insertBefore(link,chronicleLink);
-    }else if(link){
-      link.textContent="POSTACI";
-    }
+    const link=addCharactersTab(nav,chronicleLink);
     if(!link) return;
 
-    let panel=document.getElementById("characters");
-    const chronicle=document.getElementById("chronicle");
-    if(!panel){
-      panel=document.createElement("section");
-      panel.className="v-character-tab-panel";
-      panel.id="characters";
-      panel.dataset.vTabPanel="";
-      panel.hidden=true;
-      if(chronicle && chronicle.parentNode) chronicle.parentNode.insertBefore(panel,chronicle);
-      else {
-        const main=document.querySelector("main");
-        if(!main) return;
-        main.appendChild(panel);
-      }
-    }else{
-      panel.dataset.vTabPanel="";
-    }
+    const panel=ensureCharacterPanel(nav);
+    if(!panel) return;
 
-    // Reconcile visibility after adding the characters tab/panel. The first tab
-    // initialization runs before this dynamic panel exists on some pages.
-    const currentHash=location.hash;
-    const currentTarget=getLinks(nav).some(item=>item.dataset.tabTarget===currentHash)
-      ?currentHash
+    const currentTarget=getLinks(nav).some(item=>item.dataset.tabTarget===location.hash)
+      ?location.hash
       :getLinks(nav)[0]?.dataset.tabTarget;
     if(currentTarget) activate(nav,currentTarget,false);
-
-    // Preserve campaign-authored markup and any page-specific character renderer.
-    // Only generate the shared registry view when the panel has no existing content.
-    if(panel.children.length){
-      keepChronicleCardsInCharacters(nav,panel);
-      if(location.hash==="#characters") activate(nav,"#characters",false);
-      return;
-    }
-
-    // The character tab may not have existed during initial tab setup.
     if(location.hash==="#characters") activate(nav,"#characters",false);
 
     ensureCharacterStyles();
-    panel.replaceChildren();
-    const intro=textElement("div","v-character-intro__mark","AKTA / POSTACI");
-    const introSection=textElement("section","v-character-intro","");
-    introSection.appendChild(intro);
-    const groups=textElement("div","v-character-groups","");
-    groups.dataset.vCharacterGroups="";
-    setMessage(groups,"v-character-loading","Ładowanie postaci…");
-    panel.append(introSection,groups);
-    keepChronicleCardsInCharacters(nav,panel);
+    ensureCharacterIntro(panel);
+    panel.dataset.characterRegistryStatus="loading";
+    const grid=ensureCharacterGrid(panel);
+
+    let empty=panel.querySelector(".v-character-empty");
+    if(empty) empty.remove();
 
     try{
       const response=await fetch("/res/characters.json",{cache:"no-store"});
       if(!response.ok) throw new Error("characters.json: "+response.status);
       const all=await response.json();
       if(!Array.isArray(all)) throw new Error("characters.json must contain an array");
+
       const name=campaignName();
-      const campaign=all.filter(item=>item && Array.isArray(item.campaigns) && item.campaigns.includes(name));
+      panel.dataset.campaignName=name;
+      const campaign=all.filter(item=>
+        item &&
+        Array.isArray(item.campaigns) &&
+        item.campaigns.includes(name)
+      );
+
+      panel.dataset.characterCount=String(campaign.length);
+      panel.dataset.characterRegistryStatus="ready";
       if(campaign.length){
-        const grid=document.createElement("div");
-        grid.className="v-character-grid";
-        campaign.forEach(item=>grid.appendChild(card(item)));
-        groups.querySelector(".v-character-loading")?.remove();
-        groups.appendChild(grid);
+        grid.replaceChildren(...campaign.map(item=>card(item)));
       }else{
-        groups.querySelector(".v-character-loading")?.remove();
-        if(!groups.querySelector(".v-character-empty")) groups.appendChild(textElement("p","v-character-empty","Brak postaci przypisanych do tej kampanii."));
+        grid.remove();
+        empty=textElement("p","v-character-empty","Brak postaci przypisanych do tej kampanii w rejestrze.");
+        panel.appendChild(empty);
       }
     }catch(error){
-      groups.querySelector(".v-character-loading")?.remove();
-      if(!groups.querySelector(".v-character-empty")) groups.appendChild(textElement("p","v-character-empty","Nie udało się wczytać danych postaci."));
+      panel.dataset.characterRegistryStatus="error";
+      grid.remove();
+      empty=textElement("p","v-character-empty","Nie udało się wczytać danych postaci z rejestru.");
+      panel.appendChild(empty);
       console.error("Unable to load campaign characters:",error);
     }
   }

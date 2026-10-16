@@ -22,7 +22,7 @@ Reusable UI components shared by campaign pages. Adoption is incremental: a page
 
 ## Integration notes
 
-- The navbar script preserves non-empty campaign-authored character panels and page-specific character renderers. It only generates the shared character-registry view when the characters panel is empty, so campaign copy, grouping, and template examples are not erased during initialization.
+- The navbar script synchronizes each eligible campaign's `#characters` panel with `/res/characters.json`, matching the exact campaign label (including explicit path aliases where the page title differs). It preserves campaign intro/callout copy, removes legacy card grids to prevent duplicates, and renders one canonical shared card grid. Campaigns with no matching registry entries show an explicit empty state. `p/Ksiazeta-Heartwell/` remains a separate application with its own `Drużyna` page.
 - The navbar script expects tab links to use `data-tab-target="#panel-id"` and corresponding panels to use `data-v-tab-panel`.
 - Navbar activation should only change panels referenced by that navbar, not unrelated tab groups on the same document.
 - Audio playback can be blocked by browser autoplay policy. The explicit control must remain usable, and storage failures must not break initialization.
