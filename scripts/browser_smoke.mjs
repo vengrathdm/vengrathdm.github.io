@@ -70,12 +70,6 @@ try {
             }
           }
         }
-        if (file === "p/blood-red-snow-white/index.html") {
-          await page.waitForFunction(() => Boolean(document.querySelector("#blood-red-snow-white-characters .v-character-card")), null, { timeout: 5000 });
-        }
-        if (file === "p/dungeons-of-drakkenheim/index.html") {
-          await page.waitForFunction(() => Boolean(document.querySelector("#dungeons-of-drakkenheim-living .v-character-card")), null, { timeout: 5000 });
-        }
         if (file === "p/PerfectMigrationTemplate/index.html") {
           const dynamicButton = await page.evaluate(() => {
             const root = document.createElement("div");
