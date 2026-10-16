@@ -13,7 +13,7 @@ Reusable UI components shared by campaign pages. Adoption is incremental: a page
 ## Components
 
 - `subpage-navbar` — campaign tabs and navigation
-- `subpage-hero` — campaign hero layout
+- `subpage-hero` — campaign hero layout (the only supported hero implementation; `subpage-hero2` has been retired)
 - `character-card` — character card and character-tab styling
 - `audio-player` — optional ambient audio control and session continuation
 - `vengrath-button` — home navigation
@@ -38,6 +38,10 @@ The `Campaign page integrity` GitHub Actions workflow runs this checker, validat
 
 Static checks do not replace browser-based visual regression, keyboard navigation, screen-reader review, or playback tests under real browser autoplay policies.
 
+
+## Retired components
+
+- `subpage-hero2/` was confirmed unused and is removed from the shared component library. New pages must use `subpage-hero/`.
 
 ## Campaign layout extraction
 
