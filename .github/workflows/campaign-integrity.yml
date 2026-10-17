@@ -1,0 +1,54 @@
+name: Campaign page integrity
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: campaign-integrity-${{ github.event.pull_request.number || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  campaign-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate campaign pages and local references
+        run: python scripts/audit_campaign_pages.py
+      - name: Inventory duplicated campaign CSS
+        run: python scripts/audit_campaign_css.py
+      - name: Check Python syntax
+        run: python -m py_compile scripts/audit_campaign_pages.py scripts/audit_campaign_css.py
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check shared component JavaScript syntax
+        run: find res/common -name "*.js" -print0 | xargs -0 -n1 node --check
+      - name: Check browser test syntax
+        run: node --check scripts/browser_smoke.mjs
+      - name: Install browser test dependencies
+        run: npm install --no-save --no-package-lock playwright
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Start local site server
+        run: |
+          python -m http.server 8000 --bind 127.0.0.1 > /tmp/campaign-server.log 2>&1 &
+          for attempt in $(seq 1 20); do
+            if curl --fail --silent http://127.0.0.1:8000/ > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/campaign-server.log
+          exit 1
+      - name: Run desktop and mobile browser smoke tests
+        run: node scripts/browser_smoke.mjs

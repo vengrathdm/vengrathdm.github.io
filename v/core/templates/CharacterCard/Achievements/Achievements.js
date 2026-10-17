@@ -1,0 +1,1 @@
+export function renderAchievements(items){const fragment=document.createDocumentFragment();for(const item of items){const badge=document.createElement("span");badge.className="achievement-badge";badge.textContent=item.icon||"✦";badge.title=item.name||item.id;badge.setAttribute("aria-label",item.name||item.id);fragment.append(badge);}return fragment;}

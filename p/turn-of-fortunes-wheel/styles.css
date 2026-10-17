@@ -1,0 +1,233 @@
+@import url("../../res/common/campaign-layout/campaign-layout.css");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap");
+
+/* Default D&D Campaign theme tokens. Common Element geometry stays in res/common/. */
+:root{
+  --theme-base-1:#08090b;--theme-base-2:#0e1013;--theme-base-3:#111216;--theme-base-4:#12151a;--theme-base-5:#17191d;
+  --theme-accent-1:#8e2631;--theme-accent-2:#bca06a;
+  --theme-text-1:#eee9dc;--theme-text-2:#d7d2c8;--theme-text-3:#aaa59b;--theme-text-muted:#817d76;--theme-title-accent:#b9b1a1;
+  --theme-line-1:#373a3e;--theme-line-2:#4b4e52;--theme-nav-background:#111317;--theme-nav-text:#c9c5bc;--theme-nav-active-background:#191a1d;
+  --theme-seal-border:#8f8b80;--theme-seal-inner-border:#635f56;--theme-seal-background:#08090bcc;--theme-seal-small-text:#aaa397;--theme-seal-main-text:#d6cbb5;
+  --theme-font-1:"Voltaire",sans-serif;--theme-font-2:"Fira Sans Extra Condensed",sans-serif;--theme-font-3:"Brygada 1918",Georgia,serif;
+  --theme-hero-image:none;
+}
+
+html{scroll-behavior:smooth}
+body.default-dd-campaign-page{
+  margin:0;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 75% 8%,#242b31 0,transparent 32%),
+    radial-gradient(circle at 10% 70%,#1a171a 0,transparent 30%),
+    var(--theme-base-1);
+  color:var(--theme-text-1);
+  font-family:var(--theme-font-2);
+  line-height:1.6;
+}
+body.default-dd-campaign-page::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.14;
+  background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,255,255,.025) 4px);
+}
+.ddc-card{border:1px solid #3a3d42;background:linear-gradient(145deg,#13161a,#0d0f12);box-shadow:0 20px 65px #0007}
+.ddc-card-title{border-bottom:1px solid #34373b;background:#0a0c0f}
+.ddc-card-title span{font:400 30px/1 var(--theme-font-1);color:var(--theme-accent-1)}
+.ddc-card-title strong{font:700 12px/1 var(--theme-font-1);letter-spacing:3px;color:#d9d3c7}
+.ddc-paper{background:linear-gradient(135deg,#17191d,#101215);border:1px solid var(--theme-line-1);box-shadow:0 20px 70px #0007}
+.ddc-paper:after{content:"";position:absolute;top:0;right:35px;width:1px;height:100%;background:#292c30}
+.ddc-section-mark{font:400 13px/1 var(--theme-font-1);text-transform:uppercase;letter-spacing:3px;color:var(--theme-accent-2)}
+.ddc-paper h2,.ddc-source-panel h2,.ddc-section h2,.ddc-section-head h2{font:400 clamp(36px,4vw,58px)/.95 var(--theme-font-1);color:#ece7dc;margin:12px 0 20px}
+.ddc-paper p,.ddc-source-panel p{max-width:72ch;margin:0 0 14px}
+.ddc-paper p{color:#aaa9a3;font-family:var(--theme-font-3);font-size:16px;line-height:1.6}
+.ddc-case{background:#0d0f12;border:1px solid #46484b;box-shadow:8px 8px 0 #050608}
+.ddc-case-label{color:#b73b48;font:700 12px var(--theme-font-1);letter-spacing:3px;border-bottom:1px solid #4b3a3c}
+.ddc-case-row{border-bottom:1px solid #292c30;font-size:13px}
+.ddc-case-row span{color:#85827c;letter-spacing:1px}.ddc-case-row strong{font-family:var(--theme-font-1);font-size:16px;color:#ddd7ca;text-align:right}.ddc-case-row .ddc-active{color:#b94a55}
+
+.ddc-party-portrait{border:1px solid #383b3f;background:#0e1013;box-shadow:0 20px 70px #0007}
+.ddc-party-copy{background:linear-gradient(145deg,#17191d,#0e1013)}
+.ddc-party-copy h2{margin:10px 0 16px;font:400 clamp(34px,3.5vw,50px)/.95 var(--theme-font-1);color:#ece7dc}
+.ddc-party-copy p{margin:0;color:#92948f}
+.ddc-party-image{background:#08090b}
+
+.ddc-manifesto{border-top:1px solid #6b5b40;border-bottom:1px solid #6b5b40;background:#111216}
+.ddc-manifesto-symbol{font-size:48px;color:var(--theme-accent-1);text-align:center}
+.ddc-manifesto p{font:italic 25px var(--theme-font-3);color:#d8d2c7;margin:4px 0 10px}
+.ddc-manifesto span{font-size:10px;letter-spacing:3px;color:#817d76}
+
+.ddc-source-panel{border:1px solid #383b3f;background:#0e1013}
+.ddc-source-panel p{margin:0;color:#858883}
+.ddc-source-panel a{flex:0 0 auto;padding:13px 17px;border:1px solid var(--theme-accent-2);color:var(--theme-accent-2);text-decoration:none;font:700 11px var(--theme-font-1);letter-spacing:2px}
+.ddc-source-panel a:hover{background:var(--theme-accent-2);color:#101114}
+.ddc-character-intro{margin-bottom:28px}
+.ddc-character-intro p,.ddc-chronicle-intro p{max-width:72ch;margin:0;color:#888b87;font-size:15px}
+.ddc-character-quote{border-top:1px solid #6b5b40;border-bottom:1px solid #6b5b40;background:linear-gradient(90deg,#111216,#171419,#111216)}
+.ddc-character-quote p{max-width:900px;margin:8px auto 12px;font:italic 25px/1.5 var(--theme-font-3);color:#d8d2c7}
+.ddc-character-quote span{color:#817d76;font-size:11px;letter-spacing:1.5px}
+.ddc-dead-characters{margin-top:90px;padding-top:10px}.ddc-section-head p{max-width:470px;margin:0;color:#8f918e;font-size:15px}
+.ddc-dead-character{min-width:0;border:1px solid #44383a;background:linear-gradient(145deg,#19171a,#0d0f12);box-shadow:0 16px 45px #0006;max-width:300px}
+.ddc-dead-portrait{height:300px;position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding:15px;background:radial-gradient(circle at 50% 30%,#393338 0,transparent 38%),linear-gradient(180deg,#242025,#0b0d10);border-bottom:1px solid #4b3a3d;filter:grayscale(.8)}
+.ddc-dead-portrait:before{content:"";position:absolute;inset:18px;border:1px dashed #75666a;opacity:.3}
+.ddc-dead-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(.8)}
+.ddc-dead-portrait b{position:absolute;top:18px;right:22px;font:400 34px var(--theme-font-3);color:#9b4b55}
+.ddc-dead-info{padding:22px}.ddc-dead-info h3{font:400 27px var(--theme-font-1);color:#c9c2b7;margin:7px 0 2px}.ddc-dead-info strong{font-size:14px;color:#928c89;font-weight:500}.ddc-dead-info p{margin-top:15px;color:#797b78;font-size:13px;line-height:1.5}
+.ddc-footer{background:#07080a;border-top:1px solid #2f3135;color:#6f726f}
+.ddc-footer a{color:#a99a7b;text-decoration:none}
+
+@media(max-width:1050px){}
+@media(max-width:900px){.ddc-section-head p{margin-top:15px}}
+@media(max-width:620px){.ddc-paper:after{display:none}.ddc-manifesto-symbol{text-align:left}.ddc-dead-character{max-width:none}.ddc-character-quote p{font-size:21px}.ddc-source-panel a{display:inline-block;margin-top:20px}.ddc-footer a{display:block;margin-top:8px}
+}
+
+
+
+/* Turn of Fortune's Wheel — thematic treatment for the existing campaign cards.
+   Deliberately styles existing content only; no new sections or destinations. */
+body.default-dd-campaign-page{
+  --theme-accent-1:#9a72c5;
+  --theme-accent-2:#d0b276;
+  background:
+    radial-gradient(ellipse at 78% 22%,#39234b45 0,transparent 35%),
+    radial-gradient(ellipse at 8% 66%,#39234b24 0,transparent 32%),
+    var(--theme-base-1);
+}
+.ddc-card{
+  position:relative;
+  overflow:hidden;
+  border-color:#80674470;
+  background:linear-gradient(145deg,#17131d,#0b0c11 68%);
+  box-shadow:0 24px 75px #0008, inset 0 1px #d0b27614;
+}
+.ddc-card:before{
+  content:"";position:absolute;inset:8px;pointer-events:none;z-index:0;
+  border:1px solid #d0b27620;
+}
+.ddc-card-title{background:linear-gradient(90deg,#21192b,#0b0c10 75%);
+  border-bottom-color:#8c704c66}
+.ddc-card-title span{color:#b28bd8;text-shadow:0 0 20px #9a72c533}
+.ddc-card-title strong{color:#e6d5ae}
+.ddc-paper{border-color:#6d5b7c;
+  background:
+    radial-gradient(ellipse at 100% 0,#54366a26,transparent 45%),
+    linear-gradient(135deg,#1b1722,#101116)}
+.ddc-paper:after{background:#d0b27616}
+.ddc-section-mark{color:#d0b276}
+.ddc-case{border-color:#8b704d;
+  background:radial-gradient(ellipse at 100% 0,#5b3c702b,transparent 58%),#0e0d13;
+  box-shadow:7px 7px 0 #050508, inset 0 0 35px #9a72c50a}
+.ddc-case-label{color:#c49be6;border-bottom-color:#70527d}
+.ddc-case-row{border-bottom-color:#3c3045}
+.ddc-case-row strong{color:#e3d7c4}
+.ddc-case-row .ddc-active{color:#d0b276}
+.ddc-party-portrait{border-color:#796143;
+  background:#100e15;
+  box-shadow:0 24px 75px #0008;
+  transition:border-color .25s,box-shadow .25s}
+.ddc-party-portrait:hover{border-color:#d0b276;box-shadow:0 28px 85px #000a,0 0 36px #9a72c51a}
+.ddc-party-copy{background:radial-gradient(ellipse at 0 50%,#4b326027,transparent 65%),linear-gradient(145deg,#1b1721,#0d0e12)}
+.ddc-party-image:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#0d0e12aa,transparent 45%),linear-gradient(0deg,#0b0c1099,transparent 40%)}
+.ddc-party-image img{transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .4s}
+.ddc-party-portrait:hover .ddc-party-image img{transform:scale(1.025);filter:saturate(1.08)}
+.ddc-manifesto{border-color:#8b704d;
+  background:radial-gradient(ellipse at 50% 50%,#422b502b,transparent 70%),linear-gradient(90deg,#111016,#19131e,#111016)}
+.ddc-manifesto-symbol{color:#c49be6;text-shadow:0 0 28px #9a72c555}
+.ddc-manifesto p{color:#e1d4bd}
+.ddc-section-head{border-bottom:1px solid #8b704d55}
+.ddc-section-head h2{color:#eee4d2}
+.v-character-card{
+  position:relative;
+  overflow:hidden;
+  border-color:#6e587d;
+  background:linear-gradient(155deg,#211a2a,#0c0d12 72%);
+  box-shadow:0 18px 50px #0007;
+  transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+}
+.v-character-card:hover,.v-character-card:focus-within{
+  transform:translateY(-6px);
+  border-color:#d0b276;
+  box-shadow:0 26px 58px #0009,0 0 32px #9a72c51c;
+}
+.v-character-card__portrait{
+  height:clamp(280px,30vw,420px);
+  background:radial-gradient(circle at 50% 30%,#493558 0,transparent 42%),linear-gradient(180deg,#28202f,#0b0c11);
+  border-bottom-color:#8b704d88;
+}
+.v-character-card__portrait:before{inset:12px;border:1px solid #d0b27670;opacity:.55;transition:inset .3s,opacity .3s}
+.v-character-card:hover .v-character-card__portrait:before{inset:18px;opacity:.9}
+.v-character-card__portrait img{transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .35s}
+.v-character-card:hover .v-character-card__portrait img{transform:scale(1.035);filter:saturate(1.12)}
+.v-character-card__info{background:linear-gradient(180deg,#19151f,#0e0f13)}
+.v-character-card__label{color:#d0b276}
+.v-character-card__player{color:#eee4d2}
+.v-character-card__character{color:#b7a9c2}
+.v-chronicle{margin-top:24px;border-top:1px solid #8b704d88}
+.v-chronicle__entry{
+  margin:10px 0;
+  border:1px solid #51405f;
+  background:linear-gradient(110deg,#1a1521,#0e0f13 70%);
+  transition:border-color .2s,background .2s,box-shadow .2s;
+}
+.v-chronicle__entry:hover,.v-chronicle__entry[open]{
+  border-color:#b18bce;
+  background:linear-gradient(110deg,#251b30,#101015 75%);
+  box-shadow:0 10px 32px #0004;
+}
+.v-chronicle__summary{padding:21px 20px;grid-template-columns:90px minmax(0,1fr) auto}
+.v-chronicle__session{color:#c49be6;letter-spacing:1px}
+.v-chronicle__title{color:#eee4d2;font-size:21px;transition:color .2s}
+.v-chronicle__entry:hover .v-chronicle__title,.v-chronicle__entry[open] .v-chronicle__title{color:#f0d79e}
+.v-chronicle__recording{border-color:#8b704d;background:#17121e;color:#d0b276;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.v-chronicle__recording:hover{border-color:#d0b276;background:#d0b276;color:#17121e;transform:translateY(-1px)}
+.v-chronicle__notes{padding:0 20px 20px;color:#b6acbd;font-family:var(--theme-font-3);line-height:1.7}
+.ddc-footer{border-top-color:#6f5940;background:#08080c}
+.ddc-footer a{color:#d0b276}
+@media(max-width:620px){
+  .ddc-card:before{inset:5px}
+  .v-character-card__portrait{height:340px}
+  .v-chronicle__summary{grid-template-columns:1fr auto;gap:7px 12px;padding:16px}
+  .v-chronicle__session{grid-column:1}
+  .v-chronicle__title{grid-column:1;grid-row:2}
+  .v-chronicle__recordings{grid-column:2;grid-row:1 / span 2}
+  .v-chronicle__recording{min-width:0;padding:9px}
+}
+@media(prefers-reduced-motion:reduce){
+  .ddc-party-portrait,.ddc-party-image img,.v-character-card,.v-character-card__portrait:before,.v-character-card__portrait img,.v-chronicle__entry,.v-chronicle__title,.v-chronicle__recording{transition:none}
+}
+
+
+/* Fallback artwork for the campaign overview card when no banner asset exists. */
+.ddc-party-image--campaign{
+  position:relative;display:grid;place-items:center;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 50%,#6e477b42 0,transparent 28%),
+    radial-gradient(circle at 50% 50%,transparent 0 24%,#c5a46a18 24.2% 24.6%,transparent 25% 34%,#c5a46a25 34.2% 34.6%,transparent 35%),
+    repeating-conic-gradient(from 9deg at 50% 50%,#d0b2760b 0deg 2deg,transparent 2deg 15deg),
+    radial-gradient(ellipse at center,#20172b 0,#0b0c11 72%);
+}
+.ddc-party-image--campaign:before,.ddc-party-image--campaign:after{
+  content:"";position:absolute;aspect-ratio:1;border:1px solid #d0b27655;border-radius:50%;pointer-events:none;
+}
+.ddc-party-image--campaign:before{width:min(70%,390px);box-shadow:0 0 50px #8b5eac19,inset 0 0 45px #8b5eac12}
+.ddc-party-image--campaign:after{width:min(53%,295px);border-style:dashed;border-color:#b28bd866}
+.ddc-campaign-sigil{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:8px;color:#e2c78c;text-align:center;text-shadow:0 0 24px #b48bce55}
+.ddc-campaign-sigil span{font:clamp(50px,8vw,100px)/1 Georgia,serif}
+.ddc-campaign-sigil strong{font:400 clamp(20px,3vw,32px)/1 var(--theme-font-1);letter-spacing:6px}
+.ddc-campaign-sigil small{font:10px var(--theme-font-1);letter-spacing:5px;color:#bda5d0}
+
+
+
+/* Campaign audio toggle: violet outline and glyph on a transparent surface. */
+body.default-dd-campaign-page .v-audio-player__button{
+  color:#b995df;
+  border-color:#9a72c5;
+  background:transparent;
+  box-shadow:0 0 0 1px #9a72c533,0 0 24px #9a72c51a;
+}
+body.default-dd-campaign-page .v-audio-player__button:hover{
+  color:#d6b9f4;
+  border-color:#c2a0e8;
+  background:#9a72c51a;
+  box-shadow:0 0 0 1px #9a72c566,0 0 28px #9a72c533;
+}
+body.default-dd-campaign-page .v-audio-player__button:focus-visible{
+  outline-color:#b995df;
+}
