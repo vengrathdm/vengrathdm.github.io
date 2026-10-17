@@ -35,7 +35,8 @@ body.sands-of-doom-page::before {
 .sands-hero {
   position: relative;
   isolation: isolate;
-  min-height: 650px;
+  min-height: 100vh;
+  min-height: 100svh;
   padding: 0;
   overflow: hidden;
   color: var(--theme-text-1);
@@ -65,17 +66,17 @@ body.sands-of-doom-page::before {
   justify-items: start;
   box-sizing: border-box;
   width: min(1200px, 100%);
-  min-height: 650px;
+  min-height: 100vh;
+  min-height: 100svh;
   margin: 0 auto;
   padding: 170px 5vw 100px;
   text-align: left;
 }
 .sands-navbar-mount {
-  position: absolute;
-  z-index: 4;
-  top: 0;
-  left: 0;
-  right: 0;
+  /* Keep the shared navbar fixed to the viewport, not anchored to this hero. */
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1100;
 }
 .sands-hero .subpage-hero__copy h1 {
   margin: 18px 0 20px;
@@ -169,7 +170,10 @@ body.sands-of-doom-page::before {
   .sands-section-head p { margin-top: 15px; }
 }
 @media (max-width: 620px) {
-  .sands-hero, .sands-hero .subpage-hero__copy { min-height: 590px; }
+  .sands-hero, .sands-hero .subpage-hero__copy {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
   .sands-hero .subpage-hero__copy { padding: 145px 24px 70px; }
   .sands-hero-seal { display: none; }
   .sands-hero-kicker { max-width: 290px; font-size: 11px; }
