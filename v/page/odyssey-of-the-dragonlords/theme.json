@@ -21,6 +21,6 @@
     "serif": "\"Brygada 1918\", Georgia, serif"
   },
   "fontsUrl": "https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap",
-  "heroImage": "/res/voronoi/webp/odyssey-of-the-dragonlords.webp",
+  "heroImage": "/p/odyssey-of-the-dragonlords/res/hero-image.jpg",
   "audioColor": "#e0bd62"
 }
