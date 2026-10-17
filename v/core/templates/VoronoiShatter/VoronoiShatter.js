@@ -1,4 +1,3 @@
-import "./VoronoiShatter.css";
 const FILTERS=["Wszystko","Aktywna Kampania","Zamknięta Kampania","Archiwum","Blog","Grafika","Narzędzie","Postać"];
 const shuffle=a=>{const b=a.slice();for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;};
 const path=p=>p.map((q,i)=>(i?"L":"M")+q.x.toFixed(2)+" "+q.y.toFixed(2)).join(" ")+" Z";
