@@ -171,3 +171,5 @@ body.odyssey-page::before{
 @media(max-width:900px){.odyssey-intro-grid,.odyssey-party-portrait{grid-template-columns:1fr}.odyssey-party-image,.odyssey-party-image img{min-height:300px}}
 @media(max-width:620px){.odyssey-content{width:calc(100% - 28px)}.odyssey-card-body{padding:18px}.odyssey-card-title{padding:16px 18px}.odyssey-paper{padding:25px}.odyssey-footer{display:block}.odyssey-footer a{display:block;margin-top:8px}}
 @media(max-width:760px){.odyssey-content::before{background-attachment:scroll}}
+
+.odyssey-navbar-mount{position:absolute;inset:0 0 auto;z-index:5;width:100%}.odyssey-hero h1{font-family:var(--theme-font-1);color:var(--theme-title-accent)}.odyssey-hero-title-accent{font-style:normal;color:#fff8e5}

@@ -29,7 +29,13 @@ async function initialize() {
   const kicker = document.createElement("p");
   kicker.className = "odyssey-hero-kicker";
   kicker.textContent = content.campaign.kicker;
-  hero.querySelector("h1").before(kicker);
+  const heading = hero.querySelector("h1");
+  heading.textContent = "Odyssey of";
+  const titleAccent = document.createElement("em");
+  titleAccent.className = "odyssey-hero-title-accent";
+  titleAccent.textContent = "the Dragonlords";
+  heading.append(document.createElement("br"), titleAccent);
+  heading.before(kicker);
   const lead = document.createElement("p");
   lead.className = "odyssey-hero-lead";
   lead.textContent = content.campaign.lead;
