@@ -3,13 +3,13 @@
     "CardName": "Assault on Castle Blackrose",
     "CardTags": "Archiwum",
     "CardGraphic": "https://cdn.midjourney.com/47c79b31-a4ac-4c58-8cf8-f5d95ab3a959/0_0.png",
-    "CardAdress": "/v/page/assault-on-castle-blackrose/"
+    "CardAdress": "/p/assault-on-castle-blackrose/"
   },
   {
     "CardName": "Barber of Silverymoon",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/barber-of-silverymoon.webp",
-    "CardAdress": "/v/page/barber-of-silverymoon/"
+    "CardAdress": "/p/barber-of-silverymoon/"
   },
   {
     "CardName": "Blog",
@@ -21,7 +21,7 @@
     "CardName": "Cemetery of Dragons",
     "CardTags": "Archiwum",
     "CardGraphic": "https://cdn.midjourney.com/dd7584b6-fb31-4a57-ac17-ce1f8a1c5a3e/0_2.png",
-    "CardAdress": "/v/page/cemetery-of-dragons/"
+    "CardAdress": "/p/cemetery-of-dragons/"
   },
   {
     "CardName": "Ayla Brokengulf",
@@ -45,139 +45,139 @@
     "CardName": "Curse of Strahd",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/curse-of-strahd.webp",
-    "CardAdress": "/v/page/curse-of-strahd/"
+    "CardAdress": "/p/curse-of-strahd/"
   },
   {
     "CardName": "Dom Malowanych Luster",
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/dom-malowanych-luster.webp",
-    "CardAdress": "/v/page/dom-malowanych-luster/"
+    "CardAdress": "/p/dom-malowanych-luster/"
   },
   {
     "CardName": "Dragon of Dampen Depths",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/dragon-of-dampen-depths.webp",
-    "CardAdress": "/v/page/dragon-of-dampen-depths/"
+    "CardAdress": "/p/dragon-of-dampen-depths/"
   },
   {
     "CardName": "Dragon of Icespire Peak",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/dragon-of-icespire-peak.webp",
-    "CardAdress": "/v/page/dragon-of-icespire-peak/"
+    "CardAdress": "/p/dragon-of-icespire-peak/"
   },
   {
     "CardName": "Drakkenheim",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/drakkenheim.webp",
-    "CardAdress": "/v/page/drakkenheim/"
+    "CardAdress": "/p/drakkenheim/"
   },
   {
     "CardName": "Dungeons of Drakkenheim",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/dungeons-of-drakkenheim.webp",
-    "CardAdress": "/v/page/dungeons-of-drakkenheim/"
+    "CardAdress": "/p/dungeons-of-drakkenheim/"
   },
   {
     "CardName": "Echtra midst the Sidhe",
     "CardTags": "Aktywna Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/echtra-midst-the-sidhe.webp",
-    "CardAdress": "/v/page/echtra-midst-the-sidhe/"
+    "CardAdress": "/p/echtra-midst-the-sidhe/"
   },
   {
     "CardName": "Echtra - Zima Irgaeli",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/echtra-midst-the-sidhe.webp",
-    "CardAdress": "/v/page/echtra-zima-irgaeli/"
+    "CardAdress": "/p/echtra-zima-irgaeli/"
   },
   {
     "CardName": "Forge of Fury",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/forge-of-fury.webp",
-    "CardAdress": "/v/page/forge-of-fury/"
+    "CardAdress": "/p/forge-of-fury/"
   },
   {
     "CardName": "Ghoul Hour",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/ghoul-hour.webp",
-    "CardAdress": "/v/page/ghoul-hour/"
+    "CardAdress": "/p/ghoul-hour/"
   },
   {
     "CardName": "Gold for Fools and Princes",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/Gold-for-Fools-and-Princes.webp",
-    "CardAdress": "/v/page/gold-for-fools-and-princes/"
+    "CardAdress": "/p/gold-for-fools-and-princes/"
   },
   {
     "CardName": "Hand of Glory",
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/hand-of-glory.webp",
-    "CardAdress": "/v/page/hand-of-glory/"
+    "CardAdress": "/p/hand-of-glory/"
   },
   {
     "CardName": "Bohaterowie Wrót Baldura",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/heroes-of-baldurs-gate.webp",
-    "CardAdress": "/v/page/heroes-of-baldurs-gate/"
+    "CardAdress": "/p/heroes-of-baldurs-gate/"
   },
   {
     "CardName": "Heroes of Drakkenheim",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/dungeons-of-drakkenheim.webp",
-    "CardAdress": "/v/page/heroes-of-drakkenheim/"
+    "CardAdress": "/p/heroes-of-drakkenheim/"
   },
   {
     "CardName": "Książęta Heartwell",
     "CardTags": "Aktywna Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/ksiazeta-heartwell.webp",
-    "CardAdress": "/v/page/Ksiazeta-Heartwell/"
+    "CardAdress": "/p/Ksiazeta-Heartwell/"
   },
   {
     "CardName": "Ku chwale Tyra!",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/KuChwaleTyra.webp",
-    "CardAdress": "/v/page/ku-chwale-tyra/"
+    "CardAdress": "/p/ku-chwale-tyra/"
   },
   {
     "CardName": "Legends of Barovia",
     "CardTags": "Aktywna Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/legends-of-barovia.webp",
-    "CardAdress": "/v/page/legends-of-barovia/"
+    "CardAdress": "/p/legends-of-barovia/"
   },
   {
     "CardName": "Lost Mine of Phandelver",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/lost-mine-of-phandelver.webp",
-    "CardAdress": "/v/page/lost-mine-of-phandelver/"
+    "CardAdress": "/p/lost-mine-of-phandelver/"
   },
   {
     "CardName": "Maski Nyarlathotepa - Peru",
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/maski-nyarlotepa.webp",
-    "CardAdress": "/v/page/maski-nyarlotepa/"
+    "CardAdress": "/p/maski-nyarlotepa/"
   },
   {
     "CardName": "Mayhem in Earthspur Mines",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/mayhem-in-earthspur-mines.webp",
-    "CardAdress": "/v/page/mayhem-in-earthspur-mines/"
+    "CardAdress": "/p/mayhem-in-earthspur-mines/"
   },
   {
     "CardName": "Menaces of Gloomforest Legacy",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/menaces-of-gloomforest.webp",
-    "CardAdress": "/v/page/menaces-of-gloomforest-legacy/"
+    "CardAdress": "/p/menaces-of-gloomforest-legacy/"
   },
   {
     "CardName": "Menaces of Gloomforest",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/menaces-of-gloomforest.webp",
-    "CardAdress": "/v/page/menaces-of-gloomforest/"
+    "CardAdress": "/p/menaces-of-gloomforest/"
   },
   {
     "CardName": "Mences of Irensberg",
     "CardTags": "Aktywna Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/mences-of-irensberg.webp",
-    "CardAdress": "/v/page/mences-of-irensberg/"
+    "CardAdress": "/p/mences-of-irensberg/"
   },
   {
     "CardName": "Moje Rysunki 2026",
@@ -189,37 +189,37 @@
     "CardName": "Mythic Odyssey of the Dragonlords",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/mythic-odyssey-of-the-dragonlords.webp",
-    "CardAdress": "/v/page/mythic-odyssey-of-the-dragonlords/"
+    "CardAdress": "/p/mythic-odyssey-of-the-dragonlords/"
   },
   {
     "CardName": "Neverwinter: Intrygi Północnego Wybrzeża Mieczy",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/neverwinter.webp",
-    "CardAdress": "/v/page/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/"
+    "CardAdress": "/p/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/"
   },
   {
     "CardName": "Odyssey of the Dragonlords",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/odyssey-of-the-dragonlords.webp",
-    "CardAdress": "/v/page/odyssey-of-the-dragonlords/"
+    "CardAdress": "/p/odyssey-of-the-dragonlords/"
   },
   {
     "CardName": "Blood Red Snow White",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/blood-red-snow-white.webp",
-    "CardAdress": "/v/page/blood-red-snow-white/"
+    "CardAdress": "/p/blood-red-snow-white/"
   },
   {
     "CardName": "Rime of the Frostmaiden",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/rime-of-the-frostmaiden.webp",
-    "CardAdress": "/v/page/rime-of-the-frostmaiden/"
+    "CardAdress": "/p/rime-of-the-frostmaiden/"
   },
   {
     "CardName": "Rise of Tiamat",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/rise-of-tiamat.webp",
-    "CardAdress": "/v/page/rise-of-tiamat/"
+    "CardAdress": "/p/rise-of-tiamat/"
   },
   {
     "CardName": "Sala Chwały",
@@ -231,78 +231,78 @@
     "CardName": "Samotnie przeciw Jedności",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/samotnie-przeciw-jednosci.webp",
-    "CardAdress": "/v/page/samotnie-przeciw-jednosci/"
+    "CardAdress": "/p/samotnie-przeciw-jednosci/"
   },
   {
     "CardName": "Sands of Doom",
     "CardTags": "Aktywna Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/sands-of-doom.webp",
-    "CardAdress": "/v/page/sands-of-doom/"
+    "CardAdress": "/p/sands-of-doom/"
   },
   {
     "CardName": "Shadow of the Sword Coast",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/shadow-of-the-sword-coast.webp",
-    "CardAdress": "/v/page/shadow-of-the-sword-coast/"
+    "CardAdress": "/p/shadow-of-the-sword-coast/"
   },
   {
     "CardName": "Shards of the Past",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/shards-of-the-past.webp",
-    "CardAdress": "/v/page/shards-of-the-past/"
+    "CardAdress": "/p/shards-of-the-past/"
   },
   {
     "CardName": "Sons of Azalin",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/sons-of-azalin.webp",
-    "CardAdress": "/v/page/sons-of-azalin/"
+    "CardAdress": "/p/sons-of-azalin/"
   },
   {
     "CardName": "The Dragon and the Kraken",
     "CardTags": "Archiwum",
     "CardGraphic": "https://cdn.midjourney.com/233c92ad-8ba9-45f1-be79-1ea5bbc2f4d1/0_3.png",
-    "CardAdress": "/v/page/the-dragon-and-the-kraken/"
+    "CardAdress": "/p/the-dragon-and-the-kraken/"
   },
   {
     "CardName": "The Sunless Citadel",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/the-sunless-citadel.webp",
-    "CardAdress": "/v/page/the-sunless-citadel/"
+    "CardAdress": "/p/the-sunless-citadel/"
   },
   {
     "CardName": "Tomb of Annihilation",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/tomb-of-annihilation.webp",
-    "CardAdress": "/v/page/tomb-of-annihilation/"
+    "CardAdress": "/p/tomb-of-annihilation/"
   },
   {
     "CardName": "The Tower of the Veiled Star",
     "CardTags": "Archiwum",
     "CardGraphic": "https://i.imgur.com/T5JE3IL.jpeg",
-    "CardAdress": "/v/page/tower-of-the-veiled-star/"
+    "CardAdress": "/p/tower-of-the-veiled-star/"
   },
   {
     "CardName": "Trouble Below the Mountains of Ash",
     "CardTags": "Archiwum",
     "CardGraphic": "https://cdn.midjourney.com/d1fed19a-e4f0-482d-9db8-54ecad204628/0_0.png",
-    "CardAdress": "/v/page/trouble-below-the-mountains-of-ash/"
+    "CardAdress": "/p/trouble-below-the-mountains-of-ash/"
   },
   {
     "CardName": "Turn Back the Endless Night",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/turn-back-the-endless-night.webp",
-    "CardAdress": "/v/page/turn-back-the-endless-night/"
+    "CardAdress": "/p/turn-back-the-endless-night/"
   },
   {
     "CardName": "Turn of Fortune's Wheel",
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/turn-of-fortunes-wheel.webp",
-    "CardAdress": "/v/page/turn-of-fortunes-wheel/"
+    "CardAdress": "/p/turn-of-fortunes-wheel/"
   },
   {
     "CardName": "Wails from the Lighthouse",
     "CardTags": "Archiwum",
     "CardGraphic": "https://cdn.midjourney.com/f2d52c3c-0e32-4b72-a9a2-5f1fdca9d8ed/0_0.png",
-    "CardAdress": "/v/page/wails-from-the-lighthouse/"
+    "CardAdress": "/p/wails-from-the-lighthouse/"
   }
 ]
