@@ -69,7 +69,22 @@ function renderChronicle(chronicle, accent) {
   document.querySelector("#chronicle-title").textContent = chronicle.title;
   document.querySelector("#chronicle-description").textContent = chronicle.description;
   const container = document.querySelector("#campaign-chronicle");
-  container.replaceChildren(...chronicle.sessions.map(session => createChronicleRecord(session, { accent })));
+  const entries = [];
+
+  if (chronicle.playlistUrl) {
+    const playlist = node("a", "toa-chronicle-playlist");
+    playlist.href = chronicle.playlistUrl;
+    playlist.target = "_blank";
+    playlist.rel = "noopener noreferrer";
+    const label = node("span", "toa-chronicle-playlist__label", "NAGRANIA");
+    const title = node("strong", "toa-chronicle-playlist__title", "Otwórz playlistę YouTube");
+    const action = node("span", "toa-chronicle-playlist__action", "▶ OGLĄDAJ");
+    playlist.append(label, title, action);
+    entries.push(playlist);
+  }
+
+  entries.push(...chronicle.sessions.map(session => createChronicleRecord(session, { accent })));
+  container.replaceChildren(...entries);
 }
 
 async function initialize() {
