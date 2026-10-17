@@ -253,9 +253,10 @@ body.legends-of-barovia-page::before {
 
 /* Shared SubpageHero extensions used by this campaign. */
 .lob-navbar-mount {
-  position: absolute;
+  /* The mount is also the shared navbar element; do not anchor it to the hero. */
+  position: fixed;
   inset: 0 0 auto;
-  z-index: 100;
+  z-index: 1100;
 }
 
 .lob-hero-kicker {
