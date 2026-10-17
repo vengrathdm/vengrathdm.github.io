@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101113">
+  <meta name="description" content="Vengrath — kampanie, postacie, projekty i narzędzia.">
+  <title>Vengrath — nowa architektura</title>
+  <link rel="stylesheet" href="./assets/css/tokens.css">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <script type="module" src="./src/app/SiteApplication.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+  <div class="site-shell">
+    <header id="site-header"></header>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">Kampanie · postacie · narzędzia</p>
+        <h1 id="hero-title">Historie, które zostają.</h1>
+        <p class="hero__lead">Światy, bohaterowie i projekty zebrane w jednym miejscu.</p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#campaigns">Odkryj kampanie</a>
+          <a class="button button--quiet" href="#projects">Poznaj projekty</a>
+        </div>
+      </section>
+
+      <section class="content-section" id="campaigns" aria-labelledby="campaigns-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">Światy i opowieści</p><h2 id="campaigns-title">Kampanie</h2></div>
+          <p>Każda kampania ma własny klimat. Wspólny pozostaje porządek i sposób nawigacji.</p>
+        </div>
+        <div class="destination-grid" id="campaign-grid">
+          <a class="destination-card" href="../p/legends-of-barovia/"><span class="destination-card__index">01</span><h3>Legends of Barovia</h3><p>Gotycka opowieść o mgłach, wyborach i cenie przetrwania.</p><span class="text-link">Otwórz kampanię <span aria-hidden="true">↗</span></span></a>
+          <a class="destination-card" href="../p/heartwell/"><span class="destination-card__index">02</span><h3>Heartwell</h3><p>Odkryj osobny świat i jego historię.</p><span class="text-link">Otwórz kampanię <span aria-hidden="true">↗</span></span></a>
+          <a class="destination-card" href="../p/wails-from-the-lighthouse/"><span class="destination-card__index">03</span><h3>Wails from the Lighthouse</h3><p>Niepokojąca historia rozgrywająca się na granicy znanego świata.</p><span class="text-link">Otwórz kampanię <span aria-hidden="true">↗</span></span></a>
+        </div>
+      </section>
+
+      <section class="content-section" id="characters" aria-labelledby="characters-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">Obsada światów</p><h2 id="characters-title">Postacie</h2></div>
+          <label class="search-field"><span class="sr-only">Szukaj postaci</span><input id="character-search" type="search" placeholder="Szukaj postaci…" autocomplete="off"></label>
+        </div>
+        <p class="section-intro" id="character-count" aria-live="polite">Ładowanie postaci…</p>
+        <div class="character-grid" id="character-grid"></div>
+        <p class="empty-state" id="character-empty" hidden>Nie znaleziono postaci pasujących do wyszukiwania.</p>
+        <div class="section-footer"><a class="text-link" href="../Characters/">Przejdź do pełnego archiwum postaci <span aria-hidden="true">↗</span></a></div>
+      </section>
+
+      <section class="content-section project-section" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading"><div><p class="eyebrow">Więcej niż kampanie</p><h2 id="projects-title">Projekty i narzędzia</h2></div><p>Osobne przestrzenie, wspólne standardy jakości i nawigacji.</p></div>
+        <div class="destination-grid destination-grid--compact">
+          <a class="destination-card" href="../Blog/"><h3>Blog</h3><p>Notatki, refleksje i publikacje.</p><span class="text-link">Czytaj <span aria-hidden="true">↗</span></span></a>
+          <a class="destination-card" href="../HoF/"><h3>Hall of Fame</h3><p>Postacie, osiągnięcia i historia przygód.</p><span class="text-link">Odkrywaj <span aria-hidden="true">↗</span></span></a>
+          <a class="destination-card" href="../Charactermancer/"><h3>Charactermancer</h3><p>Narzędzie do tworzenia postaci.</p><span class="text-link">Otwórz narzędzie <span aria-hidden="true">↗</span></span></a>
+          <a class="destination-card" href="../HeartwellWiki/"><h3>Heartwell Wiki</h3><p>Encyklopedia świata i jego szczegółów.</p><span class="text-link">Przejdź do wiki <span aria-hidden="true">↗</span></span></a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><span>VENGRATH</span><span>Nowa implementacja · niezależna od wersji produkcyjnej</span><a href="#main">Wróć na górę ↑</a></footer>
+  </div>
+</body>
+</html>
