@@ -1,0 +1,225 @@
+{
+  "campaign": {
+    "kicker": "RAVENLOFT · BAROVIA · AKTA KAMPANII 02",
+    "title": "LEGENDS OF BAROVIA",
+    "lead": "Kraina, która nie chce wypuścić swoich gości. Stara klątwa, nowe legendy, dawne miejsca i historia, która pod powierzchnią gotyckiej grozy okazuje się znacznie większa niż sam zamek.",
+    "introTitle": "Nie jest to nowa Barovia.",
+    "introParagraphs": [
+      "Legends of Barovia rozwija Curse of Strahd, dodając nowe lokacje, postacie, zadania i połączenia między wątkami. Zachowuje podstawową konstrukcję Ravenloftu, ale traktuje dolinę jak żywy, historyczny świat — z pamięcią, ruinami, starymi mocami i konsekwencjami.",
+      "Na tej podstronie rozdzielamy dwa poziomy informacji: świat kampanii, który można poznać bez znajomości naszej rozgrywki, oraz naszą kronikę, która będzie rosła wraz z kolejnymi sesjami."
+    ],
+    "dossier": [
+      [
+        "DOMENA",
+        "Barovia"
+      ],
+      [
+        "WŁADCA",
+        "Strahd von Zarovich"
+      ],
+      [
+        "RDZEŃ",
+        "Curse of Strahd"
+      ],
+      [
+        "ROZSZERZENIE",
+        "Legends of Barovia"
+      ],
+      [
+        "TON",
+        "Gotyk / groza / izolacja"
+      ],
+      [
+        "STATUS",
+        "KAMPANIA AKTYWNA"
+      ]
+    ],
+    "partyImage": "/v/page/legends-of-barovia/res/graphics/legends-of-barovia.jpg",
+    "partyTitle": "Ci, którzy weszli we mgłę.",
+    "partyDescription": "Jedno spojrzenie na drużynę, zanim Barovia zacznie odbierać jej kolejne rzeczy.",
+    "manifesto": "Zwycięstwo nie musi oznaczać, że ktoś wychodzi z tego bez ceny.",
+    "manifestoTags": "GROZA · PRZETRWANIE · IZOLACJA · POWOLNA KORUPCJA",
+    "sourceTitle": "Pyram King · Legends of Barovia",
+    "sourceDescription": "Podstawowe informacje o rozszerzeniu, Fey Quest, lokacjach i postaciach są zgodne z oficjalnymi materiałami projektu.",
+    "sourceUrl": "https://www.pyramking.com/legends-of-barovia/"
+  },
+  "characters": {
+    "kicker": "AKTA / 02",
+    "title": "Postaci",
+    "description": "Karty bohaterów kampanii, ich statusy i informacje zapisane we wspólnym katalogu postaci.",
+    "quote": "W Barovii nie pytasz, czy ktoś przeżyje. Pytasz tylko, jak długo jeszcze jego cień będzie należał do niego.",
+    "quoteAttribution": "— zapis znaleziony pośród rzeczy tych, którzy nie wrócili",
+    "characterIds": [
+      "char-0001",
+      "char-0002",
+      "char-0003",
+      "char-0004",
+      "char-0005"
+    ]
+  },
+  "chronicle": {
+    "kicker": "AKTA / 03",
+    "title": "Kronika Drużyny",
+    "description": "Chronologia kampanii, notatki i nagrania sesji.",
+    "sessions": [
+      {
+        "sessionNumber": 1,
+        "title": "We Mgły",
+        "description": "Drużyna podróżuje Drogą Swołoczy, traci woźnicę Havoka i zatrzymuje się przy tajemniczym weselu Witalija i Julii, gdzie poznaje m.in. Barona von Reute oraz Strahda i Siergieja. Pchełka otrzymuje niepokojącą wróżbę Tarokka, a Strahd zaczyna interesować się Luką, podczas gdy Damira tańczy z Siergiejem. Po północy bohaterowie budzą się rozdzieleni, w zmienionych ubraniach, a po przejściu przez bramę trafiają na Drogę Swołoczy prowadzącą dalej w głąb Barovii.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/2_afkABU_q4",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 2,
+        "title": "Posiadłość Lugosi",
+        "description": "Drużyna wchodzi do posiadłości Lugossiego i odkrywa pozornie zamieszkany dom, trofea, broń oraz kolejne ślady nadnaturalnej działalności. Po konfrontacji z duchami i ożywionym pancerzem wszyscy giną, a następnie budzą się uratowani przez Rahadina, który wiezie ich do wioski Barovia. Tam przekazują Ismarkowi list, poznają historię śmierci jego ojca i zgadzają się pomóc w przeniesieniu trumny oraz eskortowaniu Iriny do Vallakii.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/ZIESzhSTk6k",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 3,
+        "title": "Pogrzeb Kolyana Indirovicha",
+        "description": "Drużyna odwiedza Szaloną Marię i poznaje historię zaginionej Gertrudy oraz tajemniczej Lady Karelovej. Ismark opowiada o rodach Barovii, jej historii, braku dusz u części mieszkańców i możliwym powstaniu przeciw Strahdowi. Następnie bohaterowie uczestniczą w pogrzebie Kolyana Indirovicha, gdzie Rahadin i Strahd pokazują swoją przewagę, a kapłan Donavich zostaje wezwany przez Strahda na główny plac.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/HzhlWpfKfbE",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 4,
+        "title": "Doru",
+        "description": "Drużyna podąża za Donavichem i trafia na egzekucję jego syna Doru, skazanego przez Strahda za zdradę. Luka otrzymuje od Strahda wybór i postanawia oszczędzić Doru, lecz ten okazuje się wampirzym pomiotem i zabija własnego ojca, po czym zostaje pokonany. Później drużyna bada kościół i jego podziemia, gdzie odkrywa kryptę Petrovnych oraz ciało dziewczyny przypominającej Pchełkę, a następnie rusza z Iriną w stronę Vallakii.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/Hk8DqJuPjOk",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 5,
+        "title": "Rzeka Ivlis / Obóz przy Strawie Tser",
+        "description": "Drużyna wyrusza z Barovii i dociera do rzeki Ivlis, gdzie spotyka Morgantę, poznaje informacje o pochodzeniu Iriny oraz słyszy kolejne historie o Gertrudzie, Madame Evie i Marinie. Następnie trafia do obozu Vistani, gdzie Pchełka spotyka Winkle'a, a drużyna dowiaduje się więcej o Trzech Siostrach, mgle, Marcovii i lordzie Argenvoście. Eliasz spotyka Petrę, swojego dalekiego kuzyna, otrzymuje propozycję rytuału braterstwa krwi, a drużyna awansuje na 4. poziom.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/X8EcyjKg6fQ",
+            "partNumber": 1
+          },
+          {
+            "url": "https://youtu.be/tMb2b6H-f9Q",
+            "partNumber": 2
+          }
+        ]
+      },
+      {
+        "sessionNumber": 6,
+        "title": "Wróżby i Przepowiednie",
+        "description": "Pchełka odwiedza czarny powóz Strahda, a Damira próbuje zajrzeć do jego umysłu i zostaje przez niego zaczarowana. Strahd rozmawia z Pchełką o Nocy Spadających Wstążek, Irinie i pozostałych członkach drużyny, po czym bohaterowie udają się do Madame Evy po informacje. Eva mówi o możliwości przywrócenia światła tam, gdzie zaległa ciemność, a dalsza część sesji prowadzi do przepowiedni i wskazówek dotyczących przyszłych działań drużyny.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/ios1uFWgYWg",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 7,
+        "title": "Noc Spadających Wstążek",
+        "description": "Podczas Nocy Spadających Wstążek Pchełka śni o Kalinie, Strahdzie i imieniu Tatiana, a Damira i Pchełka wybierają czerwone wstążki symbolizujące krew. Strahd pojawia się przy ognisku, Pchełka zostaje z nim sam na sam, a później znajduje w pozostawionym przez niego ubraniu magiczny pierścień z pszczołą. Następnego dnia Eliasz przechodzi z Petrą rytuał braterstwa krwi, dowiaduje się więcej o klątwie elfów i otrzymuje zadanie związane z rzadkim winem.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/pOnfPAs3ygs",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 8,
+        "title": "Droga Swołoczy",
+        "description": "Drużyna zaczyna dzień od rozmów o snach, pochodzeniu Luki, jego przeszłości i znaczeniu słów Strahda o „kolejnym razie”. Następnie dociera do wodospadu Tser, gdzie William i Anastrazja przekazują jej zlecenie Strahda dotyczące trzech kobiet z młyna, a nieumarły rycerz ze znakiem Srebrnego Smoka wskazuje Luce drogę związaną z poszukiwanym mieczem. W młynie bohaterowie odkrywają Bellę, Ophelię i Morgantę, ślady dziecięcych ofiar oraz Torbę Dusz, a Pchełka próbuje wezwać Strahda na pomoc.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/HPrrTLldMMU",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 9,
+        "title": "Droga do Starego Kościogrucha",
+        "description": "Eliasz postanawia zostać przy wiedźmach i spróbować z nimi targować, podczas gdy Pchełka, Damira i Irina uciekają, a Luka bada kamienny krąg. Luka spotyka Ceithlenna, który daje mu zaklęcie i wskazuje Dom Andrala jako miejsce, którego wiedźmy nie mogą łatwo dostrzec. Po kolejnym starciu z wiedźmami Ceithlenn przynosi zwłoki Eliasza, a drużyna rusza dalej w stronę Vallakii i znajduje miejsce, w którym może go pochować.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/9an498SmYeo",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 10,
+        "title": "Stary Kościogruch",
+        "description": "Po nocy grób Eliasza okazuje się rozkopany, a nieumarły Eliasz atakuje drużynę, po czym zostaje ponownie pokonany i pochowany. Bohaterowie docierają do Vallakii, poznają surowe zasady miasta, obowiązkowe festiwale, burmistrza Vargasa Vallakovicha i kapitana Izeka oraz lokalne karczmy i sklepy. Vargas prosi ich o pomoc w sprawie problemów z dostawami wina, a także próbuje skierować ich przeciw Fionie Wachter; w sklepie Blinskiego wychodzi na jaw obsesja Izeka na punkcie Iriny.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/9lFH1J9e7HA",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 11,
+        "title": "Wejście do Vallaki",
+        "description": "Drużyna rozmawia z Iriną o swoich podejrzeniach dotyczących Izeka, a następnie trafia do Błękitnej Wody, gdzie poznaje Pelę, Danikę i Urwina Martikovów. Równolegle bohaterowie próbują dowiedzieć się więcej o Izeku, jego demonicznej ręce i pochodzeniu Iriny, a Lucjan Petrovich ujawnia, że zaginęły kości Świętego Andrala. W śledztwie pojawia się także Rictavio, który opowiada o swojej przeszłości, a wzmianka o wiedźmach prowadzi do zaproszenia drużyny na prywatną rozmowę.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/fwUHnQrR7zM",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 12,
+        "title": "Wszystko dobrze w Vallaki",
+        "description": "Drużyna bada kryptę Świętego Andrala i odkrywa, że kości nie zostały skradzione z oczywistego miejsca, lecz z ukrytego grobu pod posadzką. Lucjan wskazuje możliwe tropy związane z rybakiem Bluto oraz Nikolajem i Carlem, synami Fiony Wachter, którzy nocami kręcą się po cmentarzu. W dalszej części sesji bohaterowie rozmawiają z Vasilim von Holzem, próbują ustalić więcej informacji o Vallakii i wspominają Rictavia, zanim ten zaprasza ich na kolejną prywatną rozmowę.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/zyJJcyiRe9s",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 13,
+        "title": "Kościół Świętego Andrala",
+        "description": "Rictavio zabiera drużynę do swojego pokoju i zabezpiecza rozmowę zaklęciem Sanktuarium, po czym ostrzega przed wiedźmami i wskazuje Kościół Świętego Andrala oraz opactwo Świętej Marcovii jako możliwe miejsca ochrony. Ujawnia też, że jego prawdziwe imię jest inne i że planuje zaatakować obóz Vistani, a drużyna dowiaduje się o jego powiązaniach z Rudolfem van Richtenem i płonącym mieczem. Rozmowa kończy się kolejnymi informacjami o Lady Wachter, miejscowej alchemiczce, naturze dusz mieszkańców Barovii i planach Rictavia.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/Ygqwwp1Ymog",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 14,
+        "title": "Rictavio, Von Holtz i Vallakovich",
+        "description": "Rictavio ujawnia drużynie część swojej historii i planów oraz ostrzega ją przed wiedźmami i innymi zagrożeniami Barovii. Rozmowy dotyczą także Vistani, świętych miejsc i możliwych sposobów ochrony przed nadnaturalnymi siłami. Wątek Vallakovicha, Von Holtza i Rictavia splata się z coraz bardziej napiętą sytuacją w Vallakii.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/7oluNmXLBGI",
+            "partNumber": 1
+          }
+        ]
+      }
+    ]
+  }
+}
