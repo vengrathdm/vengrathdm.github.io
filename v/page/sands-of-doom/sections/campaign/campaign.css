@@ -73,10 +73,11 @@ body.sands-of-doom-page::before {
   text-align: left;
 }
 .sands-navbar-mount {
-  /* Keep the shared navbar fixed to the viewport, not anchored to this hero. */
-  position: fixed;
-  inset: 0 0 auto;
-  z-index: 1100;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 .sands-hero .subpage-hero__copy h1 {
   margin: 18px 0 20px;
