@@ -1,7 +1,5 @@
 import {loadCharacterCatalog} from "/v/core/templates/CharacterGallery/CharacterRepository.js";
 import {createCharacterCard} from "/v/core/templates/CharacterCard/CharacterCard.js";
-import "/v/core/templates/CharacterCard/CharacterCard.css";
-import "/v/core/templates/CharacterCard/Achievements/Achievements.css";
 const $=id=>document.getElementById(id),arr=v=>Array.isArray(v)?v:(v?[v]:[]),norm=v=>String(v??"").trim().toLocaleLowerCase("pl-PL").normalize("NFD").replace(/[\u0300-\u036f]/g,""),esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 let characters=[],achievements=new Map();
 const filters={player:$("playerFilter"),campaign:$("campaignFilter"),module:$("moduleFilter"),class:$("classFilter"),race:$("raceFilter"),status:$("statusFilter"),achievement:$("achievementFilter")};
