@@ -1,0 +1,12 @@
+#campaign-chronicle .chronicle-record {
+  border-color: rgba(215, 179, 106, .35);
+  background: #100c09;
+}
+#campaign-chronicle .chronicle-record__number { color: #d7b36a; }
+#campaign-chronicle .chronicle-record__title { color: #ead8ac; }
+#campaign-chronicle .chronicle-record__description { border-color: rgba(215, 179, 106, .2); color: #c9b99a; }
+#campaign-chronicle .play-recording-button { border-color: rgba(215, 179, 106, .5); color: #d7b36a; }
+#campaign-chronicle .play-recording-button:hover { background: #d7b36a; color: #100c09; }
+@media (max-width: 760px) {
+  #campaign-chronicle .chronicle-record__header { grid-template-columns: 2.5rem minmax(0, 1fr); }
+}

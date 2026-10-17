@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sands of Doom — kampania D&D osadzona na Wielkim Pustkowiu. Drużyna, kronika i nagrania sesji.">
+  <meta name="theme-color" content="#080706">
+  <title>Sands of Doom — Vengrath</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./theme-fonts.css">
+  <link rel="stylesheet" href="/v/core/templates/HomeButton/HomeButton.css">
+  <link rel="stylesheet" href="/v/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageNavbar/SubpageNavbar.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageHero/SubpageHero.css">
+  <link rel="stylesheet" href="/v/core/templates/CharacterCard/CharacterCard.css">
+  <link rel="stylesheet" href="/v/core/templates/CharacterCard/Achievements/Achievements.css">
+  <link rel="stylesheet" href="/v/core/templates/CharacterGallery/CharacterGallery.css">
+  <link rel="stylesheet" href="/v/core/templates/Chronicle/Chronicle.css">
+  <link rel="stylesheet" href="/v/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css">
+  <link rel="stylesheet" href="/v/core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css">
+  <link rel="stylesheet" href="/v/core/templates/AudioPlayerButton/AudioPlayerButton.css">
+  <link rel="stylesheet" href="./sections/campaign/campaign.css">
+  <link rel="stylesheet" href="./sections/characters/characters.css">
+  <link rel="stylesheet" href="./sections/chronicle/chronicle.css">
+</head>
+<body class="sands-of-doom-page">
+  <div id="campaign-hero"></div>
+  <main class="sands-content">
+    <section class="sands-tab-panel" id="campaign" data-page-section="campaign">
+      <section class="sands-card sands-card-main">
+        <div class="sands-card-title"><span>01</span><strong>AKTA PUSTKOWIA</strong></div>
+        <div class="sands-card-body">
+          <div class="sands-intro-grid">
+            <article class="sands-paper">
+              <div class="sands-section-mark">O KAMPANII</div>
+              <h2 id="campaign-intro-title"></h2>
+              <div id="campaign-intro-copy"></div>
+            </article>
+            <aside class="sands-case" aria-label="Dossier kampanii">
+              <div class="sands-case-label">DOSSIER / PUSTKOWIE</div>
+              <div id="campaign-dossier"></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <section class="sands-party-portrait">
+        <div class="sands-party-copy">
+          <div class="sands-section-mark">WIELKIE PUSTKOWIE</div>
+          <h2 id="party-title"></h2>
+          <p id="party-description"></p>
+        </div>
+        <figure class="sands-party-image">
+          <img id="party-image" alt="Wielkie Pustkowie z kampanii Sands of Doom" loading="lazy">
+        </figure>
+      </section>
+      <section class="sands-manifesto">
+        <div class="sands-manifesto-symbol" aria-hidden="true">𓆣</div>
+        <div>
+          <div class="sands-section-mark">ZASADA PUSTKOWIA</div>
+          <p id="manifesto-quote"></p>
+          <span id="manifesto-tags"></span>
+        </div>
+      </section>
+    </section>
+
+    <section class="sands-tab-panel" id="characters" data-page-section="characters" hidden>
+      <section class="sands-section sands-character-intro">
+        <div class="sands-section-mark" id="characters-kicker"></div>
+        <h2 id="characters-title"></h2>
+        <p id="characters-description"></p>
+      </section>
+      <div id="active-character-gallery" aria-live="polite"></div>
+      <section class="sands-fallen">
+        <div class="sands-section-head">
+          <div>
+            <div class="sands-section-mark">CI, KTÓRZY ZOSTALI NA PUSTYNI</div>
+            <h2>Postacie poległe</h2>
+          </div>
+          <p>Nie wszyscy, którzy wkroczyli w Wielkie Pustkowie, wyszli z niego żywi. Busto i Nefira pozostają częścią historii drużyny.</p>
+        </div>
+        <div id="fallen-character-gallery" aria-live="polite"></div>
+      </section>
+    </section>
+
+    <section class="sands-tab-panel sands-chronicle-panel" id="chronicle" data-page-section="chronicle" hidden>
+      <section class="sands-section sands-chronicle-intro">
+        <div class="sands-section-mark" id="chronicle-kicker"></div>
+        <h2 id="chronicle-title"></h2>
+        <p id="chronicle-description"></p>
+      </section>
+      <section class="sands-section">
+        <div class="sands-section-head">
+          <div>
+            <div class="sands-section-mark">ZAPISKI KAMPANII</div>
+            <h2>Sesje</h2>
+          </div>
+          <p>Kronika wyprawy w formie nagrań z kolejnych sesji.</p>
+        </div>
+        <div id="campaign-chronicle"></div>
+      </section>
+    </section>
+  </main>
+  <footer class="sands-footer">
+    <span>VENGRATH · SANDS OF DOOM</span>
+    <a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a>
+  </footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

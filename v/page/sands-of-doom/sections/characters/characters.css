@@ -1,0 +1,33 @@
+#active-character-gallery .character-gallery,
+#fallen-character-gallery .character-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  gap: 1rem;
+}
+#active-character-gallery .character-card {
+  border-color: rgba(215, 179, 106, .35);
+  background: #120d09;
+}
+#active-character-gallery .character-card__portrait { background: linear-gradient(145deg, #2d1b11, #080706); }
+#active-character-gallery .character-card__portrait::after { border-color: #d7b36a80; }
+#active-character-gallery .character-card__label { color: #9b6b4d; }
+#active-character-gallery .character-card__player { color: #aaa08d; }
+#active-character-gallery .character-card__status { border-color: rgba(215, 179, 106, .45); color: #f1d38b; }
+#active-character-gallery .character-card h3 { color: #f1d38b; font-family: var(--theme-font-1); }
+#active-character-gallery .character-card__row { color: #d7c6a5; }
+#fallen-character-gallery { max-width: 640px; }
+#fallen-character-gallery .character-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#fallen-character-gallery .character-card {
+  border-color: rgba(145, 70, 42, .55);
+  background: linear-gradient(145deg, #19110d, #0d0a08);
+  filter: saturate(.72);
+}
+#fallen-character-gallery .character-card__portrait { aspect-ratio: 1 / 1; background: linear-gradient(180deg, #24150e, #080706); }
+#fallen-character-gallery .character-card__portrait img { filter: grayscale(.65); }
+#fallen-character-gallery .character-card__status { color: #c8a56b; }
+#fallen-character-gallery .character-card h3 { color: #c8a56b; font-family: var(--theme-font-1); }
+#fallen-character-gallery .character-card__player { color: #aaa08d; }
+@media (max-width: 700px) {
+  #fallen-character-gallery { max-width: none; }
+  #fallen-character-gallery .character-gallery { grid-template-columns: 1fr; }
+}
