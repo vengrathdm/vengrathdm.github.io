@@ -1,6 +1,7 @@
 import { createSubpageHero } from "/v/core/templates/SubpageHero/SubpageHero.js";
 import { mountSubpageNavbar } from "/v/core/templates/SubpageNavbar/SubpageNavbar.js";
 import { createChronicleRecord } from "/v/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.js";
+import { CharacterGallery } from "/v/core/templates/CharacterGallery/CharacterGallery.js";
 import { AudioPlayer } from "/v/core/templates/AudioPlayer/AudioPlayer.js";
 import { mountAudioPlayerButton } from "/v/core/templates/AudioPlayerButton/AudioPlayerButton.js";
 
@@ -43,6 +44,7 @@ async function initialize() {
   document.querySelector("#campaign-hero").replaceWith(hero);
   mountSubpageNavbar(navMount,{playlistUrl:manifest.playlistUrl,sections:[
     {text:"KAMPANIA",sectionLink:"campaign",color:theme.colors.accent2},
+    {text:"POSTACI",sectionLink:"characters",color:theme.colors.accent2},
     {text:"KRONIKA",sectionLink:"chronicle",color:theme.colors.accent2}
   ]});
   const campaign=content.campaign;
@@ -56,6 +58,11 @@ async function initialize() {
   document.querySelector("#party-title").textContent=campaign.partyTitle;
   document.querySelector("#party-description").textContent=campaign.partyDescription;
   document.querySelector("#party-image").src=campaign.partyImage;
+  document.querySelector("#characters-kicker").textContent=content.characters.kicker;
+  document.querySelector("#characters-title").textContent=content.characters.title;
+  document.querySelector("#characters-description").textContent=content.characters.description;
+  const characterGallery = new CharacterGallery(document.querySelector("#odyssey-character-gallery"), { characterIds: content.characters.characterIds });
+  await characterGallery.render();
   document.querySelector("#chronicle-kicker").textContent=content.chronicle.kicker;
   document.querySelector("#chronicle-title").textContent=content.chronicle.title;
   document.querySelector("#chronicle-description").textContent=content.chronicle.description;
