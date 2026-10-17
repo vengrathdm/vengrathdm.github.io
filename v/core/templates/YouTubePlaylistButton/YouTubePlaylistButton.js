@@ -1,2 +1,1 @@
-import "./YouTubePlaylistButton.css";
 export function createYouTubePlaylistButton(url){const link=document.createElement("a");link.className="youtube-playlist-button";link.href=url;link.target="_blank";link.rel="noopener noreferrer";link.draggable=false;link.setAttribute("aria-label","YouTube Playlista");const upper=document.createElement("span");upper.textContent="YouTube";const lower=document.createElement("span");lower.textContent="Playlista";link.append(upper,lower);return link;}
