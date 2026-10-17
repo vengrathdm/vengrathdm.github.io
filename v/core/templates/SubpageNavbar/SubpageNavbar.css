@@ -1,5 +1,5 @@
 .subpage-navbar {
-  position: fixed;
+  position: fixed !important;
   inset: 0 0 auto;
   z-index: 1100;
   display: flex;
@@ -7,9 +7,21 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 0.7rem clamp(0.75rem, 2vw, 1.5rem);
-  background: #0b0d0ef2;
-  border-bottom: 1px solid #292e31;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    backdrop-filter 180ms ease;
+}
+
+.subpage-navbar.is-scrolled {
+  background: rgb(11 13 14 / 94%);
+  border-bottom-color: #292e31;
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .subpage-navbar__left,
@@ -37,5 +49,11 @@
 
   .subpage-navbar__sections {
     justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .subpage-navbar {
+    transition: none;
   }
 }
