@@ -4,5 +4,47 @@
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/sala-chwaly.webp",
     "CardAdress": "/v/page/hof/"
+  },
+  {
+    "CardName": "Character Dossier",
+    "CardTags": "Narzędzie",
+    "CardGraphic": "/v/core/graphics/voronoi/charactermancer.webp",
+    "CardAdress": "/v/page/charactermancer/"
+  },
+  {
+    "CardName": "Książęta Heartwell",
+    "CardTags": "Aktywna Kampania",
+    "CardGraphic": "/v/core/graphics/voronoi/ksiazeta-heartwell.webp",
+    "CardAdress": "/v/page/ksiazeta-heartwell/"
+  },
+  {
+    "CardName": "Katalog Osiągnięć",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/sala-chwaly.webp",
+    "CardAdress": "/v/page/hof/achievements.html"
+  },
+  {
+    "CardName": "Legends of Barovia",
+    "CardTags": "Aktywna Kampania",
+    "CardGraphic": "/v/core/graphics/voronoi/legends-of-barovia.webp",
+    "CardAdress": "/v/page/legends-of-barovia/"
+  },
+  {
+    "CardName": "Odyssey of the Dragonlords",
+    "CardTags": "Zamknięta Kampania",
+    "CardGraphic": "/v/core/graphics/voronoi/odyssey-of-the-dragonlords.webp",
+    "CardAdress": "/v/page/odyssey-of-the-dragonlords/"
+  },
+  {
+    "CardName": "Sands of Doom",
+    "CardTags": "Aktywna Kampania",
+    "CardGraphic": "/v/core/graphics/voronoi/sands-of-doom.webp",
+    "CardAdress": "/v/page/sands-of-doom/"
+  },
+  {
+    "CardName": "Tomb of Annihilation",
+    "CardTags": "Zamknięta Kampania",
+    "CardGraphic": "/v/core/graphics/voronoi/tomb-of-annihilation.webp",
+    "CardAdress": "/v/page/tomb-of-annihilation/"
   }
 ]
