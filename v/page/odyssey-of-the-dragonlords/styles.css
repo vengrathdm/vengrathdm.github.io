@@ -186,3 +186,34 @@ body.odyssey-page::before{
 #odyssey-character-gallery .character-card h3{color:#fff8e5;font-family:var(--theme-font-1)}
 #odyssey-character-gallery .character-card__row{color:#f1ead9}
 #odyssey-character-gallery .character-card__achievement-count{color:#d0c6a9}
+
+/* Prevent full-bleed artwork and intrinsic grid items from widening the viewport. */
+html,
+body.odyssey-page {
+  max-width: 100%;
+  overflow-x: clip;
+}
+.odyssey-page *,
+.odyssey-page *::before,
+.odyssey-page *::after {
+  box-sizing: border-box;
+}
+.odyssey-content {
+  width: min(1220px, calc(100% - 48px));
+  max-width: 100%;
+  min-width: 0;
+}
+.odyssey-content::before {
+  max-width: 100vw;
+}
+#odyssey-character-gallery,
+#odyssey-character-gallery .character-gallery,
+#odyssey-character-gallery .character-card {
+  min-width: 0;
+  max-width: 100%;
+}
+@media (max-width: 620px) {
+  .odyssey-content {
+    width: calc(100% - 28px);
+  }
+}
