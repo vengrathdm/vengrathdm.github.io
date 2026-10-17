@@ -1,0 +1,1 @@
+Self-contained filtered, searchable, draggable, horizontally infinite Voronoi field. Card records live in data/cards.json; local artwork lives in /v/core/graphics/voronoi/. Existing Home behaviors are the compatibility target.
