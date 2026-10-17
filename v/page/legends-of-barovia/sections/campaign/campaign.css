@@ -249,3 +249,37 @@ body.legends-of-barovia-page::before {
   background:var(--theme-accent-2);
   color:#101114
 }
+
+/* Shared SubpageHero extensions used by this campaign. */
+.lob-navbar-mount {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 100;
+}
+
+.lob-hero-kicker {
+  margin: 0;
+  color: var(--theme-accent-2);
+  font: 400 0.85rem/1.4 var(--theme-font-1);
+  letter-spacing: 0.24em;
+  text-align: center;
+}
+
+.lob-hero-lead {
+  max-width: 68ch;
+  margin: 0;
+  color: var(--theme-text-2);
+  font: 1.15rem/1.7 var(--theme-font-3);
+  text-align: center;
+}
+
+@media (max-width: 620px) {
+  .lob-hero-kicker {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+  }
+
+  .lob-hero-lead {
+    font-size: 1rem;
+  }
+}
