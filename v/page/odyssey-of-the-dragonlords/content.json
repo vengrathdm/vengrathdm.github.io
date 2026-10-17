@@ -35,7 +35,7 @@
     "constellationsImage": "/p/odyssey-of-the-dragonlords/res/constellations.jpg"
   },
   "chronicle": {
-    "kicker": "KRONIKA WYPRAWY",
+    "kicker": "AKTA / 03",
     "title": "Od pierwszych znaków po bitwę o Mytros.",
     "description": "61 odcinków kampanii Odyssey of the Dragonlords. Wybierz sesję, aby otworzyć jej nagranie na YouTube.",
     "sessions": [
@@ -712,5 +712,18 @@
       }
     ],
     "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0jPybJxVsDrhvpVm2eMnOUy"
+  },
+  "characters": {
+    "kicker": "AKTA / 02",
+    "title": "Bohaterowie Thylei",
+    "description": "Karty postaci przypisanych do kampanii Odyssey of the Dragonlords. Statusy, klasy, rasy i osiągnięcia pochodzą ze wspólnego katalogu postaci.",
+    "characterIds": [
+      "char-0079",
+      "char-0080",
+      "char-0081",
+      "char-0082",
+      "char-0083",
+      "char-0084"
+    ]
   }
 }

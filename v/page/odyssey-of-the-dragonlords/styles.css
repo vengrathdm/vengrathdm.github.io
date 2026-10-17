@@ -173,3 +173,16 @@ body.odyssey-page::before{
 @media(max-width:760px){.odyssey-content::before{background-attachment:scroll}}
 
 .odyssey-navbar-mount{position:absolute;inset:0 0 auto;z-index:5;width:100%}.odyssey-hero h1{font-family:var(--theme-font-1);color:var(--theme-title-accent)}.odyssey-hero-title-accent{font-style:normal;color:#fff8e5}
+
+.odyssey-character-intro{margin-bottom:28px}
+.odyssey-character-intro p{max-width:72ch;margin:0;color:#888b87;font-size:15px}
+#odyssey-character-gallery .character-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,14rem),1fr));gap:1rem}
+#odyssey-character-gallery .character-card{border-color:rgba(224,189,98,.4);background:linear-gradient(145deg,#202b17,#10170b)}
+#odyssey-character-gallery .character-card__portrait{background:linear-gradient(145deg,#303b20,#080b05)}
+#odyssey-character-gallery .character-card__portrait::after{border-color:#e0bd6280}
+#odyssey-character-gallery .character-card__label{color:#d0c6a9}
+#odyssey-character-gallery .character-card__player{color:#d0c6a9}
+#odyssey-character-gallery .character-card__status{border-color:rgba(224,189,98,.45);color:#e0bd62}
+#odyssey-character-gallery .character-card h3{color:#fff8e5;font-family:var(--theme-font-1)}
+#odyssey-character-gallery .character-card__row{color:#f1ead9}
+#odyssey-character-gallery .character-card__achievement-count{color:#d0c6a9}
