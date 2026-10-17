@@ -1,0 +1,333 @@
+{
+  "campaign": {
+    "kicker": "D&D · ARCHIWUM KAMPANII",
+    "title": "TOMB OF ANNIHILATION",
+    "lead": "Wyprawa przez parną dżunglę Chult, tropienie źródła Klątwy Śmierci, utrata kolejnych twarzy drużyny i zejście do miejsca, z którego nie każdy miał wrócić.",
+    "introTitle": "Tomb of Annihilation",
+    "introParagraphs": [
+      "Wyprawa przez parną dżunglę Chult, tropienie źródła Klątwy Śmierci, utrata kolejnych twarzy drużyny i zejście do miejsca, z którego nie każdy miał wrócić.",
+      "Tomb of Annihilation to kampania o wyprawie, której pierwszy cel był większy niż jeden grobowiec: trzeba było odnaleźć źródło Klątwy Śmierci i przerwać jej działanie. W oficjalnym module droga prowadzi przez Port Nyanzaru, dzikie tereny Chult, Omu, Fane of the Night Serpent i wreszcie Tomb of the Nine Gods.",
+      "W naszej kampanii ta sama drużyna zmieniała się po drodze. Kolejne postaci przejmowały wyprawę, gdy poprzednie ginęły — aż do finału.",
+      "Klątwa uniemożliwiała przywracanie zmarłych do życia i dotykała tych, których wcześniej wskrzeszono. W naszej historii oznaczało to, że śmierć kolejnych bohaterów naprawdę zmieniała skład wyprawy.",
+      "Pięć etapów oficjalnej konstrukcji przygody — od szerokiej ekspedycji po klaustrofobiczną pułapkę w sercu grobowca."
+    ],
+    "dossier": [
+      [
+        "MATERIAŁY",
+        "9"
+      ],
+      [
+        "SESJE",
+        "41"
+      ],
+      [
+        "ŹRÓDŁO",
+        "ARCHIWUM"
+      ],
+      [
+        "STATUS",
+        "ARCHIWUM"
+      ]
+    ],
+    "partyTitle": "W Chult śmierć była częścią mapy.",
+    "partyDescription": "Klątwa uniemożliwiała przywracanie zmarłych do życia i dotykała tych, których wcześniej wskrzeszono. W naszej historii oznaczało to, że śmierć kolejnych bohaterów naprawdę zmieniała skład wyprawy.",
+    "manifesto": "W Chult każdy trop może prowadzić ku skarbowi, zgubie albo kolejnemu sekretowi.",
+    "manifestoTags": "KLĄTWA ŚMIERCI · CHULT · ODKRYWANIE · PRZETRWANIE",
+    "milestones": [
+      {
+        "kicker": "AKTA / 02",
+        "title": "W Chult śmierć była częścią mapy.",
+        "description": "Punkt wejścia do Chult, przygotowania do wyprawy i pierwsze tropy prowadzące w głąb półwyspu."
+      },
+      {
+        "kicker": "AKTA / 03",
+        "title": "Klątwa Śmierci",
+        "description": "Eksploracja dżungli, ruiny, niebezpieczeństwa i coraz wyraźniejszy trop prowadzący do zagubionego Omu."
+      },
+      {
+        "kicker": "AKTA / 04",
+        "title": "Droga przez Chult",
+        "description": "Zaginione miasto, dziewięć świątyń i zagadka, która otwiera drogę dalej."
+      },
+      {
+        "kicker": "AKTA / 05",
+        "title": "Port Nyanzaru",
+        "description": "Fane of the Night Serpent, Yuan-ti i droga do miejsca, gdzie śledztwo przestaje być wyprawą, a staje się zejściem."
+      },
+      {
+        "kicker": "AKTA / 06",
+        "title": "Dzika kraina",
+        "description": "Tomb of the Nine Gods: pułapki, duchy dziewięciu bóstw i finał przeciwko Acererakowi."
+      }
+    ]
+  },
+  "characters": {
+    "kicker": "AKTA / MATERIAŁY",
+    "title": "Postacie i grafiki",
+    "description": "Bohaterowie zapisani we wspólnym archiwum kampanii, wraz z ich statusem i danymi postaci.",
+    "characterIds": [
+      "char-0112",
+      "char-0113",
+      "char-0114",
+      "char-0128",
+      "char-0136",
+      "char-0137",
+      "char-0189",
+      "char-0195",
+      "char-0201"
+    ]
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Kronika wyprawy",
+    "description": "41 sesji — od Port Nyanzaru po finał w sercu grobowca. Tytuły zachowano z archiwum; linki do nagrań nie były zapisane na starej stronie.",
+    "sessions": [
+      {
+        "sessionNumber": 1,
+        "title": "Tomb of Annihilation S1 - Port Nyanzaru [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 2,
+        "title": "Tomb of Annihilation S2 - Na Rzece Soshenstar [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 3,
+        "title": "Tomb of Annihilation S3 - Brat Krokodyl [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 4,
+        "title": "Tomb of Annihilation S4 - Grungi Grungi! [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 5,
+        "title": "Tomb of Annihilation S5 - Podaj Mi Swoje Imię! [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 6,
+        "title": "Tomb of Annihilation S6 - Próba, Próba! [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 7,
+        "title": "Tomb of Annihilation S7 - Bangbang Nangnang [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 8,
+        "title": "Tomb of Annihilation S8 - Studnia Wizji [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 9,
+        "title": "Tomb of Annihilation S9 - Ognisty Palec [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 10,
+        "title": "Tomb of Annihilation S10 - Czerwony Mag [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 11,
+        "title": "Tomb of Annihilation S11 - Długa Droga [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 12,
+        "title": "Tomb of Annihilation S12 - Czerwony Terror z Koboldzich Gór [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 13,
+        "title": "Tomb of Annihilation S13 - Dziadek Zitembe w Opałach! [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 14,
+        "title": "Tomb of Annihilation S14 - Zdrada przewodniczki! [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 15,
+        "title": "Tomb of Annihilation S15 - Koboldy, Katakumby i Timber! [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 16,
+        "title": "Tomb of Annihilation S16 - Ucieczka z Kopalni Żmijowego Serca [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 17,
+        "title": "Tomb of Annihilation S17 - Hrakhammar [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 18,
+        "title": "Tomb of Annihilation S18 - Hrakhammar 2 [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 19,
+        "title": "Tomb of Annihilation S19 - Frogemoth i Lodowi Giganci [D&D5e]",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 20,
+        "title": "Tomb of Annihilation S20 - Droga do Omu",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 21,
+        "title": "Tomb of Annihilation S21 - Dzieci Ubtao",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 22,
+        "title": "Tomb of Annihilation S22 - Pierwsze Kroki w Zakazanym Mieście",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 23,
+        "title": "Tomb of Annihilation S23 - Śmierć w Omu i Pierwsze Świątynie",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 24,
+        "title": "Tomb of Annihilation S24 - Pogoń za Kostkami",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 25,
+        "title": "Tomb of Annihilation S25 - Dżin w Butelce",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 26,
+        "title": "Tomb of Annihilation S26 - Koboldy w Omu",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 27,
+        "title": "Tomb of Annihilation S27 - Zagadki Zakazanego Miasta",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 28,
+        "title": "Tomb of Annihilation S28 - Psoty Węży",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 29,
+        "title": "Tomb of Annihilation S29 - Babuszka Pu'Pu",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 30,
+        "title": "Tomb of Annihilation S30 - Do Świątyni Nocnego Węża",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 31,
+        "title": "Tomb of Annihilation S31 - W Świątyni Nocnego Węża",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 32,
+        "title": "Tomb of Annihilation S32 - Rytuał Yuan Ti",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 33,
+        "title": "Tomb of Annihilation S33 - Pościg Rasa Nsi",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 34,
+        "title": "Tomb of Annihilation S34 - Gnijące Korytarze",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 35,
+        "title": "Tomb of Annihilation S35 - Śmierć w Grobowcu",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 36,
+        "title": "Tomb of Annihilation S36 - Utopcie Swe Smutki",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 37,
+        "title": "Tomb of Annihilation S37 - W Labiryncie Omenów",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 38,
+        "title": "Tomb of Annihilation S38 - Grobowce i Tajemne Wzory",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 39,
+        "title": "Tomb of Annihilation S39 - 7 Lat Nieszczęścia",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 40,
+        "title": "Tomb of Annihilation S40 - Trzeci Klucz",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      },
+      {
+        "sessionNumber": 41,
+        "title": "Tomb of Annihilation S41 - Acererak Pokonany",
+        "description": "W archiwum nie zapisano opisu tej sesji.",
+        "recordings": []
+      }
+    ]
+  }
+}
