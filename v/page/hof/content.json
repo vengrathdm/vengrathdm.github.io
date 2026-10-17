@@ -1,7 +1,0 @@
-{
-  "description": "Archiwum postaci z kampanii oraz katalog osiągnięć.",
-  "views": [
-    "characters",
-    "achievements"
-  ]
-}

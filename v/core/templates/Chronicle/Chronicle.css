@@ -1,1 +1,0 @@
-.chronicle{display:grid;gap:0;width:100%;--chronicle-accent:#bca06a}.chronicle:empty::after{content:"Brak zapisanych sesji.";display:block;padding:1.5rem;color:#858b8e;border:1px dashed #41474a}
