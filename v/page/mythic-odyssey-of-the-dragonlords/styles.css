@@ -2,7 +2,7 @@
 
 /* Restore the campaign-specific sky-and-gold treatment below the hero. */
 .campaign-content{position:relative;isolation:isolate;width:100%;padding:64px max(20px,calc((100% - 1220px)/2));box-sizing:border-box}
-.campaign-content::before{content:"";position:absolute;z-index:-1;inset:0 calc((1220px - 100vw)/2);pointer-events:none;background:linear-gradient(180deg,rgba(5,17,29,.72),rgba(5,17,29,.9)),url("/p/mythic-odyssey-of-the-dragonlords/res/sky.jpg") center top/cover fixed no-repeat}
+.campaign-content::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;background:linear-gradient(180deg,rgba(5,17,29,.72),rgba(5,17,29,.9)),url("/p/mythic-odyssey-of-the-dragonlords/res/sky.jpg") center top/cover fixed no-repeat}
 .campaign-card,.campaign-section{border-color:#246084;background:linear-gradient(145deg,rgba(18,66,99,.96),rgba(7,24,39,.97));box-shadow:0 20px 65px #0008}
 .campaign-card-title{background:#071827;border-bottom-color:#246084}.campaign-card-title strong{color:#d9d3c7}.campaign-card-title span{color:#79d5f5}
 .campaign-paper{position:relative;background:linear-gradient(135deg,#164b6b,#0b2942);border-color:#246084;box-shadow:0 20px 70px #0008}.campaign-paper::after{content:"";position:absolute;top:0;right:35px;width:1px;height:100%;background:rgba(215,180,91,.22)}
