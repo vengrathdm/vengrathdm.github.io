@@ -33,7 +33,9 @@
     "partyImage": "/res/voronoi/webp/the-sunless-citadel.webp"
   },
   "characters": {
+    "kicker": "AKTA / POSTACI",
     "title": "Bohaterowie kampanii",
+    "description": "Karty korzystają ze wspólnego katalogu postaci Vengrath.",
     "characterIds": [
       "char-0168",
       "char-0192",
@@ -42,6 +44,8 @@
     ]
   },
   "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Nagrania kampanii",
     "description": "Oryginalna strona nie zawiera indywidualnych odnośników do nagrań.",
     "playlistUrl": "",
     "sessions": []
