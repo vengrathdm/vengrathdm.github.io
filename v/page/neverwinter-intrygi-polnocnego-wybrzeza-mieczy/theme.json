@@ -17,5 +17,6 @@
     "body": "\"Fira Sans Extra Condensed\", sans-serif",
     "serif": "\"Brygada 1918\", Georgia, serif"
   },
-  "heroImage": "/res/voronoi/webp/neverwinter.webp"
+  "heroImage": "/res/voronoi/webp/neverwinter.webp",
+  "audioColor": "#bca06a"
 }
