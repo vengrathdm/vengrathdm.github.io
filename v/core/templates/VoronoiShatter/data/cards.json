@@ -130,5 +130,11 @@
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/drakkenheim.webp",
     "CardAdress": "/v/page/drakkenheim/"
+  },
+  {
+    "CardName": "Dungeons of Drakkenheim",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/dungeons-of-drakkenheim.webp",
+    "CardAdress": "/v/page/dungeons-of-drakkenheim/"
   }
 ]

@@ -1,0 +1,20 @@
+{
+  "id": "dungeons-of-drakkenheim",
+  "title": "Dungeons of Drakkenheim",
+  "language": "pl",
+  "campaign": "Dungeons of Drakkenheim",
+  "module": "Dungeons of Drakkenheim",
+  "entry": "/v/page/dungeons-of-drakkenheim/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": null,
+  "audio": {
+    "src": "./res/audio/Drakkenheim.mp3",
+    "continuationKey": "dungeons-of-drakkenheim"
+  }
+}
