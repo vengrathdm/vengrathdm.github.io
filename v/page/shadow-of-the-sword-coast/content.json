@@ -1,0 +1,64 @@
+{
+  "campaign": {
+    "kicker": "D&D · ARCHIWUM KAMPANII",
+    "title": "Shadow of the Sword Coast",
+    "lead": "Poruszająca historia grupy kobiet, które chciały zbadać wybuch w domu pewnej czarodziejki — i zamiast zwykłego śledztwa znalazły się w samym środku opowieści o duszach, potężnym Diable i własnych, mrocznych przeszłościach.",
+    "introTitle": "Śledztwo, które odsłania więcej",
+    "introParagraphs": [
+      "Shadow of the Sword Coast to autorska kampania, której punktem wyjścia jest pozornie proste śledztwo: bohaterki próbują dowiedzieć się, co doprowadziło do tajemniczego wybuchu w domu pewnej czarodziejki.",
+      "Śledztwo szybko prowadzi je w znacznie bardziej osobistą historię, w której splatają się moc dusz, wpływy potężnego Diabła znanego jako Pan Psów oraz sekrety z przeszłości samych bohaterek.",
+      "To opowieść o grupie kobiet, które muszą mierzyć się nie tylko z zagrożeniem z zewnątrz, ale również z ciężarem własnych historii."
+    ],
+    "dossier": [
+      [
+        "POSTACI",
+        "5"
+      ],
+      [
+        "PLAYLISTA",
+        "1"
+      ],
+      [
+        "ŹRÓDŁO",
+        "ARCHIWUM"
+      ],
+      [
+        "STATUS",
+        "ARCHIWUM"
+      ],
+      [
+        "WĄTKI",
+        "DUSZE · ŚLEDZTWO · PAN PSÓW"
+      ]
+    ]
+  },
+  "characters": {
+    "kicker": "AKTA / MATERIAŁY",
+    "title": "Bohaterki kampanii",
+    "description": "Dane postaci, portrety i statusy z zachowanego wspólnego katalogu Vengrath.",
+    "characterIds": [
+      "char-0091",
+      "char-0092",
+      "char-0093",
+      "char-0094",
+      "char-0095"
+    ]
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Nagrania i playlista",
+    "description": "Na starej stronie zachował się odnośnik do playlisty. Szczegóły poszczególnych sesji pozostają do uzupełnienia.",
+    "sessions": [
+      {
+        "sessionNumber": "S001",
+        "title": "Do Uzupełnienia",
+        "description": "Dane sesji do uzupełnienia.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/playlist?list=PL-Lm83myvu0jQ56t7nIcnojvC_4H_Dcn9"
+          }
+        ]
+      }
+    ]
+  }
+}

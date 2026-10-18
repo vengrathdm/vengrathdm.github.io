@@ -106,5 +106,11 @@
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/sons-of-azalin.webp",
     "CardAdress": "/v/page/sons-of-azalin/"
+  },
+  {
+    "CardName": "Shadow of the Sword Coast",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/shadow-of-the-sword-coast.webp",
+    "CardAdress": "/v/page/shadow-of-the-sword-coast/"
   }
 ]
