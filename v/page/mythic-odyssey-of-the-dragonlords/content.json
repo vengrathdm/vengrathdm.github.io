@@ -4,65 +4,39 @@
     "heroFirstLine": "Mythic Odyssey of",
     "heroSecondLine": "the Dragonlords",
     "kicker": "D&D · ARCHIWUM KAMPANII",
-    "lead": "Mythic Odyssey of the Dragonlords",
-    "introTitle": "Mythic Odyssey of the Dragonlords",
-    "introParagraphs": "Thylea wzywa ponownie. Dawne przysięgi, boskie ambicje i dziedzictwo Dragonlordów splatają się w nową opowieść.",
+    "lead": "Thylea wzywa ponownie. Dawne przysięgi, boskie ambicje i dziedzictwo Dragonlordów splatają się w nową opowieść.",
+    "introTitle": "Stare mity. Nowi bohaterowie. Inny los.",
+    "introParagraphs": [
+      "Thylea to kraina, w której śmiertelni żyją w cieniu bogów i tytanów, a dawne konflikty wciąż kształtują teraźniejszość. Przysięga Pokoju pozostaje fundamentem kruchego porządku.",
+      "Mythic Odyssey of the Dragonlords rozwija mitologiczny świat Thylei jako odrębną wyprawę: nowe losy, nowe próby i kolejne spotkania z dziedzictwem.",
+      "To opowieść o boskich ambicjach, pradawnych tajemnicach i wyborach, które wystawiają na próbę odwagę i lojalność."
+    ],
     "dossier": [
       {
-        "label": "#",
-        "value": "0"
+        "label": "ŚWIAT",
+        "value": "THYLEA"
       },
       {
-        "label": "#",
-        "value": "0"
+        "label": "POSTACI",
+        "value": "6"
       },
       {
-        "label": "#",
-        "value": "1"
+        "label": "NAGRANIA",
+        "value": "32"
       },
       {
-        "label": "#",
-        "value": "1"
-      },
-      {
-        "label": "#",
-        "value": "7"
-      },
-      {
-        "label": "#",
-        "value": "d"
-      },
-      {
-        "label": "#",
-        "value": "f"
-      },
-      {
-        "label": "#",
-        "value": "e"
-      },
-      {
-        "label": "#",
-        "value": "b"
-      },
-      {
-        "label": "#",
-        "value": "2"
-      },
-      {
-        "label": "#",
-        "value": "d"
-      },
-      {
-        "label": "\"",
-        "value": "C"
+        "label": "STATUS",
+        "value": "NIEUKOŃCZONA"
       }
     ],
-    "partyTitle": "Mythic Odyssey of the Dragonlords",
-    "partyDescription": "Mythic Odyssey of the Dragonlords",
+    "partyTitle": "Stare mity. Nowi bohaterowie. Inny los.",
+    "partyDescription": "Thylea wzywa ponownie. Dawne przysięgi, boskie ambicje i dziedzictwo Dragonlordów splatają się w nową opowieść.",
     "partyImage": "/p/mythic-odyssey-of-the-dragonlords/res/hero-image.jpg"
   },
   "characters": {
+    "kicker": "AKTA / POSTACI",
     "title": "Bohaterowie kampanii",
+    "description": "Karty korzystają ze wspólnego katalogu postaci Vengrath.",
     "characterIds": [
       "char-0070",
       "char-0071",
@@ -73,6 +47,8 @@
     ]
   },
   "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Nagrania kampanii",
     "description": "Zachowane nagrania z oryginalnej strony: 32.",
     "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0hXpO3GDiZjMwAggmIWv0ZD",
     "sessions": [
