@@ -113,7 +113,7 @@ async function initialize() {
     sections: [
       { text: "KAMPANIA", sectionLink: "campaign", color: theme.colors.accent2 },
       { text: "POSTACIE", sectionLink: "characters", color: theme.colors.accent2 },
-      { text: "KRONIKA", sectionLink: "chronicle", color: theme.colors.accent2 }
+      { text: "Kronika", sectionLink: "chronicle", color: theme.colors.accent2 }
     ]
   });
 

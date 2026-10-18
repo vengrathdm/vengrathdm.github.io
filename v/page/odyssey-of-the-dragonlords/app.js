@@ -45,7 +45,7 @@ async function initialize() {
   mountSubpageNavbar(navMount,{playlistUrl:manifest.playlistUrl,sections:[
     {text:"KAMPANIA",sectionLink:"campaign",color:theme.colors.accent2},
     {text:"POSTACI",sectionLink:"characters",color:theme.colors.accent2},
-    {text:"KRONIKA",sectionLink:"chronicle",color:theme.colors.accent2}
+    {text: "Kronika",sectionLink:"chronicle",color:theme.colors.accent2}
   ]});
   const campaign=content.campaign;
   document.querySelector("#intro-kicker").textContent=campaign.introKicker;
