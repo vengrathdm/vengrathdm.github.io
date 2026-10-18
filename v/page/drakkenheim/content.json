@@ -1,0 +1,478 @@
+{
+  "campaign": {
+    "kicker": "D&D · ARCHIWUM KAMPANII",
+    "title": "Drakkenheim",
+    "lead": "Nowa wyprawa do miasta, którego ruiny są jednocześnie terenem, zagrożeniem i problemem, którego nie da się rozwiązać jednym wejściem.",
+    "introTitle": "Miasto po upadku",
+    "introParagraphs": [
+      "Drakkenheim to wyprawa w głąb miasta zniszczonego przez katastrofę, gdzie ruiny, skażenie i nieprzewidywalna mgła sprawiają, że każdy powrót ma swoją cenę.",
+      "Ekspedycja prowadzi przez zawalone dzielnice, miejsca kultu i terytoria frakcji, które walczą o wpływy oraz pozostałości dawnego miasta.",
+      "To archiwum zachowuje 42 nagrania tej odsłony kampanii — od pierwszej drogi do Drakkenheimu po rozstrzygnięcie losu miasta."
+    ],
+    "dossier": [
+      [
+        "TYTUŁ",
+        "DRAKKENHEIM"
+      ],
+      [
+        "MATERIAŁY",
+        "1"
+      ],
+      [
+        "NAGRANIA",
+        "42"
+      ],
+      [
+        "ŹRÓDŁO",
+        "ARCHIWUM"
+      ],
+      [
+        "STATUS",
+        "ARCHIWUM"
+      ],
+      [
+        "TON",
+        "DARK FANTASY · SKAŻENIE"
+      ]
+    ],
+    "partyTitle": "Miasto nadal działa.",
+    "partyDescription": "Ruiny miasta, zawalone przejścia i pierwsza warstwa ekspedycji.",
+    "partyImage": "/v/page/drakkenheim/res/graphics/hero-image.png"
+  },
+  "characters": {
+    "kicker": "AKTA / MATERIAŁY",
+    "title": "Materiały archiwalne",
+    "description": "Jedna zachowana ilustracja towarzysząca archiwum kampanii.",
+    "artifactLabel": "ILUSTRACJA",
+    "artifactTitle": "Drakkenheim",
+    "artifactDescription": "Ruiny miasta",
+    "image": "/v/page/drakkenheim/res/graphics/hero-image.png"
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Kronika sesji",
+    "description": "42 zachowane nagrania. Każdy wpis prowadzi bezpośrednio do sesji na YouTube.",
+    "sessions": [
+      {
+        "sessionNumber": "S001",
+        "title": "Droga do Drakkenheimu",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=aNRDDvJDevU"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S002",
+        "title": "Polowanie na Delerium",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=N210JcRKtSQ"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S003",
+        "title": "Droga do Szczurzego Gniazda i Ołtarz Morrigan",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=0Xbpgp3z8yQ"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S004",
+        "title": "Szczurze Gniazdo",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=itWatG9bKIo"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S005",
+        "title": "Kult Spadającego Płomienia",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=Xpu5Q0Zn39c"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S006",
+        "title": "Mumia Św. Brenny",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=QS-YmDClzAI"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S007",
+        "title": "Berło Św. Vitruvio",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=B6AdOWoZaGs"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S008",
+        "title": "Ludzie Królowej",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=H4mCrZlswI4"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S009",
+        "title": "Oscar Yoren i Wejście do Black Ivory",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=tDytr-STLHc"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S010",
+        "title": "Black Ivory",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=QISlo5rGaME"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S011",
+        "title": "Smutny Koniec Black Ivory",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=QVNsg5Fxsvo"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S012",
+        "title": "Ptak Entuzjazmu",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=Q4n5dE6XPPE"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S013",
+        "title": "Krasnoludy i Buckledown Row",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=9da2L8wdbcI"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S014",
+        "title": "Coś Się Traci, Coś Się Zyskuje",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=dGrNo0l8LPM"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S015",
+        "title": "Kat",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=ze1i_rEXrt8"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S016",
+        "title": "Z Przestworzy",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=dUCgcwQrKes"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S017",
+        "title": "Nowe Początki",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=FvNz3ymSJjI"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S018",
+        "title": "Nowi Znajomi",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=Y6mvwEJYA6A"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S019",
+        "title": "Kuźnia na Bliźnie",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=BOi7Y_95zN8"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S020",
+        "title": "Oscar Yoren",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=bZHwyU9EdEc"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S021",
+        "title": "Lukrecja Matthias",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=Q0SMMs1Cve0"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S022",
+        "title": "Kosmologiczna Wieża Zegarowa",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=8zfkk-o-X8M"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S023",
+        "title": "Droga do Banshee",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=PlRculhe3L0"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S024",
+        "title": "Żelazna Banshee",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=ttJ_UE6DPHM"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S025",
+        "title": "Ogrody Królowej",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=fy5JMXW2PfE"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S026",
+        "title": "Nowa Towarzyszka i Geoda Delerium",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=hPBdlJI-VWA"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S027",
+        "title": "Księżna",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=CCqUS_ytmzw"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S028",
+        "title": "28a Sesja 28a Cassy i Spadający Płomień",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=4OJ5ldS69jE"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S029",
+        "title": "28b Sesja 28b Powolne Leczenie",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=AANT_sRXIxw"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S030",
+        "title": "Dwa Tieflingi",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=6P_Qcmah7J4"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S031",
+        "title": "Leonore",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=uyJ23D6Pmyk"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S032",
+        "title": "Negocjacje",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=a_cOCkVhdF8"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S033",
+        "title": "Berło Vitruvio",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=EuEv8IRb-VY"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S034",
+        "title": "Bitwa o Katedrę",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=h6hzNVEK7P4"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S035",
+        "title": "Filakterium Vitruvio i Hełm Świętych Patronów",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=AMa0PGgdXoU"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S036",
+        "title": "Zaproszenie...",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=glTHZ2ZC9xU"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S037",
+        "title": "Zamek Drakken",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=mtn_9JG7ePk"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S038",
+        "title": "Skarbiec Rodu Von Kessel",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=OJDUm_eiXWM"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S039",
+        "title": "Demony Zamku Drakken",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=LeK1Qad72EM"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S040",
+        "title": "Diabli Korytarz",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=eVr1KzPDXN8"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S041",
+        "title": "Niefortunny Splot Wydarzeń",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=NPwupUYKNkc"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S042",
+        "title": "Los Drakkenheimu",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=CXxxfqenzf0"
+          }
+        ]
+      }
+    ]
+  }
+}
