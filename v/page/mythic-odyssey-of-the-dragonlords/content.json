@@ -1,0 +1,241 @@
+{
+  "campaign": {
+    "title": "MYTHIC ODYSSEY OF THE DRAGONLORDS",
+    "heroFirstLine": "Mythic Odyssey of",
+    "heroSecondLine": "the Dragonlords",
+    "kicker": "D&D · ARCHIWUM KAMPANII",
+    "lead": "Mythic Odyssey of the Dragonlords",
+    "introTitle": "Mythic Odyssey of the Dragonlords",
+    "introParagraphs": "Thylea wzywa ponownie. Dawne przysięgi, boskie ambicje i dziedzictwo Dragonlordów splatają się w nową opowieść.",
+    "dossier": [
+      {
+        "label": "#",
+        "value": "0"
+      },
+      {
+        "label": "#",
+        "value": "0"
+      },
+      {
+        "label": "#",
+        "value": "1"
+      },
+      {
+        "label": "#",
+        "value": "1"
+      },
+      {
+        "label": "#",
+        "value": "7"
+      },
+      {
+        "label": "#",
+        "value": "d"
+      },
+      {
+        "label": "#",
+        "value": "f"
+      },
+      {
+        "label": "#",
+        "value": "e"
+      },
+      {
+        "label": "#",
+        "value": "b"
+      },
+      {
+        "label": "#",
+        "value": "2"
+      },
+      {
+        "label": "#",
+        "value": "d"
+      },
+      {
+        "label": "\"",
+        "value": "C"
+      }
+    ],
+    "partyTitle": "Mythic Odyssey of the Dragonlords",
+    "partyDescription": "Mythic Odyssey of the Dragonlords",
+    "partyImage": "/p/mythic-odyssey-of-the-dragonlords/res/hero-image.jpg"
+  },
+  "characters": {
+    "title": "Bohaterowie kampanii",
+    "characterIds": [
+      "char-0070",
+      "char-0071",
+      "char-0072",
+      "char-0073",
+      "char-0184",
+      "char-0246"
+    ]
+  },
+  "chronicle": {
+    "description": "Zachowane nagrania z oryginalnej strony: 32.",
+    "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0hXpO3GDiZjMwAggmIWv0ZD",
+    "sessions": [
+      {
+        "sessionNumber": 1,
+        "title": "S1 — Wielki Dzik",
+        "url": "https://www.youtube.com/watch?v=mil_Xk0aZsk"
+      },
+      {
+        "sessionNumber": 2,
+        "title": "S2 — Świątynia Wyroczni",
+        "url": "https://www.youtube.com/watch?v=iOgkMy9X9Ew"
+      },
+      {
+        "sessionNumber": 3,
+        "title": "S3 — Król Pythor",
+        "url": "https://www.youtube.com/watch?v=Vv3qf20uxqg"
+      },
+      {
+        "sessionNumber": 4,
+        "title": "S4 — Zamszona Świątynia",
+        "url": "https://www.youtube.com/watch?v=O8KnItilagY"
+      },
+      {
+        "sessionNumber": 5,
+        "title": "S5 — Demetria",
+        "url": "https://www.youtube.com/watch?v=1sdGhWB96OY"
+      },
+      {
+        "sessionNumber": 6,
+        "title": "S6 — Skała Estora",
+        "url": "https://www.youtube.com/watch?v=DYDJBUtWIuw"
+      },
+      {
+        "sessionNumber": 7,
+        "title": "S7 — Na Ratunek Anorze",
+        "url": "https://www.youtube.com/watch?v=RmHPWxiOEqk"
+      },
+      {
+        "sessionNumber": 8,
+        "title": "S8 — Droga do Mithrylowych Kopalnii",
+        "url": "https://www.youtube.com/watch?v=OZIHByybQ-g"
+      },
+      {
+        "sessionNumber": 9,
+        "title": "S9 — Na Ratunek Centaurom",
+        "url": "https://www.youtube.com/watch?v=1zNEeK179io"
+      },
+      {
+        "sessionNumber": 10,
+        "title": "S10 — Na Ratunek Centaurom",
+        "url": "https://www.youtube.com/watch?v=eSW73QJqHAo"
+      },
+      {
+        "sessionNumber": 11,
+        "title": "S11 — Mithralowa Kuźnia",
+        "url": "https://www.youtube.com/watch?v=x2UKHi5u2fc"
+      },
+      {
+        "sessionNumber": 12,
+        "title": "S12 — Telamok",
+        "url": "https://www.youtube.com/watch?v=m6H2O12wPTg"
+      },
+      {
+        "sessionNumber": 13,
+        "title": "S13 — W Labiryncie Umarłych",
+        "url": "https://www.youtube.com/watch?v=ClzixJoVc8E"
+      },
+      {
+        "sessionNumber": 14,
+        "title": "S15 — Wezwani przez Króla",
+        "url": "https://www.youtube.com/watch?v=xsnrze1N2tU"
+      },
+      {
+        "sessionNumber": 15,
+        "title": "S16 — Droga po Ultrosa",
+        "url": "https://www.youtube.com/watch?v=EEJWDDFb9ZU"
+      },
+      {
+        "sessionNumber": 16,
+        "title": "S17P1 — Ultros",
+        "url": "https://www.youtube.com/watch?v=BQ_qzOt4kM8"
+      },
+      {
+        "sessionNumber": 17,
+        "title": "S17P2 — Ultros",
+        "url": "https://www.youtube.com/watch?v=0BzUkM-EihY"
+      },
+      {
+        "sessionNumber": 18,
+        "title": "S18 — Wielkie Debaty",
+        "url": "https://www.youtube.com/watch?v=8wHQ5zWB0DY"
+      },
+      {
+        "sessionNumber": 19,
+        "title": "S19 — Świątynia Lutherii",
+        "url": "https://www.youtube.com/watch?v=zp8WP6vShUs"
+      },
+      {
+        "sessionNumber": 20,
+        "title": "S20 — Pani Monet",
+        "url": "https://www.youtube.com/watch?v=G3cchXxTdas"
+      },
+      {
+        "sessionNumber": 21,
+        "title": "S21 — Embarkion",
+        "url": "https://www.youtube.com/watch?v=RWl6S4uqtEg"
+      },
+      {
+        "sessionNumber": 22,
+        "title": "S22 — Na Wyspę Skorpiona",
+        "url": "https://www.youtube.com/watch?v=phPdmJyMQ1o"
+      },
+      {
+        "sessionNumber": 23,
+        "title": "S23 — U Wiedźmy Lotosu",
+        "url": "https://www.youtube.com/watch?v=cp3MmBD7mho"
+      },
+      {
+        "sessionNumber": 24,
+        "title": "S24 — Wiedza o Thylei",
+        "url": "https://www.youtube.com/watch?v=L7GzsFkHmTg"
+      },
+      {
+        "sessionNumber": 25,
+        "title": "S25 — Złote Serce",
+        "url": "https://www.youtube.com/watch?v=O9zDgHAvpzU"
+      },
+      {
+        "sessionNumber": 26,
+        "title": "S26 — Złoty Kozioł",
+        "url": "https://www.youtube.com/watch?v=0jrfLjljyMc"
+      },
+      {
+        "sessionNumber": 27,
+        "title": "S27 — Sprawy Rodzinne i Chimera",
+        "url": "https://www.youtube.com/watch?v=1toZ9AcAXQo"
+      },
+      {
+        "sessionNumber": 28,
+        "title": "S28 — Wyspa Indygo",
+        "url": "https://www.youtube.com/watch?v=u2hub7EacIs"
+      },
+      {
+        "sessionNumber": 29,
+        "title": "S29 — Ventis",
+        "url": "https://www.youtube.com/watch?v=lQoMmEU3TvU"
+      },
+      {
+        "sessionNumber": 30,
+        "title": "S30 — Beach Episode",
+        "url": "https://www.youtube.com/watch?v=ohlhInIO1Dc"
+      },
+      {
+        "sessionNumber": 31,
+        "title": "S31 — Wyspa Yonder",
+        "url": "https://www.youtube.com/watch?v=03K_2mbCbkg"
+      },
+      {
+        "sessionNumber": 32,
+        "title": "S32 — Wyspa Yonder",
+        "url": "https://www.youtube.com/watch?v=i0byowx82i8"
+      }
+    ]
+  }
+}
