@@ -54,32 +54,68 @@
       {
         "sessionNumber": 1,
         "title": "Droga do Rimefall",
-        "url": "https://www.youtube.com/watch?v=gbKj3xFXKQw"
+        "description": "Nagranie sesji kampanii GHOUL HOUR.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=gbKj3xFXKQw",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
       },
       {
         "sessionNumber": 2,
         "title": "Droga do Rimefall",
-        "url": "https://www.youtube.com/watch?v=PsN2YraqiDw"
+        "description": "Nagranie sesji kampanii GHOUL HOUR.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=PsN2YraqiDw",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
       },
       {
         "sessionNumber": 3,
         "title": "Rimefall",
-        "url": "https://www.youtube.com/watch?v=ktGtO0CUhls"
+        "description": "Nagranie sesji kampanii GHOUL HOUR.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=ktGtO0CUhls",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
       },
       {
         "sessionNumber": 4,
         "title": "Kopalnie Emberdeep",
-        "url": "https://www.youtube.com/watch?v=avMcX01TdJM"
+        "description": "Nagranie sesji kampanii GHOUL HOUR.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=avMcX01TdJM",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
       },
       {
         "sessionNumber": 5,
         "title": "Opętany Syn",
-        "url": "https://www.youtube.com/watch?v=xbUbxrk9ino"
+        "description": "Nagranie sesji kampanii GHOUL HOUR.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=xbUbxrk9ino",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
       },
       {
         "sessionNumber": 6,
         "title": "Krąg Mumifikacji",
-        "url": "https://www.youtube.com/watch?v=CEkAJipghZw"
+        "description": "Nagranie sesji kampanii GHOUL HOUR.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=CEkAJipghZw",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
       }
     ]
   }
