@@ -4,65 +4,38 @@
     "heroFirstLine": "Ghoul",
     "heroSecondLine": "Hour",
     "kicker": "D&D · ARCHIWUM KAMPANII",
-    "lead": "Ghoul Hour",
-    "introTitle": "Ghoul Hour",
-    "introParagraphs": "Martwi nie zawsze pozostają w grobach. Z Rimefall po Kopalnie Emberdeep drużyna podąża śladem nekromancji, opętania i rytuałów.",
+    "lead": "Martwi nie zawsze pozostają w grobach. Z Rimefall po Kopalnie Emberdeep drużyna podąża śladem nekromancji, opętania i rytuałów.",
+    "introTitle": "Ślady, które nie powinny prowadzić dalej.",
+    "introParagraphs": [
+      "Ghoul Hour to mroczne fantasy o śladach nekromancji, nieumarłych i zagrożeniach kryjących się na północnych rubieżach. Wyprawa zaczyna się w Rimefall, gdzie sprawa zaginionych podatków prowadzi bohaterów ku niepokojącym odkryciom.",
+      "W kolejnych etapach drużyna mierzy się z drogą do Rimefall, kopalniami Emberdeep, opętaniem i Kręgiem Mumifikacji."
+    ],
     "dossier": [
       {
-        "label": "#",
-        "value": "0"
-      },
-      {
-        "label": "#",
-        "value": "1"
-      },
-      {
-        "label": "#",
-        "value": "1"
-      },
-      {
-        "label": "#",
-        "value": "2"
-      },
-      {
-        "label": "#",
-        "value": "e"
-      },
-      {
-        "label": "#",
-        "value": "c"
-      },
-      {
-        "label": "#",
-        "value": "f"
-      },
-      {
-        "label": "#",
-        "value": "d"
-      },
-      {
-        "label": "#",
-        "value": "b"
-      },
-      {
-        "label": "#",
-        "value": "4"
-      },
-      {
-        "label": "#",
+        "label": "POSTACI",
         "value": "6"
       },
       {
-        "label": "\"",
-        "value": "V"
+        "label": "NAGRANIA",
+        "value": "6"
+      },
+      {
+        "label": "LOKACJA",
+        "value": "RIMEFALL"
+      },
+      {
+        "label": "STATUS",
+        "value": "ARCHIWUM"
       }
     ],
-    "partyTitle": "Ghoul Hour",
-    "partyDescription": "Ghoul Hour",
+    "partyTitle": "Ślady, które nie powinny prowadzić dalej.",
+    "partyDescription": "Martwi nie zawsze pozostają w grobach. Z Rimefall po Kopalnie Emberdeep drużyna podąża śladem nekromancji, opętania i rytuałów.",
     "partyImage": "/res/voronoi/webp/ghoul-hour.webp"
   },
   "characters": {
+    "kicker": "AKTA / POSTACI",
     "title": "Bohaterowie kampanii",
+    "description": "Karty korzystają ze wspólnego katalogu postaci Vengrath.",
     "characterIds": [
       "char-0056",
       "char-0057",
@@ -73,6 +46,8 @@
     ]
   },
   "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Nagrania kampanii",
     "description": "Zachowane nagrania z oryginalnej strony: 6.",
     "playlistUrl": "",
     "sessions": [
