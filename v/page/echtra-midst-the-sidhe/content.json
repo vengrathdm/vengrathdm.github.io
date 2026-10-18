@@ -1,0 +1,335 @@
+{
+  "campaign": {
+    "kicker": "D&D · ARCHIWUM KAMPANII",
+    "title": "Echtra midst the Sidhe",
+    "lead": "Irgaelia to kraina celtyckich legend, dawnych bogów, druidów i Sidhe — istot z Drugiego Świata. Tutaj zmiana pór roku nie jest jedynie częścią natury. Jest częścią porządku świata.",
+    "introTitle": "Echtra midst the Sidhe",
+    "introParagraphs": [
+      "Irgaelia to kraina celtyckich legend, dawnych bogów, druidów i Sidhe — istot z Drugiego Świata. Tutaj zmiana pór roku nie jest jedynie częścią natury. Jest częścią porządku świata.",
+      "Echtra midst the Sidhe to autorska epicka kampania inspirowana przede wszystkim mitologią celtycką, szczególnie irlandzką, oraz tradycjami druidów, wojowników i fae. Jej świat — Irgaelia — ma własne plemiona, święte miejsca i bogów, a granica między światem śmiertelników a Drugim Światem jest cienka.",
+      "Historia rozpoczyna się podczas Samhain w Cúilfeorna. Święto, które powinno zamykać stary rok i otwierać nowy, zostaje naznaczone niepokojącymi omenami i pojawieniem się Dullahana. Od tego momentu bohaterowie zostają wciągnięci w historię, w której los Irgaelii splata się z rytmem pór roku i światem Sidhe.",
+      "Kampania jest projektowana jako przygoda na poziomach 1–14. Jej struktura przechodzi przez kolejne pory roku i coraz szersze konflikty, ale szczegóły dalszych wydarzeń pozostają tutaj celowo pominięte.",
+      "W Irgaelii osiem plemion związanych jest z własnymi patronackimi duchami, a ich kultury tworzą mozaikę całego regionu. W tle obecne są dawne bóstwa natury, wojny i mądrości oraz dwa dwory Sidhe, których wpływ sięga świata śmiertelników."
+    ],
+    "dossier": [
+      [
+        "POSTACI",
+        "6"
+      ],
+      [
+        "NAGRANIA",
+        "27"
+      ],
+      [
+        "ŹRÓDŁO",
+        "HOMEBREW"
+      ],
+      [
+        "STATUS",
+        "AKTYWNA"
+      ],
+      [
+        "TON",
+        "CELTYCKA FANTASY"
+      ]
+    ],
+    "partyTitle": "O kampanii",
+    "partyDescription": "Kampania jest projektowana jako przygoda na poziomach 1–14. Jej struktura przechodzi przez kolejne pory roku i coraz szersze konflikty, ale szczegóły dalszych wydarzeń pozostają tutaj celowo pominięte.",
+    "partyImage": "/v/core/portraits/char-0050.webp",
+    "manifesto": {
+      "kicker": "Z ARCHIWUM",
+      "text": "Treść kampanii zachowana ze starej strony.",
+      "signature": "ECHTRA MIDST THE SIDHE"
+    }
+  },
+  "characters": {
+    "kicker": "AKTA / POSTACIE",
+    "title": "Drużyna Irgaelii",
+    "description": "Sześć postaci zarejestrowanych w kampanii Echtra midst the Sidhe.",
+    "characterIds": [
+      "char-0050",
+      "char-0051",
+      "char-0052",
+      "char-0053",
+      "char-0054",
+      "char-0055"
+    ]
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Nagrania sesji",
+    "description": "27 zachowanych wpisów z oryginalnymi tytułami i linkami do nagrań.",
+    "sessions": [
+      {
+        "sessionNumber": "S001",
+        "title": "Echtra midst the Sidhe - S001 - Samhain",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=okmE5gE2KnA"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S002",
+        "title": "Echtra midst the Sidhe - S002 - Mroźny Korzeń",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=rZcPbs-0tGg"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S003",
+        "title": "Echtra midst the Sidhe - S003 - Fionach i Ryla",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=2jeYEBFzJEE"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S004",
+        "title": "Echtra midst the Sidhe - S004 - Ulice Comairle",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=HH_NOEVhntA"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S005",
+        "title": "Echtra midst the Sidhe - S005 - Dziad Mróz",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=KnvcbjMQmRA"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S006",
+        "title": "Echtra midst the Sidhe - S006 - Koszmary Deirdre",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=GOEm5CHliJg"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S007",
+        "title": "Echtra midst the Sidhe - S007 - Uczennica Aodhana",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=nZVu21dWy0c"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S008",
+        "title": "Echtra midst the Sidhe - S008 - Rada Druidów",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=ui7Jgjbqncw"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S009",
+        "title": "Echtra midst the Sidhe - S009 - Krypta Staruchy",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=ybfBmvMh-3k"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S010",
+        "title": "Echtra midst the Sidhe - S010 - Powrót do Comairle i Thornling",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=IO0-yKX3gr8"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S010B",
+        "title": "Echtra midst the Sidhe - S010B - Retrospekcja",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=aiUUrzUBEDo"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S011",
+        "title": "Echtra midst the Sidhe - S011 - Embarkion",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=SbLCUKJfMm0"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S011B",
+        "title": "Echtra midst the Sidhe - S011B - Retrospekcja2",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=Tuctb90gGi4"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S012",
+        "title": "Echtra midst the Sidhe - S012 - Morze Północne i Wieczna Zmarzlina",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=KcF5NnA_9Gg"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S013",
+        "title": "Echtra midst the Sidhe - S013 - Siostry Maeve",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=6ueHHqDyfuw"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S014",
+        "title": "Echtra midst the Sidhe - S014 - Intrygi",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=HxZ0hiGUAog"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S015",
+        "title": "Echtra midst the Sidhe - S015 - Matki",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=8t-9Ttb4rq4"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S016",
+        "title": "Echtra midst the Sidhe - S016 - Serce Zimy",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=oEBaiQZXAyQ"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S017",
+        "title": "Echtra midst the Sidhe - S017 - Żegluga do Domu",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=AWs6Jpzfbfo"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S018",
+        "title": "Echtra midst the Sidhe - S018 - Przełamanie Lodu",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=1zfOxERZunE"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S019",
+        "title": "Echtra midst the Sidhe - S019 - Inwazja Fomorian",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=yO3ngxTvs6E"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S020",
+        "title": "Echtra midst the Sidhe - S020 - Srebrna Ręka",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=u71sG67Z9CU"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S021",
+        "title": "Echtra midst the Sidhe - S021 - Lorobella",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=OCRzM-E_mks"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S022",
+        "title": "Echtra midst the Sidhe - S022 - Krucza Twierdza",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=YcPF2z_P6M8"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S023",
+        "title": "Echtra midst the Sidhe - S023 - Należyta Zapłata",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=r0v8ivOPYtg"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S024",
+        "title": "Echtra midst the Sidhe - S024 - Statek w Butelce",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=yUiCJbTuLFQ"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S025",
+        "title": "Echtra midst the Sidhe - S025 - Tropem Fomorian",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=nqK3XcMh_Os"
+          }
+        ]
+      }
+    ]
+  }
+}
