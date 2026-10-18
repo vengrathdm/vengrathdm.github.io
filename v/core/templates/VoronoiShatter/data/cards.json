@@ -52,5 +52,11 @@
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/rise-of-tiamat.webp",
     "CardAdress": "/v/page/rise-of-tiamat/"
+  },
+  {
+    "CardName": "Barber of Silverymoon",
+    "CardTags": "Zamknięta Kampania",
+    "CardGraphic": "/v/core/graphics/voronoi/barber-of-silverymoon.webp",
+    "CardAdress": "/v/page/barber-of-silverymoon/"
   }
 ]
