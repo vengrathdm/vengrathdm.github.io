@@ -1,0 +1,22 @@
+{
+  "colors": {
+    "base1": "#070b09",
+    "base2": "#0b120e",
+    "base3": "#111c15",
+    "base4": "#1b2a20",
+    "accent1": "#a8323e",
+    "accent2": "#a7b58a",
+    "text1": "#f2f0e7",
+    "text2": "#d8dfd2",
+    "text3": "#aebcae",
+    "line1": "#314438",
+    "line2": "#5d745e"
+  },
+  "typography": {
+    "heading": "\"Voltaire\", sans-serif",
+    "body": "\"Fira Sans Extra Condensed\", sans-serif",
+    "serif": "\"Brygada 1918\", Georgia, serif"
+  },
+  "heroImage": "/res/voronoi/webp/the-sunless-citadel.webp",
+  "audioColor": "#a7b58a"
+}

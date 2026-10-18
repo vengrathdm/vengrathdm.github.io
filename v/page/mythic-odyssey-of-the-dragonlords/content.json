@@ -1,0 +1,409 @@
+{
+  "campaign": {
+    "title": "MYTHIC ODYSSEY OF THE DRAGONLORDS",
+    "heroFirstLine": "Mythic Odyssey of",
+    "heroSecondLine": "the Dragonlords",
+    "kicker": "D&D · ARCHIWUM KAMPANII",
+    "lead": "Thylea wzywa ponownie. Dawne przysięgi, boskie ambicje i dziedzictwo Dragonlordów splatają się w nową opowieść.",
+    "introTitle": "Stare mity. Nowi bohaterowie. Inny los.",
+    "introParagraphs": [
+      "Thylea to kraina, w której śmiertelni żyją w cieniu bogów i tytanów, a dawne konflikty wciąż kształtują teraźniejszość. Przysięga Pokoju pozostaje fundamentem kruchego porządku.",
+      "Mythic Odyssey of the Dragonlords rozwija mitologiczny świat Thylei jako odrębną wyprawę: nowe losy, nowe próby i kolejne spotkania z dziedzictwem.",
+      "To opowieść o boskich ambicjach, pradawnych tajemnicach i wyborach, które wystawiają na próbę odwagę i lojalność."
+    ],
+    "dossier": [
+      {
+        "label": "ŚWIAT",
+        "value": "THYLEA"
+      },
+      {
+        "label": "POSTACI",
+        "value": "6"
+      },
+      {
+        "label": "NAGRANIA",
+        "value": "32"
+      },
+      {
+        "label": "STATUS",
+        "value": "NIEUKOŃCZONA"
+      }
+    ],
+    "partyTitle": "Stare mity. Nowi bohaterowie. Inny los.",
+    "partyDescription": "Thylea wzywa ponownie. Dawne przysięgi, boskie ambicje i dziedzictwo Dragonlordów splatają się w nową opowieść.",
+    "partyImage": "/p/mythic-odyssey-of-the-dragonlords/res/hero-image.jpg"
+  },
+  "characters": {
+    "kicker": "AKTA / POSTACI",
+    "title": "Bohaterowie kampanii",
+    "description": "Karty korzystają ze wspólnego katalogu postaci Vengrath.",
+    "characterIds": [
+      "char-0070",
+      "char-0071",
+      "char-0072",
+      "char-0073",
+      "char-0184",
+      "char-0246"
+    ]
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Nagrania kampanii",
+    "description": "Zachowane nagrania z oryginalnej strony: 32.",
+    "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0hXpO3GDiZjMwAggmIWv0ZD",
+    "sessions": [
+      {
+        "sessionNumber": 1,
+        "title": "S1 — Wielki Dzik",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=mil_Xk0aZsk",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 2,
+        "title": "S2 — Świątynia Wyroczni",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=iOgkMy9X9Ew",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 3,
+        "title": "S3 — Król Pythor",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=Vv3qf20uxqg",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 4,
+        "title": "S4 — Zamszona Świątynia",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=O8KnItilagY",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 5,
+        "title": "S5 — Demetria",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=1sdGhWB96OY",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 6,
+        "title": "S6 — Skała Estora",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=DYDJBUtWIuw",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 7,
+        "title": "S7 — Na Ratunek Anorze",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=RmHPWxiOEqk",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 8,
+        "title": "S8 — Droga do Mithrylowych Kopalnii",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=OZIHByybQ-g",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 9,
+        "title": "S9 — Na Ratunek Centaurom",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=1zNEeK179io",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 10,
+        "title": "S10 — Na Ratunek Centaurom",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=eSW73QJqHAo",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 11,
+        "title": "S11 — Mithralowa Kuźnia",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=x2UKHi5u2fc",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 12,
+        "title": "S12 — Telamok",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=m6H2O12wPTg",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 13,
+        "title": "S13 — W Labiryncie Umarłych",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=ClzixJoVc8E",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 14,
+        "title": "S15 — Wezwani przez Króla",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=xsnrze1N2tU",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 15,
+        "title": "S16 — Droga po Ultrosa",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=EEJWDDFb9ZU",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 16,
+        "title": "S17P1 — Ultros",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=BQ_qzOt4kM8",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 17,
+        "title": "S17P2 — Ultros",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=0BzUkM-EihY",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 18,
+        "title": "S18 — Wielkie Debaty",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=8wHQ5zWB0DY",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 19,
+        "title": "S19 — Świątynia Lutherii",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=zp8WP6vShUs",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 20,
+        "title": "S20 — Pani Monet",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=G3cchXxTdas",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 21,
+        "title": "S21 — Embarkion",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=RWl6S4uqtEg",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 22,
+        "title": "S22 — Na Wyspę Skorpiona",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=phPdmJyMQ1o",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 23,
+        "title": "S23 — U Wiedźmy Lotosu",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=cp3MmBD7mho",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 24,
+        "title": "S24 — Wiedza o Thylei",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=L7GzsFkHmTg",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 25,
+        "title": "S25 — Złote Serce",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=O9zDgHAvpzU",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 26,
+        "title": "S26 — Złoty Kozioł",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=0jrfLjljyMc",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 27,
+        "title": "S27 — Sprawy Rodzinne i Chimera",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=1toZ9AcAXQo",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 28,
+        "title": "S28 — Wyspa Indygo",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=u2hub7EacIs",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 29,
+        "title": "S29 — Ventis",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=lQoMmEU3TvU",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 30,
+        "title": "S30 — Beach Episode",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=ohlhInIO1Dc",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 31,
+        "title": "S31 — Wyspa Yonder",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=03K_2mbCbkg",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 32,
+        "title": "S32 — Wyspa Yonder",
+        "description": "Nagranie sesji kampanii MYTHIC ODYSSEY OF THE DRAGONLORDS.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=i0byowx82i8",
+            "label": "Oglądaj na YouTube"
+          }
+        ]
+      }
+    ]
+  }
+}

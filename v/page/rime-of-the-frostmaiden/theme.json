@@ -1,0 +1,22 @@
+{
+  "colors": {
+    "base1": "#071016",
+    "base2": "#0d1b24",
+    "base3": "#132733",
+    "base4": "#193746",
+    "accent1": "#72b8c9",
+    "accent2": "#d0c4a1",
+    "text1": "#e1eff2",
+    "text2": "#c8dce1",
+    "text3": "#a5c1c9",
+    "line1": "#294653",
+    "line2": "#72b8c9"
+  },
+  "typography": {
+    "heading": "\"Voltaire\", sans-serif",
+    "body": "\"Fira Sans Extra Condensed\", sans-serif",
+    "serif": "\"Brygada 1918\", Georgia, serif"
+  },
+  "heroImage": "/p/rime-of-the-frostmaiden/res/hero-image.jpg",
+  "audioColor": "#d0c4a1"
+}

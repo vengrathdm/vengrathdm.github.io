@@ -1,0 +1,16 @@
+{
+  "id": "ghoul-hour",
+  "title": "Ghoul Hour",
+  "language": "pl",
+  "campaign": "Ghoul Hour",
+  "module": "Ghoul Hour",
+  "entry": "/v/page/ghoul-hour/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": ""
+}

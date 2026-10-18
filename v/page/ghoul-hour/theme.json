@@ -1,0 +1,22 @@
+{
+  "colors": {
+    "base1": "#09090d",
+    "base2": "#121218",
+    "base3": "#1b1b23",
+    "base4": "#25252f",
+    "accent1": "#e4e44e",
+    "accent2": "#c78be8",
+    "text1": "#f0f0f3",
+    "text2": "#d8d8df",
+    "text3": "#b1b1bd",
+    "line1": "#42424e",
+    "line2": "#686875"
+  },
+  "typography": {
+    "heading": "\"Voltaire\", sans-serif",
+    "body": "\"Fira Sans Extra Condensed\", sans-serif",
+    "serif": "\"Brygada 1918\", Georgia, serif"
+  },
+  "heroImage": "/res/voronoi/webp/ghoul-hour.webp",
+  "audioColor": "#c78be8"
+}
