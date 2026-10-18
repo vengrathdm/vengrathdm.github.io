@@ -2,7 +2,7 @@
 
 /* Restore the frost-blue atmosphere and parchment-gold details below the hero. */
 .campaign-content{position:relative;isolation:isolate}
-.campaign-content::before{content:"";position:absolute;z-index:-1;inset:0 calc((1220px - 100vw)/2);pointer-events:none;background:radial-gradient(ellipse at 78% 8%,rgba(20,53,68,.88),transparent 36%),radial-gradient(ellipse at 8% 72%,rgba(24,42,64,.68),transparent 34%),linear-gradient(180deg,#071016,#0d1b24 62%,#071016)}
+.campaign-content::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;background:radial-gradient(ellipse at 78% 8%,rgba(20,53,68,.88),transparent 36%),radial-gradient(ellipse at 8% 72%,rgba(24,42,64,.68),transparent 34%),linear-gradient(180deg,#071016,#0d1b24 62%,#071016)}
 .campaign-card,.campaign-section{border-color:#294653;background:linear-gradient(145deg,#132733,#071016);box-shadow:0 22px 70px #0009}
 .campaign-card-title{background:#071016;border-bottom-color:#294653}.campaign-card-title span{color:#72b8c9}.campaign-paper{background:linear-gradient(135deg,#193746,#0d1b24);border-color:#294653;box-shadow:0 20px 70px #0007}.campaign-paper p{color:#c8dce1}
 .campaign-dossier{background:#0d1b24;border-color:#d0c4a1;box-shadow:8px 8px 0 #030b12}.campaign-dossier-label,.campaign-section-mark{color:#d0c4a1}.campaign-dossier-row{border-bottom-color:#294653}.campaign-dossier-row strong{color:#e1eff2}
