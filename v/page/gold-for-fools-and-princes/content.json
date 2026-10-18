@@ -1,0 +1,47 @@
+{
+  "campaign": {
+    "kicker": "D&D · ZŁOTO I INTRYGA",
+    "title": "Gold for Fools and Princes",
+    "lead": "Katastrofa w kopalni uruchamia wyścig dwóch książąt. Pod ziemią czekają uwięzieni pracownicy, nad nimi rośnie presja, a złoto przestaje być tylko nagrodą.",
+    "introTitle": "Gold for Fools and Princes",
+    "introParagraphs": [
+      "W przygodzie z antologii Journeys through the Radiant Citadel katastrofa w kopalni złota zmusza bohaterów do działania. Pod ziemią pozostają ludzie, a na powierzchni polityczna rywalizacja dwóch książąt szybko zamienia ratunek w sprawę prestiżu i władzy.",
+      "To historia o tym, jak łatwo ludzkie życie staje się elementem większej gry. Złoto błyszczy, lecz każda decyzja ma konsekwencje dla tych, którzy nie mogą sami wydostać się z ciemności.",
+      "Najważniejszym skarbem tej wyprawy nie musi być to, co da się wynieść z kopalni."
+    ],
+    "dossier": [
+      [
+        "STAWKA",
+        "UWIĘZIENI GÓRNICY"
+      ],
+      [
+        "KONFLIKT",
+        "DWÓCH KSIĄŻĄT"
+      ],
+      [
+        "MIEJSCE",
+        "KOPALNIA ZŁOTA"
+      ],
+      [
+        "TON",
+        "INTRYGA · RATUNEK"
+      ],
+      [
+        "STATUS",
+        "ARCHIWUM"
+      ]
+    ],
+    "partyTitle": "Złoto ma konsekwencje.",
+    "partyDescription": "Miasto, w którym polityka książąt i życie codzienne spotykają się na jednym tle.",
+    "partyImage": "/v/page/gold-for-fools-and-princes/res/graphics/Gold-for-Fools-and-Princes.jpg"
+  },
+  "characters": {
+    "kicker": "AKTA / POSTACIE",
+    "title": "Postacie wyprawy",
+    "description": "Postacie powiązane z Gold for Fools and Princes w katalogu Vengrath.",
+    "characterIds": [
+      "char-0192",
+      "char-0275"
+    ]
+  }
+}
