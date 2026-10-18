@@ -1,0 +1,23 @@
+{
+  "campaign": {
+    "title": "RISE OF TIAMAT",
+    "kicker": "D&D · KRONIKA PRZYGODY · TYRANNY OF DRAGONS",
+    "lead": "Kult Smoka gromadzi siły, by sprowadzić Tiamat do świata śmiertelników. Stawką nie jest już los jednej krainy, lecz przyszłość całego Faerûnu.",
+    "introTitle": "Powstrzymać powrót Tiamat.",
+    "introParagraphs": [
+      "Rise of Tiamat jest drugą częścią Tyranny of Dragons. Kampania skupia się na przygotowaniach do konfrontacji z Kultem Smoka i próbie powstrzymania kataklizmicznego powrotu Tiamat.",
+      "Kampania została przez nas ukończona. Poniżej znajdują się materiały z tej rozgrywki."
+    ],
+    "dossier": [
+      ["SAGA", "Tyranny of Dragons"],
+      ["ZAGROŻENIE", "Kult Smoka"],
+      ["STAWKA", "Powrót Tiamat"],
+      ["MATERIAŁY", "0"],
+      ["NAGRANIA", "1"],
+      ["STATUS", "KAMPANIA UKOŃCZONA"]
+    ]
+  },
+  "chronicle": {
+    "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0iz9O9RL33Hj8bInGf89VFD"
+  }
+}

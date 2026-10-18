@@ -63,9 +63,6 @@ async function initialize() {
   document.querySelector("#characters-description").textContent=content.characters.description;
   const characterGallery = new CharacterGallery(document.querySelector("#odyssey-character-gallery"), { characterIds: content.characters.characterIds });
   await characterGallery.render();
-  document.querySelector("#chronicle-kicker").textContent=content.chronicle.kicker;
-  document.querySelector("#chronicle-title").textContent=content.chronicle.title;
-  document.querySelector("#chronicle-description").textContent=content.chronicle.description;
   const playlist=document.querySelector("#chronicle-playlist");playlist.href=content.chronicle.playlistUrl;
   const chronicle=document.querySelector("#campaign-chronicle");
   chronicle.replaceChildren(...content.chronicle.sessions.map(session=>createChronicleRecord(session,{accent:theme.colors.accent2})));

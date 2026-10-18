@@ -65,9 +65,6 @@ async function renderCharacters(characters) {
 }
 
 function renderChronicle(chronicle, accent) {
-  document.querySelector("#chronicle-kicker").textContent = chronicle.kicker;
-  document.querySelector("#chronicle-title").textContent = chronicle.title;
-  document.querySelector("#chronicle-description").textContent = chronicle.description;
   const container = document.querySelector("#campaign-chronicle");
   container.replaceChildren(...chronicle.sessions.map(session => createChronicleRecord(session, { accent })));
 }
