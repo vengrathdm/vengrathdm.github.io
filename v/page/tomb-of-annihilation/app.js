@@ -118,7 +118,6 @@ async function initialize() {
   });
 
   renderCampaign(content.campaign);
-  document.body.classList.add("toa-ready");
   await renderCharacters(content.characters);
   renderChronicle(content.chronicle, theme.colors.accent2);
 }
