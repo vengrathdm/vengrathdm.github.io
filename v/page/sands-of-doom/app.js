@@ -41,7 +41,8 @@ async function initializeCampaignPage() {
 
   const navbarMount = document.createElement("div");
   navbarMount.className = "sands-navbar-mount";
-  hero.prepend(navbarMount);
+  // Mount the fixed navbar directly under body so the hero cannot establish a shifted containing block.
+  document.body.prepend(navbarMount);
 
   const kicker = document.createElement("p");
   kicker.className = "sands-hero-kicker";
