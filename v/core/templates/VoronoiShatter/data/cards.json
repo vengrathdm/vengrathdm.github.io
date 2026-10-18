@@ -154,5 +154,29 @@
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/dragon-of-icespire-peak.webp",
     "CardAdress": "/v/page/dragon-of-icespire-peak/"
+  },
+  {
+    "CardName": "Echtra midst the Sidhe",
+    "CardTags": "Aktywna Kampania",
+    "CardGraphic": "/v/core/graphics/voronoi/echtra-midst-the-sidhe.webp",
+    "CardAdress": "/v/page/echtra-midst-the-sidhe/"
+  },
+  {
+    "CardName": "Echtra - Zima Irgaeli",
+    "CardTags": "Zamknięta Kampania",
+    "CardGraphic": "/v/core/graphics/voronoi/echtra-zima-irgaeli.webp",
+    "CardAdress": "/v/page/echtra-zima-irgaeli/"
+  },
+  {
+    "CardName": "Ku Chwale Tyra!",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/KuChwaleTyra.webp",
+    "CardAdress": "/v/page/ku-chwale-tyra/"
+  },
+  {
+    "CardName": "Shards of the Past",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/shards-of-the-past.webp",
+    "CardAdress": "/v/page/shards-of-the-past/"
   }
 ]
