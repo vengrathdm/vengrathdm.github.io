@@ -1,0 +1,111 @@
+{
+  "campaign": {
+    "title": "GHOUL HOUR",
+    "heroFirstLine": "Ghoul",
+    "heroSecondLine": "Hour",
+    "kicker": "D&D · ARCHIWUM KAMPANII",
+    "lead": "Ghoul Hour",
+    "introTitle": "Ghoul Hour",
+    "introParagraphs": "Martwi nie zawsze pozostają w grobach. Z Rimefall po Kopalnie Emberdeep drużyna podąża śladem nekromancji, opętania i rytuałów.",
+    "dossier": [
+      {
+        "label": "#",
+        "value": "0"
+      },
+      {
+        "label": "#",
+        "value": "1"
+      },
+      {
+        "label": "#",
+        "value": "1"
+      },
+      {
+        "label": "#",
+        "value": "2"
+      },
+      {
+        "label": "#",
+        "value": "e"
+      },
+      {
+        "label": "#",
+        "value": "c"
+      },
+      {
+        "label": "#",
+        "value": "f"
+      },
+      {
+        "label": "#",
+        "value": "d"
+      },
+      {
+        "label": "#",
+        "value": "b"
+      },
+      {
+        "label": "#",
+        "value": "4"
+      },
+      {
+        "label": "#",
+        "value": "6"
+      },
+      {
+        "label": "\"",
+        "value": "V"
+      }
+    ],
+    "partyTitle": "Ghoul Hour",
+    "partyDescription": "Ghoul Hour",
+    "partyImage": "/res/voronoi/webp/ghoul-hour.webp"
+  },
+  "characters": {
+    "title": "Bohaterowie kampanii",
+    "characterIds": [
+      "char-0056",
+      "char-0057",
+      "char-0058",
+      "char-0059",
+      "char-0060",
+      "char-0204"
+    ]
+  },
+  "chronicle": {
+    "description": "Zachowane nagrania z oryginalnej strony: 6.",
+    "playlistUrl": "",
+    "sessions": [
+      {
+        "sessionNumber": 1,
+        "title": "Droga do Rimefall",
+        "url": "https://www.youtube.com/watch?v=gbKj3xFXKQw"
+      },
+      {
+        "sessionNumber": 2,
+        "title": "Droga do Rimefall",
+        "url": "https://www.youtube.com/watch?v=PsN2YraqiDw"
+      },
+      {
+        "sessionNumber": 3,
+        "title": "Rimefall",
+        "url": "https://www.youtube.com/watch?v=ktGtO0CUhls"
+      },
+      {
+        "sessionNumber": 4,
+        "title": "Kopalnie Emberdeep",
+        "url": "https://www.youtube.com/watch?v=avMcX01TdJM"
+      },
+      {
+        "sessionNumber": 5,
+        "title": "Opętany Syn",
+        "url": "https://www.youtube.com/watch?v=xbUbxrk9ino"
+      },
+      {
+        "sessionNumber": 6,
+        "title": "Krąg Mumifikacji",
+        "url": "https://www.youtube.com/watch?v=CEkAJipghZw"
+      }
+    ]
+  }
+}
