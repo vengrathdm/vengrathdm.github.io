@@ -1,0 +1,341 @@
+{
+  "campaign": {
+    "title": "MENACES OF IRENSBERG",
+    "heroFirstLine": "Menaces of",
+    "heroSecondLine": "Irensberg",
+    "kicker": "D&D · ARCHIWUM KAMPANII",
+    "lead": "Baronia na granicy rozkładu. Las, który nie powinien rosnąć tak blisko. Cztery postacie w samym środku historii, która zostawia za sobą zarówno wrogów, jak i tych, którzy nie są już częścią drużyny.",
+    "description": "Baronia na granicy rozkładu. Las, który nie powinien rosnąć tak blisko. Cztery postacie w samym środku historii, która zostawia za sobą zarówno wrogów, jak i tych, którzy nie są już częścią drużyny.",
+    "mark": "DARK FANTASY · GLOOMFOREST",
+    "introTitle": "Dolina pod cieniem lasu",
+    "introParagraphs": [
+      "Baronia Irensberg leży w dolinie ściśniętej między Górami Srebrnych Zębów a Gloomforest — wilgotnym, gęstym lasem, którego serce skrywa mroczne bagno.",
+      "Losy baronii splatają się z walką o władzę, śmiercią Barona Klada i tajemnicą jednoskrzydłego Wormira. Cztery postacie przemierzają krainę, w której polityczne napięcia są równie niebezpieczne jak potwory czające się poza drogami.",
+      "Archiwum zachowuje osiem portretów oraz dwadzieścia pięć nagrań sesji."
+    ],
+    "dossier": [
+      {
+        "label": "POSTACI",
+        "value": "8"
+      },
+      {
+        "label": "NAGRANIA",
+        "value": "25"
+      },
+      {
+        "label": "ŹRÓDŁO",
+        "value": "HOMEBREW"
+      },
+      {
+        "label": "STATUS",
+        "value": "ARCHIWUM",
+        "status": true
+      },
+      {
+        "label": "TON",
+        "value": "DARK FANTASY · FOLK HORROR"
+      }
+    ],
+    "partyKicker": "ARCHIWUM",
+    "partyTitle": "Baronia Irensberg",
+    "partyDescription": "Historia baronii splata się z losem Barona Klada, Baronowej Cynthii, ser Malefa Gelta oraz jednoskrzydłego Wormira. W centrum tych wydarzeń znajduje się drużyna, która przemierza dolinę i konfrontuje się z jej zagrożeniami.",
+    "sealMain": "IRENSBERG"
+  },
+  "characters": {
+    "kicker": "AKTA / MATERIAŁY",
+    "title": "Galeria postaci",
+    "description": "Osiem portretów zachowanych w archiwum kampanii.",
+    "characterIds": [
+      "char-0006",
+      "char-0012",
+      "char-0013",
+      "char-0014",
+      "char-0007",
+      "char-0008",
+      "char-0011",
+      "char-0009"
+    ]
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Kronika sesji",
+    "description": "Dwadzieścia pięć zachowanych nagrań. Rozwiń wpis, aby przejść do nagrania na YouTube.",
+    "sessions": [
+      {
+        "sessionNumber": 1,
+        "title": "Wejście do Doliny",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=0gc8bb_xnUs",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 2,
+        "title": "Małonory",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=jba5xL9i4hM",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 3,
+        "title": "Droga do Irensbergu",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=yTkKhO5vEX0",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 4,
+        "title": "Irensberg i Szlak Biedaków",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=_OxXj_DpS5o",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 5,
+        "title": "Srebrnoujście",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=ONb9qZ9zopw",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 6,
+        "title": "Droga Powrotna",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=lXhwoAavfLk",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 7,
+        "title": "Drazka",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=EMH-BgtnPFg",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 8,
+        "title": "Smoczykres",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=ZoA8s-MzhXc",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 9,
+        "title": "Sharr",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=ra-drf8ruck",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 10,
+        "title": "Ochrona Drwali",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=v6vvddix2rk",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 11,
+        "title": "Koboldy w Ogniu",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=ToAyzXQghE8",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 12,
+        "title": "Geltrum",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=4SbNGjg2cvY",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 13,
+        "title": "W Katakumbach Geltrum",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=cNJ8ZHsqbi4",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 14,
+        "title": "Nieumarły Solny Rekin Lądowy",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=3brk3jf6Lq0",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 15,
+        "title": "Przywrócony Towarzysz",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=rRXt-bPzTdY",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 16,
+        "title": "Wampiraci",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=cohaUJhnrMw",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 17,
+        "title": "Grobowiec Licza",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=vsr4EBvkBYk",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 18,
+        "title": "Posterunki Koboldów",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=hI1orHpBPaI",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 19,
+        "title": "Xil'zharr",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=E64u1B75vAU",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 20,
+        "title": "Przeklęte Wody",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=IQc7RdP-TAw",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 21,
+        "title": "Geltrum",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=FnVXs-mNoBI",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 22,
+        "title": "Sprawy Publiczne, Sprawy Prywatne",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=WfpG7i71bSc",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 23,
+        "title": "Martwe Zło",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=zpVvD9cMdxI",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 24,
+        "title": "Martwe Zło",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=QC2HbtZLPn4",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 25,
+        "title": "Powrót do Geltrum",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=LP-w_1NXXPY",
+            "partNumber": 1
+          }
+        ]
+      }
+    ]
+  }
+}

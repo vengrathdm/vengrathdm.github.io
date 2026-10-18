@@ -1,0 +1,225 @@
+{
+  "campaign": {
+    "title": "TURN OF FORTUNE'S WHEEL",
+    "heroFirstLine": "Turn of",
+    "heroSecondLine": "Fortune's Wheel",
+    "kicker": "D&D · ARCHIWUM KAMPANII",
+    "lead": "Archiwum kampanii Vengrath.",
+    "description": "Turn of Fortune's Wheel — archiwum ukończonej kampanii Dungeons & Dragons w wieloświecie Planescape.",
+    "mark": "O KAMPANII",
+    "introTitle": "Turn of Fortune's Wheel",
+    "introParagraphs": [
+      "Wieloświat staje się stołem do gry. Sigil rozdaje karty, Rubieże obracają koło, a stawką jest odzyskanie własnego miejsca w rzeczywistości.",
+      "Kampania osadzona w wieloświecie Planescape. Rozpoczyna się w Kostnicy w Sigil, a dalsza droga prowadzi przez kolejne bramy i niezwykłe miejsca Rubieży.",
+      "To zapis naszej ukończonej rozgrywki — od pierwszej sesji aż po finał i odkrycie sekretów Koła Fortuny.",
+      "Pełny przebieg kampanii w kolejności rozegranych spotkań."
+    ],
+    "dossier": [
+      {
+        "label": "POSTACI",
+        "value": "5"
+      },
+      {
+        "label": "NAGRANIA",
+        "value": "15"
+      },
+      {
+        "label": "ŹRÓDŁO",
+        "value": "ARCHIWUM"
+      },
+      {
+        "label": "STATUS",
+        "value": "UKOŃCZONA",
+        "status": true
+      }
+    ],
+    "partyKicker": "ARCHIWUM",
+    "partyTitle": "Kampania",
+    "partyDescription": "Treść kampanii zachowana ze starej strony.",
+    "sealMain": "PLANESCAPE"
+  },
+  "characters": {
+    "kicker": "AKTA / MATERIAŁY",
+    "title": "Postaci",
+    "description": "Pięć portretów zachowanych w archiwum kampanii.",
+    "characterIds": [
+      "char-0029",
+      "char-0030",
+      "char-0031",
+      "char-0032",
+      "char-0033"
+    ]
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Kronika sesji",
+    "description": "Piętnaście zachowanych nagrań. Rozwiń wpis, aby przejść do nagrania na YouTube.",
+    "sessions": [
+      {
+        "sessionNumber": 1,
+        "title": "Turn of Fortune's Wheel #01 - Kostnica Sigil",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/4UZaVlSIUgg",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 2,
+        "title": "Turn of Fortune's Wheel #02 - Przestępcy w Multiversum!",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/U3yVEX3Kgmc",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 3,
+        "title": "Turn of Fortune's Wheel #03 - Koło Fortuny",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/cAk4r-N8O8A",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 4,
+        "title": "Turn of Fortune's Wheel #04 - Automata",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/xN49OHjX-aE",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 5,
+        "title": "Turn of Fortune's Wheel #05 - Excelsior",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/h5yorYA2IAI",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 6,
+        "title": "Turn of Fortune's Wheel #06 - Faunel",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/hD23gLYdGDM",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 7,
+        "title": "Turn of Fortune's Wheel #07 - Glorium",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/c8nq7dUpQyg",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 8,
+        "title": "Turn of Fortune's Wheel #07 - Bramy Carceri",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/ym6GjzBEErc",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 9,
+        "title": "Turn of Fortune's Wheel #07 - Ucieczka z Curst",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/iEAVnxYZ-_U",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 10,
+        "title": "Turn of Fortune's Wheel #09 - Mauzoleum",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/0G0LsJ0Jsi0",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 11,
+        "title": "Turn of Fortune's Wheel #10 - MauzoleumP2",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/IQB2CykaqMg",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 12,
+        "title": "Turn of Fortune's Wheel #11 - Rigus",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/16so9UNzI_k",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 13,
+        "title": "Turn of Fortune's Wheel #12 - Platynowy Szton",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/t_Z9JUhG9Ds",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 14,
+        "title": "Turn of Fortune's Wheel #13 - Sekrety Koła Fortuny",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/Wfb4Btr84lY",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 15,
+        "title": "Turn of Fortune's Wheel #14 - Finał",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/vUzYp6rjJU0",
+            "partNumber": 1
+          }
+        ]
+      }
+    ]
+  }
+}

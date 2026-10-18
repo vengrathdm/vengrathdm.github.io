@@ -1,0 +1,17 @@
+{
+  "id": "menaces-of-irensberg",
+  "title": "Menaces of Irensberg",
+  "language": "pl",
+  "entry": "/v/page/menaces-of-irensberg/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "audio": {
+    "src": "/res/audio/menaces-of-irensberg/Irensberg.mp3",
+    "storageKey": "menacesOfIrensbergTheme"
+  }
+}

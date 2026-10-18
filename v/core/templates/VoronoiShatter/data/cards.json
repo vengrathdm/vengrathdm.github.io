@@ -58,5 +58,17 @@
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/barber-of-silverymoon.webp",
     "CardAdress": "/v/page/barber-of-silverymoon/"
+  },
+  {
+    "CardName": "Menaces of Irensberg",
+    "CardTags": "Zamknięta Kampania",
+    "CardGraphic": "/v/core/graphics/voronoi/mences-of-irensberg.webp",
+    "CardAdress": "/v/page/menaces-of-irensberg/"
+  },
+  {
+    "CardName": "Turn of Fortune's Wheel",
+    "CardTags": "Zamknięta Kampania",
+    "CardGraphic": "/v/core/graphics/voronoi/turn-of-fortunes-wheel.webp",
+    "CardAdress": "/v/page/turn-of-fortunes-wheel/"
   }
 ]
