@@ -5,7 +5,7 @@
     "heroSecondLine": "Intrygi Północnego Wybrzeża Mieczy",
     "kicker": "D&D · ARCHIWUM KAMPANII",
     "lead": "Dagult Neverember pragnie korony. Luskan i Mirabar obserwują każdy ruch. W mieście, gdzie polityka spotyka się z ulicą, każde śledztwo może stać się częścią większego konfliktu.",
-    "introTitle": "Noce Neverwinter — Intrygi Północnego Wybrzeża Mieczy",
+    "introTitle": "Miasto, w którym każdy ma własną agendę.",
     "introParagraphs": [
       "Ta kampania została pomyślana jako wielowarstwowa przygoda: śledztwa, podróże, polityczne układy, eksploracja ruin i badanie grobowców.",
       "Start następował w Neverwinter, a ogólna trajektoria prowadziła przez Północne Wybrzeże Mieczy.",
@@ -29,12 +29,14 @@
         "value": "ARCHIWUM"
       }
     ],
-    "partyTitle": "Noce Neverwinter — Intrygi Północnego Wybrzeża Mieczy",
+    "partyTitle": "Miasto, w którym każdy ma własną agendę.",
     "partyDescription": "Dagult Neverember pragnie korony. Luskan i Mirabar obserwują każdy ruch. W mieście, gdzie polityka spotyka się z ulicą, każde śledztwo może stać się częścią większego konfliktu.",
     "partyImage": "/res/voronoi/webp/neverwinter.webp"
   },
   "characters": {
+    "kicker": "AKTA / POSTACI",
     "title": "Bohaterowie kampanii",
+    "description": "Karty korzystają ze wspólnego katalogu postaci Vengrath.",
     "characterIds": [
       "char-0074",
       "char-0075",
@@ -45,6 +47,8 @@
     ]
   },
   "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Nagrania kampanii",
     "description": "Oryginalna strona zachowuje playlistę, ale nie zawiera indywidualnych odnośników do sesji.",
     "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0gYTerajwJlxi2yqRupuj9c",
     "sessions": []
