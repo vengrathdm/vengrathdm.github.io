@@ -2,7 +2,7 @@
 
 /* Restore Ghoul Hour's spectral yellow, bruise-purple and graveyard atmosphere. */
 .campaign-content{position:relative;isolation:isolate}
-.campaign-content::before{content:"";position:absolute;z-index:-1;inset:0 calc((1220px - 100vw)/2);pointer-events:none;background:radial-gradient(ellipse at 75% 12%,rgba(75,49,87,.72),transparent 36%),radial-gradient(ellipse at 10% 70%,rgba(87,87,42,.34),transparent 32%),linear-gradient(180deg,#09090d,#0d0f12 70%,#09090d)}
+.campaign-content::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;background:radial-gradient(ellipse at 75% 12%,rgba(75,49,87,.72),transparent 36%),radial-gradient(ellipse at 10% 70%,rgba(87,87,42,.34),transparent 32%),linear-gradient(180deg,#09090d,#0d0f12 70%,#09090d)}
 .campaign-card,.campaign-section{border-color:#42424e;background:linear-gradient(145deg,#1b1b23,#09090d);box-shadow:0 22px 70px #0009}
 .campaign-card-title{background:#121218;border-bottom-color:#42424e}.campaign-card-title span{color:#e4e44e}.campaign-card-title strong{color:#d9d3c7}
 .campaign-paper{background:linear-gradient(135deg,#25252f,#121218);border-color:#42424e;box-shadow:0 20px 70px #0007}.campaign-paper p{line-height:1.75}
