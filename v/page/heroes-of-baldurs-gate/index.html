@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bohaterowie Wrót Baldura — sześć postaci, sześć dziedzictw i jedno miasto, w którym przeszłość potrafi upomnieć się o każdego.">
+  <meta name="theme-color" content="#0d1016">
+  <title>Bohaterowie Wrót Baldura — Vengrath</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./theme-fonts.css">
+  <link rel="stylesheet" href="/v/core/templates/HomeButton/HomeButton.css">
+  <link rel="stylesheet" href="/v/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageNavbar/SubpageNavbar.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageHero/SubpageHero.css">
+  <link rel="stylesheet" href="/v/core/templates/CharacterGallery/CharacterGallery.css">
+  <link rel="stylesheet" href="/v/core/templates/CharacterCard/CharacterCard.css">
+  <link rel="stylesheet" href="/v/core/templates/CharacterCard/Achievements/Achievements.css">
+  <link rel="stylesheet" href="/v/core/templates/Chronicle/Chronicle.css">
+  <link rel="stylesheet" href="/v/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css">
+  <link rel="stylesheet" href="/v/core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="hobg-page">
+  <div id="campaign-hero"></div>
+  <main class="hobg-content">
+    <section class="hobg-panel" id="campaign" data-page-section="campaign">
+      <section class="hobg-card">
+        <div class="hobg-card-title"><span>01</span><strong>AKTA KAMPANII</strong></div>
+        <div class="hobg-card-body">
+          <div class="hobg-intro-grid">
+            <article class="hobg-paper">
+              <div class="hobg-section-mark">O KAMPANII</div>
+              <h2 id="intro-title"></h2>
+              <div id="intro-copy"></div>
+            </article>
+            <aside class="hobg-dossier" aria-label="Dossier kampanii">
+              <div class="hobg-dossier-label">DOSSIER</div>
+              <div id="campaign-dossier"></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <section class="hobg-party">
+        <div class="hobg-party-copy">
+          <div class="hobg-section-mark">ZAPIS</div>
+          <h2 id="party-title"></h2>
+          <p id="party-description" hidden></p>
+        </div>
+        <figure class="hobg-party-image">
+          <img id="party-image" alt="Vera — Bohaterowie Wrót Baldura" loading="lazy">
+        </figure>
+      </section>
+      <section class="hobg-archive" aria-label="Zapis archiwalny">
+        <div class="hobg-archive-heading">
+          <div class="hobg-section-mark">ZACHOWANE AKTA</div>
+          <h2>Fragmenty z archiwum</h2>
+        </div>
+        <div id="campaign-archive" class="hobg-archive-grid"></div>
+      </section>
+    </section>
+
+    <section class="hobg-panel" id="characters" data-page-section="characters" hidden>
+      <section class="hobg-section">
+        <div class="hobg-section-mark" id="characters-kicker"></div>
+        <h2 id="characters-title"></h2>
+        <p id="characters-description" hidden></p>
+        <div id="character-gallery" aria-live="polite"></div>
+      </section>
+    </section>
+
+    <section class="hobg-panel" id="chronicle" data-page-section="chronicle" hidden>
+      <section class="hobg-section">
+        <div class="hobg-section-mark" id="chronicle-kicker"></div>
+        <h2 id="chronicle-title"></h2>
+        <p id="chronicle-description"></p>
+        <div id="chronicle-records"></div>
+      </section>
+    </section>
+  </main>
+  <footer class="hobg-footer">
+    <span id="footer-title">VENGRATH · BOHATEROWIE WRÓT BALDURA</span>
+    <a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a>
+  </footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

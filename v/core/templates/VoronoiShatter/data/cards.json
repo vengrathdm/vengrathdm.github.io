@@ -190,5 +190,11 @@
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/blood-red-snow-white.webp",
     "CardAdress": "/v/page/blood-red-snow-white/"
+  },
+  {
+    "CardName": "Bohaterowie Wrót Baldura",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/heroes-of-baldurs-gate.webp",
+    "CardAdress": "/v/page/heroes-of-baldurs-gate/"
   }
 ]
