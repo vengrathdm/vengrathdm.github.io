@@ -1,0 +1,14 @@
+{
+  "id": "dragon-of-icespire-peak",
+  "title": "Dragon of Icespire Peak",
+  "language": "pl",
+  "campaign": "Dragon of Icespire Peak",
+  "module": "Dragon of Icespire Peak",
+  "entry": "/v/page/dragon-of-icespire-peak/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters"
+  ]
+}

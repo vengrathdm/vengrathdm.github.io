@@ -1,0 +1,27 @@
+.ddc-character-intro { margin-top:0; margin-bottom:28px; }
+.ddc-character-intro p { max-width:72ch; margin:0; color:var(--theme-text-3); font-size:15px; }
+.dragon-of-icespire-peak-page .character-gallery { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+.dragon-of-icespire-peak-page .character-card {
+  min-width:0; overflow:hidden; border:1px solid var(--theme-line-1); border-radius:0;
+  background:linear-gradient(145deg,var(--theme-base-4),var(--theme-base-2)); box-shadow:0 16px 45px #0006; color:var(--theme-text-1);
+}
+.dragon-of-icespire-peak-page .character-card:hover,.dragon-of-icespire-peak-page .character-card:focus-visible { border-color:var(--theme-accent-1); transform:translateY(-3px); outline-offset:3px; }
+.dragon-of-icespire-peak-page .character-card__portrait { position:relative; aspect-ratio:4/5; overflow:hidden; border-bottom:1px solid var(--theme-line-1); background:#07121c; }
+.dragon-of-icespire-peak-page .character-card__portrait img { display:block; width:100%; height:100%; object-fit:cover; object-position:center top; filter:saturate(.72); }
+.dragon-of-icespire-peak-page .character-card__portrait::after { content:""; position:absolute; inset:18px; border:1px dashed var(--theme-line-2); opacity:.35; pointer-events:none; }
+.dragon-of-icespire-peak-page .character-card__status { position:absolute; right:.65rem; bottom:.65rem; padding:.3rem .55rem; border:1px solid #ffffff40; background:#081725dd; color:var(--theme-accent-1); font:.7rem var(--theme-font-2); text-transform:uppercase; }
+.dragon-of-icespire-peak-page .character-card__achievements { position:absolute; top:.55rem; left:.55rem; right:.55rem; display:flex; flex-wrap:wrap; gap:.25rem; }
+.dragon-of-icespire-peak-page .achievement-badge { border-color:#8bdcf499; background:#0b1d1def; color:#ffffff; }
+.dragon-of-icespire-peak-page .character-card__body { display:grid; gap:.65rem; padding:22px; }
+.dragon-of-icespire-peak-page .character-card h3 { margin:7px 0 2px; color:var(--theme-text-1); font:400 27px/1.1 var(--theme-font-1); overflow-wrap:anywhere; }
+.dragon-of-icespire-peak-page .character-card__player { margin:0; color:var(--theme-text-2); font-size:14px; font-weight:500; overflow-wrap:anywhere; }
+.dragon-of-icespire-peak-page .character-card__row { display:grid; grid-template-columns:4.5rem minmax(0,1fr); gap:.5rem; font-size:.78rem; line-height:1.4; }
+.dragon-of-icespire-peak-page .character-card__label { color:var(--theme-text-3); font:.7rem var(--theme-font-1); letter-spacing:1px; text-transform:uppercase; }
+.dragon-of-icespire-peak-page .character-card__value { min-width:0; color:var(--theme-text-2); overflow-wrap:anywhere; }
+.dragon-of-icespire-peak-page .character-card__achievement-count { margin:auto 0 0; padding:.6rem .9rem; border-top:1px solid var(--theme-line-1); color:var(--theme-text-3); font-size:.72rem; }
+@media(max-width:1100px) { .dragon-of-icespire-peak-page .character-gallery { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media(max-width:850px) { .dragon-of-icespire-peak-page .character-gallery { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:620px) {
+  .dragon-of-icespire-peak-page .character-gallery { grid-template-columns:minmax(0,1fr); }
+  .dragon-of-icespire-peak-page .character-card__portrait { aspect-ratio:4/4.2; }
+}

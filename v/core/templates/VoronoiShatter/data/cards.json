@@ -148,5 +148,11 @@
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/Gold-for-Fools-and-Princes.webp",
     "CardAdress": "/v/page/gold-for-fools-and-princes/"
+  },
+  {
+    "CardName": "Dragon of Icespire Peak",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/dragon-of-icespire-peak.webp",
+    "CardAdress": "/v/page/dragon-of-icespire-peak/"
   }
 ]
