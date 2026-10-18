@@ -12,9 +12,5 @@
     "characters",
     "chronicle"
   ],
-  "playlistUrl": "",
-  "audio": {
-    "src": "/res/audio/ghoul-hour/ghoul-hour.mp3",
-    "continuationKey": "ghoulhourTheme"
-  }
+  "playlistUrl": ""
 }
