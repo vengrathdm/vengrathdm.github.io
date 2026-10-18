@@ -60,7 +60,7 @@ function initializeHero(content,theme) {
 
   mountSubpageNavbar(navbarMount,{sections:[
     {text:"Kampania",sectionLink:"campaign",color:theme.colors.accent2},
-    {text:"Materiały",sectionLink:"characters",color:theme.colors.accent2}
+    {text:"Postaci",sectionLink:"characters",color:theme.colors.accent2}
   ]});
 }
 
