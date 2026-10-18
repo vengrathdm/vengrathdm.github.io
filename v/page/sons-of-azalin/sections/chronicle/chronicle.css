@@ -1,0 +1,27 @@
+.ddc-chronicle-panel .ddc-section { margin-top:0; }
+.ddc-chronicle-intro { margin-bottom:28px; }
+#campaign-chronicle { width:100%; margin-top:20px; border-top:1px solid #3c3e42; }
+#campaign-chronicle .chronicle-record { border:0; border-bottom:1px solid var(--theme-line-1); border-radius:0; background:transparent; color:var(--theme-text-1); }
+#campaign-chronicle .chronicle-record__header {
+  display:grid; grid-template-columns:100px minmax(0,1fr) auto; align-items:center; gap:15px;
+  min-height:0; padding:19px 5px; background:transparent;
+}
+#campaign-chronicle .chronicle-record__number { color:var(--theme-accent-1); font:400 16px var(--theme-font-1); }
+#campaign-chronicle .chronicle-record__title { min-width:0; color:#ddd8cc; font:400 19px var(--theme-font-1); overflow-wrap:anywhere; }
+#campaign-chronicle .chronicle-record__recordings { display:flex; justify-content:flex-end; flex-wrap:wrap; gap:6px; }
+#campaign-chronicle .play-recording-button {
+  display:inline-flex; align-items:center; justify-content:center; min-width:116px; min-height:0;
+  padding:9px 13px; border:1px solid var(--theme-accent-2); border-radius:0; background:#111216;
+  color:var(--theme-accent-2); font:700 10px/1.4 var(--theme-font-1); letter-spacing:1.5px;
+  text-decoration:none; white-space:nowrap; transition:background-color 180ms ease,color 180ms ease;
+}
+#campaign-chronicle .play-recording-button:hover,#campaign-chronicle .play-recording-button:focus-visible {
+  background:var(--theme-accent-2); color:#101114; outline-offset:3px;
+}
+#campaign-chronicle .chronicle-record__description { padding:0 5px 20px 105px; border-top:0; color:#888b86; font:14px/1.6 var(--theme-font-2); }
+#campaign-chronicle .chronicle-record__description p { margin:0; overflow-wrap:anywhere; }
+@media(max-width:760px) {
+  #campaign-chronicle .chronicle-record__header { grid-template-columns:minmax(0,1fr); gap:8px; }
+  #campaign-chronicle .chronicle-record__recordings { justify-content:flex-start; }
+  #campaign-chronicle .chronicle-record__description { padding:0 5px 18px; }
+}

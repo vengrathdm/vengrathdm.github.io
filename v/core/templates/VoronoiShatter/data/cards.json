@@ -100,5 +100,11 @@
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/rime-of-the-frostmaiden.webp",
     "CardAdress": "/v/page/rime-of-the-frostmaiden/"
+  },
+  {
+    "CardName": "Sons of Azalin",
+    "CardTags": "Zamknięta Kampania",
+    "CardGraphic": "/v/core/graphics/voronoi/sons-of-azalin.webp",
+    "CardAdress": "/v/page/sons-of-azalin/"
   }
 ]
