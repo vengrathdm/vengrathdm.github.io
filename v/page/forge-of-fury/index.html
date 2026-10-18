@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Wyprawa do zrujnowanej twierdzy Khundrukar, gdzie w głębinach dawnej siedziby krasnoludzkiego kowala Durgeddina Czarnego wciąż czekają jego słynne ostrza, skarby i zamieszkujące ruiny potwory.">
+  <meta name="theme-color" content="#08090d">
+  <title>Forge of Fury — Vengrath</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./theme-fonts.css">
+  <link rel="stylesheet" href="/v/core/templates/HomeButton/HomeButton.css">
+  <link rel="stylesheet" href="/v/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageNavbar/SubpageNavbar.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageHero/SubpageHero.css">
+  <link rel="stylesheet" href="/v/core/templates/CharacterCard/CharacterCard.css">
+  <link rel="stylesheet" href="/v/core/templates/CharacterCard/Achievements/Achievements.css">
+  <link rel="stylesheet" href="/v/core/templates/CharacterGallery/CharacterGallery.css">
+  <link rel="stylesheet" href="./sections/campaign/campaign.css">
+  <link rel="stylesheet" href="./sections/characters/characters.css">
+  </head>
+<body class="forge-of-fury-page">
+  <div id="campaign-hero"></div>
+  <main class="ddc-content">
+    <section class="ddc-tab-panel" id="campaign" data-page-section="campaign">
+      <section class="ddc-card">
+        <div class="ddc-card-title"><span>01</span><strong>AKTA KAMPANII</strong></div>
+        <div class="ddc-card-body">
+          <div class="ddc-intro-grid">
+            <article class="ddc-paper">
+              <div class="ddc-section-mark">RAVENLOFT · DARKON</div>
+              <h2 id="campaign-intro-title"></h2>
+              <div id="campaign-intro-copy"></div>
+            </article>
+            <aside class="ddc-case" aria-label="Dossier kampanii">
+              <div class="ddc-case-label">DOSSIER</div>
+              <div id="campaign-dossier"></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <section class="ddc-party-portrait">
+        <div class="ddc-party-copy">
+          <div class="ddc-section-mark">ARCHIWUM</div>
+          <h2 id="party-title"></h2>
+          <p id="party-description"></p>
+        </div>
+        <figure class="ddc-party-image"><img id="party-image" alt="Forge of Fury" loading="lazy"></figure>
+      </section>
+    </section>
+    <section class="ddc-tab-panel" id="characters" data-page-section="characters" hidden>
+      <section class="ddc-section ddc-character-intro">
+        <div class="ddc-section-mark" id="characters-kicker"></div>
+        <h2 id="characters-title"></h2>
+        <p id="characters-description"></p>
+      </section>
+      <div id="character-gallery" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer class="ddc-footer">
+    <span>VENGRATH · SONS OF AZALIN</span>
+    <a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a>
+  </footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

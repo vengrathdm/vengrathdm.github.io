@@ -1,0 +1,28 @@
+{
+  "colors": {
+    "base1": "#100b08",
+    "base2": "#1b120d",
+    "base3": "#2b1b11",
+    "base4": "#3d2717",
+    "base5": "#54351c",
+    "accent1": "#e07836",
+    "accent2": "#d7b56d",
+    "text1": "#f6eee2",
+    "text2": "#e4d5c0",
+    "text3": "#bda78b",
+    "textMuted": "#907b63",
+    "titleAccent": "#f2d6a0",
+    "line1": "#573b27",
+    "line2": "#91623a",
+    "navBackground": "#160f0a",
+    "navText": "#f0dfc5",
+    "navActiveBackground": "#3b2516"
+  },
+  "typography": {
+    "heading": "\"Voltaire\", sans-serif",
+    "body": "\"Fira Sans Extra Condensed\", sans-serif",
+    "serif": "\"Brygada 1918\", Georgia, serif"
+  },
+  "fontsUrl": "https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap",
+  "heroImage": "/v/page/forge-of-fury/res/graphics/forge-of-fury.webp"
+}
