@@ -17,7 +17,7 @@ function initializeHero(content,theme,manifest){
  const navbarMount=document.createElement("div");navbarMount.className="drakkenheim-navbar-mount";hero.prepend(navbarMount);
  const mistLine=document.createElement("div");mistLine.className="drakkenheim-hero-mist-line";mistLine.setAttribute("aria-hidden","true");hero.append(mistLine);
  document.querySelector("#campaign-hero").replaceWith(hero);
- mountSubpageNavbar(navbarMount,{playlistUrl:manifest.playlistUrl,sections:[{text:"Kampania",sectionLink:"campaign",color:theme.colors.accent2},{text:"Materiały",sectionLink:"characters",color:theme.colors.accent2},{text:"Kronika",sectionLink:"chronicle",color:theme.colors.accent2}]});
+ mountSubpageNavbar(navbarMount,{playlistUrl:manifest.playlistUrl,sections:[{text:"Kampania",sectionLink:"campaign",color:theme.colors.accent2},{text:"Postaci",sectionLink:"characters",color:theme.colors.accent2},{text:"Kronika",sectionLink:"chronicle",color:theme.colors.accent2}]});
 }
 async function initializeCampaignPage(){const [manifest,theme,content]=await Promise.all([loadJson("./manifest.json"),loadJson("./theme.json"),loadJson("./content.json")]);applyTheme(theme);initializeHero(content,theme,manifest);renderCampaignSection(content.campaign);renderCharactersSection(content.characters);renderChronicleSection(content.chronicle,theme.colors.accent2);const audioPlayer=new AudioPlayer({src:manifest.audio.src,storageKey:manifest.audio.continuationKey});mountAudioPlayerButton(audioPlayer,theme.audioColor);}
 initializeCampaignPage().catch(error=>console.error("Nie udało się uruchomić strony Drakkenheim.",error));
