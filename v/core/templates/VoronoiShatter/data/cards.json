@@ -178,5 +178,11 @@
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/shards-of-the-past.webp",
     "CardAdress": "/v/page/shards-of-the-past/"
+  },
+  {
+    "CardName": "Curse of Strahd",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/curse-of-strahd.webp",
+    "CardAdress": "/v/page/curse-of-strahd/"
   }
 ]
