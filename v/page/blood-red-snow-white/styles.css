@@ -5,7 +5,6 @@ body.brsw-page{margin:0;min-height:100vh;background:radial-gradient(circle at 75
 .brsw-page .subpage-hero h1{margin:0;color:var(--theme-text-1);font:clamp(3.6rem,9vw,8.8rem)/.88 var(--theme-font-1);letter-spacing:-.035em;text-transform:uppercase}
 .brsw-hero-title-accent{color:var(--theme-title-accent);font-family:var(--theme-font-3);font-size:.9em;font-weight:500;font-style:italic;text-transform:none}
 .brsw-hero-lead{max-width:740px;margin:0;color:var(--theme-text-2);font:clamp(1.1rem,2.3vw,1.6rem)/1.35 var(--theme-font-3)}
-.brsw-navbar-mount{position:absolute;inset:0 0 auto;z-index:1100}
 .brsw-content{position:relative;width:min(1220px,calc(100% - 40px));margin:auto;padding:64px 0 80px}
 .brsw-content::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;background:radial-gradient(ellipse at 75% 12%,#3b1b24a8,transparent 36%),radial-gradient(ellipse at 10% 70%,#68533338,transparent 32%),linear-gradient(180deg,#08090b,#101013 70%,#08090b)}
 .brsw-panel[hidden]{display:none}
