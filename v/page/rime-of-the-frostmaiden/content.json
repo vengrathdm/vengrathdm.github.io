@@ -3,7 +3,7 @@
     "title": "RIME OF THE FROSTMAIDEN",
     "heroFirstLine": "Rime of the",
     "heroSecondLine": "Frostmaiden",
-    "kicker": "D&D · DOLINA LODOWEGO WIATRU",
+    "kicker": "D&D · ARCHIWUM KAMPANII",
     "lead": "Nad Doliną Lodowego Wiatru zalega zima, która nie powinna trwać tak długo. Ogień, żywność i schronienie stają się sprawą przetrwania.",
     "introTitle": "Rime of the Frostmaiden",
     "introParagraphs": [
@@ -30,11 +30,13 @@
       }
     ],
     "partyTitle": "Rime of the Frostmaiden",
-    "partyDescription": "Nad Doliną Lodowego Wiatru zalega zima, która nie powinna trwać tak długo.",
+    "partyDescription": "Nad Doliną Lodowego Wiatru zalega zima, która nie powinna trwać tak długo. Ogień, żywność i schronienie stają się sprawą przetrwania.",
     "partyImage": "/p/rime-of-the-frostmaiden/res/hero-image.jpg"
   },
   "characters": {
+    "kicker": "AKTA / POSTACI",
     "title": "Bohaterowie kampanii",
+    "description": "Karty korzystają ze wspólnego katalogu postaci Vengrath.",
     "characterIds": [
       "char-0106",
       "char-0138",
@@ -44,6 +46,8 @@
     ]
   },
   "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Nagrania kampanii",
     "description": "Oryginalna strona nie zawiera indywidualnych odnośników do nagrań.",
     "playlistUrl": "",
     "sessions": []
