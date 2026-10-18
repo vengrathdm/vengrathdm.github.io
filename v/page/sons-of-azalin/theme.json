@@ -1,0 +1,29 @@
+{
+  "colors": {
+    "base1": "#08090d",
+    "base2": "#0c0e14",
+    "base3": "#11131b",
+    "base4": "#171923",
+    "base5": "#20212b",
+    "accent1": "#8f2639",
+    "accent2": "#c3a66d",
+    "text1": "#eee9e4",
+    "text2": "#d7d0cb",
+    "text3": "#aaa2a3",
+    "textMuted": "#81777d",
+    "titleAccent": "#c9b9b3",
+    "line1": "#3c3039",
+    "line2": "#58404a",
+    "navBackground": "#101018",
+    "navText": "#d0c5c6",
+    "navActiveBackground": "#251820"
+  },
+  "typography": {
+    "heading": "\"Voltaire\", sans-serif",
+    "body": "\"Fira Sans Extra Condensed\", sans-serif",
+    "serif": "\"Brygada 1918\", Georgia, serif"
+  },
+  "fontsUrl": "https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap",
+  "heroImage": "/v/page/sons-of-azalin/res/graphics/sons-of-azalin.webp",
+  "audioColor": "#6f4b2a"
+}
