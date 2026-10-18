@@ -1,0 +1,84 @@
+{
+  "campaign": {
+    "kicker": "D&D · ARCHIWUM KAMPANII",
+    "title": "Ku chwale Tyra!",
+    "heroFirstLine": "Ku chwale",
+    "heroSecondLine": "Tyra!",
+    "lead": "W Neverwinter krasnolud Magdhur Miedziany Młot czeka na egzekucję za morderstwo, którego — jak twierdzi — nie popełnił. Drużyna dostaje jeden dzień, by ponownie zbadać sprawę, odnaleźć prawdziwego zabójcę i ocalić niewinnego kowala.",
+    "introTitle": "Ostatnia szansa dla Magdhura",
+    "introParagraphs": [
+      "W Neverwinter krasnolud Magdhur Miedziany Młot czeka na egzekucję za morderstwo, którego — jak twierdzi — nie popełnił. Drużyna dostaje jeden dzień, by ponownie zbadać sprawę, odnaleźć prawdziwego zabójcę i ocalić niewinnego kowala.",
+      "Ku chwale Tyra! to jednorazowa przygoda detektywistyczna osadzona w Neverwinter. Kapitan Ayla Brokengulf daje bohaterom ostatnią szansę na ponowne zbadanie sprawy Magdhura Miedzianego Młota, zanim wyrok śmierci zostanie wykonany.",
+      "Śledztwo prowadzi przez Enklawę Obrońcy, miejską kostnicę, warsztaty rzemieślnicze, stocznię i domy podejrzanych. Poszlaki stopniowo podważają oficjalną wersję wydarzeń: młotek Magdhura nie zadał śmiertelnych ciosów, Umevalur został wcześniej otruty Aquilitharem, a fałszywe złoto prowadzi do szerszej intrygi wymierzonej w handel między Neverwinter a Mirabarem.",
+      "Prawdziwym sprawcą okazuje się Ronan Blackthorn — szpieg z Luskan, który podszywał się pod kupca i próbował zdestabilizować handel żelazem. Drużyna musi jednak zebrać wystarczające dowody w bardzo krótkim czasie, zanim Magdhur zostanie stracony, a Ronan ucieknie do Luskan."
+    ],
+    "dossier": [
+      [
+        "POSTACIE",
+        "4"
+      ],
+      [
+        "MATERIAŁY",
+        "0"
+      ],
+      [
+        "NAGRANIA",
+        "1"
+      ],
+      [
+        "ŹRÓDŁO",
+        "ARCHIWUM"
+      ],
+      [
+        "STATUS",
+        "ARCHIWUM"
+      ]
+    ],
+    "caseFiles": [
+      {
+        "kicker": "AKTA / 02",
+        "title": "O przygodzie",
+        "description": "Pierwsze dowody wskazują na Magdhura: jego młotek znaleziono przy ciele Umevalura, świadkowie pamiętają jego pijackie groźby, a przy ofierze znaleziono fałszywe złoto. Brak alibi dodatkowo wzmacnia sprawę przeciw krasnoludowi."
+      },
+      {
+        "kicker": "AKTA / 03",
+        "title": "Nasza drużyna",
+        "description": "Dokładniejsze badanie ciała ujawnia jednak ślady Aquilitharu oraz obrażenia zadane innym narzędziem, przypominającym laskę. Kolejne tropy prowadzą do księgi rachunkowej Umevalura, zakupów rzadkiego odczynnika oraz niezwykle dużych zamówień żelaza związanych z Ronanem Blackthornem."
+      },
+      {
+        "kicker": "AKTA / 04",
+        "title": "Śledztwo",
+        "description": "Połączenie tych poszlak pozwala wykazać, że Magdhur został wrobiony, a morderstwo było elementem większego planu wymierzonego w handel Neverwinter z Mirabarem."
+      }
+    ]
+  },
+  "characters": {
+    "kicker": "AKTA / MATERIAŁY",
+    "title": "Bohaterowie one-shota",
+    "description": "Wspólny katalog Vengrath przypisuje tej przygodzie cztery postacie. Ich karty używają danych i portretów z katalogu; archiwalna strona nie zawierała osobnych grafik postaci.",
+    "characterIds": [
+      "char-0064",
+      "char-0065",
+      "char-0152",
+      "char-0154"
+    ]
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Nagranie przygody",
+    "description": "Na oryginalnej stronie zachowano jeden bezpośredni odnośnik do nagrania. Tytuł i notatki sesji pozostawiono zgodnie z archiwalnym placeholderem.",
+    "sessions": [
+      {
+        "number": "S001",
+        "title": "Do Uzupełnienia",
+        "description": "Notatki sesji do uzupełnienia.",
+        "recordings": [
+          {
+            "label": "▶ Nagranie",
+            "url": "https://www.youtube.com/watch?v=Pk_dhbUF2pw"
+          }
+        ]
+      }
+    ]
+  }
+}
