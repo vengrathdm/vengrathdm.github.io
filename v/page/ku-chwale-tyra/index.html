@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ku chwale Tyra! — archiwum detektywistycznej przygody w Neverwinter, bohaterów i zachowanego nagrania.">
+  <meta name="theme-color" content="#08090b">
+  <title>Ku chwale Tyra! — Vengrath</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./theme-fonts.css">
+  <link rel="stylesheet" href="/v/core/templates/HomeButton/HomeButton.css">
+  <link rel="stylesheet" href="/v/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageNavbar/SubpageNavbar.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageHero/SubpageHero.css">
+  <link rel="stylesheet" href="/v/core/templates/CharacterCard/CharacterCard.css">
+  <link rel="stylesheet" href="/v/core/templates/CharacterCard/Achievements/Achievements.css">
+  <link rel="stylesheet" href="/v/core/templates/CharacterGallery/CharacterGallery.css">
+  <link rel="stylesheet" href="./sections/campaign/campaign.css">
+  <link rel="stylesheet" href="./sections/characters/characters.css">
+  <link rel="stylesheet" href="./sections/chronicle/chronicle.css">
+</head>
+<body class="ku-chwale-tyra-page">
+  <div id="campaign-hero"></div>
+  <main class="ddc-content">
+    <section class="ddc-tab-panel" id="campaign" data-page-section="campaign">
+      <section class="ddc-card">
+        <div class="ddc-card-title"><span>01</span><strong>AKTA KAMPANII</strong></div>
+        <div class="ddc-card-body">
+          <div class="ddc-intro-grid">
+            <article class="ddc-paper">
+              <div class="ddc-section-mark">O KAMPANII</div>
+              <h2 id="campaign-intro-title"></h2>
+              <div id="campaign-intro-copy"></div>
+            </article>
+            <aside class="ddc-case" aria-label="Dossier kampanii">
+              <div class="ddc-case-label">DOSSIER</div>
+              <div id="campaign-dossier"></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <section class="ddc-manifesto">
+        <div class="ddc-manifesto-symbol" aria-hidden="true">✦</div>
+        <div>
+          <div class="ddc-section-mark">Z ARCHIWUM</div>
+          <p>Treść kampanii zachowana ze starej strony.</p>
+          <span>KU CHWALE TYRA!</span>
+        </div>
+      </section>
+      <div id="campaign-notes"></div>
+    </section>
+
+    <section class="ddc-tab-panel" id="characters" data-page-section="characters" hidden>
+      <section class="ddc-section ddc-character-intro">
+        <div class="ddc-section-mark" id="characters-kicker"></div>
+        <h2 id="characters-title"></h2>
+        <p id="characters-description"></p>
+      </section>
+      <div id="character-gallery" aria-live="polite"></div>
+    </section>
+
+    <section class="ddc-tab-panel ddc-chronicle-panel" id="chronicle" data-page-section="chronicle" hidden>
+      <section class="ddc-section ddc-chronicle-intro">
+        <div class="ddc-section-mark" id="chronicle-kicker"></div>
+        <h2 id="chronicle-title"></h2>
+        <p id="chronicle-description"></p>
+      </section>
+      <section class="ddc-section ddc-chronicle-records">
+        <div id="campaign-chronicle" aria-live="polite"></div>
+      </section>
+    </section>
+  </main>
+  <footer class="ddc-footer">
+    <span>VENGRATH · KU CHWALE TYRA!</span>
+    <a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a>
+  </footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

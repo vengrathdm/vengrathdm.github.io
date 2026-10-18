@@ -166,5 +166,11 @@
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/echtra-zima-irgaeli.webp",
     "CardAdress": "/v/page/echtra-zima-irgaeli/"
+  },
+  {
+    "CardName": "Ku Chwale Tyra!",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/KuChwaleTyra.webp",
+    "CardAdress": "/v/page/ku-chwale-tyra/"
   }
 ]
