@@ -1,0 +1,7 @@
+.ddc-chronicle-panel .ddc-section{margin-top:0}.ddc-chronicle-intro{margin-bottom:28px}.ddc-chronicle-records{border-top:1px solid var(--theme-line-1);padding-top:24px}
+#campaign-playlist .heroes-playlist-wrap{margin:0 0 22px}
+#campaign-playlist .heroes-playlist-link{display:inline-flex;align-items:center;justify-content:center;padding:13px 17px;border:1px solid var(--theme-accent-2);background:var(--theme-base-2);color:var(--theme-accent-2);font:700 11px var(--theme-font-1);letter-spacing:2px;text-decoration:none;transition:background-color 180ms ease,color 180ms ease}
+#campaign-playlist .heroes-playlist-link:hover,#campaign-playlist .heroes-playlist-link:focus-visible{background:var(--theme-accent-2);color:var(--theme-base-1);outline-offset:3px}
+#campaign-chronicle{width:100%;margin-top:20px}
+#campaign-chronicle .chronicle-record{border:0;border-bottom:1px solid var(--theme-line-1);border-radius:0;background:transparent;color:var(--theme-text-1)}
+@media(max-width:760px){#campaign-playlist .heroes-playlist-link{max-width:100%;box-sizing:border-box;white-space:normal}}

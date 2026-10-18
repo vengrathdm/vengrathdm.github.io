@@ -1,0 +1,29 @@
+{
+  "colors": {
+    "base1": "#0c0b0f",
+    "base2": "#17131a",
+    "base3": "#241b29",
+    "base4": "#352638",
+    "base5": "#493448",
+    "accent1": "#b95a67",
+    "accent2": "#c6a7df",
+    "text1": "#f2edf4",
+    "text2": "#ddd2e1",
+    "text3": "#b8a9be",
+    "textMuted": "#8f7e98",
+    "titleAccent": "#ead9f4",
+    "line1": "#4c3a52",
+    "line2": "#88658f",
+    "navBackground": "#100d13",
+    "navText": "#e8ddec",
+    "navActiveBackground": "#33263a"
+  },
+  "typography": {
+    "heading": "\"Voltaire\", sans-serif",
+    "body": "\"Fira Sans Extra Condensed\", sans-serif",
+    "serif": "\"Brygada 1918\", Georgia, serif"
+  },
+  "fontsUrl": "https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap",
+  "heroImage": "/v/page/heroes-of-drakkenheim/res/graphics/dungeons-of-drakkenheim.webp",
+  "audioColor": "#8b2020"
+}
