@@ -1,0 +1,28 @@
+{
+  "colors": {
+    "base1": "#0b1112",
+    "base2": "#101d1d",
+    "base3": "#172b29",
+    "base4": "#24403a",
+    "base5": "#36574b",
+    "accent1": "#d8a842",
+    "accent2": "#79c8b2",
+    "text1": "#f6f2e8",
+    "text2": "#e2dfd0",
+    "text3": "#b5c3b7",
+    "textMuted": "#81968c",
+    "titleAccent": "#f2d78c",
+    "line1": "#38564b",
+    "line2": "#bd9650",
+    "navBackground": "#0d1716",
+    "navText": "#e8e6d9",
+    "navActiveBackground": "#25443b"
+  },
+  "typography": {
+    "heading": "\"Voltaire\", sans-serif",
+    "body": "\"Fira Sans Extra Condensed\", sans-serif",
+    "serif": "\"Brygada 1918\", Georgia, serif"
+  },
+  "fontsUrl": "https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap",
+  "heroImage": "/v/page/gold-for-fools-and-princes/res/graphics/Gold-for-Fools-and-Princes.webp"
+}
