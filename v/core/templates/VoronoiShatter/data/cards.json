@@ -118,5 +118,11 @@
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/forge-of-fury.webp",
     "CardAdress": "/v/page/forge-of-fury/"
+  },
+  {
+    "CardName": "Lost Mine of Phandelver",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/lost-mine-of-phandelver.webp",
+    "CardAdress": "/v/page/lost-mine-of-phandelver/"
   }
 ]
