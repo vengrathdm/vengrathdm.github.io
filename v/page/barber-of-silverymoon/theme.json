@@ -1,0 +1,25 @@
+{
+  "colors": {
+    "base1": "#080a16",
+    "base2": "#101329",
+    "base3": "#191d38",
+    "base4": "#292e4b",
+    "base5": "#3a405f",
+    "accent1": "#c83f58",
+    "accent2": "#c8d4ec",
+    "text1": "#f8f8ff",
+    "text2": "#e0e4f4",
+    "text3": "#b6bfdc",
+    "textMuted": "#858eaf",
+    "titleAccent": "#ffffff",
+    "line1": "#343b61",
+    "line2": "#9aa8ca"
+  },
+  "typography": {
+    "heading": "Voltaire, sans-serif",
+    "body": "Fira Sans Extra Condensed, sans-serif",
+    "serif": "Brygada 1918, Georgia, serif"
+  },
+  "fontsUrl": "https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap",
+  "heroImage": "/v/core/graphics/voronoi/barber-of-silverymoon.webp"
+}

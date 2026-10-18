@@ -1,0 +1,45 @@
+{
+  "campaign": {
+    "title": "BARBER OF SILVERYMOON",
+    "kicker": "D&D · MIEJSKIE ŚLEDZTWO",
+    "lead": "W Silverymoon nocą znikają ludzie. Niektórzy wracają bez wspomnień, z przytępionym umysłem i fryzurą zbyt doskonałą, by nie wzbudzić podejrzeń.",
+    "introTitle": "Barber of Silverymoon",
+    "introParagraphs": [
+      "Oficjalna przygoda Dungeons & Dragons dla postaci na 4.–6. poziomie zaczyna się od serii zaginięć w Silverymoon. Część mieszkańców przepada bez śladu; inni wracają odmienieni, pozbawieni wspomnień i zaskakująco starannie ostrzyżeni.",
+      "Śledztwo prowadzi ku pozornie zwyczajnemu zakładowi fryzjerskiemu i sekretowi, który łączy miejskie plotki, demoniczne wpływy oraz niepokojącą magię. Ton przygody balansuje między miejską tajemnicą, czarnym humorem i horrorem."
+    ],
+    "dossier": [
+      [
+        "MIASTO",
+        "SILVERYMOON"
+      ],
+      [
+        "POZIOMY",
+        "4–6"
+      ],
+      [
+        "ŚLEDZTWO",
+        "ZAGINIĘCIA"
+      ],
+      [
+        "TON",
+        "MIEJSKA TAJEMNICA"
+      ],
+      [
+        "STATUS",
+        "ARCHIWUM"
+      ]
+    ]
+  },
+  "characters": {
+    "kicker": "AKTA / 02",
+    "title": "Bohaterowie wyprawy",
+    "description": "Karta postaci przypisana do przygody w katalogu Vengrath.",
+    "characterIds": [
+      "char-0286"
+    ]
+  },
+  "chronicle": {
+    "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0isDo3Zrhre_kuF94Nt_7UM"
+  }
+}
