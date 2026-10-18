@@ -112,5 +112,11 @@
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/shadow-of-the-sword-coast.webp",
     "CardAdress": "/v/page/shadow-of-the-sword-coast/"
+  },
+  {
+    "CardName": "Forge of Fury",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/forge-of-fury.webp",
+    "CardAdress": "/v/page/forge-of-fury/"
   }
 ]

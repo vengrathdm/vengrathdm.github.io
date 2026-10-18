@@ -1,0 +1,47 @@
+{
+  "campaign": {
+    "kicker": "D&D · ZAGINIONA TWIERDZA",
+    "title": "Forge of Fury",
+    "lead": "Wyprawa do zrujnowanej twierdzy Khundrukar, gdzie w głębinach dawnej siedziby krasnoludzkiego kowala Durgeddina Czarnego wciąż czekają jego słynne ostrza, skarby i zamieszkujące ruiny potwory.",
+    "introTitle": "Forge of Fury",
+    "introParagraphs": [
+      "Pod górą Stone Tooth leży Khundrukar — twierdza wykuta przez krasnoludzkiego kowala Durgeddina Czarnego. Jego klan zginął podczas oblężenia, lecz opowieści o mistrzowskich ostrzach i skarbach przetrwały dłużej niż kamienne mury.",
+      "Pięć poziomów ruin kryje ślady dawnej wojny, niebezpieczne plemiona i potwory, które zajęły opuszczone komnaty. Każde zejście prowadzi głębiej w historię zemsty, rzemiosła i upadku Khundrukar.",
+      "To wyprawa do serca góry, gdzie stal, ogień i stary gniew wciąż odciskają swoje piętno."
+    ],
+    "dossier": [
+      [
+        "MIEJSCE",
+        "KHUNDRUKAR"
+      ],
+      [
+        "RZEMIOSŁO",
+        "OSTRZA DURGEDDINA"
+      ],
+      [
+        "ZAGROŻENIE",
+        "RUINY · PLEMIONA"
+      ],
+      [
+        "TON",
+        "KUŹNIA · STARA ZEMSTA"
+      ],
+      [
+        "STATUS",
+        "ARCHIWUM"
+      ]
+    ]
+  },
+  "characters": {
+    "kicker": "AKTA / MATERIAŁY",
+    "title": "Postacie wyprawy",
+    "description": "Postacie powiązane z Forge of Fury w katalogu Vengrath.",
+    "characterIds": [
+      "char-0167",
+      "char-0192",
+      "char-0227",
+      "char-0235",
+      "char-0247"
+    ]
+  }
+}
