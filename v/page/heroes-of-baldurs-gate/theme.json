@@ -1,0 +1,28 @@
+{
+  "colors": {
+    "base1": "#0d1016",
+    "base2": "#151c25",
+    "base3": "#151c25",
+    "base4": "#151c25",
+    "base5": "#151c25",
+    "accent1": "#d2a85d",
+    "accent2": "#7b9c9c",
+    "text1": "#ece7d9",
+    "text2": "#d7d2c8",
+    "text3": "#aaa59b",
+    "textMuted": "#817d76",
+    "titleAccent": "#e2c17b",
+    "line1": "#394854",
+    "line2": "#d2a85d",
+    "navBackground": "#151c25",
+    "navText": "#c9c5bc",
+    "navActiveBackground": "#151c25"
+  },
+  "typography": {
+    "heading": "\"Voltaire\", sans-serif",
+    "body": "\"Fira Sans Extra Condensed\", sans-serif",
+    "serif": "\"Brygada 1918\", Georgia, serif"
+  },
+  "fontsUrl": "https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap",
+  "heroImage": "/v/core/graphics/voronoi/heroes-of-baldurs-gate.webp"
+}
