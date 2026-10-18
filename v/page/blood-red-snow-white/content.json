@@ -1,0 +1,157 @@
+{
+  "campaign": {
+    "title": "Blood Red Snow White",
+    "heroFirstLine": "Blood Red",
+    "heroSecondLine": "Snow White",
+    "kicker": "D&D · ARCHIWUM KAMPANII",
+    "lead": "Nie każda księżniczka czeka na księcia. Nie każda baśń kończy się pocałunkiem.",
+    "introTitle": "Blood Red Snow White",
+    "introParagraphs": [
+      "Blood Red Snow White była autorską kampanią inspirowaną niemieckimi mrocznymi baśniami ludowymi, tradycją Braci Grimm, Andersenem oraz motywami chrześcijańskiego okultyzmu.",
+      "Blood Red Snow White przepisuje znane baśniowe archetypy na gotycką, krwawą historię. Księżniczki nie są tutaj nagrodą czekającą na końcu opowieści. Są tymi, które muszą przeżyć jej środek."
+    ],
+    "dossier": [
+      {
+        "label": "TYTUŁ",
+        "value": "BLOOD RED SNOW WHITE"
+      },
+      {
+        "label": "POSTACI",
+        "value": "4"
+      },
+      {
+        "label": "NAGRANIA",
+        "value": "5"
+      },
+      {
+        "label": "AUDIO",
+        "value": "TAK"
+      },
+      {
+        "label": "ŹRÓDŁO",
+        "value": "ARCHIWUM"
+      },
+      {
+        "label": "STATUS",
+        "value": "ARCHIWUM"
+      }
+    ],
+    "partyTitle": "Baśń, która odmówiła czekać.",
+    "partyDescription": "To świat krwi, wiary, klątw i rzeczy ukrytych pod powierzchnią dobrze znanych historii. Elegancja dworu spotyka się z tym, co powinno pozostać w lesie, pod ziemią albo za zamkniętymi drzwiami.",
+    "partyImage": "/v/core/portraits/char-0015.webp",
+    "manifestoTitle": "Z ARCHIWUM",
+    "manifesto": "Treść kampanii zachowana ze starej strony i osadzona w nowym wspólnym szablonie.",
+    "manifestoTags": "BLOOD RED SNOW WHITE",
+    "archiveSections": [
+      {
+        "number": "02",
+        "title": "Baśń, która odmówiła czekać.",
+        "description": "Blood Red Snow White przepisuje znane baśniowe archetypy na gotycką, krwawą historię. Księżniczki nie są tutaj nagrodą czekającą na końcu opowieści. Są tymi, które muszą przeżyć jej środek."
+      },
+      {
+        "number": "03",
+        "title": "Cztery księżniczki. Żadna nie czekała.",
+        "description": "To świat krwi, wiary, klątw i rzeczy ukrytych pod powierzchnią dobrze znanych historii. Elegancja dworu spotyka się z tym, co powinno pozostać w lesie, pod ziemią albo za zamkniętymi drzwiami."
+      },
+      {
+        "number": "04",
+        "title": "Belle de Beaumont",
+        "description": "BAŚŃ W KRWAWYM ODBICIU"
+      },
+      {
+        "number": "05",
+        "title": "Vespera Hexbound",
+        "description": "W pięciu rozegranych sesjach drużynę tworzyły cztery postacie. Każda zajmuje w archiwum to samo miejsce."
+      },
+      {
+        "number": "06",
+        "title": "Seryth T'sarran",
+        "description": "Cztery imiona. Cztery drogi przez tę samą baśń. Żadna z nich nie została zapisana jako „wybrana” — razem stanowiły drużynę tej historii."
+      },
+      {
+        "number": "07",
+        "title": "Ariana Windmere",
+        "description": "Udało się rozegrać pięć sesji. Kampania została następnie przerwana z powodu rozpadu drużyny."
+      },
+      {
+        "number": "08",
+        "title": "Pięć rozdziałów i koniec opowieści.",
+        "description": "Po pięciu sesjach historia została przerwana z powodu rozpadu drużyny. Archiwum nie dopisuje zakończenia, którego kampania nie otrzymała."
+      },
+      {
+        "number": "09",
+        "title": "We Mgły",
+        "description": "Motyw przewodni kampanii"
+      }
+    ]
+  },
+  "characters": {
+    "kicker": "AKTA / POSTACI",
+    "title": "Postacie i grafiki",
+    "description": "Cztery postacie zapisane we wspólnym katalogu dla kampanii Blood Red Snow White.",
+    "characterIds": [
+      "char-0015",
+      "char-0016",
+      "char-0017",
+      "char-0018"
+    ]
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Pięć rozdziałów i koniec opowieści.",
+    "description": "Pięć zachowanych nagrań. Kampania została przerwana po rozpadzie drużyny; archiwum nie dopisuje zakończenia, którego kampania nie otrzymała.",
+    "playlistUrl": "",
+    "sessions": [
+      {
+        "sessionNumber": "S001",
+        "title": "We Mgły",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=--quLAFiukM"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S002",
+        "title": "Dziewczynka z Zapałkami",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=Kc_UBBi6vGo"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S003",
+        "title": "Zmienne Skóry",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=2nyTrd3g5gs"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S004",
+        "title": "Wolfsnarbe",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=NJa2bg6dt_g"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S005",
+        "title": "Komplikacje",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=h2ZDbgEbHHs"
+          }
+        ]
+      }
+    ]
+  }
+}

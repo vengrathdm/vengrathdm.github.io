@@ -184,5 +184,11 @@
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/curse-of-strahd.webp",
     "CardAdress": "/v/page/curse-of-strahd/"
+  },
+  {
+    "CardName": "Blood Red Snow White",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/blood-red-snow-white.webp",
+    "CardAdress": "/v/page/blood-red-snow-white/"
   }
 ]
