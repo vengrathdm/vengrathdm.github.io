@@ -160,5 +160,11 @@
     "CardTags": "Aktywna Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/echtra-midst-the-sidhe.webp",
     "CardAdress": "/v/page/echtra-midst-the-sidhe/"
+  },
+  {
+    "CardName": "Echtra - Zima Irgaeli",
+    "CardTags": "Zamknięta Kampania",
+    "CardGraphic": "/v/core/graphics/voronoi/echtra-zima-irgaeli.webp",
+    "CardAdress": "/v/page/echtra-zima-irgaeli/"
   }
 ]
