@@ -70,5 +70,35 @@
     "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/turn-of-fortunes-wheel.webp",
     "CardAdress": "/v/page/turn-of-fortunes-wheel/"
+  },
+  {
+    "CardName": "Mythic Odyssey of the Dragonlords",
+    "CardTags": "Aktywna Kampania",
+    "CardGraphic": "/res/voronoi/webp/mythic-odyssey-of-the-dragonlords.webp",
+    "CardAdress": "/v/page/mythic-odyssey-of-the-dragonlords/"
+  },
+  {
+    "CardName": "Ghoul Hour",
+    "CardTags": "Zamknięta Kampania",
+    "CardGraphic": "/res/voronoi/webp/ghoul-hour.webp",
+    "CardAdress": "/v/page/ghoul-hour/"
+  },
+  {
+    "CardName": "The Sunless Citadel",
+    "CardTags": "Zamknięta Kampania",
+    "CardGraphic": "/res/voronoi/webp/the-sunless-citadel.webp",
+    "CardAdress": "/v/page/the-sunless-citadel/"
+  },
+  {
+    "CardName": "Noce Neverwinter",
+    "CardTags": "Zamknięta Kampania",
+    "CardGraphic": "/res/voronoi/webp/neverwinter.webp",
+    "CardAdress": "/v/page/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/"
+  },
+  {
+    "CardName": "Rime of the Frostmaiden",
+    "CardTags": "Zamknięta Kampania",
+    "CardGraphic": "/res/voronoi/webp/rime-of-the-frostmaiden.webp",
+    "CardAdress": "/v/page/rime-of-the-frostmaiden/"
   }
 ]
