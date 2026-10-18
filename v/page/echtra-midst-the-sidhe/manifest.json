@@ -1,0 +1,20 @@
+{
+  "id": "echtra-midst-the-sidhe",
+  "title": "Echtra midst the Sidhe",
+  "language": "pl",
+  "campaign": "Echtra midst the Sidhe",
+  "module": "Echtra midst the Sidhe",
+  "entry": "/v/page/echtra-midst-the-sidhe/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0gjfyGW9ErTPXe7NhqmRLGn",
+  "audio": {
+    "src": "./res/audio/Morrigan.mp3",
+    "continuationKey": "echtra-midst-the-sidhe-theme"
+  }
+}
