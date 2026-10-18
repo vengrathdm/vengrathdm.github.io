@@ -111,9 +111,9 @@ async function initialize() {
   mountSubpageNavbar(navbarMount, {
     playlistUrl: manifest.playlistUrl,
     sections: [
-      { text: "KAMPANIA", sectionLink: "campaign", color: theme.colors.accent2 },
-      { text: "POSTACIE", sectionLink: "characters", color: theme.colors.accent2 },
-      { text: "KRONIKA", sectionLink: "chronicle", color: theme.colors.accent2 }
+      { text: "Kampania", sectionLink: "campaign", color: theme.colors.accent2 },
+      { text: "Postaci", sectionLink: "characters", color: theme.colors.accent2 },
+      { text: "Kronika", sectionLink: "chronicle", color: theme.colors.accent2 }
     ]
   });
 
