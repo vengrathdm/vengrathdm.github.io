@@ -1,0 +1,63 @@
+{
+  "campaign": {
+    "kicker": "D&D · BOHATEROWIE RUIN",
+    "title": "Heroes of Drakkenheim",
+    "lead": "Drakkenheim nie daje prostych odpowiedzi. Wśród skażonych ruin, ścierających się frakcji i pozostałości katastrofy bohaterowie muszą zdecydować, jakiej przyszłości warto bronić.",
+    "introTitle": "Heroes of Drakkenheim",
+    "introParagraphs": [
+      "Drakkenheim jest miastem, które nie potrafi umrzeć — i nie pozwala żyć bez ceny. Skażenie przenika ulice, a frakcje próbują narzucić własną wizję tego, co powinno powstać na miejscu dawnej stolicy.",
+      "W tej historii bohaterstwo nie oznacza wyłącznie pokonania potworów. To również wybór sojuszy, odpowiedzialność za ludzi i decyzja, komu przypadnie prawo do kształtowania przyszłości miasta.",
+      "Każdy zdobyty sekret może stać się przewagą, przekleństwem albo argumentem w konflikcie, którego nie da się rozstrzygnąć samym mieczem."
+    ],
+    "dossier": [
+      [
+        "MIEJSCE",
+        "DRAKKENHEIM"
+      ],
+      [
+        "ZAGROŻENIE",
+        "SKAŻENIE · FRAKCJE"
+      ],
+      [
+        "STAWKA",
+        "PRZYSZŁOŚĆ MIASTA"
+      ],
+      [
+        "TON",
+        "GOTYCKA FANTASY"
+      ],
+      [
+        "STATUS",
+        "UKOŃCZONA"
+      ]
+    ],
+    "partyTitle": "Miasto jako żywy problem.",
+    "partyDescription": "",
+    "partyImage": "/v/page/heroes-of-drakkenheim/res/graphics/archive-image.jpg"
+  },
+  "characters": {
+    "kicker": "AKTA / POSTACIE",
+    "title": "Bohaterowie ruin",
+    "description": "Postacie przypisane w rejestrze do kampanii Heroes of Drakkenheim.",
+    "groupTitle": "Poległe",
+    "groupDescription": "Postacie oznaczone w rejestrze jako martwe.",
+    "characterIds": [
+      "char-0134",
+      "char-0146",
+      "char-0187",
+      "char-0205",
+      "char-0209",
+      "char-0210",
+      "char-0250",
+      "char-0251",
+      "char-0270"
+    ]
+  },
+  "chronicle": {
+    "kicker": "KRONIKA",
+    "title": "Heroes of Drakkenheim",
+    "description": "Otwórz playlistę, aby obejrzeć materiały z kampanii.",
+    "playlistLabel": "▶ ODTWÓRZ PLAYLISTĘ",
+    "sessions": []
+  }
+}
