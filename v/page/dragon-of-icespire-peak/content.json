@@ -1,0 +1,50 @@
+{
+  "campaign": {
+    "kicker": "D&D · WYPRAWA NA POGRANICZE",
+    "title": "Dragon of Icespire Peak",
+    "lead": "Zima spływa z Gór Mieczowych. Młody biały smok Cryovain zajmuje kolejne tereny, a mieszkańcy Phandalin potrzebują bohaterów gotowych stawić czoła zagrożeniu.",
+    "introTitle": "Dragon of Icespire Peak",
+    "introParagraphs": [
+      "Phandalin próbuje odbudować życie na pograniczu, ale pojawienie się Cryovaina zmienia okolicę w niebezpieczne terytorium. Biały smok patroluje Góry Mieczowe, poluje na łatwą zdobycz i wypiera inne stworzenia ze swoich siedlisk.",
+      "Wyprawa rozwija się poprzez zlecenia, wypady do odległych miejsc i spotkania z zagrożeniami, które narastają wraz z obecnością smoka. Każda wykonana misja przybliża drużynę do Icespire Peak — i do konfrontacji z drapieżnikiem, który uważa góry za własność."
+    ],
+    "dossier": [
+      [
+        "BAZA",
+        "PHANDALIN"
+      ],
+      [
+        "ZAGROŻENIE",
+        "CRYOVAIN"
+      ],
+      [
+        "REGION",
+        "GÓRY MIECZOWE"
+      ],
+      [
+        "TON",
+        "LODOWA WYPRAWA"
+      ],
+      [
+        "STATUS",
+        "UKOŃCZONA"
+      ]
+    ],
+    "partyTitle": "Na szczytach nie ma bezpiecznych dróg.",
+    "partyDescription": "Każdy ślad na śniegu może prowadzić do kolejnego zlecenia — albo do łowiska białego smoka.",
+    "partyImage": "/v/page/dragon-of-icespire-peak/res/graphics/dragon-of-icespire-peak.webp"
+  },
+  "characters": {
+    "kicker": "POSTACI",
+    "title": "Bohaterowie wyprawy",
+    "description": "Postacie przypisane w rejestrze do kampanii Dragon of Icespire Peak.",
+    "characterIds": [
+      "char-0171",
+      "char-0172",
+      "char-0244",
+      "char-0256",
+      "char-0257",
+      "char-0262"
+    ]
+  }
+}
