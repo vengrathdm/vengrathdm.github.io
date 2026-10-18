@@ -43,9 +43,9 @@ async function initialize() {
   hero.querySelector("h1").after(lead);
   document.querySelector("#campaign-hero").replaceWith(hero);
   mountSubpageNavbar(navMount,{playlistUrl:manifest.playlistUrl,sections:[
-    {text:"KAMPANIA",sectionLink:"campaign",color:theme.colors.accent2},
-    {text:"POSTACI",sectionLink:"characters",color:theme.colors.accent2},
-    {text: "Kronika",sectionLink:"chronicle",color:theme.colors.accent2}
+    { text: "Kampania", sectionLink: "campaign",color:theme.colors.accent2},
+    { text: "Postaci", sectionLink: "characters",color:theme.colors.accent2},
+    { text: "Kronika", sectionLink: "chronicle",color:theme.colors.accent2}
   ]});
   const campaign=content.campaign;
   document.querySelector("#intro-kicker").textContent=campaign.introKicker;

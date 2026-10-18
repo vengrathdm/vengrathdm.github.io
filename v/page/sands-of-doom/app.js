@@ -79,9 +79,9 @@ async function initializeCampaignPage() {
   mountSubpageNavbar(navbarMount, {
     playlistUrl: manifest.playlistUrl,
     sections: [
-      { text: "KAMPANIA", sectionLink: "campaign", color: theme.colors.accent2 },
-      { text: "DRUŻYNA", sectionLink: "characters", color: theme.colors.accent2 },
-      { text: "NAGRANIA", sectionLink: "chronicle", color: theme.colors.accent2 }
+      { text: "Kampania", sectionLink: "campaign", color: theme.colors.accent2 },
+      { text: "Postaci", sectionLink: "characters", color: theme.colors.accent2 },
+      { text: "Kronika", sectionLink: "chronicle", color: theme.colors.accent2 }
     ]
   });
 
