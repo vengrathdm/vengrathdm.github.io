@@ -1,0 +1,54 @@
+{
+  "campaign": {
+    "kicker": "D&D · ARCHIWUM KAMPANII",
+    "title": "Lost Mine of Phandelver",
+    "lead": "Archiwum ukończonej kampanii Vengrath.",
+    "introTitle": "Droga do Wave Echo Cave",
+    "introParagraphs": [
+      "Przygoda zaczyna się od transportu ładunku, a kończy w miejscu, którego mapa przez długi czas nie chciała zdradzić.",
+      "Trasa prowadzi od Neverwinter przez Phandalin do Wave Echo Cave. Lost Mine of Phandelver to klasyczna przygoda na Wybrzeżu Mieczy, w której drużyna odkrywa historię zaginionej kopalni, lokalne konflikty oraz ludzi, którzy chcą ją odnaleźć.",
+      "Kampania została przez nas ukończona. Ta podstrona pozostaje zapisem archiwalnym."
+    ],
+    "dossier": [
+      [
+        "POSTACIE",
+        "3"
+      ],
+      [
+        "PLAYLISTA",
+        "1"
+      ],
+      [
+        "ŹRÓDŁO",
+        "ARCHIWUM"
+      ],
+      [
+        "STATUS",
+        "ARCHIWUM"
+      ],
+      [
+        "TRASA",
+        "NEVERWINTER → PHANDALIN → WAVE ECHO CAVE"
+      ]
+    ]
+  },
+  "characters": {
+    "kicker": "AKTA / MATERIAŁY",
+    "title": "Postacie wyprawy",
+    "description": "Olgi, Arson i Chronius Mk. III są wymienieni na starej stronie. Ich portrety i podstawowe dane pochodzą ze wspólnego katalogu Vengrath; w oryginalnym archiwum nie zachowano osobnych grafik ani opisów.",
+    "characterIds": [
+      "char-0066",
+      "char-0142",
+      "char-0144"
+    ]
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Nagrania i playlista",
+    "description": "Na starej stronie zachował się odnośnik do playlisty, ale nie ma zweryfikowanych danych poszczególnych sesji.",
+    "entryNumber": "S001",
+    "entryTitle": "Do Uzupełnienia",
+    "entryDescription": "Dane sesji do uzupełnienia.",
+    "playlistLabel": "OTWÓRZ ZACHOWANĄ PLAYLISTĘ →"
+  }
+}

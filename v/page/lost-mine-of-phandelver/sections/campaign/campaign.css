@@ -1,0 +1,106 @@
+html { scroll-behavior:smooth; }
+.lost-mine-of-phandelver-page {
+  margin:0; min-height:100vh;
+  background:radial-gradient(circle at 75% 8%,#242b31 0,transparent 32%),
+    radial-gradient(circle at 10% 70%,#1a171a 0,transparent 30%),var(--theme-base-1);
+  color:var(--theme-text-1); font-family:var(--theme-font-2); line-height:1.6;
+}
+.lost-mine-of-phandelver-page::before {
+  content:""; position:fixed; inset:0; z-index:30; pointer-events:none; opacity:.14;
+  background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,255,255,.025) 4px);
+}
+.lost-mine-of-phandelver-page .subpage-hero {
+  display:flex; align-items:flex-end; min-height:100vh; min-height:100svh; background:#070607;
+}
+.lost-mine-of-phandelver-page .subpage-hero::before {
+  content:""; position:absolute; inset:0; z-index:0;
+  background:var(--hero-background,none) center/cover no-repeat; filter:saturate(.72) contrast(1.08);
+}
+.lost-mine-of-phandelver-page .subpage-hero::after {
+  content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(90deg,rgba(5,4,5,.94),rgba(5,4,5,.58) 48%,rgba(5,4,5,.36)),
+    linear-gradient(0deg,rgba(5,4,5,.96),transparent 48%),
+    radial-gradient(circle at 75% 42%,transparent 0 17%,rgba(5,4,5,.45) 70%);
+}
+.lost-mine-of-phandelver-page .subpage-hero__copy {
+  display:block; z-index:3; width:min(1320px,calc(100% - 40px)); box-sizing:border-box;
+  margin:0 auto 100px; padding:0; text-align:left;
+}
+.lmop-navbar-mount { position:fixed; inset:0 0 auto; z-index:1100; }
+.lmop-hero-kicker {
+  margin:0; color:var(--theme-accent-2); font:500 9px/1.4 var(--theme-font-2);
+  letter-spacing:.25em; text-transform:uppercase;
+}
+.lost-mine-of-phandelver-page .subpage-hero h1 {
+  margin:24px 0 28px; color:var(--theme-text-1);
+  font:600 clamp(58px,9vw,128px)/.8 var(--theme-font-1); letter-spacing:-.045em;
+  overflow-wrap:break-word; text-transform:uppercase; text-shadow:0 25px 60px #000;
+}
+.lost-mine-of-phandelver-page .subpage-hero .lmop-hero-title-accent {
+  color:var(--theme-title-accent); font-family:var(--theme-font-3); font-weight:500;
+  font-style:italic; letter-spacing:-.03em; text-transform:none;
+}
+.lmop-hero-lead {
+  max-width:690px; margin:0 0 30px; color:var(--theme-text-2);
+  font:23px/1.3 var(--theme-font-3);
+}
+.lmop-hero-mist-line {
+  position:absolute; right:clamp(20px,6vw,90px); bottom:24px; left:clamp(20px,6vw,90px);
+  z-index:4; height:1px; pointer-events:none;
+}
+.lmop-hero-mist-line::after {
+  content:"↓"; position:absolute; right:0; bottom:0; color:#8b8173; font:500 24px/1 var(--theme-font-2);
+}
+.ddc-content { width:min(1220px,calc(100% - 48px)); margin:auto; padding:70px 0 100px; }
+.ddc-tab-panel[hidden] { display:none; }
+.ddc-card { border:1px solid #3a3d42; background:linear-gradient(145deg,#13161a,#0d0f12); box-shadow:0 20px 65px #0007; }
+.ddc-card-title { display:flex; align-items:center; gap:18px; padding:18px 28px; border-bottom:1px solid #34373b; background:#0a0c0f; }
+.ddc-card-title span { color:var(--theme-accent-1); font:400 30px/1 var(--theme-font-1); }
+.ddc-card-title strong { color:#d9d3c7; font:700 12px/1 var(--theme-font-1); letter-spacing:3px; }
+.ddc-card-body { padding:28px; }
+.ddc-intro-grid { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr); gap:26px; align-items:stretch; }
+.ddc-paper { position:relative; min-width:0; padding:40px; border:1px solid var(--theme-line-1); background:linear-gradient(135deg,#17191d,#101215); box-shadow:0 20px 70px #0007; }
+.ddc-paper::after { content:""; position:absolute; top:0; right:35px; width:1px; height:100%; background:#292c30; }
+.ddc-section-mark { color:var(--theme-accent-2); font:400 13px/1 var(--theme-font-1); letter-spacing:3px; text-transform:uppercase; }
+.ddc-paper h2,.ddc-section h2 { margin:12px 0 20px; color:#ece7dc; font:400 clamp(36px,4vw,58px)/.95 var(--theme-font-1); }
+.ddc-paper p { max-width:72ch; margin:0 0 14px; color:#aaa9a3; font:16px/1.6 var(--theme-font-3); }
+.ddc-case { min-width:0; padding:28px; border:1px solid #46484b; background:#0d0f12; box-shadow:8px 8px 0 #050608; }
+.ddc-case-label { margin-bottom:5px; padding-bottom:12px; border-bottom:1px solid #4b3a3c; color:#b73b48; font:700 12px var(--theme-font-1); letter-spacing:3px; }
+.ddc-case-row { display:flex; justify-content:space-between; gap:15px; padding:15px 0; border-bottom:1px solid #292c30; font-size:13px; }
+.ddc-case-row span { color:#85827c; letter-spacing:1px; }
+.ddc-case-row strong { color:#ddd7ca; font:16px var(--theme-font-1); text-align:right; overflow-wrap:anywhere; }
+.ddc-case-row .ddc-active { color:#b94a55; }
+.ddc-manifesto {
+  display:grid; grid-template-columns:70px minmax(0,1fr); align-items:center; gap:24px;
+  margin-top:50px; padding:28px 32px; border-top:1px solid #6b5b40; border-bottom:1px solid #6b5b40; background:#111216;
+}
+.ddc-manifesto-symbol { color:var(--theme-accent-1); font-size:42px; text-align:center; }
+.ddc-manifesto p { margin:8px 0 10px; color:#d8d2c7; font:italic 23px/1.4 var(--theme-font-3); }
+.ddc-manifesto span { color:#817d76; font-size:10px; letter-spacing:3px; }
+.ddc-section { margin-top:82px; }
+.ddc-character-intro { margin-top:0; margin-bottom:28px; }
+.ddc-character-intro p,.ddc-chronicle-intro p { max-width:72ch; margin:0; color:#888b87; font-size:15px; }
+.ddc-chronicle-panel .ddc-section { margin-top:0; }
+.ddc-chronicle-panel .ddc-chronicle-records { margin-top:28px; }
+.ddc-footer { display:flex; justify-content:space-between; gap:20px; padding:24px 30px; border-top:1px solid #2f3135; background:#07080a; color:#6f726f; }
+.ddc-footer a { color:#a99a7b; text-decoration:none; }
+.ddc-footer a:hover,.ddc-footer a:focus-visible { color:var(--theme-accent-2); outline-offset:3px; }
+@media(max-width:900px) { .ddc-intro-grid { grid-template-columns:minmax(0,1fr); } }
+@media(max-width:620px) {
+  .lost-mine-of-phandelver-page .subpage-hero { min-height:88vh; min-height:88svh; }
+  .lost-mine-of-phandelver-page .subpage-hero__copy { width:calc(100% - 40px); margin-bottom:85px; }
+  .lost-mine-of-phandelver-page .subpage-hero h1 { font-size:clamp(38px,8.5vw,58px); }
+  .lmop-hero-kicker { font-size:8px; letter-spacing:.14em; }
+  .lmop-hero-lead { font-size:18px; }
+  .lmop-hero-mist-line { right:20px; left:20px; }
+  .ddc-content { width:calc(100% - 28px); padding-top:45px; }
+  .ddc-card-body { padding:18px; }
+  .ddc-card-title { padding:16px 18px; }
+  .ddc-paper { padding:25px; }
+  .ddc-paper::after { display:none; }
+  .ddc-case { padding:22px; }
+  .ddc-manifesto { grid-template-columns:1fr; gap:12px; padding:22px; }
+  .ddc-manifesto-symbol { text-align:left; }
+  .ddc-footer { display:block; }
+  .ddc-footer a { display:block; margin-top:8px; }
+}
