@@ -2,7 +2,7 @@
 
 /* Restore the Citadel's deep-forest palette, stone panels and muted crimson accents. */
 .campaign-content{position:relative;isolation:isolate}
-.campaign-content::before{content:"";position:absolute;z-index:-1;inset:0 calc((1220px - 100vw)/2);pointer-events:none;background:radial-gradient(ellipse at 78% 8%,rgba(38,63,43,.72),transparent 36%),radial-gradient(ellipse at 8% 72%,rgba(66,21,27,.5),transparent 34%),linear-gradient(180deg,#070b09,#0b120e 62%,#070b09)}
+.campaign-content::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;background:radial-gradient(ellipse at 78% 8%,rgba(38,63,43,.72),transparent 36%),radial-gradient(ellipse at 8% 72%,rgba(66,21,27,.5),transparent 34%),linear-gradient(180deg,#070b09,#0b120e 62%,#070b09)}
 .campaign-card,.campaign-section{border-color:#314438;background:linear-gradient(145deg,#111c15,#070b09);box-shadow:0 22px 70px #0009}
 .campaign-card-title{background:#0b120e;border-bottom-color:#314438}.campaign-card-title span{color:#a8323e}.campaign-paper{background:linear-gradient(135deg,#1b2a20,#0b120e);border-color:#314438;box-shadow:0 20px 70px #0007}.campaign-paper p{color:#d8dfd2}
 .campaign-dossier{background:#0b120e;border-color:#5d745e;box-shadow:8px 8px 0 #0006}.campaign-dossier-label,.campaign-section-mark{color:#a7b58a}.campaign-dossier-row{border-bottom-color:#314438}.campaign-dossier-row strong{color:#f2f0e7}
