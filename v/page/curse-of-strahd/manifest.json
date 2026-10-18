@@ -1,0 +1,15 @@
+{
+  "id": "curse-of-strahd",
+  "title": "Curse of Strahd",
+  "language": "pl",
+  "campaign": "Curse of Strahd",
+  "module": "Curse of Strahd",
+  "entry": "/v/page/curse-of-strahd/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "chronicle"
+  ],
+  "playlistUrl": "https://www.youtube.com/@FraternityOfShadows/playlists"
+}
