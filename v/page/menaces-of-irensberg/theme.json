@@ -1,0 +1,25 @@
+{
+  "colors": {
+    "base1": "#05090a",
+    "base2": "#071310",
+    "base3": "#0b1c16",
+    "base4": "#10271d",
+    "base5": "#173326",
+    "accent1": "#9cff24",
+    "accent2": "#42bfff",
+    "text1": "#f2f4e9",
+    "text2": "#d5e0d6",
+    "text3": "#a4b9ac",
+    "textMuted": "#71857a",
+    "titleAccent": "#e8eee0",
+    "line1": "#244a3b",
+    "line2": "#35745a"
+  },
+  "typography": {
+    "heading": "Voltaire, sans-serif",
+    "body": "Fira Sans Extra Condensed, sans-serif",
+    "serif": "Brygada 1918, Georgia, serif"
+  },
+  "fontsUrl": "https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap",
+  "heroImage": "/v/core/graphics/voronoi/mences-of-irensberg.webp"
+}

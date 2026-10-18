@@ -1,0 +1,17 @@
+{
+  "id": "turn-of-fortunes-wheel",
+  "title": "Turn of Fortune's Wheel",
+  "language": "pl",
+  "entry": "/v/page/turn-of-fortunes-wheel/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "audio": {
+    "src": "/res/audio/turn-of-fortunes-wheel/turn-of-the-wheel.mp3",
+    "storageKey": "turnOfFortunesWheelTheme"
+  }
+}
