@@ -1,0 +1,63 @@
+{
+  "campaign": {
+    "kicker": "AUTORSKA KAMPANIA · FANTASY / SCIENCE FANTASY",
+    "title": "Shards of the Past",
+    "heroFirstLine": "Shards of",
+    "heroSecondLine": "the Past",
+    "lead": "Shards of the Past to autorska kampania fantasy osadzona w Antarriah — świecie, w którym pozostałości dawnej cywilizacji są zarazem znaleziskami archeologicznymi i śladami technologii, której przeznaczenia nikt już nie rozumie.",
+    "introTitle": "Nie wszystko powinno zostać ponownie uruchomione",
+    "introParagraphs": [
+      "Nie wszystko, co przetrwało tysiące lat, powinno zostać ponownie uruchomione.",
+      "Na Antarriah pustynne piaski skrywają bunkry, świątynie i kompleksy pozostawione przez cywilizację, której technologia wyprzedza współczesny świat o tysiąclecia.",
+      "Wolne Miasto Sorsaler jest punktem wyjścia: śledztwo w sprawie zaginionych uczonych prowadzi do Zaginionych Archiwów, reliktów Pradawnych i uszkodzonej sztucznej inteligencji.",
+      "To fantasy, w którym magia i dawna technologia współistnieją, lecz nie dają się łatwo od siebie odróżnić. W ruinach można znaleźć systemy, maszyny i wiedzę, których funkcji mieszkańcy świata nie potrafią już wyjaśnić.",
+      "Gdy Alexander Grisseaux rusza ku Kuźni Strażników — latającej fortecy zdolnej stworzyć armię — odkrycie przeszłości staje się zagrożeniem dla teraźniejszości. Stawką jest nie tylko władza nad starożytną bronią, lecz także granica oddzielająca świat materialny od Otchłani."
+    ],
+    "dossier": [
+      [
+        "FORMAT",
+        "CAMPAIGN BOOK"
+      ],
+      [
+        "ZAKRES",
+        "POZIOMY 2–17"
+      ],
+      [
+        "ŚWIAT",
+        "ANTARRIAH"
+      ],
+      [
+        "RDZEŃ",
+        "PRADAWNI · AI · RUINY"
+      ],
+      [
+        "TON",
+        "SCIENCE FANTASY · TAJEMNICA"
+      ]
+    ],
+    "audioTitle": "Muzyka świata Antarriah",
+    "audioKicker": "ŚCIEŻKA DŹWIĘKOWA"
+  },
+  "world": {
+    "kicker": "ANTARRIAH / DOKUMENTACJA",
+    "title": "Świat fantasy z warstwą zapomnianej technologii.",
+    "description": "Pradawni pozostawili po sobie świątynie, podziemne kompleksy i maszyny, które współczesne społeczeństwa odczytują przez pryzmat magii, religii i legend.",
+    "sections": [
+      {
+        "kicker": "01 / POD PIASKIEM",
+        "title": "Kompleksy prekursorów",
+        "description": "Bunkry i zatopione instalacje ukryte pod pustyniami zawierają urządzenia, pancerze i systemy stworzone przez cywilizację o możliwościach daleko wykraczających poza obecny poziom świata."
+      },
+      {
+        "kicker": "02 / ŚWIADOMOŚĆ",
+        "title": "Sztuczna inteligencja",
+        "description": "Uszkodzona AI odkryta w dawnym kompleksie nie jest wszechmocnym bytem. To zaawansowany, lecz ograniczony system — możliwy do naprawy, zrozumienia i wykorzystania, z konsekwencjami zależnymi od decyzji bohaterów."
+      },
+      {
+        "kicker": "03 / ZAGROŻENIE",
+        "title": "Kuźnia Strażników",
+        "description": "Latająca forteca i możliwość stworzenia ogromnej armii łączą technologiczną spuściznę Pradawnych z zagrożeniem otwarcia świata materialnego na wpływ Otchłani."
+      }
+    ]
+  }
+}

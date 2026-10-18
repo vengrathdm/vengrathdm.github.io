@@ -1,0 +1,18 @@
+{
+  "id": "shards-of-the-past",
+  "title": "Shards of the Past",
+  "language": "pl",
+  "campaign": "Shards of the Past",
+  "module": "Shards of the Past",
+  "entry": "/v/page/shards-of-the-past/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "world"
+  ],
+  "audio": {
+    "src": "/res/audio/shards-of-the-past/SotP.mp3",
+    "continuationKey": "shards-of-the-past-theme"
+  }
+}

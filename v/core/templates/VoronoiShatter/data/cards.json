@@ -172,5 +172,11 @@
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/KuChwaleTyra.webp",
     "CardAdress": "/v/page/ku-chwale-tyra/"
+  },
+  {
+    "CardName": "Shards of the Past",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/shards-of-the-past.webp",
+    "CardAdress": "/v/page/shards-of-the-past/"
   }
 ]
