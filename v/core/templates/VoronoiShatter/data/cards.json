@@ -196,5 +196,23 @@
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/heroes-of-baldurs-gate.webp",
     "CardAdress": "/v/page/heroes-of-baldurs-gate/"
+  },
+  {
+    "CardName": "Mayhem in Earthspur Mines",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/mayhem-in-earthspur-mines.webp",
+    "CardAdress": "/v/page/mayhem-in-earthspur-mines/"
+  },
+  {
+    "CardName": "Turn Back the Endless Night",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/turn-back-the-endless-night.webp",
+    "CardAdress": "/v/page/turn-back-the-endless-night/"
+  },
+  {
+    "CardName": "Dragon of Dampen Depths",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/dragon-of-dampen-depths.webp",
+    "CardAdress": "/v/page/dragon-of-dampen-depths/"
   }
 ]

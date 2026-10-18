@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="W kopalni w Górach Earthspur znikają górnicy, żołnierze i transport surowca. Archiwum przygody DDEX2-4 z sezonu Elemental Evil.">
+  <meta name="theme-color" content="#08090b">
+  <title>Mayhem in Earthspur Mines — Vengrath</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./theme-fonts.css">
+  <link rel="stylesheet" href="/v/core/templates/HomeButton/HomeButton.css">
+  <link rel="stylesheet" href="/v/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageNavbar/SubpageNavbar.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageHero/SubpageHero.css">
+  <link rel="stylesheet" href="/v/core/templates/CharacterGallery/CharacterGallery.css">
+  <link rel="stylesheet" href="/v/core/templates/CharacterCard/CharacterCard.css">
+  <link rel="stylesheet" href="/v/core/templates/CharacterCard/Achievements/Achievements.css">
+  <link rel="stylesheet" href="/v/core/templates/Chronicle/Chronicle.css">
+  <link rel="stylesheet" href="/v/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css">
+  <link rel="stylesheet" href="/v/core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css">
+  <link rel="stylesheet" href="/v/core/templates/AudioPlayerButton/AudioPlayerButton.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="mim-page">
+  <div id="campaign-hero"></div>
+  <main class="mim-content">
+    <section class="mim-panel" id="campaign" data-page-section="campaign">
+      <section class="mim-card">
+        <div class="mim-card-title"><span>01</span><strong>AKTA KAMPANII</strong></div>
+        <div class="mim-card-body">
+          <div class="mim-intro-grid">
+            <article class="mim-paper">
+              <div class="mim-section-mark">O KAMPANII</div>
+              <h2 id="intro-title"></h2>
+              <div id="intro-copy"></div>
+            </article>
+            <aside class="mim-dossier" aria-label="Dossier kampanii">
+              <div class="mim-dossier-label">DOSSIER</div>
+              <div id="campaign-dossier"></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <section class="mim-party">
+        <div class="mim-party-copy">
+          <div class="mim-section-mark">ARCHIWUM</div>
+          <h2 id="party-title"></h2>
+          <p id="party-description"></p>
+        </div>
+        <figure class="mim-party-image">
+          <img id="party-image" alt="Mayhem in Earthspur Mines" loading="lazy">
+        </figure>
+      </section>
+      <section class="mim-manifesto">
+        <div class="mim-manifesto-symbol" aria-hidden="true">✦</div>
+        <div>
+          <div class="mim-section-mark" id="manifesto-title"></div>
+          <p id="manifesto-quote"></p>
+          <span id="manifesto-tags"></span>
+        </div>
+      </section>
+      <section class="mim-archive" aria-label="Zapis archiwalny">
+        <div class="mim-archive-heading">
+          <div class="mim-section-mark">ZACHOWANE AKTA</div>
+          <h2>Fragmenty z archiwum</h2>
+        </div>
+        <div id="campaign-archive" class="mim-archive-grid"></div>
+      </section>
+    </section>
+
+    <section class="mim-panel" id="characters" data-page-section="characters" hidden>
+      <section class="mim-section">
+        <div class="mim-section-mark" id="characters-kicker"></div>
+        <h2 id="characters-title"></h2>
+        <p id="characters-description"></p>
+        <div id="character-gallery" aria-live="polite"></div>
+      </section>
+    </section>
+
+    <section class="mim-panel" id="chronicle" data-page-section="chronicle" hidden>
+      <section class="mim-section">
+        <div class="mim-section-mark" id="chronicle-kicker"></div>
+        <h2 id="chronicle-title"></h2>
+        <p id="chronicle-description"></p>
+        <a id="chronicle-playlist" class="mim-playlist" target="_blank" rel="noopener noreferrer" hidden>Otwórz playlistę kampanii ↗</a>
+        <div id="chronicle-records"></div>
+      </section>
+    </section>
+  </main>
+  <footer class="mim-footer">
+    <span id="footer-title">VENGRATH · BLOOD RED SNOW WHITE</span>
+    <a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a>
+  </footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
