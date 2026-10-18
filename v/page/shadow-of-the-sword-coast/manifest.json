@@ -1,0 +1,16 @@
+{
+  "id": "shadow-of-the-sword-coast",
+  "title": "Shadow of the Sword Coast",
+  "language": "pl",
+  "campaign": "Shadow of the Sword Coast",
+  "module": "Autorska kampania",
+  "entry": "/v/page/shadow-of-the-sword-coast/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0jQ56t7nIcnojvC_4H_Dcn9"
+}

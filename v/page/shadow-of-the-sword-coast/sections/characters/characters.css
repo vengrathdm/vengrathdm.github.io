@@ -1,0 +1,34 @@
+.ddc-character-intro { margin-top:0; margin-bottom:28px; }
+.ddc-character-intro p { max-width:72ch; margin:0; color:#888b87; font-size:15px; }
+.shadow-of-the-sword-coast-page .character-gallery { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+.shadow-of-the-sword-coast-page .character-card {
+ min-width:0; overflow:hidden; border:1px solid #44383a; border-radius:0;
+ background:linear-gradient(145deg,#19171a,#0d0f12); box-shadow:0 16px 45px #0006; color:var(--theme-text-1);
+}
+.shadow-of-the-sword-coast-page .character-card:hover,.shadow-of-the-sword-coast-page .character-card:focus-visible {
+ border-color:var(--theme-accent-2); transform:translateY(-3px); outline-offset:3px;
+}
+.shadow-of-the-sword-coast-page .character-card__portrait {
+ position:relative; aspect-ratio:4/5; overflow:hidden; border-bottom:1px solid #4b3a3d;
+ background:radial-gradient(circle at 50% 30%,#393338 0,transparent 38%),linear-gradient(180deg,#242025,#0b0d10);
+}
+.shadow-of-the-sword-coast-page .character-card__portrait img { display:block; width:100%; height:100%; object-fit:cover; object-position:center top; filter:saturate(.8); }
+.shadow-of-the-sword-coast-page .character-card__portrait::after { content:""; position:absolute; inset:18px; border:1px dashed #75666a; opacity:.3; pointer-events:none; }
+.shadow-of-the-sword-coast-page .character-card__status {
+ position:absolute; right:.65rem; bottom:.65rem; padding:.3rem .55rem; border:1px solid #ffffff40;
+ background:#08090bdd; color:#c3a66d; font:.7rem var(--theme-font-2); text-transform:uppercase;
+}
+.shadow-of-the-sword-coast-page .character-card__achievements { position:absolute; top:.55rem; left:.55rem; right:.55rem; display:flex; flex-wrap:wrap; gap:.25rem; }
+.shadow-of-the-sword-coast-page .achievement-badge { border-color:#c3a66d99; background:#111216ef; color:#e0c78e; }
+.shadow-of-the-sword-coast-page .character-card__body { display:grid; gap:.65rem; padding:22px; }
+.shadow-of-the-sword-coast-page .character-card h3 { margin:7px 0 2px; color:#c9c2b7; font:400 25px/1.1 var(--theme-font-1); overflow-wrap:anywhere; }
+.shadow-of-the-sword-coast-page .character-card__player { margin:0; color:#aaa8a1; font-size:14px; font-weight:500; overflow-wrap:anywhere; }
+.shadow-of-the-sword-coast-page .character-card__row { display:grid; grid-template-columns:4.5rem minmax(0,1fr); gap:.5rem; font-size:.78rem; line-height:1.4; }
+.shadow-of-the-sword-coast-page .character-card__label { color:#928c89; font:.7rem var(--theme-font-1); letter-spacing:1px; text-transform:uppercase; }
+.shadow-of-the-sword-coast-page .character-card__value { min-width:0; color:#aaa8a1; overflow-wrap:anywhere; }
+.shadow-of-the-sword-coast-page .character-card__achievement-count { margin:auto 0 0; padding:.6rem .9rem; border-top:1px solid #44383a; color:#928c89; font-size:.72rem; }
+@media(max-width:1050px) { .shadow-of-the-sword-coast-page .character-gallery { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:620px) {
+ .shadow-of-the-sword-coast-page .character-gallery { grid-template-columns:minmax(0,1fr); }
+ .shadow-of-the-sword-coast-page .character-card__portrait { aspect-ratio:4/4.2; }
+}
