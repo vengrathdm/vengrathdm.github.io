@@ -19,18 +19,6 @@ body.tomb-of-annihilation-page::before {
   content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 30; opacity: .14;
   background: repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,255,255,.025) 4px);
 }
-/* Keep the hero visible immediately while configuration and modules load. */
-#campaign-hero {
-  min-height: 100svh;
-  background:
-    linear-gradient(90deg, rgba(8, 9, 11, .78), rgba(8, 9, 11, .22)),
-    url("/v/page/tomb-of-annihilation/res/graphics/hero-image.jpg") center / cover no-repeat;
-}
-/* Prevent uninitialized page sections from flashing before the hero and navbar mount. */
-body:not(.toa-ready) .toa-content,
-body:not(.toa-ready) .toa-footer {
-  visibility: hidden;
-}
 /* The shared SubpageHero owns viewport height. Do not set a campaign-specific height here. */
 .toa-hero { background-position: center; }
 .toa-hero-kicker { margin:0; color:var(--theme-accent-2); font:400 13px/1.4 var(--theme-font-1); letter-spacing:.28em; text-transform:uppercase; }
