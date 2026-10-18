@@ -1,0 +1,12 @@
+{
+  "colors": {
+    "base1": "Thylea to kraina, w której śmiertelni żyją w cieniu bogów i tytanów, a dawne konflikty wciąż kształtują teraźniejszość.",
+    "base2": "Mythic Odyssey of the Dragonlords rozwija mitologiczny świat Thylei jako odrębną wyprawę.",
+    "base3": "To opowieść o boskich ambicjach, pradawnych tajemnicach i wyborach, które wystawiają na próbę odwagę i lojalność."
+  },
+  "typography": {
+    "body": "\"Fira Sans Extra Condensed\", sans-serif",
+    "serif": "\"Brygada 1918\", Georgia, serif"
+  },
+  "heroImage": "/p/mythic-odyssey-of-the-dragonlords/res/hero-image.jpg"
+}
