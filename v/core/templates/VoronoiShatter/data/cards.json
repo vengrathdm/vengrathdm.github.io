@@ -142,5 +142,11 @@
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/dungeons-of-drakkenheim.webp",
     "CardAdress": "/v/page/heroes-of-drakkenheim/"
+  },
+  {
+    "CardName": "Gold for Fools and Princes",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/Gold-for-Fools-and-Princes.webp",
+    "CardAdress": "/v/page/gold-for-fools-and-princes/"
   }
 ]
