@@ -1,5 +1,6 @@
 import { createSubpageHero } from "/v/core/templates/SubpageHero/SubpageHero.js";
 import { mountSubpageNavbar } from "/v/core/templates/SubpageNavbar/SubpageNavbar.js";
+import { CharacterGallery } from "/v/core/templates/CharacterGallery/CharacterGallery.js";
 
 async function loadJson(path) {
   const response = await fetch(path);
@@ -61,6 +62,7 @@ async function initializeCampaignPage() {
     playlistUrl: manifest.playlistUrl,
     sections: [
       { text: "Kampania", sectionLink: "campaign", color: theme.colors.accent2 },
+      { text: "Postaci", sectionLink: "characters", color: theme.colors.accent2 },
       { text: "Kronika", sectionLink: "chronicle", color: theme.colors.accent2 }
     ]
   });
@@ -86,6 +88,11 @@ async function initializeCampaignPage() {
     return row;
   }));
 
+  document.querySelector("#characters-kicker").textContent = content.characters.kicker;
+  document.querySelector("#characters-title").textContent = content.characters.title;
+  document.querySelector("#characters-description").textContent = content.characters.description;
+  const characterGallery = new CharacterGallery(document.querySelector("#tiamat-character-gallery"), { characterIds: content.characters.characterIds });
+  await characterGallery.render();
   document.querySelector("#chronicle-playlist").href = content.chronicle.playlistUrl;
 }
 

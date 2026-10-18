@@ -9,15 +9,44 @@
       "Kampania została przez nas ukończona. Poniżej znajdują się materiały z tej rozgrywki."
     ],
     "dossier": [
-      ["SAGA", "Tyranny of Dragons"],
-      ["ZAGROŻENIE", "Kult Smoka"],
-      ["STAWKA", "Powrót Tiamat"],
-      ["MATERIAŁY", "0"],
-      ["NAGRANIA", "1"],
-      ["STATUS", "KAMPANIA UKOŃCZONA"]
+      [
+        "SAGA",
+        "Tyranny of Dragons"
+      ],
+      [
+        "ZAGROŻENIE",
+        "Kult Smoka"
+      ],
+      [
+        "STAWKA",
+        "Powrót Tiamat"
+      ],
+      [
+        "MATERIAŁY",
+        "0"
+      ],
+      [
+        "NAGRANIA",
+        "1"
+      ],
+      [
+        "STATUS",
+        "KAMPANIA UKOŃCZONA"
+      ]
     ]
   },
   "chronicle": {
     "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0iz9O9RL33Hj8bInGf89VFD"
+  },
+  "characters": {
+    "kicker": "AKTA / 02",
+    "title": "Bohaterowie Tyranny of Dragons",
+    "description": "Cztery postacie, które stanęły przeciwko Kultowi Smoka. Karty korzystają ze wspólnego katalogu postaci.",
+    "characterIds": [
+      "char-0085",
+      "char-0086",
+      "char-0142",
+      "char-0258"
+    ]
   }
 }
