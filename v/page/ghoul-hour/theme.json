@@ -1,0 +1,11 @@
+{
+  "colors": {
+    "base1": "Ghoul Hour to mroczne fantasy o śladach nekromancji, nieumarłych i zagrożeniach kryjących się na północnych rubieżach.",
+    "base2": "W kolejnych etapach drużyna mierzy się z drogą do Rimefall, kopalniami Emberdeep, opętaniem i Kręgiem Mumifikacji."
+  },
+  "typography": {
+    "body": "\"Fira Sans Extra Condensed\", sans-serif",
+    "serif": "\"Brygada 1918\", Georgia, serif"
+  },
+  "heroImage": "/res/voronoi/webp/ghoul-hour.webp"
+}
