@@ -1,0 +1,16 @@
+{
+  "id": "menaces-of-gloomforest",
+  "title": "Menaces of Gloomforest",
+  "language": "pl",
+  "campaign": "Menaces of Gloomforest",
+  "module": "Menaces of Irensberg",
+  "entry": "/v/page/menaces-of-gloomforest/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0jY8sPEuRlBdlXIFw9WJlEL"
+}
