@@ -1,0 +1,15 @@
+{
+  "id": "the-dragon-and-the-kraken",
+  "title": "The Dragon and the Kraken",
+  "language": "pl",
+  "campaign": "The Dragon and the Kraken",
+  "module": "D&D · Przygoda archiwalna",
+  "entry": "/v/page/the-dragon-and-the-kraken/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "materials"
+  ],
+  "playlistUrl": null
+}

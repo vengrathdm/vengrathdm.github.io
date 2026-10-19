@@ -1,0 +1,47 @@
+{
+  "campaign": {
+    "title": "Cemetery of Dragons",
+    "kicker": "D&D · NIEURUCHOMIONA PRZYGODA",
+    "lead": "Zaginiona ekspedycja archeologiczna prowadzi do starożytnego miejsca pochówku smoków, ich czempionów oraz setek koboldów.",
+    "introLabel": "O PRZYGODZIE",
+    "introTitle": "Cemetery of Dragons",
+    "introParagraphs": [
+      "Zaginiona ekspedycja archeologiczna prowadzi do starożytnego miejsca pochówku smoków, ich czempionów oraz setek koboldów.",
+      "Archeolodzy natrafili na stary grobowiec, na który czekał nekromanta Arkansis. Po otwarciu grobowca ożywił zmarłych i doprowadził do zagłady ekspedycji. Teraz chce zejść jeszcze głębiej i dotrzeć do tego, co skrywa smoczy grobowiec.",
+      "Drużyna bada nekropolię, poznaje los ekspedycji i mierzy się z nieumarłymi strażnikami oraz siłami Arkansisa. Przy wejściu spotyka Friedricha, nieumarłego archeologa, i Wortaxa, smoczego czempiona."
+    ],
+    "dossier": [
+      {
+        "label": "STATUS",
+        "value": "NIEURUCHOMIONA"
+      },
+      {
+        "label": "MATERIAŁY",
+        "value": "HOMEBREWERY"
+      },
+      {
+        "label": "FORMAT",
+        "value": "PRZYGODA"
+      }
+    ],
+    "sections": [
+      {
+        "title": "O przygodzie",
+        "description": "Eksploracja nekropolii ujawnia los ekspedycji i zagrożenia pozostawione przez Arkansisa."
+      },
+      {
+        "title": "Status",
+        "description": "Przygoda nie została rozegrana."
+      },
+      {
+        "title": "Zarys",
+        "description": "Friedrich, nieumarły archeolog, i Wortax, smoczy czempion, strzegą wejścia do opowieści o smoczym grobowcu."
+      }
+    ]
+  },
+  "materials": {
+    "title": "Dokument źródłowy",
+    "description": "Pełny dokument przygody jest dostępny w Homebrewery.",
+    "url": "https://homebrewery.naturalcrit.com/share/fgP3BYZSFKNf"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "colors": {
+    "base1": "#0c0e10",
+    "base2": "#17191a",
+    "base3": "#20201d",
+    "base4": "#292822",
+    "base5": "#302e27",
+    "accent1": "#b85b32",
+    "accent2": "#d2a66a",
+    "text1": "#f0e7d6",
+    "text2": "#d9cbb6",
+    "text3": "#b9ad9a",
+    "textMuted": "#82796b",
+    "titleAccent": "#d2a66a",
+    "line1": "#494237",
+    "line2": "#70553b",
+    "navBackground": "#17191a",
+    "navText": "#d9cbb6",
+    "navActiveBackground": "#292822",
+    "sealBorder": "#d2a66a",
+    "sealInnerBorder": "#494237",
+    "sealBackground": "#08090bcc",
+    "sealSmallText": "#b9ad9a",
+    "sealMainText": "#d2a66a"
+  },
+  "typography": {
+    "heading": "\"Voltaire\", sans-serif",
+    "body": "\"Fira Sans Extra Condensed\", sans-serif",
+    "serif": "\"Brygada 1918\", Georgia, serif"
+  },
+  "heroImage": "/v/core/graphics/voronoi/trouble-beneath-the-mountains-of-ash.webp"
+}

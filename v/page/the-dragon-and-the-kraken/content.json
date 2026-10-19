@@ -1,0 +1,47 @@
+{
+  "campaign": {
+    "title": "The Dragon and the Kraken",
+    "kicker": "D&D · NIEURUCHOMIONA PRZYGODA",
+    "lead": "Mroczna przygoda morska wokół Port Mercy, miasta portowego opanowanego przez strach i coraz liczniejszych nieumarłych wyrzucanych przez morze.",
+    "introLabel": "O PRZYGODZIE",
+    "introTitle": "The Dragon and the Kraken",
+    "introParagraphs": [
+      "Mroczna przygoda morska wokół Port Mercy, miasta portowego opanowanego przez strach i coraz liczniejszych nieumarłych wyrzucanych przez morze.",
+      "Piracka królowa Aranya Vex, znana jako Kraken, sprzymierzyła się ze Storm Dragonem Vael’themonem. Wspólnie przygotowują rytuał mający obdarzyć jej załogę mocą smoczej magii, podczas gdy z wraków powstają kolejni Drowned.",
+      "Drużyna rozpoczyna w Port Mercy, bada zaatakowaną latarnię i odkrywa ślady prowadzące ku pirackiej królowej, by ostatecznie stanąć wobec Vael’themona oraz Aranyi Vex."
+    ],
+    "dossier": [
+      {
+        "label": "STATUS",
+        "value": "NIEURUCHOMIONA"
+      },
+      {
+        "label": "MATERIAŁY",
+        "value": "HOMEBREWERY"
+      },
+      {
+        "label": "FORMAT",
+        "value": "PRZYGODA"
+      }
+    ],
+    "sections": [
+      {
+        "title": "O przygodzie",
+        "description": "Port Mercy jest punktem wyjścia śledztwa prowadzącego od zaatakowanej latarni ku pirackiej królowej."
+      },
+      {
+        "title": "Status",
+        "description": "Przygoda nie została rozegrana."
+      },
+      {
+        "title": "Zarys",
+        "description": "Aranya Vex i Storm Dragon Vael’themon przygotowują rytuał, a z wraków powstają kolejni Drowned."
+      }
+    ]
+  },
+  "materials": {
+    "title": "Dokument źródłowy",
+    "description": "Pełny dokument przygody jest dostępny w Homebrewery.",
+    "url": "https://homebrewery.naturalcrit.com/share/Rnn-1EP0reif"
+  }
+}

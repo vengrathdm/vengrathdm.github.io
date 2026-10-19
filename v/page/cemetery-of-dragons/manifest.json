@@ -1,0 +1,15 @@
+{
+  "id": "cemetery-of-dragons",
+  "title": "Cemetery of Dragons",
+  "language": "pl",
+  "campaign": "Cemetery of Dragons",
+  "module": "D&D · Przygoda archiwalna",
+  "entry": "/v/page/cemetery-of-dragons/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "materials"
+  ],
+  "playlistUrl": null
+}
