@@ -1,0 +1,4 @@
+.ddc-chronicle-panel .ddc-section { margin-top: 0; }
+.ddc-chronicle-panel .ddc-section + .ddc-section { margin-top: 24px; }
+.ddc-footer { box-sizing: border-box; }
+@media (max-width: 620px) { .ddc-footer { display: block; } .ddc-footer a { display: block; margin-top: 8px; } }
