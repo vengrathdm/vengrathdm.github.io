@@ -74,9 +74,13 @@
   "characters": {
     "kicker": "AKTA / MATERIAŁY",
     "title": "Postacie i grafiki",
-    "description": "Materiały wizualne zachowane ze starej strony.",
-    "characterIds": [],
-    "emptyMessage": "Brak grafik."
+    "description": "Postacie przypisane do kampanii.",
+    "characterIds": [
+      "char-0061",
+      "char-0062",
+      "char-0063"
+    ],
+    "emptyMessage": "Brak postaci przypisanych do tej kampanii."
   },
   "chronicle": {
     "kicker": "AKTA / KRONIKA",
