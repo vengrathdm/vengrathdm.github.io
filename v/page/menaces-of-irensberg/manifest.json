@@ -11,7 +11,7 @@
     "chronicle"
   ],
   "audio": {
-    "src": "/res/audio/menaces-of-irensberg/Irensberg.mp3",
+    "src": "/v/page/menaces-of-irensberg/res/audio/menaces-of-irensberg.mp3",
     "storageKey": "menacesOfIrensbergTheme"
   }
 }
