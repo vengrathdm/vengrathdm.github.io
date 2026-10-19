@@ -39,7 +39,7 @@
     ],
     "partyTitle": "O kampanii",
     "partyDescription": "Kampania została przez nas ukończona. Poniżej zapis graczy i postaci z tej rozgrywki.",
-    "partyImage": "/res/voronoi/webp/curse-of-strahd.webp"
+    "partyImage": "/v/core/graphics/voronoi/curse-of-strahd.webp"
   },
   "chronicle": {
     "kicker": "AKTA / KRONIKA",
