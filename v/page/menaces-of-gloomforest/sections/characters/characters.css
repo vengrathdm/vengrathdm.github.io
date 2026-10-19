@@ -1,0 +1,5 @@
+.ddc-character-intro { margin-top: 0; margin-bottom: 28px; }
+#character-gallery { min-width: 0; }
+.character-gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 1050px) { .character-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .character-gallery { grid-template-columns: minmax(0, 1fr); } }
