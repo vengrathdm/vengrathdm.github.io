@@ -14,8 +14,14 @@
   {
     "CardName": "HeartwellWiki",
     "CardTags": "Aktywna Kampania",
-    "CardGraphic": "/v/core/graphics/voronoi/ksiazeta-heartwell.webp",
+    "CardGraphic": "/v/core/graphics/voronoi/heartwell-wiki.webp",
     "CardAdress": "/v/page/heartwellwiki/"
+  },
+  {
+    "CardName": "Książęta Heartwell",
+    "CardTags": "Aktywna Kampania",
+    "CardGraphic": "/v/core/graphics/voronoi/ksiazeta-heartwell.webp",
+    "CardAdress": "/v/page/ksiazeta-heartwell/"
   },
   {
     "CardName": "Katalog Osiągnięć",
