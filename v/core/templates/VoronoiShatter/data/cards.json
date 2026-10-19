@@ -226,5 +226,17 @@
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/menaces-of-gloomforest-legacy.webp",
     "CardAdress": "/v/page/menaces-of-gloomforest-legacy/"
+  },
+  {
+    "CardName": "Samotnie Przeciw Jedności",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/samotnie-przeciw-jednosci.webp",
+    "CardAdress": "/v/page/samotnie-przeciw-jednosci/"
+  },
+  {
+    "CardName": "Ręka Chwały",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/hand-of-glory.webp",
+    "CardAdress": "/v/page/hand-of-glory/"
   }
 ]
