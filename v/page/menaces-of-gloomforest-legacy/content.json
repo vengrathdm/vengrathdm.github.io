@@ -13,22 +13,10 @@
     ],
     "dossierTitle": "DOSSIER",
     "dossier": [
-      [
-        "MATERIAŁY",
-        "9"
-      ],
-      [
-        "NAGRANIA",
-        "1"
-      ],
-      [
-        "ŹRÓDŁO",
-        "ARCHIWUM"
-      ],
-      [
-        "STATUS",
-        "ARCHIWUM"
-      ]
+      ["MATERIAŁY", "9"],
+      ["NAGRANIA", "1"],
+      ["ŹRÓDŁO", "ARCHIWUM"],
+      ["STATUS", "ARCHIWUM"]
     ],
     "partyLabel": "ARCHIWUM",
     "partyTitle": "O kampanii",
@@ -36,18 +24,9 @@
     "partyImage": "/v/core/portraits/char-0131.webp",
     "partyImageAlt": "Menaces of Gloomforest Legacy",
     "emptySections": [
-      {
-        "label": "AKTA / 02",
-        "title": "O kampanii"
-      },
-      {
-        "label": "AKTA / 03",
-        "title": "Status"
-      },
-      {
-        "label": "AKTA / 04",
-        "title": "Nasza drużyna"
-      }
+      {"label": "AKTA / 02", "title": "O kampanii"},
+      {"label": "AKTA / 03", "title": "Status"},
+      {"label": "AKTA / 04", "title": "Nasza drużyna"}
     ],
     "manifesto": {
       "label": "Z ARCHIWUM",
@@ -62,13 +41,30 @@
     "description": "Materiały wizualne zachowane ze starej strony.",
     "characterIds": [
       "char-0131",
+      "char-0147",
+      "char-0149",
+      "char-0151",
+      "char-0159",
+      "char-0160",
+      "char-0161",
+      "char-0162",
+      "char-0163",
+      "char-0165",
       "char-0174",
       "char-0175",
       "char-0176",
       "char-0177",
       "char-0178",
       "char-0179",
-      "char-0180"
+      "char-0180",
+      "char-0182",
+      "char-0223",
+      "char-0233",
+      "char-0253",
+      "char-0255",
+      "char-0285",
+      "char-0291",
+      "char-0292"
     ],
     "emptyMessage": "Brak postaci w katalogu tej kampanii."
   },

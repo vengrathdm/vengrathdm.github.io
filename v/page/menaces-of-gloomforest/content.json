@@ -13,22 +13,10 @@
     ],
     "dossierTitle": "DOSSIER",
     "dossier": [
-      [
-        "MATERIAŁY",
-        "3"
-      ],
-      [
-        "NAGRANIA",
-        "1"
-      ],
-      [
-        "ŹRÓDŁO",
-        "ZAPIS"
-      ],
-      [
-        "STATUS",
-        "ZAPIS"
-      ]
+      ["MATERIAŁY", "3"],
+      ["NAGRANIA", "1"],
+      ["ŹRÓDŁO", "ZAPIS"],
+      ["STATUS", "ZAPIS"]
     ],
     "partyLabel": "ZAPIS",
     "partyTitle": "O kampanii",
@@ -36,18 +24,9 @@
     "partyImage": "/v/core/portraits/char-0067.webp",
     "partyImageAlt": "Menaces of Gloomforest",
     "emptySections": [
-      {
-        "label": "AKTA / 02",
-        "title": "O kampanii"
-      },
-      {
-        "label": "AKTA / 03",
-        "title": "Status"
-      },
-      {
-        "label": "AKTA / 04",
-        "title": "Nasza drużyna"
-      }
+      {"label": "AKTA / 02", "title": "O kampanii"},
+      {"label": "AKTA / 03", "title": "Status"},
+      {"label": "AKTA / 04", "title": "Nasza drużyna"}
     ],
     "manifesto": null,
     "footerLabel": "VENGRATH · MENACES OF GLOOMFOREST"
@@ -59,7 +38,8 @@
     "characterIds": [
       "char-0067",
       "char-0068",
-      "char-0069"
+      "char-0069",
+      "char-0203"
     ],
     "emptyMessage": "Brak postaci w katalogu tej kampanii."
   },
