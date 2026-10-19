@@ -1,0 +1,74 @@
+{
+  "campaign": {
+    "kicker": "D&D · KRONIKA PRZYGODY",
+    "title": "MENACES OF GLOOMFOREST",
+    "heroTitle": "Menaces of Gloomforest",
+    "lead": "Gloomforest to druga odsłona autorskiej kampanii Menaces of Irensberg — osobna drużyna, ten sam świat i las, w którym każdy szlak może prowadzić do spotkania z czymś drapieżnym.",
+    "introLabel": "O KAMPANII",
+    "introTitle": "Menaces of Gloomforest",
+    "introParagraphs": [
+      "Gloomforest to druga odsłona autorskiej kampanii Menaces of Irensberg — osobna drużyna, ten sam świat i las, w którym każdy szlak może prowadzić do spotkania z czymś drapieżnym.",
+      "To alternatywna rozgrywka Menaces of Irensberg z innym składem graczy. Zachowuje ten sam autorski świat i założenia kampanii, ale przedstawia losy zupełnie innej drużyny.",
+      "Ta odsłona zakończyła się TPK z rąk wampira."
+    ],
+    "dossierTitle": "DOSSIER",
+    "dossier": [
+      [
+        "MATERIAŁY",
+        "3"
+      ],
+      [
+        "NAGRANIA",
+        "1"
+      ],
+      [
+        "ŹRÓDŁO",
+        "ZAPIS"
+      ],
+      [
+        "STATUS",
+        "ZAPIS"
+      ]
+    ],
+    "partyLabel": "ZAPIS",
+    "partyTitle": "O kampanii",
+    "partyDescription": "Gloomforest to druga odsłona autorskiej kampanii Menaces of Irensberg — osobna drużyna, ten sam świat i las, w którym każdy szlak może prowadzić do spotkania z czymś drapieżnym.",
+    "partyImage": "/v/core/portraits/char-0067.webp",
+    "partyImageAlt": "Menaces of Gloomforest",
+    "emptySections": [
+      {
+        "label": "AKTA / 02",
+        "title": "O kampanii"
+      },
+      {
+        "label": "AKTA / 03",
+        "title": "Status"
+      },
+      {
+        "label": "AKTA / 04",
+        "title": "Nasza drużyna"
+      }
+    ],
+    "manifesto": null,
+    "footerLabel": "VENGRATH · MENACES OF GLOOMFOREST"
+  },
+  "characters": {
+    "kicker": "AKTA / MATERIAŁY",
+    "title": "Postacie i grafiki",
+    "description": "",
+    "characterIds": [
+      "char-0067",
+      "char-0068",
+      "char-0069"
+    ],
+    "emptyMessage": "Brak postaci w katalogu tej kampanii."
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Nagrania",
+    "description": "Materiały wideo powiązane z tą rozgrywką.",
+    "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0jY8sPEuRlBdlXIFw9WJlEL",
+    "playlistLabel": "Otwórz playlistę kampanii ↗",
+    "sessions": []
+  }
+}
