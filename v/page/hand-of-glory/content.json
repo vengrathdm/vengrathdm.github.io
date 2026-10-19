@@ -1,0 +1,99 @@
+{
+  "campaign": {
+    "kicker": "CALL OF CTHULHU · ARCHIWUM KAMPANII",
+    "title": "Ręka Chwały",
+    "heroTitle": "Ręka Chwały",
+    "lead": "Na ponurych wrzosowiskach North Yorkshire stoi Wych Elm. Gospoda jest odcięta od świata, las za oknem nie zachowuje się jak zwykły las, a to, co miało być noclegiem, bardzo szybko przestaje nim być.",
+    "introLabel": "O KAMPANII",
+    "introTitle": "Ręka Chwały",
+    "introParagraphs": [
+      "Na ponurych wrzosowiskach North Yorkshire stoi Wych Elm. Gospoda jest odcięta od świata, las za oknem nie zachowuje się jak zwykły las, a to, co miało być noclegiem, bardzo szybko przestaje nim być.",
+      "Ręka Chwały Allana Careya to krótka przygoda Call of Cthulhu z cyklu Seeds of Terror . Zaczyna się jak klasyczna opowieść o podróży przez angielskie wrzosowiska: deszcz, samotna droga i miejsce, w którym można przeczekać noc.",
+      "Wych Elm znajduje się przy ciemnym lesie, z dala od najbliższej wioski. Dalej nie trzeba wiedzieć dużo. Trzeba tylko wejść do środka.",
+      "Im bardziej zwyczajnie wygląda miejsce, do którego trafiasz, tym większy problem może czekać za zamkniętymi drzwiami.",
+      "Scenariusz jest przygotowany dla 4–5 graczy. W naszej rozgrywce przy stole zasiedli Sandra, Mat i Maria."
+    ],
+    "dossierTitle": "DOSSIER",
+    "dossier": [
+      [
+        "MATERIAŁY",
+        "0"
+      ],
+      [
+        "NAGRANIA",
+        "2"
+      ],
+      [
+        "ŹRÓDŁO",
+        "ARCHIWUM"
+      ],
+      [
+        "STATUS",
+        "ARCHIWUM"
+      ]
+    ],
+    "partyLabel": "ARCHIWUM",
+    "partyTitle": "To nie jest nocleg.",
+    "partyDescription": "Jedna gospoda. Ciemny las. Droga, która nie daje poczucia bezpieczeństwa.",
+    "partyImage": "/v/page/hand-of-glory/res/hero-image.jpg",
+    "partyImageAlt": "Ręka Chwały",
+    "emptySections": [
+      {
+        "label": "AKTA / 02",
+        "title": "To nie jest nocleg.",
+        "description": "Jedna gospoda. Ciemny las. Droga, która nie daje poczucia bezpieczeństwa."
+      },
+      {
+        "label": "AKTA / 03",
+        "title": "Śledczy w Wych Elm.",
+        "description": "Wych Elm ma być po prostu schronieniem przed pogodą. To wystarcza, żeby wszyscy bohaterowie znaleźli się pod jednym dachem."
+      },
+      {
+        "label": "AKTA / 04",
+        "title": "Audrey Fulton",
+        "description": "Po drugiej stronie drzwi znajduje się przestrzeń, której nie da się już czytać jak zwykłego angielskiego krajobrazu."
+      },
+      {
+        "label": "AKTA / 05",
+        "title": "Dan Whelan",
+        "description": "Źródło tajemnicy scenariusza pozostaje związane z miejscem, które przez ponad wiek skrywało swój sekret."
+      },
+      {
+        "label": "AKTA / 06",
+        "title": "Patty Graham",
+        "description": "To przede wszystkim one-shot: ma być zwarty, napięty i możliwy do przeprowadzenia podczas jednego wieczoru."
+      }
+    ],
+    "manifesto": {
+      "label": "Z ARCHIWUM",
+      "text": "Treść kampanii zachowana ze starej strony.",
+      "attribution": "RĘKA CHWAŁY"
+    },
+    "footerLabel": "VENGRATH · RĘKA CHWAŁY"
+  },
+  "characters": {
+    "kicker": "AKTA / MATERIAŁY",
+    "title": "Postacie i grafiki",
+    "description": "Materiały wizualne zachowane ze starej strony.",
+    "characterIds": [],
+    "emptyMessage": "Brak grafik."
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Nagrania",
+    "description": "Odnośniki zachowane ze starej strony.",
+    "sessions": [
+      {
+        "sessionNumber": 1,
+        "title": "Do Uzupełnienia",
+        "description": "Notatki sesji do uzupełnienia.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/ZC1PW71kFJU",
+            "partNumber": 1
+          }
+        ]
+      }
+    ]
+  }
+}
