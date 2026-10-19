@@ -13,7 +13,7 @@
   },
   {
     "CardName": "HeartwellWiki",
-    "CardTags": "Aktywna Kampania",
+    "CardTags": "Narzędzie",
     "CardGraphic": "/v/core/graphics/voronoi/heartwell-wiki.webp",
     "CardAdress": "/v/page/heartwellwiki/"
   },
@@ -79,7 +79,7 @@
   },
   {
     "CardName": "Mythic Odyssey of the Dragonlords",
-    "CardTags": "Aktywna Kampania",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/mythic-odyssey-of-the-dragonlords.webp",
     "CardAdress": "/v/page/mythic-odyssey-of-the-dragonlords/"
   },
@@ -115,49 +115,49 @@
   },
   {
     "CardName": "Shadow of the Sword Coast",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/shadow-of-the-sword-coast.webp",
     "CardAdress": "/v/page/shadow-of-the-sword-coast/"
   },
   {
     "CardName": "Forge of Fury",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/forge-of-fury.webp",
     "CardAdress": "/v/page/forge-of-fury/"
   },
   {
     "CardName": "Lost Mine of Phandelver",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/lost-mine-of-phandelver.webp",
     "CardAdress": "/v/page/lost-mine-of-phandelver/"
   },
   {
     "CardName": "Drakkenheim",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/drakkenheim.webp",
     "CardAdress": "/v/page/drakkenheim/"
   },
   {
     "CardName": "Dungeons of Drakkenheim",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/dungeons-of-drakkenheim.webp",
     "CardAdress": "/v/page/dungeons-of-drakkenheim/"
   },
   {
     "CardName": "Heroes of Drakkenheim",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/dungeons-of-drakkenheim.webp",
     "CardAdress": "/v/page/heroes-of-drakkenheim/"
   },
   {
     "CardName": "Gold for Fools and Princes",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/Gold-for-Fools-and-Princes.webp",
     "CardAdress": "/v/page/gold-for-fools-and-princes/"
   },
   {
     "CardName": "Dragon of Icespire Peak",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/dragon-of-icespire-peak.webp",
     "CardAdress": "/v/page/dragon-of-icespire-peak/"
   },
@@ -175,49 +175,49 @@
   },
   {
     "CardName": "Ku Chwale Tyra!",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/KuChwaleTyra.webp",
     "CardAdress": "/v/page/ku-chwale-tyra/"
   },
   {
     "CardName": "Shards of the Past",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/shards-of-the-past.webp",
     "CardAdress": "/v/page/shards-of-the-past/"
   },
   {
     "CardName": "Curse of Strahd",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/curse-of-strahd.webp",
     "CardAdress": "/v/page/curse-of-strahd/"
   },
   {
     "CardName": "Blood Red Snow White",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/blood-red-snow-white.webp",
     "CardAdress": "/v/page/blood-red-snow-white/"
   },
   {
     "CardName": "Bohaterowie Wrót Baldura",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/heroes-of-baldurs-gate.webp",
     "CardAdress": "/v/page/heroes-of-baldurs-gate/"
   },
   {
     "CardName": "Mayhem in Earthspur Mines",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/mayhem-in-earthspur-mines.webp",
     "CardAdress": "/v/page/mayhem-in-earthspur-mines/"
   },
   {
     "CardName": "Turn Back the Endless Night",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/turn-back-the-endless-night.webp",
     "CardAdress": "/v/page/turn-back-the-endless-night/"
   },
   {
     "CardName": "Dragon of Dampen Depths",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/dragon-of-dampen-depths.webp",
     "CardAdress": "/v/page/dragon-of-dampen-depths/"
   },
@@ -229,19 +229,19 @@
   },
   {
     "CardName": "Menaces of Gloomforest Legacy",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/menaces-of-gloomforest-legacy.webp",
     "CardAdress": "/v/page/menaces-of-gloomforest-legacy/"
   },
   {
     "CardName": "Samotnie Przeciw Jedności",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/samotnie-przeciw-jednosci.webp",
     "CardAdress": "/v/page/samotnie-przeciw-jednosci/"
   },
   {
     "CardName": "Ręka Chwały",
-    "CardTags": "Archiwum",
+    "CardTags": "Zamknięta Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/hand-of-glory.webp",
     "CardAdress": "/v/page/hand-of-glory/"
   },
