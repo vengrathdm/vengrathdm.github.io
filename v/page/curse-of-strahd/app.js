@@ -1,6 +1,7 @@
 import { createSubpageHero } from "/v/core/templates/SubpageHero/SubpageHero.js";
 import { mountSubpageNavbar } from "/v/core/templates/SubpageNavbar/SubpageNavbar.js";
 import { renderCampaignSection } from "./sections/campaign/campaign.js";
+import { CharacterGallery } from "/v/core/templates/CharacterGallery/CharacterGallery.js";
 
 async function loadJson(path) {
   const response = await fetch(path);
@@ -68,11 +69,16 @@ async function initialize() {
     playlistUrl: manifest.playlistUrl,
     sections: [
       { text: "Kampania", sectionLink: "campaign", color: theme.colors.accent2 },
+      { text: "Postaci", sectionLink: "characters", color: theme.colors.accent2 },
       { text: "Kronika", sectionLink: "chronicle", color: theme.colors.accent2 }
     ]
   });
 
   renderCampaignSection(content.campaign);
+  const gallery = new CharacterGallery(document.querySelector("#character-gallery"), {
+    characterIds: ["char-0038", "char-0039", "char-0284", "char-0040", "char-0041"]
+  });
+  await gallery.render();
   document.querySelector("#chronicle-kicker").textContent = content.chronicle.kicker;
   document.querySelector("#chronicle-title").textContent = content.chronicle.title;
   document.querySelector("#chronicle-description").textContent = content.chronicle.description;
