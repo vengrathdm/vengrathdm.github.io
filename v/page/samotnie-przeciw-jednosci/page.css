@@ -1,0 +1,5 @@
+@import url("/v/page/menaces-of-gloomforest/sections/campaign/campaign.css");
+@import url("/v/page/menaces-of-gloomforest/sections/characters/characters.css");
+@import url("/v/page/menaces-of-gloomforest/sections/chronicle/chronicle.css");
+body.samotnie-przeciw-jednosci-page{background:radial-gradient(ellipse at 78% 8%,#183338 0,transparent 35%),radial-gradient(ellipse at 8% 72%,#211d15 0,transparent 32%),var(--theme-base-1);}
+body.samotnie-przeciw-jednosci-page::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.14;background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,255,255,.025) 4px);}
