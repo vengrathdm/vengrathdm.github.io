@@ -2,6 +2,8 @@ import { createSubpageHero } from "/v/core/templates/SubpageHero/SubpageHero.js"
 import { mountSubpageNavbar } from "/v/core/templates/SubpageNavbar/SubpageNavbar.js";
 import { CharacterGallery } from "/v/core/templates/CharacterGallery/CharacterGallery.js";
 import { createChronicleRecord } from "/v/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.js";
+import { AudioPlayer } from "/v/core/templates/AudioPlayer/AudioPlayer.js";
+import { mountAudioPlayerButton } from "/v/core/templates/AudioPlayerButton/AudioPlayerButton.js";
 
 async function loadJson(path) {
   const response = await fetch(path);
@@ -113,6 +115,12 @@ async function initialize() {
       { text: "Kronika", sectionLink: "chronicle", color: theme.colors.accent2 }
     ]
   });
+
+  const campaignAudio = new AudioPlayer({
+    src: "/v/page/tomb-of-annihilation/res/audio/tomb-of-annihilation.mp3",
+    storageKey: "vengrath-audio-tomb-of-annihilation"
+  });
+  mountAudioPlayerButton(campaignAudio, theme.colors.accent2);
 
   renderCampaign(content.campaign);
   await renderCharacters(content.characters);
