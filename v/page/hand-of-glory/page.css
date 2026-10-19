@@ -1,4 +1,26 @@
 :root {
+  --theme-base-1: #0b0b09;
+  --theme-base-2: #13150f;
+  --theme-base-3: #171912;
+  --theme-base-4: #1c1e15;
+  --theme-base-5: #202116;
+  --theme-accent-1: #8e2631;
+  --theme-accent-2: #bca06a;
+  --theme-text-1: #eee9dc;
+  --theme-text-2: #d7d2c8;
+  --theme-text-3: #aaa59b;
+  --theme-text-muted: #817d76;
+  --theme-title-accent: #b9b1a1;
+  --theme-line-1: #373a2f;
+  --theme-line-2: #656047;
+  --theme-nav-background: #13150f;
+  --theme-nav-text: #c9c5bc;
+  --theme-nav-active-background: #171912;
+  --theme-seal-border: #bca06a;
+  --theme-seal-inner-border: #373a2f;
+  --theme-seal-background: #08090bcc;
+  --theme-seal-small-text: #aaa397;
+  --theme-seal-main-text: #d6cbb5;
   --chronicle-heading-font: var(--theme-font-1);
   --theme-font-1: "Voltaire", sans-serif;
   --theme-font-2: "Fira Sans Extra Condensed", sans-serif;
