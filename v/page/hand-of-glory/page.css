@@ -1,0 +1,5 @@
+@import url("/v/page/menaces-of-gloomforest/sections/campaign/campaign.css");
+@import url("/v/page/menaces-of-gloomforest/sections/characters/characters.css");
+@import url("/v/page/menaces-of-gloomforest/sections/chronicle/chronicle.css");
+body.hand-of-glory-page{background:radial-gradient(ellipse at 78% 8%,#28251a 0,transparent 35%),radial-gradient(ellipse at 8% 72%,#251517 0,transparent 32%),var(--theme-base-1);}
+body.hand-of-glory-page::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.14;background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,255,255,.025) 4px);}
