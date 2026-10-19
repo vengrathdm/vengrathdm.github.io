@@ -1,0 +1,16 @@
+{
+  "id": "hand-of-glory",
+  "title": "Ręka Chwały",
+  "language": "pl",
+  "campaign": "Ręka Chwały",
+  "module": "Call of Cthulhu · Seeds of Terror",
+  "entry": "/v/page/hand-of-glory/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": "https://youtu.be/ZC1PW71kFJU"
+}
