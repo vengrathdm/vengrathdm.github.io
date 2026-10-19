@@ -214,5 +214,17 @@
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/dragon-of-dampen-depths.webp",
     "CardAdress": "/v/page/dragon-of-dampen-depths/"
+  },
+  {
+    "CardName": "Menaces of Gloomforest",
+    "CardTags": "Zamknięta Kampania",
+    "CardGraphic": "/v/core/graphics/voronoi/menaces-of-gloomforest.webp",
+    "CardAdress": "/v/page/menaces-of-gloomforest/"
+  },
+  {
+    "CardName": "Menaces of Gloomforest Legacy",
+    "CardTags": "Archiwum",
+    "CardGraphic": "/v/core/graphics/voronoi/menaces-of-gloomforest-legacy.webp",
+    "CardAdress": "/v/page/menaces-of-gloomforest-legacy/"
   }
 ]
