@@ -1,43 +1,148 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Książęta Heartwell — Kompendium</title>
-<meta name="description" content="Podręczny rejestr kampanii Książęta Heartwell: dzielnice, Władcy Mroku, frakcje, lokacje pokój po pokoju, bestiariusz i ekwipunek.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Voltaire&family=Fira+Sans+Extra+Condensed:ital,wght@0,400;0,500;0,600;1,400&family=Cutive+Mono&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/heartwell.css">
-</head>
-<body>
-<div class="smog" aria-hidden="true"></div>
-<header class="masthead">
-    <div class="masthead__plate"><span class="lamp" aria-hidden="true"><i></i></span><div>
-        <h1 class="masthead__title">Książęta Heartwell</h1>
-        <p class="masthead__sub">Rejestr miejski dla Mistrza Gry — siedem dzielnic, siedem grzechów, jedna rzeka</p>
-    </div></div>
-    <div class="masthead__meters">
-        <div class="meter"><span class="meter__val" data-count="entries">—</span><span class="meter__lab">wpisów</span></div>
-        <div class="meter"><span class="meter__val" data-count="rooms">—</span><span class="meter__lab">pomieszczeń</span></div>
-        <div class="meter"><span class="meter__val" data-count="quests">—</span><span class="meter__lab">zadań</span></div>
-        <button type="button" class="switch" id="gmToggle" aria-pressed="true"><span class="switch__bulb" aria-hidden="true"></span><span class="switch__label">Notatki MG</span></button>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Akta miasta — Książęta Heartwell</title>
+    <meta content="Książęta Heartwell — gotycki horror, diesel, sześć dzielnic i siedmiu Książąt." name="description" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Voltaire&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <link href="heartwell.css" rel="stylesheet" />
+  <style>body{--theme-hero-image:url("/res/voronoi/webp/ksiazeta-heartwell.webp");}</style>
+  <style>
+    .youtube-playlist-btn {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 112px;
+      padding: 12px 0;
+      margin-top: 8px;
+      color: var(--amber);
+      border-top: 1px solid rgba(212,160,60,.45);
+      font-family: var(--display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-decoration: none;
+      text-align: center;
+    }
+    .youtube-playlist-btn:hover { color: var(--paper); background: rgba(255,255,255,.04); }
+  </style>
+  </head>
+  <body>
+    <audio id="heartwellTheme" src="/p/Ksiazeta-Heartwell/HeartwellTheme.mp3" loop preload="auto" playsinline></audio>
+    <button class="heartwell-audio-toggle" id="heartwellAudioToggle" type="button" aria-label="Włącz dźwięk" aria-pressed="false" title="Włącz dźwięk">
+      <svg class="audio-icon audio-icon-muted" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M7 19h8l10-8v26l-10-8H7z"></path>
+        <path d="M31 18l10 12M41 18L31 30"></path>
+      </svg>
+      <svg class="audio-icon audio-icon-playing" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M7 19h8l10-8v26l-10-8H7z"></path>
+        <path d="M32 18c3 3 3 9 0 12M37 13c6 6 6 16 0 22"></path>
+      </svg>
+    </button>
+    <div class="shell">
+      <nav aria-label="Nawigacja Heartwell" class="tabs">
+        <a class="global-vengrath" href="/v/home/" aria-label="Powrót do strony głównej Vengrath">VENGRATH</a>
+        <div class="badge">KSIĄŻĘTA <br />HEARTWELL </div>
+        <div class="tab-list" id="tabList">
+          <a class="tab-btn active" href="index.html">
+            <span>AKTA MIASTA</span>
+          </a>
+          <a class="tab-btn" href="miasto.html">
+            <span>MIASTO</span>
+          </a>
+          <a class="tab-btn" href="druzyna.html">
+            <span>DRUŻYNA</span>
+          </a>
+          <a class="tab-btn" href="zapisy.html">
+            <span>ZAPISKI Z KAMPANII</span>
+          </a>
+        </div>
+        <a class="youtube-playlist-btn" href="https://www.youtube.com/playlist?list=PLd6q-Ih5JcOA" target="_blank" rel="noopener noreferrer" aria-label="Otwórz playlistę Książęta Heartwell na YouTube">PLAYLISTA YOUTUBE</a>
+        <div class="tabs-foot">
+          <span>VENGRATH · RAVENLOFT</span>
+        </div>
+      </nav>
+      <main class="pages">
+        <!-- ---------- AKTA MIASTA ---------- -->
+        <section class="page active" id="page-overview">
+          <div class="file-strip">
+            <span>AKTA MIEJSKIE · RAVENLOFT</span>
+            <span class="case-no">CASE: HEARTWELL</span>
+          </div>
+          <div class="cover-grid heartwell-cover-grid">
+            <div class="cover-title-block">
+              <div class="kicker">KAMPANIA GOTYCKIEGO HORRORU · RAVENLOFT</div>
+              <h1>Książęta <br>Heartwell </h1>
+              <p class="cover-sub">Miasto czarnego kamienia, smogu i oparów prochu strzelniczego.</p>
+              <div class="testimony-strip">
+                <div class="mark">“</div>
+                <div>
+                  <p>„Już wówczas miasto nasze popadało coraz bardziej w chroniczną szarość zmierzchu, porastało na krawędziach liszajem cienia, puszystą pleśnią i mchem koloru żelaza.”</p>
+                  <cite>— Bruno Schulz, <em>Sklepy cynamonowe</em>, „Nawiedzenie” </cite>
+                </div>
+              </div>
+              <div class="stamp-row">
+                <a class="stamp" href="zapisy.html">Zapiski z Kampanii</a>
+                <a class="btn primary" href="miasto.html">ZOBACZ MIASTO</a>
+                <a class="btn" href="druzyna.html">NASZA DRUŻYNA</a>
+              </div>
+              <div class="evidence-card">
+                <div class="tag-corner">DANE MIEJSKIE</div>
+                <h3>ODCZYT AKT</h3>
+                <div class="fact-row">
+                  <span>Liczba mieszkańców</span>
+                  <span>~150 000</span>
+                </div>
+                <div class="fact-row">
+                  <span>Dzielnice</span>
+                  <span>7</span>
+                </div>
+                <div class="fact-row">
+                  <span>Książęta</span>
+                  <span>7</span>
+                </div>
+                <div class="fact-row">
+                  <span>Technologia</span>
+                  <span>Silnik Diesela ✧ Magia ✧ Fotografia ✧ Alchemia ✧ Kolej ✧ Okultyzm ✧ Szalone Wynalazki</span>
+                </div>
+                <div class="fact-row">
+                  <span>Nastrój</span>
+                  <span>Gotycki horror ✧ Noir ✧ Dieselpunk</span>
+                </div>
+              </div>
+            </div>
+            <div class="heartwell-hero-visual">
+              <img src="/Home/Graphics/ksiazeta-heartwell.jpg" alt="Heartwell — miasto dieslowego dymu, chmur i gotyckiej architektury">
+              <div class="heartwell-hero-mark">AKTA · FOTOGRAFIA</div>
+              <div class="heartwell-hero-index">CASE HEARTWELL / PLATE 01</div>
+              <div class="heartwell-hero-label">
+                <strong>Książęta Heartwell</strong>
+                <span>DIESEL · RAVENLOFT · MIASTO SZEŚCIU DZIELNIC</span>
+              </div>
+              <div class="heartwell-hero-credit">ARCHIWUM VENGRATH · DOKUMENT WIZUALNY</div>
+            </div>
+          </div>
+          <div class="testimony-strip">
+            <div class="mark">“</div>
+            <div>
+              <p>„Miasto tonęło w brudnych czarnych oparach i dymach, które leżały niby opona nad miastem, jakby się wspierając na tysiącach kominów.”</p>
+              <cite>— Władysław Stanisław Reymont, <em>Ziemia obiecana</em>
+              </cite>
+            </div>
+          </div>
+          <div class="page-foot">
+            <span>Heartwell</span>
+            <span>Heartwell</span>
+          </div>
+        </section>
+      </main>
     </div>
-</header>
-<div class="hazard" aria-hidden="true"></div>
-<main class="console">
-    <nav class="rail" aria-label="Działy kompendium">
-        <div class="rail__search"><label class="sr-only" for="q">Szukaj w kompendium</label><input id="q" type="search" placeholder="Szukaj (/)" autocomplete="off" spellcheck="false"></div>
-        <ul class="rail__list" id="rail"></ul>
-        <p class="rail__hint">↑ ↓ przewija listę · Enter otwiera · / szuka · Esc czyści</p>
-    </nav>
-    <section class="index" aria-labelledby="indexHead"><h2 class="index__head" id="indexHead">Spis</h2><ul class="index__list" id="index"></ul></section>
-    <article class="sheet" id="sheet" tabindex="-1" aria-live="polite"></article>
-</main>
-<footer class="colophon">
-    <p>Materiał zawiera treści z System Reference Document 5.1 (Wizards of the Coast LLC), udostępnionego na licencji <a href="https://creativecommons.org/licenses/by/4.0/legalcode" rel="noopener">CC BY 4.0</a>.</p>
-    <p>Kompendium do użytku przy stole. Wszystko, co oznaczone jako notatka MG, gracze powinni zobaczyć dopiero we własnym czasie.</p>
-</footer>
-<script src="app.js?v=20260920"></script>
-</body>
+    <script src="heartwell.js"></script>
+  </body>
 </html>
