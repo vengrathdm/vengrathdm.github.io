@@ -1,0 +1,47 @@
+{
+  "campaign": {
+    "title": "Trouble Below the Mountains of Ash",
+    "kicker": "D&D · NIEURUCHOMIONA PRZYGODA",
+    "lead": "Przygoda o popiołach, wulkanicznych ruinach i istotach spod ziemi — projekt, który nie doczekał się pierwszej sesji.",
+    "introLabel": "O PRZYGODZIE",
+    "introTitle": "Trouble Below the Mountains of Ash",
+    "introParagraphs": [
+      "Przygoda o popiołach, wulkanicznych ruinach i istotach spod ziemi — projekt, który nie doczekał się pierwszej sesji.",
+      "Trouble Below the Mountains of Ash to przygoda przeznaczona dla drużyny czterech–pięciu postaci, rozpoczynających na 3. poziomie i kończących około 6. poziomu. Historię można osadzić w regionie dotkniętym stosunkowo niedawną erupcją wulkanu albo rozegrać jako samodzielną przygodę.",
+      "Punktem wyjścia jest wyprawa do Desandel i poszukiwanie zaginionego Miasta Mutriel. W tle rozwija się zagrożenie związane z Asheaterami oraz Kultem Ashen Maw."
+    ],
+    "dossier": [
+      {
+        "label": "STATUS",
+        "value": "NIEURUCHOMIONA"
+      },
+      {
+        "label": "MATERIAŁY",
+        "value": "HOMEBREWERY"
+      },
+      {
+        "label": "FORMAT",
+        "value": "PRZYGODA"
+      }
+    ],
+    "sections": [
+      {
+        "title": "O kampanii",
+        "description": "Wyprawa do Desandel i poszukiwanie zaginionego Miasta Mutriel prowadzą w stronę ruin naznaczonych erupcją."
+      },
+      {
+        "title": "Status",
+        "description": "Przygoda pozostaje na etapie planów i nie została rozegrana."
+      },
+      {
+        "title": "Motywy",
+        "description": "Popioły, wulkaniczne ruiny, zagrożenia spod ziemi, Asheaterzy i Kult Ashen Maw."
+      }
+    ]
+  },
+  "materials": {
+    "title": "Dokument źródłowy",
+    "description": "Pełny dokument przygody jest dostępny w Homebrewery.",
+    "url": "https://homebrewery.naturalcrit.com/share/sh2YwXcXcTCL"
+  }
+}

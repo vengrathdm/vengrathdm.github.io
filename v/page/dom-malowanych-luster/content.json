@@ -1,0 +1,47 @@
+{
+  "campaign": {
+    "title": "Dom Malowanych Luster",
+    "kicker": "D&D · NIEURUCHOMIONA PRZYGODA",
+    "lead": "Krótka przygoda w ruinach Netherilu pod Górami Mieczy, w podziemnej siedzibie Leonarda de Vence — ekscentrycznego maga-artysty.",
+    "introLabel": "O PRZYGODZIE",
+    "introTitle": "Dom Malowanych Luster",
+    "introParagraphs": [
+      "Krótka przygoda w ruinach Netherilu pod Górami Mieczy, w podziemnej siedzibie Leonarda de Vence — ekscentrycznego maga-artysty.",
+      "Leonardo de Vence był netherilskim arkanistą specjalizującym się w iluzjach, zaklinaniu i konstruktach. Tworzył magiczne obrazy, lustra oraz Malowane Golemy z żywej farby, a jego zniknięcie po wiekach nadal pozostaje częścią tajemnicy domu.",
+      "Eksploracja zaczyna się od Lustrzanych Wrót i prowadzi przez komnaty pełne odbić, pułapek, konstruktów i pozostałości dawnej magii. Jednym z charakterystycznych zagrożeń są odbicia bohaterów."
+    ],
+    "dossier": [
+      {
+        "label": "STATUS",
+        "value": "NIEURUCHOMIONA"
+      },
+      {
+        "label": "MATERIAŁY",
+        "value": "W PRZYGOTOWANIU"
+      },
+      {
+        "label": "FORMAT",
+        "value": "PRZYGODA"
+      }
+    ],
+    "sections": [
+      {
+        "title": "O przygodzie",
+        "description": "Odkrywanie Lustrzanych Wrót prowadzi do podziemnych komnat wypełnionych magią i konstruktami."
+      },
+      {
+        "title": "Status",
+        "description": "Przygoda nie została rozegrana. Dokument Homebrewery nie został jeszcze udostępniony."
+      },
+      {
+        "title": "Zarys",
+        "description": "Iluzje, magiczne lustra i Malowane Golemy z żywej farby tworzą główne zagrożenia domu."
+      }
+    ]
+  },
+  "materials": {
+    "title": "Dokument źródłowy",
+    "description": "Dokument przygody nie został jeszcze udostępniony w Homebrewery.",
+    "url": null
+  }
+}

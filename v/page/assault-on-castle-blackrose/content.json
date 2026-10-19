@@ -1,0 +1,47 @@
+{
+  "campaign": {
+    "title": "Assault on Castle Blackrose",
+    "kicker": "D&D · NIEURUCHOMIONA PRZYGODA",
+    "lead": "Bezpośrednia, nastawiona na walkę wyprawa do Castle Blackrose — twierdzy opanowanej przez nekromantę.",
+    "introLabel": "O PRZYGODZIE",
+    "introTitle": "Assault on Castle Blackrose",
+    "introParagraphs": [
+      "Bezpośrednia, nastawiona na walkę wyprawa do Castle Blackrose — twierdzy opanowanej przez nekromantę.",
+      "Nekromanta przejął zamek po grupie dobrych, półcelestialnych poszukiwaczy przygód, a następnie wykorzystał ich siłę życiową do związania własnego istnienia z ich nieumarłymi pozostałościami. Dzięki temu stał się niemal nieśmiertelny.",
+      "Bohaterowie szturmują Castle Blackrose, mierzą się z nieumarłymi i reanimowanymi czempionami, a z pomocą ich uwięzionych duchów przygotowują Lightbringer Weapon."
+    ],
+    "dossier": [
+      {
+        "label": "STATUS",
+        "value": "NIEURUCHOMIONA"
+      },
+      {
+        "label": "MATERIAŁY",
+        "value": "HOMEBREWERY"
+      },
+      {
+        "label": "FORMAT",
+        "value": "PRZYGODA"
+      }
+    ],
+    "sections": [
+      {
+        "title": "O przygodzie",
+        "description": "Drużyna musi przedrzeć się przez kolejne poziomy zamku i odkryć sposób na ostateczne pokonanie jego pana."
+      },
+      {
+        "title": "Status",
+        "description": "Przygoda nie została rozegrana."
+      },
+      {
+        "title": "Zarys",
+        "description": "Walka z nieumarłymi i reanimowanymi czempionami prowadzi do przygotowania Lightbringer Weapon z pomocą uwięzionych duchów."
+      }
+    ]
+  },
+  "materials": {
+    "title": "Dokument źródłowy",
+    "description": "Pełny dokument przygody jest dostępny w Homebrewery.",
+    "url": "https://homebrewery.naturalcrit.com/share/FPwM2-eSXdgJ"
+  }
+}

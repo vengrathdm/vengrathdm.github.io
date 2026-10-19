@@ -1,0 +1,47 @@
+{
+  "campaign": {
+    "title": "Adventure of Arcane Collapse",
+    "kicker": "D&D · NIEURUCHOMIONA PRZYGODA",
+    "lead": "Zaburzona magia wypacza rzeczywistość wokół wieży czarodzieja Calrhuna, a niebo nad Bradmere zaczyna zachowywać się w niemożliwy sposób.",
+    "introLabel": "O PRZYGODZIE",
+    "introTitle": "Adventure of Arcane Collapse",
+    "introParagraphs": [
+      "Zaburzona magia wypacza rzeczywistość wokół wieży czarodzieja Calrhuna, a niebo nad Bradmere zaczyna zachowywać się w niemożliwy sposób.",
+      "Calrhun badał tajemniczą Veiled Star — fenomen nieobecny na znanych mapach nieba. Jego eksperyment doprowadził do kontaktu z czymś znacznie większym niż zwykłe ciało niebieskie, a sama wieża stała się miejscem, gdzie przestrzeń, czas i pamięć przestają działać normalnie.",
+      "Drużyna trafia najpierw do Bradmere, następnie na wzgórze z wieżą i do kolejnych poziomów: laboratoriów, biblioteki, komnat uczniów, gabinetu mistrza i obserwatorium."
+    ],
+    "dossier": [
+      {
+        "label": "STATUS",
+        "value": "NIEURUCHOMIONA"
+      },
+      {
+        "label": "MATERIAŁY",
+        "value": "HOMEBREWERY"
+      },
+      {
+        "label": "FORMAT",
+        "value": "PRZYGODA"
+      }
+    ],
+    "sections": [
+      {
+        "title": "O przygodzie",
+        "description": "W Bradmere pojawiają się mówiące zagadkami zwierzęta, migoczące gwiazdy i sny o niemożliwych schodach."
+      },
+      {
+        "title": "Status",
+        "description": "Przygoda nie została rozegrana."
+      },
+      {
+        "title": "Zarys",
+        "description": "Śledztwo prowadzi od Bradmere do wieży, w której przestrzeń, czas i pamięć przestają działać normalnie."
+      }
+    ]
+  },
+  "materials": {
+    "title": "Dokument źródłowy",
+    "description": "Pełny dokument przygody jest dostępny w Homebrewery.",
+    "url": "https://homebrewery.naturalcrit.com/share/cOiTopC2p4uv"
+  }
+}

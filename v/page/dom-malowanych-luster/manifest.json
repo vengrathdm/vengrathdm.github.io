@@ -1,0 +1,15 @@
+{
+  "id": "dom-malowanych-luster",
+  "title": "Dom Malowanych Luster",
+  "language": "pl",
+  "campaign": "Dom Malowanych Luster",
+  "module": "D&D · Przygoda archiwalna",
+  "entry": "/v/page/dom-malowanych-luster/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "materials"
+  ],
+  "playlistUrl": null
+}
