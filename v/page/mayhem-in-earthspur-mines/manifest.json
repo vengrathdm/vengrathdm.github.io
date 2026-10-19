@@ -1,0 +1,16 @@
+{
+  "id": "mayhem-in-earthspur-mines",
+  "title": "Mayhem in Earthspur Mines",
+  "language": "pl",
+  "campaign": "Mayhem in Earthspur Mines",
+  "module": "Mayhem in Earthspur Mines",
+  "entry": "/v/page/mayhem-in-earthspur-mines/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": ""
+}

@@ -1,0 +1,28 @@
+{
+  "colors": {
+    "base1": "#07100e",
+    "base2": "#0d1b17",
+    "base3": "#142a22",
+    "base4": "#1d3b2d",
+    "base5": "#2c513a",
+    "accent1": "#e06a42",
+    "accent2": "#d6c46f",
+    "text1": "#f1f0df",
+    "text2": "#d8dfc8",
+    "text3": "#aebda2",
+    "textMuted": "#788c76",
+    "titleAccent": "#f1d98a",
+    "line1": "#355242",
+    "line2": "#a18a4d",
+    "navBackground": "#08110e",
+    "navText": "#e1e8d6",
+    "navActiveBackground": "#254333"
+  },
+  "heroImage": "/v/core/graphics/voronoi/turn-back-the-endless-night.webp",
+  "typography": {
+    "heading": "\"Voltaire\", sans-serif",
+    "body": "\"Fira Sans Extra Condensed\", sans-serif",
+    "serif": "\"Brygada 1918\", Georgia, serif"
+  },
+  "fontsUrl": "https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap"
+}
