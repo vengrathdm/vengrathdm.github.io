@@ -1229,3 +1229,18 @@ End on the distinction at the heart of the story: preserving testimony is not th
 If the players ask whether the archive’s account is now the definitive truth of Netheril, answer according to the evidence: it is a record shaped by particular witnesses, survival conditions, and decisions. It may correct earlier claims, expose institutional harm, or preserve testimony that would otherwise be lost. It cannot speak for everyone who lived, and it cannot make disagreement disappear. The last light is not a verdict. It is evidence that someone left a record—and that the living must decide how to treat it.
 
 \page
+
+
+# Appendix A — Dungeon Master Quick Reference
+
+The present-day party advances from level 5 to 8 across Chapters I, III, and V. The ancient Netherese party advances from level 11 to 14 across Chapters II, IV, and VI. Chapter VII grants no further advancement.
+
+The Mnemosyne Engine preserves sensory testimony, not omniscient truth. The Custodian cannot rewrite history, resurrect the dead, or know what was never recorded. The Fall associated with Karsus’s Folly is fixed. Glasswell is an original Netherese waystation and monitoring relay in Delimbiyr Vale.
+
+The Last Light repeats on a thirteen-minute cycle. Its known fragments are “Leave the second copy where the witnesses can—”; “It disagrees because it remembers—”; and “Do not call it corrected. Mark it missing.” Treat them as incomplete deposits, not a password.
+
+Essential clues need multiple routes. Checks can determine speed, detail, risk, or cost, but should not decide whether a core clue exists. Failed checks change the situation and provide a next step; they do not erase discovered evidence or rewrite the historical boundary.
+
+At each chapter’s end, record the characters’ decisions, what evidence supports, what remains uncertain, and what consequence crosses into the other timeline. Keep the Custodian’s claims distinct from witness experience and independently established fact. In the finale, the ancient party determines what the archive can carry through the catastrophe; the present-day party determines how surviving evidence is governed and used.
+
+\page
