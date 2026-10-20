@@ -1721,6 +1721,14 @@ Use these prompts to preserve consequential decisions between sessions. A blank 
 
 **Record Integrity:** Full Provenance / Representative Provenance / Damaged Provenance: ___________________________________________________
 
+**Independent Baseline / Comparison Copy:** ___________________________
+
+**Omissions and Reasons Logged:** Yes / No / Uncertain: ________________
+
+**Gap status:** Recorded as unresolved / Knowingly concealed / Uncertain: __________
+
+**Emergency Warding:** Intact / Damaged / Uncertain: ___________________
+
 **Emergency Priority:** People / Source Records / System Continuity / Custom: ______________________________________________________________
 
 **Last Review Gap:** _________________________________________________
