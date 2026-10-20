@@ -35,29 +35,29 @@
     "manifestoTags": "KLĄTWA ŚMIERCI · CHULT · ODKRYWANIE · PRZETRWANIE",
     "milestones": [
       {
-        "kicker": "AKTA / 02",
-        "title": "W Chult śmierć była częścią mapy.",
-        "description": "Punkt wejścia do Chult, przygotowania do wyprawy i pierwsze tropy prowadzące w głąb półwyspu."
-      },
-      {
-        "kicker": "AKTA / 03",
-        "title": "Klątwa Śmierci",
-        "description": "Eksploracja dżungli, ruiny, niebezpieczeństwa i coraz wyraźniejszy trop prowadzący do zagubionego Omu."
-      },
-      {
-        "kicker": "AKTA / 04",
-        "title": "Droga przez Chult",
-        "description": "Zaginione miasto, dziewięć świątyń i zagadka, która otwiera drogę dalej."
-      },
-      {
-        "kicker": "AKTA / 05",
+        "kicker": "ETAP / 01",
         "title": "Port Nyanzaru",
-        "description": "Fane of the Night Serpent, Yuan-ti i droga do miejsca, gdzie śledztwo przestaje być wyprawą, a staje się zejściem."
+        "description": "Początek wyprawy, przygotowania i pierwsze tropy prowadzące w głąb Chult."
       },
       {
-        "kicker": "AKTA / 06",
-        "title": "Dzika kraina",
-        "description": "Tomb of the Nine Gods: pułapki, duchy dziewięciu bóstw i finał przeciwko Acererakowi."
+        "kicker": "ETAP / 02",
+        "title": "Dzika kraina Chult",
+        "description": "Rzeki, ruiny i niebezpieczne szlaki podczas poszukiwania źródła Klątwy Śmierci."
+      },
+      {
+        "kicker": "ETAP / 03",
+        "title": "Droga do Omu",
+        "description": "Wyprawa dociera do Zakazanego Miasta, gdzie tropy prowadzą ku dziewięciu świątyniom."
+      },
+      {
+        "kicker": "ETAP / 04",
+        "title": "Świątynia Nocnego Węża",
+        "description": "Konfrontacja z yuan-ti i Rassem Nsi staje się kolejnym krokiem ku grobowcowi."
+      },
+      {
+        "kicker": "ETAP / 05",
+        "title": "Grobowiec Dziewięciu Bogów",
+        "description": "Pułapki, zagadki i ostateczne starcie w sercu grobowca."
       }
     ]
   },
@@ -80,253 +80,458 @@
   "chronicle": {
     "kicker": "AKTA / KRONIKA",
     "title": "Kronika wyprawy",
-    "description": "41 sesji — od Port Nyanzaru po finał w sercu grobowca. Tytuły zachowano z archiwum; linki do nagrań nie były zapisane na starej stronie.",
+    "description": "41 sesji — od Port Nyanzaru po finał w sercu grobowca. Wybierz wpis, aby rozwinąć szczegóły, lub otwórz nagranie.",
     "sessions": [
       {
         "sessionNumber": 1,
-        "title": "Tomb of Annihilation S1 - Port Nyanzaru [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Port Nyanzaru",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=yttdA4b2HAU",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 2,
-        "title": "Tomb of Annihilation S2 - Na Rzece Soshenstar [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Na Rzece Soshenstar",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=PeCyycK9aak",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 3,
-        "title": "Tomb of Annihilation S3 - Brat Krokodyl [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Brat Krokodyl",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=Uva43AE89eY",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 4,
-        "title": "Tomb of Annihilation S4 - Grungi Grungi! [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Grungi Grungi!",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=ltNa1qL48g8",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 5,
-        "title": "Tomb of Annihilation S5 - Podaj Mi Swoje Imię! [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Podaj Mi Swoje Imię!",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=NMGxsQNuJdI",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 6,
-        "title": "Tomb of Annihilation S6 - Próba, Próba! [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Próba, Próba!",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=FpQ7EWg-zkU",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 7,
-        "title": "Tomb of Annihilation S7 - Bangbang Nangnang [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Bangbang Nangnang",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=hxkKmksqaso",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 8,
-        "title": "Tomb of Annihilation S8 - Studnia Wizji [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Studnia Wizji",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=FEaSYc9TJnU",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 9,
-        "title": "Tomb of Annihilation S9 - Ognisty Palec [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Ognisty Palec",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=GginyzkrR0k",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 10,
-        "title": "Tomb of Annihilation S10 - Czerwony Mag [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Czerwony Mag",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=LFAW0Sv5irE",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 11,
-        "title": "Tomb of Annihilation S11 - Długa Droga [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Długa Droga",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=4zZ2s8sfRho",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 12,
-        "title": "Tomb of Annihilation S12 - Czerwony Terror z Koboldzich Gór [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Czerwony Terror z Koboldzich Gór",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=a3HZ4B5d2BM",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 13,
-        "title": "Tomb of Annihilation S13 - Dziadek Zitembe w Opałach! [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Dziadek Zitembe w Opałach!",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=O_uM-D3zFEs",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 14,
-        "title": "Tomb of Annihilation S14 - Zdrada przewodniczki! [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Zdrada przewodniczki!",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=aV6gaInqno8",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 15,
-        "title": "Tomb of Annihilation S15 - Koboldy, Katakumby i Timber! [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Koboldy, Katakumby i Timber!",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=Iof_uBfVQW0",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 16,
-        "title": "Tomb of Annihilation S16 - Ucieczka z Kopalni Żmijowego Serca [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Ucieczka z Kopalni Żmijowego Serca",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=J_ln-ZHPEKY",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 17,
-        "title": "Tomb of Annihilation S17 - Hrakhammar [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Hrakhammar",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=QI_wP0XnDc0",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 18,
-        "title": "Tomb of Annihilation S18 - Hrakhammar 2 [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Hrakhammar 2",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=uTe4Y8EPma4",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 19,
-        "title": "Tomb of Annihilation S19 - Frogemoth i Lodowi Giganci [D&D5e]",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Frogemoth i Lodowi Giganci",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=4sJF9idUUMA",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 20,
-        "title": "Tomb of Annihilation S20 - Droga do Omu",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Droga do Omu",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=E-DGz7rZe48",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 21,
-        "title": "Tomb of Annihilation S21 - Dzieci Ubtao",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Dzieci Ubtao",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=4KFZW7uT0yU",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 22,
-        "title": "Tomb of Annihilation S22 - Pierwsze Kroki w Zakazanym Mieście",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Pierwsze Kroki w Zakazanym Mieście",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=U1MjQlf37SA",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 23,
-        "title": "Tomb of Annihilation S23 - Śmierć w Omu i Pierwsze Świątynie",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Śmierć w Omu i Pierwsze Świątynie",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=BI_pl8zJmGk",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 24,
-        "title": "Tomb of Annihilation S24 - Pogoń za Kostkami",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Pogoń za Kostkami",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=Ao9GVmV0G64",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 25,
-        "title": "Tomb of Annihilation S25 - Dżin w Butelce",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Dżin w Butelce",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=D8WUyVDcfjQ",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 26,
-        "title": "Tomb of Annihilation S26 - Koboldy w Omu",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Koboldy w Omu",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=cW79q_QJkdk",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 27,
-        "title": "Tomb of Annihilation S27 - Zagadki Zakazanego Miasta",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Zagadki Zakazanego Miasta",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=FBnnYjgux4Y",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 28,
-        "title": "Tomb of Annihilation S28 - Psoty Węży",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Psoty Węży",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=GRdoUqspa_U",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 29,
-        "title": "Tomb of Annihilation S29 - Babuszka Pu'Pu",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Babuszka Pu'Pu",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=OeWIC_-b1qY",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 30,
-        "title": "Tomb of Annihilation S30 - Do Świątyni Nocnego Węża",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Do Świątyni Nocnego Węża",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=2rCYTRzidNg",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 31,
-        "title": "Tomb of Annihilation S31 - W Świątyni Nocnego Węża",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "W Świątyni Nocnego Węża",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=vQ1cyhfSxAc",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 32,
-        "title": "Tomb of Annihilation S32 - Rytuał Yuan Ti",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Rytuał Yuan Ti",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=jagUj1TKgO0",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 33,
-        "title": "Tomb of Annihilation S33 - Pościg Rasa Nsi",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Pościg Rasa Nsi",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=9Dlo8wiWTFY",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 34,
-        "title": "Tomb of Annihilation S34 - Gnijące Korytarze",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Gnijące Korytarze",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=I0qKLuWPMtw",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 35,
-        "title": "Tomb of Annihilation S35 - Śmierć w Grobowcu",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Śmierć w Grobowcu",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=oon7zmC_dmA",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 36,
-        "title": "Tomb of Annihilation S36 - Utopcie Swe Smutki",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Utopcie Swe Smutki",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=9oNJCXfP2Do",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 37,
-        "title": "Tomb of Annihilation S37 - W Labiryncie Omenów",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "W Labiryncie Omenów",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=Mu4sSRRGyl0",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 38,
-        "title": "Tomb of Annihilation S38 - Grobowce i Tajemne Wzory",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Grobowce i Tajemne Wzory",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=XfZIAaozVP8",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 39,
-        "title": "Tomb of Annihilation S39 - 7 Lat Nieszczęścia",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "7 Lat Nieszczęścia",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=St0yhe5Erbo",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 40,
-        "title": "Tomb of Annihilation S40 - Trzeci Klucz",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Trzeci Klucz",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=P4QMyXmFAgU",
+            "partNumber": 1
+          }
+        ]
       },
       {
         "sessionNumber": 41,
-        "title": "Tomb of Annihilation S41 - Acererak Pokonany",
-        "description": "W archiwum nie zapisano opisu tej sesji.",
-        "recordings": []
+        "title": "Acererak Pokonany",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=rJ2n4y5v7OM",
+            "partNumber": 1
+          }
+        ]
       }
     ]
   }
