@@ -437,3 +437,128 @@ A chapter is ready for review only when it includes its opening situation, runna
 
 Before committing a substantial revision, count words between page markers, verify every marker is standalone, confirm the final marker exists, and recalculate every rolling ten-page window. Then search the chapter for all IDs it touches and compare them with the canon, consequence, NPC, mystery, and mechanics registers. Record any known failure rather than describing the chapter as complete. The goal is a manuscript whose limitations are visible and fixable, not a production log that reports success by assumption.
 \\page
+# Chapter I — The Signal Beneath the Ruin
+## Run Sheet and Opening Situation
+
+**Chapter objective:** The Faerûnian party discovers a repeatable signal from a damaged Netherese memory system, secures enough evidence to continue investigating, and makes its first consequential decision about custody and disclosure.  
+**Expected duration:** Two to four sessions, depending on investigation style.  
+**Advancement:** Characters begin at level 5 and reach level 6 at the end of the chapter.  
+**Required outcomes:** The party establishes that the signal is structured, linked to preserved sensory testimony, and worth pursuing. They do not yet identify the Custodian’s full nature or learn the engine’s final purpose.
+
+### Starting location: the Glasswell
+
+The Glasswell is a small Netherese waystation ruin on a wooded rise above a tributary road in the Delimbiyr Vale. It is not a lost enclave and contains no intact flying-city infrastructure. Its original purpose was practical: a relay and inspection station where travelers could verify arcane cargo seals and leave messages for the larger civic network. The station’s surviving lower chamber was later repurposed as a monitoring point for the Mnemosyne Engine’s signal. Most of the upper structure has collapsed; a narrow stair of pale stone remains visible through the roots of an old tree, and a shallow basin of black glass sits in the lower chamber.
+
+The Glasswell is small enough to explore in one session but layered enough to support different approaches. A worn path reaches the hill from the road. The fallen upper room provides cover and physical traces. A cracked service stair descends to the signal chamber. A drainage cut exits the lower slope, though debris makes it difficult to use. A nearby campsite and a weathered waymarker provide sources away from the ruin. Do not make the site a dungeon with an arbitrary sequence of locked doors: the challenge is deciding what evidence to trust, what risk to accept, and whom to involve.
+
+### Opening read-aloud
+
+> The path climbs through wet roots and pale stones. Above the trees, a broken arch leans against the sky, its surface scored by weather and by marks too regular to be natural. At the top of the rise, the air grows still. A shallow black basin rests in the ruin’s shadow. For one breath, a line of amber light travels across its surface. You hear a voice—close, frightened, and abruptly cut off—then a second sound: the small click of something being placed on stone. The basin goes dark. Nothing else in the ruin moves.
+
+After reading this, ask what the characters do first. Do not call for a check merely to notice the light or hear the impression. If they immediately leave, the signal repeats once as they reach the path, and a nearby witness approaches to ask whether they heard it too. If they attack the basin, the signal stops for ten minutes and resumes from the lower chamber; the object is not destroyed by ordinary damage. If they secure the site, they can work without interruption but become responsible for anyone who later asks to enter.
+
+### Chapter pacing
+
+The chapter should alternate investigation and tangible decisions. After each meaningful discovery, give the players a choice about what to do with it: preserve it, share it, test it, or leave it in place. A choice should alter the next scene’s conditions. If the players invent a sensible approach not listed here, adjudicate it against the site’s established properties and let it work when the method fits. The chapter is not a test of whether the players guess the author’s intended route; it is a test of what evidence they can justify and what risks they are willing to accept.
+
+\\page
+
+## Location Key and Physical Evidence
+
+### Area G1: The Fallen Arch
+
+The approach is open to the sky. The arch’s outer face bears a repeating pattern of three short strokes and one long stroke. The pattern is not a password; it is an inspection notation indicating that the station once verified a sequence of sealed cargo containers. A character who studies it can infer that the site was functional infrastructure rather than a temple or private tomb. No check is required to notice the marks. A successful Intelligence (Investigation or History) check, DC 13, identifies the marks as deliberate notation and recalls that Netherese installations often used compact glyph systems for maintenance and routing; failure still establishes that the marks are repeated and artificial.
+
+A narrow strip of blue crystal remains embedded in the arch. It is cool to the touch and gives a faint vibration when the signal occurs. Removing it is possible with careful tools; forcing it out breaks it into two pieces. Either result preserves evidence, but a broken crystal is harder to compare with other traces. The crystal does not provide a map, a name, or a complete memory.
+
+### Area G2: The Collapsed Inspection Room
+
+The upper room contains a fallen stone shelf, fragments of ceramic seals, and a shallow groove worn into the floor. The groove runs toward the lower stair, suggesting that a small wheeled cart or inspection frame once moved between levels. One ceramic fragment bears the same three-short, one-long pattern as the arch. Another has a smear of amber residue. If the party preserves both fragments and records where they were found, they can later establish that the signal chamber was connected to an organized station. If they gather everything indiscriminately, the evidence remains usable but the party cannot reliably reconstruct which fragment came from which surface.
+
+A section of ceiling is unstable. Characters can cross the room by following the wall, brace the damaged lintel, or clear the route from below. If they rush across the center, trigger the hazard procedure in Area G3. The hazard is telegraphed by fresh dust, a hairline crack, and a repeated ticking sound when the basin pulses. Do not spring the collapse without describing at least one of these cues.
+
+### Area G3: The Service Stair
+
+The stair descends six feet to a narrow landing and then turns into the signal chamber. The first three steps are sound; the fourth has a fractured support. A character examining the stair notices the fracture automatically if using a light or taking time to inspect. Moving quickly while carrying heavy gear can trigger a local collapse. The drop is short, but a fall can cause injury and separate a character from the party for a few moments. A rope, a brace, a careful route along the wall, or a suitable spell can prevent the fall. The hazard should reward preparation rather than punish a character for not guessing.
+
+If the stair is damaged, the party can still reach the lower chamber through the drainage cut. Clearing the cut takes about twenty minutes and makes enough noise to alert anyone nearby. A character who uses tools or a practical spell can shorten the work. The alternate route is intentionally slower, not impossible.
+
+### Area G4: The Signal Chamber
+
+The chamber contains the black-glass basin, a recessed panel, and three shallow sockets. The panel is dark except during a pulse. At that moment, a narrow line of light travels from one socket to another, then stops before reaching the third. The pattern repeats exactly unless someone changes the panel’s state. The basin reflects the room normally except during the signal, when it briefly shows a different stone surface and the edge of a hand withdrawing from view.
+
+The chamber contains no intact control interface that can open the sealed archive. It is a relay, damaged and incomplete. A character who examines the panel can find tool marks around the first socket and residue around the second. The third socket is clean, suggesting that it was never connected or that its component was removed before the station failed. This absence is a clue, not a key the party must find.
+
+### Area G5: The Drainage Cut
+
+The drainage cut exits beneath the slope and opens into bracken. It contains runoff silt, a broken ceramic seal, and a small metal clasp of a type used to secure travel satchels. The clasp is not magically significant; it suggests that someone used the route after the upper room collapsed. The party may follow footprints if conditions allow, but the trail is intermittent and should not lead directly to the campaign’s central answer. It can lead to the campsite or provide a reason to question a witness.
+
+\\page
+
+## The First Hazard and Signal Procedure
+
+### Hazard H-01: Fractured Service Stair
+
+**Trigger:** A creature crosses the fractured fourth step at speed, or a character puts substantial weight on the cracked support without testing or bracing it.  
+**Warning:** A visible split in the stone, loose grit, and a faint ticking sound during a signal pulse. Characters who pause to inspect the step notice the danger without a check.  
+**Avoidance:** Cross slowly along the wall, brace the support, use a rope, clear the alternate drainage route, or use a suitable spell or feature. A character can help another cross safely.  
+**Resolution:** If a character rushes across despite the warning, call for a DC 13 Dexterity saving throw. On a success, the character catches the wall or jumps to the landing. On a failure, the support gives way; the character falls to the lower landing, takes 1d6 bludgeoning damage, and lands prone. The stair remains partially passable but requires careful movement. The DM may adjust the damage if the character’s abilities or protective measures clearly change the fall.  
+**Recovery:** A rope, brace, or alternate route remains available after a failure. A failed save never blocks access to the chamber or destroys essential evidence.
+
+### Signal procedure
+
+The signal repeats every thirteen minutes while the relay remains undisturbed. When it begins, the basin emits amber light edged with blue. A sensory impression lasts no more than six seconds. It contains one voice fragment, one tactile or visual detail, and one abrupt interruption. The DM chooses a fragment from the evidence set below, keeping its wording stable for later comparison.
+
+- **Fragment A:** A low voice says, “Leave the second copy where the witnesses can—” and cuts off. The impression includes the scrape of a ceramic seal on stone.
+- **Fragment B:** A person’s hand withdraws from a shallow socket. The voice says, “It disagrees because it remembers—” before the sound drops away.
+- **Fragment C:** A hurried voice says, “Do not call it corrected. Mark it missing.” A second person answers, but the answer is not audible.
+
+These fragments are not three separate clues that must all be obtained. The first pulse presents one fragment. Later pulses may repeat it or present another, depending on the party’s actions. If characters record the sound, the recording captures a short burst of noise and the repeated rhythm but not a complete voice; the sensory impression is not ordinary acoustic sound. If they use a spell to detect magic, it reveals a lingering magical effect associated with the basin, but does not identify the engine or reveal the full memory.
+
+### Tests and their limits
+
+A successful Intelligence (Arcana) check, DC 14, identifies the signal as a repeatable magical effect that carries structured information. It does not identify the Mnemosyne Engine. A successful Intelligence (Investigation) check, DC 13, connects the repeating light pattern to the three sockets and notices that the third remains unlit. A successful Wisdom (Insight) check, DC 14, helps a character distinguish the impression’s fear and urgency from any certainty about what happened. Failure means the character cannot draw that particular inference yet; it does not produce false information.
+
+Characters who use appropriate spells, tools, or backgrounds may gain the relevant information without a roll if the method clearly applies. Do not make a check to gate the campaign’s only clue. Any failed test can be retried after the characters change their method, obtain help, or compare another source. The signal can be studied repeatedly, but every test costs time and may expose the party to outside attention.
+
+### Environmental escalation
+
+The relay is not an active enemy. If the characters damage the basin, the light stops briefly and then resumes from the recessed panel. If they remove the blue crystal from the arch, the pulse becomes weaker but does not end. If they block the stair, the signal still reaches the surface as a faint vibration. These responses demonstrate that the signal has more than one component without implying that the relay can think or retaliate. The Custodian is not directly speaking through the site yet; any impression should remain fragmentary and tied to stored testimony.
+
+\\page
+
+## NPCs, Clue Paths, and Chapter Outcomes
+
+### N-06: Mara Vell, signal-affected witness
+
+Mara Vell is a caravan ledger-keeper staying at the roadside campsite below the Glasswell. She is observant, practical, and wary of being treated as a source of supernatural contamination. During the previous night, she heard a voice while checking a sealed cargo case. She did not see a ghost and does not claim to know the voice. She remembers the phrase “mark it missing” and a sensation of cold stone beneath her palm, despite standing outside.
+
+**Goal:** Understand whether the experience threatens her work or the people traveling with her. **Pressure:** She fears that an authority will confiscate the cargo records or blame her for tampering. **Cooperation:** She shares her notes if the party explains what it is testing and allows her to keep a copy. **Lost trust:** She withdraws if the party publicly describes her as possessed, lies about what her notes contain, or takes her records without consent. **Useful information:** Her ledger records the time of the pulse and the cargo seal’s condition. It corroborates the signal’s timing but does not identify its source.
+
+### N-08: Seln Ardo, local waymarker keeper
+
+Seln maintains the road marker near the hill. He has no special knowledge of Netherese magic, but he knows that travelers have recently stopped at the Glasswell and that one group left in haste. He wants the road to remain safe and dislikes having to report unexplained incidents to distant officials. He will point out the drainage cut and the safest approach if the party treats the site as a hazard rather than a prize. He will not enter the ruin without a clear reason.
+
+### Three clue paths
+
+**Material path:** The blue crystal, ceramic seal, and repeated socket pattern establish a structured relay. The residue’s location shows that the lower chamber was maintained after the upper room began to collapse. This path supports the conclusion that the signal comes from a device, but does not reveal what the device preserves.
+
+**Witness path:** Mara’s ledger and sensory description independently corroborate the timing and one phrase from the signal. Her testimony also demonstrates that the impression affects people outside the chamber. This path establishes a repeatable effect but cannot prove that the remembered voice is accurate or complete.
+
+**Record path:** A weathered waymarker inventory and a fragment in the collapsed room refer to a “witness relay” and “civic deposit.” The language suggests a record-keeping function, not a weapon. A character with relevant historical expertise may recognize that the terminology belongs to a public institution, though no source names Orsraun or explains the Mnemosyne Engine at this stage.
+
+Each path can point toward either of the other two. If the party follows only one path, the DM offers a practical reason to seek corroboration: the crystal is difficult to interpret without a record; Mara’s timing needs comparison with the relay; the inventory uses terms whose physical referent can be found at the site. Do not force a specific NPC to provide the next clue.
+
+### End-of-chapter decision
+
+When the party has established two independent lines of evidence, introduce the custody decision. They may secure the Glasswell and limit access, share their findings with a local authority or scholarly contact, or leave the site open while preserving their own records. Explain the likely consequence of each option. Securing the site protects evidence but requires the party to spend resources and accept responsibility. Sharing information gains potential assistance but gives another party influence over access. Leaving the site open preserves broad access but risks disturbance and rumor.
+
+Record the chosen state as **Site Custody**: Secured, Shared, or Open. Also record **Evidence Record**: Complete (the party documented locations and preserved at least two independent sources) or Fragmentary. These are local campaign variables. They influence who can help in Chapter III and how much corroboration the party must obtain, but none blocks advancement or the central investigation.
+
+### Chapter I reward and transition
+
+Advance the Faerûnian characters from level 5 to level 6 after the party makes its custody decision and has a justified conclusion about the relay. The chapter’s reward is evidence, not a magic item. If a physical fragment is retained, it is a useful comparison object but has no combat power and does not grant a bonus to checks. The party may also earn Mara’s trust, Seln’s cooperation, or an institutional contact, depending on play.
+
+The transition to Chapter III should be driven by the party’s choice. A secured site attracts a request for responsible custody or technical assistance. A shared discovery produces an invitation to compare records with a scholar or authority. An open site generates another witness or a new discrepancy that requires corroboration. In every case, the party has a next step and a reason to choose it. The chapter ends with a question the players can answer through action: who should be trusted with evidence that can preserve a person’s experience without proving the whole truth?
+
+\\page
