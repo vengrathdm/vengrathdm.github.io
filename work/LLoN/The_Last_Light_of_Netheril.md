@@ -1243,4 +1243,14 @@ Essential clues need multiple routes. Checks can determine speed, detail, risk, 
 
 At each chapter’s end, record the characters’ decisions, what evidence supports, what remains uncertain, and what consequence crosses into the other timeline. Keep the Custodian’s claims distinct from witness experience and independently established fact. In the finale, the ancient party determines what the archive can carry through the catastrophe; the present-day party determines how surviving evidence is governed and used.
 
+
+
+## Quick ruling checklist
+
+Before resolving a disputed action, ask: What does the character want to change? What evidence or capability supports the attempt? What can go wrong, and what will failure cost? Is a roll genuinely necessary? If a roll is called for, state the stakes before it is made.
+
+For a consequential revelation, identify the source and its limits. A sensory deposit can show what a witness perceived; it cannot independently prove that the witness understood every cause. A catalog can corroborate a date or chain of custody; it cannot establish the truth of every statement in the record. A witness can describe lived experience without consenting to unrestricted publication.
+
+When the party’s plan is plausible and adequately supported, let it work. Do not make players repeat checks until they obtain a preferred result. On failure, preserve agency by offering a costly route, a partial answer, or a new complication that the characters can address. Record any lasting consequence before the session ends.
+
 \page
