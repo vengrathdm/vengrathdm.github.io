@@ -1599,3 +1599,78 @@ The Custodian may identify inconsistency, preserve competing deposits, or warn t
 **Example: a public demand for certainty.** A civic sponsor asks the party to state whether a disputed event definitely occurred. If the evidence supports only a plausible conclusion, the characters can say so, refuse the requested certainty, or make a stronger claim and accept responsibility for doing so. The GM should not quietly upgrade the evidence to reward a persuasive speech.
 
 \page
+
+
+# Appendix E — Factions and Negotiation Reference
+
+Use factions as groups with interests, not as single-minded blocks. Individual members may disagree about tactics while sharing a broad concern. When the characters make a consequential offer, determine which interest it serves, which interest it threatens, and what evidence the faction needs before changing its position.
+
+## Orsraun Civic Commission
+
+**Core interest:** Maintain civic legitimacy and public confidence in the archive.
+
+**What it can offer:** Access to official procedures, a hearing, civic resources, or recognition that a record has been reviewed.
+
+**What it fears:** Public panic, loss of legitimacy, and a dispute that appears to make the city’s records useless.
+
+**What changes its position:** A proposal that acknowledges uncertainty while explaining how the city will respond to correction. A demand for unconditional trust is less persuasive than a review process the Commission can explain publicly.
+
+**Pressure tactic:** The Commission may insist that a public statement be clear enough for citizens to act on. It may ask the party to delay release until a disputed point is reviewed. Such a request is not automatically malicious; the party must judge whether the delay protects people or protects the institution.
+
+## Archive Maintainers
+
+**Core interest:** Keep the Engine functioning and preserve a traceable record of technical changes.
+
+**What they can offer:** Access to system procedures, explanation of a damaged interface, and a practical method for implementing or testing a safeguard.
+
+**What they fear:** Being asked to certify claims the system cannot support, or being blamed for failures caused by an incomplete mandate.
+
+**What changes their position:** Evidence that the proposed procedure is technically coherent and that failures will be recorded rather than concealed. They may support a narrow, testable amendment before they support a broad redesign.
+
+**Pressure tactic:** A maintainer may refuse to promise that a system will behave safely when its configuration is untested. Treat that refusal as useful technical caution, not obstruction for its own sake.
+
+## Witness Circle
+
+**Core interest:** Protect the dignity, agency, and context of people whose testimony is preserved.
+
+**What it can offer:** Witness introductions, consent guidance, community trust, and a way to understand harms that an institutional summary omits.
+
+**What it fears:** Testimony being taken out of context, used to shame a witness, or treated as public property merely because it was preserved.
+
+**What changes its position:** Specific protections, a meaningful ability to refuse attribution, and a review process that includes affected people. The Circle may accept preservation while opposing public release of raw deposits.
+
+**Pressure tactic:** Members may insist that the party answer who bears the risk of publication. If the characters cannot answer, the Circle may withhold endorsement without withholding all cooperation.
+
+## Present-Day Custody Coalition
+
+**Core interest:** Ensure that the recovered evidence is governed in a way that affected people can challenge.
+
+**What it can offer:** Present-day legitimacy, a public forum, community relationships, and practical proposals for shared or restricted custody.
+
+**What it fears:** A permanent monopoly on the archive, a rushed release that harms witnesses, or a temporary emergency rule that becomes permanent.
+
+**What changes its position:** A custody model with named responsibilities, a visible inventory, appeal rights, and a clear way to revise the policy when new evidence emerges.
+
+**Pressure tactic:** The Coalition may challenge the party to explain why a particular institution should hold exclusive authority. It should also answer the same question about its own proposal; no faction is beyond scrutiny.
+
+## Negotiation record
+
+When a faction changes its position, record the reason rather than only the result.
+
+**Faction:** ________________________________________________________
+
+**Initial position:** ________________________________________________
+
+**Interest the party addressed:** ____________________________________
+
+**Evidence or commitment offered:** __________________________________
+
+**Concession made by the faction:** ___________________________________
+
+**Cost or obligation accepted by the party:** _________________________
+
+**What remains unresolved:** __________________________________________
+
+A faction should not change its position merely because the characters rolled well. A successful check can make an argument land, secure a hearing, or reveal a negotiable concern. The substantive change should follow from the evidence, offer, or commitment. Equally, a faction should not become immovable when the characters meet its stated conditions.
+
+\page
