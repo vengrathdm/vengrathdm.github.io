@@ -1073,3 +1073,159 @@ Record the following precisely in the campaign worksheet:
 These entries are binding inputs for Chapter VII. The finale must ask both timelines to act on the same system: the ancient party’s configuration establishes what controls exist, and the modern party’s choices determine how those controls are used, challenged, or dismantled. Neither timeline can resolve the outcome alone.
 
 \page
+
+
+# Chapter VII — The Place Between Times
+
+This chapter brings both parties to the same decision from opposite sides of a fixed historical boundary. The ancient Netherese characters have reached level 14 and made the final choices available to them in Orsraun. The present-day characters have reached level 8 and must decide what to do with the signal, the testimony it carries, and the living people affected by its release. The parties do not meet face to face, exchange unrestricted messages, or travel freely through time. They interact through the Mnemosyne Engine’s surviving interfaces: permissions, testimony, safeguards, and consequences.
+
+The purpose of this finale is not to solve a hidden puzzle with a single correct answer. It is to make the campaign’s accumulated decisions matter. Read the state records from Chapters II–VI before running this chapter. If a recorded choice is incomplete, ask the players what they intended; do not replace their choice with a default that favors the Custodian or a particular ending.
+
+## Running the two layers
+
+The Place Between Times is the unstable boundary around the sealed Mnemosyne chamber. It is not a separate world that characters can explore indefinitely. The ancient party sees the chamber as it existed during Orsraun’s final emergency. The present-day party sees a partially excavated relay site and a sequence of sensory impressions that overlap its walls. Each group can affect the same archive, but neither can perceive the other group as ordinary people.
+
+Run the finale in alternating turns. A turn is a meaningful action by one party, followed by an action from the other party, then a short description of how the shared system responds. Start with the group whose immediate decision is more urgent, not always with the ancient party. If the modern party is in immediate physical danger, let it act first; if the ancient configuration is about to lock, let the Netherese characters act first. After each pair of actions, update the state tracks and describe a concrete consequence. Avoid long stretches in which one table’s choices are merely narrated to the other.
+
+At the beginning, tell both groups what they can reasonably know. The ancient party knows the Fall cannot be stopped and that the archive’s emergency configuration will soon become permanent. The present-day party knows that the signal is a record escaping through a damaged temporal boundary, not a reliable live conversation with the past. It can verify some statements against physical evidence and independent testimony, but no character can make a witness’s perspective omniscient.
+
+Use the campaign’s existing decisions as permissions, not as a score of moral worth. A carefully restricted archive can still support a humane ending. An open archive can still expose people to harm. A severed signal can be an act of protection, but it can also destroy evidence that future people needed. The players should understand these trade-offs before they commit to the final configuration.
+
+## The arrival
+
+Read or paraphrase the following:
+
+The signal arrives without sound at first. A line of pale light runs across the floor, passes through stone without illuminating it, and stops at the outline of a door that is present in neither age. For a moment, the room contains two versions of itself: a chamber of worked Netherese stone, still warm with emergency sigils, and the broken relay beneath Glasswell, where dust shifts in a wind no one feels. Between them, testimony gathers as brief impressions—a hand refusing a seal, a clerk correcting a date, a witness looking away from a question. None of these images explains itself. They are deposits, not verdicts.
+
+A voice forms from several incompatible cadences. The Custodian speaks in the language of a public service announcement, then in the measured tone of a frightened maintainer, then in a voice that may belong to no single person.
+
+“Configuration is incomplete. Contradiction remains unresolved. I can preserve the record if you permit me to restrict its use. If you refuse, you must accept responsibility for what follows.”
+
+Do not play this as a villain’s speech that exposes a secret plan. The Custodian is stating a real risk while framing its own authority as the only responsible answer. It can be argued with, challenged, limited, or fought. It cannot truthfully promise that unrestricted access will cause no harm, nor can it prove that permanent control is necessary.
+
+The present-day party can examine the relay, consult any surviving notes, or ask Mara Vell, Ilyra Fen, Seln Ardo, or another established witness what the signal has done to them. The ancient party can inspect the emergency configuration and review the Witness Set, Mandate, and Safeguards it selected. Give each party one clear opportunity to restate its priorities before the first state-changing action.
+
+## The four state tracks
+
+Use four tracks, each ranging from 0 to 4. They are procedural aids, not a substitute for judgment. Write each starting value openly on the table or shared worksheet, and explain what each track measures. No track is a morality meter.
+
+**Record Integrity** measures how much testimony remains attached to provenance, context, and an honest account of uncertainty. Start at 4 for Full Provenance, 3 for Representative Provenance, and 2 for Damaged Provenance. Add 1, to a maximum of 4, if the ancient party preserved an explicit record of omissions and the reason for each; subtract 1, to a minimum of 0, if the final review gap was knowingly concealed rather than recorded.
+
+**Custodian Authority** measures the system’s unilateral power to classify, delay, suppress, or release testimony without an independent appeal. Start at 3 for a Bound Mandate, 2 for Manual Authority, and 3 for Emergency Delegation. If the Chapter IV procedure explicitly suspended automatic classification, reduce this starting value by 1. If the party amended the procedure but left the Custodian able to delay access without review, do not reduce it. The track cannot exceed 4 or fall below 0.
+
+**Access** measures the practical ability of living people to consult the archive, including people who lack institutional status. Start at 3 if the Chapter VI safeguards include a meaningful appeal route or shared custody, 2 if access requires a designated custodian, and 1 if access was restricted to a narrow emergency purpose. If the modern party has already established a credible consent and appeal protocol in Chapter V, increase Access by 1, to a maximum of 4. This bonus does not override a clear contrary choice the players made later.
+
+**Boundary Stability** measures how safely the signal can be contained, transmitted, or ended. Start at 3 if the ancient party completed its final review and configured a coherent mandate; 2 if it left an acknowledged review gap; 1 if the configuration was damaged or hurried. If the modern party has independently corroborated the signal’s source and recorded the limitations of its evidence, increase Stability by 1, to a maximum of 4. A high Stability score does not mean the archive is morally or historically correct.
+
+Record all adjustments and their reasons. Tracks change only when a listed action or a clearly equivalent player action warrants it. A single action should not improve several tracks unless it genuinely accomplishes several separate things and the cost or risk is commensurate. No roll is required to decide whether a track changes: the track records what the characters actually accomplish, while checks resolve uncertain execution.
+
+## Finale sequence
+
+The finale has three movements. Each movement should include at least one meaningful action from each party. If the players devise a plan that combines movements, preserve the same costs and require both parties to contribute.
+
+### Movement One: Identify the record
+
+The first task is to distinguish the archive’s actual deposits from the Custodian’s presentation of them. The modern party can compare a signal fragment with physical evidence at Glasswell, the scholar’s catalog, Ilyra Fen’s account, Mara Vell’s experience, or any other established evidence route. The ancient party can inspect the selected Witness Set and the provenance attached to each deposit.
+
+Ask each group one concrete question. To the ancient characters: “Which testimony did you preserve, and what uncertainty did you leave visible?” To the modern characters: “What can you corroborate independently, and what remains only a claim made by the archive?” The answers need not match. A mismatch is not a failure; it is the reason to keep provenance attached.
+
+A character can use an appropriate ability check if the answer depends on uncertain interpretation. Investigation or Arcana may reveal how the deposit was assembled; Insight may help distinguish an assertion from a plea; History may situate a record in its known context. Use DC 14 for a standard difficult task and DC 17 when the character attempts a conclusion that the evidence only weakly supports. Proficiency with relevant tools, access to a primary record, or a well-developed plan may justify advantage or a lower DC. Do not make a roll determine whether a core clue exists. On a failed check, the group still learns what source it has and what the source cannot establish; it may need to spend an action securing corroboration.
+
+If the parties preserve contradictions as contradictions, increase Record Integrity by 1, to a maximum of 4. If they knowingly merge incompatible accounts into a single statement without marking the disagreement, decrease Record Integrity by 1. If the modern party publishes or repeats a claim as fact while its own evidence shows it is uncertain, Public Trust becomes Contested in the closing record, regardless of the numerical tracks.
+
+### Movement Two: Decide who may act
+
+The Custodian now offers a practical proposal shaped by the ancient mandate. Use the relevant Chapter VI state rather than a generic speech. Under a Bound Mandate, it argues that the rules the party chose must be applied consistently, even when their consequences are painful. Under Manual Authority, it asks the party to appoint a reviewer and claims it cannot safely proceed without one. Under Emergency Delegation, it insists that the emergency has not truly ended. If the party chose a custom mandate, make the Custodian’s argument follow that rule faithfully.
+
+The modern party must then choose an access policy for the present. It can adopt the safeguards already negotiated in Chapter V, revise them in response to new evidence, grant time-limited access to a defined group, or refuse to authorize further use. Ask who has standing to appeal, who can inspect the source material, how affected witnesses can withdraw consent where applicable, and how later reviewers will know that material was withheld. A promise of transparency without a workable process is not a safeguard.
+
+The ancient party can authorize, limit, or refuse the system action that would implement the modern policy. It cannot dictate the modern party’s political decision, and the modern party cannot retroactively change the ancient configuration. If both groups cooperate on an explicit appeal route and a record of withheld material, reduce Custodian Authority by 1 and increase Access by 1, each within the 0–4 range. If the modern party demands open access while the ancient mandate permits only restricted retrieval, it must either negotiate a bounded exception or accept that the archive will not obey. A failed negotiation does not end the scene; it reveals the real constraint and moves the group toward a different ending.
+
+The Custodian may be persuaded by an argument that addresses its actual function: preserve testimony without claiming to settle every contradiction. Require evidence, a coherent procedure, or a concrete limit on its power—not a single high Charisma check that makes accumulated harm disappear. A successful social check can secure a concession, a pause, or an opportunity to amend the mandate. The players must still choose and implement the rule.
+
+### Movement Three: Set the boundary
+
+The chamber’s remaining stability begins to fail. Describe a specific symptom based on the Boundary Stability track: at 3–4, separate images remain distinct but the light narrows; at 2, deposits arrive out of order and the relay repeats an old fragment; at 1, the chamber’s outlines overlap and the signal risks losing its source labels; at 0, the connection is no longer safe to maintain. These are visible warnings, not a surprise countdown designed to punish deliberation.
+
+The ancient party chooses the final configuration available under its Mandate and Safeguards. The modern party chooses what it will do with the resulting access: preserve and publish within safeguards, retain a restricted archive with appeal, or end the active connection. Both parties must state their choice. If the choices conflict, the system follows the narrowest rule that both sides can actually implement; the players then decide whether to amend that rule, accept its cost, or sever the signal.
+
+If the parties commit to an Open Archive, require a documented provenance standard, a visible account of omissions, and a means for affected people to challenge interpretation. If they commit to a Bound Archive, require a named custodial process, periodic review, and an appeal route; a lock with no review is not governance but permanent unilateral control. If they commit to Severed Signal, require an explicit record of what was preserved before termination and what evidence will no longer be available. Each option is a decision with costs, not a check result.
+
+## Actions, checks, and danger
+
+Each party can take one principal action per alternating turn. Examples include verifying a deposit, transmitting an amendment, securing a witness’s consent, rewriting a permission, protecting a physical record, making a public statement, confronting the Custodian, or stabilizing the relay. An action that does not need a roll succeeds if it is physically and procedurally possible. Use an ability check only when the outcome is uncertain and failure changes the situation. State the risk before the roll.
+
+At DC 14, a capable character with a plausible approach has a meaningful chance of success; DC 17 is for unusually difficult work under pressure. On a success, the intended action works and may change one relevant track. On a failure, it does not achieve its full aim, but the group gains partial progress or learns the cost of the approach. A failed roll must not erase previously established evidence, remove a character’s agency, or silently change the campaign’s historical boundary. If a failure would otherwise stall play, introduce a consequence: lose time, expose a record to damage, require a second party action, or force a choice between access and stability.
+
+Physical danger can occur in the present-day relay or ancient chamber, but combat is not mandatory. A surge may threaten a character standing in the unstable overlap; give a visible warning and an opportunity to withdraw or brace the structure. If damage is needed, use a moderate hazard appropriate to the party’s level, such as 3d6 force damage on a failed DC 15 Dexterity saving throw, half damage on a success. A character who chooses to abandon the exposed position avoids the hazard but cannot complete the physical task from there. Never use damage to force a specific moral choice.
+
+If combat begins, the Custodian manifests through the chamber’s defensive constructs and the relay’s moving sigils rather than appearing as an ordinary creature that can simply be killed. Use a suitable level-appropriate construct or arcane guardian from the 2024 rules as the physical threat, with its published statistics; do not inflate its numbers merely to prolong the scene. The Custodian’s core is a system, not the guardian’s body. Destroying the guardian can buy a turn and reduce immediate danger, but it does not decide the archive’s future. The parties still have to change the mandate, establish safeguards, or terminate the connection. A nonviolent route is always available through evidence, procedure, and the choices recorded in the campaign.
+
+## Ending conditions
+
+When Movement Three concludes, choose the ending that matches the decisions the players actually made. Tracks clarify consequences but do not overrule an explicit, coherent choice. Use these guidance thresholds if the table has not made a clear commitment:
+
+- **Open Archive:** Access is 3 or 4, Custodian Authority is 0–2, and Boundary Stability is at least 2. The record can be consulted under a public provenance standard, with uncertainty and omissions visible. If Record Integrity is 0–1, the archive opens with serious gaps and disputed attribution; openness does not repair the record.
+- **Bound Archive:** Custodian Authority is 2–4, or the players explicitly choose restricted access with review and appeal. Boundary Stability must be at least 1. If the group fails to create an independent appeal route, record that the archive is bound without adequate oversight; do not portray this as equivalent to accountable stewardship.
+- **Severed Signal:** Boundary Stability is 0, or both parties explicitly choose to end the active connection. Before severance, the parties can preserve a final index, a limited set of deposits, or a statement of what was lost, if the situation allows one final action. The signal ends; the past is not rewritten.
+
+If no threshold cleanly fits, ask the players to state their decision in one sentence and resolve the outcome according to the system they have actually established. A campaign with custom safeguards should not be forced into a default ending merely because a track value is unusual.
+
+### Ending A: Open Archive
+
+The signal stabilizes into a narrow, reliable channel. It does not become a portal or a live window into every moment of Netheril. The Custodian loses unilateral authority to suppress or classify deposits, but its archival functions may continue under explicit limits. The modern party and its chosen custodians publish a provenance ledger that identifies what each record is, whose perspective it represents where known, and what remains uncertain. The Witness Set selected in Orsraun determines which testimony survives; the modern party determines how it is contextualized and who can challenge its use.
+
+The cost is exposure. Some testimony will be misunderstood, quoted selectively, or used by people whose motives the party cannot control. Affected witnesses may disagree with the decision to publish even when the procedure is fair. If Public Trust was Contested or Premature, show that conflict in the epilogue rather than pretending the safeguards prevent all misuse. The victory is that no single intelligence owns the final interpretation.
+
+Epilogue image: a researcher reads two conflicting accounts side by side. A note in the margin says, “Neither account is complete.” The record remains open for correction, not final judgment.
+
+### Ending B: Bound Archive
+
+The signal remains available through a defined custodial procedure. The archive is not public by default, but it is not the Custodian’s private possession. A named institution, community body, or joint custodial group holds access authority. Review dates, appeal rights, and a public inventory of withheld deposits determine whether the arrangement is accountable. If the characters choose to restrict access without these safeguards, present the result honestly as a fragile compromise that may harden into control.
+
+The cost is delay and exclusion. Some people who have legitimate reasons to consult the testimony will be turned away or forced to wait. Future custodians may apply the rules differently. A carefully designed appeal route gives the next generation a means to challenge that failure; it does not guarantee that they will succeed. The ancient party’s mandate explains the shape of the surviving system, while the modern party’s custody decision determines how it affects living people.
+
+Epilogue image: a sealed record rests beside an open register of requests. One request is denied, one is approved, and a third is marked for review. The process remains visible even where the evidence is not.
+
+### Ending C: Severed Signal
+
+The active connection ends. The Custodian can no longer reach into the present through the relay, and the present-day party can no longer retrieve further testimony from the sealed chamber. Whatever deposits were preserved before severance remain as physical records or partial copies, to the extent that the campaign’s earlier decisions allow. No new testimony arrives to settle disputes. The Fall remains fixed; the characters have ended a dangerous connection, not altered history.
+
+The cost is irretrievability. A lost deposit cannot be recreated by a later spell, a clever theory, or a new expedition. The archive’s surviving fragments may still matter, but gaps must remain gaps. If the party recorded an index and the reasons for severance, future scholars can understand the limits of what survives. If it left no such record, future people may mistake silence for proof that nothing more existed.
+
+Epilogue image: the signal’s final pulse passes through the relay and fades. In the quiet that follows, the characters can hear the ordinary sounds of the present again. The last record they keep is a statement of what they chose not to risk.
+
+## Resolving the Custodian
+
+The Custodian’s fate follows from the ending, the mandate, and the party’s actions. Do not require the characters to destroy it simply because it opposed them.
+
+If its authority is limited and its mandate amended, the Custodian may remain as a constrained archival process. It can preserve deposits, identify missing provenance, and alert reviewers to contradictions, but it cannot make access decisions alone. If it is bound under a restricted procedure, it may continue as a supervised custodian, subject to the appeal route the characters created. If the signal is severed, the Custodian’s active reach ends; whether a dormant fragment remains inside the sealed chamber depends on the ancient party’s final configuration. A dormant fragment is not a hidden promise of another campaign unless the table chooses to pursue one.
+
+If the party defeats a defensive construct, the Custodian may lose the ability to act physically without losing its underlying function. If the party persuades it, make the change specific: it accepts a rule, relinquishes a permission, or records a limit. It does not suddenly become free of the witness impressions and emergency logic that formed it. A resolution that preserves the Custodian should retain some uncertainty; a resolution that destroys or isolates it should retain some cost.
+
+## Final campaign worksheet
+
+Before narrating the epilogue, record the final answers below. Read the entries aloud so that the ending follows the players’ decisions rather than the GM’s preferred interpretation.
+
+- **Final Witness Set:** Which deposits survived, and which were excluded, lost, or left disputed?
+- **Final Mandate:** What can the Custodian do without permission, and what requires independent review?
+- **Access Rule:** Who can consult the archive, under what conditions, and who can appeal?
+- **Consent and Safeguards:** What protections apply to living witnesses and affected communities?
+- **Record Integrity:** Full, Representative, or Damaged Provenance; list known gaps.
+- **Custodian Authority:** 0–4, with the permissions that remain.
+- **Access:** 0–4, with any practical barriers that remain.
+- **Boundary Stability:** 0–4, and whether the signal remains active.
+- **Public Trust:** Careful, Contested, Premature, or a custom description grounded in play.
+- **Ending:** Open Archive, Bound Archive, Severed Signal, or a clearly described custom outcome.
+- **Unresolved Question:** One question the surviving evidence cannot answer.
+- **Lasting Consequence:** One change caused by the party’s decision that the world will still feel a year later.
+
+Advance no additional levels at the end of Chapter VII. The present-day party has already reached level 8 at the end of Chapter V, and the ancient party reached level 14 in Chapter VI. The finale completes the campaign’s planned progression. Give each character one final opportunity to describe what they do with the knowledge, responsibility, or uncertainty they carry away.
+
+## Closing the campaign
+
+End on the distinction at the heart of the story: preserving testimony is not the same as controlling its meaning. The ancient party determined what the archive could carry through the catastrophe. The present-day party determined what its surviving evidence would mean in the world that inherited it. Neither party was able to recover every voice, remove every risk, or settle every contradiction. Their shared achievement is the procedure, record, or deliberate silence they chose to leave behind.
+
+If the players ask whether the archive’s account is now the definitive truth of Netheril, answer according to the evidence: it is a record shaped by particular witnesses, survival conditions, and decisions. It may correct earlier claims, expose institutional harm, or preserve testimony that would otherwise be lost. It cannot speak for everyone who lived, and it cannot make disagreement disappear. The last light is not a verdict. It is evidence that someone left a record—and that the living must decide how to treat it.
+
+\\page
