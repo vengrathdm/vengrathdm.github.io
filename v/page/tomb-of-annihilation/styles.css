@@ -94,3 +94,34 @@ body.tomb-of-annihilation-page::before {
   .toa-footer { display:block; }
   .toa-footer a { display:block; margin-top:8px; }
 }
+
+/* Campaign archive refinement — intentionally leaves the shared hero untouched. */
+.toa-milestone {
+  position: relative;
+  padding: clamp(22px, 3vw, 36px);
+  border: 1px solid #35483b;
+  background: linear-gradient(135deg, #141a15, #0b0e0c);
+  box-shadow: 0 14px 38px #0005;
+}
+.toa-milestone + .toa-milestone { margin-top: 18px; }
+.toa-milestone .toa-section-head { margin-bottom: 0; }
+.toa-milestone .toa-section-head h2 { margin-bottom: 0; }
+.toa-milestone .toa-section-head p { max-width: 54ch; }
+.toa-chronicle-intro { margin: 0 0 28px; padding-bottom: 26px; border-bottom: 1px solid #35483b; }
+.toa-chronicle-intro h2 { margin: 12px 0; color: #ece7dc; font: 400 clamp(36px,4vw,58px)/.98 var(--theme-font-1); }
+.toa-chronicle-intro p { max-width: 72ch; }
+.toa-chronicle-list { border: 1px solid #35483b; box-shadow: 0 18px 55px #0005; }
+.toa-chronicle-list .chronicle-record { border-color: #35483b; background: linear-gradient(100deg,#121813,#0d100e); }
+.toa-chronicle-list .chronicle-record__header { min-height: 66px; padding: 12px 18px; transition: background .18s ease; }
+.toa-chronicle-list .chronicle-record__header:hover,
+.toa-chronicle-list .chronicle-record.is-expanded .chronicle-record__header { background: #c4a76a0c; }
+.toa-chronicle-list .chronicle-record__number { font-variant-numeric: tabular-nums; letter-spacing: .08em; }
+.toa-chronicle-list .chronicle-record__title { color: #e8e2d6; font: 500 1.08rem/1.4 var(--theme-font-2); }
+.toa-chronicle-list .chronicle-record__description { background: #090c0a; }
+.toa-chronicle-list .chronicle-record__recordings .play-recording-button { border-color: #596b50; }
+.toa-chronicle-list .chronicle-record__recordings .play-recording-button:hover { border-color: var(--theme-accent-2); }
+@media (max-width: 760px) {
+  .toa-milestone { padding: 22px 18px; }
+  .toa-chronicle-list .chronicle-record__header { padding: 12px; }
+  .toa-chronicle-list .chronicle-record__title { font-size: 1rem; }
+}
