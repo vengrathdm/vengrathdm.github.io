@@ -1227,6 +1227,8 @@ The party should leave this chapter with a functioning arrangement—or a clear 
 Advance the Faerûnian characters from level 7 to level 8 after they have tested their custody arrangement against a real request and recorded the result. If they choose not to create a shared arrangement, the milestone still applies once they have made an informed decision and faced its immediate consequences. The next chapter returns to ancient Orsraun, where the characters must make a final decision about the archive’s mandate before the canonical catastrophe. The modern party’s work will not change the Fall, but it will determine how the surviving testimony is interpreted and what safeguards later investigators can defend.
 
 ## Chapter V state record
+For finale scoring, the Chapter VII consent-and-appeal bonus applies only if all three conditions work in practice: an affected person can refuse or narrow use of their testimony; an independent reviewer can hear an appeal; and the request, decision, and reason are logged. Record Yes/No for each condition in the worksheet; a stated intention alone does not qualify.
+
 
 Record the following in the campaign worksheet:
 
