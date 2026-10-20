@@ -38,22 +38,6 @@ function renderCampaign(campaign) {
   body.append(grid);
   card.append(cardTitle, body);
   document.querySelector("#campaign-intro").replaceChildren(card);
-
-  document.querySelector("#party-title").textContent = campaign.partyTitle;
-  document.querySelector("#party-description").textContent = campaign.partyDescription;
-  document.querySelector("#manifesto-quote").textContent = campaign.manifesto;
-  document.querySelector("#manifesto-tags").textContent = campaign.manifestoTags;
-
-  const milestones = document.querySelector("#campaign-milestones");
-  milestones.replaceChildren(...campaign.milestones.map(item => {
-    const section = node("section", "toa-section toa-milestone");
-    const head = node("div", "toa-section-head");
-    const copy = node("div");
-    copy.append(node("div", "toa-section-mark", item.kicker), node("h2", "", item.title));
-    head.append(copy, node("p", "", item.description));
-    section.append(head);
-    return section;
-  }));
 }
 
 async function renderCharacters(characters) {
