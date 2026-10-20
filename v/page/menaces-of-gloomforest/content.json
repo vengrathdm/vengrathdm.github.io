@@ -7,26 +7,27 @@
     "introLabel": "O KAMPANII",
     "introTitle": "Menaces of Gloomforest",
     "introParagraphs": [
-      "Gloomforest to druga odsłona autorskiej kampanii Menaces of Irensberg — osobna drużyna, ten sam świat i las, w którym każdy szlak może prowadzić do spotkania z czymś drapieżnym.",
       "To alternatywna rozgrywka Menaces of Irensberg z innym składem graczy. Zachowuje ten sam autorski świat i założenia kampanii, ale przedstawia losy zupełnie innej drużyny.",
       "Ta odsłona zakończyła się TPK z rąk wampira."
     ],
     "dossierTitle": "DOSSIER",
     "dossier": [
-      ["MATERIAŁY", "3"],
-      ["NAGRANIA", "1"],
-      ["ŹRÓDŁO", "ZAPIS"],
-      ["STATUS", "ZAPIS"]
-    ],
-    "partyLabel": "ZAPIS",
-    "partyTitle": "O kampanii",
-    "partyDescription": "Gloomforest to druga odsłona autorskiej kampanii Menaces of Irensberg — osobna drużyna, ten sam świat i las, w którym każdy szlak może prowadzić do spotkania z czymś drapieżnym.",
-    "partyImage": "/v/core/portraits/char-0067.webp",
-    "partyImageAlt": "Menaces of Gloomforest",
-    "emptySections": [
-      {"label": "AKTA / 02", "title": "O kampanii"},
-      {"label": "AKTA / 03", "title": "Status"},
-      {"label": "AKTA / 04", "title": "Nasza drużyna"}
+      [
+        "MATERIAŁY",
+        "4"
+      ],
+      [
+        "NAGRANIA",
+        "16"
+      ],
+      [
+        "ŹRÓDŁO",
+        "ZAPIS"
+      ],
+      [
+        "STATUS",
+        "ZAPIS"
+      ]
     ],
     "manifesto": null,
     "footerLabel": "VENGRATH · MENACES OF GLOOMFOREST"
@@ -46,9 +47,186 @@
   "chronicle": {
     "kicker": "AKTA / KRONIKA",
     "title": "Nagrania",
-    "description": "Materiały wideo powiązane z tą rozgrywką.",
-    "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0jY8sPEuRlBdlXIFw9WJlEL",
+    "description": "16 sesji Menaces of Gloomforest. Wybierz wpis, aby rozwinąć szczegóły lub otwórz nagranie.",
+    "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0iAmA-EXvVyARIe1B3t2rf7",
     "playlistLabel": "Otwórz playlistę kampanii ↗",
-    "sessions": []
+    "sessions": [
+      {
+        "sessionNumber": 1,
+        "title": "Menaces of Gloomforest S1 [D&D5e]",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=S38NGHOacQg",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 2,
+        "title": "Manaces of Gloomforest S2 [D&D5e]",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=z4FMlXj7xsM",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 3,
+        "title": "Menaces of Gloomforest S3 [D&D5e]",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=laLFDnd-u64",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 4,
+        "title": "Menaces of Gloomforest S4 [D&D5e]",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=ZaFdhpeNuhU",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 5,
+        "title": "Menaces of Gloomforest S5 [D&D5e]",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=V7cB4CVG4Fg",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 6,
+        "title": "Menaces of Gloomforest S6 [D&D5e]",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=sfDsLi2cxBo",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 7,
+        "title": "Menaces of Gloomforest S7 [D&D5e]",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=PIuutc34UQo",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 8,
+        "title": "Menaces of Gloomforest S8 [D&D5e]",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=H995c6V1Bz4",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 9,
+        "title": "Menaces of Gloomforest S9 [D&D5e]",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=5HMeME7hr7Q",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 10,
+        "title": "Menaces of Gloomforest S10 [D&D5e]",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=sV_M7EBLOJ4",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 11,
+        "title": "Manaces of Gloomforest S11 [D&D5e]",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=N_nj76rFHGo",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 12,
+        "title": "Manaces of Gloomforest S12 [D&D5e]",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=6OKivpyxR_I",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 13,
+        "title": "Manaces of Gloomforest S13 [D&D5e]",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=TPjw34hzsR0",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 14,
+        "title": "Manaces of Gloomforest S14 [D&D5e]",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=WkoM3lPrV7o",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 15,
+        "title": "Manaces of Gloomforest S15 [D&D5e]",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=Q4IApxM-JM0",
+            "partNumber": 1
+          }
+        ]
+      },
+      {
+        "sessionNumber": 16,
+        "title": "Menaces of Gloomforest S16 [D&D5e]",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=KG7f17G15V0",
+            "partNumber": 1
+          }
+        ]
+      }
+    ]
   }
 }
