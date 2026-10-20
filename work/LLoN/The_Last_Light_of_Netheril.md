@@ -2,7 +2,7 @@
 
 ## Campaign Manuscript — Production Foundation
 
-**Status:** Initial canonical manuscript; campaign plot intentionally unresolved.  
+**Status:** Canonical manuscript foundation with approved campaign architecture; detailed chapter drafting in progress.  
 **Ruleset:** Revised Dungeons & Dragons fifth edition (2024).  
 **Target book length:** 256 designed pages, using the production bible's allocation.  
 **Primary presentation target:** Homebrewery V3, with the canonical source kept readable as Markdown.
