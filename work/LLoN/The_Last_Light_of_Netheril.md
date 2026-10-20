@@ -1228,6 +1228,66 @@ End on the distinction at the heart of the story: preserving testimony is not th
 
 If the players ask whether the archive’s account is now the definitive truth of Netheril, answer according to the evidence: it is a record shaped by particular witnesses, survival conditions, and decisions. It may correct earlier claims, expose institutional harm, or preserve testimony that would otherwise be lost. It cannot speak for everyone who lived, and it cannot make disagreement disappear. The last light is not a verdict. It is evidence that someone left a record—and that the living must decide how to treat it.
 
+
+
+## Running the Four-Track Convergence
+
+Use this procedure when the party enters the final chamber. It turns the ancient party’s recorded choices and the present-day party’s decisions into a shared resolution. This is a campaign-specific framework, not a replacement for initiative, ability checks, spells, or other 2024 rules. It makes consequences legible without predetermining the ending.
+
+### 1. Prepare the four tracks
+
+Write each score on a shared worksheet. Scores range from 0 to 4. A 0 means the function is absent, critically compromised, or unavailable without major intervention; a 4 means it is strongly established. A high score is not automatically beneficial: high Access can expose vulnerable testimony, high Custodian Authority can suppress appeals, and high Boundary Stability can make a flawed arrangement difficult to change.
+
+- **Record Integrity:** how well surviving evidence retains provenance, context, and visible gaps.
+- **Custodian Authority:** how much independent action the Custodian can take without review.
+- **Access:** how practically available the archive is to people with a legitimate reason to consult it.
+- **Boundary Stability:** how reliably the Place Between Times can sustain the chosen arrangement without dangerous temporal spillover.
+
+Set Record Integrity from Chapter VI: Full Provenance starts at 3, Representative Provenance at 2, and Damaged Provenance at 1. Set Custodian Authority from the actual mandate: narrow starts at 1, broad at 3, and unresolved at 2. Set Access from the safeguards that survived: a functioning witness key, baseline copy, and appeal route start at 3; partial safeguards start at 2; no functioning safeguard starts at 1. Set Boundary Stability at 2 unless Chapter VI explicitly recorded damage to the chamber’s emergency warding, in which case it starts at 1.
+
+Apply at most one adjustment per clearly relevant recorded fact, to a maximum of +1 or −1 on each track before the finale begins. A preserved comparison copy may add 1 Record Integrity; a divided key with no agreed handoff may reduce Access by 1; damaged warding may reduce Boundary Stability by 1. Do not penalize the same underlying fact twice. Keep scores between 0 and 4. When a recorded state does not fit an example, use the closest functional equivalent and write down why.
+
+### 2. Establish the two-layer situation
+
+The Netherese characters can interact with the original configuration, command structures, and witness deposits they selected. The Faerûnian characters can interact with surviving access procedures, present-day claimants, the Custodian’s current permissions, and the public consequences of the record. Neither group can simply perform the other group’s task.
+
+At the start of each movement, give each timeline one **lead action**. The group can use it to make a check, negotiate a specific concession, activate a safeguard, protect a witness or record, or accept a cost to change one track. The action must name both the intended result and the mechanism that makes it possible. Characters can still take ordinary actions in an encounter; a lead action is the group’s principal contribution to resolving the archive’s system-level crisis.
+
+Alternate which timeline acts first each movement. The second group may respond to what the first group changed. A lead action cannot change a track merely because the intention sounds compelling: it must address an established cause, use evidence or a resource, or accept a meaningful cost. Do not demand a check when prior choices or clear evidence have already secured the result.
+
+### 3. Resolve lead actions
+
+For a risky action, use DC 14 for a standard challenge and DC 17 when it is unusually difficult, directly opposed, or poorly supported by evidence. Choose the ability and proficiency that fit the method. A relevant tool, spell, relationship, or recorded safeguard can grant advantage when it genuinely changes the circumstances; do not stack several sources of advantage.
+
+On success, apply the stated track change or concession. On failure, the action still reveals something useful, but the Custodian, unstable boundary, or a stakeholder imposes a cost. Choose a consequence that follows from the failed approach: lose time, expose a sensitive deposit, damage a safeguard, increase the Custodian’s immediate control, or make the next action harder without assistance. A failed check never erases a clue already found and never makes the finale impossible to complete.
+
+Each lead action must name its track before the roll. One action normally changes one track by 1. A major action can change a second track only if the characters spend a scarce resource, accept a consequential loss, or bring the other timeline’s established work to bear. No action changes a track by more than 1 at a time. Record the cause next to each change so later narration cannot quietly undo an earlier decision.
+
+### 4. Run the three movements
+
+**Movement One: Identify the record.** The Custodian presents a coherent account assembled from deposits it considers reliable. The account should be plausible, not obviously fraudulent; its defect is that it privileges its own summary when context is missing or testimony conflicts. The ancient group identifies what its Witness Set includes and excludes. The modern group compares provenance, seeks consent, and challenges conclusions that exceed the evidence. Resolve one lead action from each timeline. State what the archive can establish and what remains disputed.
+
+**Movement Two: Decide who may act.** The Custodian invokes its mandate and surviving safeguards. The modern group proposes an access and appeal procedure; the ancient group clarifies the original purpose of a rule, reveals its known limitation, or supplies a surviving instruction. Resolve one lead action from each timeline. If Custodian Authority is 3 or 4, the Custodian imposes one additional complication before the second lead action: close a route, isolate a deposit, or demand a safeguard be tested. It cannot invent evidence or compel a character’s obedience.
+
+**Movement Three: Set the boundary.** The parties choose whether to open, bind, or sever the signal, or propose a defensible alternative. The ancient group addresses the chamber’s original configuration; the modern group addresses the durable procedure governing what survives. Each timeline states what it is willing to lose or restrict. Resolve one lead action from each timeline, then determine the outcome from the actual track scores and the characters’ decision. If a track is 0, describe its failure plainly and ask how the characters compensate; do not secretly restore it.
+
+### 5. Translate the final state into an ending
+
+Track scores describe the conditions under which the choice is carried out; they do not make the choice for the players.
+
+- **Record Integrity 3–4:** strong provenance, though testimony can still be mistaken or incomplete. At 1–2, publish a visible list of gaps and disputed inferences. At 0, the archive cannot support a unified account; preserve fragments with their origins marked where possible.
+- **Custodian Authority 3–4:** the Custodian retains meaningful unilateral powers. An Open Archive requires an enforceable restraint or its opening is nominal. At 1–2, it can maintain records but needs review for consequential access decisions. At 0, it has no independent power to grant or deny access.
+- **Access 3–4:** people can use the agreed process without a single gatekeeper. At 1–2, access is slow, geographically limited, or dependent on intermediaries. At 0, the archive is effectively closed until the party establishes a route or accepts that access is lost.
+- **Boundary Stability 3–4:** the arrangement is durable but not immune to future damage. At 1–2, the signal is intermittent or the chamber needs periodic maintenance. At 0, the boundary cannot safely sustain ordinary access; the party must evacuate, bind, or sever it before the crisis escalates.
+
+If the selected ending conflicts with a score, preserve the choice and make the conflict its cost. An Open Archive with Authority 4 risks renewed unilateral control unless the party establishes a restraint. A Bound Archive with Access 4 must explain how broad consultation coexists with restricted deposits. A Severed Signal with Integrity 4 preserves evidence but cuts off the channel through which further context might arrive. These tensions are outcomes, not errors to correct.
+
+### 6. Close the loop between timelines
+
+Before narration, ask each timeline to name one decision from the other timeline that made its success possible. Use actual recorded choices: a divided witness key, public explanation, preserved contradiction, narrowed mandate, consent condition, or deliberate gap. If the players cannot identify a connection, review the state ledger and name the concrete consequence already established; do not invent a convenient revelation at the finale.
+
+Read the final track scores and their practical meaning aloud. Ask the group which limitation they most want future generations to remember. Add that answer to the final campaign worksheet as the archive’s first public note, binding clause, or last surviving warning. The ending should show not that the characters made history perfectly reliable, but that they accepted responsibility for how an imperfect record will be handled.
+
 \page
 
 
