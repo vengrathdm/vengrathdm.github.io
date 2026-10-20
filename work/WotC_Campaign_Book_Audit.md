@@ -214,3 +214,48 @@ These measures are likely to be more valuable to this campaign than matching an 
 **Recommended next step:** select six to eight reference books, obtain lawful source files, and run the page-by-page extraction and classification protocol above. The resulting dataset should include a raw CSV, cleaned CSV, calculation script, and this report updated with actual results, sample sizes, limitations, and confidence notes.
 
 The goal is not to imitate a publisher's page count by intuition. It is to build a transparent benchmark and use it to plan a manuscript that is readable, runnable, and appropriately paced.
+
+
+## Raw findings update — public product data and online tables of contents
+
+This section contains counts that can be verified from public official product listings and D&D Beyond contents pages. **It does not contain word-count results**, because the public pages inspected expose tables of contents and marketing descriptions, not the complete printable text of each book.
+
+### Measured / confirmed from sources
+
+| Book | Print pages | Main chapters | Appendices | Character levels | Data source |
+|---|---:|---:|---:|---|---|
+| *Curse of Strahd* | 256 | 15 | 6 | 1–10 | Official D&D Beyond product description and contents page. [Product](https://marketplace.dndbeyond.com/adventures/curse-of-strahd) · [Contents](https://www.dndbeyond.com/sources/dnd/cos) |
+| *Storm King's Thunder* | 256 | 12 | 4 | 1–11 | Wizards Play Network confirms 256 pages; D&D Beyond contents page lists chapters and appendices. [WPN product page](https://wpn.wizards.com/en/products/storm-kings-thunder) · [Contents](https://www.dndbeyond.com/sources/dnd/skt) |
+| *Tomb of Annihilation* | 256 | 5 | 6 | 1–11 (published catalog listing) | D&D Beyond contents page lists five chapters and six appendices; catalog listing gives page count and level range. [Contents](https://www.dndbeyond.com/sources/dnd/toa) · [Catalog](https://wiki.ryanmichaelcurry.com/content/wikipedia_en_all_maxi_2025-08/List_of_Dungeons_%26_Dragons_adventures) |
+| *Vecna: Eve of Ruin* | 256 | 11 | 3 | 10–20 | Official D&D Store confirms 256 pages and levels; D&D Beyond contents page lists 11 chapters and three appendices. [Official product](https://dndstore.wizards.com/eu/en/product/924704/vecna-eve-of-ruin-digital-plus-physical-bundle) · [Contents](https://www.dndbeyond.com/sources/dnd/veor) |
+
+**Simple averages for these four selected books:**
+- Mean printed pages: **256**
+- Median printed pages: **256**
+- Total main chapters: **43**
+- Mean main chapters per book: **10.75**
+- Total appendices: **19**
+- Mean appendices per book: **4.75**
+
+These averages describe only this four-book sample; they are not an average for all WotC adventures.
+
+### Raw word-count status
+
+| Metric | Result |
+|---|---|
+| Full-book word count, each title above | Not available from the public pages inspected |
+| Average words per printed page | Not measured |
+| Average words per text-bearing page | Not measured |
+| Average boxed read-aloud words per page | Not measured |
+| Average words per chapter | Not measured |
+| Average encounters per 100 pages | Not measured |
+
+Do not derive word counts by multiplying pages by an assumed density. That would manufacture the central statistic this audit is meant to discover.
+
+### What is now established
+
+- In this sample, full-length campaign books consistently use **256 printed pages**, even though their chapter structures differ substantially.
+- The sample ranges from **5 chapters** (*Tomb of Annihilation*) to **15 chapters** (*Curse of Strahd*).
+- The sample ranges from **3 appendices** (*Vecna: Eve of Ruin*) to **6 appendices** (*Curse of Strahd* and *Tomb of Annihilation*).
+- Chapter count alone is not a proxy for word count: the chapter units vary from broad regional toolkits to individual set-piece adventures.
+- The actual word-count audit still requires complete text-bearing page data from source files. Public contents pages do not provide it.
