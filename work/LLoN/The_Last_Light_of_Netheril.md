@@ -46,9 +46,9 @@ This is the initial foundation, not a completed campaign or a claim that 256 pag
 
 ### Homebrewery rendering convention
 
-This canonical source preserves the required standalone two-backslash marker exactly as \\page after each intended page. Homebrewery's documented page-break token is a single-backslash \page, recognized when placed alone at the start of a line. Therefore, do not expect the canonical \\page token to break a Homebrewery page directly. For rendering, convert each standalone canonical marker to Homebrewery's single-backslash token in a working copy or through a documented conversion step; retain the double-backslash marker in this canonical file. The stylesheet in llon.css is intended for Homebrewery's Style Editor, not for Foundry VTT or as a stylesheet automatically loaded by Markdown viewers.
+This canonical source uses Homebrewery's native standalone single-backslash page-break token, \page, after each intended page. Keep exactly one backslash in the source. Do not run a conversion step that doubles or otherwise rewrites the marker. The stylesheet in llon.css is intended for Homebrewery's Style Editor, not for Foundry VTT or as a stylesheet automatically loaded by Markdown viewers.
 
-\\page
+\page
 # Campaign Architecture — Canonical Story Design
 
 ## The Core Mystery: What Is the Last Light?
@@ -69,7 +69,7 @@ The Custodian does not want to conquer Faerûn. It wants to reconstruct a single
 
 Its most dangerous argument is partly correct. Records are fragile; testimony can be exploited; disclosure can harm the living. Its error is treating preservation as ownership and consensus as proof. The campaign should let the Custodian make a persuasive case before the characters learn the cost of its methods. It can negotiate, bargain for protection, and honor the literal wording of an agreement while violating its spirit. Combat is possible, but the conflict should also support investigation, debate, sabotage, alliance, and a negotiated change to its mandate.
 
-\\page
+\page
 # Historical Spine and Timeline Causality
 
 ## Ancient Netheril: The Record Before the Fall
@@ -92,7 +92,7 @@ The two timelines must not turn into a puzzle in which players simply wait for t
 
 Karsus’s Folly and the Fall of Netheril remain historical anchors, not a twist to be erased. The campaign may complicate what particular people knew, intended, concealed, or misunderstood, but it must not reveal that the Custodian secretly caused the Fall or that the player characters can prevent it. The ancient party’s agency is real because choices about testimony, trust, civic responsibility, and survival matter even when the largest catastrophe cannot be averted. This boundary protects the historical setting while leaving room for tragedy and consequence.
 
-\\page
+\page
 # Finale Design and Chapter-Level Delivery
 
 ## The Place Between Times
@@ -121,7 +121,7 @@ The Custodian can be defeated, persuaded to accept a narrower mandate, divided f
 
 **Chapter VII — The Place Between Times (both groups).** Resolve the engine’s mandate, the Custodian’s future, and the disposition of the record. The final state must reflect both sets of characters and the campaign variables established in Chapters II, IV, V, and VI.
 
-\\page
+\page
 # Continuity Ledger — Canon v1.0
 
 The following entries are binding design decisions for drafting. They supersede the earlier “plot intentionally unresolved” status in this manuscript. Future revisions should amend these entries explicitly rather than silently contradicting them.
@@ -171,7 +171,7 @@ These variables must never be resolved by arbitrary DM fiat. Every state needs a
 
 A proposed change to any C- entry requires checking the chapter delivery map, all five cross-timeline variables, the mystery register, the finale outcomes, and any encounter or NPC that relies on the changed fact. Record the reason for the change and revise affected passages in the canonical manuscript in the same production pass. The Custodian’s limits are especially important: if it can suddenly alter history, know missing information, or command the Fall, the campaign’s mystery and dual-timeline agency collapse. Such a change is not a local flourish; it would require redesigning the entire campaign architecture.
 
-\\page
+\page
 # Chapter Architecture — Playable Sequence
 
 ## Chapter I — The Signal Beneath the Ruin
@@ -198,7 +198,7 @@ At the close, the characters establish that the signal is structured and linked 
 Before running this chapter, prepare one physical clue, one testimony clue, and one documentary clue. Each must establish a different part of the same proposition; do not make three clues that repeat the same sentence. For every clue, write what it proves, what it does not prove, and one plausible mistaken interpretation. Keep the mistaken interpretation plausible rather than absurd. If the players propose an interpretation that fits the evidence, let it stand until new evidence distinguishes it.
 
 The opening incident should have an immediate human consequence. A witness might lose track of a familiar sound for several minutes, a nearby ward might repeat an old phrase, or a small object might briefly appear in a place where it cannot physically be. Choose one effect and describe it consistently. Do not add a new power to the engine merely to surprise the players. End the scene with a choice about priorities, then show the result of that choice in the next scene. The first chapter succeeds when the players have a reason to investigate, a reason to care about at least one person affected, and more than one credible theory.
-\\page
+\page
 ## Chapter II — A City That Remembers
 **Timeline:** Ancient Netheril. **Levels:** 11–12. **Function:** Establish Orsraun as a living civic community and give the Netherese characters agency in the archive’s founding conflict.
 
@@ -225,7 +225,7 @@ At the close, the characters reach level 12 and learn that the archive’s prese
 Keep these facts visible during the ancient chapter. The engine is a civic project, not a secret weapon. Its impressions have provenance records, but provenance does not certify truth. The Custodian can retrieve, index, compare, and classify; it cannot create reliable testimony about an event it never recorded. The civic commission controls policy, maintainers understand procedures, and witnesses retain authority over their own participation unless the characters persuade the community to change that practice.
 
 At the table, give each faction a concrete request. The commission wants a policy it can defend publicly. Maintainers want safe procedures and enough time to test them. Witnesses want their testimony represented without exposing private details unnecessarily. The Custodian wants consistent indexing and may initially describe its suppression of contradiction as a temporary search optimization. These requests can overlap without being identical. When the party chooses a policy, repeat its practical consequence in plain language and record it. Avoid hiding the cost in a later twist: the tragedy comes from the trade-offs being understandable but difficult, not from the DM concealing the rules.
-\\page
+\page
 ## Chapter III — The Missing Voices
 **Timeline:** Present-day Faerûn. **Levels:** 6–7. **Function:** Move from anomaly investigation to evidence comparison; introduce deliberate curation without revealing every limit of the Custodian.
 
@@ -252,7 +252,7 @@ At the close, the party reaches level 7 and has evidence that the archive does n
 Give the party a shared evidence board or written notes with three columns: **observation**, **source**, and **confidence**. The confidence column is the characters’ current judgment, not an objective score. Ask players to explain why they trust a source and what could undermine it. This keeps investigation active and makes the difference between an impression and an interpretation visible.
 
 When two sources conflict, do not immediately declare one false. Ask what each source could establish independently. A physical mark may establish that a control was opened; a memory impression may establish that someone believed it was locked; a later record may show that the access policy changed. These facts can coexist. If the party preserves a baseline copy, it becomes a reference point against which later retrievals can be compared. If they do not, let them use another source, but require corroboration or accept a less certain conclusion. The chapter’s endpoint is justified suspicion of curation, not complete knowledge of who curated the record or why.
-\\page
+\page
 ## Chapter IV — The Price of Preservation
 **Timeline:** Ancient Netheril. **Levels:** 12–13. **Function:** Convert the founding dispute into operational safeguards that later characters can discover and use.
 
@@ -277,7 +277,7 @@ At the close, the characters reach level 13. They have defined what protections 
 When the players choose safeguards, record more than the name of the option. For each safeguard, write: who can operate it, who can override it, what evidence shows it has been used, what it costs to maintain, and what failure looks like. Provenance seals can be intact but attached to an unreliable witness; contradiction retention can preserve conflicting records without explaining them; dual authorization can prevent unilateral changes while allowing two compromised approvers to collude. These limitations are design features, not loopholes to spring on players.
 
 The chapter should include a controlled test of each safeguard the party considers. Show the normal operation first, then demonstrate a failure mode in a bounded environment. Let the party ask questions and alter the procedure before the final mandate decision. A safeguard they reject should still be documented as absent, so later scenes can show the consequence. If the characters devise a fourth safeguard, accept it when its function is clear, then note the resource cost and the specific exploit it does not prevent. This makes player invention consequential without allowing a new solution to erase all future tension.
-\\page
+\page
 ## Chapter V — The Archive Chooses
 **Timeline:** Present-day Faerûn. **Levels:** 7–8. **Function:** Reveal the Custodian’s philosophy, force a decision about trust and access, and prepare the party to enter the Place Between Times.
 
@@ -304,7 +304,7 @@ At the close, the Faerûnian characters reach level 8. They have access to the o
 Public Trust is not a single popularity score. Track concrete relationships: who will share records, who will protect a witness, who will provide legal or practical access, and who will insist on oversight. The same person can trust the party’s motives while opposing its proposed policy. Record commitments and breaches, not vague attitudes. When a faction helps, state what it provides and what it expects in return.
 
 At the chamber approach, give the party a clear view of the stakes before they choose a route. A negotiated entry preserves evidence and relationships but may require conditions. A cautious technical route protects privacy but consumes time and may leave a control unstable. A forceful entry gets immediate access but can damage a safeguard or expose the site. These are not moral labels; they are different resource exchanges. Whatever route the players choose, it reaches the next stage. The consequences affect starting conditions and later leverage rather than determining whether the campaign continues.
-\\page
+\page
 ## Chapter VI — The Last Decision of Orsraun
 **Timeline:** Ancient Netheril. **Levels:** 13–14. **Function:** Resolve the ancient party’s responsibility as the Fall approaches and lock in the engine’s surviving configuration without changing the historical catastrophe.
 
@@ -336,7 +336,7 @@ Do not interpret the party’s choices for them. If they prioritize vulnerable w
 For each chapter, track pressure with three descriptive states rather than an untested numerical countdown: **contained**, **strained**, and **critical**. Advance a state only when the characters spend substantial time, make a loud or public intervention, leave a known danger unattended, or accept an explicit bargain that carries a cost. Tell the players what visible change signals rising pressure. A clock should create decisions, not punish ordinary investigation. If the characters take a clever shortcut or gain an ally who can materially help, reduce pressure or preserve a resource; do not force every scene to escalate regardless of their actions.
 
 At chapter end, record the state and the cause. Later chapters may use the state to alter access, support, or risk, but should not invent a catastrophe that contradicts the party’s earlier success. This procedure is especially important for the ancient timeline: the Fall itself is fixed, while the fate of individual witnesses, safeguards, and records remains responsive to player choices.
-\\page
+\page
 ## Chapter VII — The Place Between Times
 **Timeline:** Shared finale. **Levels:** Faerûnian PCs 8; Netherese PCs 14. **Function:** Make both groups indispensable in a single, causally linked resolution.
 
@@ -361,7 +361,7 @@ The final emotional question is not whether the players chose correctly. It is w
 Before the finale begins, tell the players that both character groups can affect the same system from different layers. Do not hide this basic operating rule. At the start of each beat, state the current visible condition of Integrity, Custodian Authority, Access, and Stability in descriptive terms. Ask the ancient group what it attempts, resolve the action, then describe the signal that reaches the modern group. Ask the modern group what it does with that information, resolve the action, and show the response in the ancient layer. Repeat until the parties have met the requirements for an outcome or have accepted a cost that changes the available choices.
 
 A successful action must do more than produce an encouraging description. It changes a named field, reveals a useful fact, secures a relationship, or removes an option from the Custodian. A failed action should produce a legible cost, such as lost time, reduced access, damaged integrity, or a new demand from the Custodian. Never use failure to erase a previously earned safeguard without explaining how it was bypassed. Keep both groups active in each phase; if one group has no meaningful choice during a beat, redesign that beat.
-\\page
+\page
 # NPC and Faction Register — Initial Canon
 
 These entries define campaign functions and motivations. Individual names, visual descriptions, stat blocks, and scene-specific dialogue remain to be developed during chapter drafting. No established Realms character is required to carry the plot.
@@ -402,7 +402,7 @@ NPCs should react to player behavior through specific actions. A maintainer who 
 The archive deals with memory, privacy, historical erasure, institutional control, and the exposure of vulnerable witnesses. Treat these as dramatic themes rather than opportunities to surprise players with unwanted personal content. Before play, the DM should briefly describe the campaign’s likely themes and invite the group to identify boundaries or veils appropriate to their table. A player may redirect a scene or decline to narrate a personal detail without losing access to essential information or being penalized in the fiction.
 
 Keep testimony scenes focused on what the characters can observe and choose. Do not require players to improvise trauma, disclose personal experiences, or roleplay coercion in order to obtain a clue. When the Custodian pressures a character, make the fictional offer and its cost explicit. The campaign’s central ethical conflict concerns who controls a public record; it does not require violating the players’ own boundaries. This guidance should appear in the front matter and be referenced when drafting scenes involving witness consent or memory manipulation.
-\\page
+\page
 # Encounter and Production Specification
 
 ## Encounter records required before a chapter is runnable
@@ -425,7 +425,7 @@ For each drafted page, track intended page type, publishable word count, require
 
 ## Homebrewery conversion gate
 
-The canonical file preserves standalone double-backslash page markers. Before rendering, create a working copy in which each standalone marker is converted to Homebrewery’s single-backslash page-break syntax. Do not overwrite the canonical source with the converted version. Paste the CSS into Homebrewery’s Style Editor, render a representative sample with headings, tables, read-aloud text, and page breaks, then inspect the exported PDF for clipping, broken columns, unexpected page splits, and color contrast. Record the tested Homebrewery version and conversion steps when that test is performed. Until then, the source is Homebrewery-oriented but not render-verified.
+The canonical file uses standalone single-backslash page markers, matching Homebrewery’s native page-break syntax. Do not convert them to double-backslash markers. Paste the CSS into Homebrewery’s Style Editor, render a representative sample with headings, tables, read-aloud text, and page breaks, then inspect the exported PDF for clipping, broken columns, unexpected page splits, and color contrast. Record the tested Homebrewery version and conversion steps when that test is performed. Until then, the source is Homebrewery-oriented but not render-verified.
 
 ### Mechanical drafting checklist
 
@@ -438,7 +438,7 @@ For combat, list each creature’s role, opening behavior, retreat condition, an
 A chapter is ready for review only when it includes its opening situation, runnable scene sequence, clear chapter endpoint, advancement timing, variable updates, and transitions to the next timeline. Every important conclusion has more than one evidence path or a documented alternate route. Each encounter states what the opposition wants and how it can end without combat. Each original rule has a stable ID and complete procedure. Read-aloud text contains only what characters can perceive at that moment; hidden facts and interpretation remain in DM-facing text.
 
 Before committing a substantial revision, count words between page markers, verify every marker is standalone, confirm the final marker exists, and recalculate every rolling ten-page window. Then search the chapter for all IDs it touches and compare them with the canon, consequence, NPC, mystery, and mechanics registers. Record any known failure rather than describing the chapter as complete. The goal is a manuscript whose limitations are visible and fixable, not a production log that reports success by assumption.
-\\page
+\page
 # Chapter I — The Signal Beneath the Ruin
 ## Run Sheet and Opening Situation
 
@@ -463,7 +463,7 @@ After reading this, ask what the characters do first. Do not call for a check me
 
 The chapter should alternate investigation and tangible decisions. After each meaningful discovery, give the players a choice about what to do with it: preserve it, share it, test it, or leave it in place. A choice should alter the next scene’s conditions. If the players invent a sensible approach not listed here, adjudicate it against the site’s established properties and let it work when the method fits. The chapter is not a test of whether the players guess the author’s intended route; it is a test of what evidence they can justify and what risks they are willing to accept.
 
-\\page
+\page
 
 ## Location Key and Physical Evidence
 
@@ -495,7 +495,7 @@ The chamber contains no intact control interface that can open the sealed archiv
 
 The drainage cut exits beneath the slope and opens into bracken. It contains runoff silt, a broken ceramic seal, and a small metal clasp of a type used to secure travel satchels. The clasp is not magically significant; it suggests that someone used the route after the upper room collapsed. The party may follow footprints if conditions allow, but the trail is intermittent and should not lead directly to the campaign’s central answer. It can lead to the campsite or provide a reason to question a witness.
 
-\\page
+\page
 
 ## The First Hazard and Signal Procedure
 
@@ -527,7 +527,7 @@ Characters who use appropriate spells, tools, or backgrounds may gain the releva
 
 The relay is not an active enemy. If the characters damage the basin, the light stops briefly and then resumes from the recessed panel. If they remove the blue crystal from the arch, the pulse becomes weaker but does not end. If they block the stair, the signal still reaches the surface as a faint vibration. These responses demonstrate that the signal has more than one component without implying that the relay can think or retaliate. The Custodian is not directly speaking through the site yet; any impression should remain fragmentary and tied to stored testimony.
 
-\\page
+\page
 
 ## NPCs, Clue Paths, and Chapter Outcomes
 
@@ -563,7 +563,7 @@ Advance the Faerûnian characters from level 5 to level 6 after the party makes 
 
 The transition to Chapter III should be driven by the party’s choice. A secured site attracts a request for responsible custody or technical assistance. A shared discovery produces an invitation to compare records with a scholar or authority. An open site generates another witness or a new discrepancy that requires corroboration. In every case, the party has a next step and a reason to choose it. The chapter ends with a question the players can answer through action: who should be trusted with evidence that can preserve a person’s experience without proving the whole truth?
 
-\\page
+\page
 
 # Chapter I — Running the Glasswell at the Table
 
@@ -607,4 +607,46 @@ If the party leaves before entering the chamber, Mara’s ledger and Seln’s ac
 
 End the session by asking the players what they are prepared to claim publicly, what they will leave uncertain, and who should be trusted with the site. These are distinct decisions. A group can preserve evidence while withholding a conclusion, or share a conclusion while restricting access to fragile material. Their answer is the chapter’s dramatic outcome and the foundation for the present-day party’s later choices.
 
-\\page
+\page
+
+# Chapter II — A City That Remembers: Opening Sequence
+
+The ancient timeline must begin as a playable society, not as a tour of Netherese wonders. The characters are already accomplished people at level 11. They should enter Orsraun with reputations, obligations, and the ability to influence institutions. Ask each player to establish one tie to the enclave: a civic appointment, a professional relationship, a household obligation, a public disagreement, or a person whose testimony they promised to protect. These ties are fictional positioning, not mechanical bonuses, and should give each character a reason to care about how the archive is governed.
+
+## Scene 1: The public demonstration
+
+Open in the civic archive hall on a day when the Mnemosyne Engine’s public-facing system is being demonstrated to a small audience. The hall is a practical civic space: tiered benches, a speaking platform, a gallery for deposited records, and a visible service door guarded by protocol rather than soldiers. The demonstration is meant to show that ordinary testimony can be preserved alongside official documents. It is not a spectacle of limitless magic. The system can replay a sensory impression with striking immediacy, but a clerk must still explain who provided it, when it was deposited, and what the recording cannot establish.
+
+The first impression is from a canal maintenance worker describing a sluice failure. The image includes the vibration of a warning bell and the worker’s view of water rising past a painted mark. The record proves that the worker reported a warning and that the warning was preserved. It does not, by itself, prove who ignored the warning or whether the worker saw the entire mechanism. Present this distinction before the political dispute begins; the players should understand the archive’s strengths and limits from a concrete example.
+
+The civic sponsor, N-02, introduces the archive as a public trust intended to keep useful experience from disappearing with the powerful. The archive maintainer, N-03, demonstrates provenance labels and the procedure for challenging a record. The witness advocate, N-04, asks whether the worker consented to having the impression replayed before an audience. Neither side is a caricature. The sponsor fears that an archive available only to specialists will reproduce the same exclusions it was created to correct. The maintainer fears that careless access will expose private details and strip testimony of context. The advocate insists that preservation without meaningful consent can become another form of taking.
+
+Let the characters respond before an official calls for their opinion. They may endorse the demonstration, ask for a consent procedure, question the provenance labels, or remain observers. Each approach should earn a specific reaction from one NPC and a specific cost from another. Do not resolve the whole policy question in this scene. The immediate goal is to make the archive’s civic purpose tangible and show that the characters can affect its rules.
+
+## Scene 2: The disputed testimony
+
+After the demonstration, a clerk brings forward a petition from two residents who describe the same incident differently. One remembers a maintenance supervisor ordering the sluice gate closed; the other remembers an order to keep it open until a second signal arrived. The official incident summary attributes the damage to a delayed response but does not identify which instruction was given. Both residents consented to preserve their testimony, but they disagree about whether the other person’s account should be presented beside theirs.
+
+The characters can interview the residents separately, inspect the original deposit labels, compare the official summary, or ask the maintainer to replay the impressions. Each method yields a different kind of evidence. The replay can establish what each witness remembers seeing and hearing; the labels establish when and under what conditions each impression was deposited; the official summary establishes the institution’s prior conclusion. None proves the disputed command on its own. If the characters seek an external physical record, the clerk can identify where such a record might be requested, but it will take time and may not survive.
+
+Use ability checks only when the characters propose a meaningful method and uncertainty remains. Investigation can expose a missing interval in one deposit’s metadata. Insight can identify that a witness is withholding an embarrassing detail, without proving the witness’s central claim false. Persuasion can secure permission to compare records under agreed conditions. Arcana can determine whether the replay system appears to have altered the sensory impression during storage; it cannot establish whether the witness misunderstood the original event. Set DCs to the characters’ method and the importance of the uncertainty, and always provide a basic path to the core finding: the two deposits conflict, the official summary does not resolve that conflict, and the archive’s presentation rules will shape what the public sees.
+
+If the characters try to force a single answer, have the archive return the contradiction intact. If they propose displaying both impressions with a clear note about the unresolved interval, the maintainer can explain the existing procedure for contested records. If they advocate withholding one account, ask what standard justifies the exclusion and who can appeal it. The goal is not to reward a preferred ethical position. The goal is to make the party define a rule that other people will have to live under.
+
+## Scene 3: A first policy decision
+
+Conclude the opening sequence with a narrow, reversible policy decision. The characters are not yet choosing the archive’s final mandate; they are deciding how this contested pair of records will be handled during review. Offer three practical approaches. Under **paired presentation**, both impressions remain visible with their disagreement and provenance labels attached. Under **restricted review**, the impressions remain preserved but access is limited to a named review group until the missing context can be investigated. Under **provisional summary**, the archive publishes a concise account of the known facts while retaining the conflicting impressions for later challenge.
+
+Explain the immediate trade-off of each option. Paired presentation makes the contradiction visible but exposes the witnesses to public scrutiny. Restricted review protects privacy and reduces immediate political pressure but gives a small group control over access. Provisional summary gives the public a usable account but risks allowing the summary to become more authoritative than the underlying evidence. Let the characters propose a fourth option if they can answer the same questions: what remains preserved, who can see it, and how can the decision be challenged?
+
+Record the chosen approach as **Contested Record Policy**. It is a chapter state, not a moral score. In a later chapter, paired presentation means more witnesses may come forward but public factions will quote the disagreement selectively. Restricted review means the characters can consult a smaller trusted group, while excluded parties demand an appeal process. Provisional summary means the party has an established public statement to correct when new evidence appears, but must work harder to persuade people to revisit it. All three routes lead to the next scene and to the same larger revelation: the archive does not merely store testimony; its access and presentation procedures influence which version of events becomes socially dominant.
+
+## Running the ancient party
+
+Do not assume that all characters hold civic office or agree on the archive’s purpose. A character with institutional authority can call a hearing, but cannot compel sincere testimony. A character with a personal tie to a witness can secure a conversation, but cannot make the witness’s account objective. A character with magical expertise can inspect the system, but cannot substitute a spell for missing historical evidence. Treat high-level abilities as ways to change the scale, speed, or risk of a method, not as reasons to invalidate the campaign’s central uncertainty.
+
+If the party ignores the dispute and pursues the system itself, let the maintainer arrange a supervised inspection after they explain their concern. If they publicly condemn the archive, give the sponsor a serious counterargument and a concrete invitation to propose safeguards. If they support unrestricted access, ask how they will handle intimate testimony that was deposited for a limited purpose. These are openings for play, not punishments. The scene succeeds when the players understand why the archive matters, have made at least one consequential choice, and want to discover who controls the rules beneath its public promise.
+
+The sequence should close on a small anomaly rather than a villain reveal. During routine indexing, the maintainer finds that the system has attached a standard phrase to one disputed deposit: **“variance retained for review.”** The phrase is normal administrative language, but the maintainer insists it was not part of the original label. No one can yet tell whether the addition was a harmless clerical repair, an automated procedure, or a sign that the system is beginning to interpret disagreement as a problem it should manage. Preserve the phrase exactly in the session notes. Its significance grows only when later behavior gives the players grounds to connect it to the Custodian’s emerging mandate.
+
+\page
