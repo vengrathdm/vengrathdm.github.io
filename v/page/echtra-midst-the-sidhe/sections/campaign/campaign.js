@@ -18,10 +18,4 @@ export function renderCampaignSection(campaign) {
     row.append(key,detail);
     return row;
   }));
-  document.querySelector("#party-title").textContent = campaign.partyTitle;
-  document.querySelector("#party-description").textContent = campaign.partyDescription;
-  document.querySelector("#party-image").src = campaign.partyImage;
-  document.querySelector("#manifesto-kicker").textContent = campaign.manifesto.kicker;
-  document.querySelector("#manifesto-text").textContent = campaign.manifesto.text;
-  document.querySelector("#manifesto-signature").textContent = campaign.manifesto.signature;
 }
