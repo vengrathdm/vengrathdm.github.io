@@ -8,7 +8,6 @@
       "Irgaelia to kraina celtyckich legend, dawnych bogów, druidów i Sidhe — istot z Drugiego Świata. Tutaj zmiana pór roku nie jest jedynie częścią natury. Jest częścią porządku świata.",
       "Echtra midst the Sidhe to autorska epicka kampania inspirowana przede wszystkim mitologią celtycką, szczególnie irlandzką, oraz tradycjami druidów, wojowników i fae. Jej świat — Irgaelia — ma własne plemiona, święte miejsca i bogów, a granica między światem śmiertelników a Drugim Światem jest cienka.",
       "Historia rozpoczyna się podczas Samhain w Cúilfeorna. Święto, które powinno zamykać stary rok i otwierać nowy, zostaje naznaczone niepokojącymi omenami i pojawieniem się Dullahana. Od tego momentu bohaterowie zostają wciągnięci w historię, w której los Irgaelii splata się z rytmem pór roku i światem Sidhe.",
-      "Kampania jest projektowana jako przygoda na poziomach 1–14. Jej struktura przechodzi przez kolejne pory roku i coraz szersze konflikty, ale szczegóły dalszych wydarzeń pozostają tutaj celowo pominięte.",
       "W Irgaelii osiem plemion związanych jest z własnymi patronackimi duchami, a ich kultury tworzą mozaikę całego regionu. W tle obecne są dawne bóstwa natury, wojny i mądrości oraz dwa dwory Sidhe, których wpływ sięga świata śmiertelników."
     ],
     "dossier": [
@@ -32,15 +31,7 @@
         "TON",
         "CELTYCKA FANTASY"
       ]
-    ],
-    "partyTitle": "O kampanii",
-    "partyDescription": "Kampania jest projektowana jako przygoda na poziomach 1–14. Jej struktura przechodzi przez kolejne pory roku i coraz szersze konflikty, ale szczegóły dalszych wydarzeń pozostają tutaj celowo pominięte.",
-    "partyImage": "/v/core/portraits/char-0050.webp",
-    "manifesto": {
-      "kicker": "Z ARCHIWUM",
-      "text": "Treść kampanii zachowana ze starej strony.",
-      "signature": "ECHTRA MIDST THE SIDHE"
-    }
+    ]
   },
   "characters": {
     "kicker": "AKTA / POSTACIE",
