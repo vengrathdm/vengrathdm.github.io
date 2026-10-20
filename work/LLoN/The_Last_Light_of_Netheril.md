@@ -1759,6 +1759,11 @@ Use these prompts to preserve consequential decisions between sessions. A blank 
 
 **Access modifiers:** Credible consent-and-appeal protocol +1 / Divided key without handoff −1 / Neither: ______
 
+**Boundary Stability track (0–4):** ______
+
+**Stability baseline:** Intact warding 2 / Damaged warding 1: ______
+
+
 
 
 **Final Witness Set:** _______________________________________________
