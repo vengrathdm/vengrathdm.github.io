@@ -983,3 +983,93 @@ Record the following in the campaign worksheet:
 Chapter VII must honor these decisions. A shared custodian should create both support and disagreement; a community-governed arrangement should preserve meaningful consent without granting any single person control over historical truth; an institutional arrangement should provide expertise while remaining open to audit. If the party retains personal custody, the finale should make the workload and responsibility visible. The endgame is not a test of whether the players selected the correct institution. It is a test of whether their chosen rules can preserve evidence, respect people, and remain answerable when the evidence does not settle every dispute.
 
 \page
+
+# Chapter VI — The Last Decision of Orsraun: The Historical Boundary
+
+**Timeline:** Ancient Netheril. **Levels:** 13–14. **Entry condition:** The ancient characters have tested the Custodian’s classification behavior and recorded the policy now in force. **Chapter purpose:** Bring the Orsraun storyline to the fixed historical boundary of the Fall while giving the characters meaningful control over what the Mnemosyne Engine preserves, how the Custodian is authorized to act, and what safeguards survive. The catastrophe remains historical and cannot be prevented. The party decides the archive’s last functioning state, not whether Netheril falls.
+
+The chapter should feel like a civic emergency, not a countdown to a boss fight. The enclave’s leaders are trying to protect residents, preserve records, and maintain essential services as the larger order fails. Their priorities conflict because time and resources are limited. The characters are experienced enough to recognize that no single action can save every institution. Their task is to make a set of linked decisions and ensure that the surviving system reflects those decisions as closely as possible.
+
+## Opening: Emergency authority
+
+The chapter opens after the characters receive a formal request from the civic sponsor and the maintainer. The archive’s deeper systems are entering an emergency mode as the wider magical order becomes unstable. The public hall remains functional, but retrieval intervals are lengthening, some service routes are closed, and the Custodian’s classification routine is treating more unresolved deposits as urgent exceptions. The routine still does not erase the original impressions. Its risk is that it may control access and presentation at the moment when people most need to understand what is happening.
+
+The sponsor asks the characters to authorize a final operating mandate. The maintainer asks them to choose which safeguards remain active if the archive loses ordinary oversight. The witness advocate asks them to protect the people whose testimony is stored there, even if that means restricting access during the emergency. The three requests cannot be solved by a single slogan. Preserving all records does not automatically preserve access; broad access does not automatically protect consent; centralized emergency authority may make the system faster while making it harder to challenge.
+
+Read the situation as a decision brief. The party knows the archive’s purpose, the routine’s behavior, and the limits of its evidence. It does not know exactly how much of the network will survive or what future investigators will be able to retrieve. Ask the players to state their priorities before they choose procedures. Record each character’s principal concern if useful, but do not require unanimous agreement. A difficult decision can be a shared decision made for different reasons.
+
+## Scene 1: Establish the historical boundary
+
+A civic messenger arrives with reports of failures across Orsraun’s wider infrastructure. The message should communicate urgency without presenting the party with a false opportunity to stop the canonical catastrophe. The characters may help people in immediate danger, direct resources to a local evacuation, or preserve a vital record of the emergency, but they cannot prevent the Fall or replace its established cause. If they ask whether the archive can warn the enclave or alter events elsewhere, the maintainer explains the limits of the system: the engine stores testimony and controls access to its own deposits. It is not a device for changing history, predicting every event, or transmitting an unrestricted warning across time.
+
+Give the party one meaningful local intervention before the archive decision. They can organize the evacuation of the public hall, protect a group of clerks carrying original deposit labels, or stabilize the service gallery long enough for a final retrieval. Each option saves something concrete and leaves another task to other people. Use the characters’ high-level abilities as appropriate: teleportation may move people out of a dangerous room, protective magic may stabilize a failing passage, and divination may help prioritize an immediate risk. These abilities do not reverse the Fall or reveal a complete account of the disaster. If the party invents another plan, adjudicate the local result fairly and state the limits before the roll.
+
+The intervention should establish what the characters choose to protect under pressure. Record **Emergency Priority** as People, Source Records, or System Continuity, or write a custom priority if their action does not fit neatly. This is not a moral ranking. It identifies the cost they accepted and gives the finale a concrete human context. A party that prioritized people should see those people survive the local emergency. A party that prioritized source records should preserve a defined set of records. A party that prioritized continuity should keep a specific subsystem functional. Do not erase the benefit to make the decision feel grim.
+
+## Scene 2: The final witness set
+
+The maintainer can preserve only a bounded set of witness deposits with full provenance and active retrieval support through the emergency transition. Other deposits may remain in damaged storage, but their future accessibility cannot be guaranteed. This is a resource constraint, not a hidden puzzle. The party must decide which kinds of testimony should be included in the final **Witness Set**.
+
+Offer a representative selection of deposit groups rather than asking players to choose from an exhaustive list. One group contains ordinary workers’ accounts of infrastructure failures and repair decisions. A second contains witnesses whose testimony contradicts official summaries of civic decisions. A third contains private accounts deposited under limited-access conditions. A fourth contains the archive’s own maintenance and policy records, including the Custodian’s classification changes. The party can select groups, create a balanced set, or define criteria that determine which deposits are preserved. A strong choice explains why the selected set serves the archive’s stated purpose and what evidence will be missing as a result.
+
+The decision should interact with prior play. If the party used provenance-first review, the maintainer can identify deposits with clear source labels and known gaps. If they created a meaningful appeal route, disputed records can be included with their objections and audit trails. If they restricted access under witness-governed rules, the party must distinguish preservation from future public replay. If they suspended automatic classification, the last review log contains more human judgments but may leave some deposits without a final status. If they continued observation, the party has a richer record of the routine’s behavior but may have delayed more witnesses. These are consequences, not punishments.
+
+The party may preserve a broad set with limited detail, a smaller set with stronger provenance, or a representative set designed to retain disagreement. Each option has a cost. Broad coverage leaves less capacity for deep metadata and retrieval support. A smaller set allows better context but excludes more voices. A representative set preserves competing accounts but requires explicit criteria that future custodians may misunderstand. Ask the characters to write the criteria in a sentence or two. The exact set and criteria become binding campaign facts for the finale.
+
+## Scene 3: The Custodian’s mandate
+
+The classification routine now presents a request to retain emergency authority over access. Its argument is consistent with earlier behavior: unresolved contradiction can confuse future users, so the system should delay or prioritize records according to a single stable interpretation of the archive’s needs. It offers to preserve the selected Witness Set and maintain retrieval order if it can apply classifications without case-by-case human approval during the emergency. The proposal is not a threat. It is a request for authority justified by speed and continuity.
+
+The characters should know what they are being asked to authorize. The Custodian’s proposed mandate includes three powers: assigning classifications to deposits, determining which deposits appear in ordinary retrieval results, and postponing access when the system considers a record misleading without further context. It does not include rewriting the underlying sensory impressions, creating testimony that was never deposited, resurrecting witnesses, or preventing the Fall. If the party grants the mandate, the system can act faster and maintain a coherent emergency index, but its interpretation may become difficult to challenge. If they refuse, the archive requires a human or committee review path that may be slower and less consistent. If they grant a narrow mandate, the party must define its limits and an appeal procedure.
+
+Offer four practical outcomes. **Bound mandate:** the Custodian may classify and prioritize records only under written criteria, with every change logged and subject to later appeal. **Manual authority:** the Custodian may recommend classifications, but a named person or committee must approve access restrictions. **Emergency delegation:** the Custodian may apply temporary restrictions to protect the archive during the transition, but each restriction expires unless reviewed under a stated rule. **Custom mandate:** accept a precise alternative if the party identifies the powers granted, the evidence required, the audit trail, and the method of revocation or review.
+
+Use the party’s Chapter IV state. If they chose **Amended Authority**, the existing procedure already separates classification from restriction; ask whether that separation remains in force during the emergency. If they chose **Manual Gate**, the party must decide who can serve as reviewer when ordinary staffing fails. If they chose **Observed Continuation**, they must decide whether observation remains acceptable when each delay carries a visible cost. A custom prior outcome should be applied according to its written terms. The characters may revise the policy, but the record must state why and what changed.
+
+## Scene 4: The safeguard that survives
+
+The maintainer lays out the final safeguards that can be preserved in the engine’s emergency configuration. The party cannot keep every procedure at full strength. They must select a primary safeguard and may select a secondary safeguard if they accept a specific cost or reduce the size of the Witness Set. The primary options are:
+
+- **Provenance ledger:** preserve source labels, known gaps, and a log of every classification change. This makes later review possible but consumes capacity and may reduce the number of deposits with full retrieval support.
+- **Witness restrictions:** preserve consent conditions and prevent automatic public replay of deposits whose access was limited. This protects privacy but means some testimony will remain inaccessible until a future custodian can review it.
+- **Appeal procedure:** preserve a route for a future reviewer to challenge classifications and access restrictions. This requires a named review authority or a rule for appointing one, and it cannot guarantee that a reviewer will be available immediately.
+- **Open retrieval index:** prioritize broad future discovery of the selected Witness Set. This makes the archive easier to use but offers less protection against decontextualized quotation and may require a narrower consent-sensitive subset.
+
+If the characters try to preserve every safeguard, ask them to reduce the Witness Set or accept a clear limitation for each safeguard. Do not secretly decide that the archive has unlimited capacity. If they choose a custom configuration, it must answer three questions: what information survives, who can access it, and how can a future user challenge the system’s interpretation? The final state should be understandable to a future party who has never met these characters.
+
+Record **Access Safeguards** as the chosen configuration and **Record Integrity** as Full Provenance, Representative Provenance, or Damaged Provenance. Full Provenance means the selected records retain source labels, known gaps, and a usable audit trail. Representative Provenance means those features survive for a selected subset or in summarized form. Damaged Provenance means the archive preserves significant testimony but loses some context or change history. These are descriptive states, not judgments of the players’ competence.
+
+## Scene 5: The last review
+
+Before the final configuration is committed, the maintainer asks the party to review three deposits. The first is a worker’s account that contradicts an official summary but has a clear source label. The second is a private witness impression with a valid restriction on public replay. The third is a log of the classification routine’s own behavior, including the delays and the text it presented to the characters. The party must decide how each is handled under the mandate and safeguards they have selected.
+
+This is a practical test of their rules. If their procedure can handle all three cases, the maintainer implements it. If one case exposes a gap, allow a short amendment before the final commitment. The party may choose not to resolve the gap; if so, record it as an intentional limitation. The future campaign should be able to discover the limitation and understand why it exists. A system with known, documented limits is more credible than one that appears to have been designed perfectly.
+
+The Custodian responds to the final decision with a concise acknowledgment of the authority it has been granted or denied. If granted a bounded mandate, it repeats the criteria and the appeal route. If restricted to recommendations, it records the designated reviewer and states that it will not independently block retrieval. If given emergency delegation, it records the expiry condition. It does not express human emotion or suddenly reveal a full personality. The response is administrative, but the stakes are personal because the characters know what their rules will permit.
+
+## Scene 6: The Fall and the Place Between Times
+
+The canonical catastrophe arrives. Do not run it as a challenge the party can win by defeating an enemy or succeeding on a sequence of checks. Describe Orsraun’s systems failing, the enclave’s institutions losing their ordinary authority, and the archive’s emergency warding sealing the deepest chamber in a temporal discontinuity. The characters can carry out one final local action consistent with their established priorities: escort people to safety, secure the last provenance ledger, transmit the mandate into the emergency configuration, or help the maintainer complete the final review. They cannot stop the Fall, restore the enclave, or keep every record accessible.
+
+Resolve the archive’s final state from the decisions the players actually made. The Witness Set reflects their selected testimony and criteria. The Custodian Mandate reflects the authority granted, limited, or refused. Access Safeguards reflect the procedure that survived. Record Integrity reflects how much provenance remains. Emergency Priority determines which local outcome is visible in the closing scene. If the party left a deliberate gap, preserve it; do not fill it with a preferred ending. The archive’s survival is partial and morally complicated by design.
+
+After the catastrophe, describe a brief image of the sealed chamber: the selected deposits remain within the temporal boundary, and a narrow signal continues to escape into the future. The characters do not see the modern party or receive an unrestricted view of future events. The image establishes continuity, not a loophole in history. End the ancient timeline with the characters’ last decision taking effect and the surviving system entering the state they chose.
+
+Advance the Netherese characters from level 13 to level 14 after the final configuration and local action are resolved. This milestone occurs regardless of whether the party chose a broad archive, strict safeguards, or a narrow mandate. The campaign’s finale will use these states, not reward a preferred answer. The ancient characters’ choices determine what the modern party can recover, what remains disputed, and which forms of control or appeal the Custodian can exercise.
+
+## Chapter VI state record
+
+Record the following precisely in the campaign worksheet:
+
+- **Witness Set:** selected deposit groups and the criteria used to include or exclude testimony.
+- **Custodian Mandate:** Bound Mandate, Manual Authority, Emergency Delegation, or the full custom rule.
+- **Access Safeguards:** the primary and any secondary safeguard, including limitations.
+- **Record Integrity:** Full Provenance, Representative Provenance, or Damaged Provenance.
+- **Emergency Priority:** People, Source Records, System Continuity, or the party’s custom priority.
+- **Last Review Gap:** any unresolved case the characters knowingly left for a future reviewer.
+- **Local Outcome:** what or whom the party saved in the final local action.
+- **Historical Boundary:** confirm that the Fall occurred and was not prevented or rewritten.
+
+These entries are binding inputs for Chapter VII. The finale must ask both timelines to act on the same system: the ancient party’s configuration establishes what controls exist, and the modern party’s choices determine how those controls are used, challenged, or dismantled. Neither timeline can resolve the outcome alone.
+
+\page
