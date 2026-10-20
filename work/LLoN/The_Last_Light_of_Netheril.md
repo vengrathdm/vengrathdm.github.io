@@ -317,6 +317,63 @@ At the close, the party reaches level 7 and has evidence that the archive does n
 Give the party a shared evidence board or written notes with three columns: **observation**, **source**, and **confidence**. The confidence column is the characters’ current judgment, not an objective score. Ask players to explain why they trust a source and what could undermine it. This keeps investigation active and makes the difference between an impression and an interpretation visible.
 
 When two sources conflict, do not immediately declare one false. Ask what each source could establish independently. A physical mark may establish that a control was opened; a memory impression may establish that someone believed it was locked; a later record may show that the access policy changed. These facts can coexist. If the party preserves a baseline copy, it becomes a reference point against which later retrievals can be compared. If they do not, let them use another source, but require corroboration or accept a less certain conclusion. The chapter’s endpoint is justified suspicion of curation, not complete knowledge of who curated the record or why.
+## Chapter III — Field Case: The Broken Inventory
+
+Use this location-based case when the party follows the physical-trace route from Glasswell, or when the investigation needs to test whether a recovered inventory was selectively presented. It is designed for a single session. The scene is not a hidden answer room: the characters can establish what was handled, what is missing, and how the evidence was altered, but cannot infer the entire history of the Mnemosyne Engine from one damaged list.
+
+### Situation and approach
+
+The inventory lies in a waystation record niche reached through the drainage cut below Glasswell. It is a mundane maintenance ledger kept in a sealed metal sleeve, not a Netherese artifact. The sleeve survived because the niche stayed dry; the ledger itself has swollen pages, rubbed ink, and a strip of newer paper pasted over three entries. Seln Ardo can identify the niche from an old route mark, but he cannot certify who last opened it. If the party previously secured the site, explain how they obtained permission to return. If the site was shared or left open, someone else may already have inspected the niche; this creates a custody question, not a reason to remove the evidence from play.
+
+**Read aloud:** “The cut narrows beneath a shelf of pale stone. A shallow niche has been fitted with a metal sleeve, its lip scratched by repeated handling. Inside, a ledger smells of wet paper and old iron. Three lines are covered by a strip of newer paper. The strip is not sealed; its edge has lifted where moisture reached it.”
+
+The party has three immediate options: document the sleeve and ledger in place, remove the ledger for comparison, or lift the pasted strip before making a baseline copy. Do not force one correct choice. Explain the trade-off: in-place documentation preserves context but leaves the page difficult to read; removal makes comparison easier but creates a new custody event; lifting the strip may reveal the covered entries but risks tearing the underlying ink.
+
+### Keyed location
+
+**B1. Drainage Approach.** The passage is cramped but passable. The Fractured Service Stair hazard from Chapter I does not recur here unless the party’s earlier actions explicitly left the same access route unstable. A character who spends a minute examining the floor finds a thin line of silt interrupted by two parallel scuffs. This supports the inference that a flat object was carried through recently; it does not identify the carrier or prove that the ledger was altered here. A failed check still reveals the scuffs if the characters state that they are looking for disturbance, but the party may need to spend time clearing the silt.
+
+**B2. Sleeve and Fastening.** The sleeve has no magical lock. Its fastening is bent outward rather than forced inward. Investigation (DC 13) establishes that it was opened with a tool or lever; a suitable tool and careful work do so without additional damage. Failure costs ten minutes and may bend the fastening further, but does not destroy the sleeve. Record whether the party documented the fastening before opening it. That choice matters later when they explain provenance.
+
+**B3. Ledger Surface.** The first and last visible entries are routine: a count of lamp oil, a replacement hinge, and a damaged seal. The middle entries refer to “copy case two,” “witness leaves,” and “variance retained.” The terms are consistent with an inventory of documents, not a transcript of what those documents said. Investigation (DC 14) or patient comparison of the handwriting reveals that the pasted strip was added later by a different hand. Success dates it only as later than the surrounding ink; it does not establish who wrote it or whether the purpose was malicious. If the check fails, the different hand becomes apparent when the party compares the strip with the maintenance note at B4.
+
+**B4. Maintenance Notation.** A narrow line on the sleeve’s inner fold reads: “Count by container. Do not count by account.” The note is old and written in the same hand as a routine maintenance entry on the ledger’s final page. It suggests that a container could hold multiple accounts, copies, or witness leaves. It does not prove that every missing entry represents a suppressed testimony. Characters who compare the phrase with Chapter II’s contested-record policy can reasonably hypothesize that the archive distinguished physical deposits from their interpreted contents. Keep that conclusion a hypothesis until another source supports it.
+
+### Running the examination
+
+Run the discovery as a short procedure rather than a sequence of mandatory checks. First ask what the characters record before touching anything. Then ask what they want to learn: who handled the sleeve, what the covered entries say, or what the inventory’s terms mean. Choose the relevant check only after the question is clear.
+
+- **Investigation (DC 13):** reconstruct the order in which the sleeve, ledger, and pasted strip were handled. On success, the characters establish that the strip was added after the ledger was written. On failure, they still establish that the strip and surrounding ink differ, but cannot confidently sequence the handling.
+- **History (DC 14):** compare the inventory terms with known civic and archival practices. On success, the party recognizes that “count by container” is an accounting instruction, not a judgment about the truth of the contents. On failure, a routine waystation account or N-07’s catalog can supply the context later.
+- **Arcana (DC 14):** determine whether the sleeve or ledger bears an active magical effect. On success, no active effect is detected on these mundane objects. This does not establish that the signal or the distant archive is nonmagical. On failure, the result is inconclusive, not evidence of enchantment.
+- **Dexterity check using suitable tools (DC 13):** lift the pasted strip while minimizing damage. On success, the covered lines become readable and the original ink remains legible. On failure, one word is smeared; the rest remains available, and the party must mark the damaged word as uncertain rather than guess it.
+
+The covered entries read: “copy case two — count disputed”; “witness leaves — separate bundles”; and “variance retained for review.” The strip itself contains no signature. The important fact is not that these words prove suppression; it is that the inventory preserves a record of disagreement and separate bundles even where a later surface obscures part of the count.
+
+### Pressure and choices
+
+After the party has examined the ledger for several minutes, a local wayfarer arrives to collect a routine route notice. The wayfarer is not a secret agent and does not attack. They ask whether the party intends to remove the ledger, because other travelers use the niche to verify that the Glasswell route remains maintained. This creates a practical custody problem: leave the ledger in place, remove it with a receipt and copy, or arrange a supervised deposit with N-07.
+
+If the party refuses to explain, the wayfarer does not become hostile; they insist on noting who took the record and when. If the party offers a clear receipt, a witness to removal, and a plan for returning a reference copy, the wayfarer will confirm the time and condition of the niche. If the party takes the ledger secretly, they still get the evidence, but the next account of custody begins with an unexplained gap. Do not punish the players with arbitrary loss; let the choice affect the credibility of later claims.
+
+A character may propose destroying the pasted strip to prevent it being mistaken for an original entry. Require them to make a copy or record its wording first if they want the information preserved. Destroying it without documentation protects against future misuse but eliminates evidence of the later alteration. Keeping it attached preserves the physical relationship but leaves the underlying lines partially obscured. Either can be defended; the group must state its rationale.
+
+### Results and handoff
+
+At the end, record these fields:
+
+- **Inventory Provenance:** Documented in place / Removed with witnessed receipt / Removed without witnessed receipt.
+- **Alteration Evidence:** Strip preserved / Strip lifted intact / Strip damaged / Strip destroyed after documentation / Strip destroyed without documentation.
+- **Corroboration:** Strong if the physical sequence is documented and compared with an independent source; Limited if the party has only the ledger’s own marks.
+- **Public Framing:** Careful if the party distinguishes physical alteration from motive; Contested if they claim deliberate suppression without corroboration; Premature if they present the inventory as proof of the archive’s complete history.
+- **Follow-up Lead:** N-07’s terminology comparison, Ilyra Fen’s account of separate bundles, or a return to Glasswell to compare the niche’s route marks with the signal chamber.
+
+On a failed or interrupted investigation, preserve at least one actionable clue: the pasted strip is later than the ledger, or the sleeve was opened before the party arrived. The party may leave with limited corroboration, but never with nothing to do next. No single check establishes motive, authorship, or the truth of the missing records.
+
+Close the case by asking the players to state one observation, one inference, and one unresolved question. Their observation might be “the strip was added by a different hand”; their inference might be “someone changed how the inventory was presented”; their unresolved question should remain “why, and by whose authority?” Carry these statements into Chapter V. The modern party’s eventual custody decision should be based on the quality of its evidence and the consent of affected people, not on an assumed answer supplied by the Dungeon Master.
+
+\page
+
 \page
 ## Chapter IV — The Price of Preservation
 **Timeline:** Ancient Netheril. **Levels:** 12–13. **Function:** Convert the founding dispute into operational safeguards that later characters can discover and use.
