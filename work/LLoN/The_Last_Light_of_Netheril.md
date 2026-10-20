@@ -1767,6 +1767,20 @@ Use these prompts to preserve consequential decisions between sessions. A blank 
 
 **Stability baseline:** Intact warding 2 / Damaged warding 1: ______
 
+**Witness key holders and handoff procedure:** ________________________
+
+**Access baseline evidence (key, copy, appeal route):** ________________
+
+**Record Integrity modifier evidence and worksheet references:** ______
+
+**Authority modifier evidence and worksheet references:** ______________
+
+**Access modifier evidence and worksheet references:** _________________
+
+**Warding evidence and worksheet reference:** _________________________
+
+**Apply each modifier once; clamp each final score to 0–4. Verified:** ____
+
 
 
 
