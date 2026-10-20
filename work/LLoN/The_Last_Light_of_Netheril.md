@@ -1639,6 +1639,68 @@ A useful continuity entry describes a consequence, not merely a scene. “The pa
 
 If the answer is “Needs review,” revise the scene so the later party has a meaningful choice rather than merely receiving a predetermined result. The ancient party may determine which evidence exists, but the present-day party retains authority over its decisions. Modern discoveries may change how the past is understood, but they do not replace the ancient characters’ choices.
 
+
+
+## Continuity Transfer Protocol
+
+Use this protocol at the end of each chapter and again during preparation for the next chapter. Its purpose is to ensure that recorded decisions change later play without turning earlier choices into automatic success or failure. Copy the player’s actual decision into the worksheet before interpreting its effects. If the table’s notes are incomplete, ask what the players remember and mark any reconstructed detail as uncertain rather than silently treating it as established fact.
+
+### Chapter I to Chapter III: site and evidence
+
+Carry forward **Site Custody**, **Evidence Record**, and the specific signal fragments the party heard. Site Custody determines who can authorize a return to Glasswell and what practical limits apply; it does not determine whether the party can pursue other evidence routes. A secured site may offer safer access but require an appointment. A shared site may provide witnesses but expose the investigation to competing interpretations. An open or disturbed site may provide immediate access while risking damage or contamination.
+
+Evidence Record determines what physical comparison is available. A complete record supports comparison of sequence and wording; a fragmentary record supports only the claims actually present; a missing record requires the party to find another source. Do not substitute a new copy merely because a later scene would be easier with it. Signal fragments are evidence of what the engine transmitted, not proof of the full event or the Custodian’s motive.
+
+### Chapter II to Chapter IV: procedure under pressure
+
+Carry forward **Contested Record Policy**, **Retrieval Safeguard**, **Appeal Route**, **Public Explanation**, **Unresolved Anomaly**, and **Witness Relationship**. Before Chapter IV begins, write one sentence describing the policy’s intended protection and one describing its known limitation. Then choose a pressure that tests that limitation.
+
+If the policy is Automatic Classification, show a disputed deposit being omitted from routine results while remaining stored. If it is Manual Review, show a queue, unavailable reviewer, or deadline that makes review costly. If it is Visible Contradiction, show users struggling to interpret a record that remains discoverable. For a hybrid, use the exact rule the party wrote. The Custodian should not bypass an enforceable safeguard without a visible cause and a traceable act; nor should a safeguard solve a problem outside its stated purpose.
+
+### Chapter III to Chapter V: evidence and public responsibility
+
+Carry forward **Corroboration**, **Public Framing**, **Ilyra’s Consent**, **Inventory Reference**, **Glasswell Follow-up**, and **Working Hypothesis**. These states should change what the present-day party can responsibly claim, not decide what it must believe.
+
+Strong corroboration means at least two genuinely distinct evidence families support the relevant claim; repeated copies of the same source do not become independent corroboration. Limited corroboration leaves a clear question for the custody conference. Careful public framing means the party has distinguished direct observation from inference. Contested framing means stakeholders have reason to dispute the presentation. Premature framing means the party has made a stronger public claim than its evidence supports and must choose whether to correct it.
+
+Apply Ilyra’s consent exactly as recorded. Full consent permits the agreed account to be quoted within its stated scope, not unlimited use of unrelated personal details. Restricted consent allows only the specified material or paraphrase. Declined circulation means the party may use independent evidence it lawfully obtained, but cannot present Ilyra’s private testimony as public proof. The inventory reference may corroborate or complicate a claim; it does not automatically validate the Working Hypothesis.
+
+### Chapter IV to Chapter VI: safeguards at the historical boundary
+
+Carry forward **Custodian Response**, **Access Safeguards**, **Delayed Deposits**, **Witness Confidence**, **Audit Trail**, and **Party Hypothesis**. The final configuration must show what happened to each safeguard under emergency conditions. If the party amended authority, identify the exact permission removed or limited. If it imposed a manual gate, identify who can operate it and what happens when that person is unavailable. If it continued under observation, preserve both the evidence gained and the harm or delay accepted.
+
+Every delayed deposit must end in one of four states: released under the procedure, still restricted with a recorded reason, lost through an established failure, or unresolved because the characters did not have time to decide. Do not let “delayed” silently become “deleted,” and do not assume a restriction survived the Fall unless the Chapter VI configuration provides a plausible mechanism.
+
+### Chapter V and Chapter VI to Chapter VII: two sets of obligations
+
+The modern party brings **Custody Position**, **Consent Protocol**, **Public Trust**, **Public Framing**, **Publication Decision**, and **Appeal Route**. The ancient party brings **Witness Set**, **Custodian Mandate**, **Access Safeguards**, **Record Integrity**, **Emergency Priority**, **Last Review Gap**, and **Local Outcome**. Neither set overrides the other. The ancient state defines the system and evidence that exist; the modern state defines the procedure, present-day obligations, and decisions the living can still make.
+
+At finale preparation, translate each recorded state into one of three categories:
+
+- **Available resource:** a working key, comparison copy, reliable provenance trail, cooperative stakeholder, or functioning appeal route.
+- **Constraint:** restricted consent, missing evidence, divided authority without a handoff, damaged warding, a broken audit trail, or a public claim that needs correction.
+- **Open question:** a disputed interpretation, missing witness, ambiguous mandate, or unresolved request that cannot honestly be settled from the surviving record.
+
+Give each timeline at least one resource and one meaningful constraint. If one group has only disadvantages, revisit the chapter notes and identify what their actual choices made possible. If one group has no constraint, identify the uncertainty or responsibility that remains. Do not manufacture a punishment; use consequences already established in play.
+
+### The five-minute handoff
+
+At each chapter’s end, spend five minutes completing these prompts:
+
+1. **What did the characters decide?** Record their own words where practical.
+2. **What changed immediately?** Identify a person, rule, resource, record, or relationship.
+3. **What evidence supports the change?** Distinguish direct observation from interpretation.
+4. **What remains uncertain?** Preserve gaps rather than resolving them by convenience.
+5. **Where must this appear again?** Name the next chapter and the scene or decision it affects.
+
+At the next chapter’s opening, demonstrate at least one prior consequence before introducing a new complication. This may be a changed access procedure, a stakeholder honoring or challenging an agreement, a record with the expected gap, or a safeguard that works but has a known limit. If no prior decision can be shown to matter, revise the opening or state record before play.
+
+### Recovery when notes are missing
+
+If a session ends without a complete worksheet, reconstruct only what the table can support. Use surviving notes, player recollection, and established scene outcomes. Label disputed details “uncertain at handoff.” Choose the least assumption-heavy interpretation that preserves prior agency, then give the characters a way to clarify it in play if the distinction matters. Never use missing DM notes as a reason to take away a player’s established success, consent decision, or declared cost.
+
+The protocol is complete when a later chapter can answer three questions without improvising new canon: what the earlier party changed, what evidence supports that change, and what decision remains for the current party.
+
 \page
 
 
