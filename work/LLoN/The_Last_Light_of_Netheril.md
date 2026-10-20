@@ -342,6 +342,78 @@ At the close, the characters reach level 13. They have defined what protections 
 When the players choose safeguards, record more than the name of the option. For each safeguard, write: who can operate it, who can override it, what evidence shows it has been used, what it costs to maintain, and what failure looks like. Provenance seals can be intact but attached to an unreliable witness; contradiction retention can preserve conflicting records without explaining them; dual authorization can prevent unilateral changes while allowing two compromised approvers to collude. These limitations are design features, not loopholes to spring on players.
 
 The chapter should include a controlled test of each safeguard the party considers. Show the normal operation first, then demonstrate a failure mode in a bounded environment. Let the party ask questions and alter the procedure before the final mandate decision. A safeguard they reject should still be documented as absent, so later scenes can show the consequence. If the characters devise a fourth safeguard, accept it when its function is clear, then note the resource cost and the specific exploit it does not prevent. This makes player invention consequential without allowing a new solution to erase all future tension.
+
+
+## Running the Safeguard Trial
+
+Use this encounter to test the ancient party’s proposed safeguards under pressure. Each safeguard protects against a particular failure; none guarantees a perfect record. The party should see a procedure work, see its limit, and decide who is responsible for applying it.
+
+### Situation: the duplicate deposit
+
+The maintainers present two deposits concerning the same public works dispute. One has a clear witness identity and recording context but omits the moment when the disagreement began. The other contains the missing moment, but its witness key was separated from the deposit during an emergency transfer. The Custodian has marked the second deposit low confidence and excluded it from routine retrieval. It has not destroyed the record.
+
+Read aloud:
+
+> Two crystal slivers hang in a brass frame, turning slowly above a line of engraved names. The first answers your questions with a clear voice that stops just before an argument begins. The second catches the argument’s first words, then dissolves into a wash of light. A narrow strip of script identifies the second witness key as “unmatched.” Below it, someone has added a careful note: “Stored. Not presently returned by ordinary search.”
+
+The Commission wants the dispute resolved before a scheduled public review. The maintainers warn that rushing may make the key mismatch harder to investigate. The Witness Circle insists that a missing key is not proof that the testimony is false. The Custodian proposes retaining the current classification until the evidence can be reconciled.
+
+### Scene 1: Inspect the safeguards
+
+Let the characters inspect the controls. A DC 14 Intelligence (Investigation) or Intelligence (Arcana) check identifies the mechanism and the failure it is designed to prevent. On a success, explain it clearly. On a failure, a maintainer demonstrates it; the party still learns the rule, but the demonstration consumes time and the Commission presses for a decision.
+
+- **Provenance seal:** links a deposit to its source, recording context, and chain of handling. It does not prove the witness is truthful or their interpretation correct.
+- **Contradiction retention:** prevents the system from suppressing a deposit solely because it conflicts with another. It does not guarantee equal prominence or credibility.
+- **Dual authorization:** requires two independent approvals before the Custodian changes access policy or indexing rules. It slows unilateral action but can delay a legitimate emergency response.
+
+Ask which safeguard would have prevented the current problem, which would only have made it easier to detect, and which would not address it. Let the players reason from the mechanisms rather than rolling to receive the answer.
+
+### Scene 2: Run a controlled retrieval
+
+The party chooses one test: retrieve the unmatched deposit, change its classification, or add a visible contradiction notice. One character describes the action; another may assist by examining a control or consulting a maintainer. Use DC 14 for a normal procedure or DC 17 if the party attempts to restore a key without its holder or change policy while the Custodian resists.
+
+On success, the procedure works, and the party sees its limit. A provenance seal can identify where a key was separated but cannot reconstruct a missing signature. Contradiction retention makes the deposit discoverable, but the evidence still needs interpretation. Dual authorization prevents an unauthorized change, but if the second approver is absent the system pauses until a substitute procedure is invoked.
+
+On failure, the record is not erased and the scene continues. Choose one consequence: retrieval is delayed until the next review; a public notice exposes the dispute before the party has prepared an explanation; or the Custodian retains temporary control over the default search display. The party can try another method, but records the cost and decides whether to amend the safeguard.
+
+### Scene 3: Introduce an emergency
+
+As the test concludes, a warning reports that the indexing lattice is drifting out of alignment. The danger is limited but real: without intervention, the system suspends routine retrieval for one hour while it stabilizes. The Custodian proposes temporarily hiding disputed deposits to reduce load. The maintainers can instead pause all new indexing, protecting existing deposits but interrupting ordinary service. The Commission demands a choice before its public review.
+
+Offer three responses:
+
+- **Preserve visibility:** keep disputed deposits in search results and accept a service interruption or slower retrieval.
+- **Temporary restriction:** allow the Custodian to narrow routine results for a defined period, but require a visible notice, an audit entry, and a named reviewer.
+- **Manual freeze:** suspend indexing changes until two authorized people review the lattice. This preserves policy control but slows the archive and may leave urgent requests unanswered.
+
+A custom plan is valid if it identifies what is protected, what is interrupted, who has authority, and how the temporary state ends. “Do everything safely” is not a procedure; ask which risk the party accepts.
+
+### Scene 4: Make the safeguard enforceable
+
+For each adopted safeguard, record its mechanism, who can activate it, who can inspect its use, and how an affected witness appeals. A safeguard without an owner or audit trail is only an aspiration. One controlled by an interested party can reinforce that party’s preferred account.
+
+If the party chooses dual authorization, ask what happens when approvers disagree or one is absent. If it chooses contradiction retention, ask how users learn that conflicting evidence exists and how private details are protected. If it chooses provenance seals, ask what the archive displays when the source is known but the interpretation remains contested. The party’s chosen procedure must answer these questions; do not silently add a rule it has not adopted.
+
+### Scene 5: Record the result
+
+Complete the state record in plain language:
+
+- **Safeguards Adopted:** provenance seal, contradiction retention, dual authorization, or a defined alternative.
+- **Emergency Rule:** preserve visibility, temporary restriction, manual freeze, or a custom response.
+- **Authority Holder:** who can initiate, approve, and reverse a restriction.
+- **Audit Trail:** what action is logged and who can inspect it.
+- **Appeal Route:** how a witness or affected party can challenge a decision.
+- **Known Limitation:** the failure mode the party accepts rather than pretending to eliminate.
+- **Custodian Response:** cooperation, narrow compliance, or explicit resistance, with the reason evident in play.
+
+If the party cannot agree, the default is a temporary manual freeze. Existing deposits remain stored, disputed deposits remain visible to authorized reviewers, and policy changes wait until the next hearing. The cost is delay and lower confidence from stakeholders seeking an immediate answer. The benefit is that the Custodian gains no new unilateral permission by default.
+
+### Carry the trial forward
+
+Chapter VI will put these procedures under the pressure of the Fall; Chapter VII will make their consequences concrete. A provenance seal provides a comparison point but cannot repair missing testimony. Contradiction retention preserves an inconvenient record but cannot guarantee anyone reads it. Dual authorization limits unilateral control but can fail when institutions are disrupted. Record both procedure and limitation together, so the future party can discover what the ancient party built and why it was not enough.
+
+At the close, advance the ancient party from level 12 to level 13. Their achievement is an enforceable safeguard with a known limitation, not a promise that the archive can never fail.
+
 \page
 ## Chapter V — The Archive Chooses
 **Timeline:** Present-day Faerûn. **Levels:** 7–8. **Function:** Reveal the Custodian’s philosophy, force a decision about trust and access, and prepare the party to enter the Place Between Times.
