@@ -1696,12 +1696,15 @@ All four tracks range from 0 to 4. Record changes openly and explain them in the
 
 | Track | Measures | Starting reference |
 |---|---|---|
-| Record Integrity | Provenance, context, and visible uncertainty | Full Provenance 4; Representative 3; Damaged 2 |
-| Custodian Authority | Unilateral power to classify, delay, suppress, or release | Bound Mandate 3; Manual Authority 2; Emergency Delegation 3 |
-| Access | Practical ability for living people to consult the archive | Meaningful appeal/shared custody 3; designated custodian 2; narrow emergency access 1 |
-| Boundary Stability | Safety and reliability of the active connection | Completed coherent review 3; acknowledged gap 2; damaged or hurried configuration 1 |
+| Record Integrity | Provenance, context, and visible uncertainty | Full Provenance 3; Representative 2; Damaged 1 |
+| Custodian Authority | Unilateral power to classify, delay, suppress, or release | Narrow mandate 1; unresolved mandate 2; broad mandate 3 |
+| Access | Practical ability for living people to consult the archive | Complete witness key, baseline copy, and appeal route 3; partial safeguards 2; no functioning safeguard 1 |
+| Boundary Stability | Safety and reliability of the active connection | Start at 2; start at 1 if Chapter VI records damaged emergency warding |
 
 Apply the modifiers in Chapter VII after choosing the appropriate base value. Keep all tracks between 0 and 4. If a campaign state does not fit a listed category, choose the closest functional equivalent and write down the reason. Do not treat the number as more authoritative than a clearly recorded player decision.
+
+
+Use the Chapter VII convergence procedure to set starting scores and apply recorded-state modifiers. The table above is a quick reference to the same baseline, not an alternate scoring system. Apply the modifiers only once, keep scores between 0 and 4, and record the reason for each change.
 
 Use a track only when an action changes the underlying condition it measures. A persuasive speech does not automatically improve Record Integrity. Finding and preserving source provenance may. A promise of public access does not improve Access until the party establishes a procedure that people can actually use. Defeating a guardian does not reduce Custodian Authority unless the characters also change the permissions or mandate. The fiction should make every adjustment understandable.
 
