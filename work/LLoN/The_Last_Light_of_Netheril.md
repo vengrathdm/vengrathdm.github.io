@@ -140,6 +140,7 @@ The following entries are binding design decisions for drafting. They supersede 
 | C-010 | The finale’s outcome depends on both timelines. | No ending can be resolved by only one party’s actions. |
 | C-011 | The three primary outcome families are Open Archive, Bound Archive, and Severed Signal. | Each requires a distinct epilogue and documented costs; none is declared universally correct. |
 | C-012 | The Custodian may be defeated, persuaded, divided from the core, or contained. | Noncombat resolutions must be fully supported by rules and procedures. |
+| C-013 | The Glasswell is the campaign’s original present-day opening site in the Delimbiyr Vale. | Do not identify it with a published ruin; its function is to monitor the Mnemosyne Engine’s signal, not to house the Engine itself. |
 
 ## Cross-Timeline Consequence Register
 
@@ -178,7 +179,7 @@ A proposed change to any C- entry requires checking the chapter delivery map, al
 
 Begin with a contained incident the characters can directly observe: an amber-blue radiance appears in or beneath a damaged Netherese site, accompanied by a brief sensory impression that does not belong to anyone present. The impression might be a voice interrupted mid-sentence, a hand placing a small object on stone, and a repeated phrase whose context is missing. It is an evocative fragment, not a complete exposition scene. No check is required to notice the event. Checks can establish details, shorten the investigation, or avoid a hazard; they must not determine whether the campaign can continue.
 
-The starting site should have stable functional features: a public approach, a damaged interior, a sealed lower access, and at least one trace that can be examined away from the site. The exact modern location remains a mapping task. Do not attach the campaign to a named Forgotten Realms ruin without checking setting implications.
+The starting site should have stable functional features: a public approach, a damaged interior, a sealed lower access, and at least one trace that can be examined away from the site. The modern opening site is fixed as the Glasswell, a modest waystation ruin in the Delimbiyr Vale. Treat it as an original campaign location rather than identifying it with a published ruin; preserve room for the DM to place it on a local map without creating setting conflicts.
 
 Offer three independent investigation routes. The material route uses physical residue, tool marks, crystal fragments, or a surviving ward to establish that the signal comes from a structured device. The witness route follows a person affected by the impression, who can describe a repeated sensory detail but cannot explain its origin. The record route uses a surviving text or catalogue that references a civic archive or missing Netherese enclave, although its account is incomplete. The party should reach the chapter conclusion after pursuing any two routes; one route remains sufficient if the characters accept a meaningful cost or delay.
 
@@ -374,6 +375,7 @@ These entries define campaign functions and motivations. Individual names, visua
 | N-05 | Present-day claimant | Secure responsible custody of the site | Believes private investigators cannot manage a dangerous relic | Offers resources and institutional pressure |
 | N-06 | Signal-affected witness | Understand an intrusive sensory impression | Fears their memories will be treated as evidence of guilt or madness | Human anchor; testimony, not objective answers |
 | N-07 | Independent record scholar | Compare surviving histories with physical evidence | Has built a reputation on an incomplete interpretation | A source to test, not an exposition dispenser |
+| N-08 | Seln Ardo, local waymarker keeper | Knows the road, recent travelers, and safe approaches to the Glasswell | Wants the road safe and fears being blamed for an incident he cannot explain | Practical local witness; never a lore dispenser |
 
 ## Faction principles
 
@@ -560,5 +562,49 @@ Record the chosen state as **Site Custody**: Secured, Shared, or Open. Also reco
 Advance the Faerûnian characters from level 5 to level 6 after the party makes its custody decision and has a justified conclusion about the relay. The chapter’s reward is evidence, not a magic item. If a physical fragment is retained, it is a useful comparison object but has no combat power and does not grant a bonus to checks. The party may also earn Mara’s trust, Seln’s cooperation, or an institutional contact, depending on play.
 
 The transition to Chapter III should be driven by the party’s choice. A secured site attracts a request for responsible custody or technical assistance. A shared discovery produces an invitation to compare records with a scholar or authority. An open site generates another witness or a new discrepancy that requires corroboration. In every case, the party has a next step and a reason to choose it. The chapter ends with a question the players can answer through action: who should be trusted with evidence that can preserve a person’s experience without proving the whole truth?
+
+\\page
+
+# Chapter I — Running the Glasswell at the Table
+
+This section is the operational scene procedure for “The Signal Beneath the Ruin.” Use it to keep investigation moving without turning the Glasswell into a sequence of checks that can halt the campaign. The intended session rhythm is approach, establish competing accounts, explore the ruin, test the signal, then decide custody. A group that moves quickly may complete the chapter in one long session; a cautious group may split the investigation across two. Do not add combat merely to fill time. The danger here is uncertainty, physical instability, and the consequences of controlling evidence.
+
+## Scene 1: The road and the first account
+
+Begin with the party arriving while Mara Vell is checking her caravan ledger at the campsite below the rise. Seln Ardo is nearby repairing the road marker. Read the opening description already provided in the chapter, then give the players a moment to say what brought them to the site and how they approach it. If they have no stated lead, a repeated pale glimmer from the lower chamber is visible through the tree roots, followed by a brief sensation of cold that fades before anyone can identify its source.
+
+Mara offers the phrase she remembers, but does not volunteer to be treated as an exhibit. She will describe the sound, the cold sensation, and the time she recorded in her ledger. She will not claim that a dead person spoke to her, nor will she agree that the words are a prophecy. If characters press her, have her ask what they intend to do with her account. A respectful explanation earns cooperation; a demand for certainty makes her guarded. This is a roleplaying consequence, not a hidden skill check.
+
+Seln points out that the path above the road has become unstable and that someone recently used the drainage cut. He can show the safer route and describe the hurried travelers, but cannot identify them unless the DM has already introduced them in play. If asked whether the Glasswell is haunted, he answers that the road has seen strange lights before and that a label does not make a place safer. He prefers practical plans: mark the dangerous stair, keep the road clear, and tell him if anyone is trapped.
+
+## Scene 2: Approach and hazard telegraphing
+
+Give the party a clear view of the fallen arch, the inspection-room collapse, the service stair, and the drainage cut. The layout should be legible before a character commits to a risky route. Describe loose pale stone, fresh fractures, and dust that shifts when weight is placed on the first steps. Characters who pause to inspect the stair can choose to descend slowly, secure a rope, clear debris, or use the drainage cut. Reward sensible precautions with a safe descent; do not require a roll to discover that a rope can help.
+
+If a character rushes down the fractured stair without taking precautions, call for the DC 13 Dexterity saving throw specified in the hazard entry. On a failure, the character takes 1d6 bludgeoning damage and falls prone on a lower landing. The stair remains passable after the incident. A companion can assist the fallen character without a second check unless circumstances make the rescue genuinely dangerous. The hazard communicates that the structure is damaged; it is not a trap built to punish curiosity.
+
+The drainage cut is cramped, muddy, and partially obstructed. It is a viable alternate route, not a secret required entrance. A character who spends a few minutes clearing loose debris can pass through without a check. If the party chooses to force the route quickly, use an appropriate ability check only to determine time, noise, or minor scrapes; never make the route permanently impassable. The inspection room offers the easiest place to pause, compare notes, and decide which evidence to preserve.
+
+## Scene 3: The signal chamber
+
+The black-glass basin is the strongest local source of the repeated impression, but it is not a speaking creature and does not answer questions. The signal repeats approximately every thirteen minutes. Use the three fragments already printed in the chapter in the listed order, leaving a quiet interval between them. Each fragment arrives with one sensory detail: a pressure behind the eyes, the impression of a hand against cold stone, or a faint smell of rain on heated slate. These details are impressions transmitted by the relay, not proof that the characters are experiencing the original event exactly as it occurred.
+
+When the party tests the chamber, ask what method they use before calling for a check. Arcana can characterize the effect as a repeating magical transmission rather than a free-standing spirit. Investigation can establish that the basin and surrounding grooves were deliberately installed and later damaged. Insight can help a character distinguish a fragment’s emotional urgency from a reliable factual claim. Use the DCs already stated in the chapter. On a failed check, provide the basic clue with less precision, more time, or a need for corroboration; never answer with “nothing happens.” A successful check grants useful detail, not omniscience.
+
+If the players attempt to speak into the basin, the chamber does not provide a conversational reply. Their words may cause a momentary shimmer, but there is no evidence that the distant archive understands them. If they damage or cover the basin, the local signal weakens or becomes harder to hear; the party has not destroyed the Mnemosyne Engine. Record what they did, because their actions may influence how they describe the site and whether local witnesses trust their account.
+
+## Scene 4: Corroboration and custody
+
+Before presenting the custody decision, ask the party to state what they believe the evidence supports and what remains uncertain. A complete Evidence Record requires documentation of the chamber and at least two independent sources—for example, a physical trace plus Mara’s timed ledger, or the basin’s grooves plus Seln’s account of recent traffic. Repeating the same observation in different words does not create independent corroboration. The record may be Complete even if the party’s interpretation is wrong; completeness measures what was preserved, not whether the investigators guessed the whole truth.
+
+Offer three custody choices without disguising one as the correct answer. **Secured** means the party marks the hazard, limits casual access, and accepts responsibility for who may enter. **Shared** means they provide their notes and access information to a named local authority, scholar, or other contact, gaining help while surrendering some control. **Open** means they document the site but do not restrict access, preserving the broadest opportunity for independent inspection while accepting the risk of disturbance. If the players propose a different arrangement, translate it into these practical questions: who can enter, who keeps the record, and who can challenge its interpretation?
+
+Write down the choice and the reasons the characters gave. Do not immediately reveal a mechanical reward or punish them for preferring openness, secrecy, or collaboration. The consequence should arrive through play in Chapter III: who answers their request, which records are available for comparison, and whether another party has already framed the discovery for public consumption. Each option must preserve a path forward.
+
+## Scene failure states and pacing
+
+If the party leaves before entering the chamber, Mara’s ledger and Seln’s account still establish that an unusual event occurred. Their next lead can be a return visit, a scholar willing to examine the evidence, or a witness who experienced another fragment. If the party enters but refuses to speak with either local, they can still achieve a Fragmentary record and advance; they simply have fewer independent sources. If they break the basin, the signal becomes less accessible locally, but the physical grooves and witness accounts remain evidence. If they hand the site to an authority, make that authority’s conditions explicit and negotiable rather than removing the characters’ ability to investigate.
+
+End the session by asking the players what they are prepared to claim publicly, what they will leave uncertain, and who should be trusted with the site. These are distinct decisions. A group can preserve evidence while withholding a conclusion, or share a conclusion while restricting access to fragile material. Their answer is the chapter’s dramatic outcome and the foundation for the present-day party’s later choices.
 
 \\page
