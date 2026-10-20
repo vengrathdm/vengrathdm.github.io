@@ -1703,6 +1703,10 @@ Use these prompts to preserve consequential decisions between sessions. A blank 
 
 **Appeal Route:** ___________________________________________________
 
+**Consent-and-Appeal Test:** Refusal or narrowing works? Yes / No. Independent reviewer? Yes / No. Request, decision, and reason logged? Yes / No.
+
+**Credible Chapter VII Access bonus:** Yes only if all three answers are Yes. Confirmed: ______
+
 **Who can challenge a decision, and how?** ____________________________
 
 **What affected people can refuse or withdraw?** ______________________
