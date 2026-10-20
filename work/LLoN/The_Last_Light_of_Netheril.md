@@ -1144,6 +1144,8 @@ The chapter’s result is a tested policy, an audit trail, and a witnessed examp
 Advance the Netherese characters from level 12 to level 13 after they have investigated the access delays and made a consequential decision about the routine. If the party refuses to change the procedure, that is still a decision and can satisfy the milestone when its consequences are understood. End by recording which deposits remain delayed, which witnesses retain confidence in the archive, and the exact policy the characters expect the maintainer to enforce.
 
 ## Chapter IV state record
+For finale scoring, also record whether the Chapter IV procedure explicitly suspends automatic classification (Yes/No) and quote the permission that remains if the Custodian can still delay or restrict access without independent review.
+
 
 Record the following in the campaign worksheet:
 
