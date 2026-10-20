@@ -1522,3 +1522,80 @@ When an action fails, choose a consequence that follows from the attempt and lea
 Do not use a failed check to add a new secret power to the Custodian, invent an unrecorded historical event, or remove a player’s prior success. The consequence should arise from an established danger, a participant’s known interest, or the limits of the attempted method.
 
 \page
+
+
+# Appendix D — Evidence, Consent, and Public Claims
+
+This appendix gives the Dungeon Master a consistent way to adjudicate disputes about what a record establishes, who may use it, and what can fairly be said in public. It is not a universal legal code for Faerûn. Use it as the campaign’s working procedure, shaped by the safeguards the players actually choose.
+
+## Four layers of a claim
+
+When the party examines a record or prepares a public account, separate four layers:
+
+**Deposit:** What is physically or magically present in the archive? Identify the fragment, its condition, its source label, and any known gap. Do not silently complete missing words.
+
+**Witness account:** What does a named witness say they perceived, felt, did, or intended? Preserve the distinction between observation and interpretation. A witness may be sincere and mistaken, or accurate about an experience while uncertain about its cause.
+
+**Corroboration:** What independent source supports, complicates, or contradicts the account? Independence matters. Two summaries copied from the same original are not two independent witnesses. A physical mark, dated inventory, separate witness, or unrelated record may strengthen a claim in a different way.
+
+**Conclusion:** What does the party believe the evidence supports? State whether the conclusion is established, strongly supported, plausible, contested, or unknown. These labels are guidance for clear table communication, not a new numerical skill system.
+
+A player may argue for a stronger conclusion than the evidence warrants. Let the character make that argument, but make the distinction visible in the record. The GM should not decide a historical question solely because one interpretation would be more dramatic.
+
+## Provenance checklist
+
+For every important deposit, record as many of the following as the fiction supports:
+
+- **Identifier:** A stable name or code the party can use to refer to the deposit.
+- **Source:** Who created or supplied it, if known.
+- **Time and place:** When and where it was recorded, with uncertainty explicitly marked.
+- **Custody:** How it moved from its source to the current archive.
+- **Condition:** Missing sections, damage, alterations, translation issues, or other limitations.
+- **Context:** The event or question to which the deposit relates.
+- **Consent:** Whether the witness agreed to preservation, access, attribution, or publication; these are distinct permissions.
+- **Corroboration:** Independent material that supports or contradicts it.
+- **Known omissions:** What was excluded, lost, withheld, or never recorded.
+- **Review history:** Who interpreted or summarized it and what changes were made.
+
+Do not require every field to be complete before a record can be useful. Incomplete provenance is itself information. A deposit with a missing author may still corroborate a date or establish that a particular claim circulated. Mark the limitation rather than discarding the source or pretending it is complete.
+
+## Consent is not one permission
+
+When a witness agrees to speak, do not treat that agreement as automatic permission for every later use. Distinguish among preservation, private consultation, attribution by name, limited sharing, public release, and use in a new context. A witness might want their experience preserved but refuse public attribution. They might allow a scholar to consult the record while asking that a living relative not be identified. They might consent to a summary but not to the raw sensory deposit.
+
+The party cannot always satisfy every request. Some testimony may concern public harm or contradict an institution’s official account. If consent conflicts with another legitimate interest, frame the conflict clearly and ask the characters what procedure they will use. Possible responses include withholding identifying details, restricting the raw deposit while publishing a provenance note, inviting independent review, delaying publication until a risk can be assessed, or recording a principled refusal. Each response has costs. None should be treated as a free action that removes all risk.
+
+Consent may also change. If a witness withdraws permission for a particular use, the party should consider what can realistically be withdrawn: a future copy may be withheld, a public attribution corrected, or access to a raw deposit restricted. Copies already distributed may not be recoverable. Make that limitation clear before the characters promise more than they can deliver.
+
+## Public statement procedure
+
+When the party makes a public claim about the archive, ask it to state four things:
+
+1. **What we can show:** The deposit or corroborating evidence available for inspection.
+2. **What we infer:** The conclusion the party draws from that evidence.
+3. **What remains disputed:** Contradictions, missing provenance, and plausible alternatives.
+4. **What we will do next:** A review process, correction mechanism, consent restriction, or decision not to publish further material.
+
+A statement that distinguishes evidence from inference is not necessarily persuasive to every audience. Institutions may fear reputational harm; affected people may want recognition now; scholars may insist that the evidence is incomplete; witnesses may disagree about what public exposure will cost. These reactions are legitimate pressures, not proof that one side is secretly correct.
+
+If the characters conceal a material uncertainty, record that choice. It may make a statement more persuasive in the short term but weaken trust if the omission later becomes known. If they acknowledge uncertainty, they may lose immediate political advantage while preserving a better basis for future correction. Neither consequence should be automatic in every scene; tie it to the audience, the stakes, and the characters’ actual conduct.
+
+## The right to challenge a record
+
+A fair process needs a way to challenge both the content of a deposit and the authority of the person controlling it. The challenge should identify the disputed claim, the evidence offered, who can review it, and what happens while the challenge is pending. A process that allows appeals in theory but gives no one access to the relevant evidence is not a meaningful appeal route.
+
+For campaign purposes, a challenge can result in confirmation, correction of metadata, an attached dissent, restricted access pending review, or a finding that the evidence is insufficient. The review should not silently erase the original record. Preserve the previous version or note the change so future readers can see how the interpretation developed.
+
+The Custodian may identify inconsistency, preserve competing deposits, or warn that a conclusion exceeds the evidence. It may not be allowed to settle the dispute solely by invoking its own authority unless the characters deliberately grant it that power. The central question is not whether the Custodian can classify a record efficiently. It is who can challenge its classification and what evidence that challenge can examine.
+
+## Table examples
+
+**Example: a missing sentence.** A deposit ends with “Leave the second copy where the witnesses can—”. The party may conclude that the speaker wanted a second copy made available to witnesses, but it cannot claim to know the intended destination or final instruction. The incomplete wording should remain visible in any quotation.
+
+**Example: a disputed memory.** Two witnesses describe the same hearing differently. One recalls a threat; the other recalls a warning. The archive may preserve both sensory accounts. The party can compare dates, context, and independent evidence, but it should not assume that the archive’s ability to store both accounts means it can determine which interpretation is correct.
+
+**Example: a living person at risk.** A record may help explain historical wrongdoing while identifying a present-day descendant or vulnerable witness. The party can publish a redacted account, seek consent, restrict the raw deposit, or release it with a clear explanation of risk. The choice affects access and trust; no procedure removes all consequences.
+
+**Example: a public demand for certainty.** A civic sponsor asks the party to state whether a disputed event definitely occurred. If the evidence supports only a plausible conclusion, the characters can say so, refuse the requested certainty, or make a stronger claim and accept responsibility for doing so. The GM should not quietly upgrade the evidence to reward a persuasive speech.
+
+\page
