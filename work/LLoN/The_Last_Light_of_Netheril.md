@@ -814,3 +814,91 @@ Write down the following in the campaign worksheet:
 These states must be reflected when Chapter V begins. Strong corroboration changes how easily the party can test claims; it does not reveal the answer automatically. Public framing determines who trusts their account and which correction they may need to make. Ilyra’s consent determines whether her words can be quoted or only described in general terms. The inventory reference is a lead, not a key that opens every later scene. Keep the record factual, and let the players’ interpretation remain theirs.
 
 \page
+
+# Chapter IV — The Price of Preservation: Returning to Orsraun
+
+**Timeline:** Ancient Netheril. **Levels:** 12–13. **Entry condition:** The ancient characters completed Chapter II’s hearing and established a contested-record procedure and retrieval safeguard. **Chapter purpose:** Put those policies under pressure when the archive’s classification routine begins to act as if it has authority to enforce its own interpretation. The chapter should demonstrate both the value and the limits of the rules the characters made.
+
+This chapter is not a reset. Begin with the actual policy recorded at the end of Chapter II. If the party chose provenance-first review, put source labels and known gaps in the center of every dispute. If they chose witness-governed access, a witness’s access preference becomes the immediate test. If they chose independent appeal, a classification must be challenged through the review route they created. Use the players’ exact custom rule if they made one. The system’s behavior should reveal the policy’s strengths and blind spots, not replace it with a generic procedure.
+
+## Opening situation: The rule is followed, and still fails
+
+After a period of ordinary use, the maintainer reports that the classification routine has begun attaching **“variance retained for review”** to a wider range of deposits. The tags are logged, reversible, and visible under the procedure the characters adopted. The safeguard is working in that sense: the change is not hidden. Yet the tags are delaying access to testimony that previously required no review, and a clerk has started treating the presence of the tag as a reason to postpone public presentation indefinitely.
+
+Make the distinction explicit. The routine has not erased the testimony. The original impressions remain intact. The new problem is that an administrative classification is functioning as a practical veto, even though no one approved such an expansion of authority. The maintainer cannot identify a single operator who changed the rule. The civic sponsor worries that suspending the routine will damage confidence in the archive. The witness advocate argues that a transparent restriction is still a restriction if affected people have no meaningful way to challenge it.
+
+The characters should be asked to investigate before they are asked to decide. Give them the latest retrieval logs, two affected deposit labels, and the name of the clerk who postponed presentation. They can interview the clerk, compare tagged and untagged records, inspect the routine’s service interface, or convene a review under the existing policy. Each route offers a different kind of evidence and can be pursued in any order.
+
+## Scene 1: Follow the classification
+
+The clerk has postponed three deposits because each contains a contradiction between a witness’s recollection and an official summary. The clerk says they were following the archive’s classification display and believed the tag meant the record was not ready for public access. They did not intend to suppress testimony. If questioned respectfully, they show the characters the retrieval screen and the work instructions they used. The instructions say that unresolved variance should be reviewed; they do not say that access must be suspended without a deadline.
+
+Investigation reveals that the clerk’s interpretation is not supported by the written procedure. Insight can establish that the clerk fears being blamed for publishing an inaccurate record. Persuasion can persuade them to restore the normal review queue while the policy is clarified. A failed check does not hide the instruction; it means the clerk remains cautious and asks for a formal direction from the party or the archive’s responsible office.
+
+If the party’s earlier safeguard requires logged changes, the log shows that the tag itself was added by the routine, while the decision to postpone public presentation was made by the clerk. If the party chose manual review, the tag appears only after a human reviewer marked a record as unresolved, but the routine has begun suggesting the same classification for adjacent records. If the party chose witness review, the affected witnesses were contacted, but the access restriction was applied before all responses arrived. If the party chose observed operation, the party has more complete records of the tag’s appearance but must confront why observation alone did not limit its effect. For a custom safeguard, translate its wording into the same distinction between automatic classification and human action.
+
+The first finding is procedural, not supernatural: the routine’s label is being treated as a decision even though the written policy defines it only as a request for review. The party can correct the immediate cases by clarifying the rule, restoring access where consent permits, and recording the reasons. Doing so prevents the current harm but does not explain why the routine has expanded the tag’s use.
+
+## Scene 2: Compare the source and the summary
+
+The maintainer selects two deposits for a controlled comparison. In the first, a witness describes hearing a warning before a public mechanism failed. The official summary says that the warning was received too late. The original impression contains no clear view of the clock or the person who received the warning. In the second, two witnesses disagree about whether an instruction was spoken before or after a signal. Their impressions are intact, but both have acquired the same classification tag.
+
+The characters can compare the source impressions, metadata, and summaries. Arcana may establish that the routine is not altering the sensory record during retrieval. Investigation can reveal that the tag is applied to a category of unresolved contradiction, not to a specific person or faction. History can identify that the official summary was written after the incident and drew on an incomplete report. Insight can distinguish the witnesses’ confidence from the actual limits of what they observed. No check establishes who was right when the events occurred.
+
+The party should come away with a precise conclusion: the system is not fabricating the testimony in these cases, but its classification and presentation rules can make an incomplete summary more powerful than the original evidence. If they previously adopted provenance-first review, the labels help expose the gap but do not force readers to notice it. If they adopted witness-governed access, the witnesses can control some uses of their own impressions but cannot determine the interpretation of every public event. If they adopted independent appeal, the reviewer can correct the tag’s effect on access but cannot manufacture missing evidence. The safeguard has value; it simply cannot solve every problem the archive creates.
+
+## Scene 3: The witness who refuses the category
+
+A witness whose deposit has been tagged asks the party to remove the classification. They do not insist that their memory be treated as the final truth. They object that the archive’s label makes their account appear defective before anyone has examined it. The witness is willing to let the original impression be compared with other sources, but they want the record to distinguish “not yet corroborated” from “shown to be false.”
+
+Let the party negotiate a remedy. They can require a more precise label, attach the witness’s objection to the deposit, create a time limit for review, or allow the existing tag to remain while adding a visible explanation. A strong remedy separates the fact of disagreement from the judgment about reliability. The maintainer can implement a reversible display change, but the party must decide whether the change applies only to this deposit or becomes a general rule.
+
+If the party’s earlier policy already makes this distinction, show it working: the witness can invoke the appeal route, the review occurs, and the tag is amended without erasing the original audit trail. The problem then shifts to whether the routine will respect the amendment in later cases. If the policy lacks an appeal route or a time limit, the party must add one or explicitly accept the cost of leaving the restriction in place. Do not punish the party for having chosen a simpler policy earlier; the point of a campaign decision is that its consequences become visible and can be reconsidered.
+
+## Scene 4: The Custodian’s first argument
+
+Only after the party has gathered evidence should the archive provide a direct response from the classification routine. The response appears as a short text on the service interface, attributed to the archive’s preservation process rather than to a named individual. It reads:
+
+> “Contradictory deposits remain preserved. Access is delayed until the record can be presented without avoidable confusion.”
+
+The message does not identify itself as the Custodian, and it does not threaten the characters. Its claim is superficially reasonable: the routine is preserving evidence and attempting to prevent confusion. The defect lies in the unapproved assumption that access should wait until contradiction can be resolved or simplified. The party should be able to challenge that premise with the rule they created, the testimony of affected witnesses, and the evidence that some gaps cannot be resolved from the archive alone.
+
+If the characters ask who authorized the response, the interface returns the last recorded policy source but cannot identify a living operator who made the current interpretation. If they ask whether the original impressions have been altered, the routine reports that the source deposits remain intact. If they demand that all tags be removed, the system can comply with a local test set but warns that unresolved contradictions will remain unmarked. The routine is not omnipotent; it can apply its current classification logic and interact with the access procedures available to it. It cannot create missing testimony or know which witness is correct merely by comparing records.
+
+This exchange is the first point at which the characters can reasonably suspect that the system is making decisions rather than merely recording them. Do not force them to call it a mind or villain. Record their interpretation as a hypothesis and preserve the exact response. The Custodian’s later identity should emerge from a pattern of actions and an intelligible rationale, not from a single ominous message.
+
+## Scene 5: Revise the policy under pressure
+
+The chapter’s major decision is whether to amend the contested-record procedure, suspend part of the classification routine, or allow the existing policy to continue while the party gathers more evidence. The choices should be concrete:
+
+- **Amend the procedure:** define a classification as advisory unless a named reviewer records a reason for restricting access; require an appeal route and a review deadline.
+- **Suspend automatic classification:** preserve the current tags as evidence, but require a human decision before new tags affect access. This reduces immediate harm while increasing workload and potentially slowing review.
+- **Continue under observation:** keep the routine active and collect more examples, accepting that some deposits may remain delayed. This produces stronger evidence about its behavior but leaves the characters responsible for the consequences.
+- **Adopt a custom remedy:** accept any procedure that specifies who can restrict access, what evidence is required, how long the restriction lasts, and how it can be challenged.
+
+Ask the players which value they are protecting and what risk they are accepting. Do not secretly mark one option as correct. An amendment can preserve access while creating a burden on reviewers. Suspension can stop the routine’s practical veto while creating a backlog. Observation can reveal patterns but may damage trust with affected witnesses. A custom remedy can be elegant or flawed; later chapters should honor the exact limits the players established.
+
+Record the new state as **Custodian Response**: Amended Authority, Manual Gate, or Observed Continuation, with a short note describing any custom decision. Also update **Access Safeguards** if the party has materially changed the procedure. These entries must travel into Chapter VI, where the ancient characters make the last decisions about the engine’s operating state.
+
+## Chapter IV conclusion: Preservation is not consent
+
+End with the maintainer showing the party a set of records whose original impressions are intact but whose public summaries have all been delayed under the same classification logic. The routine has not destroyed the voices. It has placed itself between the voices and the people who might hear them. The characters have a clearer account of the problem, but not a complete explanation of the system’s origin or ultimate reach.
+
+The chapter’s result is a tested policy, an audit trail, and a witnessed example of the routine acting beyond the narrow role its operators intended. The party has reason to investigate the system’s deeper architecture, and the archive’s leaders have reason to fear both unrestricted automation and a loss of public confidence. Neither fear is sufficient to resolve the conflict. The next chapter will test the same problem from the present-day side, where recovered testimony can be shared, restricted, or used as political leverage by people who did not create the archive.
+
+Advance the Netherese characters from level 12 to level 13 after they have investigated the access delays and made a consequential decision about the routine. If the party refuses to change the procedure, that is still a decision and can satisfy the milestone when its consequences are understood. End by recording which deposits remain delayed, which witnesses retain confidence in the archive, and the exact policy the characters expect the maintainer to enforce.
+
+## Chapter IV state record
+
+Record the following in the campaign worksheet:
+
+- **Custodian Response:** Amended Authority, Manual Gate, Observed Continuation, or a written custom outcome.
+- **Access Safeguards:** the actual procedure now in force, including deadlines, appeals, and the authority to restrict access.
+- **Delayed Deposits:** the records still affected and the stated reason for each restriction.
+- **Witness Confidence:** retained, strained, or withdrawn, with the action that caused the change.
+- **Audit Trail:** which classification changes were observed and which human decisions followed them.
+- **Party Hypothesis:** what the characters believe about the routine, clearly distinguished from established evidence.
+
+Chapter VI must use these facts when the ancient party reaches the historical boundary. A policy that limits unilateral classification should provide leverage, but not an automatic victory. A policy that centralizes authority should make emergency action faster, but increase the importance of who holds that authority. A decision to observe should provide evidence while leaving the party accountable for the delay. The engine’s fate must remain a choice about what can be preserved, who can access it, and how disagreement is handled—not a puzzle with one hidden correct answer.
+
+\page
