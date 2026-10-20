@@ -743,3 +743,74 @@ At the end of the chapter, write down the following items in the campaign worksh
 These notes must travel forward. In Chapter IV, the Custodian’s behavior should interact with the actual procedure selected, not a generic default. If the party chose a strong safeguard, show where it works and where its authority ends. If the party accepted a risky process, show the benefit they sought as well as the harm that follows. Do not punish a choice merely because it creates a dramatic complication; the complication should arise from a rule’s limits, a competing value, or an actor who can be held accountable.
 
 \page
+
+# Chapter III — The Missing Voices: Investigation Framework
+
+**Timeline:** Present-day Faerûn. **Levels:** 6–7. **Entry condition:** The Faerûnian characters have completed the Glasswell investigation and recorded Site Custody and Evidence Record. **Chapter purpose:** Turn the initial signal into a contest over corroboration, interpretation, and public responsibility. The party should learn that the signal’s fragments belong to a larger civic archive without yet receiving an exhaustive account of the Mnemosyne Engine or the Custodian.
+
+This chapter should run as an investigation with multiple routes, not a sequence of mandatory interviews. The characters already possess the Glasswell evidence. Their first decision is how to use it: approach a scholar, follow the physical record, or return to a witness. Whichever route they choose, the investigation must eventually establish three facts: the signal contains repeatable fragments; similar archival language survives in a second source; and a significant interval or voice is missing from the available record. The mystery is not whether the evidence is strange, but what it can and cannot justify.
+
+## Opening: The invitation to compare
+
+Within a few days of the Glasswell decision, the party receives a credible invitation to compare its findings with a collection maintained by N-07, the independent record scholar. The form of the invitation depends on Site Custody. If the site is **Secured**, the scholar asks for a supervised meeting and offers to provide a catalog extract in return for a documented chain of custody. If the site is **Shared**, the scholar has already seen a summary through the named contact and asks the characters to correct or confirm its provenance. If the site is **Open**, the scholar has heard competing versions of the discovery and asks the party to distinguish firsthand evidence from rumor.
+
+The invitation should not imply that the scholar knows the solution. N-07 has collected fragments of civic terminology from old road inventories, salvage records, and copied inscriptions. The scholar believes these sources may describe a public record-keeping network, but their current interpretation is incomplete. They are willing to revise it if the party supplies stronger evidence. This establishes an ally who can be wrong without becoming useless, and who respects the difference between a plausible hypothesis and a supported conclusion.
+
+At the meeting, ask the players what they are prepared to share. They can provide the exact signal fragments, a paraphrase, physical sketches, Mara’s timed ledger, or only the fact that the Glasswell appears to be a relay. Record any restrictions they place on the material. If they share the exact phrases, the scholar can identify a repeated administrative construction in the phrase “mark it missing.” If they share only a summary, the scholar can still point to a relevant catalog entry but cannot verify the wording. If they refuse all cooperation, the party can pursue the physical and witness routes without the scholar’s help; the cost is time and a narrower comparison set, not a dead end.
+
+## The three evidence routes
+
+The investigation has three main routes: the scholar’s catalog, a physical trace from the Glasswell’s waystation function, and a second witness affected by the signal. The party needs two independent routes to establish a robust conclusion, but no specific route is mandatory. Evidence should be tracked by provenance: who or what produced it, when it was recorded, and what it actually supports. Two documents copied from the same damaged source are one evidentiary family, not two independent confirmations.
+
+### Route A: The catalog of civic deposits
+
+N-07’s catalog contains a transcription of a waystation inventory mentioning “civic deposits,” “witness relays,” and a maintenance procedure for duplicated records. The transcription is not a direct proof of the Glasswell’s purpose; it was copied by a later clerk and contains gaps. A successful Investigation or History check can identify a note that the original inventory was stored alongside a road maintenance register. Arcana can help determine that “relay” was used in a technical rather than purely metaphorical sense. On a failed check, the party still finds the relevant entry, but the catalog does not identify the larger institution or explain the signal.
+
+The catalog route is strongest when paired with the physical grooves and basin at the Glasswell. The physical site shows that a local mechanism existed; the catalog suggests a civic function. Together they support the claim that the ruin participated in a record-keeping network. They do not establish the identity of the Custodian or prove that every surviving phrase came from a single witness. If the party’s Evidence Record was **Complete**, N-07 can compare their notes against the catalog in one sitting. If it was **Fragmentary**, the scholar asks for a return visit or a more careful reconstruction, costing time and requiring the characters to decide whether to reopen a site they may have left open or entrusted to another custodian.
+
+### Route B: The material record
+
+A shallow channel behind the Glasswell basin carries traces of the same pale mineral used in old civic record fixtures. The channel is not a map to Orsraun, and following it does not reveal a hidden passage. It leads to a collapsed storage niche where a small inventory plate survived because it was protected from weather. The plate contains a list of routine maintenance tasks and one notation about a duplicated deposit whose contents “disagree in recollection.” This is the first material evidence that disagreement was a known feature of the network rather than a unique anomaly at the opening site.
+
+The plate is fragile. A character can document it with sketches, rubbings, careful transcription, or appropriate magic. No check is needed to preserve a legible copy if the party takes time and has suitable materials. A check determines whether they also notice that a later hand scratched out a reference number and replaced it with a blank. The replacement does not identify who made the change or why. It does establish that someone or some process treated the record’s reference as removable while leaving the rest of the plate intact.
+
+If Site Custody was **Secured**, the party can arrange a controlled return and preserve the plate under a documented chain of custody. If it was **Shared**, the party must coordinate with the named custodian; this creates a useful negotiation and gives that institution a voice in how the evidence is described. If it was **Open**, the niche has been disturbed by curious visitors. The plate can still be recovered, but the missing reference cannot be reconstructed from the physical context. Do not destroy the entire route because the party chose openness; the consequence is a less complete record and a stronger reason to corroborate elsewhere.
+
+### Route C: The second affected witness
+
+A signal-affected witness, introduced as a new NPC for this chapter, is a traveling copyist named Ilyra Fen. She heard the phrase “It disagrees because it remembers” while copying a list of damaged cargo seals at an inn several miles from the Glasswell. She did not see a vision and does not claim to have visited the ruin. Her account is useful because it is independent of Mara’s ledger and occurs away from the site, but it is still a memory of an experience, not proof of the original event described by the signal.
+
+Ilyra will speak if the party explains why her account matters and what will happen to it. She fears being publicly labeled unreliable because the phrase sounds like nonsense when removed from context. If the characters respect her boundaries, she can provide the approximate time, the task she was performing, and a copy of the cargo-seal list she was working from. The list gives the party a mundane anchor: she was occupied with a real document at the time, and another person can corroborate that she was copying it. That corroboration supports her presence and activity, not the truth of the signal’s words.
+
+Insight may reveal that Ilyra is more afraid of losing control over her account than of the signal itself. Persuasion may secure permission to record the account with restrictions. Investigation can compare the timing against Mara’s ledger and the signal’s known interval. On a failed check, Ilyra still provides the basic account if approached respectfully, but she withholds permission to circulate it or requires that her exact wording be approved before publication. Her participation should change the party’s options, not become a gate the players must unlock with a high roll.
+
+## Evidence synthesis: what the party can claim
+
+Once the party has followed two routes, pause and ask them to summarize the case. Encourage a three-column note: **Observed**, **Supported**, and **Unknown**. Observed facts include the exact phrases recorded at the Glasswell and the fact that Ilyra heard a similar fragment elsewhere. Supported conclusions include that the signal repeats and that old civic records describe a network for preserving witness deposits. Unknowns include who or what currently generates the signal, why a reference was removed, and whether the phrases reflect one event or several linked deposits.
+
+A strong conclusion does not need to be correct in every detail. If the players conclude that the Glasswell is part of a civic archive network, their evidence supports that hypothesis. If they conclude that the archive is deliberately suppressing testimony, the current evidence is insufficient; ask what additional observation would distinguish deliberate curation from a damaged routine. If they suspect a sentient custodian, record it as a hypothesis rather than a fact. The campaign’s later reveals should reward careful distinctions without making players feel foolish for theorizing.
+
+When the party’s record is robust, give them a new lead: an old inventory reference that points toward a larger collection of civic deposits associated with Orsraun. The reference is incomplete and cannot locate the ancient enclave by itself. It does, however, connect the present-day evidence to the campaign’s ancient timeline. The party now has a reason to investigate the record’s provenance and a practical question for the next chapter: what happened when a civic archive had to decide which conflicting accounts would be preserved, displayed, or restricted?
+
+## Consequences and advancement
+
+At the chapter’s conclusion, record **Corroboration** as Strong or Limited. Strong means the party has two or more independent evidence families, preserves provenance, and distinguishes supported claims from unknowns. Limited means the party has found the archive-network lead but relies on a single evidence family or has lost key provenance. Both states advance the campaign. Strong corroboration grants a clearer starting position in Chapter V and makes it easier to challenge overconfident claims. Limited corroboration requires the party to spend time obtaining a second source or accept a narrower public conclusion; it never makes the central mystery inaccessible.
+
+Record **Public Framing** as Careful, Contested, or Premature. Careful means the party has communicated uncertainty and source limits. Contested means multiple groups circulate competing summaries. Premature means the party has presented a theory as fact before evidence supports it. This is not a morality score. It determines which conversations are available and how much work the party must do to correct misunderstandings. A premature claim can be repaired through transparent correction; the campaign should not lock the party into a permanent failure because they made an understandable inference.
+
+Advance the Faerûnian characters from level 6 to level 7 once they have synthesized evidence from at least two routes or made a clear, informed decision to proceed with a Limited record. The chapter ends when the party can name what the evidence supports, what remains unknown, and why the trail leads toward the history of Orsraun. The transition to Chapter IV returns to ancient Netheril, where the same fundamental problem is still alive: the archive’s procedures are no longer neutral once the institution begins classifying disagreement on its own.
+
+## Chapter III state record
+
+Write down the following in the campaign worksheet:
+
+- **Corroboration:** Strong or Limited, with the evidence families used.
+- **Public Framing:** Careful, Contested, or Premature.
+- **Ilyra’s Consent:** Full account, restricted account, or declined circulation.
+- **Inventory Reference:** Preserved, transcribed with gaps, or lost.
+- **Glasswell Follow-up:** Controlled return, coordinated access, or disturbed site.
+- **Working Hypothesis:** The party’s current theory, explicitly marked as unproven.
+
+These states must be reflected when Chapter V begins. Strong corroboration changes how easily the party can test claims; it does not reveal the answer automatically. Public framing determines who trusts their account and which correction they may need to make. Ilyra’s consent determines whether her words can be quoted or only described in general terms. The inventory reference is a lead, not a key that opens every later scene. Keep the record factual, and let the players’ interpretation remain theirs.
+
+\page
