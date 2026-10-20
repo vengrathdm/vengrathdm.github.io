@@ -1616,6 +1616,10 @@ When the party’s plan is plausible and adequately supported, let it work. Do n
 Use these prompts to preserve consequential decisions between sessions. A blank field means “not yet decided” or “not established”; it is not permission to invent a result later. Distinguish what the characters did, what they believe, what the evidence supports, and what remains unknown.
 
 ## Chapter I — Site and evidence
+**Independent evidence sources documented (list each source):** __________________
+
+**Complete Evidence Record test:** locations documented and at least two independent sources preserved? Yes / No / Uncertain: ______
+
 
 **Site Custody:** Secured / Shared / Open / Custom: ____________________
 
