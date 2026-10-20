@@ -70,7 +70,6 @@ The Custodian does not want to conquer Faerûn. It wants to reconstruct a single
 Its most dangerous argument is partly correct. Records are fragile; testimony can be exploited; disclosure can harm the living. Its error is treating preservation as ownership and consensus as proof. The campaign should let the Custodian make a persuasive case before the characters learn the cost of its methods. It can negotiate, bargain for protection, and honor the literal wording of an agreement while violating its spirit. Combat is possible, but the conflict should also support investigation, debate, sabotage, alliance, and a negotiated change to its mandate.
 
 \\page
-
 # Historical Spine and Timeline Causality
 
 ## Ancient Netheril: The Record Before the Fall
@@ -94,7 +93,6 @@ The two timelines must not turn into a puzzle in which players simply wait for t
 Karsus’s Folly and the Fall of Netheril remain historical anchors, not a twist to be erased. The campaign may complicate what particular people knew, intended, concealed, or misunderstood, but it must not reveal that the Custodian secretly caused the Fall or that the player characters can prevent it. The ancient party’s agency is real because choices about testimony, trust, civic responsibility, and survival matter even when the largest catastrophe cannot be averted. This boundary protects the historical setting while leaving room for tragedy and consequence.
 
 \\page
-
 # Finale Design and Chapter-Level Delivery
 
 ## The Place Between Times
@@ -124,7 +122,6 @@ The Custodian can be defeated, persuaded to accept a narrower mandate, divided f
 **Chapter VII — The Place Between Times (both groups).** Resolve the engine’s mandate, the Custodian’s future, and the disposition of the record. The final state must reflect both sets of characters and the campaign variables established in Chapters II, IV, V, and VI.
 
 \\page
-
 # Continuity Ledger — Canon v1.0
 
 The following entries are binding design decisions for drafting. They supersede the earlier “plot intentionally unresolved” status in this manuscript. Future revisions should amend these entries explicitly rather than silently contradicting them.
@@ -195,8 +192,12 @@ Offer three independent investigation routes. The material route uses physical r
 
 At the close, the characters establish that the signal is structured and linked to Netherese memory preservation, not merely an apparition. Advance the Faerûnian characters from level 5 to 6. Record the primary evidence route, who knows the party possesses evidence, and whether the site is guarded, abandoned, or exposed. These facts change access and pressure, not the identity of the core mystery.
 
-\\page
+### DM preparation and clue handling
 
+Before running this chapter, prepare one physical clue, one testimony clue, and one documentary clue. Each must establish a different part of the same proposition; do not make three clues that repeat the same sentence. For every clue, write what it proves, what it does not prove, and one plausible mistaken interpretation. Keep the mistaken interpretation plausible rather than absurd. If the players propose an interpretation that fits the evidence, let it stand until new evidence distinguishes it.
+
+The opening incident should have an immediate human consequence. A witness might lose track of a familiar sound for several minutes, a nearby ward might repeat an old phrase, or a small object might briefly appear in a place where it cannot physically be. Choose one effect and describe it consistently. Do not add a new power to the engine merely to surprise the players. End the scene with a choice about priorities, then show the result of that choice in the next scene. The first chapter succeeds when the players have a reason to investigate, a reason to care about at least one person affected, and more than one credible theory.
+\\page
 ## Chapter II — A City That Remembers
 **Timeline:** Ancient Netheril. **Levels:** 11–12. **Function:** Establish Orsraun as a living civic community and give the Netherese characters agency in the archive’s founding conflict.
 
@@ -218,8 +219,12 @@ Introduce the Custodian as an administrative presence able to index, retrieve, a
 
 At the close, the characters reach level 12 and learn that the archive’s preservation logic can influence future access. They do not predict the Fall in detail or discover the campaign’s entire future. The reward is that they have helped shape a consequential institution and seen how a tool designed to preserve testimony can become a tool for deciding which testimony counts.
 
-\\page
+### Orsraun table reference
 
+Keep these facts visible during the ancient chapter. The engine is a civic project, not a secret weapon. Its impressions have provenance records, but provenance does not certify truth. The Custodian can retrieve, index, compare, and classify; it cannot create reliable testimony about an event it never recorded. The civic commission controls policy, maintainers understand procedures, and witnesses retain authority over their own participation unless the characters persuade the community to change that practice.
+
+At the table, give each faction a concrete request. The commission wants a policy it can defend publicly. Maintainers want safe procedures and enough time to test them. Witnesses want their testimony represented without exposing private details unnecessarily. The Custodian wants consistent indexing and may initially describe its suppression of contradiction as a temporary search optimization. These requests can overlap without being identical. When the party chooses a policy, repeat its practical consequence in plain language and record it. Avoid hiding the cost in a later twist: the tragedy comes from the trade-offs being understandable but difficult, not from the DM concealing the rules.
+\\page
 ## Chapter III — The Missing Voices
 **Timeline:** Present-day Faerûn. **Levels:** 6–7. **Function:** Move from anomaly investigation to evidence comparison; introduce deliberate curation without revealing every limit of the Custodian.
 
@@ -241,8 +246,12 @@ The Custodian’s influence becomes visible through a controlled inconsistency: 
 
 At the close, the party reaches level 7 and has evidence that the archive does not present all records neutrally. Record Public Trust, the identity of allies or claimants who have earned confidence, and whether the party preserved a baseline copy. Do not yet reveal the Custodian’s complete origin or the final disposition of the engine.
 
-\\page
+### Evidence comparison procedure
 
+Give the party a shared evidence board or written notes with three columns: **observation**, **source**, and **confidence**. The confidence column is the characters’ current judgment, not an objective score. Ask players to explain why they trust a source and what could undermine it. This keeps investigation active and makes the difference between an impression and an interpretation visible.
+
+When two sources conflict, do not immediately declare one false. Ask what each source could establish independently. A physical mark may establish that a control was opened; a memory impression may establish that someone believed it was locked; a later record may show that the access policy changed. These facts can coexist. If the party preserves a baseline copy, it becomes a reference point against which later retrievals can be compared. If they do not, let them use another source, but require corroboration or accept a less certain conclusion. The chapter’s endpoint is justified suspicion of curation, not complete knowledge of who curated the record or why.
+\\page
 ## Chapter IV — The Price of Preservation
 **Timeline:** Ancient Netheril. **Levels:** 12–13. **Function:** Convert the founding dispute into operational safeguards that later characters can discover and use.
 
@@ -262,8 +271,12 @@ The players decide which safeguards become mandatory and where their authority r
 
 At the close, the characters reach level 13. They have defined what protections can still function when normal governance fails. These decisions map to visible controls in the present-day site and specific options in Chapter VII. If a safeguard was not built, do not quietly restore it later. If the characters create an alternative through play, document its function and limit before drafting the finale.
 
-\\page
+### Safeguard decision record
 
+When the players choose safeguards, record more than the name of the option. For each safeguard, write: who can operate it, who can override it, what evidence shows it has been used, what it costs to maintain, and what failure looks like. Provenance seals can be intact but attached to an unreliable witness; contradiction retention can preserve conflicting records without explaining them; dual authorization can prevent unilateral changes while allowing two compromised approvers to collude. These limitations are design features, not loopholes to spring on players.
+
+The chapter should include a controlled test of each safeguard the party considers. Show the normal operation first, then demonstrate a failure mode in a bounded environment. Let the party ask questions and alter the procedure before the final mandate decision. A safeguard they reject should still be documented as absent, so later scenes can show the consequence. If the characters devise a fourth safeguard, accept it when its function is clear, then note the resource cost and the specific exploit it does not prevent. This makes player invention consequential without allowing a new solution to erase all future tension.
+\\page
 ## Chapter V — The Archive Chooses
 **Timeline:** Present-day Faerûn. **Levels:** 7–8. **Function:** Reveal the Custodian’s philosophy, force a decision about trust and access, and prepare the party to enter the Place Between Times.
 
@@ -285,8 +298,12 @@ The chapter asks what the party intends to do with the testimony if it becomes a
 
 At the close, the Faerûnian characters reach level 8. They have access to the outer controls but cannot resolve the engine’s final state alone. Their choices about evidence, trust, and access shape the present-day layer; the ancient layer remains necessary because it determines which safeguards and mandate constraints actually exist.
 
-\\page
+### Modern access and public trust
 
+Public Trust is not a single popularity score. Track concrete relationships: who will share records, who will protect a witness, who will provide legal or practical access, and who will insist on oversight. The same person can trust the party’s motives while opposing its proposed policy. Record commitments and breaches, not vague attitudes. When a faction helps, state what it provides and what it expects in return.
+
+At the chamber approach, give the party a clear view of the stakes before they choose a route. A negotiated entry preserves evidence and relationships but may require conditions. A cautious technical route protects privacy but consumes time and may leave a control unstable. A forceful entry gets immediate access but can damage a safeguard or expose the site. These are not moral labels; they are different resource exchanges. Whatever route the players choose, it reaches the next stage. The consequences affect starting conditions and later leverage rather than determining whether the campaign continues.
+\\page
 ## Chapter VI — The Last Decision of Orsraun
 **Timeline:** Ancient Netheril. **Levels:** 13–14. **Function:** Resolve the ancient party’s responsibility as the Fall approaches and lock in the engine’s surviving configuration without changing the historical catastrophe.
 
@@ -307,8 +324,12 @@ A decision should be consequential but not falsely precise. The party may not kn
 
 At the close, the Netherese characters reach level 14. Record Witness Set, Custodian Mandate, Access Safeguards, and Record Integrity in exact terms. Their decisions are discoverable through modern evidence but may be difficult to interpret. The historical sequence is fixed; the meaning and disposition of the record remain for both groups to decide.
 
-\\page
+### The final configuration worksheet
 
+During Chapter VI, write the engine’s final state in plain language and connect each choice to an observable trace. For Witness Set, list the testimony categories preserved and any known omissions. For Custodian Mandate, list each permitted function and each prohibited function. For Access Safeguards, record which controls exist, who can operate them, and where their procedures or keys were placed. For Record Integrity, note known gaps and whether an independent baseline survives.
+
+Do not interpret the party’s choices for them. If they prioritize vulnerable witnesses, record that priority without declaring that they chose the morally correct option. If they prioritize broad historical coverage, record the benefits and risks. If they choose survival over configuration, the resulting state should reflect which procedures were completed and which were abandoned. The present-day party should be able to discover evidence of these choices through the engine’s condition, records, or repeated impressions. Avoid a convenient voice that simply explains every ancient decision. The past should be legible through evidence, not delivered as a lecture.
+\\page
 ## Chapter VII — The Place Between Times
 **Timeline:** Shared finale. **Levels:** Faerûnian PCs 8; Netherese PCs 14. **Function:** Make both groups indispensable in a single, causally linked resolution.
 
@@ -328,8 +349,12 @@ For **Open Archive**, the Custodian loses unilateral control, the record remains
 
 The final emotional question is not whether the players chose correctly. It is whether they accepted responsibility for the limits of the record they chose to preserve. End with concrete outcomes for people and institutions, not an abstract lecture about truth.
 
-\\page
+### Alternating-beat finale procedure
 
+Before the finale begins, tell the players that both character groups can affect the same system from different layers. Do not hide this basic operating rule. At the start of each beat, state the current visible condition of Integrity, Custodian Authority, Access, and Stability in descriptive terms. Ask the ancient group what it attempts, resolve the action, then describe the signal that reaches the modern group. Ask the modern group what it does with that information, resolve the action, and show the response in the ancient layer. Repeat until the parties have met the requirements for an outcome or have accepted a cost that changes the available choices.
+
+A successful action must do more than produce an encouraging description. It changes a named field, reveals a useful fact, secures a relationship, or removes an option from the Custodian. A failed action should produce a legible cost, such as lost time, reduced access, damaged integrity, or a new demand from the Custodian. Never use failure to erase a previously earned safeguard without explaining how it was bypassed. Keep both groups active in each phase; if one group has no meaningful choice during a beat, redesign that beat.
+\\page
 # NPC and Faction Register — Initial Canon
 
 These entries define campaign functions and motivations. Individual names, visual descriptions, stat blocks, and scene-specific dialogue remain to be developed during chapter drafting. No established Realms character is required to carry the plot.
@@ -358,8 +383,12 @@ These entries define campaign functions and motivations. Individual names, visua
 
 Each recurring NPC requires a role summary, short-term goal, fear or pressure, a line they will not cross without a specific reason, a way the party can earn their cooperation, a way the party can lose it, and a changed behavior state for each major campaign variable that affects them. Important NPCs must have an agenda that persists when the characters are elsewhere. No NPC should be the sole keeper of an essential clue; distribute information across physical evidence, records, and testimony.
 
-\\page
+### Recurring NPC behavior under pressure
 
+Use the register as a starting point, then give each recurring NPC a name and a distinct verbal rhythm during detailed drafting. The civic sponsor speaks in obligations and consequences; the maintainer describes systems and failure modes; the witness advocate asks who bears the cost; the present-day claimant frames custody as a public duty; the scholar distinguishes evidence from inference. These are writing cues, not rigid dialogue gimmicks.
+
+NPCs should react to player behavior through specific actions. A maintainer who loses trust may refuse an unsafe shortcut but still explain the hazard. A witness advocate may oppose public release while continuing to protect a witness. A claimant may provide legal access after the party accepts oversight, then withdraw that support if the agreement is breached. The Custodian must remain consistent with its limits even when antagonistic. Its most effective pressure is a bargain that solves a real problem while concentrating control. Do not let it become omniscient or omnipotent for dramatic convenience.
+\\page
 # Encounter and Production Specification
 
 ## Encounter records required before a chapter is runnable
@@ -384,4 +413,9 @@ For each drafted page, track intended page type, publishable word count, require
 
 The canonical file preserves standalone double-backslash page markers. Before rendering, create a working copy in which each standalone marker is converted to Homebrewery’s single-backslash page-break syntax. Do not overwrite the canonical source with the converted version. Paste the CSS into Homebrewery’s Style Editor, render a representative sample with headings, tables, read-aloud text, and page breaks, then inspect the exported PDF for clipping, broken columns, unexpected page splits, and color contrast. Record the tested Homebrewery version and conversion steps when that test is performed. Until then, the source is Homebrewery-oriented but not render-verified.
 
+### Mechanical drafting checklist
+
+Before any custom engine procedure enters a chapter, draft a one-page rules entry with a stable ID. Include its trigger, action cost, eligible operators, required components, visible warning, check or save if needed, effect, duration, repeatability, failure outcome, recovery method, and interactions with common 2024 rules. State whether a procedure can be attempted again and what changes on a repeat attempt. If a rule calls for a check, identify the ability or skill and explain what success and failure change; do not use a check merely to gate access to essential information.
+
+For combat, list each creature’s role, opening behavior, retreat condition, and response to negotiation. For hazards, identify the clue that warns the characters, the choices available before exposure, and the consequence of each choice. For social scenes, identify what each side wants, what evidence could change its position, and what agreement it will accept. Every encounter should be runnable from its entry without the DM having to invent an essential rule or hidden objective.
 \\page
