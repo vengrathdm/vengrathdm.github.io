@@ -58,6 +58,7 @@ async function initializeCampaignPage() {
     ]
   });
 
+  document.querySelector("#campaign-footer-label").textContent = content.campaign.footerLabel;
   renderCampaignSection(content.campaign);
   await renderCharactersSection(content.characters);
   renderChronicleSection(content.chronicle);
