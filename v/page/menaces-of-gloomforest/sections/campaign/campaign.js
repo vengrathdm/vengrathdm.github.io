@@ -52,28 +52,6 @@ export function renderCampaignSection(campaign) {
   card.append(cardTitle, cardBody);
   container.replaceChildren(card);
 
-  const party = document.createElement("section");
-  party.className = "ddc-party-portrait";
-  const copy = document.createElement("div");
-  copy.className = "ddc-party-copy";
-  const partyLabel = document.createElement("div");
-  partyLabel.className = "ddc-section-mark";
-  partyLabel.textContent = campaign.partyLabel;
-  const partyTitle = document.createElement("h2");
-  partyTitle.textContent = campaign.partyTitle;
-  const partyDescription = document.createElement("p");
-  partyDescription.textContent = campaign.partyDescription;
-  copy.append(partyLabel, partyTitle, partyDescription);
-  const figure = document.createElement("figure");
-  figure.className = "ddc-party-image";
-  const image = document.createElement("img");
-  image.src = campaign.partyImage;
-  image.alt = campaign.partyImageAlt;
-  image.loading = "lazy";
-  figure.append(image);
-  party.append(copy, figure);
-  container.append(party);
-
   if (campaign.manifesto) {
     const manifesto = document.createElement("section");
     manifesto.className = "ddc-manifesto";
@@ -93,20 +71,4 @@ export function renderCampaignSection(campaign) {
     container.append(manifesto);
   }
 
-  campaign.emptySections.forEach((item) => {
-    const section = document.createElement("section");
-    section.className = "ddc-section";
-    const head = document.createElement("div");
-    head.className = "ddc-section-head";
-    const group = document.createElement("div");
-    const kicker = document.createElement("div");
-    kicker.className = "ddc-section-mark";
-    kicker.textContent = item.label;
-    const title = document.createElement("h2");
-    title.textContent = item.title;
-    group.append(kicker, title);
-    head.append(group);
-    section.append(head);
-    container.append(section);
-  });
 }
