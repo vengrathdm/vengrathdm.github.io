@@ -1681,6 +1681,10 @@ Use these prompts to preserve consequential decisions between sessions. A blank 
 
 **Party Hypothesis:** ________________________________________________
 
+**Automatic Classification Suspended:** Yes / No / Uncertain: __________
+
+**Exact permission removed or retained:** _____________________________
+
 **What the Custodian may do without review:** _________________________
 
 **What requires an independent decision:** ____________________________
