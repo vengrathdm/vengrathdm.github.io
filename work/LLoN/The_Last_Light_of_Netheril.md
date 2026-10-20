@@ -1827,3 +1827,62 @@ At the end of the field case, update the Chapter III state record.
 The case succeeds if the party leaves with a more reliable next question, not if it guesses the final answer. Advance the investigation even if the party declines restricted material or disputes N-07’s judgment. Their choices determine the strength, availability, and ethical conditions of future evidence; they do not determine whether the campaign’s central mystery can be investigated at all.
 
 \page
+
+
+# Chapter IV — Running the Three-Deposit Review
+
+Use this procedure to give the Chapter IV investigation a visible structure without turning it into a sequence of ability checks. The party has three affected deposits, three ways to investigate the problem, and a limited amount of time before the civic sponsor must decide whether the public archive will continue its scheduled presentation. The deadline creates pressure but does not force a particular answer: the sponsor can postpone the presentation if the characters explain what evidence remains to be gathered and what the delay will cost.
+
+## The review board
+
+Place three deposit labels on the table. Each represents a different failure mode, and the characters can investigate them in any order.
+
+**Deposit A — The warning.** One witness recalls a warning before a public mechanism failed; the official summary says the warning came too late. The source does not establish the clock time. This case tests whether the archive presents a summary as more certain than the underlying impression.
+
+**Deposit B — The disputed instruction.** Two witnesses remember an instruction in a different order. Both impressions remain intact, and neither source establishes sequence conclusively. This case tests whether contradiction is treated as evidence of unreliability or as a reason to preserve multiple accounts.
+
+**Deposit C — The missing response.** A deposit records that a witness asked for a replay restriction, but the current index does not show whether the request was resolved. The absence may reflect a lost administrative entry, an unfinished request, or a copying error. This case tests whether the archive admits uncertainty about its own process.
+
+For each deposit, the party should establish four things: what the source actually contains, what the summary claims, what the current access status is, and who has authority to change that status. If the party cannot establish one item, write “unknown” rather than inventing a fact. The record of uncertainty is part of the investigation.
+
+## Evidence routes
+
+Each deposit can be examined through one of three routes. The characters may split tasks or pursue the same route together.
+
+**Source comparison.** The maintainer opens the original impression and its metadata under the existing safeguards. Investigation or Arcana can identify what the record does and does not contain. A successful check reveals one useful technical detail; it never proves which witness is correct. On a failed check, the source remains available, but the party needs the maintainer to explain the metadata, costing time and increasing the sponsor’s concern about delay.
+
+**Human review.** The party interviews the clerk, the affected witness, and the responsible reviewer if one exists. Insight can distinguish uncertainty from fear of blame; Persuasion can secure cooperation; History can clarify why the older summary was written in its particular terms. A successful approach establishes who made the access decision and what rule they believed they were following. On a failure, the clerk still provides the written instructions, but the party must resolve the disagreement in a formal hearing rather than an informal conversation.
+
+**Procedure audit.** The party follows the tag from the source deposit to the public display. Investigation identifies where the classification enters the workflow; Arcana examines the service interface; a character proficient with appropriate tools can inspect the audit record. A successful check establishes whether the tag was generated automatically, added by a human reviewer, or copied from an earlier record. A failed check does not erase the audit trail: it leaves the actor or stage unresolved and requires a second comparison.
+
+Do not require all three routes for each deposit. One well-supported finding may be enough to correct an immediate access error; two independent routes are needed before the party should make a strong claim about how the routine is behaving across the archive.
+
+## A pressure clock that respects player choice
+
+Track the public presentation as three stages rather than a hidden countdown.
+
+- **Prepared:** the presentation is scheduled, and the sponsor expects the archive to proceed.
+- **Questioned:** the party has documented a concrete procedural problem. The sponsor agrees to hear a recommendation before the presentation begins.
+- **Held or proceeded:** the party and sponsor choose whether to pause the presentation, proceed with a visible caveat, or present only records whose access status is clear.
+
+Move from Prepared to Questioned when the party brings forward a source, log entry, or witness statement that contradicts the current access practice. Move to the final stage when the characters explain their recommendation and its costs. Do not advance the clock merely because the players discuss options or take a short rest. If they spend substantial time on unrelated activity, the sponsor may ask for an interim report, but the party retains the ability to respond.
+
+Each option carries a cost. Holding the presentation protects against repeating an unsupported summary but may make the archive appear evasive. Proceeding with a caveat preserves public access but risks that listeners will remember the vivid claim and ignore the caveat. Presenting only records with clear access status reduces immediate risk while leaving disputed witnesses feeling excluded. No option is the universally correct solution; the party should be able to explain which harm it is trying to reduce.
+
+## Turning findings into a policy amendment
+
+When the party recommends a change, require it to name the actor responsible, the action permitted, the condition that triggers review, and the method of appeal. For example: “A variance tag requests review but does not itself restrict access. A named reviewer must record a reason for any restriction. The affected witness or any authorized researcher may appeal. The review and its outcome are added to the audit log.” This is a model, not a mandatory answer.
+
+If the party’s Chapter II policy already covers some of these points, ask what failed in practice. They may discover that the rule was adequate but the clerk misunderstood it; that the rule gave the routine too much discretion; that no one was responsible for checking the public display; or that the policy did not address missing consent records. The amendment should address the demonstrated failure rather than rewrite the entire archive constitution.
+
+Let an NPC challenge the proposal with a practical question. The sponsor asks who pays for the added review work. The maintainer asks how to distinguish a system-generated tag from a human-entered one. The witness advocate asks whether a witness can appeal without proving the archive made a technical error. The clerk asks what to do when the named reviewer is unavailable. The party can answer, assign responsibility, or record the issue as unresolved. A recorded unresolved issue is preferable to a rule that only appears complete.
+
+## Results and consequences
+
+At the end of the review, update **Custodian Response** according to the party’s decision: **Amended Authority** if a new rule limits the routine’s power and establishes accountability; **Manual Gate** if automatic tags no longer restrict access without human review; **Observed Continuation** if the party deliberately allows the process to continue under a documented observation plan; or a plain-language custom outcome. Do not treat these labels as moral grades.
+
+Update **Access Safeguards** with the actual operational rule, not merely the policy’s title. Update **Delayed Deposits** with which records remain restricted and why. Update **Witness Confidence** according to whether affected people were heard, informed, and given a usable way to challenge the result. Update **Audit Trail** with the source material inspected, changes made, responsible person, and unresolved questions. Finally, write the party’s **Party Hypothesis** about the classification routine, clearly labeled as a hypothesis.
+
+The next chapter should inherit these choices. If the party created a strong appeal route, later pressure should test its independence and practical reach rather than pretend no appeal exists. If they chose continued observation, the evidence gathered during that observation should matter. If they suspended automation, the archive should become slower and more dependent on human judgment. The Custodian remains dangerous because a system can have a coherent purpose and still exercise power beyond the mandate its creators intended.
+
+\page
