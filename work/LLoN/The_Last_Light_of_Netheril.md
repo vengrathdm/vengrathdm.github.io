@@ -1254,3 +1254,192 @@ For a consequential revelation, identify the source and its limits. A sensory de
 When the party’s plan is plausible and adequately supported, let it work. Do not make players repeat checks until they obtain a preferred result. On failure, preserve agency by offering a costly route, a partial answer, or a new complication that the characters can address. Record any lasting consequence before the session ends.
 
 \page
+
+
+# Appendix B — Campaign State Worksheets
+
+Use these prompts to preserve consequential decisions between sessions. A blank field means “not yet decided” or “not established”; it is not permission to invent a result later. Distinguish what the characters did, what they believe, what the evidence supports, and what remains unknown.
+
+## Chapter I — Site and evidence
+
+**Site Custody:** Secured / Shared / Open / Custom: ____________________
+
+**Evidence Record:** Complete / Fragmentary / Custom: __________________
+
+**Mara Vell’s direct observations:** __________________________________
+
+**Seln Ardo’s local knowledge:** _____________________________________
+
+**Signal fragments recovered:** ______________________________________
+
+**Unresolved site question:** ________________________________________
+
+**Consequence carried forward:** _____________________________________
+
+## Chapter II — Contested record policy
+
+**Contested Record Policy:** _________________________________________
+
+**Retrieval Safeguard:** _____________________________________________
+
+**Appeal Route:** ___________________________________________________
+
+**Public Explanation:** ______________________________________________
+
+**Unresolved Anomaly:** ______________________________________________
+
+**Witness Relationship:** ____________________________________________
+
+**What the ancient party believes the Engine can do:** _________________
+
+**What remains unproven:** ___________________________________________
+
+## Chapter III — Missing voices
+
+**Corroboration:** Strong / Limited / Custom: __________________________
+
+**Public Framing:** Careful / Contested / Premature / Custom: ___________
+
+**Ilyra Fen’s Consent:** ______________________________________________
+
+**Inventory Reference:** _____________________________________________
+
+**Glasswell Follow-up:** _____________________________________________
+
+**Working Hypothesis:** ______________________________________________
+
+**Evidence supporting the hypothesis:** ______________________________
+
+**Evidence that complicates it:** _____________________________________
+
+## Chapter IV — Custodian response
+
+**Custodian Response:** Amended Authority / Manual Gate / Observed Continuation / Custom: __________________________________________________
+
+**Access Safeguards:** _______________________________________________
+
+**Delayed Deposits:** ________________________________________________
+
+**Witness Confidence:** ______________________________________________
+
+**Audit Trail:** ____________________________________________________
+
+**Party Hypothesis:** ________________________________________________
+
+**What the Custodian may do without review:** _________________________
+
+**What requires an independent decision:** ____________________________
+
+## Chapter V — Present-day custody
+
+**Custody Position:** Institutional / Shared / Community-Governed / Custom: ______________________________________________________________
+
+**Consent Protocol:** Source-Controlled / Tiered Access / Custom: _______
+
+**Public Trust:** ___________________________________________________
+
+**Public Framing:** __________________________________________________
+
+**Publication Decision:** ____________________________________________
+
+**Appeal Route:** ___________________________________________________
+
+**Who can challenge a decision, and how?** ____________________________
+
+**What affected people can refuse or withdraw?** ______________________
+
+## Chapter VI — Final Orsraun configuration
+
+**Witness Set:** ____________________________________________________
+
+**Custodian Mandate:** Bound Mandate / Manual Authority / Emergency Delegation / Custom: ___________________________________________________
+
+**Access Safeguards:** _______________________________________________
+
+**Record Integrity:** Full Provenance / Representative Provenance / Damaged Provenance: ___________________________________________________
+
+**Emergency Priority:** People / Source Records / System Continuity / Custom: ______________________________________________________________
+
+**Last Review Gap:** _________________________________________________
+
+**Local Outcome:** __________________________________________________
+
+**Historical Boundary:** The Fall occurred and was not prevented or rewritten. Confirmed: ______
+
+**What the ancient party deliberately left unresolved:** _______________
+
+## Chapter VII — Final state
+
+**Record Integrity track (0–4):** ______
+
+**Custodian Authority track (0–4):** ______
+
+**Access track (0–4):** ______
+
+**Boundary Stability track (0–4):** ______
+
+**Final Witness Set:** _______________________________________________
+
+**Final Mandate:** __________________________________________________
+
+**Access Rule:** ____________________________________________________
+
+**Consent and Safeguards:** __________________________________________
+
+**Public Trust:** ___________________________________________________
+
+**Ending:** Open Archive / Bound Archive / Severed Signal / Custom: ____
+
+**Unresolved Question:** _____________________________________________
+
+**Lasting Consequence:** ____________________________________________
+
+**What remains inaccessible or irretrievable:** _______________________
+
+**What future people can challenge or correct:** ______________________
+
+## Continuity ledger entry
+
+For every major decision that changes later play, create one entry.
+
+**Entry ID:** C-____
+
+**Chapter and scene:** _______________________________________________
+
+**Player decision:** _________________________________________________
+
+**Immediate consequence:** ___________________________________________
+
+**Affected state variable(s):** ______________________________________
+
+**Evidence supporting the outcome:** __________________________________
+
+**What is still uncertain:** _________________________________________
+
+**Future chapter that must honor this entry:** ________________________
+
+**Player-facing information:** ________________________________________
+
+**GM-only information, if any:** _____________________________________
+
+A useful continuity entry describes a consequence, not merely a scene. “The party spoke with the scholar” is insufficient. “The scholar provided a catalog reference that corroborates the fragment’s date but does not identify its author” can be used in later chapters without inventing new facts.
+
+## Cross-timeline consequence record
+
+**Ancient action or preserved condition:** ____________________________
+
+**What survives the Fall:** __________________________________________
+
+**Modern evidence that reveals it:** __________________________________
+
+**Modern interpretation or use:** _____________________________________
+
+**What the modern party cannot know:** ________________________________
+
+**What the ancient party could not foresee:** _________________________
+
+**Does the consequence preserve agency in both eras?** Yes / Needs review
+
+If the answer is “Needs review,” revise the scene so the later party has a meaningful choice rather than merely receiving a predetermined result. The ancient party may determine which evidence exists, but the present-day party retains authority over its decisions. Modern discoveries may change how the past is understood, but they do not replace the ancient characters’ choices.
+
+\page
