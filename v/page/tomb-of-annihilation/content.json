@@ -7,13 +7,11 @@
     "introParagraphs": [
       "Wyprawa przez parną dżunglę Chult, tropienie źródła Klątwy Śmierci, utrata kolejnych twarzy drużyny i zejście do miejsca, z którego nie każdy miał wrócić.",
       "Tomb of Annihilation to kampania o wyprawie, której pierwszy cel był większy niż jeden grobowiec: trzeba było odnaleźć źródło Klątwy Śmierci i przerwać jej działanie. W oficjalnym module droga prowadzi przez Port Nyanzaru, dzikie tereny Chult, Omu, Fane of the Night Serpent i wreszcie Tomb of the Nine Gods.",
-      "W naszej kampanii ta sama drużyna zmieniała się po drodze. Kolejne postaci przejmowały wyprawę, gdy poprzednie ginęły — aż do finału.",
-      "Klątwa uniemożliwiała przywracanie zmarłych do życia i dotykała tych, których wcześniej wskrzeszono. W naszej historii oznaczało to, że śmierć kolejnych bohaterów naprawdę zmieniała skład wyprawy.",
-      "Pięć etapów oficjalnej konstrukcji przygody — od szerokiej ekspedycji po klaustrofobiczną pułapkę w sercu grobowca."
+      "W naszej kampanii ta sama drużyna zmieniała się po drodze. Kolejne postaci przejmowały wyprawę, gdy poprzednie ginęły — aż do finału."
     ],
     "dossier": [
       [
-        "MATERIAŁY",
+        "POSTACI",
         "9"
       ],
       [
@@ -22,43 +20,12 @@
       ],
       [
         "ŹRÓDŁO",
-        "ARCHIWUM"
+        "Tomb of Annihilation (WotC)"
       ],
       [
         "STATUS",
-        "ARCHIWUM"
+        "Ukończona!"
       ]
-    ],
-    "partyTitle": "W Chult śmierć była częścią mapy.",
-    "partyDescription": "Klątwa uniemożliwiała przywracanie zmarłych do życia i dotykała tych, których wcześniej wskrzeszono. W naszej historii oznaczało to, że śmierć kolejnych bohaterów naprawdę zmieniała skład wyprawy.",
-    "manifesto": "W Chult każdy trop może prowadzić ku skarbowi, zgubie albo kolejnemu sekretowi.",
-    "manifestoTags": "KLĄTWA ŚMIERCI · CHULT · ODKRYWANIE · PRZETRWANIE",
-    "milestones": [
-      {
-        "kicker": "ETAP / 01",
-        "title": "Port Nyanzaru",
-        "description": "Początek wyprawy, przygotowania i pierwsze tropy prowadzące w głąb Chult."
-      },
-      {
-        "kicker": "ETAP / 02",
-        "title": "Dzika kraina Chult",
-        "description": "Rzeki, ruiny i niebezpieczne szlaki podczas poszukiwania źródła Klątwy Śmierci."
-      },
-      {
-        "kicker": "ETAP / 03",
-        "title": "Droga do Omu",
-        "description": "Wyprawa dociera do Zakazanego Miasta, gdzie tropy prowadzą ku dziewięciu świątyniom."
-      },
-      {
-        "kicker": "ETAP / 04",
-        "title": "Świątynia Nocnego Węża",
-        "description": "Konfrontacja z yuan-ti i Rassem Nsi staje się kolejnym krokiem ku grobowcowi."
-      },
-      {
-        "kicker": "ETAP / 05",
-        "title": "Grobowiec Dziewięciu Bogów",
-        "description": "Pułapki, zagadki i ostateczne starcie w sercu grobowca."
-      }
     ]
   },
   "characters": {
