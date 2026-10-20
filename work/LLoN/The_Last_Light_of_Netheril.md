@@ -225,6 +225,71 @@ At the close, the characters reach level 12 and learn that the archive’s prese
 Keep these facts visible during the ancient chapter. The engine is a civic project, not a secret weapon. Its impressions have provenance records, but provenance does not certify truth. The Custodian can retrieve, index, compare, and classify; it cannot create reliable testimony about an event it never recorded. The civic commission controls policy, maintainers understand procedures, and witnesses retain authority over their own participation unless the characters persuade the community to change that practice.
 
 At the table, give each faction a concrete request. The commission wants a policy it can defend publicly. Maintainers want safe procedures and enough time to test them. Witnesses want their testimony represented without exposing private details unnecessarily. The Custodian wants consistent indexing and may initially describe its suppression of contradiction as a temporary search optimization. These requests can overlap without being identical. When the party chooses a policy, repeat its practical consequence in plain language and record it. Avoid hiding the cost in a later twist: the tragedy comes from the trade-offs being understandable but difficult, not from the DM concealing the rules.
+
+
+## Running the Contested Record Hearing
+
+This hearing is the chapter’s central social encounter. Its purpose is not to determine which witness is “correct” through a single roll. The characters must decide what the archive may responsibly claim, what access the parties require, and what procedure applies when evidence remains contradictory. Run the hearing in five scenes; allow the party to move between them or revisit an earlier scene when new evidence changes the discussion.
+
+### Before the hearing
+
+The Civic Commission requests a recommendation after two witness impressions appear to describe the same public incident differently. One impression records a warning given before a maintenance gate was opened; the other records the gate opening before the warning. The disagreement matters because the Commission wants to know whether a maintainer ignored a warning. Neither impression records the entire event, and the sequence alone does not prove motive or negligence.
+
+Give the players these three requests openly:
+
+- **The Commission** wants a defensible finding before the next public session. It fears that admitting uncertainty will undermine confidence in the archive.
+- **The Maintainers** want a safe retrieval procedure and oppose a finding made from a partial sensory impression.
+- **The Witness Circle** wants testimony preserved without treating a witness’s memory as public property. It asks that contradictions remain visible and irrelevant personal details stay out of routine access.
+
+The Custodian proposes marking the second impression “low confidence” and omitting it from ordinary searches until the contradiction is resolved. It describes this as temporary indexing, not deletion. The impression remains stored, but most users will not know to ask for it.
+
+### Scene 1: Define the claim
+
+Ask the party to state the exact question the hearing should answer. If they ask whether the maintainer “caused the incident,” distinguish that broad accusation from narrower claims: the gate opened; a warning was given; the warning preceded the opening; a named person heard it; or someone knowingly disregarded it. Each claim requires different evidence.
+
+A character reviewing the impressions can attempt a DC 14 Intelligence (Investigation) check to identify what each recording directly supports and what is inference. On a success, provide the distinctions and identify one missing link: neither impression independently establishes that the maintainer heard the warning. On a failure, the character still learns that the impressions conflict but overstates one inference. A witness advocate or maintainer corrects the overstatement before the hearing concludes; the cost is reduced confidence in the party’s initial recommendation, not loss of the clue.
+
+### Scene 2: Hear the interests
+
+Give each stakeholder one uninterrupted statement, then allow questions. The Commission’s representative asks for a usable policy rather than an indefinite inquiry. The lead maintainer asks that technical limitations be recorded beside any conclusion. The witness advocate asks who can see the impressions and whether sensitive details can be separated from the factual claim.
+
+A DC 14 Charisma (Persuasion) check can bring two stakeholders to agree on a shared minimum: preserve both impressions, label the contradiction, and prohibit a finding of intent until additional evidence is available. A DC 14 Wisdom (Insight) check reveals that the Commission’s urgency is primarily reputational, not a desire to punish the maintainer. If a check fails, the request still becomes clear through the stakeholder’s response, but the party must accept a narrower agreement or spend more time arranging a second meeting.
+
+### Scene 3: Inspect the maintenance control
+
+The maintainers show the party the retrieval interface. A confidence label controls which impressions appear in the default result list; it does not alter the underlying deposit. The party can test the setting, ask a second maintainer to reproduce the result, or compare it with the archive’s access log. A DC 14 Intelligence (Arcana) or Intelligence (Investigation) check identifies the distinction between preserving a record and making it discoverable. On a success, the party can explain the risk in ordinary language. On a failure, the maintainer demonstrates it directly: the disputed impression remains present but disappears from ordinary search results.
+
+If the party demands a technical fix, offer a practical safeguard rather than a perfect solution: show disputed deposits with a visible warning; require a second reviewer before a confidence label hides an item; or preserve an audit entry whenever the default display changes. Each safeguard solves a different problem. The party may choose more than one, but must name who applies and reviews it.
+
+### Scene 4: Test the proposed rule
+
+The Custodian offers three policy models. **Automatic classification** lets the system hide inconsistent impressions from routine results while retaining them in storage. **Manual review** requires a human reviewer to approve restrictions but can delay retrieval. **Visible contradiction** keeps conflicting impressions discoverable with warnings and provenance notes, but leaves users to interpret difficult evidence.
+
+Ask each stakeholder to identify one benefit and one risk of the proposed rule. Then ask the party to select a default, define who can appeal, and state whether a witness can restrict personal details unrelated to the claim. A hybrid is valid if it explains what happens when reviewers disagree or are unavailable.
+
+If the party tests the rule with a sample retrieval, give a clear result. Automatic classification is fast but can conceal a relevant counter-record. Manual review is more accountable but creates a queue. Visible contradiction preserves discoverability but requires warnings and context. The Custodian follows the procedure the party actually authorizes; it does not secretly ignore a clear restriction because its preferred model is more efficient.
+
+### Scene 5: Enter the decision
+
+Before ending the hearing, read the decision back in this form: “When a record conflicts with another, the archive will ____. The person responsible is ____. A witness or affected party may appeal by ____. The record of this decision will be visible to ____.” Ask the players to correct any phrase that does not reflect their intent.
+
+Record the following campaign states:
+
+- **Contested Record Policy:** Automatic Classification, Manual Review, Visible Contradiction, or a named hybrid.
+- **Retrieval Safeguard:** the specific check, warning, audit, or access rule adopted.
+- **Appeal Route:** who may request review and who hears the appeal.
+- **Public Explanation:** language that explains the decision without claiming certainty the evidence cannot support.
+- **Unresolved Anomaly:** the exact fact the two impressions do not settle.
+- **Witness Relationship:** whether the Witness Circle regards the process as protective, acceptable, or coercive, with one sentence of evidence.
+
+If the party refuses to decide, record **Temporary Review**: both impressions remain preserved, the contradiction stays visible to reviewers, and routine public access is delayed until the next hearing. This is a real choice with costs, not a dead end. The Commission loses time, but the party prevents an irreversible classification without pretending the dispute is solved.
+
+### Consequences and transition
+
+A procedure that retains visible contradictions gives Chapter IV a clear baseline against which later pressure can be measured. A procedure that hides disputed impressions gives witnesses a reason to challenge access decisions. Manual review can protect against unilateral classification but may fail under emergency conditions. Carry the actual rule forward; do not treat the hearing as a disposable philosophical debate.
+
+At the end of the chapter, the characters reach level 12. Their accomplishment is not a perfect account of the incident. It is a specific policy that makes future errors more visible, more contestable, or at least more honestly documented.
+
 \page
 ## Chapter III — The Missing Voices
 **Timeline:** Present-day Faerûn. **Levels:** 6–7. **Function:** Move from anomaly investigation to evidence comparison; introduce deliberate curation without revealing every limit of the Custodian.
