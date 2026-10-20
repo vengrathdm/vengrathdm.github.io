@@ -1743,11 +1743,23 @@ Use these prompts to preserve consequential decisions between sessions. A blank 
 
 **Record Integrity track (0–4):** ______
 
+**Record Integrity baseline:** Full Provenance 3 / Representative Provenance 2 / Damaged Provenance 1: ______
+
+**Record Integrity modifiers:** Independent copy +1 / Omissions and reasons logged +1 / Knowingly concealed gap −1 / None: ___________________
+
 **Custodian Authority track (0–4):** ______
+
+**Authority baseline and permissions:** Bound 1 / Manual 2 / Emergency 3 / Custom 1–4: ______
+
+**Chapter IV automatic-classification suspension:** Yes −1 / No change / Uncertain: ______
 
 **Access track (0–4):** ______
 
-**Boundary Stability track (0–4):** ______
+**Access baseline:** Complete safeguards 3 / Partial safeguards 2 / None or narrow emergency access 1: ______
+
+**Access modifiers:** Credible consent-and-appeal protocol +1 / Divided key without handoff −1 / Neither: ______
+
+
 
 **Final Witness Set:** _______________________________________________
 
