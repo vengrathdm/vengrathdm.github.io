@@ -1228,4 +1228,4 @@ End on the distinction at the heart of the story: preserving testimony is not th
 
 If the players ask whether the archive’s account is now the definitive truth of Netheril, answer according to the evidence: it is a record shaped by particular witnesses, survival conditions, and decisions. It may correct earlier claims, expose institutional harm, or preserve testimony that would otherwise be lost. It cannot speak for everyone who lived, and it cannot make disagreement disappear. The last light is not a verdict. It is evidence that someone left a record—and that the living must decide how to treat it.
 
-\\page
+\page
