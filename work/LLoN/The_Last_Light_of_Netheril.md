@@ -329,6 +329,12 @@ At the close, the Netherese characters reach level 14. Record Witness Set, Custo
 During Chapter VI, write the engine’s final state in plain language and connect each choice to an observable trace. For Witness Set, list the testimony categories preserved and any known omissions. For Custodian Mandate, list each permitted function and each prohibited function. For Access Safeguards, record which controls exist, who can operate them, and where their procedures or keys were placed. For Record Integrity, note known gaps and whether an independent baseline survives.
 
 Do not interpret the party’s choices for them. If they prioritize vulnerable witnesses, record that priority without declaring that they chose the morally correct option. If they prioritize broad historical coverage, record the benefits and risks. If they choose survival over configuration, the resulting state should reflect which procedures were completed and which were abandoned. The present-day party should be able to discover evidence of these choices through the engine’s condition, records, or repeated impressions. Avoid a convenient voice that simply explains every ancient decision. The past should be legible through evidence, not delivered as a lecture.
+
+### Pressure clocks and consequence recording
+
+For each chapter, track pressure with three descriptive states rather than an untested numerical countdown: **contained**, **strained**, and **critical**. Advance a state only when the characters spend substantial time, make a loud or public intervention, leave a known danger unattended, or accept an explicit bargain that carries a cost. Tell the players what visible change signals rising pressure. A clock should create decisions, not punish ordinary investigation. If the characters take a clever shortcut or gain an ally who can materially help, reduce pressure or preserve a resource; do not force every scene to escalate regardless of their actions.
+
+At chapter end, record the state and the cause. Later chapters may use the state to alter access, support, or risk, but should not invent a catastrophe that contradicts the party’s earlier success. This procedure is especially important for the ancient timeline: the Fall itself is fixed, while the fate of individual witnesses, safeguards, and records remains responsive to player choices.
 \\page
 ## Chapter VII — The Place Between Times
 **Timeline:** Shared finale. **Levels:** Faerûnian PCs 8; Netherese PCs 14. **Function:** Make both groups indispensable in a single, causally linked resolution.
@@ -388,6 +394,12 @@ Each recurring NPC requires a role summary, short-term goal, fear or pressure, a
 Use the register as a starting point, then give each recurring NPC a name and a distinct verbal rhythm during detailed drafting. The civic sponsor speaks in obligations and consequences; the maintainer describes systems and failure modes; the witness advocate asks who bears the cost; the present-day claimant frames custody as a public duty; the scholar distinguishes evidence from inference. These are writing cues, not rigid dialogue gimmicks.
 
 NPCs should react to player behavior through specific actions. A maintainer who loses trust may refuse an unsafe shortcut but still explain the hazard. A witness advocate may oppose public release while continuing to protect a witness. A claimant may provide legal access after the party accepts oversight, then withdraw that support if the agreement is breached. The Custodian must remain consistent with its limits even when antagonistic. Its most effective pressure is a bargain that solves a real problem while concentrating control. Do not let it become omniscient or omnipotent for dramatic convenience.
+
+### Accessibility and table safety
+
+The archive deals with memory, privacy, historical erasure, institutional control, and the exposure of vulnerable witnesses. Treat these as dramatic themes rather than opportunities to surprise players with unwanted personal content. Before play, the DM should briefly describe the campaign’s likely themes and invite the group to identify boundaries or veils appropriate to their table. A player may redirect a scene or decline to narrate a personal detail without losing access to essential information or being penalized in the fiction.
+
+Keep testimony scenes focused on what the characters can observe and choose. Do not require players to improvise trauma, disclose personal experiences, or roleplay coercion in order to obtain a clue. When the Custodian pressures a character, make the fictional offer and its cost explicit. The campaign’s central ethical conflict concerns who controls a public record; it does not require violating the players’ own boundaries. This guidance should appear in the front matter and be referenced when drafting scenes involving witness consent or memory manipulation.
 \\page
 # Encounter and Production Specification
 
@@ -418,4 +430,10 @@ The canonical file preserves standalone double-backslash page markers. Before re
 Before any custom engine procedure enters a chapter, draft a one-page rules entry with a stable ID. Include its trigger, action cost, eligible operators, required components, visible warning, check or save if needed, effect, duration, repeatability, failure outcome, recovery method, and interactions with common 2024 rules. State whether a procedure can be attempted again and what changes on a repeat attempt. If a rule calls for a check, identify the ability or skill and explain what success and failure change; do not use a check merely to gate access to essential information.
 
 For combat, list each creature’s role, opening behavior, retreat condition, and response to negotiation. For hazards, identify the clue that warns the characters, the choices available before exposure, and the consequence of each choice. For social scenes, identify what each side wants, what evidence could change its position, and what agreement it will accept. Every encounter should be runnable from its entry without the DM having to invent an essential rule or hidden objective.
+
+### Release checklist for each chapter
+
+A chapter is ready for review only when it includes its opening situation, runnable scene sequence, clear chapter endpoint, advancement timing, variable updates, and transitions to the next timeline. Every important conclusion has more than one evidence path or a documented alternate route. Each encounter states what the opposition wants and how it can end without combat. Each original rule has a stable ID and complete procedure. Read-aloud text contains only what characters can perceive at that moment; hidden facts and interpretation remain in DM-facing text.
+
+Before committing a substantial revision, count words between page markers, verify every marker is standalone, confirm the final marker exists, and recalculate every rolling ten-page window. Then search the chapter for all IDs it touches and compare them with the canon, consequence, NPC, mystery, and mechanics registers. Record any known failure rather than describing the chapter as complete. The goal is a manuscript whose limitations are visible and fixable, not a production log that reports success by assumption.
 \\page
