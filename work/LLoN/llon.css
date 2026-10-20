@@ -1,0 +1,113 @@
+/* The Last Light of Netheril — Homebrewery V3 stylesheet
+   Paste into Homebrewery's Style Editor. This file is not loaded automatically
+   by Markdown viewers or Foundry VTT. Designed for legibility before decoration. */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+:root {
+  --llon-obsidian: #10152F;
+  --llon-blue: #1555A0;
+  --llon-cream: #F9DFA0;
+  --llon-amber: #FF8A24;
+  --llon-ember: #F05B28;
+  --llon-violet: #493478;
+}
+
+.phb {
+  color: var(--llon-obsidian);
+  font-family: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.32;
+  background-color: #fffaf0;
+}
+
+.phb h1,
+.phb h2,
+.phb h3,
+.phb h4 {
+  color: var(--llon-obsidian);
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.phb h1 {
+  border-bottom: 3px solid var(--llon-amber);
+  padding-bottom: 0.16em;
+  letter-spacing: 0.025em;
+}
+
+.phb h2 {
+  border-bottom: 1px solid var(--llon-blue);
+  padding-bottom: 0.12em;
+}
+
+.phb h3 { color: var(--llon-blue); }
+.phb h4 { color: var(--llon-violet); }
+
+.phb strong {
+  color: var(--llon-obsidian);
+  font-weight: 700;
+}
+
+.phb a {
+  color: var(--llon-blue);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.phb blockquote {
+  border-left: 4px solid var(--llon-amber);
+  background: rgba(249, 223, 160, 0.28);
+  color: var(--llon-obsidian);
+  padding: 0.55em 0.8em;
+}
+
+.phb table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+  font-size: 9.2pt;
+  line-height: 1.22;
+}
+
+.phb table thead tr {
+  background: var(--llon-obsidian);
+  color: var(--llon-cream);
+}
+
+.phb table thead th {
+  color: var(--llon-cream);
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 600;
+}
+
+.phb table th,
+.phb table td {
+  padding: 0.32em 0.42em;
+  border-bottom: 1px solid rgba(21, 85, 160, 0.28);
+  vertical-align: top;
+}
+
+.phb table tbody tr:nth-child(even) {
+  background: rgba(21, 85, 160, 0.055);
+}
+
+.phb hr {
+  border: 0;
+  border-top: 2px solid var(--llon-amber);
+  margin: 0.8em 0;
+}
+
+.phb .llon-note {
+  border-left: 4px solid var(--llon-violet);
+  background: rgba(73, 52, 120, 0.08);
+  padding: 0.6em 0.8em;
+}
+
+@media print {
+  .phb {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
