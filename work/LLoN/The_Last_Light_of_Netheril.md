@@ -902,3 +902,84 @@ Record the following in the campaign worksheet:
 Chapter VI must use these facts when the ancient party reaches the historical boundary. A policy that limits unilateral classification should provide leverage, but not an automatic victory. A policy that centralizes authority should make emergency action faster, but increase the importance of who holds that authority. A decision to observe should provide evidence while leaving the party accountable for the delay. The engine’s fate must remain a choice about what can be preserved, who can access it, and how disagreement is handled—not a puzzle with one hidden correct answer.
 
 \page
+
+# Chapter V — The Archive Chooses: Present-Day Custody Conflict
+
+**Timeline:** Present-day Faerûn. **Levels:** 7–8. **Entry condition:** The party has investigated the Glasswell and completed Chapter III’s evidence synthesis. **Chapter purpose:** Force the party to decide how recovered testimony should be used when several groups have legitimate but conflicting interests. This is not a trial in which the DM reveals the correct interpretation. It is a conflict over custody, public claims, consent, and the risks of letting a single institution speak for incomplete evidence.
+
+Carry forward the recorded **Corroboration**, **Public Framing**, **Ilyra’s Consent**, **Inventory Reference**, and **Glasswell Follow-up** states. Do not reset them to a preferred default. If the party has Strong corroboration, give them a defensible evidence chain and let the opposition challenge its interpretation rather than pretend the evidence does not exist. If corroboration is Limited, the party can still act, but must distinguish what it can prove from what it suspects. If Public Framing is Premature, open with a correction that must be addressed; if it is Careful, let the party’s discipline earn credibility without making them universally trusted.
+
+## Opening situation: Three requests for the same evidence
+
+The party receives three requests within a short period. The first comes from a local historical institution seeking permission to study and catalogue the inventory reference. The second comes from a custody coalition concerned that the signal may be used to justify secrecy or institutional control. The third comes from a person whose family or community has an interest in the testimony’s subject, asking that witness impressions not be circulated without context and consent. These requests are not three disguised villains. Each group wants something reasonable and fears a different harm.
+
+The historical institution offers conservation support, secure storage, and access to specialist catalogues. Its weakness is procedural confidence: staff assume that careful handling by trained experts is the safest route, and may undervalue the knowledge of people outside the institution. The custody coalition offers witnesses, public scrutiny, and a way to challenge exclusive control. Its weakness is that rapid disclosure can strip testimony of provenance and expose private details. The affected community offers context and a reason to treat consent as an ongoing relationship. Its weakness is that one representative cannot speak for every person whose history intersects with the record.
+
+The party need not accept any request as written. They can meet the groups separately, convene a joint discussion, or make a temporary decision while gathering more information. Ask the characters what they are willing to share now, what they need to verify, and who should have the right to object. Record their provisional position as **Custody Position**: Institutional, Shared, Community-Governed, or Custom. This is a starting position, not a final ending; later evidence may justify revision.
+
+## Scene 1: The scholar’s claim
+
+N-07 presents the catalog comparison and explains why the inventory reference points toward Orsraun’s civic record network. The scholar’s interpretation is plausible but incomplete. They can show that the terminology, maintenance references, and signal fragments belong to a coherent record-keeping tradition. They cannot establish the Custodian’s full identity, determine whether every fragment comes from one event, or infer the moral reliability of any witness from the existence of a preserved impression.
+
+If the party has **Strong Corroboration**, N-07 accepts the evidence chain and asks to publish a source note with clear limits. The scholar may still disagree with the party’s theory, but does not dismiss the facts. If corroboration is **Limited**, N-07 identifies one missing link and offers a targeted research task rather than demanding that the party restart the investigation. The party can accept the task, publish a narrower claim, or seek a second source through the custody coalition.
+
+If the party’s **Inventory Reference** is preserved, the scholar can compare the physical notation with the catalog transcription. If it was transcribed with gaps, the scholar can still identify a likely match but must label the match provisional. If the reference was lost, the scholar offers a route to a separate catalog copy held by a third party; this takes time and requires the party to negotiate access, but it keeps the investigation open. Do not make a single fragile object the only key to the campaign.
+
+The scholar asks for permission to produce a public catalog note. The note can state the observed facts and the limits of the interpretation. It cannot quote Ilyra if her consent restricts circulation, and it must not imply that the catalog proves more than it does. If the party agrees, decide who reviews the wording and how corrections will be attached. If they refuse, ask whether the refusal is temporary, based on privacy, or based on a concern about institutional control. Each reason produces a different relationship in later scenes.
+
+## Scene 2: The custody coalition
+
+The Present-Day Custody Coalition asks the party to attend a public forum where residents and researchers can challenge how the discovery is being handled. The coalition is not a single ideology. Some members want broad public access to prevent suppression; others want strict consent rules for personal testimony; others simply distrust institutions that claim exclusive expertise. Give the players two or three distinct voices rather than a long faction speech.
+
+The coalition requests that the party share the exact signal phrases and explain what has been independently corroborated. If Public Framing is **Careful**, the party can present the evidence with its limits, and skeptical listeners may still ask hard questions without assuming bad faith. If it is **Contested**, different summaries already circulate; the party must distinguish its own findings from claims made by others. If it is **Premature**, a participant quotes the party’s earlier overconfident claim and asks whether the characters will correct it in public. A transparent correction may cost short-term prestige but restores a basis for trust. Refusing to correct it leaves the coalition suspicious and gives critics a legitimate reason to question the party’s method.
+
+The coalition’s strongest proposal is a shared evidence register: every public claim links to its source, every restricted item carries a stated reason for restriction, and every restriction has a route of appeal. The proposal is not cost-free. Maintaining it takes time, and publishing provenance may reveal who supplied sensitive information unless the party creates a privacy rule. The characters can endorse the proposal, amend it, or decline it. Ask what they are willing to make visible and what they believe should remain private.
+
+If Ilyra’s consent is **Full Account**, she may choose to speak at the forum, but she is not required to do so. If her consent is **Restricted Account**, the party may describe the fact of a second witness and the general nature of the corroboration without quoting her exact words or exposing identifying details. If she **Declined Circulation**, the party must not use her testimony as a public quotation; it can still describe its own independent observations and seek other corroboration. Consent is not a puzzle to bypass. If the party wants to change the permitted use, they must ask Ilyra and accept her answer.
+
+## Scene 3: The affected community
+
+A representative of the affected community asks the party to meet privately before any catalog note or public forum proceeds. The representative’s concern is not that the archive is inherently bad. They worry that an institution can transform a person’s sensory memory into an authoritative public object without preserving the context that made the memory meaningful. They ask the party to distinguish three actions: keeping a record, allowing a person to hear or inspect it, and publishing it for strangers to interpret.
+
+This distinction should influence the party’s procedure. A record can remain preserved while its public use is restricted. A witness can permit study while refusing a dramatic public replay. A researcher can challenge an interpretation without claiming ownership of the witness’s experience. The representative wants those differences written into any agreement the party signs.
+
+The characters can negotiate a consent protocol, ask the coalition to add privacy safeguards, or reject the representative’s request and explain why. If they agree, record **Consent Protocol**: Source-Controlled, Tiered Access, or Custom. Source-Controlled requires permission for each significant new use of an identifiable witness impression. Tiered Access separates preservation, supervised review, and public release, with different conditions for each. A custom protocol should state who can authorize each tier, how consent is recorded, and what happens when a witness cannot be contacted. Neither protocol grants a witness the power to alter the underlying record; it governs access and use, not the truth of what happened.
+
+The representative should ask one difficult but fair question: if a witness’s account contradicts an official history, does consent allow the institution to suppress the contradiction from public view? The party must answer in terms of their actual protocol. If they choose broad disclosure, they should explain how private details will be protected. If they choose restricted access, they should explain how the restriction can be challenged. If they defer the decision, they must state what can happen during the delay. A vague promise of “responsible handling” is not a procedure.
+
+## Scene 4: The custody conference
+
+After the three meetings, the party can convene a conference or make a decision without one. If they convene it, each group gets a short statement of its request, followed by questions from the characters. The DM should keep the discussion focused on specific terms rather than letting it become a debate about who is virtuous. The party’s job is to propose a workable arrangement for custody, access, provenance, consent, and correction.
+
+A strong arrangement identifies a custodian, defines at least two access tiers, preserves a source record for every public claim, names an appeal route, and sets a review date for restrictions. The custodian may be an institution, a coalition, a community body, a joint committee, or the party itself. If the characters choose to retain custody personally, make the burden concrete: they must keep records, answer requests, secure fragile evidence, and decide how to respond when a witness disputes the use of their account. Personal control is a legitimate option, but it is not free of institutional responsibilities.
+
+The conference may end with an agreement, a provisional arrangement, or a public disagreement. An agreement grants a clear channel for future research. A provisional arrangement allows the party to continue while a missing source is sought, but should expire or be reviewed on a named condition. A public disagreement creates competing claims about custody; it does not erase the party’s evidence or stop the campaign. Record the actual terms and the parties who accepted or rejected them.
+
+## Scene 5: A test of the agreement
+
+Before the chapter ends, a new request arrives: a researcher wants to quote the signal fragment “Do not call it corrected. Mark it missing.” The researcher argues that the phrase is central to the public importance of the discovery. A witness advocate argues that the phrase should not be presented without the surrounding gaps and uncertainty. The party’s newly negotiated arrangement must decide what happens.
+
+Use the request as a procedural test, not a new mystery clue. If the party has adopted a source register, the researcher must cite the fragment’s provenance and identify that its context is incomplete. If they have adopted a consent protocol, the party must determine whether the fragment contains identifiable testimony and whether the permitted use covers quotation. If they have appointed a joint custodian, the request must go through the agreed review route. If no agreement exists, the characters must decide whether to establish an interim rule or take responsibility for the decision themselves.
+
+The party may approve the quotation with context, approve a paraphrase, restrict publication temporarily, or refuse the request under a stated rule. Each choice has an immediate consequence. Approval with context earns the researcher’s cooperation but exposes the party to public scrutiny. A paraphrase reduces the risk of decontextualization but may frustrate people who want the original evidence. Temporary restriction buys time but requires a review date and a reason. Refusal protects against a specific misuse but should not be represented as a neutral act; others may challenge it, and the party must explain the standard it applied.
+
+## Chapter V conclusion: Custody is an action
+
+The party should leave this chapter with a functioning arrangement—or a clear record of why agreement failed. Record **Custody Position**, **Consent Protocol**, **Public Framing**, and **Public Trust**. Public Trust is not a popularity score; describe which people or institutions are willing to cooperate and why. A party can be distrusted by a powerful institution while retaining the confidence of witnesses, or be publicly praised while having damaged a private relationship.
+
+Advance the Faerûnian characters from level 7 to level 8 after they have tested their custody arrangement against a real request and recorded the result. If they choose not to create a shared arrangement, the milestone still applies once they have made an informed decision and faced its immediate consequences. The next chapter returns to ancient Orsraun, where the characters must make a final decision about the archive’s mandate before the canonical catastrophe. The modern party’s work will not change the Fall, but it will determine how the surviving testimony is interpreted and what safeguards later investigators can defend.
+
+## Chapter V state record
+
+Record the following in the campaign worksheet:
+
+- **Custody Position:** Institutional, Shared, Community-Governed, or Custom, with the named custodian.
+- **Consent Protocol:** Source-Controlled, Tiered Access, or a written custom rule.
+- **Public Trust:** which groups cooperate, which remain skeptical, and what action caused each state.
+- **Public Framing:** Careful, Contested, or Premature, updated if the party has corrected an earlier claim.
+- **Publication Decision:** how the quoted signal fragment was handled and what conditions apply.
+- **Appeal Route:** who can challenge a restriction, how quickly it must be reviewed, and where the decision is recorded.
+
+Chapter VII must honor these decisions. A shared custodian should create both support and disagreement; a community-governed arrangement should preserve meaningful consent without granting any single person control over historical truth; an institutional arrangement should provide expertise while remaining open to audit. If the party retains personal custody, the finale should make the workload and responsibility visible. The endgame is not a test of whether the players selected the correct institution. It is a test of whether their chosen rules can preserve evidence, respect people, and remain answerable when the evidence does not settle every dispute.
+
+\page
