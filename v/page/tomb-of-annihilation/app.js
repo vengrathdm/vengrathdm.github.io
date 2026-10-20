@@ -46,7 +46,7 @@ function renderCampaign(campaign) {
 
   const milestones = document.querySelector("#campaign-milestones");
   milestones.replaceChildren(...campaign.milestones.map(item => {
-    const section = node("section", "toa-section");
+    const section = node("section", "toa-section toa-milestone");
     const head = node("div", "toa-section-head");
     const copy = node("div");
     copy.append(node("div", "toa-section-mark", item.kicker), node("h2", "", item.title));
@@ -68,7 +68,15 @@ async function renderCharacters(characters) {
 
 function renderChronicle(chronicle, accent) {
   const container = document.querySelector("#campaign-chronicle");
-  container.replaceChildren(...chronicle.sessions.map(session => createChronicleRecord(session, { accent })));
+  const intro = node("header", "toa-section toa-chronicle-intro");
+  intro.append(
+    node("div", "toa-section-mark", chronicle.kicker || "AKTA / KRONIKA"),
+    node("h2", "", chronicle.title || "Kronika wyprawy"),
+    node("p", "", chronicle.description || "")
+  );
+  const list = node("div", "chronicle toa-chronicle-list");
+  list.replaceChildren(...chronicle.sessions.map(session => createChronicleRecord(session, { accent })));
+  container.replaceChildren(intro, list);
 }
 
 async function initialize() {
