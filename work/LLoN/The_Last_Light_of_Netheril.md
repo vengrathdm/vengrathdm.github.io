@@ -498,6 +498,67 @@ At the close, the Faerûnian characters reach level 8. They have access to the o
 Public Trust is not a single popularity score. Track concrete relationships: who will share records, who will protect a witness, who will provide legal or practical access, and who will insist on oversight. The same person can trust the party’s motives while opposing its proposed policy. Record commitments and breaches, not vague attitudes. When a faction helps, state what it provides and what it expects in return.
 
 At the chamber approach, give the party a clear view of the stakes before they choose a route. A negotiated entry preserves evidence and relationships but may require conditions. A cautious technical route protects privacy but consumes time and may leave a control unstable. A forceful entry gets immediate access but can damage a safeguard or expose the site. These are not moral labels; they are different resource exchanges. Whatever route the players choose, it reaches the next stage. The consequences affect starting conditions and later leverage rather than determining whether the campaign continues.
+## Chapter V — Field Case: The Public Claim
+
+Run this case after the party has gathered evidence from Chapter III and before it commits to a custody position. It puts the abstract question of publication in front of people who may be helped or harmed by the answer. The scene is not a courtroom and no single official can settle the issue for everyone. Its purpose is to make the party’s proposed policy testable before the finale.
+
+### Situation
+
+A local reading room has agreed to host a public claim session. Present are N-07, the independent record scholar; a representative of the Present-Day Custody Coalition; one person from the community whose family names may appear in the recovered material; and two residents who heard rumors that the Glasswell signal contains testimony about missing ancestors. The family representative has not agreed to public circulation of names. The Coalition wants the public to know that the archive may have curated evidence. N-07 wants the party to distinguish established observations from hypotheses. Each participant has a legitimate interest, and none speaks for every person in their group.
+
+**Read aloud:** “The reading room is full but quiet. A slate at the front lists three headings: What We Observed, What We Infer, and What Remains Unknown. On the table rests a copy of the inventory, its damaged strip held in place beneath a clear sheet. Beside it is a blank notice for the public record. No one has written on it yet.”
+
+Before anyone argues, ask the players what they are prepared to say publicly. If they do not volunteer a statement, N-07 asks three direct questions: What does the inventory physically establish? What does the party believe the alteration means? What remains unproven? Record the answers in the three-column claim ledger. Do not correct the players’ interpretation; let the other participants challenge its basis.
+
+### Scene 1: The first statement
+
+The Coalition representative argues that the later strip demonstrates deliberate concealment and asks the party to endorse that conclusion. The family representative responds that publishing names from the same record could expose living relatives to harassment. N-07 confirms that the handwriting differs but cannot identify the writer. The party may endorse the Coalition’s inference, reject it, or state that the evidence supports concern without establishing motive.
+
+A careful statement should separate the observation (“the strip is in a different hand and was added later”) from the inference (“someone may have changed how the inventory was presented”) and the unknown (“we do not know who authorized the change or why”). If the party makes that distinction, N-07 will sign the factual portion of the notice. If the party states an unproven motive as fact, N-07 declines to certify that sentence but remains available to review the underlying evidence. The Coalition may still publish its own opinion; the party cannot silence disagreement.
+
+### Scene 2: The request for names
+
+The family representative asks that names and identifying details be withheld until affected people can be contacted. A resident argues that withholding names makes the record useless to families seeking answers. The party must choose a provisional rule. Offer these as starting points, not exhaustive options:
+
+- **Source-controlled release:** a person decides whether their own testimony or identifying details may be shared. This protects consent but can leave the public record incomplete.
+- **Tiered access:** publish the existence and provenance of a record while restricting identifying details to a supervised review process. This supports verification but requires a trusted custodian and a way to challenge restrictions.
+- **Open publication:** release the available copy with a clear warning about uncertainty. This maximizes immediate access but may expose private details and make later correction difficult.
+- **Community-governed review:** affected people appoint reviewers and set a review schedule. This can improve legitimacy but requires a defined process for disagreement and for people who cannot safely participate.
+- **Custom rule:** let the party propose another policy. Require it to name who decides, who can appeal, how restrictions expire or are reviewed, and how the public can tell a restriction exists.
+
+No choice is treated as morally cost-free. Ask the party to explain who bears the immediate risk and who has authority to revisit the decision.
+
+### Scene 3: The hostile summary
+
+During the discussion, a resident reads aloud a copied rumor: “The archive admits it fabricated the witnesses.” This statement is not in the inventory. The resident has repeated a summary circulating in the market and believes it follows from the alteration. The party can correct the claim, investigate its origin later, or allow it to stand for now.
+
+A successful Persuasion or History check (DC 14) can help the room accept a more precise summary, provided the players actually offer one. Insight (DC 13) reveals that the resident wants a simple account because the uncertainty has become exhausting; it does not reveal whether the rumor’s original source acted maliciously. On a failed check, the rumor remains in circulation, but the party can still place its own documented statement beside it. If they explain the uncertainty without humiliating the resident, the resident agrees to add a note that the rumor is not supported by the inventory itself.
+
+Do not make a roll substitute for a sound claim. A check can influence how people respond, but it cannot make an unsupported statement true.
+
+### Scene 4: Test the proposed safeguard
+
+Before the meeting closes, ask the party to demonstrate its chosen policy on one hypothetical record: a witness account that contains a verifiable route detail and the name of a living person who has not consented to publication. The party must decide what is released, what is restricted, who records the restriction, and how the decision can be appealed. If the party’s policy cannot answer these questions, invite them to revise it now or mark the gap for the finale.
+
+If the party chooses tiered access, require a visible index entry so that restricted material is not silently erased. If it chooses open publication, require a provenance note and a clear label distinguishing witness statement from verified fact. If it chooses source-controlled release, specify how the record is handled when the source cannot be reached. If it chooses community-governed review, name the reviewers or state how they will be selected. A custom rule must answer the same practical questions. A safeguard is only real if the table can identify who performs it and what happens when it fails.
+
+### Outcomes and state capture
+
+At the end of the session, update the Chapter V fields:
+
+- **Custody Position:** Institutional, Shared, Community-Governed, or Custom. Record the actual authority granted, not merely the label.
+- **Consent Protocol:** Source-Controlled, Tiered Access, Open Publication, or Custom. If the party’s policy separates publication of metadata from publication of names, write that distinction explicitly.
+- **Public Trust:** Improved if the party accurately labels uncertainty and gives affected people a meaningful role; Strained if it overstates evidence or ignores consent; Mixed if it is careful about facts but imposes a process without explaining who can appeal.
+- **Public Framing:** Careful, Contested, or Premature, with the exact public sentence recorded.
+- **Publication Decision:** Released, Restricted with visible index, Deferred pending review, or another specified outcome.
+- **Appeal Route:** Name the person or body that receives a challenge, the information they must record, and when the decision is reviewed.
+
+The party may leave with the room divided. That is not a failed scene. Record which participants support the policy, which accept it provisionally, and which oppose it. Trust should be local and specific rather than a single measure of universal approval. If the party handles the evidence carefully, N-07 can provide a provenance note for the finale. If it publishes an unsupported accusation, the Custodian can later quote the party’s wording as an example of how records become distorted—but that accusation does not make the Custodian correct about unrestricted access.
+
+Close by asking each player to name one safeguard their character would defend and one cost they are willing to accept. Those answers can inform the party’s negotiation in Chapter VII, but they do not bind a player to a decision before the finale reveals its actual stakes.
+
+\page
+
 \page
 ## Chapter VI — The Last Decision of Orsraun
 **Timeline:** Ancient Netheril. **Levels:** 13–14. **Function:** Resolve the ancient party’s responsibility as the Fall approaches and lock in the engine’s surviving configuration without changing the historical catastrophe.
