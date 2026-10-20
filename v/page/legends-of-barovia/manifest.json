@@ -14,7 +14,7 @@
   ],
   "playlistUrl": "https://www.youtube.com/playlist?list=PLAXuFvwFR_kU",
   "audio": {
-    "src": "/res/audio/legends-of-barovia/into-the-mists.mp3",
+    "src": "/v/page/legends-of-barovia/res/audio/into-the-mists.mp3",
     "continuationKey": "legendsOfBaroviaTheme"
   }
 }
