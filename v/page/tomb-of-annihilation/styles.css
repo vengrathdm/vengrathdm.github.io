@@ -43,16 +43,6 @@ body.tomb-of-annihilation-page::before {
 .toa-case-row span { color:#85827c; letter-spacing:1px; }
 .toa-case-row strong { color:#ddd7ca; font:400 16px var(--theme-font-1); text-align:right; }
 .toa-case-row .toa-active { color:#86a77a; }
-.toa-party-portrait { margin-top:70px; display:grid; grid-template-columns:.55fr 1.45fr; border:1px solid #383f3a; background:#0e1210; box-shadow:0 20px 70px #0007; overflow:hidden; }
-.toa-party-copy { display:flex; flex-direction:column; justify-content:center; padding:36px; background:linear-gradient(145deg,#171b18,#0e1210); }
-.toa-party-copy h2 { margin:10px 0 16px; color:#ece7dc; font:400 clamp(34px,3.5vw,50px)/.95 var(--theme-font-1); }
-.toa-party-copy p { margin:0; color:#92948f; }
-.toa-party-image { margin:0; min-height:390px; background:#08090b; }
-.toa-party-image img { display:block; width:100%; height:100%; min-height:390px; object-fit:cover; object-position:center; }
-.toa-manifesto { margin:28px 0 75px; padding:27px 35px; display:grid; grid-template-columns:60px 1fr; gap:20px; border-top:1px solid #6b765e; border-bottom:1px solid #6b765e; background:#111612; }
-.toa-manifesto-symbol { color:var(--theme-accent-1); font-size:48px; text-align:center; }
-.toa-manifesto p { margin:4px 0 10px; color:#d8d2c7; font:italic 25px var(--theme-font-3); }
-.toa-manifesto span { color:#817d76; font-size:10px; letter-spacing:3px; }
 .toa-section { margin-top:82px; }
 .toa-section-head { display:flex; justify-content:space-between; align-items:end; gap:40px; margin-bottom:28px; }
 .toa-section-head>div { min-width:0; }
@@ -76,8 +66,6 @@ body.tomb-of-annihilation-page::before {
 .toa-footer a { color:#c4a76a; text-decoration:none; }
 @media(max-width:1050px) { #character-gallery .character-gallery { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(max-width:900px) {
-  .toa-intro-grid,.toa-party-portrait { grid-template-columns:1fr; }
-  .toa-party-image,.toa-party-image img { min-height:300px; }
   .toa-section-head { display:block; }
   .toa-section-head p { margin-top:15px; }
 }
@@ -87,41 +75,8 @@ body.tomb-of-annihilation-page::before {
   .toa-card-title { padding:16px 18px; }
   .toa-paper { padding:25px; }
   .toa-paper:after { display:none; }
-  .toa-party-copy { padding:28px; }
-  .toa-manifesto { grid-template-columns:1fr; padding:22px; }
-  .toa-manifesto-symbol { text-align:left; }
   #character-gallery .character-gallery { grid-template-columns:1fr; }
   .toa-footer { display:block; }
   .toa-footer a { display:block; margin-top:8px; }
 }
 
-/* Campaign archive refinement — intentionally leaves the shared hero untouched. */
-.toa-milestone {
-  position: relative;
-  padding: clamp(22px, 3vw, 36px);
-  border: 1px solid #35483b;
-  background: linear-gradient(135deg, #141a15, #0b0e0c);
-  box-shadow: 0 14px 38px #0005;
-}
-.toa-milestone + .toa-milestone { margin-top: 18px; }
-.toa-milestone .toa-section-head { margin-bottom: 0; }
-.toa-milestone .toa-section-head h2 { margin-bottom: 0; }
-.toa-milestone .toa-section-head p { max-width: 54ch; }
-.toa-chronicle-intro { margin: 0 0 28px; padding-bottom: 26px; border-bottom: 1px solid #35483b; }
-.toa-chronicle-intro h2 { margin: 12px 0; color: #ece7dc; font: 400 clamp(36px,4vw,58px)/.98 var(--theme-font-1); }
-.toa-chronicle-intro p { max-width: 72ch; }
-.toa-chronicle-list { border: 1px solid #35483b; box-shadow: 0 18px 55px #0005; }
-.toa-chronicle-list .chronicle-record { border-color: #35483b; background: linear-gradient(100deg,#121813,#0d100e); }
-.toa-chronicle-list .chronicle-record__header { min-height: 66px; padding: 12px 18px; transition: background .18s ease; }
-.toa-chronicle-list .chronicle-record__header:hover,
-.toa-chronicle-list .chronicle-record.is-expanded .chronicle-record__header { background: #c4a76a0c; }
-.toa-chronicle-list .chronicle-record__number { font-variant-numeric: tabular-nums; letter-spacing: .08em; }
-.toa-chronicle-list .chronicle-record__title { color: #e8e2d6; font: 500 1.08rem/1.4 var(--theme-font-2); }
-.toa-chronicle-list .chronicle-record__description { background: #090c0a; }
-.toa-chronicle-list .chronicle-record__recordings .play-recording-button { border-color: #596b50; }
-.toa-chronicle-list .chronicle-record__recordings .play-recording-button:hover { border-color: var(--theme-accent-2); }
-@media (max-width: 760px) {
-  .toa-milestone { padding: 22px 18px; }
-  .toa-chronicle-list .chronicle-record__header { padding: 12px; }
-  .toa-chronicle-list .chronicle-record__title { font-size: 1rem; }
-}
