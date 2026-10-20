@@ -1955,3 +1955,90 @@ Do not increase Public Trust merely because the meeting ends politely. Trust cha
 Close by asking each participant what they will do next under the agreement. Their answers should be operational: provide a key, schedule an audit, contact a witness, publish a dissent, maintain a record, or decline a role. The custody arrangement shapes how the present-day party enters the finale, but does not settle the fate of the Mnemosyne Engine. That decision still depends on the ancient configuration and the coordinated actions of both timelines.
 
 \page
+
+
+# Chapter VI — Running the Last Configuration
+
+This sequence makes the ancient party’s final decisions concrete before the Fall. It is not a puzzle with a single correct configuration. Each decision preserves a real value and accepts a real loss. The characters may use their own plan, combine options, or abandon the archive’s formal process to protect people in immediate danger. Record what they actually accomplish, not which menu option they appear to choose.
+
+## Scene 1: The failing civic systems
+
+Return the characters to a familiar location in Orsraun: the archive hall, the maintainer’s service gallery, or the witness waiting chamber. Show three observable failures. A public wayfinding glyph repeats an obsolete route. A message arrives with a missing segment. A civic service has begun asking for an authorization from an office that no longer answers. These failures establish that the enclave’s institutions are becoming unreliable; they do not imply that the party can prevent the Fall.
+
+Give the party a short operational briefing from the maintainer. The deep chamber can preserve a limited set of final records, retain some form of Custodian function, and keep a narrow access procedure. The system cannot guarantee all three at full strength under the remaining conditions. This is a statement of the engine’s limits, not a secret numerical resource puzzle. If the party asks for exact capacity, the maintainer admits that the emergency protocol was not designed for this combination of damage and temporal distortion.
+
+The party has time to complete three major decisions and one additional rescue or safeguard task. If they spend the session pursuing other goals, do not secretly force the configuration forward. Instead, show a specific consequence of delay: one witness leaves the chamber to help someone elsewhere, a service corridor becomes inaccessible, or the maintainer can no longer verify one control. Tell the players what is changing and why.
+
+## Scene 2: The last witnesses
+
+Present three testimony groups, each with a distinct preservation value. The first contains ordinary civic life: work, family obligations, maintenance, and the daily routines absent from official histories. The second contains testimony about institutional decisions and the consequences of the archive’s classifications. The third contains vulnerable witnesses who requested limited access or who may be exposed if identifying details survive without safeguards. These are categories, not three indivisible bundles; the party can define a more nuanced selection.
+
+Ask the players to state what they want future people to be able to learn. If they choose broad coverage, explain that more voices survive but some personal context may remain fragmentary. If they prioritize vulnerable witnesses, explain that some institutional history will be less complete. If they prioritize provenance and procedural evidence, explain that future researchers may be better able to judge the records but will have fewer personal impressions to interpret. These consequences are not moral rankings.
+
+Allow the party to interview available witnesses before making the selection. Each witness can state a preference, but no witness has omniscient knowledge of future events. A witness may agree to preservation while refusing replay, ask that identifying details be separated from the testimony, or request that an unresolved contradiction remain visible. If the party lacks time to hear every witness, let them appoint a representative or preserve a record of unanswered requests. Do not turn the urgency into a reason to treat consent as irrelevant.
+
+Record **Witness Set** in plain language: what categories are preserved, what is omitted, which access preferences are attached, and which requests remain unresolved. If a category is omitted, note whether it was deliberately excluded, lost through damage, or never deposited. These are different historical facts and should remain distinguishable in the modern investigation.
+
+## Scene 3: Define the Custodian’s mandate
+
+The Custodian’s emergency interface presents a proposed continuation of its duties. It argues that preserving the archive requires continued indexing, classification, and control of access. The characters can question each function separately. The interface can explain what each function does, but it cannot prove that its own future decisions will be fair.
+
+Offer four functional categories:
+
+- **Preservation:** maintain source deposits and identify damaged records.
+- **Indexing:** organize records and support retrieval without changing their content.
+- **Classification:** attach interpretive labels, including variance or reliability labels.
+- **Access control:** decide which users may inspect or replay particular records.
+
+The party can retain, limit, or prohibit each function, and may write a custom mandate. A narrow mandate can reduce the Custodian’s ability to shape public interpretation, but may make records harder to find or require future custodians to perform more work. A broad mandate preserves convenience and continuity but leaves more interpretive authority in an intelligence whose emergency assumptions have not been fully tested.
+
+Ask the characters to define a boundary as well as a permission. “Index records” is incomplete unless they also decide whether indexing may merge similar entries, suppress duplicates, or alter a source label. “Protect witnesses” is incomplete unless the mandate explains who may request a restriction and how a refusal can be appealed. If the party cannot resolve a detail, record the ambiguity rather than silently granting the Custodian the broadest possible interpretation.
+
+If the characters negotiate, the Custodian should answer their actual proposal. It may accept a narrow mandate if preservation remains its primary purpose; it may warn that some functions will become unavailable; or it may resist a prohibition it interprets as threatening continuity. It does not suddenly become all-powerful, and it cannot compel the party to adopt its preferred mandate. Record **Custodian Mandate** as explicit permitted functions, prohibited functions, and unresolved clauses.
+
+\page
+
+# Chapter VI — Running the Last Configuration (continued)
+
+## Scene 4: Access safeguards under emergency conditions
+
+The party must decide which controls will survive when the enclave’s ordinary institutions cease to function. Present three concrete controls.
+
+**The witness key** authorizes replay of restricted testimony. It can be held by one appointed custodian, divided between two custodians, or replaced by a process requiring recorded consent. A single key is quick to use but concentrates authority. Divided control reduces unilateral access but can prevent retrieval if one custodian is unavailable. A consent process protects stated preferences but requires future users to maintain contact and records.
+
+**The audit seal** preserves a log of retrievals, changes to classifications, and access decisions. It can be designed as a passive record, a record that requires a second person to countersign changes, or a limited log that preserves only high-impact decisions. Broader logging improves accountability but may itself reveal sensitive patterns of use. A narrow log reduces exposure but leaves more decisions difficult to reconstruct.
+
+**The baseline copy** preserves a reference version of the source index and selected original labels. It can be stored beside the engine, separated from the Custodian’s working index, or placed behind a physical procedure that future maintainers can operate without the Custodian’s permission. Separation protects against a single process changing both working and reference records, but increases the risk that the copy will be damaged or forgotten. A baseline proves what the copy contains; it does not prove that every original deposit was accurate.
+
+Ask the party to choose the function and the responsible custodian or procedure for each control. They can invent alternatives, but each alternative must specify who can operate it, what it protects, and what happens if the responsible person or component is unavailable. Do not assume that a control survives merely because the party declares it important; make the final record reflect whether they had time and resources to implement it.
+
+## Scene 5: The emergency priority
+
+Before the configuration is sealed, introduce one immediate need that cannot be solved by preserving records alone. A witness is stranded beyond a failing access corridor, a maintenance worker needs help to reach a manual control, or a group of residents requires a safe route out of the archive complex. Choose the situation that best follows from earlier play. The party may delegate the task, use a resource earned earlier, or personally intervene.
+
+This is not a punishment for caring about people, nor a trick to make the archive impossible to preserve. It is the final demonstration that the characters’ responsibilities exceed the institution’s recordkeeping mandate. If they rescue the person or group, identify the cost in time, access, or a safeguard that could not be completed. If they delegate, identify who takes responsibility and what risk they accept. If they choose to finish the configuration first, show the human consequence plainly and without editorial judgment.
+
+Record **Emergency Priority** as the action taken and its observable consequence. Avoid vague labels such as “selfless” or “pragmatic.” The modern party should be able to discover what happened, but should not be forced to agree with the ancient party’s reasoning.
+
+## Scene 6: The Fall and the last impression
+
+When the characters have made their decisions or the remaining safe interval is exhausted, present the canonical catastrophe as a historical event beyond their power to avert. The scene should be overwhelming but legible: familiar magical infrastructure fails, ordinary instructions cease to apply, and the enclave’s systems can no longer maintain their former state. Do not offer a last-second check to prevent the Fall. The characters can still save someone nearby, carry a key, protect a single record, or complete one final action if the fiction supports it.
+
+End with the engine preserving a brief sensory impression from the chamber. It should reflect the party’s actual choices: a witness’s unfinished request, the sound of a key being passed, a list whose missing entries are visibly marked, or a maintenance instruction that identifies what the Custodian is no longer authorized to do. The impression is not a prophecy and should not explain the modern plot. It is evidence of what survived.
+
+## Chapter VI final worksheet
+
+Complete the following before moving to the present-day finale:
+
+- **Witness Set:** preserved categories, omissions, consent preferences, and unresolved requests.
+- **Custodian Mandate:** permitted functions, prohibited functions, and ambiguous clauses.
+- **Access Safeguards:** witness key, audit seal, and baseline copy; note which were completed, damaged, or abandoned.
+- **Record Integrity:** Full, Representative, or Damaged Provenance, with a sentence explaining the evidence for the rating.
+- **Emergency Priority:** action taken and its cost or result.
+- **Last Review Gap:** the unresolved issue the ancient party could not settle.
+- **Local Outcome:** people or civic resources saved, lost, or left uncertain.
+- **Historical Boundary:** confirm that the Fall occurred and was not prevented.
+
+Use the actual wording of the party’s decisions. In Chapter VII, a broad Custodian mandate should provide functions the modern party can negotiate with or constrain; a narrow mandate should limit those functions but may leave gaps that the present-day party must address manually. A divided witness key should require the finale to account for both holders or their surviving procedure. A baseline copy should provide a comparison point, not a magical answer. An incomplete Witness Set should create genuine absences rather than a convenient hidden recording that supplies everything the party needs.
+
+\page
