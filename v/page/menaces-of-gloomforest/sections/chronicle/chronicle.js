@@ -1,8 +1,9 @@
+import { createChronicleRecord } from "/v/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.js";
+
 export function renderChronicleSection(chronicle) {
   const container = document.querySelector("#chronicle-section-content");
   const intro = document.createElement("section");
   intro.className = "ddc-section ddc-chronicle-intro";
-
   const kicker = document.createElement("div");
   kicker.className = "ddc-section-mark";
   kicker.textContent = chronicle.kicker;
@@ -22,5 +23,11 @@ export function renderChronicleSection(chronicle) {
   playlistSection.className = "ddc-section ddc-playlist-panel";
   playlistSection.append(playlist);
 
-  container.replaceChildren(intro, playlistSection);
+  const records = document.createElement("div");
+  records.className = "chronicle ddc-chronicle-list";
+  records.replaceChildren(...chronicle.sessions.map(session => createChronicleRecord(session, { accent: "#c1a56b" })));
+  const recordsSection = document.createElement("section");
+  recordsSection.className = "ddc-section ddc-chronicle-records";
+  recordsSection.append(records);
+  container.replaceChildren(intro, playlistSection, recordsSection);
 }
