@@ -1443,3 +1443,82 @@ A useful continuity entry describes a consequence, not merely a scene. “The pa
 If the answer is “Needs review,” revise the scene so the later party has a meaningful choice rather than merely receiving a predetermined result. The ancient party may determine which evidence exists, but the present-day party retains authority over its decisions. Modern discoveries may change how the past is understood, but they do not replace the ancient characters’ choices.
 
 \page
+
+
+# Appendix C — Hazards, Encounters, and Pressure
+
+This appendix standardizes how to run physical danger and contested situations in the campaign. Use the specific encounter text in each chapter whenever it provides a more precise rule. This appendix does not replace published 2024 creature statistics or authorize improvised changes to the campaign’s fixed history.
+
+## Hazard H-01 — Fractured Service Stair
+
+**Location:** Glasswell, between the collapsed inspection room and the lower service route.
+
+**Warning:** The stair has a visible fracture, loose stone, and a faint vibration synchronized with the signal. Characters who pause to inspect the route can recognize the danger without a check. A rushed character may miss the warning if the scene has established distraction or urgency.
+
+**Trigger:** A creature rushes across the fractured section, puts heavy force on the visibly unstable edge, or otherwise crosses in a way that loads the damaged stone.
+
+**Resolution:** The creature makes a DC 13 Dexterity saving throw. On a failure, it takes 1d6 bludgeoning damage and falls prone. On a success, it keeps its footing. A character who moves slowly, braces the stair, uses suitable equipment, or chooses another route can avoid the save when the approach plausibly removes the trigger.
+
+**Access and recovery:** The stair is never the sole route to essential information. Failure does not seal the site or strand the party. A character can help an ally up, stabilize a section, or use the drainage cut as an alternate approach. If a character falls prone, describe the immediate physical position and allow the character to decide how to proceed.
+
+**Telegraphing:** Describe the loose grit, hairline cracks, and vibration before the save. Do not introduce the hazard only after a player declares an ordinary cautious movement. If a character asks whether the stair looks dangerous, answer honestly based on what can be seen.
+
+## Running hazards fairly
+
+A hazard should have a discernible trigger, a warning, a resolution, and a way to respond. Before a saving throw, tell the player what danger the character perceives and what action is exposing them to it. When a hazard’s trigger has not occurred, do not call for a roll simply because the characters are in the same room.
+
+Use the 2024 rules for saving throws, conditions, damage, movement, and recovery. The DCs and damage above are campaign-specific. They are not a general scale for every hazard. When inventing a comparable obstacle, choose a severity appropriate to the characters’ level and the consequences of failure, then state the trigger clearly. A minor obstacle should not inflict a severe consequence merely to create drama.
+
+Hazards should complicate a choice rather than dictate it. A falling character may lose time, take damage, or need help; the hazard should not arbitrarily destroy a unique clue or prevent the campaign from continuing. If the characters accept a meaningful cost to bypass a hazard—spending equipment, taking a longer route, or using a resource—recognize the trade-off instead of demanding a redundant check.
+
+## Contested situations are encounters
+
+Not every encounter requires initiative. A public hearing, witness interview, custody negotiation, or review of contradictory testimony can be run as a structured encounter if each participant has a goal, a limited opportunity to act, and a consequence that changes according to the characters’ decisions.
+
+Before the scene, write down three things:
+
+1. **Pressure:** What changes if the characters delay? Examples include a scheduled hearing, a witness who must leave, or a system about to apply an existing restriction.
+2. **Leverage:** What can the characters present or do that could change another participant’s position? Examples include independent corroboration, a source record, a credible safeguard, or a fulfilled promise.
+3. **Consequence:** What happens if the characters do not get the result they want? Examples include restricted access, contested public framing, a lost opportunity to interview a witness, or a delayed deposit.
+
+Give NPCs consistent interests and room to change their minds. A witness advocate may oppose broad publication while supporting a public inventory. The Custodian may accept a review mechanism while refusing unrestricted access. The sponsor may accept an acknowledged uncertainty if the party explains why concealing it would be worse. These are conditional positions, not scripted outcomes.
+
+Use an ability check only when a character’s action is uncertain and the result matters. Persuasion can support a proposal; Investigation can test a record; Insight can identify a distinction between a stated reason and a visible concern. No skill check can force an NPC to abandon a deeply held interest without a credible reason. A successful check may win a concession, secure a pause, or establish a fair hearing; the players still decide what to offer and what obligation to accept.
+
+## Combat and the Custodian
+
+The Custodian is an archival intelligence, not a single creature whose defeat automatically resolves the campaign. If physical combat occurs, use an appropriate published 2024 construct or arcane guardian stat block and identify it before play. Do not create or inflate statistics on the fly merely to prolong a confrontation. A guardian can threaten the party, protect a mechanism, or interrupt a task; destroying it does not by itself change the archive’s mandate or settle who controls access.
+
+Give combatants clear objectives. A guardian might be attempting to drive intruders away from a vulnerable interface rather than killing every character. The characters might be trying to hold a position long enough to transmit a procedural amendment, protect a witness, or reach a physical control. State visible environmental risks before they matter. The Custodian’s voice may continue after a guardian is disabled, making clear that the system’s permissions remain unresolved.
+
+If initiative begins during the finale, continue alternating meaningful contributions between the two parties when practical. The ancient characters can configure the mechanism while the modern characters secure the relay or decide the access policy. One group’s combat success should not automatically decide the other group’s political or ethical choice. If one party is temporarily unable to act, resolve immediate danger and return to the shared decision as soon as possible.
+
+## The Place Between Times — track reference
+
+All four tracks range from 0 to 4. Record changes openly and explain them in the fiction.
+
+| Track | Measures | Starting reference |
+|---|---|---|
+| Record Integrity | Provenance, context, and visible uncertainty | Full Provenance 4; Representative 3; Damaged 2 |
+| Custodian Authority | Unilateral power to classify, delay, suppress, or release | Bound Mandate 3; Manual Authority 2; Emergency Delegation 3 |
+| Access | Practical ability for living people to consult the archive | Meaningful appeal/shared custody 3; designated custodian 2; narrow emergency access 1 |
+| Boundary Stability | Safety and reliability of the active connection | Completed coherent review 3; acknowledged gap 2; damaged or hurried configuration 1 |
+
+Apply the modifiers in Chapter VII after choosing the appropriate base value. Keep all tracks between 0 and 4. If a campaign state does not fit a listed category, choose the closest functional equivalent and write down the reason. Do not treat the number as more authoritative than a clearly recorded player decision.
+
+Use a track only when an action changes the underlying condition it measures. A persuasive speech does not automatically improve Record Integrity. Finding and preserving source provenance may. A promise of public access does not improve Access until the party establishes a procedure that people can actually use. Defeating a guardian does not reduce Custodian Authority unless the characters also change the permissions or mandate. The fiction should make every adjustment understandable.
+
+## Consequence ladder for failed actions
+
+When an action fails, choose a consequence that follows from the attempt and leaves a meaningful next step. Use one principal consequence at a time unless the action was unusually risky.
+
+- **Time:** A deadline advances, an opportunity narrows, or the party must spend another turn.
+- **Exposure:** A character or witness becomes more visible to an interested faction or to the unstable relay.
+- **Damage:** A physical record or interface is damaged, but essential evidence remains recoverable by another route.
+- **Restriction:** An existing permission or appeal rule limits the immediate plan.
+- **Trust:** An NPC becomes more cautious because a promise was broken or a claim exceeded the evidence.
+- **Instability:** The boundary becomes harder to maintain, with a visible warning before any severe result.
+
+Do not use a failed check to add a new secret power to the Custodian, invent an unrecorded historical event, or remove a player’s prior success. The consequence should arise from an established danger, a participant’s known interest, or the limits of the attempted method.
+
+\page
