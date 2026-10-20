@@ -1317,6 +1317,8 @@ After the catastrophe, describe a brief image of the sealed chamber: the selecte
 Advance the Netherese characters from level 13 to level 14 after the final configuration and local action are resolved. This milestone occurs regardless of whether the party chose a broad archive, strict safeguards, or a narrow mandate. The campaign’s finale will use these states, not reward a preferred answer. The ancient characters’ choices determine what the modern party can recover, what remains disputed, and which forms of control or appeal the Custodian can exercise.
 
 ## Chapter VI state record
+For finale scoring, also record: (1) whether an independent baseline or comparison copy survives and how its independence is established; (2) whether every deliberate omission has a recorded reason; (3) whether the final review gap was recorded openly or knowingly concealed; and (4) whether emergency warding is intact or damaged. Do not infer these answers from the provenance rating alone.
+
 
 Record the following precisely in the campaign worksheet:
 
