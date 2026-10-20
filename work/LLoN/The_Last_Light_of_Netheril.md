@@ -1750,3 +1750,80 @@ Before play, answer these questions:
 After play, record decisions in the continuity worksheet. Do not record an NPC’s speculation as established fact. Do not erase a failed approach if it changes trust, access, or timing. A good record allows the next session to begin with consequences, not a debate about what the previous session meant.
 
 \page
+
+
+# Chapter III — Field Case: The Scholar’s Catalog
+
+This field case turns the investigation framework into a runnable sequence. Use it when the party seeks N-07, the independent record scholar, or when the players need a concrete next step after following the signal. The catalog is not a vault of perfect answers. It is a working collection assembled from estate inventories, damaged waymarker notes, copied marginalia, and reports made by people who did not share the same vocabulary. Its value lies in comparison: several imperfect sources can reveal a pattern no single source establishes.
+
+## Scene 1: An appointment with conditions
+
+N-07 receives the party in a narrow workroom above a public reading hall. Three tables are occupied by separate collections, and each table has a visible source label. One bundle is open to the public; one is available for supervised comparison; one is closed because the depositor’s family requested that personal names not be circulated. The scholar explains these boundaries before asking why the party wants the records. This makes access a visible practice rather than an arbitrary obstacle.
+
+N-07 is willing to help if the party states a question that can be tested. “Tell us what happened at Netheril” is too broad. “Does the Glasswell signal repeat a phrase found in a second source, and can we establish where that phrase came from?” is answerable. If the party refuses to explain its interest, the scholar offers a limited search of public material instead of ending the scene. A character may build trust by distinguishing what they heard directly from what another person told them, by accepting a depositor’s restriction, or by asking what evidence would change the scholar’s current view.
+
+If the conversation stalls, N-07 places three catalog slips on the table. The first records a waymarker report describing a signal heard at a fixed interval. The second records a copied phrase about a “second copy,” but its date is uncertain. The third notes a witness account that was cataloged under “civic warning” by an earlier clerk. The labels differ. The scholar does not claim they describe the same event; the party must test that possibility.
+
+Use an ability check only if the outcome is uncertain and consequential. Persuasion can secure a supervised comparison; Insight can identify whether the scholar’s caution is ethical, professional, or political; Investigation can reveal that two slips share a copying notation; History can identify an obsolete term in the catalog. Set DC 14 for a standard task and DC 17 for an especially difficult one. A strong roleplayed approach can succeed without a roll. On a failed check, the party still receives one useful public source, but the supervised comparison requires a later appointment, a reciprocal favor, or an agreed restriction on what they will publish.
+
+## Scene 2: Three records, three kinds of uncertainty
+
+Give the players the source summaries below. Read them as documents the characters can inspect, not as a single DM monologue.
+
+**Waymarker report.** A keeper wrote that a pulse of light and sound repeated “after thirteen measured minutes.” The keeper’s method for measuring time is not recorded. The report supports recurrence but does not independently establish the exact interval.
+
+**Copied marginal note.** A later copy contains the words “leave the second copy where the witnesses can—”. The source from which it was copied is missing. The phrase resembles one fragment heard at Glasswell, but the copy’s date and chain of custody are uncertain.
+
+**Civic warning entry.** A catalog lists a disputed sensory deposit under “civic warning,” then adds a later pencil note: “category disputed; retain source label.” The person who added the note is unidentified. The entry shows that someone noticed the classification problem, not why the problem occurred.
+
+Ask the players to sort each statement into observed fact, supported inference, and open question. The exercise should take only a few minutes. If they treat the three records as proof of one complete explanation, N-07 asks which source establishes the connection. If they dismiss the records because none is conclusive, the scholar points out that independent partial evidence can justify a narrower claim without proving a larger theory.
+
+The central clue is not a hidden name or a secret password. It is the pattern of uncertainty: the signal recurs, language associated with it appears in a separate copy, and a catalog classification was challenged without erasing the original label. These facts support further investigation of provenance and access procedures. They do not prove that the Custodian created the signal, that the copied phrase is accurate, or that the unidentified annotator understood the system.
+
+\page
+
+# Chapter III — Field Case: The Scholar’s Catalog (continued)
+
+## Scene 3: A source is not permission
+
+During the comparison, the scholar discovers that one bundle contains a personal name connected to a disputed deposit. The name is not necessary to establish the textual match. The depositor’s restriction permits researchers to compare the phrase but not to reproduce the name publicly. This is a deliberate consent test, not a trap. Tell the players what the restriction says before they decide what to do.
+
+The party can proceed in several ways. They may record the phrase and its source label while omitting the name. They may ask N-07 to contact the depositor for expanded permission, accepting delay and the possibility of refusal. They may decline the restricted bundle and rely on the two public sources, which leaves the comparison weaker but avoids exceeding the stated permission. They may challenge the restriction by making an argument about public interest; N-07 will hear the argument but will not treat a persuasive claim as automatic authorization.
+
+If a character tries to copy the name secretly, do not stop the scene with a moral lecture. Establish what can be observed: the reading room has a clerk, the bundle is logged, and the scholar can later notice an unexplained discrepancy in the handling record. The immediate consequence is a loss of trust and a more limited future appointment, not a sudden arrest or an invented legal system. If the party admits the mistake and offers to correct the record, N-07 can negotiate a repair, but the depositor decides whether to renew permission.
+
+This scene reinforces a core campaign distinction: preservation, access, interpretation, and publication are separate acts. A person may agree to preserve testimony while refusing public replay. A scholar may be allowed to compare two sources without being allowed to publish identifying details. A public claim may be supportable even when one part of the supporting material must remain private. Ask the players which boundary they want their own evidence record to follow, then write down the answer.
+
+## Scene 4: The catalog discrepancy
+
+As the party finishes, the clerk brings a correction slip found inside the public bundle. It reads: “Do not merge the civic warning entry with the witness deposit. Similarity is not identity. Preserve both labels until reviewed.” The slip bears no signature. Its paper and ink are consistent with ordinary catalog work, but the clerk cannot establish when it was inserted. The note may be an earlier human intervention, a copied instruction, or something else; no available evidence settles the question.
+
+This clue should connect to the ancient timeline’s contested-record policy without pretending that the present-day characters can directly inspect events they did not witness. If the ancient party adopted provenance-first review, the phrase about retaining both labels has a meaningful parallel. If they chose witness-governed access, the party can compare the note’s caution with the distinction between preserving a record and permitting replay. If they created an independent appeal route, the unsigned correction slip raises a practical question: who is authorized to make a change, and how is that authority recorded? These are thematic and procedural parallels, not proof that the modern catalog inherited a specific ancient rule unchanged.
+
+Give the party a clear choice: photograph or transcribe the slip within the room’s rules, request a formal catalog note, or leave it in place and record only its existence. Any of these can preserve a path forward. A formal note improves provenance but may make the investigation more visible. A private transcription is fast but depends on the party’s own chain of custody. Leaving it in place respects the collection’s handling rules but means the party cannot later claim to possess the exact wording unless they recorded it by an allowed method.
+
+If the characters ask who wrote the slip, N-07 answers plainly: “We do not know.” Do not make uncertainty sound like a riddle with an answer the DM is withholding. The important question is whether the party records the limits of its evidence honestly.
+
+## Scene 5: Close the case with a claim ledger
+
+Before the party leaves, have them complete a short claim ledger. Each claim must name its source, the kind of support it has, its confidence, any restriction, and the next test that could strengthen or weaken it. Use these entries as a starting point:
+
+- **Claim:** The Glasswell signal has a recurring structure. **Support:** Direct observation plus waymarker report. **Confidence:** Strong for recurrence, limited for exact timing. **Restriction:** None beyond ordinary custody.
+- **Claim:** A phrase resembling the signal fragment existed in a separate copied note. **Support:** Catalog comparison. **Confidence:** Limited until date and copying chain are established. **Restriction:** Do not publish the restricted depositor’s name.
+- **Claim:** A catalog classification was disputed by an unidentified annotator. **Support:** Civic warning entry and correction slip. **Confidence:** Strong that the notes exist; unknown as to author and motive. **Restriction:** Record the distinction between observed text and inferred history.
+
+The party may write different conclusions, but must distinguish direct observation from inference. Reward precise uncertainty with practical utility: later scenes can begin from the strongest claim rather than repeating the entire investigation. If the party overstates a claim, an ally may challenge the wording in Chapter V; this is a consequence of public framing, not a retroactive declaration that the evidence was worthless.
+
+## Outcomes and state updates
+
+At the end of the field case, update the Chapter III state record.
+
+**Corroboration: Strong** if the party compares at least two independent sources, records their limitations, and preserves the distinction between similarity and identity. Otherwise record **Limited**. A high check result alone cannot produce Strong corroboration; the outcome depends on the evidence and how it was handled.
+
+**Public Framing: Careful** if the party distinguishes facts from hypotheses and respects restrictions; **Contested** if it publishes a debatable interpretation with its uncertainty visible; **Premature** if it presents an unproven connection as established fact. Do not automatically choose Premature because the party makes a mistake in private notes. This variable concerns claims circulated beyond the party.
+
+**Consent:** Record whether the party honored the depositor’s restriction, requested expanded permission, or exceeded the permitted use. **Inventory Reference:** Record the catalog identifier or the fact that no identifier was provided. **Glasswell Follow-up:** Record whether the party returns to the site, seeks another witness, or pursues the signal’s provenance elsewhere. **Working Hypothesis:** Write the players’ own theory in their words and mark it as a hypothesis.
+
+The case succeeds if the party leaves with a more reliable next question, not if it guesses the final answer. Advance the investigation even if the party declines restricted material or disputes N-07’s judgment. Their choices determine the strength, availability, and ethical conditions of future evidence; they do not determine whether the campaign’s central mystery can be investigated at all.
+
+\page
