@@ -1870,6 +1870,51 @@ Give combatants clear objectives. A guardian might be attempting to drive intrud
 
 If initiative begins during the finale, continue alternating meaningful contributions between the two parties when practical. The ancient characters can configure the mechanism while the modern characters secure the relay or decide the access policy. One group’s combat success should not automatically decide the other group’s political or ethical choice. If one party is temporarily unable to act, resolve immediate danger and return to the shared decision as soon as possible.
 
+### Optional finale guardian: Archive Sentinel
+
+Use this original campaign creature if the modern party needs a physical obstacle while working at the surviving relay in the Place Between Times. It is a defensive construct operating under the Custodian’s standing permissions, not the Custodian itself. It tries to interrupt access and drive intruders away from the interface. It does not pursue fleeing characters beyond the chamber or attack a creature that is clearly withdrawing unless that creature continues interfering with the protected control.
+
+This campaign-specific stat block is designed for four or five 8th-level characters. Use one sentinel. For a smaller, depleted, or already pressured party, reduce its Hit Points to 58 and remove its second attack each turn. Do not add more sentinels to prolong the encounter. The ancient party continues to act on its own layer during the fight.
+
+**Archive Sentinel**
+*Medium Construct, Unaligned*
+
+**Armor Class** 16 (layered arcane plates)  
+**Hit Points** 76 (9d8 + 36)  
+**Speed** 30 ft.
+
+| STR | DEX | CON | INT | WIS | CHA |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 16 (+3) | 12 (+1) | 18 (+4) | 8 (-1) | 14 (+2) | 6 (-2) |
+
+**Saving Throws** Con +7, Wis +5  
+**Skills** Perception +5  
+**Damage Resistances** force  
+**Condition Immunities** charmed, exhaustion, frightened, poisoned  
+**Senses** darkvision 60 ft., passive Perception 15  
+**Languages** understands Netherese and Common but cannot speak  
+**Encounter Role** Single-guardian obstacle for four or five 8th-level characters; campaign-specific, not a published Challenge Rating.
+
+**Bound to the Interface.** The sentinel cannot move more than 60 feet from the relay control it protects. If forced beyond that distance, it moves toward the control by the safest available route on its next turn. It cannot cross the temporal boundary or pursue characters into another timeline.
+
+**Task Before Harm.** At the start of its first turn, the sentinel marks the relay control with a line of amber light and issues a warning in Netherese. A creature that has not attacked it can use an action to withdraw from the control area; the sentinel does not make opportunity attacks against that creature during the withdrawal. If all intruders withdraw and stop interfering, the sentinel returns to guard duty.
+
+**Actions**
+
+**Multiattack.** The sentinel makes two Arcane Slam attacks.
+
+**Arcane Slam.** *Melee Attack Roll:* +6, reach 5 ft. *Hit:* 10 (2d6 + 3) force damage.
+
+**Indexing Pulse (Recharge 5–6).** The sentinel releases a pulse in a 15-foot cone. Each creature in the area makes a DC 14 Strength saving throw. On a failed save, a creature takes 14 (4d6) force damage and is pushed up to 10 feet away from the relay control. On a successful save, it takes half damage and is not pushed. The pulse does not push a creature into an obviously lethal hazard if another direction is available.
+
+**Reorder the Field (1/Encounter).** The sentinel targets one visible creature within 30 feet. The target makes a DC 14 Dexterity saving throw or has its Speed reduced to 0 until the start of the sentinel’s next turn as amber index-lines bind its movement. The target can still take actions and reactions. This is a visible restraint, not a loss of memory or control over the character.
+
+**Running the sentinel.** It prioritizes creatures interacting with the relay control, then creatures attacking it. It does not attack unconscious creatures or pursue someone who has withdrawn. Describe the pulse gathering along its arms before it fires. Characters can use cover, spread out, withdraw, or draw its attention away from the interface. A character who spends an action studying its behavior and succeeds on DC 13 Intelligence (Arcana) or Wisdom (Insight) recognizes its narrow protection routine and can redirect it by withdrawing from the control or presenting a plausible maintenance procedure. The check reveals its behavior; it does not automatically deactivate it.
+
+**Noncombat resolution.** A character can attempt to pause the sentinel by presenting the correct maintenance sequence from Chapter VI, a witness key, or a documented authority amendment. The group must state what evidence or permission it is using. One character then makes a DC 15 Intelligence (Arcana) or Intelligence (Investigation) check. On a success, the sentinel pauses for 2 rounds while it verifies the authority; the group can use that interval to change the control or negotiate. On a failure, it remains active, and the same evidence cannot be tried again until the characters obtain new information or alter the procedure. Appropriate aid from the ancient party, such as restoring a maintenance sequence or narrowing the mandate, grants advantage. Do not require a check when the group has correctly applied explicit authorization that the sentinel is designed to recognize.
+
+**Defeat and consequences.** At 0 Hit Points, the sentinel becomes inert. This ends its immediate threat but does not reduce Custodian Authority, change Access, or settle the archive’s mandate. The party must still complete its relay objective. Record whether it disabled the sentinel, redirected it, or complied with its warning. That choice may inform Public Trust, but does not change a finale track unless a specific action changes the condition that track measures.
+
 ## The Place Between Times — track reference
 
 All four tracks range from 0 to 4. Record changes openly and explain them in the fiction.
