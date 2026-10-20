@@ -1886,3 +1886,72 @@ Update **Access Safeguards** with the actual operational rule, not merely the po
 The next chapter should inherit these choices. If the party created a strong appeal route, later pressure should test its independence and practical reach rather than pretend no appeal exists. If they chose continued observation, the evidence gathered during that observation should matter. If they suspended automation, the archive should become slower and more dependent on human judgment. The Custodian remains dangerous because a system can have a coherent purpose and still exercise power beyond the mandate its creators intended.
 
 \page
+
+
+# Chapter V — Running the Custody Conference
+
+This procedure turns the present-day custody conflict into a playable negotiation with evidence, named interests, and outcomes that affect the finale. The conference is not a vote on whether the Custodian is good or evil. It concerns who may access testimony, what restrictions are legitimate, and how decisions can be challenged when the archive’s own records are incomplete.
+
+## Before the meeting
+
+Invite three parties: a representative of the institution controlling the site, a member of the Present-Day Custody Coalition, and an affected witness or community representative. Use established NPCs where possible. If someone cannot attend, give them a recorded statement or a delegate with limited authority. Do not add a faction merely to create another obstacle.
+
+Each participant arrives with a specific request.
+
+- **Institutional representative:** wants the site kept stable and fears uncontrolled access will damage evidence or create public panic. They can provide trained personnel and supervised access, but expect a formal chain of custody.
+- **Custody Coalition representative:** wants an independent audit and refuses to let the institution certify its own conduct. They can provide researchers and public scrutiny, but may press for disclosure before every uncertainty is resolved.
+- **Affected witness or community representative:** wants the party to respect consent and avoid turning a personal account into a public symbol. They can provide testimony and community trust, but may withdraw cooperation if access is treated as automatic permission to publish.
+
+Tell the players what each participant is asking for. Hidden motives may add texture, but must not conceal the actual terms of a proposed agreement.
+
+## Scene 1: Set the agenda
+
+Ask the party to state the meeting’s purpose in one sentence. Distinguish investigating the Custodian from deciding future custody; the meeting can address both, but evidence gathering is not the same as a binding access decision.
+
+Each participant gets one uninterrupted opening statement, limited to a concrete concern and one requested safeguard. Before discussion begins, establish who keeps the notes, whether notes may be shared, and how a participant can correct a misquotation. If the party refuses all procedure, the meeting can continue, but each participant may keep a separate record and need not accept the party’s summary as authoritative.
+
+## Scene 2: The evidence hearing
+
+The party presents up to three claims from its evidence ledger. For each, state the source, confidence, and restriction. The other participants may challenge one part of a claim, but must identify whether they dispute the source, the inference, or the proposed public wording.
+
+Use these challenges as needed:
+
+- “The source exists, but it does not establish that the Custodian created the signal.”
+- “A preserved impression is evidence of what a witness experienced, not proof that every remembered detail is objectively correct.”
+- “A restriction on public replay does not require the source to be destroyed.”
+- “An institutional summary can be useful without replacing the underlying record.”
+- “An audit is not independent if the audited party chooses every reviewer and controls every source.”
+
+A challenge is not proof that a claim is false. The party can accept the limitation, narrow its wording, offer corroboration, or leave the point unresolved. If a player makes a strong argument grounded in a source and a clearly stated inference, allow an NPC to change position without a roll. When the result is uncertain, use Persuasion to build agreement, Insight to identify an unspoken concern, Investigation to check a factual assertion, or History to explain the limits of the surviving record. Use DC 14 for a standard task and DC 17 for a difficult one. Failure changes the terms or confidence of the agreement; it does not erase evidence or end the conference.
+
+## Scene 3: Negotiate the custody terms
+
+Ask the players to propose an arrangement answering four questions: who holds the records, who may access them, what consent governs replay or publication, and how a decision can be appealed. A hybrid or custom arrangement is valid.
+
+**Institutional custody.** The institution maintains the chamber and access logs; independent observers inspect the logs on a defined schedule. This offers technical continuity but concentrates day-to-day control in an institution that may protect its reputation.
+
+**Shared custody.** The institution maintains the chamber while an independent reviewer or community-appointed body oversees access and complaints. This distributes authority but requires a process for resolving disputes and funding ongoing review.
+
+**Community-governed access.** An affected community or witness body sets access priorities and appoints custodians, while technical specialists maintain the chamber under a limited mandate. This gives affected people meaningful authority but may require outside support for technical upkeep.
+
+**Restricted preservation.** Preserve source records while limiting replay or disclosure until a defined review condition is met. The restriction must include a reason, a review date or trigger, and a route to appeal. “Until the matter is settled” is not a sufficient deadline when evidence may remain ambiguous indefinitely.
+
+**Custom agreement.** Record the actual terms in plain language. If the proposal does not answer one of the four questions, identify the gap and let the party decide whether to accept it openly or revise the arrangement.
+
+## Scene 4: Test the agreement with a hard case
+
+Before participants endorse the terms, present a case drawn from the campaign’s evidence. A witness requests that their impression remain preserved but not replayed. A researcher argues that it could clarify a public event. The institution says the record may be relevant to safety. The Custody Coalition demands a reasoned decision and an appeal route.
+
+Ask the party to apply its arrangement step by step. Who receives the request? Who can see the record while the request is pending? What can be said publicly about its existence? Who reviews the decision, and what happens if that reviewer disagrees with the custodian? If the agreement cannot answer these questions, let the players amend it. The test reveals whether the procedure can handle a real conflict without granting one actor unlimited discretion.
+
+If the party ignores the witness’s stated preference, record the breach; the witness may withdraw cooperation or seek another advocate. If the party blocks every researcher indefinitely, record the challenge to public accountability. If the party grants access without recording its basis, later participants can dispute what was authorized. Consequences follow from the agreement the players actually made.
+
+## Chapter V state record
+
+Record **Custody Position** as Institutional, Shared, Community-Governed, Restricted Preservation, or a custom description. Record **Consent Protocol** as Source-Controlled, Tiered Access, or the actual custom rule. Record **Public Trust** through concrete commitments: who will provide access, defend the witness’s consent, audit the record, or refuse to endorse the arrangement. Record **Public Framing** as Careful, Contested, or Premature based on what the party has communicated outside the meeting. Record **Publication Decision** and **Appeal Route** in exact terms.
+
+Do not increase Public Trust merely because the meeting ends politely. Trust changes when someone makes a commitment, accepts oversight, repairs a breach, or sees their concern reflected in the written agreement. A participant can disagree with the decision and still trust the party’s honesty; another can agree with the outcome while doubting the party’s methods.
+
+Close by asking each participant what they will do next under the agreement. Their answers should be operational: provide a key, schedule an audit, contact a witness, publish a dissent, maintain a record, or decline a role. The custody arrangement shapes how the present-day party enters the finale, but does not settle the fate of the Mnemosyne Engine. That decision still depends on the ancient configuration and the coordinated actions of both timelines.
+
+\page
