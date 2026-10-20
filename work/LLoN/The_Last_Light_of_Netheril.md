@@ -1674,3 +1674,79 @@ When a faction changes its position, record the reason rather than only the resu
 A faction should not change its position merely because the characters rolled well. A successful check can make an argument land, secure a hearing, or reveal a negotiable concern. The substantive change should follow from the evidence, offer, or commitment. Equally, a faction should not become immovable when the characters meet its stated conditions.
 
 \page
+
+
+# Appendix F — Running Two Timelines at One Table
+
+The campaign asks one group of players to make decisions through two different sets of characters, in two historical periods, with unequal access to information. This structure works only if each timeline remains playable in its own right. The ancient party is not an exposition device for the present-day party, and the present-day party is not a group of spectators interpreting choices already made. Each group needs objectives, uncertainty, meaningful decisions, and consequences that the other group cannot simply replace.
+
+## Session structure
+
+At the beginning of a session, state which party is active and what immediate question it faces. Do not open with a long recap of information that the active characters cannot know. Give a concise reminder of their current objective, the evidence available to them, and the unresolved decision in front of them.
+
+When the session contains both timelines, alternate at meaningful decision points rather than at arbitrary intervals. A useful transition occurs when one party has changed a condition the other party will later encounter, when a decision has reached a point of commitment, or when the scene has produced a new question that the other timeline can illuminate. Avoid switching in the middle of every sentence or cutting away just as a player begins a consequential action.
+
+Before switching, summarize the result in terms of observable consequence. “The ancient party changes the retrieval rule so that an appeal must be recorded” is more useful than “the ancient party makes progress.” When the present-day group later encounters the surviving procedure, it should be able to recognize the effect without being handed the interpretation. The players may know more than their characters; help them keep those kinds of knowledge separate.
+
+## Player knowledge and character knowledge
+
+Because the same people play both groups, information separation is a table convention, not a perfect barrier. Do not punish players for remembering something they learned in another timeline. Instead, make the distinction part of play: what does this character’s evidence support, and what action can this character reasonably take?
+
+A present-day character cannot cite a conversation they never witnessed as direct evidence, but the player may use that knowledge to ask better questions or seek corroboration. An ancient character cannot react to a future political dispute as if it had already happened. The GM can say, “You as a player have seen that consequence; your character has not. What evidence or reasoning can they use here?” Then let the player choose an appropriate action.
+
+Do not demand artificial ignorance when it makes the game frustrating. If the player has a useful hypothesis, let the character investigate it. The cost may be that the character must establish evidence independently, spend time, or risk making a claim that remains unproven. The goal is not to test the players’ ability to forget. The goal is to keep each character’s conclusions grounded in the sources available in that era.
+
+## Cross-timeline consequence design
+
+For every consequential ancient decision, write down three separate things:
+
+1. **System consequence:** What rule, permission, record, or physical condition survives the Fall?
+2. **Evidence route:** What can the modern party actually discover, and through which source?
+3. **Modern choice:** What can the present-day party decide once it discovers the consequence?
+
+If the third answer is only “understand what the ancient party did,” the connection is too passive. Add a modern choice: whether to invoke the rule, challenge its legitimacy, adapt it for current circumstances, publish the evidence, or refuse to use it. Conversely, if a modern choice can simply undo the ancient configuration without cost or evidence, the ancient timeline has no durable agency. Make the modern party work with what survives rather than rewriting what happened.
+
+The relationship is not a simple chain in which every ancient action produces a single predetermined modern outcome. The ancient party can preserve a safeguard, but the modern party chooses whether it can be applied fairly in a new context. The ancient party can leave a disputed deposit, but the modern party chooses whether to retain, publish, restrict, or destroy its surviving copy. The same inherited condition may support several reasonable modern decisions.
+
+## Keeping transitions clear
+
+At each timeline transition, use a short, consistent handoff:
+
+**What changed:** One concrete fact or system condition.
+
+**What the active party can observe:** A signal fragment, a physical mark, a permission, a witness statement, or another source available to that party.
+
+**What remains uncertain:** One important limitation or contradiction.
+
+**What decision is now possible:** A choice the active party can make without needing to solve the entire campaign mystery.
+
+This handoff should not reveal GM-only information or declare an interpretation correct. It is a navigation aid, not a scripted revelation. If no meaningful condition has changed, finish the current scene before switching.
+
+## Managing unequal power levels
+
+The ancient characters begin at level 11 and reach level 14; the present-day characters begin at level 5 and reach level 8. These levels represent different campaigns, not a promise that the groups can solve the same problems in the same way. Avoid turning every modern obstacle into a smaller version of an ancient encounter. A high-level spell may provide a powerful investigative tool, but it does not automatically supply missing provenance or consent. A lower-level character may lack magical options but still have decisive access to a witness, local relationship, or present-day institution.
+
+Use the 2024 rules for each character’s actual abilities. When a spell or feature can answer a question directly, honor its text. Then ask what the result establishes and what it does not establish. Detecting magic does not identify a record’s author unless the effect says it does. Divination does not make a witness’s perspective omniscient. High-level capability should open approaches, not erase the campaign’s central distinction between evidence and interpretation.
+
+## Handling a missed session
+
+If a player misses a session, summarize the decisions and observable outcomes without turning the recap into a transcript. Ask the player whether they want to review the state record before the next session. Do not let an absent player’s character silently make a major ethical choice unless the table has agreed on a method for handling that situation.
+
+If a whole timeline is temporarily absent from play, preserve its unresolved decision rather than resolving it off-screen for convenience. The other party may continue its own work, but it should not gain authority over choices that belong to the absent characters. When the timeline returns, provide a clear situation and let its players act.
+
+## Session preparation checklist
+
+Before play, answer these questions:
+
+- Which timeline opens, and why is its decision urgent now?
+- What can the active characters directly observe?
+- Which clues are available through more than one route?
+- What is the most likely player decision, and what alternatives remain viable?
+- What changes if the characters delay, refuse, or choose a custom approach?
+- What consequence must be recorded for the other timeline?
+- Which facts remain uncertain, even if the scene goes well?
+- What state variables need to be updated at the end?
+
+After play, record decisions in the continuity worksheet. Do not record an NPC’s speculation as established fact. Do not erase a failed approach if it changes trust, access, or timing. A good record allows the next session to begin with consequences, not a debate about what the previous session meant.
+
+\page
