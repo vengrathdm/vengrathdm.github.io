@@ -1418,7 +1418,7 @@ If combat begins, the Custodian manifests through the chamber’s defensive cons
 
 ## Ending conditions
 
-When Movement Three concludes, choose the ending that matches the decisions the players actually made. Tracks clarify consequences but do not overrule an explicit, coherent choice. Use these guidance thresholds if the table has not made a clear commitment:
+When Movement Three concludes, choose the ending that matches the decisions the players actually made. Tracks clarify consequences but do not overrule an explicit, coherent choice. If the players have not made a clear commitment, apply the thresholds in this order to avoid overlap: first, Boundary Stability 0 means Severed Signal; second, if every Open Archive threshold is met, use Open Archive; third, if the Bound Archive threshold is met, use Bound Archive. If none applies, ask the players to state the choice and resolve it from the safeguards they actually established. An explicit, coherent choice takes precedence over this default order, and its costs must be described honestly.
 
 - **Open Archive:** Access is 3 or 4, Custodian Authority is 0–2, and Boundary Stability is at least 2. The record can be consulted under a public provenance standard, with uncertainty and omissions visible. If Record Integrity is 0–1, the archive opens with serious gaps and disputed attribution; openness does not repair the record.
 - **Bound Archive:** Custodian Authority is 2–4, or the players explicitly choose restricted access with review and appeal. Boundary Stability must be at least 1. If the group fails to create an independent appeal route, record that the archive is bound without adequate oversight; do not portray this as equivalent to accountable stewardship.
