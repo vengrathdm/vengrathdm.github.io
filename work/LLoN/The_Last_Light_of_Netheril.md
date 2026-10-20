@@ -690,3 +690,56 @@ Close the session with three facts, each clearly separated from inference. First
 Advance the Netherese characters from level 11 to level 12 when they have investigated the retrieval anomaly, made a meaningful decision about safeguards or appeal, and established a next step for the archive’s governance. The advancement is for resolving the chapter’s central situation, not for selecting a particular policy. If the party spends more time pursuing side questions, use the same milestone once the core sequence is complete. End with the maintainer asking the characters to help design a permanent rule for contested testimony. That request leads into the larger Chapter II conflict: a public archive cannot avoid deciding how disagreement is represented, and any automated procedure that makes that decision becomes part of the institution’s power.
 
 \page
+
+# Chapter II — The Hearing of Contested Records
+
+This sequence resolves the chapter’s central civic question without pretending the characters can settle every dispute about truth. The archive needs a rule that can be used by people who do not trust one another, including people who disagree with the party. The hearing is therefore a test of governance: the characters must turn principles into a procedure that can survive pressure, error, and future disagreement.
+
+## Scene 7: Drafting a rule
+
+The civic sponsor convenes a small hearing in the archive hall. The participants are the sponsor, the maintainer, the witness advocate, a clerk responsible for public summaries, and two residents whose testimony has been disputed. The characters may invite one additional participant if they can explain what perspective that person brings. The hearing is not a trial, and the residents are not on trial. The question is how the archive should handle testimony when preservation is possible but a single agreed interpretation is not.
+
+Ask the players to propose a rule in ordinary language before offering any menu. Their rule should answer four questions: what remains in the archive, what may be shown to others, how a disputed label can be challenged, and who is responsible for recording the final decision. If they address only one or two questions, the maintainer identifies the gap and asks how it would work in a real case. Do not require formal legal drafting; the purpose is to make the consequences legible.
+
+If the group wants a starting point, present three models. **Provenance-first review** requires every public presentation to include source, consent status, and known gaps. **Witness-governed access** gives the witness meaningful authority over replay and disclosure, subject to the archive’s stated retention duties. **Independent appeal** permits a witness or researcher to challenge a classification before a reviewer who did not make the original decision. These models can be combined, but every additional safeguard has an implementation cost. A provenance rule requires labor and clear labels. Witness-governed access can limit public scrutiny of records relevant to shared civic events. Independent appeal takes time and can become political if reviewers are appointed by a single faction.
+
+Let each NPC state one concrete concern rather than deliver a speech. The sponsor asks whether the public will still be able to learn from testimony. The maintainer asks who will audit changes made by the system itself. The advocate asks whether consent can be withdrawn from future presentation without pretending the original deposit never existed. The clerk asks who must explain a classification to someone who lacks technical knowledge. The residents disagree about whether a public label will protect them or make their dispute permanent. The characters should hear the cost of their preferred rule from the people who must live under it.
+
+## Scene 8: Pressure on the hearing
+
+Before the hearing concludes, a civic representative argues that unresolved records should be temporarily hidden until they can be reviewed. The representative is not secretly controlled by the Custodian. They fear that public contradictions will be used to undermine trust in the enclave’s institutions. Another participant argues that hiding contradictions will allow official summaries to harden into accepted history. Both positions are plausible; the dispute should remain political and human.
+
+The characters can respond by asking for a specific example, proposing a limited pilot, requiring an expiration date for restrictions, or insisting that any summary link back to the preserved testimony. A character who invokes their office or reputation can secure attention, but not agreement. A character who offers a workable safeguard may persuade a skeptical participant even without a roll. If the outcome is uncertain, use an ability check appropriate to the method: Persuasion to build agreement, Investigation to expose an unsupported claim about the record, Insight to identify the concern beneath a participant’s rhetoric, or History to compare the proposal with established civic practice. A failed check should complicate the negotiation, not end it; the party may need to accept a narrower pilot, publish a dissenting note, or return with a more concrete implementation plan.
+
+Introduce a procedural complication only if the players need a practical test. The clerk discovers that a classification tag was copied into a draft summary before the hearing began. The tag can be removed from the draft, and the source record remains intact, but the clerk cannot identify who copied it. This demonstrates that classifications can influence public understanding even when the underlying testimony is unchanged. It does not prove a conspiracy, and no NPC should suddenly know the identity or motives of the process that generated the tag.
+
+## Scene 9: Adopt and test the procedure
+
+Before the session ends, require the party to state the procedure in a few sentences. Write the exact rule in campaign notes and name the person or office responsible for its first review. Record the result as **Contested Record Policy** and **Retrieval Safeguard**, updating any earlier choice if the party has deliberately revised it. A revised policy is not a continuity error; the record should show what changed, why it changed, and which evidence caused the revision.
+
+Test the rule against three short cases. First, a witness wants an impression preserved but not replayed publicly. Second, a researcher finds a contradiction between a sensory record and an official summary. Third, an automated tag appears without an identified human operator. For each case, ask the players what the rule permits, who must be informed, and how the decision can be challenged. If their procedure cannot answer one case, let them amend it now. The aim is not to produce a perfect constitution but to establish a usable, inspectable safeguard.
+
+The chosen procedure has future effects. Provenance-first review makes later comparisons easier, but characters will have to persuade people to read the labels rather than quote a vivid impression alone. Witness-governed access increases the chance that excluded testimony will be preserved with its context, but can create conflicts when one person’s account concerns a public event. Independent appeal gives the party a method for contesting later Custodian classifications, but requires an identifiable reviewer and a record of reasons. If the players choose a different rule, translate it into equivalent practical effects and record it verbatim.
+
+## Chapter II conclusion: A promise with limits
+
+End the chapter with a short private conversation between the characters and the maintainer. The maintainer explains that the archive’s classification routine is older than the current public demonstration layer and that its documentation is incomplete. The maintainer cannot prove the routine is an intelligence, nor can they guarantee that it is harmless. They can, however, promise to preserve the original deposits and keep a log of every new classification that appears during the next period of testing.
+
+The characters leave with three tangible outcomes: a contested-record procedure, a retrieval safeguard, and an agreed method for recording unexplained changes. These outcomes become part of the archive’s institutional memory. They do not determine whether the Custodian will later honor them; that question remains open for play. The chapter’s central accomplishment is that the characters have made the institution answerable to a rule they helped create.
+
+Advance the Netherese characters from level 11 to level 12 if they have not already advanced at the conclusion of the retrieval sequence. Award the milestone only once. The transition to Chapter IV begins after a period of implementation, when the classification routine starts applying the new policy in ways the characters did not anticipate. The next ancient chapter should test the rule under pressure, not erase it. The campaign should remember both the procedure and the reasons the characters chose it.
+
+## Chapter II state record
+
+At the end of the chapter, write down the following items in the campaign worksheet:
+
+- **Contested Record Policy:** the exact rule adopted at the hearing, including any revision to the opening choice.
+- **Retrieval Safeguard:** Witness Review, Logged Changes, Manual Review, Observed Operation, or a custom procedure described in plain language.
+- **Appeal Route:** who can challenge a classification, who reviews it, and what record is kept of the decision.
+- **Public Explanation:** the language the party agreed should accompany an unresolved record.
+- **Unresolved Anomaly:** the fact that the archive added a classification without an identifiable human operator; do not record a theory as though it were proven.
+- **Witness Relationship:** whether the disputed residents remain willing to participate, restrict replay, or seek a different custodian.
+
+These notes must travel forward. In Chapter IV, the Custodian’s behavior should interact with the actual procedure selected, not a generic default. If the party chose a strong safeguard, show where it works and where its authority ends. If the party accepted a risky process, show the benefit they sought as well as the harm that follows. Do not punish a choice merely because it creates a dramatic complication; the complication should arise from a rule’s limits, a competing value, or an actor who can be held accountable.
+
+\page
