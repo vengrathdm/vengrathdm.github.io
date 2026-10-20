@@ -1833,6 +1833,21 @@ At finale preparation, translate each recorded state into one of three categorie
 
 Give each timeline at least one resource and one meaningful constraint. If one group has only disadvantages, revisit the chapter notes and identify what their actual choices made possible. If one group has no constraint, identify the uncertainty or responsibility that remains. Do not manufacture a punishment; use consequences already established in play.
 
+### Finale scoring handoff: translate once, then lock the baseline
+
+Before Chapter VII begins, copy the following from the chapter worksheets into the finale sheet. These instructions implement the single authoritative scoring procedure in “Running the Four-Track Convergence”; they do not create additional bonuses.
+
+1. **Record Integrity:** begin at 3 for Full Provenance, 2 for Representative Provenance, or 1 for Damaged Provenance. Add 1 if an independent baseline or comparison copy survives. Add 1 if the ancient party explicitly recorded omissions and the reason for each. Subtract 1 if the final review gap was knowingly concealed rather than recorded.
+2. **Custodian Authority:** begin at 1 for a Bound Mandate, 2 for Manual Authority, or 3 for Emergency Delegation. If the mandate is custom, score the actual permissions: 1 when access restriction requires review, 2 for temporary logged restrictions, 3 for independent delay or restriction, or 4 only for explicitly authorized broad unilateral control. Subtract 1 if Chapter IV explicitly suspended automatic classification. A policy amendment alone is not enough; the recorded procedure must suspend that function.
+3. **Access:** begin at 3 if the witness key, baseline copy, and appeal route all function; 2 if some safeguards remain but access depends on a custodian or incomplete procedure; or 1 if no safeguard functions or access is limited to a narrow emergency purpose. Add 1 for a credible Chapter V consent-and-appeal protocol. Subtract 1 if a divided witness key has no agreed handoff.
+4. **Boundary Stability:** begin at 2, or 1 if Chapter VI explicitly records damaged emergency warding. Do not apply a second penalty for the same warding damage.
+
+Apply each listed modifier only when its supporting fact is recorded, and only once for that fact. Clamp every final starting score to 0–4. Do not add an unlisted bonus because a scene went well or a check succeeded; changes during the finale must arise from a declared lead action under the convergence procedure.
+
+Write the source worksheet and reason beside each modifier. If a field is missing, do not guess in the party’s favor or against it. Mark it **Unverified**, ask the players what they recall, and treat any reconstructed detail as uncertain. A missing note is not automatically proof that a safeguard failed, but neither does it establish that the safeguard survived. Resolve the uncertainty through an available evidence route or begin with the conservative functional equivalent and document that choice.
+
+Once the four starting scores are calculated, read them aloud and ask the group whether the recorded facts are accurate. This is a chance to correct a transcription error, not to revise a difficult decision after its consequences are known. After confirmation, lock the baseline; any later change requires a named lead action, an observable result, and a logged cause.
+
 ### The five-minute handoff
 
 At each chapter’s end, spend five minutes completing these prompts:
