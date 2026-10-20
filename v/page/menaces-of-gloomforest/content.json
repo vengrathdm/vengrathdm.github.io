@@ -13,7 +13,7 @@
     "dossierTitle": "DOSSIER",
     "dossier": [
       [
-        "MATERIAŁY",
+        "POSTACI",
         "4"
       ],
       [
@@ -22,11 +22,11 @@
       ],
       [
         "ŹRÓDŁO",
-        "ZAPIS"
+        "HOMEBREW"
       ],
       [
         "STATUS",
-        "ZAPIS"
+        "ZAKOŃCZONA TPK"
       ]
     ],
     "manifesto": null,
