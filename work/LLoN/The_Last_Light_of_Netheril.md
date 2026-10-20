@@ -1510,6 +1510,38 @@ At the start of each movement, give each timeline one **lead action**. The group
 
 Alternate which timeline acts first each movement. The second group may respond to what the first group changed. A lead action cannot change a track merely because the intention sounds compelling: it must address an established cause, use evidence or a resource, or accept a meaningful cost. Do not demand a check when prior choices or clear evidence have already secured the result.
 
+### Cross-timeline action matrix
+
+Use this matrix when a player asks, “What can my character actually change from this side?” It is a menu of valid approaches, not a list of required actions. The acting group must still describe its method and identify the evidence, permission, person, or mechanism it uses.
+
+| Ancient lead action | Signal or result visible to the modern group | Modern response that can use it |
+|---|---|---|
+| Preserve a witness’s original phrasing beside the civic summary | The same deposit presents an original statement and a separate summary label | Compare the two versions, cite the distinction publicly, or restrict release of identifying details without hiding the existence of the record |
+| Narrow the Custodian’s authority to indexing and preservation | The relay shows an explicit list of permitted functions and a blocked classification command | Test whether a current restriction is authorized; establish an appeal route for decisions outside the mandate |
+| Divide the witness key between two custodians | The relay requires two distinct authorizations and records which one is absent | Locate the second holder, use a documented fallback procedure, or accept delayed access rather than treating one key as consent |
+| Preserve a baseline index outside the working system | A reference index can be compared with the current retrieval | Document a discrepancy and identify whether it reflects loss, changed classification, or an unsupported inference |
+| Omit a testimony group while marking the omission | The modern interface displays a category and a reason for its absence, but no testimony content | Explain the gap accurately, seek independent testimony, or decide whether the archive can be opened without implying completeness |
+| Leave an access clause unresolved | The modern controls expose an ambiguity rather than a clear permission | Negotiate a temporary rule, require a review date, or bind the archive until authority can be clarified |
+
+A modern action must also produce a return signal that the ancient group can understand. A documented appeal route might appear as a new branch in the original procedure; a public statement might return as a record of how future users interpret the archive; a refusal to publish names might appear as a visible restriction attached to the relevant deposit. Describe the link in the fiction before changing a track. The connection is not telepathy and does not let characters send arbitrary messages across time: the chamber transmits state changes and preserved evidence through the established engine and relay.
+
+If the ancient group has not established the relevant mechanism, the modern group may still act, but it must compensate. For example, without a baseline index, the modern characters can compare two independent copies or accept lower confidence; without a divided key, they can create a new present-day review procedure rather than pretend the missing second authorization exists. Compensation costs an additional lead action, a meaningful resource, a delay, or a reduction in the scope of the result. State the cost before the group commits.
+
+### Shared action log
+
+Record every lead action in this form before moving to the next timeline:
+
+- **Acting timeline and characters:** who took responsibility.
+- **Declared objective:** the specific condition they intend to change.
+- **Mechanism:** evidence, safeguard, permission, relationship, or resource used.
+- **Check and DC, if any:** include advantage source where relevant.
+- **Immediate result:** what visibly changes in that timeline.
+- **Return signal:** what the other timeline can observe and what it cannot infer from that signal alone.
+- **Track change and reason:** one named track, its previous score, new score, and causal explanation.
+- **Cost or open question:** what remains unresolved and which timeline can act on it next.
+
+Do not advance a track until the return signal is described. If the signal is ambiguous, the receiving group can spend its lead action to verify it or act provisionally while recording the uncertainty. This makes cross-timeline causality part of play rather than a retrospective explanation supplied by the DM.
+
 ### 3. Resolve lead actions
 
 For a risky action, use DC 14 for a standard challenge and DC 17 when it is unusually difficult, directly opposed, or poorly supported by evidence. Choose the ability and proficiency that fit the method. A relevant tool, spell, relationship, or recorded safeguard can grant advantage when it genuinely changes the circumstances; do not stack several sources of advantage.
