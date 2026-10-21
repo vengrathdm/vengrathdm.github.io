@@ -70,12 +70,36 @@ document.getElementById("roster").innerHTML=PARTY.map(p=>
 document.getElementById("sessions").innerHTML=SESSIONS.map(s=>
   `<details><summary><small>Sesja ${s.n}</small>${s.title}</summary><p>${s.text}</p><p><small>${s.date}</small></p></details>`).join("");
 
-/* ---------- MIERNIK GŁĘBOKOŚCI ---------- */
-const links2=[...document.querySelectorAll(".gauge li a")], depth=document.getElementById("depth");
-const secs=links2.map(a=>document.querySelector(a.hash));
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)
-  links2.forEach((a,i)=>a.classList.toggle("on",secs[i]===e.target))}),{rootMargin:"-45% 0px -50% 0px"});
-secs.forEach(s=>io.observe(s));
-let raf;addEventListener("scroll",()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{
-  const f=scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight);
-  depth.textContent=Math.round(f*3200).toLocaleString("pl-PL")})},{passive:true});
+/* ---------- NAWIGACJA SEKCJI ---------- */
+const navLinks=[...document.querySelectorAll(".gauge li a")];
+const depth=document.getElementById("depth");
+const panels=navLinks.map(a=>document.querySelector(a.hash)).filter(Boolean);
+const panelById=new Map(panels.map(panel=>[panel.id,panel]));
+
+function showPanel(id,{updateHistory=false,scroll=true}={}){
+  if(!panelById.has(id)) id="surface";
+  panels.forEach(panel=>{panel.hidden=panel.id!==id;});
+  navLinks.forEach(link=>{
+    const active=link.hash==="#"+id;
+    link.classList.toggle("on",active);
+    if(active) link.setAttribute("aria-current","page");
+    else link.removeAttribute("aria-current");
+  });
+  const index=panels.findIndex(panel=>panel.id===id);
+  depth.textContent=Math.max(0,index*800).toLocaleString("pl-PL");
+  if(updateHistory && location.hash!=="#"+id) history.pushState(null,"","#"+id);
+  if(scroll) window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+}
+
+document.addEventListener("click",event=>{
+  const link=event.target.closest('a[href^="#"]');
+  if(!link) return;
+  const id=decodeURIComponent(link.hash.slice(1));
+  if(!panelById.has(id)) return;
+  event.preventDefault();
+  showPanel(id,{updateHistory:true});
+});
+window.addEventListener("popstate",()=>showPanel(location.hash.slice(1),{scroll:true}));
+window.addEventListener("hashchange",()=>showPanel(location.hash.slice(1),{scroll:true}));
+panels.forEach(panel=>{panel.hidden=true;});
+showPanel(location.hash.slice(1),{scroll:false});
