@@ -18,6 +18,12 @@
     "CardAdress": "/v/page/ksiazeta-heartwell/"
   },
   {
+    "CardName": "Heartwell Wiki",
+    "CardTags": "Hidden",
+    "CardGraphic": "/v/core/graphics/voronoi/heartwell-wiki.webp",
+    "CardAdress": "/v/page/heartwellwiki/"
+  },
+  {
     "CardName": "Katalog Osiągnięć",
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/sala-chwaly.webp",
@@ -277,13 +283,13 @@
   },
   {
     "CardName": "Rise of the Drow",
-    "CardTags": "Blog",
+    "CardTags": "Hidden",
     "CardGraphic": "/v/page/rise-of-the-drow/res/Graphics/hero-image.webp",
     "CardAdress": "/v/page/rise-of-the-drow/"
   },
   {
     "CardName": "Raiders of the Serpent Sea",
-    "CardTags": "Kampania",
+    "CardTags": "Hidden",
     "CardGraphic": "/v/core/graphics/voronoi/raiders-of-the-serpent-sea.webp",
     "CardAdress": "/v/page/raiders-of-the-serpent-sea/"
   }
