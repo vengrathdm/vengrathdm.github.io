@@ -115,3 +115,9 @@ footer{display:flex;justify-content:space-between;padding:2rem 5vw;border-top:1p
 
 /* Single-panel navigation */
 [hidden]{display:none!important}
+
+/* Character portraits in the campaign roster */
+.party-portrait{width:4.5rem;height:5.5rem;object-fit:cover;object-position:center top;border:1px solid var(--faer-dim);background:var(--deep);clip-path:polygon(12% 0,88% 0,100% 12%,100% 88%,88% 100%,12% 100%,0 88%,0 12%)}
+#roster .party-meta{color:var(--spore);font-size:.9rem}
+#roster .party-player{font-size:.85rem;font-style:italic}
+@media(max-width:860px){#roster li{grid-template-columns:3.5rem 1fr}.party-portrait{width:3.5rem;height:4.5rem}}
