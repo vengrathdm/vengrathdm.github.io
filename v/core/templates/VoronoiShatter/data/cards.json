@@ -280,5 +280,11 @@
     "CardTags": "Blog",
     "CardGraphic": "/v/page/rise-of-the-drow/res/Graphics/hero-image.webp",
     "CardAdress": "/v/page/rise-of-the-drow/"
+  },
+  {
+    "CardName": "Raiders of the Serpent Sea",
+    "CardTags": "Kampania",
+    "CardGraphic": "/v/core/graphics/voronoi/dragon-and-the-kraken.webp",
+    "CardAdress": "/v/page/raiders-of-the-serpent-sea/"
   }
 ]
