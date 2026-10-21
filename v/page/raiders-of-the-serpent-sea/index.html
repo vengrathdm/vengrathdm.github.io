@@ -38,7 +38,7 @@
     <h2>Sieć sojuszy</h2>
     <p>Wybierz frakcję, aby prześledzić jej układy, sojusze i waśnie. Na wzburzonych wodach nikt nie żegluje samotnie.</p>
     <div class="legend"><span class="l-ally">sojusz</span><span class="l-feud">waśń</span></div>
-    <article class="house-card" id="houseCard" aria-live="polite"></article>
+    <article class="faction-card" id="factionCard" aria-live="polite"></article>
   </div>
   <svg id="web-svg" viewBox="0 0 600 600" role="group" aria-label="Sieć sojuszy i waśni"></svg>
 </section>
@@ -56,7 +56,7 @@
 </main>
 
 <footer><span>Vengrath · Raiders of the Serpent Sea</span><a href="#surface">Wróć na brzeg</a></footer>
-<dialog id="characterDialog" class="drow-character-dialog"><button class="dialog-close" type="button" aria-label="Zamknij">×</button><div id="characterDialogContent"></div></dialog>
+<dialog id="characterDialog" class="raiders-character-dialog"><button class="dialog-close" type="button" aria-label="Zamknij">×</button><div id="characterDialogContent"></div></dialog>
 <script type="module" src="raiders.js?v=serpent-sea-1"></script>
 <script>document.querySelector(".dialog-close").addEventListener("click",()=>document.getElementById("characterDialog").close());document.getElementById("characterDialog").addEventListener("click",e=>{if(e.target===e.currentTarget)e.currentTarget.close()});</script>
 </body>
