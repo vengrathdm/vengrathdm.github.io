@@ -274,5 +274,11 @@
     "CardTags": "Archiwum",
     "CardGraphic": "/v/core/graphics/voronoi/dragon-and-the-kraken.webp",
     "CardAdress": "/v/page/the-dragon-and-the-kraken/"
+  },
+  {
+    "CardName": "Rise of the Drow",
+    "CardTags": "Blog",
+    "CardGraphic": "/v/page/rise-of-the-drow/res/Graphics/hero-image.webp",
+    "CardAdress": "/v/page/rise-of-the-drow/"
   }
 ]
