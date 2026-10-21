@@ -112,3 +112,6 @@ footer{display:flex;justify-content:space-between;padding:2rem 5vw;border-top:1p
   #roster li{grid-template-columns:3.5rem 1fr}.status{grid-column:2;justify-self:start}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* Single-panel navigation */
+[hidden]{display:none!important}
