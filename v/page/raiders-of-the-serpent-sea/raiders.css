@@ -32,7 +32,7 @@ main,header,footer{margin-left:150px}
 .hero::before{content:"";position:absolute;inset:0;background:
   linear-gradient(0deg,rgba(7,21,29,.97) 0%,rgba(7,21,29,.7) 37%,rgba(7,21,29,.18) 100%),
   linear-gradient(90deg,rgba(7,21,29,.64),transparent 85%),
-  url("/v/core/graphics/voronoi/dragon-and-the-kraken.webp") center 45%/cover no-repeat;z-index:0}
+  url("/v/page/raiders-of-the-serpent-sea/res/graphics/hero-image.webp") center 45%/cover no-repeat;z-index:0}
 .glow{z-index:1;pointer-events:none}
 
 .hero{min-height:100svh;padding:12vh 6vw 8vh;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
@@ -153,7 +153,7 @@ body{background-image:radial-gradient(ellipse at 75% 0%,#24434a30,transparent 48
 .hero::before{background:
   linear-gradient(0deg,rgba(7,21,29,.98) 0%,rgba(7,21,29,.76) 36%,rgba(7,21,29,.16) 100%),
   linear-gradient(90deg,rgba(7,21,29,.68),transparent 88%),
-  url("/v/core/graphics/voronoi/dragon-and-the-kraken.webp") center 45%/cover no-repeat}
+  url("/v/page/raiders-of-the-serpent-sea/res/graphics/hero-image.webp") center 45%/cover no-repeat}
 .hero h1{color:#f0eadc;letter-spacing:.005em;text-shadow:0 4px 26px #07151dcc,0 0 60px #d0b27630}
 .lead-in{letter-spacing:.12em;text-transform:uppercase}
 .descend{border-color:var(--faer);color:var(--bone);letter-spacing:.04em}
