@@ -15,7 +15,7 @@ const SESSIONS = [
   {n:3,date:"data sesji",title:"Cień pod falami",text:"Na szlaku pojawiają się znaki czegoś pradawnego, co porusza się pod okrętem."}
 ];
 
-/* ---------- PAJĘCZYNA ---------- */
+/* ---------- SIEĆ SOJUSZY ---------- */
 const NS="http://www.w3.org/2000/svg", C=300, SPOKES=10, RINGS=[70,125,180,235,285];
 const el=(t,a={},p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p&&p.append(e);return e};
 const pt=(i,r)=>{const a=-Math.PI/2+i*2*Math.PI/SPOKES;return [C+r*Math.cos(a),C+r*Math.sin(a)]};
@@ -30,7 +30,7 @@ RINGS.forEach(r=>{let d="";for(let i=0;i<SPOKES;i++){
   el("path",{d,class:"strand"},strands)});
 
 const pos={}, nodeEl={}, linkEl={};
-const angleOrder=[0,3,6,2,8]; // rozmieszczenie domów na szprychach
+const angleOrder=[0,3,6,2,8]; // rozmieszczenie frakcji na szprychach
 FACTIONS.forEach((h,i)=>{pos[h.id]=pt(angleOrder[i],RINGS[h.rank-1]-(i?0:0))});
 FACTIONS.forEach(h=>[...h.ally.map(o=>["ally",o]),...h.feud.map(o=>["feud",o])].forEach(([k,o])=>{
   const key=[h.id,o].sort().join("-")+k; if(linkEl[key])return;
@@ -44,7 +44,7 @@ FACTIONS.forEach(h=>{
   g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();pick(h.id)}});
   nodeEl[h.id]=g});
 
-const card=document.getElementById("houseCard");
+const card=document.getElementById("factionCard");
 function pick(id){
   const h=FACTIONS.find(x=>x.id===id);
   Object.entries(nodeEl).forEach(([k,n])=>n.classList.toggle("sel",k===id));
@@ -70,7 +70,7 @@ try{
  roster.addEventListener("characterselect",event=>{
   const c=event.detail.character,dialog=document.getElementById("characterDialog"),content=document.getElementById("characterDialogContent");
   content.replaceChildren();
-  const portrait=document.createElement("div");portrait.className="drow-dialog-portrait";const img=document.createElement("img");img.src=c.portrait;img.alt="Portret "+c.character;portrait.append(img);content.append(portrait);
+  const portrait=document.createElement("div");portrait.className="raiders-dialog-portrait";const img=document.createElement("img");img.src=c.portrait;img.alt="Portret "+c.character;portrait.append(img);content.append(portrait);
   const copy=document.createElement("div"),kicker=document.createElement("p"),heading=document.createElement("h2"),dl=document.createElement("dl");
   kicker.className="lead-in";kicker.textContent="ARCHIWUM POSTACI · "+c.id;heading.textContent=c.character;
   [["Gracz",c.player],["Kampanie",(c.campaigns||[]).join(", ")],["Moduły",(c.modules||[]).join(", ")],["Klasy",(c.classes||[]).join(", ")],["Rasa",c.race],["Status",c.status],["Historia",c.history||"Brak zapisków."]].forEach(([label,value])=>{const dt=document.createElement("dt"),dd=document.createElement("dd");dt.textContent=label;dd.textContent=value||"Nie podano";dl.append(dt,dd)});
