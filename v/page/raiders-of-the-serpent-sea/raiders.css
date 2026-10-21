@@ -191,3 +191,14 @@ h2{letter-spacing:.015em;text-shadow:0 2px 20px #8cc9c510}
 summary::after{color:var(--faer)}
 footer{border-color:var(--ridge);background:#07151d;color:var(--mist)}
 @media(prefers-reduced-motion:reduce){.glow{animation:none!important}}
+
+/* Keep the longer campaign title balanced on laptop and mobile widths. */
+.hero h1{font-size:clamp(2.45rem,9.8vw,10rem);line-height:.98;overflow-wrap:normal}
+.character-grid .character-card__body{font-family:var(--body)}
+.character-grid .character-card__row{font-family:var(--body);font-size:.95rem}
+.character-grid .character-card__label{font-family:var(--body);font-size:.8rem;letter-spacing:.08em}
+.character-grid .character-card__achievement-count{font-family:var(--body);font-size:.85rem}
+.drow-character-dialog h2{font-family:var(--display)}
+.drow-character-dialog dl{font-size:1.05rem}
+@media(max-width:860px){.hero h1{font-size:clamp(2.6rem,11vw,7rem)}}
+@media(max-width:520px){.hero h1{font-size:clamp(2.35rem,11vw,4.4rem)}}
