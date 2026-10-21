@@ -1,3 +1,5 @@
+import { loadCharacterCatalog } from "/v/core/templates/CharacterGallery/CharacterRepository.js";
+import { createCharacterCard } from "/v/core/templates/CharacterCard/CharacterCard.js";
 /* ---------- DANE (edytuj tutaj) ---------- */
 const HOUSES = [
   {id:"vel",name:"Vel'Sharen",rank:1,motto:"Pierwsza w ciszy, pierwsza w krwi.",domain:"Matrona Zhyra, kapłanki Lolth",power:"Magia kapłańska, armia pająków",secret:"Matrona od lat nie słyszy głosu Lolth i ukrywa to przed wszystkimi.",ally:["nym"],feud:["zin"]},
@@ -6,12 +8,7 @@ const HOUSES = [
   {id:"zin",name:"Zin'Orath",rank:4,motto:"Jad czeka cierpliwie.",domain:"Alchemicy i truciciele",power:"Trucizny, mutacje",secret:"Hoduje w piwnicach istotę, której nikt nie zaprosił do Podmroku.",ally:["kor"],feud:["vel"]},
   {id:"kor",name:"Kor'Velith",rank:5,motto:"Gdy upadną wielcy, wstaną mali.",domain:"Dom podupadły, żądny awansu",power:"Desperacja i dług u każdego",secret:"Szuka drużyny, by zrzucić winę za planowany zamach.",ally:["ruv","zin"],feud:[]}
 ];
-const PARTY = [
-  {id:"char-0001",name:"Pelagietta",player:"Miauriusz",role:"Ranger · Halfling",note:"Legends of Barovia · Curse of Strahd",status:"Aktywna",portrait:"/v/core/portraits/char-0001.webp"},
-  {id:"char-0002",name:"Luekher",player:"Aureli",role:"Paladin · Elf",note:"Legends of Barovia · Curse of Strahd",status:"Aktywna",portrait:"/v/core/portraits/char-0002.webp"},
-  {id:"char-0003",name:"Damira",player:"Kajetan",role:"Bard · Changeling",note:"Legends of Barovia · Curse of Strahd",status:"Aktywna",portrait:"/v/core/portraits/char-0003.webp"},
-  {id:"char-0004",name:"Pchełka",player:"Zuza",role:"Druid · Human",note:"Legends of Barovia · Curse of Strahd",status:"Aktywna",portrait:"/v/core/portraits/char-0004.webp"}
-];
+
 const SESSIONS = [
   {n:1,date:"data sesji",title:"Zejście",text:"Drużyna opuszcza ostatnią latarnię i wchodzi w tunele prowadzące do miasta drowów. Tu wpisz własne podsumowanie."},
   {n:2,date:"data sesji",title:"Zaproszenie na kolację",text:"Dom Kor'Velith składa pierwszą ofertę. Tu wpisz własne podsumowanie."},
@@ -64,9 +61,22 @@ function pick(id){
 card.innerHTML='<p class="motto">Wybierz dom na pajęczynie.</p>';
 
 /* ---------- DRUŻYNA I KRONIKA ---------- */
-document.getElementById("roster").innerHTML=PARTY.map(p=>
-  `<li><img class="party-portrait" src="${p.portrait}" alt="Portret postaci ${p.name}" loading="lazy"><div><h3>${p.name}</h3><p class="party-meta">${p.role} · ID ${p.id}</p><p>${p.note}</p><p class="party-player">Gracz: ${p.player}</p></div>
-   <span class="status ${p.status==="Martwa"||p.status==="Zmarła"?"dead":""}">${p.status}</span></li>`).join("");
+const roster=document.getElementById("roster");
+const rosterIds=["char-0001","char-0002","char-0003","char-0004"];
+try{
+ const catalog=await loadCharacterCatalog();
+ const selected=rosterIds.map(id=>catalog.characters.find(character=>character.id===id)).filter(Boolean);
+ roster.replaceChildren(...selected.map(character=>createCharacterCard(character,catalog.achievements)));
+ roster.addEventListener("characterselect",event=>{
+  const c=event.detail.character,dialog=document.getElementById("characterDialog"),content=document.getElementById("characterDialogContent");
+  content.replaceChildren();
+  const portrait=document.createElement("div");portrait.className="drow-dialog-portrait";const img=document.createElement("img");img.src=c.portrait;img.alt="Portret "+c.character;portrait.append(img);content.append(portrait);
+  const copy=document.createElement("div"),kicker=document.createElement("p"),heading=document.createElement("h2"),dl=document.createElement("dl");
+  kicker.className="lead-in";kicker.textContent="ARCHIWUM POSTACI · "+c.id;heading.textContent=c.character;
+  [["Gracz",c.player],["Kampanie",(c.campaigns||[]).join(", ")],["Moduły",(c.modules||[]).join(", ")],["Klasy",(c.classes||[]).join(", ")],["Rasa",c.race],["Status",c.status],["Historia",c.history||"Brak zapisków."]].forEach(([label,value])=>{const dt=document.createElement("dt"),dd=document.createElement("dd");dt.textContent=label;dd.textContent=value||"Nie podano";dl.append(dt,dd)});
+  copy.append(kicker,heading,dl);content.append(copy);dialog.showModal();
+ });
+}catch(error){console.error(error);roster.textContent="Nie udało się wczytać kart postaci.";}
 document.getElementById("sessions").innerHTML=SESSIONS.map(s=>
   `<details><summary><small>Sesja ${s.n}</small>${s.title}</summary><p>${s.text}</p><p><small>${s.date}</small></p></details>`).join("");
 
