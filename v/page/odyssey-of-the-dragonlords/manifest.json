@@ -12,7 +12,7 @@
   ],
   "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0jPybJxVsDrhvpVm2eMnOUy",
   "audio": {
-    "src": "/res/audio/odyssey-of-the-dragonlords/odyssey.mp3",
+    "src": "/v/page/odyssey-of-the-dragonlords/res/audio/odyssey.mp3",
     "continuationKey": "odysseyDragonlordsTheme"
   }
 }

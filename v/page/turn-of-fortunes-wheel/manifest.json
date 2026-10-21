@@ -11,7 +11,7 @@
     "chronicle"
   ],
   "audio": {
-    "src": "/res/audio/turn-of-fortunes-wheel/turn-of-the-wheel.mp3",
+    "src": "/v/page/turn-of-fortunes-wheel/res/audio/turn-of-the-wheel.mp3",
     "storageKey": "turnOfFortunesWheelTheme"
   }
 }

@@ -12,7 +12,7 @@
     "world"
   ],
   "audio": {
-    "src": "/res/audio/shards-of-the-past/SotP.mp3",
+    "src": "/v/page/shards-of-the-past/res/audio/SotP.mp3",
     "continuationKey": "shards-of-the-past-theme"
   }
 }
