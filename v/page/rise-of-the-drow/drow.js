@@ -73,33 +73,39 @@ document.getElementById("sessions").innerHTML=SESSIONS.map(s=>
 /* ---------- NAWIGACJA SEKCJI ---------- */
 const navLinks=[...document.querySelectorAll(".gauge li a")];
 const depth=document.getElementById("depth");
-const panels=navLinks.map(a=>document.querySelector(a.hash)).filter(Boolean);
+const panels=navLinks.map(link=>document.getElementById(link.hash.slice(1))).filter(Boolean);
 const panelById=new Map(panels.map(panel=>[panel.id,panel]));
 
-function showPanel(id,{updateHistory=false,scroll=true}={}){
-  if(!panelById.has(id)) id="surface";
-  panels.forEach(panel=>{panel.hidden=panel.id!==id;});
+function showPanel(id,{writeHash=false,scroll=true}={}){
+  const activeId=panelById.has(id)?id:"surface";
+  panels.forEach(panel=>{
+    const active=panel.id===activeId;
+    panel.hidden=!active;
+    panel.setAttribute("aria-hidden",String(!active));
+  });
   navLinks.forEach(link=>{
-    const active=link.hash==="#"+id;
+    const active=link.hash==="#"+activeId;
     link.classList.toggle("on",active);
     if(active) link.setAttribute("aria-current","page");
     else link.removeAttribute("aria-current");
   });
-  const index=panels.findIndex(panel=>panel.id===id);
-  depth.textContent=Math.max(0,index*800).toLocaleString("pl-PL");
-  if(updateHistory && location.hash!=="#"+id) history.pushState(null,"","#"+id);
-  if(scroll) window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+  depth.textContent=String(Math.max(0,panels.findIndex(panel=>panel.id===activeId)*800));
+  if(writeHash && location.hash!=="#"+activeId) history.pushState({section:activeId},"","#"+activeId);
+  if(scroll) window.scrollTo({top:0,behavior:"auto"});
 }
 
-document.addEventListener("click",event=>{
-  const link=event.target.closest('a[href^="#"]');
-  if(!link) return;
-  const id=decodeURIComponent(link.hash.slice(1));
+function navigateToPanel(event){
+  const link=event.currentTarget;
+  const id=link.hash.slice(1);
   if(!panelById.has(id)) return;
   event.preventDefault();
-  showPanel(id,{updateHistory:true});
+  showPanel(id,{writeHash:true});
+}
+navLinks.forEach(link=>link.addEventListener("click",navigateToPanel));
+document.querySelectorAll('a[href="#surface"],a[href="#web"],a[href="#party"],a[href="#chronicle"]').forEach(link=>{
+  if(navLinks.includes(link)) return;
+  link.addEventListener("click",navigateToPanel);
 });
 window.addEventListener("popstate",()=>showPanel(location.hash.slice(1),{scroll:true}));
-window.addEventListener("hashchange",()=>showPanel(location.hash.slice(1),{scroll:true}));
-panels.forEach(panel=>{panel.hidden=true;});
+panels.forEach(panel=>{panel.hidden=true;panel.setAttribute("aria-hidden","true");});
 showPanel(location.hash.slice(1),{scroll:false});
