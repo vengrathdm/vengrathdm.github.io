@@ -57,11 +57,11 @@ h2{font-size:clamp(2.4rem,5vw,4rem)}
 .legend{display:flex;gap:1.5rem;font-size:.9rem;margin:1rem 0 1.5rem}
 .legend span::before{content:"";display:inline-block;width:26px;border-top:2px solid;margin-right:.5rem;vertical-align:middle}
 .l-ally{color:var(--spore)} .l-feud{color:var(--blood)} .l-feud::before{border-top-style:dashed!important}
-.house-card{border-left:3px solid var(--faer);padding:.2rem 0 .2rem 1.2rem;min-height:15rem}
-.house-card h3{font-size:2.2rem;margin-bottom:.3rem}
-.house-card .motto{font-style:italic;color:var(--faer);margin:0 0 .8rem}
-.house-card dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.2rem 1rem;font-size:.98rem}
-.house-card dt{color:var(--mist)} .house-card dd{margin:0}
+.faction-card{border-left:3px solid var(--faer);padding:.2rem 0 .2rem 1.2rem;min-height:15rem}
+.faction-card h3{font-size:2.2rem;margin-bottom:.3rem}
+.faction-card .motto{font-style:italic;color:var(--faer);margin:0 0 .8rem}
+.faction-card dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.2rem 1rem;font-size:.98rem}
+.faction-card dt{color:var(--mist)} .faction-card dd{margin:0}
 .secret{margin-top:1rem;background:none;border:1px dashed var(--mist);color:var(--bone);font:inherit;padding:.4rem .9rem;cursor:pointer}
 .secret:hover{border-color:var(--spore);color:var(--spore)}
 .secret-text{margin:.8rem 0 0;color:var(--spore)}
@@ -132,16 +132,16 @@ footer{display:flex;justify-content:space-between;padding:2rem 5vw;border-top:1p
 .character-grid .character-card__label,.character-grid .character-card__achievement-count{color:var(--mist)}
 .character-grid .character-card__achievement-count{border-color:var(--ridge)}
 .character-grid .character-card h3{font-family:var(--display);font-size:1.5rem}
-.drow-character-dialog{position:relative;width:min(850px,calc(100% - 2rem));max-height:85vh;overflow:auto;border:1px solid var(--faer-dim);background:var(--deep);color:var(--bone);padding:2rem}
-.drow-character-dialog::backdrop{background:#05030acc;backdrop-filter:blur(5px)}
-.drow-character-dialog #characterDialogContent{display:grid;grid-template-columns:minmax(180px,280px) 1fr;gap:2rem}
-.drow-dialog-portrait img{display:block;width:100%;border:1px solid var(--faer-dim)}
-.drow-character-dialog h2{margin:.5rem 0 1rem}
-.drow-character-dialog dl{display:grid;grid-template-columns:6rem 1fr;gap:.4rem 1rem}
-.drow-character-dialog dt{color:var(--spore)}.drow-character-dialog dd{margin:0;overflow-wrap:anywhere}
+.raiders-character-dialog{position:relative;width:min(850px,calc(100% - 2rem));max-height:85vh;overflow:auto;border:1px solid var(--faer-dim);background:var(--deep);color:var(--bone);padding:2rem}
+.raiders-character-dialog::backdrop{background:#05030acc;backdrop-filter:blur(5px)}
+.raiders-character-dialog #characterDialogContent{display:grid;grid-template-columns:minmax(180px,280px) 1fr;gap:2rem}
+.raiders-dialog-portrait img{display:block;width:100%;border:1px solid var(--faer-dim)}
+.raiders-character-dialog h2{margin:.5rem 0 1rem}
+.raiders-character-dialog dl{display:grid;grid-template-columns:6rem 1fr;gap:.4rem 1rem}
+.raiders-character-dialog dt{color:var(--spore)}.raiders-character-dialog dd{margin:0;overflow-wrap:anywhere}
 .dialog-close{position:sticky;top:0;float:right;background:none;border:1px solid var(--faer-dim);color:var(--bone);font-size:1.5rem;cursor:pointer}
 @media(max-width:1000px){.character-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:520px){.character-grid{grid-template-columns:1fr}.drow-character-dialog #characterDialogContent{grid-template-columns:1fr}.drow-dialog-portrait img{max-width:240px}}
+@media(max-width:520px){.character-grid{grid-template-columns:1fr}.raiders-character-dialog #characterDialogContent{grid-template-columns:1fr}.raiders-dialog-portrait img{max-width:240px}}
 
 /* Raiders of the Serpent Sea: salt, iron, stormglass and aged brass */
 body{background-image:radial-gradient(ellipse at 75% 0%,#24434a30,transparent 48%),linear-gradient(180deg,var(--void),#091a22 65%,var(--void))}
@@ -165,8 +165,8 @@ body{background-image:radial-gradient(ellipse at 75% 0%,#24434a30,transparent 48
 h1,h2,h3,summary{font-kerning:normal}
 h2{letter-spacing:.015em;text-shadow:0 2px 20px #8cc9c510}
 .legend .l-ally{color:var(--spore)}.legend .l-feud{color:var(--blood)}
-.house-card{border-left-color:var(--faer)}
-.house-card .motto{color:var(--faer)}
+.faction-card{border-left-color:var(--faer)}
+.faction-card .motto{color:var(--faer)}
 .secret{border-color:#8ca9a880}
 .secret:hover{border-color:var(--spore);color:var(--spore)}
 .strand{stroke:#284550;stroke-opacity:.85}
@@ -183,10 +183,10 @@ h2{letter-spacing:.015em;text-shadow:0 2px 20px #8cc9c510}
 .character-grid .character-card__player{color:var(--faer)}
 .character-grid .character-card__label,.character-grid .character-card__achievement-count{color:var(--mist)}
 .character-grid .character-card__achievement-count{border-color:var(--ridge)}
-.drow-character-dialog{box-shadow:0 25px 100px #0009;background:linear-gradient(145deg,#102630,#0b1a22)}
-.drow-character-dialog::backdrop{background:#02090de0;backdrop-filter:blur(6px)}
-.drow-dialog-portrait img{border-color:var(--faer-dim)}
-.drow-character-dialog dt{color:var(--spore)}
+.raiders-character-dialog{box-shadow:0 25px 100px #0009;background:linear-gradient(145deg,#102630,#0b1a22)}
+.raiders-character-dialog::backdrop{background:#02090de0;backdrop-filter:blur(6px)}
+.raiders-dialog-portrait img{border-color:var(--faer-dim)}
+.raiders-character-dialog dt{color:var(--spore)}
 #sessions details{border-color:var(--ridge)}
 summary::after{color:var(--faer)}
 footer{border-color:var(--ridge);background:#07151d;color:var(--mist)}
@@ -198,7 +198,7 @@ footer{border-color:var(--ridge);background:#07151d;color:var(--mist)}
 .character-grid .character-card__row{font-family:var(--body);font-size:.95rem}
 .character-grid .character-card__label{font-family:var(--body);font-size:.8rem;letter-spacing:.08em}
 .character-grid .character-card__achievement-count{font-family:var(--body);font-size:.85rem}
-.drow-character-dialog h2{font-family:var(--display)}
-.drow-character-dialog dl{font-size:1.05rem}
+.raiders-character-dialog h2{font-family:var(--display)}
+.raiders-character-dialog dl{font-size:1.05rem}
 @media(max-width:860px){.hero h1{font-size:clamp(2.6rem,11vw,7rem)}}
 @media(max-width:520px){.hero h1{font-size:clamp(2.35rem,11vw,4.4rem)}}
