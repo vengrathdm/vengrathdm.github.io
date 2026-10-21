@@ -1,18 +1,18 @@
 import { loadCharacterCatalog } from "/v/core/templates/CharacterGallery/CharacterRepository.js";
 import { createCharacterCard } from "/v/core/templates/CharacterCard/CharacterCard.js";
 /* ---------- DANE (edytuj tutaj) ---------- */
-const HOUSES = [
-  {id:"vel",name:"Vel'Sharen",rank:1,motto:"Pierwsza w ciszy, pierwsza w krwi.",domain:"Matrona Zhyra, kapłanki Lolth",power:"Magia kapłańska, armia pająków",secret:"Matrona od lat nie słyszy głosu Lolth i ukrywa to przed wszystkimi.",ally:["nym"],feud:["zin"]},
-  {id:"nym",name:"Nym'Kael",rank:2,motto:"Ostrze zna swojego pana.",domain:"Akademia wojowników",power:"Elitarni szermierze",secret:"Sprzedaje stal Domowi Zin'Orath, wrogowi swojego sojusznika.",ally:["vel"],feud:["ruv"]},
-  {id:"ruv",name:"Ru'Vhaen",rank:3,motto:"Wszystko ma cenę. Ty też.",domain:"Handel i szpiedzy",power:"Sieć informatorów",secret:"Zna prawdziwe imię jednego z bohaterów.",ally:["kor"],feud:["nym"]},
-  {id:"zin",name:"Zin'Orath",rank:4,motto:"Jad czeka cierpliwie.",domain:"Alchemicy i truciciele",power:"Trucizny, mutacje",secret:"Hoduje w piwnicach istotę, której nikt nie zaprosił do Podmroku.",ally:["kor"],feud:["vel"]},
-  {id:"kor",name:"Kor'Velith",rank:5,motto:"Gdy upadną wielcy, wstaną mali.",domain:"Dom podupadły, żądny awansu",power:"Desperacja i dług u każdego",secret:"Szuka drużyny, by zrzucić winę za planowany zamach.",ally:["ruv","zin"],feud:[]}
+const FACTIONS = [
+  {id:"skeld",short:"Skeld",name:"Skeldrun",rank:1,motto:"Burza niesie imię zwycięzców.",domain:"Wysokie fiordy i porty królewskie",power:"Długie łodzie, jarle i runiczni nawigatorzy",secret:"Jarl Skeldrun zawarł układ z czymś, co śpi pod lodem.",ally:["fjord"],feud:["ashen"]},
+  {id:"fjord",short:"Fjord",name:"Fjordborn",rank:2,motto:"Każda fala zna drogę do domu.",domain:"Stocznie, wyspy kupieckie i szlaki północy",power:"Najlepsi szkutnicy, mapy i zapasy",secret:"Fjordborn budują okręt z drewna wyrzuconego przez morze po czarnej burzy.",ally:["skeld"],feud:["varg"]},
+  {id:"varg",short:"Varg",name:"Vargskell",rank:3,motto:"Bierzemy to, czego morze nie odda.",domain:"Wolne załogi i skaliste zatoki",power:"Rajdy, najemnicy i abordaż",secret:"Ich kapitan od miesięcy płaci daninę tajemniczej istocie z głębin.",ally:["rime"],feud:["fjord"]},
+  {id:"ashen",short:"Ashen",name:"Ashen Wake",rank:4,motto:"Umarli wciąż pamiętają drogę.",domain:"Wyspy kurhanów i zatopione świątynie",power:"Wieszczki, runy i sekrety poległych",secret:"Wieszczowie słyszą głos dawnego króla, którego statek zniknął przed wiekami.",ally:["rime"],feud:["skeld"]},
+  {id:"rime",short:"Rime",name:"Rimeward",rank:5,motto:"Wyrzutki przetrwają każdą zimę.",domain:"Zamarznięte wybrzeża i osady wygnańców",power:"Przetrwanie, zasadzki i długi wdzięczności",secret:"Rimeward znają przejście przez burzę, której nie ma na żadnej mapie.",ally:["varg","ashen"],feud:[]}
 ];
 
 const SESSIONS = [
-  {n:1,date:"data sesji",title:"Zejście",text:"Drużyna opuszcza ostatnią latarnię i wchodzi w tunele prowadzące do miasta drowów. Tu wpisz własne podsumowanie."},
-  {n:2,date:"data sesji",title:"Zaproszenie na kolację",text:"Dom Kor'Velith składa pierwszą ofertę. Tu wpisz własne podsumowanie."},
-  {n:3,date:"data sesji",title:"Tytuł do uzupełnienia",text:"Podsumowanie do uzupełnienia po sesji."}
+  {n:1,date:"data sesji",title:"Wyprawa poza fiord",text:"Załoga opuszcza osłonięty port i kieruje się ku wodom, których nie ma na mapach. Tu wpisz podsumowanie sesji."},
+  {n:2,date:"data sesji",title:"Przysięga jarla",text:"Jeden z klanów składa drużynie niebezpieczną propozycję. Tu wpisz podsumowanie sesji."},
+  {n:3,date:"data sesji",title:"Cień pod falami",text:"Na szlaku pojawiają się znaki czegoś pradawnego, co porusza się pod okrętem."}
 ];
 
 /* ---------- PAJĘCZYNA ---------- */
@@ -31,34 +31,34 @@ RINGS.forEach(r=>{let d="";for(let i=0;i<SPOKES;i++){
 
 const pos={}, nodeEl={}, linkEl={};
 const angleOrder=[0,3,6,2,8]; // rozmieszczenie domów na szprychach
-HOUSES.forEach((h,i)=>{pos[h.id]=pt(angleOrder[i],RINGS[h.rank-1]-(i?0:0))});
-HOUSES.forEach(h=>[...h.ally.map(o=>["ally",o]),...h.feud.map(o=>["feud",o])].forEach(([k,o])=>{
+FACTIONS.forEach((h,i)=>{pos[h.id]=pt(angleOrder[i],RINGS[h.rank-1]-(i?0:0))});
+FACTIONS.forEach(h=>[...h.ally.map(o=>["ally",o]),...h.feud.map(o=>["feud",o])].forEach(([k,o])=>{
   const key=[h.id,o].sort().join("-")+k; if(linkEl[key])return;
   const [x1,y1]=pos[h.id],[x2,y2]=pos[o];
   linkEl[key]=el("path",{d:`M${x1} ${y1} Q${C} ${C} ${x2} ${y2}`,class:"link "+k,"data-a":h.id,"data-b":o},links)}));
-HOUSES.forEach(h=>{
-  const g=el("g",{class:"node",tabindex:0,role:"button","aria-label":"Dom "+h.name,transform:`translate(${pos[h.id]})`},nodes);
+FACTIONS.forEach(h=>{
+  const g=el("g",{class:"node",tabindex:0,role:"button","aria-label":"Frakcja "+h.name,transform:`translate(${pos[h.id]})`},nodes);
   el("circle",{r:30-h.rank*2},g);
-  const t=el("text",{y:5},g); t.textContent=h.name.split("'")[0]+"'";
+  const t=el("text",{y:5},g); t.textContent=h.short;
   g.addEventListener("click",()=>pick(h.id));
   g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();pick(h.id)}});
   nodeEl[h.id]=g});
 
 const card=document.getElementById("houseCard");
 function pick(id){
-  const h=HOUSES.find(x=>x.id===id);
+  const h=FACTIONS.find(x=>x.id===id);
   Object.entries(nodeEl).forEach(([k,n])=>n.classList.toggle("sel",k===id));
   Object.entries(nodeEl).forEach(([k,n])=>{n.classList.toggle("rel",h.ally.includes(k));n.classList.toggle("foe",h.feud.includes(k))});
   Object.values(linkEl).forEach(l=>l.classList.toggle("show",l.dataset.a===id||l.dataset.b===id));
-  const names=ids=>ids.length?ids.map(i=>HOUSES.find(x=>x.id===i).name).join(", "):"brak";
+  const names=ids=>ids.length?ids.map(i=>FACTIONS.find(x=>x.id===i).name).join(", "):"brak";
   card.innerHTML=`<h3>${h.name}</h3><p class="motto">„${h.motto}”</p>
-   <dl><dt>Pozycja</dt><dd>${h.rank} z ${HOUSES.length}</dd><dt>Domena</dt><dd>${h.domain}</dd>
-   <dt>Siła</dt><dd>${h.power}</dd><dt>Sojusznicy</dt><dd>${names(h.ally)}</dd><dt>Wrogowie</dt><dd>${names(h.feud)}</dd></dl>
+   <dl><dt>Ranga</dt><dd>${h.rank} z ${FACTIONS.length}</dd><dt>Terytorium</dt><dd>${h.domain}</dd>
+   <dt>Potęga</dt><dd>${h.power}</dd><dt>Sojusznicy</dt><dd>${names(h.ally)}</dd><dt>Wrogowie</dt><dd>${names(h.feud)}</dd></dl>
    <button class="secret" type="button">Odkryj sekret</button><p class="secret-text" hidden>${h.secret}</p>`;
   const b=card.querySelector(".secret"),s=card.querySelector(".secret-text");
   b.onclick=()=>{s.hidden=!s.hidden;b.textContent=s.hidden?"Odkryj sekret":"Ukryj sekret"};
 }
-card.innerHTML='<p class="motto">Wybierz dom na pajęczynie.</p>';
+card.innerHTML='<p class="motto">Wybierz frakcję na mapie sojuszy.</p>';
 
 /* ---------- DRUŻYNA I KRONIKA ---------- */
 const roster=document.getElementById("roster");
@@ -99,7 +99,7 @@ function showPanel(id,{writeHash=false,scroll=true}={}){
     if(active) link.setAttribute("aria-current","page");
     else link.removeAttribute("aria-current");
   });
-  depth.textContent=String(Math.max(0,panels.findIndex(panel=>panel.id===activeId)*800));
+  depth.textContent=String(Math.max(0,panels.findIndex(panel=>panel.id===activeId)*80));
   if(writeHash && location.hash!=="#"+activeId) history.pushState({section:activeId},"","#"+activeId);
   if(scroll) window.scrollTo({top:0,behavior:"auto"});
 }
