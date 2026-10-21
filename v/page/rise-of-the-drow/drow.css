@@ -121,3 +121,24 @@ footer{display:flex;justify-content:space-between;padding:2rem 5vw;border-top:1p
 #roster .party-meta{color:var(--spore);font-size:.9rem}
 #roster .party-player{font-size:.85rem;font-style:italic}
 @media(max-width:860px){#roster li{grid-template-columns:3.5rem 1fr}.party-portrait{width:3.5rem;height:4.5rem}}
+
+.character-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:2rem}
+.character-grid .character-card{background:var(--deep);border-color:var(--ridge);color:var(--bone);font-family:var(--body)}
+.character-grid .character-card:hover,.character-grid .character-card:focus-visible{border-color:var(--faer);box-shadow:0 0 20px #b44cff22}
+.character-grid .character-card__portrait{background:var(--void)}
+.character-grid .character-card__portrait::after{border-color:#b44cff88;background:linear-gradient(135deg,#b44cff15,transparent 25%,transparent 75%,#4de0c415)}
+.character-grid .character-card__status{font-family:var(--body);color:var(--spore);text-transform:none}
+.character-grid .character-card__player{color:var(--spore)}
+.character-grid .character-card__label,.character-grid .character-card__achievement-count{color:var(--mist)}
+.character-grid .character-card__achievement-count{border-color:var(--ridge)}
+.character-grid .character-card h3{font-family:var(--display);font-size:1.5rem}
+.drow-character-dialog{position:relative;width:min(850px,calc(100% - 2rem));max-height:85vh;overflow:auto;border:1px solid var(--faer-dim);background:var(--deep);color:var(--bone);padding:2rem}
+.drow-character-dialog::backdrop{background:#05030acc;backdrop-filter:blur(5px)}
+.drow-character-dialog #characterDialogContent{display:grid;grid-template-columns:minmax(180px,280px) 1fr;gap:2rem}
+.drow-dialog-portrait img{display:block;width:100%;border:1px solid var(--faer-dim)}
+.drow-character-dialog h2{margin:.5rem 0 1rem}
+.drow-character-dialog dl{display:grid;grid-template-columns:6rem 1fr;gap:.4rem 1rem}
+.drow-character-dialog dt{color:var(--spore)}.drow-character-dialog dd{margin:0;overflow-wrap:anywhere}
+.dialog-close{position:sticky;top:0;float:right;background:none;border:1px solid var(--faer-dim);color:var(--bone);font-size:1.5rem;cursor:pointer}
+@media(max-width:1000px){.character-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.character-grid{grid-template-columns:1fr}.drow-character-dialog #characterDialogContent{grid-template-columns:1fr}.drow-dialog-portrait img{max-width:240px}}
