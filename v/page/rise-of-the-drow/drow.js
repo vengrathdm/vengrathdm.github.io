@@ -7,10 +7,10 @@ const HOUSES = [
   {id:"kor",name:"Kor'Velith",rank:5,motto:"Gdy upadną wielcy, wstaną mali.",domain:"Dom podupadły, żądny awansu",power:"Desperacja i dług u każdego",secret:"Szuka drużyny, by zrzucić winę za planowany zamach.",ally:["ruv","zin"],feud:[]}
 ];
 const PARTY = [
-  {id:"001",name:"Nieznany z Podmroku",role:"Postać tymczasowa · ID 001",note:"Ślad prowadzi w głąb miasta drowów; historia do uzupełnienia.",status:"żywa"},
-  {id:"002",name:"Cień bez herbu",role:"Postać tymczasowa · ID 002",note:"Nie ujawniono jeszcze przysięgi ani lojalności.",status:"żywa"},
-  {id:"003",name:"Wygnany świadek",role:"Postać tymczasowa · ID 003",note:"Wie coś o jednym z domów, ale nie mówi całej prawdy.",status:"zaginiona"},
-  {id:"004",name:"Dłużnik Pajęczej Królowej",role:"Postać tymczasowa · ID 004",note:"Każda przysługa w Podmroku ma swoją cenę.",status:"żywa"}
+  {id:"char-0001",name:"Pelagietta",player:"Miauriusz",role:"Ranger · Halfling",note:"Legends of Barovia · Curse of Strahd",status:"Aktywna",portrait:"/v/core/portraits/char-0001.webp"},
+  {id:"char-0002",name:"Luekher",player:"Aureli",role:"Paladin · Elf",note:"Legends of Barovia · Curse of Strahd",status:"Aktywna",portrait:"/v/core/portraits/char-0002.webp"},
+  {id:"char-0003",name:"Damira",player:"Kajetan",role:"Bard · Changeling",note:"Legends of Barovia · Curse of Strahd",status:"Aktywna",portrait:"/v/core/portraits/char-0003.webp"},
+  {id:"char-0004",name:"Pchełka",player:"Zuza",role:"Druid · Human",note:"Legends of Barovia · Curse of Strahd",status:"Aktywna",portrait:"/v/core/portraits/char-0004.webp"}
 ];
 const SESSIONS = [
   {n:1,date:"data sesji",title:"Zejście",text:"Drużyna opuszcza ostatnią latarnię i wchodzi w tunele prowadzące do miasta drowów. Tu wpisz własne podsumowanie."},
@@ -65,8 +65,8 @@ card.innerHTML='<p class="motto">Wybierz dom na pajęczynie.</p>';
 
 /* ---------- DRUŻYNA I KRONIKA ---------- */
 document.getElementById("roster").innerHTML=PARTY.map(p=>
-  `<li><div class="sigil" aria-hidden="true">${p.id||p.name[0]}</div><div><h3>${p.name}</h3><p>${p.role}. ${p.note}</p></div>
-   <span class="status ${p.status==="martwa"?"dead":""}">${p.status}</span></li>`).join("");
+  `<li><img class="party-portrait" src="${p.portrait}" alt="Portret postaci ${p.name}" loading="lazy"><div><h3>${p.name}</h3><p class="party-meta">${p.role} · ID ${p.id}</p><p>${p.note}</p><p class="party-player">Gracz: ${p.player}</p></div>
+   <span class="status ${p.status==="Martwa"||p.status==="Zmarła"?"dead":""}">${p.status}</span></li>`).join("");
 document.getElementById("sessions").innerHTML=SESSIONS.map(s=>
   `<details><summary><small>Sesja ${s.n}</small>${s.title}</summary><p>${s.text}</p><p><small>${s.date}</small></p></details>`).join("");
 
