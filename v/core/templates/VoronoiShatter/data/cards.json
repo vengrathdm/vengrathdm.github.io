@@ -24,12 +24,6 @@
     "CardAdress": "/v/page/heartwellwiki/"
   },
   {
-    "CardName": "Katalog Osiągnięć",
-    "CardTags": "Archiwum",
-    "CardGraphic": "/v/core/graphics/voronoi/sala-chwaly.webp",
-    "CardAdress": "/v/page/hof/achievements.html"
-  },
-  {
     "CardName": "Legends of Barovia",
     "CardTags": "Aktywna Kampania",
     "CardGraphic": "/v/core/graphics/voronoi/legends-of-barovia.webp",
