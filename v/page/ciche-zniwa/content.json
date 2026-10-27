@@ -1,0 +1,161 @@
+{
+  "campaign": {
+    "kicker": "D&D 5E · FORGOTTEN REALMS · AKTA PRZYGODY",
+    "title": "CICHE ŻNIWA",
+    "lead": "Zboże znika, spichlerze płoną, a na drogach pojawiają się rzekomi najeźdźcy z pustyni. W Cormyrze głód nie jest klęską natury — ktoś zamierza uczynić z niego narzędzie władzy.",
+    "introTitle": "Głód jest narzędziem władzy",
+    "introParagraphs": [
+      "Ciche Żniwa to przygoda śledcza dla Dungeons & Dragons 5. edycji, prowadząca od pól Cormyru przez wolne Doliny aż po południowe rubieże Anauroch. Zamiast jednej zamkniętej lokacji drużyna otrzymuje rozległą sieć tropów, interesów i ludzi, którzy wiedzą więcej, niż chcą powiedzieć.",
+      "Kiedy konwoje z ziarnem znikają, a kolejne spichlerze stają w ogniu, podejrzenia kierują się ku Bedine z Anauroch. Ślady prowadzą jednak do fałszowanych ksiąg, przekupionych urzędników i organizacji, która chce przejąć kontrolę nad zapasami żywności.",
+      "Przygoda łączy dochodzenie, intrygę polityczną, podróż przez kilka regionów Zapomnianych Krain oraz wyprawę do starożytnych, netherilskich konstrukcji ukrytych pod piaskami."
+    ],
+    "dossier": [
+      [
+        "POZIOMY",
+        "1–9"
+      ],
+      [
+        "OBSADA",
+        "4–5 postaci"
+      ],
+      [
+        "REGIONY",
+        "Cormyr · Doliny · Anauroch"
+      ],
+      [
+        "STRUKTURA",
+        "7 części"
+      ],
+      [
+        "MOTYW",
+        "Śledztwo / intryga / podróż"
+      ],
+      [
+        "MATERIAŁ",
+        "Przygoda D&D 5e"
+      ]
+    ],
+    "manifesto": "Kiedy ktoś kontroluje zapasy zboża, nie musi zasiadać na tronie, by rządzić królestwem.",
+    "manifestoTags": "GŁÓD · KORUPCJA · FAŁSZYWE FLAGI · STARE IMPERIUM",
+    "imageCaption": "Zapis wizualny · Cormyr i południowy skraj Anauroch"
+  },
+  "chapters": [
+    {
+      "number": "01",
+      "title": "Plewy i strzały",
+      "location": "Droga Pszeniczna · Harrowmill",
+      "text": "Drużyna eskortuje transport z ziarnem do Eveningstar. Napad upozorowany na dzieło Bedine prowadzi do opuszczonego młyna, uwięzionego audytora i pierwszego śladu w postaci mosiężnej wagi."
+    },
+    {
+      "number": "02",
+      "title": "Eveningstar",
+      "location": "Miasto na skraju Hullack",
+      "text": "Wśród żołnierzy, kapłanów, agentów i kupców bohaterowie próbują zapobiec kolejnemu pożarowi spichlerza. Lokalni egzekutorzy zwani Gatherers pilnują, by nikt nie zadawał niewygodnych pytań."
+    },
+    {
+      "number": "03",
+      "title": "Księga Hullack",
+      "location": "Las Hullack i okoliczne posiadłości",
+      "text": "Tropy prowadzą do wieży Thornwick, wyniszczonego sadu, elfiego wysłannika, opuszczonej kopalni srebra i dworu Hawkmoorów. Każde miejsce ujawnia inny fragment procederu."
+    },
+    {
+      "number": "04",
+      "title": "Maski w Suzail",
+      "location": "Stolica Cormyru",
+      "text": "Na dworze królewskim drużyna porusza się wśród pozorów, uczestniczy w zamaskowanej aukcji i próbuje dostać się do skarbców Królewskich Spichlerzy."
+    },
+    {
+      "number": "05",
+      "title": "Droga przez Doliny",
+      "location": "Shadowdale · Mistledale · Cormanthor",
+      "text": "Śledztwo wychodzi poza granice Cormyru. Bohaterowie muszą zdobyć zaufanie mieszkańców Dolin, zatrzymać konwój Zhentarimów i odnaleźć agentkę Harfiarzy w ruinach dawnego elfiego imperium."
+    },
+    {
+      "number": "06",
+      "title": "Śpiewające Piaski",
+      "location": "Południowe Anauroch",
+      "text": "Wędrówka przez pustynię pozwala spotkać Bedine, których obarczono winą za napady, oraz wysłanniczkę Shadovarów. W ruinach Ascore pojawia się trop prowadzący do starożytnego systemu cystern."
+    },
+    {
+      "number": "07",
+      "title": "Cysterny Veldrath",
+      "location": "Podziemia dawnego Netherilu",
+      "text": "Finał rozgrywa się w starożytnych konstrukcjach, których odtworzenie może zmienić los pustynnych rubieży. Drużyna staje przed spiskowcami i decyzją o przyszłości królewskich zapasów."
+    }
+  ],
+  "factions": [
+    {
+      "name": "Mosiężna Konfraternia",
+      "role": "Główny spisek",
+      "text": "Kabal kupców i urzędników, który wywołuje kontrolowany kryzys żywnościowy, by przejąć zarządzanie ziarnem i ceną chleba."
+    },
+    {
+      "name": "Gatherers",
+      "role": "Lokalni egzekutorzy",
+      "text": "Zastraszają mieszkańców Eveningstar, wymuszają opłaty i blokują tych, którzy próbują ingerować w interesy Konfraternii."
+    },
+    {
+      "name": "Korona Cormyru",
+      "role": "Instytucje pod presją",
+      "text": "Purpurowe Smoki i Czarodzieje Wojny mogą pomóc, lecz potrzebują dowodów, zanim wystąpią przeciw wpływowym urzędnikom."
+    },
+    {
+      "name": "Harfiarze",
+      "role": "Sieć informatorów",
+      "text": "Szukają dowodów na nadużycia władzy i próbują ustalić, kto naprawdę korzysta na kryzysie."
+    },
+    {
+      "name": "Szmaragdowa Enklawa",
+      "role": "Strażnicy przyrody",
+      "text": "Ich tropy prowadzą do skażonych studni i wyniszczonego sadu na skraju Hullack."
+    },
+    {
+      "name": "Zhentarim",
+      "role": "Niepewni partnerzy",
+      "text": "Sieć handlowa ma własne interesy i może udostępnić informacje, jeśli osłabi to konkurencyjnych kupców."
+    },
+    {
+      "name": "Bedine i Shadovarowie",
+      "role": "Pustynny wątek",
+      "text": "Bedine stają się wygodnym kozłem ofiarnym, podczas gdy wysłanniczka Shadovarów ma własne powody, by przywrócić działanie cystern."
+    }
+  ],
+  "people": [
+    {
+      "name": "Tessaly Harnwick",
+      "role": "Zleceniodawczyni",
+      "text": "Przewoźniczka, która zatrudnia drużynę do eskorty ziarna i dostarczenia zamkniętej skrzyni z dokumentami."
+    },
+    {
+      "name": "Corwin Harnwick",
+      "role": "Audytor Korony",
+      "text": "Porównywał księgi dostaw i odkrył, że zapasy znikają od lat. Jego kopie mogą połączyć lokalne napady z urzędnikami w stolicy."
+    },
+    {
+      "name": "Lord Beren Aldvaris",
+      "role": "Warden Królewskich Spichlerzy",
+      "text": "Człowiek o nieskazitelnej reputacji, który ma dostęp do rezerw królestwa i znajduje się w centrum konspiracji."
+    },
+    {
+      "name": "Sabra Quill",
+      "role": "Kurierka",
+      "text": "Łączniczka dostarczająca rozkazy i pieniądze. Jej trasa może połączyć lokalnych najemników z kupieckimi mocodawcami."
+    },
+    {
+      "name": "Kapitan Joryn Hael",
+      "role": "Dowódczyni garnizonu",
+      "text": "Uczciwa oficerka, która podejrzewa manipulację rozkazami, ale nie może działać bez mocnych dowodów."
+    },
+    {
+      "name": "Mother Hessa Bram",
+      "role": "Kapłanka Chauntei",
+      "text": "Opiekuje się zapasami zboża i dostrzega, że część dostaw została dotknięta nienaturalną zgnilizną."
+    }
+  ],
+  "gmNotes": [
+    "Głównym przeciwnikiem nie jest pretendent do tronu, lecz człowiek, który chce kontrolować głód i ceny żywności.",
+    "Mosiężna waga z jedną szalą uniesioną jest znakiem rozpoznawczym Konfraternii.",
+    "Spisek wykorzystuje pozorowane napady Bedine, podpalenia, fałszowane księgi i przekupionych urzędników, by odwrócić uwagę Korony ku pustyni.",
+    "Wątek cystern łączy kryzys w Cormyrze z pozostałościami Netherilu i interesami Shadovarów."
+  ]
+}
