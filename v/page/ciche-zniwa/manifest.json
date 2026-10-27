@@ -1,0 +1,16 @@
+{
+  "id": "ciche-zniwa",
+  "title": "Ciche Żniwa",
+  "language": "pl",
+  "campaign": "Ciche Żniwa",
+  "module": "The Silent Harvest",
+  "entry": "/v/page/ciche-zniwa/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "overview",
+    "chapters",
+    "investigation"
+  ],
+  "status": "Archiwum przygody"
+}
