@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ciche Żniwa — przygoda D&D 5e o spisku, kryzysie żywnościowym i starożytnych cysternach na rubieżach Anauroch.">
+  <meta name="theme-color" content="#11100c">
+  <title>Ciche Żniwa — Vengrath</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./theme-fonts.css">
+  <link rel="stylesheet" href="/v/core/templates/HomeButton/HomeButton.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageNavbar/SubpageNavbar.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css">
+  <link rel="stylesheet" href="/v/core/templates/SubpageHero/SubpageHero.css">
+  <link rel="stylesheet" href="./ciche-zniwa.css">
+</head>
+<body class="ciche-zniwa-page">
+  <div id="campaign-hero"></div>
+  <main class="cz-content">
+    <section class="cz-panel" id="overview" data-page-section="overview">
+      <div class="cz-filehead"><span>AKTA / 01</span><span>KRÓLEWSKIE SPICHLERZE · CORMYR</span></div>
+      <div class="cz-overview-grid">
+        <article class="cz-paper">
+          <p class="cz-eyebrow">DOKUMENT GŁÓWNY</p>
+          <h2 id="intro-title"></h2>
+          <div id="intro-copy"></div>
+        </article>
+        <aside class="cz-dossier">
+          <div class="cz-stamp">DOSSIER PRZYGODY</div>
+          <div id="dossier"></div>
+        </aside>
+      </div>
+      <section class="cz-manifesto">
+        <span class="cz-mark" aria-hidden="true">Ⅲ</span>
+        <div><p class="cz-eyebrow">ZASADA SPISKU</p><blockquote id="manifesto"></blockquote><p class="cz-tags" id="manifesto-tags"></p></div>
+      </section>
+      <section class="cz-overview-lower">
+        <div><p class="cz-eyebrow">OŚ KONFLIKTU</p><h2>Od spichlerza do pustyni</h2><p>To, co zaczyna się od napadu na wóz z ziarnem, rozrasta się w śledztwo obejmujące dwór królewski, wolne Doliny i ruiny dawnego imperium. Każdy trop może prowadzić do kolejnej osoby, ale też ujawnić, kto dowiedział się o dochodzeniu.</p></div>
+        <figure class="cz-visual"><img src="https://i.imgur.com/lEaeBzt.png" alt="Ilustracja wykorzystana w materiale źródłowym przygody" loading="lazy"><figcaption id="image-caption"></figcaption></figure>
+      </section>
+    </section>
+    <section class="cz-panel" id="chapters" data-page-section="chapters" hidden>
+      <header class="cz-section-intro"><p class="cz-eyebrow">AKTA / 02 · TRASA DOCHODZENIA</p><h2>Siedem części, jeden spisek</h2><p>Przygoda zaczyna się od eskorty ziarna, a kończy pod piaskami Anauroch. Kolejne etapy można traktować jako główne węzły śledztwa; nie każdy trop musi zostać rozwiązany w tej samej kolejności.</p></header>
+      <div id="chapter-grid" class="cz-chapter-grid"></div>
+    </section>
+    <section class="cz-panel" id="investigation" data-page-section="investigation" hidden>
+      <header class="cz-section-intro"><p class="cz-eyebrow">AKTA / 03 · SIEĆ POWIĄZAŃ</p><h2>Ludzie, frakcje i dowody</h2><p>Informacje w tej sekcji ujawniają główne założenia spisku i mogą zawierać spoilery dla prowadzącego.</p></header>
+      <div class="cz-subhead"><span>01</span><h3>Frakcje i interesy</h3></div><div id="faction-grid" class="cz-faction-grid"></div>
+      <div class="cz-subhead"><span>02</span><h3>Osoby kluczowe</h3></div><div id="people-grid" class="cz-people-grid"></div>
+      <details class="cz-spoilers"><summary>Otwórz akta prowadzącego — główne tajemnice</summary><div id="gm-notes"></div></details>
+    </section>
+  </main>
+  <footer class="cz-footer"><span>VENGRATH · CICHE ŻNIWA</span><a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a></footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
