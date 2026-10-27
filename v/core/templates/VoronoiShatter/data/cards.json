@@ -286,5 +286,11 @@
     "CardTags": "Hidden",
     "CardGraphic": "/v/core/graphics/voronoi/raiders-of-the-serpent-sea.webp",
     "CardAdress": "/v/page/raiders-of-the-serpent-sea/"
+  },
+  {
+    "CardName": "Ciche Żniwa",
+    "CardTags": "Archiwum",
+    "CardGraphic": "https://i.imgur.com/lEaeBzt.png",
+    "CardAdress": "/v/page/ciche-zniwa/"
   }
 ]
