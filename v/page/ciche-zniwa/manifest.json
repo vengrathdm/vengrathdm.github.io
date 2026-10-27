@@ -9,8 +9,8 @@
   "content": "./content.json",
   "sections": [
     "overview",
-    "chapters",
-    "investigation"
+    "characters",
+    "chronicle"
   ],
   "status": "Archiwum przygody"
 }
