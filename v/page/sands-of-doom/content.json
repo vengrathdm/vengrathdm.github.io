@@ -10,11 +10,27 @@
       "Historia naszej drużyny <strong>wciąż trwa.</strong>"
     ],
     "dossier": [
-      { "label": "PUSTKOWIE", "value": "Great Wasteland" },
-      { "label": "MIASTO", "value": "Al-Kirat" },
-      { "label": "RUINY", "value": "Starożytna cywilizacja" },
-      { "label": "TON", "value": "Dark Fantasy" },
-      { "label": "STATUS", "value": "KAMPANIA W TOKU", "status": true }
+      {
+        "label": "PUSTKOWIE",
+        "value": "Great Wasteland"
+      },
+      {
+        "label": "MIASTO",
+        "value": "Al-Kirat"
+      },
+      {
+        "label": "RUINY",
+        "value": "Starożytna cywilizacja"
+      },
+      {
+        "label": "TON",
+        "value": "Dark Fantasy"
+      },
+      {
+        "label": "STATUS",
+        "value": "KAMPANIA W TOKU",
+        "status": true
+      }
     ],
     "partyTitle": "Piasek pamięta.",
     "partyDescription": "Ekspedycja prowadzi coraz głębiej — przez ruiny, grobowce i miejsca, w których dawna cywilizacja nie powiedziała jeszcze ostatniego słowa.",
@@ -26,23 +42,132 @@
     "kicker": "AKTA / 02",
     "title": "Nasza drużyna",
     "description": "Cztery postacie przemierzające Wielkie Pustkowie. Portrety pochodzą z archiwum kampanii.",
-    "characterIds": ["char-0019", "char-0020", "char-0021", "char-0022"],
-    "fallenCharacterIds": ["char-0023", "char-0024"]
+    "characterIds": [
+      "char-0019",
+      "char-0020",
+      "char-0021",
+      "char-0022"
+    ],
+    "fallenCharacterIds": [
+      "char-0023",
+      "char-0024"
+    ]
   },
   "chronicle": {
     "kicker": "AKTA / 03",
     "title": "Nagrania",
     "description": "Kronika wyprawy w formie nagrań z kolejnych sesji.",
     "sessions": [
-      { "sessionNumber": 1, "title": "Porwanie", "description": "Brak notatek sesji.", "recordings": [{ "url": "https://youtu.be/UA_hvflxkqk" }] },
-      { "sessionNumber": 2, "title": "—jeśli Wiesz, Co Mam na Myśli...", "description": "Brak notatek sesji.", "recordings": [{ "url": "https://youtu.be/KuPykCPIG34" }] },
-      { "sessionNumber": 3, "title": "Zbutwiałe Głazy", "description": "Brak notatek sesji.", "recordings": [{ "url": "https://youtu.be/sU7JqFpXh3o" }] },
-      { "sessionNumber": 4, "title": "Rumbold Tomekeeper", "description": "Brak notatek sesji.", "recordings": [{ "url": "https://youtu.be/9TjL1o2IFUw" }] },
-      { "sessionNumber": 5, "title": "Bogini Węży", "description": "Brak notatek sesji.", "recordings": [{ "url": "https://youtu.be/PsXAdLL9FnI" }] },
-      { "sessionNumber": 6, "title": "Kunaten Keep", "description": "Brak notatek sesji.", "recordings": [{ "url": "https://youtu.be/vYkE-NeZRRE" }] },
-      { "sessionNumber": 7, "title": "Wejście do Wielkiej Piramidy i Czarna Urna", "description": "Brak notatek sesji.", "recordings": [{ "url": "https://youtu.be/tmL4FlbFsXk" }] },
-      { "sessionNumber": 8, "title": "Wielkie Przebudzenie", "description": "Brak notatek sesji.", "recordings": [{ "url": "https://youtu.be/2Fq5jKEK_qg" }] },
-      { "sessionNumber": 9, "title": "Powstanie Anubian", "description": "Brak notatek sesji.", "recordings": [{ "url": "https://youtu.be/Je3WDsXIaR0" }] }
+      {
+        "sessionNumber": 1,
+        "title": "Porwanie",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/UA_hvflxkqk"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 2,
+        "title": "—jeśli Wiesz, Co Mam na Myśli...",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/KuPykCPIG34"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 3,
+        "title": "Zbutwiałe Głazy",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/sU7JqFpXh3o"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 4,
+        "title": "Rumbold Tomekeeper",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/9TjL1o2IFUw"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 5,
+        "title": "Bogini Węży",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/PsXAdLL9FnI"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 6,
+        "title": "Kunaten Keep",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/vYkE-NeZRRE"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 7,
+        "title": "Wejście do Wielkiej Piramidy i Czarna Urna",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/tmL4FlbFsXk"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 8,
+        "title": "Wielkie Przebudzenie",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/2Fq5jKEK_qg"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 9,
+        "title": "Powstanie Anubian",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/Je3WDsXIaR0"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 10,
+        "title": "Sands of Doom S010 - Skylark",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://youtu.be/0btoHl0lePA"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 11,
+        "title": "Sands of Doom S011 - Bitwa o Skylark",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://youtu.be/kFGzvexfHXQ"
+          }
+        ]
+      }
     ]
   }
 }
