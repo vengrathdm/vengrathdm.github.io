@@ -47,7 +47,7 @@
   "chronicle": {
     "kicker": "AKTA / KRONIKA",
     "title": "Nagrania",
-    "description": "18 sesji Menaces of Gloomforest. Wybierz wpis, aby rozwinąć szczegóły lub otwórz nagranie.",
+    "description": "16 sesji Menaces of Gloomforest. Wybierz wpis, aby rozwinąć szczegóły lub otwórz nagranie.",
     "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0iAmA-EXvVyARIe1B3t2rf7",
     "playlistLabel": "Otwórz playlistę kampanii ↗",
     "sessions": [
@@ -223,28 +223,6 @@
         "recordings": [
           {
             "url": "https://www.youtube.com/watch?v=KG7f17G15V0",
-            "partNumber": 1
-          }
-        ]
-      },
-      {
-        "sessionNumber": 26,
-        "title": "Menaces of Gloomforest S26 - Intrygi Dworskie I Opieka nad Biedotą",
-        "description": "",
-        "recordings": [
-          {
-            "url": "https://youtu.be/Ty5BjDyKypo",
-            "partNumber": 1
-          }
-        ]
-      },
-      {
-        "sessionNumber": 27,
-        "title": "Menaces of Gloomforest S27 - Aria, Arianwynn i Smoczy Szpon",
-        "description": "",
-        "recordings": [
-          {
-            "url": "https://youtu.be/N719sNSPA2M",
             "partNumber": 1
           }
         ]
