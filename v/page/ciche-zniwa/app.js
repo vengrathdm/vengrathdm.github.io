@@ -54,9 +54,9 @@ async function initialize() {
   document.querySelector("#campaign-hero").replaceWith(hero);
   mountSubpageNavbar(navbarMount, {
     sections: [
-      { text: "Dossier", sectionLink: "overview", color: theme.colors.accent2 },
-      { text: "Rozdziały", sectionLink: "chapters", color: theme.colors.accent2 },
-      { text: "Intryga", sectionLink: "investigation", color: theme.colors.accent2 }
+      { text: "Kampania", sectionLink: "overview", color: theme.colors.accent2 },
+      { text: "Postaci", sectionLink: "characters", color: theme.colors.accent2 },
+      { text: "Kronika", sectionLink: "chronicle", color: theme.colors.accent2 }
     ]
   });
   document.querySelector("#intro-title").textContent = content.campaign.introTitle;
@@ -65,12 +65,6 @@ async function initialize() {
   document.querySelector("#manifesto").textContent = "„" + content.campaign.manifesto + "”";
   document.querySelector("#manifesto-tags").textContent = content.campaign.manifestoTags;
   document.querySelector("#image-caption").textContent = content.campaign.imageCaption;
-  renderCards(document.querySelector("#chapter-grid"), content.chapters, "cz-chapter");
-  renderCards(document.querySelector("#faction-grid"), content.factions, "cz-faction");
-  renderCards(document.querySelector("#people-grid"), content.people, "cz-person");
-  document.querySelector("#gm-notes").replaceChildren(...content.gmNotes.map(text => {
-    const p = node("p", "", text); return p;
-  }));
 }
 initialize().catch(error => {
   console.error("Nie udało się uruchomić strony Ciche Żniwa.", error);
