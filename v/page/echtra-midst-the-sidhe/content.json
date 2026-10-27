@@ -49,7 +49,7 @@
   "chronicle": {
     "kicker": "AKTA / KRONIKA",
     "title": "Nagrania sesji",
-    "description": "27 zachowanych wpisów z oryginalnymi tytułami i linkami do nagrań.",
+    "description": "28 zachowanych wpisów z oryginalnymi tytułami i linkami do nagrań.",
     "sessions": [
       {
         "sessionNumber": "S001",
@@ -318,6 +318,16 @@
         "recordings": [
           {
             "url": "https://www.youtube.com/watch?v=nqK3XcMh_Os"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S026",
+        "title": "Echtra midst the Sidhe - S026 - Przybycie Osmandiasa",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://youtu.be/7O7-aYdrafg"
           }
         ]
       }
