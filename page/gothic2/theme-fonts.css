@@ -1,8 +1,0 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Grenze+Gotisch:wght@500;600;700&family=Spectral:wght@400;500;600;700&family=Voltaire&display=swap");
-
-:root {
-  --gothic-display: "Grenze Gotisch", Georgia, serif;
-  --gothic-heading: "Voltaire", sans-serif;
-  --gothic-body: "Fira Sans Extra Condensed", sans-serif;
-  --gothic-serif: "Spectral", Georgia, serif;
-}
