@@ -1,7 +1,7 @@
 :root{--cz-base:#11100c;--cz-accent:#7d3427;--cz-gold:#c6a45c;--cz-paper:#e9dfc6;--cz-ink:#27231a;--cz-muted:#a99b7c}
 html{scroll-behavior:smooth}
-body.ciche-zniwa-page{margin:0;min-height:100vh;background:radial-gradient(ellipse at 75% 15%,#342b19 0,transparent 38%),linear-gradient(180deg,#17140e,#0e0d09 75%);color:#f0e6ce;font-family:var(--cz-body);line-height:1.6}
-body.ciche-zniwa-page:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.1;background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,255,255,.03) 4px)}
+body.the-dragons-due-page{margin:0;min-height:100vh;background:radial-gradient(ellipse at 75% 15%,#342b19 0,transparent 38%),linear-gradient(180deg,#17140e,#0e0d09 75%);color:#f0e6ce;font-family:var(--cz-body);line-height:1.6}
+body.the-dragons-due-page:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.1;background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,255,255,.03) 4px)}
 .subpage-hero{height:100vh;height:100svh;min-height:100vh;min-height:100svh;background-position:center 40%;background-size:cover}
 .subpage-hero:before{background:linear-gradient(90deg,rgba(12,11,8,.94),rgba(12,11,8,.72) 52%,rgba(12,11,8,.24)),linear-gradient(0deg,#11100c,transparent 42%)}
 .subpage-hero__copy{width:min(1220px,calc(100% - 48px));padding:clamp(100px,12vh,150px) 24px clamp(48px,8vh,100px);position:relative;z-index:2;box-sizing:border-box;align-content:center;justify-items:start;text-align:left}
