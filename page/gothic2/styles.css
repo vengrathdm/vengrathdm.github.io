@@ -8,7 +8,7 @@
   --gothic-gold: #d6aa57;
   --gothic-rust: #913e30;
   --gothic-muted: #afa995;
-  --gothic-display: "Grenze Gotisch", Georgia, serif;
+  --gothic-display: "IM Fell English", "Times New Roman", serif;
   --gothic-body: "Spectral", Georgia, serif;
 }
 
@@ -48,7 +48,6 @@ a:hover {
 
 .gothic2-page {
   min-height: 100vh;
-  overflow: clip;
 }
 
 #campaign-navbar {
@@ -84,7 +83,9 @@ a:hover {
 .subpage-hero {
   position: relative;
   display: grid;
-  min-height: min(82svh, 54rem);
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
   align-items: end;
   isolation: isolate;
   padding: clamp(7rem, 18vh, 12rem) max(1.5rem, calc((100vw - 76rem) / 2)) 5rem;
@@ -122,9 +123,9 @@ a:hover {
   margin: 0.1em 0 0.15em;
   color: #f1e5c7;
   font-family: var(--gothic-display);
-  font-size: clamp(4.5rem, 13vw, 10rem);
-  font-weight: 600;
-  letter-spacing: -0.045em;
+  font-size: clamp(4rem, 11vw, 8rem);
+  font-weight: 400;
+  letter-spacing: 0.015em;
   line-height: 0.9;
   text-shadow: 0 0.15em 0.35em #000;
 }
@@ -573,7 +574,9 @@ a:hover {
   }
 
   .subpage-hero {
-    min-height: 75svh;
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
     padding-bottom: 4rem;
     background-position: 58% center;
   }

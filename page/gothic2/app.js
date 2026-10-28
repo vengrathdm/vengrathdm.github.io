@@ -44,6 +44,20 @@ function renderHero(heroContent, theme) {
     })),
   });
 
+  document.querySelectorAll(".subpage-navbar-button[data-section]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const section = document.getElementById(button.dataset.section);
+      if (!section) return;
+
+      section.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth",
+        block: "start",
+      });
+    });
+  });
+
   copy.setAttribute("aria-describedby", "hero-kicker");
 }
 
