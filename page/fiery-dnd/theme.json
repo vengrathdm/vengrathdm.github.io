@@ -1,0 +1,21 @@
+{
+  "colors": {
+    "base1": "#120a08",
+    "base2": "#1d1210",
+    "base3": "#2a1612",
+    "accent1": "#b3341a",
+    "accent2": "#e3b04b",
+    "text1": "#ecdcbc",
+    "text2": "#d5c19a",
+    "text3": "#a8967a",
+    "line1": "rgba(227, 176, 75, 0.28)",
+    "line2": "#8a5a12"
+  },
+  "typography": {
+    "heading": "Cinzel, 'Times New Roman', serif",
+    "body": "'Cormorant Garamond', Georgia, serif",
+    "serif": "'Cormorant Garamond', Georgia, serif"
+  },
+  "fontsUrl": "https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Voltaire&display=swap",
+  "audioColor": "#e3b04b"
+}

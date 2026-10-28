@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="title description">
+  <title id="title">Tron z Popiołu</title>
+  <desc id="description">Korona nad ognistą górą, cieniem smoka i królestwem Kaer Dun-Morth.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop offset="0" stop-color="#120a08" />
+      <stop offset="0.58" stop-color="#421609" />
+      <stop offset="1" stop-color="#fa5a18" />
+    </linearGradient>
+    <linearGradient id="fire" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd36b" />
+      <stop offset="1" stop-color="#c12e0e" />
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#ffbc40" stop-opacity="0.85" />
+      <stop offset="1" stop-color="#fb4514" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="900" height="600" fill="url(#sky)" />
+  <ellipse cx="455" cy="440" rx="350" ry="180" fill="url(#glow)" />
+  <path d="m0 430 170-130 106 88 152-240 170 256 106-102 196 150v148H0Z" fill="#24120d" />
+  <path d="m308 391 120-243 117 241-65-48-53 32-50-39Z" fill="#3e1a11" />
+  <path d="m403 259 25-111 33 110-27-35Z" fill="url(#fire)" />
+  <path d="m0 489 212-42 133 65 143-60 126 47 137-67 149 63v105H0Z" fill="#160d0a" />
+  <path d="M334 456c-27-90 13-162 76-176 8-51 58-75 104-48-29 4-44 19-47 40 45-23 95-8 116 33-35-14-66-12-94 6 42-2 72 23 84 57-30-14-56-17-79-6 17 17 25 34 28 56l-38-18-30 41-30-30-37 38-25-44Z" fill="#100b0a" stroke="#e3a43c" stroke-opacity="0.75" stroke-width="5" />
+  <path d="m439 75 23 49 55-12-30 45 38 37-57-7-29 49-8-57-54-19 55-16Z" fill="#e3b04b" stroke="#fff0c2" stroke-width="4" />
+  <path d="m0 552 900-40" stroke="#ff9b36" stroke-opacity="0.45" stroke-width="3" />
+  <rect x="22" y="22" width="856" height="556" fill="none" stroke="#e3b04b" stroke-opacity="0.65" stroke-width="3" />
+</svg>

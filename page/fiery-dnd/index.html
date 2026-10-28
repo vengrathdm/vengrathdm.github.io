@@ -1,440 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Tron z Popiołu — Kampania D&D</title>
-  <meta name="description" content="Kampania Dungeons & Dragons 5e: smok wstaje, Korona się rozpada.">
-  <meta name="theme-color" content="#120a08">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Voltaire&display=swap">
-  <style>
-    :root {
-      box-sizing: border-box;
-      padding-top: env(safe-area-inset-top, 0px);
-      padding-bottom: env(safe-area-inset-bottom, 0px);
-      --bg: #e9dcc0; --surface: #f4e9d1; --ink: #2b1d12; --muted: #6e5a42;
-      --gold: #8a5a12; --ember: #b3341a; --line: rgba(43, 29, 18, .28);
-      --font-head: "Cinzel", "Times New Roman", serif;
-      --font-body: "Cormorant Garamond", Georgia, serif;
-      --font-ui: "Voltaire", "Segoe UI", sans-serif;
-      color-scheme: light;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) {
-        --bg: #120a08; --surface: #1d1210; --ink: #ecdcbc; --muted: #a8967a;
-        --gold: #e3b04b; --ember: #ff6a2f; --line: rgba(227, 176, 75, .28);
-        color-scheme: dark;
-      }
-    }
-    :root[data-theme="dark"] {
-      --bg: #120a08; --surface: #1d1210; --ink: #ecdcbc; --muted: #a8967a;
-      --gold: #e3b04b; --ember: #ff6a2f; --line: rgba(227, 176, 75, .28);
-      color-scheme: dark;
-    }
-    html { scroll-padding-top: env(safe-area-inset-top, 0px); }
-    *, *::before, *::after { box-sizing: inherit; }
-    body { margin: 0; background: var(--bg); color: var(--ink); font: 1.2rem/1.55 var(--font-body); }
-    body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--bg); z-index: 30; }
-    a { color: var(--gold); }
-    :focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Tron z Popiołu — kampania Dungeons & Dragons 5e o budzącym się smoku i pękającej Koronie."
+    />
+    <meta name="theme-color" content="#120a08" />
+    <title>Tron z Popiołu — Vengrath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./theme-fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/core/templates/HomeButton/HomeButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageNavbar/SubpageNavbar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageHero/SubpageHero.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="fiery-dnd-page">
+    <div id="campaign-hero"></div>
 
-    /* ---------- Hero ---------- */
-    .hero {
-      position: relative; overflow: hidden; text-align: center; color: #f3e2bd;
-      min-height: 100vh; min-height: 100svh; min-height: 100dvh;
-      display: grid; place-items: center; padding: 4.5rem 1rem 3rem;
-      background:
-        radial-gradient(ellipse at 50% 108%, #ff5a1f 0%, #8c1d0b 24%, transparent 62%),
-        radial-gradient(ellipse at 50% 40%, #2a1612 0%, #0c0605 80%);
-    }
-    #embers { position: absolute; inset: 0; width: 100%; height: 100%; }
-    .hero::after {
-      content: ""; position: absolute; inset: 0; pointer-events: none;
-      background: radial-gradient(ellipse at center, transparent 45%, rgba(0, 0, 0, .75));
-    }
-    .home-link {
-      position: absolute; z-index: 3; left: 1rem; top: calc(1rem + env(safe-area-inset-top, 0px));
-      padding: .45rem 1rem; border: 1px solid rgba(227, 176, 75, .5); border-radius: 999px;
-      background: rgba(12, 6, 5, .65); color: #f3e2bd; font: .9rem var(--font-ui); text-decoration: none;
-    }
-    .hero-inner { position: relative; z-index: 2; max-width: 46rem; }
-    .eyebrow { margin: 0 0 .5rem; font: .8rem var(--font-ui); letter-spacing: .35em; text-transform: uppercase; color: #ff8a4c; }
-    .hero h1 {
-      margin: 0; font: 900 clamp(2.6rem, 10vw, 6rem)/1 var(--font-head); letter-spacing: .04em; text-transform: uppercase;
-      background: linear-gradient(180deg, #fff1c2 0%, #e3b04b 45%, #a8540f 100%);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-      filter: drop-shadow(0 0 18px rgba(255, 106, 47, .55));
-    }
-    .tagline { margin: 1rem 0 1.5rem; font-style: italic; font-size: 1.4rem; color: rgba(243, 226, 189, .9); }
-    .die {
-      display: block; margin: 0 auto; width: 9.5rem; padding: 0; border: 0; background: none; cursor: pointer;
-      filter: drop-shadow(0 0 16px rgba(255, 106, 47, .7)); transition: transform .2s;
-    }
-    .die:hover { transform: rotate(-6deg) scale(1.06); }
-    .die svg { width: 100%; height: auto; }
-    .die polygon, .die line { fill: none; stroke: #e3b04b; stroke-width: 3; stroke-linejoin: round; }
-    .die .face { fill: rgba(40, 14, 8, .85); }
-    .die text { fill: #fff1c2; font: 700 58px var(--font-head); text-anchor: middle; }
-    .die.rolling { animation: tumble .5s linear infinite; }
-    .die.crit { animation: flash 1.2s ease-out; }
-    .die.fail { filter: drop-shadow(0 0 16px rgba(120, 140, 255, .8)); }
-    @keyframes tumble { to { transform: rotate(360deg); } }
-    @keyframes flash { 0% { transform: scale(1.35); filter: drop-shadow(0 0 60px #ffd45a); } 100% { transform: scale(1); } }
-    .roll-msg { min-height: 1.6em; margin: .75rem 0 0; font: .95rem var(--font-ui); letter-spacing: .08em; color: #ffcf7a; }
+    <main class="fiery-main">
+      <section
+        class="fiery-section"
+        id="campaign"
+        data-page-section="campaign"
+        aria-labelledby="campaign-title"
+      >
+        <div id="campaign-content"></div>
+      </section>
 
-    /* ---------- Nav ---------- */
-    .tabs {
-      position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; display: flex; justify-content: center;
-      gap: .5rem; padding: .75rem 1rem; background: var(--bg); border-bottom: 2px solid var(--gold);
-    }
-    .tab {
-      padding: .5rem 1.4rem; border: 1px solid var(--line); border-radius: 999px; background: transparent;
-      color: var(--ink); font: 1rem var(--font-ui); cursor: pointer; transition: background-color .2s, color .2s;
-    }
-    .tab:hover { background: var(--surface); }
-    .tab[aria-pressed="true"] { background: linear-gradient(180deg, var(--ember), #7c1d0c); border-color: var(--gold); color: #fff3d6; }
+      <section
+        class="fiery-section"
+        id="characters"
+        data-page-section="characters"
+        aria-labelledby="characters-title"
+        hidden
+      >
+        <div id="characters-content"></div>
+      </section>
 
-    /* ---------- Layout ---------- */
-    main { max-width: 64rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
-    [data-page-section][hidden] { display: none; }
-    h2, h3 { font-family: var(--font-head); line-height: 1.2; }
-    h2 { margin: 0 0 1.5rem; font-size: 2rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold); }
-    h2::after { content: ""; display: block; height: 2px; margin-top: .5rem; background: linear-gradient(90deg, var(--gold), transparent); }
-    .panel { padding: 1.25rem 1.5rem; border: 1px solid var(--line); background: var(--surface); box-shadow: inset 0 0 0 4px var(--bg), inset 0 0 0 5px var(--line); }
-    .lead p { margin: 0 0 1rem; }
-    .lead p:first-child::first-letter { float: left; margin: .05em .1em 0 0; font: 900 4rem/.85 var(--font-head); color: var(--ember); }
-    .dossier { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: .75rem; margin: 1.5rem 0; padding: 0; list-style: none; }
-    .dossier li { padding: .7rem 1rem; border: 1px solid var(--line); background: var(--surface); }
-    .dossier span { display: block; font: .72rem var(--font-ui); letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
-    .dossier strong { font: 700 1.1rem var(--font-head); color: var(--gold); }
-    h3.sub { margin: 2.5rem 0 1rem; font-size: 1.2rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ember); }
+      <section
+        class="fiery-section"
+        id="chronicle"
+        data-page-section="chronicle"
+        aria-labelledby="chronicle-title"
+        hidden
+      >
+        <div id="chronicle-content"></div>
+      </section>
+    </main>
 
-    .acts { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: .75rem; }
-    .act { padding: 1rem; border: 1px solid var(--line); border-left: 5px solid var(--line); background: var(--surface); }
-    .act b { display: block; font: .75rem var(--font-ui); letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
-    .act strong { font-family: var(--font-head); }
-    .act.done { border-left-color: #4f8a3c; }
-    .act.now { border-left-color: var(--ember); box-shadow: 0 0 18px rgba(255, 106, 47, .35); }
-    .act.locked { opacity: .6; }
+    <footer class="fiery-footer">
+      <span>VENGRATH · TRON Z POPIOŁU</span>
+      <a href="#campaign-hero">Wróć na górę ↑</a>
+    </footer>
 
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; }
-    .entry { padding: 1rem 1.25rem; border: 1px solid var(--line); background: var(--surface); }
-    .entry h4 { display: flex; justify-content: space-between; gap: .5rem; margin: 0 0 .35rem; font: 700 1.05rem var(--font-head); }
-    .entry p { margin: 0; color: var(--muted); }
-    .tag { font: .8rem var(--font-ui); color: var(--ember); white-space: nowrap; }
-
-    .boss {
-      display: grid; gap: .5rem; margin-top: 1rem; padding: 1.5rem; color: #f3e2bd;
-      border: 2px solid var(--gold); background: radial-gradient(ellipse at 90% 0%, #7c1d0c, #1a0b08 70%);
-    }
-    .boss h4 { margin: 0; font: 900 1.6rem var(--font-head); color: #ffcf7a; }
-    .boss .line { font: .95rem var(--font-ui); letter-spacing: .05em; color: #ff9a62; }
-
-    /* ---------- Characters ---------- */
-    .sheets { display: grid; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); gap: 1.5rem; }
-    .sheet { position: relative; padding: 1.5rem; border: 1px solid var(--line); border-top: 5px solid var(--ember); background: var(--surface); }
-    .sheet .lvl { position: absolute; top: .9rem; right: 1rem; font: 700 .85rem var(--font-ui); color: var(--gold); }
-    .sheet h3 { margin: 0; font-size: 1.35rem; }
-    .sheet .cls { margin: .15rem 0 1rem; font: .9rem var(--font-ui); color: var(--muted); }
-    .abilities { display: grid; grid-template-columns: repeat(6, 1fr); gap: .35rem; margin: 0 0 1rem; padding: 0; list-style: none; }
-    .abilities li { padding: .3rem 0; border: 1px solid var(--line); text-align: center; background: var(--bg); }
-    .abilities span { display: block; font: .65rem var(--font-ui); letter-spacing: .08em; color: var(--muted); }
-    .abilities b { display: block; font: 700 1.1rem var(--font-head); color: var(--gold); }
-    .abilities small { font: .75rem var(--font-ui); color: var(--muted); }
-    .vitals { display: flex; gap: 1rem; margin-bottom: 1rem; font: .9rem var(--font-ui); }
-    .vitals b { font: 700 1.1rem var(--font-head); color: var(--ember); }
-    .hp { height: 8px; margin: -.5rem 0 1rem; background: var(--bg); border: 1px solid var(--line); }
-    .hp i { display: block; height: 100%; background: linear-gradient(90deg, #7c1d0c, #ff6a2f); }
-    .sheet p { margin: 0 0 .8rem; }
-    .relic { padding: .6rem .9rem; border-left: 3px solid var(--gold); font-style: italic; color: var(--muted); }
-
-    /* ---------- Chronicle ---------- */
-    .timeline { position: relative; display: grid; gap: .9rem; padding-left: 3.2rem; }
-    .timeline::before { content: ""; position: absolute; left: 1.05rem; top: 0; bottom: 0; width: 2px; background: linear-gradient(var(--ember), var(--gold)); }
-    .record { position: relative; border: 1px solid var(--line); background: var(--surface); }
-    .record .node {
-      position: absolute; left: -3.2rem; top: .75rem; width: 2.2rem; height: 2.2rem; display: grid; place-items: center;
-      border: 2px solid var(--gold); border-radius: 50%; background: var(--bg); font: 700 .95rem var(--font-head); color: var(--ember);
-    }
-    .record summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem 1rem; padding: 1rem 1.25rem; cursor: pointer; list-style: none; }
-    .record summary::-webkit-details-marker { display: none; }
-    .record .title { flex: 1; font: 700 1.15rem var(--font-head); }
-    .record .date { font: .85rem var(--font-ui); color: var(--muted); }
-    .record .badges { display: flex; flex-wrap: wrap; gap: .4rem; width: 100%; }
-    .badge { padding: .1rem .7rem; border: 1px solid var(--line); border-radius: 999px; font: .78rem var(--font-ui); color: var(--gold); }
-    .record[open] summary { border-bottom: 1px dashed var(--line); }
-    .record .body { padding: 1rem 1.25rem 1.25rem; }
-    .record .body p { margin: 0 0 .75rem; }
-    .record ul { margin: 0 0 1rem; padding-left: 1.25rem; color: var(--muted); }
-    .moment { padding: .6rem .9rem; border-left: 3px solid var(--ember); font-style: italic; }
-    .play, .no-rec { display: inline-block; margin-top: .75rem; padding: .4rem 1rem; border-radius: 999px; font: .9rem var(--font-ui); }
-    .play { background: var(--ember); color: #fff; text-decoration: none; }
-    .no-rec { border: 1px dashed var(--line); color: var(--muted); }
-
-    footer { padding: 2rem 1rem; text-align: center; border-top: 2px solid var(--gold); font: .9rem var(--font-ui); color: var(--muted); }
-    @media (max-width: 480px) { body { font-size: 1.1rem; } .tab { padding: .5rem .9rem; } .abilities { grid-template-columns: repeat(3, 1fr); } }
-    @media (prefers-reduced-motion: reduce) { .die, .die.rolling, .die.crit { animation: none; transition: none; } .tab { transition: none; } }
-  </style>
-</head>
-<body>
-  <header class="hero">
-    <canvas id="embers" aria-hidden="true"></canvas>
-    <a class="home-link" href="/home/">← Vengrath</a>
-    <div class="hero-inner">
-      <p class="eyebrow">Kampania Dungeons &amp; Dragons 5e</p>
-      <h1>Tron z Popiołu</h1>
-      <p class="tagline">Smok się budzi. Korona pęka. Wy jesteście ostatnią nadzieją królestwa — albo jego ostatnią ofiarą.</p>
-      <button class="die" id="die" type="button" aria-label="Rzuć kością k20">
-        <svg viewBox="0 0 200 200" aria-hidden="true">
-          <polygon class="face" points="100,8 180,54 180,146 100,192 20,146 20,54"/>
-          <polygon points="100,38 156,134 44,134"/>
-          <line x1="100" y1="8" x2="100" y2="38"/><line x1="180" y1="54" x2="156" y2="134"/><line x1="20" y1="54" x2="44" y2="134"/>
-          <line x1="180" y1="146" x2="156" y2="134"/><line x1="20" y1="146" x2="44" y2="134"/><line x1="100" y1="192" x2="100" y2="134"/>
-          <text id="dieNum" x="100" y="118">20</text>
-        </svg>
-      </button>
-      <p class="roll-msg" id="rollMsg" aria-live="polite">Kliknij kość, by rzucić na inicjatywę</p>
-    </div>
-  </header>
-
-  <nav class="tabs" id="tabs" aria-label="Sekcje kampanii"></nav>
-
-  <main>
-    <section id="campaign" data-page-section="campaign" aria-labelledby="campaign-title"></section>
-    <section id="characters" data-page-section="characters" aria-labelledby="characters-title" hidden></section>
-    <section id="chronicle" data-page-section="chronicle" aria-labelledby="chronicle-title" hidden></section>
-  </main>
-
-  <footer>Vengrath · Tron z Popiołu · <a href="/home/">Wróć na stronę główną</a></footer>
-
-  <script>
-    const CONTENT = {
-      lead: [
-        "Dwieście lat temu Korona Pięciu Smoków zamknęła Vhaeryth-Karra, Prastarego Czerwonego Smoka, w sercu wulkanu Morthgar. Teraz Korona pęka. Jej Odłamki rozsypały się po królestwie Kaer Dun-Morth, a z każdym z nich budzi się kolejny kawałek starego ognia.",
-        "Kult Płomiennej Dłoni zbiera Odłamki, by uwolnić bestię i ukoronować ją na Tron z Popiołu. Zakon Złotej Tarczy nie ma już rycerzy, którzy mogliby ich powstrzymać. Zostaliście wy: czworo bohaterów, którym nikt nie ufa, i którzy nie mają nic do stracenia."
-      ],
-      dossier: [["Postaci", "4"], ["Nagrania", "5"], ["System", "D&D 5e"], ["Poziomy", "3–9"], ["Status", "Aktywna"], ["Ton", "Heroiczny dark fantasy"]],
-      acts: [
-        ["Akt I", "Popioły Brzeźnej", "done"],
-        ["Akt II", "Krypty Szepczących Królów", "done"],
-        ["Akt III", "Wieża Szronowego Maga", "now"],
-        ["Akt IV", "Serce Morthgaru", "locked"]
-      ],
-      places: [
-        ["Kaer Dun-Morth", "Bezpieczne", "Miasto-twierdza u stóp wulkanu. Karczmy, kuźnie i szepty o końcu świata."],
-        ["Katakumby Szepczących Królów", "☠☠☠", "Grobowce siedmiu królów, którzy nigdy do końca nie umarli."],
-        ["Wieża Szronowego Maga", "☠☠☠☠", "Strzelista iglica pośrodku wiecznej zamieci. Wewnątrz czeka Odłamek #3."],
-        ["Morthgar", "☠☠☠☠☠", "Góra ognia i więzienie smoka. Każda ściana jest warstwą jego snu."]
-      ],
-      factions: [
-        ["Zakon Złotej Tarczy", "LD", "Ostatni rycerze królestwa, ranni i spóźnieni o dwa pokolenia."],
-        ["Kult Płomiennej Dłoni", "CZ", "Fanatycy, którzy palą wsie na cześć smoka i nazywają to modlitwą."],
-        ["Szare Palce", "CN", "Gildia złodziei, która sprzeda wam mapę, ale wcześniej sprzeda was."]
-      ],
-      npcs: [
-        ["Wielebna Matka Ysolde", "LD", "Kapłanka Pelora. Ma dla was zadania, których nie chciałaby dawać nikomu."],
-        ["Rennick Dwa Noże", "CN", "Przemytnik z kompasem, który wskazuje to, czego pragniesz najbardziej."],
-        ["Kazimir Szary", "NZ", "Lisz bez serca. Chętnie pomoże, o ile nie zapytacie, co mu przeszkadza w piersi."]
-      ],
-      boss: {
-        name: "Vhaeryth-Karr, Prastary Czerwony Smok",
-        line: "PZ 24 · KP 22 · 546 PW · Oddech ognia 26k6",
-        text: "Śpi od dwustu lat i śni o każdym, kto próbował go zabić. Wszystkie sny wkrótce się spełnią."
-      },
-      characters: [
-        {
-          name: "Thorgrim Kamiennoręki", cls: "Krasnolud · Paladyn (Przysięga Pomsty)", lvl: 7, player: "Marta",
-          stats: [17, 8, 16, 10, 12, 15], ac: 19, hp: 68, maxHp: 68, speed: 25,
-          history: "Ostatni żywy rycerz Zakonu Złotej Tarczy. Przysiągł pomścić brata, zginął on w ogniu Brzeźnej, a winnego nie ma jak ukarać, bo winny śpi pod wulkanem.",
-          relic: "Odłamek Korony #1 wtopiony w tarczę."
-        },
-        {
-          name: "Lirael Cienistopióra", cls: "Półelfka · Łotrzyk (Skrytobójca)", lvl: 7, player: "Kuba",
-          stats: [8, 19, 12, 14, 11, 14], ac: 16, hp: 49, maxHp: 49, speed: 30,
-          history: "Zwiadowczyni Szarych Palców, która za dużo wie o Kulcie i za mało o tym, dla kogo właściwie pracuje. Jej sztylety mają imiona.",
-          relic: "Zaczarowany płaszcz z kruczych piór, nigdy nie zrzuca śniegu."
-        },
-        {
-          name: "Zephyrion Szkarłatny", cls: "Smokokrwisty · Czarownik (Smocza Linia)", lvl: 7, player: "Ola",
-          stats: [8, 14, 14, 12, 10, 19], ac: 15, hp: 52, maxHp: 52, speed: 30,
-          history: "Jego krew pamięta Vhaeryth-Karra i, co gorsza, ten smok też pamięta jego. Wie, że jest pierwszym, kogo przemówi z Korony.",
-          relic: "Pierścień ze smoczego zęba, nagrzewa się przy Kultystach."
-        },
-        {
-          name: "Bruna Wilcza Łapa", cls: "Człowiek · Druid (Krąg Księżyca)", lvl: 6, player: "Bartek",
-          stats: [12, 13, 15, 12, 18, 10], ac: 15, hp: 63, maxHp: 71, speed: 30,
-          history: "Strażniczka Lasu Wiecznie Wilgotnego, wyrzucona z kręgu za to, że poprosiła ogień o pomoc. Teraz ogień jest jej winien przysługę.",
-          relic: "Laska z kości dzika, kwitnie wiosną, nawet w środku zamieci."
-        }
-      ],
-      chronicle: [
-        { title: "Popioły Brzeźnej", date: "10 IX 2026", level: 3, loot: "Odłamek Korony #1", summary: "Dymiące zgliszcza wsi i pierwszy kontakt z Kultem Płomiennej Dłoni.", notes: ["Thorgrim składa przysięgę nad zwłokami brata.", "Pierwszy Odłamek odnaleziony w spalonej kuźni."], moment: "Nat 20: Lirael zabija kapłana, zanim ten dokończy modlitwę.", url: null },
-        { title: "Szepczący Królowie", date: "17 IX 2026", level: 4, loot: "Korona Siódmego Króla", summary: "Zejście do katakumb i trzy sale pełne tych, którzy nie chcą spać.", notes: ["Bruna łamie klątwę w sali luster.", "Zephyrion słyszy smoka po raz pierwszy."], moment: "Nat 1: Pan Kwadrans, ups, wróć: Rennick sprzedaje drużynie fałszywą mapę.", url: null },
-        { title: "Lisz bez serca", date: "1 X 2026", level: 5, loot: "Smocza łuska · 800 zł", summary: "Spotkanie z Kazimirem Szarym i pakt, którego nikt nie powinien podpisywać.", notes: ["Lisz zdradza położenie Wieży.", "Drużyna dostaje trzy dni, żeby zdążyć."], moment: "Nat 20: negocjacje. Kazimir się uśmiecha, a to rzadkość.", url: null },
-        { title: "Lodowa Wieża, część I", date: "15 X 2026", level: 6, loot: "Pierścień Szronu", summary: "Zamieć, lodowe golemy i schody, które prowadzą trochę donikąd.", notes: ["Smoczy zwiadowca atakuje z góry.", "Bruna ratuje drużynę w postaci białego niedźwiedzia."], moment: "Nat 1: Zephyrion rzuca Ognistą Kulę w lodowy sufit. Wszyscy mokną.", url: null },
-        { title: "Lodowa Wieża, część II", date: "22 X 2026", level: 7, loot: "Odłamek Korony #3", summary: "Pojedynek ze Szronowym Magiem i list, który nie powinien tu leżeć.", notes: ["Mag ginie, ale nie do końca.", "List podpisany smoczym pismem czeka u wyjścia."], moment: "Nat 20: Thorgrim trafia w mocno uzbrojoną iluzję. Prawdziwy cios.", url: null }
-      ]
-    };
-
-    const SECTIONS = [["campaign", "⚔️ Kampania"], ["characters", "🛡️ Postaci"], ["chronicle", "📜 Kronika"]];
-    const ABILITIES = ["SIŁ", "ZRĘ", "KON", "INT", "MĄD", "CHA"];
-
-    function h(tag, props = {}, ...kids) {
-      const el = document.createElement(tag);
-      for (const [k, v] of Object.entries(props)) {
-        if (k === "class") el.className = v;
-        else if (k === "text") el.textContent = v;
-        else el.setAttribute(k, v);
-      }
-      kids.flat().forEach((kid) => { if (kid != null) el.append(kid); });
-      return el;
-    }
-
-    const modifier = (score) => {
-      const m = Math.floor((score - 10) / 2);
-      return m >= 0 ? `+${m}` : `${m}`;
-    };
-
-    function entries(list) {
-      return h("div", { class: "grid" }, list.map(([name, tag, text]) =>
-        h("div", { class: "entry" }, h("h4", {}, h("span", { text: name }), h("span", { class: "tag", text: tag })), h("p", { text }))));
-    }
-
-    function renderCampaign(root) {
-      const c = CONTENT;
-      root.append(
-        h("h2", { id: "campaign-title", text: "Kampania" }),
-        h("div", { class: "panel lead" }, c.lead.map((t) => h("p", { text: t }))),
-        h("ul", { class: "dossier" }, c.dossier.map(([a, b]) => h("li", {}, h("span", { text: a }), h("strong", { text: b })))),
-        h("h3", { class: "sub", text: "Akty kampanii" }),
-        h("div", { class: "acts" }, c.acts.map(([a, t, s]) =>
-          h("div", { class: `act ${s}` }, h("b", { text: `${a} · ${{ done: "ukończony", now: "w toku", locked: "zamknięty" }[s]}` }), h("strong", { text: t })))),
-        h("h3", { class: "sub", text: "Miejsca" }), entries(c.places),
-        h("h3", { class: "sub", text: "Frakcje" }), entries(c.factions),
-        h("h3", { class: "sub", text: "Postaci niezależne" }), entries(c.npcs),
-        h("h3", { class: "sub", text: "Wielki zły" }),
-        h("div", { class: "boss" }, h("h4", { text: c.boss.name }), h("div", { class: "line", text: c.boss.line }), h("p", { text: c.boss.text }))
-      );
-    }
-
-    function renderCharacters(root) {
-      root.append(
-        h("h2", { id: "characters-title", text: "Postaci" }),
-        h("div", { class: "sheets" }, CONTENT.characters.map((pc) =>
-          h("article", { class: "sheet" },
-            h("span", { class: "lvl", text: `POZ. ${pc.lvl}` }),
-            h("h3", { text: pc.name }),
-            h("p", { class: "cls", text: `${pc.cls} · gra: ${pc.player}` }),
-            h("ul", { class: "abilities" }, pc.stats.map((s, i) =>
-              h("li", {}, h("span", { text: ABILITIES[i] }), h("b", { text: String(s) }), h("small", { text: modifier(s) })))),
-            h("div", { class: "vitals" },
-              h("span", {}, "KP ", h("b", { text: String(pc.ac) })),
-              h("span", {}, "PW ", h("b", { text: `${pc.hp}/${pc.maxHp}` })),
-              h("span", {}, "Szybkość ", h("b", { text: `${pc.speed} ft` }))),
-            h("div", { class: "hp" }, h("i", { style: `width:${Math.round((pc.hp / pc.maxHp) * 100)}%` })),
-            h("p", { text: pc.history }),
-            h("p", { class: "relic", text: pc.relic }))))
-      );
-    }
-
-    function renderChronicle(root) {
-      root.append(
-        h("h2", { id: "chronicle-title", text: "Kronika" }),
-        h("div", { class: "timeline" }, CONTENT.chronicle.map((s, i) =>
-          h("details", { class: "record" },
-            h("summary", {},
-              h("span", { class: "node", "aria-hidden": "true", text: String(i + 1) }),
-              h("span", { class: "title", text: s.title }),
-              h("span", { class: "date", text: s.date }),
-              h("span", { class: "badges" }, h("span", { class: "badge", text: `Poziom ${s.level}` }), h("span", { class: "badge", text: `Łup: ${s.loot}` }))),
-            h("div", { class: "body" },
-              h("p", { text: s.summary }),
-              h("ul", {}, s.notes.map((n) => h("li", { text: n }))),
-              h("p", { class: "moment", text: s.moment }),
-              s.url
-                ? h("a", { class: "play", href: s.url, target: "_blank", rel: "noopener", text: "▶ Odtwórz nagranie" })
-                : h("span", { class: "no-rec", text: "Nagranie w montażu" })))))
-      );
-    }
-
-    function mountTabs() {
-      const nav = document.getElementById("tabs");
-      const buttons = SECTIONS.map(([id, label]) => {
-        const b = h("button", { class: "tab", type: "button", "data-section-link": id, "aria-pressed": "false", text: label });
-        b.addEventListener("click", () => show(id, true));
-        nav.append(b);
-        return b;
-      });
-      function show(id, scroll) {
-        if (!SECTIONS.some(([key]) => key === id)) id = "campaign";
-        document.querySelectorAll("[data-page-section]").forEach((s) => { s.hidden = s.dataset.pageSection !== id; });
-        buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.sectionLink === id)));
-        try { history.replaceState(null, "", `#${id}`); } catch (e) { /* ignored */ }
-        if (scroll) {
-          const top = document.querySelector("main").getBoundingClientRect().top + window.scrollY - nav.offsetHeight;
-          if (window.scrollY > top) window.scrollTo({ top, behavior: "smooth" });
-        }
-      }
-      window.addEventListener("hashchange", () => show(location.hash.slice(1), false));
-      show(location.hash.slice(1), false);
-    }
-
-    function mountDie() {
-      const die = document.getElementById("die");
-      const num = document.getElementById("dieNum");
-      const msg = document.getElementById("rollMsg");
-      let busy = false;
-      die.addEventListener("click", () => {
-        if (busy) return;
-        busy = true;
-        die.className = "die rolling";
-        let ticks = 0;
-        const timer = setInterval(() => {
-          num.textContent = 1 + Math.floor(Math.random() * 20);
-          if (++ticks < 12) return;
-          clearInterval(timer);
-          const result = 1 + Math.floor(Math.random() * 20);
-          num.textContent = result;
-          die.className = result === 20 ? "die crit" : result === 1 ? "die fail" : "die";
-          msg.textContent = result === 20 ? "KRYTYK! Bogowie kości są dziś z wami."
-            : result === 1 ? "Naturalna jedynka… smok już o was wie."
-            : `Wyrzucono ${result}. ${result >= 15 ? "Prowadzicie." : "Smok czeka."}`;
-          busy = false;
-        }, 60);
-      });
-    }
-
-    function mountEmbers() {
-      const canvas = document.getElementById("embers");
-      const ctx = canvas.getContext("2d");
-      if (!ctx || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      const sparks = Array.from({ length: 70 }, () => ({ x: Math.random(), y: Math.random(), r: 0.6 + Math.random() * 2, v: 0.0006 + Math.random() * 0.0016, d: Math.random() * 6.28 }));
-      const fit = () => { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; };
-      fit();
-      window.addEventListener("resize", fit);
-      (function frame(t) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (const s of sparks) {
-          s.y -= s.v * 16;
-          if (s.y < -0.02) { s.y = 1.02; s.x = Math.random(); }
-          const x = (s.x + Math.sin(t / 900 + s.d) * 0.012) * canvas.width;
-          ctx.beginPath();
-          ctx.arc(x, s.y * canvas.height, s.r, 0, 6.28);
-          ctx.fillStyle = `rgba(255, ${120 + Math.floor(s.r * 40)}, 40, ${0.35 + s.y * 0.55})`;
-          ctx.fill();
-        }
-        requestAnimationFrame(frame);
-      })(0);
-    }
-
-    renderCampaign(document.getElementById("campaign"));
-    renderCharacters(document.getElementById("characters"));
-    renderChronicle(document.getElementById("chronicle"));
-    mountTabs();
-    mountDie();
-    mountEmbers();
-  </script>
-</body>
+    <script type="module" src="./app.js"></script>
+  </body>
 </html>
