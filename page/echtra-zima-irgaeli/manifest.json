@@ -1,0 +1,20 @@
+{
+  "id": "echtra-zima-irgaeli",
+  "title": "Echtra — Zima Irgaeli",
+  "language": "pl",
+  "campaign": "Echtra - Zima Irgaeli",
+  "module": "Echtra midst the Sidhe",
+  "entry": "/page/echtra-zima-irgaeli/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "gallery",
+    "characters",
+    "chronicle"
+  ],
+  "audio": {
+    "src": "./res/audio/Morrigan.mp3",
+    "continuationKey": "echtra-zima-irgaeli-theme"
+  }
+}

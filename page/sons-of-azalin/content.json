@@ -1,0 +1,168 @@
+{
+  "campaign": {
+    "kicker": "D&D · ARCHIWUM KAMPANII",
+    "title": "Sons of Azalin",
+    "lead": "Grupa awanturników zaprawionych w bojach przeniesiona została do przedziwnej krainy pełnej klątw, potężnych nieumarłych i opresji Dobrego Króla Azalina.",
+    "introTitle": "Dziedzictwo króla-tyrana",
+    "introParagraphs": [
+      "Sons of Azalin to historia awanturników przeniesionych do Darkonu — krainy klątw, nieumarłych i bezwzględnych rządów Dobrego Króla Azalina.",
+      "Archiwum zachowuje sześć materiałów postaci oraz dwanaście nagrań, od prologu po ostatnią zachowaną sesję.",
+      "Kampania została przerwana po rozpadzie drużyny; jej zapis pozostaje świadectwem historii, która nie doczekała się finału."
+    ],
+    "dossier": [
+      [
+        "POSTACI",
+        "6"
+      ],
+      [
+        "NAGRANIA",
+        "11"
+      ],
+      [
+        "ŹRÓDŁO",
+        "RAVENLOFT"
+      ],
+      [
+        "STATUS",
+        "PRZERWANA"
+      ],
+      [
+        "TON",
+        "GOTYCKI HORROR · INTRYGA"
+      ]
+    ],
+    "partyTitle": "Kraina, do której trafili zbyt późno.",
+    "partyDescription": "Sześć postaci zapisanych w archiwum kampanii.",
+    "partyImage": "/core/portraits/char-0096.webp"
+  },
+  "characters": {
+    "kicker": "AKTA / MATERIAŁY",
+    "title": "Galeria postaci",
+    "description": "Sześć zachowanych portretów z archiwum kampanii.",
+    "characterIds": [
+      "char-0096",
+      "char-0097",
+      "char-0098",
+      "char-0099",
+      "char-0100",
+      "char-0101"
+    ]
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Kronika sesji",
+    "description": "Dwanaście zachowanych nagrań. Wybierz wpis, aby rozwinąć szczegóły lub otworzyć nagranie.",
+    "sessions": [
+      {
+        "sessionNumber": "S001",
+        "title": "Droga do Sławy (prolog)",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=EAdXA0oh2lo"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S002",
+        "title": "Nieznajomy, Dwa Wampiry i Kurhan",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=iHaFMZGi2pM"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S003",
+        "title": "Dzwoniący o Północy",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=8StWVaiEFns"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S004",
+        "title": "Sala Patentowa",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=yt3NGqtcf5o"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S005",
+        "title": "Komu Bije Dzwon...?",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=aH4xziAGAqs"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S006",
+        "title": "Kargat w Mayvin!",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=W0zEkWstmN0"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S007",
+        "title": "Czerwony Las",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=qLA6lFSeBuU"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S008",
+        "title": "Posiadłość Hollowmere",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=Py9LXwI5Ojg"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S009",
+        "title": "Lord Hollowmere",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=NmgX_dtYP5g"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S010",
+        "title": "Corvia",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=EU6M_0OHHmg"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S011",
+        "title": "Bugbear i Hobgoblin",
+        "description": "",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=zXmIJC5uMz8"
+          }
+        ]
+      }
+    ]
+  }
+}

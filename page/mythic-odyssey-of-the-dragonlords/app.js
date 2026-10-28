@@ -1,0 +1,96 @@
+import {
+  loadCampaignBundle,
+  applyCampaignTheme,
+} from "/core/templates/CampaignPage/CampaignPage.js";
+import { createSubpageHero } from "/core/templates/SubpageHero/SubpageHero.js";
+import { mountSubpageNavbar } from "/core/templates/SubpageNavbar/SubpageNavbar.js";
+import { CharacterGallery } from "/core/templates/CharacterGallery/CharacterGallery.js";
+import { createChronicleRecord } from "/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.js";
+import { AudioPlayer } from "/core/templates/AudioPlayer/AudioPlayer.js";
+import { mountAudioPlayerButton } from "/core/templates/AudioPlayerButton/AudioPlayerButton.js";
+async function init() {
+  const { manifest: m, theme: t, content: d } = await loadCampaignBundle();
+  applyCampaignTheme(t);
+  const h = createSubpageHero({
+    title: d.campaign.title,
+    backgroundImage: t.heroImage,
+    theme: { accent: t.colors.accent2 },
+  });
+  h.id = "campaign-hero";
+  const title = h.querySelector("h1");
+  title.textContent = d.campaign.heroFirstLine;
+  const em = document.createElement("em");
+  em.textContent = d.campaign.heroSecondLine;
+  title.append(document.createElement("br"), em);
+  const lead = document.createElement("p");
+  lead.textContent = d.campaign.lead;
+  title.after(lead);
+  document.querySelector("#campaign-hero").replaceWith(h);
+  const nav = document.createElement("div");
+  h.prepend(nav);
+  mountSubpageNavbar(nav, {
+    playlistUrl: m.playlistUrl || undefined,
+    sections: [
+      { text: "Kampania", sectionLink: "campaign", color: t.colors.accent2 },
+      { text: "Postaci", sectionLink: "characters", color: t.colors.accent2 },
+      { text: "Kronika", sectionLink: "chronicle", color: t.colors.accent2 },
+    ],
+  });
+  document.querySelector("#intro-title").textContent = d.campaign.introTitle;
+  document.querySelector("#intro-copy").replaceChildren(
+    ...d.campaign.introParagraphs.map((s) => {
+      const p = document.createElement("p");
+      p.textContent = s;
+      return p;
+    }),
+  );
+  document.querySelector("#campaign-dossier").replaceChildren(
+    ...d.campaign.dossier.map((x) => {
+      const row = document.createElement("div");
+      row.className = "campaign-dossier-row";
+      const a = document.createElement("span");
+      a.textContent = x.label;
+      const b = document.createElement("strong");
+      b.textContent = x.value;
+      row.append(a, b);
+      return row;
+    }),
+  );
+  document.querySelector("#party-title").textContent = d.campaign.title;
+  document.querySelector("#party-description").textContent = d.campaign.lead;
+  document.querySelector("#party-image").src = d.campaign.partyImage;
+  document.querySelector("#characters-title").textContent = d.characters.title;
+  await new CharacterGallery(document.querySelector("#character-gallery"), {
+    characterIds: d.characters.characterIds,
+  }).render();
+  document.querySelector("#chronicle-description").textContent =
+    d.chronicle.description;
+  const pl = document.querySelector("#chronicle-playlist");
+  if (d.chronicle.playlistUrl) {
+    pl.href = d.chronicle.playlistUrl;
+    pl.hidden = false;
+  }
+  document
+    .querySelector("#chronicle-records")
+    .replaceChildren(
+      ...d.chronicle.sessions.map((s) =>
+        createChronicleRecord(s, { accent: t.colors.accent2 }),
+      ),
+    );
+  document.querySelector("#footer-title").textContent =
+    "VENGRATH · " + d.campaign.title.toUpperCase();
+  if (m.audio?.src)
+    mountAudioPlayerButton(
+      new AudioPlayer({
+        src: m.audio.src,
+        storageKey: m.audio.continuationKey,
+      }),
+      t.colors.accent1,
+    );
+}
+init().catch((e) => {
+  console.error(e);
+  document.body.prepend(
+    document.createTextNode("Nie udało się wczytać kampanii."),
+  );
+});

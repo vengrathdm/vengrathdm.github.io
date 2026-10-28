@@ -1,0 +1,32 @@
+{
+  "colors": {
+    "base1": "#0d0b12",
+    "base2": "#181420",
+    "base3": "#211b2b",
+    "base4": "#2c2438",
+    "base5": "#382d46",
+    "accent1": "#9270bd",
+    "accent2": "#c9c2d8",
+    "text1": "#f0edf5",
+    "text2": "#d8d0e4",
+    "text3": "#b5abc5",
+    "textMuted": "#81758f",
+    "titleAccent": "#c9c2d8",
+    "line1": "#4a3c5b",
+    "line2": "#6e5a83",
+    "navBackground": "#181420",
+    "navText": "#d8d0e4",
+    "navActiveBackground": "#2c2438",
+    "sealBorder": "#c9c2d8",
+    "sealInnerBorder": "#4a3c5b",
+    "sealBackground": "#08090bcc",
+    "sealSmallText": "#b5abc5",
+    "sealMainText": "#c9c2d8"
+  },
+  "typography": {
+    "heading": "\"Voltaire\", sans-serif",
+    "body": "\"Fira Sans Extra Condensed\", sans-serif",
+    "serif": "\"Brygada 1918\", Georgia, serif"
+  },
+  "heroImage": "/core/graphics/voronoi/dom-malowanych-luster.webp"
+}

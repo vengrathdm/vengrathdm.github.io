@@ -1,0 +1,56 @@
+{
+  "campaign": {
+    "title": "NOCE NEVERWINTER — INTRYGI PÓŁNOCNEGO WYBRZEŻA MIECZY",
+    "heroFirstLine": "Noce Neverwinter",
+    "heroSecondLine": "Intrygi Północnego Wybrzeża Mieczy",
+    "kicker": "D&D · ARCHIWUM KAMPANII",
+    "lead": "Dagult Neverember pragnie korony. Luskan i Mirabar obserwują każdy ruch. W mieście, gdzie polityka spotyka się z ulicą, każde śledztwo może stać się częścią większego konfliktu.",
+    "introTitle": "Miasto, w którym każdy ma własną agendę.",
+    "introParagraphs": [
+      "Ta kampania została pomyślana jako wielowarstwowa przygoda: śledztwa, podróże, polityczne układy, eksploracja ruin i badanie grobowców.",
+      "Start następował w Neverwinter, a ogólna trajektoria prowadziła przez Północne Wybrzeże Mieczy.",
+      "W centrum konfliktu znajdowały się Neverwinter, Luskan i Mirabar. Archiwum kończy się TPK po wydarzeniach związanych z działalnością drużyny w Neverwinter."
+    ],
+    "dossier": [
+      {
+        "label": "POSTACI",
+        "value": "6"
+      },
+      {
+        "label": "MATERIAŁY",
+        "value": "5"
+      },
+      {
+        "label": "NAGRANIA",
+        "value": "1"
+      },
+      {
+        "label": "STATUS",
+        "value": "ARCHIWUM"
+      }
+    ],
+    "partyTitle": "Miasto, w którym każdy ma własną agendę.",
+    "partyDescription": "Dagult Neverember pragnie korony. Luskan i Mirabar obserwują każdy ruch. W mieście, gdzie polityka spotyka się z ulicą, każde śledztwo może stać się częścią większego konfliktu.",
+    "partyImage": "/core/graphics/voronoi/neverwinter.webp"
+  },
+  "characters": {
+    "kicker": "AKTA / POSTACI",
+    "title": "Bohaterowie kampanii",
+    "description": "Karty korzystają ze wspólnego katalogu postaci Vengrath.",
+    "characterIds": [
+      "char-0074",
+      "char-0075",
+      "char-0076",
+      "char-0077",
+      "char-0078",
+      "char-0198"
+    ]
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Nagrania kampanii",
+    "description": "Oryginalna strona zachowuje playlistę, ale nie zawiera indywidualnych odnośników do sesji.",
+    "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0gYTerajwJlxi2yqRupuj9c",
+    "sessions": []
+  }
+}

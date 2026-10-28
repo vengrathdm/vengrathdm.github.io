@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Dagult Neverember pragnie korony. Luskan i Mirabar obserwują każdy ruch. W mieście, gdzie polityka spotyka się z ulicą, każde śledztwo może stać się częścią większego konfliktu."
+    />
+    <title>
+      Noce Neverwinter — Intrygi Północnego Wybrzeża Mieczy — Vengrath
+    </title>
+    <link rel="stylesheet" href="./theme-fonts.css" />
+    <link rel="stylesheet" href="/core/templates/HomeButton/HomeButton.css" />
+    <link
+      rel="stylesheet"
+      href="/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageNavbar/SubpageNavbar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageHero/SubpageHero.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterGallery/CharacterGallery.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterCard/CharacterCard.css"
+    />
+    <link rel="stylesheet" href="/core/templates/Chronicle/Chronicle.css" />
+    <link
+      rel="stylesheet"
+      href="/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="campaign-page">
+    <div id="campaign-hero"></div>
+    <main class="campaign-content">
+      <section
+        class="campaign-panel"
+        id="campaign"
+        data-page-section="campaign"
+      >
+        <section class="campaign-card">
+          <div class="campaign-card-title">
+            <span>01</span><strong>AKTA KAMPANII</strong>
+          </div>
+          <div class="campaign-card-body">
+            <div class="campaign-intro-grid">
+              <article class="campaign-paper">
+                <div class="campaign-section-mark">O KAMPANII</div>
+                <h2 id="intro-title"></h2>
+                <div id="intro-copy"></div>
+              </article>
+              <aside class="campaign-dossier">
+                <div class="campaign-dossier-label">DOSSIER</div>
+                <div id="campaign-dossier"></div>
+              </aside>
+            </div>
+          </div>
+        </section>
+        <section class="campaign-party">
+          <div>
+            <div class="campaign-section-mark">ARCHIWUM</div>
+            <h2 id="party-title"></h2>
+            <p id="party-description"></p>
+          </div>
+          <figure><img id="party-image" alt="Ilustracja kampanii" /></figure>
+        </section>
+      </section>
+      <section
+        class="campaign-panel"
+        id="characters"
+        data-page-section="characters"
+        hidden
+      >
+        <section class="campaign-section">
+          <div class="campaign-section-mark">AKTA / POSTACI</div>
+          <h2 id="characters-title">Bohaterowie kampanii</h2>
+          <div id="character-gallery"></div>
+        </section>
+      </section>
+      <section
+        class="campaign-panel"
+        id="chronicle"
+        data-page-section="chronicle"
+        hidden
+      >
+        <section class="campaign-section">
+          <div class="campaign-section-mark">AKTA / KRONIKA</div>
+          <h2>Nagrania kampanii</h2>
+          <p id="chronicle-description"></p>
+          <a
+            id="chronicle-playlist"
+            class="campaign-playlist"
+            target="_blank"
+            rel="noopener noreferrer"
+            hidden
+            >Otwórz playlistę kampanii ↗</a
+          >
+          <div id="chronicle-records"></div>
+        </section>
+      </section>
+    </main>
+    <footer class="campaign-footer">
+      <span id="footer-title"></span
+      ><a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a>
+    </footer>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

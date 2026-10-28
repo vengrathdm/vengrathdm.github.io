@@ -1,0 +1,16 @@
+{
+  "id": "dragon-of-dampen-depths",
+  "title": "Dragon of Dampen Depths",
+  "language": "pl",
+  "campaign": "Dragon of Dampen Depths",
+  "module": "Dragon of Dampen Depths",
+  "entry": "/page/dragon-of-dampen-depths/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": ""
+}

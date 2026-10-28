@@ -1,0 +1,427 @@
+{
+  "campaign": {
+    "kicker": "D&D · ARCHIWUM KAMPANII",
+    "title": "Dungeons of Drakkenheim",
+    "lead": "Piętnaście lat po katastrofie Drakkenheim wciąż pulsuje fioletową poświatą Haze. Ruiny są pełne delirium, politycznych ambicji i rzeczy, które nigdy nie powinny się obudzić.",
+    "introTitle": "Dungeons of Drakkenheim",
+    "introParagraphs": [
+      "Piętnaście lat po katastrofie miasto nadal stoi — nie jako pomnik, lecz jako rana. Fioletowe światło Haze przenika pęknięte ulice, delirium zmienia tych, którzy zbyt długo pozostają w skażonej strefie, a ruiny przyciągają poszukiwaczy wiedzy, wpływów i bogactwa.",
+      "Frakcje rywalizują o przyszłość Drakkenheim, choć żadna nie może w pełni kontrolować tego, co kryje się w jego sercu. Eksploracja oznacza walkę o zasoby, trudne sojusze i decyzje, których konsekwencje sięgają daleko poza mury miasta.",
+      "To nie jest loch pod miastem. Całe miasto jest lochem — i każda wyprawa w jego głąb wystawia na próbę ciało, umysł oraz przekonania bohaterów."
+    ],
+    "dossier": [
+      [
+        "TYTUŁ",
+        "Dungeons of Drakkenheim"
+      ],
+      [
+        "MATERIAŁY",
+        "6"
+      ],
+      [
+        "NAGRANIA",
+        "36"
+      ],
+      [
+        "AUDIO",
+        "TAK"
+      ],
+      [
+        "ŹRÓDŁO",
+        "ARCHIWUM"
+      ],
+      [
+        "STATUS",
+        "ARCHIWUM"
+      ]
+    ],
+    "partyTitle": "Ruiny są tylko początkiem.",
+    "partyDescription": "Miasto nie obiecuje, że wrócisz taki sam, jak wszedłeś.",
+    "partyImage": "/core/portraits/char-0045.webp"
+  },
+  "characters": {
+    "kicker": "AKTA / POSTACIE",
+    "title": "Drużyna",
+    "description": "Postacie kampanii wraz z aktualnym statusem, klasą, rasą i graczem. Archiwum jest podzielone według stanu postaci.",
+    "livingTitle": "Żyjący",
+    "livingDescription": "Postacie oznaczone w rejestrze jako zwycięskie.",
+    "livingCharacterIds": [
+      "char-0045",
+      "char-0046",
+      "char-0047"
+    ],
+    "deadTitle": "Poległe",
+    "deadDescription": "Postacie oznaczone w rejestrze jako martwe.",
+    "deadCharacterIds": [
+      "char-0048",
+      "char-0049"
+    ]
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Kronika sesji",
+    "description": "36 wpisów z zachowanymi nagraniami i tytułami z dawnej strony.",
+    "sessions": [
+      {
+        "sessionNumber": "S001",
+        "title": "Droga do Drakkenheim",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=WPJvplaV13w"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S002",
+        "title": "Delerium",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=4QULZ0gG7VQ"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S003",
+        "title": "Skażenie",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=Hb5tTONL0ro"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S004",
+        "title": "Kaplica Św. Brenny",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=JPqAKMrDR4Y"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S005",
+        "title": "Berło Św. Vitruvio",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=GXGIHaYDVNA"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S006",
+        "title": "Kult Spadającego Płomienia",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=AE5cxJBhvM4"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S007",
+        "title": "Obiecana Nagroda",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=Hk2jp25qcnI"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S008",
+        "title": "Black Ivory",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=MOrGBIi89hQ"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S009",
+        "title": "Black Ivory 2",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=LCa_KamHHis"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S010",
+        "title": "Black Ivory 3",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=zPsBmnwDOWs"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S011",
+        "title": "Kuźnia na Bliźnie (1)",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=tT19CAjU-Ng"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S012",
+        "title": "Kuźnia na Bliźnie",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=6I66lg-yT30"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S013",
+        "title": "Kuźnia na Bliźnie",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=ChE7PVWAZrI"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S014",
+        "title": "X",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=SAsZO06kVYw"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S015",
+        "title": "Zasadzka Pana Uczty",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=T_qDe9Wz4Bw"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S016",
+        "title": "Plany Latarnii",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=nFY_3OEfs_c"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S017",
+        "title": "Kosmologiczna Wieża Zegarowa",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=WP-YVwhZ2hM"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S018",
+        "title": "Szkarłatna Harpia",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=PZxzn6Jno3s"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S019",
+        "title": "W Sieci Wpływów",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=eaRAm9WmyTg"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S020",
+        "title": "Utracona Leonore",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=tavBcX3Ev4c"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S021",
+        "title": "Plac Katowski",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=cZcb0-lFtek"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S022",
+        "title": "Koniec Corbena",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=yue-aOT62ZY"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S023",
+        "title": "Dywersja Ludzi Królowej",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=wlXayymWCM4"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S024",
+        "title": "Bitwa o Katedrę Św. Vitruvio",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=yJk7wYBPkZg"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S025",
+        "title": "Katakumby Św. Vitruvio",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=iEQRWtmbqtU"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S026",
+        "title": "Krater",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=yKCtNjqJn40"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S027",
+        "title": "Awans i Projekt: Manhattan",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=cczM_XC0sbY"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S028",
+        "title": "Ryan Graymere i Blady Człowiek",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=WzODiYHkMjg"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S029",
+        "title": "Osłabione Sojusze",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=-QZHoSe4icY"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S030",
+        "title": "W Sidłach Złodziei",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=afs5oQQ8czI"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S031",
+        "title": "Kto Trzyma Karty?",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=NwaoOdII3ns"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S032",
+        "title": "Minazorond",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=DXi1qeIWbb0"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S033",
+        "title": "Zamek Drakken",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=9orSkkhHtc0"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S034",
+        "title": "Sala Tronowa",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=viZ5wbHwDmo"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S035",
+        "title": "Korona Drakkenheimu",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=KsdgepumE20"
+          }
+        ]
+      },
+      {
+        "sessionNumber": "S036",
+        "title": "Finał",
+        "description": "Brak notatek sesji.",
+        "recordings": [
+          {
+            "url": "https://www.youtube.com/watch?v=WDoe4Gs-LMI"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Finał Broken Chains (DDAL07-18) prowadzi przez Peaks of Flame i Maze of Ubtao ku Iron Door."
+    />
+    <meta name="theme-color" content="#08090b" />
+    <title>Turn Back the Endless Night — Vengrath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./theme-fonts.css" />
+    <link rel="stylesheet" href="/core/templates/HomeButton/HomeButton.css" />
+    <link
+      rel="stylesheet"
+      href="/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageNavbar/SubpageNavbar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageHero/SubpageHero.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterGallery/CharacterGallery.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterCard/CharacterCard.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterCard/Achievements/Achievements.css"
+    />
+    <link rel="stylesheet" href="/core/templates/Chronicle/Chronicle.css" />
+    <link
+      rel="stylesheet"
+      href="/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/AudioPlayerButton/AudioPlayerButton.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="tben-page">
+    <div id="campaign-hero"></div>
+    <main class="tben-content">
+      <section class="tben-panel" id="campaign" data-page-section="campaign">
+        <section class="tben-card">
+          <div class="tben-card-title">
+            <span>01</span><strong>AKTA KAMPANII</strong>
+          </div>
+          <div class="tben-card-body">
+            <div class="tben-intro-grid">
+              <article class="tben-paper">
+                <div class="tben-section-mark">O KAMPANII</div>
+                <h2 id="intro-title"></h2>
+                <div id="intro-copy"></div>
+              </article>
+              <aside class="tben-dossier" aria-label="Dossier kampanii">
+                <div class="tben-dossier-label">DOSSIER</div>
+                <div id="campaign-dossier"></div>
+              </aside>
+            </div>
+          </div>
+        </section>
+        <section class="tben-party">
+          <div class="tben-party-copy">
+            <div class="tben-section-mark">ARCHIWUM</div>
+            <h2 id="party-title"></h2>
+            <p id="party-description"></p>
+          </div>
+          <figure class="tben-party-image">
+            <img
+              id="party-image"
+              alt="Turn Back the Endless Night"
+              loading="lazy"
+            />
+          </figure>
+        </section>
+        <section class="tben-manifesto">
+          <div class="tben-manifesto-symbol" aria-hidden="true">✦</div>
+          <div>
+            <div class="tben-section-mark" id="manifesto-title"></div>
+            <p id="manifesto-quote"></p>
+            <span id="manifesto-tags"></span>
+          </div>
+        </section>
+        <section class="tben-archive" aria-label="Zapis archiwalny">
+          <div class="tben-archive-heading">
+            <div class="tben-section-mark">ZACHOWANE AKTA</div>
+            <h2>Fragmenty z archiwum</h2>
+          </div>
+          <div id="campaign-archive" class="tben-archive-grid"></div>
+        </section>
+      </section>
+
+      <section
+        class="tben-panel"
+        id="characters"
+        data-page-section="characters"
+        hidden
+      >
+        <section class="tben-section">
+          <div class="tben-section-mark" id="characters-kicker"></div>
+          <h2 id="characters-title"></h2>
+          <p id="characters-description"></p>
+          <div id="character-gallery" aria-live="polite"></div>
+        </section>
+      </section>
+
+      <section
+        class="tben-panel"
+        id="chronicle"
+        data-page-section="chronicle"
+        hidden
+      >
+        <section class="tben-section">
+          <div class="tben-section-mark" id="chronicle-kicker"></div>
+          <h2 id="chronicle-title"></h2>
+          <p id="chronicle-description"></p>
+          <a
+            id="chronicle-playlist"
+            class="tben-playlist"
+            target="_blank"
+            rel="noopener noreferrer"
+            hidden
+            >Otwórz playlistę kampanii ↗</a
+          >
+          <div id="chronicle-records"></div>
+        </section>
+      </section>
+    </main>
+    <footer class="tben-footer">
+      <span id="footer-title">VENGRATH · BLOOD RED SNOW WHITE</span>
+      <a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a>
+    </footer>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

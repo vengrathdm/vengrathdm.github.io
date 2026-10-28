@@ -1,0 +1,16 @@
+{
+  "id": "turn-back-the-endless-night",
+  "title": "Turn Back the Endless Night",
+  "language": "pl",
+  "campaign": "Turn Back the Endless Night",
+  "module": "Turn Back the Endless Night",
+  "entry": "/page/turn-back-the-endless-night/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": ""
+}

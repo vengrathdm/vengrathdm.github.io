@@ -1,0 +1,32 @@
+{
+  "colors": {
+    "base1": "#090d12",
+    "base2": "#101820",
+    "base3": "#14222b",
+    "base4": "#192b35",
+    "base5": "#203640",
+    "accent1": "#2b7c91",
+    "accent2": "#c5a66e",
+    "text1": "#e9edf0",
+    "text2": "#cbd8dd",
+    "text3": "#a3b5bc",
+    "textMuted": "#71848b",
+    "titleAccent": "#80bdc9",
+    "line1": "#344d57",
+    "line2": "#4d7380",
+    "navBackground": "#101820",
+    "navText": "#cbd8dd",
+    "navActiveBackground": "#192b35",
+    "sealBorder": "#c5a66e",
+    "sealInnerBorder": "#344d57",
+    "sealBackground": "#08090bcc",
+    "sealSmallText": "#a3b5bc",
+    "sealMainText": "#80bdc9"
+  },
+  "typography": {
+    "heading": "\"Voltaire\", sans-serif",
+    "body": "\"Fira Sans Extra Condensed\", sans-serif",
+    "serif": "\"Brygada 1918\", Georgia, serif"
+  },
+  "heroImage": "/core/graphics/voronoi/cemetary-of-dragons.webp"
+}

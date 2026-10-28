@@ -1,0 +1,83 @@
+{
+  "campaign": {
+    "title": "Bohaterowie Wrót Baldura",
+    "heroFirstLine": "Bohaterowie Wrót",
+    "heroSecondLine": "Baldura",
+    "kicker": "D&D · KRONIKA PRZYGODY",
+    "lead": "Sześć postaci, sześć dziedzictw i jedno miasto, w którym przeszłość potrafi upomnieć się o każdego.",
+    "introTitle": "Bohaterowie Wrót Baldura",
+    "introParagraphs": [
+      "Sześć postaci, sześć dziedzictw i jedno miasto, w którym przeszłość potrafi upomnieć się o każdego.",
+      "Heroes of Baldur's Gate to przygoda Arcanum Worlds osadzona w Forgotten Realms. Ta strona zapisuje konkretną kampanię Vengrath.",
+      "Każdy wpis łączy postać z Sali Chwały, gracza oraz wskazany przez Ciebie premade background."
+    ],
+    "dossier": [
+      {
+        "label": "MATERIAŁY",
+        "value": "6"
+      },
+      {
+        "label": "NAGRANIA",
+        "value": "0"
+      },
+      {
+        "label": "ŹRÓDŁO",
+        "value": "ZAPIS"
+      },
+      {
+        "label": "STATUS",
+        "value": "ZAPIS"
+      }
+    ],
+    "partyTitle": "Miasto, dziedzictwo i sześć historii.",
+    "partyDescription": "",
+    "partyImage": "/core/portraits/char-0109.webp",
+    "archiveSections": [
+      {
+        "number": "02",
+        "title": "Miasto, dziedzictwo i sześć historii.",
+        "description": "Przebudzony klon."
+      },
+      {
+        "number": "03",
+        "title": "Dziedzictwa",
+        "description": "Dwoje rodzeństwa dzielących dziedzictwo Bhaala."
+      },
+      {
+        "number": "04",
+        "title": "Reincarnated Green Dragon",
+        "description": ""
+      },
+      {
+        "number": "05",
+        "title": "The Awakened Clone",
+        "description": ""
+      },
+      {
+        "number": "06",
+        "title": "Child of Bhaal",
+        "description": "Poległa z ręki Kagaina, najemnika na usługach Zhentarimów."
+      }
+    ]
+  },
+  "characters": {
+    "kicker": "AKTA / MATERIAŁY",
+    "title": "Postacie i grafiki",
+    "description": "",
+    "characterIds": [
+      "char-0109",
+      "char-0220",
+      "char-0110",
+      "char-0111",
+      "char-0108",
+      "char-0107"
+    ]
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Nagrania",
+    "description": "Na stronie źródłowej nie zachowano linków do nagrań.",
+    "playlistUrl": "",
+    "sessions": []
+  }
+}

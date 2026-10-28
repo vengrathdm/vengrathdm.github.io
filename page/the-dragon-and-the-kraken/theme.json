@@ -1,0 +1,32 @@
+{
+  "colors": {
+    "base1": "#071015",
+    "base2": "#0d1b23",
+    "base3": "#112731",
+    "base4": "#173540",
+    "base5": "#1c414c",
+    "accent1": "#2e8b91",
+    "accent2": "#d0b276",
+    "text1": "#edf2ed",
+    "text2": "#cbdad8",
+    "text3": "#a2b9b9",
+    "textMuted": "#708b8e",
+    "titleAccent": "#8cc9c5",
+    "line1": "#34535a",
+    "line2": "#4d7880",
+    "navBackground": "#0d1b23",
+    "navText": "#cbdad8",
+    "navActiveBackground": "#173540",
+    "sealBorder": "#d0b276",
+    "sealInnerBorder": "#34535a",
+    "sealBackground": "#08090bcc",
+    "sealSmallText": "#a2b9b9",
+    "sealMainText": "#8cc9c5"
+  },
+  "typography": {
+    "heading": "\"Voltaire\", sans-serif",
+    "body": "\"Fira Sans Extra Condensed\", sans-serif",
+    "serif": "\"Brygada 1918\", Georgia, serif"
+  },
+  "heroImage": "/core/graphics/voronoi/dragon-and-the-kraken.webp"
+}

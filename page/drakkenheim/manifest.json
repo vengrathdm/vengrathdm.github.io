@@ -1,0 +1,19 @@
+{
+  "id": "drakkenheim",
+  "title": "Drakkenheim",
+  "language": "pl",
+  "campaign": "Drakkenheim",
+  "entry": "/page/drakkenheim/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": null,
+  "audio": {
+    "src": "./res/audio/Drakkenheim.mp3",
+    "continuationKey": "drakkenheimTheme"
+  }
+}

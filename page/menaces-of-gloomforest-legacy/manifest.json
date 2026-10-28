@@ -1,0 +1,16 @@
+{
+  "id": "menaces-of-gloomforest-legacy",
+  "title": "Menaces of Gloomforest Legacy",
+  "language": "pl",
+  "campaign": "Menaces of Gloomforest Legacy",
+  "module": "Menaces of Irensberg",
+  "entry": "/page/menaces-of-gloomforest-legacy/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0jY8sPEuRlBdlXIFw9WJlEL"
+}

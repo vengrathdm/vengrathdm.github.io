@@ -1,0 +1,78 @@
+{
+  "campaign": {
+    "title": "Mayhem in Earthspur Mines",
+    "heroFirstLine": "Mayhem in",
+    "heroSecondLine": "Earthspur Mines",
+    "kicker": "D&D · ARCHIWUM KAMPANII",
+    "lead": "W jednej z kopalń w Górach Earthspur zapada się cisza. Bohaterowie ruszają na poszukiwania zaginionych górników i żołnierzy, a śledztwo prowadzi ich w sam środek konfliktu wokół dawnej krasnoludzkiej domeny.",
+    "introTitle": "Mayhem in Earthspur Mines",
+    "introParagraphs": [
+      "W jednej z kopalń w Górach Earthspur zapada się cisza. Bohaterowie ruszają na poszukiwania zaginionych górników i żołnierzy, a śledztwo prowadzi ich w sam środek konfliktu wokół dawnej krasnoludzkiej domeny.",
+      "Mayhem in Earthspur Mines (DDEX2-4) to oficjalna przygoda D&D Adventurers League z sezonu Elemental Evil, autorstwa Willa Doyle'a.",
+      "Jedna z kopalń w Górach Earthspur przestaje działać, a wraz z nią znika oczekiwany transport cennego surowca. Wysłani na miejsce bohaterowie muszą ustalić, co stało się z pracownikami kopalni i żołnierzami, którzy mieli ich odnaleźć."
+    ],
+    "dossier": [
+      {
+        "label": "MATERIAŁY",
+        "value": "0"
+      },
+      {
+        "label": "NAGRANIA",
+        "value": "0"
+      },
+      {
+        "label": "ŹRÓDŁO",
+        "value": "ARCHIWUM"
+      },
+      {
+        "label": "STATUS",
+        "value": "ARCHIWUM"
+      }
+    ],
+    "partyTitle": "Tam, gdzie zamilkła kopalnia.",
+    "partyDescription": "Zaginieni górnicy, żołnierze i transport cennego surowca prowadzą bohaterów ku konfliktowi wokół dawnej krasnoludzkiej domeny.",
+    "partyImage": "/core/portraits/char-0166.webp",
+    "manifestoTitle": "Z ARCHIWUM",
+    "manifesto": "Oficjalna przygoda D&D Adventurers League DDEX2-4, należąca do sezonu Elemental Evil.",
+    "manifestoTags": "DDEX2-4 · ELEMENTAL EVIL",
+    "archiveSections": [
+      {
+        "number": "02",
+        "title": "DDEX2-4 — Elemental Evil",
+        "description": "Oficjalna przygoda D&D Adventurers League autorstwa Willa Doyle'a."
+      },
+      {
+        "number": "03",
+        "title": "Zaginieni górnicy i żołnierze",
+        "description": "Bohaterowie mają ustalić, co stało się z pracownikami kopalni i żołnierzami wysłanymi na poszukiwania."
+      },
+      {
+        "number": "04",
+        "title": "Transport, który nie dotarł",
+        "description": "Wraz z unieruchomioną kopalnią znika oczekiwany transport cennego surowca."
+      },
+      {
+        "number": "05",
+        "title": "Dawna krasnoludzka domena",
+        "description": "Śledztwo prowadzi w sam środek konfliktu wokół dawnej krasnoludzkiej domeny."
+      }
+    ]
+  },
+  "characters": {
+    "kicker": "AKTA / POSTACI",
+    "title": "Drużyna z Earthspur",
+    "description": "Trzy postacie zapisane we wspólnym rejestrze kampanii Mayhem in Earthspur Mines.",
+    "characterIds": [
+      "char-0166",
+      "char-0192",
+      "char-0275"
+    ]
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Brak zachowanych nagrań",
+    "description": "Stara strona kampanii nie zawierała nagrań YouTube.",
+    "playlistUrl": "",
+    "sessions": []
+  }
+}

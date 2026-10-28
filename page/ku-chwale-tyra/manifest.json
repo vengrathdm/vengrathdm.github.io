@@ -1,0 +1,15 @@
+{
+  "id": "ku-chwale-tyra",
+  "title": "Ku chwale Tyra!",
+  "language": "pl",
+  "campaign": "Ku chwale Tyra!",
+  "module": "Ku chwale Tyra!",
+  "entry": "/page/ku-chwale-tyra/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ]
+}

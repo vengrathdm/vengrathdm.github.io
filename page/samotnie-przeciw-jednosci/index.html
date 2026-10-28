@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Wyprawa do miasta, w którym medyna, port i modernistyczne fasady przykrywają starszą historię."
+    />
+    <meta name="theme-color" content="#090d11" />
+    <title>Samotnie Przeciw Jedności — Vengrath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./theme-fonts.css" />
+    <link rel="stylesheet" href="/core/templates/HomeButton/HomeButton.css" />
+    <link
+      rel="stylesheet"
+      href="/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageNavbar/SubpageNavbar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageHero/SubpageHero.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterCard/CharacterCard.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterCard/Achievements/Achievements.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterGallery/CharacterGallery.css"
+    />
+    <link rel="stylesheet" href="/core/templates/Chronicle/Chronicle.css" />
+    <link
+      rel="stylesheet"
+      href="/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css"
+    />
+    <link rel="stylesheet" href="./page.css" />
+  </head>
+  <body class="samotnie-przeciw-jednosci-page">
+    <div id="campaign-hero"></div>
+    <main class="ddc-content">
+      <section class="ddc-tab-panel" id="campaign" data-page-section="campaign">
+        <div id="campaign-section-content"></div>
+      </section>
+      <section
+        class="ddc-tab-panel"
+        id="characters"
+        data-page-section="characters"
+        hidden
+      >
+        <section class="ddc-section ddc-character-intro">
+          <div class="ddc-section-mark" id="characters-kicker"></div>
+          <h2 id="characters-title"></h2>
+          <p id="characters-description"></p>
+        </section>
+        <div id="character-gallery"></div>
+      </section>
+      <section
+        class="ddc-tab-panel ddc-chronicle-panel"
+        id="chronicle"
+        data-page-section="chronicle"
+        hidden
+      >
+        <div id="chronicle-section-content"></div>
+      </section>
+    </main>
+    <footer class="ddc-footer">
+      <span></span><a href="#top">POWRÓT NA GÓRĘ ↑</a>
+    </footer>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

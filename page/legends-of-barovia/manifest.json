@@ -1,0 +1,20 @@
+{
+  "id": "legends-of-barovia",
+  "title": "Legends of Barovia",
+  "language": "pl",
+  "campaign": "Legends of Barovia",
+  "module": "Curse of Strahd",
+  "entry": "/page/legends-of-barovia/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": "https://www.youtube.com/playlist?list=PLAXuFvwFR_kU",
+  "audio": {
+    "src": "/page/legends-of-barovia/res/audio/into-the-mists.mp3",
+    "continuationKey": "legendsOfBaroviaTheme"
+  }
+}

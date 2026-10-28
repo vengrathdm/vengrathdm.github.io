@@ -1,0 +1,16 @@
+{
+  "id": "heroes-of-baldurs-gate",
+  "title": "Bohaterowie Wrót Baldura",
+  "language": "pl",
+  "campaign": "Heroes of Baldur's Gate",
+  "module": "Heroes of Baldur's Gate",
+  "entry": "/page/heroes-of-baldurs-gate/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": ""
+}

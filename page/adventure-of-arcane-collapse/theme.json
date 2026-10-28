@@ -1,0 +1,32 @@
+{
+  "colors": {
+    "base1": "#0a0b14",
+    "base2": "#121426",
+    "base3": "#191c35",
+    "base4": "#202449",
+    "base5": "#292d57",
+    "accent1": "#7c68d8",
+    "accent2": "#a8c9f0",
+    "text1": "#eef0ff",
+    "text2": "#d6daf2",
+    "text3": "#aeb4d6",
+    "textMuted": "#777fa7",
+    "titleAccent": "#a8c9f0",
+    "line1": "#3c416b",
+    "line2": "#5b659a",
+    "navBackground": "#121426",
+    "navText": "#d6daf2",
+    "navActiveBackground": "#202449",
+    "sealBorder": "#a8c9f0",
+    "sealInnerBorder": "#3c416b",
+    "sealBackground": "#08090bcc",
+    "sealSmallText": "#aeb4d6",
+    "sealMainText": "#a8c9f0"
+  },
+  "typography": {
+    "heading": "\"Voltaire\", sans-serif",
+    "body": "\"Fira Sans Extra Condensed\", sans-serif",
+    "serif": "\"Brygada 1918\", Georgia, serif"
+  },
+  "heroImage": "/core/graphics/voronoi/adventure-of-arcane-collapse.webp"
+}

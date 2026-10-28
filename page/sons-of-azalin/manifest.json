@@ -1,0 +1,20 @@
+{
+  "id": "sons-of-azalin",
+  "title": "Sons of Azalin",
+  "language": "pl",
+  "campaign": "Sons of Azalin",
+  "module": "Ravenloft",
+  "entry": "/page/sons-of-azalin/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": null,
+  "audio": {
+    "src": "./res/audio/Darkon.mp3",
+    "continuationKey": "sonsOfAzalinTheme"
+  }
+}

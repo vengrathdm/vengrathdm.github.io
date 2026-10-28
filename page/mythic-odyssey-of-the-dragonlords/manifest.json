@@ -1,0 +1,20 @@
+{
+  "id": "mythic-odyssey-of-the-dragonlords",
+  "title": "Mythic Odyssey of the Dragonlords",
+  "language": "pl",
+  "campaign": "Mythic Odyssey of the Dragonlords",
+  "module": "Odyssey of the Dragonlords",
+  "entry": "/page/mythic-odyssey-of-the-dragonlords/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0hXpO3GDiZjMwAggmIWv0ZD",
+  "audio": {
+    "src": "/page/mythic-odyssey-of-the-dragonlords/res/audio/mythic-odyssey-of-the-dragonlords.mp3",
+    "continuationKey": "mythicodysseyofthedragonlordsTheme"
+  }
+}

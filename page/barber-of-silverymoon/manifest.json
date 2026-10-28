@@ -1,0 +1,16 @@
+{
+  "id": "barber-of-silverymoon",
+  "title": "Barber of Silverymoon",
+  "language": "pl",
+  "campaign": "Barber of Silverymoon",
+  "module": "Barber of Silverymoon",
+  "entry": "/page/barber-of-silverymoon/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0isDo3Zrhre_kuF94Nt_7UM"
+}

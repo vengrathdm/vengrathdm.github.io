@@ -1,0 +1,50 @@
+{
+  "campaign": {
+    "kicker": "D&D · KRONIKA PRZYGODY",
+    "title": "Curse of Strahd",
+    "heroFirstLine": "Curse of",
+    "heroSecondLine": "Strahd",
+    "lead": "Barovia jest więzieniem spowitym mgłą. Nad jej wioskami, lasami i zamkiem Ravenloft ciąży wola Strahda von Zarovicha.",
+    "introTitle": "Curse of Strahd",
+    "introParagraphs": [
+      "Barovia jest więzieniem spowitym mgłą. Nad jej wioskami, lasami i zamkiem Ravenloft ciąży wola Strahda von Zarovicha.",
+      "Curse of Strahd przenosi bohaterów do Barovii — domeny grozy rządzonej przez Strahda von Zarovicha. Kampania opiera się na eksploracji przeklętej krainy, spotkaniach z jej mieszkańcami i stopniowym odkrywaniu tajemnic Ravenloftu.",
+      "Kampania została przez nas ukończona. Poniżej zapis graczy i postaci z tej rozgrywki."
+    ],
+    "dossier": [
+      [
+        "TYTUŁ",
+        "CURSE OF STRAHD"
+      ],
+      [
+        "MATERIAŁY",
+        "1"
+      ],
+      [
+        "NAGRANIA",
+        "1"
+      ],
+      [
+        "AUDIO",
+        "—"
+      ],
+      [
+        "ŹRÓDŁO",
+        "ZAPIS"
+      ],
+      [
+        "STATUS",
+        "ZAPIS"
+      ]
+    ],
+    "partyTitle": "O kampanii",
+    "partyDescription": "Kampania została przez nas ukończona. Poniżej zapis graczy i postaci z tej rozgrywki.",
+    "partyImage": "/core/graphics/voronoi/curse-of-strahd.webp"
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Nagrania i odnośniki",
+    "description": "Materiały wideo powiązane z tą rozgrywką.",
+    "playlistUrl": "https://www.youtube.com/@FraternityOfShadows/playlists"
+  }
+}

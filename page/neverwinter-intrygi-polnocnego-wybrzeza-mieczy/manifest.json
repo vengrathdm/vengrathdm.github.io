@@ -1,0 +1,16 @@
+{
+  "id": "neverwinter-intrygi-polnocnego-wybrzeza-mieczy",
+  "title": "Noce Neverwinter — Intrygi Północnego Wybrzeża Mieczy",
+  "language": "pl",
+  "campaign": "Noce Neverwinter — Intrygi Północnego Wybrzeża Mieczy",
+  "module": "Neverwinter: Intrygi Północnego Wybrzeża Mieczy",
+  "entry": "/page/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0gYTerajwJlxi2yqRupuj9c"
+}

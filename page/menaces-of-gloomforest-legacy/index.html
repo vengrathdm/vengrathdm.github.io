@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Archiwalna odsłona Menaces of Gloomforest, oddzielona od oryginalnej grupy nagrywanej na stronie głównej kampanii."
+    />
+    <meta name="theme-color" content="#08090b" />
+    <title>Menaces of Gloomforest Legacy — Vengrath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./theme-fonts.css" />
+    <link rel="stylesheet" href="/core/templates/HomeButton/HomeButton.css" />
+    <link
+      rel="stylesheet"
+      href="/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageNavbar/SubpageNavbar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageHero/SubpageHero.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterCard/CharacterCard.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterCard/Achievements/Achievements.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterGallery/CharacterGallery.css"
+    />
+    <link rel="stylesheet" href="/core/templates/Chronicle/Chronicle.css" />
+    <link
+      rel="stylesheet"
+      href="/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css"
+    />
+    <link rel="stylesheet" href="./sections/campaign/campaign.css" />
+    <link rel="stylesheet" href="./sections/characters/characters.css" />
+    <link rel="stylesheet" href="./sections/chronicle/chronicle.css" />
+  </head>
+  <body class="menaces-of-gloomforest-legacy-page">
+    <div id="campaign-hero"></div>
+    <main class="ddc-content">
+      <section class="ddc-tab-panel" id="campaign" data-page-section="campaign">
+        <div id="campaign-section-content"></div>
+      </section>
+      <section
+        class="ddc-tab-panel"
+        id="characters"
+        data-page-section="characters"
+        hidden
+      >
+        <section class="ddc-section ddc-character-intro">
+          <div class="ddc-section-mark" id="characters-kicker"></div>
+          <h2 id="characters-title"></h2>
+          <p id="characters-description"></p>
+        </section>
+        <div id="character-gallery"></div>
+      </section>
+      <section
+        class="ddc-tab-panel ddc-chronicle-panel"
+        id="chronicle"
+        data-page-section="chronicle"
+        hidden
+      >
+        <div id="chronicle-section-content"></div>
+      </section>
+    </main>
+    <footer class="ddc-footer">
+      <span>undefined</span><a href="#top">POWRÓT NA GÓRĘ ↑</a>
+    </footer>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

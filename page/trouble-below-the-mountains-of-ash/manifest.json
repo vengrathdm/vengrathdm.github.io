@@ -1,0 +1,15 @@
+{
+  "id": "trouble-below-the-mountains-of-ash",
+  "title": "Trouble Below the Mountains of Ash",
+  "language": "pl",
+  "campaign": "Trouble Below the Mountains of Ash",
+  "module": "D&D · Przygoda archiwalna",
+  "entry": "/page/trouble-below-the-mountains-of-ash/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "materials"
+  ],
+  "playlistUrl": null
+}

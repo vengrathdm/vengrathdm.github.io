@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Piętnaście lat po katastrofie miasto nadal stoi. Fioletowe Haze, delirium i ruiny, do których wchodzą ci, którzy sądzą, że potrafią wrócić."
+    />
+    <meta name="theme-color" content="#090a10" />
+    <title>Dungeons of Drakkenheim — Vengrath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./theme-fonts.css" />
+    <link rel="stylesheet" href="/core/templates/HomeButton/HomeButton.css" />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageNavbar/SubpageNavbar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageHero/SubpageHero.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterCard/CharacterCard.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterCard/Achievements/Achievements.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterGallery/CharacterGallery.css"
+    />
+    <link rel="stylesheet" href="/core/templates/Chronicle/Chronicle.css" />
+    <link
+      rel="stylesheet"
+      href="/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/AudioPlayerButton/AudioPlayerButton.css"
+    />
+    <link rel="stylesheet" href="./sections/campaign/campaign.css" />
+    <link rel="stylesheet" href="./sections/characters/characters.css" />
+    <link rel="stylesheet" href="./sections/chronicle/chronicle.css" />
+  </head>
+  <body class="dungeons-of-drakkenheim-page">
+    <div id="campaign-hero"></div>
+    <main class="ddc-content">
+      <section class="ddc-tab-panel" id="campaign" data-page-section="campaign">
+        <section class="ddc-card">
+          <div class="ddc-card-title">
+            <span>01</span><strong>AKTA KAMPANII</strong>
+          </div>
+          <div class="ddc-card-body">
+            <div class="ddc-intro-grid">
+              <article class="ddc-paper">
+                <div class="ddc-section-mark">O KAMPANII</div>
+                <h2 id="campaign-intro-title"></h2>
+                <div id="campaign-intro-copy"></div>
+              </article>
+              <aside class="ddc-case" aria-label="Dossier kampanii">
+                <div class="ddc-case-label">DOSSIER</div>
+                <div id="campaign-dossier"></div>
+              </aside>
+            </div>
+          </div>
+        </section>
+        <section class="ddc-party-portrait">
+          <div class="ddc-party-copy">
+            <div class="ddc-section-mark">ARCHIWUM</div>
+            <h2 id="party-title"></h2>
+            <p id="party-description"></p>
+          </div>
+          <figure class="ddc-party-image">
+            <img
+              id="party-image"
+              alt="Thomos — postać z Dungeons of Drakkenheim"
+              loading="lazy"
+            />
+          </figure>
+        </section>
+      </section>
+
+      <section
+        class="ddc-tab-panel"
+        id="characters"
+        data-page-section="characters"
+        hidden
+      >
+        <section class="ddc-section ddc-character-intro">
+          <div class="ddc-section-mark" id="characters-kicker"></div>
+          <h2 id="characters-title"></h2>
+          <p id="characters-description"></p>
+        </section>
+        <section class="ddc-section ddc-character-group">
+          <div class="ddc-section-head">
+            <div>
+              <div class="ddc-section-mark">AKTA / STATUS</div>
+              <h2 id="living-title"></h2>
+            </div>
+            <p id="living-description"></p>
+          </div>
+          <div id="living-character-gallery" aria-live="polite"></div>
+        </section>
+        <section class="ddc-section ddc-character-group ddc-dead-characters">
+          <div class="ddc-section-head">
+            <div>
+              <div class="ddc-section-mark">AKTA / STATUS</div>
+              <h2 id="dead-title"></h2>
+            </div>
+            <p id="dead-description"></p>
+          </div>
+          <div id="dead-character-gallery" aria-live="polite"></div>
+        </section>
+      </section>
+
+      <section
+        class="ddc-tab-panel ddc-chronicle-panel"
+        id="chronicle"
+        data-page-section="chronicle"
+        hidden
+      >
+        <section class="ddc-section ddc-chronicle-intro">
+          <div class="ddc-section-mark" id="chronicle-kicker"></div>
+          <h2 id="chronicle-title"></h2>
+          <p id="chronicle-description"></p>
+        </section>
+        <section class="ddc-section ddc-chronicle-records">
+          <div id="campaign-chronicle" class="chronicle"></div>
+        </section>
+      </section>
+    </main>
+    <footer class="ddc-footer">
+      <span>VENGRATH · DUNGEONS OF DRAKKENHEIM</span>
+      <a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a>
+    </footer>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

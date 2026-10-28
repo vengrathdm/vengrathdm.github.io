@@ -1,6 +1,6 @@
 # Vengrath
 
-Vengrath is a static website hosted on GitHub Pages at the repository root. The root `index.html` redirects to `/v/home/`. Public site URLs use the permanent `/v/` prefix.
+Vengrath is a static website hosted on GitHub Pages at the repository root. The root `index.html` redirects to `/home/`. Public site URLs are rooted at the domain, with campaigns under `/page/<slug>/`.
 
 ## Repository map
 
@@ -8,29 +8,28 @@ Vengrath is a static website hosted on GitHub Pages at the repository root. The 
 .
 ├── index.html                 # Redirect to the Vengrath home page
 ├── .nojekyll                  # Serve the repository as static files without Jekyll processing
-└── v/
-    ├── home/                  # Landing page and discovery board
-    ├── core/
-    │   ├── data/              # Page registry, character data, achievements
-    │   ├── graphics/          # Shared graphics, favicon, and card art
-    │   ├── portraits/         # Canonical character portraits
-    │   └── templates/         # Reusable interface and behavior components
-    └── page/
-        └── <slug>/            # Page implementation, content, styles, and local assets
+├── home/                      # Landing page and discovery board
+├── core/
+│   ├── data/                  # Page registry, character data, achievements
+│   ├── graphics/              # Shared graphics, favicon, and card art
+│   ├── portraits/             # Canonical character portraits
+│   └── templates/             # Reusable interface and behavior components
+└── page/
+    └── <slug>/                # Page implementation, content, styles, and local assets
 ```
 
-Page folders remain under `v/page/<slug>/` because those paths are also public routes. Keep local assets and feature-specific code with the page that owns them. Reorganize page source only when its public URLs and asset references remain valid.
+Page folders live under `page/<slug>/`, which maps directly to the public route `/page/<slug>/`. Keep local assets and feature-specific code with the page that owns them.
 
 ## GitHub Pages behavior
 
 - This is a plain static site; it does not need a build command or server-side routing.
 - `.nojekyll` disables GitHub Pages' default Jekyll processing.
-- Use root-relative `/v/...` URLs for shared files and stable links between pages. Use paths relative to the page for page-local assets where appropriate.
-- The repository is a GitHub Pages user site served at the domain root, so `/v/...` resolves from `https://vengrathdm.github.io/`.
+- Use root-relative `/core/...`, `/home/`, and `/page/...` URLs for stable links. Use paths relative to the page for page-local assets where appropriate.
+- The repository is a GitHub Pages user site served at the domain root, so these routes resolve from `https://vengrathdm.github.io/`.
 
 ## Page registry and home page
 
-[`v/core/data/site-pages.json`](v/core/data/site-pages.json) is the ordered source for home-page cards and page classification. Each record includes:
+[`core/data/site-pages.json`](core/data/site-pages.json) is the ordered source for home-page cards and page classification. Each record includes:
 
 - `id` and `title` for identifying and displaying the page.
 - `type` to group campaigns, archives, wikis, and tools.
@@ -64,7 +63,7 @@ Use this sequence when adding a campaign to the site. Keep the established publi
 Choose a unique lowercase kebab-case slug, such as `my-new-campaign`, then create:
 
 ```text
-v/page/my-new-campaign/
+page/my-new-campaign/
 ├── index.html
 ├── app.js
 ├── styles.css
@@ -77,7 +76,7 @@ v/page/my-new-campaign/
     └── audio/                # Page-specific audio
 ```
 
-Only add files the page needs. Keep page-owned styles, scripts, and assets in this folder. The public route is `/v/page/my-new-campaign/`; GitHub Pages serves `index.html` at that route. Do not use uppercase, spaces, or Polish characters in the slug or filenames.
+Only add files the page needs. Keep page-owned styles, scripts, and assets in this folder. The public route is `/page/my-new-campaign/`; GitHub Pages serves `index.html` at that route. Do not use uppercase, spaces, or Polish characters in the slug or filenames.
 
 ### 2. Build a readable HTML entry page
 
@@ -87,7 +86,7 @@ Only add files the page needs. Keep page-owned styles, scripts, and assets in th
 <script type="module" src="./app.js"></script>
 ```
 
-Use semantic `header`, `nav`, `main`, `section`, and `footer` elements, one clear `h1`, and descriptive headings. Include a link back to `/v/home/`. Give images meaningful `alt` text unless they are decorative; label controls and provide accessible names for icon-only buttons.
+Use semantic `header`, `nav`, `main`, `section`, and `footer` elements, one clear `h1`, and descriptive headings. Include a link back to `/home/`. Give images meaningful `alt` text unless they are decorative; label controls and provide accessible names for icon-only buttons.
 
 If the page uses `SubpageNavbar`, each navigation `sectionLink` must match a section `id`, and each switchable section must have the matching `data-page-section` value. The navbar hides all other such sections when a button is selected. Include an initial visible section and meaningful labels. Bespoke pages can implement their own navigation behavior.
 
@@ -99,39 +98,39 @@ For the common campaign-data pattern, add these three JSON files:
 - `theme.json`: campaign colors, `typography` (`heading`, `body`, and optional `serif`), optional `fontsUrl`, `heroImage`, and optional `audioColor`. Use the same color keys expected by the page's CSS and scripts.
 - `content.json`: the campaign-specific copy and records consumed by the page. A common shape has `campaign`, `characters`, and `chronicle` sections, but match the data to the design and renderer you actually use.
 
-Load the files together with [`CampaignPage.js`](v/core/templates/CampaignPage/CampaignPage.js): `loadCampaignBundle()` returns `{ manifest, theme, content }`, and `applyCampaignTheme(theme)` sets the shared theme variables. This helper does not render a page shell or prescribe its layout. Pages with a different data model can load their own data and keep a bespoke implementation.
+Load the files together with [`CampaignPage.js`](core/templates/CampaignPage/CampaignPage.js): `loadCampaignBundle()` returns `{ manifest, theme, content }`, and `applyCampaignTheme(theme)` sets the shared theme variables. This helper does not render a page shell or prescribe its layout. Pages with a different data model can load their own data and keep a bespoke implementation.
 
-For a character gallery, store canonical character IDs in the content and use [`characters.json`](v/core/data/characters.json) for the source of truth. For a chronicle, provide the session values the renderer consumes, such as session number, title, description or notes, and optional recording URLs. Keep campaign-specific copy in `content.json` rather than embedding large data records in `app.js` or HTML.
+For a character gallery, store canonical character IDs in the content and use [`characters.json`](core/data/characters.json) for the source of truth. For a chronicle, provide the session values the renderer consumes, such as session number, title, description or notes, and optional recording URLs. Keep campaign-specific copy in `content.json` rather than embedding large data records in `app.js` or HTML.
 
 ### 4. Opt into shared components where useful
 
-Import JavaScript modules with their root-relative `/v/...` paths. Add the matching CSS `<link>` elements to `index.html`; importing a component does not automatically load its stylesheet.
+Import JavaScript modules with their root-relative `/...` paths. Add the matching CSS `<link>` elements to `index.html`; importing a component does not automatically load its stylesheet.
 
 | Element | JavaScript address | Stylesheet address | Purpose |
 | --- | --- | --- | --- |
-| Home button | [`HomeButton.js`](v/core/templates/HomeButton/HomeButton.js) | [`HomeButton.css`](v/core/templates/HomeButton/HomeButton.css) | Link back to the site home |
-| Hero | [`SubpageHero.js`](v/core/templates/SubpageHero/SubpageHero.js) | [`SubpageHero.css`](v/core/templates/SubpageHero/SubpageHero.css) | Reusable campaign title and image area |
-| Section navigation | [`SubpageNavbar.js`](v/core/templates/SubpageNavbar/SubpageNavbar.js) | [`SubpageNavbar.css`](v/core/templates/SubpageNavbar/SubpageNavbar.css) and [`NavbarButton.css`](v/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css) | Home/playlist controls and section switching |
-| Character gallery | [`CharacterGallery.js`](v/core/templates/CharacterGallery/CharacterGallery.js) | [`CharacterGallery.css`](v/core/templates/CharacterGallery/CharacterGallery.css) | Render canonical characters by ID |
-| Character cards | [`CharacterCard.js`](v/core/templates/CharacterCard/CharacterCard.js) | [`CharacterCard.css`](v/core/templates/CharacterCard/CharacterCard.css) and optional [`Achievements.css`](v/core/templates/CharacterCard/Achievements/Achievements.css) | Render one canonical character and awards |
-| Chronicle record | [`ChronicleRecord.js`](v/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.js) | [`ChronicleRecord.css`](v/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css) and optional [`PlayRecordingButton.css`](v/core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css) | Expand session details and link recordings |
-| Background audio | [`AudioPlayer.js`](v/core/templates/AudioPlayer/AudioPlayer.js) and [`AudioPlayerButton.js`](v/core/templates/AudioPlayerButton/AudioPlayerButton.js) | [`AudioPlayerButton.css`](v/core/templates/AudioPlayerButton/AudioPlayerButton.css) | Optional looping audio with saved position and volume |
-| Playlist link | [`YouTubePlaylistButton.js`](v/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.js) | [`YouTubePlaylistButton.css`](v/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css) | Optional external playlist control |
+| Home button | [`HomeButton.js`](core/templates/HomeButton/HomeButton.js) | [`HomeButton.css`](core/templates/HomeButton/HomeButton.css) | Link back to the site home |
+| Hero | [`SubpageHero.js`](core/templates/SubpageHero/SubpageHero.js) | [`SubpageHero.css`](core/templates/SubpageHero/SubpageHero.css) | Reusable campaign title and image area |
+| Section navigation | [`SubpageNavbar.js`](core/templates/SubpageNavbar/SubpageNavbar.js) | [`SubpageNavbar.css`](core/templates/SubpageNavbar/SubpageNavbar.css) and [`NavbarButton.css`](core/templates/SubpageNavbar/NavbarButton/NavbarButton.css) | Home/playlist controls and section switching |
+| Character gallery | [`CharacterGallery.js`](core/templates/CharacterGallery/CharacterGallery.js) | [`CharacterGallery.css`](core/templates/CharacterGallery/CharacterGallery.css) | Render canonical characters by ID |
+| Character cards | [`CharacterCard.js`](core/templates/CharacterCard/CharacterCard.js) | [`CharacterCard.css`](core/templates/CharacterCard/CharacterCard.css) and optional [`Achievements.css`](core/templates/CharacterCard/Achievements/Achievements.css) | Render one canonical character and awards |
+| Chronicle record | [`ChronicleRecord.js`](core/templates/Chronicle/ChronicleRecord/ChronicleRecord.js) | [`ChronicleRecord.css`](core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css) and optional [`PlayRecordingButton.css`](core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css) | Expand session details and link recordings |
+| Background audio | [`AudioPlayer.js`](core/templates/AudioPlayer/AudioPlayer.js) and [`AudioPlayerButton.js`](core/templates/AudioPlayerButton/AudioPlayerButton.js) | [`AudioPlayerButton.css`](core/templates/AudioPlayerButton/AudioPlayerButton.css) | Optional looping audio with saved position and volume |
+| Playlist link | [`YouTubePlaylistButton.js`](core/templates/YouTubePlaylistButton/YouTubePlaylistButton.js) | [`YouTubePlaylistButton.css`](core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css) | Optional external playlist control |
 
 Use a distinct audio `continuationKey` for every campaign. Audio playback can be blocked until a visitor interacts with the page. Components are optional: preserve the campaign's own visual identity and only share behaviors that are useful across pages.
 
 ### 5. Keep assets and links GitHub Pages-safe
 
-- Store new page-owned images and audio in `v/page/<slug>/res/graphics/` and `v/page/<slug>/res/audio/` respectively.
-- Reference shared assets with root-relative paths such as `/v/core/graphics/voronoi/<image>.webp` or `/v/core/portraits/<portrait>.webp`.
-- Reference page-local assets either relative to the page (`./res/graphics/hero.webp`) or with their full root path (`/v/page/<slug>/res/graphics/hero.webp`).
+- Store new page-owned images and audio in `page/<slug>/res/graphics/` and `page/<slug>/res/audio/` respectively.
+- Reference shared assets with root-relative paths such as `/core/graphics/voronoi/<image>.webp` or `/core/portraits/<portrait>.webp`.
+- Reference page-local assets either relative to the page (`./res/graphics/hero.webp`) or with their full root path (`/page/<slug>/res/graphics/hero.webp`).
 - Match filename capitalization exactly. GitHub Pages serves on a case-sensitive filesystem.
-- Use `/v/page/<slug>/` for links to the campaign. Do not use `/p/`, `/Home/`, `/res/`, machine-specific paths, or links that only work from a local file preview.
+- Use `/page/<slug>/` for links to the campaign. Do not use `/p/`, `/Home/`, `/res/`, machine-specific paths, or links that only work from a local file preview.
 - Confirm every local `href`, `src`, CSS `url(...)`, JSON image path, manifest path, and registry URL points to a file or page that exists in the repository.
 
 ### 6. Register the campaign on the home page
 
-Add one record to [`site-pages.json`](v/core/data/site-pages.json), in the intended display order. Follow the existing record shape:
+Add one record to [`site-pages.json`](core/data/site-pages.json), in the intended display order. Follow the existing record shape:
 
 ```json
 {
@@ -140,10 +139,10 @@ Add one record to [`site-pages.json`](v/core/data/site-pages.json), in the inten
   "type": "campaign",
   "category": "Aktywna Kampania",
   "visibility": "public",
-  "url": "/v/page/my-new-campaign/",
-  "image": "/v/core/graphics/voronoi/my-new-campaign.webp",
+  "url": "/page/my-new-campaign/",
+  "image": "/core/graphics/voronoi/my-new-campaign.webp",
   "layout": "campaign-shell",
-  "manifest": "/v/page/my-new-campaign/manifest.json"
+  "manifest": "/page/my-new-campaign/manifest.json"
 }
 ```
 
@@ -153,19 +152,19 @@ Use a real existing image path. The current categories are `Aktywna Kampania`, `
 
 All new HTML, CSS, JavaScript, and JSON must be human-readable, as if passed through an HTML/CSS/JS beautifier: use consistent two-space indentation, line breaks, and clear grouping. Do not add minified or single-line page files, even when an existing file is minified. Keep functions and styles organized by purpose, use descriptive names, and avoid deeply compressed expressions.
 
-Before publishing, confirm the page opens at `/v/page/<slug>/`, the home card points to it, all referenced files exist with matching capitalization, navigation sections work, media controls handle browser autoplay restrictions, and the page remains usable on narrow screens. Update this root README whenever adding the page changes shared conventions, directory structure, reusable components, registry fields, or GitHub Pages/deployment instructions. Page-specific content alone does not require a README change.
+Before publishing, confirm the page opens at `/page/<slug>/`, the home card points to it, all referenced files exist with matching capitalization, navigation sections work, media controls handle browser autoplay restrictions, and the page remains usable on narrow screens. Update this root README whenever adding the page changes shared conventions, directory structure, reusable components, registry fields, or GitHub Pages/deployment instructions. Page-specific content alone does not require a README change.
 
 ## Shared data
 
-- `v/core/data/characters.json` contains canonical character records and portrait paths. Character awards are stored as unique `achievementIds` arrays on each record.
-- `v/core/data/achievements.json` contains achievement definitions.
-- `v/core/data/site-pages.json` contains the ordered page registry used by the home page.
+- `core/data/characters.json` contains canonical character records and portrait paths. Character awards are stored as unique `achievementIds` arrays on each record.
+- `core/data/achievements.json` contains achievement definitions.
+- `core/data/site-pages.json` contains the ordered page registry used by the home page.
 
 Keep character and achievement facts in these canonical files so pages that share the data stay consistent.
 
 ## Shared components and media
 
-Reusable components live in `v/core/templates/`. Each component owns its styling and feature-specific behavior. Introduce shared utilities for behavior that is genuinely used across features; page-specific logic belongs beside its page.
+Reusable components live in `core/templates/`. Each component owns its styling and feature-specific behavior. Introduce shared utilities for behavior that is genuinely used across features; page-specific logic belongs beside its page.
 
 - `SubpageHero`, `SubpageNavbar`, and `HomeButton` provide optional campaign navigation and hero elements.
 - `CharacterGallery`, `CharacterCard`, and `Chronicle` render shared campaign records.
@@ -173,15 +172,15 @@ Reusable components live in `v/core/templates/`. Each component owns its styling
 - `CampaignPage` loads the common campaign data bundle and theme variables.
 - `VoronoiShatter` renders the searchable home discovery board from the page registry.
 
-Shared graphics live in `v/core/graphics/`, with favicon assets in `favicon/` and home-card artwork in `voronoi/`. Canonical portraits live in `v/core/portraits/`; character records refer to them using `/v/core/portraits/<filename>` paths.
+Shared graphics live in `core/graphics/`, with favicon assets in `favicon/` and home-card artwork in `voronoi/`. Canonical portraits live in `core/portraits/`; character records refer to them using `/core/portraits/<filename>` paths.
 
 ## Hall of Fame
 
-The Hall of Fame and achievement catalogue are under `v/page/hof/`. They read canonical character and achievement data from `v/core/data/`; awards are associated with characters through `achievementIds`.
+The Hall of Fame and achievement catalogue are under `page/hof/`. They read canonical character and achievement data from `core/data/`; awards are associated with characters through `achievementIds`.
 
 ## Maintenance notes
 
 - Keep page titles, categories, visibility, card artwork, and public destinations in the page registry.
-- Preserve `/v/page/<slug>/` routes and update references whenever a page-local file is renamed or moved.
+- Preserve `/page/<slug>/` routes and update references whenever a page-local file is renamed or moved.
 - Preserve intentional page-specific layouts. Shared data and components are opt-in and do not require visual uniformity.
 - Check local `href`, `src`, CSS `url(...)`, manifest, and JSON asset paths against the repository before publishing.

@@ -1,0 +1,102 @@
+{
+  "campaign": {
+    "title": "Turn Back the Endless Night",
+    "heroFirstLine": "Turn Back the",
+    "heroSecondLine": "Endless Night",
+    "kicker": "D&D · TOMB OF ANNIHILATION",
+    "lead": "Peaks of Flame. Maze of Ubtao. Iron Door. Droga prowadzi przez miejsca, w których tropikalna dzicz i starożytne zagrożenie splatają się z nocą, która nie chce ustąpić.",
+    "introTitle": "Turn Back the Endless Night",
+    "introParagraphs": [
+      "Turn Back the Endless Night (DDAL07-18) zamyka serię Broken Chains osadzoną w realiach Tomb of Annihilation. To finałowa wyprawa przez Peaks of Flame i Maze of Ubtao, prowadząca ku Iron Door.",
+      "Przygoda stawia bohaterów wobec niebezpieczeństw dżungli, pozostałości dawnych cywilizacji i sił, których wpływ sięga dalej niż pojedyncze ruiny. Stawka jest prosta: powstrzymać noc, zanim pochłonie wszystko, co jeszcze można ocalić."
+    ],
+    "dossier": [
+      {
+        "label": "SERIA",
+        "value": "BROKEN CHAINS"
+      },
+      {
+        "label": "POSTACI",
+        "value": "5"
+      },
+      {
+        "label": "NAGRANIA",
+        "value": "1"
+      },
+      {
+        "label": "LOKACJE",
+        "value": "PEAKS OF FLAME"
+      },
+      {
+        "label": "CEL",
+        "value": "IRON DOOR"
+      },
+      {
+        "label": "TON",
+        "value": "APOKALIPTYCZNA WYPRAWA"
+      },
+      {
+        "label": "STATUS",
+        "value": "ARCHIWUM"
+      }
+    ],
+    "partyTitle": "Odwrócić noc.",
+    "partyDescription": "Finał serii Broken Chains prowadzi przez Peaks of Flame i Maze of Ubtao ku Iron Door. Droga łączy tropikalną dzicz, pozostałości dawnych cywilizacji oraz zagrożenie, którego stawką jest zatrzymanie nocy.",
+    "partyImage": "/core/graphics/voronoi/turn-back-the-endless-night.webp",
+    "manifestoTitle": "Z ARCHIWUM",
+    "manifesto": "Finał przygody Broken Chains.",
+    "manifestoTags": "BROKEN CHAINS · DDAL07-18",
+    "archiveSections": [
+      {
+        "number": "02",
+        "title": "Finał Broken Chains",
+        "description": "Turn Back the Endless Night (DDAL07-18) zamyka serię Broken Chains osadzoną w realiach Tomb of Annihilation."
+      },
+      {
+        "number": "03",
+        "title": "Peaks of Flame i Maze of Ubtao",
+        "description": "Finałowa wyprawa wiedzie przez Peaks of Flame i Maze of Ubtao."
+      },
+      {
+        "number": "04",
+        "title": "Iron Door",
+        "description": "Iron Door jest celem finałowej drogi bohaterów."
+      },
+      {
+        "number": "05",
+        "title": "Powstrzymać noc",
+        "description": "Stawka tej wyprawy to powstrzymanie nocy, zanim pochłonie wszystko, co jeszcze można ocalić."
+      }
+    ]
+  },
+  "characters": {
+    "kicker": "AKTA / POSTACI",
+    "title": "Drużyna Broken Chains",
+    "description": "Pięć postaci zapisanych we wspólnym rejestrze kampanii Turn Back the Endless Night.",
+    "characterIds": [
+      "char-0115",
+      "char-0116",
+      "char-0117",
+      "char-0118",
+      "char-0119"
+    ]
+  },
+  "chronicle": {
+    "kicker": "AKTA / KRONIKA",
+    "title": "Turn Back the Endless Night",
+    "description": "Jedno nagranie zachowane w archiwum finałowej przygody Broken Chains.",
+    "playlistUrl": "",
+    "sessions": [
+      {
+        "sessionNumber": "S001",
+        "title": "Turn Back the Endless Night",
+        "description": "Finał przygody Broken Chains.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/1_M1nEU9eOA"
+          }
+        ]
+      }
+    ]
+  }
+}

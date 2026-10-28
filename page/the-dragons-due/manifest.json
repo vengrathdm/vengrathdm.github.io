@@ -1,0 +1,16 @@
+{
+  "id": "the-dragons-due",
+  "title": "The Dragon's Due",
+  "language": "pl",
+  "campaign": "The Dragon's Due",
+  "module": "The Dragon's Due",
+  "entry": "/page/the-dragons-due/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "overview",
+    "characters",
+    "chronicle"
+  ],
+  "status": "Archiwum przygody"
+}

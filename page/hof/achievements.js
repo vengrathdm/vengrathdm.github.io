@@ -1,0 +1,61 @@
+import { loadCharacterCatalog } from "/core/templates/CharacterGallery/CharacterRepository.js";
+const $ = (id) => document.getElementById(id),
+  norm = (v) =>
+    String(v ?? "")
+      .trim()
+      .toLocaleLowerCase("pl-PL")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+let items = [];
+function render() {
+  const q = norm($("achievementSearch").value),
+    category = $("categoryFilter").value,
+    rows = items.filter(
+      (a) =>
+        (!q ||
+          norm([a.name, a.description, a.category, a.id].join(" ")).includes(
+            q,
+          )) &&
+        (!category || a.category === category),
+    );
+  $("achievementGrid").replaceChildren(
+    ...rows.map((a) => {
+      const card = document.createElement("article");
+      card.className = "achievement-catalogue-card";
+      const icon = document.createElement("span");
+      icon.className = "achievement-catalogue-icon";
+      icon.textContent = a.icon;
+      const copy = document.createElement("div");
+      copy.className = "achievement-catalogue-copy";
+      const title = document.createElement("h3");
+      title.textContent = a.name;
+      const desc = document.createElement("p");
+      desc.textContent = a.description;
+      const cat = document.createElement("small");
+      cat.textContent = a.category;
+      copy.append(title, desc, cat);
+      card.append(icon, copy);
+      return card;
+    }),
+  );
+  $("achievementCount").textContent = rows.length + " / " + items.length;
+  $("achievementEmpty").hidden = rows.length > 0;
+}
+$("achievementSearch").addEventListener("input", render);
+$("categoryFilter").addEventListener("change", render);
+try {
+  const data = await loadCharacterCatalog();
+  items = [...data.achievements.values()].sort(
+    (a, b) =>
+      String(a.category).localeCompare(String(b.category), "pl") ||
+      String(a.name).localeCompare(String(b.name), "pl"),
+  );
+  [...new Set(items.map((a) => a.category))]
+    .sort((a, b) => a.localeCompare(b, "pl"))
+    .forEach((c) => $("categoryFilter").add(new Option(c, c)));
+  render();
+} catch (error) {
+  console.error(error);
+  $("achievementCount").textContent = "BŁĄD";
+  $("achievementError").hidden = false;
+}

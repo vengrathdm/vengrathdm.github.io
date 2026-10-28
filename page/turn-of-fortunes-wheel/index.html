@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Turn of Fortune's Wheel — archiwum ukończonej kampanii Dungeons & Dragons w wieloświecie Planescape."
+    />
+    <meta name="theme-color" content="#08090b" />
+    <title>Turn of Fortune's Wheel — Vengrath</title>
+    <link rel="stylesheet" href="/core/templates/HomeButton/HomeButton.css" />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageNavbar/SubpageNavbar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageHero/SubpageHero.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterGallery/CharacterGallery.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterCard/CharacterCard.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterCard/Achievements/Achievements.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/AudioPlayerButton/AudioPlayerButton.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="turn-of-fortunes-wheel-page">
+    <div id="campaign-hero"></div>
+    <main class="turn-of-fortunes-wheel-content">
+      <section id="campaign" data-page-section="campaign">
+        <section class="turn-of-fortunes-wheel-card">
+          <div class="turn-of-fortunes-wheel-card-title">
+            01 · AKTA KAMPANII
+          </div>
+          <div class="turn-of-fortunes-wheel-intro-grid">
+            <article class="turn-of-fortunes-wheel-paper">
+              <div class="turn-of-fortunes-wheel-mark">O KAMPANII</div>
+              <h2 id="intro-title"></h2>
+              <div id="intro-copy"></div>
+            </article>
+            <aside class="turn-of-fortunes-wheel-dossier">
+              <div class="turn-of-fortunes-wheel-mark">DOSSIER</div>
+              <div id="dossier"></div>
+            </aside>
+          </div>
+        </section>
+        <section class="turn-of-fortunes-wheel-party">
+          <div>
+            <div class="turn-of-fortunes-wheel-mark">ARCHIWUM</div>
+            <h2 id="party-title"></h2>
+            <p id="party-description"></p>
+          </div>
+          <img
+            src="/page/turn-of-fortunes-wheel/res/graphics/ModronMarch.webp"
+            alt="Modron March — Turn of Fortune's Wheel"
+          />
+        </section>
+      </section>
+      <section id="characters" data-page-section="characters" hidden>
+        <div class="turn-of-fortunes-wheel-mark" id="characters-kicker"></div>
+        <h2 id="characters-title"></h2>
+        <p id="characters-description"></p>
+        <div id="character-gallery"></div>
+      </section>
+      <section id="chronicle" data-page-section="chronicle" hidden>
+        <div class="turn-of-fortunes-wheel-mark" id="chronicle-kicker"></div>
+        <h2 id="chronicle-title"></h2>
+        <p id="chronicle-description"></p>
+        <div
+          id="chronicle-records"
+          class="turn-of-fortunes-wheel-chronicle"
+        ></div>
+      </section>
+    </main>
+    <footer class="turn-of-fortunes-wheel-footer">
+      VENGRATH · TURN OF FORTUNE'S WHEEL
+      <a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a>
+    </footer>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

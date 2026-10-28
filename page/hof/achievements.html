@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Katalog osiągnięć dostępnych w Vengrath Hall of Fame."
+    />
+    <title>Osiągnięcia — Hall of Fame — Vengrath</title>
+    <link rel="icon" href="/core/graphics/favicon/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Voltaire&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/page/hof/hof.css" />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterCard/CharacterCard.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterCard/Achievements/Achievements.css"
+    />
+  </head>
+  <body>
+    <header class="hof-hero">
+      <nav class="hof-nav">
+        <a class="hof-brand" href="/home/"
+          ><img src="/core/graphics/favicon/favicon.ico" alt="" /><span
+            >VENGRATH</span
+          ></a
+        >
+        <div class="hof-nav-meta">ARCHIVE <span>/</span> ACHIEVEMENTS</div>
+        <a class="hof-nav-link" href="/page/hof/">GALERIA POSTACI</a
+        ><a class="hof-nav-link" href="/home/">STRONA GŁÓWNA</a>
+      </nav>
+      <div class="hof-hero-copy">
+        <p>VENGRATH / ARCHIVE</p>
+        <h1>THE <span>ACHIEVEMENT</span> ARCHIVE</h1>
+        <p>Katalog osiągnięć dostępnych w przygodach Vengrath.</p>
+      </div>
+    </header>
+    <main class="achievement-main">
+      <div class="achievement-tools">
+        <input
+          id="achievementSearch"
+          type="search"
+          placeholder="Szukaj osiągnięcia…"
+          aria-label="Szukaj osiągnięcia"
+        /><select id="categoryFilter" aria-label="Filtr kategorii">
+          <option value="">Wszystkie kategorie</option>
+        </select>
+      </div>
+      <div class="hof-results-heading">
+        <div>
+          <p>KATALOG / OSIĄGNIĘCIA</p>
+          <h2>Galeria osiągnięć</h2>
+        </div>
+        <span id="achievementCount">ŁADOWANIE…</span>
+      </div>
+      <div id="achievementGrid" class="achievement-catalogue"></div>
+      <p id="achievementEmpty" class="hof-empty" hidden>
+        Nie znaleziono osiągnięć dla wybranych kryteriów.
+      </p>
+      <p id="achievementError" class="hof-empty" hidden>
+        Nie udało się wczytać katalogu osiągnięć.
+      </p>
+    </main>
+    <footer class="hof-footer">
+      <a href="/page/hof/">GALERIA POSTACI →</a
+      ><span>HALL OF FAME / ACHIEVEMENT ARCHIVE</span
+      ><a href="/home/">STRONA GŁÓWNA →</a>
+    </footer>
+    <script type="module" src="/page/hof/achievements.js"></script>
+  </body>
+</html>

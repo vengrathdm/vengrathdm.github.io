@@ -1,0 +1,20 @@
+{
+  "id": "blood-red-snow-white",
+  "title": "Blood Red Snow White",
+  "language": "pl",
+  "campaign": "Blood Red Snow White",
+  "module": "Blood Red Snow White",
+  "entry": "/page/blood-red-snow-white/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": "",
+  "audio": {
+    "src": "./res/BRSW.mp3",
+    "continuationKey": "blood-red-snow-white"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "adventure-of-arcane-collapse",
+  "title": "Adventure of Arcane Collapse",
+  "language": "pl",
+  "campaign": "Adventure of Arcane Collapse",
+  "module": "D&D · Przygoda archiwalna",
+  "entry": "/page/adventure-of-arcane-collapse/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "materials"
+  ],
+  "playlistUrl": null
+}

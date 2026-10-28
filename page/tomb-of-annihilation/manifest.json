@@ -1,0 +1,16 @@
+{
+  "id": "tomb-of-annihilation",
+  "title": "Tomb of Annihilation",
+  "language": "pl",
+  "campaign": "Tomb of Annihilation",
+  "module": "Tomb of Annihilation",
+  "entry": "/page/tomb-of-annihilation/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ],
+  "playlistUrl": null
+}

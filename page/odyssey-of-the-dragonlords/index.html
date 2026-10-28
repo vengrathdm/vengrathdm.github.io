@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Odyssey of the Dragonlords — epicka kampania D&D przez mityczną Thyleę. Kronika 61 odcinków i nagrania sesji."
+    />
+    <meta name="theme-color" content="#10170b" />
+    <title>Odyssey of the Dragonlords — Vengrath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./theme-fonts.css" />
+    <link rel="stylesheet" href="/core/templates/HomeButton/HomeButton.css" />
+    <link
+      rel="stylesheet"
+      href="/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageNavbar/SubpageNavbar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/SubpageHero/SubpageHero.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterGallery/CharacterGallery.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterCard/CharacterCard.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CharacterCard/Achievements/Achievements.css"
+    />
+    <link rel="stylesheet" href="/core/templates/Chronicle/Chronicle.css" />
+    <link
+      rel="stylesheet"
+      href="/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/AudioPlayerButton/AudioPlayerButton.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="odyssey-page">
+    <div id="campaign-hero"></div>
+    <main class="odyssey-content">
+      <section class="odyssey-panel" id="campaign" data-page-section="campaign">
+        <section class="odyssey-card">
+          <div class="odyssey-card-title">
+            <span>01</span><strong>AKTA KAMPANII</strong>
+          </div>
+          <div class="odyssey-card-body">
+            <div class="odyssey-intro-grid">
+              <article class="odyssey-paper">
+                <div class="odyssey-section-mark" id="intro-kicker"></div>
+                <h2 id="intro-title"></h2>
+                <div id="intro-copy"></div>
+              </article>
+              <aside class="odyssey-case" aria-label="Dossier kampanii">
+                <div class="odyssey-case-label">DOSSIER</div>
+                <div id="campaign-dossier"></div>
+              </aside>
+            </div>
+          </div>
+        </section>
+        <section class="odyssey-party-portrait">
+          <div class="odyssey-party-copy">
+            <div class="odyssey-section-mark" id="party-kicker"></div>
+            <h2 id="party-title"></h2>
+            <p id="party-description"></p>
+          </div>
+          <figure class="odyssey-party-image">
+            <img
+              id="party-image"
+              alt="Mityczna Thylea — Odyssey of the Dragonlords"
+              loading="lazy"
+            />
+          </figure>
+        </section>
+      </section>
+      <section
+        class="odyssey-panel odyssey-characters-panel"
+        id="characters"
+        data-page-section="characters"
+        hidden
+      >
+        <section class="odyssey-section odyssey-character-intro">
+          <div class="odyssey-section-mark" id="characters-kicker"></div>
+          <h2 id="characters-title"></h2>
+          <p id="characters-description"></p>
+        </section>
+        <section class="odyssey-section">
+          <div id="odyssey-character-gallery"></div>
+        </section>
+      </section>
+      <section
+        class="odyssey-panel odyssey-chronicle-panel"
+        id="chronicle"
+        data-page-section="chronicle"
+        hidden
+      >
+        <section class="odyssey-section odyssey-chronicle-list">
+          <p>
+            <a
+              class="odyssey-playlist-link"
+              id="chronicle-playlist"
+              target="_blank"
+              rel="noopener noreferrer"
+              >▶ ODTWÓRZ CAŁĄ PLAYLISTĘ</a
+            >
+          </p>
+          <div id="campaign-chronicle" class="chronicle"></div>
+        </section>
+      </section>
+    </main>
+    <footer class="odyssey-footer">
+      <span>VENGRATH · ODYSSEY OF THE DRAGONLORDS</span
+      ><a href="#top">POWRÓT NA GÓRĘ ↑</a>
+    </footer>
+    <div id="audio-player-mount" aria-label="Muzyka kampanii"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

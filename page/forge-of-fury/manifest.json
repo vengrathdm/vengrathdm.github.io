@@ -1,0 +1,13 @@
+{
+  "id": "forge-of-fury",
+  "title": "Forge of Fury",
+  "language": "pl",
+  "campaign": "Forge of Fury",
+  "entry": "/page/forge-of-fury/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters"
+  ]
+}

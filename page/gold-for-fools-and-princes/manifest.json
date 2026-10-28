@@ -1,0 +1,13 @@
+{
+  "id": "gold-for-fools-and-princes",
+  "title": "Gold for Fools and Princes",
+  "language": "pl",
+  "campaign": "Gold for Fools and Princes",
+  "entry": "/page/gold-for-fools-and-princes/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters"
+  ]
+}
