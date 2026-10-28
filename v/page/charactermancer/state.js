@@ -21,5 +21,5 @@ window.S = {
   backgroundSkills: [],
   backgroundLanguages: [],
   assign: {},
-  notes: ""
+  notes: "",
 };

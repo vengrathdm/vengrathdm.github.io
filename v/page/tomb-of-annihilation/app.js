@@ -7,7 +7,10 @@ import { mountAudioPlayerButton } from "/v/core/templates/AudioPlayerButton/Audi
 
 async function loadJson(path) {
   const response = await fetch(path);
-  if (!response.ok) throw new Error(`Nie udało się wczytać konfiguracji: ${path} (${response.status})`);
+  if (!response.ok)
+    throw new Error(
+      `Nie udało się wczytać konfiguracji: ${path} (${response.status})`,
+    );
   return response.json();
 }
 
@@ -25,13 +28,19 @@ function renderCampaign(campaign) {
   const body = node("div", "toa-card-body");
   const grid = node("div", "toa-intro-grid");
   const paper = node("article", "toa-paper");
-  paper.append(node("div", "toa-section-mark", "O KAMPANII"), node("h2", "", campaign.introTitle));
-  campaign.introParagraphs.forEach(text => paper.append(node("p", "", text)));
+  paper.append(
+    node("div", "toa-section-mark", "O KAMPANII"),
+    node("h2", "", campaign.introTitle),
+  );
+  campaign.introParagraphs.forEach((text) => paper.append(node("p", "", text)));
   const dossier = node("aside", "toa-case");
   dossier.append(node("div", "toa-case-label", "DOSSIER"));
   campaign.dossier.forEach(([label, value]) => {
     const row = node("div", "toa-case-row");
-    row.append(node("span", "", label), node("strong", label === "STATUS" ? "toa-active" : "", value));
+    row.append(
+      node("span", "", label),
+      node("strong", label === "STATUS" ? "toa-active" : "", value),
+    );
     dossier.append(row);
   });
   grid.append(paper, dossier);
@@ -43,10 +52,14 @@ function renderCampaign(campaign) {
 async function renderCharacters(characters) {
   document.querySelector("#characters-kicker").textContent = characters.kicker;
   document.querySelector("#characters-title").textContent = characters.title;
-  document.querySelector("#characters-description").textContent = characters.description;
-  const gallery = new CharacterGallery(document.querySelector("#character-gallery"), {
-    characterIds: characters.characterIds
-  });
+  document.querySelector("#characters-description").textContent =
+    characters.description;
+  const gallery = new CharacterGallery(
+    document.querySelector("#character-gallery"),
+    {
+      characterIds: characters.characterIds,
+    },
+  );
   await gallery.render();
 }
 
@@ -56,20 +69,29 @@ function renderChronicle(chronicle, accent) {
   intro.append(
     node("div", "toa-section-mark", chronicle.kicker || "AKTA / KRONIKA"),
     node("h2", "", chronicle.title || "Kronika wyprawy"),
-    node("p", "", chronicle.description || "")
+    node("p", "", chronicle.description || ""),
   );
   const list = node("div", "chronicle toa-chronicle-list");
-  list.replaceChildren(...chronicle.sessions.map(session => createChronicleRecord(session, { accent })));
+  list.replaceChildren(
+    ...chronicle.sessions.map((session) =>
+      createChronicleRecord(session, { accent }),
+    ),
+  );
   container.replaceChildren(intro, list);
 }
 
 async function initialize() {
   const [manifest, theme, content] = await Promise.all([
-    loadJson("./manifest.json"), loadJson("./theme.json"), loadJson("./content.json")
+    loadJson("./manifest.json"),
+    loadJson("./theme.json"),
+    loadJson("./content.json"),
   ]);
   const root = document.documentElement;
   Object.entries(theme.colors).forEach(([token, value]) => {
-    const cssToken = token.replace(/[A-Z]/g, letter => "-" + letter.toLowerCase());
+    const cssToken = token.replace(
+      /[A-Z]/g,
+      (letter) => "-" + letter.toLowerCase(),
+    );
     root.style.setProperty("--theme-" + cssToken, value);
   });
   root.style.setProperty("--campaign-accent", theme.colors.accent2);
@@ -80,7 +102,7 @@ async function initialize() {
   const hero = createSubpageHero({
     title: content.campaign.title,
     backgroundImage: theme.heroImage,
-    theme: { accent: theme.colors.accent2 }
+    theme: { accent: theme.colors.accent2 },
   });
   hero.id = "campaign-hero";
   hero.classList.add("toa-hero");
@@ -92,7 +114,11 @@ async function initialize() {
   heading.after(node("p", "toa-hero-lead", content.campaign.lead));
   const seal = node("div", "toa-hero-seal");
   seal.setAttribute("aria-hidden", "true");
-  seal.append(node("span", "", "TROPICAL EXPEDITION"), node("strong", "", "CHULT"), node("small", "", "ARCHIVE"));
+  seal.append(
+    node("span", "", "TROPICAL EXPEDITION"),
+    node("strong", "", "CHULT"),
+    node("small", "", "ARCHIVE"),
+  );
   copy.append(seal);
   document.querySelector("#campaign-hero").replaceWith(hero);
 
@@ -102,15 +128,27 @@ async function initialize() {
   mountSubpageNavbar(navbarMount, {
     playlistUrl: manifest.playlistUrl,
     sections: [
-      { text: "Kampania", sectionLink: "campaign", color: theme.colors.accent2 },
-      { text: "Postaci", sectionLink: "characters", color: theme.colors.accent2 },
-      { text: "Kronika", sectionLink: "chronicle", color: theme.colors.accent2 }
-    ]
+      {
+        text: "Kampania",
+        sectionLink: "campaign",
+        color: theme.colors.accent2,
+      },
+      {
+        text: "Postaci",
+        sectionLink: "characters",
+        color: theme.colors.accent2,
+      },
+      {
+        text: "Kronika",
+        sectionLink: "chronicle",
+        color: theme.colors.accent2,
+      },
+    ],
   });
 
   const campaignAudio = new AudioPlayer({
     src: "/v/page/tomb-of-annihilation/res/audio/tomb-of-annihilation.mp3",
-    storageKey: "vengrath-audio-tomb-of-annihilation"
+    storageKey: "vengrath-audio-tomb-of-annihilation",
   });
   mountAudioPlayerButton(campaignAudio, theme.colors.accent2);
 
@@ -119,9 +157,13 @@ async function initialize() {
   renderChronicle(content.chronicle, theme.colors.accent2);
 }
 
-initialize().catch(error => {
+initialize().catch((error) => {
   console.error("Nie udało się uruchomić strony Tomb of Annihilation.", error);
-  const message = node("p", "toa-load-error", "Nie udało się załadować archiwum kampanii. Odśwież stronę lub spróbuj ponownie później.");
+  const message = node(
+    "p",
+    "toa-load-error",
+    "Nie udało się załadować archiwum kampanii. Odśwież stronę lub spróbuj ponownie później.",
+  );
   message.setAttribute("role", "alert");
   document.body.prepend(message);
 });

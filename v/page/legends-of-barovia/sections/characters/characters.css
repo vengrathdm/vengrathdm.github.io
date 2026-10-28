@@ -1,118 +1,121 @@
 .lob-section {
-  margin-top:82px
+  margin-top: 82px;
 }
 .lob-character-intro {
-  margin-top:0;
-  margin-bottom:28px
+  margin-top: 0;
+  margin-bottom: 28px;
 }
-.lob-character-intro p,.lob-chronicle-intro p {
-  max-width:72ch;
-  margin:0;
-  color:#888b87;
-  font-size:15px
+.lob-character-intro p,
+.lob-chronicle-intro p {
+  max-width: 72ch;
+  margin: 0;
+  color: #888b87;
+  font-size: 15px;
 }
 .lob-character-quote {
-  margin:55px 0 70px;
-  padding:30px 38px;
-  border-top:1px solid #6b5b40;
-  border-bottom:1px solid #6b5b40;
-  background:linear-gradient(90deg,#111216,#171419,#111216);
-  text-align:center
+  margin: 55px 0 70px;
+  padding: 30px 38px;
+  border-top: 1px solid #6b5b40;
+  border-bottom: 1px solid #6b5b40;
+  background: linear-gradient(90deg, #111216, #171419, #111216);
+  text-align: center;
 }
 .lob-character-quote p {
-  max-width:900px;
-  margin:8px auto 12px;
-  font:italic 25px/1.5 var(--theme-font-3);
-  color:#d8d2c7
+  max-width: 900px;
+  margin: 8px auto 12px;
+  font: italic 25px/1.5 var(--theme-font-3);
+  color: #d8d2c7;
 }
 .lob-character-quote span {
-  color:#817d76;
-  font-size:11px;
-  letter-spacing:1.5px
+  color: #817d76;
+  font-size: 11px;
+  letter-spacing: 1.5px;
 }
 .lob-character-grid {
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:14px
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
 }
 .lob-dead-characters {
-  margin-top:90px;
-  padding-top:10px
+  margin-top: 90px;
+  padding-top: 10px;
 }
 .lob-section-head {
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:40px;
-  margin-bottom:28px
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 28px;
 }
-.lob-section-head>div {
-  min-width:0
+.lob-section-head > div {
+  min-width: 0;
 }
 .lob-section-head p {
-  max-width:470px;
-  margin:0;
-  color:#8f918e;
-  font-size:15px
+  max-width: 470px;
+  margin: 0;
+  color: #8f918e;
+  font-size: 15px;
 }
 .lob-dead-character {
-  min-width:0;
-  border:1px solid #44383a;
-  background:linear-gradient(145deg,#19171a,#0d0f12);
-  box-shadow:0 16px 45px #0006;
-  max-width:300px
+  min-width: 0;
+  border: 1px solid #44383a;
+  background: linear-gradient(145deg, #19171a, #0d0f12);
+  box-shadow: 0 16px 45px #0006;
+  max-width: 300px;
 }
 .lob-dead-portrait {
-  height:300px;
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  padding:15px;
-  background:radial-gradient(circle at 50% 30%,#393338 0,transparent 38%),linear-gradient(180deg,#242025,#0b0d10);
-  border-bottom:1px solid #4b3a3d;
-  filter:grayscale(.8)
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 15px;
+  background:
+    radial-gradient(circle at 50% 30%, #393338 0, transparent 38%),
+    linear-gradient(180deg, #242025, #0b0d10);
+  border-bottom: 1px solid #4b3a3d;
+  filter: grayscale(0.8);
 }
 .lob-dead-portrait:before {
-  content:"";
-  position:absolute;
-  inset:18px;
-  border:1px dashed #75666a;
-  opacity:.3
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px dashed #75666a;
+  opacity: 0.3;
 }
 .lob-dead-portrait img {
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center top;
-  filter:grayscale(.8)
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(0.8);
 }
 .lob-dead-portrait b {
-  position:absolute;
-  top:18px;
-  right:22px;
-  font:400 34px var(--theme-font-3);
-  color:#9b4b55
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font: 400 34px var(--theme-font-3);
+  color: #9b4b55;
 }
 .lob-dead-info {
-  padding:22px
+  padding: 22px;
 }
 .lob-dead-info h3 {
-  font:400 27px var(--theme-font-1);
-  color:#c9c2b7;
-  margin:7px 0 2px
+  font: 400 27px var(--theme-font-1);
+  color: #c9c2b7;
+  margin: 7px 0 2px;
 }
 .lob-dead-info strong {
-  font-size:14px;
-  color:#928c89;
-  font-weight:500
+  font-size: 14px;
+  color: #928c89;
+  font-weight: 500;
 }
 .lob-dead-info p {
-  margin-top:15px;
-  color:#797b78;
-  font-size:13px;
-  line-height:1.5
+  margin-top: 15px;
+  color: #797b78;
+  font-size: 13px;
+  line-height: 1.5;
 }

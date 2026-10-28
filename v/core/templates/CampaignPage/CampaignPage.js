@@ -1,13 +1,15 @@
 const CAMPAIGN_FILES = {
   manifest: "./manifest.json",
   theme: "./theme.json",
-  content: "./content.json"
+  content: "./content.json",
 };
 
 async function loadJson(path) {
   const response = await fetch(path);
   if (!response.ok) {
-    throw new Error(`Could not load campaign data: ${path} (${response.status})`);
+    throw new Error(
+      `Could not load campaign data: ${path} (${response.status})`,
+    );
   }
 
   const value = await response.json();
@@ -22,7 +24,7 @@ async function loadJson(path) {
 export async function loadCampaignBundle(files = {}) {
   const paths = { ...CAMPAIGN_FILES, ...files };
   const [manifest, theme, content] = await Promise.all(
-    Object.values(paths).map(loadJson)
+    Object.values(paths).map(loadJson),
   );
 
   return { manifest, theme, content };

@@ -1,1 +1,488 @@
-:root{color-scheme:dark;--bg:#0b0d0e;--surface:#111416;--text:#f1f2f2;--muted:#858b8e;--line:#292e31;--gold:#bca06a;font-family:Manrope,sans-serif;background:var(--bg);color:var(--text)}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0,#22282a 0,var(--bg) 48rem);font-size:14px}.hof-hero{min-height:22rem;border-bottom:1px solid var(--line)}.hof-nav{display:flex;align-items:center;gap:1.2rem;padding:1rem clamp(1rem,4vw,4rem);border-bottom:1px solid #ffffff12}.hof-brand{display:flex;align-items:center;gap:.65rem;color:var(--text);text-decoration:none;font:1.25rem Voltaire,sans-serif;letter-spacing:.1em;white-space:nowrap}.hof-brand img{width:2.4rem;height:2.4rem;object-fit:contain}.hof-nav-meta{flex:1;color:var(--muted);font:.68rem 'DM Mono',monospace;letter-spacing:.12em}.hof-nav-meta span{padding:0 .6rem;color:var(--gold)}.hof-nav-link{color:#c4c8c9;text-decoration:none;font:.78rem Voltaire,sans-serif;letter-spacing:.07em}.hof-nav-link:hover{color:var(--gold)}.hof-hero-copy{max-width:1200px;margin:auto;padding:4.5rem 2rem 3.5rem}.hof-hero-copy>p:first-child{color:var(--gold);font:.72rem 'DM Mono',monospace;letter-spacing:.18em}.hof-hero-copy h1{margin:.7rem 0;font:700 clamp(3rem,8vw,6.8rem)/.98 'Space Grotesk',sans-serif;letter-spacing:-.07em}.hof-hero-copy h1 span{color:var(--gold)}.hof-hero-copy>p:last-child{color:var(--muted)}.hof-main,.achievement-main{max-width:1600px;margin:auto;padding:2rem clamp(1rem,3vw,3rem) 4rem}.hof-stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.6rem;margin-bottom:2rem}.hof-stats>div{display:grid;gap:.45rem;padding:1rem;border:1px solid var(--line);background:#111416aa}.hof-stats span,.hof-results-heading p{font:.65rem 'DM Mono',monospace;letter-spacing:.1em;color:var(--muted)}.hof-stats strong{font:600 1.8rem 'Space Grotesk',sans-serif}.hof-archive{display:grid;grid-template-columns:16rem minmax(0,1fr);gap:2rem}.hof-filters{align-self:start;position:sticky;top:1rem;border:1px solid var(--line);background:var(--surface);padding:1rem;display:grid;gap:1rem}.hof-search{display:flex;gap:.5rem;align-items:center;border:1px solid #41474a;padding:.65rem;color:var(--gold)}.hof-search input,.achievement-tools input{min-width:0;width:100%;border:0;outline:0;background:transparent;color:var(--text);font:inherit}.hof-filter-grid{display:grid;gap:.8rem}.hof-filter-grid label{display:grid;gap:.35rem;color:var(--muted);font:.62rem 'DM Mono',monospace;letter-spacing:.06em}.hof-filter-grid select,.achievement-tools select{width:100%;padding:.65rem;border:1px solid var(--line);background:#0b0d0e;color:var(--text);font:.8rem Manrope,sans-serif}.hof-reset{padding:.7rem;border:1px solid #41474a;background:transparent;color:var(--text);font:.75rem Voltaire,sans-serif;letter-spacing:.1em;cursor:pointer}.hof-reset:hover{border-color:var(--gold);color:var(--gold)}.hof-results{min-width:0}.hof-results-heading{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.2rem}.hof-results-heading p{margin:0 0 .3rem}.hof-results-heading h2{margin:0;font:600 1.8rem 'Space Grotesk',sans-serif}.hof-results-heading>span{color:var(--gold);font:.7rem 'DM Mono',monospace}.character-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,14rem),1fr));gap:1rem}.hof-empty{padding:2rem;border:1px dashed #41474a;color:var(--muted);text-align:center}.hof-footer{display:flex;justify-content:space-between;gap:1rem;padding:1.4rem clamp(1rem,4vw,4rem);border-top:1px solid var(--line);color:var(--muted);font:.65rem 'DM Mono',monospace}.hof-footer a{color:inherit;text-decoration:none}.hof-footer a:hover{color:var(--gold)}.character-dialog{position:fixed;inset:0;max-width:min(980px,calc(100% - 2rem));max-height:calc(100% - 2rem);padding:0;border:1px solid #41474a;background:#111416;color:var(--text);overflow:auto}.character-dialog::backdrop{background:#000c;backdrop-filter:blur(5px)}.dialog-close{position:sticky;float:right;top:.6rem;z-index:2;margin:.6rem .6rem -3rem 0;width:2.4rem;height:2.4rem;border:1px solid #41474a;border-radius:50%;background:#0b0d0e;color:var(--text);font-size:1.5rem;cursor:pointer}.dialog-layout{display:grid;grid-template-columns:minmax(220px,.7fr) minmax(0,1.3fr)}.dialog-portrait{position:relative;background:#0b0d0e}.dialog-portrait img{width:100%;height:100%;max-height:780px;object-fit:cover;display:block}.dialog-portrait>span{position:absolute;bottom:1rem;left:1rem;padding:.4rem .7rem;background:#0b0d0edb;border:1px solid #41474a;font:.65rem 'DM Mono',monospace}.dialog-copy{padding:2rem}.dialog-kicker,.dialog-history>span{color:var(--gold);font:.65rem 'DM Mono',monospace;letter-spacing:.12em}.dialog-copy h2{font:600 2.4rem 'Space Grotesk',sans-serif;margin:.6rem 0}.dialog-player{color:var(--gold)}.dialog-copy dl{display:grid;grid-template-columns:6rem minmax(0,1fr);gap:.8rem 1rem}.dialog-copy dt{color:var(--muted);font:.65rem 'DM Mono',monospace;text-transform:uppercase}.dialog-copy dd{margin:0;line-height:1.55}.dialog-achievements{display:grid;gap:.8rem}.dialog-achievements article{display:flex;gap:.8rem}.dialog-achievements article>span{font-size:1.4rem}.dialog-achievements p{margin:.3rem 0;color:#b3b8ba;font-size:.8rem}.dialog-achievements small{color:var(--gold)}.dialog-history{border-top:1px solid var(--line);margin-top:1.5rem;padding-top:1rem}.dialog-history p{line-height:1.7;color:#c4c8c9}.achievement-tools{display:flex;gap:.8rem;max-width:900px;margin:0 0 2rem}.achievement-tools input{border:1px solid var(--line);padding:.8rem;background:var(--surface)}.achievement-tools select{max-width:17rem}.achievement-catalogue{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,21rem),1fr));gap:1rem}.achievement-catalogue-card{display:flex;gap:1rem;padding:1.2rem;border:1px solid var(--line);background:var(--surface)}.achievement-catalogue-icon{flex:0 0 3rem;height:3rem;display:grid;place-items:center;background:#bca06a12;border:1px solid #bca06a55;font-size:1.5rem}.achievement-catalogue-copy h3{margin:0 0 .5rem;font:600 1.1rem 'Space Grotesk',sans-serif}.achievement-catalogue-copy p{margin:0 0 .8rem;color:#b5babb;line-height:1.6}.achievement-catalogue-copy small{color:var(--gold);font:.65rem 'DM Mono',monospace;text-transform:uppercase}@media(max-width:900px){.hof-archive{grid-template-columns:1fr}.hof-filters{position:static}.hof-filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hof-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.dialog-layout{grid-template-columns:1fr}.dialog-portrait{max-height:360px}.dialog-portrait img{height:360px}.dialog-copy{padding:1.2rem}}@media(max-width:620px){.hof-nav{flex-wrap:wrap;gap:.8rem}.hof-nav-meta{order:3;flex-basis:100%}.hof-hero-copy{padding:3rem 1.2rem}.hof-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.hof-filter-grid{grid-template-columns:1fr}.hof-footer{flex-wrap:wrap}.achievement-tools{flex-direction:column}.achievement-tools select{max-width:none}.hof-results-heading h2{font-size:1.4rem}.dialog-copy dl{grid-template-columns:5rem minmax(0,1fr)}}
+:root {
+  color-scheme: dark;
+  --bg: #0b0d0e;
+  --surface: #111416;
+  --text: #f1f2f2;
+  --muted: #858b8e;
+  --line: #292e31;
+  --gold: #bca06a;
+  font-family: Manrope, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% 0, #22282a 0, var(--bg) 48rem);
+  font-size: 14px;
+}
+.hof-hero {
+  min-height: 22rem;
+  border-bottom: 1px solid var(--line);
+}
+.hof-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1rem clamp(1rem, 4vw, 4rem);
+  border-bottom: 1px solid #ffffff12;
+}
+.hof-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--text);
+  text-decoration: none;
+  font:
+    1.25rem Voltaire,
+    sans-serif;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+.hof-brand img {
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: contain;
+}
+.hof-nav-meta {
+  flex: 1;
+  color: var(--muted);
+  font:
+    0.68rem "DM Mono",
+    monospace;
+  letter-spacing: 0.12em;
+}
+.hof-nav-meta span {
+  padding: 0 0.6rem;
+  color: var(--gold);
+}
+.hof-nav-link {
+  color: #c4c8c9;
+  text-decoration: none;
+  font:
+    0.78rem Voltaire,
+    sans-serif;
+  letter-spacing: 0.07em;
+}
+.hof-nav-link:hover {
+  color: var(--gold);
+}
+.hof-hero-copy {
+  max-width: 1200px;
+  margin: auto;
+  padding: 4.5rem 2rem 3.5rem;
+}
+.hof-hero-copy > p:first-child {
+  color: var(--gold);
+  font:
+    0.72rem "DM Mono",
+    monospace;
+  letter-spacing: 0.18em;
+}
+.hof-hero-copy h1 {
+  margin: 0.7rem 0;
+  font:
+    700 clamp(3rem, 8vw, 6.8rem)/0.98 "Space Grotesk",
+    sans-serif;
+  letter-spacing: -0.07em;
+}
+.hof-hero-copy h1 span {
+  color: var(--gold);
+}
+.hof-hero-copy > p:last-child {
+  color: var(--muted);
+}
+.hof-main,
+.achievement-main {
+  max-width: 1600px;
+  margin: auto;
+  padding: 2rem clamp(1rem, 3vw, 3rem) 4rem;
+}
+.hof-stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+.hof-stats > div {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  background: #111416aa;
+}
+.hof-stats span,
+.hof-results-heading p {
+  font:
+    0.65rem "DM Mono",
+    monospace;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.hof-stats strong {
+  font:
+    600 1.8rem "Space Grotesk",
+    sans-serif;
+}
+.hof-archive {
+  display: grid;
+  grid-template-columns: 16rem minmax(0, 1fr);
+  gap: 2rem;
+}
+.hof-filters {
+  align-self: start;
+  position: sticky;
+  top: 1rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+.hof-search {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  border: 1px solid #41474a;
+  padding: 0.65rem;
+  color: var(--gold);
+}
+.hof-search input,
+.achievement-tools input {
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+}
+.hof-filter-grid {
+  display: grid;
+  gap: 0.8rem;
+}
+.hof-filter-grid label {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--muted);
+  font:
+    0.62rem "DM Mono",
+    monospace;
+  letter-spacing: 0.06em;
+}
+.hof-filter-grid select,
+.achievement-tools select {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid var(--line);
+  background: #0b0d0e;
+  color: var(--text);
+  font:
+    0.8rem Manrope,
+    sans-serif;
+}
+.hof-reset {
+  padding: 0.7rem;
+  border: 1px solid #41474a;
+  background: transparent;
+  color: var(--text);
+  font:
+    0.75rem Voltaire,
+    sans-serif;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+.hof-reset:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.hof-results {
+  min-width: 0;
+}
+.hof-results-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.hof-results-heading p {
+  margin: 0 0 0.3rem;
+}
+.hof-results-heading h2 {
+  margin: 0;
+  font:
+    600 1.8rem "Space Grotesk",
+    sans-serif;
+}
+.hof-results-heading > span {
+  color: var(--gold);
+  font:
+    0.7rem "DM Mono",
+    monospace;
+}
+.character-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  gap: 1rem;
+}
+.hof-empty {
+  padding: 2rem;
+  border: 1px dashed #41474a;
+  color: var(--muted);
+  text-align: center;
+}
+.hof-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.4rem clamp(1rem, 4vw, 4rem);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font:
+    0.65rem "DM Mono",
+    monospace;
+}
+.hof-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+.hof-footer a:hover {
+  color: var(--gold);
+}
+.character-dialog {
+  position: fixed;
+  inset: 0;
+  max-width: min(980px, calc(100% - 2rem));
+  max-height: calc(100% - 2rem);
+  padding: 0;
+  border: 1px solid #41474a;
+  background: #111416;
+  color: var(--text);
+  overflow: auto;
+}
+.character-dialog::backdrop {
+  background: #000c;
+  backdrop-filter: blur(5px);
+}
+.dialog-close {
+  position: sticky;
+  float: right;
+  top: 0.6rem;
+  z-index: 2;
+  margin: 0.6rem 0.6rem -3rem 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid #41474a;
+  border-radius: 50%;
+  background: #0b0d0e;
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.dialog-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+}
+.dialog-portrait {
+  position: relative;
+  background: #0b0d0e;
+}
+.dialog-portrait img {
+  width: 100%;
+  height: 100%;
+  max-height: 780px;
+  object-fit: cover;
+  display: block;
+}
+.dialog-portrait > span {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  padding: 0.4rem 0.7rem;
+  background: #0b0d0edb;
+  border: 1px solid #41474a;
+  font:
+    0.65rem "DM Mono",
+    monospace;
+}
+.dialog-copy {
+  padding: 2rem;
+}
+.dialog-kicker,
+.dialog-history > span {
+  color: var(--gold);
+  font:
+    0.65rem "DM Mono",
+    monospace;
+  letter-spacing: 0.12em;
+}
+.dialog-copy h2 {
+  font:
+    600 2.4rem "Space Grotesk",
+    sans-serif;
+  margin: 0.6rem 0;
+}
+.dialog-player {
+  color: var(--gold);
+}
+.dialog-copy dl {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  gap: 0.8rem 1rem;
+}
+.dialog-copy dt {
+  color: var(--muted);
+  font:
+    0.65rem "DM Mono",
+    monospace;
+  text-transform: uppercase;
+}
+.dialog-copy dd {
+  margin: 0;
+  line-height: 1.55;
+}
+.dialog-achievements {
+  display: grid;
+  gap: 0.8rem;
+}
+.dialog-achievements article {
+  display: flex;
+  gap: 0.8rem;
+}
+.dialog-achievements article > span {
+  font-size: 1.4rem;
+}
+.dialog-achievements p {
+  margin: 0.3rem 0;
+  color: #b3b8ba;
+  font-size: 0.8rem;
+}
+.dialog-achievements small {
+  color: var(--gold);
+}
+.dialog-history {
+  border-top: 1px solid var(--line);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+}
+.dialog-history p {
+  line-height: 1.7;
+  color: #c4c8c9;
+}
+.achievement-tools {
+  display: flex;
+  gap: 0.8rem;
+  max-width: 900px;
+  margin: 0 0 2rem;
+}
+.achievement-tools input {
+  border: 1px solid var(--line);
+  padding: 0.8rem;
+  background: var(--surface);
+}
+.achievement-tools select {
+  max-width: 17rem;
+}
+.achievement-catalogue {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 21rem), 1fr));
+  gap: 1rem;
+}
+.achievement-catalogue-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.achievement-catalogue-icon {
+  flex: 0 0 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  background: #bca06a12;
+  border: 1px solid #bca06a55;
+  font-size: 1.5rem;
+}
+.achievement-catalogue-copy h3 {
+  margin: 0 0 0.5rem;
+  font:
+    600 1.1rem "Space Grotesk",
+    sans-serif;
+}
+.achievement-catalogue-copy p {
+  margin: 0 0 0.8rem;
+  color: #b5babb;
+  line-height: 1.6;
+}
+.achievement-catalogue-copy small {
+  color: var(--gold);
+  font:
+    0.65rem "DM Mono",
+    monospace;
+  text-transform: uppercase;
+}
+@media (max-width: 900px) {
+  .hof-archive {
+    grid-template-columns: 1fr;
+  }
+  .hof-filters {
+    position: static;
+  }
+  .hof-filter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hof-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .dialog-layout {
+    grid-template-columns: 1fr;
+  }
+  .dialog-portrait {
+    max-height: 360px;
+  }
+  .dialog-portrait img {
+    height: 360px;
+  }
+  .dialog-copy {
+    padding: 1.2rem;
+  }
+}
+@media (max-width: 620px) {
+  .hof-nav {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .hof-nav-meta {
+    order: 3;
+    flex-basis: 100%;
+  }
+  .hof-hero-copy {
+    padding: 3rem 1.2rem;
+  }
+  .hof-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hof-filter-grid {
+    grid-template-columns: 1fr;
+  }
+  .hof-footer {
+    flex-wrap: wrap;
+  }
+  .achievement-tools {
+    flex-direction: column;
+  }
+  .achievement-tools select {
+    max-width: none;
+  }
+  .hof-results-heading h2 {
+    font-size: 1.4rem;
+  }
+  .dialog-copy dl {
+    grid-template-columns: 5rem minmax(0, 1fr);
+  }
+}

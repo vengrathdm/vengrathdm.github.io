@@ -1,2 +1,63 @@
 <!doctype html>
-<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0d0e"><meta name="description" content="Vengrath — kampanie, projekty graficzne i narzędzia."><title>Vengrath</title><link rel="icon" href="/v/core/graphics/favicon/favicon.ico"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&display=swap" rel="stylesheet"><link rel="stylesheet" href="/v/home/home.css?v=empty-state-1"><link rel="stylesheet" href="/v/core/templates/VoronoiShatter/VoronoiShatter.css"></head><body><div class="home-app"><header class="home-topbar"><a class="home-brand" href="/v/home/"><img src="/v/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a><nav id="filters" class="voronoi-filters" aria-label="Kategorie"></nav><label class="home-search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Szukaj…" aria-label="Szukaj"></label></header><main id="viewport" class="voronoi-viewport" aria-label="Przesuwane pole stron"><div id="board" class="voronoi-board"></div><div id="empty-state" class="voronoi-empty-state" role="status" aria-live="polite" hidden><p>Brak wyników. Zmień wyszukiwanie lub kategorię.</p><button id="clear-filters" type="button">Wyczyść filtry</button></div></main></div><script type="module" src="/v/home/home.js?v=accessibility-1"></script></body></html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0b0d0e" />
+    <meta
+      name="description"
+      content="Vengrath — kampanie, projekty graficzne i narzędzia."
+    />
+    <title>Vengrath</title>
+    <link rel="icon" href="/v/core/graphics/favicon/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/v/home/home.css?v=empty-state-1" />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/VoronoiShatter/VoronoiShatter.css"
+    />
+  </head>
+  <body>
+    <div class="home-app">
+      <header class="home-topbar">
+        <a class="home-brand" href="/v/home/"
+          ><img src="/v/core/graphics/favicon/mg-logo.png" alt="" /><span
+            >VENGRATH</span
+          ></a
+        >
+        <nav id="filters" class="voronoi-filters" aria-label="Kategorie"></nav>
+        <label class="home-search"
+          ><span aria-hidden="true">⌕</span
+          ><input
+            id="search"
+            type="search"
+            placeholder="Szukaj…"
+            aria-label="Szukaj"
+        /></label>
+      </header>
+      <main
+        id="viewport"
+        class="voronoi-viewport"
+        aria-label="Przesuwane pole stron"
+      >
+        <div id="board" class="voronoi-board"></div>
+        <div
+          id="empty-state"
+          class="voronoi-empty-state"
+          role="status"
+          aria-live="polite"
+          hidden
+        >
+          <p>Brak wyników. Zmień wyszukiwanie lub kategorię.</p>
+          <button id="clear-filters" type="button">Wyczyść filtry</button>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/v/home/home.js?v=homepage-2"></script>
+  </body>
+</html>

@@ -1,1 +1,105 @@
-<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Baronia na granicy rozkładu. Las, który nie powinien rosnąć tak blisko. Cztery postacie w samym środku historii, która zostawia za sobą zarówno wrogów, jak i tych, którzy nie są już częścią drużyny."><meta name="theme-color" content="#05090a"><title>Menaces of Irensberg — Vengrath</title><link rel="stylesheet" href="/v/core/templates/HomeButton/HomeButton.css"><link rel="stylesheet" href="/v/core/templates/SubpageNavbar/SubpageNavbar.css"><link rel="stylesheet" href="/v/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css"><link rel="stylesheet" href="/v/core/templates/SubpageHero/SubpageHero.css"><link rel="stylesheet" href="/v/core/templates/CharacterGallery/CharacterGallery.css"><link rel="stylesheet" href="/v/core/templates/CharacterCard/CharacterCard.css"><link rel="stylesheet" href="/v/core/templates/CharacterCard/Achievements/Achievements.css"><link rel="stylesheet" href="/v/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css"><link rel="stylesheet" href="/v/core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css"><link rel="stylesheet" href="/v/core/templates/AudioPlayerButton/AudioPlayerButton.css"><link rel="stylesheet" href="./styles.css"></head><body class="menaces-of-irensberg-page"><div id="campaign-hero"></div><main class="menaces-of-irensberg-content"><section id="campaign" data-page-section="campaign"><section class="menaces-of-irensberg-card"><div class="menaces-of-irensberg-card-title">01 · AKTA KAMPANII</div><div class="menaces-of-irensberg-intro-grid"><article class="menaces-of-irensberg-paper"><div class="menaces-of-irensberg-mark">DARK FANTASY · GLOOMFOREST</div><h2 id="intro-title"></h2><div id="intro-copy"></div></article><aside class="menaces-of-irensberg-dossier"><div class="menaces-of-irensberg-mark">DOSSIER</div><div id="dossier"></div></aside></div></section><section class="menaces-of-irensberg-party"><div><div class="menaces-of-irensberg-mark">ARCHIWUM</div><h2 id="party-title"></h2><p id="party-description"></p></div><img src="/v/core/portraits/char-0006.webp" alt="Menaces of Irensberg"></section></section><section id="characters" data-page-section="characters" hidden><div class="menaces-of-irensberg-mark" id="characters-kicker"></div><h2 id="characters-title"></h2><p id="characters-description"></p><div id="character-gallery"></div></section><section id="chronicle" data-page-section="chronicle" hidden><div class="menaces-of-irensberg-mark" id="chronicle-kicker"></div><h2 id="chronicle-title"></h2><p id="chronicle-description"></p><div id="chronicle-records" class="menaces-of-irensberg-chronicle"></div></section></main><footer class="menaces-of-irensberg-footer">VENGRATH · MENACES OF IRENSBERG <a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a></footer><script type="module" src="./app.js"></script></body></html>
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Baronia na granicy rozkładu. Las, który nie powinien rosnąć tak blisko. Cztery postacie w samym środku historii, która zostawia za sobą zarówno wrogów, jak i tych, którzy nie są już częścią drużyny."
+    />
+    <meta name="theme-color" content="#05090a" />
+    <title>Menaces of Irensberg — Vengrath</title>
+    <link rel="stylesheet" href="/v/core/templates/HomeButton/HomeButton.css" />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/SubpageNavbar/SubpageNavbar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/SubpageHero/SubpageHero.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/CharacterGallery/CharacterGallery.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/CharacterCard/CharacterCard.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/CharacterCard/Achievements/Achievements.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/AudioPlayerButton/AudioPlayerButton.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="menaces-of-irensberg-page">
+    <div id="campaign-hero"></div>
+    <main class="menaces-of-irensberg-content">
+      <section id="campaign" data-page-section="campaign">
+        <section class="menaces-of-irensberg-card">
+          <div class="menaces-of-irensberg-card-title">01 · AKTA KAMPANII</div>
+          <div class="menaces-of-irensberg-intro-grid">
+            <article class="menaces-of-irensberg-paper">
+              <div class="menaces-of-irensberg-mark">
+                DARK FANTASY · GLOOMFOREST
+              </div>
+              <h2 id="intro-title"></h2>
+              <div id="intro-copy"></div>
+            </article>
+            <aside class="menaces-of-irensberg-dossier">
+              <div class="menaces-of-irensberg-mark">DOSSIER</div>
+              <div id="dossier"></div>
+            </aside>
+          </div>
+        </section>
+        <section class="menaces-of-irensberg-party">
+          <div>
+            <div class="menaces-of-irensberg-mark">ARCHIWUM</div>
+            <h2 id="party-title"></h2>
+            <p id="party-description"></p>
+          </div>
+          <img
+            src="/v/core/portraits/char-0006.webp"
+            alt="Menaces of Irensberg"
+          />
+        </section>
+      </section>
+      <section id="characters" data-page-section="characters" hidden>
+        <div class="menaces-of-irensberg-mark" id="characters-kicker"></div>
+        <h2 id="characters-title"></h2>
+        <p id="characters-description"></p>
+        <div id="character-gallery"></div>
+      </section>
+      <section id="chronicle" data-page-section="chronicle" hidden>
+        <div class="menaces-of-irensberg-mark" id="chronicle-kicker"></div>
+        <h2 id="chronicle-title"></h2>
+        <p id="chronicle-description"></p>
+        <div
+          id="chronicle-records"
+          class="menaces-of-irensberg-chronicle"
+        ></div>
+      </section>
+    </main>
+    <footer class="menaces-of-irensberg-footer">
+      VENGRATH · MENACES OF IRENSBERG
+      <a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a>
+    </footer>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

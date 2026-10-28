@@ -1,1 +1,29 @@
-.vengrath-home-button{display:inline-flex;height:3.1rem;min-height:3.1rem;box-sizing:border-box;align-items:center;gap:.65rem;padding:.55rem .9rem;border:1px solid #41474a;border-radius:999px;background:#111416;color:#f1f2f2;text-decoration:none;font:1rem Voltaire,sans-serif;letter-spacing:.08em;white-space:nowrap}.vengrath-home-button img{width:1.65rem;height:1.65rem;object-fit:contain}.vengrath-home-button:hover,.vengrath-home-button:focus-visible{border-color:#bca06a;outline-offset:3px}
+.vengrath-home-button {
+  display: inline-flex;
+  height: 3.1rem;
+  min-height: 3.1rem;
+  box-sizing: border-box;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #41474a;
+  border-radius: 999px;
+  background: #111416;
+  color: #f1f2f2;
+  text-decoration: none;
+  font:
+    1rem Voltaire,
+    sans-serif;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.vengrath-home-button img {
+  width: 1.65rem;
+  height: 1.65rem;
+  object-fit: contain;
+}
+.vengrath-home-button:hover,
+.vengrath-home-button:focus-visible {
+  border-color: #bca06a;
+  outline-offset: 3px;
+}

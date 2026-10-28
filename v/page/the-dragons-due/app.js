@@ -15,31 +15,41 @@ function node(tag, className, text) {
   return el;
 }
 function renderRows(target, rows) {
-  target.replaceChildren(...rows.map(([label, value]) => {
-    const row = node("div", "cz-dossier-row");
-    row.append(node("span", "", label), node("strong", "", value));
-    return row;
-  }));
+  target.replaceChildren(
+    ...rows.map(([label, value]) => {
+      const row = node("div", "cz-dossier-row");
+      row.append(node("span", "", label), node("strong", "", value));
+      return row;
+    }),
+  );
 }
 function renderCards(target, records, kind) {
-  target.replaceChildren(...records.map((item) => {
-    const card = node("article", kind + "-card");
-    const number = item.number ? node("span", "cz-card-number", item.number) : null;
-    if (number) card.append(number);
-    card.append(node("p", "cz-card-kicker", item.location || item.role || ""));
-    card.append(node("h3", "", item.title || item.name));
-    card.append(node("p", "cz-card-copy", item.text));
-    return card;
-  }));
+  target.replaceChildren(
+    ...records.map((item) => {
+      const card = node("article", kind + "-card");
+      const number = item.number
+        ? node("span", "cz-card-number", item.number)
+        : null;
+      if (number) card.append(number);
+      card.append(
+        node("p", "cz-card-kicker", item.location || item.role || ""),
+      );
+      card.append(node("h3", "", item.title || item.name));
+      card.append(node("p", "cz-card-copy", item.text));
+      return card;
+    }),
+  );
 }
 async function initialize() {
   const campaignAudio = new AudioPlayer({
     src: "/v/page/the-dragons-due/res/audio/TheDragonsDue.mp3",
-    storageKey: "vengrath-the-dragons-due-audio"
+    storageKey: "vengrath-the-dragons-due-audio",
   });
   mountAudioPlayerButton(campaignAudio, "#c6a45c");
   const [manifest, theme, content] = await Promise.all([
-    loadJson("./manifest.json"), loadJson("./theme.json"), loadJson("./content.json")
+    loadJson("./manifest.json"),
+    loadJson("./theme.json"),
+    loadJson("./content.json"),
   ]);
   const root = document.documentElement;
   root.style.setProperty("--cz-base", theme.colors.base1);
@@ -48,7 +58,7 @@ async function initialize() {
   const hero = createSubpageHero({
     title: content.campaign.title,
     backgroundImage: theme.heroImage,
-    theme: { accent: theme.colors.accent2 }
+    theme: { accent: theme.colors.accent2 },
   });
   hero.id = "campaign-hero";
   const kicker = node("p", "cz-hero-kicker", content.campaign.kicker);
@@ -61,19 +71,39 @@ async function initialize() {
   document.querySelector("#campaign-hero").replaceWith(hero);
   mountSubpageNavbar(navbarMount, {
     sections: [
-      { text: "Kampania", sectionLink: "overview", color: theme.colors.accent2 },
-      { text: "Postaci", sectionLink: "characters", color: theme.colors.accent2 },
-      { text: "Kronika", sectionLink: "chronicle", color: theme.colors.accent2 }
-    ]
+      {
+        text: "Kampania",
+        sectionLink: "overview",
+        color: theme.colors.accent2,
+      },
+      {
+        text: "Postaci",
+        sectionLink: "characters",
+        color: theme.colors.accent2,
+      },
+      {
+        text: "Kronika",
+        sectionLink: "chronicle",
+        color: theme.colors.accent2,
+      },
+    ],
   });
-  document.querySelector("#intro-title").textContent = content.campaign.introTitle;
-  document.querySelector("#intro-copy").replaceChildren(...content.campaign.introParagraphs.map(text => node("p", "", text)));
+  document.querySelector("#intro-title").textContent =
+    content.campaign.introTitle;
+  document
+    .querySelector("#intro-copy")
+    .replaceChildren(
+      ...content.campaign.introParagraphs.map((text) => node("p", "", text)),
+    );
   renderRows(document.querySelector("#dossier"), content.campaign.dossier);
-  document.querySelector("#manifesto").textContent = "„" + content.campaign.manifesto + "”";
-  document.querySelector("#manifesto-tags").textContent = content.campaign.manifestoTags;
-  document.querySelector("#image-caption").textContent = content.campaign.imageCaption;
+  document.querySelector("#manifesto").textContent =
+    "„" + content.campaign.manifesto + "”";
+  document.querySelector("#manifesto-tags").textContent =
+    content.campaign.manifestoTags;
+  document.querySelector("#image-caption").textContent =
+    content.campaign.imageCaption;
 }
-initialize().catch(error => {
+initialize().catch((error) => {
   console.error("Nie udało się uruchomić strony The Dragon's Due.", error);
   const message = node("p", "cz-error", "Nie udało się wczytać akt przygody.");
   document.querySelector("main")?.prepend(message);

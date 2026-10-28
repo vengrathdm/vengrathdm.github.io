@@ -7,7 +7,7 @@ const SCROLL_THRESHOLD = 12;
 
 export function mountSubpageNavbar(
   container,
-  { playlistUrl = null, sections = [] } = {}
+  { playlistUrl = null, sections = [] } = {},
 ) {
   container.classList.add("subpage-navbar");
 
@@ -26,8 +26,8 @@ export function mountSubpageNavbar(
   const buttons = sections.map((section, index) =>
     createNavbarButton({
       ...section,
-      defaultActive: index === 0
-    })
+      defaultActive: index === 0,
+    }),
   );
 
   buttons.forEach((button) => right.append(button));
@@ -36,7 +36,7 @@ export function mountSubpageNavbar(
   const updateScrollState = () => {
     container.classList.toggle(
       SCROLLED_CLASS,
-      window.scrollY > SCROLL_THRESHOLD
+      window.scrollY > SCROLL_THRESHOLD,
     );
   };
 
@@ -51,14 +51,14 @@ export function mountSubpageNavbar(
     container.dispatchEvent(
       new CustomEvent("vengrath:sectionchange", {
         bubbles: true,
-        detail: { section: sectionId }
-      })
+        detail: { section: sectionId },
+      }),
     );
 
     buttons.forEach((button) => {
       button.setAttribute(
         "aria-pressed",
-        String(button.dataset.section === sectionId)
+        String(button.dataset.section === sectionId),
       );
     });
   };
@@ -77,6 +77,6 @@ export function mountSubpageNavbar(
       window.removeEventListener("scroll", updateScrollState);
       container.replaceChildren();
       container.classList.remove(SCROLLED_CLASS);
-    }
+    },
   };
 }

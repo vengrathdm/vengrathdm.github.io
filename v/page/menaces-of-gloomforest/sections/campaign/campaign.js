@@ -70,5 +70,4 @@ export function renderCampaignSection(campaign) {
     manifesto.append(symbol, text);
     container.append(manifesto);
   }
-
 }

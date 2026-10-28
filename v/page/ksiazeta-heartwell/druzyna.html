@@ -1,53 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Drużyna — Książęta Heartwell</title>
-    <meta content="Książęta Heartwell — gotycki horror, diesel, siedem dzielnic i siedmiu Książąt." name="description" />
+    <meta
+      content="Książęta Heartwell — gotycki horror, diesel, siedem dzielnic i siedmiu Książąt."
+      name="description"
+    />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Voltaire&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Voltaire&amp;family=Courier+Prime:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
     <link href="heartwell.css" rel="stylesheet" />
-  <style>
-    .youtube-playlist-btn {
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      transform: rotate(180deg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 112px;
-      padding: 12px 0;
-      margin-top: 8px;
-      color: var(--amber);
-      border-top: 1px solid rgba(212,160,60,.45);
-      font-family: var(--display);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-decoration: none;
-      text-align: center;
-    }
-    .youtube-playlist-btn:hover { color: var(--paper); background: rgba(255,255,255,.04); }
-  </style>
+    <style>
+      .youtube-playlist-btn {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 112px;
+        padding: 12px 0;
+        margin-top: 8px;
+        color: var(--amber);
+        border-top: 1px solid rgba(212, 160, 60, 0.45);
+        font-family: var(--display);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        text-align: center;
+      }
+      .youtube-playlist-btn:hover {
+        color: var(--paper);
+        background: rgba(255, 255, 255, 0.04);
+      }
+    </style>
   </head>
   <body>
-    <button class="heartwell-audio-toggle" id="heartwellAudioToggle" type="button" aria-label="Włącz dźwięk" aria-pressed="false" title="Włącz dźwięk">
-      <svg class="audio-icon audio-icon-muted" viewBox="0 0 48 48" aria-hidden="true">
+    <button
+      class="heartwell-audio-toggle"
+      id="heartwellAudioToggle"
+      type="button"
+      aria-label="Włącz dźwięk"
+      aria-pressed="false"
+      title="Włącz dźwięk"
+    >
+      <svg
+        class="audio-icon audio-icon-muted"
+        viewBox="0 0 48 48"
+        aria-hidden="true"
+      >
         <path d="M7 19h8l10-8v26l-10-8H7z"></path>
         <path d="M31 18l10 12M41 18L31 30"></path>
       </svg>
-      <svg class="audio-icon audio-icon-playing" viewBox="0 0 48 48" aria-hidden="true">
+      <svg
+        class="audio-icon audio-icon-playing"
+        viewBox="0 0 48 48"
+        aria-hidden="true"
+      >
         <path d="M7 19h8l10-8v26l-10-8H7z"></path>
         <path d="M32 18c3 3 3 9 0 12M37 13c6 6 6 16 0 22"></path>
       </svg>
     </button>
-    <audio id="heartwellTheme" src="/v/page/ksiazeta-heartwell/res/audio/heartwell-theme.mp3" loop preload="auto" playsinline></audio>
+    <audio
+      id="heartwellTheme"
+      src="/v/page/ksiazeta-heartwell/res/audio/heartwell-theme.mp3"
+      loop
+      preload="auto"
+      playsinline
+    ></audio>
     <div class="shell">
       <nav aria-label="Nawigacja Heartwell" class="tabs">
-        <a class="global-vengrath" href="/v/home/" aria-label="Powrót do strony głównej Vengrath">VENGRATH</a>
-        <div class="badge">KSIĄŻĘTA <br />HEARTWELL </div>
+        <a
+          class="global-vengrath"
+          href="/v/home/"
+          aria-label="Powrót do strony głównej Vengrath"
+          >VENGRATH</a
+        >
+        <div class="badge">KSIĄŻĘTA <br />HEARTWELL</div>
         <div class="tab-list" id="tabList">
           <a class="tab-btn" href="index.html">
             <span>AKTA MIASTA</span>
@@ -62,7 +97,14 @@
             <span>ZAPISKI Z KAMPANII</span>
           </a>
         </div>
-        <a class="youtube-playlist-btn" href="https://www.youtube.com/playlist?list=PLd6q-Ih5JcOA" target="_blank" rel="noopener noreferrer" aria-label="Otwórz playlistę Książęta Heartwell na YouTube">PLAYLISTA YOUTUBE</a>
+        <a
+          class="youtube-playlist-btn"
+          href="https://www.youtube.com/playlist?list=PLd6q-Ih5JcOA"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Otwórz playlistę Książęta Heartwell na YouTube"
+          >PLAYLISTA YOUTUBE</a
+        >
         <div class="tabs-foot">
           <span>VENGRATH · RAVENLOFT</span>
         </div>
@@ -82,32 +124,52 @@
             <div class="mark">“</div>
             <div>
               <p>„Człowiek może wytrzymać wszystko, z wyjątkiem pokusy.”</p>
-              <cite>— Oscar Wilde, <em>Wachlarz Lady Windermere</em>, akt III </cite>
+              <cite
+                >— Oscar Wilde, <em>Wachlarz Lady Windermere</em>, akt III
+              </cite>
             </div>
           </div>
           <div class="party-grid">
             <article class="party-card">
               <div class="party-number">01</div>
               <div class="party-portrait">
-                <img src="/v/page/ksiazeta-heartwell/res/graphics/Character_1.png" alt="Portret postaci — Polter von Geist">
+                <img
+                  src="/v/page/ksiazeta-heartwell/res/graphics/Character_1.png"
+                  alt="Portret postaci — Polter von Geist"
+                />
               </div>
               <div class="party-card-top">ZUZIA</div>
               <h3>Bard, Kolegium Duchów</h3>
               <h4>Polter von Geist</h4>
-              <p>Półelfka, która nauczyła się słuchać tego, czego inni wolą nie słyszeć. Duchy mówią przez nią pieśnią — a ona nie zawsze ma wybór, by milczeć.</p>
+              <p>
+                Półelfka, która nauczyła się słuchać tego, czego inni wolą nie
+                słyszeć. Duchy mówią przez nią pieśnią — a ona nie zawsze ma
+                wybór, by milczeć.
+              </p>
               <div class="party-tags">
-                <a class="party-tag-link" href="/v/page/ksiazeta-heartwell/player-characters/polter-von-geist.html">POLTER VON GEIST</a>
+                <a
+                  class="party-tag-link"
+                  href="/v/page/ksiazeta-heartwell/player-characters/polter-von-geist.html"
+                  >POLTER VON GEIST</a
+                >
               </div>
             </article>
             <article class="party-card">
               <div class="party-number">02</div>
               <div class="party-portrait">
-                <img src="/v/core/portraits/char-0122.webp" alt="Portret postaci — James Blackwood">
+                <img
+                  src="/v/core/portraits/char-0122.webp"
+                  alt="Portret postaci — James Blackwood"
+                />
               </div>
               <div class="party-card-top">DANIEL</div>
               <h3>Wojownik, Rewolwerowiec</h3>
               <h4>James Blackwood</h4>
-              <p>Wojownik, który polega na opanowaniu, celności i sile ognia. W Heartwell nawet najkrótszy pojedynek może mieć długie konsekwencje.</p>
+              <p>
+                Wojownik, który polega na opanowaniu, celności i sile ognia. W
+                Heartwell nawet najkrótszy pojedynek może mieć długie
+                konsekwencje.
+              </p>
               <div class="party-tags">
                 <span>WOJOWNIK · REWOLWEROWIEC</span>
               </div>
@@ -115,12 +177,18 @@
             <article class="party-card">
               <div class="party-number">03</div>
               <div class="party-portrait">
-                <img src="/v/core/portraits/char-0121.webp" alt="Portret postaci — Delilah Brooke">
+                <img
+                  src="/v/core/portraits/char-0121.webp"
+                  alt="Portret postaci — Delilah Brooke"
+                />
               </div>
               <div class="party-card-top">WPOLUWIATR</div>
               <h3>Łowca Miejski</h3>
               <h4>Delilah Brooke</h4>
-              <p>Łowczyni, która zna miejskie zaułki, ich ukryte ścieżki i niebezpieczeństwa kryjące się tuż poza zasięgiem latarni.</p>
+              <p>
+                Łowczyni, która zna miejskie zaułki, ich ukryte ścieżki i
+                niebezpieczeństwa kryjące się tuż poza zasięgiem latarni.
+              </p>
               <div class="party-tags">
                 <span>ŁOWCA MIEJSKI</span>
               </div>
@@ -128,12 +196,19 @@
             <article class="party-card">
               <div class="party-number">04</div>
               <div class="party-portrait">
-                <img src="/v/core/portraits/char-0123.webp" alt="Portret postaci — Alderik Erikson">
+                <img
+                  src="/v/core/portraits/char-0123.webp"
+                  alt="Portret postaci — Alderik Erikson"
+                />
               </div>
               <div class="party-card-top">RAF</div>
               <h3>Artificer</h3>
               <h4>Alderik Erikson</h4>
-              <p>Krasnoludzki wynalazca z klanu Baltimore. Jego wszechstronny umysł, talent do mechanizmów i zamiłowanie do rzemiosła prowadzą go ku własnej legendzie.</p>
+              <p>
+                Krasnoludzki wynalazca z klanu Baltimore. Jego wszechstronny
+                umysł, talent do mechanizmów i zamiłowanie do rzemiosła prowadzą
+                go ku własnej legendzie.
+              </p>
               <div class="party-tags">
                 <span>ARTIFICER</span>
               </div>
@@ -142,8 +217,12 @@
           <div class="testimony-strip">
             <div class="mark">“</div>
             <div>
-              <p>„Każdy święty ma przeszłość, a każdy grzesznik ma przyszłość.”</p>
-              <cite>— Oscar Wilde, <em>Wachlarz Lady Windermere</em>, akt III </cite>
+              <p>
+                „Każdy święty ma przeszłość, a każdy grzesznik ma przyszłość.”
+              </p>
+              <cite
+                >— Oscar Wilde, <em>Wachlarz Lady Windermere</em>, akt III
+              </cite>
             </div>
           </div>
         </section>

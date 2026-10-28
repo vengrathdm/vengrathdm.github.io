@@ -20,18 +20,30 @@ async function initializeCampaignPage() {
   const [manifest, theme, content] = await Promise.all([
     loadJson("./manifest.json"),
     loadJson("./theme.json"),
-    loadJson("./content.json")
+    loadJson("./content.json"),
   ]);
 
-  document.documentElement.style.setProperty("--theme-base-1", theme.colors.base1);
-  document.documentElement.style.setProperty("--theme-accent-1", theme.colors.accent1);
-  document.documentElement.style.setProperty("--theme-accent-2", theme.colors.accent2);
-  document.documentElement.style.setProperty("--campaign-accent", theme.colors.accent2);
+  document.documentElement.style.setProperty(
+    "--theme-base-1",
+    theme.colors.base1,
+  );
+  document.documentElement.style.setProperty(
+    "--theme-accent-1",
+    theme.colors.accent1,
+  );
+  document.documentElement.style.setProperty(
+    "--theme-accent-2",
+    theme.colors.accent2,
+  );
+  document.documentElement.style.setProperty(
+    "--campaign-accent",
+    theme.colors.accent2,
+  );
 
   const hero = createSubpageHero({
     title: content.campaign.title,
     backgroundImage: theme.heroImage,
-    theme: { accent: theme.colors.accent2 }
+    theme: { accent: theme.colors.accent2 },
   });
 
   hero.id = "campaign-hero";
@@ -57,10 +69,22 @@ async function initializeCampaignPage() {
   mountSubpageNavbar(navbarMount, {
     playlistUrl: manifest.playlistUrl,
     sections: [
-      { text: "Kampania", sectionLink: "campaign", color: theme.colors.accent2 },
-      { text: "Postaci", sectionLink: "characters", color: theme.colors.accent2 },
-      { text: "Kronika", sectionLink: "chronicle", color: theme.colors.accent2 }
-    ]
+      {
+        text: "Kampania",
+        sectionLink: "campaign",
+        color: theme.colors.accent2,
+      },
+      {
+        text: "Postaci",
+        sectionLink: "characters",
+        color: theme.colors.accent2,
+      },
+      {
+        text: "Kronika",
+        sectionLink: "chronicle",
+        color: theme.colors.accent2,
+      },
+    ],
   });
 
   renderCampaignSection(content.campaign);
@@ -69,7 +93,7 @@ async function initializeCampaignPage() {
 
   const audioPlayer = new AudioPlayer({
     src: manifest.audio.src,
-    storageKey: manifest.audio.continuationKey
+    storageKey: manifest.audio.continuationKey,
   });
 
   mountAudioPlayerButton(audioPlayer, theme.audioColor);

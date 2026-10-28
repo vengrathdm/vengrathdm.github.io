@@ -18,13 +18,13 @@ const RACIAL_CHOICE_RULES = {
   halfElf: {
     skillCount: 2,
     abilityCount: 2,
-    abilityBonus: 1
+    abilityBonus: 1,
   },
   variantHuman: {
     skillCount: 1,
     abilityCount: 2,
-    abilityBonus: 1
-  }
+    abilityBonus: 1,
+  },
 };
 
 function racialChoiceRule() {
@@ -32,7 +32,11 @@ function racialChoiceRule() {
     return RACIAL_CHOICE_RULES.halfElf;
   }
 
-  if (S.race === "Human" && S.subrace === "Variant Human" && S.racialMode === "2014") {
+  if (
+    S.race === "Human" &&
+    S.subrace === "Variant Human" &&
+    S.racialMode === "2014"
+  ) {
     return RACIAL_CHOICE_RULES.variantHuman;
   }
 
@@ -44,7 +48,11 @@ function isHalfElf() {
 }
 
 function isVariantHuman() {
-  return S.race === "Human" && S.subrace === "Variant Human" && S.racialMode === "2014";
+  return (
+    S.race === "Human" &&
+    S.subrace === "Variant Human" &&
+    S.racialMode === "2014"
+  );
 }
 
 function ensureRacialChoiceState() {
@@ -62,15 +70,15 @@ function ensureRacialChoiceState() {
   }
 
   S.racialSkills = S.racialSkills
-    .filter(skill => DATA.skills.includes(skill))
+    .filter((skill) => DATA.skills.includes(skill))
     .slice(0, rule.skillCount);
 
   const selectedAbilities = Object.keys(S.racialAbilityChoices)
-    .filter(ability => DATA.abilities.includes(ability))
+    .filter((ability) => DATA.abilities.includes(ability))
     .slice(0, rule.abilityCount);
 
   S.racialAbilityChoices = Object.fromEntries(
-    selectedAbilities.map(ability => [ability, rule.abilityBonus])
+    selectedAbilities.map((ability) => [ability, rule.abilityBonus]),
   );
 }
 
@@ -78,8 +86,9 @@ function findRacePorthole() {
   const portholes = document.querySelectorAll(".porthole");
 
   for (const porthole of portholes) {
-    const heading = [...porthole.querySelectorAll("b")]
-      .find(node => node.textContent.trim() === "Ability Modifiers");
+    const heading = [...porthole.querySelectorAll("b")].find(
+      (node) => node.textContent.trim() === "Ability Modifiers",
+    );
 
     if (heading) return porthole;
   }
@@ -88,8 +97,9 @@ function findRacePorthole() {
 }
 
 function findLabel(porthole, text) {
-  return [...porthole.children]
-    .find(node => node.matches("b") && node.textContent.trim() === text);
+  return [...porthole.children].find(
+    (node) => node.matches("b") && node.textContent.trim() === text,
+  );
 }
 
 function replaceAdjacentParagraph(label, replacement) {
@@ -131,12 +141,14 @@ function enhanceRaceUI() {
       const selected = Object.keys(S.racialAbilityChoices);
       existingAbilityParagraph.innerHTML = [
         ...fixedBonuses,
-        ...selected.map(ability => `${ability} +1`)
-      ].map(value => `<i>${escapeHtml(value)}</i>`).join("");
+        ...selected.map((ability) => `${ability} +1`),
+      ]
+        .map((value) => `<i>${escapeHtml(value)}</i>`)
+        .join("");
     } else if (isVariantHuman()) {
       const selected = Object.keys(S.racialAbilityChoices);
       existingAbilityParagraph.innerHTML = selected.length
-        ? selected.map(ability => `<i>${escapeHtml(ability)} +1</i>`).join("")
+        ? selected.map((ability) => `<i>${escapeHtml(ability)} +1</i>`).join("")
         : "None";
     }
   }
@@ -151,11 +163,7 @@ function enhanceRaceUI() {
     skillLabel.textContent = `Skill Proficiencies — choose exactly ${rule.skillCount}`;
     proficiencyLabel.after(skillLabel);
 
-    const rack = createChoiceRack(
-      "racialSkill",
-      DATA.skills,
-      S.racialSkills
-    );
+    const rack = createChoiceRack("racialSkill", DATA.skills, S.racialSkills);
 
     skillLabel.after(rack);
 
@@ -169,13 +177,14 @@ function enhanceRaceUI() {
     if (isHalfElf() || isVariantHuman()) {
       const abilityLabel2 = document.createElement("label");
       abilityLabel2.className = "field-label";
-      abilityLabel2.textContent = "Ability Score Increase — choose two abilities (+1 each)";
+      abilityLabel2.textContent =
+        "Ability Score Increase — choose two abilities (+1 each)";
       hint.after(abilityLabel2);
 
       const abilityRack = createChoiceRack(
         "racialAbility",
         DATA.abilities,
-        Object.keys(S.racialAbilityChoices)
+        Object.keys(S.racialAbilityChoices),
       );
       abilityLabel2.after(abilityRack);
 
@@ -224,8 +233,9 @@ R.proficientSkills = function () {
   ensureRacialChoiceState();
 
   const rule = racialChoiceRule();
-  const skills = baseProficientSkills.call(R)
-    .filter(skill => skill !== "2 CHOICE");
+  const skills = baseProficientSkills
+    .call(R)
+    .filter((skill) => skill !== "2 CHOICE");
 
   if (!rule) return skills;
 
@@ -244,24 +254,26 @@ R.validation = function () {
   checks.push({
     key: "racialSkills",
     label: `${isHalfElf() ? "Half-Elf" : "Variant Human"} skill proficiencies`,
-    ok: S.racialSkills.length === rule.skillCount
+    ok: S.racialSkills.length === rule.skillCount,
   });
 
   checks.push({
     key: "racialAbilityChoices",
     label: `${isHalfElf() ? "Half-Elf" : "Variant Human"} ability bonuses`,
-    ok: Object.keys(S.racialAbilityChoices).length === rule.abilityCount
+    ok: Object.keys(S.racialAbilityChoices).length === rule.abilityCount,
   });
 
   return checks;
 };
 
 R.isComplete = function () {
-  return R.validation().every(item => item.ok);
+  return R.validation().every((item) => item.ok);
 };
 
-document.addEventListener("click", event => {
-  const control = event.target.closest('[data-type="racialSkill"],[data-type="racialAbility"]');
+document.addEventListener("click", (event) => {
+  const control = event.target.closest(
+    '[data-type="racialSkill"],[data-type="racialAbility"]',
+  );
   if (!control || !racialChoiceRule()) return;
 
   event.preventDefault();
@@ -289,8 +301,12 @@ document.addEventListener("click", event => {
   render();
 });
 
-document.addEventListener("click", event => {
-  if (!event.target.closest("[data-type=\"race\"],[data-type=\"subrace\"],[data-type=\"racialMode\"]")) {
+document.addEventListener("click", (event) => {
+  if (
+    !event.target.closest(
+      '[data-type="race"],[data-type="subrace"],[data-type="racialMode"]',
+    )
+  ) {
     return;
   }
 
@@ -306,7 +322,7 @@ const observer = new MutationObserver(() => {
 
 observer.observe(document.body, {
   childList: true,
-  subtree: true
+  subtree: true,
 });
 
 queueMicrotask(enhanceRaceUI);

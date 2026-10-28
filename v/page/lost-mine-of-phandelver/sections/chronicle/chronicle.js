@@ -1,7 +1,8 @@
-export function renderChronicleSection(chronicle,playlistUrl) {
+export function renderChronicleSection(chronicle, playlistUrl) {
   document.querySelector("#chronicle-kicker").textContent = chronicle.kicker;
   document.querySelector("#chronicle-title").textContent = chronicle.title;
-  document.querySelector("#chronicle-description").textContent = chronicle.description;
+  document.querySelector("#chronicle-description").textContent =
+    chronicle.description;
 
   const container = document.querySelector("#campaign-chronicle");
   const entry = document.createElement("article");
@@ -15,13 +16,13 @@ export function renderChronicleSection(chronicle,playlistUrl) {
   title.textContent = chronicle.entryTitle;
   const description = document.createElement("p");
   description.textContent = chronicle.entryDescription;
-  copy.append(title,description);
+  copy.append(title, description);
   const link = document.createElement("a");
   link.className = "lmop-playlist-link";
   link.href = playlistUrl;
   link.target = "_blank";
   link.rel = "noopener noreferrer";
   link.textContent = chronicle.playlistLabel;
-  entry.append(number,copy,link);
+  entry.append(number, copy, link);
   container.replaceChildren(entry);
 }

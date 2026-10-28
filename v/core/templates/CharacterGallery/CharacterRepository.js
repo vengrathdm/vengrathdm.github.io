@@ -1,1 +1,15 @@
-export async function loadCharacterCatalog(){const responses=await Promise.all([fetch("/v/core/data/characters.json"),fetch("/v/core/data/achievements.json")]);if(responses.some(r=>!r.ok))throw new Error("Nie udało się wczytać danych postaci lub osiągnięć.");const [characters,items]=await Promise.all(responses.map(r=>r.json()));if(!Array.isArray(characters)||!Array.isArray(items))throw new Error("Dane postaci lub osiągnięć mają nieprawidłowy format.");return{characters,achievements:new Map(items.map(item=>[item.id,item]))};}
+export async function loadCharacterCatalog() {
+  const responses = await Promise.all([
+    fetch("/v/core/data/characters.json"),
+    fetch("/v/core/data/achievements.json"),
+  ]);
+  if (responses.some((r) => !r.ok))
+    throw new Error("Nie udało się wczytać danych postaci lub osiągnięć.");
+  const [characters, items] = await Promise.all(responses.map((r) => r.json()));
+  if (!Array.isArray(characters) || !Array.isArray(items))
+    throw new Error("Dane postaci lub osiągnięć mają nieprawidłowy format.");
+  return {
+    characters,
+    achievements: new Map(items.map((item) => [item.id, item])),
+  };
+}

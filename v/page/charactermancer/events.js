@@ -1,14 +1,41 @@
 function normalizeState(raw) {
   const defaults = {
-    schemaVersion: 2, step: 0, name:"", player:"", campaign:"", alignment:"", level:1,
-    race:"", subrace:"", racialMode:"2014", tashaMode:"2+1", tasha:{}, racialSkills:[], racialLanguages:[],
-    className:"", subclass:"", classSkills:[], expertise:[], background:"", backgroundSkills:[], backgroundLanguages:[], assign:{}, notes:""
+    schemaVersion: 2,
+    step: 0,
+    name: "",
+    player: "",
+    campaign: "",
+    alignment: "",
+    level: 1,
+    race: "",
+    subrace: "",
+    racialMode: "2014",
+    tashaMode: "2+1",
+    tasha: {},
+    racialSkills: [],
+    racialLanguages: [],
+    className: "",
+    subclass: "",
+    classSkills: [],
+    expertise: [],
+    background: "",
+    backgroundSkills: [],
+    backgroundLanguages: [],
+    assign: {},
+    notes: "",
   };
   const next = { ...defaults, ...(raw || {}) };
   next.schemaVersion = 3;
   next.step = Math.max(0, Math.min(6, Number(next.step) || 0));
   next.level = Math.max(1, Math.min(20, Number(next.level) || 1));
-  ["racialSkills","racialLanguages","classSkills","expertise","backgroundSkills","backgroundLanguages"].forEach(k => {
+  [
+    "racialSkills",
+    "racialLanguages",
+    "classSkills",
+    "expertise",
+    "backgroundSkills",
+    "backgroundLanguages",
+  ].forEach((k) => {
     if (!Array.isArray(next[k])) next[k] = [];
   });
   if (!next.tasha || typeof next.tasha !== "object") next.tasha = {};
@@ -23,18 +50,30 @@ document.addEventListener("click", (e) => {
     const value = control.dataset.value;
 
     if (type === "race") {
-      S.race = value; S.subrace = ""; S.racialSkills = []; S.racialLanguages = [];
+      S.race = value;
+      S.subrace = "";
+      S.racialSkills = [];
+      S.racialLanguages = [];
       S.tasha = {};
     } else if (type === "className") {
-      S.className = value; S.subclass = ""; S.classSkills = []; S.expertise = [];
+      S.className = value;
+      S.subclass = "";
+      S.classSkills = [];
+      S.expertise = [];
     } else if (type === "background") {
-      S.background = value; S.backgroundSkills = []; S.backgroundLanguages = [];
+      S.background = value;
+      S.backgroundSkills = [];
+      S.backgroundLanguages = [];
     } else if (type === "backgroundSkill") {
       toggleLimited(S.backgroundSkills, value, 2);
     } else if (type === "racialLanguage") {
       toggleLimited(S.racialLanguages, value, R.race()?.languageChoices || 0);
     } else if (type === "backgroundLanguage") {
-      toggleLimited(S.backgroundLanguages, value, DATA.backgroundLanguages[S.background]?.choices || 0);
+      toggleLimited(
+        S.backgroundLanguages,
+        value,
+        DATA.backgroundLanguages[S.background]?.choices || 0,
+      );
     } else if (type === "classSkill") {
       toggleLimited(S.classSkills, value, Number(R.cls()?.n || 0));
     } else if (type === "expertise") {
@@ -49,13 +88,17 @@ document.addEventListener("click", (e) => {
         S.tashaMode = nextMode;
       }
     } else if (type === "tashaMode") {
-      if (S.tashaMode !== value) { S.tashaMode = value; S.tasha = {}; }
+      if (S.tashaMode !== value) {
+        S.tashaMode = value;
+        S.tasha = {};
+      }
     } else if (type === "level") {
       S.level = Math.max(1, Math.min(20, Number(value) || 1));
     } else {
       S[type] = value;
     }
-    render(); return;
+    render();
+    return;
   }
 
   const stepControl = e.target.closest("[data-step]");
@@ -68,7 +111,9 @@ document.addEventListener("click", (e) => {
       render();
       return;
     }
-    S.step = target; render(); return;
+    S.step = target;
+    render();
+    return;
   }
 
   if (e.target.closest("[data-next]")) {
@@ -80,14 +125,37 @@ document.addEventListener("click", (e) => {
     } else if (next <= 5) {
       S.step = next;
     }
-    render(); return;
+    render();
+    return;
   }
-  if (e.target.closest("[data-prev]")) { S.step = Math.max(0, S.step - 1); render(); return; }
-  if (e.target.closest("[data-reset-tasha]")) { S.tasha = {}; render(); return; }
-  if (e.target.closest("[data-clear-score]")) { delete S.assign[e.target.closest("[data-clear-score]").dataset.clearScore]; render(); return; }
-  if (e.target.closest("[data-clear-tasha]")) { delete S.tasha[e.target.closest("[data-clear-tasha]").dataset.clearTasha]; render(); return; }
-  if (e.target.closest("[data-save]")) { save(); return; }
-  if (e.target.closest("[data-load]")) { $("#file").click(); return; }
+  if (e.target.closest("[data-prev]")) {
+    S.step = Math.max(0, S.step - 1);
+    render();
+    return;
+  }
+  if (e.target.closest("[data-reset-tasha]")) {
+    S.tasha = {};
+    render();
+    return;
+  }
+  if (e.target.closest("[data-clear-score]")) {
+    delete S.assign[e.target.closest("[data-clear-score]").dataset.clearScore];
+    render();
+    return;
+  }
+  if (e.target.closest("[data-clear-tasha]")) {
+    delete S.tasha[e.target.closest("[data-clear-tasha]").dataset.clearTasha];
+    render();
+    return;
+  }
+  if (e.target.closest("[data-save]")) {
+    save();
+    return;
+  }
+  if (e.target.closest("[data-load]")) {
+    $("#file").click();
+    return;
+  }
 });
 
 function toggleLimited(array, value, limit) {
@@ -99,14 +167,19 @@ function toggleLimited(array, value, limit) {
 document.addEventListener("input", (e) => {
   if (!e.target.dataset.field) return;
   const key = e.target.dataset.field;
-  if (key === "level") S.level = Math.max(1, Math.min(20, Number(e.target.value) || 1));
+  if (key === "level")
+    S.level = Math.max(1, Math.min(20, Number(e.target.value) || 1));
   else S[key] = e.target.value;
   if (e.target.dataset.live === "true") render();
 });
 
 document.addEventListener("dragstart", (e) => {
   const target = e.target.closest("[data-ability],[data-token]");
-  if (target) e.dataTransfer.setData("text/plain", target.dataset.ability || target.dataset.token);
+  if (target)
+    e.dataTransfer.setData(
+      "text/plain",
+      target.dataset.ability || target.dataset.token,
+    );
 });
 document.addEventListener("dragover", (e) => {
   if (e.target.closest("[data-ability-slot],[data-slot]")) e.preventDefault();
@@ -122,11 +195,15 @@ document.addEventListener("drop", (e) => {
     const score = Number(value);
     if (!R.scoreArray.includes(score)) return;
     const destination = abilitySlot.dataset.abilitySlot;
-    const oldAbility = Object.keys(S.assign).find(a => Number(S.assign[a]) === score);
+    const oldAbility = Object.keys(S.assign).find(
+      (a) => Number(S.assign[a]) === score,
+    );
     if (oldAbility && oldAbility !== destination) delete S.assign[oldAbility];
     const occupiedScore = S.assign[destination];
     if (occupiedScore && Number(occupiedScore) !== score) {
-      const otherAbility = Object.keys(S.assign).find(a => a !== destination && Number(S.assign[a]) === score);
+      const otherAbility = Object.keys(S.assign).find(
+        (a) => a !== destination && Number(S.assign[a]) === score,
+      );
       if (otherAbility) delete S.assign[otherAbility];
     }
     S.assign[destination] = score;
@@ -151,20 +228,22 @@ function buildSaveData() {
   const languages = languageSummary();
   const saves = R.saves();
   const modifiers = {};
-  DATA.abilities.forEach(a => { modifiers[a] = R.modifier(scores[a]); });
+  DATA.abilities.forEach((a) => {
+    modifiers[a] = R.modifier(scores[a]);
+  });
 
-  const skillDetails = DATA.skills.map(skill => ({
+  const skillDetails = DATA.skills.map((skill) => ({
     name: skill,
     ability: R.skillAbility(skill),
     proficient: skills.includes(skill),
     expertise: expertise.includes(skill),
-    modifier: R.skillModifier(skill)
+    modifier: R.skillModifier(skill),
   }));
 
-  const savingThrows = DATA.abilities.map(ability => ({
+  const savingThrows = DATA.abilities.map((ability) => ({
     ability,
     proficient: saves.includes(ability),
-    modifier: R.savingThrowModifier(ability)
+    modifier: R.savingThrowModifier(ability),
   }));
 
   const dex = Number(scores.DEX || 0);
@@ -183,7 +262,7 @@ function buildSaveData() {
         player: S.player,
         campaign: S.campaign,
         alignment: S.alignment,
-        level: Number(S.level) || 1
+        level: Number(S.level) || 1,
       },
       lineage: {
         race: S.race,
@@ -191,12 +270,16 @@ function buildSaveData() {
         racialMode: S.racialMode,
         tashaMode: S.racialMode === "tasha" ? S.tashaMode : null,
         tashaBonuses: S.racialMode === "tasha" ? { ...S.tasha } : {},
-        fixedRacialBonuses: S.racialMode === "2014" ? { ...(race.fixed || {}) } : {},
-        subraceBonuses: S.racialMode === "2014" ? { ...((race.subs || {})[S.subrace] || {}) } : {},
+        fixedRacialBonuses:
+          S.racialMode === "2014" ? { ...(race.fixed || {}) } : {},
+        subraceBonuses:
+          S.racialMode === "2014"
+            ? { ...((race.subs || {})[S.subrace] || {}) }
+            : {},
         racialSkills: [...(race.skills || [])],
         racialSkillChoices: [...(S.racialSkills || [])],
         racialLanguages: [...(race.languages || [])],
-        racialLanguageChoices: [...(S.racialLanguages || [])]
+        racialLanguageChoices: [...(S.racialLanguages || [])],
       },
       class: {
         name: S.className,
@@ -204,45 +287,58 @@ function buildSaveData() {
         skillChoices: [...(S.classSkills || [])],
         expertise: [...expertise],
         savingThrowProficiencies: [...saves],
-        armorProficiencies: [...((DATA.classReference[S.className] || {}).armor || [])],
-        weaponProficiencies: [...((DATA.classReference[S.className] || {}).weapons || [])],
-        toolProficiencies: [...((DATA.classReference[S.className] || {}).tools || [])],
+        armorProficiencies: [
+          ...((DATA.classReference[S.className] || {}).armor || []),
+        ],
+        weaponProficiencies: [
+          ...((DATA.classReference[S.className] || {}).weapons || []),
+        ],
+        toolProficiencies: [
+          ...((DATA.classReference[S.className] || {}).tools || []),
+        ],
         hitDie: hitDie,
-        featureSummary: (DATA.classReference[S.className] || {}).feature || ""
+        featureSummary: (DATA.classReference[S.className] || {}).feature || "",
       },
       background: {
         name: S.background,
-        skillProficiencies: S.background === "Custom" ? [...(S.backgroundSkills || [])] : [...(DATA.backgroundSkills[S.background] || [])],
+        skillProficiencies:
+          S.background === "Custom"
+            ? [...(S.backgroundSkills || [])]
+            : [...(DATA.backgroundSkills[S.background] || [])],
         languageChoices: [...(S.backgroundLanguages || [])],
         languageRule: { ...(DATA.backgroundLanguages[S.background] || {}) },
         feature: background.feature || "",
         toolProficiencies: [...(background.tools || [])],
-        startingEquipment: background.equipment || ""
+        startingEquipment: background.equipment || "",
       },
       abilities: {
         baseScores: { ...R.baseScores() },
         racialOrTashaBonuses: { ...R.bonus() },
         finalScores: { ...scores },
         modifiers,
-        assignments: { ...S.assign }
+        assignments: { ...S.assign },
       },
       proficiencies: {
         proficiencyBonus,
         skills: skillDetails,
         savingThrows,
-        passivePerception: 10 + Math.floor((wis - 10) / 2) + (skills.includes("Perception") ? 2 : 0) + (expertise.includes("Perception") ? 2 : 0),
+        passivePerception:
+          10 +
+          Math.floor((wis - 10) / 2) +
+          (skills.includes("Perception") ? 2 : 0) +
+          (expertise.includes("Perception") ? 2 : 0),
         initiative: R.modifier(dex),
-        languages: [...languages]
+        languages: [...languages],
       },
       combat: {
         armorClassUnarmored: 10 + Math.floor((dex - 10) / 2),
         initiative: R.modifier(dex),
         speed: "30 ft",
         hitPointsLevel1: hitDie ? hitDie + Math.floor((con - 10) / 2) : null,
-        hitDie: hitDie ? `d${hitDie}` : null
+        hitDie: hitDie ? `d${hitDie}` : null,
       },
-      notes: S.notes || ""
-    }
+      notes: S.notes || "",
+    },
   };
 }
 
@@ -251,7 +347,9 @@ function save() {
   S.schemaVersion = 3;
   localStorage.setItem("heartwell-character", JSON.stringify(payload));
   const link = document.createElement("a");
-  link.href = URL.createObjectURL(new Blob([JSON.stringify(payload, null, 2)], {type:"application/json"}));
+  link.href = URL.createObjectURL(
+    new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" }),
+  );
   link.download = (S.name || "character") + ".json";
   link.click();
   URL.revokeObjectURL(link.href);
@@ -263,10 +361,15 @@ document.addEventListener("change", (e) => {
   reader.onload = () => {
     try {
       const parsed = JSON.parse(reader.result);
-      const rawState = parsed && parsed.fileType === "heartwell-character" && parsed.state ? parsed.state : parsed;
+      const rawState =
+        parsed && parsed.fileType === "heartwell-character" && parsed.state
+          ? parsed.state
+          : parsed;
       S = normalizeState(rawState);
       render();
-    } catch { alert("Invalid character file"); }
+    } catch {
+      alert("Invalid character file");
+    }
   };
   reader.readAsText(e.target.files[0]);
 });

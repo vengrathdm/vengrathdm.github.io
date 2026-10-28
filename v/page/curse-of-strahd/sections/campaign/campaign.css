@@ -1,26 +1,265 @@
-.curse-of-strahd-page{margin:0;min-height:100vh;background:radial-gradient(circle at 75% 8%,#242b31 0,transparent 32%),radial-gradient(circle at 10% 70%,#1a171a 0,transparent 30%),var(--theme-base-1);color:var(--theme-text-1);font-family:var(--theme-font-2);line-height:1.6}.curse-of-strahd-page::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.14;background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,255,255,.025) 4px)}.curse-navbar-mount{position:fixed;inset:0 0 auto;z-index:1100}.curse-hero-kicker{color:var(--theme-accent-1);font:500 11px var(--theme-font-2);letter-spacing:.25em;text-transform:uppercase}.curse-hero-title-accent{font-family:var(--theme-font-3);font-style:italic;color:var(--theme-title-accent)}.curse-hero-lead{max-width:690px;color:var(--theme-text-2);font:23px/1.3 var(--theme-font-3)}.ddc-content{width:min(1220px,calc(100% - 48px));margin:auto;padding:70px 0 100px}.ddc-tab-panel[hidden]{display:none}.ddc-card{border:1px solid var(--theme-line-1);background:linear-gradient(145deg,#13161a,#0d0f12);box-shadow:0 20px 65px #0007}.ddc-card-title{display:flex;gap:18px;padding:18px 28px;border-bottom:1px solid #34373b;background:#0a0c0f}.ddc-card-title span{font:30px var(--theme-font-1);color:var(--theme-accent-1)}.ddc-card-title strong{font:700 12px var(--theme-font-1);letter-spacing:3px}.ddc-card-body{padding:28px}.ddc-intro-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:26px}.ddc-paper{position:relative;padding:40px;background:linear-gradient(135deg,#17191d,#101215);border:1px solid var(--theme-line-1)}.ddc-section-mark{font:13px var(--theme-font-1);letter-spacing:3px;color:var(--theme-accent-2)}.ddc-paper h2,.ddc-section h2,.ddc-party-copy h2{font:400 clamp(36px,4vw,58px)/.95 var(--theme-font-1);color:#ece7dc}.ddc-paper p{color:#aaa9a3;font:16px/1.6 var(--theme-font-3)}.ddc-case{padding:28px;background:#0d0f12;border:1px solid #46484b}.ddc-case-label{color:#b73b48;font:700 12px var(--theme-font-1);letter-spacing:3px;padding-bottom:12px}.ddc-case-row{display:flex;justify-content:space-between;gap:15px;padding:15px 0;border-bottom:1px solid #292c30;font-size:13px}.ddc-case-row span{color:#85827c;letter-spacing:1px}.ddc-case-row strong{font:16px var(--theme-font-1);color:#ddd7ca;text-align:right}.ddc-case-row .ddc-active{color:#b94a55}.ddc-party-portrait{margin-top:70px;display:grid;grid-template-columns:.55fr 1.45fr;border:1px solid #383b3f;background:#0e1013;overflow:hidden}.ddc-party-copy{padding:40px}.ddc-party-copy p,.ddc-section p{color:#92948f}.ddc-party-image{margin:0;min-height:300px}.ddc-party-image img{width:100%;height:100%;min-height:300px;object-fit:cover}.ddc-section{padding:25px 0}.ddc-section a{color:var(--theme-accent-2)}.ddc-footer{display:flex;justify-content:space-between;padding:24px 30px;background:#07080a;border-top:1px solid #2f3135;color:#6f726f}.ddc-footer a{color:#a99a7b;text-decoration:none}@media(max-width:800px){.ddc-intro-grid,.ddc-party-portrait{grid-template-columns:1fr}.ddc-content{width:calc(100% - 28px)}.ddc-paper{padding:25px}.ddc-footer{display:block}}
+.curse-of-strahd-page {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 75% 8%, #242b31 0, transparent 32%),
+    radial-gradient(circle at 10% 70%, #1a171a 0, transparent 30%),
+    var(--theme-base-1);
+  color: var(--theme-text-1);
+  font-family: var(--theme-font-2);
+  line-height: 1.6;
+}
+.curse-of-strahd-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 30;
+  opacity: 0.14;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 3px,
+    rgba(255, 255, 255, 0.025) 4px
+  );
+}
+.curse-navbar-mount {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1100;
+}
+.curse-hero-kicker {
+  color: var(--theme-accent-1);
+  font: 500 11px var(--theme-font-2);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+.curse-hero-title-accent {
+  font-family: var(--theme-font-3);
+  font-style: italic;
+  color: var(--theme-title-accent);
+}
+.curse-hero-lead {
+  max-width: 690px;
+  color: var(--theme-text-2);
+  font: 23px/1.3 var(--theme-font-3);
+}
+.ddc-content {
+  width: min(1220px, calc(100% - 48px));
+  margin: auto;
+  padding: 70px 0 100px;
+}
+.ddc-tab-panel[hidden] {
+  display: none;
+}
+.ddc-card {
+  border: 1px solid var(--theme-line-1);
+  background: linear-gradient(145deg, #13161a, #0d0f12);
+  box-shadow: 0 20px 65px #0007;
+}
+.ddc-card-title {
+  display: flex;
+  gap: 18px;
+  padding: 18px 28px;
+  border-bottom: 1px solid #34373b;
+  background: #0a0c0f;
+}
+.ddc-card-title span {
+  font: 30px var(--theme-font-1);
+  color: var(--theme-accent-1);
+}
+.ddc-card-title strong {
+  font: 700 12px var(--theme-font-1);
+  letter-spacing: 3px;
+}
+.ddc-card-body {
+  padding: 28px;
+}
+.ddc-intro-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 26px;
+}
+.ddc-paper {
+  position: relative;
+  padding: 40px;
+  background: linear-gradient(135deg, #17191d, #101215);
+  border: 1px solid var(--theme-line-1);
+}
+.ddc-section-mark {
+  font: 13px var(--theme-font-1);
+  letter-spacing: 3px;
+  color: var(--theme-accent-2);
+}
+.ddc-paper h2,
+.ddc-section h2,
+.ddc-party-copy h2 {
+  font: 400 clamp(36px, 4vw, 58px)/0.95 var(--theme-font-1);
+  color: #ece7dc;
+}
+.ddc-paper p {
+  color: #aaa9a3;
+  font: 16px/1.6 var(--theme-font-3);
+}
+.ddc-case {
+  padding: 28px;
+  background: #0d0f12;
+  border: 1px solid #46484b;
+}
+.ddc-case-label {
+  color: #b73b48;
+  font: 700 12px var(--theme-font-1);
+  letter-spacing: 3px;
+  padding-bottom: 12px;
+}
+.ddc-case-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #292c30;
+  font-size: 13px;
+}
+.ddc-case-row span {
+  color: #85827c;
+  letter-spacing: 1px;
+}
+.ddc-case-row strong {
+  font: 16px var(--theme-font-1);
+  color: #ddd7ca;
+  text-align: right;
+}
+.ddc-case-row .ddc-active {
+  color: #b94a55;
+}
+.ddc-party-portrait {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr;
+  border: 1px solid #383b3f;
+  background: #0e1013;
+  overflow: hidden;
+}
+.ddc-party-copy {
+  padding: 40px;
+}
+.ddc-party-copy p,
+.ddc-section p {
+  color: #92948f;
+}
+.ddc-party-image {
+  margin: 0;
+  min-height: 300px;
+}
+.ddc-party-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+}
+.ddc-section {
+  padding: 25px 0;
+}
+.ddc-section a {
+  color: var(--theme-accent-2);
+}
+.ddc-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 30px;
+  background: #07080a;
+  border-top: 1px solid #2f3135;
+  color: #6f726f;
+}
+.ddc-footer a {
+  color: #a99a7b;
+  text-decoration: none;
+}
+@media (max-width: 800px) {
+  .ddc-intro-grid,
+  .ddc-party-portrait {
+    grid-template-columns: 1fr;
+  }
+  .ddc-content {
+    width: calc(100% - 28px);
+  }
+  .ddc-paper {
+    padding: 25px;
+  }
+  .ddc-footer {
+    display: block;
+  }
+}
 
 /* Layout refinements and accessible responsive spacing. */
-.curse-of-strahd-page { overflow-x: clip; }
-.curse-of-strahd-page .subpage-hero__copy { gap: 1.35rem; }
-.curse-of-strahd-page .curse-hero-kicker { margin: 0; color: var(--theme-accent-2); }
-.curse-of-strahd-page .subpage-hero h1 { line-height: .98; text-shadow: 0 4px 28px #000b; }
-.curse-of-strahd-page .curse-hero-title-accent { display: inline-block; margin-top: .08em; }
-.curse-of-strahd-page .curse-hero-lead { margin: 0; text-shadow: 0 2px 12px #000; }
-.curse-of-strahd-page .ddc-content { position: relative; }
-.curse-of-strahd-page .ddc-paper h2 { margin: 12px 0 24px; }
-.curse-of-strahd-page .ddc-case-row strong { overflow-wrap: anywhere; }
-.curse-of-strahd-page .ddc-party-copy { display: flex; flex-direction: column; justify-content: center; }
-.curse-of-strahd-page .ddc-section a { text-underline-offset: .22em; }
-.curse-of-strahd-page .ddc-section a:hover, .curse-of-strahd-page .ddc-footer a:hover { color: var(--theme-text-1); }
-.curse-of-strahd-page .ddc-footer { gap: 16px; flex-wrap: wrap; }
+.curse-of-strahd-page {
+  overflow-x: clip;
+}
+.curse-of-strahd-page .subpage-hero__copy {
+  gap: 1.35rem;
+}
+.curse-of-strahd-page .curse-hero-kicker {
+  margin: 0;
+  color: var(--theme-accent-2);
+}
+.curse-of-strahd-page .subpage-hero h1 {
+  line-height: 0.98;
+  text-shadow: 0 4px 28px #000b;
+}
+.curse-of-strahd-page .curse-hero-title-accent {
+  display: inline-block;
+  margin-top: 0.08em;
+}
+.curse-of-strahd-page .curse-hero-lead {
+  margin: 0;
+  text-shadow: 0 2px 12px #000;
+}
+.curse-of-strahd-page .ddc-content {
+  position: relative;
+}
+.curse-of-strahd-page .ddc-paper h2 {
+  margin: 12px 0 24px;
+}
+.curse-of-strahd-page .ddc-case-row strong {
+  overflow-wrap: anywhere;
+}
+.curse-of-strahd-page .ddc-party-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.curse-of-strahd-page .ddc-section a {
+  text-underline-offset: 0.22em;
+}
+.curse-of-strahd-page .ddc-section a:hover,
+.curse-of-strahd-page .ddc-footer a:hover {
+  color: var(--theme-text-1);
+}
+.curse-of-strahd-page .ddc-footer {
+  gap: 16px;
+  flex-wrap: wrap;
+}
 @media (max-width: 800px) {
-  .curse-of-strahd-page .ddc-content { padding-top: 38px; padding-bottom: 64px; }
-  .curse-of-strahd-page .ddc-card-body { padding: 16px; }
-  .curse-of-strahd-page .ddc-party-portrait { margin-top: 36px; }
-  .curse-of-strahd-page .ddc-party-image, .curse-of-strahd-page .ddc-party-image img { min-height: 220px; }
-  .curse-of-strahd-page .curse-hero-lead { font-size: clamp(17px, 4vw, 22px); }
+  .curse-of-strahd-page .ddc-content {
+    padding-top: 38px;
+    padding-bottom: 64px;
+  }
+  .curse-of-strahd-page .ddc-card-body {
+    padding: 16px;
+  }
+  .curse-of-strahd-page .ddc-party-portrait {
+    margin-top: 36px;
+  }
+  .curse-of-strahd-page .ddc-party-image,
+  .curse-of-strahd-page .ddc-party-image img {
+    min-height: 220px;
+  }
+  .curse-of-strahd-page .curse-hero-lead {
+    font-size: clamp(17px, 4vw, 22px);
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .curse-of-strahd-page { scroll-behavior: auto; }
+  .curse-of-strahd-page {
+    scroll-behavior: auto;
+  }
 }

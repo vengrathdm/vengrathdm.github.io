@@ -1,1 +1,74 @@
-.voronoi-filters{display:flex;gap:.4rem;align-items:center;overflow-x:auto}.voronoi-filter{flex:0 0 auto;border:1px solid #41474a;border-radius:999px;padding:.45rem .75rem;background:transparent;color:#aeb3b5;font:.8rem "Fira Sans Extra Condensed",sans-serif;cursor:pointer}.voronoi-filter.is-active,.voronoi-filter:hover{background:#bca06a;color:#0b0d0e;border-color:#bca06a}.voronoi-viewport{position:relative;min-height:0;flex:1;overflow:auto;scrollbar-width:none;cursor:grab;touch-action:pan-x pan-y;overscroll-behavior:contain}.voronoi-viewport::-webkit-scrollbar{display:none}.voronoi-board{position:relative}.voronoi-shard{cursor:pointer}.voronoi-shard image{transition:filter .18s}.voronoi-shard:hover image{filter:brightness(1.12)}.voronoi-shard-title{fill:#fff;text-anchor:middle;font-family:"Fira Sans Extra Condensed",sans-serif;font-weight:600;paint-order:stroke;stroke:#080a0b99;stroke-width:2px}.voronoi-shard-tag{fill:#f0d99e;text-anchor:middle;font:600 11px "DM Mono",monospace;letter-spacing:.08em}.voronoi-shard-tint{fill:#080a0b30;pointer-events:none}.voronoi-error{padding:2rem;color:#ffb4b4}
+.voronoi-filters {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  overflow-x: auto;
+}
+.voronoi-filter {
+  flex: 0 0 auto;
+  border: 1px solid #41474a;
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  background: transparent;
+  color: #aeb3b5;
+  font:
+    0.8rem "Fira Sans Extra Condensed",
+    sans-serif;
+  cursor: pointer;
+}
+.voronoi-filter.is-active,
+.voronoi-filter:hover {
+  background: #bca06a;
+  color: #0b0d0e;
+  border-color: #bca06a;
+}
+.voronoi-viewport {
+  position: relative;
+  min-height: 0;
+  flex: 1;
+  overflow: auto;
+  scrollbar-width: none;
+  cursor: grab;
+  touch-action: pan-x pan-y;
+  overscroll-behavior: contain;
+}
+.voronoi-viewport::-webkit-scrollbar {
+  display: none;
+}
+.voronoi-board {
+  position: relative;
+}
+.voronoi-shard {
+  cursor: pointer;
+}
+.voronoi-shard image {
+  transition: filter 0.18s;
+}
+.voronoi-shard:hover image {
+  filter: brightness(1.12);
+}
+.voronoi-shard-title {
+  fill: #fff;
+  text-anchor: middle;
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: #080a0b99;
+  stroke-width: 2px;
+}
+.voronoi-shard-tag {
+  fill: #f0d99e;
+  text-anchor: middle;
+  font:
+    600 11px "DM Mono",
+    monospace;
+  letter-spacing: 0.08em;
+}
+.voronoi-shard-tint {
+  fill: #080a0b30;
+  pointer-events: none;
+}
+.voronoi-error {
+  padding: 2rem;
+  color: #ffb4b4;
+}

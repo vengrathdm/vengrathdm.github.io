@@ -1,204 +1,887 @@
-:root{
-  --void:#07151d; --deep:#0d1f28; --ridge:#284550;
-  --faer:#d0b276; --faer-dim:#987b48; --spore:#8cc9c5;
-  --blood:#bf715d; --bone:#edf2ed; --mist:#a2b9b9;
-  --display:"Cinzel Decorative","Palatino Linotype",serif;
-  --body:"Cormorant Garamond",Georgia,serif;
+:root {
+  --void: #07151d;
+  --deep: #0d1f28;
+  --ridge: #284550;
+  --faer: #d0b276;
+  --faer-dim: #987b48;
+  --spore: #8cc9c5;
+  --blood: #bf715d;
+  --bone: #edf2ed;
+  --mist: #a2b9b9;
+  --display: "Cinzel Decorative", "Palatino Linotype", serif;
+  --body: "Cormorant Garamond", Georgia, serif;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--void);color:var(--bone);font:400 1.08rem/1.7 var(--body)}
-:focus-visible{outline:2px solid var(--spore);outline-offset:3px}
-h1,h2,h3{font-family:var(--display);margin:0;font-weight:700;line-height:.95}
-a{color:inherit}
-code{color:var(--spore);font-size:.9em}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--void);
+  color: var(--bone);
+  font: 400 1.08rem/1.7 var(--body);
+}
+:focus-visible {
+  outline: 2px solid var(--spore);
+  outline-offset: 3px;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  margin: 0;
+  font-weight: 700;
+  line-height: 0.95;
+}
+a {
+  color: inherit;
+}
+code {
+  color: var(--spore);
+  font-size: 0.9em;
+}
 
 /* depth gauge */
-.gauge{position:fixed;left:0;top:0;bottom:0;width:150px;z-index:10;padding:1.5rem 1rem;
-  display:flex;flex-direction:column;justify-content:space-between;
-  border-right:1px solid var(--ridge);background:linear-gradient(90deg,var(--void),transparent)}
-.gauge .home{font-family:var(--display);font-size:1.3rem;text-decoration:none;color:var(--mist)}
-.gauge ol{list-style:none;margin:0;padding:0 0 0 14px;border-left:2px solid var(--ridge);display:grid;gap:2.2rem}
-.gauge li a{position:relative;text-decoration:none;color:var(--mist);font-size:.95rem}
-.gauge li a::before{content:"";position:absolute;left:-19px;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--ridge);transition:.3s}
-.gauge li a.on{color:var(--bone)}
-.gauge li a.on::before{background:var(--faer);box-shadow:0 0 12px var(--faer)}
-.depth b{display:block;font:700 2.4rem/1 var(--display);color:var(--spore)}
-.depth span{font-size:.8rem;color:var(--mist)}
+.gauge {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  z-index: 10;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid var(--ridge);
+  background: linear-gradient(90deg, var(--void), transparent);
+}
+.gauge .home {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: var(--mist);
+}
+.gauge ol {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 14px;
+  border-left: 2px solid var(--ridge);
+  display: grid;
+  gap: 2.2rem;
+}
+.gauge li a {
+  position: relative;
+  text-decoration: none;
+  color: var(--mist);
+  font-size: 0.95rem;
+}
+.gauge li a::before {
+  content: "";
+  position: absolute;
+  left: -19px;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ridge);
+  transition: 0.3s;
+}
+.gauge li a.on {
+  color: var(--bone);
+}
+.gauge li a.on::before {
+  background: var(--faer);
+  box-shadow: 0 0 12px var(--faer);
+}
+.depth b {
+  display: block;
+  font: 700 2.4rem/1 var(--display);
+  color: var(--spore);
+}
+.depth span {
+  font-size: 0.8rem;
+  color: var(--mist);
+}
 
-main,header,footer{margin-left:150px}
+main,
+header,
+footer {
+  margin-left: 150px;
+}
 
 /* hero */
-.hero::before{content:"";position:absolute;inset:0;background:
-  linear-gradient(0deg,rgba(7,21,29,.97) 0%,rgba(7,21,29,.7) 37%,rgba(7,21,29,.18) 100%),
-  linear-gradient(90deg,rgba(7,21,29,.64),transparent 85%),
-  url("/v/page/raiders-of-the-serpent-sea/res/graphics/hero-image.webp") center 45%/cover no-repeat;z-index:0}
-.glow{z-index:1;pointer-events:none}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      0deg,
+      rgba(7, 21, 29, 0.97) 0%,
+      rgba(7, 21, 29, 0.7) 37%,
+      rgba(7, 21, 29, 0.18) 100%
+    ),
+    linear-gradient(90deg, rgba(7, 21, 29, 0.64), transparent 85%),
+    url("/v/page/raiders-of-the-serpent-sea/res/graphics/hero-image.webp")
+      center 45% / cover no-repeat;
+  z-index: 0;
+}
+.glow {
+  z-index: 1;
+  pointer-events: none;
+}
 
-.hero{min-height:100svh;padding:12vh 6vw 8vh;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
-.glow{position:absolute;inset:-20%;background:
-  radial-gradient(40% 35% at 70% 30%,rgba(208,178,118,.25),transparent 70%),
-  radial-gradient(30% 30% at 25% 75%,rgba(140,201,197,.22),transparent 70%);
-  animation:drift 18s ease-in-out infinite alternate}
-@keyframes drift{to{transform:translate(-4%,5%) scale(1.1)}}
-.hero>*:not(.glow){position:relative}
-.lead-in{color:var(--spore);margin:0 0 1rem;font-style:italic}
-.hero h1{font-size:clamp(4.5rem,15vw,12rem);font-weight:900;letter-spacing:-.02em;text-shadow:0 0 60px rgba(208,178,118,.28)}
-.sub{max-width:34rem;color:var(--mist);margin:1.8rem 0}
-.descend{align-self:flex-start;padding:.75rem 1.6rem;border:1px solid var(--faer);text-decoration:none;
-  clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%);transition:.25s}
-.descend:hover{background:var(--faer);color:var(--void)}
+.hero {
+  min-height: 100svh;
+  padding: 12vh 6vw 8vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.glow {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(
+      40% 35% at 70% 30%,
+      rgba(208, 178, 118, 0.25),
+      transparent 70%
+    ),
+    radial-gradient(
+      30% 30% at 25% 75%,
+      rgba(140, 201, 197, 0.22),
+      transparent 70%
+    );
+  animation: drift 18s ease-in-out infinite alternate;
+}
+@keyframes drift {
+  to {
+    transform: translate(-4%, 5%) scale(1.1);
+  }
+}
+.hero > *:not(.glow) {
+  position: relative;
+}
+.lead-in {
+  color: var(--spore);
+  margin: 0 0 1rem;
+  font-style: italic;
+}
+.hero h1 {
+  font-size: clamp(4.5rem, 15vw, 12rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 60px rgba(208, 178, 118, 0.28);
+}
+.sub {
+  max-width: 34rem;
+  color: var(--mist);
+  margin: 1.8rem 0;
+}
+.descend {
+  align-self: flex-start;
+  padding: 0.75rem 1.6rem;
+  border: 1px solid var(--faer);
+  text-decoration: none;
+  clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+  transition: 0.25s;
+}
+.descend:hover {
+  background: var(--faer);
+  color: var(--void);
+}
 
 /* web section */
-.web-sec{display:grid;grid-template-columns:minmax(18rem,26rem) 1fr;gap:3vw;align-items:center;padding:12vh 5vw;
-  background:linear-gradient(var(--void),var(--deep))}
-h2{font-size:clamp(2.4rem,5vw,4rem)}
-.web-intro p{color:var(--mist)}
-.legend{display:flex;gap:1.5rem;font-size:.9rem;margin:1rem 0 1.5rem}
-.legend span::before{content:"";display:inline-block;width:26px;border-top:2px solid;margin-right:.5rem;vertical-align:middle}
-.l-ally{color:var(--spore)} .l-feud{color:var(--blood)} .l-feud::before{border-top-style:dashed!important}
-.faction-card{border-left:3px solid var(--faer);padding:.2rem 0 .2rem 1.2rem;min-height:15rem}
-.faction-card h3{font-size:2.2rem;margin-bottom:.3rem}
-.faction-card .motto{font-style:italic;color:var(--faer);margin:0 0 .8rem}
-.faction-card dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.2rem 1rem;font-size:.98rem}
-.faction-card dt{color:var(--mist)} .faction-card dd{margin:0}
-.secret{margin-top:1rem;background:none;border:1px dashed var(--mist);color:var(--bone);font:inherit;padding:.4rem .9rem;cursor:pointer}
-.secret:hover{border-color:var(--spore);color:var(--spore)}
-.secret-text{margin:.8rem 0 0;color:var(--spore)}
-#web-svg{width:100%;max-height:82vh;overflow:visible}
-.strand{fill:none;stroke:var(--ridge);stroke-width:1.2}
-.link{fill:none;stroke-width:2.4;opacity:0;transition:opacity .4s}
-.link.show{opacity:1} .link.ally{stroke:var(--spore)} .link.feud{stroke:var(--blood);stroke-dasharray:7 6}
-.node{cursor:pointer}
-.node circle{fill:var(--deep);stroke:var(--faer-dim);stroke-width:2;transition:.25s}
-.node text{fill:var(--bone);font:700 15px var(--display);text-anchor:middle;pointer-events:none}
-.node:hover circle,.node:focus-visible circle{stroke:var(--faer)}
-.node.sel circle{fill:var(--faer-dim);stroke:var(--faer);filter:drop-shadow(0 0 14px var(--faer))}
-.node.rel circle{stroke:var(--spore)}
-.node.foe circle{stroke:var(--blood)}
-.node:focus-visible{outline:none}
+.web-sec {
+  display: grid;
+  grid-template-columns: minmax(18rem, 26rem) 1fr;
+  gap: 3vw;
+  align-items: center;
+  padding: 12vh 5vw;
+  background: linear-gradient(var(--void), var(--deep));
+}
+h2 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+.web-intro p {
+  color: var(--mist);
+}
+.legend {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  margin: 1rem 0 1.5rem;
+}
+.legend span::before {
+  content: "";
+  display: inline-block;
+  width: 26px;
+  border-top: 2px solid;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+.l-ally {
+  color: var(--spore);
+}
+.l-feud {
+  color: var(--blood);
+}
+.l-feud::before {
+  border-top-style: dashed !important;
+}
+.faction-card {
+  border-left: 3px solid var(--faer);
+  padding: 0.2rem 0 0.2rem 1.2rem;
+  min-height: 15rem;
+}
+.faction-card h3 {
+  font-size: 2.2rem;
+  margin-bottom: 0.3rem;
+}
+.faction-card .motto {
+  font-style: italic;
+  color: var(--faer);
+  margin: 0 0 0.8rem;
+}
+.faction-card dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.2rem 1rem;
+  font-size: 0.98rem;
+}
+.faction-card dt {
+  color: var(--mist);
+}
+.faction-card dd {
+  margin: 0;
+}
+.secret {
+  margin-top: 1rem;
+  background: none;
+  border: 1px dashed var(--mist);
+  color: var(--bone);
+  font: inherit;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+}
+.secret:hover {
+  border-color: var(--spore);
+  color: var(--spore);
+}
+.secret-text {
+  margin: 0.8rem 0 0;
+  color: var(--spore);
+}
+#web-svg {
+  width: 100%;
+  max-height: 82vh;
+  overflow: visible;
+}
+.strand {
+  fill: none;
+  stroke: var(--ridge);
+  stroke-width: 1.2;
+}
+.link {
+  fill: none;
+  stroke-width: 2.4;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.link.show {
+  opacity: 1;
+}
+.link.ally {
+  stroke: var(--spore);
+}
+.link.feud {
+  stroke: var(--blood);
+  stroke-dasharray: 7 6;
+}
+.node {
+  cursor: pointer;
+}
+.node circle {
+  fill: var(--deep);
+  stroke: var(--faer-dim);
+  stroke-width: 2;
+  transition: 0.25s;
+}
+.node text {
+  fill: var(--bone);
+  font: 700 15px var(--display);
+  text-anchor: middle;
+  pointer-events: none;
+}
+.node:hover circle,
+.node:focus-visible circle {
+  stroke: var(--faer);
+}
+.node.sel circle {
+  fill: var(--faer-dim);
+  stroke: var(--faer);
+  filter: drop-shadow(0 0 14px var(--faer));
+}
+.node.rel circle {
+  stroke: var(--spore);
+}
+.node.foe circle {
+  stroke: var(--blood);
+}
+.node:focus-visible {
+  outline: none;
+}
 
 /* party */
-.party,.chron{padding:12vh 5vw;max-width:62rem}
-.note{color:var(--mist);font-size:.9rem}
-#roster{list-style:none;margin:2.5rem 0 0;padding:0}
-#roster li{display:grid;grid-template-columns:4.5rem 1fr auto;gap:1.5rem;align-items:center;padding:1.4rem 0;border-top:1px solid var(--ridge)}
-#roster li:last-child{border-bottom:1px solid var(--ridge)}
-.sigil{width:4.5rem;height:4.5rem;display:grid;place-items:center;font:900 2rem var(--display);
-  background:var(--deep);clip-path:polygon(50% 0,100% 30%,85% 100%,15% 100%,0 30%);color:var(--faer)}
-#roster h3{font-size:1.8rem}
-#roster p{margin:.2rem 0 0;color:var(--mist);font-size:.98rem}
-.status{font-size:.9rem;color:var(--spore);border:1px solid currentColor;padding:.15rem .8rem;border-radius:99px}
-.status.dead{color:var(--blood)}
+.party,
+.chron {
+  padding: 12vh 5vw;
+  max-width: 62rem;
+}
+.note {
+  color: var(--mist);
+  font-size: 0.9rem;
+}
+#roster {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+}
+#roster li {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--ridge);
+}
+#roster li:last-child {
+  border-bottom: 1px solid var(--ridge);
+}
+.sigil {
+  width: 4.5rem;
+  height: 4.5rem;
+  display: grid;
+  place-items: center;
+  font: 900 2rem var(--display);
+  background: var(--deep);
+  clip-path: polygon(50% 0, 100% 30%, 85% 100%, 15% 100%, 0 30%);
+  color: var(--faer);
+}
+#roster h3 {
+  font-size: 1.8rem;
+}
+#roster p {
+  margin: 0.2rem 0 0;
+  color: var(--mist);
+  font-size: 0.98rem;
+}
+.status {
+  font-size: 0.9rem;
+  color: var(--spore);
+  border: 1px solid currentColor;
+  padding: 0.15rem 0.8rem;
+  border-radius: 99px;
+}
+.status.dead {
+  color: var(--blood);
+}
 
 /* chronicle */
-details{border-top:1px solid var(--ridge);padding:1.1rem 0}
-details:last-child{border-bottom:1px solid var(--ridge)}
-summary{cursor:pointer;display:flex;gap:1.2rem;align-items:baseline;list-style:none;font:700 1.7rem var(--display)}
-summary::-webkit-details-marker{display:none}
-summary small{font:400 .9rem var(--body);color:var(--mist);min-width:6.5rem}
-summary::after{content:"+";margin-left:auto;color:var(--faer);transition:transform .25s}
-details[open] summary::after{transform:rotate(45deg)}
-details p{margin:.9rem 0 0;max-width:42rem;color:var(--mist)}
-footer{display:flex;justify-content:space-between;padding:2rem 5vw;border-top:1px solid var(--ridge);color:var(--mist);font-size:.9rem}
-
-@media(max-width:860px){
-  main,header,footer{margin-left:0}
-  .gauge{position:sticky;width:auto;height:auto;flex-direction:row;align-items:center;padding:.7rem 1rem;background:var(--void);border:0;border-bottom:1px solid var(--ridge)}
-  .gauge .home,.depth span{display:none}
-  .gauge ol{display:flex;gap:1rem;border:0;padding:0}.gauge li a::before{display:none}
-  .depth b{font-size:1.2rem}
-  .web-sec{grid-template-columns:1fr}
-  #roster li{grid-template-columns:3.5rem 1fr}.status{grid-column:2;justify-self:start}
+details {
+  border-top: 1px solid var(--ridge);
+  padding: 1.1rem 0;
 }
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+details:last-child {
+  border-bottom: 1px solid var(--ridge);
+}
+summary {
+  cursor: pointer;
+  display: flex;
+  gap: 1.2rem;
+  align-items: baseline;
+  list-style: none;
+  font: 700 1.7rem var(--display);
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary small {
+  font: 400 0.9rem var(--body);
+  color: var(--mist);
+  min-width: 6.5rem;
+}
+summary::after {
+  content: "+";
+  margin-left: auto;
+  color: var(--faer);
+  transition: transform 0.25s;
+}
+details[open] summary::after {
+  transform: rotate(45deg);
+}
+details p {
+  margin: 0.9rem 0 0;
+  max-width: 42rem;
+  color: var(--mist);
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 5vw;
+  border-top: 1px solid var(--ridge);
+  color: var(--mist);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 860px) {
+  main,
+  header,
+  footer {
+    margin-left: 0;
+  }
+  .gauge {
+    position: sticky;
+    width: auto;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    background: var(--void);
+    border: 0;
+    border-bottom: 1px solid var(--ridge);
+  }
+  .gauge .home,
+  .depth span {
+    display: none;
+  }
+  .gauge ol {
+    display: flex;
+    gap: 1rem;
+    border: 0;
+    padding: 0;
+  }
+  .gauge li a::before {
+    display: none;
+  }
+  .depth b {
+    font-size: 1.2rem;
+  }
+  .web-sec {
+    grid-template-columns: 1fr;
+  }
+  #roster li {
+    grid-template-columns: 3.5rem 1fr;
+  }
+  .status {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
 
 /* Single-panel navigation */
-[hidden]{display:none!important}
+[hidden] {
+  display: none !important;
+}
 
 /* Character portraits in the campaign roster */
-.party-portrait{width:4.5rem;height:5.5rem;object-fit:cover;object-position:center top;border:1px solid var(--faer-dim);background:var(--deep);clip-path:polygon(12% 0,88% 0,100% 12%,100% 88%,88% 100%,12% 100%,0 88%,0 12%)}
-#roster .party-meta{color:var(--spore);font-size:.9rem}
-#roster .party-player{font-size:.85rem;font-style:italic}
-@media(max-width:860px){#roster li{grid-template-columns:3.5rem 1fr}.party-portrait{width:3.5rem;height:4.5rem}}
+.party-portrait {
+  width: 4.5rem;
+  height: 5.5rem;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid var(--faer-dim);
+  background: var(--deep);
+  clip-path: polygon(
+    12% 0,
+    88% 0,
+    100% 12%,
+    100% 88%,
+    88% 100%,
+    12% 100%,
+    0 88%,
+    0 12%
+  );
+}
+#roster .party-meta {
+  color: var(--spore);
+  font-size: 0.9rem;
+}
+#roster .party-player {
+  font-size: 0.85rem;
+  font-style: italic;
+}
+@media (max-width: 860px) {
+  #roster li {
+    grid-template-columns: 3.5rem 1fr;
+  }
+  .party-portrait {
+    width: 3.5rem;
+    height: 4.5rem;
+  }
+}
 
-.character-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:2rem}
-.character-grid .character-card{background:var(--deep);border-color:var(--ridge);color:var(--bone);font-family:var(--body)}
-.character-grid .character-card:hover,.character-grid .character-card:focus-visible{border-color:var(--faer);box-shadow:0 0 20px #d0b27622}
-.character-grid .character-card__portrait{background:var(--void)}
-.character-grid .character-card__portrait::after{border-color:#d0b27688;background:linear-gradient(135deg,#d0b27615,transparent 25%,transparent 75%,#8cc9c415)}
-.character-grid .character-card__status{font-family:var(--body);color:var(--spore);text-transform:none}
-.character-grid .character-card__player{color:var(--spore)}
-.character-grid .character-card__label,.character-grid .character-card__achievement-count{color:var(--mist)}
-.character-grid .character-card__achievement-count{border-color:var(--ridge)}
-.character-grid .character-card h3{font-family:var(--display);font-size:1.5rem}
-.raiders-character-dialog{position:relative;width:min(850px,calc(100% - 2rem));max-height:85vh;overflow:auto;border:1px solid var(--faer-dim);background:var(--deep);color:var(--bone);padding:2rem}
-.raiders-character-dialog::backdrop{background:#05030acc;backdrop-filter:blur(5px)}
-.raiders-character-dialog #characterDialogContent{display:grid;grid-template-columns:minmax(180px,280px) 1fr;gap:2rem}
-.raiders-dialog-portrait img{display:block;width:100%;border:1px solid var(--faer-dim)}
-.raiders-character-dialog h2{margin:.5rem 0 1rem}
-.raiders-character-dialog dl{display:grid;grid-template-columns:6rem 1fr;gap:.4rem 1rem}
-.raiders-character-dialog dt{color:var(--spore)}.raiders-character-dialog dd{margin:0;overflow-wrap:anywhere}
-.dialog-close{position:sticky;top:0;float:right;background:none;border:1px solid var(--faer-dim);color:var(--bone);font-size:1.5rem;cursor:pointer}
-@media(max-width:1000px){.character-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:520px){.character-grid{grid-template-columns:1fr}.raiders-character-dialog #characterDialogContent{grid-template-columns:1fr}.raiders-dialog-portrait img{max-width:240px}}
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.character-grid .character-card {
+  background: var(--deep);
+  border-color: var(--ridge);
+  color: var(--bone);
+  font-family: var(--body);
+}
+.character-grid .character-card:hover,
+.character-grid .character-card:focus-visible {
+  border-color: var(--faer);
+  box-shadow: 0 0 20px #d0b27622;
+}
+.character-grid .character-card__portrait {
+  background: var(--void);
+}
+.character-grid .character-card__portrait::after {
+  border-color: #d0b27688;
+  background: linear-gradient(
+    135deg,
+    #d0b27615,
+    transparent 25%,
+    transparent 75%,
+    #8cc9c415
+  );
+}
+.character-grid .character-card__status {
+  font-family: var(--body);
+  color: var(--spore);
+  text-transform: none;
+}
+.character-grid .character-card__player {
+  color: var(--spore);
+}
+.character-grid .character-card__label,
+.character-grid .character-card__achievement-count {
+  color: var(--mist);
+}
+.character-grid .character-card__achievement-count {
+  border-color: var(--ridge);
+}
+.character-grid .character-card h3 {
+  font-family: var(--display);
+  font-size: 1.5rem;
+}
+.raiders-character-dialog {
+  position: relative;
+  width: min(850px, calc(100% - 2rem));
+  max-height: 85vh;
+  overflow: auto;
+  border: 1px solid var(--faer-dim);
+  background: var(--deep);
+  color: var(--bone);
+  padding: 2rem;
+}
+.raiders-character-dialog::backdrop {
+  background: #05030acc;
+  backdrop-filter: blur(5px);
+}
+.raiders-character-dialog #characterDialogContent {
+  display: grid;
+  grid-template-columns: minmax(180px, 280px) 1fr;
+  gap: 2rem;
+}
+.raiders-dialog-portrait img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--faer-dim);
+}
+.raiders-character-dialog h2 {
+  margin: 0.5rem 0 1rem;
+}
+.raiders-character-dialog dl {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 0.4rem 1rem;
+}
+.raiders-character-dialog dt {
+  color: var(--spore);
+}
+.raiders-character-dialog dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.dialog-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  background: none;
+  border: 1px solid var(--faer-dim);
+  color: var(--bone);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+@media (max-width: 1000px) {
+  .character-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 520px) {
+  .character-grid {
+    grid-template-columns: 1fr;
+  }
+  .raiders-character-dialog #characterDialogContent {
+    grid-template-columns: 1fr;
+  }
+  .raiders-dialog-portrait img {
+    max-width: 240px;
+  }
+}
 
 /* Raiders of the Serpent Sea: salt, iron, stormglass and aged brass */
-body{background-image:radial-gradient(ellipse at 75% 0%,#24434a30,transparent 48%),linear-gradient(180deg,var(--void),#091a22 65%,var(--void))}
-.gauge{border-right-color:#34535a;background:linear-gradient(90deg,#07151df5,#07151ddd 80%,#07151d88)}
-.gauge .home{color:#cbdad8;letter-spacing:.04em}
-.gauge ol{border-left-color:#34535a}
-.gauge li a.on::before{box-shadow:0 0 12px #d0b276}
-.hero{isolation:isolate}
-.hero::before{background:
-  linear-gradient(0deg,rgba(7,21,29,.98) 0%,rgba(7,21,29,.76) 36%,rgba(7,21,29,.16) 100%),
-  linear-gradient(90deg,rgba(7,21,29,.68),transparent 88%),
-  url("/v/page/raiders-of-the-serpent-sea/res/graphics/hero-image.webp") center 45%/cover no-repeat}
-.hero h1{color:#f0eadc;letter-spacing:.005em;text-shadow:0 4px 26px #07151dcc,0 0 60px #d0b27630}
-.lead-in{letter-spacing:.12em;text-transform:uppercase}
-.descend{border-color:var(--faer);color:var(--bone);letter-spacing:.04em}
-.descend:hover{background:var(--faer);color:#07151d}
-.web-sec{position:relative;background:
-  radial-gradient(ellipse at 80% 50%,#1f414930,transparent 55%),
-  linear-gradient(var(--void),var(--deep))}
-.web-sec::before,.party::before,.chron::before{content:"";display:block;width:5rem;height:2px;margin-bottom:1.25rem;background:linear-gradient(90deg,var(--faer),transparent)}
-h1,h2,h3,summary{font-kerning:normal}
-h2{letter-spacing:.015em;text-shadow:0 2px 20px #8cc9c510}
-.legend .l-ally{color:var(--spore)}.legend .l-feud{color:var(--blood)}
-.faction-card{border-left-color:var(--faer)}
-.faction-card .motto{color:var(--faer)}
-.secret{border-color:#8ca9a880}
-.secret:hover{border-color:var(--spore);color:var(--spore)}
-.strand{stroke:#284550;stroke-opacity:.85}
-.link.ally{stroke:#8cc9c5}.link.feud{stroke:#bf715d}
-.node circle{fill:#0d1f28;stroke:#987b48}
-.node:hover circle,.node:focus-visible circle{stroke:#d0b276}
-.node.sel circle{fill:#46503e;stroke:#d0b276;filter:drop-shadow(0 0 12px #d0b27655)}
-.node.rel circle{stroke:#8cc9c5}.node.foe circle{stroke:#bf715d}
-#roster .character-card{box-shadow:inset 0 0 0 1px #ffffff03}
-.character-grid .character-card{background:linear-gradient(155deg,#122832,#0b1a22 70%);border-color:#34535a}
-.character-grid .character-card:hover,.character-grid .character-card:focus-visible{border-color:var(--faer);box-shadow:0 0 20px #d0b27620}
-.character-grid .character-card__portrait::after{border-color:#d0b27688;background:linear-gradient(135deg,#d0b27617,transparent 25%,transparent 75%,#8cc9c417)}
-.character-grid .character-card__status{color:var(--spore);border-color:#8cc9c580}
-.character-grid .character-card__player{color:var(--faer)}
-.character-grid .character-card__label,.character-grid .character-card__achievement-count{color:var(--mist)}
-.character-grid .character-card__achievement-count{border-color:var(--ridge)}
-.raiders-character-dialog{box-shadow:0 25px 100px #0009;background:linear-gradient(145deg,#102630,#0b1a22)}
-.raiders-character-dialog::backdrop{background:#02090de0;backdrop-filter:blur(6px)}
-.raiders-dialog-portrait img{border-color:var(--faer-dim)}
-.raiders-character-dialog dt{color:var(--spore)}
-#sessions details{border-color:var(--ridge)}
-summary::after{color:var(--faer)}
-footer{border-color:var(--ridge);background:#07151d;color:var(--mist)}
-@media(prefers-reduced-motion:reduce){.glow{animation:none!important}}
+body {
+  background-image:
+    radial-gradient(ellipse at 75% 0%, #24434a30, transparent 48%),
+    linear-gradient(180deg, var(--void), #091a22 65%, var(--void));
+}
+.gauge {
+  border-right-color: #34535a;
+  background: linear-gradient(90deg, #07151df5, #07151ddd 80%, #07151d88);
+}
+.gauge .home {
+  color: #cbdad8;
+  letter-spacing: 0.04em;
+}
+.gauge ol {
+  border-left-color: #34535a;
+}
+.gauge li a.on::before {
+  box-shadow: 0 0 12px #d0b276;
+}
+.hero {
+  isolation: isolate;
+}
+.hero::before {
+  background:
+    linear-gradient(
+      0deg,
+      rgba(7, 21, 29, 0.98) 0%,
+      rgba(7, 21, 29, 0.76) 36%,
+      rgba(7, 21, 29, 0.16) 100%
+    ),
+    linear-gradient(90deg, rgba(7, 21, 29, 0.68), transparent 88%),
+    url("/v/page/raiders-of-the-serpent-sea/res/graphics/hero-image.webp")
+      center 45% / cover no-repeat;
+}
+.hero h1 {
+  color: #f0eadc;
+  letter-spacing: 0.005em;
+  text-shadow:
+    0 4px 26px #07151dcc,
+    0 0 60px #d0b27630;
+}
+.lead-in {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.descend {
+  border-color: var(--faer);
+  color: var(--bone);
+  letter-spacing: 0.04em;
+}
+.descend:hover {
+  background: var(--faer);
+  color: #07151d;
+}
+.web-sec {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 80% 50%, #1f414930, transparent 55%),
+    linear-gradient(var(--void), var(--deep));
+}
+.web-sec::before,
+.party::before,
+.chron::before {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 2px;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(90deg, var(--faer), transparent);
+}
+h1,
+h2,
+h3,
+summary {
+  font-kerning: normal;
+}
+h2 {
+  letter-spacing: 0.015em;
+  text-shadow: 0 2px 20px #8cc9c510;
+}
+.legend .l-ally {
+  color: var(--spore);
+}
+.legend .l-feud {
+  color: var(--blood);
+}
+.faction-card {
+  border-left-color: var(--faer);
+}
+.faction-card .motto {
+  color: var(--faer);
+}
+.secret {
+  border-color: #8ca9a880;
+}
+.secret:hover {
+  border-color: var(--spore);
+  color: var(--spore);
+}
+.strand {
+  stroke: #284550;
+  stroke-opacity: 0.85;
+}
+.link.ally {
+  stroke: #8cc9c5;
+}
+.link.feud {
+  stroke: #bf715d;
+}
+.node circle {
+  fill: #0d1f28;
+  stroke: #987b48;
+}
+.node:hover circle,
+.node:focus-visible circle {
+  stroke: #d0b276;
+}
+.node.sel circle {
+  fill: #46503e;
+  stroke: #d0b276;
+  filter: drop-shadow(0 0 12px #d0b27655);
+}
+.node.rel circle {
+  stroke: #8cc9c5;
+}
+.node.foe circle {
+  stroke: #bf715d;
+}
+#roster .character-card {
+  box-shadow: inset 0 0 0 1px #ffffff03;
+}
+.character-grid .character-card {
+  background: linear-gradient(155deg, #122832, #0b1a22 70%);
+  border-color: #34535a;
+}
+.character-grid .character-card:hover,
+.character-grid .character-card:focus-visible {
+  border-color: var(--faer);
+  box-shadow: 0 0 20px #d0b27620;
+}
+.character-grid .character-card__portrait::after {
+  border-color: #d0b27688;
+  background: linear-gradient(
+    135deg,
+    #d0b27617,
+    transparent 25%,
+    transparent 75%,
+    #8cc9c417
+  );
+}
+.character-grid .character-card__status {
+  color: var(--spore);
+  border-color: #8cc9c580;
+}
+.character-grid .character-card__player {
+  color: var(--faer);
+}
+.character-grid .character-card__label,
+.character-grid .character-card__achievement-count {
+  color: var(--mist);
+}
+.character-grid .character-card__achievement-count {
+  border-color: var(--ridge);
+}
+.raiders-character-dialog {
+  box-shadow: 0 25px 100px #0009;
+  background: linear-gradient(145deg, #102630, #0b1a22);
+}
+.raiders-character-dialog::backdrop {
+  background: #02090de0;
+  backdrop-filter: blur(6px);
+}
+.raiders-dialog-portrait img {
+  border-color: var(--faer-dim);
+}
+.raiders-character-dialog dt {
+  color: var(--spore);
+}
+#sessions details {
+  border-color: var(--ridge);
+}
+summary::after {
+  color: var(--faer);
+}
+footer {
+  border-color: var(--ridge);
+  background: #07151d;
+  color: var(--mist);
+}
+@media (prefers-reduced-motion: reduce) {
+  .glow {
+    animation: none !important;
+  }
+}
 
 /* Keep the longer campaign title balanced on laptop and mobile widths. */
-.hero h1{font-size:clamp(2.45rem,9.8vw,10rem);line-height:.98;overflow-wrap:normal}
-.character-grid .character-card__body{font-family:var(--body)}
-.character-grid .character-card__row{font-family:var(--body);font-size:.95rem}
-.character-grid .character-card__label{font-family:var(--body);font-size:.8rem;letter-spacing:.08em}
-.character-grid .character-card__achievement-count{font-family:var(--body);font-size:.85rem}
-.raiders-character-dialog h2{font-family:var(--display)}
-.raiders-character-dialog dl{font-size:1.05rem}
-@media(max-width:860px){.hero h1{font-size:clamp(2.6rem,11vw,7rem)}}
-@media(max-width:520px){.hero h1{font-size:clamp(2.35rem,11vw,4.4rem)}}
+.hero h1 {
+  font-size: clamp(2.45rem, 9.8vw, 10rem);
+  line-height: 0.98;
+  overflow-wrap: normal;
+}
+.character-grid .character-card__body {
+  font-family: var(--body);
+}
+.character-grid .character-card__row {
+  font-family: var(--body);
+  font-size: 0.95rem;
+}
+.character-grid .character-card__label {
+  font-family: var(--body);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+.character-grid .character-card__achievement-count {
+  font-family: var(--body);
+  font-size: 0.85rem;
+}
+.raiders-character-dialog h2 {
+  font-family: var(--display);
+}
+.raiders-character-dialog dl {
+  font-size: 1.05rem;
+}
+@media (max-width: 860px) {
+  .hero h1 {
+    font-size: clamp(2.6rem, 11vw, 7rem);
+  }
+}
+@media (max-width: 520px) {
+  .hero h1 {
+    font-size: clamp(2.35rem, 11vw, 4.4rem);
+  }
+}

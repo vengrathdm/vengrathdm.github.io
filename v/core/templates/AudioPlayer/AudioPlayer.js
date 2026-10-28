@@ -8,19 +8,21 @@ export class AudioPlayer {
     this.audio.volume = 0.5;
     this.restore();
 
-    ["play", "pause", "volumechange", "timeupdate", "loadedmetadata"].forEach((type) => {
-      this.audio.addEventListener(type, () => {
-        if (type === "loadedmetadata" && this.pendingTime > 0) {
-          this.audio.currentTime = Math.min(
-            this.pendingTime,
-            this.audio.duration || this.pendingTime
-          );
-        }
+    ["play", "pause", "volumechange", "timeupdate", "loadedmetadata"].forEach(
+      (type) => {
+        this.audio.addEventListener(type, () => {
+          if (type === "loadedmetadata" && this.pendingTime > 0) {
+            this.audio.currentTime = Math.min(
+              this.pendingTime,
+              this.audio.duration || this.pendingTime,
+            );
+          }
 
-        this.persist();
-        this.emit();
-      });
-    });
+          this.persist();
+          this.emit();
+        });
+      },
+    );
 
     window.addEventListener("pagehide", () => this.persist());
   }
@@ -37,10 +39,13 @@ export class AudioPlayer {
 
   persist() {
     try {
-      localStorage.setItem(this.storageKey, JSON.stringify({
-        volume: this.audio.volume,
-        time: this.audio.currentTime || 0
-      }));
+      localStorage.setItem(
+        this.storageKey,
+        JSON.stringify({
+          volume: this.audio.volume,
+          time: this.audio.currentTime || 0,
+        }),
+      );
     } catch {
       // Storage can be unavailable in private browsing or restricted contexts.
     }
@@ -50,7 +55,7 @@ export class AudioPlayer {
     return {
       playing: !this.audio.paused,
       volume: this.audio.volume,
-      time: this.audio.currentTime || 0
+      time: this.audio.currentTime || 0,
     };
   }
 

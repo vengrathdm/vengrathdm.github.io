@@ -69,189 +69,163 @@ selectable skills.
 ===========================================================
 */
 
-
 /* =========================================================
    ABILITIES
 ========================================================= */
 
-const ABILITIES = [
-    "STR",
-    "DEX",
-    "CON",
-    "INT",
-    "WIS",
-    "CHA"
-];
-
+const ABILITIES = ["STR", "DEX", "CON", "INT", "WIS", "CHA"];
 
 /* =========================================================
    SKILLS
 ========================================================= */
 
 const SKILLS = [
-    "Acrobatics",
-    "Animal Handling",
-    "Arcana",
-    "Athletics",
-    "Deception",
-    "History",
-    "Insight",
-    "Intimidation",
-    "Investigation",
-    "Medicine",
-    "Nature",
-    "Perception",
-    "Performance",
-    "Persuasion",
-    "Religion",
-    "Sleight of Hand",
-    "Stealth",
-    "Survival"
+  "Acrobatics",
+  "Animal Handling",
+  "Arcana",
+  "Athletics",
+  "Deception",
+  "History",
+  "Insight",
+  "Intimidation",
+  "Investigation",
+  "Medicine",
+  "Nature",
+  "Perception",
+  "Performance",
+  "Persuasion",
+  "Religion",
+  "Sleight of Hand",
+  "Stealth",
+  "Survival",
 ];
-
 
 /* =========================================================
    ALIGNMENTS
 ========================================================= */
 
 const ALIGNMENTS = [
-    "Lawful Good",
-    "Neutral Good",
-    "Chaotic Good",
+  "Lawful Good",
+  "Neutral Good",
+  "Chaotic Good",
 
-    "Lawful Neutral",
-    "True Neutral",
-    "Chaotic Neutral",
+  "Lawful Neutral",
+  "True Neutral",
+  "Chaotic Neutral",
 
-    "Lawful Evil",
-    "Neutral Evil",
-    "Chaotic Evil"
+  "Lawful Evil",
+  "Neutral Evil",
+  "Chaotic Evil",
 ];
-
 
 /* =========================================================
    RACES
 ========================================================= */
 
 const RACES = {
-
-    /* -----------------------------------------------------
+  /* -----------------------------------------------------
        DWARF
     ----------------------------------------------------- */
 
-    "Dwarf": {
-        languages: ["Common", "Dwarvish"],
-        fixed: {
-            CON: 2
-        },
-
-        subs: {
-
-            "Hill Dwarf": {
-                WIS: 1
-            },
-
-            "Mountain Dwarf": {
-                STR: 2
-            },
-
-            "Duergar": {
-                STR: 1
-            }
-
-        },
-
-        skills: []
+  Dwarf: {
+    languages: ["Common", "Dwarvish"],
+    fixed: {
+      CON: 2,
     },
 
+    subs: {
+      "Hill Dwarf": {
+        WIS: 1,
+      },
 
-    /* -----------------------------------------------------
+      "Mountain Dwarf": {
+        STR: 2,
+      },
+
+      Duergar: {
+        STR: 1,
+      },
+    },
+
+    skills: [],
+  },
+
+  /* -----------------------------------------------------
        ELF
     ----------------------------------------------------- */
 
-    "Elf": {
-        languages: ["Common", "Elvish"],
-        fixed: {
-            DEX: 2
-        },
-
-        subs: {
-
-            "High Elf": {
-                INT: 1
-            },
-
-            "Wood Elf": {
-                WIS: 1
-            },
-
-            "Drow": {
-                CHA: 1
-            }
-
-        },
-
-        skills: [
-            "Perception"
-        ]
+  Elf: {
+    languages: ["Common", "Elvish"],
+    fixed: {
+      DEX: 2,
     },
 
+    subs: {
+      "High Elf": {
+        INT: 1,
+      },
 
-    /* -----------------------------------------------------
+      "Wood Elf": {
+        WIS: 1,
+      },
+
+      Drow: {
+        CHA: 1,
+      },
+    },
+
+    skills: ["Perception"],
+  },
+
+  /* -----------------------------------------------------
        HALFLING
     ----------------------------------------------------- */
 
-    "Halfling": {
-        languages: ["Common", "Halfling"],
-        fixed: {
-            DEX: 2
-        },
-
-        subs: {
-
-            "Lightfoot Halfling": {
-                CHA: 1
-            },
-
-            "Stout Halfling": {
-                CON: 1
-            }
-
-        },
-
-        skills: []
+  Halfling: {
+    languages: ["Common", "Halfling"],
+    fixed: {
+      DEX: 2,
     },
 
+    subs: {
+      "Lightfoot Halfling": {
+        CHA: 1,
+      },
 
-    /* -----------------------------------------------------
+      "Stout Halfling": {
+        CON: 1,
+      },
+    },
+
+    skills: [],
+  },
+
+  /* -----------------------------------------------------
        HUMAN
     ----------------------------------------------------- */
 
-    "Human": {
-        languages: ["Common"],
-        languageChoices: 1,
-        fixed: {
-            STR: 1,
-            DEX: 1,
-            CON: 1,
-            INT: 1,
-            WIS: 1,
-            CHA: 1
-        },
-
-        subs: {
-
-            "Human": {},
-
-            "Variant Human": {}
-
-        },
-
-        skills: []
+  Human: {
+    languages: ["Common"],
+    languageChoices: 1,
+    fixed: {
+      STR: 1,
+      DEX: 1,
+      CON: 1,
+      INT: 1,
+      WIS: 1,
+      CHA: 1,
     },
 
+    subs: {
+      Human: {},
 
-    /* -----------------------------------------------------
+      "Variant Human": {},
+    },
+
+    skills: [],
+  },
+
+  /* -----------------------------------------------------
        DRAGONBORN
 
        All Dragonborn variants are intentionally grouped
@@ -267,968 +241,793 @@ const RACES = {
            Gem Dragonborn
     ----------------------------------------------------- */
 
-    "Dragonborn": {
-        languages: ["Common", "Draconic"],
-        fixed: {
-            STR: 2,
-            CHA: 1
-        },
-
-        subs: {
-
-            "Dragonborn": {},
-
-            "Chromatic Dragonborn": {},
-
-            "Metallic Dragonborn": {},
-
-            "Gem Dragonborn": {}
-
-        },
-
-        skills: []
+  Dragonborn: {
+    languages: ["Common", "Draconic"],
+    fixed: {
+      STR: 2,
+      CHA: 1,
     },
 
+    subs: {
+      Dragonborn: {},
 
-    /* -----------------------------------------------------
+      "Chromatic Dragonborn": {},
+
+      "Metallic Dragonborn": {},
+
+      "Gem Dragonborn": {},
+    },
+
+    skills: [],
+  },
+
+  /* -----------------------------------------------------
        GNOME
     ----------------------------------------------------- */
 
-    "Gnome": {
-        languages: ["Common", "Gnomish"],
-        fixed: {
-            INT: 2
-        },
-
-        subs: {
-
-            "Forest Gnome": {
-                DEX: 1
-            },
-
-            "Rock Gnome": {
-                CON: 1
-            },
-
-            "Svirfneblin": {
-                DEX: 1
-            }
-
-        },
-
-        skills: []
+  Gnome: {
+    languages: ["Common", "Gnomish"],
+    fixed: {
+      INT: 2,
     },
 
+    subs: {
+      "Forest Gnome": {
+        DEX: 1,
+      },
 
-    /* -----------------------------------------------------
+      "Rock Gnome": {
+        CON: 1,
+      },
+
+      Svirfneblin: {
+        DEX: 1,
+      },
+    },
+
+    skills: [],
+  },
+
+  /* -----------------------------------------------------
        HALF-ELF
     ----------------------------------------------------- */
 
-    "Half-Elf": {
-        languages: ["Common", "Elvish"],
-        languageChoices: 1,
-        fixed: {
-            CHA: 2
-        },
-
-        subs: {
-
-            "Half-Elf": {}
-
-        },
-
-        skills: [
-            "2 CHOICE"
-        ]
+  "Half-Elf": {
+    languages: ["Common", "Elvish"],
+    languageChoices: 1,
+    fixed: {
+      CHA: 2,
     },
 
+    subs: {
+      "Half-Elf": {},
+    },
 
-    /* -----------------------------------------------------
+    skills: ["2 CHOICE"],
+  },
+
+  /* -----------------------------------------------------
        HALF-ORC
     ----------------------------------------------------- */
 
-    "Half-Orc": {
-        languages: ["Common", "Orc"],
-        fixed: {
-            STR: 2,
-            CON: 1
-        },
-
-        subs: {
-
-            "Half-Orc": {}
-
-        },
-
-        skills: [
-            "Intimidation"
-        ]
+  "Half-Orc": {
+    languages: ["Common", "Orc"],
+    fixed: {
+      STR: 2,
+      CON: 1,
     },
 
+    subs: {
+      "Half-Orc": {},
+    },
 
-    /* -----------------------------------------------------
+    skills: ["Intimidation"],
+  },
+
+  /* -----------------------------------------------------
        TIEFLING
     ----------------------------------------------------- */
 
-    "Tiefling": {
-        languages: ["Common", "Infernal"],
-        fixed: {
-            INT: 1,
-            CHA: 2
-        },
-
-        subs: {
-
-            "Tiefling": {}
-
-        },
-
-        skills: []
+  Tiefling: {
+    languages: ["Common", "Infernal"],
+    fixed: {
+      INT: 1,
+      CHA: 2,
     },
 
+    subs: {
+      Tiefling: {},
+    },
 
-    /* -----------------------------------------------------
+    skills: [],
+  },
+
+  /* -----------------------------------------------------
        GOLIATH
     ----------------------------------------------------- */
 
-    "Goliath": {
-        languages: ["Common", "Giant"],
-        fixed: {
-            STR: 2,
-            CON: 1
-        },
-
-        subs: {
-
-            "Goliath": {}
-
-        },
-
-        skills: []
+  Goliath: {
+    languages: ["Common", "Giant"],
+    fixed: {
+      STR: 2,
+      CON: 1,
     },
 
+    subs: {
+      Goliath: {},
+    },
 
-    /* -----------------------------------------------------
+    skills: [],
+  },
+
+  /* -----------------------------------------------------
        GENASI
     ----------------------------------------------------- */
 
-    "Genasi": {
-        languages: ["Common", "Primordial"],
-        fixed: {
-            CON: 2
-        },
-
-        subs: {
-
-            "Air Genasi": {
-                DEX: 1
-            },
-
-            "Earth Genasi": {
-                STR: 1
-            },
-
-            "Fire Genasi": {
-                INT: 1
-            },
-
-            "Water Genasi": {
-                WIS: 1
-            }
-
-        },
-
-        skills: []
+  Genasi: {
+    languages: ["Common", "Primordial"],
+    fixed: {
+      CON: 2,
     },
 
+    subs: {
+      "Air Genasi": {
+        DEX: 1,
+      },
 
-    /* -----------------------------------------------------
+      "Earth Genasi": {
+        STR: 1,
+      },
+
+      "Fire Genasi": {
+        INT: 1,
+      },
+
+      "Water Genasi": {
+        WIS: 1,
+      },
+    },
+
+    skills: [],
+  },
+
+  /* -----------------------------------------------------
        AASIMAR
     ----------------------------------------------------- */
 
-    "Aasimar": {
-        languages: ["Common", "Celestial"],
-        fixed: {
-            CHA: 2
-        },
-
-        subs: {
-
-            "Protector Aasimar": {
-                WIS: 1
-            },
-
-            "Scourge Aasimar": {
-                CON: 1
-            },
-
-            "Fallen Aasimar": {
-                STR: 1
-            }
-
-        },
-
-        skills: []
+  Aasimar: {
+    languages: ["Common", "Celestial"],
+    fixed: {
+      CHA: 2,
     },
 
+    subs: {
+      "Protector Aasimar": {
+        WIS: 1,
+      },
 
-    /* -----------------------------------------------------
+      "Scourge Aasimar": {
+        CON: 1,
+      },
+
+      "Fallen Aasimar": {
+        STR: 1,
+      },
+    },
+
+    skills: [],
+  },
+
+  /* -----------------------------------------------------
        GITH
     ----------------------------------------------------- */
 
-    "Gith": {
-        languages: ["Common", "Gith"],
-        fixed: {
-            INT: 1
-        },
-
-        subs: {
-
-            "Githyanki": {
-                STR: 2
-            },
-
-            "Githzerai": {
-                WIS: 2
-            }
-
-        },
-
-        skills: []
+  Gith: {
+    languages: ["Common", "Gith"],
+    fixed: {
+      INT: 1,
     },
 
+    subs: {
+      Githyanki: {
+        STR: 2,
+      },
 
-    /* -----------------------------------------------------
+      Githzerai: {
+        WIS: 2,
+      },
+    },
+
+    skills: [],
+  },
+
+  /* -----------------------------------------------------
        TABAXI
     ----------------------------------------------------- */
 
-    "Tabaxi": {
-        languages: ["Common"],
-        fixed: {
-            DEX: 2,
-            CHA: 1
-        },
-
-        subs: {
-
-            "Tabaxi": {}
-
-        },
-
-        skills: []
+  Tabaxi: {
+    languages: ["Common"],
+    fixed: {
+      DEX: 2,
+      CHA: 1,
     },
 
+    subs: {
+      Tabaxi: {},
+    },
 
-    /* -----------------------------------------------------
+    skills: [],
+  },
+
+  /* -----------------------------------------------------
        KOBOLD
     ----------------------------------------------------- */
 
-    "Kobold": {
-        languages: ["Common", "Draconic"],
-        fixed: {
-            DEX: 2
-        },
+  Kobold: {
+    languages: ["Common", "Draconic"],
+    fixed: {
+      DEX: 2,
+    },
 
-        subs: {
+    subs: {
+      Kobold: {},
+    },
 
-            "Kobold": {}
-
-        },
-
-        skills: []
-    }
-
+    skills: [],
+  },
 };
-
 
 /* =========================================================
    CLASSES
 ========================================================= */
 
 const CLASSES = {
-
-
-    /* =====================================================
+  /* =====================================================
        BARBARIAN
     ===================================================== */
 
-    "Barbarian": {
+  Barbarian: {
+    subs: [
+      /* Player's Handbook */
 
-        subs: [
+      "Path of the Berserker",
+      "Path of the Totem Warrior",
 
-            /* Player's Handbook */
+      /* Xanathar's Guide to Everything */
 
-            "Path of the Berserker",
-            "Path of the Totem Warrior",
+      "Path of the Ancestral Guardian",
+      "Path of the Storm Herald",
+      "Path of the Zealot",
 
-            /* Xanathar's Guide to Everything */
+      /* Tasha's Cauldron of Everything */
 
-            "Path of the Ancestral Guardian",
-            "Path of the Storm Herald",
-            "Path of the Zealot",
+      "Path of the Beast",
+      "Path of Wild Magic",
 
-            /* Tasha's Cauldron of Everything */
+      /* Bigby Presents: Glory of the Giants */
 
-            "Path of the Beast",
-            "Path of Wild Magic",
+      "Path of the Giant",
+    ],
 
-            /* Bigby Presents: Glory of the Giants */
+    skills: [
+      "Animal Handling",
+      "Athletics",
+      "Intimidation",
+      "Nature",
+      "Perception",
+      "Survival",
+    ],
 
-            "Path of the Giant"
+    n: 2,
 
-        ],
+    saves: ["STR", "CON"],
+  },
 
-        skills: [
-            "Animal Handling",
-            "Athletics",
-            "Intimidation",
-            "Nature",
-            "Perception",
-            "Survival"
-        ],
-
-        n: 2,
-
-        saves: [
-            "STR",
-            "CON"
-        ]
-    },
-
-
-    /* =====================================================
+  /* =====================================================
        BARD
     ===================================================== */
 
-    "Bard": {
+  Bard: {
+    subs: [
+      /* Player's Handbook */
 
-        subs: [
+      "College of Lore",
+      "College of Valor",
 
-            /* Player's Handbook */
+      /* Xanathar's Guide to Everything */
 
-            "College of Lore",
-            "College of Valor",
+      "College of Glamour",
+      "College of Swords",
+      "College of Whispers",
 
-            /* Xanathar's Guide to Everything */
+      /* Tasha's Cauldron of Everything */
 
-            "College of Glamour",
-            "College of Swords",
-            "College of Whispers",
+      "College of Creation",
+      "College of Eloquence",
 
-            /* Tasha's Cauldron of Everything */
+      /* The Book of Many Things */
 
-            "College of Creation",
-            "College of Eloquence",
+      "College of Dance",
+    ],
 
-            /* The Book of Many Things */
+    skills: [
+      "Acrobatics",
+      "Animal Handling",
+      "Arcana",
+      "Athletics",
+      "Deception",
+      "History",
+      "Insight",
+      "Intimidation",
+      "Investigation",
+      "Medicine",
+      "Nature",
+      "Perception",
+      "Performance",
+      "Persuasion",
+      "Religion",
+      "Sleight of Hand",
+      "Stealth",
+      "Survival",
+    ],
 
-            "College of Dance"
+    n: 3,
 
-        ],
+    saves: ["DEX", "CHA"],
+  },
 
-        skills: [
-        "Acrobatics",
-        "Animal Handling",
-        "Arcana",
-        "Athletics",
-        "Deception",
-        "History",
-        "Insight",
-        "Intimidation",
-        "Investigation",
-        "Medicine",
-        "Nature",
-        "Perception",
-        "Performance",
-        "Persuasion",
-        "Religion",
-        "Sleight of Hand",
-        "Stealth",
-        "Survival",
-        ],
-
-        n: 3,
-
-        saves: [
-            "DEX",
-            "CHA"
-        ]
-    },
-
-
-    /* =====================================================
+  /* =====================================================
        CLERIC
     ===================================================== */
 
-    "Cleric": {
+  Cleric: {
+    subs: [
+      /* Player's Handbook */
 
-        subs: [
+      "Knowledge Domain",
+      "Life Domain",
+      "Light Domain",
+      "Nature Domain",
+      "Tempest Domain",
+      "Trickery Domain",
+      "War Domain",
 
-            /* Player's Handbook */
+      /* Xanathar's Guide to Everything */
 
-            "Knowledge Domain",
-            "Life Domain",
-            "Light Domain",
-            "Nature Domain",
-            "Tempest Domain",
-            "Trickery Domain",
-            "War Domain",
+      "Forge Domain",
+      "Grave Domain",
 
-            /* Xanathar's Guide to Everything */
+      /* Tasha's Cauldron of Everything */
 
-            "Forge Domain",
-            "Grave Domain",
+      "Order Domain",
+      "Peace Domain",
+      "Twilight Domain",
+    ],
 
-            /* Tasha's Cauldron of Everything */
+    skills: ["History", "Insight", "Medicine", "Persuasion", "Religion"],
 
-            "Order Domain",
-            "Peace Domain",
-            "Twilight Domain"
+    n: 2,
 
-        ],
+    saves: ["WIS", "CHA"],
+  },
 
-        skills: [
-            "History",
-            "Insight",
-            "Medicine",
-            "Persuasion",
-            "Religion"
-        ],
-
-        n: 2,
-
-        saves: [
-            "WIS",
-            "CHA"
-        ]
-    },
-
-
-    /* =====================================================
+  /* =====================================================
        DRUID
     ===================================================== */
 
-    "Druid": {
+  Druid: {
+    subs: [
+      /* Player's Handbook */
 
-        subs: [
+      "Circle of the Land",
+      "Circle of the Moon",
 
-            /* Player's Handbook */
+      /* Xanathar's Guide to Everything */
 
-            "Circle of the Land",
-            "Circle of the Moon",
+      "Circle of Dreams",
+      "Circle of the Shepherd",
 
-            /* Xanathar's Guide to Everything */
+      /* Tasha's Cauldron of Everything */
 
-            "Circle of Dreams",
-            "Circle of the Shepherd",
+      "Circle of Spores",
+      "Circle of Stars",
+      "Circle of Wildfire",
+    ],
 
-            /* Tasha's Cauldron of Everything */
+    skills: [
+      "Arcana",
+      "Animal Handling",
+      "Insight",
+      "Medicine",
+      "Nature",
+      "Perception",
+      "Religion",
+      "Survival",
+    ],
 
-            "Circle of Spores",
-            "Circle of Stars",
-            "Circle of Wildfire"
+    n: 2,
 
-        ],
+    saves: ["INT", "WIS"],
+  },
 
-        skills: [
-            "Arcana",
-            "Animal Handling",
-            "Insight",
-            "Medicine",
-            "Nature",
-            "Perception",
-            "Religion",
-            "Survival"
-        ],
-
-        n: 2,
-
-        saves: [
-            "INT",
-            "WIS"
-        ]
-    },
-
-
-    /* =====================================================
+  /* =====================================================
        FIGHTER
     ===================================================== */
 
-    "Fighter": {
+  Fighter: {
+    subs: [
+      /* Player's Handbook */
 
-        subs: [
+      "Champion",
+      "Battle Master",
+      "Eldritch Knight",
 
-            /* Player's Handbook */
+      /* Xanathar's Guide to Everything */
 
-            "Champion",
-            "Battle Master",
-            "Eldritch Knight",
+      "Arcane Archer",
+      "Cavalier",
+      "Samurai",
 
-            /* Xanathar's Guide to Everything */
+      /* Tasha's Cauldron of Everything */
 
-            "Arcane Archer",
-            "Cavalier",
-            "Samurai",
+      "Rune Knight",
+    ],
 
-            /* Tasha's Cauldron of Everything */
+    skills: [
+      "Acrobatics",
+      "Animal Handling",
+      "Athletics",
+      "History",
+      "Insight",
+      "Intimidation",
+      "Perception",
+      "Survival",
+    ],
 
-            "Rune Knight"
+    n: 2,
 
-        ],
+    saves: ["STR", "CON"],
+  },
 
-        skills: [
-            "Acrobatics",
-            "Animal Handling",
-            "Athletics",
-            "History",
-            "Insight",
-            "Intimidation",
-            "Perception",
-            "Survival"
-        ],
-
-        n: 2,
-
-        saves: [
-            "STR",
-            "CON"
-        ]
-    },
-
-
-    /* =====================================================
+  /* =====================================================
        MONK
     ===================================================== */
 
-    "Monk": {
+  Monk: {
+    subs: [
+      /* Player's Handbook */
 
-        subs: [
+      "Way of the Open Hand",
+      "Way of Shadow",
+      "Way of the Four Elements",
 
-            /* Player's Handbook */
+      /* Xanathar's Guide to Everything */
 
-            "Way of the Open Hand",
-            "Way of Shadow",
-            "Way of the Four Elements",
+      "Way of the Drunken Master",
+      "Way of the Kensei",
+      "Way of the Sun Soul",
 
-            /* Xanathar's Guide to Everything */
+      /* Tasha's Cauldron of Everything */
 
-            "Way of the Drunken Master",
-            "Way of the Kensei",
-            "Way of the Sun Soul",
+      "Way of Mercy",
+      "Way of the Astral Self",
 
-            /* Tasha's Cauldron of Everything */
+      /* Fizban's Treasury of Dragons */
 
-            "Way of Mercy",
-            "Way of the Astral Self",
+      "Way of the Ascendant Dragon",
+    ],
 
-            /* Fizban's Treasury of Dragons */
+    skills: [
+      "Acrobatics",
+      "Athletics",
+      "History",
+      "Insight",
+      "Religion",
+      "Stealth",
+    ],
 
-            "Way of the Ascendant Dragon"
+    n: 2,
 
-        ],
+    saves: ["STR", "DEX"],
+  },
 
-        skills: [
-            "Acrobatics",
-            "Athletics",
-            "History",
-            "Insight",
-            "Religion",
-            "Stealth"
-        ],
-
-        n: 2,
-
-        saves: [
-            "STR",
-            "DEX"
-        ]
-    },
-
-
-    /* =====================================================
+  /* =====================================================
        PALADIN
     ===================================================== */
 
-    "Paladin": {
+  Paladin: {
+    subs: [
+      /* Player's Handbook */
 
-        subs: [
+      "Oath of Devotion",
+      "Oath of the Ancients",
+      "Oath of Vengeance",
 
-            /* Player's Handbook */
+      /* Xanathar's Guide to Everything */
 
-            "Oath of Devotion",
-            "Oath of the Ancients",
-            "Oath of Vengeance",
+      "Oath of Conquest",
+      "Oath of Redemption",
 
-            /* Xanathar's Guide to Everything */
+      /* Tasha's Cauldron of Everything */
 
-            "Oath of Conquest",
-            "Oath of Redemption",
+      "Oath of Glory",
+      "Oath of the Watchers",
+    ],
 
-            /* Tasha's Cauldron of Everything */
+    skills: [
+      "Athletics",
+      "Insight",
+      "Intimidation",
+      "Medicine",
+      "Persuasion",
+      "Religion",
+    ],
 
-            "Oath of Glory",
-            "Oath of the Watchers"
+    n: 2,
 
-        ],
+    saves: ["WIS", "CHA"],
+  },
 
-        skills: [
-            "Athletics",
-            "Insight",
-            "Intimidation",
-            "Medicine",
-            "Persuasion",
-            "Religion"
-        ],
-
-        n: 2,
-
-        saves: [
-            "WIS",
-            "CHA"
-        ]
-    },
-
-
-    /* =====================================================
+  /* =====================================================
        RANGER
     ===================================================== */
 
-    "Ranger": {
+  Ranger: {
+    subs: [
+      /* Player's Handbook */
 
-        subs: [
+      "Hunter",
+      "Beast Master",
 
-            /* Player's Handbook */
+      /* Xanathar's Guide to Everything */
 
-            "Hunter",
-            "Beast Master",
+      "Gloom Stalker",
+      "Horizon Walker",
+      "Monster Slayer",
 
-            /* Xanathar's Guide to Everything */
+      /* Tasha's Cauldron of Everything */
 
-            "Gloom Stalker",
-            "Horizon Walker",
-            "Monster Slayer",
+      "Fey Wanderer",
+      "Swarmkeeper",
 
-            /* Tasha's Cauldron of Everything */
+      /* Fizban's Treasury of Dragons */
 
-            "Fey Wanderer",
-            "Swarmkeeper",
+      "Drakewarden",
+    ],
 
-            /* Fizban's Treasury of Dragons */
+    skills: [
+      "Animal Handling",
+      "Athletics",
+      "Insight",
+      "Investigation",
+      "Nature",
+      "Perception",
+      "Stealth",
+      "Survival",
+    ],
 
-            "Drakewarden"
+    n: 3,
 
-        ],
+    saves: ["STR", "DEX"],
+  },
 
-        skills: [
-            "Animal Handling",
-            "Athletics",
-            "Insight",
-            "Investigation",
-            "Nature",
-            "Perception",
-            "Stealth",
-            "Survival"
-        ],
-
-        n: 3,
-
-        saves: [
-            "STR",
-            "DEX"
-        ]
-    },
-
-
-    /* =====================================================
+  /* =====================================================
        ROGUE
     ===================================================== */
 
-    "Rogue": {
+  Rogue: {
+    subs: [
+      /* Player's Handbook */
 
-        subs: [
+      "Thief",
+      "Assassin",
+      "Arcane Trickster",
 
-            /* Player's Handbook */
+      /* Xanathar's Guide to Everything */
 
-            "Thief",
-            "Assassin",
-            "Arcane Trickster",
+      "Inquisitive",
+      "Mastermind",
+      "Scout",
+      "Swashbuckler",
 
-            /* Xanathar's Guide to Everything */
+      /* Tasha's Cauldron of Everything */
 
-            "Inquisitive",
-            "Mastermind",
-            "Scout",
-            "Swashbuckler",
+      "Phantom",
+      "Soulknife",
+    ],
 
-            /* Tasha's Cauldron of Everything */
+    skills: [
+      "Acrobatics",
+      "Athletics",
+      "Deception",
+      "Insight",
+      "Intimidation",
+      "Investigation",
+      "Perception",
+      "Performance",
+      "Persuasion",
+      "Sleight of Hand",
+      "Stealth",
+    ],
 
-            "Phantom",
-            "Soulknife"
+    n: 4,
 
-        ],
+    saves: ["DEX", "INT"],
 
-        skills: [
-            "Acrobatics",
-            "Athletics",
-            "Deception",
-            "Insight",
-            "Intimidation",
-            "Investigation",
-            "Perception",
-            "Performance",
-            "Persuasion",
-            "Sleight of Hand",
-            "Stealth"
-        ],
+    expertise: true,
+  },
 
-        n: 4,
-
-        saves: [
-            "DEX",
-            "INT"
-        ],
-
-        expertise: true
-    },
-
-
-    /* =====================================================
+  /* =====================================================
        SORCERER
     ===================================================== */
 
-    "Sorcerer": {
+  Sorcerer: {
+    subs: [
+      /* Player's Handbook */
 
-        subs: [
+      "Draconic Bloodline",
+      "Wild Magic",
 
-            /* Player's Handbook */
+      /* Xanathar's Guide to Everything */
 
-            "Draconic Bloodline",
-            "Wild Magic",
+      "Divine Soul",
+      "Shadow Magic",
+      "Storm Sorcery",
 
-            /* Xanathar's Guide to Everything */
+      /* Tasha's Cauldron of Everything */
 
-            "Divine Soul",
-            "Shadow Magic",
-            "Storm Sorcery",
+      "Aberrant Mind",
+      "Clockwork Soul",
+    ],
 
-            /* Tasha's Cauldron of Everything */
+    skills: [
+      "Arcana",
+      "Deception",
+      "Insight",
+      "Intimidation",
+      "Persuasion",
+      "Religion",
+    ],
 
-            "Aberrant Mind",
-            "Clockwork Soul"
+    n: 2,
 
-        ],
+    saves: ["CON", "CHA"],
+  },
 
-        skills: [
-            "Arcana",
-            "Deception",
-            "Insight",
-            "Intimidation",
-            "Persuasion",
-            "Religion"
-        ],
-
-        n: 2,
-
-        saves: [
-            "CON",
-            "CHA"
-        ]
-    },
-
-
-    /* =====================================================
+  /* =====================================================
        WARLOCK
     ===================================================== */
 
-    "Warlock": {
+  Warlock: {
+    subs: [
+      /* Player's Handbook */
 
-        subs: [
+      "Archfey",
+      "Fiend",
+      "Great Old One",
 
-            /* Player's Handbook */
+      /* Xanathar's Guide to Everything */
 
-            "Archfey",
-            "Fiend",
-            "Great Old One",
+      "The Celestial",
+      "The Hexblade",
 
-            /* Xanathar's Guide to Everything */
+      /* Tasha's Cauldron of Everything */
 
-            "The Celestial",
-            "The Hexblade",
+      "The Fathomless",
+      "The Genie",
+    ],
 
-            /* Tasha's Cauldron of Everything */
+    skills: [
+      "Arcana",
+      "Deception",
+      "History",
+      "Intimidation",
+      "Investigation",
+      "Nature",
+      "Religion",
+    ],
 
-            "The Fathomless",
-            "The Genie"
+    n: 2,
 
-        ],
+    saves: ["WIS", "CHA"],
+  },
 
-        skills: [
-            "Arcana",
-            "Deception",
-            "History",
-            "Intimidation",
-            "Investigation",
-            "Nature",
-            "Religion"
-        ],
-
-        n: 2,
-
-        saves: [
-            "WIS",
-            "CHA"
-        ]
-    },
-
-
-    /* =====================================================
+  /* =====================================================
        WIZARD
     ===================================================== */
 
-    "Wizard": {
+  Wizard: {
+    subs: [
+      /* Player's Handbook */
 
-        subs: [
+      "School of Abjuration",
+      "School of Conjuration",
+      "School of Divination",
+      "School of Enchantment",
+      "School of Evocation",
+      "School of Illusion",
+      "School of Necromancy",
+      "School of Transmutation",
 
-            /* Player's Handbook */
+      /* Xanathar's Guide to Everything */
 
-            "School of Abjuration",
-            "School of Conjuration",
-            "School of Divination",
-            "School of Enchantment",
-            "School of Evocation",
-            "School of Illusion",
-            "School of Necromancy",
-            "School of Transmutation",
+      "War Magic",
 
-            /* Xanathar's Guide to Everything */
+      /* Tasha's Cauldron of Everything */
 
-            "War Magic",
+      "Bladesinging",
+      "Order of Scribes",
+    ],
 
-            /* Tasha's Cauldron of Everything */
+    skills: [
+      "Arcana",
+      "History",
+      "Insight",
+      "Investigation",
+      "Medicine",
+      "Religion",
+    ],
 
-            "Bladesinging",
-            "Order of Scribes"
+    n: 2,
 
-        ],
-
-        skills: [
-            "Arcana",
-            "History",
-            "Insight",
-            "Investigation",
-            "Medicine",
-            "Religion"
-        ],
-
-        n: 2,
-
-        saves: [
-            "INT",
-            "WIS"
-        ]
-    }
-
+    saves: ["INT", "WIS"],
+  },
 };
-
 
 /* =========================================================
    BACKGROUND SKILL PROFICIENCIES
 ========================================================= */
 
 const BACKGROUND_SKILLS = {
+  Acolyte: ["Insight", "Religion"],
 
-    "Acolyte": [
-        "Insight",
-        "Religion"
-    ],
+  Charlatan: ["Deception", "Sleight of Hand"],
 
-    "Charlatan": [
-        "Deception",
-        "Sleight of Hand"
-    ],
+  Criminal: ["Deception", "Stealth"],
 
-    "Criminal": [
-        "Deception",
-        "Stealth"
-    ],
+  Entertainer: ["Acrobatics", "Performance"],
 
-    "Entertainer": [
-        "Acrobatics",
-        "Performance"
-    ],
+  "Folk Hero": ["Animal Handling", "Survival"],
 
-    "Folk Hero": [
-        "Animal Handling",
-        "Survival"
-    ],
+  "Guild Artisan": ["Insight", "Persuasion"],
 
-    "Guild Artisan": [
-        "Insight",
-        "Persuasion"
-    ],
+  Hermit: ["Medicine", "Religion"],
 
-    "Hermit": [
-        "Medicine",
-        "Religion"
-    ],
+  Noble: ["History", "Persuasion"],
 
-    "Noble": [
-        "History",
-        "Persuasion"
-    ],
+  Outlander: ["Athletics", "Survival"],
 
-    "Outlander": [
-        "Athletics",
-        "Survival"
-    ],
+  Sage: ["Arcana", "History"],
 
-    "Sage": [
-        "Arcana",
-        "History"
-    ],
+  Sailor: ["Athletics", "Perception"],
 
-    "Sailor": [
-        "Athletics",
-        "Perception"
-    ],
+  Soldier: ["Athletics", "Intimidation"],
 
-    "Soldier": [
-        "Athletics",
-        "Intimidation"
-    ],
-
-    "Urchin": [
-        "Sleight of Hand",
-        "Stealth"
-    ]
-
+  Urchin: ["Sleight of Hand", "Stealth"],
 };
-
 
 /* =========================================================
    BACKGROUNDS
 ========================================================= */
 
 const BACKGROUNDS = [
-
-    /* Player's Handbook */
-    "Acolyte",
-    "Charlatan",
-    "Criminal",
-    "Entertainer",
-    "Folk Hero",
-    "Guild Artisan",
-    "Hermit",
-    "Noble",
-    "Outlander",
-    "Sage",
-    "Sailor",
-    "Soldier",
-    "Urchin",
-    /* Custom */
-    "Custom"
+  /* Player's Handbook */
+  "Acolyte",
+  "Charlatan",
+  "Criminal",
+  "Entertainer",
+  "Folk Hero",
+  "Guild Artisan",
+  "Hermit",
+  "Noble",
+  "Outlander",
+  "Sage",
+  "Sailor",
+  "Soldier",
+  "Urchin",
+  /* Custom */
+  "Custom",
 ];
-
 
 /* =========================================================
    BACKGROUND LANGUAGES
@@ -1236,31 +1035,31 @@ const BACKGROUNDS = [
 ========================================================= */
 
 const BACKGROUND_LANGUAGES = {
-    "Acolyte": { choices: 2 },
-    "Charlatan": { choices: 1 },
-    "Criminal": { choices: 1 },
-    "Entertainer": { choices: 1 },
-    "Folk Hero": { choices: 1 },
-    "Guild Artisan": { choices: 1 },
-    "Hermit": { choices: 1 },
-    "Noble": { choices: 1 },
-    "Outlander": { choices: 1 },
-    "Sage": { choices: 2 },
-    "Sailor": { choices: 0 },
-    "Soldier": { choices: 0 },
-    "Urchin": { choices: 0 },
-    "Custom": { choices: 2 }
+  Acolyte: { choices: 2 },
+  Charlatan: { choices: 1 },
+  Criminal: { choices: 1 },
+  Entertainer: { choices: 1 },
+  "Folk Hero": { choices: 1 },
+  "Guild Artisan": { choices: 1 },
+  Hermit: { choices: 1 },
+  Noble: { choices: 1 },
+  Outlander: { choices: 1 },
+  Sage: { choices: 2 },
+  Sailor: { choices: 0 },
+  Soldier: { choices: 0 },
+  Urchin: { choices: 0 },
+  Custom: { choices: 2 },
 };
 
 const STANDARD_LANGUAGES = [
-    "Common",
-    "Dwarvish",
-    "Elvish",
-    "Giant",
-    "Gnomish",
-    "Goblin",
-    "Halfling",
-    "Orc"
+  "Common",
+  "Dwarvish",
+  "Elvish",
+  "Giant",
+  "Gnomish",
+  "Goblin",
+  "Halfling",
+  "Orc",
 ];
 
 /* =========================================================
@@ -1268,16 +1067,15 @@ const STANDARD_LANGUAGES = [
 ========================================================= */
 
 window.DATA = {
-    abilities: ABILITIES,
-    skills: SKILLS,
-    alignments: ALIGNMENTS,
-    races: RACES,
-    classes: CLASSES,
-    backgrounds: BACKGROUNDS,
-    backgroundSkills: BACKGROUND_SKILLS,
-    backgroundLanguages: BACKGROUND_LANGUAGES,
-    standardLanguages: STANDARD_LANGUAGES
-
+  abilities: ABILITIES,
+  skills: SKILLS,
+  alignments: ALIGNMENTS,
+  races: RACES,
+  classes: CLASSES,
+  backgrounds: BACKGROUNDS,
+  backgroundSkills: BACKGROUND_SKILLS,
+  backgroundLanguages: BACKGROUND_LANGUAGES,
+  standardLanguages: STANDARD_LANGUAGES,
 };
 /* =========================================================
    DERIVED 5E REFERENCE DATA
@@ -1286,44 +1084,214 @@ window.DATA = {
 ========================================================= */
 
 const SKILL_ABILITIES = {
-  "Acrobatics":"DEX", "Animal Handling":"WIS", "Arcana":"INT",
-  "Athletics":"STR", "Deception":"CHA", "History":"INT",
-  "Insight":"WIS", "Intimidation":"CHA", "Investigation":"INT",
-  "Medicine":"WIS", "Nature":"INT", "Perception":"WIS",
-  "Performance":"CHA", "Persuasion":"CHA", "Religion":"INT",
-  "Sleight of Hand":"DEX", "Stealth":"DEX", "Survival":"WIS"
+  Acrobatics: "DEX",
+  "Animal Handling": "WIS",
+  Arcana: "INT",
+  Athletics: "STR",
+  Deception: "CHA",
+  History: "INT",
+  Insight: "WIS",
+  Intimidation: "CHA",
+  Investigation: "INT",
+  Medicine: "WIS",
+  Nature: "INT",
+  Perception: "WIS",
+  Performance: "CHA",
+  Persuasion: "CHA",
+  Religion: "INT",
+  "Sleight of Hand": "DEX",
+  Stealth: "DEX",
+  Survival: "WIS",
 };
 
 const CLASS_REFERENCE = {
-  Barbarian: { hitDie:12, armor:["Light armor","Medium armor","Shields"], weapons:["Simple weapons","Martial weapons"], tools:[], feature:"Rage, Unarmored Defense" },
-  Bard: { hitDie:8, armor:["Light armor"], weapons:["Simple weapons","Hand crossbows","Longswords","Rapiers","Shortswords"], tools:["Three musical instruments"], feature:"Bardic Inspiration, Spellcasting" },
-  Cleric: { hitDie:8, armor:["Light armor","Medium armor","Shields"], weapons:["Simple weapons"], tools:[], feature:"Spellcasting, Divine Domain" },
-  Druid: { hitDie:8, armor:["Light armor (nonmetal)","Medium armor (nonmetal)"], weapons:["Clubs","Daggers","Darts","Javelins","Maces","Quarterstaffs","Scimitars","Sickles","Slings","Spears"], tools:["Herbalism kit"], feature:"Druidic, Spellcasting" },
-  Fighter: { hitDie:10, armor:["All armor","Shields"], weapons:["Simple weapons","Martial weapons"], tools:[], feature:"Fighting Style, Second Wind" },
-  Monk: { hitDie:8, armor:[], weapons:["Simple weapons","Shortswords"], tools:["One artisan's tool or musical instrument"], feature:"Unarmored Defense, Martial Arts" },
-  Paladin: { hitDie:10, armor:["All armor","Shields"], weapons:["Simple weapons","Martial weapons"], tools:[], feature:"Divine Sense, Lay on Hands" },
-  Ranger: { hitDie:10, armor:["Light armor","Medium armor","Shields"], weapons:["Simple weapons","Martial weapons"], tools:[], feature:"Favored Enemy, Natural Explorer" },
-  Rogue: { hitDie:8, armor:["Light armor"], weapons:["Simple weapons","Hand crossbows","Longswords","Rapiers","Shortswords"], tools:["Thieves' tools"], feature:"Expertise, Sneak Attack, Thieves' Cant" },
-  Sorcerer: { hitDie:6, armor:[], weapons:["Daggers","Darts","Slings","Quarterstaffs","Light crossbows"], tools:[], feature:"Spellcasting, Sorcerous Origin" },
-  Warlock: { hitDie:8, armor:["Light armor"], weapons:["Simple weapons"], tools:[], feature:"Otherworldly Patron, Pact Magic" },
-  Wizard: { hitDie:6, armor:[], weapons:["Daggers","Darts","Slings","Quarterstaffs","Light crossbows"], tools:[], feature:"Spellcasting, Arcane Recovery" }
+  Barbarian: {
+    hitDie: 12,
+    armor: ["Light armor", "Medium armor", "Shields"],
+    weapons: ["Simple weapons", "Martial weapons"],
+    tools: [],
+    feature: "Rage, Unarmored Defense",
+  },
+  Bard: {
+    hitDie: 8,
+    armor: ["Light armor"],
+    weapons: [
+      "Simple weapons",
+      "Hand crossbows",
+      "Longswords",
+      "Rapiers",
+      "Shortswords",
+    ],
+    tools: ["Three musical instruments"],
+    feature: "Bardic Inspiration, Spellcasting",
+  },
+  Cleric: {
+    hitDie: 8,
+    armor: ["Light armor", "Medium armor", "Shields"],
+    weapons: ["Simple weapons"],
+    tools: [],
+    feature: "Spellcasting, Divine Domain",
+  },
+  Druid: {
+    hitDie: 8,
+    armor: ["Light armor (nonmetal)", "Medium armor (nonmetal)"],
+    weapons: [
+      "Clubs",
+      "Daggers",
+      "Darts",
+      "Javelins",
+      "Maces",
+      "Quarterstaffs",
+      "Scimitars",
+      "Sickles",
+      "Slings",
+      "Spears",
+    ],
+    tools: ["Herbalism kit"],
+    feature: "Druidic, Spellcasting",
+  },
+  Fighter: {
+    hitDie: 10,
+    armor: ["All armor", "Shields"],
+    weapons: ["Simple weapons", "Martial weapons"],
+    tools: [],
+    feature: "Fighting Style, Second Wind",
+  },
+  Monk: {
+    hitDie: 8,
+    armor: [],
+    weapons: ["Simple weapons", "Shortswords"],
+    tools: ["One artisan's tool or musical instrument"],
+    feature: "Unarmored Defense, Martial Arts",
+  },
+  Paladin: {
+    hitDie: 10,
+    armor: ["All armor", "Shields"],
+    weapons: ["Simple weapons", "Martial weapons"],
+    tools: [],
+    feature: "Divine Sense, Lay on Hands",
+  },
+  Ranger: {
+    hitDie: 10,
+    armor: ["Light armor", "Medium armor", "Shields"],
+    weapons: ["Simple weapons", "Martial weapons"],
+    tools: [],
+    feature: "Favored Enemy, Natural Explorer",
+  },
+  Rogue: {
+    hitDie: 8,
+    armor: ["Light armor"],
+    weapons: [
+      "Simple weapons",
+      "Hand crossbows",
+      "Longswords",
+      "Rapiers",
+      "Shortswords",
+    ],
+    tools: ["Thieves' tools"],
+    feature: "Expertise, Sneak Attack, Thieves' Cant",
+  },
+  Sorcerer: {
+    hitDie: 6,
+    armor: [],
+    weapons: ["Daggers", "Darts", "Slings", "Quarterstaffs", "Light crossbows"],
+    tools: [],
+    feature: "Spellcasting, Sorcerous Origin",
+  },
+  Warlock: {
+    hitDie: 8,
+    armor: ["Light armor"],
+    weapons: ["Simple weapons"],
+    tools: [],
+    feature: "Otherworldly Patron, Pact Magic",
+  },
+  Wizard: {
+    hitDie: 6,
+    armor: [],
+    weapons: ["Daggers", "Darts", "Slings", "Quarterstaffs", "Light crossbows"],
+    tools: [],
+    feature: "Spellcasting, Arcane Recovery",
+  },
 };
 
 const BACKGROUND_REFERENCE = {
-  Acolyte:{ feature:"Shelter of the Faithful", tools:[], equipment:"Holy symbol, prayer book or prayer wheel, vestments, common clothes, pouch" },
-  Charlatan:{ feature:"False Identity", tools:["Disguise kit","Forgery kit"], equipment:"Fine clothes, disguise kit, tools of the con, belt pouch" },
-  Criminal:{ feature:"Criminal Contact", tools:["Thieves' tools","One gaming set"], equipment:"Crowbar, dark common clothes, hood, pouch" },
-  Entertainer:{ feature:"By Popular Demand", tools:["Disguise kit","One musical instrument"], equipment:"Musical instrument, favor of an admirer, costume, pouch" },
-  "Folk Hero":{ feature:"Rustic Hospitality", tools:["One artisan's tools","Vehicles (land)"], equipment:"Artisan's tools, shovel, iron pot, common clothes, pouch" },
-  "Guild Artisan":{ feature:"Guild Membership", tools:["One artisan's tools"], equipment:"Artisan's tools, letter of introduction, traveler's clothes, pouch" },
-  Hermit:{ feature:"Discovery", tools:["Herbalism kit"], equipment:"Scroll case, winter blanket, common clothes, herbalism kit, 5 gp" },
-  Noble:{ feature:"Position of Privilege", tools:["One gaming set"], equipment:"Fine clothes, signet ring, scroll of pedigree, purse" },
-  Outlander:{ feature:"Wanderer", tools:["One musical instrument"], equipment:"Staff, hunting trap, trophy, traveler's clothes, pouch" },
-  Sage:{ feature:"Researcher", tools:[], equipment:"Bottle of black ink, quill, small knife, letter from dead colleague, common clothes, pouch" },
-  Sailor:{ feature:"Ship's Passage", tools:["Navigator's tools","Vehicles (water)"], equipment:"Belaying pin, 50 feet of silk rope, lucky charm, common clothes, pouch" },
-  Soldier:{ feature:"Military Rank", tools:["One gaming set","Vehicles (land)"], equipment:"Insignia of rank, trophy, bone dice or deck, common clothes, pouch" },
-  Urchin:{ feature:"City Secrets", tools:["Disguise kit","Thieves' tools"], equipment:"Small knife, city map, pet mouse, token of parents, common clothes, pouch" },
-  Custom:{ feature:"Custom Background", tools:[], equipment:"Customize starting equipment to match the background concept" }
+  Acolyte: {
+    feature: "Shelter of the Faithful",
+    tools: [],
+    equipment:
+      "Holy symbol, prayer book or prayer wheel, vestments, common clothes, pouch",
+  },
+  Charlatan: {
+    feature: "False Identity",
+    tools: ["Disguise kit", "Forgery kit"],
+    equipment: "Fine clothes, disguise kit, tools of the con, belt pouch",
+  },
+  Criminal: {
+    feature: "Criminal Contact",
+    tools: ["Thieves' tools", "One gaming set"],
+    equipment: "Crowbar, dark common clothes, hood, pouch",
+  },
+  Entertainer: {
+    feature: "By Popular Demand",
+    tools: ["Disguise kit", "One musical instrument"],
+    equipment: "Musical instrument, favor of an admirer, costume, pouch",
+  },
+  "Folk Hero": {
+    feature: "Rustic Hospitality",
+    tools: ["One artisan's tools", "Vehicles (land)"],
+    equipment: "Artisan's tools, shovel, iron pot, common clothes, pouch",
+  },
+  "Guild Artisan": {
+    feature: "Guild Membership",
+    tools: ["One artisan's tools"],
+    equipment:
+      "Artisan's tools, letter of introduction, traveler's clothes, pouch",
+  },
+  Hermit: {
+    feature: "Discovery",
+    tools: ["Herbalism kit"],
+    equipment:
+      "Scroll case, winter blanket, common clothes, herbalism kit, 5 gp",
+  },
+  Noble: {
+    feature: "Position of Privilege",
+    tools: ["One gaming set"],
+    equipment: "Fine clothes, signet ring, scroll of pedigree, purse",
+  },
+  Outlander: {
+    feature: "Wanderer",
+    tools: ["One musical instrument"],
+    equipment: "Staff, hunting trap, trophy, traveler's clothes, pouch",
+  },
+  Sage: {
+    feature: "Researcher",
+    tools: [],
+    equipment:
+      "Bottle of black ink, quill, small knife, letter from dead colleague, common clothes, pouch",
+  },
+  Sailor: {
+    feature: "Ship's Passage",
+    tools: ["Navigator's tools", "Vehicles (water)"],
+    equipment:
+      "Belaying pin, 50 feet of silk rope, lucky charm, common clothes, pouch",
+  },
+  Soldier: {
+    feature: "Military Rank",
+    tools: ["One gaming set", "Vehicles (land)"],
+    equipment:
+      "Insignia of rank, trophy, bone dice or deck, common clothes, pouch",
+  },
+  Urchin: {
+    feature: "City Secrets",
+    tools: ["Disguise kit", "Thieves' tools"],
+    equipment:
+      "Small knife, city map, pet mouse, token of parents, common clothes, pouch",
+  },
+  Custom: {
+    feature: "Custom Background",
+    tools: [],
+    equipment: "Customize starting equipment to match the background concept",
+  },
 };
 
 DATA.skillAbilities = SKILL_ABILITIES;

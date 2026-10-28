@@ -1,5 +1,6 @@
 export function renderCampaignSection(campaign) {
-  document.querySelector("#campaign-intro-title").textContent = campaign.introTitle;
+  document.querySelector("#campaign-intro-title").textContent =
+    campaign.introTitle;
   const introCopy = document.querySelector("#campaign-intro-copy");
   introCopy.replaceChildren();
   campaign.introParagraphs.forEach((paragraph) => {
@@ -23,9 +24,12 @@ export function renderCampaignSection(campaign) {
   });
 
   document.querySelector("#party-title").textContent = campaign.partyTitle;
-  document.querySelector("#party-description").textContent = campaign.partyDescription;
+  document.querySelector("#party-description").textContent =
+    campaign.partyDescription;
   const partyImage = document.querySelector("#party-image");
   partyImage.src = campaign.partyImage;
-  document.querySelector("#manifesto-quote").textContent = campaign.manifestoQuote;
-  document.querySelector("#manifesto-tags").textContent = campaign.manifestoTags;
+  document.querySelector("#manifesto-quote").textContent =
+    campaign.manifestoQuote;
+  document.querySelector("#manifesto-tags").textContent =
+    campaign.manifestoTags;
 }

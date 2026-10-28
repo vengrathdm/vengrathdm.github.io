@@ -1,91 +1,93 @@
 .lob-chronicle-panel .lob-section {
-  margin-top:0
+  margin-top: 0;
 }
-.lob-chronicle-panel .lob-section+.lob-section {
-  margin-top:82px
+.lob-chronicle-panel .lob-section + .lob-section {
+  margin-top: 82px;
 }
 .lob-footer {
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  padding:24px 30px;
-  background:#07080a;
-  border-top:1px solid #2f3135;
-  color:#6f726f
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 30px;
+  background: #07080a;
+  border-top: 1px solid #2f3135;
+  color: #6f726f;
 }
 .lob-footer a {
-  color:#a99a7b;
-  text-decoration:none
+  color: #a99a7b;
+  text-decoration: none;
 }
-@media(max-width:1050px) {
+@media (max-width: 1050px) {
   .lob-character-grid {
-    grid-template-columns:repeat(2,minmax(0,1fr))
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-@media(max-width:900px) {
-  .lob-intro-grid,.lob-party-portrait {
-    grid-template-columns:1fr
+@media (max-width: 900px) {
+  .lob-intro-grid,
+  .lob-party-portrait {
+    grid-template-columns: 1fr;
   }
-.lob-party-image,.lob-party-image img {
-    min-height:300px
+  .lob-party-image,
+  .lob-party-image img {
+    min-height: 300px;
   }
-.lob-section-head {
-    display:block
+  .lob-section-head {
+    display: block;
   }
-.lob-section-head p {
-    margin-top:15px
+  .lob-section-head p {
+    margin-top: 15px;
   }
 }
-@media(max-width:620px) {
+@media (max-width: 620px) {
   .lob-content {
-    width:calc(100% - 28px)
+    width: calc(100% - 28px);
   }
-.lob-card-body {
-    padding:18px
+  .lob-card-body {
+    padding: 18px;
   }
-.lob-card-title {
-    padding:16px 18px
+  .lob-card-title {
+    padding: 16px 18px;
   }
-.lob-paper {
-    padding:25px
+  .lob-paper {
+    padding: 25px;
   }
-.lob-paper:after {
-    display:none
+  .lob-paper:after {
+    display: none;
   }
-.lob-party-copy {
-    padding:28px
+  .lob-party-copy {
+    padding: 28px;
   }
-.lob-manifesto {
-    grid-template-columns:1fr;
-    padding:22px
+  .lob-manifesto {
+    grid-template-columns: 1fr;
+    padding: 22px;
   }
-.lob-manifesto-symbol {
-    text-align:left
+  .lob-manifesto-symbol {
+    text-align: left;
   }
-.lob-character-grid {
-    grid-template-columns:1fr
+  .lob-character-grid {
+    grid-template-columns: 1fr;
   }
-.lob-dead-character {
-    max-width:none
+  .lob-dead-character {
+    max-width: none;
   }
-.lob-character-quote {
-    padding:24px 20px
+  .lob-character-quote {
+    padding: 24px 20px;
   }
-.lob-character-quote p {
-    font-size:21px
+  .lob-character-quote p {
+    font-size: 21px;
   }
-.lob-source-panel {
-    display:block
+  .lob-source-panel {
+    display: block;
   }
-.lob-source-panel a {
-    display:inline-block;
-    margin-top:20px
+  .lob-source-panel a {
+    display: inline-block;
+    margin-top: 20px;
   }
-.lob-footer {
-    display:block
+  .lob-footer {
+    display: block;
   }
-.lob-footer a {
-    display:block;
-    margin-top:8px
+  .lob-footer a {
+    display: block;
+    margin-top: 8px;
   }
 }

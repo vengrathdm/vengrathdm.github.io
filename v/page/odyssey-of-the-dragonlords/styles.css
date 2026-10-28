@@ -1,119 +1,496 @@
-500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap");
-
 /* Default D&D Campaign theme tokens. Common Element geometry stays in res/common/. */
-:root{
-  --theme-base-1:#10170b;--theme-base-2:#1a2410;--theme-base-3:#29351a;--theme-base-4:#394824;--theme-base-5:#4b5c2d;
-  --theme-accent-1:#a8783e;--theme-accent-2:#e0bd62;
-  --theme-text-1:#fffdf5;--theme-text-2:#f1ead9;--theme-text-3:#d0c6a9;--theme-text-muted:#a79a7a;--theme-title-accent:#fff8e5;
-  --theme-line-1:#4e5a31;--theme-line-2:#8a6a3d;--theme-nav-background:#151d0d;--theme-nav-text:#f4ecd9;--theme-nav-active-background:#303d1b;
-  --theme-seal-border:#8f8b80;--theme-seal-inner-border:#635f56;--theme-seal-background:#08090bcc;--theme-seal-small-text:#aaa397;--theme-seal-main-text:#d6cbb5;
-  --theme-font-1:"Caesar Dressing","Voltaire",sans-serif;--theme-font-2:"Fira Sans Extra Condensed",sans-serif;--theme-font-3:"Brygada 1918",Georgia,serif;
-  --theme-hero-image:url("/v/core/graphics/voronoi/odyssey-of-the-dragonlords.webp");
+:root {
+  --theme-base-1: #10170b;
+  --theme-base-2: #1a2410;
+  --theme-base-3: #29351a;
+  --theme-base-4: #394824;
+  --theme-base-5: #4b5c2d;
+  --theme-accent-1: #a8783e;
+  --theme-accent-2: #e0bd62;
+  --theme-text-1: #fffdf5;
+  --theme-text-2: #f1ead9;
+  --theme-text-3: #d0c6a9;
+  --theme-text-muted: #a79a7a;
+  --theme-title-accent: #fff8e5;
+  --theme-line-1: #4e5a31;
+  --theme-line-2: #8a6a3d;
+  --theme-nav-background: #151d0d;
+  --theme-nav-text: #f4ecd9;
+  --theme-nav-active-background: #303d1b;
+  --theme-seal-border: #8f8b80;
+  --theme-seal-inner-border: #635f56;
+  --theme-seal-background: #08090bcc;
+  --theme-seal-small-text: #aaa397;
+  --theme-seal-main-text: #d6cbb5;
+  --theme-font-1: "Caesar Dressing", "Voltaire", sans-serif;
+  --theme-font-2: "Fira Sans Extra Condensed", sans-serif;
+  --theme-font-3: "Brygada 1918", Georgia, serif;
+  --theme-hero-image: url("/v/core/graphics/voronoi/odyssey-of-the-dragonlords.webp");
 }
 
-html{scroll-behavior:smooth}
-body.odyssey-page{
-  margin:0;
-  min-height:100vh;
+html {
+  scroll-behavior: smooth;
+}
+body.odyssey-page {
+  margin: 0;
+  min-height: 100vh;
   background:
-    radial-gradient(circle at 75% 8%,#4a4e25 0,transparent 34%),
-    radial-gradient(circle at 10% 70%,#5b4222 0,transparent 30%),
+    radial-gradient(circle at 75% 8%, #4a4e25 0, transparent 34%),
+    radial-gradient(circle at 10% 70%, #5b4222 0, transparent 30%),
     var(--theme-base-1);
-  color:var(--theme-text-1);
-  font-family:var(--theme-font-2);
-  line-height:1.6;
+  color: var(--theme-text-1);
+  font-family: var(--theme-font-2);
+  line-height: 1.6;
 }
-body.odyssey-page::before{
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.14;
-  background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,255,255,.025) 4px);
+body.odyssey-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 30;
+  opacity: 0.14;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 3px,
+    rgba(255, 255, 255, 0.025) 4px
+  );
 }
-.odyssey-card{border:1px solid #6d7040;background:linear-gradient(145deg,#26331a,#12190d);box-shadow:0 20px 65px #0008}
-.odyssey-card-title{border-bottom:1px solid #4e5a31;background:#151d0d}
-.odyssey-card-title span{font:400 30px/1 var(--theme-font-1);color:var(--theme-accent-1)}
-.odyssey-card-title strong{font:700 12px/1 var(--theme-font-1);letter-spacing:3px;color:#d9d3c7}
-.odyssey-paper{background:linear-gradient(135deg,#303b20,#1a2410);border:1px solid var(--theme-line-1);box-shadow:0 20px 70px #0008}
-.odyssey-paper:after{content:"";position:absolute;top:0;right:35px;width:1px;height:100%;background:#292c30}
-.odyssey-section-mark{font:400 13px/1 var(--theme-font-1);text-transform:uppercase;letter-spacing:3px;color:var(--theme-accent-2)}
-.odyssey-paper h2,.odyssey-source-panel h2,.odyssey-section h2,.odyssey-section-head h2{font:400 clamp(36px,4vw,58px)/.95 var(--theme-font-1);color:#ece7dc;margin:12px 0 20px}
-.odyssey-paper p,.odyssey-source-panel p{max-width:72ch;margin:0 0 14px}
-.odyssey-paper p{color:#eee7d5;font-family:var(--theme-font-3);font-size:16px;line-height:1.7}
-.odyssey-case{background:#151d0d;border:1px solid #8a6a3d;box-shadow:8px 8px 0 #080b05}
-.odyssey-case-label{color:#e0bd62;font:700 12px var(--theme-font-1);letter-spacing:3px;border-bottom:1px solid #8a6a3d}
-.odyssey-case-row{border-bottom:1px solid #394824;font-size:13px}
-.odyssey-case-row span{color:#d0c6a9;letter-spacing:1px}.odyssey-case-row strong{font-family:var(--theme-font-1);font-size:15px;color:#fff8e5;text-align:right}.odyssey-case-row .odyssey-active{color:#e0bd62}
+.odyssey-card {
+  border: 1px solid #6d7040;
+  background: linear-gradient(145deg, #26331a, #12190d);
+  box-shadow: 0 20px 65px #0008;
+}
+.odyssey-card-title {
+  border-bottom: 1px solid #4e5a31;
+  background: #151d0d;
+}
+.odyssey-card-title span {
+  font: 400 30px/1 var(--theme-font-1);
+  color: var(--theme-accent-1);
+}
+.odyssey-card-title strong {
+  font: 700 12px/1 var(--theme-font-1);
+  letter-spacing: 3px;
+  color: #d9d3c7;
+}
+.odyssey-paper {
+  background: linear-gradient(135deg, #303b20, #1a2410);
+  border: 1px solid var(--theme-line-1);
+  box-shadow: 0 20px 70px #0008;
+}
+.odyssey-paper:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 35px;
+  width: 1px;
+  height: 100%;
+  background: #292c30;
+}
+.odyssey-section-mark {
+  font: 400 13px/1 var(--theme-font-1);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--theme-accent-2);
+}
+.odyssey-paper h2,
+.odyssey-source-panel h2,
+.odyssey-section h2,
+.odyssey-section-head h2 {
+  font: 400 clamp(36px, 4vw, 58px)/0.95 var(--theme-font-1);
+  color: #ece7dc;
+  margin: 12px 0 20px;
+}
+.odyssey-paper p,
+.odyssey-source-panel p {
+  max-width: 72ch;
+  margin: 0 0 14px;
+}
+.odyssey-paper p {
+  color: #eee7d5;
+  font-family: var(--theme-font-3);
+  font-size: 16px;
+  line-height: 1.7;
+}
+.odyssey-case {
+  background: #151d0d;
+  border: 1px solid #8a6a3d;
+  box-shadow: 8px 8px 0 #080b05;
+}
+.odyssey-case-label {
+  color: #e0bd62;
+  font: 700 12px var(--theme-font-1);
+  letter-spacing: 3px;
+  border-bottom: 1px solid #8a6a3d;
+}
+.odyssey-case-row {
+  border-bottom: 1px solid #394824;
+  font-size: 13px;
+}
+.odyssey-case-row span {
+  color: #d0c6a9;
+  letter-spacing: 1px;
+}
+.odyssey-case-row strong {
+  font-family: var(--theme-font-1);
+  font-size: 15px;
+  color: #fff8e5;
+  text-align: right;
+}
+.odyssey-case-row .odyssey-active {
+  color: #e0bd62;
+}
 
-.odyssey-party-portrait{border:1px solid #383b3f;background:#0e1013;box-shadow:0 20px 70px #0007}
-.odyssey-party-copy{background:linear-gradient(145deg,#17191d,#0e1013)}
-.odyssey-party-copy h2{margin:10px 0 16px;font:400 clamp(34px,3.5vw,50px)/.95 var(--theme-font-1);color:#ece7dc}
-.odyssey-party-copy p{margin:0;color:#92948f}
-.odyssey-party-image{background:#08090b}
+.odyssey-party-portrait {
+  border: 1px solid #383b3f;
+  background: #0e1013;
+  box-shadow: 0 20px 70px #0007;
+}
+.odyssey-party-copy {
+  background: linear-gradient(145deg, #17191d, #0e1013);
+}
+.odyssey-party-copy h2 {
+  margin: 10px 0 16px;
+  font: 400 clamp(34px, 3.5vw, 50px)/0.95 var(--theme-font-1);
+  color: #ece7dc;
+}
+.odyssey-party-copy p {
+  margin: 0;
+  color: #92948f;
+}
+.odyssey-party-image {
+  background: #08090b;
+}
 
-.odyssey-manifesto{border-top:1px solid #6b5b40;border-bottom:1px solid #6b5b40;background:#111216}
-.odyssey-manifesto-symbol{font-size:48px;color:var(--theme-accent-1);text-align:center}
-.odyssey-manifesto p{font:italic 25px var(--theme-font-3);color:#d8d2c7;margin:4px 0 10px}
-.odyssey-manifesto span{font-size:10px;letter-spacing:3px;color:#817d76}
+.odyssey-manifesto {
+  border-top: 1px solid #6b5b40;
+  border-bottom: 1px solid #6b5b40;
+  background: #111216;
+}
+.odyssey-manifesto-symbol {
+  font-size: 48px;
+  color: var(--theme-accent-1);
+  text-align: center;
+}
+.odyssey-manifesto p {
+  font: italic 25px var(--theme-font-3);
+  color: #d8d2c7;
+  margin: 4px 0 10px;
+}
+.odyssey-manifesto span {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #817d76;
+}
 
-.odyssey-source-panel{border:1px solid #383b3f;background:#0e1013}
-.odyssey-source-panel p{margin:0;color:#858883}
-.odyssey-source-panel a{flex:0 0 auto;padding:13px 17px;border:1px solid var(--theme-accent-2);color:var(--theme-accent-2);text-decoration:none;font:700 11px var(--theme-font-1);letter-spacing:2px}
-.odyssey-source-panel a:hover{background:var(--theme-accent-2);color:#101114}
-.odyssey-character-intro{margin-bottom:28px}
-.odyssey-character-intro p,.odyssey-chronicle-intro p{max-width:72ch;margin:0;color:#888b87;font-size:15px}
-.odyssey-character-quote{border-top:1px solid #6b5b40;border-bottom:1px solid #6b5b40;background:linear-gradient(90deg,#111216,#171419,#111216)}
-.odyssey-character-quote p{max-width:900px;margin:8px auto 12px;font:italic 25px/1.5 var(--theme-font-3);color:#d8d2c7}
-.odyssey-character-quote span{color:#817d76;font-size:11px;letter-spacing:1.5px}
-.odyssey-dead-characters{margin-top:90px;padding-top:10px}.odyssey-section-head p{max-width:470px;margin:0;color:#8f918e;font-size:15px}
-.odyssey-dead-character{min-width:0;border:1px solid #44383a;background:linear-gradient(145deg,#19171a,#0d0f12);box-shadow:0 16px 45px #0006;max-width:300px}
-.odyssey-dead-portrait{height:300px;position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding:15px;background:radial-gradient(circle at 50% 30%,#393338 0,transparent 38%),linear-gradient(180deg,#242025,#0b0d10);border-bottom:1px solid #4b3a3d;filter:grayscale(.8)}
-.odyssey-dead-portrait:before{content:"";position:absolute;inset:18px;border:1px dashed #75666a;opacity:.3}
-.odyssey-dead-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(.8)}
-.odyssey-dead-portrait b{position:absolute;top:18px;right:22px;font:400 34px var(--theme-font-3);color:#9b4b55}
-.odyssey-dead-info{padding:22px}.odyssey-dead-info h3{font:400 27px var(--theme-font-1);color:#c9c2b7;margin:7px 0 2px}.odyssey-dead-info strong{font-size:14px;color:#928c89;font-weight:500}.odyssey-dead-info p{margin-top:15px;color:#797b78;font-size:13px;line-height:1.5}
-.odyssey-footer{background:#07080a;border-top:1px solid #2f3135;color:#6f726f}
-.odyssey-footer a{color:#a99a7b;text-decoration:none}
+.odyssey-source-panel {
+  border: 1px solid #383b3f;
+  background: #0e1013;
+}
+.odyssey-source-panel p {
+  margin: 0;
+  color: #858883;
+}
+.odyssey-source-panel a {
+  flex: 0 0 auto;
+  padding: 13px 17px;
+  border: 1px solid var(--theme-accent-2);
+  color: var(--theme-accent-2);
+  text-decoration: none;
+  font: 700 11px var(--theme-font-1);
+  letter-spacing: 2px;
+}
+.odyssey-source-panel a:hover {
+  background: var(--theme-accent-2);
+  color: #101114;
+}
+.odyssey-character-intro {
+  margin-bottom: 28px;
+}
+.odyssey-character-intro p,
+.odyssey-chronicle-intro p {
+  max-width: 72ch;
+  margin: 0;
+  color: #888b87;
+  font-size: 15px;
+}
+.odyssey-character-quote {
+  border-top: 1px solid #6b5b40;
+  border-bottom: 1px solid #6b5b40;
+  background: linear-gradient(90deg, #111216, #171419, #111216);
+}
+.odyssey-character-quote p {
+  max-width: 900px;
+  margin: 8px auto 12px;
+  font: italic 25px/1.5 var(--theme-font-3);
+  color: #d8d2c7;
+}
+.odyssey-character-quote span {
+  color: #817d76;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+.odyssey-dead-characters {
+  margin-top: 90px;
+  padding-top: 10px;
+}
+.odyssey-section-head p {
+  max-width: 470px;
+  margin: 0;
+  color: #8f918e;
+  font-size: 15px;
+}
+.odyssey-dead-character {
+  min-width: 0;
+  border: 1px solid #44383a;
+  background: linear-gradient(145deg, #19171a, #0d0f12);
+  box-shadow: 0 16px 45px #0006;
+  max-width: 300px;
+}
+.odyssey-dead-portrait {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 15px;
+  background:
+    radial-gradient(circle at 50% 30%, #393338 0, transparent 38%),
+    linear-gradient(180deg, #242025, #0b0d10);
+  border-bottom: 1px solid #4b3a3d;
+  filter: grayscale(0.8);
+}
+.odyssey-dead-portrait:before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px dashed #75666a;
+  opacity: 0.3;
+}
+.odyssey-dead-portrait img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(0.8);
+}
+.odyssey-dead-portrait b {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font: 400 34px var(--theme-font-3);
+  color: #9b4b55;
+}
+.odyssey-dead-info {
+  padding: 22px;
+}
+.odyssey-dead-info h3 {
+  font: 400 27px var(--theme-font-1);
+  color: #c9c2b7;
+  margin: 7px 0 2px;
+}
+.odyssey-dead-info strong {
+  font-size: 14px;
+  color: #928c89;
+  font-weight: 500;
+}
+.odyssey-dead-info p {
+  margin-top: 15px;
+  color: #797b78;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.odyssey-footer {
+  background: #07080a;
+  border-top: 1px solid #2f3135;
+  color: #6f726f;
+}
+.odyssey-footer a {
+  color: #a99a7b;
+  text-decoration: none;
+}
 
-@media(max-width:1050px){}
-@media(max-width:900px){.odyssey-section-head p{margin-top:15px}}
-@media(max-width:620px){.odyssey-paper:after{display:none}.odyssey-manifesto-symbol{text-align:left}.odyssey-dead-character{max-width:none}.odyssey-character-quote p{font-size:21px}.odyssey-source-panel a{display:inline-block;margin-top:20px}.odyssey-footer a{display:block;margin-top:8px}
+@media (max-width: 1050px) {
+}
+@media (max-width: 900px) {
+  .odyssey-section-head p {
+    margin-top: 15px;
+  }
+}
+@media (max-width: 620px) {
+  .odyssey-paper:after {
+    display: none;
+  }
+  .odyssey-manifesto-symbol {
+    text-align: left;
+  }
+  .odyssey-dead-character {
+    max-width: none;
+  }
+  .odyssey-character-quote p {
+    font-size: 21px;
+  }
+  .odyssey-source-panel a {
+    display: inline-block;
+    margin-top: 20px;
+  }
+  .odyssey-footer a {
+    display: block;
+    margin-top: 8px;
+  }
 }
 
 /* Odyssey of the Dragonlords — olive, bronze and ceremonial gold. */
-.odyssey-playlist-link{display:inline-flex;align-items:center;gap:10px;padding:13px 18px;border:1px solid #e0bd62;background:linear-gradient(135deg,#4b5c2d,#29351a);color:#fff8e5;text-decoration:none;font:700 13px var(--theme-font-1);letter-spacing:1.5px;transition:transform .2s ease,background .2s ease}
-.odyssey-playlist-link:hover{transform:translateY(-2px);background:#5b6734}
-.chronicle__entry{border-color:#4e5a31!important;background:linear-gradient(110deg,#202b15,#141d0e)!important}
-.chronicle__summary{gap:14px!important}
-.chronicle__session{color:#e0bd62!important;border-color:#8a6a3d!important}
-.chronicle__title{color:#fffdf5!important}
-.chronicle__recordings{color:#e0bd62!important}
-.chronicle__notes{color:#eee7d5!important}
-.chronicle__notes a{color:#f0cf78!important;text-decoration-color:#8a6a3d}
-.odyssey-party-portrait{border-color:#8a6a3d!important}
-.odyssey-party-copy{background:linear-gradient(145deg,#303b20,#151d0d)!important}
-@media(max-width:760px){}
+.odyssey-playlist-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 18px;
+  border: 1px solid #e0bd62;
+  background: linear-gradient(135deg, #4b5c2d, #29351a);
+  color: #fff8e5;
+  text-decoration: none;
+  font: 700 13px var(--theme-font-1);
+  letter-spacing: 1.5px;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+.odyssey-playlist-link:hover {
+  transform: translateY(-2px);
+  background: #5b6734;
+}
+.chronicle__entry {
+  border-color: #4e5a31 !important;
+  background: linear-gradient(110deg, #202b15, #141d0e) !important;
+}
+.chronicle__summary {
+  gap: 14px !important;
+}
+.chronicle__session {
+  color: #e0bd62 !important;
+  border-color: #8a6a3d !important;
+}
+.chronicle__title {
+  color: #fffdf5 !important;
+}
+.chronicle__recordings {
+  color: #e0bd62 !important;
+}
+.chronicle__notes {
+  color: #eee7d5 !important;
+}
+.chronicle__notes a {
+  color: #f0cf78 !important;
+  text-decoration-color: #8a6a3d;
+}
+.odyssey-party-portrait {
+  border-color: #8a6a3d !important;
+}
+.odyssey-party-copy {
+  background: linear-gradient(145deg, #303b20, #151d0d) !important;
+}
+@media (max-width: 760px) {
+}
 
 /* Odyssey-only refinements: legible episode rows and mythic display typography. */
-.chronicle{border-top:1px solid #8a6a3d}
-.chronicle__entry{border-bottom:1px solid #4e5a31!important}
-.chronicle__summary{grid-template-columns:54px minmax(0,1fr) auto!important;gap:16px!important;padding:16px 18px!important}
-.chronicle__session{display:block;min-width:0;font-family:var(--theme-font-2)!important;font-size:13px!important;font-weight:700;letter-spacing:1px}
-.chronicle__title{display:block;min-width:0;font-family:var(--theme-font-2)!important;font-size:17px!important;line-height:1.35;overflow-wrap:anywhere}
-.chronicle__recordings{justify-self:end;white-space:nowrap;padding:7px 10px;border:1px solid #8a6a3d;background:#29351a;font-family:var(--theme-font-2)!important;font-size:11px!important;letter-spacing:1px}
-.chronicle__notes{padding:0 18px 16px 88px!important}
-.chronicle__notes a{display:inline-block;color:#fff8e5!important;text-decoration:none;border-bottom:1px solid #e0bd62;padding:5px 0}
-.odyssey-hero__title,.odyssey-hero__title-accent,.odyssey-paper h2,.odyssey-source-panel h2,.odyssey-section h2,.odyssey-section-head h2,.odyssey-party-copy h2,.odyssey-card-title strong,.odyssey-case-label,.odyssey-case-row strong,.odyssey-section-mark,.odyssey-playlist-link{font-family:"Caesar Dressing","Voltaire",sans-serif!important}
-@media(max-width:620px){
- .chronicle__summary{grid-template-columns:38px minmax(0,1fr)!important;gap:8px 12px!important;padding:14px 10px!important}
- .chronicle__title{grid-column:2;grid-row:1;font-size:16px!important}
- .chronicle__session{grid-column:1;grid-row:1;font-size:12px!important}
- .chronicle__recordings{grid-column:2;grid-row:2;justify-self:start;margin-top:3px}
- .chronicle__notes{padding:0 10px 15px 60px!important}
+.chronicle {
+  border-top: 1px solid #8a6a3d;
+}
+.chronicle__entry {
+  border-bottom: 1px solid #4e5a31 !important;
+}
+.chronicle__summary {
+  grid-template-columns: 54px minmax(0, 1fr) auto !important;
+  gap: 16px !important;
+  padding: 16px 18px !important;
+}
+.chronicle__session {
+  display: block;
+  min-width: 0;
+  font-family: var(--theme-font-2) !important;
+  font-size: 13px !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.chronicle__title {
+  display: block;
+  min-width: 0;
+  font-family: var(--theme-font-2) !important;
+  font-size: 17px !important;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.chronicle__recordings {
+  justify-self: end;
+  white-space: nowrap;
+  padding: 7px 10px;
+  border: 1px solid #8a6a3d;
+  background: #29351a;
+  font-family: var(--theme-font-2) !important;
+  font-size: 11px !important;
+  letter-spacing: 1px;
+}
+.chronicle__notes {
+  padding: 0 18px 16px 88px !important;
+}
+.chronicle__notes a {
+  display: inline-block;
+  color: #fff8e5 !important;
+  text-decoration: none;
+  border-bottom: 1px solid #e0bd62;
+  padding: 5px 0;
+}
+.odyssey-hero__title,
+.odyssey-hero__title-accent,
+.odyssey-paper h2,
+.odyssey-source-panel h2,
+.odyssey-section h2,
+.odyssey-section-head h2,
+.odyssey-party-copy h2,
+.odyssey-card-title strong,
+.odyssey-case-label,
+.odyssey-case-row strong,
+.odyssey-section-mark,
+.odyssey-playlist-link {
+  font-family: "Caesar Dressing", "Voltaire", sans-serif !important;
+}
+@media (max-width: 620px) {
+  .chronicle__summary {
+    grid-template-columns: 38px minmax(0, 1fr) !important;
+    gap: 8px 12px !important;
+    padding: 14px 10px !important;
+  }
+  .chronicle__title {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 16px !important;
+  }
+  .chronicle__session {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 12px !important;
+  }
+  .chronicle__recordings {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: start;
+    margin-top: 3px;
+  }
+  .chronicle__notes {
+    padding: 0 10px 15px 60px !important;
+  }
 }
 
 /* Caesar Dressing on both lines of the campaign title. */
-.odyssey-hero__title,.odyssey-hero__title-accent{font-family:"Caesar Dressing","Voltaire",sans-serif!important}
-
-
-
+.odyssey-hero__title,
+.odyssey-hero__title-accent {
+  font-family: "Caesar Dressing", "Voltaire", sans-serif !important;
+}
 
 /* Full-width constellation field starts immediately below the hero. */
 .odyssey-content {
@@ -141,51 +518,332 @@ body.odyssey-page::before{
   }
 }
 
-.odyssey-content{width:min(1220px,calc(100% - 48px));margin:auto;padding:70px 0 100px;position:relative;isolation:isolate}
-.odyssey-content::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;background:linear-gradient(rgba(10,13,20,.72),rgba(10,13,20,.86)),url("/v/page/odyssey-of-the-dragonlords/res/graphics/constellations.jpg") center top/cover fixed no-repeat}
-.odyssey-panel[hidden]{display:none!important}
-.odyssey-card{border:1px solid #6d7040;background:linear-gradient(145deg,#26331a,#12190d);box-shadow:0 20px 65px #0008}
-.odyssey-card-title{display:flex;align-items:center;gap:18px;padding:18px 28px;border-bottom:1px solid #4e5a31;background:#151d0d}
-.odyssey-card-title span{font:400 30px/1 var(--theme-font-1);color:var(--theme-accent-1)}
-.odyssey-card-title strong{font:700 12px/1 var(--theme-font-1);letter-spacing:3px;color:#d9d3c7}
-.odyssey-card-body{padding:28px}.odyssey-intro-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:26px;align-items:stretch}
-.odyssey-paper{position:relative;padding:40px;background:linear-gradient(135deg,#303b20,#1a2410);border:1px solid var(--theme-line-1);box-shadow:0 20px 70px #0008}
-.odyssey-paper h2,.odyssey-section h2{font:400 clamp(36px,4vw,58px)/.95 var(--theme-font-1);color:#ece7dc;margin:12px 0 20px}
-.odyssey-paper p{max-width:72ch;margin:0 0 14px;color:#eee7d5;font:400 16px/1.7 var(--theme-font-3)}
-.odyssey-section-mark{font:400 13px/1 var(--theme-font-1);text-transform:uppercase;letter-spacing:3px;color:var(--theme-accent-2)}
-.odyssey-case{padding:28px;background:#151d0d;border:1px solid #8a6a3d;box-shadow:8px 8px 0 #080b05}
-.odyssey-case-label{color:#e0bd62;font:700 12px var(--theme-font-1);letter-spacing:3px;border-bottom:1px solid #8a6a3d;padding-bottom:12px}
-.odyssey-case-row{display:flex;justify-content:space-between;gap:15px;padding:15px 0;border-bottom:1px solid #394824;font-size:13px}
-.odyssey-case-row span{color:#d0c6a9;letter-spacing:1px}.odyssey-case-row strong{font:400 15px var(--theme-font-1);color:#fff8e5;text-align:right}
-.odyssey-party-portrait{margin-top:70px;display:grid;grid-template-columns:.55fr 1.45fr;border:1px solid #383b3f;background:#0e1013;box-shadow:0 20px 70px #0007;overflow:hidden}
-.odyssey-party-copy{display:flex;flex-direction:column;justify-content:center;padding:36px;background:linear-gradient(145deg,#17191d,#0e1013)}
-.odyssey-party-copy h2{margin:10px 0 16px;font:400 clamp(34px,3.5vw,50px)/.95 var(--theme-font-1);color:#ece7dc}.odyssey-party-copy p{margin:0;color:#92948f}
-.odyssey-party-image{margin:0;min-height:390px;background:#08090b}.odyssey-party-image img{display:block;width:100%;height:100%;min-height:390px;object-fit:cover;object-position:center}
-.odyssey-chronicle-panel .odyssey-section{margin-top:0}.odyssey-chronicle-intro{margin-bottom:28px}.odyssey-chronicle-intro p{max-width:72ch;margin:0;color:#888b87;font-size:15px}
-.odyssey-playlist-link{display:inline-block;margin-top:18px;padding:13px 17px;border:1px solid var(--theme-accent-2);color:var(--theme-accent-2);text-decoration:none;font:700 11px var(--theme-font-1);letter-spacing:2px}
-.odyssey-footer{display:flex;justify-content:space-between;gap:20px;padding:24px 30px;background:#07080a;border-top:1px solid #2f3135;color:#6f726f}.odyssey-footer a{color:#e0bd62;text-decoration:none}
-.odyssey-hero{position:relative}.odyssey-hero-kicker,.odyssey-hero-lead{position:relative;z-index:2;max-width:58rem}.odyssey-hero-kicker{margin:0 0 12px;color:#e0bd62;font:400 13px/1.4 var(--theme-font-1);letter-spacing:.28em;text-transform:uppercase}.odyssey-hero-lead{margin:20px 0 0;color:var(--theme-text-2);font:400 clamp(1rem,1.5vw,1.25rem)/1.65 var(--theme-font-3)}
-.odyssey-navbar-mount{position:relative;z-index:5}
-#campaign-chronicle .chronicle-record{border-color:#4e5a31;background:#151d0d}#campaign-chronicle .chronicle-record__number{color:#e0bd62}#campaign-chronicle .chronicle-record__title{color:#fff8e5}#campaign-chronicle .chronicle-record__description{border-color:#4e5a31;color:#d0c6a9}
-.odyssey-load-error{position:relative;z-index:1200;padding:1rem;background:#451a1a;color:#fff}
-@media(max-width:900px){.odyssey-intro-grid,.odyssey-party-portrait{grid-template-columns:1fr}.odyssey-party-image,.odyssey-party-image img{min-height:300px}}
-@media(max-width:620px){.odyssey-content{width:calc(100% - 28px)}.odyssey-card-body{padding:18px}.odyssey-card-title{padding:16px 18px}.odyssey-paper{padding:25px}.odyssey-footer{display:block}.odyssey-footer a{display:block;margin-top:8px}}
-@media(max-width:760px){.odyssey-content::before{background-attachment:scroll}}
+.odyssey-content {
+  width: min(1220px, calc(100% - 48px));
+  margin: auto;
+  padding: 70px 0 100px;
+  position: relative;
+  isolation: isolate;
+}
+.odyssey-content::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(10, 13, 20, 0.72), rgba(10, 13, 20, 0.86)),
+    url("/v/page/odyssey-of-the-dragonlords/res/graphics/constellations.jpg")
+      center top/cover fixed no-repeat;
+}
+.odyssey-panel[hidden] {
+  display: none !important;
+}
+.odyssey-card {
+  border: 1px solid #6d7040;
+  background: linear-gradient(145deg, #26331a, #12190d);
+  box-shadow: 0 20px 65px #0008;
+}
+.odyssey-card-title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 28px;
+  border-bottom: 1px solid #4e5a31;
+  background: #151d0d;
+}
+.odyssey-card-title span {
+  font: 400 30px/1 var(--theme-font-1);
+  color: var(--theme-accent-1);
+}
+.odyssey-card-title strong {
+  font: 700 12px/1 var(--theme-font-1);
+  letter-spacing: 3px;
+  color: #d9d3c7;
+}
+.odyssey-card-body {
+  padding: 28px;
+}
+.odyssey-intro-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 26px;
+  align-items: stretch;
+}
+.odyssey-paper {
+  position: relative;
+  padding: 40px;
+  background: linear-gradient(135deg, #303b20, #1a2410);
+  border: 1px solid var(--theme-line-1);
+  box-shadow: 0 20px 70px #0008;
+}
+.odyssey-paper h2,
+.odyssey-section h2 {
+  font: 400 clamp(36px, 4vw, 58px)/0.95 var(--theme-font-1);
+  color: #ece7dc;
+  margin: 12px 0 20px;
+}
+.odyssey-paper p {
+  max-width: 72ch;
+  margin: 0 0 14px;
+  color: #eee7d5;
+  font: 400 16px/1.7 var(--theme-font-3);
+}
+.odyssey-section-mark {
+  font: 400 13px/1 var(--theme-font-1);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--theme-accent-2);
+}
+.odyssey-case {
+  padding: 28px;
+  background: #151d0d;
+  border: 1px solid #8a6a3d;
+  box-shadow: 8px 8px 0 #080b05;
+}
+.odyssey-case-label {
+  color: #e0bd62;
+  font: 700 12px var(--theme-font-1);
+  letter-spacing: 3px;
+  border-bottom: 1px solid #8a6a3d;
+  padding-bottom: 12px;
+}
+.odyssey-case-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #394824;
+  font-size: 13px;
+}
+.odyssey-case-row span {
+  color: #d0c6a9;
+  letter-spacing: 1px;
+}
+.odyssey-case-row strong {
+  font: 400 15px var(--theme-font-1);
+  color: #fff8e5;
+  text-align: right;
+}
+.odyssey-party-portrait {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr;
+  border: 1px solid #383b3f;
+  background: #0e1013;
+  box-shadow: 0 20px 70px #0007;
+  overflow: hidden;
+}
+.odyssey-party-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 36px;
+  background: linear-gradient(145deg, #17191d, #0e1013);
+}
+.odyssey-party-copy h2 {
+  margin: 10px 0 16px;
+  font: 400 clamp(34px, 3.5vw, 50px)/0.95 var(--theme-font-1);
+  color: #ece7dc;
+}
+.odyssey-party-copy p {
+  margin: 0;
+  color: #92948f;
+}
+.odyssey-party-image {
+  margin: 0;
+  min-height: 390px;
+  background: #08090b;
+}
+.odyssey-party-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  object-fit: cover;
+  object-position: center;
+}
+.odyssey-chronicle-panel .odyssey-section {
+  margin-top: 0;
+}
+.odyssey-chronicle-intro {
+  margin-bottom: 28px;
+}
+.odyssey-chronicle-intro p {
+  max-width: 72ch;
+  margin: 0;
+  color: #888b87;
+  font-size: 15px;
+}
+.odyssey-playlist-link {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 13px 17px;
+  border: 1px solid var(--theme-accent-2);
+  color: var(--theme-accent-2);
+  text-decoration: none;
+  font: 700 11px var(--theme-font-1);
+  letter-spacing: 2px;
+}
+.odyssey-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 30px;
+  background: #07080a;
+  border-top: 1px solid #2f3135;
+  color: #6f726f;
+}
+.odyssey-footer a {
+  color: #e0bd62;
+  text-decoration: none;
+}
+.odyssey-hero {
+  position: relative;
+}
+.odyssey-hero-kicker,
+.odyssey-hero-lead {
+  position: relative;
+  z-index: 2;
+  max-width: 58rem;
+}
+.odyssey-hero-kicker {
+  margin: 0 0 12px;
+  color: #e0bd62;
+  font: 400 13px/1.4 var(--theme-font-1);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+.odyssey-hero-lead {
+  margin: 20px 0 0;
+  color: var(--theme-text-2);
+  font: 400 clamp(1rem, 1.5vw, 1.25rem)/1.65 var(--theme-font-3);
+}
+.odyssey-navbar-mount {
+  position: relative;
+  z-index: 5;
+}
+#campaign-chronicle .chronicle-record {
+  border-color: #4e5a31;
+  background: #151d0d;
+}
+#campaign-chronicle .chronicle-record__number {
+  color: #e0bd62;
+}
+#campaign-chronicle .chronicle-record__title {
+  color: #fff8e5;
+}
+#campaign-chronicle .chronicle-record__description {
+  border-color: #4e5a31;
+  color: #d0c6a9;
+}
+.odyssey-load-error {
+  position: relative;
+  z-index: 1200;
+  padding: 1rem;
+  background: #451a1a;
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .odyssey-intro-grid,
+  .odyssey-party-portrait {
+    grid-template-columns: 1fr;
+  }
+  .odyssey-party-image,
+  .odyssey-party-image img {
+    min-height: 300px;
+  }
+}
+@media (max-width: 620px) {
+  .odyssey-content {
+    width: calc(100% - 28px);
+  }
+  .odyssey-card-body {
+    padding: 18px;
+  }
+  .odyssey-card-title {
+    padding: 16px 18px;
+  }
+  .odyssey-paper {
+    padding: 25px;
+  }
+  .odyssey-footer {
+    display: block;
+  }
+  .odyssey-footer a {
+    display: block;
+    margin-top: 8px;
+  }
+}
+@media (max-width: 760px) {
+  .odyssey-content::before {
+    background-attachment: scroll;
+  }
+}
 
-.odyssey-navbar-mount{position:absolute;inset:0 0 auto;z-index:5;width:100%}.odyssey-hero h1{font-family:var(--theme-font-1);color:var(--theme-title-accent)}.odyssey-hero-title-accent{font-style:normal;color:#fff8e5}
+.odyssey-navbar-mount {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 5;
+  width: 100%;
+}
+.odyssey-hero h1 {
+  font-family: var(--theme-font-1);
+  color: var(--theme-title-accent);
+}
+.odyssey-hero-title-accent {
+  font-style: normal;
+  color: #fff8e5;
+}
 
-.odyssey-character-intro{margin-bottom:28px}
-.odyssey-character-intro p{max-width:72ch;margin:0;color:#888b87;font-size:15px}
-#odyssey-character-gallery .character-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,14rem),1fr));gap:1rem}
-#odyssey-character-gallery .character-card{border-color:rgba(224,189,98,.4);background:linear-gradient(145deg,#202b17,#10170b)}
-#odyssey-character-gallery .character-card__portrait{background:linear-gradient(145deg,#303b20,#080b05)}
-#odyssey-character-gallery .character-card__portrait::after{border-color:#e0bd6280}
-#odyssey-character-gallery .character-card__label{color:#d0c6a9}
-#odyssey-character-gallery .character-card__player{color:#d0c6a9}
-#odyssey-character-gallery .character-card__status{border-color:rgba(224,189,98,.45);color:#e0bd62}
-#odyssey-character-gallery .character-card h3{color:#fff8e5;font-family:var(--theme-font-1)}
-#odyssey-character-gallery .character-card__row{color:#f1ead9}
-#odyssey-character-gallery .character-card__achievement-count{color:#d0c6a9}
+.odyssey-character-intro {
+  margin-bottom: 28px;
+}
+.odyssey-character-intro p {
+  max-width: 72ch;
+  margin: 0;
+  color: #888b87;
+  font-size: 15px;
+}
+#odyssey-character-gallery .character-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  gap: 1rem;
+}
+#odyssey-character-gallery .character-card {
+  border-color: rgba(224, 189, 98, 0.4);
+  background: linear-gradient(145deg, #202b17, #10170b);
+}
+#odyssey-character-gallery .character-card__portrait {
+  background: linear-gradient(145deg, #303b20, #080b05);
+}
+#odyssey-character-gallery .character-card__portrait::after {
+  border-color: #e0bd6280;
+}
+#odyssey-character-gallery .character-card__label {
+  color: #d0c6a9;
+}
+#odyssey-character-gallery .character-card__player {
+  color: #d0c6a9;
+}
+#odyssey-character-gallery .character-card__status {
+  border-color: rgba(224, 189, 98, 0.45);
+  color: #e0bd62;
+}
+#odyssey-character-gallery .character-card h3 {
+  color: #fff8e5;
+  font-family: var(--theme-font-1);
+}
+#odyssey-character-gallery .character-card__row {
+  color: #f1ead9;
+}
+#odyssey-character-gallery .character-card__achievement-count {
+  color: #d0c6a9;
+}
 
 /* Prevent full-bleed artwork and intrinsic grid items from widening the viewport. */
 html,

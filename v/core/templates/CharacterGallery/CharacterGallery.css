@@ -1,1 +1,11 @@
-.character-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,14rem),1fr));gap:1rem}.character-gallery__empty{padding:2rem;text-align:center;color:#aeb3b5;border:1px dashed #41474a}
+.character-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  gap: 1rem;
+}
+.character-gallery__empty {
+  padding: 2rem;
+  text-align: center;
+  color: #aeb3b5;
+  border: 1px dashed #41474a;
+}

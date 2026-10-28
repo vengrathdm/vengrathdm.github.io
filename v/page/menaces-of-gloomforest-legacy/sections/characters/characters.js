@@ -3,14 +3,15 @@ import { CharacterGallery } from "/v/core/templates/CharacterGallery/CharacterGa
 export async function renderCharactersSection(characters) {
   document.querySelector("#characters-kicker").textContent = characters.kicker;
   document.querySelector("#characters-title").textContent = characters.title;
-  document.querySelector("#characters-description").textContent = characters.description;
+  document.querySelector("#characters-description").textContent =
+    characters.description;
 
   const gallery = new CharacterGallery(
     document.querySelector("#character-gallery"),
     {
       characterIds: characters.characterIds,
-      emptyMessage: characters.emptyMessage
-    }
+      emptyMessage: characters.emptyMessage,
+    },
   );
   await gallery.render();
 }

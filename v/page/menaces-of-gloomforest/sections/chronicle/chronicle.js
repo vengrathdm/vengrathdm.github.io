@@ -25,7 +25,11 @@ export function renderChronicleSection(chronicle) {
 
   const records = document.createElement("div");
   records.className = "chronicle ddc-chronicle-list";
-  records.replaceChildren(...chronicle.sessions.map(session => createChronicleRecord(session, { accent: "#c1a56b" })));
+  records.replaceChildren(
+    ...chronicle.sessions.map((session) =>
+      createChronicleRecord(session, { accent: "#c1a56b" }),
+    ),
+  );
   const recordsSection = document.createElement("section");
   recordsSection.className = "ddc-section ddc-chronicle-records";
   recordsSection.append(records);

@@ -1,2 +1,125 @@
 <!doctype html>
-<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Curse of Strahd — zapis kampanii w Barovii, domenie Strahda von Zarovicha."><meta name="theme-color" content="#08090b"><title>Curse of Strahd — Vengrath</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="./theme-fonts.css"><link rel="stylesheet" href="/v/core/templates/HomeButton/HomeButton.css"><link rel="stylesheet" href="/v/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css"><link rel="stylesheet" href="/v/core/templates/SubpageNavbar/SubpageNavbar.css"><link rel="stylesheet" href="/v/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css"><link rel="stylesheet" href="/v/core/templates/SubpageHero/SubpageHero.css"><link rel="stylesheet" href="/v/core/templates/AudioPlayerButton/AudioPlayerButton.css"><link rel="stylesheet" href="/v/core/templates/CharacterCard/CharacterCard.css"><link rel="stylesheet" href="/v/core/templates/CharacterCard/Achievements/Achievements.css"><link rel="stylesheet" href="/v/core/templates/CharacterGallery/CharacterGallery.css"><link rel="stylesheet" href="./sections/campaign/campaign.css"><link rel="stylesheet" href="./sections/chronicle/chronicle.css"></head><body class="curse-of-strahd-page"><div id="campaign-hero"></div><main class="ddc-content"><section class="ddc-tab-panel" id="campaign" data-page-section="campaign"><section class="ddc-card"><div class="ddc-card-title"><span>01</span><strong>AKTA KAMPANII</strong></div><div class="ddc-card-body"><div class="ddc-intro-grid"><article class="ddc-paper"><div class="ddc-section-mark">O KAMPANII</div><h2 id="campaign-intro-title"></h2><div id="campaign-intro-copy"></div></article><aside class="ddc-case"><div class="ddc-case-label">DOSSIER</div><div id="campaign-dossier"></div></aside></div></div></section><section class="ddc-party-portrait"><div class="ddc-party-copy"><div class="ddc-section-mark">ZAPIS</div><h2 id="party-title"></h2><p id="party-description"></p></div><figure class="ddc-party-image"><img id="party-image" alt="Barovia, domena Strahda" loading="lazy"></figure></section></section><section class="ddc-tab-panel" id="characters" data-page-section="characters" hidden><section class="ddc-section"><div class="ddc-section-mark">DRUŻYNA</div><h2 id="characters-title">Postaci</h2><p id="characters-description">Bohaterowie tej rozgrywki.</p><div id="character-gallery"></div></section></section><section class="ddc-tab-panel" id="chronicle" data-page-section="chronicle" hidden><section class="ddc-section"><div class="ddc-section-mark" id="chronicle-kicker"></div><h2 id="chronicle-title"></h2><p id="chronicle-description"></p><p><a id="chronicle-playlist" target="_blank" rel="noopener noreferrer">Otwórz playlistę kampanii ↗</a></p></section></section></main><footer class="ddc-footer"><span>VENGRATH · CURSE OF STRAHD</span><a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a></footer><script type="module" src="./app.js"></script></body></html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Curse of Strahd — zapis kampanii w Barovii, domenie Strahda von Zarovicha."
+    />
+    <meta name="theme-color" content="#08090b" />
+    <title>Curse of Strahd — Vengrath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./theme-fonts.css" />
+    <link rel="stylesheet" href="/v/core/templates/HomeButton/HomeButton.css" />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/SubpageNavbar/SubpageNavbar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/SubpageHero/SubpageHero.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/AudioPlayerButton/AudioPlayerButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/CharacterCard/CharacterCard.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/CharacterCard/Achievements/Achievements.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/CharacterGallery/CharacterGallery.css"
+    />
+    <link rel="stylesheet" href="./sections/campaign/campaign.css" />
+    <link rel="stylesheet" href="./sections/chronicle/chronicle.css" />
+  </head>
+  <body class="curse-of-strahd-page">
+    <div id="campaign-hero"></div>
+    <main class="ddc-content">
+      <section class="ddc-tab-panel" id="campaign" data-page-section="campaign">
+        <section class="ddc-card">
+          <div class="ddc-card-title">
+            <span>01</span><strong>AKTA KAMPANII</strong>
+          </div>
+          <div class="ddc-card-body">
+            <div class="ddc-intro-grid">
+              <article class="ddc-paper">
+                <div class="ddc-section-mark">O KAMPANII</div>
+                <h2 id="campaign-intro-title"></h2>
+                <div id="campaign-intro-copy"></div>
+              </article>
+              <aside class="ddc-case">
+                <div class="ddc-case-label">DOSSIER</div>
+                <div id="campaign-dossier"></div>
+              </aside>
+            </div>
+          </div>
+        </section>
+        <section class="ddc-party-portrait">
+          <div class="ddc-party-copy">
+            <div class="ddc-section-mark">ZAPIS</div>
+            <h2 id="party-title"></h2>
+            <p id="party-description"></p>
+          </div>
+          <figure class="ddc-party-image">
+            <img
+              id="party-image"
+              alt="Barovia, domena Strahda"
+              loading="lazy"
+            />
+          </figure>
+        </section>
+      </section>
+      <section
+        class="ddc-tab-panel"
+        id="characters"
+        data-page-section="characters"
+        hidden
+      >
+        <section class="ddc-section">
+          <div class="ddc-section-mark">DRUŻYNA</div>
+          <h2 id="characters-title">Postaci</h2>
+          <p id="characters-description">Bohaterowie tej rozgrywki.</p>
+          <div id="character-gallery"></div>
+        </section>
+      </section>
+      <section
+        class="ddc-tab-panel"
+        id="chronicle"
+        data-page-section="chronicle"
+        hidden
+      >
+        <section class="ddc-section">
+          <div class="ddc-section-mark" id="chronicle-kicker"></div>
+          <h2 id="chronicle-title"></h2>
+          <p id="chronicle-description"></p>
+          <p>
+            <a id="chronicle-playlist" target="_blank" rel="noopener noreferrer"
+              >Otwórz playlistę kampanii ↗</a
+            >
+          </p>
+        </section>
+      </section>
+    </main>
+    <footer class="ddc-footer">
+      <span>VENGRATH · CURSE OF STRAHD</span
+      ><a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a>
+    </footer>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

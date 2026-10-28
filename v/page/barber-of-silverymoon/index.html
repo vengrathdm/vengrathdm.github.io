@@ -1,21 +1,130 @@
 <!doctype html>
-<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="W Silverymoon ludzie znikają nocą, a ci, którzy wracają, nie pamiętają porwania. Łączy ich jedno: nienaturalnie perfekcyjne fryzury.">
-<meta name="theme-color" content="#080a16"><title>Barber of Silverymoon — Vengrath</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="./theme-fonts.css"><link rel="stylesheet" href="/v/core/templates/HomeButton/HomeButton.css">
-<link rel="stylesheet" href="/v/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css"><link rel="stylesheet" href="/v/core/templates/SubpageNavbar/SubpageNavbar.css">
-<link rel="stylesheet" href="/v/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css"><link rel="stylesheet" href="/v/core/templates/SubpageHero/SubpageHero.css">
-<link rel="stylesheet" href="/v/core/templates/CharacterGallery/CharacterGallery.css"><link rel="stylesheet" href="/v/core/templates/CharacterCard/CharacterCard.css">
-<link rel="stylesheet" href="/v/core/templates/CharacterCard/Achievements/Achievements.css"><link rel="stylesheet" href="./styles.css"></head>
-<body class="barber-page"><div id="campaign-hero"></div><main class="barber-content">
-<section class="barber-tab-panel" id="campaign" data-page-section="campaign"><section class="barber-card">
-<div class="barber-card-title"><span>01</span><strong>AKTA KAMPANII</strong></div><div class="barber-card-body"><div class="barber-intro-grid">
-<article class="barber-paper"><div class="barber-section-mark">O KAMPANII</div><h2 id="campaign-intro-title"></h2><div id="campaign-intro-copy"></div></article>
-<aside class="barber-dossier" aria-label="Dossier kampanii"><div class="barber-dossier-label">DOSSIER / SILVERYMOON</div><div id="campaign-dossier"></div></aside></div></div></section>
-<section class="barber-atmosphere"><div class="barber-atmosphere-copy"><div class="barber-section-mark">NOCNE SILVERYMOON</div><h2>Nie każdy wraca z własnymi wspomnieniami.</h2><p>Eleganckie ulice miasta skrywają ślad, którego nie da się wyjaśnić zwykłym rzemiosłem.</p></div><figure><img src="/v/core/graphics/voronoi/barber-of-silverymoon.webp" alt="Barber of Silverymoon"></figure></section></section>
-<section class="barber-tab-panel barber-characters-panel" id="characters" data-page-section="characters" hidden><section class="barber-section barber-character-intro">
-<div class="barber-section-mark" id="characters-kicker"></div><h2 id="characters-title"></h2><p id="characters-description"></p></section><section class="barber-section"><div id="barber-character-gallery"></div></section></section>
-<section class="barber-tab-panel barber-chronicle-panel" id="chronicle" data-page-section="chronicle" hidden><section class="barber-section">
-<div class="barber-section-mark">AKTA / KRONIKA</div><h2>Sprawa z Silverymoon</h2><p>Materiały wideo powiązane z tą przygodą.</p><a class="barber-playlist-link" id="chronicle-playlist" target="_blank" rel="noopener noreferrer">Otwórz playlistę kampanii ↗</a></section></section></main>
-<footer class="barber-footer"><span>VENGRATH · BARBER OF SILVERYMOON</span><a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a></footer><script type="module" src="./app.js"></script></body></html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="W Silverymoon ludzie znikają nocą, a ci, którzy wracają, nie pamiętają porwania. Łączy ich jedno: nienaturalnie perfekcyjne fryzury."
+    />
+    <meta name="theme-color" content="#080a16" />
+    <title>Barber of Silverymoon — Vengrath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./theme-fonts.css" />
+    <link rel="stylesheet" href="/v/core/templates/HomeButton/HomeButton.css" />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/SubpageNavbar/SubpageNavbar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/SubpageHero/SubpageHero.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/CharacterGallery/CharacterGallery.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/CharacterCard/CharacterCard.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/CharacterCard/Achievements/Achievements.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="barber-page">
+    <div id="campaign-hero"></div>
+    <main class="barber-content">
+      <section
+        class="barber-tab-panel"
+        id="campaign"
+        data-page-section="campaign"
+      >
+        <section class="barber-card">
+          <div class="barber-card-title">
+            <span>01</span><strong>AKTA KAMPANII</strong>
+          </div>
+          <div class="barber-card-body">
+            <div class="barber-intro-grid">
+              <article class="barber-paper">
+                <div class="barber-section-mark">O KAMPANII</div>
+                <h2 id="campaign-intro-title"></h2>
+                <div id="campaign-intro-copy"></div>
+              </article>
+              <aside class="barber-dossier" aria-label="Dossier kampanii">
+                <div class="barber-dossier-label">DOSSIER / SILVERYMOON</div>
+                <div id="campaign-dossier"></div>
+              </aside>
+            </div>
+          </div>
+        </section>
+        <section class="barber-atmosphere">
+          <div class="barber-atmosphere-copy">
+            <div class="barber-section-mark">NOCNE SILVERYMOON</div>
+            <h2>Nie każdy wraca z własnymi wspomnieniami.</h2>
+            <p>
+              Eleganckie ulice miasta skrywają ślad, którego nie da się wyjaśnić
+              zwykłym rzemiosłem.
+            </p>
+          </div>
+          <figure>
+            <img
+              src="/v/core/graphics/voronoi/barber-of-silverymoon.webp"
+              alt="Barber of Silverymoon"
+            />
+          </figure>
+        </section>
+      </section>
+      <section
+        class="barber-tab-panel barber-characters-panel"
+        id="characters"
+        data-page-section="characters"
+        hidden
+      >
+        <section class="barber-section barber-character-intro">
+          <div class="barber-section-mark" id="characters-kicker"></div>
+          <h2 id="characters-title"></h2>
+          <p id="characters-description"></p>
+        </section>
+        <section class="barber-section">
+          <div id="barber-character-gallery"></div>
+        </section>
+      </section>
+      <section
+        class="barber-tab-panel barber-chronicle-panel"
+        id="chronicle"
+        data-page-section="chronicle"
+        hidden
+      >
+        <section class="barber-section">
+          <div class="barber-section-mark">AKTA / KRONIKA</div>
+          <h2>Sprawa z Silverymoon</h2>
+          <p>Materiały wideo powiązane z tą przygodą.</p>
+          <a
+            class="barber-playlist-link"
+            id="chronicle-playlist"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Otwórz playlistę kampanii ↗</a
+          >
+        </section>
+      </section>
+    </main>
+    <footer class="barber-footer">
+      <span>VENGRATH · BARBER OF SILVERYMOON</span
+      ><a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a>
+    </footer>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

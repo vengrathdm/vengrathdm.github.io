@@ -23,7 +23,7 @@ export function mountAudioPlayerButton(player, color = "#bca06a") {
 
     return {
       radius: Math.hypot(x, y),
-      volume: angle / (Math.PI * 2)
+      volume: angle / (Math.PI * 2),
     };
   };
 
@@ -67,9 +67,9 @@ export function mountAudioPlayerButton(player, color = "#bca06a") {
     symbol.textContent = state.playing ? "Ⅱ" : "▶";
     button.setAttribute(
       "aria-label",
-      state.playing ? "Wstrzymaj audio" : "Odtwórz audio"
+      state.playing ? "Wstrzymaj audio" : "Odtwórz audio",
     );
-    ring.style.setProperty("--volume", (state.volume * 100) + "%");
+    ring.style.setProperty("--volume", state.volume * 100 + "%");
   });
 
   document.body.append(button);
@@ -82,6 +82,6 @@ export function mountAudioPlayerButton(player, color = "#bca06a") {
     destroy() {
       unsubscribe();
       button.remove();
-    }
+    },
   };
 }

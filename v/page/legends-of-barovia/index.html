@@ -1,105 +1,156 @@
 <!doctype html>
 <html lang="pl">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Legends of Barovia — kampania Vengrath. Dossier świata, postaci drużyny i kronika.">
-  <meta name="theme-color" content="#08090b">
-  <title>Legends of Barovia — Vengrath</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Legends of Barovia — kampania Vengrath. Dossier świata, postaci drużyny i kronika."
+    />
+    <meta name="theme-color" content="#08090b" />
+    <title>Legends of Barovia — Vengrath</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="./theme-fonts.css">
-  <link rel="stylesheet" href="/v/core/templates/HomeButton/HomeButton.css">
-  <link rel="stylesheet" href="/v/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css">
-  <link rel="stylesheet" href="/v/core/templates/SubpageNavbar/SubpageNavbar.css">
-  <link rel="stylesheet" href="/v/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css">
-  <link rel="stylesheet" href="/v/core/templates/SubpageHero/SubpageHero.css">
-  <link rel="stylesheet" href="/v/core/templates/CharacterCard/CharacterCard.css">
-  <link rel="stylesheet" href="/v/core/templates/CharacterCard/Achievements/Achievements.css">
-  <link rel="stylesheet" href="/v/core/templates/CharacterGallery/CharacterGallery.css">
-  <link rel="stylesheet" href="/v/core/templates/Chronicle/Chronicle.css">
-  <link rel="stylesheet" href="/v/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css">
-  <link rel="stylesheet" href="/v/core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css">
-  <link rel="stylesheet" href="/v/core/templates/AudioPlayerButton/AudioPlayerButton.css">
-  <link rel="stylesheet" href="./sections/campaign/campaign.css">
-  <link rel="stylesheet" href="./sections/characters/characters.css">
-  <link rel="stylesheet" href="./sections/chronicle/chronicle.css">
-</head>
-<body class="legends-of-barovia-page">
-  <div id="campaign-hero"></div>
-  <main class="lob-content">
-    <section class="lob-tab-panel" id="campaign" data-page-section="campaign">
-      <section class="lob-card lob-card-main">
-        <div class="lob-card-title"><span>01</span><strong>GŁÓWNA</strong></div>
-        <div class="lob-card-body">
-          <div class="lob-intro-grid">
-            <article class="lob-paper">
-              <div class="lob-section-mark">AKTA / 01</div>
-              <h2 id="campaign-intro-title"></h2>
-              <div id="campaign-intro-copy"></div>
-            </article>
-            <aside class="lob-case" aria-label="Dossier kampanii">
-              <div class="lob-case-label">DOSSIER</div>
-              <div id="campaign-dossier"></div>
-            </aside>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./theme-fonts.css" />
+    <link rel="stylesheet" href="/v/core/templates/HomeButton/HomeButton.css" />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/SubpageNavbar/SubpageNavbar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/SubpageNavbar/NavbarButton/NavbarButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/SubpageHero/SubpageHero.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/CharacterCard/CharacterCard.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/CharacterCard/Achievements/Achievements.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/CharacterGallery/CharacterGallery.css"
+    />
+    <link rel="stylesheet" href="/v/core/templates/Chronicle/Chronicle.css" />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/v/core/templates/AudioPlayerButton/AudioPlayerButton.css"
+    />
+    <link rel="stylesheet" href="./sections/campaign/campaign.css" />
+    <link rel="stylesheet" href="./sections/characters/characters.css" />
+    <link rel="stylesheet" href="./sections/chronicle/chronicle.css" />
+  </head>
+  <body class="legends-of-barovia-page">
+    <div id="campaign-hero"></div>
+    <main class="lob-content">
+      <section class="lob-tab-panel" id="campaign" data-page-section="campaign">
+        <section class="lob-card lob-card-main">
+          <div class="lob-card-title">
+            <span>01</span><strong>GŁÓWNA</strong>
           </div>
-        </div>
+          <div class="lob-card-body">
+            <div class="lob-intro-grid">
+              <article class="lob-paper">
+                <div class="lob-section-mark">AKTA / 01</div>
+                <h2 id="campaign-intro-title"></h2>
+                <div id="campaign-intro-copy"></div>
+              </article>
+              <aside class="lob-case" aria-label="Dossier kampanii">
+                <div class="lob-case-label">DOSSIER</div>
+                <div id="campaign-dossier"></div>
+              </aside>
+            </div>
+          </div>
+        </section>
+        <section class="lob-party-portrait">
+          <div class="lob-party-copy">
+            <div class="lob-section-mark">PORTRET DRUŻYNY</div>
+            <h2 id="party-title"></h2>
+            <p id="party-description"></p>
+          </div>
+          <figure class="lob-party-image">
+            <img
+              id="party-image"
+              alt="Portret drużyny Legends of Barovia"
+              loading="lazy"
+            />
+          </figure>
+        </section>
+        <section class="lob-manifesto">
+          <div class="lob-manifesto-symbol" aria-hidden="true">☾</div>
+          <div>
+            <div class="lob-section-mark">ZASADA BAROVII</div>
+            <p id="manifesto-quote"></p>
+            <span id="manifesto-tags"></span>
+          </div>
+        </section>
+        <section class="lob-source-panel">
+          <div>
+            <div class="lob-section-mark">ŹRÓDŁO ŚWIATA</div>
+            <h2 id="source-title"></h2>
+            <p id="source-description"></p>
+          </div>
+          <a id="source-link" target="_blank" rel="noopener noreferrer"
+            >OFICJALNA STRONA →</a
+          >
+        </section>
       </section>
-      <section class="lob-party-portrait">
-        <div class="lob-party-copy">
-          <div class="lob-section-mark">PORTRET DRUŻYNY</div>
-          <h2 id="party-title"></h2>
-          <p id="party-description"></p>
-        </div>
-        <figure class="lob-party-image">
-          <img id="party-image" alt="Portret drużyny Legends of Barovia" loading="lazy">
-        </figure>
-      </section>
-      <section class="lob-manifesto">
-        <div class="lob-manifesto-symbol" aria-hidden="true">☾</div>
-        <div>
-          <div class="lob-section-mark">ZASADA BAROVII</div>
-          <p id="manifesto-quote"></p>
-          <span id="manifesto-tags"></span>
-        </div>
-      </section>
-      <section class="lob-source-panel">
-        <div>
-          <div class="lob-section-mark">ŹRÓDŁO ŚWIATA</div>
-          <h2 id="source-title"></h2>
-          <p id="source-description"></p>
-        </div>
-        <a id="source-link" target="_blank" rel="noopener noreferrer">OFICJALNA STRONA →</a>
-      </section>
-    </section>
 
-    <section class="lob-tab-panel" id="characters" data-page-section="characters" hidden>
-      <section class="lob-section lob-character-intro">
-        <div class="lob-section-mark" id="characters-kicker"></div>
-        <h2 id="characters-title"></h2>
-        <p id="characters-description"></p>
+      <section
+        class="lob-tab-panel"
+        id="characters"
+        data-page-section="characters"
+        hidden
+      >
+        <section class="lob-section lob-character-intro">
+          <div class="lob-section-mark" id="characters-kicker"></div>
+          <h2 id="characters-title"></h2>
+          <p id="characters-description"></p>
+        </section>
+        <section class="lob-character-quote">
+          <div class="lob-section-mark">GŁOS Z MGŁY</div>
+          <p id="characters-quote"></p>
+          <span id="characters-attribution"></span>
+        </section>
+        <div id="character-gallery" aria-live="polite"></div>
       </section>
-      <section class="lob-character-quote">
-        <div class="lob-section-mark">GŁOS Z MGŁY</div>
-        <p id="characters-quote"></p>
-        <span id="characters-attribution"></span>
+
+      <section
+        class="lob-tab-panel lob-chronicle-panel"
+        id="chronicle"
+        data-page-section="chronicle"
+        hidden
+      >
+        <section class="lob-section">
+          <div id="campaign-chronicle" class="chronicle"></div>
+        </section>
       </section>
-      <div id="character-gallery" aria-live="polite"></div>
-    </section>
+    </main>
 
-    <section class="lob-tab-panel lob-chronicle-panel" id="chronicle" data-page-section="chronicle" hidden>
-      <section class="lob-section">
-        <div id="campaign-chronicle" class="chronicle"></div>
-      </section>
-    </section>
-  </main>
+    <footer class="lob-footer">
+      <span>VENGRATH · LEGENDS OF BAROVIA</span>
+      <a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a>
+    </footer>
 
-  <footer class="lob-footer">
-    <span>VENGRATH · LEGENDS OF BAROVIA</span>
-    <a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a>
-  </footer>
-
-  <script type="module" src="./app.js"></script>
-</body>
+    <script type="module" src="./app.js"></script>
+  </body>
 </html>

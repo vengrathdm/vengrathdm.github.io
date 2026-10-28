@@ -9,7 +9,9 @@ import { renderChronicleSection } from "./sections/chronicle/chronicle.js";
 async function loadJson(path) {
   const response = await fetch(path);
   if (!response.ok) {
-    throw new Error(`Nie udało się wczytać pliku konfiguracji: ${path} (${response.status})`);
+    throw new Error(
+      `Nie udało się wczytać pliku konfiguracji: ${path} (${response.status})`,
+    );
   }
   return response.json();
 }
@@ -18,12 +20,15 @@ async function initializeCampaignPage() {
   const [manifest, theme, content] = await Promise.all([
     loadJson("./manifest.json"),
     loadJson("./theme.json"),
-    loadJson("./content.json")
+    loadJson("./content.json"),
   ]);
 
   const root = document.documentElement;
   Object.entries(theme.colors).forEach(([token, value]) => {
-    const cssToken = token.replace(/[A-Z]/g, (letter) => "-" + letter.toLowerCase());
+    const cssToken = token.replace(
+      /[A-Z]/g,
+      (letter) => "-" + letter.toLowerCase(),
+    );
     root.style.setProperty("--theme-" + cssToken, value);
   });
   root.style.setProperty("--campaign-accent", theme.colors.accent2);
@@ -34,7 +39,7 @@ async function initializeCampaignPage() {
   const hero = createSubpageHero({
     title: content.campaign.title,
     backgroundImage: theme.heroImage,
-    theme: { accent: theme.colors.accent2 }
+    theme: { accent: theme.colors.accent2 },
   });
   hero.id = "campaign-hero";
   hero.classList.add("sands-hero");
@@ -73,17 +78,30 @@ async function initializeCampaignPage() {
   const seal = document.createElement("div");
   seal.className = "sands-hero-seal";
   seal.setAttribute("aria-hidden", "true");
-  seal.innerHTML = '<span>THE WASTELAND</span><strong>KIRAT</strong><small>DOOM</small>';
+  seal.innerHTML =
+    "<span>THE WASTELAND</span><strong>KIRAT</strong><small>DOOM</small>";
   hero.querySelector(".subpage-hero__copy").append(seal);
 
   document.querySelector("#campaign-hero").replaceWith(hero);
   mountSubpageNavbar(navbarMount, {
     playlistUrl: manifest.playlistUrl,
     sections: [
-      { text: "Kampania", sectionLink: "campaign", color: theme.colors.accent2 },
-      { text: "Postaci", sectionLink: "characters", color: theme.colors.accent2 },
-      { text: "Kronika", sectionLink: "chronicle", color: theme.colors.accent2 }
-    ]
+      {
+        text: "Kampania",
+        sectionLink: "campaign",
+        color: theme.colors.accent2,
+      },
+      {
+        text: "Postaci",
+        sectionLink: "characters",
+        color: theme.colors.accent2,
+      },
+      {
+        text: "Kronika",
+        sectionLink: "chronicle",
+        color: theme.colors.accent2,
+      },
+    ],
   });
 
   renderCampaignSection(content.campaign);
@@ -93,7 +111,7 @@ async function initializeCampaignPage() {
   if (manifest.audio?.src) {
     const audioPlayer = new AudioPlayer({
       src: manifest.audio.src,
-      storageKey: manifest.audio.continuationKey
+      storageKey: manifest.audio.continuationKey,
     });
     mountAudioPlayerButton(audioPlayer, theme.audioColor);
   }
@@ -104,6 +122,7 @@ initializeCampaignPage().catch((error) => {
   const message = document.createElement("p");
   message.className = "sands-load-error";
   message.setAttribute("role", "alert");
-  message.textContent = "Nie udało się załadować konfiguracji kampanii. Odśwież stronę lub spróbuj ponownie później.";
+  message.textContent =
+    "Nie udało się załadować konfiguracji kampanii. Odśwież stronę lub spróbuj ponownie później.";
   document.body.prepend(message);
 });
