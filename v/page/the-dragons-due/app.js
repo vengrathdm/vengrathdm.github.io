@@ -1,5 +1,7 @@
 import { createSubpageHero } from "/v/core/templates/SubpageHero/SubpageHero.js";
 import { mountSubpageNavbar } from "/v/core/templates/SubpageNavbar/SubpageNavbar.js";
+import { AudioPlayer } from "/v/core/templates/AudioPlayer/AudioPlayer.js";
+import { mountAudioPlayerButton } from "/v/core/templates/AudioPlayerButton/AudioPlayerButton.js";
 
 async function loadJson(path) {
   const response = await fetch(path);
@@ -31,6 +33,11 @@ function renderCards(target, records, kind) {
   }));
 }
 async function initialize() {
+  const campaignAudio = new AudioPlayer({
+    src: "/v/page/the-dragons-due/res/audio/TheDragonsDue.mp3",
+    storageKey: "vengrath-the-dragons-due-audio"
+  });
+  mountAudioPlayerButton(campaignAudio, "#c6a45c");
   const [manifest, theme, content] = await Promise.all([
     loadJson("./manifest.json"), loadJson("./theme.json"), loadJson("./content.json")
   ]);
