@@ -1,10 +1,10 @@
 {
-  "id": "ciche-zniwa",
-  "title": "Ciche Żniwa",
+  "id": "the-dragons-due",
+  "title": "The Dragon's Due",
   "language": "pl",
-  "campaign": "Ciche Żniwa",
-  "module": "The Silent Harvest",
-  "entry": "/v/page/ciche-zniwa/",
+  "campaign": "The Dragon's Due",
+  "module": "The Dragon's Due",
+  "entry": "/v/page/the-dragons-due/",
   "theme": "./theme.json",
   "content": "./content.json",
   "sections": [
