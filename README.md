@@ -90,7 +90,17 @@ Use semantic `header`, `nav`, `main`, `section`, and `footer` elements, one clea
 
 If the page uses `SubpageNavbar`, each navigation `sectionLink` must match a section `id`, and each switchable section must have the matching `data-page-section` value. The navbar hides all other such sections when a button is selected. Include an initial visible section and meaningful labels. Bespoke pages can implement their own navigation behavior.
 
-For the standard campaign structure, keep exactly these primary sections in this order: **Kampania**, **Postaci**, and **Kronika**. Put the campaign overview, setting, locations, factions, and non-player characters in Kampania. Postaci is for player characters only; do not use it as an NPC gallery. Kronika contains the session records, with optional recordings and notes that open when a record is expanded. A campaign can present these sections as a scrollable page or as switchable panels. Preserve deliberate bespoke exceptions such as Rise of the Drow and Książęta Heartwell.
+For the standard campaign structure, provide exactly these primary sections in this order: **Kampania**, **Postaci**, and **Kronika**. Their IDs and navbar links are `campaign`, `characters`, and `chronicle`.
+
+- **Kampania** holds the campaign overview, setting, locations, factions, and non-player characters.
+- **Postaci** is only for player characters; do not use it as an NPC gallery. Use the shared character gallery/cards and canonical character records where they fit. A game-based demonstration with a single playable protagonist may use a page-owned character record.
+- **Kronika** holds the chronological session records. Use the shared `ChronicleRecord` component so each record can expand to show notes and optional recording links.
+
+Show only one primary section at a time. Start with Kampania visible; mark the other sections `hidden`. Set each section's `data-page-section` to its ID, and make each navbar `sectionLink` match that ID. The shared `SubpageNavbar` switches visibility and updates the selected button. Keep the document itself scrollable so the selected section and footer remain reachable; do not set `overflow: clip` on the page body or root. Preserve deliberate bespoke exceptions such as Rise of the Drow and Książęta Heartwell.
+
+The hero should adapt to the viewport and fill the screen before the campaign sections. Use viewport height units with fallbacks (`100vh`, `100svh`, `100dvh`) and keep page scrolling enabled. Do not make the hero or body an overflow-clipped container that traps or hides the content below it.
+
+Fonts are page-owned: load every typeface used by the page and its shared components, then set those families explicitly in the page stylesheet. The shared Vengrath home button and navbar buttons use **Voltaire**; include it in the page's font stylesheet so those controls do not fall back to an unrelated system font. Give the hero title its own intentional heading font and verify that the corresponding family is loaded.
 
 ### 3. Add campaign data and theme configuration
 
@@ -104,7 +114,6 @@ Load the files together with [`CampaignPage.js`](core/templates/CampaignPage/Cam
 
 For a character gallery, store canonical character IDs in the content and use [`characters.json`](core/data/characters.json) for the source of truth. For a chronicle, provide the session values the renderer consumes, such as session number, title, description or notes, and optional recording URLs. Keep campaign-specific copy in `content.json` rather than embedding large data records in `app.js` or HTML.
 
-Campaign font styles are page-owned: load every font used by the page and its shared components. In particular, the common Vengrath home button and navbar buttons use **Voltaire**, so include that font in the page's font stylesheet.
 
 ### 4. Opt into shared components where useful
 

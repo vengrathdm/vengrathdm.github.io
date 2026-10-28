@@ -49,26 +49,11 @@ function renderHero(heroContent, theme) {
   hero.id = "campaign-hero";
   document.querySelector("#campaign-hero").replaceWith(hero);
 
-  const navbar = document.querySelector("#campaign-navbar");
-  mountSubpageNavbar(navbar, {
+  mountSubpageNavbar(document.querySelector("#campaign-navbar"), {
     sections: sections.map((section) => ({
       ...section,
       color: theme.colors.accent2,
     })),
-  });
-
-  navbar.querySelectorAll(".subpage-navbar-button[data-section]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const section = document.getElementById(button.dataset.section);
-      if (!section) return;
-
-      section.scrollIntoView({
-        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? "auto"
-          : "smooth",
-        block: "start",
-      });
-    });
   });
 
   copy.setAttribute("aria-describedby", "hero-kicker");

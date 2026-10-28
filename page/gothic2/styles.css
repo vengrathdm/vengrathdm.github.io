@@ -152,6 +152,10 @@ a:hover {
   scroll-margin-top: 6rem;
 }
 
+.gothic-panel[hidden] {
+  display: none;
+}
+
 .gothic-panel + .gothic-panel {
   border-top: 1px solid rgb(214 170 87 / 20%);
 }
