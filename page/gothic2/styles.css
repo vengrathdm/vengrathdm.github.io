@@ -1,0 +1,627 @@
+:root {
+  color-scheme: dark;
+  --gothic-ink: #171a1c;
+  --gothic-iron: #293137;
+  --gothic-iron-light: #465157;
+  --gothic-paper: #e7dcc1;
+  --gothic-paper-dark: #c9b995;
+  --gothic-gold: #d6aa57;
+  --gothic-rust: #913e30;
+  --gothic-muted: #afa995;
+  --gothic-display: "Grenze Gotisch", Georgia, serif;
+  --gothic-body: "Spectral", Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--gothic-ink);
+}
+
+body {
+  margin: 0;
+  color: var(--gothic-paper);
+  background:
+    radial-gradient(ellipse at 50% 45rem, #384147 0, transparent 55rem),
+    var(--gothic-ink);
+  font-family: var(--gothic-body);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: var(--gothic-gold);
+}
+
+a:hover {
+  color: #f1d08e;
+}
+
+:focus-visible {
+  outline: 3px solid var(--gothic-gold);
+  outline-offset: 4px;
+}
+
+.gothic2-page {
+  min-height: 100vh;
+  overflow: clip;
+}
+
+#campaign-navbar {
+  position: relative;
+  z-index: 5;
+}
+
+.subpage-navbar {
+  border-bottom: 1px solid rgb(214 170 87 / 28%);
+  background: rgb(19 23 25 / 94%);
+  box-shadow: 0 0.5rem 2rem rgb(0 0 0 / 28%);
+  backdrop-filter: blur(12px);
+}
+
+.subpage-navbar__inner {
+  width: min(100% - 2rem, 76rem);
+  margin-inline: auto;
+}
+
+.subpage-navbar a,
+.subpage-navbar button {
+  color: var(--gothic-paper);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.subpage-navbar a:hover,
+.subpage-navbar button:hover,
+.subpage-navbar [aria-current="page"] {
+  color: var(--gothic-gold);
+}
+
+.subpage-hero {
+  position: relative;
+  display: grid;
+  min-height: min(82svh, 54rem);
+  align-items: end;
+  isolation: isolate;
+  padding: clamp(7rem, 18vh, 12rem) max(1.5rem, calc((100vw - 76rem) / 2)) 5rem;
+  background-color: #28343b;
+  background-position: center 45%;
+  background-size: cover;
+}
+
+.subpage-hero::before,
+.subpage-hero::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  inset: 0;
+}
+
+.subpage-hero::before {
+  background: linear-gradient(90deg, rgb(13 17 19 / 88%), rgb(13 17 19 / 25%) 75%);
+}
+
+.subpage-hero::after {
+  background: linear-gradient(0deg, var(--gothic-ink), transparent 43%);
+}
+
+.subpage-hero__copy {
+  display: grid;
+  justify-items: start;
+  gap: 0.5rem;
+  width: min(100%, 54rem);
+  padding: 0;
+  text-align: left;
+}
+
+.subpage-hero h1 {
+  margin: 0.1em 0 0.15em;
+  color: #f1e5c7;
+  font-family: var(--gothic-display);
+  font-size: clamp(4.5rem, 13vw, 10rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+  text-shadow: 0 0.15em 0.35em #000;
+}
+
+.gothic-hero-kicker,
+.eyebrow,
+.gothic-hero-stamp {
+  color: var(--gothic-gold);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.gothic-hero-kicker {
+  margin: 0;
+}
+
+.gothic-hero-lead {
+  max-width: 40rem;
+  margin: 1.4rem 0;
+  color: #f3ead7;
+  font-size: clamp(1.2rem, 2.4vw, 1.75rem);
+  line-height: 1.45;
+  text-wrap: balance;
+}
+
+.gothic-hero-stamp {
+  display: inline-block;
+  margin: 0;
+  border: 1px solid rgb(214 170 87 / 60%);
+  padding: 0.55rem 0.85rem;
+}
+
+.gothic-section {
+  width: min(100% - 2.5rem, 76rem);
+  margin-inline: auto;
+  padding-block: clamp(4rem, 8vw, 7rem);
+  scroll-margin-top: 6rem;
+}
+
+.gothic-section + .gothic-section {
+  border-top: 1px solid rgb(214 170 87 / 20%);
+}
+
+.section-heading {
+  max-width: 54rem;
+  margin-bottom: 2.5rem;
+}
+
+.section-heading .eyebrow,
+.cast-heading .eyebrow,
+.dossier-card .eyebrow,
+.guild-result .eyebrow,
+.location-detail .eyebrow {
+  margin: 0 0 0.65rem;
+}
+
+.section-heading h2,
+.cast-heading h3 {
+  margin: 0;
+  color: #f0e4c8;
+  font-family: var(--gothic-display);
+  font-size: clamp(2.5rem, 6vw, 4.6rem);
+  font-weight: 500;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.section-lead {
+  max-width: 46rem;
+  margin: 1rem 0 0;
+  color: var(--gothic-muted);
+  font-size: 1.15rem;
+}
+
+.overview-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(15rem, 0.8fr);
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+.parchment-card,
+.dossier-card,
+.cast-card {
+  border: 1px solid rgb(214 170 87 / 24%);
+  box-shadow: 0 1.2rem 3rem rgb(0 0 0 / 20%);
+}
+
+.parchment-card {
+  color: #28241d;
+  background:
+    linear-gradient(115deg, rgb(255 255 255 / 20%), transparent 40%),
+    var(--gothic-paper);
+}
+
+.story-card {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  font-size: 1.12rem;
+}
+
+.story-card p:first-child {
+  margin-top: 0;
+}
+
+.story-card p:last-child {
+  margin-bottom: 0;
+}
+
+.dossier-card {
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: linear-gradient(145deg, #353e42, #202629);
+}
+
+.dossier-card h3,
+.location-detail h3,
+.guild-result h3 {
+  margin: 0;
+  color: #f0e4c8;
+  font-family: var(--gothic-display);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.dossier-list {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 0.45rem 0.8rem;
+  margin: 1.5rem 0 0;
+  font-size: 0.94rem;
+}
+
+.dossier-list dt {
+  color: var(--gothic-muted);
+}
+
+.dossier-list dd {
+  margin: 0;
+  color: #f2e8d4;
+  font-weight: 600;
+}
+
+.spoiler-note {
+  margin: 1.25rem 0 0;
+  border-left: 3px solid var(--gothic-rust);
+  padding: 0.8rem 1rem;
+  color: #d7c9ae;
+  background: rgb(145 62 48 / 14%);
+  font-size: 0.92rem;
+}
+
+.atlas-layout {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.75fr) minmax(0, 1.25fr);
+  gap: 1.25rem;
+}
+
+.atlas-route {
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+}
+
+.location-stop {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0 0.7rem;
+  border: 1px solid rgb(231 220 193 / 15%);
+  padding: 0.85rem 1rem;
+  color: var(--gothic-paper);
+  background: #252c30;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.location-stop:hover,
+.location-stop[aria-pressed="true"] {
+  border-color: var(--gothic-gold);
+  background: #343b3e;
+}
+
+.location-number {
+  grid-row: span 2;
+  align-self: center;
+  color: var(--gothic-gold);
+  font-family: var(--gothic-display);
+  font-size: 1.8rem;
+}
+
+.location-stop-copy {
+  font-weight: 700;
+}
+
+.location-kind {
+  color: var(--gothic-muted);
+  font-size: 0.82rem;
+}
+
+.location-detail {
+  min-height: 18rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.location-detail h3,
+.guild-result h3 {
+  color: #27231d;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.location-summary {
+  margin-block: 1.2rem;
+  font-size: 1.15rem;
+}
+
+.location-thread {
+  border-top: 1px solid rgb(40 36 29 / 20%);
+  padding-top: 1rem;
+  font-style: italic;
+}
+
+.location-detail .eyebrow,
+.guild-result .eyebrow {
+  color: #80591f;
+}
+
+.chronicle-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.chronicle-entry {
+  border: 1px solid rgb(231 220 193 / 17%);
+  background: linear-gradient(110deg, #2b3235, #202528);
+}
+
+.chronicle-summary {
+  display: grid;
+  grid-template-columns: 3rem 9rem 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.1rem 1.4rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.chronicle-summary::-webkit-details-marker {
+  display: none;
+}
+
+.chapter-number {
+  color: var(--gothic-gold);
+  font-family: var(--gothic-display);
+  font-size: 1.75rem;
+}
+
+.chapter-kind {
+  color: var(--gothic-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.chapter-title {
+  color: #f0e4c8;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.chapter-copy {
+  max-width: 58rem;
+  margin: 0;
+  padding: 0 1.4rem 1.4rem 6.8rem;
+  color: #d1c7b2;
+}
+
+.guild-picker {
+  min-width: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.guild-picker legend {
+  margin-bottom: 1rem;
+  color: var(--gothic-muted);
+}
+
+.guild-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.guild-card {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.guild-input {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--gothic-gold);
+}
+
+.guild-card-copy {
+  display: grid;
+  min-height: 11rem;
+  align-content: start;
+  gap: 0.5rem;
+  border: 1px solid rgb(231 220 193 / 17%);
+  padding: 1rem 1rem 1rem 2.8rem;
+  background: #262d30;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.guild-input:checked + .guild-card-copy {
+  border-color: var(--gothic-gold);
+  background: #343a3c;
+}
+
+.guild-input:focus-visible + .guild-card-copy {
+  outline: 3px solid var(--gothic-gold);
+  outline-offset: 3px;
+}
+
+.guild-mark {
+  color: var(--gothic-gold);
+  font-family: var(--gothic-display);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.guild-name {
+  color: #f0e4c8;
+  font-family: var(--gothic-display);
+  font-size: 1.55rem;
+}
+
+.guild-path {
+  color: var(--gothic-muted);
+  font-size: 0.88rem;
+}
+
+.guild-result {
+  margin-top: 1rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.guild-result p:last-child {
+  margin-bottom: 0;
+}
+
+.guild-first-step {
+  border-top: 1px solid rgb(40 36 29 / 20%);
+  padding-top: 1rem;
+  font-weight: 700;
+}
+
+.cast-section {
+  margin-top: clamp(4rem, 7vw, 6rem);
+}
+
+.cast-heading {
+  margin-bottom: 1.5rem;
+}
+
+.cast-heading h3 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.cast-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.cast-card {
+  padding: 1.3rem;
+  background: #252c30;
+}
+
+.cast-role {
+  margin: 0 0 0.5rem;
+  color: var(--gothic-gold);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cast-card h4 {
+  margin: 0;
+  color: #f0e4c8;
+  font-family: var(--gothic-display);
+  font-size: 1.65rem;
+  font-weight: 500;
+}
+
+.cast-card p:last-child {
+  margin-bottom: 0;
+  color: var(--gothic-muted);
+  font-size: 0.95rem;
+}
+
+.gothic-footer {
+  border-top: 1px solid rgb(214 170 87 / 25%);
+  padding: 2rem max(1.25rem, calc((100vw - 76rem) / 2)) 3rem;
+  color: var(--gothic-muted);
+  background: #121618;
+  font-size: 0.9rem;
+}
+
+.gothic-footer p {
+  max-width: 60rem;
+}
+
+.back-to-top {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.load-error {
+  width: min(100% - 2rem, 50rem);
+  margin: 4rem auto;
+  border: 1px solid var(--gothic-rust);
+  padding: 1.5rem;
+  background: #352522;
+}
+
+@media (max-width: 760px) {
+  .overview-layout,
+  .atlas-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .guild-cards,
+  .cast-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .subpage-hero {
+    min-height: 75svh;
+    padding-bottom: 4rem;
+    background-position: 58% center;
+  }
+}
+
+@media (max-width: 520px) {
+  .gothic-section {
+    width: min(100% - 1.5rem, 76rem);
+  }
+
+  .chronicle-summary {
+    grid-template-columns: 2rem 1fr;
+    gap: 0.25rem 0.7rem;
+  }
+
+  .chapter-kind {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .chapter-title {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .chapter-number {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .chapter-copy {
+    padding: 0 1rem 1.2rem 3.7rem;
+  }
+
+  .guild-cards,
+  .cast-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}

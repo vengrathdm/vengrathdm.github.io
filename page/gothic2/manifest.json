@@ -1,0 +1,16 @@
+{
+  "id": "gothic2",
+  "title": "Gothic2",
+  "language": "pl",
+  "campaign": "Gothic II",
+  "module": "Gothic II: Noc Kruka",
+  "entry": "/page/gothic2/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "world",
+    "chronicle",
+    "guilds"
+  ]
+}

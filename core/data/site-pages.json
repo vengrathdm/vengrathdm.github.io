@@ -537,5 +537,16 @@
     "image": "/core/graphics/voronoi/the-dragons-due.webp",
     "layout": "campaign-shell",
     "manifest": "/page/the-dragons-due/manifest.json"
+  },
+  {
+    "id": "gothic2",
+    "title": "Gothic2",
+    "type": "campaign",
+    "category": "Aktywna Kampania",
+    "visibility": "public",
+    "url": "/page/gothic2/",
+    "image": "/page/gothic2/res/graphics/gothic2-cover.svg",
+    "layout": "bespoke",
+    "manifest": "/page/gothic2/manifest.json"
   }
 ]
