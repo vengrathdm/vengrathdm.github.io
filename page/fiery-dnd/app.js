@@ -3,6 +3,7 @@ import {
   loadCampaignBundle,
 } from "/core/templates/CampaignPage/CampaignPage.js";
 import { createChronicleRecord } from "/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.js";
+import { CharacterGallery } from "/core/templates/CharacterGallery/CharacterGallery.js";
 import { createSubpageHero } from "/core/templates/SubpageHero/SubpageHero.js";
 import { mountSubpageNavbar } from "/core/templates/SubpageNavbar/SubpageNavbar.js";
 
@@ -11,8 +12,6 @@ const sections = [
   { text: "Postaci", sectionLink: "characters" },
   { text: "Kronika", sectionLink: "chronicle" },
 ];
-
-const abilities = ["SIŁ", "ZRĘ", "KON", "INT", "MĄD", "CHA"];
 
 function createElement(tagName, properties = {}, ...children) {
   const element = document.createElement(tagName);
@@ -79,11 +78,6 @@ function createDieControl() {
   svg.append(value);
   button.append(svg);
   return button;
-}
-
-function modifier(score) {
-  const value = Math.floor((score - 10) / 2);
-  return value >= 0 ? `+${value}` : String(value);
 }
 
 function renderEntries(records) {
@@ -212,69 +206,20 @@ function renderCampaign(root, campaign) {
   );
 }
 
-function renderCharacters(root, characters) {
-  const sheets = createElement("div", { class: "sheets" });
-
-  characters.forEach((character) => {
-    const abilityList = createElement("ul", { class: "abilities" });
-    character.stats.forEach((score, index) => {
-      abilityList.append(
-        createElement(
-          "li",
-          {},
-          createElement("span", { text: abilities[index] }),
-          createElement("strong", { text: String(score) }),
-          createElement("small", { text: modifier(score) }),
-        ),
-      );
-    });
-
-    const vitals = createElement(
-      "div",
-      { class: "vitals" },
-      createElement("span", {}, "KP ", createElement("strong", { text: String(character.armorClass) })),
-      createElement(
-        "span",
-        {},
-        "PW ",
-        createElement("strong", {
-          text: `${character.hitPoints}/${character.maximumHitPoints}`,
-        }),
-      ),
-      createElement("span", {}, "Szybkość ", createElement("strong", { text: `${character.speed} ft` })),
-    );
-    const health = createElement("div", {
-      class: "hit-points",
-      role: "meter",
-      "aria-label": `Punkty wytrzymałości: ${character.hitPoints} z ${character.maximumHitPoints}`,
-      "aria-valuemin": "0",
-      "aria-valuemax": String(character.maximumHitPoints),
-      "aria-valuenow": String(character.hitPoints),
-    });
-    const healthFill = createElement("span");
-    healthFill.style.width = `${Math.round((character.hitPoints / character.maximumHitPoints) * 100)}%`;
-    health.append(healthFill);
-
-    sheets.append(
-      createElement(
-        "article",
-        { class: "sheet" },
-        createElement("span", { class: "level", text: `POZ. ${character.level}` }),
-        createElement("h3", { text: character.name }),
-        createElement("p", { class: "class-line", text: `${character.class} · gracz: ${character.player}` }),
-        abilityList,
-        vitals,
-        health,
-        createElement("p", { text: character.history }),
-        createElement("p", { class: "relic", text: character.relic }),
-      ),
-    );
-  });
-
+async function renderCharacters(root, characters) {
+  const gallery = createElement("div", { id: "character-gallery" });
   root.replaceChildren(
     createElement("h2", { id: "characters-title", text: "Postaci" }),
-    sheets,
+    createElement("p", { class: "characters-kicker", text: characters.kicker }),
+    createElement("h3", { class: "characters-heading", text: characters.title }),
+    createElement("p", { class: "characters-description", text: characters.description }),
+    gallery,
   );
+
+  await new CharacterGallery(gallery, {
+    characterIds: characters.characterIds,
+    emptyMessage: "Brak kart postaci do wyświetlenia.",
+  }).render();
 }
 
 function sessionDescription(session) {
@@ -417,7 +362,7 @@ async function initializeCampaignPage() {
   applyCampaignTheme(theme);
   renderHero(content.hero, theme);
   renderCampaign(document.querySelector("#campaign-content"), content.campaign);
-  renderCharacters(document.querySelector("#characters-content"), content.characters);
+  await renderCharacters(document.querySelector("#characters-content"), content.characters);
   renderChronicle(document.querySelector("#chronicle-content"), content.chronicle, theme);
   document.title = `${manifest.title} — Vengrath`;
 }

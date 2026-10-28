@@ -8,10 +8,10 @@
   "campaign": {
     "lead": [
       "Dwieście lat temu Korona Pięciu Smoków zamknęła Vhaeryth-Karra, Prastarego Czerwonego Smoka, w sercu wulkanu Morthgar. Teraz Korona pęka. Jej Odłamki rozsypały się po królestwie Kaer Dun-Morth, a z każdym z nich budzi się kolejny kawałek starego ognia.",
-      "Kult Płomiennej Dłoni zbiera Odłamki, by uwolnić bestię i ukoronować ją na Tron z Popiołu. Zakon Złotej Tarczy nie ma już rycerzy, którzy mogliby ich powstrzymać. Zostaliście wy: czworo bohaterów, którym nikt nie ufa, i którzy nie mają nic do stracenia."
+      "Kult Płomiennej Dłoni zbiera Odłamki, by uwolnić bestię i ukoronować ją na Tron z Popiołu. Zakon Złotej Tarczy nie ma już rycerzy, którzy mogliby ich powstrzymać. Zostaliście wy: drużyna bohaterów, którym nikt nie ufa i którzy nie mają nic do stracenia."
     ],
     "dossier": [
-      ["Postaci", "4"],
+      ["Postaci", "7 · makieta"],
       ["Nagrania", "5"],
       ["System", "D&D 5e"],
       ["Poziomy", "3–9"],
@@ -46,60 +46,20 @@
       "text": "Śpi od dwustu lat i śni o każdym, kto próbował go zabić. Wszystkie sny wkrótce się spełnią."
     }
   },
-  "characters": [
-    {
-      "name": "Thorgrim Kamiennoręki",
-      "class": "Krasnolud · Paladyn (Przysięga Pomsty)",
-      "level": 7,
-      "player": "Marta",
-      "stats": [17, 8, 16, 10, 12, 15],
-      "armorClass": 19,
-      "hitPoints": 68,
-      "maximumHitPoints": 68,
-      "speed": 25,
-      "history": "Ostatni żywy rycerz Zakonu Złotej Tarczy. Przysiągł pomścić brata, który zginął w ogniu Brzeźnej, a winnego nie ma jak ukarać, bo winny śpi pod wulkanem.",
-      "relic": "Odłamek Korony #1 wtopiony w tarczę."
-    },
-    {
-      "name": "Lirael Cienistopióra",
-      "class": "Półelfka · Łotrzyk (Skrytobójca)",
-      "level": 7,
-      "player": "Kuba",
-      "stats": [8, 19, 12, 14, 11, 14],
-      "armorClass": 16,
-      "hitPoints": 49,
-      "maximumHitPoints": 49,
-      "speed": 30,
-      "history": "Zwiadowczyni Szarych Palców, która za dużo wie o Kulcie i za mało o tym, dla kogo właściwie pracuje. Jej sztylety mają imiona.",
-      "relic": "Zaczarowany płaszcz z kruczych piór, nigdy nie zrzuca śniegu."
-    },
-    {
-      "name": "Zephyrion Szkarłatny",
-      "class": "Smokokrwisty · Czarownik (Smocza Linia)",
-      "level": 7,
-      "player": "Ola",
-      "stats": [8, 14, 14, 12, 10, 19],
-      "armorClass": 15,
-      "hitPoints": 52,
-      "maximumHitPoints": 52,
-      "speed": 30,
-      "history": "Jego krew pamięta Vhaeryth-Karra i, co gorsza, ten smok też pamięta jego. Wie, że jako pierwszy przemówi z Korony.",
-      "relic": "Pierścień ze smoczego zęba, nagrzewa się przy Kultystach."
-    },
-    {
-      "name": "Bruna Wilcza Łapa",
-      "class": "Człowiek · Druid (Krąg Księżyca)",
-      "level": 6,
-      "player": "Bartek",
-      "stats": [12, 13, 15, 12, 18, 10],
-      "armorClass": 15,
-      "hitPoints": 63,
-      "maximumHitPoints": 71,
-      "speed": 30,
-      "history": "Strażniczka Lasu Wiecznie Wilgotnego, wyrzucona z kręgu za to, że poprosiła ogień o pomoc. Teraz ogień jest jej winien przysługę.",
-      "relic": "Laska z kości dzika, kwitnie wiosną, nawet w środku zamieci."
-    }
-  ],
+  "characters": {
+    "kicker": "MAKIETA · ECHTRA — ZIMA IRGAELI",
+    "title": "Bohaterowie Zimy Irgaeli",
+    "description": "Makieta wykorzystuje te same kanoniczne postacie, które są przypisane do kampanii Echtra - Zima Irgaeli.",
+    "characterIds": [
+      "char-0127",
+      "char-0214",
+      "char-0215",
+      "char-0217",
+      "char-0218",
+      "char-0219",
+      "char-0263"
+    ]
+  },
   "chronicle": [
     {
       "title": "Popioły Brzeźnej",
