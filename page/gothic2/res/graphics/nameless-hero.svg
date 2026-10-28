@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" role="img" aria-labelledby="title description">
+  <title id="title">Symboliczny portret Bezimiennego</title>
+  <desc id="description">Ciemna sylwetka wędrowca na tle gór i czerwonego księżyca.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop offset="0" stop-color="#222b30" />
+      <stop offset="1" stop-color="#111619" />
+    </linearGradient>
+    <linearGradient id="cloak" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#384146" />
+      <stop offset="1" stop-color="#15191b" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="700" fill="url(#sky)" />
+  <circle cx="420" cy="168" r="76" fill="#9a4735" opacity="0.82" />
+  <path d="M0 420 156 255l96 112 133-166 215 221v278H0Z" fill="#20292d" />
+  <path d="m0 493 173-136 119 119 131-111 177 133v202H0Z" fill="#151a1d" />
+  <path d="M0 584 600 516v184H0Z" fill="#0e1214" />
+  <path d="M201 700c11-107 30-186 68-240l31-71 75 3 39 75c43 58 69 139 78 233Z" fill="url(#cloak)" stroke="#6f654e" stroke-width="5" />
+  <path d="m284 409 12-55 83 1 14 59-28 55-50-2Z" fill="#b48c60" stroke="#201d19" stroke-width="8" />
+  <path d="m278 372 6-53c6-46 27-75 65-78 42-2 67 28 68 79l-7 58-23 29-75-1Z" fill="#c29b6e" stroke="#1b1c1c" stroke-width="8" />
+  <path d="M280 330c-2-89 27-133 77-134 52-1 78 41 76 121l-22-44-43-22-60 27Z" fill="#202325" stroke="#101314" stroke-width="10" />
+  <path d="m297 350 37 10m48-10-36 10" fill="none" stroke="#26211d" stroke-linecap="round" stroke-width="7" />
+  <path d="m341 372 16 1" fill="none" stroke="#7a4d37" stroke-linecap="round" stroke-width="5" />
+  <path d="m277 407 50 35-43 32-37-50m144-16-49 35 46 34 35-52" fill="#262d30" stroke="#111517" stroke-width="9" />
+  <path d="m300 478 47 51 41-51 43 172H258Z" fill="#1a2023" stroke="#70563a" stroke-width="5" />
+  <path d="m349 526 12 95" stroke="#b48c60" stroke-width="5" opacity="0.7" />
+  <path d="M42 42h516v616H42Z" fill="none" stroke="#b58a4e" stroke-opacity="0.62" stroke-width="3" />
+</svg>

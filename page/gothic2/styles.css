@@ -2,14 +2,10 @@
   color-scheme: dark;
   --gothic-ink: #171a1c;
   --gothic-iron: #293137;
-  --gothic-iron-light: #465157;
   --gothic-paper: #e7dcc1;
-  --gothic-paper-dark: #c9b995;
   --gothic-gold: #d6aa57;
   --gothic-rust: #913e30;
   --gothic-muted: #afa995;
-  --gothic-display: "IM Fell English", "Times New Roman", serif;
-  --gothic-body: "Spectral", Georgia, serif;
 }
 
 html {
@@ -19,12 +15,13 @@ html {
 
 body {
   margin: 0;
+  min-height: 100vh;
   color: var(--gothic-paper);
   background:
     radial-gradient(ellipse at 50% 45rem, #384147 0, transparent 55rem),
     var(--gothic-ink);
-  font-family: var(--gothic-body);
-  font-size: 1.05rem;
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: 1.1rem;
   line-height: 1.65;
 }
 
@@ -55,40 +52,29 @@ a:hover {
   z-index: 5;
 }
 
-.subpage-navbar {
-  border-bottom: 1px solid rgb(214 170 87 / 28%);
-  background: rgb(19 23 25 / 94%);
-  box-shadow: 0 0.5rem 2rem rgb(0 0 0 / 28%);
-  backdrop-filter: blur(12px);
+.subpage-navbar.is-scrolled {
+  background: rgb(19 23 25 / 96%);
+  border-bottom-color: rgb(214 170 87 / 35%);
 }
 
-.subpage-navbar__inner {
-  width: min(100% - 2rem, 76rem);
-  margin-inline: auto;
+.gothic2-page .vengrath-home-button,
+.gothic2-page .subpage-navbar-button {
+  font-family: "Voltaire", sans-serif;
 }
 
-.subpage-navbar a,
-.subpage-navbar button {
-  color: var(--gothic-paper);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.subpage-navbar a:hover,
-.subpage-navbar button:hover,
-.subpage-navbar [aria-current="page"] {
-  color: var(--gothic-gold);
+.subpage-navbar-button[aria-pressed="true"],
+.subpage-navbar-button:hover {
+  background: var(--gothic-gold);
+  color: var(--gothic-ink);
 }
 
 .subpage-hero {
-  position: relative;
-  display: grid;
-  min-height: 100vh;
-  min-height: 100svh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100svh;
+  height: 100dvh;
+  min-height: 0;
   align-items: end;
-  isolation: isolate;
-  padding: clamp(7rem, 18vh, 12rem) max(1.5rem, calc((100vw - 76rem) / 2)) 5rem;
+  padding: 8rem max(1.5rem, calc((100vw - 76rem) / 2)) 5rem;
   background-color: #28343b;
   background-position: center 45%;
   background-size: cover;
@@ -96,18 +82,18 @@ a:hover {
 
 .subpage-hero::before,
 .subpage-hero::after {
-  position: absolute;
-  z-index: -1;
   content: "";
+  position: absolute;
+  z-index: 0;
   inset: 0;
 }
 
 .subpage-hero::before {
-  background: linear-gradient(90deg, rgb(13 17 19 / 88%), rgb(13 17 19 / 25%) 75%);
+  background: linear-gradient(90deg, rgb(13 17 19 / 86%), rgb(13 17 19 / 18%) 85%);
 }
 
 .subpage-hero::after {
-  background: linear-gradient(0deg, var(--gothic-ink), transparent 43%);
+  background: linear-gradient(0deg, var(--gothic-ink), transparent 48%);
 }
 
 .subpage-hero__copy {
@@ -122,11 +108,8 @@ a:hover {
 .subpage-hero h1 {
   margin: 0.1em 0 0.15em;
   color: #f1e5c7;
-  font-family: var(--gothic-display);
-  font-size: clamp(4rem, 11vw, 8rem);
-  font-weight: 400;
+  font: 600 clamp(4rem, 11vw, 8rem) / 0.98 "Grenze Gotisch", Georgia, serif;
   letter-spacing: 0.015em;
-  line-height: 0.9;
   text-shadow: 0 0.15em 0.35em #000;
 }
 
@@ -134,9 +117,9 @@ a:hover {
 .eyebrow,
 .gothic-hero-stamp {
   color: var(--gothic-gold);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-family: "Voltaire", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
   line-height: 1.4;
   text-transform: uppercase;
 }
@@ -146,10 +129,11 @@ a:hover {
 }
 
 .gothic-hero-lead {
-  max-width: 40rem;
-  margin: 1.4rem 0;
+  max-width: 42rem;
+  margin: 1.1rem 0;
   color: #f3ead7;
-  font-size: clamp(1.2rem, 2.4vw, 1.75rem);
+  font-family: "Spectral", Georgia, serif;
+  font-size: clamp(1.2rem, 2.4vw, 1.7rem);
   line-height: 1.45;
   text-wrap: balance;
 }
@@ -178,20 +162,18 @@ a:hover {
 }
 
 .section-heading .eyebrow,
-.cast-heading .eyebrow,
 .dossier-card .eyebrow,
-.guild-result .eyebrow,
-.location-detail .eyebrow {
+.player-character-details .eyebrow {
   margin: 0 0 0.65rem;
 }
 
 .section-heading h2,
-.cast-heading h3 {
+.campaign-subsection h2 {
   margin: 0;
   color: #f0e4c8;
-  font-family: var(--gothic-display);
+  font-family: "Grenze Gotisch", Georgia, serif;
   font-size: clamp(2.5rem, 6vw, 4.6rem);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.05;
   text-wrap: balance;
 }
@@ -200,7 +182,7 @@ a:hover {
   max-width: 46rem;
   margin: 1rem 0 0;
   color: var(--gothic-muted);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
 }
 
 .overview-layout {
@@ -212,7 +194,9 @@ a:hover {
 
 .parchment-card,
 .dossier-card,
-.cast-card {
+.cast-card,
+.faction-card,
+.location-card {
   border: 1px solid rgb(214 170 87 / 24%);
   box-shadow: 0 1.2rem 3rem rgb(0 0 0 / 20%);
 }
@@ -226,7 +210,17 @@ a:hover {
 
 .story-card {
   padding: clamp(1.5rem, 4vw, 3rem);
-  font-size: 1.12rem;
+  font-family: "Spectral", Georgia, serif;
+  font-size: 1.08rem;
+}
+
+.story-title {
+  margin-top: 0;
+  color: #27231d;
+  font-family: "Grenze Gotisch", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 600;
+  line-height: 1.1;
 }
 
 .story-card p:first-child {
@@ -243,13 +237,15 @@ a:hover {
 }
 
 .dossier-card h3,
-.location-detail h3,
-.guild-result h3 {
+.location-card h3,
+.faction-card h3,
+.cast-card h3,
+.player-character-details h3 {
   margin: 0;
   color: #f0e4c8;
-  font-family: var(--gothic-display);
+  font-family: "Grenze Gotisch", Georgia, serif;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.15;
 }
 
@@ -258,7 +254,7 @@ a:hover {
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: 0.45rem 0.8rem;
   margin: 1.5rem 0 0;
-  font-size: 0.94rem;
+  font-size: 0.95rem;
 }
 
 .dossier-list dt {
@@ -277,264 +273,179 @@ a:hover {
   padding: 0.8rem 1rem;
   color: #d7c9ae;
   background: rgb(145 62 48 / 14%);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
 }
 
-.atlas-layout {
-  display: grid;
-  grid-template-columns: minmax(16rem, 0.75fr) minmax(0, 1.25fr);
-  gap: 1.25rem;
+.campaign-subsection {
+  margin-top: clamp(4rem, 7vw, 6rem);
 }
 
-.atlas-route {
-  display: grid;
-  gap: 0.55rem;
-  align-content: start;
+.campaign-subsection .section-heading {
+  margin-bottom: 1.5rem;
 }
 
-.location-stop {
+.campaign-subsection .section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.3rem);
+}
+
+.location-grid,
+.faction-grid,
+.cast-grid {
   display: grid;
-  grid-template-columns: 2.5rem 1fr;
-  gap: 0 0.7rem;
-  border: 1px solid rgb(231 220 193 / 15%);
-  padding: 0.85rem 1rem;
-  color: var(--gothic-paper);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.location-card,
+.faction-card,
+.cast-card {
+  position: relative;
+  padding: 1.4rem;
   background: #252c30;
-  text-align: left;
-  cursor: pointer;
-  transition: border-color 160ms ease, background-color 160ms ease;
-}
-
-.location-stop:hover,
-.location-stop[aria-pressed="true"] {
-  border-color: var(--gothic-gold);
-  background: #343b3e;
 }
 
 .location-number {
-  grid-row: span 2;
-  align-self: center;
   color: var(--gothic-gold);
-  font-family: var(--gothic-display);
-  font-size: 1.8rem;
+  font-family: "Grenze Gotisch", Georgia, serif;
+  font-size: 1.9rem;
+  line-height: 1;
 }
 
-.location-stop-copy {
-  font-weight: 700;
+.location-card .eyebrow,
+.faction-card .eyebrow {
+  margin: 0.8rem 0 0.4rem;
+  font-size: 0.72rem;
 }
 
-.location-kind {
+.location-card p:last-child,
+.faction-card p:last-child,
+.cast-card p:last-child {
+  margin-bottom: 0;
   color: var(--gothic-muted);
-  font-size: 0.82rem;
-}
-
-.location-detail {
-  min-height: 18rem;
-  padding: clamp(1.5rem, 4vw, 3rem);
-}
-
-.location-detail h3,
-.guild-result h3 {
-  color: #27231d;
-  font-size: clamp(2rem, 4vw, 3rem);
-}
-
-.location-summary {
-  margin-block: 1.2rem;
-  font-size: 1.15rem;
 }
 
 .location-thread {
-  border-top: 1px solid rgb(40 36 29 / 20%);
-  padding-top: 1rem;
+  border-top: 1px solid rgb(231 220 193 / 17%);
+  padding-top: 0.8rem;
   font-style: italic;
 }
 
-.location-detail .eyebrow,
-.guild-result .eyebrow {
-  color: #80591f;
-}
-
-.chronicle-list {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.chronicle-entry {
-  border: 1px solid rgb(231 220 193 / 17%);
-  background: linear-gradient(110deg, #2b3235, #202528);
-}
-
-.chronicle-summary {
-  display: grid;
-  grid-template-columns: 3rem 9rem 1fr;
-  gap: 1rem;
-  align-items: center;
-  padding: 1.1rem 1.4rem;
-  cursor: pointer;
-  list-style: none;
-}
-
-.chronicle-summary::-webkit-details-marker {
-  display: none;
-}
-
-.chapter-number {
+.cast-role {
+  margin: 0 0 0.45rem;
   color: var(--gothic-gold);
-  font-family: var(--gothic-display);
-  font-size: 1.75rem;
-}
-
-.chapter-kind {
-  color: var(--gothic-muted);
-  font-size: 0.78rem;
+  font-family: "Voltaire", sans-serif;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.chapter-title {
-  color: #f0e4c8;
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.chapter-copy {
-  max-width: 58rem;
-  margin: 0;
-  padding: 0 1.4rem 1.4rem 6.8rem;
-  color: #d1c7b2;
-}
-
-.guild-picker {
-  min-width: 0;
-  margin: 0;
-  border: 0;
-  padding: 0;
-}
-
-.guild-picker legend {
-  margin-bottom: 1rem;
-  color: var(--gothic-muted);
-}
-
-.guild-cards {
+.player-character-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
-.guild-card {
-  position: relative;
+.player-character-card {
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.7fr) minmax(0, 1.3fr);
+  overflow: hidden;
+}
+
+.player-character-portrait {
+  min-height: 24rem;
+  background: #20272a;
+}
+
+.player-character-portrait img {
   display: block;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.guild-input {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  width: 1rem;
-  height: 1rem;
-  accent-color: var(--gothic-gold);
+.player-character-details {
+  padding: clamp(1.5rem, 4vw, 3rem);
 }
 
-.guild-card-copy {
-  display: grid;
-  min-height: 11rem;
-  align-content: start;
-  gap: 0.5rem;
-  border: 1px solid rgb(231 220 193 / 17%);
-  padding: 1rem 1rem 1rem 2.8rem;
-  background: #262d30;
-  transition: border-color 160ms ease, background-color 160ms ease;
+.player-character-details .eyebrow {
+  color: #80591f;
 }
 
-.guild-input:checked + .guild-card-copy {
-  border-color: var(--gothic-gold);
-  background: #343a3c;
+.player-character-details h3 {
+  color: #27231d;
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
 }
 
-.guild-input:focus-visible + .guild-card-copy {
-  outline: 3px solid var(--gothic-gold);
-  outline-offset: 3px;
-}
-
-.guild-mark {
-  color: var(--gothic-gold);
-  font-family: var(--gothic-display);
-  font-size: 2rem;
-  line-height: 1;
-}
-
-.guild-name {
-  color: #f0e4c8;
-  font-family: var(--gothic-display);
-  font-size: 1.55rem;
-}
-
-.guild-path {
-  color: var(--gothic-muted);
-  font-size: 0.88rem;
-}
-
-.guild-result {
-  margin-top: 1rem;
-  padding: clamp(1.5rem, 4vw, 2.5rem);
-}
-
-.guild-result p:last-child {
-  margin-bottom: 0;
-}
-
-.guild-first-step {
-  border-top: 1px solid rgb(40 36 29 / 20%);
-  padding-top: 1rem;
-  font-weight: 700;
-}
-
-.cast-section {
-  margin-top: clamp(4rem, 7vw, 6rem);
-}
-
-.cast-heading {
-  margin-bottom: 1.5rem;
-}
-
-.cast-heading h3 {
-  font-size: clamp(2rem, 4vw, 3rem);
-}
-
-.cast-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem;
-}
-
-.cast-card {
-  padding: 1.3rem;
-  background: #252c30;
-}
-
-.cast-role {
-  margin: 0 0 0.5rem;
-  color: var(--gothic-gold);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
+.player-character-player {
+  margin: 0.25rem 0 1.4rem;
+  color: #80591f;
+  font-family: "Voltaire", sans-serif;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-.cast-card h4 {
+.player-character-summary {
+  font-family: "Spectral", Georgia, serif;
+  font-size: 1.08rem;
+}
+
+.player-character-facts {
+  display: grid;
+  grid-template-columns: minmax(7rem, 0.4fr) minmax(0, 1fr);
+  gap: 0.5rem 1rem;
+  margin: 1.5rem 0 0;
+  border-top: 1px solid rgb(40 36 29 / 20%);
+  padding-top: 1rem;
+}
+
+.player-character-facts dt {
+  color: #80591f;
+  font-family: "Voltaire", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.player-character-facts dd {
   margin: 0;
-  color: #f0e4c8;
-  font-family: var(--gothic-display);
-  font-size: 1.65rem;
+}
+
+.chronicle-recording-note {
+  margin: 0 0 1rem;
+  color: var(--gothic-muted);
+  font-size: 0.95rem;
+}
+
+.chronicle-list {
+  display: grid;
+  gap: 0.7rem;
+  --chronicle-heading-font: "Grenze Gotisch", Georgia, serif;
+}
+
+.chronicle-record {
+  border-color: rgb(214 170 87 / 28%);
+  background: #22292c;
+}
+
+.chronicle-record__header {
+  min-height: 4.5rem;
+}
+
+.chronicle-record__number {
+  font-family: "Voltaire", sans-serif;
+}
+
+.chronicle-record__title {
+  font-size: 1.35rem;
   font-weight: 500;
 }
 
-.cast-card p:last-child {
-  margin-bottom: 0;
-  color: var(--gothic-muted);
-  font-size: 0.95rem;
+.chronicle-record__description {
+  border-top-color: rgb(214 170 87 / 20%);
+  color: #d7d0c0;
+  font-family: "Spectral", Georgia, serif;
+}
+
+.play-recording-button {
+  font-family: "Voltaire", sans-serif;
 }
 
 .gothic-footer {
@@ -542,7 +453,7 @@ a:hover {
   padding: 2rem max(1.25rem, calc((100vw - 76rem) / 2)) 3rem;
   color: var(--gothic-muted);
   background: #121618;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .gothic-footer p {
@@ -563,22 +474,22 @@ a:hover {
 }
 
 @media (max-width: 760px) {
+  .subpage-hero {
+    height: 100vh;
+    height: 100svh;
+    height: 100dvh;
+    padding-bottom: 4rem;
+    background-position: 58% center;
+  }
+
   .overview-layout,
-  .atlas-layout {
+  .player-character-card {
     grid-template-columns: 1fr;
   }
 
-  .guild-cards,
-  .cast-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .subpage-hero {
-    min-height: 100vh;
-    min-height: 100svh;
-    min-height: 100dvh;
-    padding-bottom: 4rem;
-    background-position: 58% center;
+  .player-character-portrait {
+    min-height: 18rem;
+    max-height: 28rem;
   }
 }
 
@@ -587,33 +498,19 @@ a:hover {
     width: min(100% - 1.5rem, 76rem);
   }
 
-  .chronicle-summary {
-    grid-template-columns: 2rem 1fr;
-    gap: 0.25rem 0.7rem;
-  }
-
-  .chapter-kind {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .chapter-title {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .chapter-number {
-    grid-column: 1;
-    grid-row: 1 / span 2;
-  }
-
-  .chapter-copy {
-    padding: 0 1rem 1.2rem 3.7rem;
-  }
-
-  .guild-cards,
+  .location-grid,
+  .faction-grid,
   .cast-grid {
     grid-template-columns: 1fr;
+  }
+
+  .player-character-facts {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .player-character-facts dd + dt {
+    margin-top: 0.65rem;
   }
 }
 

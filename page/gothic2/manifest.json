@@ -9,8 +9,7 @@
   "content": "./content.json",
   "sections": [
     "campaign",
-    "world",
-    "chronicle",
-    "guilds"
+    "characters",
+    "chronicle"
   ]
 }

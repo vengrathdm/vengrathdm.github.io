@@ -21,6 +21,18 @@
     ],
     "warning": "Uwaga: kronika i opisy postaci zawierają spoilery do Gothic II oraz Nocy Kruka."
   },
+  "playerCharacters": [
+    {
+      "id": "nameless-hero",
+      "name": "Bezimienny",
+      "player": "Postać prowadzona przez gracza",
+      "role": "Protagonista",
+      "origin": "Były więzień kolonii karnej w Górniczej Dolinie",
+      "path": "Gildia i rozwój zależą od decyzji gracza",
+      "portrait": "./res/graphics/nameless-hero.svg",
+      "summary": "Po pokonaniu Śniącego Bezimienny wraca do Khorinis. To jedyna postać gracza w tej modelowej kampanii; jej przynależność, umiejętności i sojusze zmieniają się wraz z przebiegiem rozgrywki."
+    }
+  ],
   "locations": [
     {
       "id": "khorinis",
@@ -59,31 +71,36 @@
       "edition": "Gothic II"
     }
   ],
-  "chapters": [
+  "sessions": [
     {
-      "kind": "Gothic II",
-      "title": "Oko Innosa",
-      "summary": "Xardas wskazuje artefakt jako sposób na rozmowę ze smokami. Najpierw trzeba zdobyć audiencję u Lorda Hagena i udowodnić, że Dolina Kopalń znów jest zagrożona."
+      "sessionNumber": 1,
+      "title": "Powrót do Khorinis",
+      "description": "Po ataku smoków i orków Bezimienny dociera do Xardasa. Otrzymuje zadanie zdobycia Oka Innosa i przekonania Lorda Hagena, że zagrożenie jest prawdziwe.",
+      "recordings": []
     },
     {
-      "kind": "Gothic II",
-      "title": "Raport z oblężonego zamku",
-      "summary": "Powrót do kolonii odsłania skalę problemu. Świadectwa z kopalń przekonują dowództwo, ale samo Oko Innosa nie pozostaje bezpieczne."
+      "sessionNumber": 2,
+      "title": "Raport z Doliny Kopalń",
+      "description": "Wizyta w oblężonym zamku i kopalniach dostarcza dowodów na skalę najazdu. Powrót z raportem prowadzi do kolejnych wydarzeń związanych z Okiem Innosa.",
+      "recordings": []
     },
     {
-      "kind": "Gothic II",
-      "title": "Rytuał i polowanie",
-      "summary": "Po odzyskaniu artefaktu magowie trzech bóstw przywracają mu moc. Bezimienny rusza do Doliny Kopalń, by odnaleźć smoki i zakończyć ich najazd."
+      "sessionNumber": 3,
+      "title": "Oko Innosa i smocze legowiska",
+      "description": "Po odzyskaniu artefaktu magowie przywracają mu moc. Bezimienny rusza do Doliny Kopalń, by odnaleźć smoki i powstrzymać ich najazd.",
+      "recordings": []
     },
     {
-      "kind": "Noc Kruka",
-      "title": "Tajemnica budowniczych",
-      "summary": "Wątek dodatku prowadzi przez portal do Jharkendaru. Poszukiwanie Kruka odsłania historię dawnej cywilizacji i świątyni Adanosa."
+      "sessionNumber": 4,
+      "title": "Noc Kruka: Jharkendar",
+      "description": "Wątek dodatku prowadzi przez portal do zaginionej krainy. Poszukiwanie Kruka odsłania historię Budowniczych i świątyni Adanosa.",
+      "recordings": []
     },
     {
-      "kind": "Gothic II",
+      "sessionNumber": 5,
       "title": "Kurs na Irdorath",
-      "summary": "Wskazówki pozostawione przez Xardasa prowadzą na morze. Bezimienny zbiera załogę i rusza na wyspę, gdzie czeka finał wyprawy przeciw sługom Beliara."
+      "description": "Wskazówki Xardasa prowadzą na morze. Bezimienny zbiera załogę i rusza na wyspę, gdzie rozstrzyga się finał wyprawy przeciw sługom Beliara.",
+      "recordings": []
     }
   ],
   "factions": [
