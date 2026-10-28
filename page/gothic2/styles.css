@@ -160,14 +160,14 @@ a:hover {
   padding: 0.55rem 0.85rem;
 }
 
-.gothic-section {
+.gothic-panel {
   width: min(100% - 2.5rem, 76rem);
   margin-inline: auto;
   padding-block: clamp(4rem, 8vw, 7rem);
   scroll-margin-top: 6rem;
 }
 
-.gothic-section + .gothic-section {
+.gothic-panel + .gothic-panel {
   border-top: 1px solid rgb(214 170 87 / 20%);
 }
 
@@ -580,7 +580,7 @@ a:hover {
 }
 
 @media (max-width: 520px) {
-  .gothic-section {
+  .gothic-panel {
     width: min(100% - 1.5rem, 76rem);
   }
 
