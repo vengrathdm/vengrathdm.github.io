@@ -304,8 +304,8 @@ function mountDie(button) {
         result === 20
           ? "KRYTYK! Bogowie kości są dziś z wami."
           : result === 1
-            ? "Naturalna jedynka… smok już o was wie."
-            : `Wyrzucono ${result}. ${result >= 15 ? "Prowadzicie." : "Smok czeka."}`;
+            ? "Naturalna jedynka… Zariel zwróciła na was uwagę."
+            : `Wyrzucono ${result}. ${result >= 15 ? "Prowadzicie." : "Avernus czeka."}`;
       busy = false;
     }, 60);
   });
@@ -368,7 +368,7 @@ async function initializeCampaignPage() {
 }
 
 initializeCampaignPage().catch((error) => {
-  console.error("Nie udało się uruchomić kampanii Tron z Popiołu.", error);
+  console.error("Nie udało się uruchomić kampanii Descent into Avernus.", error);
   const message = createElement("p", {
     class: "page-error",
     text: "Nie udało się wczytać kampanii. Odśwież stronę za chwilę.",

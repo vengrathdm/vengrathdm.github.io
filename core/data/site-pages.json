@@ -539,14 +539,14 @@
     "manifest": "/page/the-dragons-due/manifest.json"
   },
   {
-    "id": "fiery-dnd",
-    "title": "Tron z Popiołu",
+    "id": "descent-into-avernus",
+    "title": "Descent into Avernus",
     "type": "campaign",
     "category": "Hidden",
     "visibility": "hidden",
-    "url": "/page/fiery-dnd/",
-    "image": "/core/graphics/voronoi/fiery-dnd.svg",
+    "url": "/page/descent-into-avernus/",
+    "image": "/core/graphics/voronoi/descent-into-avernus.svg",
     "layout": "bespoke",
-    "manifest": "/page/fiery-dnd/manifest.json"
+    "manifest": "/page/descent-into-avernus/manifest.json"
   }
 ]

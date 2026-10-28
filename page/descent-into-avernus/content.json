@@ -1,0 +1,141 @@
+{
+  "hero": {
+    "title": "Descent into Avernus",
+    "eyebrow": "BALDUR'S GATE · DUNGEONS & DRAGONS 5e",
+    "tagline": "Z cieni Baldur's Gate droga prowadzi wprost na front Krwawej Wojny. Każdy pakt ma cenę.",
+    "rollPrompt": "Rzuć k20, zanim złożysz przysięgę"
+  },
+  "campaign": {
+    "lead": [
+      "Baldur's Gate to miasto, w którym ambicja i korupcja splatają się na każdym poziomie. Śledztwo drużyny zaczyna się pośród jego frakcji, ulicznych kultów i ludzi gotowych sprzedać cudzy los za własne ocalenie.",
+      "Tropy prowadzą do Candlekeep, a potem do Elturel, miasta pochłoniętego przez Avernus. Wśród piekielnych kontraktów, machin wojennych i bitew Krwawej Wojny bohaterowie muszą zdecydować, komu można zaufać — i czy da się przeciwstawić Zariel bez zapłacenia ceny."
+    ],
+    "dossier": [
+      ["Galeria", "7 · demonstracyjna"],
+      ["Wpisy kroniki", "5 · makieta"],
+      ["System", "D&D 5e"],
+      ["Poziomy", "1–13"],
+      ["Status", "Makieta · ukryta"],
+      ["Ton", "Piekielna wyprawa"]
+    ],
+    "acts": [
+      ["Etap I", "Sprawy w Baldur's Gate", "done"],
+      ["Etap II", "Upadek Elturel", "done"],
+      ["Etap III", "Droga przez Avernus", "now"],
+      ["Etap IV", "Los Zariel", "locked"]
+    ],
+    "places": [
+      ["Baldur's Gate", "MIASTO", "Portowe miasto pełne wpływowych rodów, najemników i kultów. Tutaj zaczyna się śledztwo drużyny."],
+      ["Candlekeep", "BIBLIOTEKA", "Warownia wiedzy, w której bohaterowie szukają sposobu, by zrozumieć piekielny kryzys."],
+      ["Elturel", "ZAGINIONE MIASTO", "Miasto i jego mieszkańcy znaleźli się w Avernusie. Ich los wiąże się z dawnymi przysięgami i Zariel."],
+      ["Avernus", "PIERWSZY KRĄG", "Jałowe pustkowia, pole bitwy Krwawej Wojny i szlak, na którym piekielne kontrakty bywają równie groźne co demony."]
+    ],
+    "factions": [
+      ["Płomienna Pięść", "Baldur's Gate", "Najemnicy utrzymujący porządek w mieście. Ich interesy nie zawsze pokrywają się z dobrem mieszkańców."],
+      ["Kult Trzech Umarłych", "KULT", "Mroczny kult działający w Baldur's Gate; jego ślady wciągają drużynę w lokalne śledztwo."],
+      ["Jeźdźcy Piekieł", "ELTUREL", "Rycerze, których historia i przysięgi łączą się z upadkiem Elturel."],
+      ["Legiony Zariel", "AVERNUS", "Diabelskie siły księżnej Avernusa, uwikłane w walkę o przewagę w Krwawej Wojnie."]
+    ],
+    "npcs": [
+      ["Zariel", "ARCYDIABLICA", "Władczyni Avernusa i jedna z głównych sił kształtujących los Elturel."],
+      ["Lulu", "PRZEWODNICZKA", "Niezwykła towarzyszka, której wspomnienia mogą pomóc drużynie odnaleźć drogę przez Avernus."],
+      ["Mad Maggie", "MEGERA", "Mieszkanka Piekieł z własnymi planami i wiedzą o machinach wojennych."],
+      ["Bel", "KSIĄŻĘ PIEKIEŁ", "Dawny władca Avernusa, którego wpływy nadal są częścią diabelskiej gry o władzę."]
+    ],
+    "boss": {
+      "name": "Zariel, księżna Avernusa",
+      "line": "ARCYDIABLICA · WŁADCZYNI PIERWSZEGO KRĘGU",
+      "text": "Jej historia splata się z losem Elturel. Piekielna siła nie przesądza jeszcze o tym, jak zakończy się spotkanie z drużyną."
+    }
+  },
+  "characters": {
+    "kicker": "GALERIA DEMONSTRACYJNA",
+    "title": "Bohaterowie z Echtra — Zima Irgaeli",
+    "description": "To makieta strony Descent into Avernus. Dla demonstracji wspólnego systemu kart pokazuje te same kanoniczne postacie, które są przypisane do kampanii Echtra - Zima Irgaeli.",
+    "characterIds": [
+      "char-0127",
+      "char-0214",
+      "char-0215",
+      "char-0217",
+      "char-0218",
+      "char-0219",
+      "char-0263"
+    ]
+  },
+  "chronicle": [
+    {
+      "title": "Cienie Baldur's Gate",
+      "date": "Wpis demonstracyjny",
+      "level": 1,
+      "loot": "Pierwszy trop",
+      "summary": "Śledztwo w mieście odsłania działalność kultu i powiązania sięgające poza mury Baldur's Gate.",
+      "notes": [
+        "Makietowy wpis pokazuje miejsce na odkrycia i decyzje drużyny.",
+        "Nie dodano nagrania ani rzeczywistych notatek z sesji."
+      ],
+      "moment": "Wskazówka z ulic Baldur's Gate prowadzi poza miasto.",
+      "recordingStatus": "Brak nagrania · makieta",
+      "recordings": []
+    },
+    {
+      "title": "Wrota do Candlekeep",
+      "date": "Wpis demonstracyjny",
+      "level": 3,
+      "loot": "Wiedza o piekielnym pakcie",
+      "summary": "Bohaterowie szukają w Candlekeep odpowiedzi, które pozwolą im zrozumieć związek między Elturel a Avernusem.",
+      "notes": [
+        "Makietowy wpis pozostawia przestrzeń na rozwinięcie scen i tropów.",
+        "Właściwe notatki można dodać po sesji."
+      ],
+      "moment": "Księga wskazuje drogę do zaginionego miasta.",
+      "recordingStatus": "Brak nagrania · makieta",
+      "recordings": []
+    },
+    {
+      "title": "Elturel w Avernusie",
+      "date": "Wpis demonstracyjny",
+      "level": 5,
+      "loot": "Sojusz lub zobowiązanie",
+      "summary": "Drużyna dociera do Elturel i odkrywa, jak dawne przysięgi wiążą miasto z księżną Avernusa.",
+      "notes": [
+        "Makietowy wpis pokazuje rozwijane notatki karty kroniki.",
+        "Właściwy przebieg wydarzeń zależy od decyzji drużyny."
+      ],
+      "moment": "W Avernusie nawet droga powrotna może wymagać paktu.",
+      "recordingStatus": "Brak nagrania · makieta",
+      "recordings": []
+    },
+    {
+      "title": "Machiny Krwawej Wojny",
+      "date": "Wpis demonstracyjny",
+      "level": 8,
+      "loot": "Infernalna machina wojenna",
+      "summary": "Podróż przez pustkowia Avernusa prowadzi przez pola bitwy, obozy i drogi patrolowane przez diabelskie legiony.",
+      "notes": [
+        "Makietowy wpis ilustruje kartę z miejscem na łup i poziom drużyny.",
+        "Nagranie można podpiąć do karty po jego dodaniu."
+      ],
+      "moment": "Silnik machiny ryczy głośniej niż odległe demony.",
+      "recordingStatus": "Brak nagrania · makieta",
+      "recordings": []
+    },
+    {
+      "title": "Przed obliczem Zariel",
+      "date": "Wpis demonstracyjny",
+      "level": 13,
+      "loot": "Los Elturel",
+      "summary": "Finał stawia drużynę wobec Zariel i wyboru, który zaważy na losie miasta oraz tych, którzy wciąż w nim pozostali.",
+      "notes": [
+        "To przykładowa karta finałowa, nie zapis rozegranej sesji.",
+        "Zakończenie pozostaje otwarte na decyzje graczy."
+      ],
+      "moment": "Ostatnie słowo należy do bohaterów — i do ceny, którą są gotowi zapłacić.",
+      "recordingStatus": "Brak nagrania · makieta",
+      "recordings": []
+    }
+  ],
+  "source": {
+    "label": "Oficjalny opis przygody",
+    "url": "https://marketplace.dndbeyond.com/SALE_Summer_25/baldurs-gate-descent-into-avernus"
+  }
+}

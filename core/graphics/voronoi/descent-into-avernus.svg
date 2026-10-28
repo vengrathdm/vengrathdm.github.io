@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="title description">
-  <title id="title">Tron z Popiołu</title>
-  <desc id="description">Korona nad ognistą górą, cieniem smoka i królestwem Kaer Dun-Morth.</desc>
+  <title id="title">Descent into Avernus</title>
+  <desc id="description">Piekielny krajobraz Avernusa, krąg Krwawej Wojny i miasto Elturel uwięzione w infernalnym ogniu.</desc>
   <defs>
     <linearGradient id="sky" x2="0" y2="1">
       <stop offset="0" stop-color="#120a08" />

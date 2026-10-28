@@ -1,0 +1,10 @@
+{
+  "id": "descent-into-avernus",
+  "title": "Descent into Avernus",
+  "language": "pl",
+  "campaign": "Descent into Avernus",
+  "entry": "/page/descent-into-avernus/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": ["campaign", "characters", "chronicle"]
+}
