@@ -17,6 +17,6 @@
     "body": "\"Fira Sans Extra Condensed\", sans-serif",
     "serif": "\"Brygada 1918\", Georgia, serif"
   },
-  "heroImage": "/res/voronoi/webp/ghoul-hour.webp",
+  "heroImage": "/v/core/graphics/voronoi/ghoul-hour.webp",
   "audioColor": "#c78be8"
 }

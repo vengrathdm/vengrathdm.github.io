@@ -31,7 +31,7 @@
     ],
     "partyTitle": "Miasto, w którym każdy ma własną agendę.",
     "partyDescription": "Dagult Neverember pragnie korony. Luskan i Mirabar obserwują każdy ruch. W mieście, gdzie polityka spotyka się z ulicą, każde śledztwo może stać się częścią większego konfliktu.",
-    "partyImage": "/res/voronoi/webp/neverwinter.webp"
+    "partyImage": "/v/core/graphics/voronoi/neverwinter.webp"
   },
   "characters": {
     "kicker": "AKTA / POSTACI",

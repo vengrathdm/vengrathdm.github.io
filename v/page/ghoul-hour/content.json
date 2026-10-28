@@ -30,7 +30,7 @@
     ],
     "partyTitle": "Ślady, które nie powinny prowadzić dalej.",
     "partyDescription": "Martwi nie zawsze pozostają w grobach. Z Rimefall po Kopalnie Emberdeep drużyna podąża śladem nekromancji, opętania i rytuałów.",
-    "partyImage": "/res/voronoi/webp/ghoul-hour.webp"
+    "partyImage": "/v/core/graphics/voronoi/ghoul-hour.webp"
   },
   "characters": {
     "kicker": "AKTA / POSTACI",

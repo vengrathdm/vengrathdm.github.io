@@ -1,11 +1,17 @@
-# Vengrath v2
+# Vengrath site
 
-New implementation staged under /v/ while legacy files remain untouched. Internal URLs use the permanent /v/ prefix. The site is expected at the domain root. Do not remove legacy files until every page and feature has been migrated and verified.
+This is a static GitHub Pages site served from the repository root. All current public site routes use the permanent `/v/` prefix. Root `index.html` redirects to `/v/home/`.
 
-- home/: Home page
-- core/data/: canonical JSON data
-- core/graphics/: shared graphics
-- core/portraits/: canonical character portraits
-- core/templates/: reusable components and feature-local logic
-- page/hof/: migrated Hall of Fame and achievement catalogue
-- page/: destination for Phase 3 campaign migrations
+## Source organization
+
+- `home/` contains the landing page and its behavior.
+- `core/data/` contains canonical data, including the page registry, characters, and achievements.
+- `core/graphics/` and `core/portraits/` contain shared media.
+- `core/templates/` contains reusable UI and behavior. Campaigns may use these pieces without adopting a shared visual design.
+- `page/` contains public page directories. Each directory keeps its own assets, styles, and implementation so bespoke experiences remain self-contained.
+
+## Page types and URLs
+
+`core/data/site-pages.json` is the source of truth for landing-page cards and page classification. Its `type` field groups pages as campaigns, archive, wiki, or tools; `layout` marks deliberately bespoke pages. The registry's `url` values are public routes and must stay valid on GitHub Pages. Preserve these routes when reorganizing source files, and use root-relative `/v/...` paths for site assets.
+
+GitHub Pages is configured as a plain static site. `.nojekyll` keeps GitHub's default Jekyll processing from omitting static files or directories. No build step or server-side routing is required.

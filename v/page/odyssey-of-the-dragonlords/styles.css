@@ -8,7 +8,7 @@
   --theme-line-1:#4e5a31;--theme-line-2:#8a6a3d;--theme-nav-background:#151d0d;--theme-nav-text:#f4ecd9;--theme-nav-active-background:#303d1b;
   --theme-seal-border:#8f8b80;--theme-seal-inner-border:#635f56;--theme-seal-background:#08090bcc;--theme-seal-small-text:#aaa397;--theme-seal-main-text:#d6cbb5;
   --theme-font-1:"Caesar Dressing","Voltaire",sans-serif;--theme-font-2:"Fira Sans Extra Condensed",sans-serif;--theme-font-3:"Brygada 1918",Georgia,serif;
-  --theme-hero-image:url("/res/voronoi/webp/odyssey-of-the-dragonlords.webp");
+  --theme-hero-image:url("/v/core/graphics/voronoi/odyssey-of-the-dragonlords.webp");
 }
 
 html{scroll-behavior:smooth}
@@ -133,7 +133,7 @@ body.odyssey-page::before{
   pointer-events: none;
   background:
     linear-gradient(rgba(10, 13, 20, 0.72), rgba(10, 13, 20, 0.86)),
-    url("./res/constellations.jpg") center top / cover fixed no-repeat;
+    url("./res/graphics/constellations.jpg") center top / cover fixed no-repeat;
 }
 @media (max-width: 760px) {
   .odyssey-content::before {
@@ -142,7 +142,7 @@ body.odyssey-page::before{
 }
 
 .odyssey-content{width:min(1220px,calc(100% - 48px));margin:auto;padding:70px 0 100px;position:relative;isolation:isolate}
-.odyssey-content::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;background:linear-gradient(rgba(10,13,20,.72),rgba(10,13,20,.86)),url("/p/odyssey-of-the-dragonlords/res/constellations.jpg") center top/cover fixed no-repeat}
+.odyssey-content::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;background:linear-gradient(rgba(10,13,20,.72),rgba(10,13,20,.86)),url("/v/page/odyssey-of-the-dragonlords/res/graphics/constellations.jpg") center top/cover fixed no-repeat}
 .odyssey-panel[hidden]{display:none!important}
 .odyssey-card{border:1px solid #6d7040;background:linear-gradient(145deg,#26331a,#12190d);box-shadow:0 20px 65px #0008}
 .odyssey-card-title{display:flex;align-items:center;gap:18px;padding:18px 28px;border-bottom:1px solid #4e5a31;background:#151d0d}

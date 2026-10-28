@@ -17,6 +17,6 @@
     "body": "\"Fira Sans Extra Condensed\", sans-serif",
     "serif": "\"Brygada 1918\", Georgia, serif"
   },
-  "heroImage": "/res/voronoi/webp/the-sunless-citadel.webp",
+  "heroImage": "/v/core/graphics/voronoi/the-sunless-citadel.webp",
   "audioColor": "#a7b58a"
 }

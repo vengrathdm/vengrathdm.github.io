@@ -1,1 +1,1 @@
-Self-contained filtered, searchable, draggable, horizontally infinite Voronoi field. Card records live in data/cards.json; local artwork lives in /v/core/graphics/voronoi/. Existing Home behaviors are the compatibility target.
+Self-contained filtered, searchable, draggable, horizontally infinite Voronoi field. Page records live in `/v/core/data/site-pages.json`; local artwork lives in `/v/core/graphics/voronoi/`. The registry is the single source for home cards, categories, visibility, page type, and public URL. Existing home interactions are preserved.
