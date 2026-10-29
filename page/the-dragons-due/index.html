@@ -7,7 +7,7 @@
       name="description"
       content="The Dragon's Due — przygoda D&D 5e o spisku, kryzysie żywnościowym i starożytnych cysternach na rubieżach Anauroch."
     />
-    <meta name="theme-color" content="#11100c" />
+    <meta name="theme-color" content="#171112" />
     <title>The Dragon's Due — Vengrath</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,28 +40,39 @@
     <link rel="stylesheet" href="./the-dragons-due.css" />
   </head>
   <body class="the-dragons-due-page campaign-startup-loading">
-    <header
-      class="subpage-hero"
-      id="campaign-hero"
-      style="--hero-background: url('/page/the-dragons-due/res/graphics/hero-image.webp')"
-    >
+    <header class="subpage-hero cz-hero" id="campaign-hero">
       <div class="subpage-hero__copy">
-        <p class="campaign-startup-kicker">
+        <p class="cz-hero-kicker">
           D&amp;D 5E · FORGOTTEN REALMS · AKTA PRZYGODY
         </p>
-        <h1>
-          THE DRAGON'S DUE
-        </h1>
-        <p class="campaign-startup-lead">
-          Zboże znika, spichlerze płoną, a na drogach pojawiają się rzekomi najeźdźcy z pustyni. W
-          Cormyrze głód nie jest klęską natury — ktoś zamierza uczynić z niego narzędzie władzy.
+        <h1>THE DRAGON'S <span>DUE</span></h1>
+        <p class="cz-hero-lead">
+          Zboże znika, spichlerze płoną, a na drogach pojawiają się rzekomi
+          najeźdźcy z pustyni. W Cormyrze głód nie jest klęską natury — ktoś
+          zamierza uczynić z niego narzędzie władzy.
         </p>
+        <div class="cz-hero-register" aria-label="Akta sprawy">
+          <span>AKTA KORONY</span>
+          <span>SPRAWA 03 / 07</span>
+          <span>CORMYR · SPRAWA OTWARTA</span>
+        </div>
       </div>
+      <figure class="cz-hero-seal" aria-label="Herb z materiałów źródłowych">
+        <span class="cz-seal-label">PIECZĘĆ SPRAWY</span>
+        <img
+          src="/page/the-dragons-due/res/graphics/hero-image.webp"
+          alt=""
+          fetchpriority="high"
+        />
+        <figcaption>KRÓLEWSKIE SPICHLERZE · CORMYR</figcaption>
+      </figure>
+      <div class="cz-hero-index" aria-hidden="true">TDD / SPRAWA 03</div>
     </header>
     <main class="cz-content">
-      <section class="cz-panel" id="overview" data-page-section="overview">
+      <section class="cz-panel" id="campaign" data-page-section="campaign">
         <div class="cz-filehead">
-          <span>AKTA / 01</span><span>KRÓLEWSKIE SPICHLERZE · CORMYR</span>
+          <span>01 / AKTA KAMPANII</span>
+          <span>KRÓLEWSKIE SPICHLERZE · CORMYR</span>
         </div>
         <div class="cz-overview-grid">
           <article class="cz-paper">
@@ -93,15 +104,65 @@
               ujawnić, kto dowiedział się o dochodzeniu.
             </p>
           </div>
-          <figure class="cz-visual">
-            <img
-              src="/page/the-dragons-due/res/graphics/hero-image.webp"
-              alt="Ilustracja wykorzystana w materiale źródłowym przygody"
-              loading="lazy"
-            />
-            <figcaption id="image-caption"></figcaption>
+          <figure class="cz-route-map">
+            <div class="cz-route-heading">
+              <p class="cz-eyebrow">MAPA SPRAWY</p>
+              <span id="image-caption">
+                Od królewskich zapasów po stare cysterny
+              </span>
+            </div>
+            <div class="cz-route-stops" aria-label="Trasa dochodzenia">
+              <div class="cz-route-stop">
+                <span>01 / PUNKT ZAPALNY</span>
+                <strong>Cormyr</strong>
+                <small>Spichlerze · Eveningstar</small>
+              </div>
+              <div class="cz-route-stop">
+                <span>02 / ŚLADY</span>
+                <strong>Wolne Doliny</strong>
+                <small>Konwoje · fałszywe księgi</small>
+              </div>
+              <div class="cz-route-stop">
+                <span>03 / ŹRÓDŁO</span>
+                <strong>Anauroch</strong>
+                <small>Ascore · cysterny Veldrath</small>
+              </div>
+            </div>
+            <figcaption>OD ZIARNA DO WODY · CORMYR / ANAUROCH</figcaption>
           </figure>
         </section>
+
+        <section class="cz-record-section" aria-labelledby="chapters-heading">
+          <div class="cz-record-heading">
+            <p class="cz-eyebrow">ŁAŃCUCH DOWODÓW</p>
+            <h2 id="chapters-heading">Siedem części sprawy</h2>
+          </div>
+          <div id="chapters" class="cz-chapter-grid"></div>
+        </section>
+
+        <section class="cz-record-section" aria-labelledby="factions-heading">
+          <div class="cz-record-heading">
+            <p class="cz-eyebrow">KTO ZYSKUJE NA GŁODZIE</p>
+            <h2 id="factions-heading">Strony konfliktu</h2>
+          </div>
+          <div id="factions" class="cz-faction-grid"></div>
+        </section>
+
+        <section class="cz-record-section" aria-labelledby="people-heading">
+          <div class="cz-record-heading">
+            <p class="cz-eyebrow">ŚWIADKOWIE · MOCODAWCY · ŁĄCZNICY</p>
+            <h2 id="people-heading">Osoby ze sprawy</h2>
+          </div>
+          <div id="people" class="cz-people-grid"></div>
+        </section>
+
+        <details class="cz-spoilers">
+          <summary>
+            <span>AKTA ZASTRZEŻONE</span>
+            <span>Notatki dla prowadzącego</span>
+          </summary>
+          <div id="gm-notes" class="cz-gm-notes"></div>
+        </details>
       </section>
       <section
         class="cz-panel"
@@ -112,16 +173,13 @@
         <header class="cz-section-intro">
           <p class="cz-eyebrow">AKTA / 02 · OBSADA</p>
           <h2>Postaci</h2>
-          <p>
-            Miejsce na bohaterów graczy, portrety, krótkie biogramy i informacje
-            o ich celach. Sekcja przygotowana do uzupełnienia.
-          </p>
+          <p>Bohaterowie graczy, ich portrety i własne tropy w sprawie.</p>
         </header>
         <div class="cz-placeholder">
           <span class="cz-placeholder-mark">02</span>
           <div>
-            <h3>Galeria postaci</h3>
-            <p>Portrety i profile postaci pojawią się tutaj.</p>
+            <h3>Akta bohaterów</h3>
+            <p>Nie dodano jeszcze postaci graczy.</p>
           </div>
         </div>
       </section>
@@ -134,25 +192,19 @@
         <header class="cz-section-intro">
           <p class="cz-eyebrow">AKTA / 03 · ZAPIS SESJI</p>
           <h2>Kronika</h2>
-          <p>
-            Chronologiczny zapis wydarzeń kampanii, odkrytych tropów i decyzji
-            drużyny. Sekcja przygotowana do uzupełnienia po kolejnych sesjach.
-          </p>
+          <p>Datowane relacje z sesji, nagrania i odkryte tropy.</p>
         </header>
         <div class="cz-placeholder">
           <span class="cz-placeholder-mark">03</span>
           <div>
-            <h3>Pierwszy wpis oczekuje</h3>
-            <p>
-              Po dodaniu relacji z sesji kronika będzie prezentować kolejne
-              wydarzenia.
-            </p>
+            <h3>Kronika nieotwarta</h3>
+            <p>Nie dodano jeszcze wpisów z sesji.</p>
           </div>
         </div>
       </section>
     </main>
     <footer class="cz-footer">
-      <span>VENGRATH · CICHE ŻNIWA</span
+      <span>VENGRATH · THE DRAGON'S DUE · AKTA SPICHLERZY</span
       ><a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a>
     </footer>
     <script type="module" src="./app.js"></script>

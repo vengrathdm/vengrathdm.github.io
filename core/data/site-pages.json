@@ -535,7 +535,7 @@
     "visibility": "public",
     "url": "/page/the-dragons-due/",
     "image": "/core/graphics/voronoi/the-dragons-due.webp",
-    "layout": "campaign-shell",
+    "layout": "bespoke",
     "manifest": "/page/the-dragons-due/manifest.json"
   },
   {

@@ -41,11 +41,6 @@ function renderCards(target, records, kind) {
   );
 }
 async function initialize() {
-  const campaignAudio = new AudioPlayer({
-    src: "/page/the-dragons-due/res/audio/TheDragonsDue.mp3",
-    storageKey: "vengrath-the-dragons-due-audio",
-  });
-  mountAudioPlayerButton(campaignAudio, "#c6a45c");
   const [manifest, theme, content] = await Promise.all([
     loadJson("./manifest.json"),
     loadJson("./theme.json"),
@@ -57,15 +52,45 @@ async function initialize() {
   root.style.setProperty("--cz-gold", theme.colors.accent2);
   const hero = createSubpageHero({
     title: content.campaign.title,
-    backgroundImage: theme.heroImage,
     theme: { accent: theme.colors.accent2 },
   });
   hero.id = "campaign-hero";
+  hero.classList.add("cz-hero");
   const kicker = node("p", "cz-hero-kicker", content.campaign.kicker);
   const lead = node("p", "cz-hero-lead", content.campaign.lead);
   const heading = hero.querySelector("h1");
+  const titleParts = content.campaign.title.split(" ");
+  const titleAccent = node("span", "", titleParts.pop());
+  heading.replaceChildren(
+    document.createTextNode(titleParts.join(" ") + " "),
+    titleAccent,
+  );
   heading.before(kicker);
   heading.after(lead);
+  const register = node("div", "cz-hero-register");
+  register.setAttribute("aria-label", "Akta sprawy");
+  register.append(
+    node("span", "", "AKTA KORONY"),
+    node("span", "", `SPRAWA 03 / ${String(content.chapters.length).padStart(2, "0")}`),
+    node("span", "", "CORMYR · SPRAWA OTWARTA"),
+  );
+  hero.querySelector(".subpage-hero__copy").append(register);
+
+  const seal = node("figure", "cz-hero-seal");
+  seal.setAttribute("aria-label", "Herb z materiałów źródłowych");
+  const sealLabel = node("span", "cz-seal-label", "PIECZĘĆ SPRAWY");
+  const sealImage = node("img");
+  sealImage.src = theme.heroImage;
+  sealImage.alt = "";
+  sealImage.fetchPriority = "high";
+  const sealCaption = node(
+    "figcaption",
+    "",
+    "KRÓLEWSKIE SPICHLERZE · CORMYR",
+  );
+  seal.append(sealLabel, sealImage, sealCaption);
+  hero.append(seal, node("div", "cz-hero-index", "TDD / SPRAWA 03"));
+
   const navbarMount = node("div", "cz-navbar-mount");
   hero.prepend(navbarMount);
   document.querySelector("#campaign-hero").replaceWith(hero);
@@ -73,7 +98,7 @@ async function initialize() {
     sections: [
       {
         text: "Kampania",
-        sectionLink: "overview",
+        sectionLink: "campaign",
         color: theme.colors.accent2,
       },
       {
@@ -102,6 +127,33 @@ async function initialize() {
     content.campaign.manifestoTags;
   document.querySelector("#image-caption").textContent =
     content.campaign.imageCaption;
+  renderCards(
+    document.querySelector("#chapters"),
+    content.chapters,
+    "cz-chapter",
+  );
+  renderCards(
+    document.querySelector("#factions"),
+    content.factions,
+    "cz-faction",
+  );
+  renderCards(
+    document.querySelector("#people"),
+    content.people,
+    "cz-person",
+  );
+  document.querySelector("#gm-notes").replaceChildren(
+    ...content.gmNotes.map((note) => node("p", "", note)),
+  );
+
+  if (manifest.audio?.src) {
+    const campaignAudio = new AudioPlayer({
+      src: manifest.audio.src,
+      storageKey: manifest.audio.continuationKey,
+      preload: "none",
+    });
+    mountAudioPlayerButton(campaignAudio, theme.audioColor);
+  }
 }
 initialize()
   .then(() => {
@@ -109,6 +161,7 @@ initialize()
   })
   .catch((error) => {
     console.error("Nie udało się uruchomić strony The Dragon's Due.", error);
+    document.body.classList.remove("campaign-startup-loading");
     const message = node("p", "cz-error", "Nie udało się wczytać akt przygody.");
     document.querySelector("main")?.prepend(message);
   });

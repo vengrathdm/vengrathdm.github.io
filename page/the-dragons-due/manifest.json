@@ -8,9 +8,13 @@
   "theme": "./theme.json",
   "content": "./content.json",
   "sections": [
-    "overview",
+    "campaign",
     "characters",
     "chronicle"
   ],
-  "status": "Archiwum przygody"
+  "status": "Archiwum przygody",
+  "audio": {
+    "src": "/page/the-dragons-due/res/audio/TheDragonsDue.mp3",
+    "continuationKey": "vengrath-the-dragons-due-audio"
+  }
 }

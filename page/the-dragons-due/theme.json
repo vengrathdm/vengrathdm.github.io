@@ -1,15 +1,15 @@
 {
   "colors": {
-    "base1": "#11100c",
-    "base2": "#17150f",
-    "base3": "#201d14",
-    "accent1": "#7d3427",
-    "accent2": "#c6a45c",
-    "text1": "#f0e6ce",
-    "text2": "#d8c9a7",
-    "text3": "#b1a17d",
-    "line1": "#574b32",
-    "line2": "#806b42"
+    "base1": "#171112",
+    "base2": "#241a1a",
+    "base3": "#30221d",
+    "accent1": "#a63e36",
+    "accent2": "#d7b76b",
+    "text1": "#f0e8d7",
+    "text2": "#d6c9b1",
+    "text3": "#ad9d81",
+    "line1": "#6f5834",
+    "line2": "#9b714f"
   },
   "typography": {
     "heading": "'Voltaire', sans-serif",
@@ -18,5 +18,5 @@
   },
   "fontsUrl": "https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap",
   "heroImage": "/page/the-dragons-due/res/graphics/hero-image.webp",
-  "audioColor": "#7d3427"
+  "audioColor": "#d7b76b"
 }
