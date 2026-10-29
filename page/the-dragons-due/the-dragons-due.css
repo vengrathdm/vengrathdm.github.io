@@ -106,8 +106,8 @@ h4 {
   z-index: 20;
 }
 .tabs .badge {
-  width: 56px;
-  height: 56px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   border: 2px solid var(--amber);
   display: flex;
@@ -116,7 +116,7 @@ h4 {
   color: var(--amber);
   font-family: var(--display);
   font-weight: 800;
-  font-size: 11px;
+  font-size: 9.5px;
   text-align: center;
   line-height: 1.15;
   margin-bottom: 26px;
@@ -738,16 +738,16 @@ h4 {
 }
 @media (max-width: 640px) {
   .tabs {
-    width: 64px;
+    width: 86px;
   }
   .tab-btn {
     font-size: 11px;
     height: 90px;
   }
   .tabs .badge {
-    width: 40px;
-    height: 40px;
-    font-size: 9px;
+    width: 68px;
+    height: 68px;
+    font-size: 7.2px;
     margin-bottom: 16px;
   }
   .district-grid {
@@ -1977,7 +1977,7 @@ h4 {
 
 /* GLOBAL VENGRATH BACKLINK */
 .global-vengrath {
-  width: 56px;
+  width: 96px;
   min-height: 30px;
   display: flex;
   align-items: center;
@@ -1988,7 +1988,7 @@ h4 {
   color: var(--amber);
   background: rgba(21, 17, 27, 0.35);
   font-family: var(--display);
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 700;
   letter-spacing: 0.08em;
   line-height: 1;
@@ -3774,47 +3774,6 @@ h4 {
   visibility: hidden;
 }
 
-.gm-record {
-  margin-top: 30px;
-}
-
-.gm-record summary {
-  color: var(--amber);
-  font-family: var(--display);
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  cursor: pointer;
-}
-
-.gm-record .thread-board {
-  margin-top: 16px;
-}
-
-.gm-record .thread-card {
-  color: var(--paper);
-}
-
-.empty-record {
-  max-width: 720px;
-  margin-top: 28px;
-  padding: 26px 24px;
-  border: 1px solid var(--kraft-dark);
-  background: var(--carbon);
-  color: var(--paper);
-}
-
-.empty-record strong {
-  display: block;
-  color: var(--amber);
-  font-family: var(--display);
-  font-size: 16px;
-}
-
-.empty-record p {
-  margin: 10px 0 0;
-  color: var(--paper);
-}
-
 .audio-player-button {
   width: 64px;
   height: 64px;
@@ -3841,5 +3800,11 @@ h4 {
     bottom: 16px;
     width: 58px;
     height: 58px;
+  }
+
+  .global-vengrath {
+    width: 72px;
+    padding: 6px 2px;
+    font-size: 7.5px;
   }
 }

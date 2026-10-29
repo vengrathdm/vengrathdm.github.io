@@ -9,71 +9,20 @@ async function loadJson(path) {
   return response.json();
 }
 
-function createNode(tag, className, text) {
-  const element = document.createElement(tag);
-  if (className) element.className = className;
-  if (text !== undefined) element.textContent = text;
-  return element;
-}
-
-function renderDossier(target, records) {
+function renderDossier(target, entries) {
   target.replaceChildren(
-    ...records.map(([label, value]) => {
-      const row = createNode("div", "fact-row");
-      row.append(
-        createNode("span", "", label),
-        createNode("span", "", value),
-      );
+    ...entries.map(([label, value]) => {
+      const row = document.createElement("div");
+      row.className = "fact-row";
+
+      const heading = document.createElement("span");
+      heading.textContent = label;
+
+      const detail = document.createElement("span");
+      detail.textContent = value;
+
+      row.append(heading, detail);
       return row;
-    }),
-  );
-}
-
-function renderChapters(target, chapters) {
-  target.replaceChildren(
-    ...chapters.map((chapter) => {
-      const card = createNode("article", "district-card");
-      card.append(
-        createNode("span", "tag", chapter.location),
-        createNode("h4", "", chapter.title),
-        createNode("p", "", chapter.text),
-      );
-      return card;
-    }),
-  );
-}
-
-function renderFactions(target, factions) {
-  target.replaceChildren(
-    ...factions.map((faction) => {
-      const card = createNode("article", "district-card");
-      card.append(
-        createNode("span", "tag", faction.role),
-        createNode("h4", "", faction.name),
-        createNode("p", "", faction.text),
-      );
-      return card;
-    }),
-  );
-}
-
-function renderPeople(target, people) {
-  target.replaceChildren(
-    ...people.map((person, index) => {
-      const card = createNode("article", "prince-card");
-      const portrait = createNode("div", "prince-mug", person.name.slice(0, 1));
-      portrait.append(
-        createNode("span", "plate", String(index + 1).padStart(2, "0")),
-      );
-
-      const body = createNode("div", "prince-body");
-      body.append(
-        createNode("span", "role", person.role),
-        createNode("h3", "", person.name),
-        createNode("p", "", person.text),
-      );
-      card.append(portrait, body);
-      return card;
     }),
   );
 }
@@ -112,35 +61,12 @@ async function initialize() {
     loadJson("./content.json"),
   ]);
 
-  document.querySelector("#campaign-lead").textContent =
-    content.campaign.lead;
-  document.querySelector("#campaign-manifesto").textContent =
-    `„${content.campaign.manifesto}”`;
-  document.querySelector("#campaign-manifesto-credit").textContent =
-    "— Akta Korony · Cormyr";
-  document.querySelector("#intro-title").textContent =
-    content.campaign.introTitle;
-  document.querySelector("#intro-copy").replaceChildren(
-    ...content.campaign.introParagraphs.map((paragraph) =>
-      createNode("p", "", paragraph),
-    ),
+  document.querySelector("#campaign-description").textContent =
+    content.campaign.description;
+  renderDossier(
+    document.querySelector("#dossier"),
+    content.campaign.dossier,
   );
-
-  renderDossier(document.querySelector("#dossier"), content.campaign.dossier);
-  renderChapters(document.querySelector("#chapters"), content.chapters);
-  renderFactions(document.querySelector("#factions"), content.factions);
-  renderPeople(document.querySelector("#people"), content.people);
-
-  const notes = document.querySelector("#gm-notes");
-  notes.className = "thread-board";
-  notes.replaceChildren(
-    ...content.gmNotes.map((note) => {
-      const card = createNode("p", "thread-card", note);
-      return card;
-    }),
-  );
-
-  mountSectionNavigation();
 
   if (manifest.audio?.src) {
     const campaignAudio = new AudioPlayer({
@@ -150,6 +76,8 @@ async function initialize() {
     });
     mountAudioPlayerButton(campaignAudio, theme.audioColor);
   }
+
+  mountSectionNavigation();
 }
 
 initialize()
@@ -159,10 +87,4 @@ initialize()
   .catch((error) => {
     console.error("Nie udało się uruchomić strony The Dragon's Due.", error);
     document.body.classList.remove("campaign-startup-loading");
-    const message = createNode(
-      "p",
-      "cz-error",
-      "Nie udało się wczytać akt kampanii.",
-    );
-    document.querySelector("main")?.prepend(message);
   });
