@@ -33,16 +33,13 @@
           <img src="/core/graphics/favicon/mg-logo.png" alt="" />
           <span>VENGRATH</span>
         </a>
-        <div class="hof-nav-meta">ARCHIWUM <span>/</span> BOHATEROWIE</div>
         <a class="hof-nav-link" href="/page/hof/achievements.html"
           >KATALOG ODZNACZEŃ</a
         >
         <a class="hof-nav-link" href="/home/">STRONA GŁÓWNA</a>
       </nav>
       <div class="hof-hero-copy">
-        <p>VENGRATH · ARCHIWUM POSTACI</p>
         <h1>SALA <span>CHWAŁY</span></h1>
-        <p>Bohaterowie, których historie zostają z nami na dłużej.</p>
       </div>
     </header>
     <main class="hof-main">
@@ -55,76 +52,66 @@
       </section>
       <section class="hof-archive">
         <aside class="hof-filters" aria-label="Filtry galerii postaci">
-          <div class="hof-filter-primary">
-            <label class="hof-search">
-              <span aria-hidden="true">⌕</span>
-              <input
-                id="search"
-                type="search"
-                placeholder="Szukaj postaci lub gracza…"
-                aria-label="Szukaj postaci lub gracza"
-              />
-            </label>
+          <label class="hof-search">
+            <span aria-hidden="true">⌕</span>
+            <input
+              id="search"
+              type="search"
+              placeholder="Szukaj…"
+              aria-label="Szukaj postaci lub gracza"
+            />
+          </label>
+          <div class="hof-filter-grid">
             <label>
               GRACZ
               <select id="playerFilter">
-                <option value="">Wszyscy gracze</option>
+                <option value="">Wszyscy</option>
               </select>
             </label>
             <label>
               KAMPANIA
               <select id="campaignFilter">
-                <option value="">Wszystkie kampanie</option>
+                <option value="">Wszystkie</option>
+              </select>
+            </label>
+            <label>
+              MODUŁ
+              <select id="moduleFilter">
+                <option value="">Wszystkie</option>
+              </select>
+            </label>
+            <label>
+              KLASA
+              <select id="classFilter">
+                <option value="">Wszystkie</option>
+              </select>
+            </label>
+            <label>
+              RASA
+              <select id="raceFilter">
+                <option value="">Wszystkie</option>
+              </select>
+            </label>
+            <label>
+              ODZNACZENIE
+              <select id="achievementFilter">
+                <option value="">Wszystkie</option>
               </select>
             </label>
             <label>
               STATUS
               <select id="statusFilter">
-                <option value="">Wszystkie statusy</option>
+                <option value="">Wszystkie</option>
               </select>
             </label>
           </div>
-          <div class="hof-filter-extras">
-            <details>
-              <summary>Więcej filtrów</summary>
-              <div class="hof-filter-grid">
-                <label>
-                  MODUŁ
-                  <select id="moduleFilter">
-                    <option value="">Wszystkie moduły</option>
-                  </select>
-                </label>
-                <label>
-                  KLASA
-                  <select id="classFilter">
-                    <option value="">Wszystkie klasy</option>
-                  </select>
-                </label>
-                <label>
-                  RASA
-                  <select id="raceFilter">
-                    <option value="">Wszystkie rasy</option>
-                  </select>
-                </label>
-                <label>
-                  ODZNACZENIE
-                  <select id="achievementFilter">
-                    <option value="">Wszystkie odznaczenia</option>
-                  </select>
-                </label>
-              </div>
-            </details>
-            <button id="clearFilters" class="hof-reset" type="button">
-              WYCZYŚĆ FILTRY
-            </button>
-          </div>
+          <button id="clearFilters" class="hof-reset" type="button">
+            WYCZYŚĆ FILTRY
+          </button>
         </aside>
-        <section class="hof-results">
+        <section class="hof-results" aria-label="Galeria postaci">
           <div class="hof-results-heading">
-            <div>
-              <p>SALA CHWAŁY / REJESTR BOHATERÓW</p>
-              <h2>Bohaterowie Vengrath</h2>
-            </div>
+            <h2 class="hof-visually-hidden">Postacie</h2>
             <span id="resultCount">ŁADOWANIE…</span>
           </div>
           <div id="grid" class="character-gallery" aria-live="polite"></div>
