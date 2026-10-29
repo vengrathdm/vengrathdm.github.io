@@ -326,8 +326,8 @@ body {
 }
 
 .hof-results .character-gallery {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 7.8rem), 1fr));
-  gap: 0.55rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 6.5rem), 1fr));
+  gap: 0.5rem;
 }
 
 .hof-results .character-card {
@@ -350,7 +350,7 @@ body {
 }
 
 .hof-results .character-card__portrait {
-  aspect-ratio: 4 / 4.55;
+  aspect-ratio: 4 / 4.3;
   background: #191714;
 }
 
@@ -440,7 +440,7 @@ body {
 .hof-results .character-card__body h3 {
   color: #fff7e9;
   font:
-    600 clamp(0.82rem, 1vw, 1rem) / 1.15 "Space Grotesk",
+    600 clamp(0.72rem, 0.82vw, 0.9rem) / 1.15 "Space Grotesk",
     sans-serif;
   text-shadow: 0 2px 12px rgb(0 0 0 / 85%);
   display: -webkit-box;
@@ -452,7 +452,7 @@ body {
 .hof-results .character-card__player {
   overflow: hidden;
   color: var(--gold-soft);
-  font-size: 0.72rem;
+  font-size: 0.62rem;
   text-overflow: ellipsis;
   white-space: nowrap;
   text-shadow: 0 2px 8px rgb(0 0 0 / 90%);
