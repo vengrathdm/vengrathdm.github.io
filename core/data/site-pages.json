@@ -259,7 +259,7 @@
     "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/heroes-of-drakkenheim/",
-    "image": "/core/graphics/voronoi/dungeons-of-drakkenheim.webp",
+    "image": "/core/graphics/voronoi/heroes-of-drakkenheim.webp",
     "layout": "campaign-shell",
     "manifest": "/page/heroes-of-drakkenheim/manifest.json"
   },
@@ -545,7 +545,7 @@
     "category": "Hidden",
     "visibility": "hidden",
     "url": "/page/descent-into-avernus/",
-    "image": "/core/graphics/voronoi/descent-into-avernus.svg",
+    "image": "/core/graphics/voronoi/descent-into-avernus.webp",
     "layout": "bespoke",
     "manifest": "/page/descent-into-avernus/manifest.json"
   }
