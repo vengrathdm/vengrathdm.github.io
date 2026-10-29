@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#100e0c" />
+    <meta
+      name="description"
+      content="Eksperymentalna galeria postaci Sala Chwały w układzie Voronoi."
+    />
+    <title>Voronoi · Sala Chwały</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Voltaire&display=swap"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="voronoi-header">
+      <a class="voronoi-brand" href="/page/hof/">
+        <span class="voronoi-brand__mark" aria-hidden="true">V</span>
+        <span>SALA CHWAŁY</span>
+      </a>
+      <label class="voronoi-search">
+        <span aria-hidden="true">⌕</span>
+        <input
+          id="search"
+          type="search"
+          placeholder="Szukaj…"
+          aria-label="Szukaj postaci"
+        />
+      </label>
+      <span id="result-count" class="voronoi-count" aria-live="polite">—</span>
+      <a class="voronoi-back" href="/page/hof/">WRÓĆ DO GALERII</a>
+    </header>
+
+    <main>
+      <section
+        id="gallery-frame"
+        class="voronoi-frame"
+        aria-label="Postacie przedstawione jako karty Voronoi"
+      >
+        <div id="board" class="voronoi-board"></div>
+        <p id="empty-state" class="voronoi-empty" hidden>
+          Brak postaci dla tego wyszukiwania.
+        </p>
+        <p id="load-error" class="voronoi-empty" hidden>
+          Nie udało się wczytać postaci.
+        </p>
+      </section>
+    </main>
+
+    <dialog id="character-dialog" class="character-dialog">
+      <button
+        id="dialog-close"
+        class="dialog-close"
+        type="button"
+        aria-label="Zamknij"
+      >
+        ×
+      </button>
+      <div id="dialog-content"></div>
+    </dialog>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

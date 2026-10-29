@@ -38,22 +38,6 @@ body {
     linear-gradient(125deg, rgb(24 21 18 / 98%), rgb(16 14 12 / 90%));
 }
 
-.hof-hero::after {
-  position: absolute;
-  right: -4rem;
-  bottom: -12rem;
-  width: 30rem;
-  aspect-ratio: 1;
-  border: 1px solid rgb(215 184 120 / 12%);
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 2rem rgb(215 184 120 / 2%),
-    0 0 0 4rem rgb(215 184 120 / 2%),
-    0 0 0 6rem rgb(215 184 120 / 2%);
-  content: "";
-  pointer-events: none;
-}
-
 .hof-nav {
   position: relative;
   z-index: 1;
@@ -205,7 +189,7 @@ body {
   gap: 0.8rem;
   padding: 0.8rem;
   border: 1px solid var(--line);
-  background: linear-gradient(125deg, rgb(31 27 22 / 96%), rgb(22 20 17 / 96%));
+  background: #151310;
 }
 
 .hof-filter-grid label {
@@ -342,16 +326,16 @@ body {
 }
 
 .hof-results .character-gallery {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 10.5rem), 1fr));
-  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 7.8rem), 1fr));
+  gap: 0.55rem;
 }
 
 .hof-results .character-card {
   display: block;
   overflow: hidden;
-  border-color: rgb(231 213 180 / 15%);
-  background: #171411;
-  box-shadow: 0 12px 24px rgb(0 0 0 / 15%);
+  border-color: rgb(231 213 180 / 12%);
+  background: #151310;
+  box-shadow: 0 7px 16px rgb(0 0 0 / 18%);
   transition:
     border-color 180ms ease,
     transform 180ms ease,
@@ -360,14 +344,14 @@ body {
 
 .hof-results .character-card:hover,
 .hof-results .character-card:focus-visible {
-  border-color: rgb(215 184 120 / 72%);
-  box-shadow: 0 16px 32px rgb(0 0 0 / 34%);
-  transform: translateY(-4px);
+  border-color: rgb(215 184 120 / 55%);
+  box-shadow: 0 10px 20px rgb(0 0 0 / 32%);
+  transform: translateY(-2px);
 }
 
 .hof-results .character-card__portrait {
-  aspect-ratio: 4 / 4.8;
-  background: #211d18;
+  aspect-ratio: 4 / 4.55;
+  background: #191714;
 }
 
 .hof-results .character-card__portrait img {
@@ -415,7 +399,7 @@ body {
 
 .hof-results .character-card__portrait::after {
   z-index: 3;
-  border-color: rgb(215 184 120 / 46%);
+  border-color: rgb(231 213 180 / 24%);
   background: none;
 }
 
@@ -437,6 +421,8 @@ body {
   top: 0.85rem;
   left: 0.85rem;
   right: 0.85rem;
+  max-height: 1.8rem;
+  overflow: hidden;
   gap: 0.35rem;
 }
 
@@ -454,13 +440,21 @@ body {
 .hof-results .character-card__body h3 {
   color: #fff7e9;
   font:
-    600 clamp(1.15rem, 1.8vw, 1.4rem) / 1.15 "Space Grotesk",
+    600 clamp(0.82rem, 1vw, 1rem) / 1.15 "Space Grotesk",
     sans-serif;
   text-shadow: 0 2px 12px rgb(0 0 0 / 85%);
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .hof-results .character-card__player {
+  overflow: hidden;
   color: var(--gold-soft);
+  font-size: 0.72rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   text-shadow: 0 2px 8px rgb(0 0 0 / 90%);
 }
 
@@ -478,23 +472,26 @@ body {
 }
 
 .hof-results #grid .achievement-badge {
-  width: 1.9rem;
-  height: 1.9rem;
-  border: 1px solid rgb(240 217 158 / 78%);
-  background: radial-gradient(circle at 35% 25%, #665235, #17130e 76%);
-  box-shadow: 0 2px 8px rgb(0 0 0 / 65%);
+  width: 1.45rem;
+  height: 1.45rem;
+  border: 1px solid rgb(215 184 120 / 48%);
+  background: rgb(16 14 12 / 90%);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 52%);
   color: #f4d997;
-  font-size: 0.95rem;
+  font-size: 0.72rem;
 }
 
 .hof-results .character-card__achievement-count {
   margin: 0;
   padding: 0.72rem 0.9rem;
+  overflow: hidden;
   border-top: 1px solid rgb(231 213 180 / 12%);
-  background: #171411;
+  background: #151310;
   color: #b7aa95;
-  font-size: 0.72rem;
+  font-size: 0.62rem;
   letter-spacing: 0.04em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .hof-empty {
@@ -753,7 +750,7 @@ body {
   min-height: 9rem;
   padding: 1.1rem;
   border: 1px solid rgb(231 213 180 / 15%);
-  background: linear-gradient(135deg, #1d1915, #15120f);
+  background: #151310;
   transition:
     border-color 170ms ease,
     transform 170ms ease;
@@ -769,12 +766,10 @@ body {
   flex: 0 0 3.2rem;
   height: 3.2rem;
   place-items: center;
-  border: 1px solid rgb(240 217 158 / 65%);
+  border: 1px solid rgb(215 184 120 / 48%);
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 25%, #705a35, #211a11 76%);
-  box-shadow:
-    inset 0 0 0 3px rgb(16 14 12 / 70%),
-    0 0 0 1px rgb(215 184 120 / 12%);
+  background: #1d1a16;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 35%);
   color: #f4d997;
   font-size: 1.45rem;
 }

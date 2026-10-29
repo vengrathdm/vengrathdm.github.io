@@ -1,0 +1,400 @@
+:root {
+  color-scheme: dark;
+  --bg: #100e0c;
+  --surface: #151310;
+  --line: rgb(231 213 180 / 16%);
+  --text: #f4efe5;
+  --muted: #aaa298;
+  --accent: #d7b878;
+  font-family: Manrope, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 0, rgb(120 72 42 / 12%), transparent 52rem),
+    var(--bg);
+}
+
+.voronoi-header {
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 4.1rem;
+  padding: 0.5rem clamp(0.7rem, 1.8vw, 1.5rem);
+  border-bottom: 1px solid var(--line);
+  background: rgb(21 19 16 / 96%);
+  backdrop-filter: blur(12px);
+}
+
+.voronoi-brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--text);
+  text-decoration: none;
+  font: 1rem Voltaire, sans-serif;
+  letter-spacing: 0.1em;
+}
+
+.voronoi-brand__mark {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: var(--accent);
+  font: 1.1rem Voltaire, sans-serif;
+}
+
+.voronoi-search {
+  display: flex;
+  flex: 0 1 18rem;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  padding: 0.52rem 0.7rem;
+  border: 1px solid var(--line);
+  background: #100e0c;
+  color: var(--accent);
+}
+
+.voronoi-search:focus-within {
+  border-color: var(--accent);
+}
+
+.voronoi-search > span {
+  font: 1.3rem / 0.8 sans-serif;
+}
+
+.voronoi-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+}
+
+.voronoi-search input::placeholder {
+  color: #81796f;
+}
+
+.voronoi-count {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font: 0.68rem "DM Mono", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.voronoi-back {
+  flex: 0 0 auto;
+  color: var(--accent);
+  text-decoration: none;
+  font: 0.68rem Voltaire, sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.voronoi-back:hover,
+.voronoi-back:focus-visible {
+  color: var(--text);
+}
+
+.voronoi-frame {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+}
+
+.voronoi-board,
+.voronoi-board svg {
+  display: block;
+  width: 100%;
+}
+
+.voronoi-tile {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #1b1916;
+  cursor: pointer;
+  isolation: isolate;
+}
+
+.voronoi-tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: none;
+  transition:
+    filter 180ms ease,
+    transform 260ms ease;
+}
+
+.voronoi-tile[data-status="Martwa"] img {
+  filter: grayscale(1) sepia(1) hue-rotate(315deg) saturate(4) brightness(0.78) contrast(1.08);
+}
+
+.voronoi-tile[data-status="Porzucona"] img,
+.voronoi-tile[data-status="Wycofana"] img {
+  filter: grayscale(1) brightness(0.58) contrast(1.04);
+}
+
+.voronoi-tile__shade {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.7rem;
+  background: linear-gradient(180deg, transparent 42%, rgb(10 9 8 / 84%) 100%);
+}
+
+.voronoi-tile__copy {
+  display: grid;
+  gap: 0.16rem;
+  min-width: 0;
+  color: #f4efe5;
+  text-shadow: 0 1px 6px rgb(0 0 0 / 90%);
+}
+
+.voronoi-tile__name {
+  display: -webkit-box;
+  overflow: hidden;
+  font: 600 clamp(0.65rem, 0.9vw, 0.92rem) / 1.12 "Space Grotesk", sans-serif;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.voronoi-tile__player {
+  overflow: hidden;
+  color: #e5d6b6;
+  font-size: clamp(0.55rem, 0.7vw, 0.72rem);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.voronoi-tile__status {
+  display: none;
+}
+
+.voronoi-outline {
+  fill: none;
+  stroke: rgb(244 239 229 / 42%);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+  transition: stroke 150ms ease;
+}
+
+.voronoi-cell:hover .voronoi-outline,
+.voronoi-cell:focus-visible .voronoi-outline {
+  stroke: #f0d99e;
+  stroke-width: 2;
+}
+
+.voronoi-cell:hover .voronoi-tile img,
+.voronoi-cell:focus-visible .voronoi-tile img {
+  transform: scale(1.035);
+}
+
+.voronoi-empty {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: max-content;
+  max-width: calc(100% - 2rem);
+  margin: 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.voronoi-empty[hidden] {
+  display: none;
+}
+
+.character-dialog {
+  position: fixed;
+  inset: 0;
+  width: min(900px, calc(100% - 2rem));
+  max-width: none;
+  max-height: calc(100% - 2rem);
+  padding: 0;
+  overflow: auto;
+  border: 1px solid var(--line);
+  background: #151310;
+  color: var(--text);
+}
+
+.character-dialog::backdrop {
+  background: rgb(4 3 2 / 82%);
+  backdrop-filter: blur(6px);
+}
+
+.dialog-close {
+  position: sticky;
+  z-index: 2;
+  top: 0.5rem;
+  float: right;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin: 0.5rem -2.9rem 0 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #100e0c;
+  color: var(--text);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.dialog-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+}
+
+.dialog-portrait {
+  position: relative;
+  min-height: 25rem;
+  overflow: hidden;
+  background: #100e0c;
+}
+
+.dialog-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 25rem;
+  object-fit: cover;
+}
+
+.dialog-portrait[data-status="Martwa"] img {
+  filter: grayscale(1) sepia(1) hue-rotate(315deg) saturate(4) brightness(0.78) contrast(1.08);
+}
+
+.dialog-portrait[data-status="Porzucona"] img,
+.dialog-portrait[data-status="Wycofana"] img {
+  filter: grayscale(1) brightness(0.58) contrast(1.04);
+}
+
+.dialog-copy {
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.dialog-copy h2 {
+  margin: 0 0 0.3rem;
+  font: 600 clamp(1.6rem, 4vw, 2.4rem) / 1.1 "Space Grotesk", sans-serif;
+}
+
+.dialog-player {
+  color: var(--accent);
+}
+
+.dialog-copy dl {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  gap: 0.65rem 0.9rem;
+  margin: 1.5rem 0;
+}
+
+.dialog-copy dt {
+  color: var(--muted);
+  font: 0.62rem "DM Mono", monospace;
+  text-transform: uppercase;
+}
+
+.dialog-copy dd {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.dialog-awards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.dialog-award {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--line);
+  color: #e9dfce;
+  font-size: 0.72rem;
+}
+
+:focus-visible {
+  outline: 2px solid #f0d99e;
+  outline-offset: 2px;
+}
+
+@media (max-width: 700px) {
+  .voronoi-header {
+    flex-wrap: wrap;
+    gap: 0.45rem 0.7rem;
+    padding: 0.45rem 0.65rem;
+  }
+
+  .voronoi-brand {
+    margin-right: auto;
+    font-size: 0.84rem;
+  }
+
+  .voronoi-brand__mark {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .voronoi-search {
+    flex: 1 1 100%;
+    order: 3;
+  }
+
+  .voronoi-count {
+    order: 2;
+  }
+
+  .voronoi-back {
+    order: 4;
+    margin-left: auto;
+  }
+
+  .dialog-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dialog-portrait,
+  .dialog-portrait img {
+    min-height: 0;
+    height: min(72vw, 22rem);
+  }
+
+  .dialog-close {
+    margin-right: 0.5rem;
+    margin-bottom: -2.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
