@@ -129,7 +129,9 @@ function render() {
 function openCharacter(c) {
   const earnedItems = earned(c).map((id) => achievements.get(id));
   $("modalContent").innerHTML =
-    '<div class="dialog-layout"><div class="dialog-portrait"><img src="' +
+    '<div class="dialog-layout"><div class="dialog-portrait" data-status="' +
+    esc(c.status) +
+    '"><img src="' +
     esc(c.portrait) +
     '" alt="' +
     esc(c.character) +

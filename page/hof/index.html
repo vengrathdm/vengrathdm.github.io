@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
-      content="Vengrath Hall of Fame — archiwum postaci z kampanii."
+      content="Sala Chwały Vengrath — bohaterowie, historie i osiągnięcia z kampanii."
     />
-    <meta name="theme-color" content="#0b0d0e" />
-    <title>Hall of Fame — Vengrath</title>
+    <meta name="theme-color" content="#100e0c" />
+    <title>Sala Chwały — Vengrath</title>
     <link rel="icon" href="/core/graphics/favicon/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,20 +29,20 @@
   <body>
     <header class="hof-hero">
       <nav class="hof-nav">
-        <a class="hof-brand" href="/home/"
-          ><img src="/core/graphics/favicon/favicon.ico" alt="" /><span
-            >VENGRATH</span
-          ></a
-        >
-        <div class="hof-nav-meta">ARCHIVE <span>/</span> HALL OF FAME</div>
+        <a class="hof-brand" href="/home/" aria-label="Vengrath — strona główna">
+          <img src="/core/graphics/favicon/mg-logo.png" alt="" />
+          <span>VENGRATH</span>
+        </a>
+        <div class="hof-nav-meta">ARCHIWUM <span>/</span> BOHATEROWIE</div>
         <a class="hof-nav-link" href="/page/hof/achievements.html"
-          >OSIĄGNIĘCIA</a
-        ><a class="hof-nav-link" href="/home/">STRONA GŁÓWNA</a>
+          >KATALOG ODZNACZEŃ</a
+        >
+        <a class="hof-nav-link" href="/home/">STRONA GŁÓWNA</a>
       </nav>
       <div class="hof-hero-copy">
-        <p>ARCHIWUM POSTACI</p>
-        <h1>HALL <span>OF</span> FAME</h1>
-        <p>Historie postaci, kampanii i osiągnięć.</p>
+        <p>VENGRATH · ARCHIWUM POSTACI</p>
+        <h1>SALA <span>CHWAŁY</span></h1>
+        <p>Bohaterowie, których historie zostają z nami na dłużej.</p>
       </div>
     </header>
     <main class="hof-main">
@@ -54,55 +54,76 @@
         <div><span>ZWYCIĘSKIE</span><strong id="statWinning">—</strong></div>
       </section>
       <section class="hof-archive">
-        <aside class="hof-filters">
-          <label class="hof-search"
-            >⌕
-            <input
-              id="search"
-              type="search"
-              placeholder="Szukaj…"
-              aria-label="Szukaj postaci"
-          /></label>
-          <div class="hof-filter-grid">
-            <label
-              >GRACZ<select id="playerFilter">
+        <aside class="hof-filters" aria-label="Filtry galerii postaci">
+          <div class="hof-filter-primary">
+            <label class="hof-search">
+              <span aria-hidden="true">⌕</span>
+              <input
+                id="search"
+                type="search"
+                placeholder="Szukaj postaci lub gracza…"
+                aria-label="Szukaj postaci lub gracza"
+              />
+            </label>
+            <label>
+              GRACZ
+              <select id="playerFilter">
                 <option value="">Wszyscy gracze</option>
-              </select></label
-            ><label
-              >KAMPANIA<select id="campaignFilter">
+              </select>
+            </label>
+            <label>
+              KAMPANIA
+              <select id="campaignFilter">
                 <option value="">Wszystkie kampanie</option>
-              </select></label
-            ><label
-              >MODUŁ<select id="moduleFilter">
-                <option value="">Wszystkie moduły</option>
-              </select></label
-            ><label
-              >KLASA<select id="classFilter">
-                <option value="">Wszystkie klasy</option>
-              </select></label
-            ><label
-              >RASA<select id="raceFilter">
-                <option value="">Wszystkie rasy</option>
-              </select></label
-            ><label
-              >OSIĄGNIĘCIA<select id="achievementFilter">
-                <option value="">Wszystkie tytuły</option>
-              </select></label
-            ><label
-              >STATUS<select id="statusFilter">
+              </select>
+            </label>
+            <label>
+              STATUS
+              <select id="statusFilter">
                 <option value="">Wszystkie statusy</option>
-              </select></label
-            >
+              </select>
+            </label>
           </div>
-          <button id="clearFilters" class="hof-reset" type="button">
-            RESET FILTRÓW
-          </button>
+          <div class="hof-filter-extras">
+            <details>
+              <summary>Więcej filtrów</summary>
+              <div class="hof-filter-grid">
+                <label>
+                  MODUŁ
+                  <select id="moduleFilter">
+                    <option value="">Wszystkie moduły</option>
+                  </select>
+                </label>
+                <label>
+                  KLASA
+                  <select id="classFilter">
+                    <option value="">Wszystkie klasy</option>
+                  </select>
+                </label>
+                <label>
+                  RASA
+                  <select id="raceFilter">
+                    <option value="">Wszystkie rasy</option>
+                  </select>
+                </label>
+                <label>
+                  ODZNACZENIE
+                  <select id="achievementFilter">
+                    <option value="">Wszystkie odznaczenia</option>
+                  </select>
+                </label>
+              </div>
+            </details>
+            <button id="clearFilters" class="hof-reset" type="button">
+              WYCZYŚĆ FILTRY
+            </button>
+          </div>
         </aside>
         <section class="hof-results">
           <div class="hof-results-heading">
             <div>
-              <p>ARCHIWUM / POSTACIE</p>
-              <h2>Galeria postaci</h2>
+              <p>SALA CHWAŁY / REJESTR BOHATERÓW</p>
+              <h2>Bohaterowie Vengrath</h2>
             </div>
             <span id="resultCount">ŁADOWANIE…</span>
           </div>
@@ -117,9 +138,9 @@
       </section>
     </main>
     <footer class="hof-footer">
-      <a href="/page/hof/achievements.html">KATALOG OSIĄGNIĘĆ →</a
-      ><span>VENGRATH / HALL OF FAME</span
-      ><a href="/home/">STRONA GŁÓWNA →</a>
+      <a href="/page/hof/achievements.html">KATALOG ODZNACZEŃ →</a>
+      <span>VENGRATH / SALA CHWAŁY</span>
+      <a href="/home/">STRONA GŁÓWNA →</a>
     </footer>
     <dialog id="characterDialog" class="character-dialog">
       <button
