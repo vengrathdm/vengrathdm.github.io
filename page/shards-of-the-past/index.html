@@ -11,6 +11,10 @@
     <title>Shards of the Past — Vengrath</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&family=Iceberg&display=swap"
+    />
     <link rel="stylesheet" href="./theme-fonts.css" />
     <link rel="stylesheet" href="/core/templates/HomeButton/HomeButton.css" />
     <link
@@ -32,8 +36,30 @@
     <link rel="stylesheet" href="./sections/campaign/campaign.css" />
     <link rel="stylesheet" href="./sections/world/world.css" />
   </head>
-  <body class="shards-of-the-past-page">
-    <div id="campaign-hero"></div>
+  <body class="shards-of-the-past-page is-loading">
+    <header
+      class="subpage-hero"
+      id="campaign-hero"
+      style="--hero-background: url('/core/graphics/voronoi/shards-of-the-past.webp')"
+    >
+      <div class="shards-navbar-mount" id="campaign-navbar"></div>
+      <div class="subpage-hero__copy">
+        <p class="shards-hero-kicker">
+          AUTORSKA KAMPANIA · FANTASY / SCIENCE FANTASY
+        </p>
+        <h1>
+          SHARDS OF<br />
+          <span class="shards-hero-title-accent">the Past</span>
+        </h1>
+        <p class="shards-hero-lead">
+          Shards of the Past to autorska kampania fantasy osadzona w Antarriah —
+          świecie, w którym pozostałości dawnej cywilizacji są zarazem
+          znaleziskami archeologicznymi i śladami technologii, której
+          przeznaczenia nikt już nie rozumie.
+        </p>
+      </div>
+      <div class="shards-hero-mist-line" aria-hidden="true"></div>
+    </header>
     <main class="ddc-content">
       <section class="ddc-tab-panel" id="campaign" data-page-section="campaign">
         <section class="ddc-card">
@@ -82,6 +108,10 @@
         </section>
         <div id="world-grid" class="ddc-world-grid"></div>
       </section>
+      <p id="load-error" class="ddc-load-error" hidden>
+        Nie udało się wczytać treści kampanii. Odśwież stronę, aby spróbować
+        ponownie.
+      </p>
     </main>
     <footer class="ddc-footer">
       <span>VENGRATH · SHARDS OF THE PAST</span>

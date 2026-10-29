@@ -1,8 +1,13 @@
 export class AudioPlayer {
-  constructor({ src, storageKey = "vengrath-audio-state" }) {
-    this.audio = new Audio(src);
+  constructor({
+    src,
+    storageKey = "vengrath-audio-state",
+    preload = "metadata",
+  }) {
+    this.audio = new Audio();
     this.audio.loop = true;
-    this.audio.preload = "metadata";
+    this.audio.preload = preload;
+    this.audio.src = src;
     this.storageKey = storageKey;
     this.listeners = new Set();
     this.audio.volume = 0.5;

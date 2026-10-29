@@ -1,4 +1,8 @@
-export function mountAudioPlayerButton(player, color = "#bca06a") {
+export function mountAudioPlayerButton(
+  player,
+  color = "#bca06a",
+  { autoplay = true } = {},
+) {
   const button = document.createElement("button");
   button.type = "button";
   button.className = "audio-player-button";
@@ -74,8 +78,10 @@ export function mountAudioPlayerButton(player, color = "#bca06a") {
 
   document.body.append(button);
 
-  // Try to start playback by default; browsers may require a user gesture.
-  player.play();
+  if (autoplay) {
+    // Browsers may require a user gesture before starting playback.
+    player.play();
+  }
 
   return {
     element: button,

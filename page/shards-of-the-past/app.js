@@ -1,4 +1,3 @@
-import { createSubpageHero } from "/core/templates/SubpageHero/SubpageHero.js";
 import { mountSubpageNavbar } from "/core/templates/SubpageNavbar/SubpageNavbar.js";
 import { AudioPlayer } from "/core/templates/AudioPlayer/AudioPlayer.js";
 import { mountAudioPlayerButton } from "/core/templates/AudioPlayerButton/AudioPlayerButton.js";
@@ -43,13 +42,12 @@ function applyTheme(theme) {
 }
 
 function initializeHero(content, theme) {
-  const hero = createSubpageHero({
-    title: content.campaign.title,
-    backgroundImage: theme.heroImage,
-    theme: { accent: theme.colors.accent2 },
-  });
-  hero.id = "campaign-hero";
-
+  const hero = document.querySelector("#campaign-hero");
+  hero.style.setProperty(
+    "--hero-background",
+    "url(" + theme.heroImage + ")",
+  );
+  hero.style.setProperty("--campaign-accent", theme.colors.accent2);
   const heading = hero.querySelector("h1");
   heading.replaceChildren(
     document.createTextNode(content.campaign.heroFirstLine),
@@ -59,35 +57,18 @@ function initializeHero(content, theme) {
       textContent: content.campaign.heroSecondLine,
     }),
   );
-  const kicker = document.createElement("p");
-  kicker.className = "shards-hero-kicker";
+  const kicker = hero.querySelector(".shards-hero-kicker");
   kicker.textContent = content.campaign.kicker;
-  const lead = document.createElement("p");
-  lead.className = "shards-hero-lead";
+  const lead = hero.querySelector(".shards-hero-lead");
   lead.textContent = content.campaign.lead;
-  heading.before(kicker);
-  heading.after(lead);
-
-  const navbarMount = document.createElement("div");
-  navbarMount.className = "shards-navbar-mount";
-  hero.prepend(navbarMount);
-  const mistLine = document.createElement("div");
-  mistLine.className = "shards-hero-mist-line";
-  mistLine.setAttribute("aria-hidden", "true");
-  hero.append(mistLine);
-
-  document.querySelector("#campaign-hero").replaceWith(hero);
-  mountSubpageNavbar(navbarMount, {
-    sections: [
-      {
-        text: "Kampania",
-        sectionLink: "campaign",
-        color: theme.colors.accent2,
-      },
-      { text: "Świat", sectionLink: "world", color: theme.colors.accent2 },
-    ],
-  });
 }
+
+mountSubpageNavbar(document.querySelector("#campaign-navbar"), {
+  sections: [
+    { text: "Kampania", sectionLink: "campaign", color: "#5ba9ff" },
+    { text: "Świat", sectionLink: "world", color: "#5ba9ff" },
+  ],
+});
 
 async function initializeCampaignPage() {
   const [manifest, theme, content] = await Promise.all([
@@ -99,13 +80,21 @@ async function initializeCampaignPage() {
   initializeHero(content, theme);
   renderCampaignSection(content.campaign);
   renderWorldSection(content.world);
+  document.body.classList.remove("is-loading");
+
   const audio = new AudioPlayer({
     src: manifest.audio.src,
     storageKey: manifest.audio.continuationKey,
+    preload: "none",
   });
-  mountAudioPlayerButton(audio, theme.audioColor);
+  mountAudioPlayerButton(audio, theme.audioColor, { autoplay: false });
 }
 
 initializeCampaignPage().catch((error) => {
   console.error("Nie udało się uruchomić strony Shards of the Past.", error);
+  document.querySelectorAll(".ddc-tab-panel").forEach((panel) => {
+    panel.hidden = true;
+  });
+  document.querySelector("#load-error").hidden = false;
+  document.body.classList.remove("is-loading");
 });
