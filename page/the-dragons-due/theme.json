@@ -1,22 +1,22 @@
 {
   "colors": {
-    "base1": "#11191b",
-    "base2": "#1c292b",
-    "base3": "#2c3d3e",
-    "accent1": "#3d7774",
-    "accent2": "#c8ad70",
-    "text1": "#f1eee4",
-    "text2": "#d7ded7",
-    "text3": "#b9b6a8",
-    "line1": "#526c67",
-    "line2": "#82918a"
+    "base1": "#15111b",
+    "base2": "#2b2039",
+    "base3": "#453452",
+    "accent1": "#68468f",
+    "accent2": "#d8bb63",
+    "text1": "#f4f2f8",
+    "text2": "#ded8e8",
+    "text3": "#bcb2c8",
+    "line1": "#a99abd",
+    "line2": "#c9c2d8"
   },
   "typography": {
-    "heading": "'Voltaire', sans-serif",
-    "body": "'Fira Sans Extra Condensed', sans-serif",
-    "serif": "'Brygada 1918', Georgia, serif"
+    "heading": "'Cinzel', serif",
+    "body": "'Alegreya', serif",
+    "serif": "'Alegreya', serif"
   },
-  "fontsUrl": "https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap",
+  "fontsUrl": "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Alegreya:wght@400;500;600;700&display=swap",
   "heroImage": "/page/the-dragons-due/res/graphics/hero-image.webp",
-  "audioColor": "#c8ad70"
+  "audioColor": "#d8bb63"
 }
