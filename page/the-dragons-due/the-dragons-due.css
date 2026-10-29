@@ -1,21 +1,21 @@
 :root {
-  --cz-base: #171112;
-  --cz-base-raised: #241a1a;
-  --cz-accent: #a63e36;
-  --cz-gold: #d7b76b;
-  --cz-paper: #eee5d0;
-  --cz-paper-light: #f6f0e2;
-  --cz-paper-shadow: #d8c9a9;
-  --cz-ink: #29231d;
-  --cz-ink-muted: #71685a;
-  --cz-line: #c7b792;
+  --cz-base: #11191b;
+  --cz-base-raised: #1c292b;
+  --cz-accent: #3d7774;
+  --cz-gold: #c8ad70;
+  --cz-paper: #e6e2d5;
+  --cz-paper-light: #f1eee4;
+  --cz-paper-shadow: #d6d1c2;
+  --cz-ink: #222c2b;
+  --cz-ink-muted: #5e6965;
+  --cz-line: #b7b6a7;
   --cz-serif: "Brygada 1918", Georgia, serif;
-  --cz-heading: Voltaire, sans-serif;
+  --cz-heading: "Voltaire", sans-serif;
   --cz-body: "Fira Sans Extra Condensed", sans-serif;
   color-scheme: dark;
   font-family: var(--cz-body);
   background: var(--cz-base);
-  color: #f0e8d7;
+  color: #f1eee4;
 }
 
 * {
@@ -33,25 +33,15 @@ body.the-dragons-due-page {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(ellipse at 48% 45%, rgb(116 62 49 / 13%), transparent 42rem),
-    #171112;
-  color: #f0e8d7;
+    radial-gradient(
+      ellipse 900px 540px at 50% -12%,
+      #243437 0%,
+      transparent 70%
+    ),
+    linear-gradient(180deg, #151f21, #0e1416 72%);
+  color: #f1eee4;
   font-family: var(--cz-body);
   line-height: 1.6;
-}
-
-body.the-dragons-due-page::before {
-  position: fixed;
-  z-index: 30;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent 0,
-    transparent 3px,
-    rgb(255 255 255 / 2%) 4px
-  );
-  content: "";
-  pointer-events: none;
 }
 
 button,
@@ -64,28 +54,35 @@ textarea {
 .subpage-hero.cz-hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(17rem, 0.7fr);
+  grid-template-columns: minmax(0, 1.1fr) minmax(17rem, 0.8fr);
   align-items: center;
-  gap: clamp(2rem, 7vw, 7rem);
+  gap: clamp(2rem, 6vw, 6rem);
   min-height: 100vh;
   min-height: 100svh;
-  padding: 7.5rem clamp(1.4rem, 8vw, 8rem) 5rem;
+  padding: 7rem clamp(1.4rem, 7vw, 7rem) 4rem;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse at 78% 44%, rgb(167 74 56 / 22%), transparent 29rem),
-    linear-gradient(118deg, #211719 0%, #181214 56%, #2b1c18 100%);
-  color: #f0e8d7;
   isolation: isolate;
+  background:
+    linear-gradient(
+      110deg,
+      rgb(17 25 27 / 98%) 0%,
+      rgb(17 25 27 / 88%) 48%,
+      rgb(17 25 27 / 45%) 100%
+    ),
+    var(--hero-background, linear-gradient(135deg, #223033, #101719));
+  color: #f1eee4;
 }
 
 .subpage-hero.cz-hero::before {
   position: absolute;
   z-index: -1;
   inset: 1rem;
-  border: 1px solid rgb(215 183 107 / 25%);
-  background:
-    linear-gradient(90deg, transparent 49.9%, rgb(215 183 107 / 8%) 50%, transparent 50.1%),
-    repeating-linear-gradient(135deg, transparent 0 52px, rgb(215 183 107 / 4%) 53px 54px);
+  border: 1px solid rgb(200 173 112 / 24%);
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0 35px,
+    rgb(200 173 112 / 3%) 36px
+  );
   content: "";
   pointer-events: none;
 }
@@ -95,13 +92,13 @@ textarea {
   z-index: -1;
   top: 50%;
   right: 0;
-  width: min(52vw, 760px);
+  width: min(52vw, 720px);
   aspect-ratio: 1;
-  border: 1px solid rgb(215 183 107 / 12%);
+  border: 1px solid rgb(200 173 112 / 12%);
   border-radius: 50%;
   box-shadow:
-    0 0 0 44px rgb(215 183 107 / 3%),
-    0 0 0 112px rgb(215 183 107 / 2%);
+    0 0 0 42px rgb(200 173 112 / 3%),
+    0 0 0 108px rgb(200 173 112 / 2%);
   content: "";
   transform: translate(28%, -50%);
   pointer-events: none;
@@ -125,28 +122,30 @@ textarea {
 }
 
 .cz-navbar-mount.subpage-navbar.is-scrolled {
-  border-color: rgb(215 183 107 / 24%);
-  background: rgb(27 19 18 / 94%);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  border-color: rgb(200 173 112 / 24%);
+  background: rgb(17 25 27 / 94%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .cz-navbar-mount .vengrath-home-button {
-  border-color: rgb(215 183 107 / 40%);
-  background: rgb(25 18 18 / 82%);
-  color: #f0e8d7;
+  border-color: rgb(200 173 112 / 50%);
+  background: rgb(17 25 27 / 78%);
+  color: #f1eee4;
   font-family: var(--cz-heading);
 }
 
 .cz-navbar-mount .vengrath-home-button:hover,
 .cz-navbar-mount .vengrath-home-button:focus-visible {
   border-color: var(--cz-gold);
+  background: var(--cz-accent);
+  color: #fff;
 }
 
 .cz-navbar-mount .subpage-navbar-button {
-  border-color: rgb(215 183 107 / 44%);
-  background: rgb(25 18 18 / 58%);
-  color: #eee3ca;
+  border-color: rgb(200 173 112 / 50%);
+  background: rgb(17 25 27 / 68%);
+  color: #f1eee4;
   font-family: var(--cz-heading);
   letter-spacing: 0.08em;
 }
@@ -154,15 +153,15 @@ textarea {
 .cz-navbar-mount .subpage-navbar-button[aria-pressed="true"],
 .cz-navbar-mount .subpage-navbar-button:hover {
   border-color: var(--cz-gold);
-  background: var(--cz-gold);
-  color: #211719;
+  background: var(--cz-accent);
+  color: #fff;
 }
 
 .subpage-hero.cz-hero .subpage-hero__copy {
   grid-column: 1;
   justify-items: start;
   gap: 0;
-  width: min(100%, 780px);
+  width: min(100%, 760px);
   margin: 0;
   padding: 0;
   text-align: left;
@@ -179,22 +178,22 @@ textarea {
 .cz-card-kicker,
 .cz-footer {
   font-family: var(--cz-heading);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .cz-hero-kicker {
-  margin: 0 0 1.3rem;
+  margin: 0 0 1.2rem;
   color: var(--cz-gold);
-  font-size: 0.77rem;
+  font-size: 0.78rem;
 }
 
 .subpage-hero.cz-hero h1 {
   max-width: 10ch;
-  color: #f0e8d7;
-  font: 400 clamp(4rem, 10vw, 9.2rem) / 0.82 var(--cz-heading);
+  color: #f1eee4;
+  font: 400 clamp(4rem, 9vw, 7.6rem) / 0.91 var(--cz-heading);
   letter-spacing: -0.025em;
-  text-shadow: 0 12px 48px rgb(0 0 0 / 45%);
+  text-shadow: 0 10px 36px rgb(0 0 0 / 36%);
   text-wrap: balance;
 }
 
@@ -203,26 +202,26 @@ textarea {
 }
 
 .cz-hero-lead {
-  max-width: 41rem;
-  margin: clamp(1.5rem, 4vh, 2.5rem) 0 0;
-  color: #d6c9b1;
-  font: clamp(1.15rem, 2vw, 1.55rem) / 1.5 var(--cz-serif);
+  max-width: 43rem;
+  margin: clamp(1.4rem, 3.5vh, 2.2rem) 0 0;
+  color: #d7ded7;
+  font: clamp(1.12rem, 1.8vw, 1.4rem) / 1.55 var(--cz-serif);
 }
 
 .cz-hero-register {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem 1.5rem;
-  margin-top: 2.1rem;
-  padding-top: 0.9rem;
-  border-top: 1px solid rgb(215 183 107 / 34%);
-  color: #ad9d81;
+  gap: 0.65rem 1.3rem;
+  margin-top: 2rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgb(200 173 112 / 42%);
+  color: #b9b6a8;
   font-size: 0.64rem;
 }
 
 .cz-hero-register span + span::before {
-  padding-right: 1.5rem;
-  color: var(--cz-accent);
+  padding-right: 1.3rem;
+  color: var(--cz-gold);
   content: "·";
 }
 
@@ -233,26 +232,26 @@ textarea {
   grid-column: 2;
   grid-row: 1;
   align-self: center;
-  width: min(100%, 25rem);
+  width: min(100%, 26rem);
   margin: 1.5rem auto;
-  padding: 1rem;
+  padding: 0.8rem;
   border: 1px solid var(--cz-gold);
-  background: var(--cz-paper);
+  background: var(--cz-paper-light);
   box-shadow:
-    0 0 0 8px rgb(215 183 107 / 8%),
-    1.2rem 1.2rem 0 rgb(0 0 0 / 25%),
-    0 2rem 5rem rgb(0 0 0 / 36%);
-  transform: rotate(2deg);
+    0 0 0 7px rgb(200 173 112 / 8%),
+    1rem 1rem 0 rgb(0 0 0 / 22%),
+    0 2rem 4rem rgb(0 0 0 / 38%);
+  transform: rotate(1.5deg);
 }
 
 .cz-seal-label {
   position: absolute;
   z-index: 1;
-  top: 1.7rem;
-  left: 1.7rem;
-  padding: 0.35rem 0.5rem;
+  top: 1.4rem;
+  left: 1.4rem;
+  padding: 0.35rem 0.55rem;
   background: var(--cz-accent);
-  color: var(--cz-paper-light);
+  color: white;
   font-size: 0.58rem;
 }
 
@@ -263,12 +262,12 @@ textarea {
   object-fit: cover;
   object-position: center;
   background: var(--cz-paper-light);
-  filter: saturate(0.85) contrast(1.04);
+  filter: saturate(0.82) contrast(1.03);
 }
 
 .cz-hero-seal figcaption {
-  padding: 0.8rem 0.2rem 0.2rem;
-  color: #4b4031;
+  padding: 0.75rem 0.2rem 0.15rem;
+  color: #43514d;
   font-size: 0.62rem;
   text-align: center;
 }
@@ -276,21 +275,22 @@ textarea {
 .cz-hero-index {
   position: absolute;
   right: clamp(1.5rem, 4vw, 4rem);
-  bottom: 1.5rem;
-  color: rgb(215 183 107 / 42%);
-  font-size: 0.68rem;
+  bottom: 1.4rem;
+  color: rgb(200 173 112 / 54%);
+  font-size: 0.66rem;
 }
 
 .cz-content {
   position: relative;
-  width: min(100%, 1440px);
+  width: min(100%, 1380px);
+  min-height: 70vh;
   margin: 0 auto;
-  padding: clamp(1rem, 4vw, 3.75rem);
+  padding: clamp(2rem, 5vw, 4.5rem) clamp(1.2rem, 5.5vw, 5.5rem) 5rem;
   background:
-    repeating-linear-gradient(0deg, transparent 0 35px, rgb(68 54 32 / 3%) 36px),
+    repeating-linear-gradient(0deg, transparent 0 35px, rgb(50 63 57 / 3%) 36px),
     var(--cz-paper);
   color: var(--cz-ink);
-  box-shadow: 0 0 5rem rgb(0 0 0 / 25%);
+  box-shadow: 0 0 5rem rgb(0 0 0 / 22%);
 }
 
 .cz-panel[hidden] {
@@ -300,12 +300,14 @@ textarea {
 .cz-filehead {
   display: flex;
   justify-content: space-between;
-  gap: 0.75rem 2rem;
-  margin-bottom: clamp(1.5rem, 4vw, 3rem);
-  padding-bottom: 0.85rem;
-  border-bottom: 1px solid var(--cz-line);
-  color: #766443;
-  font-size: 0.68rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: clamp(1.7rem, 4vw, 3rem);
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid var(--cz-ink);
+  color: var(--cz-ink-muted);
+  font-size: 0.67rem;
 }
 
 .cz-filehead span:first-child {
@@ -314,41 +316,32 @@ textarea {
 
 .cz-overview-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(16rem, 0.65fr);
+  grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 0.7fr);
   align-items: stretch;
-  gap: clamp(1rem, 2.5vw, 2.5rem);
+  gap: clamp(1rem, 2.4vw, 2rem);
 }
 
 .cz-paper {
   position: relative;
   min-width: 0;
-  padding: clamp(1.5rem, 4vw, 4rem);
-  border: 1px solid #c8b995;
-  background:
-    linear-gradient(
-      90deg,
-      transparent calc(100% - 2.2rem),
-      rgb(166 62 54 / 8%) calc(100% - 2.15rem),
-      transparent calc(100% - 2.1rem)
-    ),
-    var(--cz-paper-light);
-  box-shadow: 0.7rem 0.7rem 0 rgb(54 43 29 / 10%);
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  border: 1px solid #b6b7a8;
+  background: var(--cz-paper-light);
+  box-shadow: 5px 5px 0 rgb(31 45 42 / 10%);
 }
 
 .cz-paper::before {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0 auto 0 0;
   width: 0.35rem;
   background: var(--cz-accent);
   content: "";
 }
 
 .cz-eyebrow {
-  margin: 0 0 0.8rem;
+  margin: 0 0 0.75rem;
   color: var(--cz-accent);
-  font-size: 0.68rem;
+  font-size: 0.67rem;
 }
 
 .cz-paper h2,
@@ -356,21 +349,21 @@ textarea {
 .cz-record-heading h2,
 .cz-section-intro h2 {
   margin: 0;
-  color: #30251f;
-  font: 400 clamp(2.2rem, 5vw, 4.4rem) / 0.98 var(--cz-heading);
+  color: #263331;
+  font: 400 clamp(2.1rem, 4.5vw, 3.8rem) / 1 var(--cz-heading);
   text-wrap: balance;
 }
 
 .cz-paper h2 {
-  max-width: 12ch;
-  margin-bottom: 1.5rem;
+  max-width: 14ch;
+  margin-bottom: 1.4rem;
 }
 
 #intro-copy p {
   max-width: 66ch;
   margin: 0 0 1rem;
-  color: #51483b;
-  font: 1.05rem / 1.8 var(--cz-serif);
+  color: #485550;
+  font: 1.02rem / 1.78 var(--cz-serif);
 }
 
 #intro-copy p:last-child {
@@ -379,39 +372,48 @@ textarea {
 
 .cz-dossier {
   position: relative;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(1.4rem, 3vw, 2.25rem);
   overflow: hidden;
-  border: 1px solid #6f5834;
-  background:
-    linear-gradient(
-      135deg,
-      transparent 0 70%,
-      rgb(215 183 107 / 8%) 70.1% 70.4%,
-      transparent 70.5%
-    ),
-    linear-gradient(150deg, #30221d, #1b1713 74%);
-  box-shadow: 0.65rem 0.65rem 0 rgb(53 42 25 / 15%);
-  color: #efe3c7;
+  border: 1px solid #5d7973;
+  background: linear-gradient(145deg, #27383a, #172225 76%);
+  box-shadow: 5px 5px 0 rgb(31 45 42 / 13%);
+  color: #eeecdf;
+}
+
+.cz-dossier::after {
+  position: absolute;
+  right: -3rem;
+  bottom: -5rem;
+  width: 12rem;
+  height: 12rem;
+  border: 1px solid rgb(200 173 112 / 20%);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 1.6rem rgb(200 173 112 / 3%),
+    0 0 0 3.2rem rgb(200 173 112 / 2%);
+  content: "";
+  pointer-events: none;
 }
 
 .cz-stamp {
   display: inline-flex;
-  align-items: center;
-  margin: 0 0 1.5rem;
-  padding: 0.45rem 0.7rem;
-  border: 1px solid #c56c58;
-  color: #e2a18a;
-  font: 0.7rem var(--cz-heading);
-  letter-spacing: 0.18em;
+  margin: 0 0 1.3rem;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid #bd9a5e;
+  color: #d9c28e;
+  font: 0.68rem var(--cz-heading);
+  letter-spacing: 0.16em;
   transform: rotate(-2deg);
 }
 
 .cz-dossier-row {
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: minmax(5rem, 0.75fr) minmax(0, 1.25fr);
-  gap: 0.9rem;
-  padding: 0.9rem 0;
-  border-bottom: 1px solid rgb(239 227 199 / 16%);
+  grid-template-columns: minmax(5rem, 0.7fr) minmax(0, 1.3fr);
+  gap: 0.8rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgb(238 236 223 / 15%);
 }
 
 .cz-dossier-row:last-child {
@@ -419,79 +421,77 @@ textarea {
 }
 
 .cz-dossier-row span {
-  color: #bda87c;
-  font: 0.64rem var(--cz-heading);
-  letter-spacing: 0.1em;
+  color: #bdc2b5;
+  font: 0.62rem var(--cz-heading);
+  letter-spacing: 0.09em;
 }
 
 .cz-dossier-row strong {
-  color: #f1e6ce;
-  font: 1rem / 1.35 var(--cz-serif);
+  color: #f2eee0;
+  font: 0.96rem / 1.35 var(--cz-serif);
   text-align: right;
 }
 
 .cz-manifesto {
   display: grid;
-  grid-template-columns: 4.5rem minmax(0, 1fr);
+  grid-template-columns: 3rem minmax(0, 1fr);
   gap: 1.2rem;
   align-items: start;
-  margin: clamp(3rem, 7vw, 6rem) 0;
-  padding: clamp(1.4rem, 3vw, 2.6rem) 0;
-  border-top: 1px solid #9b714f;
-  border-bottom: 1px solid #9b714f;
-  background: linear-gradient(90deg, rgb(166 62 54 / 7%), transparent 72%);
+  margin: clamp(3rem, 7vw, 5.5rem) 0;
+  padding: 1.8rem 0;
+  border-top: 1px solid #82918a;
+  border-bottom: 1px solid #82918a;
+  background: linear-gradient(90deg, rgb(61 119 116 / 8%), transparent 72%);
 }
 
 .cz-mark {
   color: var(--cz-accent);
-  font: 400 4.5rem / 0.9 var(--cz-heading);
+  font: 400 3.6rem / 0.9 var(--cz-heading);
   text-align: center;
 }
 
 .cz-manifesto blockquote {
-  max-width: 34ch;
+  max-width: 40ch;
   margin: 0;
-  color: #332821;
-  font: italic clamp(1.45rem, 3vw, 2.5rem) / 1.35 var(--cz-serif);
+  color: #293632;
+  font: italic clamp(1.4rem, 2.8vw, 2.3rem) / 1.38 var(--cz-serif);
   text-wrap: balance;
 }
 
 .cz-tags {
-  margin: 1.2rem 0 0;
-  color: #80663c;
-  font-size: 0.66rem;
+  margin: 1rem 0 0;
+  color: #61716a;
+  font-size: 0.64rem;
 }
 
 .cz-overview-lower {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   align-items: center;
-  gap: clamp(1.5rem, 5vw, 5rem);
-  padding-bottom: clamp(3rem, 7vw, 6rem);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
   border-bottom: 1px solid var(--cz-line);
 }
 
 .cz-overview-lower h2 {
-  max-width: 10ch;
-  margin-bottom: 1.25rem;
+  max-width: 11ch;
+  margin-bottom: 1rem;
 }
 
 .cz-overview-lower p:not(.cz-eyebrow) {
   max-width: 58ch;
-  color: #51483b;
-  font: 1.05rem / 1.8 var(--cz-serif);
+  color: #485550;
+  font: 1rem / 1.75 var(--cz-serif);
 }
 
 .cz-route-map {
   align-self: stretch;
   margin: 0;
-  padding: clamp(1.5rem, 4vw, 3rem);
-  border: 1px solid #745d37;
-  background:
-    radial-gradient(circle at 90% 10%, rgb(166 62 54 / 22%), transparent 16rem),
-    linear-gradient(145deg, #30231f, #1e1915);
-  box-shadow: 0.7rem 0.7rem 0 rgb(54 43 29 / 12%);
-  color: #efe4ce;
+  padding: clamp(1.4rem, 3.5vw, 2.75rem);
+  border: 1px solid #526c67;
+  background: linear-gradient(145deg, #2c3d3e, #192426);
+  box-shadow: 5px 5px 0 rgb(31 45 42 / 12%);
+  color: #eeecdf;
 }
 
 .cz-route-heading .cz-eyebrow {
@@ -500,23 +500,23 @@ textarea {
 
 .cz-route-heading > span {
   display: block;
-  max-width: 19ch;
-  color: #f0e5cb;
-  font: 400 clamp(1.7rem, 3vw, 2.5rem) / 1.08 var(--cz-heading);
+  max-width: 20ch;
+  color: #f1eee4;
+  font: 400 clamp(1.6rem, 3vw, 2.3rem) / 1.08 var(--cz-heading);
 }
 
 .cz-route-stops {
   display: grid;
   gap: 0;
-  margin: 1.8rem 0;
-  border-left: 1px solid rgb(215 183 107 / 58%);
+  margin: 1.6rem 0;
+  border-left: 1px solid rgb(200 173 112 / 60%);
 }
 
 .cz-route-stop {
   position: relative;
   display: grid;
-  gap: 0.15rem;
-  padding: 0.25rem 0 1.2rem 1.25rem;
+  gap: 0.12rem;
+  padding: 0.2rem 0 1.15rem 1.2rem;
 }
 
 .cz-route-stop:last-child {
@@ -525,8 +525,8 @@ textarea {
 
 .cz-route-stop::before {
   position: absolute;
-  top: 0.3rem;
-  left: -0.28rem;
+  top: 0.25rem;
+  left: -0.27rem;
   width: 0.5rem;
   height: 0.5rem;
   border: 1px solid var(--cz-gold);
@@ -536,32 +536,32 @@ textarea {
 }
 
 .cz-route-stop > span {
-  color: #c99a76;
+  color: #c7b985;
   font: 0.58rem var(--cz-heading);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
 }
 
 .cz-route-stop strong {
-  color: #f1e6ce;
-  font: 400 1.45rem / 1.1 var(--cz-heading);
+  color: #f1eee4;
+  font: 400 1.4rem / 1.1 var(--cz-heading);
 }
 
 .cz-route-stop small {
-  color: #b9aa8e;
-  font: 0.88rem / 1.5 var(--cz-serif);
+  color: #c3c8bd;
+  font: 0.86rem / 1.5 var(--cz-serif);
 }
 
 .cz-route-map figcaption {
-  padding-top: 0.8rem;
-  border-top: 1px solid rgb(215 183 107 / 24%);
-  color: #9f8b69;
-  font: 0.6rem var(--cz-heading);
-  letter-spacing: 0.12em;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgb(200 173 112 / 25%);
+  color: #b9b39e;
+  font: 0.58rem var(--cz-heading);
+  letter-spacing: 0.11em;
   text-transform: uppercase;
 }
 
 .cz-record-section {
-  padding: clamp(3rem, 7vw, 6rem) 0 0;
+  padding: clamp(3rem, 6vw, 5.5rem) 0 0;
 }
 
 .cz-record-heading {
@@ -570,12 +570,12 @@ textarea {
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.9rem;
   border-bottom: 1px solid var(--cz-line);
 }
 
 .cz-record-heading h2 {
-  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-size: clamp(2rem, 4vw, 3.2rem);
 }
 
 .cz-record-heading .cz-eyebrow {
@@ -587,7 +587,7 @@ textarea {
 .cz-people-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.9rem;
+  gap: 1rem;
 }
 
 .cz-chapter-card,
@@ -595,52 +595,45 @@ textarea {
 .cz-person-card {
   position: relative;
   min-width: 0;
-  padding: 1.35rem 1.4rem 1.5rem;
-  border: 1px solid #c6b58f;
-  background:
-    linear-gradient(
-      90deg,
-      transparent 0 1.2rem,
-      rgb(166 62 54 / 10%) 1.25rem 1.3rem,
-      transparent 1.35rem
-    ),
-    var(--cz-paper-light);
+  padding: 1.25rem 1.3rem 1.4rem;
+  border: 1px solid #b8b8a8;
+  background: var(--cz-paper-light);
   color: var(--cz-ink);
-  box-shadow: 0.3rem 0.3rem 0 rgb(54 43 29 / 7%);
+  box-shadow: 3px 3px 0 rgb(31 45 42 / 8%);
 }
 
 .cz-chapter-card {
-  min-height: 15rem;
-  padding-top: 3.3rem;
+  min-height: 14rem;
+  padding-top: 2.9rem;
 }
 
 .cz-card-number {
   position: absolute;
-  top: 0.7rem;
-  right: 0.9rem;
-  color: rgb(166 62 54 / 32%);
-  font: 400 2.6rem / 1 var(--cz-heading);
+  top: 0.55rem;
+  right: 0.8rem;
+  color: rgb(61 119 116 / 34%);
+  font: 400 2.3rem / 1 var(--cz-heading);
 }
 
 .cz-card-kicker {
-  margin: 0 0 0.65rem;
-  color: #8d573d;
-  font-size: 0.62rem;
+  margin: 0 0 0.55rem;
+  color: #50736d;
+  font-size: 0.61rem;
 }
 
 .cz-chapter-card h3,
 .cz-faction-card h3,
 .cz-person-card h3 {
-  margin: 0 0 0.8rem;
-  color: #34271f;
-  font: 400 1.65rem / 1.05 var(--cz-heading);
+  margin: 0 0 0.7rem;
+  color: #293632;
+  font: 400 1.5rem / 1.08 var(--cz-heading);
   text-wrap: balance;
 }
 
 .cz-card-copy {
   margin: 0;
-  color: #625748;
-  font: 0.94rem / 1.7 var(--cz-serif);
+  color: #58625c;
+  font: 0.9rem / 1.65 var(--cz-serif);
 }
 
 .cz-faction-card {
@@ -648,23 +641,23 @@ textarea {
 }
 
 .cz-person-card {
-  border-top: 3px solid #947643;
+  border-top: 3px solid #9a8252;
 }
 
 .cz-spoilers {
-  margin-top: clamp(3rem, 7vw, 6rem);
-  border: 1px solid #a94338;
-  background: #241918;
-  color: #efe4ce;
+  margin-top: clamp(3rem, 6vw, 5rem);
+  border: 1px solid #526c67;
+  background: #1c292b;
+  color: #eeecdf;
 }
 
 .cz-spoilers summary {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 1.3rem;
-  color: #f0d49a;
-  font: 0.78rem var(--cz-heading);
+  padding: 1rem 1.25rem;
+  color: #d9c28e;
+  font: 0.76rem var(--cz-heading);
   letter-spacing: 0.1em;
   list-style: none;
   cursor: pointer;
@@ -684,15 +677,15 @@ textarea {
 }
 
 .cz-gm-notes {
-  padding: 0 1.3rem 1.2rem;
+  padding: 0 1.25rem 1.1rem;
 }
 
 .cz-gm-notes p {
   margin: 0;
-  padding: 0.8rem 0;
-  border-top: 1px solid rgb(239 228 206 / 15%);
-  color: #d0c2a7;
-  font: 0.95rem / 1.7 var(--cz-serif);
+  padding: 0.75rem 0;
+  border-top: 1px solid rgb(238 236 223 / 14%);
+  color: #c9cec3;
+  font: 0.92rem / 1.7 var(--cz-serif);
 }
 
 .cz-section-intro {
@@ -701,14 +694,14 @@ textarea {
 }
 
 .cz-section-intro h2 {
-  margin-bottom: 1rem;
-  font-size: clamp(3rem, 7vw, 6.5rem);
+  margin-bottom: 0.8rem;
+  font-size: clamp(3rem, 7vw, 5.8rem);
 }
 
 .cz-section-intro > p:last-child {
   max-width: 54ch;
-  color: #d5c9b1;
-  font: 1.2rem / 1.7 var(--cz-serif);
+  color: #56625d;
+  font: 1.12rem / 1.7 var(--cz-serif);
 }
 
 .cz-placeholder {
@@ -718,38 +711,38 @@ textarea {
   gap: clamp(1rem, 4vw, 3rem);
   min-height: 15rem;
   padding: clamp(1.5rem, 5vw, 4rem);
-  border: 1px dashed rgb(215 183 107 / 50%);
+  border: 1px dashed #82918a;
   background:
-    linear-gradient(120deg, rgb(166 62 54 / 13%), transparent 55%),
-    #211819;
-  color: #ded0b2;
+    linear-gradient(120deg, rgb(61 119 116 / 8%), transparent 55%),
+    #e0ddd1;
+  color: var(--cz-ink);
 }
 
 .cz-placeholder-mark {
-  color: var(--cz-gold);
-  font: 400 clamp(4rem, 11vw, 8rem) / 0.85 var(--cz-heading);
+  color: var(--cz-accent);
+  font: 400 clamp(4rem, 11vw, 7rem) / 0.85 var(--cz-heading);
 }
 
 .cz-placeholder h3 {
   margin: 0 0 0.5rem;
-  color: #f1e6ce;
-  font: 400 clamp(1.8rem, 4vw, 3rem) / 1 var(--cz-heading);
+  color: #293632;
+  font: 400 clamp(1.8rem, 4vw, 2.8rem) / 1 var(--cz-heading);
 }
 
 .cz-placeholder p {
   margin: 0;
-  color: #bcae92;
-  font: 1rem / 1.7 var(--cz-serif);
+  color: #626d67;
+  font: 0.98rem / 1.7 var(--cz-serif);
 }
 
 .cz-footer {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.3rem clamp(1rem, 5vw, 4rem);
-  border-top: 1px solid rgb(215 183 107 / 22%);
-  color: #9c8b6c;
-  font-size: 0.63rem;
+  padding: 1.25rem clamp(1rem, 5vw, 4rem);
+  border-top: 1px solid rgb(200 173 112 / 24%);
+  color: #aaa995;
+  font-size: 0.62rem;
 }
 
 .cz-footer a {
@@ -759,12 +752,12 @@ textarea {
 
 .cz-footer a:hover,
 .cz-footer a:focus-visible {
-  color: #f4dda7;
+  color: #f2e3bb;
 }
 
 .audio-player-button {
-  border: 1px solid rgb(215 183 107 / 68%);
-  background: #241a1a;
+  border: 1px solid rgb(200 173 112 / 68%);
+  background: #1c292b;
   color: var(--cz-gold);
 }
 
@@ -777,8 +770,8 @@ textarea {
   margin: 2rem auto;
   padding: 1.2rem;
   border: 1px solid var(--cz-accent);
-  background: #291a19;
-  color: #f2c4b2;
+  background: #1c292b;
+  color: #f2e3bb;
 }
 
 @media (max-width: 900px) {
@@ -817,31 +810,31 @@ textarea {
 
   .subpage-hero.cz-hero h1 {
     max-width: 8ch;
-    font-size: clamp(3.5rem, 18vw, 6rem);
+    font-size: clamp(3.5rem, 18vw, 5.8rem);
   }
 
   .cz-hero-lead {
-    font-size: 1.08rem;
+    font-size: 1.05rem;
   }
 
   .cz-hero-register {
-    gap: 0.5rem 0.85rem;
-    margin-top: 1.4rem;
-    font-size: 0.57rem;
+    gap: 0.45rem 0.8rem;
+    margin-top: 1.35rem;
+    font-size: 0.56rem;
   }
 
   .cz-hero-register span + span::before {
-    padding-right: 0.85rem;
+    padding-right: 0.8rem;
   }
 
   .cz-hero-seal {
     position: absolute;
-    right: -5.5rem;
-    bottom: 1.2rem;
-    width: 11rem;
+    right: -5rem;
+    bottom: 1rem;
+    width: 10rem;
     margin: 0;
-    padding: 0.35rem;
-    opacity: 0.18;
+    padding: 0.3rem;
+    opacity: 0.14;
     transform: rotate(8deg);
   }
 
@@ -852,16 +845,16 @@ textarea {
 
   .cz-hero-index {
     right: 1.5rem;
-    bottom: 1rem;
+    bottom: 0.8rem;
     z-index: 2;
   }
 
   .cz-content {
-    padding: 1.1rem;
+    padding: 1.2rem 1rem 3rem;
   }
 
   .cz-filehead {
-    font-size: 0.58rem;
+    font-size: 0.57rem;
   }
 
   .cz-overview-grid,
@@ -870,20 +863,20 @@ textarea {
   }
 
   .cz-paper {
-    padding: 1.5rem 1.35rem;
+    padding: 1.45rem 1.25rem;
   }
 
   .cz-paper h2 {
-    font-size: clamp(2.2rem, 12vw, 3.2rem);
+    font-size: clamp(2.15rem, 11vw, 3rem);
   }
 
   .cz-manifesto {
-    grid-template-columns: 2.5rem minmax(0, 1fr);
-    gap: 0.6rem;
+    grid-template-columns: 2.3rem minmax(0, 1fr);
+    gap: 0.55rem;
   }
 
   .cz-mark {
-    font-size: 2.7rem;
+    font-size: 2.6rem;
   }
 
   .cz-record-heading {
@@ -902,12 +895,12 @@ textarea {
 
   .cz-placeholder {
     min-height: 12rem;
-    padding: 1.4rem;
+    padding: 1.35rem;
   }
 
   .cz-footer {
     display: grid;
-    font-size: 0.56rem;
+    font-size: 0.55rem;
   }
 }
 
