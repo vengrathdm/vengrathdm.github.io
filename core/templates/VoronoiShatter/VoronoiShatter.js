@@ -39,12 +39,9 @@ function cell(site, sites, bounds) {
   }
   return p;
 }
-function domain(x0, x1, h, w) {
-  const wrap = (x) => ((x % w) + w) % w,
-    top = (x) =>
-      12 + Math.sin(wrap(x) / 92 + 0.2) * 9 + Math.sin(wrap(x) / 31) * 3,
-    bot = (x) =>
-      h - 12 + Math.sin(wrap(x) / 92 + 0.7) * 11 + Math.sin(wrap(x) / 37) * 3,
+function domain(x0, x1, h) {
+  const top = () => 0,
+    bot = () => h,
     p = [{ x: x0, y: top(x0) }];
   for (let x = x0 + 46; x < x1; x += 46) p.push({ x, y: top(x) });
   p.push({ x: x1, y: top(x1) }, { x: x1, y: bot(x1) });
@@ -201,7 +198,7 @@ export class VoronoiShatter {
     this.board.replaceChildren();
     this.emptyState.hidden = records.length > 0;
     if (!records.length) return;
-    const bounds = domain(-world, 2 * world, h, world),
+    const bounds = domain(-world, 2 * world, h),
       periodic = [];
     sites.forEach((s) =>
       periodic.push(
