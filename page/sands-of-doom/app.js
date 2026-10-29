@@ -117,12 +117,16 @@ async function initializeCampaignPage() {
   }
 }
 
-initializeCampaignPage().catch((error) => {
-  console.error("Nie udało się uruchomić strony Sands of Doom.", error);
-  const message = document.createElement("p");
-  message.className = "sands-load-error";
-  message.setAttribute("role", "alert");
-  message.textContent =
-    "Nie udało się załadować konfiguracji kampanii. Odśwież stronę lub spróbuj ponownie później.";
-  document.body.prepend(message);
-});
+initializeCampaignPage()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((error) => {
+    console.error("Nie udało się uruchomić strony Sands of Doom.", error);
+    const message = document.createElement("p");
+    message.className = "sands-load-error";
+    message.setAttribute("role", "alert");
+    message.textContent =
+      "Nie udało się załadować konfiguracji kampanii. Odśwież stronę lub spróbuj ponownie później.";
+    document.body.prepend(message);
+  });

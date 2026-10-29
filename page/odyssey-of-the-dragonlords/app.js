@@ -124,15 +124,19 @@ async function initialize() {
     mountAudioPlayerButton(player, theme.audioColor);
   }
 }
-initialize().catch((error) => {
-  console.error(
-    "Nie udało się uruchomić strony Odyssey of the Dragonlords.",
-    error,
-  );
-  const message = document.createElement("p");
-  message.className = "odyssey-load-error";
-  message.textContent =
-    "Nie udało się wczytać kampanii. Odśwież stronę lub spróbuj później.";
-  message.setAttribute("role", "alert");
-  document.body.prepend(message);
-});
+initialize()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((error) => {
+    console.error(
+      "Nie udało się uruchomić strony Odyssey of the Dragonlords.",
+      error,
+    );
+    const message = document.createElement("p");
+    message.className = "odyssey-load-error";
+    message.textContent =
+      "Nie udało się wczytać kampanii. Odśwież stronę lub spróbuj później.";
+    message.setAttribute("role", "alert");
+    document.body.prepend(message);
+  });

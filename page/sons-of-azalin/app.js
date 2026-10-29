@@ -124,6 +124,10 @@ async function initializeCampaignPage() {
   mountAudioPlayerButton(player, theme.audioColor);
 }
 
-initializeCampaignPage().catch((error) =>
-  console.error("Nie udało się uruchomić strony Sons of Azalin.", error),
-);
+initializeCampaignPage()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((error) =>
+    console.error("Nie udało się uruchomić strony Sons of Azalin.", error),
+  );

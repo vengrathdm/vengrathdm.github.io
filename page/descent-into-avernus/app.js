@@ -367,11 +367,16 @@ async function initializeCampaignPage() {
   document.title = `${manifest.title} — Vengrath`;
 }
 
-initializeCampaignPage().catch((error) => {
-  console.error("Nie udało się uruchomić kampanii Descent into Avernus.", error);
-  const message = createElement("p", {
-    class: "page-error",
-    text: "Nie udało się wczytać kampanii. Odśwież stronę za chwilę.",
+initializeCampaignPage()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((error) => {
+    console.error("Nie udało się uruchomić kampanii Descent into Avernus.", error);
+    document.body.classList.remove("campaign-startup-loading");
+    const message = createElement("p", {
+      class: "page-error",
+      text: "Nie udało się wczytać kampanii. Odśwież stronę za chwilę.",
+    });
+    document.querySelector("main")?.prepend(message);
   });
-  document.querySelector("main")?.prepend(message);
-});

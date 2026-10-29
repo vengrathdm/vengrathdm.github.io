@@ -8,6 +8,16 @@
       content="Wyprawa przez dżunglę Chult, tropienie źródła Klątwy Śmierci i zejście do Tomb of the Nine Gods."
     />
     <title>Tomb of Annihilation — Vengrath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&amp;family=Voltaire&amp;family=Brygada+1918:wght@400;500;600;700&amp;display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CampaignPage/CampaignStartup.css"
+    />
     <link rel="stylesheet" href="./theme-fonts.css" />
     <link rel="stylesheet" href="/core/templates/HomeButton/HomeButton.css" />
     <link
@@ -53,8 +63,25 @@
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="tomb-of-annihilation-page">
-    <header id="campaign-hero" aria-label="Tomb of Annihilation"></header>
+  <body class="tomb-of-annihilation-page campaign-startup-loading">
+    <header
+      class="subpage-hero toa-hero"
+      id="campaign-hero"
+      style="--hero-background: url('/page/tomb-of-annihilation/res/graphics/hero-image.jpg')"
+    >
+      <div class="subpage-hero__copy">
+        <p class="campaign-startup-kicker">
+          D&amp;D · ARCHIWUM KAMPANII
+        </p>
+        <h1>
+          TOMB OF ANNIHILATION
+        </h1>
+        <p class="campaign-startup-lead">
+          Wyprawa przez parną dżunglę Chult, tropienie źródła Klątwy Śmierci, utrata kolejnych twarzy
+          drużyny i zejście do miejsca, z którego nie każdy miał wrócić.
+        </p>
+      </div>
+    </header>
     <main class="toa-content">
       <section id="campaign" data-page-section="campaign">
         <div id="campaign-intro"></div>

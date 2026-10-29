@@ -119,6 +119,10 @@ async function initialize() {
   });
   mountAudioPlayerButton(player, theme.audioColor);
 }
-initialize().catch((e) =>
-  console.error("Nie udało się uruchomić strony Echtra — Zima Irgaeli.", e),
-);
+initialize()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((e) =>
+    console.error("Nie udało się uruchomić strony Echtra — Zima Irgaeli.", e),
+  );

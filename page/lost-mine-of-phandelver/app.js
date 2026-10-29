@@ -113,9 +113,13 @@ async function initializeCampaignPage() {
   renderChronicleSection(content.chronicle, manifest.playlistUrl);
 }
 
-initializeCampaignPage().catch((error) => {
-  console.error(
-    "Nie udało się uruchomić strony Lost Mine of Phandelver.",
-    error,
-  );
-});
+initializeCampaignPage()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((error) => {
+    console.error(
+      "Nie udało się uruchomić strony Lost Mine of Phandelver.",
+      error,
+    );
+  });

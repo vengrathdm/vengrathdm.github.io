@@ -11,6 +11,14 @@
     <title>Echtra — Zima Irgaeli | Vengrath</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Almendra+SC&amp;family=Uncial+Antiqua&amp;family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&amp;family=Brygada+1918:wght@400;500;600;700&amp;family=Voltaire&amp;display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CampaignPage/CampaignStartup.css"
+    />
     <link rel="stylesheet" href="./theme-fonts.css" />
     <link rel="stylesheet" href="/core/templates/HomeButton/HomeButton.css" />
     <link
@@ -55,8 +63,24 @@
     <link rel="stylesheet" href="./sections/characters/characters.css" />
     <link rel="stylesheet" href="./sections/chronicle/chronicle.css" />
   </head>
-  <body class="echtra-zima-irgaeli-page">
-    <div id="campaign-hero"></div>
+  <body class="echtra-zima-irgaeli-page campaign-startup-loading">
+    <header
+      class="subpage-hero"
+      id="campaign-hero"
+      style="--hero-background: url('/core/graphics/voronoi/echtra-zima-irgaeli.webp')"
+    >
+      <div class="subpage-hero__copy">
+        <p class="campaign-startup-kicker">
+          D&amp;D · ECHTRA
+        </p>
+        <h1>
+          Echtra — Zima Irgaeli
+        </h1>
+        <p class="campaign-startup-lead">
+          Zima Irgaeli — opowieść o Samhain, Cailleach, Sidhe i drodze ku Krainom Wiecznej Zimy.
+        </p>
+      </div>
+    </header>
     <main class="ddc-content">
       <section class="ddc-tab-panel" id="campaign" data-page-section="campaign">
         <section class="ddc-card">

@@ -206,6 +206,10 @@ async function init() {
   await renderCharacters(data.characters);
   renderChronicle(data.chronicle, theme.colors.accent2);
 }
-init().catch((e) =>
-  console.error("Nie udało się uruchomić strony Ręka Chwały.", e),
-);
+init()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((e) =>
+    console.error("Nie udało się uruchomić strony Ręka Chwały.", e),
+  );

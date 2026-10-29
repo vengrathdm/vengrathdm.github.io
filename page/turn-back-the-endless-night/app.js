@@ -209,9 +209,13 @@ async function initializeCampaignPage() {
   }
 }
 
-initializeCampaignPage().catch((error) => {
-  console.error(
-    "Nie udało się uruchomić strony Turn Back the Endless Night.",
-    error,
-  );
-});
+initializeCampaignPage()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((error) => {
+    console.error(
+      "Nie udało się uruchomić strony Turn Back the Endless Night.",
+      error,
+    );
+  });

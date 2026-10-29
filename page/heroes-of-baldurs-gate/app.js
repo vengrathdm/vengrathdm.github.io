@@ -197,9 +197,13 @@ async function initializeCampaignPage() {
     "VENGRATH · " + content.campaign.title.toUpperCase();
 }
 
-initializeCampaignPage().catch((error) => {
-  console.error(
-    "Nie udało się uruchomić strony Bohaterowie Wrót Baldura.",
-    error,
-  );
-});
+initializeCampaignPage()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((error) => {
+    console.error(
+      "Nie udało się uruchomić strony Bohaterowie Wrót Baldura.",
+      error,
+    );
+  });

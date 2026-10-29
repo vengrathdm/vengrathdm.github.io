@@ -77,9 +77,13 @@ async function init() {
     t.colors.accent1,
   );
 }
-init().catch((e) => {
-  console.error(e);
-  document.body.prepend(
-    document.createTextNode("Nie udało się wczytać kampanii."),
-  );
-});
+init()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((e) => {
+    console.error(e);
+    document.body.prepend(
+      document.createTextNode("Nie udało się wczytać kampanii."),
+    );
+  });

@@ -121,6 +121,7 @@ Import JavaScript modules with their root-relative `/...` paths. Add the matchin
 
 | Element | JavaScript address | Stylesheet address | Purpose |
 | --- | --- | --- | --- |
+| Campaign startup guard | — | [`CampaignStartup.css`](core/templates/CampaignPage/CampaignStartup.css) | Hide data-driven page sections until the first render is ready |
 | Home button | [`HomeButton.js`](core/templates/HomeButton/HomeButton.js) | [`HomeButton.css`](core/templates/HomeButton/HomeButton.css) | Link back to the site home |
 | Hero | [`SubpageHero.js`](core/templates/SubpageHero/SubpageHero.js) | [`SubpageHero.css`](core/templates/SubpageHero/SubpageHero.css) | Reusable campaign title and image area |
 | Section navigation | [`SubpageNavbar.js`](core/templates/SubpageNavbar/SubpageNavbar.js) | [`SubpageNavbar.css`](core/templates/SubpageNavbar/SubpageNavbar.css) and [`NavbarButton.css`](core/templates/SubpageNavbar/NavbarButton/NavbarButton.css) | Home/playlist controls and section switching |
@@ -181,8 +182,9 @@ Reusable components live in `core/templates/`. Each component owns its styling a
 
 - `SubpageHero`, `SubpageNavbar`, and `HomeButton` provide optional campaign navigation and hero elements.
 - `CharacterGallery`, `CharacterCard`, and `Chronicle` render shared campaign records.
-- `AudioPlayer` owns a single audio element and stores playback position and volume state. Give each campaign a distinct storage key. Browser autoplay restrictions are respected. `AudioPlayerButton` and `YouTubePlaylistButton` provide optional controls.
+- `AudioPlayer` owns a single audio element and stores playback position and volume state. Give each campaign a distinct storage key. Audio is not preloaded or autoplayed by default; playback begins from the visitor's control. Pass an explicit preload value or `{ autoplay: true }` to `mountAudioPlayerButton` only when a page needs different behavior.
 - `CampaignPage` loads the common campaign data bundle and theme variables.
+- `CampaignStartup.css` keeps data-driven campaign content hidden until initialization finishes. Campaign pages using it should render a readable hero in their initial HTML and remove `campaign-startup-loading` from the body after successful initialization.
 - `VoronoiShatter` renders the searchable home discovery board from the page registry.
 
 Shared graphics live in `core/graphics/`, with favicon assets in `favicon/` and home-card artwork in `voronoi/`. Canonical portraits live in `core/portraits/`; character records refer to them using `/core/portraits/<filename>` paths.

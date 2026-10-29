@@ -11,6 +11,14 @@
     <title>Dragon of Dampen Depths — Vengrath</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&amp;family=Voltaire&amp;family=Brygada+1918:wght@400;500;600;700&amp;display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CampaignPage/CampaignStartup.css"
+    />
     <link rel="stylesheet" href="./theme-fonts.css" />
     <link rel="stylesheet" href="/core/templates/HomeButton/HomeButton.css" />
     <link
@@ -56,8 +64,27 @@
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="dodd-page">
-    <div id="campaign-hero"></div>
+  <body class="dodd-page campaign-startup-loading">
+    <header
+      class="subpage-hero"
+      id="campaign-hero"
+      style="--hero-background: url('/core/graphics/voronoi/dragon-of-dampen-depths.webp')"
+    >
+      <div class="subpage-hero__copy">
+        <p class="campaign-startup-kicker">
+          D&amp;D · ARCHIWUM KAMPANII
+        </p>
+        <h1>
+          Dragon of
+          <br />
+          <span>Dampen Depths</span>
+        </h1>
+        <p class="campaign-startup-lead">
+          W Amanicie, niewielkiej osadzie żyjącej z leśnych zbiorów, spokojne życie zostaje zachwiane
+          przez zniknięcia mieszkańców, tajemnicze grzyby i ślady prowadzące coraz głębiej w las.
+        </p>
+      </div>
+    </header>
     <main class="dodd-content">
       <section class="dodd-panel" id="campaign" data-page-section="campaign">
         <section class="dodd-card">

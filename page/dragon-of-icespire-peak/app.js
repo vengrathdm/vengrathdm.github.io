@@ -102,9 +102,13 @@ async function initializeCampaignPage() {
   await renderCharactersSection(content.characters);
 }
 
-initializeCampaignPage().catch((error) =>
-  console.error(
-    "Nie udało się uruchomić strony Dragon of Icespire Peak.",
-    error,
-  ),
-);
+initializeCampaignPage()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((error) =>
+    console.error(
+      "Nie udało się uruchomić strony Dragon of Icespire Peak.",
+      error,
+    ),
+  );

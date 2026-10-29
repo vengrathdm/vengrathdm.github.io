@@ -9,9 +9,16 @@
     />
     <meta name="theme-color" content="#08090b" />
     <title>Legends of Barovia — Vengrath</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&amp;family=Voltaire&amp;family=Brygada+1918:wght@400;500;600;700&amp;display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CampaignPage/CampaignStartup.css"
+    />
     <link rel="stylesheet" href="./theme-fonts.css" />
     <link rel="stylesheet" href="/core/templates/HomeButton/HomeButton.css" />
     <link
@@ -59,8 +66,25 @@
     <link rel="stylesheet" href="./sections/characters/characters.css" />
     <link rel="stylesheet" href="./sections/chronicle/chronicle.css" />
   </head>
-  <body class="legends-of-barovia-page">
-    <div id="campaign-hero"></div>
+  <body class="legends-of-barovia-page campaign-startup-loading">
+    <header
+      class="subpage-hero"
+      id="campaign-hero"
+      style="--hero-background: url('/page/legends-of-barovia/res/graphics/hero-image.jpg')"
+    >
+      <div class="subpage-hero__copy">
+        <p class="campaign-startup-kicker">
+          RAVENLOFT · BAROVIA · AKTA KAMPANII 02
+        </p>
+        <h1>
+          LEGENDS OF BAROVIA
+        </h1>
+        <p class="campaign-startup-lead">
+          Kraina, która nie chce wypuścić swoich gości. Stara klątwa, nowe legendy, dawne miejsca i
+          historia, która pod powierzchnią gotyckiej grozy okazuje się znacznie większa niż sam zamek.
+        </p>
+      </div>
+    </header>
     <main class="lob-content">
       <section class="lob-tab-panel" id="campaign" data-page-section="campaign">
         <section class="lob-card lob-card-main">

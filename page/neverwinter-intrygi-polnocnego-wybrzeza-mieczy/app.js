@@ -78,9 +78,13 @@ async function init() {
   document.querySelector("#footer-title").textContent =
     "VENGRATH · " + d.campaign.title.toUpperCase();
 }
-init().catch((e) => {
-  console.error(e);
-  document.body.prepend(
-    document.createTextNode("Nie udało się wczytać kampanii."),
-  );
-});
+init()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((e) => {
+    console.error(e);
+    document.body.prepend(
+      document.createTextNode("Nie udało się wczytać kampanii."),
+    );
+  });

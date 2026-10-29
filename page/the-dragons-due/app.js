@@ -103,8 +103,12 @@ async function initialize() {
   document.querySelector("#image-caption").textContent =
     content.campaign.imageCaption;
 }
-initialize().catch((error) => {
-  console.error("Nie udało się uruchomić strony The Dragon's Due.", error);
-  const message = node("p", "cz-error", "Nie udało się wczytać akt przygody.");
-  document.querySelector("main")?.prepend(message);
-});
+initialize()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((error) => {
+    console.error("Nie udało się uruchomić strony The Dragon's Due.", error);
+    const message = node("p", "cz-error", "Nie udało się wczytać akt przygody.");
+    document.querySelector("main")?.prepend(message);
+  });

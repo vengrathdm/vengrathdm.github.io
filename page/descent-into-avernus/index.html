@@ -11,6 +11,10 @@
     <title>Descent into Avernus — Vengrath</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=Voltaire&display=swap"
+    />
     <link rel="stylesheet" href="./theme-fonts.css" />
     <link
       rel="stylesheet"
@@ -49,9 +53,25 @@
       href="/core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CampaignPage/CampaignStartup.css"
+    />
   </head>
-  <body class="descent-into-avernus-page">
-    <div id="campaign-hero"></div>
+  <body class="descent-into-avernus-page campaign-startup-loading">
+    <header class="subpage-hero fiery-hero" id="campaign-hero">
+      <canvas class="embers" aria-hidden="true"></canvas>
+      <div class="fiery-navbar-mount"></div>
+      <div class="subpage-hero__copy">
+        <p class="eyebrow">BALDUR'S GATE · DUNGEONS &amp; DRAGONS 5e</p>
+        <h1 id="hero-title">Descent into Avernus</h1>
+        <p class="tagline">
+          Z cieni Baldur's Gate droga prowadzi wprost na front Krwawej Wojny.
+          Każdy pakt ma cenę.
+        </p>
+        <p class="roll-message">Rzuć k20, zanim złożysz przysięgę</p>
+      </div>
+    </header>
 
     <main class="fiery-main">
       <section

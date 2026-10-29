@@ -115,9 +115,13 @@ async function initializeCampaignPage() {
   });
   mountAudioPlayerButton(audioPlayer, theme.audioColor);
 }
-initializeCampaignPage().catch((error) =>
-  console.error(
-    "Nie udało się uruchomić strony Dungeons of Drakkenheim.",
-    error,
-  ),
-);
+initializeCampaignPage()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((error) =>
+    console.error(
+      "Nie udało się uruchomić strony Dungeons of Drakkenheim.",
+      error,
+    ),
+  );

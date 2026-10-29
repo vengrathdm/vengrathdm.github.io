@@ -110,6 +110,10 @@ async function initializeCampaignPage() {
   renderChronicleSection(content.chronicle);
 }
 
-initializeCampaignPage().catch((error) => {
-  console.error("Nie udało się uruchomić strony Ku chwale Tyra!.", error);
-});
+initializeCampaignPage()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((error) => {
+    console.error("Nie udało się uruchomić strony Ku chwale Tyra!.", error);
+  });

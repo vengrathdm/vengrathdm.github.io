@@ -11,6 +11,14 @@
     <title>Shadow of the Sword Coast — Vengrath</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&amp;family=Voltaire&amp;family=Brygada+1918:wght@400;500;600;700&amp;display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CampaignPage/CampaignStartup.css"
+    />
     <link rel="stylesheet" href="./theme-fonts.css" />
     <link rel="stylesheet" href="/core/templates/HomeButton/HomeButton.css" />
     <link
@@ -54,8 +62,26 @@
     <link rel="stylesheet" href="./sections/characters/characters.css" />
     <link rel="stylesheet" href="./sections/chronicle/chronicle.css" />
   </head>
-  <body class="shadow-of-the-sword-coast-page">
-    <div id="campaign-hero"></div>
+  <body class="shadow-of-the-sword-coast-page campaign-startup-loading">
+    <header
+      class="subpage-hero"
+      id="campaign-hero"
+      style="--hero-background: url('/page/shadow-of-the-sword-coast/res/graphics/hero-image.jpg')"
+    >
+      <div class="subpage-hero__copy">
+        <p class="campaign-startup-kicker">
+          D&amp;D · ARCHIWUM KAMPANII
+        </p>
+        <h1>
+          Shadow of the Sword Coast
+        </h1>
+        <p class="campaign-startup-lead">
+          Poruszająca historia grupy kobiet, które chciały zbadać wybuch w domu pewnej czarodziejki —
+          i zamiast zwykłego śledztwa znalazły się w samym środku opowieści o duszach, potężnym Diable
+          i własnych, mrocznych przeszłościach.
+        </p>
+      </div>
+    </header>
     <main class="ddc-content">
       <section class="ddc-tab-panel" id="campaign" data-page-section="campaign">
         <section class="ddc-card">

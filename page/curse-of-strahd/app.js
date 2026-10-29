@@ -136,6 +136,10 @@ async function initialize() {
     content.chronicle.playlistUrl;
 }
 
-initialize().catch((error) =>
-  console.error("Nie udało się uruchomić strony Curse of Strahd.", error),
-);
+initialize()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((error) =>
+    console.error("Nie udało się uruchomić strony Curse of Strahd.", error),
+  );

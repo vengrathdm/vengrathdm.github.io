@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="Ghoul Hour" />
     <title>Ghoul Hour — Vengrath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&amp;family=Voltaire&amp;family=Brygada+1918:wght@400;500;600;700&amp;display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CampaignPage/CampaignStartup.css"
+    />
     <link rel="stylesheet" href="./theme-fonts.css" />
     <link rel="stylesheet" href="/core/templates/HomeButton/HomeButton.css" />
     <link
@@ -42,8 +52,27 @@
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="campaign-page">
-    <div id="campaign-hero"></div>
+  <body class="campaign-page campaign-startup-loading">
+    <header
+      class="subpage-hero"
+      id="campaign-hero"
+      style="--hero-background: url('/core/graphics/voronoi/ghoul-hour.webp')"
+    >
+      <div class="subpage-hero__copy">
+        <p class="campaign-startup-kicker">
+          D&amp;D · ARCHIWUM KAMPANII
+        </p>
+        <h1>
+          Ghoul
+          <br />
+          <span>Hour</span>
+        </h1>
+        <p class="campaign-startup-lead">
+          Martwi nie zawsze pozostają w grobach. Z Rimefall po Kopalnie Emberdeep drużyna podąża
+          śladem nekromancji, opętania i rytuałów.
+        </p>
+      </div>
+    </header>
     <main class="campaign-content">
       <section
         class="campaign-panel"

@@ -11,6 +11,14 @@
     <title>Odyssey of the Dragonlords — Vengrath</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&amp;family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&amp;family=Voltaire&amp;family=Brygada+1918:wght@400;500;600;700&amp;display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="/core/templates/CampaignPage/CampaignStartup.css"
+    />
     <link rel="stylesheet" href="./theme-fonts.css" />
     <link rel="stylesheet" href="/core/templates/HomeButton/HomeButton.css" />
     <link
@@ -56,8 +64,25 @@
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="odyssey-page">
-    <div id="campaign-hero"></div>
+  <body class="odyssey-page campaign-startup-loading">
+    <header
+      class="subpage-hero odyssey-hero"
+      id="campaign-hero"
+      style="--hero-background: url('/page/odyssey-of-the-dragonlords/res/graphics/hero-image.webp')"
+    >
+      <div class="subpage-hero__copy">
+        <p class="campaign-startup-kicker">
+          EPICKA KAMPANIA FANTASY · THYLEA
+        </p>
+        <h1>
+          ODYSSEY OF THE DRAGONLORDS
+        </h1>
+        <p class="campaign-startup-lead">
+          Przysięga, która miała zakończyć wojnę bogów i tytanów, nie może trwać wiecznie. Na Thylei
+          bohaterowie staną wobec przepowiedni, dawnych win i losu, którego nie wybrali.
+        </p>
+      </div>
+    </header>
     <main class="odyssey-content">
       <section class="odyssey-panel" id="campaign" data-page-section="campaign">
         <section class="odyssey-card">

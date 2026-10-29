@@ -1,7 +1,7 @@
 export function mountAudioPlayerButton(
   player,
   color = "#bca06a",
-  { autoplay = true } = {},
+  { autoplay = false } = {},
 ) {
   const button = document.createElement("button");
   button.type = "button";

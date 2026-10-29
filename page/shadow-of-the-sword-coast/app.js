@@ -114,9 +114,13 @@ async function initializeCampaignPage() {
   await renderCharactersSection(content.characters);
   renderChronicleSection(content.chronicle, theme.colors.accent2);
 }
-initializeCampaignPage().catch((error) =>
-  console.error(
-    "Nie udało się uruchomić strony Shadow of the Sword Coast.",
-    error,
-  ),
-);
+initializeCampaignPage()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((error) =>
+    console.error(
+      "Nie udało się uruchomić strony Shadow of the Sword Coast.",
+      error,
+    ),
+  );

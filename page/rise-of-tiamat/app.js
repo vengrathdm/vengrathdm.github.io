@@ -127,12 +127,16 @@ async function initializeCampaignPage() {
     content.chronicle.playlistUrl;
 }
 
-initializeCampaignPage().catch((error) => {
-  console.error("Nie udało się uruchomić strony Rise of Tiamat.", error);
-  const message = document.createElement("p");
-  message.className = "rot-load-error";
-  message.setAttribute("role", "alert");
-  message.textContent =
-    "Nie udało się wczytać kampanii. Odśwież stronę lub spróbuj ponownie później.";
-  document.body.prepend(message);
-});
+initializeCampaignPage()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((error) => {
+    console.error("Nie udało się uruchomić strony Rise of Tiamat.", error);
+    const message = document.createElement("p");
+    message.className = "rot-load-error";
+    message.setAttribute("role", "alert");
+    message.textContent =
+      "Nie udało się wczytać kampanii. Odśwież stronę lub spróbuj ponownie później.";
+    document.body.prepend(message);
+  });

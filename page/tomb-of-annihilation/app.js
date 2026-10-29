@@ -157,13 +157,17 @@ async function initialize() {
   renderChronicle(content.chronicle, theme.colors.accent2);
 }
 
-initialize().catch((error) => {
-  console.error("Nie udało się uruchomić strony Tomb of Annihilation.", error);
-  const message = node(
-    "p",
-    "toa-load-error",
-    "Nie udało się załadować archiwum kampanii. Odśwież stronę lub spróbuj ponownie później.",
-  );
-  message.setAttribute("role", "alert");
-  document.body.prepend(message);
-});
+initialize()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((error) => {
+    console.error("Nie udało się uruchomić strony Tomb of Annihilation.", error);
+    const message = node(
+      "p",
+      "toa-load-error",
+      "Nie udało się załadować archiwum kampanii. Odśwież stronę lub spróbuj ponownie później.",
+    );
+    message.setAttribute("role", "alert");
+    document.body.prepend(message);
+  });

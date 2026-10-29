@@ -1,0 +1,19 @@
+body.campaign-startup-loading > main,
+body.campaign-startup-loading > footer {
+  display: none !important;
+}
+
+.campaign-startup-kicker {
+  margin: 0 0 1rem;
+  color: var(--theme-accent-2, var(--campaign-accent, #bca06a));
+  font: 500 0.7rem/1.5 "DM Mono", monospace;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.campaign-startup-lead {
+  max-width: 50rem;
+  margin: 1.5rem 0 0;
+  color: var(--theme-text-2, #d7d2c8);
+  font: clamp(1.05rem, 1.8vw, 1.35rem) / 1.4 var(--theme-font-3, Georgia, serif);
+}

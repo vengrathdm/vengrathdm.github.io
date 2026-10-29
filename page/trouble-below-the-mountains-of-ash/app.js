@@ -166,6 +166,10 @@ async function init() {
   document.querySelector("#footer-title").textContent =
     "VENGRATH · " + manifest.title.toUpperCase();
 }
-init().catch((error) =>
-  console.error("Nie udało się uruchomić strony kampanii.", error),
-);
+init()
+  .then(() => {
+    document.body.classList.remove("campaign-startup-loading");
+  })
+  .catch((error) =>
+    console.error("Nie udało się uruchomić strony kampanii.", error),
+  );
