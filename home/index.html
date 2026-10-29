@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#100e0c" />
     <meta
       name="description"
-      content="Odkryj światy Vengrath: kampanie, opowieści i projekty tworzone przy wspólnym stole."
+      content="Vengrath — kampanie, postacie, kroniki i projekty fantasy."
     />
     <title>Vengrath</title>
     <link rel="icon" href="/core/graphics/favicon/favicon.ico" />
@@ -25,39 +25,26 @@
   <body>
     <div class="home-app">
       <header class="home-topbar">
-        <div class="home-masthead">
-          <a
-            class="home-brand"
-            href="/home/"
-            aria-label="Vengrath — strona główna"
-          >
-            <img src="/core/graphics/favicon/mg-logo.png" alt="" />
-            <span>VENGRATH</span>
-          </a>
+        <a
+          class="home-brand"
+          href="/home/"
+          aria-label="Vengrath — strona główna"
+        >
+          <img src="/core/graphics/favicon/mg-logo.png" alt="" />
+          <span>VENGRATH</span>
+        </a>
 
-          <div class="home-intro">
-            <p class="home-eyebrow">ŚWIATY PRZY WSPÓLNYM STOLE</p>
-            <h1>Odkryj swój kolejny świat.</h1>
-            <p class="home-deck">
-              Kampanie, bohaterowie i opowieści, które wciąż się tworzą.
-            </p>
-          </div>
+        <nav id="filters" class="voronoi-filters" aria-label="Kategorie"></nav>
 
-          <label class="home-search">
-            <span aria-hidden="true">⌕</span>
-            <input
-              id="search"
-              type="search"
-              placeholder="Szukaj kampanii…"
-              aria-label="Szukaj kampanii"
-            />
-          </label>
-        </div>
-
-        <div class="home-browsebar">
-          <p class="home-browse-label">PRZEGLĄDAJ</p>
-          <nav id="filters" class="voronoi-filters" aria-label="Kategorie"></nav>
-        </div>
+        <label class="home-search">
+          <span aria-hidden="true">⌕</span>
+          <input
+            id="search"
+            type="search"
+            placeholder="Szukaj…"
+            aria-label="Szukaj kampanii"
+          />
+        </label>
       </header>
       <main
         id="viewport"

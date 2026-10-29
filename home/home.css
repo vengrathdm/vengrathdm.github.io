@@ -8,11 +8,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --home-bg: #100e0c;
-  --home-surface: #191613;
   --home-line: rgb(231 213 180 / 14%);
   --home-muted: #aaa298;
   --home-gold: #d7b878;
-  --home-copper: #b87951;
 }
 
 * {
@@ -49,132 +47,42 @@ input {
 .home-topbar {
   position: relative;
   z-index: 2;
+  display: flex;
   flex: 0 0 auto;
-  padding: 1.05rem clamp(1rem, 4vw, 3.75rem) 0;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1.75rem);
+  min-height: 4.15rem;
+  padding: 0.45rem clamp(0.75rem, 1.6vw, 1.5rem);
   border-bottom: 1px solid var(--home-line);
   background: linear-gradient(180deg, rgb(25 22 19 / 98%), rgb(19 17 15 / 96%));
   box-shadow: 0 14px 40px rgb(0 0 0 / 18%);
 }
 
-.home-masthead {
-  display: grid;
-  grid-template-columns: auto minmax(16rem, 1fr) minmax(12rem, 17rem);
-  align-items: center;
-  gap: clamp(1rem, 3vw, 3rem);
-  max-width: 1500px;
-  margin: 0 auto;
-}
-
 .home-brand {
   display: inline-flex;
+  flex: 0 0 auto;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.55rem;
   color: #f4efe5;
   text-decoration: none;
-  font: 1.25rem Voltaire, sans-serif;
-  letter-spacing: 0.17em;
+  font: 1.2rem Voltaire, sans-serif;
+  letter-spacing: 0.15em;
   white-space: nowrap;
 }
 
 .home-brand img {
-  width: 2.7rem;
-  height: 2.7rem;
+  width: 2.5rem;
+  height: 2.5rem;
   object-fit: contain;
   filter: drop-shadow(0 0 14px rgb(215 184 120 / 22%));
 }
 
-.home-intro {
-  min-width: 0;
-  padding: 0.25rem 0 0.85rem;
-}
-
-.home-eyebrow,
-.home-browse-label {
-  margin: 0;
-  color: var(--home-gold);
-  font: 500 0.66rem "DM Mono", monospace;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.home-intro h1 {
-  margin: 0.24rem 0 0.15rem;
-  color: #f5ecda;
-  font: 500 clamp(1.55rem, 3.1vw, 2.55rem) / 1.05 "Fira Sans Extra Condensed", sans-serif;
-  letter-spacing: 0.015em;
-  text-wrap: balance;
-}
-
-.home-deck {
-  margin: 0;
-  color: var(--home-muted);
-  font-size: clamp(0.88rem, 1.2vw, 1rem);
-  letter-spacing: 0.015em;
-}
-
-.home-search {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  min-width: 0;
-  padding: 0.7rem 0.9rem;
-  border: 1px solid rgb(231 213 180 / 19%);
-  border-radius: 4px;
-  background: rgb(8 7 6 / 42%);
-  color: var(--home-gold);
-  transition:
-    border-color 160ms ease,
-    background-color 160ms ease,
-    box-shadow 160ms ease;
-}
-
-.home-search:focus-within {
-  border-color: rgb(215 184 120 / 70%);
-  background: rgb(8 7 6 / 70%);
-  box-shadow: 0 0 0 3px rgb(215 184 120 / 10%);
-}
-
-.home-search > span {
-  font: 1.6rem / 0.8 sans-serif;
-}
-
-.home-search input {
-  width: 100%;
-  min-width: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  color: #f4efe5;
-  font-size: 0.95rem;
-}
-
-.home-search input::placeholder {
-  color: #8c857b;
-}
-
-.home-browsebar {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  max-width: 1500px;
-  min-height: 3.25rem;
-  margin: 0 auto;
-  border-top: 1px solid rgb(231 213 180 / 9%);
-}
-
-.home-browse-label {
-  flex: 0 0 auto;
-  color: #8b8275;
-  font-size: 0.61rem;
-  letter-spacing: 0.16em;
-}
-
 .voronoi-filters {
   display: flex;
-  flex: 1;
+  flex: 1 1 auto;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
+  min-width: 0;
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -185,12 +93,12 @@ input {
 
 .voronoi-filter {
   flex: 0 0 auto;
-  padding: 0.4rem 0.8rem;
+  padding: 0.38rem 0.72rem;
   border: 1px solid transparent;
   border-radius: 2px;
   background: transparent;
   color: #b7afa3;
-  font: 0.85rem "Fira Sans Extra Condensed", sans-serif;
+  font: 0.84rem "Fira Sans Extra Condensed", sans-serif;
   cursor: pointer;
   transition:
     color 150ms ease,
@@ -207,6 +115,48 @@ input {
   border-color: rgb(215 184 120 / 42%);
   background: rgb(215 184 120 / 10%);
   color: #efd59c;
+}
+
+.home-search {
+  display: flex;
+  flex: 0 1 15rem;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 9rem;
+  padding: 0.58rem 0.75rem;
+  border: 1px solid rgb(231 213 180 / 19%);
+  border-radius: 3px;
+  background: rgb(8 7 6 / 42%);
+  color: var(--home-gold);
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.home-search:focus-within {
+  border-color: rgb(215 184 120 / 70%);
+  background: rgb(8 7 6 / 70%);
+  box-shadow: 0 0 0 3px rgb(215 184 120 / 10%);
+}
+
+.home-search > span {
+  font: 1.5rem / 0.8 sans-serif;
+}
+
+.home-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #f4efe5;
+  font-size: 0.92rem;
+}
+
+.home-search input::placeholder {
+  color: #8c857b;
 }
 
 .voronoi-viewport {
@@ -242,7 +192,6 @@ input {
 
 .voronoi-shard {
   cursor: pointer;
-  transition: filter 180ms ease;
 }
 
 .voronoi-shard:focus-visible {
@@ -380,23 +329,24 @@ input {
 
 @media (max-width: 900px) {
   .home-topbar {
-    padding-inline: 1.25rem;
-  }
-
-  .home-masthead {
-    grid-template-columns: auto minmax(0, 1fr) minmax(10rem, 14rem);
-    gap: 1.2rem;
+    gap: 0.75rem;
+    padding-inline: 0.75rem;
   }
 
   .home-brand {
     gap: 0.4rem;
     font-size: 1rem;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
   }
 
   .home-brand img {
     width: 2.1rem;
     height: 2.1rem;
+  }
+
+  .home-search {
+    flex-basis: 12rem;
+    min-width: 8rem;
   }
 }
 
@@ -412,72 +362,45 @@ input {
   .home-app {
     height: 100vh;
     height: 100svh;
-    min-height: 520px;
     height: 100dvh;
+    min-height: 520px;
   }
 
   .home-topbar {
-    padding: 0.75rem 1rem 0;
-  }
-
-  .home-masthead {
+    display: grid;
     grid-template-columns: 1fr auto;
-    gap: 0.65rem 1rem;
+    gap: 0.25rem 0.75rem;
+    min-height: 0;
+    padding: 0.45rem 0.7rem 0.55rem;
   }
 
   .home-brand {
     grid-column: 1;
     grid-row: 1;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
   }
 
   .home-brand img {
-    width: 2rem;
-    height: 2rem;
+    width: 1.9rem;
+    height: 1.9rem;
   }
 
   .home-search {
     grid-column: 2;
     grid-row: 1;
-    width: min(44vw, 15rem);
-    padding: 0.55rem 0.7rem;
-  }
-
-  .home-intro {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    padding: 0.3rem 0 0.9rem;
-  }
-
-  .home-eyebrow {
-    font-size: 0.58rem;
-  }
-
-  .home-intro h1 {
-    font-size: clamp(1.8rem, 8vw, 2.45rem);
-  }
-
-  .home-deck {
-    max-width: 34rem;
-    font-size: 0.9rem;
-  }
-
-  .home-browsebar {
-    display: block;
-    min-height: 0;
-    padding: 0.55rem 0 0.65rem;
-  }
-
-  .home-browse-label {
-    margin-bottom: 0.35rem;
+    width: min(43vw, 14rem);
+    padding: 0.5rem 0.65rem;
   }
 
   .voronoi-filters {
-    margin-inline: -0.15rem;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-inline: -0.1rem;
   }
 
   .voronoi-filter {
-    padding: 0.34rem 0.65rem;
+    padding: 0.32rem 0.58rem;
+    font-size: 0.8rem;
   }
 
   .home-field-hint {
@@ -492,12 +415,8 @@ input {
 }
 
 @media (max-width: 380px) {
-  .home-brand {
-    font-size: 0.9rem;
-  }
-
   .home-search {
-    width: 43vw;
+    width: 42vw;
   }
 
   .home-search input {
