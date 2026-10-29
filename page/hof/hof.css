@@ -326,16 +326,17 @@ body {
 }
 
 .hof-results .character-gallery {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 6.5rem), 1fr));
-  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 7.6rem), 1fr));
+  gap: 0.65rem;
 }
 
 .hof-results .character-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  border-color: rgb(231 213 180 / 12%);
+  border-color: rgb(231 213 180 / 16%);
   background: #151310;
-  box-shadow: 0 7px 16px rgb(0 0 0 / 18%);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 18%);
   transition:
     border-color 180ms ease,
     transform 180ms ease,
@@ -346,11 +347,11 @@ body {
 .hof-results .character-card:focus-visible {
   border-color: rgb(215 184 120 / 55%);
   box-shadow: 0 10px 20px rgb(0 0 0 / 32%);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .hof-results .character-card__portrait {
-  aspect-ratio: 4 / 4.3;
+  aspect-ratio: 4 / 5;
   background: #191714;
 }
 
@@ -388,19 +389,8 @@ body {
   filter: grayscale(1) brightness(0.58) contrast(1.04);
 }
 
-.hof-results .character-card__portrait::before {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  background: linear-gradient(180deg, rgb(10 8 7 / 6%) 34%, rgb(10 8 7 / 88%) 100%);
-  content: "";
-  pointer-events: none;
-}
-
 .hof-results .character-card__portrait::after {
-  z-index: 3;
-  border-color: rgb(231 213 180 / 24%);
-  background: none;
+  border-color: rgb(231 213 180 / 30%);
 }
 
 .hof-results .character-card[data-status="Martwa"] .character-card__status {
@@ -417,32 +407,27 @@ body {
 }
 
 .hof-results .character-card__achievements {
-  z-index: 4;
-  top: 0.85rem;
-  left: 0.85rem;
-  right: 0.85rem;
-  max-height: 1.8rem;
+  z-index: 2;
+  top: 0.45rem;
+  left: 0.45rem;
+  right: 0.45rem;
+  max-height: 1.45rem;
   overflow: hidden;
-  gap: 0.35rem;
+  gap: 0.2rem;
 }
 
 .hof-results .character-card__body {
-  position: absolute;
-  z-index: 2;
-  right: 0.85rem;
-  bottom: 3rem;
-  left: 0.85rem;
-  gap: 0.25rem;
-  padding: 0;
-  pointer-events: none;
+  position: static;
+  gap: 0.35rem;
+  padding: 0.6rem;
 }
 
 .hof-results .character-card__body h3 {
-  color: #fff7e9;
+  margin: 0;
+  color: #efe6d6;
   font:
-    600 clamp(0.72rem, 0.82vw, 0.9rem) / 1.15 "Space Grotesk",
+    600 0.86rem / 1.2 "Space Grotesk",
     sans-serif;
-  text-shadow: 0 2px 12px rgb(0 0 0 / 85%);
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
@@ -452,44 +437,64 @@ body {
 .hof-results .character-card__player {
   overflow: hidden;
   color: var(--gold-soft);
-  font-size: 0.62rem;
+  font-size: 0.68rem;
   text-overflow: ellipsis;
   white-space: nowrap;
-  text-shadow: 0 2px 8px rgb(0 0 0 / 90%);
 }
 
 .hof-results .character-card__row {
-  display: none;
+  display: grid;
+  grid-template-columns: 2.7rem minmax(0, 1fr);
+  gap: 0.35rem;
+  color: #d4cbbb;
+  font-size: 0.62rem;
+  line-height: 1.35;
+}
+
+.hof-results .character-card__row label {
+  overflow: hidden;
+  color: #8d877d;
+  font-size: 0.52rem;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+}
+
+.hof-results .character-card__row > :last-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .hof-results .character-card__status {
   z-index: 2;
-  right: 0.85rem;
-  bottom: 0.85rem;
+  right: 0.45rem;
+  bottom: 0.45rem;
   border-color: rgb(255 255 255 / 24%);
   background: rgb(17 15 13 / 88%);
   color: #e8dfd1;
+  padding: 0.24rem 0.38rem;
+  font-size: 0.58rem;
 }
 
 .hof-results #grid .achievement-badge {
-  width: 1.45rem;
-  height: 1.45rem;
+  width: 1.1rem;
+  height: 1.1rem;
   border: 1px solid rgb(215 184 120 / 48%);
   background: rgb(16 14 12 / 90%);
   box-shadow: 0 1px 4px rgb(0 0 0 / 52%);
   color: #f4d997;
-  font-size: 0.72rem;
+  font-size: 0.6rem;
 }
 
 .hof-results .character-card__achievement-count {
-  margin: 0;
-  padding: 0.72rem 0.9rem;
+  margin: auto 0 0;
+  padding: 0.45rem 0.6rem;
   overflow: hidden;
   border-top: 1px solid rgb(231 213 180 / 12%);
   background: #151310;
   color: #b7aa95;
-  font-size: 0.62rem;
-  letter-spacing: 0.04em;
+  font-size: 0.58rem;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
