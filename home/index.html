@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#0b0d0e" />
+    <meta name="theme-color" content="#100e0c" />
     <meta
       name="description"
-      content="Vengrath — kampanie, projekty graficzne i narzędzia."
+      content="Odkryj światy Vengrath: kampanie, opowieści i projekty tworzone przy wspólnym stole."
     />
     <title>Vengrath</title>
     <link rel="icon" href="/core/graphics/favicon/favicon.ico" />
@@ -16,36 +16,59 @@
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/home/home.css?v=empty-state-1" />
     <link
       rel="stylesheet"
       href="/core/templates/VoronoiShatter/VoronoiShatter.css"
     />
+    <link rel="stylesheet" href="/home/home.css?v=editorial-home-1" />
   </head>
   <body>
     <div class="home-app">
       <header class="home-topbar">
-        <a class="home-brand" href="/home/"
-          ><img src="/core/graphics/favicon/mg-logo.png" alt="" /><span
-            >VENGRATH</span
-          ></a
-        >
-        <nav id="filters" class="voronoi-filters" aria-label="Kategorie"></nav>
-        <label class="home-search"
-          ><span aria-hidden="true">⌕</span
-          ><input
-            id="search"
-            type="search"
-            placeholder="Szukaj…"
-            aria-label="Szukaj"
-        /></label>
+        <div class="home-masthead">
+          <a
+            class="home-brand"
+            href="/home/"
+            aria-label="Vengrath — strona główna"
+          >
+            <img src="/core/graphics/favicon/mg-logo.png" alt="" />
+            <span>VENGRATH</span>
+          </a>
+
+          <div class="home-intro">
+            <p class="home-eyebrow">ŚWIATY PRZY WSPÓLNYM STOLE</p>
+            <h1>Odkryj swój kolejny świat.</h1>
+            <p class="home-deck">
+              Kampanie, bohaterowie i opowieści, które wciąż się tworzą.
+            </p>
+          </div>
+
+          <label class="home-search">
+            <span aria-hidden="true">⌕</span>
+            <input
+              id="search"
+              type="search"
+              placeholder="Szukaj kampanii…"
+              aria-label="Szukaj kampanii"
+            />
+          </label>
+        </div>
+
+        <div class="home-browsebar">
+          <p class="home-browse-label">PRZEGLĄDAJ</p>
+          <nav id="filters" class="voronoi-filters" aria-label="Kategorie"></nav>
+        </div>
       </header>
       <main
         id="viewport"
         class="voronoi-viewport"
-        aria-label="Przesuwane pole stron"
+        aria-label="Odkrywaj strony Vengrath"
       >
         <div id="board" class="voronoi-board"></div>
+        <p class="home-field-hint" aria-hidden="true">
+          <span class="home-field-hint__icon">↔</span>
+          Przeciągnij, by odkrywać · wybierz kartę, by wejść do świata
+        </p>
         <div
           id="empty-state"
           class="voronoi-empty-state"

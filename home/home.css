@@ -1,110 +1,332 @@
 :root {
   color-scheme: dark;
   font-family: "Fira Sans Extra Condensed", sans-serif;
-  background: #0b0d0e;
-  color: #f1f2f2;
+  background: #100e0c;
+  color: #f4efe5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --home-bg: #100e0c;
+  --home-surface: #191613;
+  --home-line: rgb(231 213 180 / 14%);
+  --home-muted: #aaa298;
+  --home-gold: #d7b878;
+  --home-copper: #b87951;
 }
+
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
-  margin: 0;
   width: 100%;
   height: 100%;
+  margin: 0;
   overflow: hidden;
 }
+
 body {
-  background: #0b0d0e;
+  background:
+    radial-gradient(ellipse at 50% -30%, rgb(120 72 42 / 18%), transparent 65%),
+    var(--home-bg);
 }
+
+button,
+input {
+  font: inherit;
+}
+
 .home-app {
-  height: 100dvh;
   display: flex;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
   flex-direction: column;
 }
+
 .home-topbar {
+  position: relative;
   z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  min-height: 5.2rem;
-  padding: 0.7rem 1.2rem;
-  border-bottom: 1px solid #292e31;
-  background: #0b0d0e;
-}
-.home-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
   flex: 0 0 auto;
-  color: #f1f2f2;
+  padding: 1.05rem clamp(1rem, 4vw, 3.75rem) 0;
+  border-bottom: 1px solid var(--home-line);
+  background: linear-gradient(180deg, rgb(25 22 19 / 98%), rgb(19 17 15 / 96%));
+  box-shadow: 0 14px 40px rgb(0 0 0 / 18%);
+}
+
+.home-masthead {
+  display: grid;
+  grid-template-columns: auto minmax(16rem, 1fr) minmax(12rem, 17rem);
+  align-items: center;
+  gap: clamp(1rem, 3vw, 3rem);
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.home-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #f4efe5;
   text-decoration: none;
-  font:
-    1.5rem Voltaire,
-    sans-serif;
-  letter-spacing: 0.12em;
+  font: 1.25rem Voltaire, sans-serif;
+  letter-spacing: 0.17em;
+  white-space: nowrap;
 }
+
 .home-brand img {
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 2.7rem;
+  height: 2.7rem;
   object-fit: contain;
+  filter: drop-shadow(0 0 14px rgb(215 184 120 / 22%));
 }
-.voronoi-filters {
-  flex: 1;
+
+.home-intro {
+  min-width: 0;
+  padding: 0.25rem 0 0.85rem;
 }
+
+.home-eyebrow,
+.home-browse-label {
+  margin: 0;
+  color: var(--home-gold);
+  font: 500 0.66rem "DM Mono", monospace;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.home-intro h1 {
+  margin: 0.24rem 0 0.15rem;
+  color: #f5ecda;
+  font: 500 clamp(1.55rem, 3.1vw, 2.55rem) / 1.05 "Fira Sans Extra Condensed", sans-serif;
+  letter-spacing: 0.015em;
+  text-wrap: balance;
+}
+
+.home-deck {
+  margin: 0;
+  color: var(--home-muted);
+  font-size: clamp(0.88rem, 1.2vw, 1rem);
+  letter-spacing: 0.015em;
+}
+
 .home-search {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  min-width: 9rem;
-  max-width: 15rem;
-  border: 1px solid #292e31;
-  border-radius: 999px;
-  padding: 0.45rem 0.75rem;
-  color: #858b8e;
+  gap: 0.65rem;
+  min-width: 0;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid rgb(231 213 180 / 19%);
+  border-radius: 4px;
+  background: rgb(8 7 6 / 42%);
+  color: var(--home-gold);
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
 }
+
+.home-search:focus-within {
+  border-color: rgb(215 184 120 / 70%);
+  background: rgb(8 7 6 / 70%);
+  box-shadow: 0 0 0 3px rgb(215 184 120 / 10%);
+}
+
+.home-search > span {
+  font: 1.6rem / 0.8 sans-serif;
+}
+
 .home-search input {
   width: 100%;
   min-width: 0;
+  padding: 0;
   border: 0;
   outline: 0;
   background: transparent;
-  color: #f1f2f2;
-  font: inherit;
+  color: #f4efe5;
+  font-size: 0.95rem;
 }
+
+.home-search input::placeholder {
+  color: #8c857b;
+}
+
+.home-browsebar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1500px;
+  min-height: 3.25rem;
+  margin: 0 auto;
+  border-top: 1px solid rgb(231 213 180 / 9%);
+}
+
+.home-browse-label {
+  flex: 0 0 auto;
+  color: #8b8275;
+  font-size: 0.61rem;
+  letter-spacing: 0.16em;
+}
+
+.voronoi-filters {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 0.45rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.voronoi-filters::-webkit-scrollbar {
+  display: none;
+}
+
+.voronoi-filter {
+  flex: 0 0 auto;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background: transparent;
+  color: #b7afa3;
+  font: 0.85rem "Fira Sans Extra Condensed", sans-serif;
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    border-color 150ms ease,
+    background-color 150ms ease;
+}
+
+.voronoi-filter:hover {
+  border-color: rgb(215 184 120 / 32%);
+  color: #f4efe5;
+}
+
+.voronoi-filter.is-active {
+  border-color: rgb(215 184 120 / 42%);
+  background: rgb(215 184 120 / 10%);
+  color: #efd59c;
+}
+
 .voronoi-viewport {
-  height: calc(100dvh - 5.2rem);
-  scroll-behavior: auto;
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  background:
+    radial-gradient(ellipse at 50% 45%, rgb(119 75 44 / 10%), transparent 58%),
+    linear-gradient(135deg, #100e0c, #15120f 52%, #100e0c);
+  scrollbar-width: none;
+  cursor: grab;
+  touch-action: pan-x pan-y;
+  overscroll-behavior: contain;
 }
+
+.voronoi-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.voronoi-viewport::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border: 1px solid rgb(231 213 180 / 5%);
+  content: "";
+  pointer-events: none;
+}
+
+.voronoi-board {
+  position: relative;
+}
+
+.voronoi-shard {
+  cursor: pointer;
+  transition: filter 180ms ease;
+}
+
 .voronoi-shard:focus-visible {
-  outline: 2px solid #e0c78e;
-  outline-offset: -4px;
+  outline: 2px solid #f0d99e;
+  outline-offset: -5px;
 }
-@media (max-width: 850px) {
-  .home-topbar {
-    flex-wrap: wrap;
-    gap: 0.55rem;
-    padding: 0.65rem;
-  }
-  .home-brand {
-    font-size: 1.25rem;
-  }
-  .home-brand img {
-    width: 2rem;
-    height: 2rem;
-  }
-  .voronoi-filters {
-    order: 3;
-    flex-basis: 100%;
-  }
-  .home-search {
-    margin-left: auto;
-    max-width: 12rem;
-  }
-  .voronoi-viewport {
-    height: calc(100dvh - 7.5rem);
-  }
+
+.voronoi-shard image {
+  filter: saturate(0.82) brightness(0.83);
+  transition: filter 220ms ease;
 }
+
+.voronoi-shard:hover image,
+.voronoi-shard:focus-visible image {
+  filter: saturate(1) brightness(1.08);
+}
+
+.voronoi-shard-title {
+  fill: #fff8eb;
+  text-anchor: middle;
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: rgb(12 10 8 / 78%);
+  stroke-linejoin: round;
+  stroke-width: 3px;
+  pointer-events: none;
+}
+
+.voronoi-shard-tag {
+  fill: #efd59c;
+  text-anchor: middle;
+  font:
+    500 10px "DM Mono",
+    monospace;
+  letter-spacing: 0.1em;
+  paint-order: stroke;
+  stroke: rgb(12 10 8 / 75%);
+  stroke-width: 2px;
+  pointer-events: none;
+}
+
+.voronoi-shard-tint {
+  fill: rgb(10 8 7 / 27%);
+  stroke: rgb(237 218 180 / 28%);
+  stroke-width: 1.1px;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+  transition:
+    fill 200ms ease,
+    stroke 200ms ease;
+}
+
+.voronoi-shard:hover .voronoi-shard-tint,
+.voronoi-shard:focus-visible .voronoi-shard-tint {
+  fill: rgb(10 8 7 / 10%);
+  stroke: rgb(247 226 185 / 82%);
+}
+
+.home-field-hint {
+  position: fixed;
+  z-index: 2;
+  right: clamp(1rem, 3vw, 2.5rem);
+  bottom: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgb(231 213 180 / 13%);
+  border-radius: 2px;
+  background: rgb(16 14 12 / 76%);
+  color: #c2b9aa;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+}
+
+.home-field-hint__icon {
+  color: var(--home-gold);
+  font: 1.2rem / 1 sans-serif;
+}
+
 .voronoi-empty-state {
   position: absolute;
   inset: 0;
@@ -114,27 +336,180 @@ body {
   justify-content: center;
   gap: 1rem;
   padding: 1.5rem;
+  color: #f4efe5;
   text-align: center;
-  color: #f1f2f2;
 }
+
 .voronoi-empty-state[hidden] {
   display: none;
 }
+
 .voronoi-empty-state p {
   margin: 0;
+  color: var(--home-muted);
   font-size: 1.1rem;
 }
+
 .voronoi-empty-state button {
-  border: 1px solid #bca06a;
-  border-radius: 999px;
-  padding: 0.55rem 0.9rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--home-gold);
+  border-radius: 2px;
   background: transparent;
-  color: #f1f2f2;
-  font: inherit;
+  color: #f4efe5;
   cursor: pointer;
+  transition:
+    color 150ms ease,
+    background-color 150ms ease;
 }
+
 .voronoi-empty-state button:hover,
 .voronoi-empty-state button:focus-visible {
-  background: #bca06a;
-  color: #0b0d0e;
+  background: var(--home-gold);
+  color: var(--home-bg);
+}
+
+.voronoi-error {
+  padding: 2rem;
+  color: #ffb4b4;
+}
+
+:focus-visible {
+  outline: 2px solid #f0d99e;
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .home-topbar {
+    padding-inline: 1.25rem;
+  }
+
+  .home-masthead {
+    grid-template-columns: auto minmax(0, 1fr) minmax(10rem, 14rem);
+    gap: 1.2rem;
+  }
+
+  .home-brand {
+    gap: 0.4rem;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+  }
+
+  .home-brand img {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+}
+
+@media (max-width: 680px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .home-app {
+    height: 100vh;
+    height: 100svh;
+    min-height: 520px;
+    height: 100dvh;
+  }
+
+  .home-topbar {
+    padding: 0.75rem 1rem 0;
+  }
+
+  .home-masthead {
+    grid-template-columns: 1fr auto;
+    gap: 0.65rem 1rem;
+  }
+
+  .home-brand {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 1.05rem;
+  }
+
+  .home-brand img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .home-search {
+    grid-column: 2;
+    grid-row: 1;
+    width: min(44vw, 15rem);
+    padding: 0.55rem 0.7rem;
+  }
+
+  .home-intro {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    padding: 0.3rem 0 0.9rem;
+  }
+
+  .home-eyebrow {
+    font-size: 0.58rem;
+  }
+
+  .home-intro h1 {
+    font-size: clamp(1.8rem, 8vw, 2.45rem);
+  }
+
+  .home-deck {
+    max-width: 34rem;
+    font-size: 0.9rem;
+  }
+
+  .home-browsebar {
+    display: block;
+    min-height: 0;
+    padding: 0.55rem 0 0.65rem;
+  }
+
+  .home-browse-label {
+    margin-bottom: 0.35rem;
+  }
+
+  .voronoi-filters {
+    margin-inline: -0.15rem;
+  }
+
+  .voronoi-filter {
+    padding: 0.34rem 0.65rem;
+  }
+
+  .home-field-hint {
+    right: 0.65rem;
+    bottom: 0.65rem;
+    left: 0.65rem;
+    justify-content: center;
+    padding: 0.5rem;
+    font-size: 0.72rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .home-brand {
+    font-size: 0.9rem;
+  }
+
+  .home-search {
+    width: 43vw;
+  }
+
+  .home-search input {
+    font-size: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
