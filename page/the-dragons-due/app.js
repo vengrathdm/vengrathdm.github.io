@@ -45,13 +45,27 @@ function mountSectionNavigation() {
     });
   }
 
+  const validSections = new Set(sections.map((section) => section.dataset.pageSection));
+  const sectionFromHash = () => {
+    const requested = window.location.hash.replace(/^#/, "");
+    return validSections.has(requested) ? requested : "campaign";
+  };
+
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
-      selectSection(button.dataset.section);
+      const sectionId = button.dataset.section;
+      selectSection(sectionId);
+      if (window.location.hash !== `#${sectionId}`) {
+        window.history.replaceState(null, "", `#${sectionId}`);
+      }
     });
   });
 
-  selectSection("campaign");
+  window.addEventListener("hashchange", () => {
+    selectSection(sectionFromHash());
+  });
+
+  selectSection(sectionFromHash());
 }
 
 async function initialize() {
