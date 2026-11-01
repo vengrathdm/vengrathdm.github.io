@@ -3808,3 +3808,42 @@ h4 {
     font-size: 7.5px;
   }
 }
+
+
+/* REKRUTACJA — kontrast nagłówków i tabel na ciemnym tle */
+#page-recruitment .section-head h2 {
+  color: #f4f2f8;
+  font-family: "Cinzel", serif;
+}
+#page-recruitment .section-head .rule {
+  background: #dedbe7;
+}
+#page-recruitment .file-strip {
+  color: #e6e3ed;
+}
+#page-recruitment .file-strip .case-no {
+  color: #c5a6e3;
+}
+#page-recruitment .intel {
+  border-top-color: #dedbe7;
+  border-bottom-color: #dedbe7;
+}
+#page-recruitment .intel-row {
+  border-bottom-color: #9994a2;
+}
+#page-recruitment .intel-row .name {
+  color: #f4f2f8;
+  font-family: "Cinzel", serif;
+}
+#page-recruitment .intel-row .desc {
+  color: #e6e3ed;
+  font-family: "Cinzel", serif;
+}
+#page-recruitment .intel-row .status {
+  color: #eee8f5;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+}
+#page-recruitment .intel-row .status.hostile {
+  background: rgba(104, 70, 143, 0.35);
+  color: #f4f2f8;
+}
