@@ -3988,3 +3988,91 @@ h4 {
     min-height: 0;
   }
 }
+
+
+/* REKRUTACJA — jedna, czytelna tabela zasad zamiast rozproszonych paneli */
+#page-recruitment .recruitment-intro {
+  max-width: 90ch;
+  margin: -4px 0 20px;
+  color: #e6e3ed;
+  font-size: 15px;
+  line-height: 1.65;
+}
+#page-recruitment .recruitment-guide-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid rgba(222, 219, 231, 0.55);
+  background: rgba(25, 20, 32, 0.92);
+}
+#page-recruitment .recruitment-guide {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: #f4f2f8;
+  font-size: 15px;
+  line-height: 1.6;
+}
+#page-recruitment .recruitment-guide th,
+#page-recruitment .recruitment-guide td {
+  padding: 18px 24px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(222, 219, 231, 0.28);
+}
+#page-recruitment .recruitment-guide thead th {
+  background: rgba(126, 91, 164, 0.22);
+  color: #e6d8f5;
+  font-family: "Cinzel", serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+#page-recruitment .recruitment-guide thead th:first-child,
+#page-recruitment .recruitment-guide tbody th {
+  width: 23%;
+}
+#page-recruitment .recruitment-guide tbody th {
+  color: #f4f2f8;
+  font-family: "Cinzel", serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+#page-recruitment .recruitment-guide tbody td {
+  color: #e6e3ed;
+}
+#page-recruitment .recruitment-guide tbody td strong {
+  color: #fff;
+  font-weight: 700;
+}
+#page-recruitment .recruitment-guide tbody tr:last-child th,
+#page-recruitment .recruitment-guide tbody tr:last-child td {
+  border-bottom: 0;
+}
+#page-recruitment .recruitment-guide-ban {
+  background: rgba(130, 55, 65, 0.18);
+}
+#page-recruitment .recruitment-guide-ban th,
+#page-recruitment .recruitment-guide-ban td,
+#page-recruitment .recruitment-guide-ban td strong {
+  color: #f2caca !important;
+}
+@media (min-width: 1500px) {
+  #page-recruitment .recruitment-guide th,
+  #page-recruitment .recruitment-guide td {
+    padding: 22px 30px;
+  }
+}
+@media (max-width: 640px) {
+  #page-recruitment .recruitment-guide {
+    table-layout: auto;
+    font-size: 14px;
+  }
+  #page-recruitment .recruitment-guide th,
+  #page-recruitment .recruitment-guide td {
+    padding: 13px 14px;
+  }
+  #page-recruitment .recruitment-guide thead th:first-child,
+  #page-recruitment .recruitment-guide tbody th {
+    width: 34%;
+  }
+}
