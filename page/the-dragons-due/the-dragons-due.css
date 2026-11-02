@@ -4076,3 +4076,253 @@ h4 {
     width: 34%;
   }
 }
+
+
+/* REKRUTACJA — czytelny układ oparty na treści, nie ozdobnych kartach */
+#page-recruitment {
+  width: min(100%, 1760px);
+  max-width: 1760px;
+}
+#page-recruitment .recruitment-hero {
+  max-width: 1100px;
+  margin: 26px 0 30px;
+}
+#page-recruitment .recruitment-eyebrow {
+  color: #c5a6e3;
+  font-family: "Cinzel", serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+#page-recruitment .recruitment-hero h2 {
+  margin: 10px 0 14px;
+  color: #f7f4fa;
+  font-family: "Cinzel", serif;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.15;
+}
+#page-recruitment .recruitment-hero p {
+  max-width: 78ch;
+  margin: 0;
+  color: #e6e3ed;
+  font-size: clamp(16px, 1.2vw, 19px);
+  line-height: 1.7;
+}
+#page-recruitment .recruitment-hook {
+  max-width: 1250px;
+  margin: 0 0 34px;
+  padding: 22px 26px;
+  border-left: 3px solid #c5a6e3;
+  background: rgba(126, 91, 164, .12);
+}
+#page-recruitment .recruitment-hook strong {
+  color: #d9c4ec;
+  font-family: "Cinzel", serif;
+  font-size: 11px;
+  letter-spacing: .1em;
+}
+#page-recruitment .recruitment-hook p {
+  margin: 9px 0 0;
+  color: #f0edf4;
+  font-size: 16px;
+  line-height: 1.7;
+}
+#page-recruitment .recruitment-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid rgba(222,219,231,.45);
+  border-left: 1px solid rgba(222,219,231,.25);
+}
+#page-recruitment .recruitment-fact {
+  min-width: 0;
+  padding: 19px 22px;
+  border-right: 1px solid rgba(222,219,231,.25);
+  border-bottom: 1px solid rgba(222,219,231,.45);
+  background: rgba(25,20,32,.38);
+}
+#page-recruitment .recruitment-fact > span,
+#page-recruitment .recruitment-fact strong,
+#page-recruitment .recruitment-fact small {
+  display: block;
+}
+#page-recruitment .recruitment-fact > span {
+  margin-bottom: 7px;
+  color: #c5a6e3;
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+#page-recruitment .recruitment-fact strong {
+  color: #fff;
+  font-size: 17px;
+  line-height: 1.4;
+}
+#page-recruitment .recruitment-fact small {
+  margin-top: 4px;
+  color: #d4cedd;
+  font-size: 13px;
+  line-height: 1.5;
+}
+#page-recruitment .recruitment-two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 64px);
+  margin-top: 34px;
+}
+#page-recruitment .recruitment-text-panel {
+  min-width: 0;
+  padding-top: 20px;
+  border-top: 2px solid rgba(197,166,227,.65);
+}
+#page-recruitment .recruitment-text-panel h3 {
+  margin: 0 0 12px;
+  color: #f4f2f8;
+  font-family: "Cinzel", serif;
+  font-size: clamp(20px, 2vw, 25px);
+}
+#page-recruitment .recruitment-text-panel p {
+  max-width: 65ch;
+  margin: 0 0 13px;
+  color: #e6e3ed;
+  font-size: 15px;
+  line-height: 1.7;
+}
+#page-recruitment .recruitment-intro {
+  max-width: 90ch;
+  margin: -4px 0 20px;
+  color: #e6e3ed;
+  font-size: 15px;
+  line-height: 1.65;
+}
+#page-recruitment .recruitment-guide-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid rgba(222,219,231,.5);
+  background: rgba(25,20,32,.85);
+}
+#page-recruitment .recruitment-guide {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: #f4f2f8;
+  font-size: 15px;
+  line-height: 1.65;
+}
+#page-recruitment .recruitment-guide th,
+#page-recruitment .recruitment-guide td {
+  padding: 17px 22px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(222,219,231,.25);
+}
+#page-recruitment .recruitment-guide thead th {
+  background: rgba(126,91,164,.2);
+  color: #e6d8f5;
+  font-family: "Cinzel", serif;
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+#page-recruitment .recruitment-guide thead th:first-child,
+#page-recruitment .recruitment-guide tbody th {
+  width: 23%;
+}
+#page-recruitment .recruitment-guide tbody th {
+  color: #f4f2f8;
+  font-family: "Cinzel", serif;
+  font-size: 14px;
+}
+#page-recruitment .recruitment-guide tbody td {
+  color: #e6e3ed;
+}
+#page-recruitment .recruitment-guide tbody td strong {
+  color: #fff;
+}
+#page-recruitment .recruitment-guide-ban {
+  background: rgba(130,55,65,.17);
+}
+#page-recruitment .recruitment-guide-ban th,
+#page-recruitment .recruitment-guide-ban td,
+#page-recruitment .recruitment-guide-ban td strong {
+  color: #f2caca !important;
+}
+#page-recruitment .recruitment-apply {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, .7fr);
+  gap: 30px;
+  align-items: center;
+  margin-top: 42px;
+  padding: clamp(24px, 3vw, 42px);
+  border: 1px solid rgba(197,166,227,.55);
+  background: linear-gradient(120deg, rgba(42,36,50,.95), rgba(25,20,32,.96));
+}
+#page-recruitment .recruitment-apply h3 {
+  margin: 8px 0 10px;
+  color: #fff;
+  font-family: "Cinzel", serif;
+  font-size: clamp(25px, 2.5vw, 34px);
+}
+#page-recruitment .recruitment-apply p {
+  max-width: 76ch;
+  margin: 0;
+  color: #e6e3ed;
+  font-size: 15px;
+  line-height: 1.7;
+}
+#page-recruitment .recruitment-apply-note {
+  padding: 19px 21px;
+  border-left: 2px solid #d8bb63;
+  background: rgba(216,187,99,.08);
+}
+#page-recruitment .recruitment-apply-note strong,
+#page-recruitment .recruitment-apply-note span {
+  display: block;
+}
+#page-recruitment .recruitment-apply-note strong {
+  margin-bottom: 7px;
+  color: #e5cf91;
+  font-family: "Cinzel", serif;
+  font-size: 14px;
+}
+#page-recruitment .recruitment-apply-note span {
+  color: #f0edf4;
+  font-size: 14px;
+  line-height: 1.6;
+}
+@media (min-width: 1500px) {
+  #page-recruitment .recruitment-facts {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+@media (max-width: 900px) {
+  #page-recruitment .recruitment-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #page-recruitment .recruitment-two-columns,
+  #page-recruitment .recruitment-apply {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  #page-recruitment .recruitment-facts {
+    grid-template-columns: 1fr;
+  }
+  #page-recruitment .recruitment-hook {
+    padding: 18px;
+  }
+  #page-recruitment .recruitment-guide {
+    table-layout: auto;
+    font-size: 13px;
+  }
+  #page-recruitment .recruitment-guide th,
+  #page-recruitment .recruitment-guide td {
+    padding: 12px;
+  }
+  #page-recruitment .recruitment-guide thead th:first-child,
+  #page-recruitment .recruitment-guide tbody th {
+    width: 35%;
+  }
+}
