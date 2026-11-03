@@ -4342,3 +4342,17 @@ h4 {
   object-fit: contain;
   border-radius: 50%;
 }
+
+
+/* Campaign cover artwork: 20% inset with a white field behind it. */
+.heartwell-hero-visual {
+  background: #fff;
+}
+
+.heartwell-hero-visual::before {
+  background: none;
+}
+
+.heartwell-hero-visual img {
+  transform: scale(0.8);
+}
