@@ -556,7 +556,7 @@
     "category": "Hidden",
     "visibility": "hidden",
     "url": "/page/curse-of-strahd-muppet-show/",
-    "image": "/page/curse-of-strahd-muppet-show/res/graphics/hero-image.webp",
+    "image": "/core/graphics/voronoi/curse-of-strahd-muppets-musical.webp",
     "layout": "bespoke",
     "manifest": null
   }
