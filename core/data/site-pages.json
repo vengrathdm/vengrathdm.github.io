@@ -548,5 +548,16 @@
     "image": "/core/graphics/voronoi/descent-into-avernus.webp",
     "layout": "bespoke",
     "manifest": "/page/descent-into-avernus/manifest.json"
+  },
+  {
+    "id": "curse-of-strahd-muppet-show",
+    "title": "The Muppet Show: Curse of Strahd",
+    "type": "campaign",
+    "category": "Hidden",
+    "visibility": "hidden",
+    "url": "/page/curse-of-strahd-muppet-show/",
+    "image": "/page/curse-of-strahd-muppet-show/res/graphics/hero-image.webp",
+    "layout": "bespoke",
+    "manifest": null
   }
 ]
