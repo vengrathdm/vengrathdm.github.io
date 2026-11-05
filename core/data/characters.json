@@ -5850,5 +5850,24 @@
       "Menaces of Gloomforest"
     ],
     "achievementIds": []
+  },
+  {
+    "portrait": "/core/portraits/char-0293.webp",
+    "character": "Kiki Croc",
+    "player": "Zuza",
+    "campaigns": [
+      "The Dragon's Due"
+    ],
+    "classes": [
+      "Barbarian"
+    ],
+    "race": "Lizardman",
+    "status": "Aktywna",
+    "id": "char-0293",
+    "history": "Tajemnicze tabliczki nieopodal bagna? Ostrzeżenie przed niebezpieczeństwem? Prawdę mówiąc tabliczki się nie mylą, albowiem to konkretne miejsce zostało obrane przez Kiki jako swoje leże. Nietypowa istota, z twarzy człowiek, ale pokryty łuskami, posiadający ostre kły i wielkie wzbudzające strach pazury i przypieczętowujący to wszystko krokodyli ogon. To nikt inny, jak młoda i drapieżna Kiki Croc, która porzucona przez swoją rodzinę postanowiła spędzić swoje młodzieńcze lata przyprawiając podróżnych o gęsią skórkę, pływając w wielkim bagnie wśród piranii i pijawek i przejmując bagno jako swoje terytorium. Ale ile można tak żyć? Wszystko już przecież widziała, a w końcu kiedyś to miejsce musiało jej się znudzić. Uznała w końcu, że skoro uwielbia kłopoty, rozlew krwi, a ludzie często drżą na jej widok to może przydałoby się to wykorzystać? I tak oto postanowiła zostać najemniczką i przyjęła swoje pierwsze zlecenie...",
+    "modules": [
+      "The Dragon's Due"
+    ],
+    "achievementIds": []
   }
 ]
