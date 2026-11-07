@@ -5880,5 +5880,81 @@
       "The Dragon's Due"
     ],
     "achievementIds": []
+  },
+  {
+    "portrait": "/core/portraits/char-0294.webp",
+    "character": "Ivelios",
+    "player": "Huqel",
+    "campaigns": [
+      "The Dragon's Due"
+    ],
+    "classes": [
+      "Rogue"
+    ],
+    "race": "Elf",
+    "status": "Aktywna",
+    "id": "char-0294",
+    "history": "Wychowany pośród pomniejszej szlachty Cormyru, Ivelios był jednym z elfów związanych z rodem Haldane, który władał niewielkimi, wzgórzystymi terenami na północ od Arabel. W ich posiadłości stale rezydowało kilkoro spokrewnionych elfów, zajmujących się rozmaitymi obowiązkami, przede wszystkim jednak pełniących rolę nauczycieli i opiekunów dla młodych dziedziców. Przez pierwsze lata Ivelios nie miał własnych podopiecznych, zamiast tego uwieczniając na płótnie portrety żywych oraz zmarłych członków rodu, a także skrupulatnie doglądając rodowej krypty, gdzie spoczywali wszyscy Haldane. Jego cicha, spokojna natura sprawiła, że z czasem stał się powiernikiem sekretów i trosk domowników, a głowa rodu zaczęła powierzać mu dyskretne misje w najbliższej okolicy.\nNie pamięta, kiedy dokładnie w jego życiu pojawiła się Wieczorna Chwała, lecz jej obecność nadała głębszy sens rytuałom, które dotąd przeprowadzał w samotności. Jako jej oddany wyznawca wierzy w miłość dozgonną - a nawet trwającą dłużej niż samo życie - odnajdując w naukach bogini wartości bliskie sercu lojalnego mieszkańca Cormyru. Ivelios stracił w życiu wielu bliskich, co jedynie pogłębiło jego oddanie Wiecznej Piękności. Najpierw odeszli jego mentorzy, pozostawiając pustkę we wrażliwym, nieroztropnie rozkochanym sercu elfa. Los nie oszczędził także szlacheckiego rodu - nocny napad rabunkowy przerodził się w katastrofę, gdy zaprószony w chaosie ogień strawił posiadłość. Większość mieszkańców zginęła lub została porwana, a Ivelios, broniąc się ramię w ramię z innymi elfami, ledwie uszedł z życiem. Na jego twarzy pozostał ślad po nekrotycznej energii, której dotyk był ostatnim, co zapamiętał z całego chaosu.\nW odruchu niezłomnej lojalności, żywiąc nadzieję na powrót prawowitych właścicieli, próbował własnymi siłami odbudować zgliszcza. Kiedy jednak zadanie to go przerosło, ograniczył się do samotnego pielęgnowania pobliskiego cmentarza i rodowej krypty. Gdy z czasem ziemie te przeszły w obce ręce, został zmuszony do opuszczenia domostwa. Ostatni promyk nadziei na odnalezienie ocalałych potomków rodu Haldane pchnął go ostatecznie w nieznane dotąd ramiona przygody.",
+    "modules": [
+      "The Dragon's Due"
+    ],
+    "achievementIds": []
+  },
+  {
+    "portrait": "/core/portraits/char-0295.webp",
+    "character": "Xavier Mortis VII",
+    "player": "archangelss",
+    "campaigns": [
+      "The Dragon's Due"
+    ],
+    "classes": [
+      "Wizard"
+    ],
+    "race": "Dwarf",
+    "status": "Aktywna",
+    "id": "char-0295",
+    "history": "Xavier wywodzi się z długiego i potężnego rodu krasnoludzkich czarodziejów z górskich twierdz.\nNiedawno skończył terminowanie w tamtejszej szkole dla czarodziejów. Jedną z uświęconych tradycji w szlacheckich rodach\nJest wyruszenie w podróż, w której wykuje się swoją historię, dziedzictwo i majątek, BEZ wsparcia rodziny i koneksji w twierdzy.\nDlatego też większość krasnoludów opuszcza ją, gdy mają osiągnąć pełnię dorosłości.\nDodatkowo, każdy krasnolud płci męskiej przyjmuje imię Xavier, by uhonorować założyciela rodu, oraz każda krasnoludka przyjmuje imię Victoria, by uhonorować matkę założycielkę tego rodu.\nBez ukończenia tej części życia, wyprawy i powrotu w chwale, sławie z majątkiem i wielkimi czynami, majątek, honory i dostojeństwa w rodzinnej twierdzy, pozostają nieosiągalne dla takiego krasnoluda.\nAby spełnić rodzinną tradycję i uzyskać prawo do ponownego korzystania z rodzinnej fortuny, Xavier wyruszył w drogę, aby wykuć swoją historię. Tak trafił właśnie do tej wyprawy, chcąc zarobić swoje pierwsze pieniądze i rozpocząć poszukiwania swojej fortuny, chwały i sławy.",
+    "modules": [
+      "The Dragon's Due"
+    ],
+    "achievementIds": []
+  },
+  {
+    "portrait": "/core/portraits/char-0296.webp",
+    "character": "Raoh",
+    "player": "MarkX",
+    "campaigns": [
+      "The Dragon's Due"
+    ],
+    "classes": [
+      "Paladin"
+    ],
+    "race": "Human",
+    "status": "Aktywna",
+    "id": "char-0296",
+    "history": "Jako chłopiec, wywodzący się z biedoty Cimbaru, Raoh od małego uczestniczył w życiu miasta jako tancerz miecza. Uczony przez szermierzy z Cormyru i Turmish, Raoh zdołał jeszcze za młodu zdobyć złote laury w turnieju Innany. Życie artysty miecza skończyło się gdy miał 14 lat. Wtedy to jego mistrz wraz z całą szkołą zostali zabici przez konkurentów pokonanych na poprzednich igrzyskach. Raoh powalił sam trzech napastników, zostając przy tym ciężko rannym, jednak musiał ratować się ucieczką przed pozostałymi. Zbiegł do świątyni Assurana w Cimbarze. Poprzysiągł służbę Sprawiedliwemu Poecie w zamian za wybawienie z opresji. Przed bramami świątyni napastnicy zostali co do jednego rozdziobani przez czarne jastrzębie, zwiastun i sługi boga pomsty. Tego dnia, Raoh przybrał przydomek Rozjemca. Zabrał ze sobą miecz i hełm, i ruszył na zachód, by nieść ukojenie w stracie i sprawiedliwość w zadośćuczynieniu.",
+    "modules": [
+      "The Dragon's Due"
+    ],
+    "achievementIds": []
+  },
+  {
+    "portrait": "/core/portraits/char-0297.webp",
+    "character": "Grondar Silverleaf",
+    "player": "eltchar",
+    "campaigns": [
+      "The Dragon's Due"
+    ],
+    "classes": [
+      "Cleric"
+    ],
+    "race": "Human",
+    "status": "Aktywna",
+    "id": "char-0297",
+    "history": "Grondar Silverleaf, 20 letni mężczyzna o przeciętnej budowie, czarnych włosach i niebieskich oczach, był on drugim synem z mniejszego rodu szlacheckiego który mieszkał w Marsember i zajmował się handlem morskim. Na co dzień Grondar przyglądał się rodzinnemu interesowi i w wolnych chwilach eksperymentował przy kuchni testując nowe przepisy. Dla przeciętnych obywateli był on przyjemnym mężczyzną który okazjonalnie dzielił się swoimi kulinarnymi wybrykami. Podczas jednej z wizyt w lokalnej świątyni podczas modlitwy o dobre wiatry dla okrętu swojego ojca usłyszał on boski głos. Bogini Selune postanowiła nawiązać z nim kontakt. Grondar był zaszczycony atencją bóstwa, te natomiast skierowało go by rozpoczął on pielgrzymkę po Cormyrze w celu odnalezienia swojego przeznaczenia, nabrania doświadczeń których nie zdobędzie w mieście i pomagania potrzebującym w imieniu Selune. Bogini postanowiła błogosławić młodzieńcowi w jego podróży pozwalając mu by ten korzystał z magii w jej imieniu a jako symbol jego nowej drogi jego oczy przybrały srebrnej barwy. Po tym spotkaniu Grondar oznajmił swojej rodzinie że musi wyruszyć na duchową pielgrzymkę, przygotował swój ekwipunek na podróż, przywdział pancerz na drogę i wyruszył w stronę miasta Arabel które obrał za swój pierwszy cel podróży. Jednakże jego idylliczna pielgrzymka szybko spotkała się z brutalną rzeczywistością, koszt noclegów i podróży zaczął opróżniać portfel Grondara, by odnowić zasobność swego portfela postanowił on poszukać dorywczego zlecenia, poznając w ten sposób panią Tessaly Harnwick która zleciła mu jak i innym poszukiwaczom przygód których zatrudniła, eskortę transportu ziarna oraz dokumentów do miasteczka Eveningstar. Tym oto sposobem Grondar znalazł się w towarzystwie poszukiwaczy przygód z którymi aktualnie podróżuje do miejscowości zlecenia.",
+    "modules": [
+      "The Dragon's Due"
+    ],
+    "achievementIds": []
   }
 ]
