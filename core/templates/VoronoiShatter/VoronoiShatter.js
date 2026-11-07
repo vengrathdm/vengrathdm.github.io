@@ -185,12 +185,19 @@ export class VoronoiShatter {
     const sites = [];
     for (let c = 0; c < cols; c++) {
       const rh = h / Math.max(1, counts[c]);
-      for (let r = 0; r < counts[c]; r++)
+      for (let r = 0; r < counts[c]; r++) {
+        // A staggered, strongly-jittered lattice breaks the old column/row
+        // rhythm. The 16:10 source format informs the nominal cell footprint
+        // (tile : rh), while the offsets keep the resulting polygons organic.
+        const stagger = r % 2 ? tile * 0.28 : 0;
+        const xJitter = (Math.random() - 0.5) * tile * 0.58;
+        const yJitter = (Math.random() - 0.5) * rh * 0.58;
         sites.push({
           data: records[k++],
-          x: (c + 0.5) * tile + (Math.random() - 0.5) * tile * 0.42,
-          y: (r + 0.5) * rh + (Math.random() - 0.5) * rh * 0.34,
+          x: (c + 0.5) * tile + stagger + xJitter,
+          y: (r + 0.5) * rh + yJitter,
         });
+      }
     }
     this.world = world;
     this.board.style.width = world * 3 + "px";
