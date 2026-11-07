@@ -106,14 +106,16 @@
       "Sorcerer"
     ],
     "race": "Tiefling",
-    "status": "Aktywna",
+    "status": "Zwycięska",
     "id": "char-0006",
     "history": "Brak zapisków.",
     "modules": [
       "Menaces of Irensberg"
     ],
     "achievementIds": [
-      "zguba-lisza"
+      "zguba-lisza",
+      "pogromca-smokow",
+      "krolotworca"
     ]
   },
   {
@@ -223,14 +225,17 @@
       "Rogue"
     ],
     "race": "Dragonborn",
-    "status": "Aktywna",
+    "status": "Zwycięska",
     "id": "char-0012",
     "history": "Brak zapisków.",
     "modules": [
       "Menaces of Irensberg"
     ],
     "achievementIds": [
-      "zguba-lisza"
+      "zguba-lisza",
+      "pogromca-smokow",
+      "krolotworca",
+      "powrocony"
     ]
   },
   {
@@ -244,7 +249,7 @@
       "Cleric"
     ],
     "race": "Yokai",
-    "status": "Aktywna",
+    "status": "Zwycięska",
     "id": "char-0013",
     "history": "Brak zapisków.",
     "modules": [
@@ -254,7 +259,9 @@
       "zguba-lisza",
       "blazen",
       "powrocony",
-      "kolekcjoner-klatw"
+      "kolekcjoner-klatw",
+      "pogromca-smokow",
+      "krolotworca"
     ]
   },
   {
@@ -268,14 +275,17 @@
       "Paladin"
     ],
     "race": "Dwarf",
-    "status": "Aktywna",
+    "status": "Zwycięska",
     "id": "char-0014",
     "history": "Brak zapisków.",
     "modules": [
       "Menaces of Irensberg"
     ],
     "achievementIds": [
-      "zguba-lisza"
+      "zguba-lisza",
+      "pogromca-smokow",
+      "krolotworca",
+      "pan-na-wlosciach"
     ]
   },
   {
@@ -1571,7 +1581,8 @@
       "legenda",
       "blazen",
       "kapitan",
-      "nieoczekiwany-sojusz"
+      "nieoczekiwany-sojusz",
+      "hazardzista"
     ]
   },
   {
