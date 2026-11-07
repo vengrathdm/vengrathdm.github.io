@@ -200,13 +200,13 @@ input {
 }
 
 .voronoi-shard image {
-  filter: saturate(0.82) brightness(0.83);
-  transition: filter 220ms ease;
+  filter: saturate(1.1) brightness(0.96);
+  transition: filter 240ms ease;
 }
 
 .voronoi-shard:hover image,
 .voronoi-shard:focus-visible image {
-  filter: saturate(1) brightness(1.08);
+  filter: saturate(1.18) brightness(1.08);
 }
 
 .voronoi-shard-title {
@@ -235,20 +235,23 @@ input {
 }
 
 .voronoi-shard-tint {
-  fill: rgb(10 8 7 / 27%);
-  stroke: rgb(237 218 180 / 28%);
+  fill: rgb(10 8 7 / 13%);
+  stroke: rgb(237 218 180 / 43%);
   stroke-width: 1.1px;
   vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 3px rgb(215 184 120 / 18%));
   pointer-events: none;
   transition:
-    fill 200ms ease,
-    stroke 200ms ease;
+    fill 220ms ease,
+    stroke 220ms ease,
+    filter 220ms ease;
 }
 
 .voronoi-shard:hover .voronoi-shard-tint,
 .voronoi-shard:focus-visible .voronoi-shard-tint {
-  fill: rgb(10 8 7 / 10%);
-  stroke: rgb(247 226 185 / 82%);
+  fill: rgb(10 8 7 / 6%);
+  stroke: rgb(247 226 185 / 92%);
+  filter: drop-shadow(0 0 5px rgb(215 184 120 / 42%));
 }
 
 
