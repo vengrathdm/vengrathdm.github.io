@@ -1,4 +1,4 @@
-import { VoronoiShatter } from "/core/templates/VoronoiShatter/VoronoiShatter.js?v=voronoi-layout-1";
+import { VoronoiShatter } from "/core/templates/VoronoiShatter/VoronoiShatter.js?v=voronoi-layout-2";
 const field = new VoronoiShatter({
   viewport: document.querySelector("#viewport"),
   board: document.querySelector("#board"),
