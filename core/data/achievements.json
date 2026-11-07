@@ -187,5 +187,12 @@
     "icon": "🤝",
     "description": "Przemień dawnego wroga w prawdziwego sojusznika.",
     "category": "Odgrywanie Roli"
+  },
+  {
+    "id": "hazardzista",
+    "name": "Hazardzista",
+    "icon": "🎲",
+    "description": "Stawiaj liczne zakłady w losowych grach.",
+    "category": "Odgrywanie Roli"
   }
 ]
