@@ -326,7 +326,7 @@ body {
 }
 
 .hof-results .character-gallery {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 7.6rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15.2rem), 1fr));
   gap: 0.65rem;
 }
 
