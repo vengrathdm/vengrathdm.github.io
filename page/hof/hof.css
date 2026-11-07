@@ -972,3 +972,188 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* Align the Hall of Fame layout and visual language with the main Vengrath home page. */
+:root {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  --bg: #100e0c;
+  --surface: #191613;
+  --surface-raised: #211c17;
+  --text: #f4efe5;
+  --muted: #aaa298;
+  --line: rgb(231 213 180 / 14%);
+  --gold: #d7b878;
+  --gold-soft: #efd59c;
+}
+
+body {
+  width: 100%;
+  background:
+    radial-gradient(ellipse at 50% -30%, rgb(120 72 42 / 18%), transparent 65%),
+    var(--bg);
+}
+
+.hof-hero {
+  background: linear-gradient(180deg, rgb(25 22 19 / 98%), rgb(19 17 15 / 96%));
+  border-bottom-color: var(--line);
+  box-shadow: 0 14px 40px rgb(0 0 0 / 18%);
+}
+
+.hof-nav {
+  min-height: 4.15rem;
+  padding: 0.45rem clamp(0.75rem, 1.6vw, 1.5rem);
+  gap: clamp(0.75rem, 2vw, 1.75rem);
+  border-bottom-color: var(--line);
+}
+
+.hof-brand {
+  font: 1.2rem Voltaire, sans-serif;
+  letter-spacing: 0.15em;
+}
+
+.hof-brand img {
+  width: 2.5rem;
+  height: 2.5rem;
+  filter: drop-shadow(0 0 14px rgb(215 184 120 / 22%));
+}
+
+.hof-nav-link {
+  color: #b7afa3;
+  font: 0.84rem "Fira Sans Extra Condensed", sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.hof-nav-link:hover,
+.hof-nav-link:focus-visible {
+  color: #f4efe5;
+}
+
+.hof-hero-copy {
+  width: 100%;
+  max-width: none;
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2vw, 2rem);
+}
+
+.hof-hero-copy h1 {
+  color: #fff8eb;
+  font: 600 clamp(2.8rem, 6vw, 5rem) / 0.98 "Fira Sans Extra Condensed", sans-serif;
+  letter-spacing: -0.035em;
+}
+
+.hof-hero-copy h1 span {
+  color: var(--gold-soft);
+}
+
+.hof-main {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 1.25rem clamp(0.85rem, 1.8vw, 2rem) 3rem;
+}
+
+.hof-stats {
+  border-color: var(--line);
+  background: linear-gradient(90deg, rgb(215 184 120 / 5%), transparent 72%);
+}
+
+.hof-stats strong,
+.hof-results-heading > span {
+  color: var(--gold-soft);
+}
+
+.hof-filters {
+  border-color: var(--line);
+  border-radius: 2px;
+  background: linear-gradient(180deg, #191613, #13110f);
+}
+
+.hof-search,
+.hof-filter-grid select {
+  border-radius: 2px;
+  border-color: rgb(231 213 180 / 19%);
+  background: rgb(8 7 6 / 42%);
+}
+
+.hof-search:focus-within {
+  border-color: rgb(215 184 120 / 70%);
+  background: rgb(8 7 6 / 70%);
+  box-shadow: 0 0 0 3px rgb(215 184 120 / 10%);
+}
+
+.hof-filter-grid select:focus-visible {
+  border-color: var(--gold);
+  outline-color: rgb(215 184 120 / 30%);
+}
+
+.hof-reset {
+  border-radius: 2px;
+  border-color: rgb(231 213 180 / 20%);
+  color: #b7afa3;
+  font: 0.84rem "Fira Sans Extra Condensed", sans-serif;
+}
+
+.hof-reset:hover,
+.hof-reset:focus-visible {
+  border-color: var(--gold);
+  background: rgb(215 184 120 / 10%);
+  color: #efd59c;
+}
+
+.hof-results .character-card {
+  border-color: rgb(231 213 180 / 14%);
+  border-radius: 2px;
+  background: linear-gradient(180deg, #191613, #13110f);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 18%);
+}
+
+.hof-results .character-card:hover,
+.hof-results .character-card:focus-visible {
+  border-color: rgb(215 184 120 / 55%);
+  box-shadow: 0 10px 20px rgb(0 0 0 / 32%);
+}
+
+.hof-results .character-card__body h3 {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.hof-results .character-card__player {
+  color: var(--gold-soft);
+}
+
+.hof-results .character-card__achievement-count {
+  border-top-color: var(--line);
+  background: transparent;
+  color: var(--muted);
+}
+
+.hof-empty {
+  border-color: var(--line);
+  color: var(--muted);
+}
+
+@media (max-width: 620px) {
+  .hof-nav {
+    gap: 0.5rem 0.8rem;
+    padding: 0.5rem 0.7rem;
+  }
+
+  .hof-brand {
+    font-size: 1rem;
+  }
+
+  .hof-brand img {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+
+  .hof-nav-link {
+    font-size: 0.8rem;
+  }
+
+  .hof-main {
+    padding: 1rem 0.7rem 2.5rem;
+  }
+}
