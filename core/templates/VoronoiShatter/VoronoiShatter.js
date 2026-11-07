@@ -172,27 +172,24 @@ export class VoronoiShatter {
       w = Math.max(this.viewport.clientWidth || innerWidth, 320),
       records = this.current(),
       tile = Math.max(210, Math.min(322, w / 4.65)),
-      // Source graphics are 16:10. Use that as a soft layout target, not a
-      // polygon constraint: the Voronoi edges remain irregular and organic.
-      targetRows = Math.max(1, Math.round((h * 1.6) / tile)),
-      rows = Math.min(Math.max(1, records.length), targetRows),
-      cols = Math.max(1, Math.ceil(records.length / rows)),
-      rowHeight = h / rows,
+      viewportColumns = Math.ceil(w / tile),
+      contentColumns =
+        records.length >= 4
+          ? Math.min(viewportColumns, records.length - 1)
+          : viewportColumns,
+      cols = Math.max(1, Math.ceil(records.length / 5), contentColumns),
       world = Math.max(w, cols * tile);
     let k = 0;
     const counts = Array(cols).fill(Math.floor(records.length / cols));
     for (let i = 0; i < records.length % cols; i++) counts[i]++;
     const sites = [];
     for (let c = 0; c < cols; c++) {
-      const verticalOffset = ((rows - counts[c]) * rowHeight) / 2;
+      const rh = h / Math.max(1, counts[c]);
       for (let r = 0; r < counts[c]; r++)
         sites.push({
           data: records[k++],
-          x: (c + 0.5) * tile + (Math.random() - 0.5) * tile * 0.3,
-          y:
-            verticalOffset +
-            (r + 0.5) * rowHeight +
-            (Math.random() - 0.5) * rowHeight * 0.28,
+          x: (c + 0.5) * tile + (Math.random() - 0.5) * tile * 0.42,
+          y: (r + 0.5) * rh + (Math.random() - 0.5) * rh * 0.34,
         });
     }
     this.world = world;
