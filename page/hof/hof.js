@@ -105,6 +105,13 @@ function matches(c) {
       earned(c).includes(filters.achievement.value))
   );
 }
+function shuffleInPlace(items) {
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [items[i], items[j]] = [items[j], items[i]];
+  }
+  return items;
+}
 function render() {
   const rows = characters.filter(matches);
   $("resultCount").textContent = rows.length + " / " + characters.length;
@@ -201,7 +208,7 @@ document.addEventListener("keydown", (e) => {
 });
 try {
   const data = await loadCharacterCatalog();
-  characters = data.characters;
+  characters = shuffleInPlace(data.characters);
   achievements = data.achievements;
   setup();
   render();
