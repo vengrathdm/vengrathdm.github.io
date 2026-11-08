@@ -1,5 +1,6 @@
 import { AudioPlayer } from "/core/templates/AudioPlayer/AudioPlayer.js";
 import { mountAudioPlayerButton } from "/core/templates/AudioPlayerButton/AudioPlayerButton.js";
+import { CharacterGallery } from "/core/templates/CharacterGallery/CharacterGallery.js";
 
 async function loadJson(path) {
   const response = await fetch(path);
@@ -81,6 +82,24 @@ async function initialize() {
     document.querySelector("#dossier"),
     content.campaign.dossier,
   );
+
+  const characterRecords = await loadJson("/core/data/characters.json");
+  const activeCharacterIds = characterRecords
+    .filter(
+      (character) =>
+        character.status === "Aktywna" &&
+        Array.isArray(character.modules) &&
+        character.modules.includes("The Dragon's Due"),
+    )
+    .map((character) => character.id);
+  const characterGallery = new CharacterGallery(
+    document.querySelector("#character-gallery"),
+    {
+      characterIds: activeCharacterIds,
+      emptyMessage: "W katalogu nie ma obecnie aktywnych postaci tej kampanii.",
+    },
+  );
+  await characterGallery.render();
 
   if (manifest.audio?.src) {
     const campaignAudio = new AudioPlayer({
