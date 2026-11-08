@@ -1271,3 +1271,172 @@ body {
   .hof-results .character-card__portrait img, .dialog-portrait img,
   .hof-results .character-card__portrait::after, .dialog-portrait::after { transition:none; }
 }
+
+
+/* Hall of Fame card refinement: Voltaire-led typography, deliberate rhythm, true 4:5 portraits. */
+.hof-results .character-gallery {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  align-items: stretch;
+  gap: clamp(0.85rem, 1.25vw, 1.25rem);
+}
+
+.hof-results .character-card {
+  height: 100%;
+  min-width: 0;
+  border: 1px solid rgb(231 213 180 / 18%);
+  border-radius: 3px;
+  background: linear-gradient(180deg, #1b1814 0%, #14120f 100%);
+  box-shadow: 0 5px 18px rgb(0 0 0 / 22%);
+}
+
+.hof-results .character-card__portrait {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  height: auto;
+  overflow: hidden;
+  background: #191714;
+}
+
+.hof-results .character-card__portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hof-results .character-card__portrait::after {
+  inset: 0.55rem;
+  border-color: rgb(231 213 180 / 34%);
+  background: linear-gradient(180deg, rgb(12 10 8 / 7%), transparent 30%, transparent 72%, rgb(12 10 8 / 10%));
+}
+
+.hof-results .character-card__achievements {
+  top: 0.7rem;
+  left: 0.7rem;
+  right: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.3rem;
+  max-height: 2.4rem;
+  overflow: hidden;
+}
+
+.hof-results #grid .achievement-badge {
+  width: 1.55rem;
+  height: 1.55rem;
+  border-color: rgb(231 195 120 / 66%);
+  background: rgb(16 14 12 / 94%);
+  font-size: 0.76rem;
+}
+
+.hof-results .character-card__status {
+  right: 0.7rem;
+  bottom: 0.7rem;
+  max-width: calc(100% - 1.4rem);
+  padding: 0.34rem 0.58rem 0.3rem;
+  border-width: 1px;
+  font: 0.78rem Voltaire, sans-serif;
+  letter-spacing: 0.075em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hof-results .character-card__body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.9rem 0.95rem 0.85rem;
+}
+
+.hof-results .character-card__body h3 {
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  color: #fff4df;
+  font: 1.42rem / 1.05 Voltaire, sans-serif;
+  letter-spacing: 0.018em;
+  text-overflow: ellipsis;
+  text-wrap: balance;
+}
+
+.hof-results .character-card__player {
+  margin: -0.12rem 0 0.28rem;
+  overflow: hidden;
+  color: #d9bd82;
+  font: 0.94rem / 1.2 "Fira Sans Extra Condensed", sans-serif;
+  letter-spacing: 0.025em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hof-results .character-card__row {
+  display: grid;
+  grid-template-columns: 3.7rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.55rem;
+  padding-top: 0.42rem;
+  border-top: 1px solid rgb(231 213 180 / 9%);
+  color: #e0d6c7;
+  font: 0.86rem / 1.3 "Fira Sans Extra Condensed", sans-serif;
+}
+
+.hof-results .character-card__row .character-card__label,
+.hof-results .character-card__row label {
+  color: #928878;
+  font: 0.68rem / 1.2 Voltaire, sans-serif;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.hof-results .character-card__row .character-card__value,
+.hof-results .character-card__row > :last-child {
+  min-width: 0;
+  overflow: hidden;
+  color: #e3d9ca;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hof-results .character-card__achievement-count {
+  flex: 0 0 auto;
+  margin: auto 0 0;
+  padding: 0.62rem 0.95rem 0.68rem;
+  border-top: 1px solid rgb(231 213 180 / 13%);
+  background: rgb(0 0 0 / 12%);
+  color: #b9aa91;
+  font: 0.78rem / 1.2 "Fira Sans Extra Condensed", sans-serif;
+  letter-spacing: 0.025em;
+}
+
+.hof-results .character-card:hover,
+.hof-results .character-card:focus-visible {
+  border-color: rgb(215 184 120 / 62%);
+  box-shadow: 0 13px 28px rgb(0 0 0 / 34%);
+  transform: translateY(-4px);
+}
+
+.hof-results .character-card:hover .character-card__portrait img,
+.hof-results .character-card:focus-visible .character-card__portrait img {
+  transform: scale(1.018);
+}
+
+@media (max-width: 620px) {
+  .hof-results .character-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+    gap: 0.8rem;
+  }
+
+  .hof-results .character-card__body {
+    padding: 0.8rem;
+  }
+
+  .hof-results .character-card__body h3 {
+    font-size: 1.32rem;
+  }
+}
