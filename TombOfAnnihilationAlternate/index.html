@@ -26,7 +26,16 @@
 <section class="page" id="page-tomb" role="tabpanel"><article class="sheet"><div class="entry-head"><span>WPIS 05 — OSTATNI ETAP</span><span>GROBOWIEC DZIEWIĘCIU BOGÓW</span></div><h2>Grobowiec</h2><p class="lead">Finał wyprawy, zapisany w ostatnich sesjach kampanii.</p><div class="prose"><p>Pod Omu znajduje się Grobowiec Dziewięciu Bogów — ostatni etap wyprawy i miejsce, w którym kampania osiąga swój finał. Archiwum odnotowuje ukończenie kampanii oraz pokonanie Acereraka.</p></div><div class="field-note">FINAŁ KAMPANII · AKTA ZAMKNIĘTE</div><div class="footer"><span>FINAŁ KAMPANII</span><span>41 SESJI</span></div></article></section>
 <section class="page" id="page-characters" role="tabpanel"><article class="sheet"><div class="entry-head"><span>WPIS 06 — KARTOTEKA WYPRAWY</span><span>9 POSTACI</span></div><h2>Uczestnicy wyprawy</h2><p class="lead">Portrety, gracze i statusy pobierane ze wspólnego archiwum postaci Vengrath.</p><div id="characters-grid" class="specimen-grid" aria-live="polite"><p>Wczytywanie kart postaci…</p></div><div class="footer"><span>PORTRETY 4:5 · ARCHIWUM VENGRATH</span><span>ŹRÓDŁO: CORE/DATA/CHARACTERS.JSON</span></div></article></section>
 <section class="page" id="page-log" role="tabpanel"><article class="sheet"><div class="entry-head"><span>WPIS 07 — REJESTR SESJI</span><span>41 NAGRAŃ</span></div><h2>Kronika wyprawy</h2><p class="lead">Pełny wykaz sesji z oryginalnego archiwum, wraz z odnośnikami do nagrań. Najnowsze wpisy wyświetlane są jako pierwsze.</p><div id="log-list" class="log-list" aria-live="polite"><p>Wczytywanie kroniki…</p></div><div class="footer"><span>VENGRATH · REJESTR WYPRAWY</span><span>ŹRÓDŁO: ORYGINALNA KRONIKA</span></div></article></section>
-</main><script>
+</main><script type="module">
+import { AudioPlayer } from "/core/templates/AudioPlayer/AudioPlayer.js";
+import { mountAudioPlayerButton } from "/core/templates/AudioPlayerButton/AudioPlayerButton.js";
+
+const campaignAudio = new AudioPlayer({
+  src: "/page/tomb-of-annihilation/res/audio/tomb-of-annihilation.mp3",
+  storageKey: "vengrath-audio-tomb-of-annihilation-alternate",
+});
+mountAudioPlayerButton(campaignAudio, "#d4aa62");
+
 const pages=[...document.querySelectorAll('.page')],tabs=[...document.querySelectorAll('[data-page]')];
 function navigate(name){const target=document.getElementById('page-'+name);if(!target)return;pages.forEach(p=>p.classList.toggle('active',p===target));document.querySelectorAll('.waypoints button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.page===name)));history.replaceState(null,'','#'+name);window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
 document.querySelectorAll('.waypoints button').forEach(b=>b.addEventListener('click',()=>navigate(b.dataset.page)));
