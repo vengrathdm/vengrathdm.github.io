@@ -4418,3 +4418,139 @@ h4 {
 @media(max-width:1050px){#page-lore-primer .lore-fact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#page-lore-primer .lore-place-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#page-lore-primer .lore-scale{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){#page-lore-primer .lore-deity-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#page-lore-primer .lore-faction-list,#page-lore-primer .lore-source-list,#page-lore-primer .lore-columns{grid-template-columns:1fr}#page-lore-primer .lore-timeline article{grid-template-columns:1fr;gap:7px}}
 @media(max-width:560px){#page-lore-primer .lore-fact-grid,#page-lore-primer .lore-place-grid,#page-lore-primer .lore-deity-grid,#page-lore-primer .lore-scale{grid-template-columns:1fr}#page-lore-primer .lore-block{padding:20px 16px}#page-lore-primer .lore-meta{flex-direction:column;gap:8px}}
+
+
+/* ============================================================
+   ACTIVE PARTY — CHARACTER DOSSIER CARDS
+   ============================================================ */
+#page-case #character-gallery {
+  min-width: 0;
+}
+#page-case .character-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+#page-case .character-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--kraft-dark);
+  border-top: 3px solid var(--stamp-red);
+  border-radius: 2px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 5px 5px 0 rgba(26, 18, 35, 0.35);
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+#page-case .character-card:hover,
+#page-case .character-card:focus-visible {
+  border-color: var(--stamp-red);
+  box-shadow: 7px 8px 0 rgba(26, 18, 35, 0.4);
+  transform: translateY(-3px);
+  outline-offset: 3px;
+}
+#page-case .character-card__portrait {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--paper-shadow);
+}
+#page-case .character-card__portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#page-case .character-card__portrait::after {
+  position: absolute;
+  inset: 9px;
+  border: 1px solid rgba(104, 70, 143, 0.55);
+  content: "";
+  pointer-events: none;
+}
+#page-case .character-card__status {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 5px 8px;
+  border: 1px solid rgba(255,255,255,.55);
+  background: rgba(35, 27, 43, .88);
+  color: #fff;
+  font: 700 9px "Cinzel", serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+#page-case .character-card__achievements {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+#page-case .character-card__body {
+  display: grid;
+  gap: 8px;
+  padding: 16px 16px 13px;
+}
+#page-case .character-card h3 {
+  margin: 0;
+  color: var(--ink);
+  font: 700 clamp(18px, 1.7vw, 23px)/1.12 "Cinzel", serif;
+  overflow-wrap: anywhere;
+}
+#page-case .character-card__player {
+  margin: -2px 0 4px;
+  color: var(--stamp-red);
+  font: italic 14px "Alegreya", serif;
+}
+#page-case .character-card__row {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 8px;
+  font: 13px/1.4 "Alegreya", serif;
+}
+#page-case .character-card__label {
+  color: var(--ink-fade);
+  font: 700 9px "Cinzel", serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+#page-case .character-card__value {
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+#page-case .character-card__achievement-count {
+  margin: auto 0 0;
+  padding: 10px 16px;
+  border-top: 1px solid var(--paper-shadow);
+  color: var(--ink-fade);
+  font: 12px "Alegreya", serif;
+}
+#page-case .character-gallery__empty {
+  padding: 22px;
+  border: 1px dashed var(--kraft-dark);
+  color: var(--ink-fade);
+  font: italic 15px "Alegreya", serif;
+}
+@media (max-width: 620px) {
+  #page-case .character-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  #page-case .character-card__body {
+    padding: 12px;
+  }
+}
+@media (max-width: 420px) {
+  #page-case .character-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
