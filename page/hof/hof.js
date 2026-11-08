@@ -20,6 +20,13 @@ const $ = (id) => document.getElementById(id),
           "'": "&#39;",
         })[c],
     );
+const statusExplanations = {
+  Aktywna: "Postać żyje i bierze udział w trwającej przygodzie D&D.",
+  Martwa: "Postać zginęła podczas przygody i nie została wskrzeszona.",
+  Wycofana: "Gracz opuścił kampanię albo zdecydował się wycofać tę postać i grać inną.",
+  Porzucona: "Kampania została zakończona przez Mistrza Gry, na przykład z powodu ryzyka TPK, zachowania graczy lub problemów z terminami.",
+  Zwycięska: "Postać zakończyła swoją przygodę po pomyślnym finale kampanii.",
+};
 let characters = [],
   achievements = new Map();
 const filters = {
@@ -116,9 +123,17 @@ function render() {
   const rows = characters.filter(matches);
   $("resultCount").textContent = rows.length + " / " + characters.length;
   $("empty").hidden = rows.length > 0;
-  $("grid").replaceChildren(
-    ...rows.map((c) => createCharacterCard(c, achievements)),
-  );
+  const cards = rows.map((c) => {
+    const card = createCharacterCard(c, achievements);
+    const explanation = statusExplanations[c.status];
+    const badge = card.querySelector(".character-card__status");
+    if (badge && explanation) {
+      badge.title = explanation;
+      badge.setAttribute("aria-label", c.status + ". " + explanation);
+    }
+    return card;
+  });
+  $("grid").replaceChildren(...cards);
   $("statCharacters").textContent = rows.length;
   $("statPlayers").textContent = new Set(
     rows.map((c) => c.player).filter(Boolean),
@@ -177,7 +192,9 @@ function openCharacter(c) {
           .join("") +
         "</div>"
       : "Brak zdobytych osiągnięć") +
-    '</dd></dl><section class="dialog-history"><span>HISTORIA</span><p>' +
+    '</dd></dl><p class="dialog-status-explanation">' +
+    esc(statusExplanations[c.status] || "Brak dodatkowego opisu statusu.") +
+    '</p><section class="dialog-history"><span>HISTORIA</span><p>' +
     esc(c.history || "Brak zapisków.") +
     "</p></section></div></div>";
   $("characterDialog").showModal();
