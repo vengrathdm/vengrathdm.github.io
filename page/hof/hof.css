@@ -1440,3 +1440,197 @@ body {
     font-size: 1.32rem;
   }
 }
+
+
+/* Repository-wide Vengrath editorial theme, aligned with /home/. */
+:root {
+  --bg: #100e0c;
+  --surface: #191613;
+  --surface-raised: #211c17;
+  --text: #f4efe5;
+  --muted: #aaa298;
+  --line: rgb(231 213 180 / 14%);
+  --gold: #d7b878;
+  --gold-soft: #efd59c;
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 50% -30%, rgb(120 72 42 / 18%), transparent 65%),
+    var(--bg);
+  color: var(--text);
+}
+
+.hof-hero {
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  box-shadow: none;
+}
+
+.hof-nav {
+  min-height: 4.15rem;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, rgb(25 22 19 / 98%), rgb(19 17 15 / 96%));
+  box-shadow: 0 14px 40px rgb(0 0 0 / 18%);
+}
+
+.hof-nav-link {
+  font: 0.88rem "Fira Sans Extra Condensed", sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.hof-hero-copy {
+  padding-block: clamp(1.7rem, 3.5vw, 3.1rem);
+  background:
+    radial-gradient(ellipse at 20% 0%, rgb(150 101 51 / 11%), transparent 62%),
+    linear-gradient(135deg, rgb(22 19 16 / 96%), rgb(16 14 12 / 97%));
+}
+
+.hof-hero-copy h1 {
+  margin: 0;
+  color: #fff8eb;
+  font: clamp(3.1rem, 7vw, 5.6rem) / 0.95 Voltaire, sans-serif;
+  letter-spacing: 0.015em;
+}
+
+.hof-hero-copy h1 span { color: var(--gold-soft); }
+
+.hof-main {
+  padding-top: clamp(1.15rem, 2vw, 2rem);
+}
+
+.hof-stats {
+  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+  border: 1px solid var(--line);
+  background: linear-gradient(90deg, rgb(215 184 120 / 6%), rgb(25 22 19 / 65%) 70%);
+}
+
+.hof-stats > div { padding: 0.9rem clamp(0.7rem, 1.4vw, 1.2rem); }
+
+.hof-stats span {
+  color: #aaa298;
+  font: 0.7rem Voltaire, sans-serif;
+  letter-spacing: 0.09em;
+}
+
+.hof-stats strong {
+  color: #efd59c;
+  font: 1.8rem / 1 Voltaire, sans-serif;
+}
+
+.hof-archive {
+  grid-template-columns: 15.5rem minmax(0, 1fr);
+  gap: clamp(1rem, 2vw, 1.8rem);
+}
+
+.hof-filters {
+  top: 1rem;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: linear-gradient(180deg, #1b1814, #14120f);
+  box-shadow: 0 6px 22px rgb(0 0 0 / 15%);
+}
+
+.hof-filter-grid { gap: 0.8rem; }
+
+.hof-filter-grid label {
+  gap: 0.4rem;
+  color: #b7aa95;
+  font: 0.73rem Voltaire, sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.hof-search,
+.hof-filter-grid select {
+  min-height: 2.45rem;
+  border: 1px solid rgb(231 213 180 / 19%);
+  border-radius: 3px;
+  background: rgb(8 7 6 / 42%);
+  color: var(--text);
+  font: 0.94rem "Fira Sans Extra Condensed", sans-serif;
+}
+
+.hof-search input { font: inherit; }
+.hof-search input::placeholder { color: #8c857b; }
+
+.hof-filter-grid select:focus-visible,
+.hof-search:focus-within {
+  border-color: rgb(215 184 120 / 70%);
+  box-shadow: 0 0 0 3px rgb(215 184 120 / 10%);
+}
+
+.hof-reset {
+  min-height: 2.3rem;
+  font: 0.87rem Voltaire, sans-serif;
+  letter-spacing: 0.09em;
+}
+
+.hof-results-heading {
+  min-height: 2.4rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.hof-results-heading > span {
+  color: #c8b38d;
+  font: 0.8rem "DM Mono", monospace;
+}
+
+.hof-results .character-card__body h3 {
+  text-align: center;
+  text-wrap: balance;
+}
+
+.hof-results .character-card__player {
+  text-align: center;
+}
+
+.character-dialog {
+  border-color: rgb(215 184 120 / 38%);
+  background: #191613;
+}
+
+.dialog-copy h2 {
+  color: #fff4df;
+  font: clamp(2.2rem, 4vw, 3.25rem) / 1.05 Voltaire, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.dialog-kicker,
+.dialog-history > span {
+  font: 0.82rem Voltaire, sans-serif;
+  letter-spacing: 0.11em;
+}
+
+.dialog-copy dt {
+  font: 0.77rem Voltaire, sans-serif;
+  letter-spacing: 0.06em;
+}
+
+.dialog-copy dd,
+.dialog-history p,
+.dialog-status-explanation {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .hof-archive { grid-template-columns: minmax(0, 1fr); }
+  .hof-filters { position: static; }
+  .hof-filter-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (max-width: 620px) {
+  .hof-hero-copy { padding-block: 1.8rem; }
+  .hof-hero-copy h1 { font-size: clamp(2.7rem, 12vw, 4.3rem); }
+  .hof-filter-grid { grid-template-columns: 1fr; }
+  .hof-stats > div { padding: 0.75rem 0.65rem; }
+  .hof-stats strong { font-size: 1.5rem; }
+}
