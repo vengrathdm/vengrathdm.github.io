@@ -18,6 +18,8 @@
       href="/core/templates/AudioPlayerButton/AudioPlayerButton.css"
       rel="stylesheet"
     />
+    <link href="/core/templates/CharacterGallery/CharacterGallery.css" rel="stylesheet" />
+    <link href="/core/templates/CharacterCard/Achievements/Achievements.css" rel="stylesheet" />
     <link href="the-dragons-due.css" rel="stylesheet" />
   </head>
   <body class="campaign-startup-loading">
@@ -173,10 +175,7 @@
               <cite>The Dragon's Due · Drużyna</cite>
             </div>
           </div>
-          <div class="empty-record">
-            <strong>Brak wpisów w aktach drużyny.</strong>
-            <p>Portrety i karty postaci pojawią się tutaj po ich dodaniu.</p>
-          </div>
+          <div id="character-gallery" aria-live="polite"></div>
           <div class="page-foot">
             <span>The Dragon's Due · Postaci</span>
             <span>Cormyr · Faerûn</span>
