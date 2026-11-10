@@ -7,6 +7,7 @@ export function createSubpageHero({
   const hero = document.createElement("header");
   hero.className = "subpage-hero";
   hero.style.setProperty("--campaign-accent", theme.accent || "#bca06a");
+  document.body.classList.add("campaign-fonts-loading");
 
   // Keep the hero copy out of the first paint until its final web fonts are ready.
   const revealHeroCopyWhenFontsAreReady = () => {
@@ -32,10 +33,12 @@ export function createSubpageHero({
       .then(() => document.fonts.ready)
       .then(() => {
         copy.style.visibility = "visible";
+        document.body.classList.remove("campaign-fonts-loading");
       })
       .catch((error) => {
         console.warn("Hero font loading failed; showing fallback typography.", error);
         copy.style.visibility = "visible";
+        document.body.classList.remove("campaign-fonts-loading");
       });
     return true;
   };
