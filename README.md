@@ -102,6 +102,39 @@ The hero should adapt to the viewport and fill the screen before the campaign se
 
 Fonts are page-owned: load every typeface used by the page and its shared components, then set those families explicitly in the page stylesheet. The shared Vengrath home button and navbar buttons use **Voltaire**; include it in the page's font stylesheet so those controls do not fall back to an unrelated system font. Give the hero title its own intentional heading font and verify that the corresponding family is loaded.
 
+#### Preventing first-paint theme and hero shifts (required)
+
+A campaign must render its **final theme on the first visible frame**. Do not rely on fetching `theme.json` and applying CSS variables after the page has become visible: that creates a flash of default colors and typography. A later font swap can also change the hero title's line breaks and move the copy relative to the background image.
+
+For every new `campaign-shell` page, follow these rules:
+
+1. **Ship theme variables as render-blocking CSS.** Add a page-local `theme-fonts.css` (or equivalently named generated theme stylesheet) containing the final theme's color and font custom properties on `:root`. Include the aliases consumed by the page and shared components, for example `--theme-base-1`, `--theme-accent-2`, `--theme-text-1`, `--theme-font-1`, `--theme-font-2`, and `--theme-font-3`. Link this stylesheet directly in the HTML `<head>`, before the page's component/page stylesheets and before first paint. Keep it synchronized with `theme.json`; JavaScript applying the same values later is a runtime fallback, not the first-paint theme mechanism.
+
+2. **Declare and load every actual font before revealing the hero.** Add the Google Fonts (or local font-face) stylesheet in the HTML `<head>`, with the required families and weights. Use the exact family names in `theme.json` and `theme-fonts.css`. Include **Voltaire** for shared home/navbar controls when those components are used. Do not assume that setting `font-family` or calling `document.fonts.ready` alone means a particular missing face has been requested; ensure the fonts used by the hero and theme are explicitly requested. Avoid relying on a visible fallback followed by a late swap.
+
+3. **Use the shared hero font gate.** Import and use `createSubpageHero()` from [`SubpageHero.js`](core/templates/SubpageHero/SubpageHero.js), and include [`SubpageHero.css`](core/templates/SubpageHero/SubpageHero.css). The component keeps its copy hidden until the connected hero's theme and text fonts have loaded, then reveals it. Do not replace this with a hand-built visible hero that is immediately painted in a fallback font. If a bespoke page intentionally does not use this component, implement the equivalent: keep the hero copy hidden, request all exact font faces, wait for those requests and `document.fonts.ready`, then reveal the copy.
+
+4. **Keep the page hidden until initialization and fonts are ready.** Include [`CampaignStartup.css`](core/templates/CampaignPage/CampaignStartup.css) and put `campaign-startup-loading` on the body for a data-driven campaign shell. Keep a meaningful static hero placeholder in the HTML so the page has useful structure while data loads. Initialize the theme before creating the shared hero, render the page content, and remove `campaign-startup-loading` only after successful initialization. The shared hero component also uses `campaign-fonts-loading` to prevent the rest of the page from becoming visible before its theme fonts are ready. Do not remove either guard early or bypass it with page-specific CSS.
+
+5. **Set hero copy position intentionally, not as a side effect of font metrics.** The shared hero supports inherited custom properties on the hero element: `--hero-copy-align` (grid alignment, default `center`), `--hero-copy-text-align` (default `center`), `--hero-copy-offset-x` and `--hero-copy-offset-y` (default `0px`). Set these on the `.subpage-hero` element (or its ancestor) to position the copy consistently over the image. For example:
+
+   ```css
+   .my-campaign-page .subpage-hero {
+     --hero-copy-align: start;
+     --hero-copy-text-align: left;
+     --hero-copy-offset-x: 0px;
+     --hero-copy-offset-y: 3rem;
+   }
+   ```
+
+   Check the position at desktop and mobile widths. Do not compensate for a late-loading font by adding arbitrary margins or transforms to the heading; fix the font loading and use the hero positioning variables instead.
+
+6. **Do not introduce a second late theme override.** Avoid injecting a new Google Fonts link, changing font families, or applying a second palette after the page is visible. If JavaScript must apply `theme.json` values for dynamic components, those values must match the statically linked theme stylesheet.
+
+For a bespoke page, these rules still apply even if its layout and color palette are unique: its final colors and typography must be available before visible paint, and its hero copy must not appear until its intended fonts are ready. A bespoke design may use its own equivalent stylesheet and font gate rather than the shared campaign components.
+
+**Review checklist:** throttle the network in browser devtools and hard-reload the page. The first visible hero must already have the final palette, heading/body fonts, line wrapping, and copy position; there must be no visible fallback-font phase or second layout jump. Check both desktop and mobile, and verify that a failed font request still reveals readable fallback text rather than leaving the page permanently hidden.
+
 ### 3. Add campaign data and theme configuration
 
 For the common campaign-data pattern, add these three JSON files:
