@@ -3,3 +3,41 @@
   --theme-font-2: "Fira Sans Extra Condensed", sans-serif;
   --theme-font-3: "Brygada 1918", Georgia, serif;
 }
+
+/* BEGIN GENERATED THEME VARIABLES */
+:root {
+  --theme-base-1: #080a16;
+  --theme-base1: #080a16;
+  --theme-base-2: #101329;
+  --theme-base2: #101329;
+  --theme-base-3: #191d38;
+  --theme-base3: #191d38;
+  --theme-base-4: #292e4b;
+  --theme-base4: #292e4b;
+  --theme-base-5: #3a405f;
+  --theme-base5: #3a405f;
+  --theme-accent-1: #c83f58;
+  --theme-accent1: #c83f58;
+  --theme-accent-2: #c8d4ec;
+  --theme-accent2: #c8d4ec;
+  --theme-text-1: #f8f8ff;
+  --theme-text1: #f8f8ff;
+  --theme-text-2: #e0e4f4;
+  --theme-text2: #e0e4f4;
+  --theme-text-3: #b6bfdc;
+  --theme-text3: #b6bfdc;
+  --theme-text-muted: #858eaf;
+  --theme-textMuted: #858eaf;
+  --theme-title-accent: #ffffff;
+  --theme-titleAccent: #ffffff;
+  --theme-line-1: #343b61;
+  --theme-line1: #343b61;
+  --theme-line-2: #9aa8ca;
+  --theme-line2: #9aa8ca;
+  --theme-font-1: Voltaire, sans-serif;
+  --theme-font-2: Fira Sans Extra Condensed, sans-serif;
+  --theme-font-3: Brygada 1918, Georgia, serif;
+  --campaign-accent: #c8d4ec;
+  --chronicle-heading-font: var(--theme-font-1);
+}
+/* END GENERATED THEME VARIABLES */

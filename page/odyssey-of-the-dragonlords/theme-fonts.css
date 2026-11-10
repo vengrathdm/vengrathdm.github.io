@@ -1,0 +1,37 @@
+/* BEGIN GENERATED THEME VARIABLES */
+:root {
+  --theme-base-1: #10170b;
+  --theme-base1: #10170b;
+  --theme-base-2: #1a2410;
+  --theme-base2: #1a2410;
+  --theme-base-3: #29351a;
+  --theme-base3: #29351a;
+  --theme-base-4: #394824;
+  --theme-base4: #394824;
+  --theme-base-5: #4b5c2d;
+  --theme-base5: #4b5c2d;
+  --theme-accent-1: #a8783e;
+  --theme-accent1: #a8783e;
+  --theme-accent-2: #e0bd62;
+  --theme-accent2: #e0bd62;
+  --theme-text-1: #fffdf5;
+  --theme-text1: #fffdf5;
+  --theme-text-2: #f1ead9;
+  --theme-text2: #f1ead9;
+  --theme-text-3: #d0c6a9;
+  --theme-text3: #d0c6a9;
+  --theme-text-muted: #a79a7a;
+  --theme-textMuted: #a79a7a;
+  --theme-title-accent: #fff8e5;
+  --theme-titleAccent: #fff8e5;
+  --theme-line-1: #4e5a31;
+  --theme-line1: #4e5a31;
+  --theme-line-2: #8a6a3d;
+  --theme-line2: #8a6a3d;
+  --theme-font-1: "Caesar Dressing", "Voltaire", sans-serif;
+  --theme-font-2: "Fira Sans Extra Condensed", sans-serif;
+  --theme-font-3: "Brygada 1918", Georgia, serif;
+  --campaign-accent: #e0bd62;
+  --chronicle-heading-font: var(--theme-font-1);
+}
+/* END GENERATED THEME VARIABLES */

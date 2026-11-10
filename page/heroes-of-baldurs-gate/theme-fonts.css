@@ -3,3 +3,47 @@
   --theme-font-2: "Fira Sans Extra Condensed", sans-serif;
   --theme-font-3: "Brygada 1918", Georgia, serif;
 }
+
+/* BEGIN GENERATED THEME VARIABLES */
+:root {
+  --theme-base-1: #0d1016;
+  --theme-base1: #0d1016;
+  --theme-base-2: #151c25;
+  --theme-base2: #151c25;
+  --theme-base-3: #151c25;
+  --theme-base3: #151c25;
+  --theme-base-4: #151c25;
+  --theme-base4: #151c25;
+  --theme-base-5: #151c25;
+  --theme-base5: #151c25;
+  --theme-accent-1: #d2a85d;
+  --theme-accent1: #d2a85d;
+  --theme-accent-2: #7b9c9c;
+  --theme-accent2: #7b9c9c;
+  --theme-text-1: #ece7d9;
+  --theme-text1: #ece7d9;
+  --theme-text-2: #d7d2c8;
+  --theme-text2: #d7d2c8;
+  --theme-text-3: #aaa59b;
+  --theme-text3: #aaa59b;
+  --theme-text-muted: #817d76;
+  --theme-textMuted: #817d76;
+  --theme-title-accent: #e2c17b;
+  --theme-titleAccent: #e2c17b;
+  --theme-line-1: #394854;
+  --theme-line1: #394854;
+  --theme-line-2: #d2a85d;
+  --theme-line2: #d2a85d;
+  --theme-nav-background: #151c25;
+  --theme-navBackground: #151c25;
+  --theme-nav-text: #c9c5bc;
+  --theme-navText: #c9c5bc;
+  --theme-nav-active-background: #151c25;
+  --theme-navActiveBackground: #151c25;
+  --theme-font-1: "Voltaire", sans-serif;
+  --theme-font-2: "Fira Sans Extra Condensed", sans-serif;
+  --theme-font-3: "Brygada 1918", Georgia, serif;
+  --campaign-accent: #7b9c9c;
+  --chronicle-heading-font: var(--theme-font-1);
+}
+/* END GENERATED THEME VARIABLES */

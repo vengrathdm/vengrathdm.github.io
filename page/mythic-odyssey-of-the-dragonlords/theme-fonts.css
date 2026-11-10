@@ -1,0 +1,31 @@
+/* BEGIN GENERATED THEME VARIABLES */
+:root {
+  --theme-base-1: #071827;
+  --theme-base1: #071827;
+  --theme-base-2: #0b2942;
+  --theme-base2: #0b2942;
+  --theme-base-3: #124263;
+  --theme-base3: #124263;
+  --theme-base-4: #1c5c80;
+  --theme-base4: #1c5c80;
+  --theme-accent-1: #79d5f5;
+  --theme-accent1: #79d5f5;
+  --theme-accent-2: #d7b45b;
+  --theme-accent2: #d7b45b;
+  --theme-text-1: #ffffff;
+  --theme-text1: #ffffff;
+  --theme-text-2: #e2f5ff;
+  --theme-text2: #e2f5ff;
+  --theme-text-3: #b4d8e8;
+  --theme-text3: #b4d8e8;
+  --theme-line-1: #246084;
+  --theme-line1: #246084;
+  --theme-line-2: #d7b45b;
+  --theme-line2: #d7b45b;
+  --theme-font-1: "Caesar Dressing", "Voltaire", sans-serif;
+  --theme-font-2: "Fira Sans Extra Condensed", sans-serif;
+  --theme-font-3: "Brygada 1918", Georgia, serif;
+  --campaign-accent: #d7b45b;
+  --chronicle-heading-font: var(--theme-font-1);
+}
+/* END GENERATED THEME VARIABLES */
