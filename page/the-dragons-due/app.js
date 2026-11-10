@@ -1,6 +1,8 @@
 import { AudioPlayer } from "/core/templates/AudioPlayer/AudioPlayer.js";
 import { mountAudioPlayerButton } from "/core/templates/AudioPlayerButton/AudioPlayerButton.js";
 import { CharacterGallery } from "/core/templates/CharacterGallery/CharacterGallery.js";
+import { createChronicleRecord } from "/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.js";
+import { createYouTubePlaylistButton } from "/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.js";
 
 async function loadJson(path) {
   const response = await fetch(path);
@@ -100,6 +102,24 @@ async function initialize() {
     },
   );
   await characterGallery.render();
+
+  if (manifest.playlistUrl) {
+    document.querySelector("#campaign-playlist").append(
+      createYouTubePlaylistButton(manifest.playlistUrl),
+    );
+  }
+
+  const chronicleRecords = document.querySelector("#chronicle-records");
+  const sessions = content.chronicle?.sessions ?? [];
+  if (sessions.length) {
+    chronicleRecords.replaceChildren(
+      ...sessions.map((session) =>
+        createChronicleRecord(session, { accent: theme.colors?.accent2 }),
+      ),
+    );
+  } else {
+    chronicleRecords.textContent = "Nie opublikowano jeszcze zapisów sesji.";
+  }
 
   if (manifest.audio?.src) {
     const campaignAudio = new AudioPlayer({
