@@ -19,19 +19,23 @@
   position: relative;
   z-index: 1;
   display: grid;
-  justify-items: center;
+  justify-items: var(--hero-copy-align, center);
   gap: 2rem;
   width: min(100%, 1200px);
   box-sizing: border-box;
   padding: clamp(1.5rem, 5vw, 5rem);
-  text-align: center;
+  text-align: var(--hero-copy-text-align, center);
+  transform: translate(
+    var(--hero-copy-offset-x, 0px),
+    var(--hero-copy-offset-y, 0px)
+  );
 }
 
 .subpage-hero h1 {
   margin: 0;
   color: var(--campaign-accent);
   font:
-    clamp(2.5rem, 7vw, 7rem) / 1.05 Voltaire,
+    clamp(2.5rem, 7vw, 7rem) / 1.05 var(--theme-font-1, Voltaire),
     serif;
   letter-spacing: 0.03em;
   text-wrap: balance;
