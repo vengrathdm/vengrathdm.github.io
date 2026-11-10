@@ -28,7 +28,13 @@ export function createChronicleRecord(session, { accent = "#bca06a" } = {}) {
       }),
     ),
   );
-  header.append(number, title, recordings);
+  const date = document.createElement("time");
+  date.className = "chronicle-record__date";
+  if (session.date) {
+    date.dateTime = session.date.split(".").reverse().join("-");
+    date.textContent = session.date;
+  }
+  header.append(number, title, date, recordings);
   const description = document.createElement("div");
   description.className = "chronicle-record__description";
   description.hidden = true;
