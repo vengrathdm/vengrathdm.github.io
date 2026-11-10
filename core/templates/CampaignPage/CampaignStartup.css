@@ -17,3 +17,12 @@ body.campaign-startup-loading > footer {
   color: var(--theme-text-2, #d7d2c8);
   font: clamp(1.05rem, 1.8vw, 1.35rem) / 1.4 var(--theme-font-3, Georgia, serif);
 }
+
+/* Keep hero copy in its final layout until the page theme and web fonts are ready. */
+body.campaign-startup-loading .subpage-hero__copy {
+  visibility: hidden;
+}
+
+body.campaign-startup-loading .subpage-hero {
+  --hero-copy-ready: 0;
+}
