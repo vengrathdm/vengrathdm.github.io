@@ -14,12 +14,20 @@ export function createSubpageHero({
     const copy = hero.querySelector(".subpage-hero__copy");
     if (!copy) return false;
     observer.disconnect();
-    const fontRequests = [...copy.querySelectorAll("*")]
+    const rootStyle = getComputedStyle(document.documentElement);
+    const themeFontRequests = ["--theme-font-1", "--theme-font-2", "--theme-font-3"]
+      .map((property) => rootStyle.getPropertyValue(property).trim())
+      .filter(Boolean)
+      .map((family) =>
+        document.fonts.load("400 16px " + family, "Vengrath 0123456789"),
+      );
+    const heroFontRequests = [...copy.querySelectorAll("*")]
       .filter((element) => element.textContent.trim())
       .map((element) => {
         const style = getComputedStyle(element);
         return document.fonts.load(style.font, element.textContent);
       });
+    const fontRequests = [...themeFontRequests, ...heroFontRequests];
     Promise.all(fontRequests)
       .then(() => document.fonts.ready)
       .then(() => {
