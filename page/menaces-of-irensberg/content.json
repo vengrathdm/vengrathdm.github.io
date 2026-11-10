@@ -16,7 +16,7 @@
     "dossier": [
       {
         "label": "POSTACI",
-        "value": "8"
+        "value": "10"
       },
       {
         "label": "NAGRANIA",
@@ -44,7 +44,7 @@
   "characters": {
     "kicker": "AKTA / MATERIAŁY",
     "title": "Galeria postaci",
-    "description": "Osiem portretów zachowanych w archiwum kampanii.",
+    "description": "Dziesięć portretów zachowanych w archiwum kampanii.",
     "characterIds": [
       "char-0006",
       "char-0012",
@@ -53,7 +53,9 @@
       "char-0007",
       "char-0008",
       "char-0011",
-      "char-0009"
+      "char-0009",
+      "char-0010",
+      "char-0213"
     ]
   },
   "chronicle": {
