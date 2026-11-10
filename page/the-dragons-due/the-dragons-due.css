@@ -4554,3 +4554,80 @@ h4 {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+
+/* Chronicle records use the campaign's dossier palette while retaining the shared renderer. */
+#page-sessions .chronicle-playlist {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 22px;
+}
+
+#page-sessions .chronicle-record {
+  border-color: rgba(197, 166, 227, 0.38);
+  background: rgba(25, 20, 32, 0.92);
+  color: #f4f2f8;
+}
+
+#page-sessions .chronicle-record + .chronicle-record {
+  border-top: 1px solid rgba(197, 166, 227, 0.25);
+}
+
+#page-sessions .chronicle-record__header {
+  min-height: 76px;
+}
+
+#page-sessions .chronicle-record__title {
+  color: #f4f2f8;
+  font-family: "Cinzel", serif;
+  font-size: clamp(14px, 1.3vw, 18px);
+}
+
+#page-sessions .chronicle-record__date {
+  color: #d8bb63;
+  font-family: "Alegreya", serif;
+  font-size: 14px;
+}
+
+#page-sessions .chronicle-record__number {
+  color: #d8bb63;
+  font-family: "Cinzel", serif;
+}
+
+#page-sessions .chronicle-record__description {
+  border-top-color: rgba(197, 166, 227, 0.25);
+  color: #e6e0ed;
+  font-family: "Alegreya", serif;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+#page-sessions .play-recording-button {
+  border-color: #c5a6e3;
+  background: rgba(126, 91, 164, 0.12);
+  color: #e6d8f5;
+  font-family: "Voltaire", sans-serif;
+}
+
+#page-sessions .play-recording-button:hover,
+#page-sessions .play-recording-button:focus-visible {
+  background: #c5a6e3;
+  color: #211a2a;
+}
+
+#page-sessions .youtube-playlist-button {
+  border-color: #ef4444;
+  background: #b91c1c;
+  color: #fff;
+}
+
+#page-sessions .youtube-playlist-button:hover,
+#page-sessions .youtube-playlist-button:focus-visible {
+  background: #dc2626;
+}
+
+@media (max-width: 760px) {
+  #page-sessions .chronicle-playlist {
+    justify-content: flex-start;
+  }
+}
