@@ -3,11 +3,44 @@
     "title": "The Dragon's Due",
     "description": "Kampania Dungeons & Dragons 5e w Zapomnianych Krainach, w królewskim Cormyrze.",
     "dossier": [
-      ["SYSTEM", "Dungeons & Dragons 5e"],
-      ["ŚWIAT", "Zapomniane Krainy"],
-      ["REGION", "Cormyr"],
-      ["DRUŻYNA", "4–5 postaci"],
-      ["POZIOMY", "1–9"]
+      [
+        "SYSTEM",
+        "Dungeons & Dragons 5e"
+      ],
+      [
+        "ŚWIAT",
+        "Zapomniane Krainy"
+      ],
+      [
+        "REGION",
+        "Cormyr"
+      ],
+      [
+        "DRUŻYNA",
+        "4–5 postaci"
+      ],
+      [
+        "POZIOMY",
+        "1–9"
+      ]
+    ]
+  },
+  "chronicle": {
+    "kicker": "AKTA / 03",
+    "title": "Kronika kampanii",
+    "description": "Zapisy kolejnych sesji kampanii The Dragon's Due.",
+    "sessions": [
+      {
+        "sessionNumber": 1,
+        "date": "09.11.2026",
+        "title": "The Dragons Due S01 - Karawana w Ogniu",
+        "description": "Cormyr, rok 1492. Drużyna została wynajęta przez Tessally Harnwick do transportu dwóch wozów z ziarnem z Arabel do garnizonu w Eveningstar, a następnie przekazać dokumenty przewozowe jej bratu, Corwinowi, który jest królewskim audytorem i wyruszył w drogę do Eveningstar poprzedniego dnia. Na szlaku, bohaterowie natykają się na bandytów w Bedińskich strojach, rabujących szczątki karawany, i nie tylko zmuszają ich do ucieczki, ale też wybijają bandę do nogi. Z podpalonego wozu ratują również jedynego ocalałego poprzedniej karawany - Pella Ostrandera. Dowiadują się od niego, że Corwin podróżował wraz z nim, ale został porwany przez bandytów, wraz z większością ładunku, prawdopodobnie do pobliskiego młyna. Drużyna, nie mitrężąc udała się za tym tropem. Bohatersko szturmując bandytów, udało się zmusić najeźdźców do wycofania się, w niemałej części dzięki magicznym zdolnościom krasnoludzkiego czarodzieja Xaviera. Choć młyn podpalono, Corwina udało się uratować z piwnicy, a grupę pięciu bandytów pojmano żywcem. Jak się okazuje, ich Bedińskie ubrania zostały jednak wyprodukowane w Hilsfar, nad Morzem Księżycowym...",
+        "recordings": [
+          {
+            "url": "https://youtu.be/KHpAAcGuxiA"
+          }
+        ]
+      }
     ]
   }
 }
