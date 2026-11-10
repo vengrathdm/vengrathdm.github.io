@@ -7,10 +7,37 @@ export function createSubpageHero({
   const hero = document.createElement("header");
   hero.className = "subpage-hero";
   hero.style.setProperty("--campaign-accent", theme.accent || "#bca06a");
+
+  // Keep the hero copy out of the first paint until its final web fonts are ready.
+  const revealHeroCopyWhenFontsAreReady = () => {
+    if (!hero.isConnected) return false;
+    const copy = hero.querySelector(".subpage-hero__copy");
+    if (!copy) return false;
+    observer.disconnect();
+    const fontRequests = [...copy.querySelectorAll("*")]
+      .filter((element) => element.textContent.trim())
+      .map((element) => {
+        const style = getComputedStyle(element);
+        return document.fonts.load(style.font, element.textContent);
+      });
+    Promise.all(fontRequests)
+      .then(() => document.fonts.ready)
+      .then(() => {
+        copy.style.visibility = "visible";
+      })
+      .catch((error) => {
+        console.warn("Hero font loading failed; showing fallback typography.", error);
+        copy.style.visibility = "visible";
+      });
+    return true;
+  };
+  const observer = new MutationObserver(revealHeroCopyWhenFontsAreReady);
+  observer.observe(document.documentElement, { childList: true, subtree: true });
   if (backgroundImage)
     hero.style.setProperty("--hero-background", "url(" + backgroundImage + ")");
   const copy = document.createElement("div");
   copy.className = "subpage-hero__copy";
+  copy.style.visibility = "hidden";
   const heading = document.createElement("h1");
   heading.textContent = title || "Kampania";
   copy.append(heading);
