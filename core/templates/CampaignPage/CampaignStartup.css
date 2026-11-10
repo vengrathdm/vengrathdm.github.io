@@ -32,3 +32,10 @@ body.campaign-startup-loading .subpage-hero {
 body.campaign-startup-loading .subpage-hero__copy {
   visibility: hidden !important;
 }
+
+
+/* Keep page content in its final layout while all campaign theme fonts load. */
+body.campaign-fonts-loading > main,
+body.campaign-fonts-loading > footer {
+  visibility: hidden !important;
+}
