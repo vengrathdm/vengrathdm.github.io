@@ -10,7 +10,7 @@
 
 .chronicle-record__header {
   display: grid;
-  grid-template-columns: 4.2rem minmax(0, 1fr) auto;
+  grid-template-columns: 4.2rem minmax(0, 1fr) auto auto;
   align-items: center;
   gap: 1rem;
   min-height: 4.2rem;
@@ -34,6 +34,13 @@
   font-family: var(--chronicle-heading-font, "Space Grotesk", sans-serif);
   font-size: 1.1rem;
   font-weight: 700;
+}
+
+.chronicle-record__date {
+  color: var(--chronicle-accent);
+  font-family: var(--chronicle-heading-font, "Space Grotesk", sans-serif);
+  font-size: 0.85rem;
+  white-space: nowrap;
 }
 
 .chronicle-record__recordings {
