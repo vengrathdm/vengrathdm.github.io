@@ -17,5 +17,6 @@
   "audio": {
     "src": "/page/the-dragons-due/res/audio/TheDragonsDue.mp3",
     "continuationKey": "vengrath-the-dragons-due-audio"
-  }
+  },
+  "playlistUrl": "https://www.youtube.com/playlist?list=PLCF62VKwiaA0"
 }
