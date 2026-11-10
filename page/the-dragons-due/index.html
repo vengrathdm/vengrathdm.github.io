@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&amp;family=Alegreya:wght@400;500;600;700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&amp;family=Alegreya:wght@400;500;600;700&amp;family=Voltaire&amp;display=swap"
       rel="stylesheet"
     />
     <link
@@ -20,6 +20,9 @@
     />
     <link href="/core/templates/CharacterGallery/CharacterGallery.css" rel="stylesheet" />
     <link href="/core/templates/CharacterCard/Achievements/Achievements.css" rel="stylesheet" />
+    <link href="/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css" rel="stylesheet" />
+    <link href="/core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css" rel="stylesheet" />
+    <link href="/core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css" rel="stylesheet" />
     <link href="the-dragons-due.css" rel="stylesheet" />
   </head>
   <body class="campaign-startup-loading">
@@ -198,14 +201,12 @@
           <div class="testimony-strip">
             <div aria-hidden="true" class="mark">“</div>
             <div>
-              <p>Śledztwo dopiero czeka na swój pierwszy zapis.</p>
+              <p>Każda wyprawa zostawia po sobie ślad.</p>
               <cite>The Dragon's Due · Kronika</cite>
             </div>
           </div>
-          <div class="empty-record">
-            <strong>Brak opublikowanych notatek z sesji.</strong>
-            <p>Zapisy, nagrania i rozwinięte raporty będą dostępne w tym miejscu.</p>
-          </div>
+          <div class="chronicle-playlist" id="campaign-playlist"></div>
+          <div class="chronicle-records" id="chronicle-records" aria-live="polite"></div>
           <div class="page-foot">
             <span>The Dragon's Due · Kronika</span>
             <span>Cormyr · Faerûn</span>
