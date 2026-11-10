@@ -26,3 +26,9 @@ body.campaign-startup-loading .subpage-hero__copy {
 body.campaign-startup-loading .subpage-hero {
   --hero-copy-ready: 0;
 }
+
+
+/* Avoid showing the static placeholder hero while campaign data and theme initialize. */
+body.campaign-startup-loading .subpage-hero__copy {
+  visibility: hidden !important;
+}
