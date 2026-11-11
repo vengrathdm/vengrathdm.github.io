@@ -196,12 +196,24 @@ st.addEventListener("pointermove",e=>{
 }
 );
 /* staggered reveal indices + card tilt */
-const stagger=()=>document.querySelectorAll(".unit,.cc,.ent,.dispatch p,.dispatch .facts").forEach(e=>e.style.setProperty("--k",[...e.parentElement.children].filter(c=>c.tagName===e.tagName||!e.matches("p")).indexOf(e)));
+const stagger = () => {
+  document.querySelectorAll(".unit,.cc,.ent,.dispatch p,.dispatch .facts").forEach((element) => {
+    const siblings = [...element.parentElement.children];
+    const index = siblings.filter((sibling) =>
+      sibling.tagName === element.tagName || !element.matches("p")
+    ).indexOf(element);
+    element.style.setProperty("--k", index);
+  });
+};
 setTimeout(stagger,400);
 setTimeout(stagger,1500);
 const gal=$("#character-gallery");
 gal.addEventListener("pointermove",e=>{
-  const c=e.target.closest(".cc");if(!c||c.classList.contains("flip"))return;const r=c.getBoundingClientRect();c.style.setProperty("--ry",((e.clientX-r.left)/r.width-.5)*18+"deg");c.style.setProperty("--rx",(.5-(e.clientY-r.top)/r.height)*14+"deg")
+  const card = e.target.closest(".cc");
+  if (!card || card.classList.contains("flip")) return;
+  const rect = card.getBoundingClientRect();
+  card.style.setProperty("--ry", ((e.clientX - rect.left) / rect.width - .5) * 18 + "deg");
+  card.style.setProperty("--rx", (.5 - (e.clientY - rect.top) / rect.height) * 14 + "deg");
 }
 );
 gal.addEventListener("pointerout",e=>{
