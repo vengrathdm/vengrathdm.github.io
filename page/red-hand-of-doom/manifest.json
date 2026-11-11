@@ -1,0 +1,14 @@
+{
+  "id": "red-hand-of-doom",
+  "title": "Red Hand of Doom",
+  "language": "pl",
+  "campaign": "Red Hand of Doom",
+  "entry": "/page/red-hand-of-doom/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "campaign",
+    "characters",
+    "chronicle"
+  ]
+}
