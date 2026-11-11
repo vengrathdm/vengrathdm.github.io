@@ -1,29 +1,90 @@
 {
-  "characterIds": [],
+  "characterIds": [
+    "char-0020",
+    "char-0251",
+    "char-0068",
+    "char-0021"
+  ],
   "art": {
     "stageBg": "",
     "hero": ""
   },
   "characters": [
     {
-      "character": "Obrońca Brindol",
-      "player": "Gracz",
-      "race": "Krasnolud",
-      "classes": [
-        "Wojownik"
+      "portrait": "/core/portraits/char-0020.webp",
+      "character": "Bromli",
+      "player": "koksuvi",
+      "campaigns": [
+        "Sands of Doom"
       ],
-      "status": "Walczy",
-      "history": "Przykładowy wpis. Prawdziwe postaci wczytają się z katalogu Vengrath."
+      "classes": [
+        "Wizard"
+      ],
+      "race": "Dwarf",
+      "status": "Aktywna",
+      "id": "char-0020",
+      "history": "Brak zapisków.",
+      "modules": [
+        "Sands of Doom"
+      ],
+      "achievementIds": []
     },
     {
-      "character": "Zwiadowca z Doliny",
-      "player": "Gracz",
-      "race": "Półelf",
-      "classes": [
-        "Łowca"
+      "portrait": "/core/portraits/char-0251.webp",
+      "character": "Serrell Allemard",
+      "player": "koksuvi",
+      "campaigns": [
+        "Heroes of Drakkenheim"
       ],
-      "status": "Walczy",
-      "history": "Brak zapisków."
+      "classes": [
+        "Fighter"
+      ],
+      "race": "Human",
+      "status": "Martwa",
+      "id": "char-0251",
+      "history": "Serrell, ostatni z rodu Allemard, powrócił do Drakkenheim by odzyskać rodowy miecz, który pozostał w mieście i podobno był bardzo potężny, oraz odzyskać skarby które mogły pozostać w pozostałościach posiadłości jego rodu. Chce użyć tego miecza, by zdobyć zasługi, złoto i odbudować swój ród. Jego ród wymarł gdy w drakkenheim uderzył meteoryt. Miał on znajomości w srebrnym zakonie co dało mu pracę jako najemnik u nich po dotarciu do miasta. ",
+      "modules": [
+        "Dungeons of Drakkenheim"
+      ],
+      "achievementIds": []
+    },
+    {
+      "portrait": "/core/portraits/char-0068.webp",
+      "character": "Elran",
+      "player": "Daniel",
+      "campaigns": [
+        "Menaces of Gloomforest"
+      ],
+      "classes": [
+        "Fighter"
+      ],
+      "race": "Elf",
+      "status": "Wycofana",
+      "id": "char-0068",
+      "history": "Brak zapisków.",
+      "modules": [
+        "Menaces of Gloomforest"
+      ],
+      "achievementIds": []
+    },
+    {
+      "portrait": "/core/portraits/char-0021.webp",
+      "character": "Gromar",
+      "player": "lexonis",
+      "campaigns": [
+        "Sands of Doom"
+      ],
+      "classes": [
+        "Barbarian"
+      ],
+      "race": "Half-Orc",
+      "status": "Aktywna",
+      "id": "char-0021",
+      "history": "Brak zapisków.",
+      "modules": [
+        "Sands of Doom"
+      ],
+      "achievementIds": []
     }
   ],
   "sessions": [
