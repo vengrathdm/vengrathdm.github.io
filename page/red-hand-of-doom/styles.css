@@ -681,21 +681,6 @@ body.shake {
     transform:translateY(-2px)
   }
 }
-.drum {
-  font:400 .8rem "Special Elite";
-  background:none;
-  color:var(--bone);
-  border:2px solid var(--iron);
-  padding:.4rem .6rem;
-  cursor:pointer;
-  white-space:nowrap;
-  transition:.15s
-}
-.drum[aria-pressed=true] {
-  border-color:var(--blood);
-  color:var(--torch);
-  box-shadow:0 0 14px #b3141a99
-}
 .pane.on .unit,.pane.on .cc,.pane.on .ent {
   animation:rise .6s backwards;
   animation-delay:calc(var(--k,0)*90ms + .25s)
@@ -726,10 +711,6 @@ body.shake {
   box-shadow:0 14px 40px #000,0 0 30px #b3141a88
 }
 @media(max-width:640px) {
-  .drum {
-    font-size:.7rem;
-    padding:.3rem .4rem
-  }
   .army {
     bottom:1.4rem
   }
@@ -744,3 +725,35 @@ body.shake {
   display:none
 }
 
+
+/* Shared Vengrath home button, adapted to the Red Hand campaign theme. */
+.red-hand-page .vengrath-home-button {
+  height: auto;
+  min-height: 2.8rem;
+  padding: 0.45rem 0.85rem;
+  gap: 0.55rem;
+  border: 2px solid var(--bone);
+  border-radius: 0;
+  background: #120c0bdd;
+  color: var(--bone);
+  font: 400 0.85rem "Special Elite", monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transform: rotate(-1.5deg);
+  transition: 0.15s;
+}
+
+.red-hand-page .vengrath-home-button img {
+  width: 1.55rem;
+  height: 1.55rem;
+  filter: sepia(0.35) saturate(1.4);
+}
+
+.red-hand-page .vengrath-home-button:hover,
+.red-hand-page .vengrath-home-button:focus-visible {
+  border-color: var(--torch);
+  background: var(--bone);
+  color: var(--soot);
+  transform: rotate(1deg) scale(1.05);
+  outline-offset: 3px;
+}
