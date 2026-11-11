@@ -1,3 +1,4 @@
+import { createHomeButton } from "/core/templates/HomeButton/HomeButton.js";
 /* Wait for the intended display fonts before revealing the campaign UI. */
 const fontRequests = [
   document.fonts.load('400 3rem "Pirata One"'),
@@ -21,6 +22,9 @@ if (!contentResponse.ok) {
 }
 const PAGE_DATA = await contentResponse.json();
 const REPO = "https://vengrathdm.github.io";
+const homeButton = createHomeButton();
+homeButton.classList.add("red-hand-home-button");
+document.querySelector(".back")?.replaceWith(homeButton);
 const CAMPAIGN = "Red Hand of Doom";
 const CHARACTER_IDS = PAGE_DATA.characterIds || [];
 const ART = PAGE_DATA.art || {
@@ -46,7 +50,7 @@ function card(c){
   const pt=mk("div","pt");
   if(c.portrait){
     const i=new Image();
-    i.alt="";
+    i.alt=c.character+" — portret postaci";
     i.src=c.portrait.startsWith("http")?c.portrait:REPO+c.portrait;
     i.onerror=()=>pt.replaceChildren(mk("span","","✋"));
     pt.append(i)
@@ -130,7 +134,6 @@ function show(i,snap=true){
     flag.style.left=POS[i]+"%";
     army.style.width=POS[i]+"%"
   }
-  tempo();
   panes[i].scrollTop=0
 }
 function pct(e){
@@ -230,41 +233,6 @@ else{
   gate.onclick=killGate;
   setTimeout(killGate,2700)
 }
-/* war drum (procedural, off by default) — tempo quickens as the horde advances */
-let ac=null,drumOn=false,tm;
-const dBtn=$("#drum");
-function thump(v=1){
-  const t=ac.currentTime,o=ac.createOscillator(),g=ac.createGain();
-  o.type="sine";
-  o.frequency.setValueAtTime(130,t);
-  o.frequency.exponentialRampToValueAtTime(38,t+.25);
-  g.gain.setValueAtTime(.9*v,t);
-  g.gain.exponentialRampToValueAtTime(.001,t+.35);
-  o.connect(g).connect(ac.destination);
-  o.start(t);
-  o.stop(t+.4)
-}
-function loop(){
-  if(!drumOn)return;
-  const i=Math.max(idx,0);
-  thump(1);
-  setTimeout(()=>drumOn&&thump(.55),[420,330,240][i]);
-  tm=setTimeout(loop,[1300,1000,720][i])
-}
-function tempo(){
-}
-dBtn.onclick=()=>{
-  drumOn=!drumOn;
-  dBtn.setAttribute("aria-pressed",drumOn);
-  dBtn.textContent=drumOn?"🥁 Werbel: wł.":"🥁 Werbel: wył.";
-  clearTimeout(tm);
-  if(drumOn){
-    ac=ac||new (window.AudioContext||window.webkitAudioContext)();
-    ac.resume();
-    loop()
-  }
-}
-;
 /* ===== smoke & sparks, thicker the further the horde marches ===== */
 (()=>{
   if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;const c=$("#smoke"),x=c.getContext("2d");let W,H;const P=[];
