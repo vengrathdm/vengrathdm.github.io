@@ -707,12 +707,6 @@ body.shake {
     bottom:1.4rem
   }
 }
-@media(hover:none) {
-  .stage::after {
-    display:none
-  }
-}
-
 .pane[hidden] {
   display:none
 }
