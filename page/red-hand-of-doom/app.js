@@ -3,7 +3,8 @@ import { createHomeButton } from "/core/templates/HomeButton/HomeButton.js";
 const fontRequests = [
   document.fonts.load('400 3rem "Pirata One"'),
   document.fonts.load('400 1rem "Special Elite"'),
-  document.fonts.load('400 1rem "Crimson Pro"')
+  document.fonts.load('400 1rem "Crimson Pro"'),
+  document.fonts.load('400 1rem "Voltaire"')
 ];
 try {
   await Promise.race([
