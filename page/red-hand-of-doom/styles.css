@@ -14,7 +14,7 @@ body {
   overflow-y:auto;
   color:var(--bone);
   font:1.12rem/1.6 "Crimson Pro",Georgia,serif;
-  background:radial-gradient(ellipse 90% 60% at 85% 105%,rgb(240 138 36/calc(var(--burn)*.55)),transparent 65%),radial-gradient(ellipse 70% 50% at 50% 110%,rgb(179 20 26/calc(.25 + var(--burn)*.5)),transparent 70%),var(--soot)
+  background:radial-gradient(ellipse 90% 60% at 85% 105%,rgb(179 20 26/calc(var(--burn)*.55)),transparent 65%),radial-gradient(ellipse 70% 50% at 50% 110%,rgb(179 20 26/calc(.25 + var(--burn)*.5)),transparent 70%),var(--soot)
 }
 body::after {
   content:"";
@@ -714,9 +714,8 @@ body.shake {
 
 /* Red Hand custom cursor. Hotspot sits at the raised fingertips. */
 html,
-body,
-body * {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='36' viewBox='0 0 100 110'%3E%3Cg fill='%23b3141a' stroke='%23e8dcc4' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M30 55 22 22M43 50 40 12M56 50 59 14M68 56 77 26M26 70 8 52' fill='none' stroke-width='9'/%3E%3Cpath d='M22 60c0 28 14 42 32 42s26-14 24-36c-2-8-6-12-14-12H34c-8 0-12 2-12 6Z'/%3E%3C/g%3E%3C/svg%3E") 7 3, auto;
+html * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='36' viewBox='0 0 100 110'%3E%3Cg fill='%23b3141a' stroke='%23b3141a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M30 55 22 22M43 50 40 12M56 50 59 14M68 56 77 26M26 70 8 52' fill='none' stroke-width='9'/%3E%3Cpath d='M22 60c0 28 14 42 32 42s26-14 24-36c-2-8-6-12-14-12H34c-8 0-12 2-12 6Z'/%3E%3C/g%3E%3C/svg%3E") 7 3, auto !important;
 }
 
 /* Shared Vengrath home button, adapted to the Red Hand campaign theme. */
