@@ -3,118 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Red Hand of Doom | Vengrath</title>
+<title>Red Hand of Doom | Vengrath</title>\n<meta name="description" content="Red Hand of Doom — Dolina Elsir płonie. Kampania Dungeons & Dragons 5e.">\n<meta name="theme-color" content="#120c0b">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Special+Elite&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap">
-<style>
-:root{--soot:#120c0b;--blood:#b3141a;--bone:#e8dcc4;--iron:#6a6560;--torch:#f08a24;--burn:0}
-*{box-sizing:border-box}
-html,body{height:100%;margin:0}
-body{display:grid;grid-template-rows:auto 1fr auto;height:100dvh;overflow:hidden;color:var(--bone);font:1.12rem/1.6 "Crimson Pro",Georgia,serif;
-background:radial-gradient(ellipse 90% 60% at 85% 105%,rgb(240 138 36/calc(var(--burn)*.55)),transparent 65%),radial-gradient(ellipse 70% 50% at 50% 110%,rgb(179 20 26/calc(.25 + var(--burn)*.5)),transparent 70%),var(--soot)}
-body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.28;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
-#smoke{position:fixed;inset:0;z-index:0;pointer-events:none}
-header,.stage,.road{position:relative;z-index:2}
-/* header */
-header{display:flex;align-items:center;gap:1rem;padding:.7rem 1.2rem;border-bottom:3px solid var(--blood);background:#120c0bdd}
-.back{font:400 .85rem "Special Elite",monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--bone);text-decoration:none;border:2px solid var(--bone);padding:.4rem .7rem;transform:rotate(-1.5deg);transition:.15s;white-space:nowrap}
-.back:hover,.back:focus-visible{background:var(--bone);color:var(--soot);transform:rotate(1deg) scale(1.05)}
-.brand{display:flex;align-items:center;gap:.8rem;margin:0 auto}
-.hand{width:3.2rem;height:3.2rem;filter:url(#rough) drop-shadow(0 0 8px #b3141a99);animation:pulse 3s ease-in-out infinite}
-@keyframes pulse{50%{transform:scale(1.08) rotate(-3deg)}}
-h1{margin:0;font:400 clamp(1.8rem,5vw,3.4rem)/1 "Pirata One",serif;letter-spacing:.04em;text-shadow:3px 3px 0 var(--blood)}
-h1 small{display:block;font:400 .72rem "Special Elite",monospace;letter-spacing:.3em;color:var(--torch);text-shadow:none;margin-top:.2rem}
-/* stage */
-.stage{overflow:hidden}
-.pane{position:absolute;inset:0;overflow:auto;padding:1.5rem clamp(1rem,5vw,4rem) 2rem;opacity:0;visibility:hidden;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s,visibility .6s}
-.pane.before{transform:translateX(-12%)}.pane.after{transform:translateX(12%)}
-.pane.on{opacity:1;visibility:visible;transform:none}
-h2{margin:0 0 1rem;font:400 clamp(2.2rem,6vw,4.4rem)/1 "Pirata One",serif;color:var(--bone)}
-h2 span{color:var(--blood)}
-.tag{font:400 .8rem "Special Elite",monospace;letter-spacing:.25em;color:var(--torch);text-transform:uppercase}
-/* dispatch */
-.wrap{max-width:1050px;margin:0 auto}
-.dispatch{position:relative;background:var(--bone);color:#241a14;padding:2rem clamp(1.2rem,4vw,3rem);font:400 1.05rem/1.7 "Special Elite",monospace;transform:rotate(-.6deg);box-shadow:0 18px 50px #000;clip-path:polygon(0 1%,4% 0,9% 1.2%,16% 0,25% 1%,34% 0,45% 1.2%,57% 0,68% 1%,79% 0,90% 1.2%,100% 0,100% 99%,93% 100%,82% 98.8%,70% 100%,58% 99%,45% 100%,30% 98.8%,16% 100%,6% 99%,0 100%)}
-.dispatch p{margin:.6rem 0}.dispatch .stamp{position:absolute;right:1.2rem;top:1rem;font:400 2.2rem "Pirata One";color:var(--blood);border:4px solid var(--blood);padding:0 .7rem;transform:rotate(9deg);opacity:.85;animation:stamp .5s .3s both}
-@keyframes stamp{from{transform:rotate(9deg) scale(3);opacity:0}}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem;margin-top:1rem;border-top:2px dashed #241a1466;padding-top:1rem;font-size:.85rem}
-.facts b{display:block;color:var(--blood);text-transform:uppercase;letter-spacing:.1em;font-size:.7rem}
-.horde{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem}
-.unit{border:2px solid var(--iron);padding:1rem;background:linear-gradient(#ffffff0a,#0008);position:relative;overflow:hidden;transition:.25s}
-.unit::before{content:attr(data-n);position:absolute;right:.4rem;top:-.6rem;font:400 5rem "Pirata One";color:#b3141a33}
-.unit:hover{border-color:var(--blood);transform:translateY(-5px) rotate(-1deg);box-shadow:0 0 25px #b3141a88}
-.unit h3{margin:0;font:400 1.5rem "Pirata One";color:var(--torch)}.unit p{margin:.3rem 0 0;font-size:.98rem}
-/* cards: flip */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.8rem;margin-top:1.5rem}
-.cc{perspective:1000px;height:360px;cursor:pointer;outline:0}
-.in{position:relative;width:100%;height:100%;transition:transform .7s;transform-style:preserve-3d}
-.cc.flip .in{transform:rotateY(180deg)}.cc:focus-visible .in{box-shadow:0 0 0 3px var(--torch)}
-.f,.b{position:absolute;inset:0;backface-visibility:hidden;border:3px solid var(--iron);background:#1b1210;display:flex;flex-direction:column;padding:12px;box-shadow:0 10px 30px #000}
-.cc:hover .f{border-color:var(--blood)}
-.b{transform:rotateY(180deg);overflow:auto;border-color:var(--blood);background:var(--bone);color:#241a14;font-size:1rem}
-.pt{flex:1;min-height:0;background:radial-gradient(#4a1a14,#120c0b);display:grid;place-items:center;overflow:hidden;border:2px solid #000}
-.pt img{width:100%;height:100%;object-fit:cover;filter:sepia(.4) contrast(1.1)}.pt span{font-size:4rem;color:var(--blood)}
-.f h3{margin:.6rem 0 0;font:400 1.7rem/1 "Pirata One";text-align:center}.f .m{text-align:center;font:400 .78rem "Special Elite";color:var(--torch);letter-spacing:.1em}
-.badge{position:absolute;right:-6px;top:20px;background:var(--blood);padding:.1rem .7rem;font:400 .75rem "Special Elite";text-transform:uppercase;transform:rotate(6deg);box-shadow:2px 2px 0 #000}
-.b h3{margin:0;font:400 1.6rem "Pirata One";color:var(--blood)}.b dl{display:grid;grid-template-columns:auto 1fr;gap:0 .8rem;font-size:.95rem}.b dt{font:400 .75rem "Special Elite";color:var(--blood)}.b dd{margin:0}
-/* chronicle: march log */
-.log{position:relative;margin:2rem 0 0 1.2rem;padding-left:2.4rem;border-left:4px dashed var(--iron)}
-.ent{position:relative;margin-bottom:1.2rem;background:#1b1210;border:2px solid var(--iron);transition:.2s}
-.ent::before{content:"";position:absolute;left:-3.05rem;top:1.2rem;width:1.3rem;height:1.3rem;background:var(--blood);border:3px solid var(--soot);transform:rotate(45deg);box-shadow:0 0 12px var(--blood)}
-.ent:hover,.ent.open{border-color:var(--blood)}
-.eh{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;padding:.8rem 1rem;cursor:pointer}.eh:focus-visible{outline:2px solid var(--torch)}
-.en{font:400 2.2rem "Pirata One";color:var(--blood);min-width:3.6rem}.et{font:400 1.5rem "Pirata One";flex:1;min-width:9rem}.ed{font:400 .8rem "Special Elite";color:var(--torch)}
-.ls{display:flex;gap:.4rem;flex-wrap:wrap}
-.play{font:400 .78rem "Special Elite";text-transform:uppercase;text-decoration:none;color:var(--soot);background:var(--bone);padding:.35rem .7rem;transition:.15s}.play:hover{background:var(--blood);color:var(--bone)}
-.eb{display:none;padding:0 1rem 1rem 6.3rem;color:#d6c9b0}.ent.open .eb{display:block}
-.empty{padding:2rem;border:2px dashed var(--iron);text-align:center;font:400 .95rem "Special Elite";color:var(--iron)}
-/* road control */
-.road{padding:.5rem 1.5rem 1rem;border-top:3px solid var(--blood);background:#120c0bf2;user-select:none;touch-action:none}
-.hint{margin:0 0 .2rem;text-align:center;font:400 .7rem "Special Elite";letter-spacing:.25em;color:var(--iron);text-transform:uppercase}
-.track{position:relative;height:4.6rem;margin:0 1.6rem;cursor:grab}
-.track svg.line{position:absolute;inset:auto 0 1.2rem 0;width:100%;height:1.6rem;overflow:visible}
-.node{position:absolute;bottom:0;transform:translateX(-50%);text-align:center;font:400 .72rem/1.2 "Special Elite";text-transform:uppercase;letter-spacing:.06em;color:var(--iron);background:none;border:0;cursor:pointer;transition:.3s}
-.node::before{content:"";display:block;width:.9rem;height:.9rem;margin:0 auto .3rem;background:var(--iron);transform:rotate(45deg);transition:.3s}
-.node b{display:block;font:400 1.15rem "Pirata One";letter-spacing:.04em}
-.node.on{color:var(--bone)}.node.on::before{background:var(--blood);box-shadow:0 0 14px var(--blood)}
-.flag{position:absolute;top:-.6rem;width:3rem;height:3.2rem;margin-left:-1.5rem;transition:left .6s cubic-bezier(.3,1.4,.5,1);pointer-events:none;filter:drop-shadow(0 4px 6px #000)}
-.track.drag .flag{transition:none}.flag svg{width:100%;height:100%;transform-origin:50% 100%;animation:wave 1.4s ease-in-out infinite}
-@keyframes wave{50%{transform:skewX(-6deg) rotate(2deg)}}
-@media(max-width:640px){header{flex-wrap:wrap}.brand{order:3;margin:0 auto}.eb{padding-left:1rem}.node{font-size:.6rem}.cc{height:340px}.road{padding:.4rem .6rem .7rem}.track{margin:0 1.2rem}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-
-/* ===== 11/10 layer ===== */
-#gate{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:var(--soot);cursor:pointer;animation:gate 2.6s forwards}
-#gate svg{width:min(60vw,340px);filter:url(#rough) drop-shadow(0 0 40px #b3141a);animation:slam 1.1s cubic-bezier(.2,1.6,.4,1) both}
-#gate p{position:absolute;bottom:14vh;margin:0;font:400 .85rem "Special Elite";letter-spacing:.5em;color:var(--torch);text-transform:uppercase;animation:fadein 1s .9s both}
-#gate::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,#b3141a 0,transparent 60%);opacity:0;animation:flash 1.1s both}
-@keyframes slam{0%{transform:scale(7) rotate(-18deg);opacity:0}40%{transform:scale(.92) rotate(2deg);opacity:1}100%{transform:scale(1)}}
-@keyframes flash{35%{opacity:.9}100%{opacity:0}}@keyframes fadein{from{opacity:0}}
-@keyframes gate{0%,72%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden}}
-body.shake{animation:shake .4s .35s}
-@keyframes shake{20%{transform:translate(-8px,5px)}40%{transform:translate(7px,-6px)}60%{transform:translate(-4px,3px)}80%{transform:translate(3px,-2px)}}
-.stage::after{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;background:radial-gradient(circle 300px at var(--mx,50%) var(--my,35%),transparent 0,#0000 30%,#000a 100%)}
-#wipe{position:absolute;inset:0;z-index:5;pointer-events:none;background:radial-gradient(circle at 50% 50%,#b3141a,#5a0a0e);opacity:0;clip-path:circle(0 at 50% 100%)}
-#wipe.go{animation:wipe .95s ease-in-out}
-@keyframes wipe{0%{opacity:1;clip-path:circle(0 at var(--wx) 100%)}55%{opacity:1;clip-path:circle(160vmax at var(--wx) 100%)}100%{opacity:0;clip-path:circle(160vmax at var(--wx) 100%)}}
-.army{position:absolute;left:0;bottom:1.55rem;height:1.9rem;width:10%;transition:width .6s cubic-bezier(.3,1.4,.5,1);pointer-events:none;
- background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='30'%3E%3Cg fill='%23b3141a' stroke='%23b3141a'%3E%3Ccircle cx='9' cy='8' r='4'/%3E%3Crect x='5' y='12' width='9' height='13' rx='2'/%3E%3Cpath d='M18 4v26' stroke-width='1.6'/%3E%3Cpath d='M18 0l3 6h-6z'/%3E%3C/g%3E%3C/svg%3E") repeat-x right bottom/22px 30px;
- -webkit-mask-image:linear-gradient(90deg,transparent,#000 55%);mask-image:linear-gradient(90deg,transparent,#000 55%);animation:bob .5s steps(2) infinite;filter:drop-shadow(0 0 5px #b3141a)}
-.track.drag .army{transition:none}
-@keyframes bob{50%{transform:translateY(-2px)}}
-.drum{font:400 .8rem "Special Elite";background:none;color:var(--bone);border:2px solid var(--iron);padding:.4rem .6rem;cursor:pointer;white-space:nowrap;transition:.15s}
-.drum[aria-pressed=true]{border-color:var(--blood);color:var(--torch);box-shadow:0 0 14px #b3141a99}
-.pane.on .unit,.pane.on .cc,.pane.on .ent{animation:rise .6s backwards;animation-delay:calc(var(--k,0)*90ms + .25s)}
-@keyframes rise{from{opacity:0;transform:translateY(30px) rotate(2deg)}}
-.pane.on .dispatch p,.pane.on .dispatch .facts{animation:typed 1.1s steps(36) backwards;animation-delay:calc(var(--k,0)*.6s + .3s)}
-@keyframes typed{from{clip-path:inset(0 100% 0 0)}}
-.cc:not(.flip) .in{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .15s}
-.cc.flip .in{transition:transform .7s}
-.cc:not(.flip):hover .f{box-shadow:0 14px 40px #000,0 0 30px #b3141a88}
-@media(max-width:640px){.drum{font-size:.7rem;padding:.3rem .4rem}.army{bottom:1.4rem}}
-@media(hover:none){.stage::after{display:none}}
-</style>
+<link rel="stylesheet" href="./theme-fonts.css">\n<link rel="stylesheet" href="./styles.css">
 </head>
-<body>
+<body class="fonts-loading">
 <svg width="0" height="0" style="position:absolute"><filter id="rough"><feTurbulence baseFrequency=".06" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter>
 <symbol id="hand" viewBox="0 0 100 110" fill="none" stroke="#b3141a" stroke-linecap="round"><g stroke-width="13"><path d="M30 55 22 22M43 50 40 12M56 50 59 14M68 56 77 26"/><path d="M26 70 8 52"/></g><path d="M22 60c0 28 14 42 32 42s26-14 24-36c-2-8-6-12-14-12H34c-8 0-12 2-12 6Z" fill="#b3141a" stroke-width="6"/></symbol></svg>
 <canvas id="smoke"></canvas>
@@ -127,7 +20,7 @@ body.shake{animation:shake .4s .35s}
 </header>
 
 <main class="stage" id="stage">
- <section class="pane" id="kampania" aria-label="Kampania"><div class="wrap">
+ <section class="pane" id="campaign" data-page-section="campaign" aria-label="Kampania"><div class="wrap">
   <div class="tag">Depesza nr 1 · Pilne</div><h2><span>Kampania</span></h2>
   <article class="dispatch"><div class="stamp">ALARM</div>
    <p>Do: wszystkich, którzy jeszcze trzymają miecz.<br>Z: Drellin's Ferry, Dolina Elsir.</p>
@@ -138,12 +31,12 @@ body.shake{animation:shake .4s .35s}
   <div class="horde" id="horde"></div>
  </div></section>
 
- <section class="pane" id="postaci" aria-label="Postaci"><div class="wrap">
+ <section class="pane" id="characters" data-page-section="characters" aria-label="Postaci" hidden><div class="wrap">
   <div class="tag">Lista poborowych</div><h2><span>Postaci</span></h2>
   <div class="cards" id="character-gallery"></div>
  </div></section>
 
- <section class="pane" id="kronika" aria-label="Kronika"><div class="wrap">
+ <section class="pane" id="chronicle" data-page-section="chronicle" aria-label="Kronika" hidden><div class="wrap">
   <div class="tag">Dziennik marszu</div><h2><span>Kronika</span></h2>
   <div class="log" id="campaign-chronicle"></div>
  </div></section>
@@ -162,96 +55,6 @@ body.shake{animation:shake .4s .35s}
  </div>
 </footer>
 
-<script>
-/* ====== CONFIG — everything swappable ====== */
-const REPO="https://vengrathdm.github.io", CAMPAIGN="Red Hand of Doom", CHARACTER_IDS=[];
-const ART={ /* optional graphics: paste URLs of your own drawings */ stageBg:"", hero:"" };
-const SAMPLE_CHARACTERS=[
- {character:"Obrońca Brindol",player:"Gracz",race:"Krasnolud",classes:["Wojownik"],status:"Walczy",history:"Przykładowy wpis. Prawdziwe postaci wczytają się z katalogu Vengrath."},
- {character:"Zwiadowca z Doliny",player:"Gracz",race:"Półelf",classes:["Łowca"],status:"Walczy",history:"Brak zapisków."}];
-const SAMPLE_SESSIONS=[ /* PLACEHOLDER links — replace with real recordings */
- {sessionNumber:1,title:"Dym nad Drellin's Ferry",date:"01.01.2026",description:"Notatki z sesji: pierwsze ślady hordy.",recordings:[{url:"https://www.youtube.com"}]},
- {sessionNumber:2,title:"Droga do Brindol",date:"08.01.2026",description:"Brak notatek.",recordings:[{url:"https://www.youtube.com"},{url:"https://www.youtube.com"}]}];
-const HORDE=[["Azarr Kul","Hobgoblin, wyrmlord Czerwonej Dłoni. Wódz, który prowadzi marsz."],["Legiony hobgoblinów","Żelazna dyscyplina, szyk i wojna jako rzemiosło."],["Gobliny, ogry, gnolle","Fala mięsa armatniego, która zalewa dolinę."],["Kult Tiamat","Za wojną stoi smocza bogini i jej wyrmlordzi."]];
-/* =========================================== */
-const $=s=>document.querySelector(s),mk=(t,c,x)=>Object.assign(document.createElement(t),{className:c||"",textContent:x||""});
-if(ART.stageBg)$("#stage").style.cssText+=`background:linear-gradient(#120c0bcc,#120c0bcc),url(${ART.stageBg}) center/cover`;
-$("#horde").append(...HORDE.map(([n,d],i)=>{const u=mk("div","unit");u.dataset.n=i+1;u.append(mk("h3","",n),mk("p","",d));return u}));
-
-function card(c){const a=mk("article","cc");a.tabIndex=0;a.setAttribute("role","button");a.setAttribute("aria-label",c.character+" — obróć kartę");
- const pt=mk("div","pt");
- if(c.portrait){const i=new Image();i.alt="";i.src=c.portrait.startsWith("http")?c.portrait:REPO+c.portrait;i.onerror=()=>pt.replaceChildren(mk("span","","✋"));pt.append(i)}else pt.append(mk("span","","✋"));
- const f=mk("div","f");f.append(pt,mk("h3","",c.character),mk("div","m",[c.race,(c.classes||[]).join(" / ")].filter(Boolean).join(" · ")));
- if(c.status)f.append(mk("div","badge",c.status));
- const b=mk("div","b");b.append(mk("h3","",c.character));const dl=mk("dl");
- [["Gracz",c.player],["Rasa",c.race],["Klasa",(c.classes||[]).join(" / ")],["Status",c.status]].forEach(([k,v])=>dl.append(mk("dt","",k),mk("dd","",v||"—")));
- b.append(dl,mk("p","",c.history||""));
- const i=mk("div","in");i.append(f,b);a.append(i);
- const t=()=>a.classList.toggle("flip");a.onclick=t;a.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();t()}};return a}
-
-function entry(s){const r=mk("article","ent"),h=mk("div","eh");h.tabIndex=0;h.setAttribute("role","button");
- const L=s.recordings||[],ls=mk("div","ls");
- L.forEach((x,i)=>{const a=mk("a","play",L.length>1?"▶ Część "+(x.partNumber||i+1):"▶ Odtwórz");a.href=x.url;a.target="_blank";a.rel="noopener";a.onclick=e=>e.stopPropagation();ls.append(a)});
- h.append(mk("span","en",String(s.sessionNumber).padStart(2,"0")),mk("span","et",s.title||"Bez tytułu"),mk("span","ed",s.date||""),ls);
- r.append(h,mk("div","eb",s.description||s.notes||""));
- const t=()=>r.classList.toggle("open");h.onclick=t;h.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();t()}};return r}
-
-(async()=>{let ch=SAMPLE_CHARACTERS,se=SAMPLE_SESSIONS;
- try{const r=await fetch(REPO+"/core/data/characters.json");if(r.ok){const all=await r.json();const p=all.filter(c=>CHARACTER_IDS.includes(c.id)||(c.campaigns||[]).includes(CAMPAIGN));if(p.length)ch=p}}catch(e){}
- $("#character-gallery").append(...ch.map(card));
- $("#campaign-chronicle").append(...(se.length?se.map(entry):[mk("p","empty","Brak wpisów — pierwszy dzień marszu jeszcze nie nadszedł.")]));})();
-
-/* ===== the march: drag the banner to change section ===== */
-const panes=[...document.querySelectorAll(".pane")],nodes=[...document.querySelectorAll(".node")],track=$("#track"),flag=$("#flag"),POS=[10,50,90];
-let idx=-1;const army=$("#army"),wipe=$("#wipe");
-function show(i,snap=true){if(i===idx&&!snap)return;if(idx>=0&&i!==idx)wipeGo();idx=i;
- panes.forEach((p,k)=>{p.classList.toggle("on",k===i);p.classList.toggle("before",k<i);p.classList.toggle("after",k>i);p.inert=k!==i});
- nodes.forEach((n,k)=>n.classList.toggle("on",k===i));
- track.setAttribute("aria-valuenow",i);track.setAttribute("aria-valuetext",nodes[i].lastElementChild.textContent);
- document.documentElement.style.setProperty("--burn",[.1,.5,1][i]);
- if(snap){flag.style.left=POS[i]+"%";army.style.width=POS[i]+"%"}tempo();panes[i].scrollTop=0}
-function pct(e){const r=track.getBoundingClientRect();return Math.min(96,Math.max(4,(e.clientX-r.left)/r.width*100))}
-let dragging=false;
-track.addEventListener("pointerdown",e=>{if(e.target.closest(".node")&&e.pointerType==="mouse"&&false)return;dragging=true;track.classList.add("drag");track.setPointerCapture(e.pointerId);move(e)});
-track.addEventListener("pointermove",e=>dragging&&move(e));
-function move(e){const p=pct(e);flag.style.left=p+"%";army.style.width=p+"%";show(p<30?0:p<70?1:2,false)}
-const end=()=>{if(!dragging)return;dragging=false;track.classList.remove("drag");flag.style.left=POS[idx]+"%";army.style.width=POS[idx]+"%"};
-track.addEventListener("pointerup",end);track.addEventListener("pointercancel",end);
-track.addEventListener("keydown",e=>{if(e.key==="ArrowRight")show(Math.min(2,idx+1));if(e.key==="ArrowLeft")show(Math.max(0,idx-1))});
-addEventListener("keydown",e=>{if(e.target.closest(".cc,.eh"))return;if(e.key==="ArrowRight")show(Math.min(2,idx+1));if(e.key==="ArrowLeft")show(Math.max(0,idx-1))});
-show(0);
-function wipeGo(){const r=flag.getBoundingClientRect();wipe.style.setProperty("--wx",(r.left+r.width/2)+"px");wipe.classList.remove("go");void wipe.offsetWidth;wipe.classList.add("go")}
-addEventListener("keydown",e=>{if("123".includes(e.key)&&e.key)show(+e.key-1)});
-/* swipe on touch */
-let sx=0,sy=0;const st=$("#stage");
-st.addEventListener("pointerdown",e=>{sx=e.clientX;sy=e.clientY});
-st.addEventListener("pointerup",e=>{if(e.pointerType==="mouse")return;const dx=e.clientX-sx;if(Math.abs(dx)>80&&Math.abs(e.clientY-sy)<50)show(Math.max(0,Math.min(2,idx+(dx<0?1:-1))))});
-/* torch light follows cursor */
-st.addEventListener("pointermove",e=>{st.style.setProperty("--mx",e.clientX+"px");st.style.setProperty("--my",(e.clientY-st.getBoundingClientRect().top)+"px")});
-/* staggered reveal indices + card tilt */
-const stagger=()=>document.querySelectorAll(".unit,.cc,.ent,.dispatch p,.dispatch .facts").forEach(e=>e.style.setProperty("--k",[...e.parentElement.children].filter(c=>c.tagName===e.tagName||!e.matches("p")).indexOf(e)));
-setTimeout(stagger,400);setTimeout(stagger,1500);
-const gal=$("#character-gallery");
-gal.addEventListener("pointermove",e=>{const c=e.target.closest(".cc");if(!c||c.classList.contains("flip"))return;const r=c.getBoundingClientRect();c.style.setProperty("--ry",((e.clientX-r.left)/r.width-.5)*18+"deg");c.style.setProperty("--rx",(.5-(e.clientY-r.top)/r.height)*14+"deg")});
-gal.addEventListener("pointerout",e=>{const c=e.target.closest(".cc");if(c){c.style.setProperty("--rx","0deg");c.style.setProperty("--ry","0deg")}});
-/* intro gate */
-const gate=$("#gate"),killGate=()=>gate&&gate.remove();
-if(matchMedia("(prefers-reduced-motion:reduce)").matches)killGate();else{document.body.classList.add("shake");gate.onclick=killGate;setTimeout(killGate,2700)}
-/* war drum (procedural, off by default) — tempo quickens as the horde advances */
-let ac=null,drumOn=false,tm;const dBtn=$("#drum");
-function thump(v=1){const t=ac.currentTime,o=ac.createOscillator(),g=ac.createGain();o.type="sine";o.frequency.setValueAtTime(130,t);o.frequency.exponentialRampToValueAtTime(38,t+.25);g.gain.setValueAtTime(.9*v,t);g.gain.exponentialRampToValueAtTime(.001,t+.35);o.connect(g).connect(ac.destination);o.start(t);o.stop(t+.4)}
-function loop(){if(!drumOn)return;const i=Math.max(idx,0);thump(1);setTimeout(()=>drumOn&&thump(.55),[420,330,240][i]);tm=setTimeout(loop,[1300,1000,720][i])}
-function tempo(){}
-dBtn.onclick=()=>{drumOn=!drumOn;dBtn.setAttribute("aria-pressed",drumOn);dBtn.textContent=drumOn?"🥁 Werbel: wł.":"🥁 Werbel: wył.";clearTimeout(tm);if(drumOn){ac=ac||new (window.AudioContext||window.webkitAudioContext)();ac.resume();loop()}};
-
-/* ===== smoke & sparks, thicker the further the horde marches ===== */
-(()=>{if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;const c=$("#smoke"),x=c.getContext("2d");let W,H;const P=[];
- const rs=()=>{W=c.width=innerWidth;H=c.height=innerHeight};rs();addEventListener("resize",rs);
- const spawn=()=>({x:Math.random()*W,y:H+10,r:Math.random()*2+.6,v:Math.random()*1.2+.4,d:Math.random()*6,s:Math.random()<.25});
- (function f(){x.clearRect(0,0,W,H);const b=+getComputedStyle(document.documentElement).getPropertyValue("--burn")||.1;
-  while(P.length<20+b*90)P.push(spawn());
-  P.forEach((p,i)=>{p.y-=p.v;p.d+=.03;p.x+=Math.sin(p.d)*.6;if(p.y<-10)P[i]=spawn();
-   x.globalAlpha=p.s?.8:.18;x.fillStyle=p.s?"#f08a24":"#8a8078";x.beginPath();x.arc(p.x,p.y,p.s?p.r:p.r*8,0,7);x.fill()});requestAnimationFrame(f)})()})();
-</script>
+<script type="module" src="./app.js"></script>
 </body>
 </html>
