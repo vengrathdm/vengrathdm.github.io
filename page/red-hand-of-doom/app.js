@@ -194,11 +194,6 @@ st.addEventListener("pointerup",e=>{
   if(e.pointerType==="mouse")return;const dx=e.clientX-sx;if(Math.abs(dx)>80&&Math.abs(e.clientY-sy)<50)show(Math.max(0,Math.min(2,idx+(dx<0?1:-1))))
 }
 );
-/* torch light follows cursor */
-st.addEventListener("pointermove",e=>{
-  st.style.setProperty("--mx",e.clientX+"px");st.style.setProperty("--my",(e.clientY-st.getBoundingClientRect().top)+"px")
-}
-);
 /* staggered reveal indices + card tilt */
 const stagger = () => {
   document.querySelectorAll(".unit,.cc,.ent,.dispatch p,.dispatch .facts").forEach((element) => {
