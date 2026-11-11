@@ -1,0 +1,74 @@
+{
+  "characterIds": [],
+  "art": {
+    "stageBg": "",
+    "hero": ""
+  },
+  "characters": [
+    {
+      "character": "Obrońca Brindol",
+      "player": "Gracz",
+      "race": "Krasnolud",
+      "classes": [
+        "Wojownik"
+      ],
+      "status": "Walczy",
+      "history": "Przykładowy wpis. Prawdziwe postaci wczytają się z katalogu Vengrath."
+    },
+    {
+      "character": "Zwiadowca z Doliny",
+      "player": "Gracz",
+      "race": "Półelf",
+      "classes": [
+        "Łowca"
+      ],
+      "status": "Walczy",
+      "history": "Brak zapisków."
+    }
+  ],
+  "sessions": [
+    {
+      "sessionNumber": 1,
+      "title": "Dym nad Drellin's Ferry",
+      "date": "01.01.2026",
+      "description": "Notatki z sesji: pierwsze ślady hordy.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 2,
+      "title": "Droga do Brindol",
+      "date": "08.01.2026",
+      "description": "Brak notatek.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com"
+        },
+        {
+          "url": "https://www.youtube.com"
+        }
+      ]
+    }
+  ],
+  "horde": [
+    [
+      "Azarr Kul",
+      "Hobgoblin, wyrmlord Czerwonej Dłoni. Wódz, który prowadzi marsz."
+    ],
+    [
+      "Legiony hobgoblinów",
+      "Żelazna dyscyplina, szyk i wojna jako rzemiosło."
+    ],
+    [
+      "Gobliny, ogry, gnolle",
+      "Fala mięsa armatniego, która zalewa dolinę."
+    ],
+    [
+      "Kult Tiamat",
+      "Za wojną stoi smocza bogini i jej wyrmlordzi."
+    ]
+  ]
+}\n
