@@ -4,123 +4,123 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Red Hand of Doom | Vengrath</title>
-      <meta name="description" content="Red Hand of Doom — Dolina Elsir płonie. Kampania Dungeons & Dragons 5e.">
-      <meta name="theme-color" content="#120c0b">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Special+Elite&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap">
-      <link rel="stylesheet" href="./theme-fonts.css">
-      <link rel="stylesheet" href="./styles.css">
-    </head>
-    <body class="fonts-loading">
-      <svg width="0" height="0" style="position:absolute">
-        <filter id="rough">
-          <feTurbulence baseFrequency=".06" numOctaves="2" seed="4"/>
-          <feDisplacementMap in="SourceGraphic" scale="4"/>
-        </filter>
-        <symbol id="hand" viewBox="0 0 100 110" fill="none" stroke="#b3141a" stroke-linecap="round">
-          <g stroke-width="13">
-            <path d="M30 55 22 22M43 50 40 12M56 50 59 14M68 56 77 26"/>
-            <path d="M26 70 8 52"/>
-          </g>
-          <path d="M22 60c0 28 14 42 32 42s26-14 24-36c-2-8-6-12-14-12H34c-8 0-12 2-12 6Z" fill="#b3141a" stroke-width="6"/>
-        </symbol>
+    <meta name="description" content="Red Hand of Doom — Dolina Elsir płonie. Kampania Dungeons & Dragons 5e.">
+    <meta name="theme-color" content="#120c0b">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Special+Elite&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap">
+    <link rel="stylesheet" href="./theme-fonts.css">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body class="fonts-loading">
+    <svg width="0" height="0" style="position:absolute">
+      <filter id="rough">
+        <feTurbulence baseFrequency=".06" numOctaves="2" seed="4"/>
+        <feDisplacementMap in="SourceGraphic" scale="4"/>
+      </filter>
+      <symbol id="hand" viewBox="0 0 100 110" fill="none" stroke="#b3141a" stroke-linecap="round">
+        <g stroke-width="13">
+          <path d="M30 55 22 22M43 50 40 12M56 50 59 14M68 56 77 26"/>
+          <path d="M26 70 8 52"/>
+        </g>
+        <path d="M22 60c0 28 14 42 32 42s26-14 24-36c-2-8-6-12-14-12H34c-8 0-12 2-12 6Z" fill="#b3141a" stroke-width="6"/>
+      </symbol>
+    </svg>
+    <canvas id="smoke">
+    </canvas>
+    <div id="gate" role="presentation">
+      <svg viewBox="0 0 100 110">
+        <use href="#hand"/>
       </svg>
-      <canvas id="smoke">
-      </canvas>
-      <div id="gate" role="presentation">
-        <svg viewBox="0 0 100 110">
+      <p>Horda nadchodzi</p>
+    </div>
+    <header>
+      <a class="back" href="/home/">← Back VENGRATH</a>
+      <div class="brand">
+        <svg class="hand">
           <use href="#hand"/>
         </svg>
-        <p>Horda nadchodzi</p>
-        </div>
-        <header>
-          <a class="back" href="/home/">← Back VENGRATH</a>
-            <div class="brand">
-              <svg class="hand">
-                <use href="#hand"/>
-              </svg>
-              <h1>Red Hand of Doom<small>DOLINA ELSIR PŁONIE · D&amp;D 5E</small>
-              </h1>
+        <h1>Red Hand of Doom<small>DOLINA ELSIR PŁONIE · D&amp;D 5E</small>
+        </h1>
+      </div>
+      <button class="drum" id="drum" aria-pressed="false">🥁 Werbel: wył.</button>
+    </header>
+    <main class="stage" id="stage">
+      <section class="pane" id="campaign" data-page-section="campaign" aria-label="Kampania">
+        <div class="wrap">
+          <div class="tag">Depesza nr 1 · Pilne</div>
+          <h2>
+            <span>Kampania</span>
+          </h2>
+          <article class="dispatch">
+            <div class="stamp">ALARM</div>
+            <p>Do: wszystkich, którzy jeszcze trzymają miecz.<br>Z: Drellin's Ferry, Dolina Elsir.</p>
+            <p>Hobgobliny maszerują. Za nimi gobliny, ogry i gnolle. Ponad nimi — kapłani Tiamat i wola Czerwonej Dłoni. Wodzem hordy jest Azarr Kul, wyrmlord, który nie zna słowa „odwrót”.</p>
+            <p>Red Hand of Doom to klasyczna przygoda o wojnie: najpierw ratujesz wioskę, potem miasto, a na końcu całą dolinę. Drużyna musi wygrać wyścig z armią, która nie zwalnia.</p>
+            <div class="facts">
+              <div>
+                <b>Przygoda</b>Red Hand of Doom</div>
+              <div>
+                <b>Poziomy</b>~6–10 (5e)</div>
+              <div>
+                <b>Pole bitwy</b>Dolina Elsir</div>
+              <div>
+                <b>Punkt zapalny</b>Drellin's Ferry</div>
+              <div>
+                <b>Status</b>W toku</div>
             </div>
-            <button class="drum" id="drum" aria-pressed="false">🥁 Werbel: wył.</button>
-            </header>
-            <main class="stage" id="stage">
-              <section class="pane" id="campaign" data-page-section="campaign" aria-label="Kampania">
-                <div class="wrap">
-                  <div class="tag">Depesza nr 1 · Pilne</div>
-                    <h2>
-                      <span>Kampania</span>
-                      </h2>
-                      <article class="dispatch">
-                        <div class="stamp">ALARM</div>
-                          <p>Do: wszystkich, którzy jeszcze trzymają miecz.<br>Z: Drellin's Ferry, Dolina Elsir.</p>
-                            <p>Hobgobliny maszerują. Za nimi gobliny, ogry i gnolle. Ponad nimi — kapłani Tiamat i wola Czerwonej Dłoni. Wodzem hordy jest Azarr Kul, wyrmlord, który nie zna słowa „odwrót”.</p>
-                              <p>Red Hand of Doom to klasyczna przygoda o wojnie: najpierw ratujesz wioskę, potem miasto, a na końcu całą dolinę. Drużyna musi wygrać wyścig z armią, która nie zwalnia.</p>
-                                <div class="facts">
-                                  <div>
-                                    <b>Przygoda</b>Red Hand of Doom</div>
-                                      <div>
-                                        <b>Poziomy</b>~6–10 (5e)</div>
-                                          <div>
-                                            <b>Pole bitwy</b>Dolina Elsir</div>
-                                              <div>
-                                                <b>Punkt zapalny</b>Drellin's Ferry</div>
-                                                  <div>
-                                                    <b>Status</b>W toku</div>
-                                                    </div>
-                                                  </article>
-                                                  <div class="horde" id="horde">
-                                                  </div>
-                                                </div>
-                                              </section>
-                                              <section class="pane" id="characters" data-page-section="characters" aria-label="Postaci" hidden>
-                                                <div class="wrap">
-                                                  <div class="tag">Lista poborowych</div>
-                                                    <h2>
-                                                      <span>Postaci</span>
-                                                      </h2>
-                                                      <div class="cards" id="character-gallery">
-                                                      </div>
-                                                    </div>
-                                                  </section>
-                                                  <section class="pane" id="chronicle" data-page-section="chronicle" aria-label="Kronika" hidden>
-                                                    <div class="wrap">
-                                                      <div class="tag">Dziennik marszu</div>
-                                                        <h2>
-                                                          <span>Kronika</span>
-                                                          </h2>
-                                                          <div class="log" id="campaign-chronicle">
-                                                          </div>
-                                                        </div>
-                                                      </section>
-                                                      <div id="wipe">
-                                                      </div>
-                                                    </main>
-                                                    <footer class="road">
-  <nav aria-label="Nawigacja sekcji">
-                                                      <p class="hint">Przeciągnij sztandar wzdłuż drogi marszu ⟷ albo użyj strzałek</p>
-                                                        <div class="track" id="track" role="slider" tabindex="0" aria-label="Sekcja kampanii" aria-valuemin="0" aria-valuemax="2" aria-valuenow="0" aria-valuetext="Kampania">
-                                                          <svg class="line" viewBox="0 0 100 16" preserveAspectRatio="none">
-                                                            <path d="M0 8C10 0 18 16 28 8S42 0 50 8 68 16 78 8 92 0 100 8" fill="none" stroke="#6a6560" stroke-width="3" stroke-dasharray="6 5" vector-effect="non-scaling-stroke"/>
-                                                          </svg>
-                                                          <button class="node" data-i="0" style="left:10%">Drellin's Ferry<b>Kampania</b>
-                                                          </button>
-                                                          <button class="node" data-i="1" style="left:50%">Brindol<b>Postaci</b>
-                                                          </button>
-                                                          <button class="node" data-i="2" style="left:90%">Skullcliff<b>Kronika</b>
-                                                          </button>
-                                                          <div class="army" id="army" aria-hidden="true">
-                                                          </div>
-                                                          <div class="flag" id="flag">
-                                                            <svg viewBox="0 0 40 44">
-                                                              <path d="M6 2v42" stroke="#e8dcc4" stroke-width="3"/>
-                                                              <path d="M6 4h30l-8 10 8 10H6Z" fill="#b3141a" stroke="#000" stroke-width="1.5"/>
-                                                              <path d="M14 8 22 8M13 14l9 0M15 19l7 0" stroke="#120c0b" stroke-width="2"/>
-                                                            </svg>
-                                                          </div>
-                                                        </div>
-                                                      </nav>
-</footer>
-                                                      <script type="module" src="./app.js">
-                                                      </script>
-                                                    </body>
-                                                  </html>
+          </article>
+          <div class="horde" id="horde">
+          </div>
+        </div>
+      </section>
+      <section class="pane" id="characters" data-page-section="characters" aria-label="Postaci" hidden>
+        <div class="wrap">
+          <div class="tag">Lista poborowych</div>
+          <h2>
+            <span>Postaci</span>
+          </h2>
+          <div class="cards" id="character-gallery">
+          </div>
+        </div>
+      </section>
+      <section class="pane" id="chronicle" data-page-section="chronicle" aria-label="Kronika" hidden>
+        <div class="wrap">
+          <div class="tag">Dziennik marszu</div>
+          <h2>
+            <span>Kronika</span>
+          </h2>
+          <div class="log" id="campaign-chronicle">
+          </div>
+        </div>
+      </section>
+      <div id="wipe">
+      </div>
+    </main>
+    <footer class="road">
+      <nav aria-label="Nawigacja sekcji">
+        <p class="hint">Przeciągnij sztandar wzdłuż drogi marszu ⟷ albo użyj strzałek</p>
+        <div class="track" id="track" role="slider" tabindex="0" aria-label="Sekcja kampanii" aria-valuemin="0" aria-valuemax="2" aria-valuenow="0" aria-valuetext="Kampania">
+          <svg class="line" viewBox="0 0 100 16" preserveAspectRatio="none">
+            <path d="M0 8C10 0 18 16 28 8S42 0 50 8 68 16 78 8 92 0 100 8" fill="none" stroke="#6a6560" stroke-width="3" stroke-dasharray="6 5" vector-effect="non-scaling-stroke"/>
+          </svg>
+          <button class="node" data-i="0" style="left:10%">Drellin's Ferry<b>Kampania</b>
+          </button>
+          <button class="node" data-i="1" style="left:50%">Brindol<b>Postaci</b>
+          </button>
+          <button class="node" data-i="2" style="left:90%">Skullcliff<b>Kronika</b>
+          </button>
+          <div class="army" id="army" aria-hidden="true">
+          </div>
+          <div class="flag" id="flag">
+            <svg viewBox="0 0 40 44">
+              <path d="M6 2v42" stroke="#e8dcc4" stroke-width="3"/>
+              <path d="M6 4h30l-8 10 8 10H6Z" fill="#b3141a" stroke="#000" stroke-width="1.5"/>
+              <path d="M14 8 22 8M13 14l9 0M15 19l7 0" stroke="#120c0b" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+      </nav>
+    </footer>
+    <script type="module" src="./app.js">
+    </script>
+  </body>
+</html>
