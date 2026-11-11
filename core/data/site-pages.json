@@ -570,16 +570,5 @@
     "image": "/core/graphics/voronoi/red-hand-of-doom.webp",
     "layout": "bespoke",
     "manifest": null
-  },
-  {
-    "id": "voronoi",
-    "title": "Voronoi",
-    "type": "graphics",
-    "category": "Hidden",
-    "visibility": "hidden",
-    "url": "/page/voronoi/",
-    "image": "/core/graphics/voronoi/voronoi.webp",
-    "layout": "page-specific",
-    "manifest": null
   }
 ]
