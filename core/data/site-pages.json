@@ -559,5 +559,27 @@
     "image": "/core/graphics/voronoi/curse-of-strahd-muppets-musical.webp",
     "layout": "bespoke",
     "manifest": null
+  },
+  {
+    "id": "red-hand-of-doom",
+    "title": "Red Hand of Doom",
+    "type": "campaign",
+    "category": "Hidden",
+    "visibility": "hidden",
+    "url": "/page/red-hand-of-doom/",
+    "image": "/core/graphics/voronoi/red-hand-of-doom.webp",
+    "layout": "bespoke",
+    "manifest": null
+  },
+  {
+    "id": "voronoi",
+    "title": "Voronoi",
+    "type": "graphics",
+    "category": "Hidden",
+    "visibility": "hidden",
+    "url": "/page/voronoi/",
+    "image": "/core/graphics/voronoi/voronoi.webp",
+    "layout": "page-specific",
+    "manifest": null
   }
 ]
