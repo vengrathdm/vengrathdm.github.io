@@ -8,6 +8,14 @@
   "use strict";
 
   var MANIFEST = "articles/index.json";
+  var DISTRICTS = [
+    "Apetoria",
+    "Erozja",
+    "Korona",
+    "Senatorium",
+    "Wisielcze Wzgórze",
+    "Zabraniec",
+  ];
   var el = {
     rail: document.getElementById("rail"),
     index: document.getElementById("index"),
@@ -107,6 +115,13 @@
             root.dataset.name ||
             root.querySelector(".entry__title").textContent,
           kicker: root.dataset.kicker || "",
+          district:
+            root.dataset.district ||
+            (root.dataset.section === "dzielnice"
+              ? root.dataset.name || ""
+              : DISTRICTS.indexOf(root.dataset.kicker || "") !== -1
+                ? root.dataset.kicker
+                : ""),
           sub: root.dataset.sub || "",
           content: root.querySelector(".article-content"),
         };
@@ -122,11 +137,16 @@
         entry: a.entry,
         name: a.name,
         kicker: a.kicker,
+        district: a.district,
+        order: a.order,
         haystack: flatten(a),
       };
     });
     CATALOG.sort(function (a, b) {
-      return a.name.localeCompare(b.name, "pl");
+      var districtA = a.district || "\uffff";
+      var districtB = b.district || "\uffff";
+      var districtOrder = districtA.localeCompare(districtB, "pl");
+      return districtOrder || a.name.localeCompare(b.name, "pl");
     });
     var map = Object.create(null);
     CATALOG.forEach(function (a) {
