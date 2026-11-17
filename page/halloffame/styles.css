@@ -320,3 +320,134 @@ footer a { color:var(--gold-lt); }
   .hof-hero-copy .hof-stats strong { font-size:1rem; }
   .character-gallery.character-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem; }
 }
+
+
+/* Hall of Fame status treatments — scoped to this page's character cards. */
+.character-card {
+  --status-accent: var(--gold);
+  --status-glow: rgba(176,141,87,.24);
+  border-color: color-mix(in srgb, var(--status-accent) 72%, var(--darkblue));
+  transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+}
+.character-card__portrait::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .32s ease;
+}
+.character-card__portrait img {
+  transition: transform .48s ease, filter .32s ease;
+}
+.character-card:hover,
+.character-card:focus-visible {
+  border-color: var(--status-accent);
+  box-shadow: 0 0 0 5px var(--paper-fold), 0 0 22px var(--status-glow), 0 22px 38px #000b;
+}
+.character-card:hover .character-card__portrait::before,
+.character-card:focus-visible .character-card__portrait::before { opacity: 1; }
+.character-card__status {
+  z-index: 2;
+  border-color: var(--status-accent);
+}
+
+/* Zwycięska: warm, prestigious gold and a restrained moving glint. */
+.character-card[data-status="Zwycięska"] {
+  --status-accent: #d8b87e;
+  --status-glow: rgba(216,184,126,.38);
+}
+.character-card[data-status="Zwycięska"] .character-card__portrait::before {
+  background: linear-gradient(112deg, transparent 22%, rgba(255,231,174,.2) 48%, transparent 68%);
+  transform: translateX(-100%);
+}
+.character-card[data-status="Zwycięska"]:hover .character-card__portrait::before,
+.character-card[data-status="Zwycięska"]:focus-visible .character-card__portrait::before {
+  opacity: 1;
+  animation: hof-victory-glint .9s ease-out both;
+}
+.character-card[data-status="Zwycięska"] .character-card__portrait img { filter: saturate(1.08) contrast(1.03); }
+.character-card[data-status="Zwycięska"]:hover .character-card__portrait img,
+.character-card[data-status="Zwycięska"]:focus-visible .character-card__portrait img {
+  filter: saturate(1.2) brightness(1.08) contrast(1.04);
+}
+
+/* Aktywna: living ember — a warm red edge, with no permanent animation. */
+.character-card[data-status="Aktywna"] {
+  --status-accent: #b85955;
+  --status-glow: rgba(184,89,85,.32);
+}
+.character-card[data-status="Aktywna"] .character-card__portrait::before {
+  background: radial-gradient(ellipse at 50% 100%, rgba(184,89,85,.28), transparent 68%);
+}
+.character-card[data-status="Aktywna"]:hover .character-card__portrait img,
+.character-card[data-status="Aktywna"]:focus-visible .character-card__portrait img {
+  filter: saturate(1.12) brightness(1.06);
+}
+
+/* Martwa: cold ash, silver-blue light and a solemn desaturated portrait. */
+.character-card[data-status="Martwa"] {
+  --status-accent: #9ba9bd;
+  --status-glow: rgba(155,169,189,.3);
+}
+.character-card[data-status="Martwa"] .character-card__portrait::before {
+  background: linear-gradient(145deg, rgba(135,157,184,.2), transparent 62%);
+}
+.character-card[data-status="Martwa"] .character-card__portrait img { filter: grayscale(.88) sepia(.12) hue-rotate(175deg); }
+.character-card[data-status="Martwa"]:hover .character-card__portrait img,
+.character-card[data-status="Martwa"]:focus-visible .character-card__portrait img {
+  filter: grayscale(.58) sepia(.08) hue-rotate(175deg) brightness(1.08);
+}
+
+/* Wycofana: faded bronze and a gentle return of detail on hover. */
+.character-card[data-status="Wycofana"] {
+  --status-accent: #a9875f;
+  --status-glow: rgba(169,135,95,.25);
+}
+.character-card[data-status="Wycofana"] .character-card__portrait::before {
+  background: linear-gradient(180deg, rgba(178,145,103,.12), rgba(74,54,37,.2));
+}
+.character-card[data-status="Wycofana"] .character-card__portrait img { filter: saturate(.52) sepia(.3) brightness(.86); }
+.character-card[data-status="Wycofana"]:hover .character-card__portrait img,
+.character-card[data-status="Wycofana"]:focus-visible .character-card__portrait img {
+  filter: saturate(.78) sepia(.18) brightness(.98);
+}
+
+/* Porzucona: interrupted crimson — distinct from death, darker and unsettled. */
+.character-card[data-status="Porzucona"] {
+  --status-accent: #873b43;
+  --status-glow: rgba(135,59,67,.3);
+}
+.character-card[data-status="Porzucona"] .character-card__portrait::before {
+  background: linear-gradient(118deg, transparent 25%, rgba(116,34,46,.25) 52%, transparent 78%);
+}
+.character-card[data-status="Porzucona"] .character-card__portrait img { filter: saturate(.48) brightness(.78) contrast(1.06); }
+.character-card[data-status="Porzucona"]:hover .character-card__portrait img,
+.character-card[data-status="Porzucona"]:focus-visible .character-card__portrait img {
+  filter: saturate(.72) brightness(.9) contrast(1.08);
+}
+.character-card[data-status="Porzucona"]:hover .character-card__portrait::before,
+.character-card[data-status="Porzucona"]:focus-visible .character-card__portrait::before {
+  animation: hof-abandoned-flicker .72s steps(2, end) both;
+}
+
+@keyframes hof-victory-glint {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+@keyframes hof-abandoned-flicker {
+  0%, 100% { opacity: .25; }
+  35% { opacity: .8; }
+  60% { opacity: .35; }
+  78% { opacity: .65; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .character-card[data-status="Zwycięska"]:hover .character-card__portrait::before,
+  .character-card[data-status="Zwycięska"]:focus-visible .character-card__portrait::before,
+  .character-card[data-status="Porzucona"]:hover .character-card__portrait::before,
+  .character-card[data-status="Porzucona"]:focus-visible .character-card__portrait::before {
+    animation: none;
+    transform: none;
+  }
+}
