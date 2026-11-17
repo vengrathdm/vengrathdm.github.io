@@ -1636,24 +1636,15 @@ body {
 }
 
 
-/* Wycofana: clip the image to the actual inset opening of the silver arch. */
-.hof-results .character-card[data-status="Wycofana"] .character-card__portrait {
-  position: relative;
-  overflow: hidden;
-}
+/* Wycofana: use the same SVG arc geometry as the silver frame (viewBox 0 0 220 310). */
 .hof-results .character-card[data-status="Wycofana"] .character-card__portrait img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  max-height: none;
-  object-fit: cover;
-  object-position: center;
-  clip-path: polygon(
-    5.45% 96.13%, 5.45% 35.48%,
-    6.98% 23.64%, 11.43% 15.41%, 18.50% 9.22%, 27.98% 5.44%, 39.59% 3.87%,
-    50% 3.87%, 60.41% 3.87%, 72.02% 5.44%, 81.50% 9.22%, 88.57% 15.41%, 93.02% 23.64%,
-    94.55% 35.48%, 94.55% 96.13%
-  );
+  clip-path: none;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 310' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M12 298 L12 110 A98 98 0 0 1 208 110 L208 298 Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 310' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M12 298 L12 110 A98 98 0 0 1 208 110 L208 298 Z'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
 }
