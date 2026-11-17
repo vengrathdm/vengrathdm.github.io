@@ -439,3 +439,42 @@ footer a { color:var(--gold-lt); }
   animation-duration:calc(var(--dur,3.6s)*.68);
   box-shadow:0 0 10px #fff2b2,0 0 16px var(--gold-bright);
 }
+
+
+/* Readability and status hover refinements. */
+.character-card.status-zwycieska h3,
+.character-card.status-aktywna h3,
+.character-card.status-martywa h3,
+.character-card.status-wycofana h3,
+.character-card.status-porzucona h3 {
+  color:var(--bloodred)!important;
+}
+.character-card.status-zwycieska:hover h3 {
+  text-shadow:0 0 12px rgba(245,208,97,.5);
+}
+.character-card.status-aktywna:hover h3 {
+  text-shadow:0 0 12px rgba(255,157,59,.48);
+}
+.character-card.status-martywa:hover h3 {
+  text-shadow:0 0 12px rgba(217,38,56,.48);
+}
+.character-card.status-wycofana:hover h3 {
+  text-shadow:0 0 12px rgba(159,174,190,.5);
+}
+.character-card.status-porzucona:hover h3 {
+  text-shadow:0 0 10px rgba(181,170,156,.45);
+}
+/* Zwycięska: filigree and frame ornaments remain present while hovered. */
+.character-card.status-zwycieska:hover .status-frame-svg,
+.character-card.status-zwycieska:hover .status-frame-svg * {
+  visibility:visible;
+  opacity:1;
+}
+/* Martwa: desaturated in its resting state, regaining natural color on hover. */
+.character-card.status-martywa .portrait-frame-viewport>img {
+  filter:grayscale(.88) sepia(.16) saturate(.72) brightness(.82) contrast(1.04);
+  transition:filter .45s ease,transform .45s ease;
+}
+.character-card.status-martywa:hover .portrait-frame-viewport>img {
+  filter:grayscale(.08) sepia(.04) saturate(1.08) brightness(.98) contrast(1.04);
+}
