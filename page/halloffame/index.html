@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="Hall of Fame — an immersive archive of Vengrath's heroes, their journeys and honours.">
+  <title>Hall of Fame · Vengrath</title>
+  <link rel="icon" href="/core/graphics/favicon/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Cinzel:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="/home/" aria-label="Vengrath home"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
+      <div class="topbar-label"><span class="live-dot"></span> THE CHRONICLES · CHARACTER ARCHIVE</div>
+      <a class="back-link" href="/page/hof/">SALA CHWAŁY <span>↗</span></a>
+    </header>
+    <main>
+      <section class="intro">
+        <div class="intro-copy">
+          <p class="eyebrow">THE RECORD OF LEGENDS <i>—</i> EST. IN THE REALMS</p>
+          <h1>HALL <em>OF</em><br>FAME<span class="title-period">.</span></h1>
+          <p class="intro-description">Every name carries a story. Every fragment marks a life that changed the course of an adventure.</p>
+        </div>
+        <div class="seal" aria-hidden="true"><span>V</span><small>VENGRATH<br>ARCHIVE</small></div>
+      </section>
+      <section class="metrics" aria-label="Archive statistics">
+        <div><span>RECORDED HEROES</span><strong id="stat-heroes">—</strong></div>
+        <div><span>PLAYERS</span><strong id="stat-players">—</strong></div>
+        <div><span>CAMPAIGNS</span><strong id="stat-campaigns">—</strong></div>
+        <div><span>STILL ACTIVE</span><strong id="stat-active">—</strong></div>
+        <div><span>VICTORIOUS</span><strong id="stat-victorious">—</strong></div>
+      </section>
+      <section class="explorer">
+        <div class="explorer-heading">
+          <div><p class="eyebrow">THE LIVING TAPESTRY</p><h2>Legends, <em>interwoven.</em></h2></div>
+          <p class="explorer-note">DRAG TO EXPLORE <span>·</span> SELECT A FRAGMENT TO OPEN ITS RECORD</p>
+        </div>
+        <div class="control-deck">
+          <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search heroes, players, campaigns…" aria-label="Search heroes"></label>
+          <label class="select-wrap"><span>STATUS</span><select id="status-filter"><option value="">All statuses</option></select></label>
+          <label class="select-wrap"><span>CAMPAIGN</span><select id="campaign-filter"><option value="">All campaigns</option></select></label>
+          <label class="select-wrap"><span>ORDER</span><select id="sort"><option value="name">Name · A—Z</option><option value="player">Player</option><option value="status">Status</option></select></label>
+          <button id="reset" type="button">RESET FILTERS <span>↺</span></button>
+        </div>
+        <div class="legend"><span><i class="key active"></i> ACTIVE</span><span><i class="key victory"></i> VICTORIOUS</span><span><i class="key fallen"></i> FALLEN</span><span><i class="key retired"></i> RETIRED / LOST</span><strong id="result-count">—</strong></div>
+        <div id="gallery-frame" class="gallery-frame" aria-label="Voronoi character gallery"><div id="board" class="board"></div><div id="empty-state" class="empty-state" hidden>No heroes match these filters.</div><div id="load-error" class="empty-state" hidden>The archive could not be loaded.</div></div>
+      </section>
+    </main>
+    <footer><span>VENGRATH <i>×</i> HALL OF FAME</span><span>AN ARCHIVE OF STORIES, NOT JUST NAMES</span><a href="/page/hof/">RETURN TO SALA CHWAŁY ↗</a></footer>
+  </div>
+  <dialog id="character-dialog" class="character-dialog"><button id="dialog-close" class="dialog-close" type="button" aria-label="Close">×</button><div id="dialog-content"></div></dialog>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
