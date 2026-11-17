@@ -31,7 +31,7 @@ function applySilverArch(card) {
   const id = "hof-silver-arch-" + (++retiredFrameId);
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.setAttribute("viewBox", "0 0 220 310");
-  svg.setAttribute("preserveAspectRatio", "none");
+  svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
   svg.setAttribute("aria-hidden", "true");
   svg.classList.add("hof-silver-arch");
 
@@ -41,7 +41,7 @@ function applySilverArch(card) {
   clip.setAttribute("clipPathUnits", "objectBoundingBox");
   const clipPath = document.createElementNS(svg.namespaceURI, "path");
   clipPath.setAttribute("d", SILVER_ARCH_PATH);
-  clipPath.setAttribute("transform", "scale(0.00454545454545 0.00322580645161)");
+  clipPath.setAttribute("transform", "translate(0.0564516129 0) scale(0.00403225806452 0.00322580645161)");
   clip.append(clipPath);
   defs.append(clip);
 
