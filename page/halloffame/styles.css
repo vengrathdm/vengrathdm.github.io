@@ -694,3 +694,8 @@ footer a { color:var(--gold-lt); }
   .character-card[data-status="Wycofana"] .character-card__portrait::before,
   .character-card[data-status="Porzucona"] .character-card__portrait::before { animation:none!important; transform:none!important; }
 }
+
+/* Keep the archival cornerwork and fractured silver visible before hover. */
+.character-card[data-status="Wycofana"] .character-card__portrait::before,
+.character-card[data-status="Porzucona"] .character-card__portrait::before { transform:none; }
+.character-card[data-status="Porzucona"] .character-card__portrait::before { opacity:.48; }
