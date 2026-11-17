@@ -51,7 +51,7 @@ body[class*="rise-of-tiamat"], body[class*="rise-of-tiamat"] * { cursor: url("/c
 body[class*="barber-of-silverymoon"], body[class*="barber-of-silverymoon"] * { cursor: url("/core/graphics/cursors/barber-of-silverymoon_default.svg") 21 21, auto !important; }
 body[class*="menaces-of-irensberg"], body[class*="menaces-of-irensberg"] * { cursor: url("/core/graphics/cursors/menaces-of-irensberg_default.svg") 21 21, auto !important; }
 body[class*="turn-of-fortunes-wheel"], body[class*="turn-of-fortunes-wheel"] * { cursor: url("/core/graphics/cursors/turn-of-fortunes-wheel_default.svg") 21 21, auto !important; }
-body[class*="mythic-odyssey-of-the-dragonlords"], body[class*="mythic-odyssey-of-the-dragonlords"] * { cursor: url("/core/graphics/cursors/mythic-odyssey-of-the-dragonlords_default.svg") 21 21, auto !important; }
+body[class*="mythic-odyssey-of-the-dragonlords"], body[class*="mythic-odyssey-of-the-dragonlords"] * { cursor: url("/core/graphics/cursors/mythic-odyssey-of-the-dragonlords_default.png") 21 21, auto !important; }
 body[class*="ghoul-hour"], body[class*="ghoul-hour"] * { cursor: url("/core/graphics/cursors/ghoul-hour_default.svg") 21 21, auto !important; }
 body[class*="the-sunless-citadel"], body[class*="the-sunless-citadel"] * { cursor: url("/core/graphics/cursors/the-sunless-citadel_default.svg") 21 21, auto !important; }
 body[class*="neverwinter-intrygi-polnocnego-wybrzeza-mieczy"], body[class*="neverwinter-intrygi-polnocnego-wybrzeza-mieczy"] * { cursor: url("/core/graphics/cursors/neverwinter-intrygi-polnocnego-wybrzeza-mieczy_default.svg") 21 21, auto !important; }
@@ -60,8 +60,8 @@ body[class*="sons-of-azalin"], body[class*="sons-of-azalin"] * { cursor: url("/c
 body[class*="shadow-of-the-sword-coast"], body[class*="shadow-of-the-sword-coast"] * { cursor: url("/core/graphics/cursors/shadow-of-the-sword-coast_default.svg") 21 21, auto !important; }
 body[class*="forge-of-fury"], body[class*="forge-of-fury"] * { cursor: url("/core/graphics/cursors/forge-of-fury_default.svg") 21 21, auto !important; }
 body[class*="lost-mine-of-phandelver"], body[class*="lost-mine-of-phandelver"] * { cursor: url("/core/graphics/cursors/lost-mine-of-phandelver_default.svg") 21 21, auto !important; }
-body[class*="drakkenheim"], body[class*="drakkenheim"] * { cursor: url("/core/graphics/cursors/drakkenheim_default.svg") 21 21, auto !important; }
-body[class*="dungeons-of-drakkenheim"], body[class*="dungeons-of-drakkenheim"] * { cursor: url("/core/graphics/cursors/dungeons-of-drakkenheim_default.svg") 21 21, auto !important; }
+body[class*="drakkenheim"], body[class*="drakkenheim"] * { cursor: url("/core/graphics/cursors/drakkenheim_default.png") 21 21, auto !important; }
+body[class*="dungeons-of-drakkenheim"], body[class*="dungeons-of-drakkenheim"] * { cursor: url("/core/graphics/cursors/dungeons-of-drakkenheim_default.png") 21 21, auto !important; }
 body[class*="heroes-of-drakkenheim"], body[class*="heroes-of-drakkenheim"] * { cursor: url("/core/graphics/cursors/heroes-of-drakkenheim_default.svg") 21 21, auto !important; }
 body[class*="gold-for-fools-and-princes"], body[class*="gold-for-fools-and-princes"] * { cursor: url("/core/graphics/cursors/gold-for-fools-and-princes_default.svg") 21 21, auto !important; }
 body[class*="dragon-of-icespire-peak"], body[class*="dragon-of-icespire-peak"] * { cursor: url("/core/graphics/cursors/dragon-of-icespire-peak_default.svg") 21 21, auto !important; }
