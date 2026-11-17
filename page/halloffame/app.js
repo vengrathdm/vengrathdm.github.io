@@ -1,23 +1,133 @@
 import { loadCharacterCatalog } from "/core/templates/CharacterGallery/CharacterRepository.js";
-const $=s=>document.querySelector(s), SVG="http://www.w3.org/2000/svg", HTML="http://www.w3.org/1999/xhtml";
-const frame=$("#gallery-frame"),board=$("#board"),search=$("#search"),statusFilter=$("#status-filter"),campaignFilter=$("#campaign-filter"),sort=$("#sort"),count=$("#result-count"),dialog=$("#character-dialog"),dialogContent=$("#dialog-content");
-let characters=[],achievements=new Map(),period=0,drag=null,momentum=0,resize=0,suppress=0;
-const norm=v=>String(v??"").trim().toLocaleLowerCase("pl-PL").normalize("NFD").replace(/[\u0300-\u036f]/g,"");
-const arr=v=>Array.isArray(v)?v:v?[v]:[];
-function svg(name,attrs={}){const n=document.createElementNS(SVG,name);Object.entries(attrs).forEach(([k,v])=>n.setAttribute(k,String(v)));return n}
-function html(name,cls="",value=""){const n=document.createElementNS(HTML,name);if(cls)n.className=cls;if(value)n.textContent=value;return n}
-function path(points){return points.map((p,i)=>(i?"L":"M")+p.x.toFixed(2)+" "+p.y.toFixed(2)).join(" ")+" Z"}
-function clip(poly,nx,ny,mid){const out=[];for(let i=0;i<poly.length;i++){const a=poly[i],b=poly[(i+1)%poly.length],da=nx*a.x+ny*a.y-mid,db=nx*b.x+ny*b.y-mid,ia=da<=0,ib=db<=0;if(ia)out.push(a);if(ia!==ib){const t=da/(da-db);out.push({x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t})}}return out}
-function cell(site,sites,bounds){let p=bounds.map(q=>({...q}));for(const other of sites){if(other===site)continue;const nx=other.x-site.x,ny=other.y-site.y,mid=(nx*(other.x+site.x)+ny*(other.y+site.y))/2;p=clip(p,nx,ny,mid);if(!p.length)break}return p}
-function populate(select,values,label){select.replaceChildren(new Option(label,""));[...new Set(values.filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),"pl")).forEach(v=>select.add(new Option(v,v)))}
-function filtered(){const q=norm(search.value);let rows=characters.filter(c=>{const fields=[c.character,c.player,c.status,c.race,...arr(c.campaigns),...arr(c.classes),...arr(c.modules),...arr(c.achievementIds).map(id=>achievements.get(id)?.name)];return (!q||norm(fields.join(" ")).includes(q))&&(!statusFilter.value||c.status===statusFilter.value)&&(!campaignFilter.value||arr(c.campaigns).includes(campaignFilter.value))});rows.sort((a,b)=>sort.value==="player"?String(a.player).localeCompare(String(b.player),"pl"):sort.value==="status"?String(a.status).localeCompare(String(b.status),"pl"):String(a.character).localeCompare(String(b.character),"pl"));return rows}
-function createTile(c,i,copy,world,poly){const p=poly.map(q=>({x:q.x+copy*world,y:q.y}));if(p.length<3)return null;const xs=p.map(q=>q.x),ys=p.map(q=>q.y),id="hall-clip-"+copy+"-"+i,a=svg("a",{class:"voronoi-cell",href:"#character-dialog","aria-label":c.character+" — "+(c.player||"player")});if(copy!==1){a.setAttribute("aria-hidden","true");a.setAttribute("tabindex","-1")}const cp=svg("clipPath",{id,"clipPathUnits":"userSpaceOnUse"});cp.append(svg("path",{d:path(p)}));const fo=svg("foreignObject",{x:Math.min(...xs),y:Math.min(...ys),width:Math.max(...xs)-Math.min(...xs),height:Math.max(...ys)-Math.min(...ys),"clip-path":"url(#"+id+")"}),tile=html("div","voronoi-tile");tile.dataset.status=c.status||"";const img=html("img");img.src=c.portrait;img.alt="";img.loading="lazy";img.decoding="async";img.draggable=false;const shade=html("div","voronoi-tile__shade"),copyText=html("div","voronoi-tile__copy");copyText.append(html("strong","voronoi-tile__name",c.character||"Unnamed hero"),html("span","voronoi-tile__player",c.player||"Player unknown"));shade.append(copyText);tile.append(img,shade);fo.append(tile);const outline=svg("path",{class:"voronoi-outline",d:path(p)});a.append(fo,outline);a.addEventListener("click",e=>{e.preventDefault();if(performance.now()>=suppress)openCharacter(c)});return{cp,a}}
-function wrap(){if(!period)return;if(frame.scrollLeft<period*.25)frame.scrollLeft+=period;else if(frame.scrollLeft>period*1.75)frame.scrollLeft-=period}
-function render(preserve=false){const rows=filtered();count.textContent=rows.length+" / "+characters.length+" RECORDS";$("#empty-state").hidden=rows.length>0;board.replaceChildren();if(!rows.length){period=0;return}const phase=period?(((frame.scrollLeft%period)+period)%period)/period:0,w=Math.max(320,frame.clientWidth),h=Math.max(1,frame.clientHeight),tileW=Math.max(165,Math.min(270,w/5.2)),r=Math.max(1,Math.min(6,Math.floor(h/176))),cols=Math.max(1,Math.ceil(rows.length/r)),world=cols*tileW,sites=[];for(let i=0;i<cols*r;i++){const c=Math.floor(i/r),row=i%r,seed=i+1;sites.push({character:rows[i]||null,x:(c+.5)*tileW+Math.sin(seed*12.9898)*tileW*.16,y:(row+.5)*(h/r)+Math.sin(seed*78.233)*(h/r)*.15})}const periodic=[];sites.forEach(s=>periodic.push({...s,x:s.x-world},s,{...s,x:s.x+world}));const bounds=[{x:-world,y:0},{x:2*world,y:0},{x:2*world,y:h},{x:-world,y:h}],root=svg("svg",{width:3*world,height:h,viewBox:"0 0 "+3*world+" "+h,role:"group","aria-label":"Voronoi hero archive"}),defs=svg("defs");root.append(defs);sites.forEach((s,i)=>{if(!s.character)return;const poly=cell(periodic[i*3+1],periodic,bounds);for(let copy=0;copy<3;copy++){const item=createTile(s.character,i,copy,world,poly);if(item){defs.append(item.cp);root.append(item.a)}}});board.append(root);period=world;frame.scrollLeft=world*(1+(preserve?phase:0));}
-function row(dl,label,value){const dt=document.createElement("dt"),dd=document.createElement("dd");dt.textContent=label;dd.textContent=Array.isArray(value)?value.join(", ")||"—":value||"—";dl.append(dt,dd)}
-function openCharacter(c){const layout=html("div","dialog-layout"),portrait=html("div","dialog-portrait");portrait.dataset.status=c.status||"";const img=html("img");img.src=c.portrait;img.alt=c.character||"Hero portrait";portrait.append(img);const copy=html("div","dialog-copy"),kicker=html("p","dialog-kicker","THE ARCHIVE RECORD · "+(c.id||"HERO").toUpperCase()),title=html("h2","",c.character||"Unnamed hero"),player=html("p","dialog-player",c.player||"Player unrecorded"),badge=html("span","dialog-status",(c.status||"STATUS UNKNOWN").toUpperCase()),details=document.createElement("dl");row(details,"Campaigns",c.campaigns);row(details,"Modules",c.modules);row(details,"Classes",c.classes);row(details,"Race",c.race);row(details,"Status",c.status);copy.append(kicker,title,player,badge,details);const ids=[...new Set(arr(c.achievementIds))],earned=ids.map(id=>achievements.get(id)).filter(Boolean),awards=html("section","dialog-section"),heading=html("h3","","HONOURS & DISTINCTIONS"),list=html("div","award-list");if(earned.length)earned.forEach(a=>{const item=html("article","award"),icon=html("span","award-icon",a.icon||"✦"),body=html("div"),name=html("strong","",a.name),desc=html("p","",a.description||"");body.append(name,desc);item.append(icon,body);list.append(item)});else list.textContent="No honours have been recorded.";awards.append(heading,list);copy.append(awards);const history=html("section","dialog-section"),historyTitle=html("h3","","CHRONICLE"),historyText=html("p","dialog-history",c.history||"No chronicle has been preserved for this hero.");history.append(historyTitle,historyText);copy.append(history);layout.append(portrait,copy);dialogContent.replaceChildren(layout);dialog.showModal()}
-function updateStats(rows){$("#stat-heroes").textContent=rows.length;$("#stat-players").textContent=new Set(rows.map(c=>c.player).filter(Boolean)).size;$("#stat-campaigns").textContent=new Set(rows.flatMap(c=>arr(c.campaigns))).size;$("#stat-active").textContent=rows.filter(c=>c.status==="Aktywna").length;$("#stat-victorious").textContent=rows.filter(c=>c.status==="Zwycięska").length}
-function refresh(){const rows=filtered();updateStats(rows);render()}
-search.addEventListener("input",refresh);[statusFilter,campaignFilter,sort].forEach(el=>el.addEventListener("change",refresh));$("#reset").addEventListener("click",()=>{search.value="";statusFilter.value="";campaignFilter.value="";sort.value="name";refresh()});$("#dialog-close").addEventListener("click",()=>dialog.close());dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close()});
-frame.addEventListener("scroll",wrap,{passive:true});frame.addEventListener("wheel",e=>{const d=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:e.deltaY;if(d){e.preventDefault();frame.scrollLeft+=d*1.8;wrap()}},{passive:false});frame.addEventListener("pointerdown",e=>{if(e.pointerType!=="mouse"||e.button!==0)return;cancelAnimationFrame(momentum);drag={x:e.clientX,last:e.clientX,time:performance.now(),velocity:0,moved:false,target:e.target.closest?.(".voronoi-cell")};frame.setPointerCapture(e.pointerId);frame.style.cursor="grabbing"});frame.addEventListener("pointermove",e=>{if(!drag)return;const now=performance.now(),dx=e.clientX-drag.last,dt=Math.max(1,now-drag.time);frame.scrollLeft-=dx;drag.velocity=-dx/dt*16;drag.moved||=Math.abs(drag.x-e.clientX)>8;drag.last=e.clientX;drag.time=now});function endDrag(e){if(!drag)return;const d=drag;drag=null;frame.style.cursor="grab";try{frame.releasePointerCapture(e.pointerId)}catch{}if(d.moved){suppress=performance.now()+140;let v=d.velocity;const tick=()=>{frame.scrollLeft+=v;wrap();v*=.94;if(Math.abs(v)>.15)momentum=requestAnimationFrame(tick)};if(Math.abs(v)>.15)momentum=requestAnimationFrame(tick)}else if(d.target){suppress=performance.now()+140;d.target.dispatchEvent(new MouseEvent("click",{bubbles:true,cancelable:true}))}}frame.addEventListener("pointerup",endDrag);frame.addEventListener("pointercancel",endDrag);window.addEventListener("resize",()=>{cancelAnimationFrame(resize);resize=requestAnimationFrame(()=>render(true))});
-try{const data=await loadCharacterCatalog();characters=data.characters.slice();achievements=data.achievements;populate(statusFilter,characters.map(c=>c.status),"All statuses");populate(campaignFilter,characters.flatMap(c=>arr(c.campaigns)),"All campaigns");updateStats(characters);render()}catch(error){console.error("Hall of Fame archive failed to load",error);$("#load-error").hidden=false}
+import { createCharacterCard } from "/core/templates/CharacterCard/CharacterCard.js";
+
+const $ = (selector) => document.querySelector(selector);
+const fields = {
+  player: $("#player-filter"), campaign: $("#campaign-filter"), module: $("#module-filter"),
+  className: $("#class-filter"), race: $("#race-filter"), achievement: $("#achievement-filter"),
+  status: $("#status-filter")
+};
+let characters = [], achievements = new Map();
+
+const asArray = (value) => Array.isArray(value) ? value : value ? [value] : [];
+const normalize = (value) => String(value ?? "").trim().toLocaleLowerCase("pl-PL")
+  .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+function fillSelect(select, values, placeholder) {
+  const current = select.value;
+  select.replaceChildren(new Option(placeholder, ""));
+  [...new Set(values.filter(Boolean).map(String))]
+    .sort((a, b) => a.localeCompare(b, "pl"))
+    .forEach((value) => select.add(new Option(value, value)));
+  if ([...select.options].some((option) => option.value === current)) select.value = current;
+}
+
+function selectedRows() {
+  const query = normalize($("#search").value);
+  const rows = characters.filter((character) => {
+    const earned = asArray(character.achievementIds).map((id) => achievements.get(id)).filter(Boolean);
+    const searchable = [
+      character.character, character.player, character.status, character.race,
+      ...asArray(character.campaigns), ...asArray(character.classes), ...asArray(character.modules),
+      ...earned.flatMap((item) => [item.name, item.description])
+    ].join(" ");
+    return (!query || normalize(searchable).includes(query))
+      && (!fields.player.value || character.player === fields.player.value)
+      && (!fields.campaign.value || asArray(character.campaigns).includes(fields.campaign.value))
+      && (!fields.module.value || asArray(character.modules).includes(fields.module.value))
+      && (!fields.className.value || asArray(character.classes).includes(fields.className.value))
+      && (!fields.race.value || character.race === fields.race.value)
+      && (!fields.achievement.value || asArray(character.achievementIds).includes(fields.achievement.value))
+      && (!fields.status.value || character.status === fields.status.value);
+  });
+  rows.sort((a, b) => {
+    if ($("#sort").value === "player") return String(a.player || "").localeCompare(String(b.player || ""), "pl") || String(a.character || "").localeCompare(String(b.character || ""), "pl");
+    if ($("#sort").value === "status") return String(a.status || "").localeCompare(String(b.status || ""), "pl") || String(a.character || "").localeCompare(String(b.character || ""), "pl");
+    return String(a.character || "").localeCompare(String(b.character || ""), "pl");
+  });
+  return rows;
+}
+
+function updateStats(rows) {
+  $("#stat-heroes").textContent = rows.length;
+  $("#stat-players").textContent = new Set(rows.map((item) => item.player).filter(Boolean)).size;
+  $("#stat-campaigns").textContent = new Set(rows.flatMap((item) => asArray(item.campaigns))).size;
+  $("#stat-active").textContent = rows.filter((item) => item.status === "Aktywna").length;
+  $("#stat-victorious").textContent = rows.filter((item) => item.status === "Zwycięska").length;
+}
+
+function openCharacter(character) {
+  const layout = document.createElement("div"); layout.className = "dialog-layout";
+  const portrait = document.createElement("div"); portrait.className = "dialog-portrait";
+  const image = document.createElement("img"); image.src = character.portrait; image.alt = character.character || "Portret postaci";
+  portrait.append(image);
+  const copy = document.createElement("div"); copy.className = "dialog-copy";
+  const kicker = document.createElement("p"); kicker.className = "dialog-kicker"; kicker.textContent = "KARTA BOHATERA · " + (character.id || "").toUpperCase();
+  const title = document.createElement("h2"); title.textContent = character.character || "Nieznana postać";
+  const player = document.createElement("p"); player.className = "dialog-player"; player.textContent = "Gracz: " + (character.player || "Nie podano");
+  const status = document.createElement("span"); status.className = "dialog-status"; status.textContent = character.status || "Nieznany status";
+  const details = document.createElement("dl");
+  const addRow = (label, value) => { const dt = document.createElement("dt"), dd = document.createElement("dd"); dt.textContent = label; dd.textContent = Array.isArray(value) ? value.join(", ") || "Nie podano" : value || "Nie podano"; details.append(dt, dd); };
+  addRow("Kampanie", character.campaigns); addRow("Moduły", character.modules); addRow("Klasy", character.classes); addRow("Rasa", character.race); addRow("Status", character.status);
+  copy.append(kicker, title, player, status, details);
+  const earned = asArray(character.achievementIds).map((id) => achievements.get(id)).filter(Boolean);
+  const awards = document.createElement("section"); awards.className = "dialog-section";
+  const heading = document.createElement("h3"); heading.textContent = "ODZNACZENIA I DOKONANIA";
+  const list = document.createElement("div"); list.className = "award-list";
+  if (earned.length) earned.forEach((item) => { const article = document.createElement("article"); article.className = "award"; const icon = document.createElement("span"); icon.className = "award-icon"; icon.textContent = item.icon || "✦"; const body = document.createElement("div"); const name = document.createElement("strong"); name.textContent = item.name || "Odznaczenie"; const desc = document.createElement("p"); desc.textContent = item.description || ""; body.append(name, desc); article.append(icon, body); list.append(article); });
+  else list.textContent = "Ta postać nie ma jeszcze zapisanych odznaczeń.";
+  awards.append(heading, list); copy.append(awards);
+  const history = document.createElement("section"); history.className = "dialog-section";
+  const historyHeading = document.createElement("h3"); historyHeading.textContent = "KRONIKA";
+  const historyText = document.createElement("p"); historyText.className = "dialog-history";
+  historyText.textContent = character.history && character.history !== "Brak zapisków." ? character.history : "Nie zachowały się jeszcze zapiski z historii tej postaci.";
+  history.append(historyHeading, historyText); copy.append(history);
+  layout.append(portrait, copy); $("#dialog-content").replaceChildren(layout); $("#character-dialog").showModal();
+}
+
+function render() {
+  const rows = selectedRows();
+  $("#result-count").textContent = "WYŚWIETLANE: " + rows.length + " Z " + characters.length + " POSTACI";
+  $("#empty-state").hidden = rows.length !== 0;
+  const grid = $("#grid"); grid.replaceChildren();
+  const fragment = document.createDocumentFragment();
+  rows.forEach((character) => fragment.append(createCharacterCard(character, achievements)));
+  grid.append(fragment);
+  updateStats(rows);
+}
+
+function resetFilters() {
+  $("#search").value = "";
+  Object.values(fields).forEach((select) => { select.value = ""; });
+  $("#sort").value = "name";
+  render();
+}
+
+$("#search").addEventListener("input", render);
+Object.values(fields).forEach((select) => select.addEventListener("change", render));
+$("#sort").addEventListener("change", render);
+$("#reset").addEventListener("click", resetFilters);
+$("#grid").addEventListener("characterselect", (event) => openCharacter(event.detail.character));
+$("#dialog-close").addEventListener("click", () => $("#character-dialog").close());
+$("#character-dialog").addEventListener("click", (event) => { if (event.target === $("#character-dialog")) $("#character-dialog").close(); });
+document.addEventListener("keydown", (event) => { if (event.key === "Escape" && $("#character-dialog").open) $("#character-dialog").close(); });
+
+try {
+  const catalog = await loadCharacterCatalog();
+  characters = catalog.characters;
+  achievements = catalog.achievements;
+  fillSelect(fields.player, characters.map((item) => item.player), "Wszyscy gracze");
+  fillSelect(fields.campaign, characters.flatMap((item) => asArray(item.campaigns)), "Wszystkie kampanie");
+  fillSelect(fields.module, characters.flatMap((item) => asArray(item.modules)), "Wszystkie moduły");
+  fillSelect(fields.className, characters.flatMap((item) => asArray(item.classes)), "Wszystkie klasy");
+  fillSelect(fields.race, characters.map((item) => item.race), "Wszystkie rasy");
+  fillSelect(fields.achievement, characters.flatMap((item) => asArray(item.achievementIds)), "Wszystkie odznaczenia");
+  fillSelect(fields.status, characters.map((item) => item.status), "Wszystkie statusy");
+  // Uczyń nazwy odznaczeń czytelnymi, zachowując ich identyfikatory jako wartości filtra.
+  [...fields.achievement.options].slice(1).forEach((option) => { const item = achievements.get(option.value); if (item?.name) option.textContent = item.name; });
+  render();
+} catch (error) {
+  console.error("Nie udało się wczytać archiwum Hall of Fame:", error);
+  $("#load-error").hidden = false;
+  $("#result-count").textContent = "BŁĄD WCZYTYWANIA DANYCH";
+}
