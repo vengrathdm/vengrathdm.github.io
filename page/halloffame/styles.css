@@ -491,3 +491,206 @@ footer a { color:var(--gold-lt); }
     transform: none;
   }
 }
+
+
+/* High-impact status pass: distinct atmospheres, frames and hover responses. */
+.character-card { isolation:isolate; }
+.character-card__portrait { isolation:isolate; }
+.character-card__portrait::before { z-index:2; }
+.character-card__portrait::after { z-index:3; transition:border-color .3s ease,box-shadow .3s ease; }
+
+/* Zwycięska — Ascendant: radiant gold corona and a stronger sweep. */
+.character-card[data-status="Zwycięska"] {
+  --status-accent:#f0ca7b;
+  --status-glow:rgba(240,202,123,.58);
+  box-shadow:0 0 0 5px var(--paper-fold),0 0 17px rgba(216,184,126,.2),0 15px 28px #0009;
+}
+.character-card[data-status="Zwycięska"] .character-card__portrait::before {
+  opacity:.38;
+  background:
+    radial-gradient(ellipse at 50% 48%,rgba(255,218,139,.2),transparent 58%),
+    repeating-conic-gradient(from 0deg at 50% 50%,rgba(255,221,153,.0) 0deg 12deg,rgba(255,221,153,.16) 13deg 14deg,transparent 15deg 30deg),
+    linear-gradient(112deg,transparent 22%,rgba(255,239,190,.42) 48%,transparent 68%);
+  transform:translateX(-100%);
+}
+.character-card[data-status="Zwycięska"]:hover,
+.character-card[data-status="Zwycięska"]:focus-visible {
+  box-shadow:0 0 0 5px var(--paper-fold),0 0 18px rgba(255,220,147,.62),0 0 42px rgba(216,184,126,.36),0 22px 38px #000b;
+}
+.character-card[data-status="Zwycięska"]:hover .character-card__portrait::before,
+.character-card[data-status="Zwycięska"]:focus-visible .character-card__portrait::before {
+  animation:hof-victory-glint 1.15s ease-out both;
+}
+
+/* Aktywna — Living Flame: amber embers, heat-like light and a breathing gold-orange edge. */
+.character-card[data-status="Aktywna"] {
+  --status-accent:#e5a33d;
+  --status-glow:rgba(229,163,61,.56);
+  border-color:#bd792b;
+  box-shadow:0 0 0 5px var(--paper-fold),0 0 15px rgba(229,163,61,.2),0 15px 28px #0009;
+  animation:hof-amber-breathe 3.2s ease-in-out infinite;
+}
+.character-card[data-status="Aktywna"] .character-card__portrait::before {
+  opacity:.5;
+  background:
+    radial-gradient(circle at 13% 82%,rgba(255,183,65,.9) 0 1px,transparent 3px),
+    radial-gradient(circle at 29% 67%,rgba(255,207,105,.82) 0 1.5px,transparent 4px),
+    radial-gradient(circle at 77% 86%,rgba(255,156,42,.9) 0 1px,transparent 3px),
+    radial-gradient(circle at 88% 72%,rgba(255,213,126,.8) 0 1px,transparent 3px),
+    radial-gradient(ellipse at 50% 100%,rgba(230,125,28,.42),transparent 65%),
+    linear-gradient(180deg,transparent 48%,rgba(153,71,20,.18));
+  animation:hof-ember-drift 5s ease-in-out infinite alternate;
+}
+.character-card[data-status="Aktywna"] .character-card__portrait:after {
+  border:2px solid rgba(232,169,76,.92);
+  box-shadow:inset 0 0 18px rgba(255,163,48,.2),0 0 13px rgba(229,163,61,.28);
+}
+.character-card[data-status="Aktywna"]:hover,
+.character-card[data-status="Aktywna"]:focus-visible {
+  box-shadow:0 0 0 5px var(--paper-fold),0 0 24px rgba(255,174,65,.7),0 0 48px rgba(229,119,35,.34),0 22px 38px #000b;
+}
+.character-card[data-status="Aktywna"]:hover .character-card__portrait::before,
+.character-card[data-status="Aktywna"]:focus-visible .character-card__portrait::before {
+  opacity:.9;
+  animation:hof-ember-flare .85s ease-out both;
+}
+.character-card[data-status="Aktywna"] .character-card__portrait img,
+.character-card[data-status="Aktywna"]:hover .character-card__portrait img,
+.character-card[data-status="Aktywna"]:focus-visible .character-card__portrait img {
+  filter:saturate(1.14) contrast(1.04);
+}
+
+/* Martwa — Bloodstained: a larger irregular stain, spray droplets and deep red frame. */
+.character-card[data-status="Martwa"] {
+  --status-accent:#8e1728;
+  --status-glow:rgba(142,23,40,.62);
+  border:1px solid #64111d;
+  box-shadow:0 0 0 5px var(--paper-fold),0 0 17px rgba(112,13,30,.3),0 15px 28px #0009;
+}
+.character-card[data-status="Martwa"] .character-card__portrait::before {
+  opacity:.76;
+  background:
+    radial-gradient(ellipse 20px 15px at 9% 13%,rgba(93,5,23,.9) 0 52%,transparent 76%),
+    radial-gradient(ellipse 12px 19px at 17% 21%,rgba(126,12,31,.92) 0 50%,transparent 75%),
+    radial-gradient(ellipse 9px 7px at 25% 11%,rgba(105,7,25,.9) 0 58%,transparent 78%),
+    radial-gradient(ellipse 4px 6px at 29% 24%,rgba(133,15,34,.9) 0 60%,transparent 80%),
+    radial-gradient(ellipse 3px 4px at 4% 29%,rgba(133,15,34,.92) 0 60%,transparent 80%),
+    radial-gradient(ellipse 2px 3px at 34% 17%,rgba(133,15,34,.88) 0 60%,transparent 80%),
+    radial-gradient(ellipse 2px 2px at 21% 34%,rgba(133,15,34,.9) 0 60%,transparent 80%),
+    radial-gradient(ellipse 42px 34px at 13% 17%,rgba(67,3,17,.48),transparent 78%),
+    linear-gradient(135deg,rgba(66,3,17,.24),transparent 48%);
+  transition:opacity .35s ease,filter .35s ease;
+}
+.character-card[data-status="Martwa"]:hover .character-card__portrait::before,
+.character-card[data-status="Martwa"]:focus-visible .character-card__portrait::before {
+  opacity:1;
+  filter:contrast(1.18) saturate(1.25);
+}
+.character-card[data-status="Martwa"] .character-card__portrait:after {
+  border:2px solid rgba(145,28,43,.95);
+  box-shadow:inset 0 0 25px rgba(82,0,18,.35),0 0 16px rgba(142,23,40,.22);
+}
+.character-card[data-status="Martwa"]:hover,
+.character-card[data-status="Martwa"]:focus-visible {
+  box-shadow:0 0 0 5px var(--paper-fold),0 0 25px rgba(142,23,40,.72),0 0 52px rgba(91,4,23,.42),0 22px 38px #000b;
+}
+
+/* Wycofana — Relic: heavy bronze cornerwork and an aged-metal light sweep. */
+.character-card[data-status="Wycofana"] {
+  --status-accent:#bd9560;
+  --status-glow:rgba(189,149,96,.42);
+  border:2px solid #76532e;
+  box-shadow:0 0 0 4px #3b2a1c,0 0 0 6px rgba(189,149,96,.46),0 15px 28px #0009;
+}
+.character-card[data-status="Wycofana"] .character-card__portrait::before {
+  opacity:.62;
+  background:
+    linear-gradient(90deg,rgba(90,57,27,.9) 0 7px,transparent 7px calc(100% - 7px),rgba(90,57,27,.9) calc(100% - 7px)),
+    linear-gradient(180deg,rgba(90,57,27,.9) 0 7px,transparent 7px calc(100% - 7px),rgba(90,57,27,.9) calc(100% - 7px)),
+    linear-gradient(108deg,transparent 34%,rgba(255,218,158,.38) 49%,transparent 63%);
+  transform:translateX(-110%);
+}
+.character-card[data-status="Wycofana"] .character-card__portrait:after {
+  inset:12px;
+  border:2px solid rgba(193,151,91,.94);
+  box-shadow:inset 0 0 0 4px rgba(83,55,29,.52),inset 0 0 18px rgba(32,20,11,.36),0 0 12px rgba(189,149,96,.2);
+}
+.character-card[data-status="Wycofana"]:hover .character-card__portrait::before,
+.character-card[data-status="Wycofana"]:focus-visible .character-card__portrait::before {
+  opacity:1;
+  animation:hof-bronze-glint 1.1s ease-out both;
+}
+.character-card[data-status="Wycofana"]:hover,
+.character-card[data-status="Wycofana"]:focus-visible {
+  box-shadow:0 0 0 4px #3b2a1c,0 0 0 6px rgba(221,179,116,.68),0 0 25px rgba(189,149,96,.46),0 22px 38px #000b;
+}
+
+/* Porzucona — Forsaken: fractured silver segments, cold fissures and a travelling glint. */
+.character-card[data-status="Porzucona"] {
+  --status-accent:#c6d1df;
+  --status-glow:rgba(198,209,223,.42);
+  border:1px solid #718095;
+  box-shadow:0 0 0 5px #252c37,0 0 0 6px rgba(190,204,222,.52),0 15px 28px #0009;
+}
+.character-card[data-status="Porzucona"] .character-card__portrait::before {
+  opacity:.66;
+  background:
+    linear-gradient(132deg,transparent 0 13%,rgba(210,224,240,.0) 13.2%,rgba(210,224,240,.68) 13.6%,transparent 14.1% 100%),
+    linear-gradient(48deg,transparent 0 72%,rgba(210,224,240,.0) 72.2%,rgba(210,224,240,.58) 72.6%,transparent 73.1% 100%),
+    linear-gradient(90deg,rgba(153,169,190,.34),transparent 13% 86%,rgba(153,169,190,.28)),
+    linear-gradient(112deg,transparent 28%,rgba(230,239,250,.42) 48%,transparent 68%);
+  transform:translateX(-110%);
+}
+.character-card[data-status="Porzucona"] .character-card__portrait:after {
+  inset:8px;
+  border:0;
+  background:
+    linear-gradient(#c5d0df,#c5d0df) left top/31% 2px no-repeat,
+    linear-gradient(#c5d0df,#c5d0df) right top/24% 2px no-repeat,
+    linear-gradient(#c5d0df,#c5d0df) left top/2px 27% no-repeat,
+    linear-gradient(#c5d0df,#c5d0df) right top/2px 43% no-repeat,
+    linear-gradient(#c5d0df,#c5d0df) left bottom/18% 2px no-repeat,
+    linear-gradient(#c5d0df,#c5d0df) right bottom/34% 2px no-repeat,
+    linear-gradient(#c5d0df,#c5d0df) left bottom/2px 38% no-repeat,
+    linear-gradient(#c5d0df,#c5d0df) right bottom/2px 22% no-repeat;
+  filter:drop-shadow(0 0 4px rgba(198,209,223,.55));
+}
+.character-card[data-status="Porzucona"]:hover .character-card__portrait::before,
+.character-card[data-status="Porzucona"]:focus-visible .character-card__portrait::before {
+  opacity:1;
+  animation:hof-silver-glint 1.3s ease-out both;
+}
+.character-card[data-status="Porzucona"]:hover,
+.character-card[data-status="Porzucona"]:focus-visible {
+  box-shadow:0 0 0 5px #252c37,0 0 0 6px rgba(215,226,241,.82),0 0 28px rgba(198,209,223,.5),0 22px 38px #000b;
+}
+
+/* Motion is status-specific; static treatments remain visible with reduced motion. */
+@keyframes hof-amber-breathe {
+  0%,100% { box-shadow:0 0 0 5px var(--paper-fold),0 0 12px rgba(229,163,61,.16),0 15px 28px #0009; }
+  50% { box-shadow:0 0 0 5px var(--paper-fold),0 0 22px rgba(255,178,64,.34),0 15px 28px #0009; }
+}
+@keyframes hof-ember-drift {
+  from { background-position:0 0,0 0,0 0,0 0,0 0,0 0; }
+  to { background-position:8px -12px,-6px -18px,5px -14px,-4px -10px,0 0,0 0; }
+}
+@keyframes hof-ember-flare {
+  0% { opacity:.5; filter:brightness(1); }
+  45% { opacity:1; filter:brightness(1.65); }
+  100% { opacity:.8; filter:brightness(1.12); }
+}
+@keyframes hof-bronze-glint {
+  from { transform:translateX(-110%); }
+  to { transform:translateX(110%); }
+}
+@keyframes hof-silver-glint {
+  from { transform:translateX(-110%); }
+  to { transform:translateX(110%); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .character-card[data-status="Aktywna"] { animation:none; }
+  .character-card[data-status="Aktywna"] .character-card__portrait::before { animation:none; }
+  .character-card[data-status="Zwycięska"] .character-card__portrait::before,
+  .character-card[data-status="Wycofana"] .character-card__portrait::before,
+  .character-card[data-status="Porzucona"] .character-card__portrait::before { animation:none!important; transform:none!important; }
+}
