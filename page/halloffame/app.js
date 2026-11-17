@@ -138,7 +138,7 @@ function applyStatusPortraitDesign(card, character) {
     const particles = document.createElement("div"); particles.className = "particle-layer crimson-particles"; portrait.append(particles);
     spawnStatusParticles(particles, 18, "crimson-ash", {minSize:2,maxSize:3.8,minDur:3.2,maxDur:5.0,driftRange:20});
   } else if (statusKey === "wycofana") {
-    const veil = document.createElement("div"); veil.className = "curator-veil"; portrait.append(veil);
+    const veil = document.createElement("div"); veil.className = "curator-veil"; portrait.insertBefore(veil, vignette);
   }
   appendSvgFrame(portrait, statusKey);
 }
