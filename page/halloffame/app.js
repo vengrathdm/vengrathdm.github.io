@@ -40,11 +40,18 @@ function selectedRows() {
       && (!fields.achievement.value || asArray(character.achievementIds).includes(fields.achievement.value))
       && (!fields.status.value || character.status === fields.status.value);
   });
-  rows.sort((a, b) => {
-    if ($("#sort").value === "player") return String(a.player || "").localeCompare(String(b.player || ""), "pl") || String(a.character || "").localeCompare(String(b.character || ""), "pl");
-    if ($("#sort").value === "status") return String(a.status || "").localeCompare(String(b.status || ""), "pl") || String(a.character || "").localeCompare(String(b.character || ""), "pl");
-    return String(a.character || "").localeCompare(String(b.character || ""), "pl");
-  });
+  const sortBy = $("#sort").value;
+  const sortValue = (character) => {
+    if (sortBy === "player") return String(character.player || "");
+    if (sortBy === "module") return asArray(character.modules).join(", ");
+    if (sortBy === "campaign") return asArray(character.campaigns).join(", ");
+    if (sortBy === "race") return String(character.race || "");
+    if (sortBy === "class") return asArray(character.classes).join(", ");
+    if (sortBy === "status") return String(character.status || "");
+    return String(character.character || "");
+  };
+  rows.sort((a, b) => sortValue(a).localeCompare(sortValue(b), "pl", { sensitivity: "base" })
+    || String(a.character || "").localeCompare(String(b.character || ""), "pl", { sensitivity: "base" }));
   return rows;
 }
 
