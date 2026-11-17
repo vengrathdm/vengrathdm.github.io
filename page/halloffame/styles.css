@@ -494,25 +494,95 @@ footer a { color:var(--gold-lt); }
 }
 
 
-/* Character detail: fixed portrait column and independently scrollable dossier. */
+/* Character detail: fixed portrait pane + independently scrolling dossier. */
 @media(min-width:601px) {
   .character-dialog {
-    height:min(820px,calc(100dvh - 28px));
+    display:block;
+    height:min(820px,calc(100vh - 28px));
+    max-height:calc(100vh - 28px);
     overflow:hidden;
   }
+  #dialog-content {
+    width:100%;
+    height:100%;
+    min-height:0;
+  }
   .dialog-layout {
+    display:grid;
+    grid-template-columns:minmax(280px,42%) minmax(0,1fr);
+    width:100%;
     height:100%;
     min-height:0;
     max-height:100%;
-    grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr);
     overflow:hidden;
   }
   .dialog-portrait {
-    position:sticky;
-    top:0;
+    position:relative;
     align-self:stretch;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
     height:100%;
     min-height:0;
+    overflow:hidden;
+    background:#100d18;
+  }
+  .dialog-portrait img {
+    position:static;
+    display:block;
+    width:100%;
+    height:100%;
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+    object-position:center;
+  }
+  .dialog-copy {
+    box-sizing:border-box;
+    width:100%;
+    height:100%;
+    min-width:0;
+    min-height:0;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    overscroll-behavior:contain;
+    scrollbar-gutter:stable;
+  }
+  .dialog-close {
+    position:absolute;
+    top:12px;
+    right:12px;
+    float:none;
+    margin:0;
+  }
+}
+@media(max-width:600px) {
+  .character-dialog {
+    display:block;
+    height:auto;
+    max-height:calc(100vh - 28px);
+    overflow:auto;
+  }
+  #dialog-content {
+    width:100%;
+    height:auto;
+  }
+  .dialog-layout {
+    display:grid;
+    grid-template-columns:1fr;
+    width:100%;
+    height:auto;
+    max-height:none;
+    overflow:visible;
+  }
+  .dialog-portrait {
+    position:relative;
+    display:block;
+    width:100%;
+    height:65vw;
+    min-height:0;
+    max-height:360px;
     overflow:hidden;
   }
   .dialog-portrait img {
@@ -520,29 +590,20 @@ footer a { color:var(--gold-lt); }
     inset:0;
     width:100%;
     height:100%;
+    max-width:none;
+    max-height:none;
     object-fit:cover;
   }
   .dialog-copy {
-    min-width:0;
+    width:100%;
+    height:auto;
     min-height:0;
-    height:100%;
-    overflow-y:auto;
-    overscroll-behavior:contain;
-    scrollbar-gutter:stable;
-  }
-}
-@media(max-width:600px) {
-  .character-dialog {
-    height:auto;
-    overflow:auto;
-  }
-  .dialog-layout {
-    height:auto;
-    max-height:none;
     overflow:visible;
   }
-  .dialog-copy {
-    height:auto;
-    overflow:visible;
+  .dialog-close {
+    position:sticky;
+    float:right;
+    top:12px;
+    margin:12px 12px -52px 0;
   }
 }
