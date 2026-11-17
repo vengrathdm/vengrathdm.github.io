@@ -422,7 +422,16 @@ footer a { color:var(--gold-lt); }
 .character-card.status-martywa .portrait-frame-viewport {
   clip-path:polygon(0 0,48% 0,50% 5px,52% 0,100% 0,100% 100%,53% 100%,50% calc(100% - 6px),47% 100%,0 100%);
 }
-.character-card.status-wycofana .portrait-frame-viewport { border-radius:50% 50% 4px 4px; }
+.character-card.status-wycofana .portrait-frame-viewport {
+  /* Dopasowanie do srebrnego łuku SVG: półokrąg o promieniu połowy szerokości. */
+  clip-path:polygon(
+    0 100%,0 34.27%,
+    1.7% 21.4%,6.7% 12.5%,14.6% 5.8%,25% 1.7%,37.5% 0,
+    50% 0,62.5% 0,75% 1.7%,85.4% 5.8%,93.3% 12.5%,98.3% 21.4%,
+    100% 34.27%,100% 100%
+  );
+  border-radius:0;
+}
 .character-card.status-porzucona .portrait-frame-viewport { border-radius:2px; }
 .character-card.status-zwycieska .portrait-frame-viewport>img,
 .character-card.status-aktywna .portrait-frame-viewport>img,
