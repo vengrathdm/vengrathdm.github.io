@@ -320,3 +320,143 @@ footer a { color:var(--gold-lt); }
 }
 
 
+
+
+
+/* Character status portrait frames — adapted directly from the supplied Character Status Frames concept. */
+.character-card__portrait { isolation:isolate; aspect-ratio:220 / 310; border-bottom:0; overflow:hidden; background:#16141a; }
+.character-card__portrait > img { position:absolute; inset:3.23% 5.45%; width:89.1%; height:92.25%; object-fit:cover; z-index:2; }
+.character-card__portrait:after { display:none; }
+.character-card__portrait .status-frame-svg { position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none; z-index:5; }
+.character-card__portrait .particle-layer { position:absolute; inset:-3%; z-index:6; overflow:hidden; pointer-events:none; }
+.character-card__portrait .sanctuary-glow,.character-card__portrait .torch-aura { position:absolute; inset:3.6%; z-index:1; pointer-events:none; }
+.character-card__portrait .sanctuary-glow { background:radial-gradient(circle at 50% 45%,rgba(245,208,97,.16),transparent 72%); opacity:.65; transition:opacity .45s ease,transform .45s ease; }
+.character-card__portrait .gold-dust { position:absolute; bottom:-6px; border-radius:50%; background:radial-gradient(circle,#fff7d6 0%,var(--gold-bright) 55%,transparent 100%); box-shadow:0 0 6px var(--gold-bright); opacity:0; animation:hof-rise-gold var(--dur,3.6s) ease-in infinite; animation-delay:var(--delay,0s); }
+@keyframes hof-rise-gold { 0%{transform:translateY(0) translateX(0) scale(.5);opacity:0} 20%,75%{opacity:var(--max-op,.75)} 100%{transform:translateY(-295px) translateX(var(--drift,12px)) scale(1.15);opacity:0} }
+.character-card__portrait .torch-aura { background:radial-gradient(circle at 50% 85%,rgba(255,136,28,.28),transparent 70%); animation:hof-torch-flicker 3.2s infinite alternate ease-in-out; }
+@keyframes hof-torch-flicker { 0%,100%{opacity:.65;transform:scale(1)} 35%{opacity:.9;transform:scale(1.03)} 70%{opacity:.55;transform:scale(.99)} }
+.character-card__portrait .ember-spark { position:absolute; bottom:6px; border-radius:50%; background:#ffd27d; box-shadow:0 0 6px var(--amber-bright); opacity:0; animation:hof-ember-float var(--dur,2.8s) ease-out infinite; animation-delay:var(--delay,0s); }
+@keyframes hof-ember-float { 0%{transform:translateY(0) translateX(0) scale(1);opacity:0} 15%{opacity:.9} 100%{transform:translateY(-220px) translateX(var(--drift,-14px)) scale(.2);opacity:0} }
+.character-card__portrait .crimson-ash { position:absolute; top:-6px; border-radius:50%; background:radial-gradient(circle,#ff5c6c 0%,var(--crimson-bright) 60%,transparent 100%); box-shadow:0 0 5px rgba(217,38,56,.75); opacity:0; animation:hof-fall-crimson var(--dur,3.8s) linear infinite; animation-delay:var(--delay,0s); animation-play-state:paused; }
+@keyframes hof-fall-crimson { 0%{transform:translateY(0) translateX(0) scale(.8);opacity:0} 18%{opacity:.78} 82%{opacity:.65} 100%{transform:translateY(305px) translateX(var(--drift,10px)) scale(.35);opacity:0} }
+.character-card__portrait .curator-veil { position:absolute; inset:3.9% 5.45%; z-index:3; background:linear-gradient(180deg,rgba(29,35,42,.12),rgba(18,22,28,.52)); pointer-events:none; transition:opacity .45s ease; }
+.character-card.status-zwycieska .character-card__portrait .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait .sanctuary-glow { }
+.character-card.status-zwycieska .character-card__portrait .sanctuary-filigree { stroke:#d4a843; transition:stroke .35s ease,filter .35s ease; }
+.character-card.status-zwycieska .character-card__portrait .gold-dust { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait .portrait-unused { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait .sanctuary-filigree { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait .gold-dust { }
+.character-card.status-zwycieska .character-card__portrait .sanctuary-glow { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait .sanctuary-glow { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait .gold-dust { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait .sanctuary-glow { }
+.character-card.status-zwycieska .character-card__portrait .gold-dust { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait .gold-dust { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait .sanctuary-glow { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait .gold-dust { }
+.character-card.status-zwycieska .character-card__portrait .sanctuary-glow { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait .gold-dust { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait .sanctuary-glow { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait .gold-dust { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait .sanctuary-glow { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait .gold-dust { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait .sanctuary-glow { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait .gold-dust { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait .sanctuary-glow { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait .gold-dust { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait img { }
+.character-card.status-zwycieska .character-card__portrait { }
+.character-card.status-zwycieska .character-card__portrait img { }
+/* Status-specific geometry and passive effects from the supplied reference. */
+.character-card.status-zwycieska .character-card__portrait img { clip-path:polygon(14px 0,calc(100% - 14px) 0,100% 14px,100% calc(100% - 14px),calc(100% - 14px) 100%,14px 100%,0 calc(100% - 14px),0 14px); }
+.character-card.status-aktywna .character-card__portrait img { border-radius:2px; }
+.character-card.status-martywa .character-card__portrait img { clip-path:polygon(0 0,48% 0,50% 5px,52% 0,100% 0,100% 100%,53% 100%,50% calc(100% - 6px),47% 100%,0 100%); filter:grayscale(.55) contrast(1.08) brightness(.84); }
+.character-card.status-martywa .fault-crack-glow { opacity:.75; transition:opacity .45s ease,filter .45s ease; }
+.character-card.status-wycofana .character-card__portrait img { border-radius:98px 98px 4px 4px; filter:sepia(.28) saturate(.72) contrast(.96) brightness(.88); }
+.character-card.status-porzucona .character-card__portrait { background:#171513; }
+.character-card.status-porzucona .character-card__portrait img { filter:grayscale(.82) sepia(.22) contrast(.84) brightness(.72); opacity:.78; mask-image:linear-gradient(to bottom,#000 52%,rgba(0,0,0,.28) 100%); -webkit-mask-image:linear-gradient(to bottom,#000 52%,rgba(0,0,0,.28) 100%); }
+.character-card.status-porzucona .unwritten-sketch-lines { opacity:.65; transition:stroke-dashoffset .8s ease,opacity .45s ease; }
+.character-card.status-zwycieska .character-card__status { color:var(--gold-bright);border-color:rgba(200,157,60,.45);box-shadow:inset 0 0 12px rgba(200,157,60,.12); }
+.character-card.status-aktywna .character-card__status { color:var(--amber-bright);border-color:rgba(217,107,20,.45);box-shadow:inset 0 0 12px rgba(217,107,20,.14); }
+.character-card.status-martywa .character-card__status { color:var(--crimson-bright);border-color:rgba(143,17,30,.5);box-shadow:inset 0 0 12px rgba(143,17,30,.16); }
+.character-card.status-wycofana .character-card__status { color:var(--curator-silver);border-color:rgba(83,96,110,.45);box-shadow:inset 0 0 12px rgba(83,96,110,.12); }
+.character-card.status-porzucona .character-card__status { color:var(--unwritten-parchment);border-color:rgba(74,68,61,.55);border-style:dashed; }
+.character-card.status-zwycieska .character-card__status:before,.character-card.status-aktywna .character-card__status:before,.character-card.status-martywa .character-card__status:before,.character-card.status-wycofana .character-card__status:before,.character-card.status-porzucona .character-card__status:before { content:"";display:inline-block;width:5px;height:5px;margin:0 7px 1px 0;transform:rotate(45deg); }
+.character-card.status-zwycieska .character-card__status:before { background:var(--gold-bright);box-shadow:0 0 8px var(--gold-bright); }
+.character-card.status-aktywna .character-card__status:before { background:var(--amber-bright);box-shadow:0 0 8px var(--amber-bright); }
+.character-card.status-martywa .character-card__status:before { background:var(--crimson-bright);box-shadow:0 0 8px var(--crimson-bright); }
+.character-card.status-wycofana .character-card__status:before { background:var(--curator-silver);box-shadow:0 0 6px var(--curator-silver); }
+.character-card.status-porzucona .character-card__status:before { background:transparent;border:1px solid var(--unwritten-parchment); }
+.character-card.status-zwycieska h3 { transition:color .35s ease,text-shadow .35s ease; }
+.character-card.status-aktywna h3,.character-card.status-martywa h3,.character-card.status-wycofana h3,.character-card.status-porzucona h3 { transition:color .35s ease,text-shadow .35s ease; }
+
+/* Hover states: same movements, lighting, portrait treatment and particle response as the supplied designs. */
+.character-card.status-zwycieska:hover .character-card__portrait .frame-wrapper { }
+.character-card.status-zwycieska:hover .sanctuary-glow { opacity:1;transform:scale(1.06); }
+.character-card.status-zwycieska:hover .character-card__portrait img { transform:scale(1.045);filter:contrast(1.06) brightness(1.05); }
+.character-card.status-zwycieska:hover .sanctuary-filigree { stroke:var(--gold-bright);filter:drop-shadow(0 0 4px rgba(245,208,97,.65)); }
+.character-card.status-zwycieska:hover .gold-dust { --max-op:1;animation-duration:calc(var(--dur,3.6s)*.68);box-shadow:0 0 10px #fff2b2,0 0 16px var(--gold-bright); }
+.character-card.status-zwycieska:hover h3 { color:var(--gold-bright);text-shadow:0 0 14px rgba(245,208,97,.35); }
+.character-card.status-aktywna:hover .character-card__portrait img { transform:scale(1.04);filter:saturate(1.1) contrast(1.04); }
+.character-card.status-aktywna:hover .torch-flame-tip { filter:drop-shadow(0 0 8px var(--amber-bright)); }
+.character-card.status-aktywna:hover h3 { color:var(--amber-bright);text-shadow:0 0 14px rgba(255,157,59,.35); }
+.character-card.status-martywa:hover .character-card__portrait img { transform:scale(1.035);filter:grayscale(1) contrast(1.18) brightness(.72); }
+.character-card.status-martywa:hover .vignette-overlay { box-shadow:inset 0 0 38px rgba(45,4,10,.92); }
+.character-card.status-martywa:hover .fault-crack-glow { opacity:1;filter:drop-shadow(0 0 6px var(--crimson-bright)); }
+.character-card.status-martywa:hover .crimson-ash { animation-play-state:running; }
+.character-card.status-martywa:hover h3 { color:#e05260;text-shadow:0 0 12px rgba(217,38,56,.35); }
+.character-card.status-wycofana:hover .character-card__portrait img { transform:scale(1.03);filter:sepia(.12) saturate(.88) contrast(1.02) brightness(.95); }
+.character-card.status-wycofana:hover .curator-veil { opacity:.55; }
+.character-card.status-wycofana:hover .curator-trim { stroke:#cfd8e3; }
+.character-card.status-wycofana:hover h3 { color:#cfd8e3; }
+.character-card.status-porzucona:hover .character-card__portrait img { opacity:.92;filter:grayscale(.65) sepia(.18) contrast(.92) brightness(.82); }
+.character-card.status-porzucona:hover .unwritten-sketch-lines { opacity:1; }
+.character-card.status-porzucona:hover h3 { color:#b5aa9c; }
+.character-card.status-zwycieska:hover .character-card__portrait,.character-card.status-aktywna:hover .character-card__portrait,.character-card.status-martywa:hover .character-card__portrait,.character-card.status-wycofana:hover .character-card__portrait,.character-card.status-porzucona:hover .character-card__portrait { }
+@media(prefers-reduced-motion:reduce) {
+ .character-card__portrait *, .character-card__portrait *:before, .character-card__portrait *:after { animation:none!important;transition:none!important; }
+}
