@@ -115,7 +115,8 @@
     "achievementIds": [
       "zguba-lisza",
       "pogromca-smokow",
-      "krolotworca"
+      "krolotworca",
+      "powrocony"
     ]
   },
   {
@@ -215,7 +216,7 @@
   },
   {
     "portrait": "/core/portraits/char-0012.webp",
-    "character": "Oxie",
+    "character": "Orpheus 'Oxie' Norixius",
     "player": "Dawid",
     "campaigns": [
       "Menaces of Irensberg"
@@ -240,7 +241,7 @@
   },
   {
     "portrait": "/core/portraits/char-0013.webp",
-    "character": "Keto",
+    "character": "Keto Nal",
     "player": "Anemo",
     "campaigns": [
       "Menaces of Irensberg"
