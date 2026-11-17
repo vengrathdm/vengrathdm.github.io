@@ -1634,3 +1634,15 @@ body {
   .hof-stats > div { padding: 0.75rem 0.65rem; }
   .hof-stats strong { font-size: 1.5rem; }
 }
+
+
+/* Wycofana: keep the portrait inside the silver arch in the general archive.
+   This gallery uses the shared card markup without the Hall of Fame viewport wrapper. */
+.hof-results .character-card[data-status="Wycofana"] .character-card__portrait img {
+  clip-path: polygon(
+    0 100%, 0 34.27%,
+    1.7% 21.4%, 6.7% 12.5%, 14.6% 5.8%, 25% 1.7%, 37.5% 0,
+    50% 0, 62.5% 0, 75% 1.7%, 85.4% 5.8%, 93.3% 12.5%, 98.3% 21.4%,
+    100% 34.27%, 100% 100%
+  );
+}
