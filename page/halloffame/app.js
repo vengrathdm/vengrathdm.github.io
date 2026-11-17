@@ -122,6 +122,9 @@ function applyStatusPortraitDesign(card, character) {
   card.classList.add("status-" + statusKey);
   const portrait = card.querySelector(".character-card__portrait");
   if (!portrait) return;
+  const vignette = document.createElement("div"); vignette.className = "vignette-overlay";
+  const image = portrait.querySelector("img");
+  if (image) image.after(vignette); else portrait.append(vignette);
 
   if (statusKey === "zwycieska") {
     const glow = document.createElement("div"); glow.className = "sanctuary-glow"; portrait.append(glow);
