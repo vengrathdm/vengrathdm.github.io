@@ -1636,9 +1636,19 @@ body {
 }
 
 
-/* Wycofana: keep the portrait inside the silver arch in the general archive.
-   This gallery uses the shared card markup without the Hall of Fame viewport wrapper. */
+/* Wycofana: the portrait is inset to the opening and clipped to the silver arch. */
+.hof-results .character-card[data-status="Wycofana"] .character-card__portrait {
+  overflow: hidden;
+}
 .hof-results .character-card[data-status="Wycofana"] .character-card__portrait img {
+  position: absolute;
+  inset: 3.87% 5.45%;
+  width: 89.1%;
+  height: 92.26%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
   clip-path: polygon(
     0 100%, 0 34.27%,
     1.7% 21.4%, 6.7% 12.5%, 14.6% 5.8%, 25% 1.7%, 37.5% 0,
