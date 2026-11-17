@@ -122,23 +122,31 @@ function applyStatusPortraitDesign(card, character) {
   card.classList.add("status-" + statusKey);
   const portrait = card.querySelector(".character-card__portrait");
   if (!portrait) return;
-  const vignette = document.createElement("div"); vignette.className = "vignette-overlay";
   const image = portrait.querySelector("img");
-  if (image) image.after(vignette); else portrait.append(vignette);
+  const viewport = document.createElement("div");
+  viewport.className = "portrait-frame-viewport";
+  if (image) {
+    portrait.insertBefore(viewport, image);
+    viewport.append(image);
+  } else {
+    portrait.append(viewport);
+  }
+  const vignette = document.createElement("div"); vignette.className = "vignette-overlay";
+  viewport.append(vignette);
 
   if (statusKey === "zwycieska") {
-    const glow = document.createElement("div"); glow.className = "sanctuary-glow"; portrait.append(glow);
+    const glow = document.createElement("div"); glow.className = "sanctuary-glow"; viewport.append(glow);
     const particles = document.createElement("div"); particles.className = "particle-layer gold-particles"; portrait.append(particles);
     spawnStatusParticles(particles, 22, "gold-dust", {minSize:2,maxSize:4.5,minDur:2.8,maxDur:4.8,driftRange:28});
   } else if (statusKey === "aktywna") {
-    const aura = document.createElement("div"); aura.className = "torch-aura"; portrait.append(aura);
+    const aura = document.createElement("div"); aura.className = "torch-aura"; viewport.append(aura);
     const particles = document.createElement("div"); particles.className = "particle-layer ember-particles"; portrait.append(particles);
     spawnStatusParticles(particles, 16, "ember-spark", {minSize:2,maxSize:3.5,minDur:2.2,maxDur:3.8,driftRange:30});
   } else if (statusKey === "martywa") {
     const particles = document.createElement("div"); particles.className = "particle-layer crimson-particles"; portrait.append(particles);
     spawnStatusParticles(particles, 18, "crimson-ash", {minSize:2,maxSize:3.8,minDur:3.2,maxDur:5.0,driftRange:20});
   } else if (statusKey === "wycofana") {
-    const veil = document.createElement("div"); veil.className = "curator-veil"; portrait.insertBefore(veil, vignette);
+    const veil = document.createElement("div"); veil.className = "curator-veil"; viewport.insertBefore(veil, vignette);
   }
   appendSvgFrame(portrait, statusKey);
 }
