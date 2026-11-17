@@ -478,3 +478,8 @@ footer a { color:var(--gold-lt); }
 .character-card.status-martywa:hover .portrait-frame-viewport>img {
   filter:grayscale(.08) sepia(.04) saturate(1.08) brightness(.98) contrast(1.04);
 }
+
+/* Match the existing hover selector specificity so the portrait regains color. */
+.character-card.status-martywa:hover .character-card__portrait .portrait-frame-viewport>img {
+  filter:grayscale(.08) sepia(.04) saturate(1.08) brightness(.98) contrast(1.04);
+}
