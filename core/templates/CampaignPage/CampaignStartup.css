@@ -43,7 +43,7 @@ body.campaign-fonts-loading > footer {
 
 /* One campaign cursor everywhere: no pointer, text, or drag-specific variants. */
 body[class*="ksiazeta-heartwell"], body[class*="ksiazeta-heartwell"] * { cursor: url("/core/graphics/cursors/ksiazeta-heartwell_default.svg") 21 21, auto !important; }
-body[class*="legends-of-barovia"], body[class*="legends-of-barovia"] * { cursor: url("/core/graphics/cursors/legends-of-barovia_default.png") 21 21, auto !important; }
+body[class*="legends-of-barovia"], body[class*="legends-of-barovia"] * { cursor: url("/core/graphics/cursors/legends-of-barovia_default.png") 111 102, auto !important; }
 body[class*="odyssey-of-the-dragonlords"], body[class*="odyssey-of-the-dragonlords"] * { cursor: url("/core/graphics/cursors/odyssey-of-the-dragonlords_default.svg") 21 21, auto !important; }
 body[class*="sands-of-doom"], body[class*="sands-of-doom"] * { cursor: url("/core/graphics/cursors/sands-of-doom_default.svg") 21 21, auto !important; }
 body[class*="tomb-of-annihilation"], body[class*="tomb-of-annihilation"] * { cursor: url("/core/graphics/cursors/tomb-of-annihilation_default.png") 21 21, auto !important; }
