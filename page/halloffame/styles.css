@@ -188,6 +188,75 @@ footer a { color:var(--gold-lt); }
   .character-grid { grid-template-columns:1fr 1fr; }
   .character-card__row { grid-template-columns:1fr; }
 }
+
+/* Character dossier: fixed portrait and independently scrollable details. */
+.character-dialog {
+  max-height:calc(100dvh - 40px);
+  overflow:hidden;
+}
+.dialog-layout {
+  grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr);
+  align-items:stretch;
+  max-height:calc(100dvh - 40px);
+  min-height:0;
+}
+.dialog-portrait {
+  min-height:0;
+  aspect-ratio:3 / 4;
+  align-self:start;
+}
+.dialog-portrait img { object-fit:cover; }
+.dialog-copy {
+  min-width:0;
+  min-height:0;
+  max-height:calc(100dvh - 40px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  scrollbar-color:var(--gold) #c9bca4;
+}
+.dialog-meta {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:16px 0 20px;
+}
+.dialog-meta-item {
+  display:grid;
+  gap:3px;
+  min-width:92px;
+  padding:7px 10px;
+  border:1px solid #943a3740;
+  background:#c9bca455;
+}
+.dialog-meta-item small {
+  color:var(--ink-soft);
+  font:9px var(--ledger);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.dialog-meta-item strong {
+  color:var(--ink);
+  font-size:14px;
+  font-weight:500;
+  overflow-wrap:anywhere;
+}
+@media(max-width:600px) {
+  .character-dialog { overflow:auto; }
+  .dialog-layout {
+    grid-template-columns:1fr;
+    max-height:none;
+  }
+  .dialog-portrait {
+    aspect-ratio:auto;
+    height:65vw;
+    max-height:360px;
+  }
+  .dialog-copy {
+    max-height:none;
+    overflow:visible;
+  }
+}
+
 @media(prefers-reduced-motion:reduce) {
   html { scroll-behavior:auto; }
   *,*:before,*:after { transition-duration:.01ms!important; }
