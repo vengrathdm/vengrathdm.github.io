@@ -699,3 +699,177 @@ footer a { color:var(--gold-lt); }
 .character-card[data-status="Wycofana"] .character-card__portrait::before,
 .character-card[data-status="Porzucona"] .character-card__portrait::before { transform:none; }
 .character-card[data-status="Porzucona"] .character-card__portrait::before { opacity:.48; }
+
+
+/* Static status frames: shape carries the status; hover only sharpens the existing detail. */
+.character-card,
+.character-card:hover,
+.character-card:focus-visible {
+  animation:none!important;
+}
+.character-card__portrait::before,
+.character-card__portrait::after {
+  animation:none!important;
+  transform:none!important;
+  transition:opacity .18s ease,border-color .18s ease,box-shadow .18s ease!important;
+}
+.character-card__portrait::before {
+  z-index:1!important;
+  opacity:1!important;
+  filter:none!important;
+}
+.character-card__portrait::after {
+  z-index:3!important;
+  pointer-events:none;
+}
+.character-card__status { z-index:4; }
+.character-card__achievements { z-index:5; }
+
+/* Zwycięska — complete, symmetrical double-gilt frame. */
+.character-card[data-status="Zwycięska"] {
+  --status-accent:#d8b87e;
+  --status-glow:rgba(216,184,126,.22);
+  border-color:#b08d57;
+  box-shadow:0 0 0 5px var(--paper-fold),0 15px 28px #0008;
+}
+.character-card[data-status="Zwycięska"] .character-card__portrait::before {
+  background:
+    linear-gradient(90deg,#d8b87e 0 2px,transparent 2px calc(100% - 2px),#d8b87e calc(100% - 2px)) 50% 7px/100% 2px no-repeat,
+    linear-gradient(90deg,#d8b87e 0 2px,transparent 2px calc(100% - 2px),#d8b87e calc(100% - 2px)) 50% calc(100% - 7px)/100% 2px no-repeat,
+    linear-gradient(#d8b87e,#d8b87e) 7px 0/2px 100% no-repeat,
+    linear-gradient(#d8b87e,#d8b87e) calc(100% - 7px) 0/2px 100% no-repeat;
+  opacity:.72!important;
+}
+.character-card[data-status="Zwycięska"] .character-card__portrait::after {
+  inset:12px;
+  border:3px double #e2c58c;
+  box-shadow:inset 0 0 0 2px rgba(216,184,126,.22);
+  background:linear-gradient(180deg,#09070e10,transparent 40%,#09070e35);
+}
+
+/* Aktywna — angular amber corner brackets, open at the middle of each edge. */
+.character-card[data-status="Aktywna"] {
+  --status-accent:#e5a33d;
+  --status-glow:rgba(229,163,61,.24);
+  border-color:#bd792b;
+  box-shadow:0 0 0 5px var(--paper-fold),0 15px 28px #0008;
+}
+.character-card[data-status="Aktywna"] .character-card__portrait::before {
+  background:
+    linear-gradient(#e5a33d,#e5a33d) left 8px top 8px/34px 3px no-repeat,
+    linear-gradient(#e5a33d,#e5a33d) left 8px top 8px/3px 34px no-repeat,
+    linear-gradient(#e5a33d,#e5a33d) right 8px top 8px/34px 3px no-repeat,
+    linear-gradient(#e5a33d,#e5a33d) right 8px top 8px/3px 34px no-repeat,
+    linear-gradient(#e5a33d,#e5a33d) left 8px bottom 8px/34px 3px no-repeat,
+    linear-gradient(#e5a33d,#e5a33d) left 8px bottom 8px/3px 34px no-repeat,
+    linear-gradient(#e5a33d,#e5a33d) right 8px bottom 8px/34px 3px no-repeat,
+    linear-gradient(#e5a33d,#e5a33d) right 8px bottom 8px/3px 34px no-repeat;
+  opacity:.86!important;
+}
+.character-card[data-status="Aktywna"] .character-card__portrait::after {
+  inset:17px;
+  border:1px solid rgba(229,163,61,.58);
+  background:linear-gradient(180deg,#09070e10,transparent 40%,#09070e35);
+}
+
+/* Martwa — a broken, dark-red memorial rule with one fixed blood mark. */
+.character-card[data-status="Martwa"] {
+  --status-accent:#76252d;
+  --status-glow:rgba(118,37,45,.22);
+  border-color:#64111d;
+  box-shadow:0 0 0 5px var(--paper-fold),0 15px 28px #0008;
+}
+.character-card[data-status="Martwa"] .character-card__portrait::before {
+  background:
+    radial-gradient(ellipse 24px 17px at 12% 13%,rgba(104,12,29,.72) 0 48%,transparent 78%),
+    radial-gradient(ellipse 9px 13px at 21% 22%,rgba(132,20,39,.62) 0 48%,transparent 78%),
+    radial-gradient(ellipse 3px 4px at 27% 12%,rgba(132,20,39,.72) 0 55%,transparent 80%),
+    radial-gradient(ellipse 2px 3px at 7% 29%,rgba(132,20,39,.72) 0 55%,transparent 80%);
+  opacity:.72!important;
+}
+.character-card[data-status="Martwa"] .character-card__portrait::after {
+  inset:10px;
+  border:0;
+  background:
+    linear-gradient(#76252d,#76252d) left top/42% 2px no-repeat,
+    linear-gradient(#76252d,#76252d) right top/24% 2px no-repeat,
+    linear-gradient(#76252d,#76252d) left top/2px 35% no-repeat,
+    linear-gradient(#76252d,#76252d) right top/2px 19% no-repeat,
+    linear-gradient(#76252d,#76252d) left bottom/20% 2px no-repeat,
+    linear-gradient(#76252d,#76252d) right bottom/43% 2px no-repeat,
+    linear-gradient(#76252d,#76252d) right bottom/2px 31% no-repeat,
+    linear-gradient(#76252d,#76252d) left bottom/2px 15% no-repeat,
+    linear-gradient(180deg,#09070e10,transparent 40%,#09070e35);
+  box-shadow:none;
+}
+
+/* Wycofana — an orderly bronze archive frame with substantial corner brackets. */
+.character-card[data-status="Wycofana"] {
+  --status-accent:#a9875f;
+  --status-glow:rgba(169,135,95,.2);
+  border:2px solid #76532e;
+  box-shadow:0 0 0 4px #3b2a1c,0 0 0 5px rgba(169,135,95,.34),0 15px 28px #0008;
+}
+.character-card[data-status="Wycofana"] .character-card__portrait::before {
+  background:
+    linear-gradient(#bd9560,#bd9560) left 7px top 7px/40px 4px no-repeat,
+    linear-gradient(#bd9560,#bd9560) left 7px top 7px/4px 40px no-repeat,
+    linear-gradient(#bd9560,#bd9560) right 7px top 7px/40px 4px no-repeat,
+    linear-gradient(#bd9560,#bd9560) right 7px top 7px/4px 40px no-repeat,
+    linear-gradient(#bd9560,#bd9560) left 7px bottom 7px/40px 4px no-repeat,
+    linear-gradient(#bd9560,#bd9560) left 7px bottom 7px/4px 40px no-repeat,
+    linear-gradient(#bd9560,#bd9560) right 7px bottom 7px/40px 4px no-repeat,
+    linear-gradient(#bd9560,#bd9560) right 7px bottom 7px/4px 40px no-repeat;
+  opacity:.9!important;
+}
+.character-card[data-status="Wycofana"] .character-card__portrait::after {
+  inset:15px;
+  border:1px solid rgba(189,149,96,.9);
+  box-shadow:inset 0 0 0 3px rgba(83,55,29,.32);
+  background:linear-gradient(180deg,#09070e10,transparent 40%,#09070e35);
+}
+
+/* Porzucona — interrupted silver perimeter and two quiet fracture lines. */
+.character-card[data-status="Porzucona"] {
+  --status-accent:#aeb8c5;
+  --status-glow:rgba(174,184,197,.18);
+  border:1px solid #718095;
+  box-shadow:0 0 0 5px #252c37,0 0 0 6px rgba(190,204,222,.34),0 15px 28px #0008;
+}
+.character-card[data-status="Porzucona"] .character-card__portrait::before {
+  background:
+    linear-gradient(132deg,transparent 0 22%,rgba(210,224,240,.7) 22.3% 22.7%,transparent 23% 100%) 0 0/100% 100% no-repeat,
+    linear-gradient(48deg,transparent 0 68%,rgba(210,224,240,.58) 68.3% 68.7%,transparent 69% 100%) 0 0/100% 100% no-repeat;
+  opacity:.58!important;
+}
+.character-card[data-status="Porzucona"] .character-card__portrait::after {
+  inset:9px;
+  border:0;
+  background:
+    linear-gradient(#c5d0df,#c5d0df) left top/28% 2px no-repeat,
+    linear-gradient(#c5d0df,#c5d0df) right top/19% 2px no-repeat,
+    linear-gradient(#c5d0df,#c5d0df) left top/2px 22% no-repeat,
+    linear-gradient(#c5d0df,#c5d0df) right top/2px 39% no-repeat,
+    linear-gradient(#c5d0df,#c5d0df) left bottom/17% 2px no-repeat,
+    linear-gradient(#c5d0df,#c5d0df) right bottom/31% 2px no-repeat,
+    linear-gradient(#c5d0df,#c5d0df) left bottom/2px 35% no-repeat,
+    linear-gradient(#c5d0df,#c5d0df) right bottom/2px 18% no-repeat,
+    linear-gradient(180deg,#09070e10,transparent 40%,#09070e35);
+}
+
+/* Hover is deliberately limited to a small status-coloured edge lift. */
+.character-card[data-status]:hover,
+.character-card[data-status]:focus-visible {
+  box-shadow:0 0 0 5px var(--paper-fold),0 0 10px var(--status-glow),0 22px 38px #000b;
+}
+.character-card[data-status="Wycofana"]:hover,
+.character-card[data-status="Wycofana"]:focus-visible {
+  box-shadow:0 0 0 4px #3b2a1c,0 0 0 5px rgba(169,135,95,.42),0 0 10px var(--status-glow),0 22px 38px #000b;
+}
+.character-card[data-status="Porzucona"]:hover,
+.character-card[data-status="Porzucona"]:focus-visible {
+  box-shadow:0 0 0 5px #252c37,0 0 0 6px rgba(190,204,222,.42),0 0 10px var(--status-glow),0 22px 38px #000b;
+}
+.character-card[data-status="Martwa"] .character-card__portrait img,
+.character-card[data-status="Wycofana"] .character-card__portrait img,
+.character-card[data-status="Porzucona"] .character-card__portrait img { filter:none; }
