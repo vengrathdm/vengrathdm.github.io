@@ -572,7 +572,8 @@ footer a { color:var(--gold-lt); }
 /* Final modal sizing: give the scroll pane a definite height through every parent. */
 @media(min-width:601px) {
   .character-dialog {
-    height:min(540px, calc(100dvh - 40px));
+    width:min(1155px, calc(100% - 28px));
+    height:min(594px, calc(100dvh - 40px));
     max-height:calc(100dvh - 40px);
     overflow:hidden;
   }
