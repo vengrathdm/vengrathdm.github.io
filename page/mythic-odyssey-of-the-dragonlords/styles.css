@@ -279,3 +279,21 @@ body.campaign-page {
     background-attachment: scroll;
   }
 }
+
+
+/* Chronicle recording controls: match the shared campaign-page pattern. */
+#chronicle-records .chronicle-record { border: 0; border-bottom: 1px solid #246084; border-radius: 0; background: transparent; color: #f1f2f2; }
+#chronicle-records .chronicle-record__header { display: grid; grid-template-columns: 100px minmax(0, 1fr) auto; align-items: center; gap: 15px; min-height: 0; padding: 19px 5px; background: transparent; }
+#chronicle-records .chronicle-record__number { color: #79d5f5; font: 400 16px var(--theme-font-1); }
+#chronicle-records .chronicle-record__title { min-width: 0; color: #fff; font: 400 19px var(--theme-font-1); overflow-wrap: anywhere; }
+#chronicle-records .chronicle-record__recordings { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 6px; }
+#chronicle-records .play-recording-button { display: inline-flex; align-items: center; justify-content: center; min-width: 116px; min-height: 0; padding: 9px 13px; border: 1px solid #d7b45b; border-radius: 0; background: linear-gradient(135deg, #1c5c80, #124263); color: #d7b45b; font: 700 10px/1.4 var(--theme-font-1); letter-spacing: 1.5px; text-decoration: none; white-space: nowrap; transition: background-color 180ms ease, color 180ms ease; }
+#chronicle-records .play-recording-button:hover, #chronicle-records .play-recording-button:focus-visible { background: #d7b45b; color: #071827; outline-offset: 3px; }
+#chronicle-records .play-recording-button__icon { font-size: 0.75em; }
+#chronicle-records .chronicle-record__description { padding: 0 5px 20px 105px; border-top: 0; color: #c2c6c7; font: 14px/1.6 var(--theme-font-2); }
+#chronicle-records .chronicle-record__description p { margin: 0; overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+  #chronicle-records .chronicle-record__header { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  #chronicle-records .chronicle-record__recordings { justify-content: flex-start; }
+  #chronicle-records .chronicle-record__description { padding: 0 5px 18px; }
+}
