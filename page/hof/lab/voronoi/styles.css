@@ -432,4 +432,97 @@ main {
   }
 }
 
-.voronoi-brand img{width:32px;height:32px;object-fit:contain;filter:sepia(.45)}.voronoi-brand b{color:var(--accent);font-weight:400}.voronoi-nav{display:flex;align-items:center;gap:clamp(10px,1.8vw,26px);margin-left:clamp(10px,3vw,48px)}.voronoi-nav a{color:#b9a9c0;font:10px "Cutive Mono",monospace;letter-spacing:.1em;text-decoration:none}.voronoi-nav a:hover{color:#fff0ce}.voronoi-header{gap:clamp(9px,1.4vw,20px);padding-inline:clamp(12px,2.5vw,38px)}.voronoi-search{background:#100d18}.voronoi-outline{stroke:rgba(216,184,126,.5)}.voronoi-cell:hover .voronoi-outline,.voronoi-cell:focus-visible .voronoi-outline{stroke:#d8b87e}.character-dialog{border-color:var(--accent);background:#141120;color:var(--text)}.dialog-close{border-color:var(--accent);background:#100d18;color:var(--accent)}.dialog-copy h2{font-family:Voltaire,sans-serif;color:var(--accent)}.dialog-player{color:var(--accent)}.dialog-copy dt{color:#9b8fa6}.dialog-award{border-color:var(--line);color:#d8b87e}@media(max-width:760px){.voronoi-nav{order:4;width:100%;margin:0;justify-content:center}.voronoi-search{order:5}.voronoi-count{order:3}}
+.voronoi-brand img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: sepia(.45);
+}
+
+.voronoi-brand b {
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.voronoi-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.8vw, 26px);
+  margin-left: clamp(10px, 3vw, 48px);
+}
+
+.voronoi-nav a {
+  color: #b9a9c0;
+  font: 10px "Cutive Mono", monospace;
+  letter-spacing: .1em;
+  text-decoration: none;
+}
+
+.voronoi-nav a:hover {
+  color: #fff0ce;
+}
+
+.voronoi-header {
+  gap: clamp(9px, 1.4vw, 20px);
+  padding-inline: clamp(12px, 2.5vw, 38px);
+}
+
+.voronoi-search {
+  background: #100d18;
+}
+
+.voronoi-outline {
+  stroke: rgba(216, 184, 126, .5);
+}
+
+.voronoi-cell:hover .voronoi-outline,
+.voronoi-cell:focus-visible .voronoi-outline {
+  stroke: #d8b87e;
+}
+
+.character-dialog {
+  border-color: var(--accent);
+  background: #141120;
+  color: var(--text);
+}
+
+.dialog-close {
+  border-color: var(--accent);
+  background: #100d18;
+  color: var(--accent);
+}
+
+.dialog-copy h2 {
+  font-family: Voltaire, sans-serif;
+  color: var(--accent);
+}
+
+.dialog-player {
+  color: var(--accent);
+}
+
+.dialog-copy dt {
+  color: #9b8fa6;
+}
+
+.dialog-award {
+  border-color: var(--line);
+  color: #d8b87e;
+}
+
+@media (max-width: 760px) {
+  .voronoi-nav {
+    order: 4;
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+  }
+
+  .voronoi-search {
+    order: 5;
+  }
+
+  .voronoi-count {
+    order: 3;
+  }
+}
