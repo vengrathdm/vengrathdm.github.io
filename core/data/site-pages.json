@@ -570,5 +570,16 @@
     "image": "/core/graphics/voronoi/red-hand-of-doom.webp",
     "layout": "bespoke",
     "manifest": null
+  },
+  {
+    "id": "halloffame",
+    "title": "Hall of Fame",
+    "type": "archive",
+    "category": "Hidden",
+    "visibility": "hidden",
+    "url": "/page/halloffame/",
+    "image": "/core/graphics/voronoi/sala-chwaly.webp",
+    "layout": "page-specific",
+    "manifest": null
   }
 ]
