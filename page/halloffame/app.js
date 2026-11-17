@@ -211,10 +211,19 @@ function openCharacter(character) {
   const title = document.createElement("h2"); title.textContent = character.character || "Nieznana postać";
   const player = document.createElement("p"); player.className = "dialog-player"; player.textContent = "Gracz: " + (character.player || "Nie podano");
   const status = document.createElement("span"); status.className = "dialog-status"; status.textContent = character.status || "Nieznany status";
+  const identity = document.createElement("div"); identity.className = "dialog-meta";
+  const addMeta = (label, value) => {
+    if (!value || (Array.isArray(value) && !value.length)) return;
+    const item = document.createElement("span"); item.className = "dialog-meta-item";
+    const caption = document.createElement("small"); caption.textContent = label;
+    const content = document.createElement("strong"); content.textContent = Array.isArray(value) ? value.join(", ") : value;
+    item.append(caption, content); identity.append(item);
+  };
+  addMeta("Rasa", character.race); addMeta("Klasa", character.classes);
   const details = document.createElement("dl");
   const addRow = (label, value) => { const dt = document.createElement("dt"), dd = document.createElement("dd"); dt.textContent = label; dd.textContent = Array.isArray(value) ? value.join(", ") || "Nie podano" : value || "Nie podano"; details.append(dt, dd); };
-  addRow("Kampanie", character.campaigns); addRow("Moduły", character.modules); addRow("Klasy", character.classes); addRow("Rasa", character.race); addRow("Status", character.status);
-  copy.append(kicker, title, player, status, details);
+  addRow("Kampanie", character.campaigns); addRow("Moduły", character.modules);
+  copy.append(kicker, title, player, status, identity, details);
   const earned = asArray(character.achievementIds).map((id) => achievements.get(id)).filter(Boolean);
   const awards = document.createElement("section"); awards.className = "dialog-section";
   const heading = document.createElement("h3"); heading.textContent = "ODZNACZENIA I DOKONANIA";
