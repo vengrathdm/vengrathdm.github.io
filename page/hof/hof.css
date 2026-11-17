@@ -1636,23 +1636,24 @@ body {
 }
 
 
-/* Wycofana: the portrait is inset to the opening and clipped to the silver arch. */
+/* Wycofana: clip the image to the actual inset opening of the silver arch. */
 .hof-results .character-card[data-status="Wycofana"] .character-card__portrait {
+  position: relative;
   overflow: hidden;
 }
 .hof-results .character-card[data-status="Wycofana"] .character-card__portrait img {
   position: absolute;
-  inset: 3.87% 5.45%;
-  width: 89.1%;
-  height: 92.26%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   max-width: none;
   max-height: none;
   object-fit: cover;
   object-position: center;
   clip-path: polygon(
-    0 100%, 0 34.27%,
-    1.7% 21.4%, 6.7% 12.5%, 14.6% 5.8%, 25% 1.7%, 37.5% 0,
-    50% 0, 62.5% 0, 75% 1.7%, 85.4% 5.8%, 93.3% 12.5%, 98.3% 21.4%,
-    100% 34.27%, 100% 100%
+    5.45% 96.13%, 5.45% 35.48%,
+    6.98% 23.64%, 11.43% 15.41%, 18.50% 9.22%, 27.98% 5.44%, 39.59% 3.87%,
+    50% 3.87%, 60.41% 3.87%, 72.02% 5.44%, 81.50% 9.22%, 88.57% 15.41%, 93.02% 23.64%,
+    94.55% 35.48%, 94.55% 96.13%
   );
 }
