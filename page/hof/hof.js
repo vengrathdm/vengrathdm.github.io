@@ -20,6 +20,44 @@ const $ = (id) => document.getElementById(id),
           "'": "&#39;",
         })[c],
     );
+let retiredFrameId = 0;
+const SILVER_ARCH_PATH = "M12 298 L12 110 A98 98 0 0 1 208 110 L208 298 Z";
+
+function applySilverArch(card) {
+  const portrait = card.querySelector(".character-card__portrait");
+  const image = portrait?.querySelector("img");
+  if (!portrait || !image) return;
+
+  const id = "hof-silver-arch-" + (++retiredFrameId);
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("viewBox", "0 0 220 310");
+  svg.setAttribute("preserveAspectRatio", "none");
+  svg.setAttribute("aria-hidden", "true");
+  svg.classList.add("hof-silver-arch");
+
+  const defs = document.createElementNS(svg.namespaceURI, "defs");
+  const clip = document.createElementNS(svg.namespaceURI, "clipPath");
+  clip.setAttribute("id", id);
+  clip.setAttribute("clipPathUnits", "objectBoundingBox");
+  const clipPath = document.createElementNS(svg.namespaceURI, "path");
+  clipPath.setAttribute("d", SILVER_ARCH_PATH);
+  clipPath.setAttribute("transform", "scale(0.00454545454545 0.00322580645161)");
+  clip.append(clipPath);
+  defs.append(clip);
+
+  const frame = document.createElementNS(svg.namespaceURI, "path");
+  frame.setAttribute("d", SILVER_ARCH_PATH);
+  frame.setAttribute("fill", "none");
+  frame.setAttribute("stroke", "#9aa7b5");
+  frame.setAttribute("stroke-width", "2.2");
+  frame.setAttribute("class", "hof-silver-arch__stroke");
+  svg.append(defs, frame);
+
+  image.style.clipPath = "url(#" + id + ")";
+  image.style.webkitClipPath = "url(#" + id + ")";
+  portrait.append(svg);
+}
+
 const statusExplanations = {
   Aktywna: "Postać żyje i bierze udział w trwającej przygodzie D&D.",
   Martwa: "Postać zginęła podczas przygody i nie została wskrzeszona.",
@@ -126,6 +164,7 @@ function render() {
   const cards = rows.map((c) => {
     const card = createCharacterCard(c, achievements);
     const explanation = statusExplanations[c.status];
+    if (c.status === "Wycofana") applySilverArch(card);
     const badge = card.querySelector(".character-card__status");
     if (badge && explanation) {
       badge.title = explanation;
