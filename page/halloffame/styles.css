@@ -194,3 +194,78 @@ footer a { color:var(--gold-lt); }
   html { scroll-behavior:auto; }
   *,*:before,*:after { transition-duration:.01ms!important; }
 }
+
+
+/* Layout follows Sala Chwały: shared hero/nav, compact stats, sticky filter rail and results column. */
+.hof-hero {
+  position:relative; overflow:hidden; border-bottom:1px solid var(--hairline);
+  background:radial-gradient(ellipse at 78% 76%,rgba(148,58,55,.12),transparent 30rem),
+    linear-gradient(125deg,rgba(38,32,50,.98),rgba(20,17,32,.96));
+}
+.hof-nav {
+  position:relative; z-index:1; display:flex; align-items:center; gap:clamp(.75rem,2vw,1.75rem);
+  min-height:4.4rem; padding:.65rem clamp(.8rem,2vw,1.5rem); border-bottom:1px solid var(--hairline);
+}
+.hof-brand { display:flex; flex:0 0 auto; align-items:center; gap:.6rem; color:var(--parchment); font:1.25rem var(--display); letter-spacing:.14em; white-space:nowrap; }
+.hof-brand img { width:2.35rem; height:2.35rem; object-fit:contain; filter:sepia(.45) drop-shadow(0 0 10px #b08d5740); }
+.hof-nav-meta { flex:1; color:#9b8fa6; font: .68rem var(--ledger); letter-spacing:.12em; }
+.hof-nav-meta span { padding:0 .5rem; color:var(--gold); }
+.hof-nav-link { padding:.45rem .1rem; color:#c8bda9; font:.95rem var(--body); letter-spacing:.07em; text-decoration:none; }
+.hof-nav-link:hover,.hof-nav-link:focus-visible { color:var(--gold-lt); }
+.hof-hero-copy { position:relative; z-index:1; max-width:1600px; margin:auto; padding:clamp(2rem,4vw,3.4rem) clamp(1.2rem,5vw,4.75rem); }
+.hof-hero-copy>p:first-child { margin:0; color:var(--gold); font:.7rem var(--ledger); letter-spacing:.2em; }
+.hof-hero-copy h1 { margin:.65rem 0 0; color:#f5eddd; font:400 clamp(3rem,8vw,6.3rem)/.95 var(--display); letter-spacing:.015em; text-transform:uppercase; }
+.hof-hero-copy h1 span { color:var(--gold-lt); }
+.hof-main { width:min(100%,1720px); margin:auto; padding:1.5rem clamp(1rem,3vw,3rem) 4rem; }
+.hof-stats { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); margin:0 0 2rem; border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline); background:linear-gradient(90deg,var(--gold-dim),transparent 72%); }
+.hof-stats>div { display:flex; align-items:center; justify-content:space-between; gap:.5rem; min-width:0; padding:.8rem 1rem; }
+.hof-stats>div+div { border-left:1px solid var(--hairline); }
+.hof-stats span { color:#a99caf; font:.62rem var(--ledger); letter-spacing:.1em; }
+.hof-stats strong { color:var(--gold-lt); font:600 1.55rem var(--ledger); font-variant-numeric:tabular-nums; }
+.hof-archive { display:grid; grid-template-columns:15rem minmax(0,1fr); align-items:start; gap:1.25rem; }
+.hof-filters { position:sticky; top:1rem; align-self:start; display:grid; gap:.8rem; padding:.8rem; border:1px solid var(--hairline); background:linear-gradient(180deg,var(--panel),var(--night)); }
+.hof-search { display:flex; align-items:center; gap:.55rem; min-width:0; padding:.58rem .75rem; border:1px solid var(--hairline); background:#09070e; color:var(--gold-lt); }
+.hof-search>span { font:1.4rem/.8 sans-serif; }
+.hof-search input { width:100%; min-width:0; padding:0; border:0; outline:0; background:transparent; color:var(--parchment); font:16px var(--body); }
+.hof-search input::placeholder { color:#746b7c; }
+.hof-search:focus-within { border-color:var(--gold); box-shadow:0 0 0 3px var(--gold-dim); }
+.hof-filter-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:.55rem; }
+.hof-filter-grid label { display:grid; gap:.35rem; min-width:0; color:#a99caf; font:.62rem var(--ledger); letter-spacing:.08em; }
+.hof-filter-grid select { width:100%; min-width:0; padding:.58rem .65rem; border:1px solid var(--hairline); border-radius:0; background:#100d18; color:var(--parchment); font:15px var(--body); }
+.hof-filter-grid select:focus-visible { border-color:var(--gold); outline:2px solid var(--gold-dim); }
+.hof-reset { padding:.55rem .7rem; border:1px solid var(--hairline); background:transparent; color:#c8bda9; font:.95rem var(--body); letter-spacing:.08em; cursor:pointer; }
+.hof-reset:hover,.hof-reset:focus-visible { border-color:var(--gold); background:var(--gold-dim); color:var(--gold-lt); }
+.hof-results { min-width:0; }
+.hof-results-heading { display:flex; align-items:center; justify-content:flex-end; gap:1rem; margin:0 0 1rem; min-height:1.5rem; }
+#result-count { color:var(--gold-lt); font:.7rem var(--ledger); letter-spacing:.08em; }
+.character-gallery.character-grid { grid-template-columns:repeat(auto-fill,minmax(min(100%,15.2rem),1fr)); gap:.75rem; }
+@media(max-width:900px) { .hof-archive { grid-template-columns:13rem minmax(0,1fr); gap:1rem; } .character-gallery.character-grid { grid-template-columns:repeat(auto-fill,minmax(min(100%,12rem),1fr)); } }
+@media(max-width:760px) {
+ .hof-stats { grid-template-columns:repeat(3,minmax(0,1fr)); }
+ .hof-stats>div:nth-child(4) { border-left:0; }
+ .hof-stats>div:nth-child(n+4) { border-top:1px solid var(--hairline); }
+ .hof-archive { grid-template-columns:minmax(0,1fr); }
+ .hof-filters { position:static; }
+ .hof-filter-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:620px) {
+ .hof-nav { flex-wrap:wrap; gap:.5rem .8rem; padding-block:.5rem; }
+ .hof-brand { margin-right:auto; font-size:1.05rem; }
+ .hof-brand img { width:1.9rem; height:1.9rem; }
+ .hof-nav-meta { display:none; }
+ .hof-nav-link { font-size:.88rem; }
+ .hof-hero-copy { padding:2rem 1.15rem 1.7rem; }
+ .hof-hero-copy h1 { font-size:clamp(2.8rem,13vw,4.7rem); }
+ .hof-main { padding:1rem .85rem 2.5rem; }
+ .hof-stats { grid-template-columns:repeat(2,minmax(0,1fr)); margin-bottom:1.2rem; }
+ .hof-stats>div { padding:.65rem .7rem; }
+ .hof-stats>div:nth-child(3),.hof-stats>div:nth-child(5) { border-left:0; }
+ .hof-stats>div:nth-child(4) { border-left:1px solid var(--hairline); }
+ .hof-stats>div:nth-child(n+3) { border-top:1px solid var(--hairline); }
+ .hof-stats span { font-size:.56rem; }
+ .hof-stats strong { font-size:1.3rem; }
+ .hof-filter-grid { grid-template-columns:1fr; }
+ .character-gallery.character-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem; }
+ .hof-footer { flex-wrap:wrap; justify-content:center; text-align:center; }
+ .hof-footer span:nth-child(2) { flex-basis:100%; order:3; }
+}
