@@ -1,61 +1,35 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#090b10">
-  <meta name="description" content="Hall of Fame — an immersive archive of Vengrath's heroes, their journeys and honours.">
-  <title>Hall of Fame · Vengrath</title>
-  <link rel="icon" href="/core/graphics/favicon/favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Cinzel:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css">
-  <!-- Deployment refresh: Hall of Fame archive -->
-  <!-- Pages deployment retry 2 -->
-  </head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0d12"><meta name="description" content="Hall of Fame Vengrath — galeria bohaterów, ich historii i osiągnięć.">
+<title>Hall of Fame — Vengrath</title>
+<link rel="icon" href="/core/graphics/favicon/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Cinzel:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
 <body>
-  <div class="app-shell">
-    <header class="topbar">
-      <a class="brand" href="/home/" aria-label="Vengrath home"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
-      <div class="topbar-label"><span class="live-dot"></span> THE CHRONICLES · CHARACTER ARCHIVE</div>
-      <a class="back-link" href="/page/hof/">SALA CHWAŁY <span>↗</span></a>
-    </header>
-    <main>
-      <section class="intro">
-        <div class="intro-copy">
-          <p class="eyebrow">THE RECORD OF LEGENDS <i>—</i> EST. IN THE REALMS</p>
-          <h1>HALL <em>OF</em><br>FAME<span class="title-period">.</span></h1>
-          <p class="intro-description">Every name carries a story. Every fragment marks a life that changed the course of an adventure.</p>
-        </div>
-        <div class="seal" aria-hidden="true"><span>V</span><small>VENGRATH<br>ARCHIVE</small></div>
-      </section>
-      <section class="metrics" aria-label="Archive statistics">
-        <div><span>RECORDED HEROES</span><strong id="stat-heroes">—</strong></div>
-        <div><span>PLAYERS</span><strong id="stat-players">—</strong></div>
-        <div><span>CAMPAIGNS</span><strong id="stat-campaigns">—</strong></div>
-        <div><span>STILL ACTIVE</span><strong id="stat-active">—</strong></div>
-        <div><span>VICTORIOUS</span><strong id="stat-victorious">—</strong></div>
-      </section>
-      <section class="explorer">
-        <div class="explorer-heading">
-          <div><p class="eyebrow">THE LIVING TAPESTRY</p><h2>Legends, <em>interwoven.</em></h2></div>
-          <p class="explorer-note">DRAG TO EXPLORE <span>·</span> SELECT A FRAGMENT TO OPEN ITS RECORD</p>
-        </div>
-        <div class="control-deck">
-          <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search heroes, players, campaigns…" aria-label="Search heroes"></label>
-          <label class="select-wrap"><span>STATUS</span><select id="status-filter"><option value="">All statuses</option></select></label>
-          <label class="select-wrap"><span>CAMPAIGN</span><select id="campaign-filter"><option value="">All campaigns</option></select></label>
-          <label class="select-wrap"><span>ORDER</span><select id="sort"><option value="name">Name · A—Z</option><option value="player">Player</option><option value="status">Status</option></select></label>
-          <button id="reset" type="button">RESET FILTERS <span>↺</span></button>
-        </div>
-        <div class="legend"><span><i class="key active"></i> ACTIVE</span><span><i class="key victory"></i> VICTORIOUS</span><span><i class="key fallen"></i> FALLEN</span><span><i class="key retired"></i> RETIRED / LOST</span><strong id="result-count">—</strong></div>
-        <div id="gallery-frame" class="gallery-frame" aria-label="Voronoi character gallery"><div id="board" class="board"></div><div id="empty-state" class="empty-state" hidden>No heroes match these filters.</div><div id="load-error" class="empty-state" hidden>The archive could not be loaded.</div></div>
-      </section>
-    </main>
-    <footer><span>VENGRATH <i>×</i> HALL OF FAME</span><span>AN ARCHIVE OF STORIES, NOT JUST NAMES</span><a href="/page/hof/">RETURN TO SALA CHWAŁY ↗</a></footer>
-  </div>
-  <dialog id="character-dialog" class="character-dialog"><button id="dialog-close" class="dialog-close" type="button" aria-label="Close">×</button><div id="dialog-content"></div></dialog>
-  <script type="module" src="./app.js"></script>
-</body>
-</html>
+<div class="shell">
+<header class="topbar"><a class="brand" href="/home/"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a><span class="topbar-label">ARCHIWUM BOHATERÓW</span><a class="back-link" href="/page/hof/">SALA CHWAŁY ↗</a></header>
+<main>
+<section class="hero"><div><p class="eyebrow">KRONIKI VENGRATH · ARCHIWUM POSTACI</p><h1>HALL OF <em>FAME</em><span>.</span></h1><p class="lead">Bohaterowie, którzy zapisali się w historiach naszych kampanii. Przeglądaj postacie, filtruj archiwum i odkrywaj ich dokonania.</p></div><div class="seal" aria-hidden="true"><b>V</b><small>VENGRATH<br>ARCHIWUM</small></div></section>
+<section class="stats" aria-label="Statystyki archiwum"><div><span>POSTACIE</span><strong id="stat-heroes">—</strong></div><div><span>GRACZE</span><strong id="stat-players">—</strong></div><div><span>KAMPANIE</span><strong id="stat-campaigns">—</strong></div><div><span>AKTYWNE</span><strong id="stat-active">—</strong></div><div><span>ZWYCIĘSKIE</span><strong id="stat-victorious">—</strong></div></section>
+<section class="archive"><div class="section-heading"><div><p class="eyebrow">GALERIA BOHATERÓW</p><h2>Odkryj <em>archiwum</em></h2></div><p class="section-note">WYBIERZ KARTĘ, ABY POZNAĆ SZCZEGÓŁY</p></div>
+<div class="filters"><label class="search"><span>⌕</span><input id="search" type="search" placeholder="Szukaj postaci, gracza, kampanii…" aria-label="Szukaj w archiwum"></label><div class="filter-grid">
+<label>GRACZ<select id="player-filter"><option value="">Wszyscy gracze</option></select></label>
+<label>KAMPANIA<select id="campaign-filter"><option value="">Wszystkie kampanie</option></select></label>
+<label>MODUŁ<select id="module-filter"><option value="">Wszystkie moduły</option></select></label>
+<label>KLASA<select id="class-filter"><option value="">Wszystkie klasy</option></select></label>
+<label>RASA<select id="race-filter"><option value="">Wszystkie rasy</option></select></label>
+<label>ODZNACZENIE<select id="achievement-filter"><option value="">Wszystkie odznaczenia</option></select></label>
+<label>STATUS<select id="status-filter"><option value="">Wszystkie statusy</option></select></label>
+<label>SORTOWANIE<select id="sort"><option value="name">Nazwa: A–Z</option><option value="player">Gracz: A–Z</option><option value="status">Status</option></select></label>
+</div><div class="filter-actions"><span id="result-count" aria-live="polite">Wczytywanie archiwum…</span><button id="reset" type="button">WYCZYŚĆ FILTRY <span>↺</span></button></div></div>
+<div id="grid" class="character-grid" aria-live="polite"></div><p id="empty-state" class="message" hidden>Nie znaleziono postaci spełniających wybrane kryteria.</p><p id="load-error" class="message" hidden>Nie udało się wczytać archiwum. Odśwież stronę lub spróbuj ponownie później.</p>
+</section>
+</main><footer><span>VENGRATH <i>×</i> HALL OF FAME</span><span>ARCHIWUM HISTORII I BOHATERÓW</span><a href="/page/hof/">WRÓĆ DO SALI CHWAŁY ↗</a></footer>
+</div>
+<dialog id="character-dialog" class="character-dialog"><button id="dialog-close" class="dialog-close" type="button" aria-label="Zamknij">×</button><div id="dialog-content"></div></dialog>
+<script type="module" src="./app.js"></script>
+</body></html>
