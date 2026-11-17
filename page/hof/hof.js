@@ -29,32 +29,41 @@ function applySilverArch(card) {
   if (!portrait || !image) return;
 
   const id = "hof-silver-arch-" + (++retiredFrameId);
-  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  const ns = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(ns, "svg");
   svg.setAttribute("viewBox", "0 0 220 310");
   svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
   svg.setAttribute("aria-hidden", "true");
   svg.classList.add("hof-silver-arch");
 
-  const defs = document.createElementNS(svg.namespaceURI, "defs");
-  const clip = document.createElementNS(svg.namespaceURI, "clipPath");
+  const defs = document.createElementNS(ns, "defs");
+  const clip = document.createElementNS(ns, "clipPath");
   clip.setAttribute("id", id);
-  clip.setAttribute("clipPathUnits", "objectBoundingBox");
-  const clipPath = document.createElementNS(svg.namespaceURI, "path");
-  clipPath.setAttribute("d", SILVER_ARCH_PATH);
-  clipPath.setAttribute("transform", "translate(0.0564516129 0) scale(0.00403225806452 0.00322580645161)");
-  clip.append(clipPath);
+  clip.setAttribute("clipPathUnits", "userSpaceOnUse");
+  const shape = document.createElementNS(ns, "path");
+  shape.setAttribute("d", SILVER_ARCH_PATH);
+  clip.append(shape);
   defs.append(clip);
 
-  const frame = document.createElementNS(svg.namespaceURI, "path");
+  const portraitImage = document.createElementNS(ns, "image");
+  portraitImage.setAttribute("href", image.currentSrc || image.src);
+  portraitImage.setAttribute("x", "0");
+  portraitImage.setAttribute("y", "0");
+  portraitImage.setAttribute("width", "220");
+  portraitImage.setAttribute("height", "310");
+  portraitImage.setAttribute("preserveAspectRatio", "xMidYMid slice");
+  portraitImage.setAttribute("clip-path", "url(#" + id + ")");
+  portraitImage.setAttribute("class", "hof-silver-arch__image");
+
+  const frame = document.createElementNS(ns, "path");
   frame.setAttribute("d", SILVER_ARCH_PATH);
   frame.setAttribute("fill", "none");
   frame.setAttribute("stroke", "#9aa7b5");
   frame.setAttribute("stroke-width", "2.2");
   frame.setAttribute("class", "hof-silver-arch__stroke");
-  svg.append(defs, frame);
 
-  image.style.clipPath = "url(#" + id + ")";
-  image.style.webkitClipPath = "url(#" + id + ")";
+  svg.append(defs, portraitImage, frame);
+  image.remove();
   portrait.append(svg);
 }
 
