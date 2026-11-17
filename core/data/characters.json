@@ -425,7 +425,7 @@
   {
     "portrait": "/core/portraits/char-0022.webp",
     "character": "Samira",
-    "player": "Jeesoo",
+    "player": "Jeesooo",
     "campaigns": [
       "Sands of Doom"
     ],
@@ -463,7 +463,7 @@
   {
     "portrait": "/core/portraits/char-0024.webp",
     "character": "Nefira",
-    "player": "Jeesoo",
+    "player": "Jeesooo",
     "campaigns": [
       "Sands of Doom"
     ],
@@ -2812,7 +2812,7 @@
   {
     "portrait": "/core/portraits/char-0138.webp",
     "character": "Xalrae",
-    "player": "Jeesoo",
+    "player": "Jeesooo",
     "campaigns": [
       "Rime of the Frostmaiden"
     ],
@@ -4738,7 +4738,7 @@
   {
     "portrait": "/core/portraits/char-0236.webp",
     "character": "Orelius",
-    "player": "Mags",
+    "player": "Magdalena",
     "campaigns": [
       "Epic Odyssey of the Dragonlords"
     ],
@@ -5350,7 +5350,7 @@
   {
     "portrait": "/core/portraits/placeholder_ref.webp",
     "character": "Bill Frankson",
-    "player": "Dominik",
+    "player": "chinczyk",
     "campaigns": [
       "Shards of the Past Legacy"
     ],
@@ -5571,7 +5571,7 @@
   {
     "portrait": "/core/portraits/char-278.webp",
     "character": "Selene Lunaris",
-    "player": "Jeesso",
+    "player": "Jeesoo",
     "campaigns": [
       "Dragon of Icespire Peak 2"
     ],
@@ -5809,7 +5809,7 @@
   {
     "portrait": "/core/portraits/char-0290.webp",
     "character": "Nerthirl Danann",
-    "player": "Neiiska",
+    "player": "neiiska",
     "campaigns": [
       "Dragons of Stormwreck Isle"
     ],
@@ -5828,7 +5828,7 @@
   {
     "portrait": "/core/portraits/char-0291.webp",
     "character": "Dilfiri",
-    "player": "Neiiska",
+    "player": "neiiska",
     "campaigns": [
       "Menaces of Gloomforest Legacy"
     ],
@@ -5847,7 +5847,7 @@
   {
     "portrait": "/core/portraits/char-0292.webp",
     "character": "Violet",
-    "player": "Neiiska",
+    "player": "neiiska",
     "campaigns": [
       "Menaces of Gloomforest Legacy"
     ],
