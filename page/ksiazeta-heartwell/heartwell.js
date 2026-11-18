@@ -2,9 +2,17 @@
    KSIĄŻĘTA HEARTWELL — CAMPAIGN INTERACTIONS
    ============================================================ */
 
+/* Session recording links are styled separately from the archive layout. */
+const sessionLinkStyles = document.createElement("link");
+sessionLinkStyles.rel = "stylesheet";
+sessionLinkStyles.href = "./heartwell-session-links.css";
+document.head.append(sessionLinkStyles);
+
 /* CASE LOG ACCORDION */
 document.querySelectorAll(".report-head").forEach((button) => {
-  button.addEventListener("click", () => {
+  button.addEventListener("click", (event) => {
+    if (event.target.closest(".session-youtube")) return;
+
     const entry = button.closest(".report-entry");
     if (!entry) return;
     entry.classList.toggle("open");

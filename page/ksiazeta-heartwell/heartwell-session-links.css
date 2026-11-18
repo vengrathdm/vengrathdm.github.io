@@ -1,0 +1,54 @@
+/* Individual recording links in the Heartwell case log. */
+.session-meta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.session-youtube-slot {
+  display: inline-flex;
+  align-items: center;
+}
+
+.session-youtube {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 5px 11px;
+  border: 1px solid var(--stamp-red);
+  background: rgba(139, 32, 32, 0.08);
+  color: var(--stamp-red);
+  font-family: var(--display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.session-youtube:hover,
+.session-youtube:focus-visible {
+  color: var(--paper);
+  background: var(--stamp-red);
+  border-color: var(--stamp-red);
+}
+
+@media (max-width: 640px) {
+  .report-head .session-meta {
+    grid-column: 2;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .report-head .session-youtube {
+    min-height: 26px;
+    padding: 4px 9px;
+  }
+}

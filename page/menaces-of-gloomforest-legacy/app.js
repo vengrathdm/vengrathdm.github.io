@@ -2,7 +2,6 @@ import { createSubpageHero } from "/core/templates/SubpageHero/SubpageHero.js";
 import { mountSubpageNavbar } from "/core/templates/SubpageNavbar/SubpageNavbar.js";
 import { renderCampaignSection } from "./sections/campaign/campaign.js";
 import { renderCharactersSection } from "./sections/characters/characters.js";
-import { renderChronicleSection } from "./sections/chronicle/chronicle.js";
 
 async function loadJson(path) {
   const response = await fetch(path);
@@ -62,7 +61,6 @@ async function initializeCampaignPage() {
   document.querySelector("#campaign-hero").replaceWith(hero);
 
   mountSubpageNavbar(navbarMount, {
-    playlistUrl: manifest.playlistUrl,
     sections: [
       {
         text: "Kampania",
@@ -74,17 +72,11 @@ async function initializeCampaignPage() {
         sectionLink: "characters",
         color: theme.colors.accent2,
       },
-      {
-        text: "Kronika",
-        sectionLink: "chronicle",
-        color: theme.colors.accent2,
-      },
     ],
   });
 
   renderCampaignSection(content.campaign);
   await renderCharactersSection(content.characters);
-  renderChronicleSection(content.chronicle);
 }
 
 initializeCampaignPage()
