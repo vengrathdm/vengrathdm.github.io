@@ -15,34 +15,27 @@
 <body class="curse-of-strahd-muppet-show-page">
   <div class="curtain curtain--left" aria-hidden="true"></div>
   <div class="curtain curtain--right" aria-hidden="true"></div>
-  <nav class="topbar" aria-label="Nawigacja kampanii">
-    <a class="brand" href="/home/">VENGRATH</a>
-    <div class="nav-links">
-      <a href="#premiere">Premiera</a>
-      <a href="#cast">Obsada</a>
-      <a href="#episodes">Odcinki</a>
-      <a href="#credits">Informacje</a>
-    </div>
-    <span class="on-air"><i></i> WYDANIE SPECJALNE</span>
-  </nav>
+<nav class="topbar" aria-label="Nawigacja kampanii"><a class="brand" href="/home/">VENGRATH</a><div class="nav-links" role="tablist" aria-label="Sekcje kampanii">
+<button class="nav-tab is-active" id="tab-premiere" type="button" role="tab" aria-selected="true" aria-controls="panel-premiere" data-panel="panel-premiere">Premiera</button>
+<button class="nav-tab" id="tab-campaign" type="button" role="tab" aria-selected="false" aria-controls="panel-campaign" data-panel="panel-campaign" tabindex="-1">Kampania</button>
+<button class="nav-tab" id="tab-cast" type="button" role="tab" aria-selected="false" aria-controls="panel-cast" data-panel="panel-cast" tabindex="-1">Obsada</button>
+<button class="nav-tab" id="tab-characters" type="button" role="tab" aria-selected="false" aria-controls="panel-characters" data-panel="panel-characters" tabindex="-1">Postaci</button>
+<button class="nav-tab" id="tab-chronicle" type="button" role="tab" aria-selected="false" aria-controls="panel-chronicle" data-panel="panel-chronicle" tabindex="-1">Kronika</button></div><span class="on-air"><i></i> WYDANIE SPECJALNE</span></nav>
 
-  <header class="hero" id="premiere">
+  <main class="show-panels"><section class="show-panel is-active" id="panel-premiere" role="tabpanel" aria-labelledby="tab-premiere">  <header class="hero" id="premiere">
     <div class="hero-copy">
       <p class="eyebrow">VENGRATH ZAPRASZA NA REWIĘ GROZY · W GOTYCKIEJ ODSŁONIE</p>
       <p class="show-mark">THE MUPPET SHOW <span>przedstawia</span></p>
       <h1>KLĄTWA <em>hrabiego</em><br>STRAHDA</h1>
       <p class="hero-subtitle">Jeden zamek. Jeden wampir. Niepokojąco wielu wykonawców z filcu.</p>
-      <a class="ticket" href="#the-show">ZAJMIJ MIEJSCE <span>↓</span></a>
+      <button class="ticket" type="button" data-go="panel-campaign">ZAJMIJ MIEJSCE <span>↓</span></button>
     </div>
     <figure class="hero-art" aria-label="Główna ilustracja kampanii">
       <img src="./res/graphics/hero-image.webp" alt="Kermit w roli hrabiego Strahda w gotyckiej odsłonie Muppet Show osadzonej w Barovii" fetchpriority="high">
       <figcaption>HRABIA RAVENLOFT · NA ŻYWO Z BAROVII</figcaption>
     </figure>
     <div class="hero-foot"><span>POŚRÓD MGIEŁ</span><span>PO ZACHODZIE SŁOŃCA ZWROTÓW NIE PRZYJMUJEMY</span><span>TOM I · BAROVIA</span></div>
-  </header>
-
-  <main id="the-show">
-    <section class="intro section-wrap">
+  </header>    <section class="intro section-wrap">
       <div class="section-index">01 / PREMIERA</div>
       <div class="intro-grid">
         <div>
@@ -55,50 +48,24 @@
           <p class="small-note">Kampania w duchu gotyckiego melodramatu i zakulisowego chaosu. Prosimy trzymać ręce, nogi i dusze wewnątrz teatru przez cały spektakl.</p>
         </div>
       </div>
-    </section>
-
-    <section class="intermission">
-      <div class="intermission-rule"></div>
-      <p>♪ <em>Czas rozpocząć przedstawienie…</em></p>
-      <h2>…czas zapalić<br>świece.</h2>
-      <p class="intermission-tag">MGŁY NADCIĄGAJĄ</p>
-      <div class="intermission-rule"></div>
-    </section>
-
-    <section class="cast section-wrap" id="cast">
-      <div class="section-index">02 / ZESPÓŁ</div>
-      <p class="eyebrow">WYJĄTKOWO NIEFORTUNNA EKIPA</p>
-      <h2>Obsada <em>i postacie</em></h2>
-      <p class="section-lead">Każde wielkie przedstawienie potrzebuje potwora w głównej roli, obsady drugoplanowej i przynajmniej jednej osoby za kulisami, która zastanawia się, dlaczego maszyna do mgły wydaje z siebie krzyki.</p>
-      <div class="cast-grid">
-        <article class="cast-card cast-card--lead">
-          <div class="cast-number">ROLA GŁÓWNA · 001</div>
-          <div class="cast-symbol">♛</div>
-          <h3>Kermit<br><em>Hrabia</em></h3>
-          <p>Strahd von Zarovich</p>
-          <span class="cast-caption">PAN RAVENLOFT · GOSPODARZ WIECZORU</span>
-        </article>
-        <article class="cast-card">
-          <div class="cast-number">ROLE DRUGOPLANOWE · 002</div>
-          <div class="cast-symbol">✦</div>
-          <h3>Reszta zespołu</h3>
-          <p>Nasi nieszczęśni wykonawcy</p>
-          <span class="cast-caption">SZCZEGÓŁY OBSADY WKRÓTCE</span>
-        </article>
-        <article class="cast-card">
-          <div class="cast-number">GOŚCIE SPECJALNI · 003</div>
-          <div class="cast-symbol">☽</div>
-          <h3>Publiczność</h3>
-          <p>Wiecie, o kim mowa</p>
-          <span class="cast-caption">OKLASKI NIE PODLEGAJĄ NEGOCJACJOM</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="episodes section-wrap" id="episodes">
-      <div class="section-index">03 / PROGRAM WIECZORU</div>
+    </section></section><section class="show-panel section-wrap" id="panel-campaign" role="tabpanel" aria-labelledby="tab-campaign" hidden>
+<div class="section-index">02 / AKTA KAMPANII</div><p class="eyebrow">SCENERIA, ZASADY I KULISY</p><h2>Witajcie w <em>Barovii</em></h2>
+<div class="campaign-grid"><article class="campaign-paper"><p class="dropcap">Panie, panowie, duchy i wszelkiej maści leśne stworzenia: witajcie w Barovii, gdzie noce są długie, gościnność pozostawia wiele do życzenia, a gospodarz za nic nie pozwoli nikomu wyjść przed wielkim finałem.</p><p>Strahd von Zarovich — hrabia, władca Ravenloft i gospodarz tego osobliwego widowiska — zaprasza na spektakl, w którym gotycki melodramat spotyka się z chaosem za kulisami. Znane koszmary Barovii zyskują nowe, filcowe oblicza, ale mgły, groza i konsekwencje pozostają jak najbardziej prawdziwe.</p><p>Ta strona jest programem kampanii. W miarę rozwoju przedstawienia będą pojawiać się tu informacje o świecie, obsadzie, bohaterach graczy oraz kronika kolejnych aktów.</p></article>
+<aside class="campaign-dossier"><div class="dossier-label">NOTY PRODUKCYJNE</div><div class="credits-line"><span>MIEJSCE AKCJI</span><strong>BAROVIA · RAVENLOFT</strong></div><div class="credits-line"><span>GOSPODARZ</span><strong>Kermit jako Strahd</strong></div><div class="credits-line"><span>FORMA</span><strong>GOTYCKI SPEKTAKL REWIOWY</strong></div><div class="credits-line"><span>TON</span><strong>MELODRAMAT I KUKIEŁKOWY CHAOS</strong></div><div class="credits-line"><span>STATUS</span><strong>W PRZYGOTOWANIU</strong></div></aside></div>
+<div class="campaign-intermission"><p>♪ <em>Czas rozpocząć przedstawienie…</em></p><h2>…czas zapalić świece.</h2><span>MGŁY NADCIĄGAJĄ</span></div></section><section class="show-panel section-wrap" id="panel-cast" role="tabpanel" aria-labelledby="tab-cast" hidden>
+<div class="section-index">03 / ZESPÓŁ</div><p class="eyebrow">WYJĄTKOWO NIEFORTUNNA EKIPA</p><h2>Obsada <em>i postacie</em></h2>
+<p class="section-lead">Każde wielkie przedstawienie potrzebuje potwora w głównej roli, barwnej obsady drugoplanowej i przynajmniej jednej osoby za kulisami, która zastanawia się, dlaczego maszyna do mgły wydaje z siebie krzyki.</p>
+<div class="cast-group-title">GWIAZDA WIECZORU</div><div class="cast-grid cast-grid-feature">
+<article class="cast-card cast-card--lead"><div class="cast-number">ROLA GŁÓWNA · 001</div><div class="cast-symbol">♛</div><h3>Kermit<br><em>Hrabia</em></h3><p>Strahd von Zarovich</p><span class="cast-caption">PAN RAVENLOFT · GOSPODARZ WIECZORU</span></article></div>
+<div class="cast-group-title">DWÓR, SOJUSZNICY I WROGOWIE</div><div class="cast-grid">
+<article class="cast-card"><div class="cast-number">002 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">🌹</div><h3>Miss Piggy</h3><p>Ireena Kolyana</p><span class="cast-caption">DZIEDZICZKA · TA, KTÓRĄ HRABIA PRAGNIE ODZYSKAĆ</span></article><article class="cast-card"><div class="cast-number">003 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">♜</div><h3>Fozzie Bear</h3><p>Ismark Kolyanovich</p><span class="cast-caption">BRAT IREENY · NIECO PECHOWY OPIEKUN</span></article><article class="cast-card"><div class="cast-number">004 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">☽</div><h3>Pepe the King Prawn</h3><p>Madam Eva</p><span class="cast-caption">WIESZCZKA · KARTY I PRZEPOWIEDNIE</span></article><article class="cast-card"><div class="cast-number">005 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">🦇</div><h3>Sam the Eagle</h3><p>Rudolph van Richten / Rictavio</p><span class="cast-caption">ŁOWCA WAMPIRÓW · EKSPERT OD POTWORÓW</span></article><article class="cast-card"><div class="cast-number">006 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">⚔</div><h3>Camilla the Chicken</h3><p>Ezmerelda d’Avenir</p><span class="cast-caption">ŁOWCZYNI · NIE POTRZEBUJE OPIEKI</span></article><article class="cast-card"><div class="cast-number">007 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">♟</div><h3>Uncle Deadly</h3><p>Rahadin</p><span class="cast-caption">MAJORDOMUS RAVENLOFT · WIERNY SŁUGA</span></article><article class="cast-card"><div class="cast-number">008 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">✧</div><h3>Miss Poogy</h3><p>Baba Lysaga</p><span class="cast-caption">WIEDŹMA · MATCZYNA MIŁOŚĆ PO BAROVIJSKU</span></article><article class="cast-card"><div class="cast-number">009 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">☄</div><h3>Dr. Bunsen Honeydew</h3><p>Mordenkainen</p><span class="cast-caption">MAG Z WIEŻY · EKSPERYMENTY POZA KONTROLĄ</span></article><article class="cast-card"><div class="cast-number">010 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">🩸</div><h3>Beaker</h3><p>Escher</p><span class="cast-caption">WAMPIRZY SŁUGA · DAWNA GWIAZDA DWORU</span></article><article class="cast-card"><div class="cast-number">011 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">🎭</div><h3>Statler</h3><p>Vargas Vallakovich</p><span class="cast-caption">BURMISTRZ VALLAKI · OBOWIĄZKOWA RADOŚĆ</span></article><article class="cast-card"><div class="cast-number">012 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">🕯</div><h3>Waldorf</h3><p>Lady Fiona Wachter</p><span class="cast-caption">ARYSTOKRATKA · MA WŁASNE PLANY</span></article><article class="cast-card"><div class="cast-number">013 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">🪓</div><h3>Gonzo</h3><p>Izek Strazni</p><span class="cast-caption">KAPITAN STRAŻY · NIE PYTAJ O RĘKĘ</span></article><article class="cast-card"><div class="cast-number">014 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">♢</div><h3>Rizzo the Rat</h3><p>Arrigal</p><span class="cast-caption">VISTANI · ZAWSZE ZNA KOGOŚ, KTO ZNA KOGOŚ</span></article><article class="cast-card"><div class="cast-number">015 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">🪶</div><h3>Robin the Frog</h3><p>Rodzina Martikovów</p><span class="cast-caption">KARCZMARZE I TAJEMNICZY SPRZYMIERZEŃCY</span></article><article class="cast-card"><div class="cast-number">016 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">☠</div><h3>Crazy Harry</h3><p>Opat z Krezku</p><span class="cast-caption">CUDOTWÓRCA · NIEPOKOJĄCE METODY</span></article><article class="cast-card"><div class="cast-number">017 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">✿</div><h3>Abby Cadabby</h3><p>Arabelle</p><span class="cast-caption">MŁODA VISTANKA · WAŻNA DLA LOSÓW BAROVII</span></article><article class="cast-card"><div class="cast-number">018 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">♧</div><h3>Marvin Suggs</h3><p>Pidlwick II</p><span class="cast-caption">MECHANICZNA OSOBLIWOŚĆ Z RAVENLOFT</span></article><article class="cast-card"><div class="cast-number">019 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">🥧</div><h3>The Old Women</h3><p>Morgantha i jej siostry</p><span class="cast-caption">WIEDŹMY · CIASTECZKA, KTÓRYCH LEPIEJ NIE PRÓBOWAĆ</span></article><article class="cast-card"><div class="cast-number">020 · GOŚĆ SPEKTAKLU</div><div class="cast-symbol">✦</div><h3>Sweetums</h3><p>Babałagan?</p><span class="cast-caption">GOŚĆ SPECJALNY · SZCZEGÓŁY WKRÓTCE</span></article>
+</div><p class="cast-footnote">To teatralna, muppetowa obsada ważnych postaci i stronnictw kampanii. Niektóre role zbiorowe łączą kilka postaci w jeden numer zespołowy.</p></section><section class="show-panel section-wrap" id="panel-characters" role="tabpanel" aria-labelledby="tab-characters" hidden>
+<div class="section-index">04 / KARTOTEKA DRUŻYNY</div><p class="eyebrow">BOHATEROWIE NASZEGO PRZEDSTAWIENIA</p><h2>Postaci <em>graczy</em></h2>
+<p class="section-lead">Każdy bohater otrzyma własną kartę z portretem, imieniem, graczem i najważniejszymi informacjami o postaci. Miejsca pozostają wolne do czasu obsadzenia ról.</p>
+<div class="player-card-grid"><article class="player-card-placeholder"><div class="player-card-portrait">I</div><div class="player-card-body"><span>KARTA BOHATERA · 01</span><h3>Rola nieobsadzona</h3><p>Portret i dane postaci pojawią się tutaj.</p><div class="player-card-line"><b>GRACZ</b><span>DO UZUPEŁNIENIA</span></div><div class="player-card-line"><b>KLASA</b><span>DO UZUPEŁNIENIA</span></div></div></article><article class="player-card-placeholder"><div class="player-card-portrait">II</div><div class="player-card-body"><span>KARTA BOHATERA · 02</span><h3>Rola nieobsadzona</h3><p>Portret i dane postaci pojawią się tutaj.</p><div class="player-card-line"><b>GRACZ</b><span>DO UZUPEŁNIENIA</span></div><div class="player-card-line"><b>KLASA</b><span>DO UZUPEŁNIENIA</span></div></div></article><article class="player-card-placeholder"><div class="player-card-portrait">III</div><div class="player-card-body"><span>KARTA BOHATERA · 03</span><h3>Rola nieobsadzona</h3><p>Portret i dane postaci pojawią się tutaj.</p><div class="player-card-line"><b>GRACZ</b><span>DO UZUPEŁNIENIA</span></div><div class="player-card-line"><b>KLASA</b><span>DO UZUPEŁNIENIA</span></div></div></article><article class="player-card-placeholder"><div class="player-card-portrait">IV</div><div class="player-card-body"><span>KARTA BOHATERA · 04</span><h3>Rola nieobsadzona</h3><p>Portret i dane postaci pojawią się tutaj.</p><div class="player-card-line"><b>GRACZ</b><span>DO UZUPEŁNIENIA</span></div><div class="player-card-line"><b>KLASA</b><span>DO UZUPEŁNIENIA</span></div></div></article></div></section>    <section class="show-panel section-wrap" id="panel-chronicle" role="tabpanel" aria-labelledby="tab-chronicle" hidden>
+      <div class="section-index">05 / PROGRAM WIECZORU</div>
       <div class="episodes-heading">
-        <div><p class="eyebrow">SPEKTAKL MUSI TRWAĆ</p><h2>Akt y i <em>antrakty</em></h2></div>
+        <div><p class="eyebrow">SPEKTAKL MUSI TRWAĆ</p><h2>Kronika <em>przedstawienia</em></h2></div>
         <span class="stamp">PROGRAM<br>W PRZYGOTOWANIU</span>
       </div>
       <div class="episode-list">
@@ -106,21 +73,9 @@
         <article><span class="episode-no">AKT II</span><div><h3>Zamek z charakterem</h3><p>Ravenloft otwiera podwoje. Uważajcie na nietoperze.</p></div><span class="episode-status">WKRÓTCE</span></article>
         <article><span class="episode-no">AKT III</span><div><h3>Wielki finał</h3><p>Każde przedstawienie ma swój koniec. Hrabia ma na ten temat inne zdanie.</p></div><span class="episode-status">WKRÓTCE</span></article>
       </div>
-    </section>
+    </section></main>
 
-    <section class="credits section-wrap" id="credits">
-      <div class="section-index">04 / NOTY PRODUKCYJNE</div>
-      <p class="eyebrow">PRODUKCJA VENGRATH</p>
-      <h2>Za <em>kulisami</em></h2>
-      <p>Ta strona pełni funkcję programu nowej kampanii. W miarę rozwoju przedstawienia pojawią się tu biografie postaci, kroniki sesji, materiały dla graczy i noty produkcyjne.</p>
-      <div class="credits-line"><span>MIEJSCE AKCJI</span><strong>BAROVIA · RAVENLOFT</strong></div>
-      <div class="credits-line"><span>GOSPODARZ WIECZORU</span><strong>Kermit jako Strahd</strong></div>
-      <div class="credits-line"><span>FORMA</span><strong>GOTYCKI SPEKTAKL REWIOWY</strong></div>
-      <div class="credits-line"><span>STATUS</span><strong>W PRZYGOTOWANIU</strong></div>
-    </section>
-  </main>
-
-  <footer><a href="/home/">VENGRATH</a><span>THE MUPPET SHOW: KLĄTWA STRAHDA</span><a href="#premiere">POWRÓT NA WIDOWNIĘ ↑</a></footer>
+<footer><a href="/home/">VENGRATH</a><span>THE MUPPET SHOW: KLĄTWA STRAHDA</span><button type="button" data-go="panel-premiere">POWRÓT NA WIDOWNIĘ ↑</button></footer>
   <script src="./muppet.js"></script>
 </body>
 </html>
