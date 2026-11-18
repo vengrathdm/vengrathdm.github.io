@@ -1,4 +1,5 @@
 import { createPlayRecordingButton } from "../PlayRecordingButton/PlayRecordingButton.js";
+import { createInlineYouTubePlayer } from "../../YouTubeInlinePlayer/YouTubeInlinePlayer.js";
 
 function formatSessionNumber(value) {
   if (value == null || value === "") return "—";
@@ -35,15 +36,17 @@ export function createChronicleRecord(session, { accent = "#bca06a" } = {}) {
   header.setAttribute("role", "button");
   header.setAttribute("aria-expanded", "false");
 
+  const numberValue = session.sessionNumber ?? session.number;
+  const formattedNumber = formatSessionNumber(numberValue);
+  const titleValue = formatSessionTitle(session.title);
+
   const number = document.createElement("span");
   number.className = "chronicle-record__number";
-  number.textContent = formatSessionNumber(
-    session.sessionNumber ?? session.number,
-  );
+  number.textContent = formattedNumber;
 
   const title = document.createElement("span");
   title.className = "chronicle-record__title";
-  title.textContent = formatSessionTitle(session.title);
+  title.textContent = titleValue;
 
   const date = document.createElement("time");
   date.className = "chronicle-record__date";
@@ -57,17 +60,28 @@ export function createChronicleRecord(session, { accent = "#bca06a" } = {}) {
   recordings.className = "chronicle-record__recordings";
   const links = Array.isArray(session.recordings) ? session.recordings : [];
   recordings.hidden = links.length === 0;
-  links.forEach((recording, index) =>
-    recordings.append(
-      createPlayRecordingButton({
-        url: recording.url,
-        label:
-          links.length > 1
-            ? "Odtwórz Część " + (recording.partNumber || index + 1)
-            : "Odtwórz",
-      }),
-    ),
-  );
+
+  const players = document.createElement("div");
+  players.className = "chronicle-record__players";
+  links.forEach((recording, index) => {
+    const partNumber = recording.partNumber || (links.length > 1 ? index + 1 : null);
+    const label =
+      links.length > 1 ? "Odtwórz Część " + (partNumber || index + 1) : "Odtwórz";
+    const player = createInlineYouTubePlayer({
+      url: recording.url,
+      title: titleValue,
+      sessionNumber: formattedNumber,
+      partNumber,
+      label,
+      accent,
+    });
+    if (player) {
+      recordings.append(player.button);
+      players.append(player.panel);
+    } else if (recording.url) {
+      recordings.append(createPlayRecordingButton({ url: recording.url, label }));
+    }
+  });
   recordings.addEventListener("click", (event) => event.stopPropagation());
 
   header.append(number, title, date, recordings);
@@ -97,6 +111,6 @@ export function createChronicleRecord(session, { accent = "#bca06a" } = {}) {
     }
   });
 
-  article.append(header, description);
+  article.append(header, players, description);
   return article;
 }
