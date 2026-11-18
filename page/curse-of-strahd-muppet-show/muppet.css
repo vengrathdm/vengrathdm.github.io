@@ -15,3 +15,19 @@
 @keyframes panel-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@media(max-width:850px){.topbar{height:auto;min-height:68px;padding:8px 22px;gap:12px}.nav-links{justify-content:center;gap:12px}.nav-tab{font-size:9px}.campaign-grid{grid-template-columns:1fr}.cast-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.player-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:580px){.topbar{position:sticky;inset:0;flex-wrap:wrap;justify-content:center;background:#100a16ed}.brand{display:none}.nav-links{width:100%;justify-content:space-between;gap:8px}.nav-tab{font-size:8px;padding:9px 1px}.on-air{display:none}#panel-campaign,#panel-cast,#panel-characters,#panel-chronicle{padding-top:52px}.premiere-welcome{padding-top:55px}.cast-grid,.cast-grid-feature{grid-template-columns:1fr}.player-card-grid{grid-template-columns:1fr 1fr}.player-card-body{padding:13px}.player-card-body h3{font-size:17px}.campaign-paper,.campaign-dossier{padding:22px}footer{flex-direction:column;align-items:center}}
 @media(prefers-reduced-motion:reduce){.show-panel.is-active{animation:none}}
+
+
+/* Portrait artwork slots integrated into each cast card (4:5). */
+.curse-of-strahd-muppet-show-page{min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
+.show-panels{flex:1 0 auto}
+.curse-of-strahd-muppet-show-page>footer{margin-top:auto;flex-shrink:0}
+#panel-chronicle{min-height:calc(100svh - 180px)}
+.cast-card{justify-content:flex-start;padding:14px}
+.cast-card .cast-portrait{position:relative;flex:0 0 auto;width:100%;aspect-ratio:4/5;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;margin:0 0 18px;border:1px solid #8b6b5970;background:radial-gradient(ellipse at 50% 38%,#58303d 0,#291522 58%,#130e17 100%);color:#d7b979}
+.cast-card .cast-portrait::before{content:"";position:absolute;inset:12px;border:1px dashed #d7b97955;pointer-events:none}
+.cast-card .cast-portrait span{font:clamp(13px,1.3vw,18px) var(--display);letter-spacing:.18em;color:#e5d0a5}
+.cast-card .cast-portrait small{font:8px var(--mono);letter-spacing:.16em;color:#a98a7e}
+.cast-card .cast-number{z-index:2;top:24px;left:24px;padding:6px 8px;background:#160e19d9;border:1px solid #8b6b596b}
+.cast-card .cast-symbol{top:20px;right:22px;z-index:2;padding:4px 7px;background:#160e19b8;border-radius:2px}
+.cast-card h3{margin-top:auto}
+@media(max-width:580px){#panel-chronicle{min-height:calc(100svh - 155px)}.cast-card{padding:13px}.cast-card .cast-portrait{margin-bottom:15px}}
