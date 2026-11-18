@@ -40,6 +40,46 @@
     ]
   },
   "chronicle": {
-    "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0isDo3Zrhre_kuF94Nt_7UM"
+    "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0isDo3Zrhre_kuF94Nt_7UM",
+    "kicker": "AKTA / KRONIKA",
+    "title": "Nagrania",
+    "description": "Nagrania sesji kampanii Barber of Silverymoon.",
+    "sessions": [
+      {
+        "sessionNumber": 1,
+        "title": "Barber of Silverymoon",
+        "description": "Sesja pierwsza — dwie części nagrania.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/lsQBTYpaoMU",
+            "partNumber": 1
+          },
+          {
+            "url": "https://youtu.be/kwEPzfUos7M",
+            "partNumber": 2
+          }
+        ]
+      },
+      {
+        "sessionNumber": 2,
+        "title": "Barber of Silverymoon",
+        "description": "Nagranie drugiej sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/VszquFkXYJs"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 3,
+        "title": "Barber of Silverymoon",
+        "description": "Nagranie trzeciej sesji.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/XGKf8yzI6vo"
+          }
+        ]
+      }
+    ]
   }
 }
