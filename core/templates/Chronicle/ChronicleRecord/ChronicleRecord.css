@@ -11,6 +11,7 @@
 .chronicle-record__header {
   display: grid;
   grid-template-columns: 4.2rem minmax(0, 1fr) auto auto;
+  grid-template-areas: "number title date recordings";
   align-items: center;
   gap: 1rem;
   min-height: 4.2rem;
@@ -24,6 +25,7 @@
 }
 
 .chronicle-record__number {
+  grid-area: number;
   color: var(--chronicle-accent);
   font-family: var(--chronicle-heading-font, "Space Grotesk", sans-serif);
   font-size: 1rem;
@@ -31,12 +33,16 @@
 }
 
 .chronicle-record__title {
+  grid-area: title;
+  min-width: 0;
+  overflow-wrap: anywhere;
   font-family: var(--chronicle-heading-font, "Space Grotesk", sans-serif);
   font-size: 1.1rem;
   font-weight: 700;
 }
 
 .chronicle-record__date {
+  grid-area: date;
   color: var(--chronicle-accent);
   font-family: var(--chronicle-heading-font, "Space Grotesk", sans-serif);
   font-size: 0.85rem;
@@ -44,11 +50,17 @@
 }
 
 .chronicle-record__recordings {
+  grid-area: recordings;
   display: flex;
   gap: 0.4rem;
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
+}
+
+.chronicle-record__date[hidden],
+.chronicle-record__recordings[hidden] {
+  display: none;
 }
 
 .chronicle-record__description {
@@ -70,11 +82,18 @@
 @media (max-width: 760px) {
   .chronicle-record__header {
     grid-template-columns: 2.5rem minmax(0, 1fr);
+    grid-template-areas:
+      "number title"
+      ". date"
+      ". recordings";
     gap: 0.65rem;
   }
 
+  .chronicle-record__date {
+    white-space: normal;
+  }
+
   .chronicle-record__recordings {
-    grid-column: 2;
     justify-content: flex-start;
   }
 
