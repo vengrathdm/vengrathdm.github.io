@@ -1,45 +1,33 @@
 import { createInlineYouTubePlayer } from "/core/templates/YouTubeInlinePlayer/YouTubeInlinePlayer.js";
 
 /* INLINE SESSION RECORDINGS */
-const playerStyles = document.createElement("style");
-playerStyles.textContent = `
-  .session-player-slot { margin: 0 4px 16px 104px; }
-  .session-player-slot .chronicle-inline-player { margin-top: 12px; }
-  @media (max-width: 640px) {
-    .session-player-slot { margin-left: 50px; }
-  }
-`;
-document.head.append(playerStyles);
-
 document.querySelectorAll(".report-entry").forEach((entry) => {
   const source = entry.querySelector(".session-youtube");
-  if (!source) return;
+  const slot = entry.querySelector(".session-youtube-slot");
+  const header = entry.querySelector(".report-head");
+  if (!source || !slot || !header) return;
 
   const player = createInlineYouTubePlayer({
     url: source.href,
-    title: entry.querySelector(".report-head h3")?.textContent.trim() || "Nagranie sesji",
-    sessionNumber: entry.querySelector(".report-head .num")?.textContent.trim() || "",
-    label: "▶ ODTWÓRZ NAGRANIE",
-    accent: "#8b2020",
+    title: header.querySelector("h3")?.textContent.trim() || "Nagranie sesji",
+    sessionNumber: header.querySelector(".num")?.textContent.trim() || "",
+    label: "YOUTUBE",
+    accent: "#c94a4a",
   });
 
   if (!player) return;
-  const mount = document.createElement("div");
-  mount.className = "session-player-slot";
-  mount.append(player.button, player.panel);
-  entry.querySelector(".report-head")?.after(mount);
-  source.closest(".session-youtube-slot")?.remove();
+
+  // Keep the control in the original date / YouTube slot in the session header.
+  player.button.classList.add("session-youtube");
+  slot.replaceChildren(player.button);
+
+  // The expandable player panel sits directly below the header, not in the row.
+  header.after(player.panel);
 });
 
 /* ============================================================
    KSIĄŻĘTA HEARTWELL — CAMPAIGN INTERACTIONS
    ============================================================ */
-
-/* Session recording links are styled separately from the archive layout. */
-const sessionLinkStyles = document.createElement("link");
-sessionLinkStyles.rel = "stylesheet";
-sessionLinkStyles.href = "./heartwell-session-links.css";
-document.head.append(sessionLinkStyles);
 
 /* CASE LOG ACCORDION */
 document.querySelectorAll(".report-head").forEach((button) => {
