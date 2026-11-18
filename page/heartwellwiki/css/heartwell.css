@@ -1272,3 +1272,7 @@ body.hide-gm .secret {
     box-shadow: none;
   }
 }
+
+
+/* Default cursor for all HeartwellWiki articles and subpages. */
+html, body, body * { cursor: url("/core/graphics/cursors/default.png") 10 10, auto; }
