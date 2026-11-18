@@ -21,7 +21,7 @@
       ],
       [
         "NAGRANIA",
-        "2"
+        "1"
       ],
       [
         "ŹRÓDŁO",
@@ -85,11 +85,11 @@
   "chronicle": {
     "kicker": "AKTA / KRONIKA",
     "title": "Nagrania",
-    "description": "Odnośniki zachowane ze starej strony.",
+    "description": "Nagranie przygody Obłędny Gotowiec: Ręka Chwały.",
     "sessions": [
       {
         "sessionNumber": 1,
-        "title": "Do Uzupełnienia",
+        "title": "Obłędny Gotowiec: Ręka Chwały",
         "description": "Notatki sesji do uzupełnienia.",
         "recordings": [
           {
