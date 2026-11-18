@@ -615,7 +615,9 @@
     "modules": [
       "Turn of Fortune's Wheel"
     ],
-    "achievementIds": []
+    "achievementIds": [
+      "hazardzista"
+    ]
   },
   {
     "portrait": "/core/portraits/char-0032.webp",
