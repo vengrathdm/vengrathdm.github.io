@@ -45,6 +45,7 @@ body.campaign-fonts-loading > footer {
 html, body, body * { cursor: url("/core/graphics/cursors/default.png") 10 10, auto; }
 
 /* One campaign cursor everywhere: no pointer, text, or drag-specific variants. */
+body.heartwellwiki-page, body.heartwellwiki-page * { cursor: url("/core/graphics/cursors/heartwellwiki.png") 10 10, auto !important; }
 body[class*="ksiazeta-heartwell"], body[class*="ksiazeta-heartwell"] * { cursor: url("/core/graphics/cursors/ksiazeta-heartwell_default.svg") 10 10, auto !important; }
 body[class*="legends-of-barovia"], body[class*="legends-of-barovia"] * { cursor: url("/core/graphics/cursors/legends-of-barovia_default.png") 10 10, auto !important; }
 body.odyssey-page, body.odyssey-page * { cursor: url("/core/graphics/cursors/odyssey-of-the-dragonlords_default.png") 10 10, auto !important; }
