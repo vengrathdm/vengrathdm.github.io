@@ -1,6 +1,7 @@
 import { createSubpageHero } from "/core/templates/SubpageHero/SubpageHero.js";
 import { mountSubpageNavbar } from "/core/templates/SubpageNavbar/SubpageNavbar.js";
 import { CharacterGallery } from "/core/templates/CharacterGallery/CharacterGallery.js";
+import { createChronicleRecord } from "/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.js";
 
 async function loadJson(path) {
   const response = await fetch(path);
@@ -121,6 +122,12 @@ async function initializeCampaignPage() {
   await gallery.render();
   document.querySelector("#chronicle-playlist").href =
     content.chronicle.playlistUrl;
+  const chronicleRecords = document.querySelector("#chronicle-records");
+  chronicleRecords.replaceChildren(
+    ...(content.chronicle.sessions || []).map((session) =>
+      createChronicleRecord(session, { accent: theme.colors.accent2 }),
+    ),
+  );
 }
 
 initializeCampaignPage()
