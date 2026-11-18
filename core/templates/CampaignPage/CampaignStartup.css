@@ -74,7 +74,7 @@ body[class*="echtra-zima-irgaeli"], body[class*="echtra-zima-irgaeli"] * { curso
 body[class*="ku-chwale-tyra"], body[class*="ku-chwale-tyra"] * { cursor: url("/core/graphics/cursors/ku-chwale-tyra_default.svg") 10 10, auto !important; }
 body[class*="shards-of-the-past"], body[class*="shards-of-the-past"] * { cursor: url("/core/graphics/cursors/shards-of-the-past_default.svg") 10 10, auto !important; }
 body[class*="curse-of-strahd"], body[class*="curse-of-strahd"] * { cursor: url("/core/graphics/cursors/curse-of-strahd_default.svg") 10 10, auto !important; }
-body[class*="blood-red-snow-white"], body[class*="blood-red-snow-white"] * { cursor: url("/core/graphics/cursors/blood-red-snow-white_default.svg") 10 10, auto !important; }
+body[class*="blood-red-snow-white"], body[class*="blood-red-snow-white"] * { cursor: url("/core/graphics/cursors/blood-red-snow-white_default.png") 10 10, auto !important; }
 body[class*="heroes-of-baldurs-gate"], body[class*="heroes-of-baldurs-gate"] * { cursor: url("/core/graphics/cursors/heroes-of-baldurs-gate_default.svg") 10 10, auto !important; }
 body[class*="mayhem-in-earthspur-mines"], body[class*="mayhem-in-earthspur-mines"] * { cursor: url("/core/graphics/cursors/mayhem-in-earthspur-mines_default.svg") 10 10, auto !important; }
 body[class*="turn-back-the-endless-night"], body[class*="turn-back-the-endless-night"] * { cursor: url("/core/graphics/cursors/turn-back-the-endless-night_default.png") 10 10, auto !important; }
@@ -86,12 +86,12 @@ body[class*="hand-of-glory"], body[class*="hand-of-glory"] * { cursor: url("/cor
 body[class*="trouble-below-the-mountains-of-ash"], body[class*="trouble-below-the-mountains-of-ash"] * { cursor: url("/core/graphics/cursors/trouble-below-the-mountains-of-ash_default.png") 10 10, auto !important; }
 body[class*="assault-on-castle-blackrose"], body[class*="assault-on-castle-blackrose"] * { cursor: url("/core/graphics/cursors/assault-on-castle-blackrose_default.svg") 10 10, auto !important; }
 body[class*="cemetery-of-dragons"], body[class*="cemetery-of-dragons"] * { cursor: url("/core/graphics/cursors/cemetery-of-dragons_default.svg") 10 10, auto !important; }
-body[class*="adventure-of-arcane-collapse"], body[class*="adventure-of-arcane-collapse"] * { cursor: url("/core/graphics/cursors/adventure-of-arcane-collapse_default.svg") 10 10, auto !important; }
+body[class*="adventure-of-arcane-collapse"], body[class*="adventure-of-arcane-collapse"] * { cursor: url("/core/graphics/cursors/adventure-of-arcane-collapse_default.png") 10 10, auto !important; }
 body[class*="dom-malowanych-luster"], body[class*="dom-malowanych-luster"] * { cursor: url("/core/graphics/cursors/dom-malowanych-luster_default.svg") 10 10, auto !important; }
 body[class*="the-dragon-and-the-kraken"], body[class*="the-dragon-and-the-kraken"] * { cursor: url("/core/graphics/cursors/the-dragon-and-the-kraken_default.png") 10 10, auto !important; }
 body[class*="rise-of-the-drow"], body[class*="rise-of-the-drow"] * { cursor: url("/core/graphics/cursors/rise-of-the-drow_default.svg") 10 10, auto !important; }
 body[class*="raiders-of-the-serpent-sea"], body[class*="raiders-of-the-serpent-sea"] * { cursor: url("/core/graphics/cursors/raiders-of-the-serpent-sea_default.svg") 10 10, auto !important; }
 body[class*="the-dragons-due"], body[class*="the-dragons-due"] * { cursor: url("/core/graphics/cursors/the-dragons-due_default.png") 10 10, auto !important; }
-body[class*="descent-into-avernus"], body[class*="descent-into-avernus"] * { cursor: url("/core/graphics/cursors/descent-into-avernus_default.svg") 10 10, auto !important; }
-body[class*="curse-of-strahd-muppet-show"], body[class*="curse-of-strahd-muppet-show"] * { cursor: url("/core/graphics/cursors/curse-of-strahd-muppet-show_default.svg") 10 10, auto !important; }
+body[class*="descent-into-avernus"], body[class*="descent-into-avernus"] * { cursor: url("/core/graphics/cursors/descent-into-avernus_default.png") 10 10, auto !important; }
+body[class*="curse-of-strahd-muppet-show"], body[class*="curse-of-strahd-muppet-show"] * { cursor: url("/core/graphics/cursors/curse-of-strahd-muppet-show_default.png") 10 10, auto !important; }
 body[class*="red-hand-of-doom"], body[class*="red-hand-of-doom"] * { cursor: url("/core/graphics/cursors/red-hand-of-doom_default.svg") 10 10, auto !important; }
