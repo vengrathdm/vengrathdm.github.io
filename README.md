@@ -222,6 +222,51 @@ Reusable components live in `core/templates/`. Each component owns its styling a
 
 Shared graphics live in `core/graphics/`, with favicon assets in `favicon/` and home-card artwork in `voronoi/`. Canonical portraits live in `core/portraits/`; character records refer to them using `/core/portraits/<filename>` paths.
 
+## Cursor system
+
+Custom cursors are shared site assets, not page-local graphics. Store them in `core/graphics/cursors/` and configure them centrally in `core/templates/CampaignPage/CampaignStartup.css` or, for the site-wide fallback, `core/templates/Cursor/Cursor.css`.
+
+### Current behavior
+
+- `core/templates/Cursor/Cursor.css` defines the generic site fallback: `/core/graphics/cursors/default.png`, with hotspot coordinates `10 10`. Standalone pages that do not load `CampaignStartup.css` should load this stylesheet if they need the shared fallback.
+- `core/templates/CampaignPage/CampaignStartup.css` also defines the generic `default.png` fallback. Campaign pages and other pages that load this stylesheet therefore get the same default cursor unless a page-specific rule matches.
+- The same `CampaignStartup.css` contains the dedicated cursor rules for campaigns. These rules match a class or other stable identifier on `body`, apply to `body` and its descendants, and use `!important` so the campaign cursor is retained over component-level pointer/text cursor declarations.
+- Heartwell Wiki is a bespoke page that opts into `CampaignStartup.css`: its `body` has the class `heartwellwiki-page`, and the matching rule uses `/core/graphics/cursors/heartwellwiki.png`. Its dynamically loaded article fragments inherit the cursor from the Wiki page; they do not need their own cursor rules.
+- The current cursor rules use a single cursor image across the page, rather than separate `pointer`, `text`, or drag cursor variants.
+
+### Adding a cursor to a new page or campaign
+
+1. Decide which shared stylesheet the page uses. A campaign or bespoke page already using the common startup styles should load `/core/templates/CampaignPage/CampaignStartup.css`. A standalone page that does not use that stylesheet should load `/core/templates/Cursor/Cursor.css` for the generic fallback. Do not load both just to obtain a cursor; `CampaignStartup.css` already includes the generic fallback.
+2. If the page needs its own cursor, add a stable class to its `<body>` (for example, `my-campaign-page`). Add a dedicated rule to `CampaignStartup.css` that targets both `body.my-campaign-page` and `body.my-campaign-page *`. Use a distinctive body class rather than a broad selector that could affect unrelated pages.
+3. Put the cursor image in `core/graphics/cursors/`, not in the page's local `res/` directory. Use a descriptive lowercase kebab-case filename. The established campaign convention is `<page-slug>_default.svg` or `<page-slug>_default.png`; bespoke names such as `heartwellwiki.png` are acceptable when they identify a distinct site feature.
+4. Add the CSS rule in the central cursor section of `CampaignStartup.css`, using a root-relative asset path and the standard hotspot:
+   
+   ```css
+   body.my-campaign-page,
+   body.my-campaign-page * {
+     cursor: url("/core/graphics/cursors/my-campaign-page_default.png") 10 10, auto !important;
+   }
+   ```
+
+5. Keep the rule alongside the other dedicated cursor rules. Do not add page-specific cursor declarations to the page's own stylesheet unless there is a deliberate technical reason; central rules make the behavior discoverable and consistent.
+6. Verify that the body class actually exists on the rendered page, that the asset path and filename capitalization match the repository exactly, and that the cursor is visible over ordinary content, links, buttons, and text. Check the page at its deployed GitHub Pages URL as well as locally.
+
+### Image formats and hotspot
+
+Both SVG and PNG cursor assets are used by the site. Keep the image transparent outside the cursor artwork and make sure the pointer graphic is legible at its rendered size. The CSS hotspot is currently `10 10` for every configured cursor; this is the active point of the cursor image that browser interactions use. Preserve that coordinate when adding or replacing cursor assets unless the artwork is intentionally designed around a different hotspot and the CSS is updated accordingly.
+
+Use root-relative URLs such as `/core/graphics/cursors/<filename>` in CSS. GitHub Pages paths are case-sensitive, so the extension and filename must match the committed asset exactly. Keep cursor assets reasonably small and test the result in the browsers the site supports; if a format or asset fails to load, the CSS `auto` fallback remains available.
+
+### Cursor maintenance checklist
+
+- [ ] Cursor image is committed under `core/graphics/cursors/`.
+- [ ] The page loads the appropriate shared cursor stylesheet.
+- [ ] A dedicated page has a stable body class and a matching central CSS selector.
+- [ ] The rule uses the exact root-relative asset path and hotspot `10 10`.
+- [ ] The selector covers both the body and its descendants.
+- [ ] No page-local CSS unintentionally overrides the intended cursor.
+- [ ] The cursor has been checked on links, buttons, text, and ordinary content after deployment.
+
 ## Hall of Fame
 
 The Hall of Fame and achievement catalogue are under `page/hof/`. They read canonical character and achievement data from `core/data/`; awards are associated with characters through `achievementIds`.
