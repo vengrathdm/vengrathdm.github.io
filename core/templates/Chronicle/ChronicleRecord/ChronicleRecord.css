@@ -10,8 +10,8 @@
 
 .chronicle-record__header {
   display: grid;
-  grid-template-columns: 4.2rem minmax(0, 1fr) auto auto !important;
-  grid-template-areas: "number title date recordings" !important;
+  grid-template-columns: 4.2rem minmax(0, 1fr) auto auto;
+  grid-template-areas: "number title date recordings";
   align-items: center;
   gap: 1rem;
   min-height: 4.2rem;
@@ -60,7 +60,7 @@
 
 .chronicle-record__date[hidden],
 .chronicle-record__recordings[hidden] {
-  display: none !important;
+  display: none;
 }
 
 .chronicle-record__description {
@@ -81,11 +81,11 @@
 
 @media (max-width: 760px) {
   .chronicle-record__header {
-    grid-template-columns: 2.5rem minmax(0, 1fr) !important;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
     grid-template-areas:
       "number title"
       ". date"
-      ". recordings" !important;
+      ". recordings";
     gap: 0.65rem;
   }
 

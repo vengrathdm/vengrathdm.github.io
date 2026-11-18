@@ -20,7 +20,6 @@
 }
 #campaign-chronicle .chronicle-record__header {
   display: grid;
-  grid-template-columns: 100px minmax(0, 1fr) auto;
   align-items: center;
   gap: 15px;
   min-height: 0;
@@ -79,7 +78,6 @@
 }
 @media (max-width: 760px) {
   #campaign-chronicle .chronicle-record__header {
-    grid-template-columns: minmax(0, 1fr);
     gap: 8px;
   }
   #campaign-chronicle .chronicle-record__recordings {
