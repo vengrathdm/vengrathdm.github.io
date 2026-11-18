@@ -9,8 +9,6 @@
   "content": "./content.json",
   "sections": [
     "campaign",
-    "characters",
-    "chronicle"
-  ],
-  "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0jY8sPEuRlBdlXIFw9WJlEL"
+    "characters"
+  ]
 }
