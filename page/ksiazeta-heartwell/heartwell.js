@@ -1,3 +1,36 @@
+import { createInlineYouTubePlayer } from "/core/templates/YouTubeInlinePlayer/YouTubeInlinePlayer.js";
+
+/* INLINE SESSION RECORDINGS */
+const playerStyles = document.createElement("style");
+playerStyles.textContent = `
+  .session-player-slot { margin: 0 4px 16px 104px; }
+  .session-player-slot .chronicle-inline-player { margin-top: 12px; }
+  @media (max-width: 640px) {
+    .session-player-slot { margin-left: 50px; }
+  }
+`;
+document.head.append(playerStyles);
+
+document.querySelectorAll(".report-entry").forEach((entry) => {
+  const source = entry.querySelector(".session-youtube");
+  if (!source) return;
+
+  const player = createInlineYouTubePlayer({
+    url: source.href,
+    title: entry.querySelector(".report-head h3")?.textContent.trim() || "Nagranie sesji",
+    sessionNumber: entry.querySelector(".report-head .num")?.textContent.trim() || "",
+    label: "▶ ODTWÓRZ NAGRANIE",
+    accent: "#8b2020",
+  });
+
+  if (!player) return;
+  const mount = document.createElement("div");
+  mount.className = "session-player-slot";
+  mount.append(player.button, player.panel);
+  entry.querySelector(".report-head")?.after(mount);
+  source.closest(".session-youtube-slot")?.remove();
+});
+
 /* ============================================================
    KSIĄŻĘTA HEARTWELL — CAMPAIGN INTERACTIONS
    ============================================================ */
