@@ -4,6 +4,7 @@ import { renderCampaignSection } from "./sections/campaign/campaign.js";
 import { CharacterGallery } from "/core/templates/CharacterGallery/CharacterGallery.js";
 import { AudioPlayer } from "/core/templates/AudioPlayer/AudioPlayer.js";
 import { mountAudioPlayerButton } from "/core/templates/AudioPlayerButton/AudioPlayerButton.js";
+import { createChronicleRecord } from "/core/templates/Chronicle/ChronicleRecord/ChronicleRecord.js";
 
 async function loadJson(path) {
   const response = await fetch(path);
@@ -134,6 +135,11 @@ async function initialize() {
     content.chronicle.description;
   document.querySelector("#chronicle-playlist").href =
     content.chronicle.playlistUrl;
+  document.querySelector("#chronicle-records").replaceChildren(
+    ...content.chronicle.sessions.map((session) =>
+      createChronicleRecord(session, { accent: theme.colors.accent2 }),
+    ),
+  );
 }
 
 initialize()
