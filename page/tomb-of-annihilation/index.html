@@ -96,7 +96,7 @@ async function load(){const [contentResponse,charactersResponse]=await Promise.a
 [...content.chronicle.sessions].reverse().forEach(session=>{
   const entry=node('article','log');
   const number=String(session.sessionNumber).padStart(2,'0');
-  const title=(session.title||'Bez tytułu').replace(/^Tomb of Annihilation S\\d+\\s*-\\s*/i,'').replace(/\\s*\\[D&D5e\\]$/i,'');
+  const title=(session.title||'Bez tytułu').replace(/^Tomb of Annihilation S\d+\s*-\s*/i,'').replace(/\s*\[D&D5e\]$/i,'');
   entry.append(node('div','log-meta','SESJA '+number),node('h3','',title));
   const recordings=(session.recordings||[]).filter(recording=>recording.url);
   if(recordings.length){
@@ -124,7 +124,7 @@ async function load(){const [contentResponse,charactersResponse]=await Promise.a
         if(!player.hidden){close();return;}
         if(activePlayerClose)activePlayerClose();
         let videoId=null;
-        try{const url=new URL(recording.url);videoId=url.hostname.includes('youtu.be')?url.pathname.split('/').filter(Boolean)[0]:url.searchParams.get('v')||url.pathname.match(/\\/(?:embed|shorts|live)\\/([^/]+)/)?.[1];}catch{}
+        try{const url=new URL(recording.url);videoId=url.hostname.includes('youtu.be')?url.pathname.split('/').filter(Boolean)[0]:url.searchParams.get('v')||url.pathname.match(/\/(?:embed|shorts|live)\/([^/]+)/)?.[1];}catch{}
         if(!videoId){external.click();return;}
         const iframe=document.createElement('iframe');
         iframe.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(videoId)+'?rel=0';
