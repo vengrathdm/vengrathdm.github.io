@@ -1,3 +1,5 @@
+import { createInlineYouTubePlayer } from "/core/templates/YouTubeInlinePlayer/YouTubeInlinePlayer.js";
+
 export function renderChronicleSection(chronicle) {
   const container = document.querySelector("#chronicle-section-content");
   const intro = document.createElement("section");
@@ -12,15 +14,24 @@ export function renderChronicleSection(chronicle) {
   description.textContent = chronicle.description;
   intro.append(kicker, title, description);
 
-  const playlist = document.createElement("a");
-  playlist.className = "ddc-playlist-link";
-  playlist.href = chronicle.playlistUrl;
-  playlist.target = "_blank";
-  playlist.rel = "noopener noreferrer";
-  playlist.textContent = chronicle.playlistLabel;
   const playlistSection = document.createElement("section");
   playlistSection.className = "ddc-section ddc-playlist-panel";
-  playlistSection.append(playlist);
-
+  const player = createInlineYouTubePlayer({
+    url: chronicle.playlistUrl,
+    title: chronicle.title || "Menaces of Gloomforest — archiwum",
+    label: "ODTWÓRZ PLAYLISTĘ",
+    accent: getComputedStyle(document.documentElement).getPropertyValue("--theme-accent-2").trim(),
+  });
+  if (player) {
+    playlistSection.append(player.button, player.panel);
+  } else if (chronicle.playlistUrl) {
+    const playlist = document.createElement("a");
+    playlist.className = "ddc-playlist-link";
+    playlist.href = chronicle.playlistUrl;
+    playlist.target = "_blank";
+    playlist.rel = "noopener noreferrer";
+    playlist.textContent = chronicle.playlistLabel || "Otwórz playlistę";
+    playlistSection.append(playlist);
+  }
   container.replaceChildren(intro, playlistSection);
 }

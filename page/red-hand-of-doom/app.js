@@ -1,4 +1,5 @@
 import { createHomeButton } from "/core/templates/HomeButton/HomeButton.js";
+import { createInlineYouTubePlayer } from "/core/templates/YouTubeInlinePlayer/YouTubeInlinePlayer.js";
 /* Wait for the intended display fonts before revealing the campaign UI. */
 const fontRequests = [
   document.fonts.load('400 3rem "Pirata One"'),
@@ -83,22 +84,24 @@ function entry(s){
   const r=mk("article","ent"),h=mk("div","eh");
   h.tabIndex=0;
   h.setAttribute("role","button");
-  const L=s.recordings||[],ls=mk("div","ls");
-  L.forEach((x,i)=>{
-    const a=mk("a","play",L.length>1?"▶ Część "+(x.partNumber||i+1):"▶ Odtwórz");a.href=x.url;a.target="_blank";a.rel="noopener";a.onclick=e=>e.stopPropagation();ls.append(a)
-  }
-  );
-  h.append(mk("span","en",String(s.sessionNumber).padStart(2,"0")),mk("span","et",s.title||"Bez tytułu"),mk("span","ed",s.date||""),ls);
-  r.append(h,mk("div","eb",s.description||s.notes||""));
-  const t=()=>r.classList.toggle("open");
+  h.setAttribute("aria-expanded","false");
+  const number=String(s.sessionNumber??s.number??"—").replace(/^S0*/i,"").padStart(2,"0");
+  const recordings=s.recordings||[];
+  const links=mk("div","ls");
+  const players=mk("div","red-hand-inline-players");
+  recordings.forEach((recording,index)=>{
+    const part=recordings.length>1?(recording.partNumber||index+1):null;
+    const label=part?"▶ Część "+part:"▶ Odtwórz";
+    const player=createInlineYouTubePlayer({url:recording.url,title:s.title||"Nagranie sesji",sessionNumber:number,partNumber:part,label,accent:"#b3141a"});
+    if(player){links.append(player.button);players.append(player.panel);}
+    else if(recording.url){const fallback=mk("a","play play-unavailable","▶ Otwórz nagranie");fallback.href=recording.url;fallback.target="_blank";fallback.rel="noopener noreferrer";fallback.onclick=e=>e.stopPropagation();links.append(fallback);}
+  });
+  links.addEventListener("click",e=>e.stopPropagation());
+  h.append(mk("span","en",number),mk("span","et",s.title||"Bez tytułu"),mk("span","ed",s.date||""),links);
+  r.append(h,players,mk("div","eb",s.description||s.notes||""));
+  const t=()=>{const open=!r.classList.contains("open");r.classList.toggle("open",open);h.setAttribute("aria-expanded",String(open));};
   h.onclick=t;
-  h.onkeydown=e=>{
-    if(e.key==="Enter"||e.key===" "){
-      e.preventDefault();
-      t()
-    }
-  }
-  ;
+  h.onkeydown=e=>{if(e.target===h&&(e.key==="Enter"||e.key===" ")){e.preventDefault();t();}};
   return r
 }
 (async()=>{

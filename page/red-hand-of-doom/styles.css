@@ -749,3 +749,13 @@ html * {
   transform: rotate(1deg) scale(1.05);
   outline-offset: 3px;
 }
+
+/* Inline player for Red Hand of Doom session entries. */
+.red-hand-inline-players{display:grid;gap:.8rem;padding:0 1rem 1rem 6.3rem}
+.red-hand-inline-players:empty{display:none}
+.red-hand-page .chronicle-inline-player{border-color:var(--blood)}
+.red-hand-page .chronicle-inline-player__toggle{border:1px solid var(--blood);background:var(--soot);color:var(--bone);padding:.45rem .7rem;font:400 .78rem "Special Elite";text-transform:uppercase}
+.red-hand-page .chronicle-inline-player__toggle:hover,.red-hand-page .chronicle-inline-player__toggle:focus-visible{background:var(--blood);color:var(--bone)}
+.red-hand-page .chronicle-inline-player__tag,.red-hand-page .chronicle-inline-player__footer a{color:var(--torch);border-color:var(--blood)}
+.play-unavailable{display:inline-flex;align-items:center;opacity:.8}
+@media(max-width:640px){.red-hand-inline-players{padding:0 1rem 1rem}}

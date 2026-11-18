@@ -92,6 +92,52 @@ document.querySelectorAll('.map-pin').forEach(pin=>{
   });
 });
 const node=(tag,cls,value)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(value!==undefined)e.textContent=value;return e};
-async function load(){const [contentResponse,charactersResponse]=await Promise.all([fetch('/page/tomb-of-annihilation/content.json'),fetch('/core/data/characters.json')]);if(!contentResponse.ok||!charactersResponse.ok)throw Error('Brak danych archiwum');const content=await contentResponse.json(),characters=await charactersResponse.json();initializeNavbar(content);const byId=new Map(characters.map(c=>[c.id,c]));const grid=document.getElementById('characters-grid');grid.replaceChildren();content.characters.characterIds.forEach((id,i)=>{const c=byId.get(id);if(!c)return;const card=node('article','specimen');const img=node('img');img.src=c.portrait;img.alt='Portret postaci '+c.character;img.loading='lazy';img.width=240;img.height=300;const label=node('div','spec-label','KARTA '+String(i+1).padStart(2,'0'));const name=node('h3','',c.character);const player=node('p','', 'GRACZ: '+c.player);const details=node('p','',[c.race,...(c.classes||[])].filter(Boolean).join(' · '));const status=node('span','status'+(c.status==='Martwa'?' dead':''),c.status);card.append(img,label,name,player,details,status);grid.append(card)});const list=document.getElementById('log-list');list.replaceChildren();let activePlayer=null;[...content.chronicle.sessions].reverse().forEach(session=>{const entry=node('article','log');const number=String(session.sessionNumber).padStart(2,'0');const title=session.title.replace(/^Tomb of Annihilation S\d+\s*-\s*/i,'').replace(/\s*\[D&D5e\]$/i,'');const recording=(session.recordings||[]).find(r=>r.url);entry.append(node('div','log-meta','SESJA '+number),node('h3','',title));if(recording){let videoId=null;try{const url=new URL(recording.url);videoId=url.hostname.includes('youtu.be')?url.pathname.slice(1):url.searchParams.get('v')||url.pathname.match(/\/embed\/([^/]+)/)?.[1]}catch{}if(videoId){const toggle=node('button','log-player-toggle','ODTWÓRZ');toggle.type='button';toggle.setAttribute('aria-expanded','false');const player=node('section','log-player');player.hidden=true;const playerHeader=node('div','log-player-header');playerHeader.append(node('strong','',title),node('span','log-player-tag','CHULT · WYPRAWA'));const video=node('div','log-video');const footer=node('div','log-player-footer');footer.append(node('span','', 'SESJA '+number));const external=node('a','','OTWÓRZ W YOUTUBE ↗');external.href=recording.url;external.target='_blank';external.rel='noopener noreferrer';footer.append(external);player.append(playerHeader,video,footer);toggle.addEventListener('click',()=>{if(activePlayer&&activePlayer!==player){activePlayer.replaceChildren();activePlayer.hidden=true;const previous=activePlayer.previousElementSibling;previous.textContent='ODTWÓRZ';previous.setAttribute('aria-expanded','false')}const opening=player.hidden;if(opening){const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(videoId)+'?rel=0';iframe.title='Tomb of Annihilation — sesja '+number+': '+title;iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';iframe.referrerPolicy='strict-origin-when-cross-origin';iframe.allowFullscreen=true;video.replaceChildren(iframe);player.hidden=false;activePlayer=player;toggle.textContent='ZAMKNIJ ODTWARZACZ';toggle.setAttribute('aria-expanded','true')}else{player.replaceChildren(playerHeader);player.append(video,footer);video.replaceChildren();player.hidden=true;activePlayer=null;toggle.textContent='ODTWÓRZ';toggle.setAttribute('aria-expanded','false')}});entry.append(toggle,player)}else{entry.append(node('span','log-meta','BRAK LINKU'))}}else{entry.append(node('span','log-meta','BRAK LINKU'))}list.append(entry)})}
+async function load(){const [contentResponse,charactersResponse]=await Promise.all([fetch('/page/tomb-of-annihilation/content.json'),fetch('/core/data/characters.json')]);if(!contentResponse.ok||!charactersResponse.ok)throw Error('Brak danych archiwum');const content=await contentResponse.json(),characters=await charactersResponse.json();initializeNavbar(content);const byId=new Map(characters.map(c=>[c.id,c]));const grid=document.getElementById('characters-grid');grid.replaceChildren();content.characters.characterIds.forEach((id,i)=>{const c=byId.get(id);if(!c)return;const card=node('article','specimen');const img=node('img');img.src=c.portrait;img.alt='Portret postaci '+c.character;img.loading='lazy';img.width=240;img.height=300;const label=node('div','spec-label','KARTA '+String(i+1).padStart(2,'0'));const name=node('h3','',c.character);const player=node('p','', 'GRACZ: '+c.player);const details=node('p','',[c.race,...(c.classes||[])].filter(Boolean).join(' · '));const status=node('span','status'+(c.status==='Martwa'?' dead':''),c.status);card.append(img,label,name,player,details,status);grid.append(card)});const list=document.getElementById('log-list');list.replaceChildren();let activePlayerClose=null;
+[...content.chronicle.sessions].reverse().forEach(session=>{
+  const entry=node('article','log');
+  const number=String(session.sessionNumber).padStart(2,'0');
+  const title=(session.title||'Bez tytułu').replace(/^Tomb of Annihilation S\\d+\\s*-\\s*/i,'').replace(/\\s*\\[D&D5e\\]$/i,'');
+  entry.append(node('div','log-meta','SESJA '+number),node('h3','',title));
+  const recordings=(session.recordings||[]).filter(recording=>recording.url);
+  if(recordings.length){
+    recordings.forEach((recording,index)=>{
+      const part=recordings.length>1?(recording.partNumber||index+1):null;
+      const baseLabel=part?'ODTWÓRZ CZĘŚĆ '+part:'ODTWÓRZ';
+      const toggle=node('button','log-player-toggle',baseLabel);
+      toggle.type='button';
+      toggle.setAttribute('aria-expanded','false');
+      const player=node('section','log-player');
+      player.hidden=true;
+      const playerHeader=node('div','log-player-header');
+      playerHeader.append(node('strong','',title),node('span','log-player-tag','CHULT · WYPRAWA'));
+      const video=node('div','log-video');
+      const footer=node('div','log-player-footer');
+      footer.append(node('span','', 'SESJA '+number+(part?' · CZĘŚĆ '+part:'')));
+      const external=node('a','','OTWÓRZ W YOUTUBE ↗');
+      external.href=recording.url;external.target='_blank';external.rel='noopener noreferrer';
+      footer.append(external);player.append(playerHeader,video,footer);
+      const close=()=>{
+        video.replaceChildren();player.hidden=true;toggle.textContent=baseLabel;toggle.setAttribute('aria-expanded','false');
+        if(activePlayerClose===close)activePlayerClose=null;
+      };
+      toggle.addEventListener('click',()=>{
+        if(!player.hidden){close();return;}
+        if(activePlayerClose)activePlayerClose();
+        let videoId=null;
+        try{const url=new URL(recording.url);videoId=url.hostname.includes('youtu.be')?url.pathname.split('/').filter(Boolean)[0]:url.searchParams.get('v')||url.pathname.match(/\\/(?:embed|shorts|live)\\/([^/]+)/)?.[1];}catch{}
+        if(!videoId){external.click();return;}
+        const iframe=document.createElement('iframe');
+        iframe.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(videoId)+'?rel=0';
+        iframe.title='Tomb of Annihilation — sesja '+number+': '+title;
+        iframe.loading='lazy';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.referrerPolicy='strict-origin-when-cross-origin';iframe.allowFullscreen=true;
+        video.replaceChildren(iframe);player.hidden=false;toggle.textContent='ZAMKNIJ ODTWARZACZ';
+        toggle.setAttribute('aria-expanded','true');activePlayerClose=close;
+      });
+      entry.append(toggle,player);
+    });
+  }else{entry.append(node('span','log-meta','BRAK LINKU'));}
+  list.append(entry);
+});
 load().catch(e=>{console.error(e);for(const id of ['characters-grid','log-list'])document.getElementById(id).replaceChildren(node('p','error','Nie udało się pobrać danych archiwum. Spróbuj odświeżyć stronę.'))});
 </script></body></html>
