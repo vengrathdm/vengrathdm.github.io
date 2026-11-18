@@ -1273,6 +1273,3 @@ body.hide-gm .secret {
   }
 }
 
-
-/* HeartwellWiki-specific cursor for the wiki shell and dynamically loaded articles. */
-html, body, body * { cursor: url("/core/graphics/cursors/heartwellwiki.png") 10 10, auto; }
