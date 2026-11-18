@@ -66,11 +66,11 @@
   "chronicle": {
     "kicker": "AKTA / KRONIKA",
     "title": "Nagranie przygody",
-    "description": "Na oryginalnej stronie zachowano jeden bezpośredni odnośnik do nagrania. Tytuł i notatki sesji pozostawiono zgodnie z archiwalnym placeholderem.",
+    "description": "Nagranie przygody Ku Chwale Tyra!.",
     "sessions": [
       {
         "number": "S001",
-        "title": "Do Uzupełnienia",
+        "title": "Ku Chwale Tyra!",
         "description": "Notatki sesji do uzupełnienia.",
         "recordings": [
           {
