@@ -21,7 +21,7 @@
       ],
       [
         "NAGRANIA",
-        "0"
+        "2"
       ],
       [
         "ŹRÓDŁO",
@@ -90,9 +90,23 @@
     "sessions": [
       {
         "sessionNumber": 1,
-        "title": "Do Uzupełnienia",
-        "description": "Dane sesji do uzupełnienia.",
-        "recordings": []
+        "title": "Samotnie przeciw Jedności - Trypolis - S1",
+        "description": "Nagranie pierwszej sesji w Trypolitanii.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/Eh-S8V31x_E"
+          }
+        ]
+      },
+      {
+        "sessionNumber": 2,
+        "title": "Samotnie przeciw Jedności - Trypolis - S2",
+        "description": "Nagranie drugiej sesji w Trypolitanii.",
+        "recordings": [
+          {
+            "url": "https://youtu.be/7l1X8GzVrk8"
+          }
+        ]
       }
     ]
   }
