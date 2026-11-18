@@ -25,6 +25,7 @@
 .cast-card{justify-content:flex-start;padding:14px}
 .cast-card .cast-portrait{position:relative;flex:0 0 auto;width:100%;aspect-ratio:4/5;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;margin:0 0 18px;border:1px solid #8b6b5970;background:radial-gradient(ellipse at 50% 38%,#58303d 0,#291522 58%,#130e17 100%);color:#d7b979}
 .cast-card .cast-portrait::before{content:"";position:absolute;inset:12px;border:1px dashed #d7b97955;pointer-events:none}
+.cast-card .cast-portrait img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
 .cast-card .cast-portrait span{font:clamp(13px,1.3vw,18px) var(--display);letter-spacing:.18em;color:#e5d0a5}
 .cast-card .cast-portrait small{font:8px var(--mono);letter-spacing:.16em;color:#a98a7e}
 .cast-card .cast-number{z-index:2;top:24px;left:24px;padding:6px 8px;background:#160e19d9;border:1px solid #8b6b596b}
