@@ -94,7 +94,7 @@ function entry(s){
     const label=part?"▶ Część "+part:"▶ Odtwórz";
     const player=createInlineYouTubePlayer({url:recording.url,title:s.title||"Nagranie sesji",sessionNumber:number,partNumber:part,label,accent:"#b3141a"});
     if(player){links.append(player.button);players.append(player.panel);}
-    else if(recording.url){const fallback=mk("a","play play-unavailable","▶ Otwórz nagranie");fallback.href=recording.url;fallback.target="_blank";fallback.rel="noopener noreferrer";fallback.onclick=e=>e.stopPropagation();links.append(fallback);}
+    else{const fallback=mk("span","play play-unavailable","NAGRANIE DO UZUPEŁNIENIA");fallback.title="Brak prawidłowego identyfikatora filmu YouTube";links.append(fallback);}
   });
   links.addEventListener("click",e=>e.stopPropagation());
   h.append(mk("span","en",number),mk("span","et",s.title||"Bez tytułu"),mk("span","ed",s.date||""),links);
