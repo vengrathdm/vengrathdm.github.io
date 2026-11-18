@@ -1274,5 +1274,5 @@ body.hide-gm .secret {
 }
 
 
-/* Default cursor for all HeartwellWiki articles and subpages. */
-html, body, body * { cursor: url("/core/graphics/cursors/default.png") 10 10, auto; }
+/* HeartwellWiki-specific cursor for the wiki shell and dynamically loaded articles. */
+html, body, body * { cursor: url("/core/graphics/cursors/heartwellwiki.png") 10 10, auto; }
