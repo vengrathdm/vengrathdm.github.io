@@ -8,27 +8,45 @@
   border-top: 1px solid var(--theme-line-1);
 }
 .lmop-archive-entry {
-  display: grid;
-  grid-template-columns: 86px minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 18px;
   padding: 24px 4px;
   border-bottom: 1px solid var(--theme-line-1);
 }
+.lmop-archive-entry__header {
+  display: grid;
+  grid-template-columns: 4.2rem minmax(0, 1fr) auto auto;
+  grid-template-areas: "number title date recordings";
+  align-items: center;
+  gap: 1rem;
+}
 .lmop-archive-entry__number {
+  grid-area: number;
   color: var(--theme-accent-1);
   font: 400 17px var(--theme-font-1);
 }
-.lmop-archive-entry__copy {
+.lmop-archive-entry__title {
+  grid-area: title;
   min-width: 0;
-}
-.lmop-archive-entry__copy h3 {
-  margin: 0 0 7px;
+  margin: 0;
   color: #ddd8cc;
   font: 400 21px/1.2 var(--theme-font-1);
+  overflow-wrap: anywhere;
 }
-.lmop-archive-entry__copy p {
-  margin: 0;
+.lmop-archive-entry__date {
+  grid-area: date;
+  color: var(--theme-accent-1);
+  font: 400 13px var(--theme-font-1);
+  white-space: nowrap;
+}
+.lmop-archive-entry__links {
+  grid-area: recordings;
+  display: flex;
+  justify-content: flex-end;
+}
+.lmop-archive-entry__date[hidden] {
+  display: none;
+}
+.lmop-archive-entry__description {
+  margin: 10px 0 0;
   color: #888b86;
   font-size: 14px;
 }
@@ -54,13 +72,15 @@
   outline-offset: 3px;
 }
 @media (max-width: 760px) {
-  .lmop-archive-entry {
-    grid-template-columns: minmax(0, 1fr);
-    align-items: start;
-    gap: 9px;
+  .lmop-archive-entry__header {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    grid-template-areas:
+      "number title"
+      ". date"
+      ". recordings";
+    gap: 0.65rem;
   }
-  .lmop-playlist-link {
-    justify-self: start;
-    margin-top: 8px;
+  .lmop-archive-entry__links {
+    justify-content: flex-start;
   }
 }

@@ -7,22 +7,44 @@ export function renderChronicleSection(chronicle, playlistUrl) {
   const container = document.querySelector("#campaign-chronicle");
   const entry = document.createElement("article");
   entry.className = "lmop-archive-entry";
+
+  const header = document.createElement("div");
+  header.className = "lmop-archive-entry__header";
+
   const number = document.createElement("span");
   number.className = "lmop-archive-entry__number";
-  number.textContent = chronicle.entryNumber;
-  const copy = document.createElement("div");
-  copy.className = "lmop-archive-entry__copy";
+  number.textContent = String(chronicle.entryNumber || "—")
+    .replace(/^S0*/i, "")
+    .padStart(2, "0");
+
   const title = document.createElement("h3");
-  title.textContent = chronicle.entryTitle;
-  const description = document.createElement("p");
-  description.textContent = chronicle.entryDescription;
-  copy.append(title, description);
+  title.className = "lmop-archive-entry__title";
+  title.textContent = chronicle.entryTitle || "Bez tytułu";
+
+  const date = document.createElement("time");
+  date.className = "lmop-archive-entry__date";
+  date.hidden = !chronicle.entryDate;
+  if (chronicle.entryDate) {
+    date.dateTime = chronicle.entryDate;
+    date.textContent = chronicle.entryDate;
+  }
+
+  const links = document.createElement("div");
+  links.className = "lmop-archive-entry__links";
   const link = document.createElement("a");
   link.className = "lmop-playlist-link";
   link.href = playlistUrl;
   link.target = "_blank";
   link.rel = "noopener noreferrer";
   link.textContent = chronicle.playlistLabel;
-  entry.append(number, copy, link);
+  links.append(link);
+
+  header.append(number, title, date, links);
+
+  const description = document.createElement("p");
+  description.className = "lmop-archive-entry__description";
+  description.textContent = chronicle.entryDescription || "";
+
+  entry.append(header, description);
   container.replaceChildren(entry);
 }
