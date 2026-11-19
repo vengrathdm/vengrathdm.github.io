@@ -112,6 +112,11 @@
   .region-dialog-actions button.danger{background:#75483e;color:#fff2e8;border-color:#b98170}
   .region-dialog-actions button:disabled{opacity:.45;cursor:not-allowed}
   .delete-region-list{display:grid;gap:6px;max-height:290px;overflow:auto;margin-top:10px;padding:2px}
+  .delete-region-list{scrollbar-width:thin;scrollbar-color:#a58a5e rgba(12,22,27,.55)}
+  .delete-region-list::-webkit-scrollbar{width:7px}
+  .delete-region-list::-webkit-scrollbar-track{background:rgba(12,22,27,.55);border-left:1px solid rgba(222,198,145,.12);border-radius:4px}
+  .delete-region-list::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#c4ad7d,#806b49);border:1px solid rgba(25,31,30,.8);border-radius:5px}
+  .delete-region-list::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#dfc994,#a58a5e)}
   .delete-region-option{display:grid;grid-template-columns:18px 14px minmax(0,1fr);align-items:start;gap:8px;padding:9px;border:1px solid rgba(222,198,145,.3);border-radius:4px;background:rgba(255,255,255,.035);cursor:pointer}
   .delete-region-option.selected{border-color:#c4a879;background:rgba(102,86,64,.38)}
   .delete-region-option input{width:auto;margin:2px 0 0;accent-color:#d5bd8b}
