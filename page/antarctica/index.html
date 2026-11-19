@@ -38,6 +38,8 @@
   #editor input[type=range]{width:100%;margin-top:5px;padding:0}
   #editor button,#editor .file-button{margin:7px 4px 0 0;padding:6px 9px;border:1px solid #8a795a;border-radius:3px;background:#e5d7b8;color:#28201a;font:600 12px system-ui,sans-serif;cursor:pointer}
   #editor button.active{background:#665640;color:#fff8e8}
+  .editor-data-actions{display:flex;flex-direction:column;align-items:center;gap:0;margin-top:5px}
+  #editor .editor-data-actions button,#editor .editor-data-actions .file-button{box-sizing:border-box;width:180px;margin:7px 0 0;text-align:center}
   #editorHint{margin:8px 0 0;color:#d0c2a5;font-size:12px}
   #importData{display:none}
   #presenter{padding:11px}
@@ -92,12 +94,13 @@
   <div id="editorTools">
     <label>Overlay layer<select id="layerSelect"><option value="biome">Biome</option><option value="political">Political</option><option value="geographical">Geographical</option></select></label>
     <label>Region<select id="regionSelect"><option value="">Create a region first</option></select></label>
+    <button id="deleteRegion" type="button">Delete selected region</button>
     <label>New region name<input id="regionName" type="text" placeholder="e.g. Temperate Forest"></label>
     <label>Region colour <input id="regionColor" type="color" value="#668b54"></label>
     <button id="createRegion" type="button">Create region</button><button id="paintToggle" type="button">Paint: off</button><button id="eraseToggle" type="button">Erase: off</button>
     <label>Brush size <span id="brushSizeValue">1 hex</span><input id="brushSize" type="range" min="0" max="5" step="1" value="0"></label>
     <p id="editorHint">Select a region, enable Paint, then hold and drag across the map. Brush size controls the radius. Shared regions load from the site. Your edits stay local until you download and publish the JSON file.</p>
-    <button id="exportData" type="button">Download draft JSON</button><label class="file-button" for="importData">Import data</label><input id="importData" type="file" accept="application/json">
+    <div class="editor-data-actions"><button id="exportData" type="button">Export data</button><label class="file-button" for="importData">Import data</label></div><input id="importData" type="file" accept="application/json">
   </div>
 </div>
 <script src="leaflet/leaflet.js"></script>
@@ -167,6 +170,7 @@
   document.getElementById('layerSelect').addEventListener('change',function(){stopEditing();refreshRegions();setHint('Select a region, enable Paint, then hold and drag across the map.');});
   document.getElementById('createRegion').addEventListener('click',function(){var name=document.getElementById('regionName').value.trim();if(!name){setHint('Enter a region name first.');return;}var region={id:'r'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),name:name,color:document.getElementById('regionColor').value,hexes:[]};regionData[currentLayer()].push(region);refreshRegions(region.id);saveData();setHint('Created '+name+'. Enable Paint to assign hexes.');});
   document.getElementById('regionSelect').addEventListener('change',function(){var r=selectedRegion();if(r){document.getElementById('regionName').value=r.name;document.getElementById('regionColor').value=r.color;}});
+  document.getElementById('deleteRegion').addEventListener('click',function(){var region=selectedRegion();if(!region){setHint('Select a region to delete.');return;}if(!window.confirm('Delete the region “'+region.name+'”? Its assigned hexes and region definition will be removed. This cannot be undone except by importing a backup.'))return;var arr=regionData[currentLayer()];regionData[currentLayer()]=arr.filter(function(r){return r.id!==region.id;});stopEditing();refreshRegions();document.getElementById('regionName').value='';renderLayer(currentLayer());saveData();setHint('Deleted region '+region.name+'.');});
   document.getElementById('paintToggle').addEventListener('click',function(){editMode=!editMode;eraseMode=false;painting=false;map.dragging[editMode?'disable':'enable']();document.getElementById('eraseToggle').textContent='Erase: off';document.getElementById('eraseToggle').classList.remove('active');this.textContent='Paint: '+(editMode?'on':'off');this.classList.toggle('active',editMode);setHint(editMode?'Hold the mouse button and drag across hexes to paint. Map panning is paused while painting.':'Paint mode is off. Map panning is restored.');});
   document.getElementById('eraseToggle').addEventListener('click',function(){eraseMode=!eraseMode;editMode=eraseMode;painting=false;map.dragging[editMode?'disable':'enable']();document.getElementById('paintToggle').textContent='Paint: off';document.getElementById('paintToggle').classList.remove('active');this.textContent='Erase: '+(eraseMode?'on':'off');this.classList.toggle('active',eraseMode);setHint(eraseMode?'Hold the mouse button and drag to erase hexes. Map panning is paused while erasing.':'Erase mode is off. Map panning is restored.');});
   document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(regionData,null,2)+'\\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='regions.json';a.click();URL.revokeObjectURL(url);setHint('Downloaded regions.json. To publish these changes for everyone, replace page/antarctica/data/regions.json in the site repository with this file.');});
