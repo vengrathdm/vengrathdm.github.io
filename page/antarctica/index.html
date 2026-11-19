@@ -23,6 +23,16 @@
   .ruin{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee5cc;border:2px solid #28201a;font:700 17px/1 Georgia,serif;color:#28201a;box-shadow:0 1px 4px rgba(0,0,0,.4)}
   .leaflet-container{font:14px/1.4 system-ui,sans-serif}
   .leaflet-popup-content a{color:#7a2e1c;font-weight:600}
+  #editor{top:10px;right:10px;width:250px;max-width:calc(100vw - 20px);max-height:calc(100vh - 20px);overflow:auto;padding:10px;font:13px/1.4 system-ui,sans-serif}
+  #editorHead{display:flex;align-items:center;justify-content:space-between;gap:8px}
+  #editorTools[hidden]{display:none}
+  #editor label{display:block;margin-top:9px;font-weight:600}
+  #editor select,#editor input:not([type=color]):not([type=file]){box-sizing:border-box;width:100%;margin-top:3px;padding:5px;border:1px solid #82745e;border-radius:3px;background:#fffaf0;color:#28201a}
+  #editor input[type=color]{width:42px;height:28px;vertical-align:middle;margin:3px 0}
+  #editor button,#editor .file-button{margin:7px 4px 0 0;padding:6px 9px;border:1px solid #665640;border-radius:3px;background:#e5d7b8;color:#28201a;font:600 12px system-ui,sans-serif;cursor:pointer}
+  #editor button.active{background:#665640;color:#fff8e8}
+  #editorHint{margin:8px 0 0;color:#665640;font-size:12px}
+  #importData{display:none}
 </style>
 </head>
 <body>
@@ -31,6 +41,18 @@
   <a class="home-brand" href="/home/" aria-label="Vengrath — strona główna"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
 </div>
 <div id="read" class="panel"><small>Move over the map for hex references</small></div>
+<div id="editor" class="panel">
+  <div id="editorHead"><strong>Hex overlays</strong><button id="editorToggle" type="button">Open editor</button></div>
+  <div id="editorTools" hidden>
+    <label>Overlay layer<select id="layerSelect"><option value="biome">Biome</option><option value="political">Political</option><option value="geographical">Geographical</option></select></label>
+    <label>Region<select id="regionSelect"><option value="">Create a region first</option></select></label>
+    <label>New region name<input id="regionName" type="text" placeholder="e.g. Temperate Forest"></label>
+    <label>Region colour <input id="regionColor" type="color" value="#668b54"></label>
+    <button id="createRegion" type="button">Create region</button><button id="paintToggle" type="button" class="active">Paint: off</button><button id="eraseToggle" type="button">Erase: off</button>
+    <p id="editorHint">Create or select a region, then enable Paint and click hexes on the map. Changes save in this browser.</p>
+    <button id="exportData" type="button">Export data</button><label class="file-button" for="importData">Import data</label><input id="importData" type="file" accept="application/json">
+  </div>
+</div>
 <script src="leaflet/leaflet.js"></script>
 <script>
 (function(){
@@ -62,7 +84,32 @@
     var i=Math.floor(h[0]/SC), j=Math.floor(h[1]/SR);
     read.innerHTML='Sheet '+sid(i,j)+' &middot; hex '+two(h[0]%SC+1)+two(h[1]%SR+1);
   }
-  map.on('mousemove',show); map.on('click',show);
+  map.on('mousemove',show);
+  var STORE='antarctica-hex-overlays-v1', layerNames=['biome','political','geographical'];
+  var regionData={biome:[],political:[],geographical:[]}, overlayGroups={}, editMode=false, eraseMode=false;
+  try{var saved=localStorage.getItem(STORE);if(saved){var parsed=JSON.parse(saved);layerNames.forEach(function(k){if(Array.isArray(parsed[k]))regionData[k]=parsed[k];});}}catch(err){console.warn('Could not load saved overlay data',err);}
+  layerNames.forEach(function(k){overlayGroups[k]=L.layerGroup().addTo(map);});
+  function saveData(){try{localStorage.setItem(STORE,JSON.stringify(regionData));}catch(err){setHint('Could not save in this browser. Export the data as a backup.');}}
+  function setHint(t){document.getElementById('editorHint').textContent=t;}
+  function currentLayer(){return document.getElementById('layerSelect').value;}
+  function selectedRegion(){var id=document.getElementById('regionSelect').value;return regionData[currentLayer()].find(function(r){return r.id===id;});}
+  function refreshRegions(preferred){var sel=document.getElementById('regionSelect'),arr=regionData[currentLayer()];sel.innerHTML='';arr.forEach(function(r){var o=document.createElement('option');o.value=r.id;o.textContent=r.name;sel.appendChild(o);});if(preferred&&arr.some(function(r){return r.id===preferred;}))sel.value=preferred;if(!arr.length){var o=document.createElement('option');o.value='';o.textContent='No regions yet';sel.appendChild(o);}}
+  function addressKey(h){var i=Math.floor(h[0]/SC),j=Math.floor(h[1]/SR);return sid(i,j)+':'+two(h[0]%SC+1)+two(h[1]%SR+1);}
+  function parseAddress(key){var m=/^([A-Z])(\d+):(\d{2})(\d{2})$/.exec(key);if(!m)return null;var si=m[1].charCodeAt(0)-65,sj=parseInt(m[2],10)-1,col=parseInt(m[3],10)-1,row=parseInt(m[4],10)-1;if(si<0||sj<0||col<0||col>=SC||row<0||row>=SR)return null;return [si*SC+col,sj*SR+row];}
+  function hexPolygon(key){var h=parseAddress(key);if(!h)return null;var cx=CS*h[0]/KPP,cy=S*(h[1]+0.5*(h[0]&1))/KPP,pts=[];for(var n=0;n<6;n++){var a=Math.PI*n/3;pts.push(ll(cx+R*Math.cos(a)/KPP,cy+R*Math.sin(a)/KPP));}return pts;}
+  function renderLayer(k){var group=overlayGroups[k];group.clearLayers();regionData[k].forEach(function(region){region.hexes.forEach(function(key){var pts=hexPolygon(key);if(pts)L.polygon(pts,{color:region.color,weight:0.7,opacity:0.9,fillColor:region.color,fillOpacity:0.34,interactive:false}).addTo(group);});});}
+  function renderAll(){layerNames.forEach(renderLayer);}
+  function assignHex(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var key=addressKey(h),arr=regionData[currentLayer()],region=selectedRegion();if(!eraseMode&&!region){setHint('Create or select a region before painting.');return;}arr.forEach(function(r){r.hexes=r.hexes.filter(function(x){return x!==key;});});if(!eraseMode)region.hexes.push(key);saveData();renderLayer(currentLayer());setHint((eraseMode?'Erased ':'Assigned ')+key+(region&&!eraseMode?' to '+region.name:'.'));}
+  document.getElementById('editorToggle').addEventListener('click',function(){var tools=document.getElementById('editorTools');tools.hidden=!tools.hidden;this.textContent=tools.hidden?'Open editor':'Close editor';});
+  document.getElementById('layerSelect').addEventListener('change',function(){refreshRegions();document.getElementById('paintToggle').textContent='Paint: off';document.getElementById('paintToggle').classList.remove('active');editMode=false;});
+  document.getElementById('createRegion').addEventListener('click',function(){var name=document.getElementById('regionName').value.trim();if(!name){setHint('Enter a region name first.');return;}var region={id:'r'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),name:name,color:document.getElementById('regionColor').value,hexes:[]};regionData[currentLayer()].push(region);refreshRegions(region.id);saveData();setHint('Created '+name+'. Enable Paint to assign hexes.');});
+  document.getElementById('regionSelect').addEventListener('change',function(){var r=selectedRegion();if(r){document.getElementById('regionName').value=r.name;document.getElementById('regionColor').value=r.color;}});
+  document.getElementById('paintToggle').addEventListener('click',function(){editMode=!editMode;eraseMode=false;document.getElementById('eraseToggle').textContent='Erase: off';document.getElementById('eraseToggle').classList.remove('active');this.textContent='Paint: '+(editMode?'on':'off');this.classList.toggle('active',editMode);setHint(editMode?'Paint mode is on. Click map hexes to assign them to the selected region.':'Paint mode is off.');});
+  document.getElementById('eraseToggle').addEventListener('click',function(){eraseMode=!eraseMode;editMode=eraseMode;document.getElementById('paintToggle').textContent='Paint: off';document.getElementById('paintToggle').classList.remove('active');this.textContent='Erase: '+(eraseMode?'on':'off');this.classList.toggle('active',eraseMode);setHint(eraseMode?'Erase mode is on. Click assigned hexes to clear them from this overlay layer.':'Erase mode is off.');});
+  document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(regionData,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='antarctica-overlays.json';a.click();URL.revokeObjectURL(url);});
+  document.getElementById('importData').addEventListener('change',function(e){var file=e.target.files&&e.target.files[0];if(!file)return;var reader=new FileReader();reader.onload=function(){try{var data=JSON.parse(reader.result);layerNames.forEach(function(k){if(Array.isArray(data[k]))regionData[k]=data[k].filter(function(r){return r&&typeof r.name==='string'&&typeof r.color==='string'&&Array.isArray(r.hexes);});});saveData();refreshRegions();renderAll();setHint('Overlay data imported.');}catch(err){setHint('Could not import that JSON file.');}};reader.readAsText(file);e.target.value='';});
+  map.on('click',function(e){show(e);if(editMode)assignHex(e.latlng);});
+  renderAll();refreshRegions();
 
   var grid=L.layerGroup();
   LAND.forEach(function(s){
@@ -86,6 +133,7 @@
     .addTo(map);
   var ruins=L.marker(ll(pc[0],pc[1]),{icon:L.divIcon({className:'',html:'<div class="ruin" aria-label="Ruins">&there4;</div>',iconSize:[26,26],iconAnchor:[13,13]}),title:'South Pole ruins'})
     .bindPopup('<b>The South Pole</b><br>Drowned ruins, just offshore.<br>Sheet '+sid(Math.floor(ph[0]/SC),Math.floor(ph[1]/SR))+', hex '+two(ph[0]%SC+1)+two(ph[1]%SR+1)+'.').addTo(map);
+  L.control.layers(null,{'Biome':overlayGroups.biome,'Political':overlayGroups.political,'Geographical':overlayGroups.geographical},{collapsed:true,position:'bottomright'}).addTo(map);
   L.control.scale({imperial:false,metric:false}).addTo(map);
 })();
 </script>
