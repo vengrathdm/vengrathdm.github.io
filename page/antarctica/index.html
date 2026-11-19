@@ -69,9 +69,9 @@
   #importData{display:none}
   #pinDialog{position:fixed!important;z-index:99999!important;left:50vw;top:50vh;right:auto;bottom:auto;transform:translate(-50%,-50%);box-sizing:border-box;width:340px;max-width:calc(100vw - 32px);max-height:calc(100vh - 32px);overflow-y:auto;padding:16px;background:rgba(23,37,43,.98);color:#f3ead7;border:1px solid rgba(222,198,145,.78);border-radius:5px;box-shadow:0 16px 48px rgba(0,0,0,.62);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font:13px/1.45 system-ui,sans-serif;pointer-events:auto}
   #pinDialog[hidden]{display:none!important}
-  #pinContextMenu{position:fixed;z-index:100000;min-width:150px;padding:4px;background:rgba(23,37,43,.98);border:1px solid rgba(222,198,145,.7);border-radius:4px;box-shadow:0 8px 24px rgba(0,0,0,.5);font:13px/1.4 system-ui,sans-serif}
+  #pinContextMenu{position:fixed;z-index:100000;min-width:184px;max-width:min(260px,calc(100vw - 16px));max-height:calc(100vh - 16px);overflow-y:auto;padding:4px;background:rgba(23,37,43,.98);border:1px solid rgba(222,198,145,.7);border-radius:4px;box-shadow:0 8px 24px rgba(0,0,0,.5);font:13px/1.4 system-ui,sans-serif}
   #pinContextMenu[hidden]{display:none!important}
-  #pinContextMenu button{display:block;width:100%;padding:8px 10px;border:0;border-radius:2px;background:transparent;color:#f3ead7;text-align:left;font:600 12px system-ui,sans-serif;cursor:pointer}
+  #pinContextMenu button{display:block;width:100%;padding:8px 10px;border:0;border-radius:2px;background:transparent;color:#f3ead7;text-align:left;font:600 12px system-ui,sans-serif;cursor:pointer;white-space:normal}
   #pinContextMenu button:hover,#pinContextMenu button:focus{outline:0;background:#665640;color:#fff2d4}
   #pinContextMenu button.delete{color:#e5aa96}
   #pinDialog h2{margin:0 0 4px;color:#efd59c;font:1.2rem Voltaire,sans-serif;letter-spacing:.12em;text-transform:uppercase}
@@ -182,10 +182,7 @@
     <div class="pin-dialog-actions"><button type="button" id="cancelPin">Cancel</button><button type="submit" class="primary">Save pin</button></div>
   </form>
 </div>
-<div id="pinContextMenu" hidden role="menu" aria-label="Pin actions">
-  <button type="button" id="editPinAction" role="menuitem">Edit Pin</button>
-  <button type="button" id="deletePinAction" class="delete" role="menuitem">Delete Pin</button>
-</div>
+<div id="pinContextMenu" hidden role="menu" aria-label="Map actions"></div>
 <script src="leaflet/leaflet.js"></script>
 <script>
 (function(){
@@ -357,12 +354,31 @@
   }
   function renderAll(){layerNames.forEach(renderLayer);}
   function pinIcon(style){var glyph={standard:'•',ruin:'✥',settlement:'⌂',landmark:'★',natural:'✿'}[style]||'•';return L.divIcon({className:'',html:'<div class="pin-icon pin-'+style+'"><span><b>'+glyph+'</b></span></div>',iconSize:[28,34],iconAnchor:[14,32]});}
-  function renderPins(){pinMarkers.clearLayers();pinData.forEach(function(pin){var h=parseAddress(pin.hex);if(!h)return;var point=ll(CS*h[0]/KPP,S*(h[1]+0.5*(h[0]&1))/KPP);L.marker(point,{icon:pinIcon(pin.style),title:pin.name}).bindPopup('<span class="popup-title">'+escapeHtml(pin.name)+'</span><span class="popup-description">'+escapeHtml(pin.description).replace(/\\n/g,'<br>')+'</span><span class="popup-reference">'+escapeHtml(pin.hex.replace(':',' · Hex '))+'</span>',{className:'editorial-popup'}).on('click',function(e){if(placingPin)cancelPinPlacement();selectHexAt(e.latlng);}).on('contextmenu',function(e){L.DomEvent.preventDefault(e);L.DomEvent.stopPropagation(e);showPinContextMenu(pin,e.originalEvent);}).addTo(pinMarkers);});}
+  function renderPins(){pinMarkers.clearLayers();pinData.forEach(function(pin){var h=parseAddress(pin.hex);if(!h)return;var point=ll(CS*h[0]/KPP,S*(h[1]+0.5*(h[0]&1))/KPP);L.marker(point,{icon:pinIcon(pin.style),title:pin.name}).bindPopup('<span class="popup-title">'+escapeHtml(pin.name)+'</span><span class="popup-description">'+escapeHtml(pin.description).replace(/\\n/g,'<br>')+'</span><span class="popup-reference">'+escapeHtml(pin.hex.replace(':',' · Hex '))+'</span>',{className:'editorial-popup'}).on('click',function(e){if(placingPin)cancelPinPlacement();selectHexAt(e.latlng);}).addTo(pinMarkers);});}
   function cancelPinPlacement(){placingPin=false;pendingPinHex='';document.body.classList.remove('pin-placement-active');}
   function beginPinPlacement(){stopEditing();cancelPinPlacement();placingPin=true;document.body.classList.add('pin-placement-active');document.getElementById('editor').hidden=true;document.getElementById('editorButton').setAttribute('aria-expanded','false');}
   function hexAddressAt(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return null;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return null;var sheet=sid(Math.floor(h[0]/SC),Math.floor(h[1]/SR));if(LAND.indexOf(sheet)<0)return null;return addressKey(h);}
-  function showPinContextMenu(pin,event){var menu=document.getElementById('pinContextMenu');menu.dataset.pinId=pin.id;menu.hidden=false;var x=Math.min(event.clientX,window.innerWidth-170),y=Math.min(event.clientY,window.innerHeight-90);menu.style.left=Math.max(8,x)+'px';menu.style.top=Math.max(8,y)+'px';}
-  function closePinContextMenu(){document.getElementById('pinContextMenu').hidden=true;}
+  function closePinContextMenu(){var menu=document.getElementById('pinContextMenu');menu.hidden=true;menu.innerHTML='';menu.dataset.hex='';}
+  function copyMapText(value){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(value).catch(function(){setHint('Could not copy to clipboard.');});return;}var field=document.createElement('textarea');field.value=value;field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();try{document.execCommand('copy');}catch(err){setHint('Could not copy to clipboard.');}field.remove();}
+  function showMapContextMenu(latlng,event){
+    var key=hexAddressAt(latlng),menu=document.getElementById('pinContextMenu');
+    if(!key){closePinContextMenu();return;}
+    var pins=pinData.filter(function(pin){return pin.hex===key;});
+    menu.innerHTML='';menu.dataset.hex=key;
+    function action(label,handler,extra){var button=document.createElement('button');button.type='button';button.setAttribute('role','menuitem');button.textContent=label;if(extra)button.className=extra;button.addEventListener('click',function(){closePinContextMenu();handler();});menu.appendChild(button);}
+    if(pins.length){
+      action('View Pin Record',function(){selectHexAt(latlng);});
+      action('Edit Pin',function(){openPinDialog(key,pins[0]);});
+      action('Delete Pin',function(){var pin=pins[0];if(!window.confirm('Delete the pin “'+pin.name+'”? This cannot be undone except by importing a backup.'))return;pinData=pinData.filter(function(p){return p.id!==pin.id;});saveData();renderPins();},'delete');
+    }else{
+      action('Create Pin',function(){openPinDialog(key);});
+    }
+    action('Copy Hex Reference',function(){copyMapText(key);});
+    action('Center Map Here',function(){map.panTo(latlng);});
+    menu.hidden=false;
+    var width=menu.offsetWidth,height=menu.offsetHeight,x=Math.max(8,Math.min(event.clientX,window.innerWidth-width-8)),y=Math.max(8,Math.min(event.clientY,window.innerHeight-height-8));
+    menu.style.left=x+'px';menu.style.top=y+'px';
+  }
   function openPinDialog(key,pin){editingPinId=pin?pin.id:'';pendingPinHex=key;var dialog=document.getElementById('pinDialog');document.getElementById('pinDialogTitle').textContent=pin?'Edit point':'Record a point';document.getElementById('pinDialogAddress').textContent='Sheet '+key.replace(':',' · Hex ');document.getElementById('pinName').value=pin?pin.name:'';document.getElementById('pinStyle').value=pin?pin.style:'standard';document.getElementById('pinDescription').value=pin?pin.description:'';dialog.hidden=false;dialog.style.display='block';requestAnimationFrame(function(){dialog.style.left='50vw';dialog.style.top='50vh';dialog.style.transform='translate(-50%,-50%)';document.getElementById('pinName').focus();});}
   function closePinDialog(){var dialog=document.getElementById('pinDialog');dialog.hidden=true;dialog.style.display='none';pendingPinHex='';editingPinId='';}
   function brushRadius(){return parseInt(document.getElementById('brushSize').value,10)||0;}
@@ -383,8 +399,6 @@
   document.getElementById('brushSize').addEventListener('input',updateBrushLabel);
   document.getElementById('placePinButton').addEventListener('click',beginPinPlacement);
   document.getElementById('cancelPin').addEventListener('click',function(){closePinDialog();cancelPinPlacement();});
-  document.getElementById('editPinAction').addEventListener('click',function(){var id=document.getElementById('pinContextMenu').dataset.pinId,pin=pinData.find(function(p){return p.id===id;});closePinContextMenu();if(pin)openPinDialog(pin.hex,pin);});
-  document.getElementById('deletePinAction').addEventListener('click',function(){var id=document.getElementById('pinContextMenu').dataset.pinId,pin=pinData.find(function(p){return p.id===id;});closePinContextMenu();if(!pin)return;if(!window.confirm('Delete the pin “'+pin.name+'”? This cannot be undone except by importing a backup.'))return;pinData=pinData.filter(function(p){return p.id!==id;});saveData();renderPins();});
   document.addEventListener('click',function(e){if(!e.target.closest||!e.target.closest('#pinContextMenu'))closePinContextMenu();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closePinContextMenu();});
   window.addEventListener('resize',closePinContextMenu);
@@ -408,7 +422,8 @@
 
   function openPanel(id){closePanels();document.getElementById(id).hidden=false;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','true');}
   function selectHexAt(latlng){var event={latlng:latlng};show(event);presentHex(latlng);openPanel('presenter');}
-  map.on('click',function(e){if(placingPin){var key=hexAddressAt(e.latlng);if(!key){cancelPinPlacement();return;}cancelPinPlacement();openPinDialog(key);return;}if(!document.getElementById('editor').hidden){show(e);presentHex(e.latlng);return;}selectHexAt(e.latlng);});
+  map.on('contextmenu',function(e){L.DomEvent.preventDefault(e);L.DomEvent.stopPropagation(e);if(placingPin)return;showMapContextMenu(e.latlng,e.originalEvent);});
+  map.on('click',function(e){closePinContextMenu();if(placingPin){var key=hexAddressAt(e.latlng);if(!key){cancelPinPlacement();return;}cancelPinPlacement();openPinDialog(key);return;}if(!document.getElementById('editor').hidden){show(e);presentHex(e.latlng);return;}selectHexAt(e.latlng);});
   document.addEventListener('click',function(e){
     if(!placingPin)return;
     var target=e.target;
