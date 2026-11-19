@@ -56,6 +56,25 @@
   .editor-data-actions{display:flex;flex-direction:column;align-items:center;gap:0;margin-top:5px}
   #editor .editor-data-actions button,#editor .editor-data-actions .file-button{box-sizing:border-box;width:180px;margin:7px 0 0;text-align:center}
   #importData{display:none}
+  #pinDialog{position:absolute;z-index:1600;left:50%;top:50%;transform:translate(-50%,-50%);width:310px;max-width:calc(100vw - 36px);padding:14px;background:rgba(23,37,43,.97);color:#f3ead7;border:1px solid rgba(222,198,145,.68);border-radius:5px;box-shadow:0 12px 38px rgba(0,0,0,.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font:13px/1.45 system-ui,sans-serif}
+  #pinDialog[hidden]{display:none}
+  #pinDialog h2{margin:0 0 4px;color:#efd59c;font:1.2rem Voltaire,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+  #pinDialog .pin-dialog-sub{margin:0 0 10px;color:#c5b99f;font:11px/1.4 system-ui,sans-serif}
+  #pinDialog label{display:block;margin-top:9px;color:#e7d9bb;font:600 12px/1.4 system-ui,sans-serif}
+  #pinDialog input,#pinDialog textarea,#pinDialog select{box-sizing:border-box;width:100%;margin-top:4px;padding:8px;border:1px solid #82745e;border-radius:3px;background:#fffaf0;color:#28201a;font:13px/1.4 system-ui,sans-serif}
+  #pinDialog textarea{min-height:88px;resize:vertical}
+  .pin-dialog-actions{display:flex;justify-content:flex-end;gap:7px;margin-top:12px}
+  .pin-dialog-actions button{padding:7px 11px;border:1px solid #8a795a;border-radius:3px;background:#e5d7b8;color:#28201a;font:600 12px system-ui,sans-serif;cursor:pointer}
+  .pin-dialog-actions button.primary{background:#665640;color:#fff8e8;border-color:#b9a47c}
+  .pin-icon{display:flex;align-items:center;justify-content:center;width:28px;height:34px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.55))}
+  .pin-icon span{display:flex;align-items:center;justify-content:center;width:24px;height:24px;border:2px solid #28201a;border-radius:50% 50% 50% 2px;transform:rotate(-45deg);background:#eee5cc;color:#28201a;font:700 13px/1 Georgia,serif}
+  .pin-icon span b{transform:rotate(45deg);font-weight:700}
+  .pin-icon.pin-ruin span{background:#d8c59a}
+  .pin-icon.pin-settlement span{background:#c5d0bb}
+  .pin-icon.pin-landmark span{background:#d8b7a3}
+  .pin-icon.pin-natural span{background:#9dbb91}
+  .pin-placement-active .leaflet-container{cursor:crosshair}
+  .pin-placement-active .leaflet-container *{cursor:crosshair!important}
   #presenter{padding:11px}
   #presenterBody{padding:0}
   #presenterAddress{font:1.55rem Voltaire,sans-serif;letter-spacing:.06em;color:#fff5df}
@@ -131,11 +150,21 @@
     </section>
     <section class="editor-section">
       <h3>Brush</h3>
-      <div class="editor-action-row"><button id="paintToggle" type="button">Paint: off</button><button id="eraseToggle" type="button">Erase: off</button></div>
+      <div class="editor-action-row"><button id="paintToggle" type="button">Paint: off</button><button id="eraseToggle" type="button">Erase: off</button><button id="placePinButton" type="button">Place Pin</button></div>
       <label>Brush size <span id="brushSizeValue">1 hex</span><input id="brushSize" type="range" min="0" max="5" step="1" value="0"></label>
     </section>
     <div class="editor-data-actions"><button id="exportData" type="button">Export data</button><label class="file-button" for="importData">Import data</label></div><input id="importData" type="file" accept="application/json">
   </div>
+</div>
+<div id="pinDialog" hidden role="dialog" aria-modal="true" aria-labelledby="pinDialogTitle">
+  <h2 id="pinDialogTitle">Record a point</h2>
+  <p class="pin-dialog-sub" id="pinDialogAddress">Selected hex</p>
+  <form id="pinForm">
+    <label>Pin name<input id="pinName" type="text" maxlength="100" required placeholder="e.g. The Old Observatory"></label>
+    <label>Pin style<select id="pinStyle"><option value="standard">Standard</option><option value="ruin">Ruins</option><option value="settlement">Settlement</option><option value="landmark">Landmark</option><option value="natural">Natural feature</option></select></label>
+    <label>Description<textarea id="pinDescription" maxlength="2000" placeholder="Describe this place..."></textarea></label>
+    <div class="pin-dialog-actions"><button type="button" id="cancelPin">Cancel</button><button type="submit" class="primary">Save pin</button></div>
+  </form>
 </div>
 <script src="leaflet/leaflet.js"></script>
 <script>
@@ -170,7 +199,7 @@
   }
   map.on('mousemove',show);
   var STORE='antarctica-hex-overlays-v1', DATA_URL='data/regions.json', layerNames=['biome','political','geographical'];
-  var regionData={biome:[],political:[],geographical:[]}, overlayGroups={}, editMode=false, eraseMode=false, painting=false, lastPainted='', hasLocalDraft=false;
+  var regionData={biome:[],political:[],geographical:[]}, pinData=[], pinMarkers=L.layerGroup().addTo(map), overlayGroups={}, editMode=false, eraseMode=false, painting=false, lastPainted='', hasLocalDraft=false, placingPin=false, pendingPinHex='';
   function applyRegionData(data){
     layerNames.forEach(function(k){
       if(!Array.isArray(data&&data[k]))return;
@@ -181,10 +210,12 @@
         return copy;
       });
     });
+    pinData=Array.isArray(data&&data.pins)?data.pins.filter(function(p){return p&&typeof p.id==='string'&&typeof p.name==='string'&&typeof p.hex==='string'&&parseAddress(p.hex)&&['standard','ruin','settlement','landmark','natural'].indexOf(p.style)!==-1;}).map(function(p){return {id:p.id,name:p.name,style:p.style,description:typeof p.description==='string'?p.description:'',hex:p.hex};}):[];
   }
   try{var saved=localStorage.getItem(STORE);if(saved){applyRegionData(JSON.parse(saved));hasLocalDraft=true;}}catch(err){console.warn('Could not load saved overlay data',err);}
   layerNames.forEach(function(k){overlayGroups[k]=L.layerGroup();});
-  function saveData(){try{localStorage.setItem(STORE,JSON.stringify(regionData));hasLocalDraft=true;}catch(err){setHint('Could not save in this browser. Download the JSON draft as a backup.');}}
+  function exportableData(){return {biome:regionData.biome,political:regionData.political,geographical:regionData.geographical,pins:pinData};}
+  function saveData(){try{localStorage.setItem(STORE,JSON.stringify(exportableData()));hasLocalDraft=true;}catch(err){setHint('Could not save in this browser. Download the JSON draft as a backup.');}}
   function setHint(t){}
   function currentLayer(){return document.getElementById('layerSelect').value;}
   function selectedRegion(){var id=document.getElementById('regionSelect').value;return regionData[currentLayer()].find(function(r){return r.id===id;});}
@@ -288,6 +319,13 @@
     });
   }
   function renderAll(){layerNames.forEach(renderLayer);}
+  function pinIcon(style){var glyph={standard:'•',ruin:'✥',settlement:'⌂',landmark:'★',natural:'✿'}[style]||'•';return L.divIcon({className:'',html:'<div class="pin-icon pin-'+style+'"><span><b>'+glyph+'</b></span></div>',iconSize:[28,34],iconAnchor:[14,32]});}
+  function renderPins(){pinMarkers.clearLayers();pinData.forEach(function(pin){var h=parseAddress(pin.hex);if(!h)return;var point=ll(CS*h[0]/KPP,S*(h[1]+0.5*(h[0]&1))/KPP);L.marker(point,{icon:pinIcon(pin.style),title:pin.name}).bindPopup('<span class="popup-title">'+escapeHtml(pin.name)+'</span><span class="popup-description">'+escapeHtml(pin.description).replace(/\\n/g,'<br>')+'</span><span class="popup-reference">'+escapeHtml(pin.hex.replace(':',' · Hex '))+'</span>',{className:'editorial-popup'}).on('click',function(e){if(placingPin)cancelPinPlacement();selectHexAt(e.latlng);}).addTo(pinMarkers);});}
+  function cancelPinPlacement(){placingPin=false;pendingPinHex='';document.body.classList.remove('pin-placement-active');}
+  function beginPinPlacement(){stopEditing();cancelPinPlacement();placingPin=true;document.body.classList.add('pin-placement-active');document.getElementById('editor').hidden=true;document.getElementById('editorButton').setAttribute('aria-expanded','false');}
+  function hexAddressAt(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return null;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return null;return addressKey(h);}
+  function openPinDialog(key){pendingPinHex=key;document.getElementById('pinDialogAddress').textContent='Sheet '+key.replace(':',' · Hex ');document.getElementById('pinName').value='';document.getElementById('pinStyle').value='standard';document.getElementById('pinDescription').value='';document.getElementById('pinDialog').hidden=false;document.getElementById('pinName').focus();}
+  function closePinDialog(){document.getElementById('pinDialog').hidden=true;pendingPinHex='';}
   function brushRadius(){return parseInt(document.getElementById('brushSize').value,10)||0;}
   function brushKeys(center){var q0=center[0],r0=center[1]-(q0-(q0&1))/2,rad=brushRadius(),keys=[];for(var dq=-rad;dq<=rad;dq++){for(var dr=-rad;dr<=rad;dr++){if(Math.max(Math.abs(dq),Math.abs(dr),Math.abs(dq+dr))>rad)continue;var q=q0+dq,ar=r0+dr,row=ar+(q-(q&1))/2;if(q<0||row<0)continue;var si=Math.floor(q/SC),sj=Math.floor(row/SR),sheet=sid(si,sj);if(LAND.indexOf(sheet)<0)continue;keys.push(addressKey([q,row]));}}return keys;}
   function assignBrush(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var center=addressKey(h);if(center===lastPainted)return;lastPainted=center;var arr=regionData[currentLayer()],region=selectedRegion();if(!eraseMode&&!region){setHint('Create or select a region before painting.');return;}brushKeys(h).forEach(function(key){arr.forEach(function(r){r.hexes=r.hexes.filter(function(x){return x!==key;});});if(!eraseMode&&region.hexes.indexOf(key)===-1)region.hexes.push(key);});saveData();renderLayer(currentLayer());}
@@ -304,6 +342,9 @@
   function stopEditing(){editMode=false;eraseMode=false;painting=false;map.dragging.enable();document.getElementById('paintToggle').textContent='Paint: off';document.getElementById('paintToggle').classList.remove('active');document.getElementById('eraseToggle').textContent='Erase: off';document.getElementById('eraseToggle').classList.remove('active');}
   function updateBrushLabel(){var r=brushRadius(),count=1+3*r*(r+1);document.getElementById('brushSizeValue').textContent=r===0?'1 hex':'radius '+r+' ('+count+' hexes)';}
   document.getElementById('brushSize').addEventListener('input',updateBrushLabel);
+  document.getElementById('placePinButton').addEventListener('click',beginPinPlacement);
+  document.getElementById('cancelPin').addEventListener('click',function(){closePinDialog();cancelPinPlacement();});
+  document.getElementById('pinForm').addEventListener('submit',function(e){e.preventDefault();if(!pendingPinHex)return;var name=document.getElementById('pinName').value.trim();if(!name){document.getElementById('pinName').focus();return;}pinData.push({id:'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),name:name,style:document.getElementById('pinStyle').value,description:document.getElementById('pinDescription').value.trim(),hex:pendingPinHex});saveData();renderPins();closePinDialog();cancelPinPlacement();});
   document.getElementById('layerSelect').addEventListener('change',function(){stopEditing();refreshRegions();setHint('Select a region, enable Paint, then hold and drag across the map.');});
   document.getElementById('createRegion').addEventListener('click',function(){var name=document.getElementById('regionName').value.trim();if(!name){setHint('Enter a region name first.');return;}var region={id:'r'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),name:name,color:document.getElementById('regionColor').value,hexes:[]};regionData[currentLayer()].push(region);refreshRegions(region.id);saveData();setHint('Created '+name+'. Enable Paint to assign hexes.');});
   document.getElementById('regionSelect').addEventListener('change',function(){var r=selectedRegion();if(r){document.getElementById('regionName').value=r.name;document.getElementById('regionColor').value=r.color;}});
@@ -311,20 +352,21 @@
   document.getElementById('deleteRegion').addEventListener('click',function(){var region=selectedRegion();if(!region){setHint('Select a region to delete.');return;}if(!window.confirm('Delete the region “'+region.name+'”? Its assigned hexes and region definition will be removed. This cannot be undone except by importing a backup.'))return;var arr=regionData[currentLayer()];regionData[currentLayer()]=arr.filter(function(r){return r.id!==region.id;});stopEditing();refreshRegions();document.getElementById('regionName').value='';renderLayer(currentLayer());saveData();setHint('Deleted region '+region.name+'.');});
   document.getElementById('paintToggle').addEventListener('click',function(){editMode=!editMode;eraseMode=false;painting=false;map.dragging[editMode?'disable':'enable']();document.getElementById('eraseToggle').textContent='Erase: off';document.getElementById('eraseToggle').classList.remove('active');this.textContent='Paint: '+(editMode?'on':'off');this.classList.toggle('active',editMode);setHint(editMode?'Hold the mouse button and drag across hexes to paint. Map panning is paused while painting.':'Paint mode is off. Map panning is restored.');});
   document.getElementById('eraseToggle').addEventListener('click',function(){eraseMode=!eraseMode;editMode=eraseMode;painting=false;map.dragging[editMode?'disable':'enable']();document.getElementById('paintToggle').textContent='Paint: off';document.getElementById('paintToggle').classList.remove('active');this.textContent='Erase: '+(eraseMode?'on':'off');this.classList.toggle('active',eraseMode);setHint(eraseMode?'Hold the mouse button and drag to erase hexes. Map panning is paused while erasing.':'Erase mode is off. Map panning is restored.');});
-  document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(regionData,null,2)+'\\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='regions.json';a.click();URL.revokeObjectURL(url);setHint('Downloaded regions.json. To publish these changes for everyone, replace page/antarctica/data/regions.json in the site repository with this file.');});
-  document.getElementById('importData').addEventListener('change',function(e){var file=e.target.files&&e.target.files[0];if(!file)return;var reader=new FileReader();reader.onload=function(){try{var data=JSON.parse(reader.result);applyRegionData(data);saveData();refreshRegions();renderAll();setHint('Overlay data imported.');}catch(err){setHint('Could not import that JSON file.');}};reader.readAsText(file);e.target.value='';});
+  document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(exportableData(),null,2)+'\\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='regions.json';a.click();URL.revokeObjectURL(url);setHint('Downloaded regions.json. Replace page/antarctica/data/regions.json with this file to publish regions and pins.');});
+  document.getElementById('importData').addEventListener('change',function(e){var file=e.target.files&&e.target.files[0];if(!file)return;var reader=new FileReader();reader.onload=function(){try{var data=JSON.parse(reader.result);applyRegionData(data);saveData();refreshRegions();renderAll();renderPins();setHint('Overlay and pin data imported.');}catch(err){setHint('Could not import that JSON file.');}};reader.readAsText(file);e.target.value='';});
   map.on('mousedown',function(e){if(!editMode)return;painting=true;lastPainted='';assignBrush(e.latlng);});
   map.on('mousemove',function(e){if(painting)assignBrush(e.latlng);});
   function endStroke(){painting=false;lastPainted='';}
   map.on('mouseup',endStroke);
   window.addEventListener('mouseup',endStroke);
-  function presentHex(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var i=Math.floor(h[0]/SC),j=Math.floor(h[1]/SR),sheet=sid(i,j),hex=two(h[0]%SC+1)+two(h[1]%SR+1),key=sheet+':'+hex;document.getElementById('presenterAddress').textContent=sheet+' / '+hex;document.getElementById('presenterSub').textContent='Antarctica · Hex record';document.getElementById('presenterIntro').textContent='Recorded information for this hex.';var html='';layerNames.forEach(function(k){var found=null;regionData[k].some(function(r){if(r.hexes.indexOf(key)!==-1){found=r;return true;}return false;});html+='<div class="present-row"><div class="present-label">'+(k==='biome'?'Biome':k==='political'?'Political territory':'Geographical region')+'</div>';html+=found?'<div class="present-value"><span class="present-swatch" style="background:'+found.color+'"></span>'+escapeHtml(found.name)+'</div>':'<div class="present-empty">No information recorded</div>';html+='</div>';});var places=[];if(sheet==='F9'&&hex==='1606')places.push({name:'Test Marker',description:'Test Descirption'});var poleHex=hexOf(POLE[0],POLE[1]),poleSheet=sid(Math.floor(poleHex[0]/SC),Math.floor(poleHex[1]/SR)),poleAddress=two(poleHex[0]%SC+1)+two(poleHex[1]%SR+1);if(sheet===poleSheet&&hex===poleAddress)places.push({name:'The South Pole',description:'Drowned ruins, just offshore.'});if(places.length){html+='<div class="present-row"><div class="present-label">Points of interest</div>'+places.map(function(x){return '<div class="present-value">'+escapeHtml(x.name)+'</div><div class="present-empty">'+escapeHtml(x.description)+'</div>';}).join('')+'</div>';}document.getElementById('presenterDetails').innerHTML=html;}
+  function presentHex(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var i=Math.floor(h[0]/SC),j=Math.floor(h[1]/SR),sheet=sid(i,j),hex=two(h[0]%SC+1)+two(h[1]%SR+1),key=sheet+':'+hex;document.getElementById('presenterAddress').textContent=sheet+' / '+hex;document.getElementById('presenterSub').textContent='Antarctica · Hex record';document.getElementById('presenterIntro').textContent='Recorded information for this hex.';var html='';layerNames.forEach(function(k){var found=null;regionData[k].some(function(r){if(r.hexes.indexOf(key)!==-1){found=r;return true;}return false;});html+='<div class="present-row"><div class="present-label">'+(k==='biome'?'Biome':k==='political'?'Political territory':'Geographical region')+'</div>';html+=found?'<div class="present-value"><span class="present-swatch" style="background:'+found.color+'"></span>'+escapeHtml(found.name)+'</div>':'<div class="present-empty">No information recorded</div>';html+='</div>';});var places=pinData.filter(function(pin){return pin.hex===key;});if(places.length){html+='<div class="present-row"><div class="present-label">Points of interest</div>'+places.map(function(x){return '<div class="present-value">'+escapeHtml(x.name)+'</div><div class="present-empty">'+escapeHtml(x.description)+'</div>';}).join('')+'</div>';}document.getElementById('presenterDetails').innerHTML=html;}
   function escapeHtml(s){return String(s).replace(/[&<>\"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch];});}
 
   function openPanel(id){closePanels();document.getElementById(id).hidden=false;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','true');}
   function selectHexAt(latlng){var event={latlng:latlng};show(event);presentHex(latlng);openPanel('presenter');}
-  map.on('click',function(e){if(!document.getElementById('editor').hidden){show(e);presentHex(e.latlng);return;}selectHexAt(e.latlng);});
-  fetch(DATA_URL,{cache:'no-store'}).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json();}).then(function(shared){if(!hasLocalDraft){applyRegionData(shared);renderAll();refreshRegions();}}).catch(function(err){console.warn('Could not load shared region data',err);if(!hasLocalDraft)setHint('Shared region data could not be loaded.');});
+  map.on('click',function(e){if(placingPin){var key=hexAddressAt(e.latlng);if(!key){cancelPinPlacement();return;}cancelPinPlacement();openPinDialog(key);return;}if(!document.getElementById('editor').hidden){show(e);presentHex(e.latlng);return;}selectHexAt(e.latlng);});
+  document.addEventListener('click',function(e){if(!placingPin)return;var target=e.target;if(target.closest&&target.closest('#placePinButton'))return;if(target.closest&&target.closest('#pinDialog'))return;var mapPane=target.closest&&target.closest('.leaflet-map-pane');if(!mapPane||e.button!==0){cancelPinPlacement();}} ,true);
+  fetch(DATA_URL,{cache:'no-store'}).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json();}).then(function(shared){if(!hasLocalDraft){applyRegionData(shared);renderAll();refreshRegions();renderPins();}}).catch(function(err){console.warn('Could not load shared region data',err);if(!hasLocalDraft)setHint('Shared region data could not be loaded.');});
   enhanceEditorSelect(document.getElementById('layerSelect'));
   enhanceEditorSelect(document.getElementById('regionSelect'));
   renderAll();refreshRegions();updateBrushLabel();
@@ -346,12 +388,7 @@
     var h=[si*SC+col,sj*SR+row];
     return ll(CS*h[0]/KPP,S*(h[1]+0.5*(h[0]&1))/KPP);
   }
-  L.marker(sheetHex('F9','1606'),{icon:L.divIcon({className:'',html:'<div class="ruin" aria-label="Test Marker">★</div>',iconSize:[26,26],iconAnchor:[13,13]}),title:'Test Marker'})
-    .bindPopup('<span class="popup-title">Test Marker</span><span class="popup-description">Test Descirption</span><span class="popup-reference">Sheet F9 · Hex 1606</span>',{className:'editorial-popup'})
-    .on('click',function(e){selectHexAt(e.latlng);})
-    .addTo(map);
-  var ruins=L.marker(ll(pc[0],pc[1]),{icon:L.divIcon({className:'',html:'<div class="ruin" aria-label="Ruins">&there4;</div>',iconSize:[26,26],iconAnchor:[13,13]}),title:'South Pole ruins'})
-    .bindPopup('<span class="popup-title">The South Pole</span><span class="popup-description">Drowned ruins, just offshore.</span><span class="popup-reference">Sheet '+sid(Math.floor(ph[0]/SC),Math.floor(ph[1]/SR))+' · Hex '+two(ph[0]%SC+1)+two(ph[1]%SR+1)+'</span>',{className:'editorial-popup'}).on('click',function(e){selectHexAt(e.latlng);}).addTo(map);
+  renderPins();
   document.getElementById('sheetGrid').addEventListener('change',function(){if(this.checked)grid.addTo(map);else map.removeLayer(grid);});
   L.control.zoom({position:'bottomright'}).addTo(map);
   L.control.scale({imperial:false,metric:false,position:'bottomright'}).addTo(map);
