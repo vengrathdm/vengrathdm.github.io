@@ -34,6 +34,21 @@
   #editor button.active{background:#665640;color:#fff8e8}
   #editorHint{margin:8px 0 0;color:#665640;font-size:12px}
   #importData{display:none}
+  #presenter{left:10px;top:76px;width:270px;max-width:calc(100vw - 20px);max-height:calc(100vh - 130px);overflow:auto;padding:0;font:13px/1.45 system-ui,sans-serif;background:rgba(25,34,42,.94);border:1px solid rgba(222,198,145,.75);color:#f3ead7;box-shadow:0 5px 22px rgba(0,0,0,.42)}
+  #presenterHead{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:rgba(215,184,120,.13);border-bottom:1px solid rgba(222,198,145,.35)}
+  #presenterHead strong{font:1.1rem Voltaire,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#efd59c}
+  #presenterToggle{border:1px solid #b69a68;border-radius:3px;background:#3b4141;color:#f3ead7;padding:5px 8px;font-weight:600;cursor:pointer}
+  #presenterBody{padding:12px}
+  #presenterBody[hidden]{display:none}
+  #presenterAddress{font:1.55rem Voltaire,sans-serif;letter-spacing:.06em;color:#fff5df}
+  #presenterSub{color:#c5b99f;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-top:2px}
+  .present-row{padding:9px 0;border-top:1px solid rgba(222,198,145,.2)}
+  .present-label{color:#c5b99f;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;margin-bottom:3px}
+  .present-value{display:flex;align-items:center;gap:7px;font:1rem Georgia,serif;color:#fff5df}
+  .present-swatch{width:10px;height:10px;border-radius:50%;flex:0 0 10px;border:1px solid rgba(255,255,255,.35)}
+  .present-empty{color:#9f988a;font-style:italic}
+  #presenterIntro{color:#c5b99f;margin:0}
+  @media(max-width:600px){#presenter{top:auto;bottom:58px;left:8px;width:calc(100vw - 36px);max-height:42vh}#editor{max-height:55vh}}
 </style>
 </head>
 <body>
@@ -42,6 +57,10 @@
   <a class="home-brand" href="/home/" aria-label="Vengrath — strona główna"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
 </div>
 <div id="read" class="panel"><small>Move over the map for hex references</small></div>
+<section id="presenter" class="panel">
+  <div id="presenterHead"><strong>Field dossier</strong><button id="presenterToggle" type="button">Open Presenter</button></div>
+  <div id="presenterBody" hidden><div id="presenterAddress">No hex selected</div><div id="presenterSub">Antarctica · Hex reference</div><p id="presenterIntro">Select any hex on the map to inspect its recorded information.</p><div id="presenterDetails"></div></div>
+</section>
 <div id="editor" class="panel">
   <div id="editorHead"><strong>Hex overlays</strong><button id="editorToggle" type="button">Open editor</button></div>
   <div id="editorTools" hidden>
@@ -122,7 +141,10 @@
   function endStroke(){painting=false;lastPainted='';}
   map.on('mouseup',endStroke);
   window.addEventListener('mouseup',endStroke);
-  map.on('click',function(e){show(e);});
+  function presentHex(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var i=Math.floor(h[0]/SC),j=Math.floor(h[1]/SR),sheet=sid(i,j),hex=two(h[0]%SC+1)+two(h[1]%SR+1),key=sheet+':'+hex;document.getElementById('presenterAddress').textContent=sheet+' / '+hex;document.getElementById('presenterSub').textContent='Antarctica · Hex dossier';document.getElementById('presenterIntro').textContent='Recorded information for this hex.';var html='';layerNames.forEach(function(k){var found=null;regionData[k].some(function(r){if(r.hexes.indexOf(key)!==-1){found=r;return true;}return false;});html+='<div class="present-row"><div class="present-label">'+(k==='biome'?'Biome':k==='political'?'Political territory':'Geographical region')+'</div>';html+=found?'<div class="present-value"><span class="present-swatch" style="background:'+found.color+'"></span>'+escapeHtml(found.name)+'</div>':'<div class="present-empty">No information recorded</div>';html+='</div>';});var places=[];if(sheet==='F9'&&hex==='1606')places.push({name:'Test Marker',description:'Test Descirption'});var poleHex=hexOf(POLE[0],POLE[1]),poleSheet=sid(Math.floor(poleHex[0]/SC),Math.floor(poleHex[1]/SR)),poleAddress=two(poleHex[0]%SC+1)+two(poleHex[1]%SR+1);if(sheet===poleSheet&&hex===poleAddress)places.push({name:'The South Pole',description:'Drowned ruins, just offshore.'});if(places.length){html+='<div class="present-row"><div class="present-label">Points of interest</div>'+places.map(function(x){return '<div class="present-value">'+escapeHtml(x.name)+'</div><div class="present-empty">'+escapeHtml(x.description)+'</div>';}).join('')+'</div>';}document.getElementById('presenterDetails').innerHTML=html;}
+  function escapeHtml(s){return String(s).replace(/[&<>\"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch];});}
+  document.getElementById('presenterToggle').addEventListener('click',function(){var body=document.getElementById('presenterBody');body.hidden=!body.hidden;this.textContent=body.hidden?'Open Presenter':'Close Presenter';});
+  map.on('click',function(e){show(e);presentHex(e.latlng);});
   renderAll();refreshRegions();updateBrushLabel();
 
   var grid=L.layerGroup();
