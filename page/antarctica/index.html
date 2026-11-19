@@ -34,7 +34,9 @@
   #editorTools[hidden]{display:none}
   #editor label{display:block;margin-top:9px;font-weight:600;color:#e7d9bb;font:600 12px/1.4 system-ui,sans-serif}
   #editor select,#editor input:not([type=color]):not([type=file]){box-sizing:border-box;width:100%;margin-top:4px;padding:7px 8px;border:1px solid #82745e;border-radius:3px;background:#fffaf0;color:#28201a;font:13px/1.35 system-ui,sans-serif}
-  #editor select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#665640 50%),linear-gradient(135deg,#665640 50%,transparent 50%);background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:28px}
+  #editor select{appearance:none;-webkit-appearance:none;background-color:#fffaf0;background-image:linear-gradient(45deg,transparent 50%,#665640 50%),linear-gradient(135deg,#665640 50%,transparent 50%);background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:28px;color:#28201a;font:13px/1.35 system-ui,sans-serif}
+  #editor select option{background:#fffaf0;color:#28201a;font:13px/1.4 system-ui,sans-serif}
+  #editor select:focus{outline:2px solid rgba(213,189,139,.8);outline-offset:1px}
   #editor input[type=color]{width:42px;height:28px;vertical-align:middle;margin:3px 0}
   #editor input[type=range]{width:100%;margin-top:5px;padding:0}
   #editor button:not(.panel-close),#editor .file-button{margin:7px 4px 0 0;padding:7px 9px;border:1px solid #8a795a;border-radius:3px;background:#e5d7b8;color:#28201a;font:600 12px system-ui,sans-serif;cursor:pointer}
@@ -45,7 +47,6 @@
   .editor-action-row button{box-sizing:border-box;min-width:180px;text-align:center}
   .editor-data-actions{display:flex;flex-direction:column;align-items:center;gap:0;margin-top:5px}
   #editor .editor-data-actions button,#editor .editor-data-actions .file-button{box-sizing:border-box;width:180px;margin:7px 0 0;text-align:center}
-  #editorHint{margin:8px 0 0;color:#d0c2a5;font-size:12px}
   #importData{display:none}
   #presenter{padding:11px}
   #presenterBody{padding:0}
@@ -125,7 +126,6 @@
       <div class="editor-action-row"><button id="paintToggle" type="button">Paint: off</button><button id="eraseToggle" type="button">Erase: off</button></div>
       <label>Brush size <span id="brushSizeValue">1 hex</span><input id="brushSize" type="range" min="0" max="5" step="1" value="0"></label>
     </section>
-    <p id="editorHint">Select a region, enable Paint, then hold and drag across the map. Brush size controls the radius. Shared regions load from the site. Export your changes as JSON to publish them.</p>
     <div class="editor-data-actions"><button id="exportData" type="button">Export data</button><label class="file-button" for="importData">Import data</label></div><input id="importData" type="file" accept="application/json">
   </div>
 </div>
@@ -177,7 +177,7 @@
   try{var saved=localStorage.getItem(STORE);if(saved){applyRegionData(JSON.parse(saved));hasLocalDraft=true;}}catch(err){console.warn('Could not load saved overlay data',err);}
   layerNames.forEach(function(k){overlayGroups[k]=L.layerGroup();});
   function saveData(){try{localStorage.setItem(STORE,JSON.stringify(regionData));hasLocalDraft=true;}catch(err){setHint('Could not save in this browser. Download the JSON draft as a backup.');}}
-  function setHint(t){document.getElementById('editorHint').textContent=t;}
+  function setHint(t){}
   function currentLayer(){return document.getElementById('layerSelect').value;}
   function selectedRegion(){var id=document.getElementById('regionSelect').value;return regionData[currentLayer()].find(function(r){return r.id===id;});}
   function refreshRegions(preferred){var sel=document.getElementById('regionSelect'),arr=regionData[currentLayer()];sel.innerHTML='';arr.forEach(function(r){var o=document.createElement('option');o.value=r.id;o.textContent=r.name;sel.appendChild(o);});if(preferred&&arr.some(function(r){return r.id===preferred;}))sel.value=preferred;if(!arr.length){var o=document.createElement('option');o.value='';o.textContent='No regions yet';sel.appendChild(o);}}
