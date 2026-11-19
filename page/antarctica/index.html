@@ -3,119 +3,81 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Antarctica Unfrozen: 5-mile hex atlas</title>
-<meta name="description" content="A hex-map atlas of an ice-free Antarctica moved to the Northern Hemisphere, built from real sub-ice terrain data. 52 sheets at 5 miles per hex.">
+<title>Antarctica Unfrozen: explore the map</title>
+<meta name="description" content="Pan and zoom the whole 5-mile hex map of an ice-free Antarctica moved to the Northern Hemisphere.">
+<link rel="stylesheet" href="leaflet/leaflet.css">
 <style>
-  :root{--paper:#eee5cc;--ink:#28201a;--soft:#6b5d4c;--line:#b9a987;--accent:#7a2e1c}
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 Georgia,"Iowan Old Style","Times New Roman",serif}
-  main{max-width:1000px;margin:0 auto;padding:22px 16px 56px}
-  a{color:var(--accent)}
-  nav{font:14px/1 system-ui,sans-serif;margin:0 0 26px}
-  nav a{text-decoration:none}
-  nav a:hover{text-decoration:underline}
-  h1{font-size:clamp(1.7rem,5vw,2.6rem);line-height:1.1;margin:0 0 6px;letter-spacing:.02em}
-  .sub{color:var(--soft);font-style:italic;margin:0 0 20px}
-  p{max-width:64ch;margin:0 0 14px}
-  .how{border-left:4px solid var(--accent);padding:2px 0 2px 14px;margin:20px 0}
-  .map{position:relative;margin:22px 0 10px;border:2px solid var(--ink);line-height:0;background:#24466a}
-  .map img{width:100%;height:auto;display:block}
-  .sheet{position:absolute;display:flex;align-items:flex-start;justify-content:flex-end;border:1px solid transparent;text-decoration:none;line-height:1}
-  .sheet span{opacity:0;margin:4px;padding:3px 6px;background:var(--paper);color:var(--ink);font:700 13px/1 system-ui,sans-serif;border-radius:2px}
-  .sheet:hover,.sheet:focus-visible{background:rgba(255,236,170,.3);border-color:#fff3c4;outline:none;box-shadow:0 0 0 2px var(--accent) inset}
-  .sheet:hover span,.sheet:focus-visible span{opacity:1}
-  .sheet span::before{content:"\2193  "}
-  .explore{display:inline-block;margin:4px 0 4px;padding:10px 16px;background:var(--accent);color:#fff8e6;text-decoration:none;font:600 15px/1.2 system-ui,sans-serif;border-radius:3px}
-  .explore:hover,.explore:focus-visible{background:#5e2112}
-  .more{margin-top:34px;padding:16px 18px;border:1px solid var(--line);background:rgba(255,255,255,.35)}
-  .more p{margin:0}
-  .cap{font-size:.86rem;color:var(--soft);margin:0 0 26px}
-  h2{font-size:1.15rem;margin:26px 0 8px;letter-spacing:.03em}
-  ul{margin:0 0 14px;padding-left:20px;max-width:64ch}
-  li{margin-bottom:6px}
-  footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);font-size:.86rem;color:var(--soft)}
-  @media (max-width:600px){.sheet span{display:none}}
+  html,body{height:100%;margin:0}
+  body{background:#24486c;color:#28201a;font:15px/1.4 Georgia,"Times New Roman",serif}
+  #map{position:absolute;inset:0;background:#24486c}
+  .panel{position:absolute;z-index:1000;background:rgba(238,229,204,.94);border:1px solid #28201a;border-radius:3px;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+  #head{top:10px;left:54px;padding:8px 12px;max-width:calc(100vw - 130px)}
+  #head h1{font-size:1.05rem;margin:0 0 3px;letter-spacing:.02em}
+  #head a{color:#7a2e1c;font:13px/1.5 system-ui,sans-serif;text-decoration:none;margin-right:12px;white-space:nowrap}
+  #head a:hover{text-decoration:underline}
+  #read{bottom:22px;left:10px;padding:6px 10px;font:600 14px/1.3 system-ui,sans-serif;min-width:11em}
+  #read small{font-weight:400;color:#6b5d4c}
+  .ruin{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee5cc;border:2px solid #28201a;font:700 17px/1 Georgia,serif;color:#28201a;box-shadow:0 1px 4px rgba(0,0,0,.4)}
+  .leaflet-container{font:14px/1.4 system-ui,sans-serif}
+  .leaflet-popup-content a{color:#7a2e1c;font-weight:600}
 </style>
 </head>
 <body>
-<main>
-  <nav><a href="/">&larr; krisfricke.github.io</a></nav>
+<div id="map"></div>
+<div id="head" class="panel">
   <h1>Antarctica Unfrozen</h1>
-  <p class="sub">A 5-mile hex atlas of an ice-free Antarctica, moved to the Northern Hemisphere</p>
-  <p>Take the real bedrock under the Antarctic ice, turn the continent so the Peninsula points north, and slide it up until the south coast sits at the latitude of Sicily. This is what grows there: forest in the south, taiga and tundra through the middle, glaciers in the far north.</p>
-  <p class="how"><strong>Click any square on the map to download that sheet.</strong> There are 52 sheets, each 96 &times; 68 hexes (416 &times; 340 miles) at 5 miles per hex, about 4000 &times; 3600 pixels.</p>
-  <p><a class="explore" href="explore/">Explore the whole map in your browser &rarr;</a></p>
-  <div class="map">
-    <img src="antarctica_hex_index.jpg" width="2278" height="3198" alt="Index map of the relocated, ice-free Antarctica divided into lettered and numbered sheets">
-    <a class="sheet" href="sheets/antarctica_hex_C1.jpg" download="antarctica_hex_C1.jpg" title="Download sheet C1" aria-label="Download sheet C1" style="left:29.266%;top:0.000%;width:14.735%;height:8.555%"><span>C1</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_D1.jpg" download="antarctica_hex_D1.jpg" title="Download sheet D1" aria-label="Download sheet D1" style="left:43.949%;top:0.000%;width:14.735%;height:8.555%"><span>D1</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_C2.jpg" download="antarctica_hex_C2.jpg" title="Download sheet C2" aria-label="Download sheet C2" style="left:29.266%;top:8.492%;width:14.735%;height:8.618%"><span>C2</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_B3.jpg" download="antarctica_hex_B3.jpg" title="Download sheet B3" aria-label="Download sheet B3" style="left:14.582%;top:17.047%;width:14.735%;height:8.618%"><span>B3</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_C3.jpg" download="antarctica_hex_C3.jpg" title="Download sheet C3" aria-label="Download sheet C3" style="left:29.266%;top:17.047%;width:14.735%;height:8.618%"><span>C3</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_A4.jpg" download="antarctica_hex_A4.jpg" title="Download sheet A4" aria-label="Download sheet A4" style="left:0.000%;top:25.602%;width:14.633%;height:8.618%"><span>A4</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_B4.jpg" download="antarctica_hex_B4.jpg" title="Download sheet B4" aria-label="Download sheet B4" style="left:14.582%;top:25.602%;width:14.735%;height:8.618%"><span>B4</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_C4.jpg" download="antarctica_hex_C4.jpg" title="Download sheet C4" aria-label="Download sheet C4" style="left:29.266%;top:25.602%;width:14.735%;height:8.618%"><span>C4</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_D4.jpg" download="antarctica_hex_D4.jpg" title="Download sheet D4" aria-label="Download sheet D4" style="left:43.949%;top:25.602%;width:14.735%;height:8.618%"><span>D4</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_E4.jpg" download="antarctica_hex_E4.jpg" title="Download sheet E4" aria-label="Download sheet E4" style="left:58.633%;top:25.602%;width:14.735%;height:8.618%"><span>E4</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_F4.jpg" download="antarctica_hex_F4.jpg" title="Download sheet F4" aria-label="Download sheet F4" style="left:73.317%;top:25.602%;width:14.735%;height:8.618%"><span>F4</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_A5.jpg" download="antarctica_hex_A5.jpg" title="Download sheet A5" aria-label="Download sheet A5" style="left:0.000%;top:34.157%;width:14.633%;height:8.618%"><span>A5</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_B5.jpg" download="antarctica_hex_B5.jpg" title="Download sheet B5" aria-label="Download sheet B5" style="left:14.582%;top:34.157%;width:14.735%;height:8.618%"><span>B5</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_C5.jpg" download="antarctica_hex_C5.jpg" title="Download sheet C5" aria-label="Download sheet C5" style="left:29.266%;top:34.157%;width:14.735%;height:8.618%"><span>C5</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_D5.jpg" download="antarctica_hex_D5.jpg" title="Download sheet D5" aria-label="Download sheet D5" style="left:43.949%;top:34.157%;width:14.735%;height:8.618%"><span>D5</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_E5.jpg" download="antarctica_hex_E5.jpg" title="Download sheet E5" aria-label="Download sheet E5" style="left:58.633%;top:34.157%;width:14.735%;height:8.618%"><span>E5</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_F5.jpg" download="antarctica_hex_F5.jpg" title="Download sheet F5" aria-label="Download sheet F5" style="left:73.317%;top:34.157%;width:14.735%;height:8.618%"><span>F5</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_A6.jpg" download="antarctica_hex_A6.jpg" title="Download sheet A6" aria-label="Download sheet A6" style="left:0.000%;top:42.712%;width:14.633%;height:8.618%"><span>A6</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_B6.jpg" download="antarctica_hex_B6.jpg" title="Download sheet B6" aria-label="Download sheet B6" style="left:14.582%;top:42.712%;width:14.735%;height:8.618%"><span>B6</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_C6.jpg" download="antarctica_hex_C6.jpg" title="Download sheet C6" aria-label="Download sheet C6" style="left:29.266%;top:42.712%;width:14.735%;height:8.618%"><span>C6</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_D6.jpg" download="antarctica_hex_D6.jpg" title="Download sheet D6" aria-label="Download sheet D6" style="left:43.949%;top:42.712%;width:14.735%;height:8.618%"><span>D6</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_E6.jpg" download="antarctica_hex_E6.jpg" title="Download sheet E6" aria-label="Download sheet E6" style="left:58.633%;top:42.712%;width:14.735%;height:8.618%"><span>E6</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_F6.jpg" download="antarctica_hex_F6.jpg" title="Download sheet F6" aria-label="Download sheet F6" style="left:73.317%;top:42.712%;width:14.735%;height:8.618%"><span>F6</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_A7.jpg" download="antarctica_hex_A7.jpg" title="Download sheet A7" aria-label="Download sheet A7" style="left:0.000%;top:51.267%;width:14.633%;height:8.618%"><span>A7</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_C7.jpg" download="antarctica_hex_C7.jpg" title="Download sheet C7" aria-label="Download sheet C7" style="left:29.266%;top:51.267%;width:14.735%;height:8.618%"><span>C7</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_D7.jpg" download="antarctica_hex_D7.jpg" title="Download sheet D7" aria-label="Download sheet D7" style="left:43.949%;top:51.267%;width:14.735%;height:8.618%"><span>D7</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_E7.jpg" download="antarctica_hex_E7.jpg" title="Download sheet E7" aria-label="Download sheet E7" style="left:58.633%;top:51.267%;width:14.735%;height:8.618%"><span>E7</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_F7.jpg" download="antarctica_hex_F7.jpg" title="Download sheet F7" aria-label="Download sheet F7" style="left:73.317%;top:51.267%;width:14.735%;height:8.618%"><span>F7</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_G7.jpg" download="antarctica_hex_G7.jpg" title="Download sheet G7" aria-label="Download sheet G7" style="left:88.001%;top:51.267%;width:11.999%;height:8.618%"><span>G7</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_B8.jpg" download="antarctica_hex_B8.jpg" title="Download sheet B8" aria-label="Download sheet B8" style="left:14.582%;top:59.822%;width:14.735%;height:8.618%"><span>B8</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_C8.jpg" download="antarctica_hex_C8.jpg" title="Download sheet C8" aria-label="Download sheet C8" style="left:29.266%;top:59.822%;width:14.735%;height:8.618%"><span>C8</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_D8.jpg" download="antarctica_hex_D8.jpg" title="Download sheet D8" aria-label="Download sheet D8" style="left:43.949%;top:59.822%;width:14.735%;height:8.618%"><span>D8</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_E8.jpg" download="antarctica_hex_E8.jpg" title="Download sheet E8" aria-label="Download sheet E8" style="left:58.633%;top:59.822%;width:14.735%;height:8.618%"><span>E8</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_F8.jpg" download="antarctica_hex_F8.jpg" title="Download sheet F8" aria-label="Download sheet F8" style="left:73.317%;top:59.822%;width:14.735%;height:8.618%"><span>F8</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_G8.jpg" download="antarctica_hex_G8.jpg" title="Download sheet G8" aria-label="Download sheet G8" style="left:88.001%;top:59.822%;width:11.999%;height:8.618%"><span>G8</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_A9.jpg" download="antarctica_hex_A9.jpg" title="Download sheet A9" aria-label="Download sheet A9" style="left:0.000%;top:68.377%;width:14.633%;height:8.618%"><span>A9</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_B9.jpg" download="antarctica_hex_B9.jpg" title="Download sheet B9" aria-label="Download sheet B9" style="left:14.582%;top:68.377%;width:14.735%;height:8.618%"><span>B9</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_C9.jpg" download="antarctica_hex_C9.jpg" title="Download sheet C9" aria-label="Download sheet C9" style="left:29.266%;top:68.377%;width:14.735%;height:8.618%"><span>C9</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_D9.jpg" download="antarctica_hex_D9.jpg" title="Download sheet D9" aria-label="Download sheet D9" style="left:43.949%;top:68.377%;width:14.735%;height:8.618%"><span>D9</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_E9.jpg" download="antarctica_hex_E9.jpg" title="Download sheet E9" aria-label="Download sheet E9" style="left:58.633%;top:68.377%;width:14.735%;height:8.618%"><span>E9</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_F9.jpg" download="antarctica_hex_F9.jpg" title="Download sheet F9" aria-label="Download sheet F9" style="left:73.317%;top:68.377%;width:14.735%;height:8.618%"><span>F9</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_G9.jpg" download="antarctica_hex_G9.jpg" title="Download sheet G9" aria-label="Download sheet G9" style="left:88.001%;top:68.377%;width:11.999%;height:8.618%"><span>G9</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_A10.jpg" download="antarctica_hex_A10.jpg" title="Download sheet A10" aria-label="Download sheet A10" style="left:0.000%;top:76.932%;width:14.633%;height:8.618%"><span>A10</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_B10.jpg" download="antarctica_hex_B10.jpg" title="Download sheet B10" aria-label="Download sheet B10" style="left:14.582%;top:76.932%;width:14.735%;height:8.618%"><span>B10</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_C10.jpg" download="antarctica_hex_C10.jpg" title="Download sheet C10" aria-label="Download sheet C10" style="left:29.266%;top:76.932%;width:14.735%;height:8.618%"><span>C10</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_D10.jpg" download="antarctica_hex_D10.jpg" title="Download sheet D10" aria-label="Download sheet D10" style="left:43.949%;top:76.932%;width:14.735%;height:8.618%"><span>D10</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_E10.jpg" download="antarctica_hex_E10.jpg" title="Download sheet E10" aria-label="Download sheet E10" style="left:58.633%;top:76.932%;width:14.735%;height:8.618%"><span>E10</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_F10.jpg" download="antarctica_hex_F10.jpg" title="Download sheet F10" aria-label="Download sheet F10" style="left:73.317%;top:76.932%;width:14.735%;height:8.618%"><span>F10</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_B11.jpg" download="antarctica_hex_B11.jpg" title="Download sheet B11" aria-label="Download sheet B11" style="left:14.582%;top:85.487%;width:14.735%;height:8.618%"><span>B11</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_C11.jpg" download="antarctica_hex_C11.jpg" title="Download sheet C11" aria-label="Download sheet C11" style="left:29.266%;top:85.487%;width:14.735%;height:8.618%"><span>C11</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_D11.jpg" download="antarctica_hex_D11.jpg" title="Download sheet D11" aria-label="Download sheet D11" style="left:43.949%;top:85.487%;width:14.735%;height:8.618%"><span>D11</span></a>
-    <a class="sheet" href="sheets/antarctica_hex_E11.jpg" download="antarctica_hex_E11.jpg" title="Download sheet E11" aria-label="Download sheet E11" style="left:58.633%;top:85.487%;width:14.735%;height:8.618%"><span>E11</span></a>
-  </div>
-  <p class="cap">Sheets are lettered A to G west to east and numbered 1 to 12 north to south. Squares with no land have no sheet.</p>
-  <h2>Using the sheets</h2>
-  <ul>
-    <li>Hexes are numbered column-row (0101 is top left) within each sheet. The footer names the adjoining sheets.</li>
-    <li>Each hex has one terrain type, shown by its fill and symbol. Coasts, lakes and rivers follow the real terrain.</li>
-    <li>The actual South Pole is marked with a ruins symbol on sheet C7, hex 8203. It lies just offshore.</li>
-  </ul>
-  <h2>How it was made</h2>
-  <ul>
-    <li>Elevation is the GEBCO 2026 sub-ice grid: bedrock as it sits today, with no rebound after the ice is removed and sea level at 0 m.</li>
-    <li>Climate, biomes and rivers are modelled from latitude, elevation and distance from the sea. They are plausible, not predictions.</li>
-  </ul>
-  <div class="more">
-    <p>If you enjoyed this, please check out my biggest project: <a href="https://krisfricke.github.io/Silk-Road/"><strong>The Silk Road</strong></a>, a game in homage to the classic <i>Oregon Trail</i>, set on the ancient Silk Road. The map-making techniques I developed for that project fed directly into this one.</p>
-  </div>
-  <footer>Terrain data: GEBCO Compilation Group (2026), GEBCO 2026 Grid. Map by Kris Fricke. <a href="/">Back to krisfricke.github.io</a></footer>
-</main>
+  <a href="../">&larr; Atlas and sheet downloads</a><a href="/">krisfricke.github.io</a>
+</div>
+<div id="read" class="panel"><small>Move over the map for hex references</small></div>
+<script src="leaflet/leaflet.js"></script>
+<script>
+(function(){
+  var WN=27171, HN=36345, Z=7, S=8.04672, R=S/Math.sqrt(3), CS=1.5*R, KPP=S/48, SC=96, SR=68, YS=5873;
+  var LAND=["C1", "D1", "C2", "B3", "C3", "A4", "B4", "C4", "D4", "E4", "F4", "A5", "B5", "C5", "D5", "E5", "F5", "A6", "B6", "C6", "D6", "E6", "F6", "A7", "C7", "D7", "E7", "F7", "G7", "B8", "C8", "D8", "E8", "F8", "G8", "A9", "B9", "C9", "D9", "E9", "F9", "G9", "A10", "B10", "C10", "D10", "E10", "F10", "B11", "C11", "D11", "E11"], POLE=[1900.0,3300.0];
+  var map=L.map('map',{crs:L.CRS.Simple,minZoom:1,maxZoom:Z,zoomSnap:0.5,wheelPxPerZoomLevel:90});
+  var ll=function(px,py){return map.unproject([px,py],Z)};
+  var bounds=L.latLngBounds(ll(0,HN),ll(WN,0));
+  L.tileLayer('tiles/{z}/{x}/{y}.jpg',{tileSize:512,minZoom:0,maxZoom:Z,bounds:bounds,noWrap:true,errorTileUrl:'ocean.jpg',
+    attribution:'Terrain: GEBCO 2026 Grid. Climate and biomes modelled.'}).addTo(map);
+  map.setMaxBounds(bounds.pad(0.15));
+  var m=/^#(\d+(?:\.\d+)?)\/(\d+)\/(\d+)$/.exec(location.hash);
+  if(m) map.setView(ll(+m[2],+m[3]),Math.min(Z,+m[1])); else map.fitBounds(bounds);
+  map.on('moveend',function(){var p=map.project(map.getCenter(),Z);
+    history.replaceState(null,'','#'+map.getZoom()+'/'+Math.round(p.x)+'/'+Math.round(p.y));});
+
+  function hexOf(x,y){
+    var q=(2/3)*x/R, r=(-x/3+y/Math.sqrt(3))/R, s=-q-r, rq=Math.round(q), rr=Math.round(r), rs=Math.round(s);
+    var dq=Math.abs(rq-q), dr=Math.abs(rr-r), ds=Math.abs(rs-s);
+    if(dq>dr&&dq>ds) rq=-rr-rs; else if(dr>ds) rr=-rq-rs;
+    return [rq, rr+(rq-(rq&1))/2];
+  }
+  var sid=function(i,j){return String.fromCharCode(65+i)+(j+1)}, two=function(n){return (n<10?'0':'')+n};
+  var read=document.getElementById('read');
+  function show(e){
+    var p=map.project(e.latlng,Z);
+    if(p.x<0||p.y<0||p.x>WN||p.y>HN){read.innerHTML='<small>Off the map</small>';return}
+    var h=hexOf(p.x*KPP,p.y*KPP), lat=37+(YS+0.5-p.y*KPP)/111.32;
+    if(h[0]<0||h[1]<0){read.innerHTML='<small>Off the map</small>';return}
+    var i=Math.floor(h[0]/SC), j=Math.floor(h[1]/SR);
+    read.innerHTML='Sheet '+sid(i,j)+' &middot; hex '+two(h[0]%SC+1)+two(h[1]%SR+1)+'<br><small>about '+Math.min(90,lat).toFixed(1)+'&deg;N</small>';
+  }
+  map.on('mousemove',show); map.on('click',show);
+
+  var grid=L.layerGroup();
+  LAND.forEach(function(s){
+    var i=s.charCodeAt(0)-65, j=parseInt(s.slice(1),10)-1;
+    var x0=Math.max(0,(i*SC*CS-R)/KPP), y0=Math.max(0,(j*SR*S-S/2)/KPP), x1=Math.min(WN,((i+1)*SC*CS-0.5*R)/KPP), y1=Math.min(HN,((j+1)*SR*S)/KPP);
+    L.rectangle([ll(x0,y1),ll(x1,y0)],{color:'#fff3c4',weight:1.5,fillColor:'#fff3c4',fillOpacity:0.02})
+      .bindTooltip('Sheet '+s,{sticky:true})
+      .bindPopup('<a href="../sheets/antarctica_hex_'+s+'.jpg" download="antarctica_hex_'+s+'.jpg">Download sheet '+s+'</a>')
+      .addTo(grid);
+  });
+  var ph=hexOf(POLE[0],POLE[1]), pc=[CS*ph[0]/KPP, S*(ph[1]+0.5*(ph[0]&1))/KPP];
+  var ruins=L.marker(ll(pc[0],pc[1]),{icon:L.divIcon({className:'',html:'<div class="ruin" aria-label="Ruins">&there4;</div>',iconSize:[26,26],iconAnchor:[13,13]}),title:'South Pole ruins'})
+    .bindPopup('<b>The South Pole</b><br>Drowned ruins, just offshore.<br>Sheet '+sid(Math.floor(ph[0]/SC),Math.floor(ph[1]/SR))+', hex '+two(ph[0]%SC+1)+two(ph[1]%SR+1)+'.').addTo(map);
+  L.control.layers(null,{'Sheet grid (click a sheet to download)':grid,'South Pole ruins':ruins},{collapsed:false,position:'topright'}).addTo(map);
+  L.control.scale({imperial:false,metric:false}).addTo(map);
+})();
+</script>
 </body>
 </html>
