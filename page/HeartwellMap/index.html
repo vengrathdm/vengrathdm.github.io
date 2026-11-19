@@ -287,7 +287,7 @@
 (function(){
   var WN=1582, HN=2048, Z=2, S=8.04672, R=S/Math.sqrt(3), CS=1.5*R, KPP=S/48, SC=96, SR=68, YS=5873;
   var LAND=["A1"], POLE=[0,0];
-  var map=L.map('map',{crs:L.CRS.Simple,minZoom:1,maxZoom:Z,zoomSnap:0.5,wheelPxPerZoomLevel:90,attributionControl:false,zoomControl:false});
+  var map=L.map('map',{crs:L.CRS.Simple,minZoom:1,maxZoom:5,zoomSnap:0.25,zoomDelta:0.5,wheelPxPerZoomLevel:60,attributionControl:false,zoomControl:false});
   var ll=function(px,py){return map.unproject([px,py],Z)};
   var bounds=L.latLngBounds(ll(0,HN),ll(WN,0));
   L.imageOverlay('map.jpg',bounds,{interactive:false}).addTo(map);
