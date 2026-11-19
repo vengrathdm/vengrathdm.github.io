@@ -393,7 +393,24 @@
   function openPanel(id){closePanels();document.getElementById(id).hidden=false;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','true');}
   function selectHexAt(latlng){var event={latlng:latlng};show(event);presentHex(latlng);openPanel('presenter');}
   map.on('click',function(e){if(placingPin){var key=hexAddressAt(e.latlng);if(!key){cancelPinPlacement();return;}cancelPinPlacement();openPinDialog(key);return;}if(!document.getElementById('editor').hidden){show(e);presentHex(e.latlng);return;}selectHexAt(e.latlng);});
-  document.addEventListener('click',function(e){if(!placingPin)return;var target=e.target;if(target.closest&&target.closest('#placePinButton'))return;if(target.closest&&target.closest('#pinDialog'))return;var mapPane=target.closest&&target.closest('.leaflet-map-pane'),nonHex=target.closest&&(target.closest('.leaflet-marker-icon')||target.closest('.leaflet-interactive'));if(!mapPane||nonHex||e.button!==0){cancelPinPlacement();}} ,true);
+  document.addEventListener('click',function(e){
+    if(!placingPin)return;
+    var target=e.target;
+    if(target.closest&&target.closest('#placePinButton'))return;
+    if(target.closest&&target.closest('#pinDialog'))return;
+    var mapContainer=target.closest&&target.closest('#map');
+    if(mapContainer&&e.button===0){
+      var latlng=map.mouseEventToLatLng(e),key=hexAddressAt(latlng);
+      if(key){
+        e.preventDefault();e.stopPropagation();
+        cancelPinPlacement();openPinDialog(key);
+        return;
+      }
+      cancelPinPlacement();
+      return;
+    }
+    cancelPinPlacement();
+  },true);
   fetch(DATA_URL,{cache:'no-store'}).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json();}).then(function(shared){if(!hasLocalDraft){applyRegionData(shared);renderAll();refreshRegions();renderPins();}else if(!hasLocalPins){pinData=Array.isArray(shared.pins)?shared.pins:[];renderPins();}}).catch(function(err){console.warn('Could not load shared region data',err);if(!hasLocalDraft)setHint('Shared region data could not be loaded.');});
   enhanceEditorSelect(document.getElementById('layerSelect'));
   enhanceEditorSelect(document.getElementById('regionSelect'));
