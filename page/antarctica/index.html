@@ -67,6 +67,27 @@
   .editor-data-actions{display:flex;flex-direction:column;align-items:center;gap:0;margin-top:5px}
   #editor .editor-data-actions button,#editor .editor-data-actions .file-button{box-sizing:border-box;width:180px;margin:7px 0 0;text-align:center}
   #importData{display:none}
+  .region-dialog{position:fixed;z-index:100001;left:50%;top:50%;transform:translate(-50%,-50%);box-sizing:border-box;width:390px;max-width:calc(100vw - 32px);max-height:calc(100vh - 32px);overflow-y:auto;padding:16px;background:rgba(23,37,43,.98);color:#f3ead7;border:1px solid rgba(222,198,145,.78);border-radius:5px;box-shadow:0 16px 48px rgba(0,0,0,.62);backdrop-filter:blur(14px);font:13px/1.45 system-ui,sans-serif}
+  .region-dialog[hidden]{display:none!important}
+  .region-dialog h2{margin:0 0 4px;color:#efd59c;font:1.2rem Voltaire,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+  .region-dialog-sub{margin:0 0 10px;color:#c5b99f;font:11px/1.4 system-ui,sans-serif}
+  .region-dialog label{display:block;margin-top:9px;color:#e7d9bb;font:600 12px/1.4 system-ui,sans-serif}
+  .region-dialog input,.region-dialog textarea,.region-dialog select{box-sizing:border-box;width:100%;margin-top:4px;padding:8px;border:1px solid #82745e;border-radius:3px;background:#fffaf0;color:#28201a;font:13px/1.4 system-ui,sans-serif}
+  .region-dialog input[type=color]{height:36px;padding:3px}
+  .region-dialog textarea{min-height:72px;resize:vertical}
+  .region-dialog-actions{display:flex;justify-content:flex-end;gap:7px;margin-top:14px}
+  .region-dialog-actions button{padding:7px 11px;border:1px solid #8a795a;border-radius:3px;background:#e5d7b8;color:#28201a;font:600 12px system-ui,sans-serif;cursor:pointer}
+  .region-dialog-actions button.primary{background:#665640;color:#fff8e8;border-color:#b9a47c}
+  .region-dialog-actions button.danger{background:#75483e;color:#fff2e8;border-color:#b98170}
+  .region-dialog-actions button:disabled{opacity:.45;cursor:not-allowed}
+  .delete-region-list{display:grid;gap:6px;max-height:290px;overflow:auto;margin-top:10px;padding:2px}
+  .delete-region-option{display:grid;grid-template-columns:18px 14px minmax(0,1fr);align-items:start;gap:8px;padding:9px;border:1px solid rgba(222,198,145,.3);border-radius:4px;background:rgba(255,255,255,.035);cursor:pointer}
+  .delete-region-option.selected{border-color:#c4a879;background:rgba(102,86,64,.38)}
+  .delete-region-option input{width:auto;margin:2px 0 0;accent-color:#d5bd8b}
+  .delete-region-swatch{width:13px;height:13px;margin-top:2px;border:1px solid rgba(255,255,255,.45);border-radius:2px}
+  .delete-region-name{color:#fff2d4;font-weight:700}
+  .delete-region-meta{color:#c5b99f;font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+  .delete-region-description{margin-top:3px;color:#d5cbb8;font:12px/1.4 Georgia,serif;overflow-wrap:anywhere}
   #pinDialog{position:fixed!important;z-index:99999!important;left:50vw;top:50vh;right:auto;bottom:auto;transform:translate(-50%,-50%);box-sizing:border-box;width:340px;max-width:calc(100vw - 32px);max-height:calc(100vh - 32px);overflow-y:auto;padding:16px;background:rgba(23,37,43,.98);color:#f3ead7;border:1px solid rgba(222,198,145,.78);border-radius:5px;box-shadow:0 16px 48px rgba(0,0,0,.62);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font:13px/1.45 system-ui,sans-serif;pointer-events:auto}
   #pinDialog[hidden]{display:none!important}
   #pinContextMenu{position:fixed;z-index:100000;min-width:184px;max-width:min(260px,calc(100vw - 16px));max-height:calc(100vh - 16px);overflow-y:auto;padding:4px;background:rgba(23,37,43,.98);border:1px solid rgba(222,198,145,.7);border-radius:4px;box-shadow:0 8px 24px rgba(0,0,0,.5);font:13px/1.4 system-ui,sans-serif}
@@ -159,9 +180,7 @@
     <section class="editor-section">
       <h3>Region</h3>
       <div class="editor-field"><span class="editor-field-label">Region</span><select id="regionSelect"><option value="">Create a region first</option></select></div>
-      <label>New region name<input id="regionName" type="text" placeholder="e.g. Temperate Forest"></label>
-      <label>Region colour <input id="regionColor" type="color" value="#668b54"></label>
-      <div class="editor-action-row"><button id="createRegion" type="button">Create region</button><button id="deleteRegion" type="button">Delete selected region</button></div>
+      <div class="editor-action-row"><button id="createRegion" type="button">Create Region</button><button id="deleteRegion" type="button">Delete Region</button></div>
     </section>
     <section class="editor-section">
       <h3>Brush</h3>
@@ -170,6 +189,26 @@
     </section>
     <div class="editor-data-actions"><button id="exportData" type="button">Export data</button><label class="file-button" for="importData">Import data</label></div><input id="importData" type="file" accept="application/json">
   </div>
+</div>
+<div id="regionCreateDialog" class="region-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="regionCreateTitle">
+  <h2 id="regionCreateTitle">Create Region</h2>
+  <p class="region-dialog-sub">Configure a new overlay region.</p>
+  <form id="regionCreateForm">
+    <label>Layer<select id="newRegionLayer"><option value="political">Political</option><option value="geographical">Geographical</option></select></label>
+    <label>Region name<input id="newRegionName" type="text" maxlength="100" required placeholder="e.g. Temperate Forest"></label>
+    <label>Region colour<input id="newRegionColor" type="color" value="#668b54"></label>
+    <label>Description<textarea id="newRegionDescription" maxlength="1000" placeholder="Describe this region..."></textarea></label>
+    <label>Fill style<select id="newRegionFill"><option value="none">None — borders only</option><option value="tint">Subtle colour fill</option><option value="hatch">Hatched fill</option></select></label>
+    <div class="region-dialog-actions"><button type="button" data-close-region-dialog>Cancel</button><button type="submit" class="primary">Create Region</button></div>
+  </form>
+</div>
+<div id="regionDeleteDialog" class="region-dialog region-delete-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="regionDeleteTitle">
+  <h2 id="regionDeleteTitle">Delete Region</h2>
+  <p class="region-dialog-sub">Choose one region to remove. The list is filtered by layer.</p>
+  <label>Layer<select id="deleteRegionLayer"><option value="political">Political</option><option value="geographical">Geographical</option></select></label>
+  <div id="deleteRegionList" class="delete-region-list"></div>
+  <p id="deleteRegionEmpty" class="region-dialog-sub" hidden>No regions exist in this layer.</p>
+  <div class="region-dialog-actions"><button type="button" data-close-region-dialog>Cancel</button><button type="button" id="confirmDeleteRegion" class="danger" disabled>Delete Selected Region</button></div>
 </div>
 <div id="pinDialog" hidden role="dialog" aria-modal="true" aria-labelledby="pinDialogTitle">
   <h2 id="pinDialogTitle">Record a point</h2>
@@ -221,7 +260,7 @@
       if(!Array.isArray(data&&data[k]))return;
       var claimed=Object.create(null);
       regionData[k]=data[k].filter(function(r){return r&&typeof r.id==='string'&&typeof r.name==='string'&&/^#[0-9a-f]{6}$/i.test(r.color)&&Array.isArray(r.hexes);}).map(function(r){
-        var copy={id:r.id,name:r.name,color:r.color,hexes:[]};
+        var copy={id:r.id,name:r.name,color:r.color,description:typeof r.description==='string'?r.description:'',fillStyle:['none','tint','hatch'].indexOf(r.fillStyle)!==-1?r.fillStyle:(k==='political'?'hatch':'none'),hexes:[]};
         r.hexes.forEach(function(key){if(typeof key==='string'&&!claimed[key]&&parseAddress(key)){claimed[key]=true;copy.hexes.push(key);}});
         return copy;
       });
@@ -320,8 +359,10 @@
       var unique=Array.from(new Set(region.hexes)),valid=[];
       unique.forEach(function(key){
         var pts=hexVertices(key);if(!pts)return;valid.push(key);
-        if(k==='political'){
-          L.polygon(pts.map(function(p){return ll(p[0],p[1]);}),{stroke:false,fillColor:region.color,fillOpacity:.055,interactive:false}).addTo(group);
+        if(region.fillStyle==='tint'){
+          L.polygon(pts.map(function(p){return ll(p[0],p[1]);}),{stroke:false,fillColor:region.color,fillOpacity:k==='political'?.09:.16,interactive:false}).addTo(group);
+        }else if(region.fillStyle==='hatch'){
+          L.polygon(pts.map(function(p){return ll(p[0],p[1]);}),{stroke:false,fillColor:region.color,fillOpacity:.035,interactive:false}).addTo(group);
           hatchHex(pts,region.color,group);
         }
         for(var n=0;n<6;n++){
@@ -396,14 +437,18 @@
   document.getElementById('placePinButton').addEventListener('click',beginPinPlacement);
   document.getElementById('cancelPin').addEventListener('click',function(){closePinDialog();cancelPinPlacement();});
   document.addEventListener('click',function(e){if(!e.target.closest||!e.target.closest('#pinContextMenu'))closePinContextMenu();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closePinContextMenu();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closePinContextMenu();closeRegionDialogs();}});
   window.addEventListener('resize',closePinContextMenu);
   document.getElementById('pinForm').addEventListener('submit',function(e){e.preventDefault();if(!pendingPinHex)return;var name=document.getElementById('pinName').value.trim();if(!name){document.getElementById('pinName').focus();return;}var updated={id:editingPinId||('p'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)),name:name,style:document.getElementById('pinStyle').value,description:document.getElementById('pinDescription').value.trim(),hex:pendingPinHex};if(editingPinId){var index=pinData.findIndex(function(p){return p.id===editingPinId;});if(index!==-1)pinData[index]=updated;else pinData.push(updated);}else pinData.push(updated);saveData();renderPins();closePinDialog();cancelPinPlacement();});
   document.getElementById('layerSelect').addEventListener('change',function(){stopEditing();refreshRegions();setHint('Select a region, enable Paint, then hold and drag across the map.');});
-  document.getElementById('createRegion').addEventListener('click',function(){var name=document.getElementById('regionName').value.trim();if(!name){setHint('Enter a region name first.');return;}var normalized=name.replace(/\\s+/g,' ').toLocaleLowerCase();var duplicate=regionData[currentLayer()].some(function(r){return r.name.replace(/\\s+/g,' ').trim().toLocaleLowerCase()===normalized;});if(duplicate){setHint('A region with that name already exists in this layer. Choose a unique name.');document.getElementById('regionName').focus();return;}var region={id:'r'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),name:name,color:document.getElementById('regionColor').value,hexes:[]};regionData[currentLayer()].push(region);refreshRegions(region.id);saveData();setHint('Created '+name+'. Enable Paint to assign hexes.');});
-  document.getElementById('regionSelect').addEventListener('change',function(){var r=selectedRegion();if(r){document.getElementById('regionName').value=r.name;document.getElementById('regionColor').value=r.color;}});
-  document.getElementById('regionColor').addEventListener('input',function(){var region=selectedRegion();if(!region)return;region.color=this.value;saveData();renderLayer(currentLayer());});
-  document.getElementById('deleteRegion').addEventListener('click',function(){var region=selectedRegion();if(!region){setHint('Select a region to delete.');return;}regionData[currentLayer()]=regionData[currentLayer()].filter(function(r){return r.id!==region.id;});stopEditing();refreshRegions();document.getElementById('regionName').value='';renderLayer(currentLayer());saveData();setHint('Deleted region '+region.name+'.');});
+  function closeRegionDialogs(){document.getElementById('regionCreateDialog').hidden=true;document.getElementById('regionDeleteDialog').hidden=true;}
+  document.querySelectorAll('[data-close-region-dialog]').forEach(function(button){button.addEventListener('click',closeRegionDialogs);});
+  document.getElementById('createRegion').addEventListener('click',function(){document.getElementById('newRegionLayer').value=currentLayer();document.getElementById('newRegionName').value='';document.getElementById('newRegionColor').value='#668b54';document.getElementById('newRegionDescription').value='';document.getElementById('newRegionFill').value=currentLayer()==='political'?'hatch':'none';document.getElementById('regionCreateDialog').hidden=false;document.getElementById('newRegionName').focus();});
+  document.getElementById('regionCreateForm').addEventListener('submit',function(e){e.preventDefault();var layer=document.getElementById('newRegionLayer').value,name=document.getElementById('newRegionName').value.trim().replace(/\\s+/g,' '),normalized=name.toLocaleLowerCase();if(!name)return;var duplicate=regionData[layer].some(function(r){return r.name.trim().replace(/\\s+/g,' ').toLocaleLowerCase()===normalized;});if(duplicate){setHint('A region with that name already exists in the '+layer+' layer.');document.getElementById('newRegionName').focus();return;}var region={id:'r'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),name:name,color:document.getElementById('newRegionColor').value,description:document.getElementById('newRegionDescription').value.trim(),fillStyle:document.getElementById('newRegionFill').value,hexes:[]};regionData[layer].push(region);if(currentLayer()!==layer){document.getElementById('layerSelect').value=layer;document.getElementById('layerSelect').dispatchEvent(new Event('change',{bubbles:true}));}refreshRegions(region.id);saveData();renderLayer(layer);closeRegionDialogs();setHint('Created '+name+'. Enable Paint to assign hexes.');});
+  function refreshDeleteRegionOptions(){var layer=document.getElementById('deleteRegionLayer').value,list=document.getElementById('deleteRegionList'),regions=regionData[layer];list.innerHTML='';document.getElementById('deleteRegionEmpty').hidden=regions.length!==0;document.getElementById('confirmDeleteRegion').disabled=true;regions.forEach(function(region,index){var label=document.createElement('label');label.className='delete-region-option';var radio=document.createElement('input');radio.type='radio';radio.name='deleteRegionChoice';radio.value=region.id;var swatch=document.createElement('span');swatch.className='delete-region-swatch';swatch.style.background=region.color;var details=document.createElement('span');var name=document.createElement('span');name.className='delete-region-name';name.textContent=region.name;var meta=document.createElement('div');meta.className='delete-region-meta';meta.textContent=(layer==='political'?'Political':'Geographical')+' · '+region.color+' · '+(region.fillStyle||'none');var desc=document.createElement('div');desc.className='delete-region-description';desc.textContent=region.description||'No description provided.';details.appendChild(name);details.appendChild(meta);details.appendChild(desc);label.appendChild(radio);label.appendChild(swatch);label.appendChild(details);radio.addEventListener('change',function(){list.querySelectorAll('.delete-region-option').forEach(function(item){item.classList.remove('selected');});label.classList.add('selected');document.getElementById('confirmDeleteRegion').disabled=false;});list.appendChild(label);});}
+  document.getElementById('deleteRegion').addEventListener('click',function(){document.getElementById('deleteRegionLayer').value=currentLayer();refreshDeleteRegionOptions();document.getElementById('regionDeleteDialog').hidden=false;});
+  document.getElementById('deleteRegionLayer').addEventListener('change',refreshDeleteRegionOptions);
+  document.getElementById('confirmDeleteRegion').addEventListener('click',function(){var layer=document.getElementById('deleteRegionLayer').value,choice=document.querySelector('input[name="deleteRegionChoice"]:checked');if(!choice)return;var region=regionData[layer].find(function(r){return r.id===choice.value;});if(!region)return;regionData[layer]=regionData[layer].filter(function(r){return r.id!==region.id;});if(currentLayer()===layer){if(document.getElementById('regionSelect').value===region.id){stopEditing();refreshRegions();}else refreshRegions(document.getElementById('regionSelect').value);}renderLayer(layer);saveData();closeRegionDialogs();setHint('Deleted region '+region.name+'.');});
   document.querySelectorAll('#brushModeControl button').forEach(function(button){button.addEventListener('click',function(){setBrushMode(this.dataset.mode);});});
   document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(exportableData(),null,2)+'\\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='regions.json';a.click();URL.revokeObjectURL(url);setHint('Downloaded regions.json. Replace page/antarctica/data/regions.json with this file to publish regions and pins.');});
   document.getElementById('importData').addEventListener('change',function(e){var file=e.target.files&&e.target.files[0];if(!file)return;var reader=new FileReader();reader.onload=function(){try{var data=JSON.parse(reader.result);applyRegionData(data);saveData();refreshRegions();renderAll();renderPins();setHint('Overlay and pin data imported.');}catch(err){setHint('Could not import that JSON file.');}};reader.readAsText(file);e.target.value='';});
