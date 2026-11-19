@@ -143,6 +143,12 @@
   .pin-icon{display:flex;align-items:center;justify-content:center;width:28px;height:34px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.55))}
   .pin-icon span{display:flex;align-items:center;justify-content:center;width:24px;height:24px;border:2px solid #28201a;border-radius:50% 50% 50% 2px;transform:rotate(-45deg);background:#eee5cc;color:#28201a;font:700 13px/1 Georgia,serif}
   .pin-icon span b{transform:rotate(45deg);font-weight:700}
+  .pin-icon span{background:var(--pin-color,#eee5cc)!important}
+  .pin-style-preview{display:flex;align-items:center;justify-content:center;min-height:58px;margin-top:8px;padding:8px;border:1px solid rgba(222,198,145,.28);border-radius:4px;background:rgba(10,20,24,.48)}
+  .pin-style-preview .pin-icon{transform:scale(1.25);transform-origin:center}
+  .pin-color-control{display:flex;align-items:center;gap:10px;margin-top:4px}
+  #pinDialog .pin-color-control input[type=color]{width:52px;height:36px;margin:0;padding:3px;border:1px solid rgba(222,198,145,.6);border-radius:3px;background:#17252b;cursor:pointer}
+  .pin-color-sample{display:block;width:64px;height:26px;border:2px solid rgba(255,255,255,.55);border-radius:3px;background:#eee5cc}
   .pin-icon.pin-ruin span{background:#d8c59a}
   .pin-icon.pin-settlement span{background:#c5d0bb}
   .pin-icon.pin-landmark span{background:#d8b7a3}
@@ -270,7 +276,8 @@
   <p class="pin-dialog-sub" id="pinDialogAddress">Wybrany heks</p>
   <form id="pinForm">
     <label>Nazwa znacznika<input id="pinName" type="text" maxlength="100" required placeholder="np. Stare obserwatorium"></label>
-    <label>Rodzaj znacznika<select id="pinStyle"><option value="standard">Zwykły</option><option value="ruin">Ruiny</option><option value="settlement">Osada</option><option value="landmark">Punkt orientacyjny</option><option value="natural">Obiekt przyrodniczy</option></select></label>
+    <label>Rodzaj znacznika<select id="pinStyle"><option value="standard">Zwykły</option><option value="ruin">Ruiny</option><option value="settlement">Osada</option><option value="landmark">Punkt orientacyjny</option><option value="natural">Obiekt przyrodniczy</option></select><span id="pinStylePreview" class="pin-style-preview" aria-label="Podgląd wyglądu znacznika"></span></label>
+    <label>Kolor znacznika<div class="pin-color-control"><input id="pinColor" type="color" value="#eee5cc"><span id="pinColorPreview" class="pin-color-sample"></span></div></label>
     <label>Opis<textarea id="pinDescription" maxlength="2000" placeholder="Opisz to miejsce..."></textarea></label>
     <div class="pin-dialog-actions"><button type="button" id="cancelPin">Anuluj</button><button type="submit" class="primary">Zapisz znacznik</button></div>
   </form>
@@ -324,7 +331,7 @@
       });
     });
     if(data.pins!==undefined&&!Array.isArray(data.pins))throw new Error('Lista znaczników musi być tablicą.');
-    (data.pins||[]).forEach(function(p){if(!p||typeof p.id!=='string'||typeof p.name!=='string'||typeof p.hex!=='string'||!parseAddress(p.hex)||['standard','ruin','settlement','landmark','natural'].indexOf(p.style)===-1)throw new Error('Nieprawidłowy wpis znacznika.');nextPins.push({id:p.id,name:p.name,style:p.style,description:typeof p.description==='string'?p.description:'',hex:p.hex});});
+    (data.pins||[]).forEach(function(p){if(!p||typeof p.id!=='string'||typeof p.name!=='string'||typeof p.hex!=='string'||!parseAddress(p.hex)||['standard','ruin','settlement','landmark','natural'].indexOf(p.style)===-1)throw new Error('Nieprawidłowy wpis znacznika.');nextPins.push({id:p.id,name:p.name,style:p.style,color:typeof p.color==='string'&&/^#[0-9a-f]{6}$/i.test(p.color)?p.color:defaultPinColor(p.style),description:typeof p.description==='string'?p.description:'',hex:p.hex});});
     regionData=next;pinData=nextPins;
   }
   try{var saved=localStorage.getItem(STORE);if(saved){var savedData=JSON.parse(saved);applyRegionData(savedData);hasLocalPins=Array.isArray(savedData.pins);hasLocalDraft=true;}}catch(err){console.warn('Nie udało się wczytać zapisanych danych nakładek',err);}
@@ -468,8 +475,9 @@
     });
   }
   function renderAll(){layerNames.forEach(renderLayer);}
-  function pinIcon(style){var glyph={standard:'•',ruin:'✥',settlement:'⌂',landmark:'★',natural:'✿'}[style]||'•';return L.divIcon({className:'',html:'<div class="pin-icon pin-'+style+'"><span><b>'+glyph+'</b></span></div>',iconSize:[28,34],iconAnchor:[14,32]});}
-  function renderPins(){pinMarkers.clearLayers();pinData.forEach(function(pin){var h=parseAddress(pin.hex);if(!h)return;var point=ll(CS*h[0]/KPP,S*(h[1]+0.5*(h[0]&1))/KPP);L.marker(point,{icon:pinIcon(pin.style),title:pin.name}).bindPopup('<span class="popup-title">'+escapeHtml(pin.name)+'</span><span class="popup-description">'+escapeHtml(pin.description).replace(/\\n/g,'<br>')+'</span><span class="popup-reference">'+escapeHtml(pin.hex.replace(':',' · Hex '))+'</span>',{className:'editorial-popup'}).on('click',function(e){if(placingPin)cancelPinPlacement();selectHexAt(e.latlng);}).addTo(pinMarkers);});}
+  function defaultPinColor(style){return {standard:'#eee5cc',ruin:'#d8c59a',settlement:'#c5d0bb',landmark:'#d8b7a3',natural:'#9dbb91'}[style]||'#eee5cc';}
+  function pinIcon(style,color){var glyph={standard:'•',ruin:'✥',settlement:'⌂',landmark:'★',natural:'✿'}[style]||'•',safeColor=/^#[0-9a-f]{6}$/i.test(color||'')?color:defaultPinColor(style);return L.divIcon({className:'',html:'<div class="pin-icon pin-'+style+'" style="--pin-color:'+safeColor+'"><span><b>'+glyph+'</b></span></div>',iconSize:[28,34],iconAnchor:[14,32]});}
+  function renderPins(){pinMarkers.clearLayers();pinData.forEach(function(pin){var h=parseAddress(pin.hex);if(!h)return;var point=ll(CS*h[0]/KPP,S*(h[1]+0.5*(h[0]&1))/KPP);L.marker(point,{icon:pinIcon(pin.style,pin.color),title:pin.name}).bindPopup('<span class="popup-title">'+escapeHtml(pin.name)+'</span><span class="popup-description">'+escapeHtml(pin.description).replace(/\\n/g,'<br>')+'</span><span class="popup-reference">'+escapeHtml(pin.hex.replace(':',' · Hex '))+'</span>',{className:'editorial-popup'}).on('click',function(e){if(placingPin)cancelPinPlacement();selectHexAt(e.latlng);}).addTo(pinMarkers);});}
   function cancelPinPlacement(){placingPin=false;pendingPinHex='';document.body.classList.remove('pin-placement-active');}
   function beginPinPlacement(){stopEditing();cancelPinPlacement();placingPin=true;document.body.classList.add('pin-placement-active');document.getElementById('editor').hidden=true;document.getElementById('editorButton').setAttribute('aria-expanded','false');}
   function hexAddressAt(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return null;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return null;var sheet=sid(Math.floor(h[0]/SC),Math.floor(h[1]/SR));if(LAND.indexOf(sheet)<0)return null;return addressKey(h);}
@@ -495,7 +503,7 @@
     var width=menu.offsetWidth,height=menu.offsetHeight,x=Math.max(8,Math.min(event.clientX,window.innerWidth-width-8)),y=Math.max(8,Math.min(event.clientY,window.innerHeight-height-8));
     menu.style.left=x+'px';menu.style.top=y+'px';
   }
-  function openPinDialog(key,pin){editingPinId=pin?pin.id:'';pendingPinHex=key;var dialog=document.getElementById('pinDialog');document.getElementById('pinDialogTitle').textContent=pin?'Edytuj punkt':'Dodaj punkt';document.getElementById('pinDialogAddress').textContent='Arkusz '+key.replace(':',' · Hex ');document.getElementById('pinName').value=pin?pin.name:'';document.getElementById('pinStyle').value=pin?pin.style:'standard';document.getElementById('pinDescription').value=pin?pin.description:'';dialog.hidden=false;dialog.style.display='block';requestAnimationFrame(function(){dialog.style.left='50vw';dialog.style.top='50vh';dialog.style.transform='translate(-50%,-50%)';document.getElementById('pinName').focus();});}
+  function openPinDialog(key,pin){editingPinId=pin?pin.id:'';pendingPinHex=key;var dialog=document.getElementById('pinDialog');document.getElementById('pinDialogTitle').textContent=pin?'Edytuj punkt':'Dodaj punkt';document.getElementById('pinDialogAddress').textContent='Arkusz '+key.replace(':',' · Hex ');document.getElementById('pinName').value=pin?pin.name:'';document.getElementById('pinStyle').value=pin?pin.style:'standard';document.getElementById('pinColor').value=pin?(pin.color||defaultPinColor(pin.style)):defaultPinColor('standard');document.getElementById('pinDescription').value=pin?pin.description:'';updatePinPreview();dialog.hidden=false;dialog.style.display='block';requestAnimationFrame(function(){dialog.style.left='50vw';dialog.style.top='50vh';dialog.style.transform='translate(-50%,-50%)';document.getElementById('pinName').focus();});}
   function closePinDialog(){var dialog=document.getElementById('pinDialog');dialog.hidden=true;dialog.style.display='none';pendingPinHex='';editingPinId='';}
   function brushRadius(){return parseInt(document.getElementById('brushSize').value,10)||0;}
   function brushKeys(center){var q0=center[0],r0=center[1]-(q0-(q0&1))/2,rad=brushRadius(),keys=[];for(var dq=-rad;dq<=rad;dq++){for(var dr=-rad;dr<=rad;dr++){if(Math.max(Math.abs(dq),Math.abs(dr),Math.abs(dq+dr))>rad)continue;var q=q0+dq,ar=r0+dr,row=ar+(q-(q&1))/2;if(q<0||row<0)continue;var si=Math.floor(q/SC),sj=Math.floor(row/SR),sheet=sid(si,sj);if(LAND.indexOf(sheet)<0)continue;keys.push(addressKey([q,row]));}}return keys;}
@@ -523,7 +531,10 @@
   document.addEventListener('click',function(e){if(!e.target.closest||!e.target.closest('#pinContextMenu'))closePinContextMenu();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){closePinContextMenu();closeRegionDialogs();}});
   window.addEventListener('resize',closePinContextMenu);
-  document.getElementById('pinForm').addEventListener('submit',function(e){e.preventDefault();if(!pendingPinHex)return;var name=document.getElementById('pinName').value.trim();if(!name){document.getElementById('pinName').focus();return;}var updated={id:editingPinId||('p'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)),name:name,style:document.getElementById('pinStyle').value,description:document.getElementById('pinDescription').value.trim(),hex:pendingPinHex};if(editingPinId){var index=pinData.findIndex(function(p){return p.id===editingPinId;});if(index!==-1)pinData[index]=updated;else pinData.push(updated);}else pinData.push(updated);saveData();renderPins();closePinDialog();cancelPinPlacement();});
+  function updatePinPreview(){var style=document.getElementById('pinStyle').value,color=document.getElementById('pinColor').value,preview=document.getElementById('pinStylePreview'),glyph={standard:'•',ruin:'✥',settlement:'⌂',landmark:'★',natural:'✿'}[style]||'•';preview.innerHTML='<div class="pin-icon pin-'+style+'" style="--pin-color:'+color+'"><span><b>'+glyph+'</b></span></div>';document.getElementById('pinColorPreview').style.background=color;}
+  document.getElementById('pinStyle').addEventListener('change',updatePinPreview);
+  document.getElementById('pinColor').addEventListener('input',updatePinPreview);
+  document.getElementById('pinForm').addEventListener('submit',function(e){e.preventDefault();if(!pendingPinHex)return;var name=document.getElementById('pinName').value.trim();if(!name){document.getElementById('pinName').focus();return;}var updated={id:editingPinId||('p'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)),name:name,style:document.getElementById('pinStyle').value,color:document.getElementById('pinColor').value,description:document.getElementById('pinDescription').value.trim(),hex:pendingPinHex};if(editingPinId){var index=pinData.findIndex(function(p){return p.id===editingPinId;});if(index!==-1)pinData[index]=updated;else pinData.push(updated);}else pinData.push(updated);saveData();renderPins();closePinDialog();cancelPinPlacement();});
   document.getElementById('layerSelect').addEventListener('change',function(){painting=false;lastPainted='';refreshRegions();setHint('Zmieniono warstwę. Ustawienie pędzla pozostaje bez zmian; malowanie wymaga otwartego panelu edytora i wybranego regionu.');});
   function closeRegionDialogs(){document.getElementById('regionCreateDialog').hidden=true;document.getElementById('regionDeleteDialog').hidden=true;document.getElementById('regionChooseDialog').hidden=true;editingRegionId='';document.getElementById('newRegionLayer').disabled=false;}
   document.querySelectorAll('[data-close-region-dialog]').forEach(function(button){button.addEventListener('click',closeRegionDialogs);});
