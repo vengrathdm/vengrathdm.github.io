@@ -1,5 +1,21 @@
 {
   "biome": [],
   "political": [],
-  "geographical": []
+  "geographical": [],
+  "pins": [
+    {
+      "id": "p-test-marker",
+      "name": "Test Marker",
+      "style": "standard",
+      "description": "Test Descirption",
+      "hex": "F9:1606"
+    },
+    {
+      "id": "p-south-pole-ruins",
+      "name": "The South Pole",
+      "style": "ruin",
+      "description": "Drowned ruins, just offshore.",
+      "hex": "C7:8203"
+    }
+  ]
 }
