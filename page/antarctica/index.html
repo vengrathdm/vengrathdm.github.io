@@ -40,13 +40,12 @@
   #editor select.editor-select-native{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;opacity:0!important;pointer-events:none!important}
   .editor-select{position:relative;width:100%;margin-top:4px;font:13px/1.35 system-ui,sans-serif}
   .editor-select-trigger{box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:34px;padding:7px 9px;border:1px solid #82745e;border-radius:3px;background:#fffaf0;color:#28201a;font:13px/1.35 system-ui,sans-serif;text-align:left;cursor:pointer;overflow:hidden}
-  .editor-select-marquee{display:block;flex:1;min-width:0;overflow:hidden;white-space:nowrap}
-  .editor-select-track{display:flex;width:max-content;align-items:center;will-change:transform}
-  .editor-select-group{display:flex;flex:0 0 auto;align-items:center;gap:58px;white-space:nowrap}
-  .editor-select-group span{display:block;white-space:nowrap}
-  .editor-select-trigger.marquee-overflow:hover .editor-select-track{animation:editor-select-marquee var(--marquee-duration,5s) linear infinite}
-  @keyframes editor-select-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-  .editor-select-menu{overflow-x:hidden;overflow-y:auto}
+  .editor-select-marquee{display:block;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .editor-select-menu{overflow-x:hidden;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#a58b60 rgba(12,22,27,.45)}
+  .editor-select-menu::-webkit-scrollbar{width:7px}
+  .editor-select-menu::-webkit-scrollbar-track{background:rgba(12,22,27,.45);border-radius:6px}
+  .editor-select-menu::-webkit-scrollbar-thumb{background:#8d7958;border:1px solid rgba(23,37,43,.9);border-radius:6px}
+  .editor-select-menu::-webkit-scrollbar-thumb:hover{background:#c0a574}
   .editor-select-option{box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .editor-select-trigger:after{content:'';width:7px;height:7px;margin:0 3px 4px 12px;border-right:1.5px solid #665640;border-bottom:1.5px solid #665640;transform:rotate(45deg);flex:0 0 auto}
   .editor-select-trigger:hover,.editor-select-trigger[aria-expanded=true]{background:#f0e4ca;border-color:#b9a47c}
@@ -247,18 +246,8 @@
     function setTriggerLabel(value){
       trigger.innerHTML='';
       var viewport=document.createElement('span');viewport.className='editor-select-marquee';
-      var track=document.createElement('span');track.className='editor-select-track';
-      var first=document.createElement('span');first.className='editor-select-group';
-      var second=document.createElement('span');second.className='editor-select-group';
-      var one=document.createElement('span');one.textContent=value;
-      var two=document.createElement('span');two.textContent=value;
-      first.appendChild(one);second.appendChild(two);track.appendChild(first);track.appendChild(second);viewport.appendChild(track);trigger.appendChild(viewport);
-      requestAnimationFrame(function(){
-        var overflowing=one.getBoundingClientRect().width>viewport.clientWidth+1;
-        trigger.classList.toggle('marquee-overflow',overflowing);
-        if(overflowing){var duration=Math.max(5,one.getBoundingClientRect().width/24);trigger.style.setProperty('--marquee-duration',duration+'s');}
-        else trigger.style.removeProperty('--marquee-duration');
-      });
+      viewport.textContent=value;
+      trigger.appendChild(viewport);
     }
     function sync(){
       var chosen=select.options[select.selectedIndex];setTriggerLabel(chosen?chosen.textContent:'Select…');
