@@ -59,6 +59,11 @@
   .editor-section h3{margin:0;color:#efd59c;font:1rem Voltaire,sans-serif;letter-spacing:.12em;text-transform:uppercase}
   .editor-action-row{display:flex;flex-direction:column;align-items:center;gap:2px}
   .editor-action-row button{box-sizing:border-box;min-width:180px;text-align:center}
+  #editor .brush-mode-control{display:flex;width:100%;max-width:240px;margin-top:7px;padding:3px;border:1px solid #8a795a;border-radius:4px;background:rgba(10,20,24,.72);gap:3px}
+  #editor .brush-mode-control button{flex:1;min-width:0;margin:0;padding:8px 5px;border:1px solid transparent;border-radius:2px;background:transparent;color:#c5b99f;font:600 11px/1.2 system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+  #editor .brush-mode-control button[aria-pressed=true]{background:#665640;border-color:#b9a47c;color:#fff2d4;box-shadow:inset 0 0 0 1px rgba(255,242,212,.08)}
+  #editor .brush-mode-control button:hover{background:#514633;color:#fff2d4}
+  #editor .brush-mode-control button[aria-pressed=true]:hover{background:#756044}
   .editor-data-actions{display:flex;flex-direction:column;align-items:center;gap:0;margin-top:5px}
   #editor .editor-data-actions button,#editor .editor-data-actions .file-button{box-sizing:border-box;width:180px;margin:7px 0 0;text-align:center}
   #importData{display:none}
@@ -161,7 +166,7 @@
     </section>
     <section class="editor-section">
       <h3>Brush</h3>
-      <div class="editor-action-row"><button id="paintToggle" type="button">Paint: off</button><button id="eraseToggle" type="button">Erase: off</button><button id="placePinButton" type="button">Place Pin</button></div>
+      <div class="editor-action-row"><div id="brushModeControl" class="brush-mode-control" role="group" aria-label="Brush mode"><button type="button" data-mode="idle" aria-pressed="true">Idle</button><button type="button" data-mode="paint" aria-pressed="false">Paint</button><button type="button" data-mode="erase" aria-pressed="false">Erase</button></div><button id="placePinButton" type="button">Place Pin</button></div>
       <label>Brush size <span id="brushSizeValue">1 hex</span><input id="brushSize" type="range" min="0" max="5" step="1" value="0"></label>
     </section>
     <div class="editor-data-actions"><button id="exportData" type="button">Export data</button><label class="file-button" for="importData">Import data</label></div><input id="importData" type="file" accept="application/json">
@@ -379,7 +384,8 @@
   document.getElementById('biomeLayer').addEventListener('change',function(){setOverlayVisibility('biome',this.checked);});
   document.getElementById('politicalLayer').addEventListener('change',function(){setOverlayVisibility('political',this.checked);});
   document.getElementById('geographicalLayer').addEventListener('change',function(){setOverlayVisibility('geographical',this.checked);});
-  function stopEditing(){editMode=false;eraseMode=false;painting=false;map.dragging.enable();document.getElementById('paintToggle').textContent='Paint: off';document.getElementById('paintToggle').classList.remove('active');document.getElementById('eraseToggle').textContent='Erase: off';document.getElementById('eraseToggle').classList.remove('active');}
+  function setBrushMode(mode,announce){editMode=mode!=='idle';eraseMode=mode==='erase';painting=false;lastPainted='';map.dragging[editMode?'disable':'enable']();document.querySelectorAll('#brushModeControl button').forEach(function(button){button.setAttribute('aria-pressed',button.dataset.mode===mode?'true':'false');});if(announce!==false){setHint(mode==='paint'?'Paint mode: hold and drag across hexes to assign the selected region. Map panning is paused.':mode==='erase'?'Erase mode: hold and drag across hexes to remove overlay assignments. Map panning is paused.':'Brush is idle. Map panning is restored.');}}
+  function stopEditing(){setBrushMode('idle',false);}
   function updateBrushLabel(){var r=brushRadius(),count=1+3*r*(r+1);document.getElementById('brushSizeValue').textContent=r===0?'1 hex':'radius '+r+' ('+count+' hexes)';}
   document.getElementById('brushSize').addEventListener('input',updateBrushLabel);
   document.getElementById('placePinButton').addEventListener('click',beginPinPlacement);
@@ -393,8 +399,7 @@
   document.getElementById('regionSelect').addEventListener('change',function(){var r=selectedRegion();if(r){document.getElementById('regionName').value=r.name;document.getElementById('regionColor').value=r.color;}});
   document.getElementById('regionColor').addEventListener('input',function(){var region=selectedRegion();if(!region)return;region.color=this.value;saveData();renderLayer(currentLayer());});
   document.getElementById('deleteRegion').addEventListener('click',function(){var region=selectedRegion();if(!region){setHint('Select a region to delete.');return;}regionData[currentLayer()]=regionData[currentLayer()].filter(function(r){return r.id!==region.id;});stopEditing();refreshRegions();document.getElementById('regionName').value='';renderLayer(currentLayer());saveData();setHint('Deleted region '+region.name+'.');});
-  document.getElementById('paintToggle').addEventListener('click',function(){editMode=!editMode;eraseMode=false;painting=false;map.dragging[editMode?'disable':'enable']();document.getElementById('eraseToggle').textContent='Erase: off';document.getElementById('eraseToggle').classList.remove('active');this.textContent='Paint: '+(editMode?'on':'off');this.classList.toggle('active',editMode);setHint(editMode?'Hold the mouse button and drag across hexes to paint. Map panning is paused while painting.':'Paint mode is off. Map panning is restored.');});
-  document.getElementById('eraseToggle').addEventListener('click',function(){eraseMode=!eraseMode;editMode=eraseMode;painting=false;map.dragging[editMode?'disable':'enable']();document.getElementById('paintToggle').textContent='Paint: off';document.getElementById('paintToggle').classList.remove('active');this.textContent='Erase: '+(eraseMode?'on':'off');this.classList.toggle('active',eraseMode);setHint(eraseMode?'Hold the mouse button and drag to erase hexes. Map panning is paused while erasing.':'Erase mode is off. Map panning is restored.');});
+  document.querySelectorAll('#brushModeControl button').forEach(function(button){button.addEventListener('click',function(){setBrushMode(this.dataset.mode);});});
   document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(exportableData(),null,2)+'\\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='regions.json';a.click();URL.revokeObjectURL(url);setHint('Downloaded regions.json. Replace page/antarctica/data/regions.json with this file to publish regions and pins.');});
   document.getElementById('importData').addEventListener('change',function(e){var file=e.target.files&&e.target.files[0];if(!file)return;var reader=new FileReader();reader.onload=function(){try{var data=JSON.parse(reader.result);applyRegionData(data);saveData();refreshRegions();renderAll();renderPins();setHint('Overlay and pin data imported.');}catch(err){setHint('Could not import that JSON file.');}};reader.readAsText(file);e.target.value='';});
   map.on('mousedown',function(e){if(!editMode)return;painting=true;lastPainted='';assignBrush(e.latlng);});
