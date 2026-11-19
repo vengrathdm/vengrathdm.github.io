@@ -32,7 +32,7 @@
   .panel-head strong{font:1.05rem Voltaire,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#efd59c}
   .panel-close{border:1px solid rgba(222,198,145,.45);border-radius:4px;background:rgba(255,255,255,.06);color:#f3ead7;padding:4px 8px;font:600 11px system-ui,sans-serif;cursor:pointer}
   #editorTools[hidden]{display:none}
-  #editor label{display:block;margin-top:9px;font-weight:600;color:#e7d9bb;font:600 12px/1.4 system-ui,sans-serif}
+  #editor label,#editor .editor-field-label{display:block;margin-top:9px;font-weight:600;color:#e7d9bb;font:600 12px/1.4 system-ui,sans-serif}
   #editor select,#editor input:not([type=color]):not([type=file]){box-sizing:border-box;width:100%;margin-top:4px;padding:7px 8px;border:1px solid #82745e;border-radius:3px;background:#fffaf0;color:#28201a;font:13px/1.35 system-ui,sans-serif}
   #editor #regionName{min-height:34px;padding:7px 9px;border-color:#82745e;border-radius:3px;background:#fffaf0;color:#28201a;font:13px/1.35 system-ui,sans-serif;box-shadow:inset 0 1px 2px rgba(40,32,26,.08)}
   #editor #regionName::placeholder{color:#8b806d;opacity:1}
@@ -41,16 +41,12 @@
   .editor-select{position:relative;width:100%;margin-top:4px;font:13px/1.35 system-ui,sans-serif}
   .editor-select-trigger{box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:34px;padding:7px 9px;border:1px solid #82745e;border-radius:3px;background:#fffaf0;color:#28201a;font:13px/1.35 system-ui,sans-serif;text-align:left;cursor:pointer;overflow:hidden}
   .editor-select-marquee{display:block;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .editor-select-menu{overflow-x:hidden;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#a58b60 rgba(12,22,27,.45)}
-  .editor-select-menu::-webkit-scrollbar{width:7px}
-  .editor-select-menu::-webkit-scrollbar-track{background:rgba(12,22,27,.45);border-radius:6px}
-  .editor-select-menu::-webkit-scrollbar-thumb{background:#8d7958;border:1px solid rgba(23,37,43,.9);border-radius:6px}
-  .editor-select-menu::-webkit-scrollbar-thumb:hover{background:#c0a574}
+  .editor-select-menu{overflow:visible}
   .editor-select-option{box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .editor-select-trigger:after{content:'';width:7px;height:7px;margin:0 3px 4px 12px;border-right:1.5px solid #665640;border-bottom:1.5px solid #665640;transform:rotate(45deg);flex:0 0 auto}
   .editor-select-trigger:hover,.editor-select-trigger[aria-expanded=true]{background:#f0e4ca;border-color:#b9a47c}
   .editor-select-trigger:focus-visible,.editor-select-option:focus-visible{outline:2px solid #d5bd8b;outline-offset:2px}
-  .editor-select-menu{position:absolute;z-index:1300;top:calc(100% + 4px);left:0;right:0;max-height:220px;overflow:auto;padding:4px;background:rgba(23,37,43,.98);border:1px solid rgba(222,198,145,.65);border-radius:4px;box-shadow:0 8px 22px rgba(0,0,0,.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+  .editor-select-menu{position:absolute;z-index:1300;top:calc(100% + 4px);left:0;min-width:100%;width:max-content;max-width:min(320px,calc(100vw - 40px));overflow:visible;padding:4px;background:rgba(23,37,43,.98);border:1px solid rgba(222,198,145,.65);border-radius:4px;box-shadow:0 8px 22px rgba(0,0,0,.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
   .editor-select-menu[hidden]{display:none}
   .editor-select-option{display:block;width:100%;padding:7px 9px;border:0;border-radius:2px;background:transparent;color:#f3ead7;font:13px/1.4 system-ui,sans-serif;text-align:left;cursor:pointer}
   .editor-select-option:hover,.editor-select-option[aria-selected=true],.editor-select-option:focus{background:#665640;color:#fff2d4;outline:none}
@@ -155,10 +151,10 @@
 <div id="editor" class="floating-panel" hidden>
   <div class="panel-head"><strong>Hex overlays</strong><button class="panel-close" data-close="editor" type="button">Close</button></div>
   <div id="editorTools">
-    <label>Overlay layer<select id="layerSelect"><option value="biome">Biome</option><option value="political">Political</option><option value="geographical">Geographical</option></select></label>
+    <div class="editor-field"><span class="editor-field-label">Overlay layer</span><select id="layerSelect"><option value="biome">Biome</option><option value="political">Political</option><option value="geographical">Geographical</option></select></div>
     <section class="editor-section">
       <h3>Region</h3>
-      <label>Region<select id="regionSelect"><option value="">Create a region first</option></select></label>
+      <div class="editor-field"><span class="editor-field-label">Region</span><select id="regionSelect"><option value="">Create a region first</option></select></div>
       <label>New region name<input id="regionName" type="text" placeholder="e.g. Temperate Forest"></label>
       <label>Region colour <input id="regionColor" type="color" value="#668b54"></label>
       <div class="editor-action-row"><button id="createRegion" type="button">Create region</button><button id="deleteRegion" type="button">Delete selected region</button></div>
@@ -358,7 +354,7 @@
     if(pins.length){
       action('View Pin Record',function(){selectHexAt(latlng);});
       action('Edit Pin',function(){openPinDialog(key,pins[0]);});
-      action('Delete Pin',function(){var pin=pins[0];if(!window.confirm('Delete the pin “'+pin.name+'”? This cannot be undone except by importing a backup.'))return;pinData=pinData.filter(function(p){return p.id!==pin.id;});saveData();renderPins();},'delete');
+      action('Delete Pin',function(){var pin=pins[0];pinData=pinData.filter(function(p){return p.id!==pin.id;});saveData();renderPins();},'delete');
     }else{
       action('Create Pin',function(){openPinDialog(key);});
     }
@@ -393,10 +389,10 @@
   window.addEventListener('resize',closePinContextMenu);
   document.getElementById('pinForm').addEventListener('submit',function(e){e.preventDefault();if(!pendingPinHex)return;var name=document.getElementById('pinName').value.trim();if(!name){document.getElementById('pinName').focus();return;}var updated={id:editingPinId||('p'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)),name:name,style:document.getElementById('pinStyle').value,description:document.getElementById('pinDescription').value.trim(),hex:pendingPinHex};if(editingPinId){var index=pinData.findIndex(function(p){return p.id===editingPinId;});if(index!==-1)pinData[index]=updated;else pinData.push(updated);}else pinData.push(updated);saveData();renderPins();closePinDialog();cancelPinPlacement();});
   document.getElementById('layerSelect').addEventListener('change',function(){stopEditing();refreshRegions();setHint('Select a region, enable Paint, then hold and drag across the map.');});
-  document.getElementById('createRegion').addEventListener('click',function(){var name=document.getElementById('regionName').value.trim();if(!name){setHint('Enter a region name first.');return;}var region={id:'r'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),name:name,color:document.getElementById('regionColor').value,hexes:[]};regionData[currentLayer()].push(region);refreshRegions(region.id);saveData();setHint('Created '+name+'. Enable Paint to assign hexes.');});
+  document.getElementById('createRegion').addEventListener('click',function(){var name=document.getElementById('regionName').value.trim();if(!name){setHint('Enter a region name first.');return;}var normalized=name.replace(/\\s+/g,' ').toLocaleLowerCase();var duplicate=regionData[currentLayer()].some(function(r){return r.name.replace(/\\s+/g,' ').trim().toLocaleLowerCase()===normalized;});if(duplicate){setHint('A region with that name already exists in this layer. Choose a unique name.');document.getElementById('regionName').focus();return;}var region={id:'r'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),name:name,color:document.getElementById('regionColor').value,hexes:[]};regionData[currentLayer()].push(region);refreshRegions(region.id);saveData();setHint('Created '+name+'. Enable Paint to assign hexes.');});
   document.getElementById('regionSelect').addEventListener('change',function(){var r=selectedRegion();if(r){document.getElementById('regionName').value=r.name;document.getElementById('regionColor').value=r.color;}});
   document.getElementById('regionColor').addEventListener('input',function(){var region=selectedRegion();if(!region)return;region.color=this.value;saveData();renderLayer(currentLayer());});
-  document.getElementById('deleteRegion').addEventListener('click',function(){var region=selectedRegion();if(!region){setHint('Select a region to delete.');return;}if(!window.confirm('Delete the region “'+region.name+'”? Its assigned hexes and region definition will be removed. This cannot be undone except by importing a backup.'))return;var arr=regionData[currentLayer()];regionData[currentLayer()]=arr.filter(function(r){return r.id!==region.id;});stopEditing();refreshRegions();document.getElementById('regionName').value='';renderLayer(currentLayer());saveData();setHint('Deleted region '+region.name+'.');});
+  document.getElementById('deleteRegion').addEventListener('click',function(){var region=selectedRegion();if(!region){setHint('Select a region to delete.');return;}regionData[currentLayer()]=regionData[currentLayer()].filter(function(r){return r.id!==region.id;});stopEditing();refreshRegions();document.getElementById('regionName').value='';renderLayer(currentLayer());saveData();setHint('Deleted region '+region.name+'.');});
   document.getElementById('paintToggle').addEventListener('click',function(){editMode=!editMode;eraseMode=false;painting=false;map.dragging[editMode?'disable':'enable']();document.getElementById('eraseToggle').textContent='Erase: off';document.getElementById('eraseToggle').classList.remove('active');this.textContent='Paint: '+(editMode?'on':'off');this.classList.toggle('active',editMode);setHint(editMode?'Hold the mouse button and drag across hexes to paint. Map panning is paused while painting.':'Paint mode is off. Map panning is restored.');});
   document.getElementById('eraseToggle').addEventListener('click',function(){eraseMode=!eraseMode;editMode=eraseMode;painting=false;map.dragging[editMode?'disable':'enable']();document.getElementById('paintToggle').textContent='Paint: off';document.getElementById('paintToggle').classList.remove('active');this.textContent='Erase: '+(eraseMode?'on':'off');this.classList.toggle('active',eraseMode);setHint(eraseMode?'Hold the mouse button and drag to erase hexes. Map panning is paused while erasing.':'Erase mode is off. Map panning is restored.');});
   document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(exportableData(),null,2)+'\\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='regions.json';a.click();URL.revokeObjectURL(url);setHint('Downloaded regions.json. Replace page/antarctica/data/regions.json with this file to publish regions and pins.');});
