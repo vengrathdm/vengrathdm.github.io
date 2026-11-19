@@ -311,16 +311,21 @@
   var STORE='antarctica-hex-overlays-v1', DATA_URL='data/regions.json', layerNames=['political','geographical'], regionNameMode='hover', editingRegionId='';
   var regionData={political:[],geographical:[]}, pinData=[], pinMarkers=L.layerGroup().addTo(map), overlayGroups={}, editMode=false, eraseMode=false, painting=false, lastPainted='', hasLocalDraft=false, hasLocalPins=false, placingPin=false, pendingPinHex='', editingPinId='';
   function applyRegionData(data){
+    if(!data||typeof data!=='object'||!Array.isArray(data.political)||!Array.isArray(data.geographical))throw new Error('The file must contain political and geographical region arrays.');
+    var next={political:[],geographical:[]},nextPins=[];
     layerNames.forEach(function(k){
-      if(!Array.isArray(data&&data[k]))return;
-      var claimed=Object.create(null);
-      regionData[k]=data[k].filter(function(r){return r&&typeof r.id==='string'&&typeof r.name==='string'&&/^#[0-9a-f]{6}$/i.test(r.color)&&Array.isArray(r.hexes);}).map(function(r){
-        var copy={id:r.id,name:r.name,color:r.color,description:typeof r.description==='string'?r.description:'',fillStyle:['none','tint','hatch'].indexOf(r.fillStyle)!==-1?r.fillStyle:(k==='political'?'hatch':'none'),hexes:[]};
-        r.hexes.forEach(function(key){if(typeof key==='string'&&!claimed[key]&&parseAddress(key)){claimed[key]=true;copy.hexes.push(key);}});
-        return copy;
+      var seenIds=Object.create(null),seenNames=Object.create(null);
+      data[k].forEach(function(r){
+        if(!r||typeof r.id!=='string'||!r.id||typeof r.name!=='string'||!r.name.trim()||!/^#[0-9a-f]{6}$/i.test(r.color)||!Array.isArray(r.hexes))throw new Error('Invalid region entry in '+k+' layer.');
+        var normalized=r.name.trim().replace(/\\s+/g,' ').toLocaleLowerCase();
+        if(seenIds[r.id]||seenNames[normalized])throw new Error('Duplicate region ID or name in '+k+' layer.');
+        seenIds[r.id]=true;seenNames[normalized]=true;
+        next[k].push({id:r.id,name:r.name.trim(),color:r.color,description:typeof r.description==='string'?r.description:'',fillStyle:['none','tint','hatch'].indexOf(r.fillStyle)!==-1?r.fillStyle:(k==='political'?'hatch':'none'),hexes:r.hexes.filter(function(key){return typeof key==='string'&&!!parseAddress(key);})});
       });
     });
-    pinData=Array.isArray(data&&data.pins)?data.pins.filter(function(p){return p&&typeof p.id==='string'&&typeof p.name==='string'&&typeof p.hex==='string'&&parseAddress(p.hex)&&['standard','ruin','settlement','landmark','natural'].indexOf(p.style)!==-1;}).map(function(p){return {id:p.id,name:p.name,style:p.style,description:typeof p.description==='string'?p.description:'',hex:p.hex};}):[];
+    if(data.pins!==undefined&&!Array.isArray(data.pins))throw new Error('Pins must be an array.');
+    (data.pins||[]).forEach(function(p){if(!p||typeof p.id!=='string'||typeof p.name!=='string'||typeof p.hex!=='string'||!parseAddress(p.hex)||['standard','ruin','settlement','landmark','natural'].indexOf(p.style)===-1)throw new Error('Invalid pin entry.');nextPins.push({id:p.id,name:p.name,style:p.style,description:typeof p.description==='string'?p.description:'',hex:p.hex});});
+    regionData=next;pinData=nextPins;
   }
   try{var saved=localStorage.getItem(STORE);if(saved){var savedData=JSON.parse(saved);applyRegionData(savedData);hasLocalPins=Array.isArray(savedData.pins);hasLocalDraft=true;}}catch(err){console.warn('Could not load saved overlay data',err);}
   layerNames.forEach(function(k){overlayGroups[k]=L.layerGroup();});
@@ -538,8 +543,8 @@
   document.getElementById('deleteRegionLayer').addEventListener('change',refreshDeleteRegionOptions);
   document.getElementById('confirmDeleteRegion').addEventListener('click',function(){var layer=document.getElementById('deleteRegionLayer').value,choice=document.querySelector('input[name="deleteRegionChoice"]:checked');if(!choice)return;var region=regionData[layer].find(function(r){return r.id===choice.value;});if(!region)return;regionData[layer]=regionData[layer].filter(function(r){return r.id!==region.id;});if(currentLayer()===layer){if(document.getElementById('regionSelect').value===region.id){stopEditing();refreshRegions();}else refreshRegions(document.getElementById('regionSelect').value);}renderLayer(layer);saveData();closeRegionDialogs();setHint('Deleted region '+region.name+'.');});
   document.querySelectorAll('#brushModeControl button').forEach(function(button){button.addEventListener('click',function(){setBrushMode(this.dataset.mode);});});
-  document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(exportableData(),null,2)+'\\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='regions.json';a.click();URL.revokeObjectURL(url);setHint('Downloaded regions.json. Replace page/antarctica/data/regions.json with this file to publish regions and pins.');});
-  document.getElementById('importData').addEventListener('change',function(e){var file=e.target.files&&e.target.files[0];if(!file)return;var reader=new FileReader();reader.onload=function(){try{var data=JSON.parse(reader.result);applyRegionData(data);saveData();refreshRegions();renderAll();renderPins();setHint('Overlay and pin data imported.');}catch(err){setHint('Could not import that JSON file.');}};reader.readAsText(file);e.target.value='';});
+  document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(exportableData(),null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='regions.json';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);setHint('Downloaded complete region and pin data as regions.json.');});
+  document.getElementById('importData').addEventListener('change',function(e){var file=e.target.files&&e.target.files[0];if(!file)return;var reader=new FileReader();reader.onerror=function(){setHint('Could not read the selected JSON file.');e.target.value='';};reader.onload=function(){try{var data=JSON.parse(String(reader.result).replace(/^\\uFEFF/,''));applyRegionData(data);hasLocalDraft=true;hasLocalPins=true;saveData();stopEditing();refreshRegions();renderAll();renderPins();document.getElementById('regionName').value='';document.getElementById('regionColor').value='#668b54';setHint('Imported '+regionData.political.length+' Political regions, '+regionData.geographical.length+' Geographical regions, and '+pinData.length+' pins. Imported data now replaces the current map data in this browser.');}catch(err){console.error('Overlay import failed:',err);setHint('Import failed: '+(err&&err.message?err.message:'invalid JSON'));}finally{e.target.value='';}};reader.readAsText(file);});
   map.on('mousedown',function(e){if(!editMode)return;painting=true;lastPainted='';assignBrush(e.latlng);});
   map.on('mousemove',function(e){if(painting)assignBrush(e.latlng);});
   function endStroke(){painting=false;lastPainted='';}
