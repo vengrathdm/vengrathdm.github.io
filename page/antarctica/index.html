@@ -13,42 +13,56 @@
   html,body{height:100%;margin:0}
   body{background:#24486c;color:#28201a;font:15px/1.4 Georgia,"Times New Roman",serif}
   #map{position:absolute;inset:0;background:#24486c}
-  .panel{position:absolute;z-index:1000;background:rgba(238,229,204,.94);border:1px solid #28201a;border-radius:3px;box-shadow:0 2px 8px rgba(0,0,0,.3)}
-  #head{top:10px;left:10px;padding:0;max-width:calc(100vw - 20px);background:transparent;border:0;border-radius:0;box-shadow:none}
-  .home-brand{display:inline-flex;align-items:center;gap:.55rem;color:#f4efe5;text-decoration:none;font:1.2rem Voltaire,sans-serif;letter-spacing:.15em;white-space:nowrap;text-shadow:0 1px 5px rgba(0,0,0,.8)}
-  .home-brand img{width:2.5rem;height:2.5rem;object-fit:contain;filter:drop-shadow(0 0 14px rgba(215,184,120,.22))}
+  .panel{position:absolute;z-index:1000;border:1px solid rgba(226,211,177,.42);border-radius:5px;box-shadow:0 5px 22px rgba(0,0,0,.28);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  #head{top:12px;left:14px;padding:0;background:transparent;border:0;box-shadow:none}
+  .home-brand{display:inline-flex;align-items:center;gap:.5rem;color:#f4efe5;text-decoration:none;font:1.15rem Voltaire,sans-serif;letter-spacing:.15em;white-space:nowrap;text-shadow:0 1px 6px rgba(0,0,0,.9)}
+  .home-brand img{width:2.25rem;height:2.25rem;object-fit:contain;filter:drop-shadow(0 0 12px rgba(215,184,120,.25))}
   .home-brand:hover{color:#efd59c}
-  #read{bottom:22px;left:10px;padding:6px 10px;font:600 14px/1.3 system-ui,sans-serif;min-width:11em}
-  #read small{font-weight:400;color:#6b5d4c}
+  #toolbar{position:absolute;z-index:1100;top:12px;right:14px;display:flex;gap:5px;padding:4px;background:rgba(20,35,43,.78);border:1px solid rgba(226,211,177,.32);border-radius:6px;box-shadow:0 3px 14px rgba(0,0,0,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  .tool-button{border:1px solid transparent;border-radius:4px;background:transparent;color:#f3ead7;padding:7px 10px;font:600 12px/1.2 system-ui,sans-serif;cursor:pointer;white-space:nowrap}
+  .tool-button:hover,.tool-button[aria-expanded=true]{background:rgba(215,184,120,.2);border-color:rgba(222,198,145,.4);color:#fff2d4}
+  #read{bottom:18px;left:14px;padding:6px 10px;background:rgba(20,35,43,.78);border:1px solid rgba(226,211,177,.32);color:#f3ead7;font:600 12px/1.3 system-ui,sans-serif;min-width:11em;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  #read small{font-weight:400;color:#c5b99f}
   .ruin{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee5cc;border:2px solid #28201a;font:700 17px/1 Georgia,serif;color:#28201a;box-shadow:0 1px 4px rgba(0,0,0,.4)}
   .leaflet-container{font:14px/1.4 system-ui,sans-serif}
   .leaflet-popup-content a{color:#7a2e1c;font-weight:600}
-  #editor{top:10px;right:10px;width:250px;max-width:calc(100vw - 20px);max-height:calc(100vh - 20px);overflow:auto;padding:10px;font:13px/1.4 system-ui,sans-serif}
-  #editorHead{display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .floating-panel{position:absolute;z-index:1050;top:62px;right:14px;width:270px;max-width:calc(100vw - 28px);max-height:calc(100vh - 92px);overflow:auto;padding:11px;background:rgba(23,37,43,.9);color:#f3ead7;border:1px solid rgba(222,198,145,.48);border-radius:5px;box-shadow:0 6px 24px rgba(0,0,0,.35);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font:13px/1.45 system-ui,sans-serif}
+  .floating-panel[hidden]{display:none}
+  .panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(222,198,145,.25)}
+  .panel-head strong{font:1.05rem Voltaire,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#efd59c}
+  .panel-close{border:1px solid rgba(222,198,145,.45);border-radius:4px;background:rgba(255,255,255,.06);color:#f3ead7;padding:4px 8px;font:600 11px system-ui,sans-serif;cursor:pointer}
   #editorTools[hidden]{display:none}
-  #editor label{display:block;margin-top:9px;font-weight:600}
-  #editor select,#editor input:not([type=color]):not([type=file]){box-sizing:border-box;width:100%;margin-top:3px;padding:5px;border:1px solid #82745e;border-radius:3px;background:#fffaf0;color:#28201a}
+  #editor label{display:block;margin-top:9px;font-weight:600;color:#e7d9bb}
+  #editor select,#editor input:not([type=color]):not([type=file]){box-sizing:border-box;width:100%;margin-top:3px;padding:6px;border:1px solid #82745e;border-radius:3px;background:#fffaf0;color:#28201a}
   #editor input[type=color]{width:42px;height:28px;vertical-align:middle;margin:3px 0}
   #editor input[type=range]{width:100%;margin-top:5px;padding:0}
-  #editor button,#editor .file-button{margin:7px 4px 0 0;padding:6px 9px;border:1px solid #665640;border-radius:3px;background:#e5d7b8;color:#28201a;font:600 12px system-ui,sans-serif;cursor:pointer}
+  #editor button,#editor .file-button{margin:7px 4px 0 0;padding:6px 9px;border:1px solid #8a795a;border-radius:3px;background:#e5d7b8;color:#28201a;font:600 12px system-ui,sans-serif;cursor:pointer}
   #editor button.active{background:#665640;color:#fff8e8}
-  #editorHint{margin:8px 0 0;color:#665640;font-size:12px}
+  #editorHint{margin:8px 0 0;color:#d0c2a5;font-size:12px}
   #importData{display:none}
-  #presenter{left:10px;top:76px;width:270px;max-width:calc(100vw - 20px);max-height:calc(100vh - 130px);overflow:auto;padding:0;font:13px/1.45 system-ui,sans-serif;background:rgba(25,34,42,.94);border:1px solid rgba(222,198,145,.75);color:#f3ead7;box-shadow:0 5px 22px rgba(0,0,0,.42)}
-  #presenterHead{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:rgba(215,184,120,.13);border-bottom:1px solid rgba(222,198,145,.35)}
-  #presenterHead strong{font:1.1rem Voltaire,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#efd59c}
-  #presenterToggle{border:1px solid #b69a68;border-radius:3px;background:#3b4141;color:#f3ead7;padding:5px 8px;font-weight:600;cursor:pointer}
-  #presenterBody{padding:12px}
-  #presenterBody[hidden]{display:none}
+  #presenter{padding:11px}
+  #presenterBody{padding:0}
   #presenterAddress{font:1.55rem Voltaire,sans-serif;letter-spacing:.06em;color:#fff5df}
-  #presenterSub{color:#c5b99f;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-top:2px}
-  .present-row{padding:9px 0;border-top:1px solid rgba(222,198,145,.2)}
+  #presenterSub{color:#c5b99f;font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-top:2px}
+  .present-row{padding:8px 0;border-top:1px solid rgba(222,198,145,.2)}
   .present-label{color:#c5b99f;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;margin-bottom:3px}
   .present-value{display:flex;align-items:center;gap:7px;font:1rem Georgia,serif;color:#fff5df}
   .present-swatch{width:10px;height:10px;border-radius:50%;flex:0 0 10px;border:1px solid rgba(255,255,255,.35)}
-  .present-empty{color:#9f988a;font-style:italic}
-  #presenterIntro{color:#c5b99f;margin:0}
-  @media(max-width:600px){#presenter{top:auto;bottom:58px;left:8px;width:calc(100vw - 36px);max-height:42vh}#editor{max-height:55vh}}
+  .present-empty{color:#b4aa98;font-style:italic}
+  #presenterIntro{color:#c5b99f;margin:0 0 8px}
+  #layersPanel label{display:flex;align-items:center;gap:9px;padding:7px 2px;color:#f3ead7;cursor:pointer}
+  #layersPanel input{accent-color:#d5bd8b}
+  .leaflet-bottom.leaflet-right{bottom:8px;right:10px}
+  .leaflet-control-zoom a{background:rgba(20,35,43,.84)!important;color:#f3ead7!important;border-color:rgba(226,211,177,.35)!important}
+  .leaflet-control-scale-line{background:rgba(20,35,43,.65);border-color:#f3ead7;color:#f3ead7;text-shadow:none}
+  @media(max-width:600px){
+    #head{top:9px;left:9px}.home-brand{font-size:1rem}.home-brand img{width:1.9rem;height:1.9rem}
+    #toolbar{top:54px;left:9px;right:9px;justify-content:flex-end;width:max-content;margin-left:auto}
+    .tool-button{padding:7px 9px;font-size:11px}
+    .floating-panel{top:98px;right:9px;max-height:calc(100vh - 150px);width:270px}
+    #read{bottom:14px;left:9px;font-size:11px;min-width:0}
+    .leaflet-bottom.leaflet-right{bottom:8px;right:8px}
+  }
 </style>
 </head>
 <body>
@@ -56,22 +70,34 @@
 <div id="head" class="panel">
   <a class="home-brand" href="/home/" aria-label="Vengrath — strona główna"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
 </div>
+<div id="toolbar" role="toolbar" aria-label="Map tools">
+  <button class="tool-button" id="layersButton" type="button" aria-expanded="false">Layers</button>
+  <button class="tool-button" id="editorButton" type="button" aria-expanded="false">Editor</button>
+  <button class="tool-button" id="dossierButton" type="button" aria-expanded="false">Dossier</button>
+</div>
 <div id="read" class="panel"><small>Move over the map for hex references</small></div>
-<section id="presenter" class="panel">
-  <div id="presenterHead"><strong>Field dossier</strong><button id="presenterToggle" type="button">Open Presenter</button></div>
-  <div id="presenterBody" hidden><div id="presenterAddress">No hex selected</div><div id="presenterSub">Antarctica · Hex reference</div><p id="presenterIntro">Select any hex on the map to inspect its recorded information.</p><div id="presenterDetails"></div></div>
+<section id="layersPanel" class="floating-panel" hidden>
+  <div class="panel-head"><strong>Map layers</strong><button class="panel-close" data-close="layersPanel" type="button">Close</button></div>
+  <label><input type="checkbox" id="biomeLayer" checked> Biome overlays</label>
+  <label><input type="checkbox" id="politicalLayer" checked> Political overlays</label>
+  <label><input type="checkbox" id="geographicalLayer" checked> Geographical overlays</label>
+  <label><input type="checkbox" id="sheetGrid"> Sheet boundaries</label>
 </section>
-<div id="editor" class="panel">
-  <div id="editorHead"><strong>Hex overlays</strong><button id="editorToggle" type="button">Open editor</button></div>
-  <div id="editorTools" hidden>
+<section id="presenter" class="floating-panel" hidden>
+  <div class="panel-head"><strong>Field dossier</strong><button class="panel-close" data-close="presenter" type="button">Close</button></div>
+  <div id="presenterBody"><div id="presenterAddress">No hex selected</div><div id="presenterSub">Antarctica · Hex reference</div><p id="presenterIntro">Select any hex on the map to inspect its recorded information.</p><div id="presenterDetails"></div></div>
+</section>
+<div id="editor" class="floating-panel" hidden>
+  <div class="panel-head"><strong>Hex overlays</strong><button class="panel-close" data-close="editor" type="button">Close</button></div>
+  <div id="editorTools">
     <label>Overlay layer<select id="layerSelect"><option value="biome">Biome</option><option value="political">Political</option><option value="geographical">Geographical</option></select></label>
     <label>Region<select id="regionSelect"><option value="">Create a region first</option></select></label>
     <label>New region name<input id="regionName" type="text" placeholder="e.g. Temperate Forest"></label>
     <label>Region colour <input id="regionColor" type="color" value="#668b54"></label>
     <button id="createRegion" type="button">Create region</button><button id="paintToggle" type="button">Paint: off</button><button id="eraseToggle" type="button">Erase: off</button>
     <label>Brush size <span id="brushSizeValue">1 hex</span><input id="brushSize" type="range" min="0" max="5" step="1" value="0"></label>
-    <p id="editorHint">Select a region, enable Paint, then hold and drag across the map. Brush size controls the radius. Changes save in this browser.</p>
-    <button id="exportData" type="button">Export data</button><label class="file-button" for="importData">Import data</label><input id="importData" type="file" accept="application/json">
+    <p id="editorHint">Select a region, enable Paint, then hold and drag across the map. Brush size controls the radius. Shared regions load from the site. Your edits stay local until you download and publish the JSON file.</p>
+    <button id="exportData" type="button">Download draft JSON</button><label class="file-button" for="importData">Import data</label><input id="importData" type="file" accept="application/json">
   </div>
 </div>
 <script src="leaflet/leaflet.js"></script>
@@ -79,7 +105,7 @@
 (function(){
   var WN=27171, HN=36345, Z=7, S=8.04672, R=S/Math.sqrt(3), CS=1.5*R, KPP=S/48, SC=96, SR=68, YS=5873;
   var LAND=["C1", "D1", "C2", "B3", "C3", "A4", "B4", "C4", "D4", "E4", "F4", "A5", "B5", "C5", "D5", "E5", "F5", "A6", "B6", "C6", "D6", "E6", "F6", "A7", "C7", "D7", "E7", "F7", "G7", "B8", "C8", "D8", "E8", "F8", "G8", "A9", "B9", "C9", "D9", "E9", "F9", "G9", "A10", "B10", "C10", "D10", "E10", "F10", "B11", "C11", "D11", "E11"], POLE=[1900.0,3300.0];
-  var map=L.map('map',{crs:L.CRS.Simple,minZoom:1,maxZoom:Z,zoomSnap:0.5,wheelPxPerZoomLevel:90,attributionControl:false});
+  var map=L.map('map',{crs:L.CRS.Simple,minZoom:1,maxZoom:Z,zoomSnap:0.5,wheelPxPerZoomLevel:90,attributionControl:false,zoomControl:false});
   var ll=function(px,py){return map.unproject([px,py],Z)};
   var bounds=L.latLngBounds(ll(0,HN),ll(WN,0));
   L.tileLayer('tiles/{z}/{x}/{y}.jpg',{tileSize:512,minZoom:0,maxZoom:Z,bounds:bounds,noWrap:true,errorTileUrl:'ocean.jpg'}).addTo(map);
@@ -106,11 +132,12 @@
     read.innerHTML='Sheet '+sid(i,j)+' &middot; hex '+two(h[0]%SC+1)+two(h[1]%SR+1);
   }
   map.on('mousemove',show);
-  var STORE='antarctica-hex-overlays-v1', layerNames=['biome','political','geographical'];
-  var regionData={biome:[],political:[],geographical:[]}, overlayGroups={}, editMode=false, eraseMode=false, painting=false, lastPainted='';
-  try{var saved=localStorage.getItem(STORE);if(saved){var parsed=JSON.parse(saved);layerNames.forEach(function(k){if(Array.isArray(parsed[k]))regionData[k]=parsed[k];});}}catch(err){console.warn('Could not load saved overlay data',err);}
+  var STORE='antarctica-hex-overlays-v1', DATA_URL='data/regions.json', layerNames=['biome','political','geographical'];
+  var regionData={biome:[],political:[],geographical:[]}, overlayGroups={}, editMode=false, eraseMode=false, painting=false, lastPainted='', hasLocalDraft=false;
+  function applyRegionData(data){layerNames.forEach(function(k){if(Array.isArray(data&&data[k]))regionData[k]=data[k].filter(function(r){return r&&typeof r.id==='string'&&typeof r.name==='string'&&typeof r.color==='string'&&Array.isArray(r.hexes);});});}
+  try{var saved=localStorage.getItem(STORE);if(saved){applyRegionData(JSON.parse(saved));hasLocalDraft=true;}}catch(err){console.warn('Could not load saved overlay data',err);}
   layerNames.forEach(function(k){overlayGroups[k]=L.layerGroup().addTo(map);});
-  function saveData(){try{localStorage.setItem(STORE,JSON.stringify(regionData));}catch(err){setHint('Could not save in this browser. Export the data as a backup.');}}
+  function saveData(){try{localStorage.setItem(STORE,JSON.stringify(regionData));hasLocalDraft=true;}catch(err){setHint('Could not save in this browser. Download the JSON draft as a backup.');}}
   function setHint(t){document.getElementById('editorHint').textContent=t;}
   function currentLayer(){return document.getElementById('layerSelect').value;}
   function selectedRegion(){var id=document.getElementById('regionSelect').value;return regionData[currentLayer()].find(function(r){return r.id===id;});}
@@ -125,7 +152,15 @@
   function brushKeys(center){var q0=center[0],r0=center[1]-(q0-(q0&1))/2,rad=brushRadius(),keys=[];for(var dq=-rad;dq<=rad;dq++){for(var dr=-rad;dr<=rad;dr++){if(Math.max(Math.abs(dq),Math.abs(dr),Math.abs(dq+dr))>rad)continue;var q=q0+dq,ar=r0+dr,row=ar+(q-(q&1))/2;if(q<0||row<0)continue;var si=Math.floor(q/SC),sj=Math.floor(row/SR),sheet=sid(si,sj);if(LAND.indexOf(sheet)<0)continue;keys.push(addressKey([q,row]));}}return keys;}
   function assignBrush(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var center=addressKey(h);if(center===lastPainted)return;lastPainted=center;var arr=regionData[currentLayer()],region=selectedRegion();if(!eraseMode&&!region){setHint('Create or select a region before painting.');return;}brushKeys(h).forEach(function(key){arr.forEach(function(r){r.hexes=r.hexes.filter(function(x){return x!==key;});});if(!eraseMode)region.hexes.push(key);});saveData();renderLayer(currentLayer());}
 
-  document.getElementById('editorToggle').addEventListener('click',function(){var tools=document.getElementById('editorTools');tools.hidden=!tools.hidden;this.textContent=tools.hidden?'Open editor':'Close editor';});
+  var panelIds=['layersPanel','editor','presenter'],buttonIds={layersPanel:'layersButton',editor:'editorButton',presenter:'dossierButton'};
+  function closePanels(){panelIds.forEach(function(id){document.getElementById(id).hidden=true;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','false');});}
+  function togglePanel(id){var panel=document.getElementById(id),wasOpen=!panel.hidden;closePanels();if(!wasOpen){panel.hidden=false;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','true');}}
+  Object.keys(buttonIds).forEach(function(id){document.getElementById(buttonIds[id]).addEventListener('click',function(){togglePanel(id);});});
+  document.querySelectorAll('[data-close]').forEach(function(button){button.addEventListener('click',function(){var id=this.getAttribute('data-close');document.getElementById(id).hidden=true;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','false');});});
+  function setOverlayVisibility(key,visible){if(visible){overlayGroups[key].addTo(map);}else{map.removeLayer(overlayGroups[key]);}}
+  document.getElementById('biomeLayer').addEventListener('change',function(){setOverlayVisibility('biome',this.checked);});
+  document.getElementById('politicalLayer').addEventListener('change',function(){setOverlayVisibility('political',this.checked);});
+  document.getElementById('geographicalLayer').addEventListener('change',function(){setOverlayVisibility('geographical',this.checked);});
   function stopEditing(){editMode=false;eraseMode=false;painting=false;map.dragging.enable();document.getElementById('paintToggle').textContent='Paint: off';document.getElementById('paintToggle').classList.remove('active');document.getElementById('eraseToggle').textContent='Erase: off';document.getElementById('eraseToggle').classList.remove('active');}
   function updateBrushLabel(){var r=brushRadius(),count=1+3*r*(r+1);document.getElementById('brushSizeValue').textContent=r===0?'1 hex':'radius '+r+' ('+count+' hexes)';}
   document.getElementById('brushSize').addEventListener('input',updateBrushLabel);
@@ -134,7 +169,7 @@
   document.getElementById('regionSelect').addEventListener('change',function(){var r=selectedRegion();if(r){document.getElementById('regionName').value=r.name;document.getElementById('regionColor').value=r.color;}});
   document.getElementById('paintToggle').addEventListener('click',function(){editMode=!editMode;eraseMode=false;painting=false;map.dragging[editMode?'disable':'enable']();document.getElementById('eraseToggle').textContent='Erase: off';document.getElementById('eraseToggle').classList.remove('active');this.textContent='Paint: '+(editMode?'on':'off');this.classList.toggle('active',editMode);setHint(editMode?'Hold the mouse button and drag across hexes to paint. Map panning is paused while painting.':'Paint mode is off. Map panning is restored.');});
   document.getElementById('eraseToggle').addEventListener('click',function(){eraseMode=!eraseMode;editMode=eraseMode;painting=false;map.dragging[editMode?'disable':'enable']();document.getElementById('paintToggle').textContent='Paint: off';document.getElementById('paintToggle').classList.remove('active');this.textContent='Erase: '+(eraseMode?'on':'off');this.classList.toggle('active',eraseMode);setHint(eraseMode?'Hold the mouse button and drag to erase hexes. Map panning is paused while erasing.':'Erase mode is off. Map panning is restored.');});
-  document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(regionData,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='antarctica-overlays.json';a.click();URL.revokeObjectURL(url);});
+  document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(regionData,null,2)+'\\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='regions.json';a.click();URL.revokeObjectURL(url);setHint('Downloaded regions.json. To publish these changes for everyone, replace page/antarctica/data/regions.json in the site repository with this file.');});
   document.getElementById('importData').addEventListener('change',function(e){var file=e.target.files&&e.target.files[0];if(!file)return;var reader=new FileReader();reader.onload=function(){try{var data=JSON.parse(reader.result);layerNames.forEach(function(k){if(Array.isArray(data[k]))regionData[k]=data[k].filter(function(r){return r&&typeof r.name==='string'&&typeof r.color==='string'&&Array.isArray(r.hexes);});});saveData();refreshRegions();renderAll();setHint('Overlay data imported.');}catch(err){setHint('Could not import that JSON file.');}};reader.readAsText(file);e.target.value='';});
   map.on('mousedown',function(e){if(!editMode)return;painting=true;lastPainted='';assignBrush(e.latlng);});
   map.on('mousemove',function(e){if(painting)assignBrush(e.latlng);});
@@ -143,8 +178,9 @@
   window.addEventListener('mouseup',endStroke);
   function presentHex(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var i=Math.floor(h[0]/SC),j=Math.floor(h[1]/SR),sheet=sid(i,j),hex=two(h[0]%SC+1)+two(h[1]%SR+1),key=sheet+':'+hex;document.getElementById('presenterAddress').textContent=sheet+' / '+hex;document.getElementById('presenterSub').textContent='Antarctica · Hex dossier';document.getElementById('presenterIntro').textContent='Recorded information for this hex.';var html='';layerNames.forEach(function(k){var found=null;regionData[k].some(function(r){if(r.hexes.indexOf(key)!==-1){found=r;return true;}return false;});html+='<div class="present-row"><div class="present-label">'+(k==='biome'?'Biome':k==='political'?'Political territory':'Geographical region')+'</div>';html+=found?'<div class="present-value"><span class="present-swatch" style="background:'+found.color+'"></span>'+escapeHtml(found.name)+'</div>':'<div class="present-empty">No information recorded</div>';html+='</div>';});var places=[];if(sheet==='F9'&&hex==='1606')places.push({name:'Test Marker',description:'Test Descirption'});var poleHex=hexOf(POLE[0],POLE[1]),poleSheet=sid(Math.floor(poleHex[0]/SC),Math.floor(poleHex[1]/SR)),poleAddress=two(poleHex[0]%SC+1)+two(poleHex[1]%SR+1);if(sheet===poleSheet&&hex===poleAddress)places.push({name:'The South Pole',description:'Drowned ruins, just offshore.'});if(places.length){html+='<div class="present-row"><div class="present-label">Points of interest</div>'+places.map(function(x){return '<div class="present-value">'+escapeHtml(x.name)+'</div><div class="present-empty">'+escapeHtml(x.description)+'</div>';}).join('')+'</div>';}document.getElementById('presenterDetails').innerHTML=html;}
   function escapeHtml(s){return String(s).replace(/[&<>\"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch];});}
-  document.getElementById('presenterToggle').addEventListener('click',function(){var body=document.getElementById('presenterBody');body.hidden=!body.hidden;this.textContent=body.hidden?'Open Presenter':'Close Presenter';});
+
   map.on('click',function(e){show(e);presentHex(e.latlng);});
+  fetch(DATA_URL,{cache:'no-store'}).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json();}).then(function(shared){if(!hasLocalDraft){applyRegionData(shared);renderAll();refreshRegions();setHint('Shared region data loaded. New edits are saved locally; download the JSON draft to publish them for everyone.');}else{setHint('A local draft is active and takes precedence over the shared site data. Download it as JSON to publish your changes.');}}).catch(function(err){console.warn('Could not load shared region data',err);if(!hasLocalDraft)setHint('Shared data could not be loaded. You can still create regions locally and download a JSON draft.');});
   renderAll();refreshRegions();updateBrushLabel();
 
   var grid=L.layerGroup();
@@ -169,8 +205,9 @@
     .addTo(map);
   var ruins=L.marker(ll(pc[0],pc[1]),{icon:L.divIcon({className:'',html:'<div class="ruin" aria-label="Ruins">&there4;</div>',iconSize:[26,26],iconAnchor:[13,13]}),title:'South Pole ruins'})
     .bindPopup('<b>The South Pole</b><br>Drowned ruins, just offshore.<br>Sheet '+sid(Math.floor(ph[0]/SC),Math.floor(ph[1]/SR))+', hex '+two(ph[0]%SC+1)+two(ph[1]%SR+1)+'.').addTo(map);
-  L.control.layers(null,{'Biome':overlayGroups.biome,'Political':overlayGroups.political,'Geographical':overlayGroups.geographical},{collapsed:true,position:'bottomright'}).addTo(map);
-  L.control.scale({imperial:false,metric:false}).addTo(map);
+  document.getElementById('sheetGrid').addEventListener('change',function(){if(this.checked)grid.addTo(map);else map.removeLayer(grid);});
+  L.control.zoom({position:'bottomright'}).addTo(map);
+  L.control.scale({imperial:false,metric:false,position:'bottomright'}).addTo(map);
 })();
 </script>
 </body>
