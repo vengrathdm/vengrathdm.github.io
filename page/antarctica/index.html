@@ -39,6 +39,10 @@
   #editor #regionName:focus{outline:2px solid rgba(213,189,139,.8);outline-offset:1px;border-color:#b9a47c}
   #editor select.editor-select-native{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;opacity:0!important;pointer-events:none!important}
   .editor-select{position:relative;width:100%;margin-top:4px;font:13px/1.35 system-ui,sans-serif}
+  .editor-select-native{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;opacity:0!important;pointer-events:none!important}
+  .region-dialog .editor-select,#pinDialog .editor-select{width:100%;margin-top:4px}
+  .region-dialog .editor-select-trigger,#pinDialog .editor-select-trigger{width:100%;background:#fffaf0;color:#28201a;border-color:#82745e}
+  .region-dialog .editor-select-trigger:hover,.region-dialog .editor-select-trigger[aria-expanded=true],#pinDialog .editor-select-trigger:hover,#pinDialog .editor-select-trigger[aria-expanded=true]{background:#f0e4ca;border-color:#b9a47c}
   .editor-select-trigger{box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:34px;padding:7px 9px;border:1px solid #82745e;border-radius:3px;background:#fffaf0;color:#28201a;font:13px/1.35 system-ui,sans-serif;text-align:left;cursor:pointer;overflow:hidden}
   .editor-select-marquee{display:block;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .editor-select-menu{overflow:visible}
