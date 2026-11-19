@@ -74,6 +74,16 @@
       .addTo(grid);
   });
   var ph=hexOf(POLE[0],POLE[1]), pc=[CS*ph[0]/KPP, S*(ph[1]+0.5*(ph[0]&1))/KPP];
+  function sheetHex(sheet,hex){
+    var si=sheet.charCodeAt(0)-65, sj=parseInt(sheet.slice(1),10)-1;
+    var col=parseInt(hex.slice(0,2),10)-1, row=parseInt(hex.slice(2,4),10)-1;
+    if(!/^[A-Z]\d+$/.test(sheet)||!/^\d{4}$/.test(hex)||si<0||sj<0||col<0||col>=SC||row<0||row>=SR) throw new Error('Invalid sheet/hex address: '+sheet+' '+hex);
+    var h=[si*SC+col,sj*SR+row];
+    return ll(CS*h[0]/KPP,S*(h[1]+0.5*(h[0]&1))/KPP);
+  }
+  L.marker(sheetHex('F9','1606'),{icon:L.divIcon({className:'',html:'<div class="ruin" aria-label="Test Marker">★</div>',iconSize:[26,26],iconAnchor:[13,13]}),title:'Test Marker'})
+    .bindPopup('<b>Test Marker</b><br>Test Descirption<br>Sheet F9, hex 1606.')
+    .addTo(map);
   var ruins=L.marker(ll(pc[0],pc[1]),{icon:L.divIcon({className:'',html:'<div class="ruin" aria-label="Ruins">&there4;</div>',iconSize:[26,26],iconAnchor:[13,13]}),title:'South Pole ruins'})
     .bindPopup('<b>The South Pole</b><br>Drowned ruins, just offshore.<br>Sheet '+sid(Math.floor(ph[0]/SC),Math.floor(ph[1]/SR))+', hex '+two(ph[0]%SC+1)+two(ph[1]%SR+1)+'.').addTo(map);
   L.control.scale({imperial:false,metric:false}).addTo(map);
