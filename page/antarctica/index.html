@@ -179,9 +179,9 @@
   .popup-description{color:#f3ead7}
   .popup-reference{display:block;margin-top:5px;color:#c5b99f;font:10px/1.4 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
   .map-region-label{background:transparent;border:0;white-space:nowrap;pointer-events:none}
-  .map-region-label span{display:inline-block;transform:translate(-50%,-50%);padding:3px 7px;border-radius:3px;color:#fff8e8;background:rgba(23,30,31,.72);font:600 12px/1.25 Georgia,"Times New Roman",serif;letter-spacing:.04em;text-shadow:0 1px 2px #000,0 0 4px #000;box-shadow:0 1px 4px rgba(0,0,0,.25)}
-  .map-region-label-political span{border-bottom:2px solid currentColor}
-  .map-region-label-geographical span{font:italic 600 13px/1.25 Georgia,"Times New Roman",serif;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5)}
+  .map-region-label span{display:inline-block;transform:translate(-50%,-50%);max-width:320px;padding:5px 12px;border-radius:3px;color:#fff3d6;background:linear-gradient(180deg,rgba(19,31,34,.9),rgba(19,31,34,.76));font:700 20px/1.15 Voltaire,Georgia,serif;letter-spacing:.11em;text-transform:uppercase;text-shadow:0 2px 2px rgba(0,0,0,.95),0 0 8px rgba(0,0,0,.9);box-shadow:0 2px 8px rgba(0,0,0,.42);border-bottom:2px solid rgba(213,189,139,.9);-webkit-text-stroke:.25px rgba(40,32,26,.7)}
+  .map-region-label-political span{font-style:normal}
+  .map-region-label-geographical span{font:italic 700 19px/1.15 Georgia,"Times New Roman",serif;letter-spacing:.14em;color:#f4e6c4;border:1px solid rgba(213,189,139,.8);border-bottom:2px solid rgba(213,189,139,.95);background:linear-gradient(180deg,rgba(31,43,43,.92),rgba(20,30,33,.82))}
   .leaflet-bottom.leaflet-right{bottom:8px;right:10px}
   .leaflet-control-zoom a{background:rgba(20,35,43,.84)!important;color:#f3ead7!important;border-color:rgba(226,211,177,.35)!important}
   .leaflet-control-scale-line{background:rgba(20,35,43,.65);border-color:#f3ead7;color:#f3ead7;text-shadow:none}
@@ -210,7 +210,7 @@
   <div class="panel-head"><strong>Map layers</strong><button class="panel-close" data-close="layersPanel" type="button">Close</button></div>
   <label><input type="checkbox" id="politicalLayer" checked> Political overlays</label>
   <label><input type="checkbox" id="geographicalLayer" checked> Geographical overlays</label>
-  <div class="layer-name-control-wrap"><span class="layer-name-label">Region names</span><div id="regionNameMode" class="layer-name-control" role="group" aria-label="Region name visibility"><button type="button" data-mode="hide" aria-pressed="true">Hide</button><button type="button" data-mode="hover" aria-pressed="false">Hover</button><button type="button" data-mode="show" aria-pressed="false">Show</button></div></div>
+  <div class="layer-name-control-wrap"><span class="layer-name-label">Region names</span><div id="regionNameMode" class="layer-name-control" role="group" aria-label="Region name visibility"><button type="button" data-mode="hide" aria-pressed="false">Hide</button><button type="button" data-mode="hover" aria-pressed="true">Hover</button><button type="button" data-mode="show" aria-pressed="false">Show</button></div></div>
   <label><input type="checkbox" id="sheetGrid"> Sheet boundaries</label>
 </section>
 <section id="presenter" class="floating-panel" hidden>
@@ -308,7 +308,7 @@
     read.innerHTML='Sheet '+sid(i,j)+' &middot; hex '+two(h[0]%SC+1)+two(h[1]%SR+1);
   }
   map.on('mousemove',show);
-  var STORE='antarctica-hex-overlays-v1', DATA_URL='data/regions.json', layerNames=['political','geographical'], regionNameMode='hide', editingRegionId='';
+  var STORE='antarctica-hex-overlays-v1', DATA_URL='data/regions.json', layerNames=['political','geographical'], regionNameMode='hover', editingRegionId='';
   var regionData={political:[],geographical:[]}, pinData=[], pinMarkers=L.layerGroup().addTo(map), overlayGroups={}, editMode=false, eraseMode=false, painting=false, lastPainted='', hasLocalDraft=false, hasLocalPins=false, placingPin=false, pendingPinHex='', editingPinId='';
   function applyRegionData(data){
     layerNames.forEach(function(k){
