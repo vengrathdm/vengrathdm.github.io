@@ -314,7 +314,7 @@
     read.innerHTML='Arkusz '+sid(i,j)+' &middot; hex '+two(h[0]%SC+1)+two(h[1]%SR+1);
   }
   map.on('mousemove',show);
-  var STORE='heartwellmap-hex-overlays-v1', DATA_URL='data/regions.json', layerNames=['political','geographical'], regionNameMode='hover', editingRegionId='', brushMode='idle', regionChooserPurpose='edit';
+  var STORE='heartwellmap-hex-overlays-v2', DATA_URL='data/regions.json', layerNames=['political','geographical'], regionNameMode='hover', editingRegionId='', brushMode='idle', regionChooserPurpose='edit';
   var regionData={political:[],geographical:[]}, pinData=[], pinMarkers=L.layerGroup().addTo(map), overlayGroups={}, editMode=false, eraseMode=false, painting=false, lastPainted='', hasLocalDraft=false, hasLocalPins=false, placingPin=false, pendingPinHex='', editingPinId='';
   function applyRegionData(data){
     if(!data||typeof data!=='object'||!Array.isArray(data.political)||!Array.isArray(data.geographical))throw new Error('Plik musi zawierać tablice regionów politycznych i geograficznych.');
