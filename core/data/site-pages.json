@@ -570,5 +570,16 @@
     "image": "/core/graphics/voronoi/red-hand-of-doom.webp",
     "layout": "bespoke",
     "manifest": null
+  },
+  {
+    "id": "fantasy-map",
+    "title": "Fantasy Map",
+    "type": "map",
+    "category": "Archiwum",
+    "visibility": "public",
+    "url": "/page/antarctica/",
+    "image": "/core/graphics/voronoi/FantasyMap1.png",
+    "layout": "page-specific",
+    "manifest": null
   }
 ]
