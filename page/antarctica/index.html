@@ -70,6 +70,10 @@
   .popup-title{display:block;margin-bottom:3px;color:#efd59c;font:1.05rem Voltaire,sans-serif;letter-spacing:.1em;text-transform:uppercase}
   .popup-description{color:#f3ead7}
   .popup-reference{display:block;margin-top:5px;color:#c5b99f;font:10px/1.4 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+  .map-region-label{background:transparent;border:0;white-space:nowrap;pointer-events:none}
+  .map-region-label span{display:inline-block;transform:translate(-50%,-50%);padding:3px 7px;border-radius:3px;color:#fff8e8;background:rgba(23,30,31,.72);font:600 12px/1.25 Georgia,"Times New Roman",serif;letter-spacing:.04em;text-shadow:0 1px 2px #000,0 0 4px #000;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+  .map-region-label-political span{border-bottom:2px solid currentColor}
+  .map-region-label-geographical span{font:italic 600 13px/1.25 Georgia,"Times New Roman",serif;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5)}
   .leaflet-bottom.leaflet-right{bottom:8px;right:10px}
   .leaflet-control-zoom a{background:rgba(20,35,43,.84)!important;color:#f3ead7!important;border-color:rgba(226,211,177,.35)!important}
   .leaflet-control-scale-line{background:rgba(20,35,43,.65);border-color:#f3ead7;color:#f3ead7;text-shadow:none}
@@ -159,7 +163,17 @@
   map.on('mousemove',show);
   var STORE='antarctica-hex-overlays-v1', DATA_URL='data/regions.json', layerNames=['biome','political','geographical'];
   var regionData={biome:[],political:[],geographical:[]}, overlayGroups={}, editMode=false, eraseMode=false, painting=false, lastPainted='', hasLocalDraft=false;
-  function applyRegionData(data){layerNames.forEach(function(k){if(Array.isArray(data&&data[k]))regionData[k]=data[k].filter(function(r){return r&&typeof r.id==='string'&&typeof r.name==='string'&&typeof r.color==='string'&&Array.isArray(r.hexes);});});}
+  function applyRegionData(data){
+    layerNames.forEach(function(k){
+      if(!Array.isArray(data&&data[k]))return;
+      var claimed=Object.create(null);
+      regionData[k]=data[k].filter(function(r){return r&&typeof r.id==='string'&&typeof r.name==='string'&&/^#[0-9a-f]{6}$/i.test(r.color)&&Array.isArray(r.hexes);}).map(function(r){
+        var copy={id:r.id,name:r.name,color:r.color,hexes:[]};
+        r.hexes.forEach(function(key){if(typeof key==='string'&&!claimed[key]&&parseAddress(key)){claimed[key]=true;copy.hexes.push(key);}});
+        return copy;
+      });
+    });
+  }
   try{var saved=localStorage.getItem(STORE);if(saved){applyRegionData(JSON.parse(saved));hasLocalDraft=true;}}catch(err){console.warn('Could not load saved overlay data',err);}
   layerNames.forEach(function(k){overlayGroups[k]=L.layerGroup();});
   function saveData(){try{localStorage.setItem(STORE,JSON.stringify(regionData));hasLocalDraft=true;}catch(err){setHint('Could not save in this browser. Download the JSON draft as a backup.');}}
@@ -171,11 +185,64 @@
   function parseAddress(key){var m=/^([A-Z])(\d+):(\d{2})(\d{2})$/.exec(key);if(!m)return null;var si=m[1].charCodeAt(0)-65,sj=parseInt(m[2],10)-1,col=parseInt(m[3],10)-1,row=parseInt(m[4],10)-1;if(si<0||sj<0||col<0||col>=SC||row<0||row>=SR)return null;return [si*SC+col,sj*SR+row];}
   function hexVertices(key){var h=parseAddress(key);if(!h)return null;var cx=CS*h[0]/KPP,cy=S*(h[1]+0.5*(h[0]&1))/KPP,pts=[];for(var n=0;n<6;n++){var a=Math.PI*n/3;pts.push([cx+R*Math.cos(a)/KPP,cy+R*Math.sin(a)/KPP]);}return pts;}
   function darker(hex){var n=parseInt(hex.slice(1),16),r=Math.max(0,((n>>16)&255)-65),g=Math.max(0,((n>>8)&255)-65),b=Math.max(0,(n&255)-65);return '#'+[r,g,b].map(function(v){return ('0'+v.toString(16)).slice(-2);}).join('');}
-  function renderLayer(k){var group=overlayGroups[k];group.clearLayers();regionData[k].forEach(function(region){var unique=Array.from(new Set(region.hexes)),edges=Object.create(null);unique.forEach(function(key){var pts=hexVertices(key);if(!pts)return;L.polygon(pts.map(function(p){return ll(p[0],p[1]);}),{stroke:false,fillColor:region.color,fillOpacity:0.34,interactive:false}).addTo(group);for(var n=0;n<6;n++){var a=pts[n],b=pts[(n+1)%6],ak=a[0].toFixed(2)+','+a[1].toFixed(2),bk=b[0].toFixed(2)+','+b[1].toFixed(2),id=ak<bk?ak+'|'+bk:bk+'|'+ak;if(!edges[id])edges[id]={count:0,a:a,b:b};edges[id].count++;}});Object.keys(edges).forEach(function(id){var e=edges[id];if(e.count===1)L.polyline([ll(e.a[0],e.a[1]),ll(e.b[0],e.b[1])],{color:darker(region.color),weight:2.2,opacity:1,interactive:false,lineCap:'round'}).addTo(group);});});}
+  function hatchHex(pts,color,group){
+    var values=pts.map(function(p){return p[0]+p[1];}),min=Math.min.apply(null,values),max=Math.max.apply(null,values),spacing=10;
+    for(var c=Math.ceil(min/spacing)*spacing;c<=max;c+=spacing){
+      var hits=[];
+      for(var i=0;i<6;i++){
+        var a=pts[i],b=pts[(i+1)%6],da=a[0]+a[1]-c,db=b[0]+b[1]-c;
+        if((da<0&&db>0)||(da>0&&db<0)||Math.abs(da)<0.0001){
+          var t=Math.abs(da)<0.0001?0:da/(da-db);
+          hits.push([a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t]);
+        }
+      }
+      if(hits.length>=2){
+        var a=hits[0],b=hits[1];
+        if(Math.hypot(a[0]-b[0],a[1]-b[1])>1)
+          L.polyline([ll(a[0],a[1]),ll(b[0],b[1])],{color:color,weight:1.25,opacity:.68,interactive:false,lineCap:'round'}).addTo(group);
+      }
+    }
+  }
+  function regionLabel(region,keys,k,group){
+    if(k==='biome'||!keys.length)return;
+    var centers=keys.map(function(key){var h=parseAddress(key);return {key:key,x:CS*h[0]/KPP,y:S*(h[1]+0.5*(h[0]&1))/KPP};});
+    var cx=centers.reduce(function(a,p){return a+p.x;},0)/centers.length,cy=centers.reduce(function(a,p){return a+p.y;},0)/centers.length,best=centers[0],distance=Infinity;
+    centers.forEach(function(p){var d=Math.pow(p.x-cx,2)+Math.pow(p.y-cy,2);if(d<distance){distance=d;best=p;}});
+    var cls=k==='political'?'map-region-label-political':'map-region-label-geographical';
+    L.marker(ll(best.x,best.y),{interactive:false,keyboard:false,icon:L.divIcon({className:'map-region-label '+cls,html:'<span>'+escapeHtml(region.name)+'</span>',iconSize:[1,1],iconAnchor:[0,0]})}).addTo(group);
+  }
+  function renderLayer(k){
+    var group=overlayGroups[k];group.clearLayers();
+    regionData[k].forEach(function(region){
+      var unique=Array.from(new Set(region.hexes)),edges=Object.create(null),valid=[];
+      unique.forEach(function(key){
+        var pts=hexVertices(key);if(!pts)return;valid.push(key);
+        if(k==='biome'){
+          L.polygon(pts.map(function(p){return ll(p[0],p[1]);}),{stroke:false,fillColor:region.color,fillOpacity:.34,interactive:false}).addTo(group);
+        }else if(k==='political'){
+          L.polygon(pts.map(function(p){return ll(p[0],p[1]);}),{stroke:false,fillColor:region.color,fillOpacity:.055,interactive:false}).addTo(group);
+          hatchHex(pts,region.color,group);
+        }
+        for(var n=0;n<6;n++){
+          var a=pts[n],b=pts[(n+1)%6],ak=a[0].toFixed(2)+','+a[1].toFixed(2),bk=b[0].toFixed(2)+','+b[1].toFixed(2),id=ak<bk?ak+'|'+bk:bk+'|'+ak;
+          if(!edges[id])edges[id]={count:0,a:a,b:b};edges[id].count++;
+        }
+      });
+      Object.keys(edges).forEach(function(id){
+        var e=edges[id];if(e.count!==1)return;
+        if(k==='biome')return;
+        L.polyline([ll(e.a[0],e.a[1]),ll(e.b[0],e.b[1])],{
+          color:region.color,weight:k==='political'?2.1:4.2,opacity:k==='political'?.88:1,
+          interactive:false,lineCap:'round',lineJoin:'round'
+        }).addTo(group);
+      });
+      regionLabel(region,valid,k,group);
+    });
+  }
   function renderAll(){layerNames.forEach(renderLayer);}
   function brushRadius(){return parseInt(document.getElementById('brushSize').value,10)||0;}
   function brushKeys(center){var q0=center[0],r0=center[1]-(q0-(q0&1))/2,rad=brushRadius(),keys=[];for(var dq=-rad;dq<=rad;dq++){for(var dr=-rad;dr<=rad;dr++){if(Math.max(Math.abs(dq),Math.abs(dr),Math.abs(dq+dr))>rad)continue;var q=q0+dq,ar=r0+dr,row=ar+(q-(q&1))/2;if(q<0||row<0)continue;var si=Math.floor(q/SC),sj=Math.floor(row/SR),sheet=sid(si,sj);if(LAND.indexOf(sheet)<0)continue;keys.push(addressKey([q,row]));}}return keys;}
-  function assignBrush(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var center=addressKey(h);if(center===lastPainted)return;lastPainted=center;var arr=regionData[currentLayer()],region=selectedRegion();if(!eraseMode&&!region){setHint('Create or select a region before painting.');return;}brushKeys(h).forEach(function(key){arr.forEach(function(r){r.hexes=r.hexes.filter(function(x){return x!==key;});});if(!eraseMode)region.hexes.push(key);});saveData();renderLayer(currentLayer());}
+  function assignBrush(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var center=addressKey(h);if(center===lastPainted)return;lastPainted=center;var arr=regionData[currentLayer()],region=selectedRegion();if(!eraseMode&&!region){setHint('Create or select a region before painting.');return;}brushKeys(h).forEach(function(key){arr.forEach(function(r){r.hexes=r.hexes.filter(function(x){return x!==key;});});if(!eraseMode&&region.hexes.indexOf(key)===-1)region.hexes.push(key);});saveData();renderLayer(currentLayer());}
 
   var panelIds=['layersPanel','editor','presenter'],buttonIds={layersPanel:'layersButton',editor:'editorButton',presenter:'dossierButton'};
   function closePanels(){panelIds.forEach(function(id){document.getElementById(id).hidden=true;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','false');});}
@@ -196,7 +263,7 @@
   document.getElementById('paintToggle').addEventListener('click',function(){editMode=!editMode;eraseMode=false;painting=false;map.dragging[editMode?'disable':'enable']();document.getElementById('eraseToggle').textContent='Erase: off';document.getElementById('eraseToggle').classList.remove('active');this.textContent='Paint: '+(editMode?'on':'off');this.classList.toggle('active',editMode);setHint(editMode?'Hold the mouse button and drag across hexes to paint. Map panning is paused while painting.':'Paint mode is off. Map panning is restored.');});
   document.getElementById('eraseToggle').addEventListener('click',function(){eraseMode=!eraseMode;editMode=eraseMode;painting=false;map.dragging[editMode?'disable':'enable']();document.getElementById('paintToggle').textContent='Paint: off';document.getElementById('paintToggle').classList.remove('active');this.textContent='Erase: '+(eraseMode?'on':'off');this.classList.toggle('active',eraseMode);setHint(eraseMode?'Hold the mouse button and drag to erase hexes. Map panning is paused while erasing.':'Erase mode is off. Map panning is restored.');});
   document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(regionData,null,2)+'\\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='regions.json';a.click();URL.revokeObjectURL(url);setHint('Downloaded regions.json. To publish these changes for everyone, replace page/antarctica/data/regions.json in the site repository with this file.');});
-  document.getElementById('importData').addEventListener('change',function(e){var file=e.target.files&&e.target.files[0];if(!file)return;var reader=new FileReader();reader.onload=function(){try{var data=JSON.parse(reader.result);layerNames.forEach(function(k){if(Array.isArray(data[k]))regionData[k]=data[k].filter(function(r){return r&&typeof r.name==='string'&&typeof r.color==='string'&&Array.isArray(r.hexes);});});saveData();refreshRegions();renderAll();setHint('Overlay data imported.');}catch(err){setHint('Could not import that JSON file.');}};reader.readAsText(file);e.target.value='';});
+  document.getElementById('importData').addEventListener('change',function(e){var file=e.target.files&&e.target.files[0];if(!file)return;var reader=new FileReader();reader.onload=function(){try{var data=JSON.parse(reader.result);applyRegionData(data);saveData();refreshRegions();renderAll();setHint('Overlay data imported.');}catch(err){setHint('Could not import that JSON file.');}};reader.readAsText(file);e.target.value='';});
   map.on('mousedown',function(e){if(!editMode)return;painting=true;lastPainted='';assignBrush(e.latlng);});
   map.on('mousemove',function(e){if(painting)assignBrush(e.latlng);});
   function endStroke(){painting=false;lastPainted='';}
