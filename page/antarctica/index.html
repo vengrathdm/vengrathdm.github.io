@@ -34,11 +34,17 @@
   #editorTools[hidden]{display:none}
   #editor label{display:block;margin-top:9px;font-weight:600;color:#e7d9bb;font:600 12px/1.4 system-ui,sans-serif}
   #editor select,#editor input:not([type=color]):not([type=file]){box-sizing:border-box;width:100%;margin-top:4px;padding:7px 8px;border:1px solid #82745e;border-radius:3px;background:#fffaf0;color:#28201a;font:13px/1.35 system-ui,sans-serif}
-  #editor select{appearance:none;-webkit-appearance:none;background-color:#fffaf0;background-image:linear-gradient(45deg,transparent 50%,#665640 50%),linear-gradient(135deg,#665640 50%,transparent 50%);background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:28px;color:#28201a;font:13px/1.35 system-ui,sans-serif}
-  #editor select option{background:#17252b;color:#f3ead7;font:13px/1.4 system-ui,sans-serif}
-  #editor select option:checked{background:#665640;color:#fff2d4}
-  #editor select optgroup{background:#17252b;color:#efd59c;font:600 12px system-ui,sans-serif}
-  #editor select:focus{outline:2px solid rgba(213,189,139,.8);outline-offset:1px}
+  #editor select.editor-select-native{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;opacity:0!important;pointer-events:none!important}
+  .editor-select{position:relative;width:100%;margin-top:4px;font:13px/1.35 system-ui,sans-serif}
+  .editor-select-trigger{box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;width:100%;min-height:34px;padding:7px 9px;border:1px solid #82745e;border-radius:3px;background:#fffaf0;color:#28201a;font:13px/1.35 system-ui,sans-serif;text-align:left;cursor:pointer}
+  .editor-select-trigger:after{content:'';width:7px;height:7px;margin:0 3px 4px 12px;border-right:1.5px solid #665640;border-bottom:1.5px solid #665640;transform:rotate(45deg);flex:0 0 auto}
+  .editor-select-trigger:hover,.editor-select-trigger[aria-expanded=true]{background:#f0e4ca;border-color:#b9a47c}
+  .editor-select-trigger:focus-visible,.editor-select-option:focus-visible{outline:2px solid #d5bd8b;outline-offset:2px}
+  .editor-select-menu{position:absolute;z-index:1300;top:calc(100% + 4px);left:0;right:0;max-height:220px;overflow:auto;padding:4px;background:rgba(23,37,43,.98);border:1px solid rgba(222,198,145,.65);border-radius:4px;box-shadow:0 8px 22px rgba(0,0,0,.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+  .editor-select-menu[hidden]{display:none}
+  .editor-select-option{display:block;width:100%;padding:7px 9px;border:0;border-radius:2px;background:transparent;color:#f3ead7;font:13px/1.4 system-ui,sans-serif;text-align:left;cursor:pointer}
+  .editor-select-option:hover,.editor-select-option[aria-selected=true],.editor-select-option:focus{background:#665640;color:#fff2d4;outline:none}
+  .editor-select-option:disabled{color:#958b78;cursor:default}
   #editor input[type=color]{width:42px;height:28px;vertical-align:middle;margin:3px 0}
   #editor input[type=range]{width:100%;margin-top:5px;padding:0}
   #editor button:not(.panel-close),#editor .file-button{margin:7px 4px 0 0;padding:7px 9px;border:1px solid #8a795a;border-radius:3px;background:#e5d7b8;color:#28201a;font:600 12px system-ui,sans-serif;cursor:pointer}
@@ -182,7 +188,47 @@
   function setHint(t){}
   function currentLayer(){return document.getElementById('layerSelect').value;}
   function selectedRegion(){var id=document.getElementById('regionSelect').value;return regionData[currentLayer()].find(function(r){return r.id===id;});}
-  function refreshRegions(preferred){var sel=document.getElementById('regionSelect'),arr=regionData[currentLayer()];sel.innerHTML='';arr.forEach(function(r){var o=document.createElement('option');o.value=r.id;o.textContent=r.name;sel.appendChild(o);});if(preferred&&arr.some(function(r){return r.id===preferred;}))sel.value=preferred;if(!arr.length){var o=document.createElement('option');o.value='';o.textContent='No regions yet';sel.appendChild(o);}}
+  var editorSelects=[];
+  function enhanceEditorSelect(select){
+    var wrap=document.createElement('div');wrap.className='editor-select';
+    select.classList.add('editor-select-native');select.parentNode.insertBefore(wrap,select);wrap.appendChild(select);
+    var trigger=document.createElement('button');trigger.type='button';trigger.className='editor-select-trigger';trigger.setAttribute('role','combobox');trigger.setAttribute('aria-haspopup','listbox');trigger.setAttribute('aria-expanded','false');
+    var menu=document.createElement('div');menu.className='editor-select-menu';menu.hidden=true;menu.setAttribute('role','listbox');
+    var menuId='editor-select-menu-'+select.id;menu.id=menuId;trigger.setAttribute('aria-controls',menuId);wrap.appendChild(trigger);wrap.appendChild(menu);
+    function close(){menu.hidden=true;trigger.setAttribute('aria-expanded','false');}
+    function sync(){
+      var chosen=select.options[select.selectedIndex];trigger.textContent=chosen?chosen.textContent:'Select…';
+      menu.innerHTML='';
+      Array.prototype.forEach.call(select.options,function(option,index){
+        var item=document.createElement('button');item.type='button';item.className='editor-select-option';item.setAttribute('role','option');item.setAttribute('aria-selected',option.selected?'true':'false');item.textContent=option.textContent;item.disabled=option.disabled;
+        item.addEventListener('click',function(){select.selectedIndex=index;select.dispatchEvent(new Event('change',{bubbles:true}));sync();close();trigger.focus();});
+        menu.appendChild(item);
+      });
+    }
+    function open(){sync();menu.hidden=false;trigger.setAttribute('aria-expanded','true');var current=menu.querySelector('[aria-selected=true]')||menu.querySelector('button');if(current)current.focus();}
+    trigger.addEventListener('click',function(){if(menu.hidden)open();else close();});
+    trigger.addEventListener('keydown',function(e){
+      if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();open();}
+      else if(e.key==='Enter'||e.key===' '){e.preventDefault();if(menu.hidden)open();else close();}
+      else if(e.key==='Escape')close();
+    });
+    menu.addEventListener('keydown',function(e){
+      var items=Array.prototype.slice.call(menu.querySelectorAll('button:not(:disabled)')),index=items.indexOf(document.activeElement),next=index;
+      if(e.key==='ArrowDown')next=Math.min(items.length-1,index+1);
+      else if(e.key==='ArrowUp')next=Math.max(0,index-1);
+      else if(e.key==='Home')next=0;
+      else if(e.key==='End')next=items.length-1;
+      else if(e.key==='Escape'){e.preventDefault();close();trigger.focus();return;}
+      else if(e.key==='Tab'){close();return;}
+      else return;
+      e.preventDefault();if(items[next])items[next].focus();
+    });
+    select.addEventListener('change',sync);
+    document.addEventListener('click',function(e){if(!wrap.contains(e.target))close();});
+    editorSelects.push({select:select,sync:sync,close:close});sync();
+  }
+  function syncEditorSelect(select){editorSelects.forEach(function(item){if(item.select===select)item.sync();});}
+  function refreshRegions(preferred){var sel=document.getElementById('regionSelect'),arr=regionData[currentLayer()];sel.innerHTML='';arr.forEach(function(r){var o=document.createElement('option');o.value=r.id;o.textContent=r.name;sel.appendChild(o);});if(preferred&&arr.some(function(r){return r.id===preferred;}))sel.value=preferred;if(!arr.length){var o=document.createElement('option');o.value='';o.textContent='No regions yet';sel.appendChild(o);}syncEditorSelect(sel);}
   function addressKey(h){var i=Math.floor(h[0]/SC),j=Math.floor(h[1]/SR);return sid(i,j)+':'+two(h[0]%SC+1)+two(h[1]%SR+1);}
   function parseAddress(key){var m=/^([A-Z])(\d+):(\d{2})(\d{2})$/.exec(key);if(!m)return null;var si=m[1].charCodeAt(0)-65,sj=parseInt(m[2],10)-1,col=parseInt(m[3],10)-1,row=parseInt(m[4],10)-1;if(si<0||sj<0||col<0||col>=SC||row<0||row>=SR)return null;return [si*SC+col,sj*SR+row];}
   function hexVertices(key){var h=parseAddress(key);if(!h)return null;var cx=CS*h[0]/KPP,cy=S*(h[1]+0.5*(h[0]&1))/KPP,pts=[];for(var n=0;n<6;n++){var a=Math.PI*n/3;pts.push([cx+R*Math.cos(a)/KPP,cy+R*Math.sin(a)/KPP]);}return pts;}
@@ -279,6 +325,8 @@
   function selectHexAt(latlng){var event={latlng:latlng};show(event);presentHex(latlng);openPanel('presenter');}
   map.on('click',function(e){if(!document.getElementById('editor').hidden){show(e);presentHex(e.latlng);return;}selectHexAt(e.latlng);});
   fetch(DATA_URL,{cache:'no-store'}).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json();}).then(function(shared){if(!hasLocalDraft){applyRegionData(shared);renderAll();refreshRegions();}}).catch(function(err){console.warn('Could not load shared region data',err);if(!hasLocalDraft)setHint('Shared region data could not be loaded.');});
+  enhanceEditorSelect(document.getElementById('layerSelect'));
+  enhanceEditorSelect(document.getElementById('regionSelect'));
   renderAll();refreshRegions();updateBrushLabel();
 
   var grid=L.layerGroup();
