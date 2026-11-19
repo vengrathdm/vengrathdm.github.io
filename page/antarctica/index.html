@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Antarktyda bez lodu — mapa</title>
-<meta name="description" content="Przesuwaj i przybliżaj mapę bezlodowej Antarktydy w siatce heksów o boku 5 mil.">
+<meta name="description" content="Przesuwaj i przybliżaj mapę bezlodowej Antarktydy w siatce hexów o boku 5 mil.">
 <link rel="stylesheet" href="leaflet/leaflet.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -211,7 +211,7 @@
   <button class="tool-button" id="editorButton" type="button" aria-expanded="false">Edytor</button>
   <button class="tool-button" id="dossierButton" type="button" aria-expanded="false">Karta terenu</button>
 </div>
-<div id="read" class="panel"><small>Najedź na mapę, aby wyświetlić oznaczenie heksu</small></div>
+<div id="read" class="panel"><small>Najedź na mapę, aby wyświetlić oznaczenie hexu</small></div>
 <section id="layersPanel" class="floating-panel" hidden>
   <div class="panel-head"><strong>Warstwy mapy</strong><button class="panel-close" data-close="layersPanel" type="button">Zamknij</button></div>
   <label><input type="checkbox" id="politicalLayer" checked> Warstwy polityczne</label>
@@ -221,10 +221,10 @@
 </section>
 <section id="presenter" class="floating-panel" hidden>
   <div class="panel-head"><strong>Karta terenu</strong><button class="panel-close" data-close="presenter" type="button">Zamknij</button></div>
-  <div id="presenterBody"><div id="presenterAddress">Nie wybrano heksu</div><div id="presenterSub">Antarktyda · Oznaczenie heksu</div><p id="presenterIntro">Wybierz dowolny heks na mapie, aby wyświetlić zapisane o nim informacje.</p><div id="presenterDetails"></div></div>
+  <div id="presenterBody"><div id="presenterAddress">Nie wybrano hexu</div><div id="presenterSub">Antarktyda · Oznaczenie hexu</div><p id="presenterIntro">Wybierz dowolny hex na mapie, aby wyświetlić zapisane o nim informacje.</p><div id="presenterDetails"></div></div>
 </section>
 <div id="editor" class="floating-panel" hidden>
-  <div class="panel-head"><strong>Nakładki heksów</strong><button class="panel-close" data-close="editor" type="button">Zamknij</button></div>
+  <div class="panel-head"><strong>Nakładki hexów</strong><button class="panel-close" data-close="editor" type="button">Zamknij</button></div>
   <div id="editorTools">
     <div class="editor-field"><span class="editor-field-label">Warstwa nakładki</span><select id="layerSelect"><option value="political">Polityczna</option><option value="geographical">Geograficzna</option></select></div>
     <section class="editor-section">
@@ -235,7 +235,7 @@
     <section class="editor-section">
       <h3>Pędzel</h3>
       <div class="editor-action-row"><div id="brushModeControl" class="brush-mode-control" role="group" aria-label="Tryb pędzla"><button type="button" data-mode="idle" aria-pressed="true">Bezczynny</button><button type="button" data-mode="paint" aria-pressed="false">Maluj</button><button type="button" data-mode="erase" aria-pressed="false">Wymaż</button></div><button id="placePinButton" type="button">Dodaj znacznik</button></div>
-      <label>Rozmiar pędzla <span id="brushSizeValue">1 heks</span><input id="brushSize" type="range" min="0" max="5" step="1" value="0"></label>
+      <label>Rozmiar pędzla <span id="brushSizeValue">1 hex</span><input id="brushSize" type="range" min="0" max="5" step="1" value="0"></label>
     </section>
     <div class="editor-data-actions"><button id="exportData" type="button">Eksportuj dane</button><label class="file-button" for="importData">Importuj dane</label></div><input id="importData" type="file" accept="application/json">
   </div>
@@ -273,7 +273,7 @@
 </div>
 <div id="pinDialog" hidden role="dialog" aria-modal="true" aria-labelledby="pinDialogTitle">
   <h2 id="pinDialogTitle">Dodaj punkt</h2>
-  <p class="pin-dialog-sub" id="pinDialogAddress">Wybrany heks</p>
+  <p class="pin-dialog-sub" id="pinDialogAddress">Wybrany hex</p>
   <form id="pinForm">
     <label>Nazwa znacznika<input id="pinName" type="text" maxlength="100" required placeholder="np. Stare obserwatorium"></label>
     <label>Rodzaj znacznika<select id="pinStyle"><option value="standard">Zwykły</option><option value="ruin">Ruiny</option><option value="settlement">Osada</option><option value="landmark">Punkt orientacyjny</option><option value="natural">Obiekt przyrodniczy</option></select><span id="pinStylePreview" class="pin-style-preview" aria-label="Podgląd wyglądu znacznika"></span></label>
@@ -312,7 +312,7 @@
     var h=hexOf(p.x*KPP,p.y*KPP);
     if(h[0]<0||h[1]<0){read.innerHTML='<small>Poza mapą</small>';return}
     var i=Math.floor(h[0]/SC), j=Math.floor(h[1]/SR);
-    read.innerHTML='Arkusz '+sid(i,j)+' &middot; heks '+two(h[0]%SC+1)+two(h[1]%SR+1);
+    read.innerHTML='Arkusz '+sid(i,j)+' &middot; hex '+two(h[0]%SC+1)+two(h[1]%SR+1);
   }
   map.on('mousemove',show);
   var STORE='antarctica-hex-overlays-v1', DATA_URL='data/regions.json', layerNames=['political','geographical'], regionNameMode='hover', editingRegionId='', brushMode='idle', regionChooserPurpose='edit';
@@ -497,7 +497,7 @@
     var assigned=[];
     layerNames.forEach(function(layer){regionData[layer].forEach(function(region){if(region.hexes.indexOf(key)!==-1)assigned.push({layer:layer,region:region});});});
     if(assigned.length){action('Wybierz region do edytora',function(){if(assigned.length===1)selectRegionInEditor(assigned[0].layer,assigned[0].region);else openRegionChooser(assigned,'select');});action('Edytuj region',function(){if(assigned.length===1)openRegionEditor(assigned[0].layer,assigned[0].region);else openRegionChooser(assigned,'edit');});}
-    action('Kopiuj oznaczenie heksu',function(){copyMapText(key);});
+    action('Kopiuj oznaczenie hexu',function(){copyMapText(key);});
     action('Wyśrodkuj mapę w tym miejscu',function(){map.panTo(latlng);});
     menu.hidden=false;
     var width=menu.offsetWidth,height=menu.offsetHeight,x=Math.max(8,Math.min(event.clientX,window.innerWidth-width-8)),y=Math.max(8,Math.min(event.clientY,window.innerHeight-height-8));
@@ -524,7 +524,7 @@
   function syncBrushActivation(){var active=!document.getElementById('editor').hidden&&brushMode!=='idle';editMode=active;eraseMode=active&&brushMode==='erase';if(!active){painting=false;lastPainted='';}map.dragging[active?'disable':'enable']();}
   function setBrushMode(mode,announce){brushMode=mode;painting=false;lastPainted='';syncBrushActivation();document.querySelectorAll('#brushModeControl button').forEach(function(button){button.setAttribute('aria-pressed',button.dataset.mode===mode?'true':'false');});if(announce!==false){setHint(mode==='paint'?'Wybrano tryb malowania. Malowanie działa tylko wtedy, gdy panel edytora jest otwarty.':mode==='erase'?'Wybrano tryb wymazywania. Wymazywanie działa tylko wtedy, gdy panel edytora jest otwarty.':'Pędzel jest nieaktywny. Przesuwanie mapy jest ponownie dostępne.');}}
   function stopEditing(){setBrushMode('idle',false);}
-  function updateBrushLabel(){var r=brushRadius(),count=1+3*r*(r+1);document.getElementById('brushSizeValue').textContent=r===0?'1 heks':'promień '+r+' ('+count+' heksów)';}
+  function updateBrushLabel(){var r=brushRadius(),count=1+3*r*(r+1);document.getElementById('brushSizeValue').textContent=r===0?'1 hex':'promień '+r+' ('+count+' hexów)';}
   document.getElementById('brushSize').addEventListener('input',updateBrushLabel);
   document.getElementById('placePinButton').addEventListener('click',beginPinPlacement);
   document.getElementById('cancelPin').addEventListener('click',function(){closePinDialog();cancelPinPlacement();});
@@ -564,7 +564,7 @@
   function endStroke(){painting=false;lastPainted='';}
   map.on('mouseup',endStroke);
   window.addEventListener('mouseup',endStroke);
-  function presentHex(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var i=Math.floor(h[0]/SC),j=Math.floor(h[1]/SR),sheet=sid(i,j),hex=two(h[0]%SC+1)+two(h[1]%SR+1),key=sheet+':'+hex;document.getElementById('presenterAddress').textContent=sheet+' / '+hex;document.getElementById('presenterSub').textContent='Antarktyda · Karta heksu';document.getElementById('presenterIntro').textContent='Zapisane informacje o tym heksie.';var html='';layerNames.forEach(function(k){var found=null;regionData[k].some(function(r){if(r.hexes.indexOf(key)!==-1){found=r;return true;}return false;});html+='<div class="present-row"><div class="present-label">'+(k==='political'?'Polityczna territory':'Geograficzna region')+'</div>';html+=found?'<div class="present-value"><span class="present-swatch" style="background:'+found.color+'"></span>'+escapeHtml(found.name)+'</div>':'<div class="present-empty">Brak zapisanych informacji</div>';html+='</div>';});var places=pinData.filter(function(pin){return pin.hex===key;});if(places.length){html+='<div class="present-row"><div class="present-label">Punkty zainteresowania</div>'+places.map(function(x){return '<div class="present-value">'+escapeHtml(x.name)+'</div><div class="present-empty">'+escapeHtml(x.description)+'</div>';}).join('')+'</div>';}document.getElementById('presenterDetails').innerHTML=html;}
+  function presentHex(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var i=Math.floor(h[0]/SC),j=Math.floor(h[1]/SR),sheet=sid(i,j),hex=two(h[0]%SC+1)+two(h[1]%SR+1),key=sheet+':'+hex;document.getElementById('presenterAddress').textContent=sheet+' / '+hex;document.getElementById('presenterSub').textContent='Antarktyda · Karta hexu';document.getElementById('presenterIntro').textContent='Zapisane informacje o tym hexie.';var html='';layerNames.forEach(function(k){var found=null;regionData[k].some(function(r){if(r.hexes.indexOf(key)!==-1){found=r;return true;}return false;});html+='<div class="present-row"><div class="present-label">'+(k==='political'?'Polityczna territory':'Geograficzna region')+'</div>';html+=found?'<div class="present-value"><span class="present-swatch" style="background:'+found.color+'"></span>'+escapeHtml(found.name)+'</div>':'<div class="present-empty">Brak zapisanych informacji</div>';html+='</div>';});var places=pinData.filter(function(pin){return pin.hex===key;});if(places.length){html+='<div class="present-row"><div class="present-label">Punkty zainteresowania</div>'+places.map(function(x){return '<div class="present-value">'+escapeHtml(x.name)+'</div><div class="present-empty">'+escapeHtml(x.description)+'</div>';}).join('')+'</div>';}document.getElementById('presenterDetails').innerHTML=html;}
   function escapeHtml(s){return String(s).replace(/[&<>\"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch];});}
 
   function openPanel(id){closePanels();document.getElementById(id).hidden=false;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','true');}
