@@ -96,8 +96,8 @@
     <label>Region colour <input id="regionColor" type="color" value="#668b54"></label>
     <button id="createRegion" type="button">Create region</button><button id="paintToggle" type="button">Paint: off</button><button id="eraseToggle" type="button">Erase: off</button>
     <label>Brush size <span id="brushSizeValue">1 hex</span><input id="brushSize" type="range" min="0" max="5" step="1" value="0"></label>
-    <p id="editorHint">Select a region, enable Paint, then hold and drag across the map. Brush size controls the radius. Changes save in this browser.</p>
-    <button id="exportData" type="button">Export data</button><label class="file-button" for="importData">Import data</label><input id="importData" type="file" accept="application/json">
+    <p id="editorHint">Select a region, enable Paint, then hold and drag across the map. Brush size controls the radius. Shared regions load from the site. Your edits stay local until you download and publish the JSON file.</p>
+    <button id="exportData" type="button">Download draft JSON</button><label class="file-button" for="importData">Import data</label><input id="importData" type="file" accept="application/json">
   </div>
 </div>
 <script src="leaflet/leaflet.js"></script>
@@ -132,11 +132,12 @@
     read.innerHTML='Sheet '+sid(i,j)+' &middot; hex '+two(h[0]%SC+1)+two(h[1]%SR+1);
   }
   map.on('mousemove',show);
-  var STORE='antarctica-hex-overlays-v1', layerNames=['biome','political','geographical'];
-  var regionData={biome:[],political:[],geographical:[]}, overlayGroups={}, editMode=false, eraseMode=false, painting=false, lastPainted='';
-  try{var saved=localStorage.getItem(STORE);if(saved){var parsed=JSON.parse(saved);layerNames.forEach(function(k){if(Array.isArray(parsed[k]))regionData[k]=parsed[k];});}}catch(err){console.warn('Could not load saved overlay data',err);}
+  var STORE='antarctica-hex-overlays-v1', DATA_URL='data/regions.json', layerNames=['biome','political','geographical'];
+  var regionData={biome:[],political:[],geographical:[]}, overlayGroups={}, editMode=false, eraseMode=false, painting=false, lastPainted='', hasLocalDraft=false;
+  function applyRegionData(data){layerNames.forEach(function(k){if(Array.isArray(data&&data[k]))regionData[k]=data[k].filter(function(r){return r&&typeof r.id==='string'&&typeof r.name==='string'&&typeof r.color==='string'&&Array.isArray(r.hexes);});});}
+  try{var saved=localStorage.getItem(STORE);if(saved){applyRegionData(JSON.parse(saved));hasLocalDraft=true;}}catch(err){console.warn('Could not load saved overlay data',err);}
   layerNames.forEach(function(k){overlayGroups[k]=L.layerGroup().addTo(map);});
-  function saveData(){try{localStorage.setItem(STORE,JSON.stringify(regionData));}catch(err){setHint('Could not save in this browser. Export the data as a backup.');}}
+  function saveData(){try{localStorage.setItem(STORE,JSON.stringify(regionData));hasLocalDraft=true;}catch(err){setHint('Could not save in this browser. Download the JSON draft as a backup.');}}
   function setHint(t){document.getElementById('editorHint').textContent=t;}
   function currentLayer(){return document.getElementById('layerSelect').value;}
   function selectedRegion(){var id=document.getElementById('regionSelect').value;return regionData[currentLayer()].find(function(r){return r.id===id;});}
@@ -168,7 +169,7 @@
   document.getElementById('regionSelect').addEventListener('change',function(){var r=selectedRegion();if(r){document.getElementById('regionName').value=r.name;document.getElementById('regionColor').value=r.color;}});
   document.getElementById('paintToggle').addEventListener('click',function(){editMode=!editMode;eraseMode=false;painting=false;map.dragging[editMode?'disable':'enable']();document.getElementById('eraseToggle').textContent='Erase: off';document.getElementById('eraseToggle').classList.remove('active');this.textContent='Paint: '+(editMode?'on':'off');this.classList.toggle('active',editMode);setHint(editMode?'Hold the mouse button and drag across hexes to paint. Map panning is paused while painting.':'Paint mode is off. Map panning is restored.');});
   document.getElementById('eraseToggle').addEventListener('click',function(){eraseMode=!eraseMode;editMode=eraseMode;painting=false;map.dragging[editMode?'disable':'enable']();document.getElementById('paintToggle').textContent='Paint: off';document.getElementById('paintToggle').classList.remove('active');this.textContent='Erase: '+(eraseMode?'on':'off');this.classList.toggle('active',eraseMode);setHint(eraseMode?'Hold the mouse button and drag to erase hexes. Map panning is paused while erasing.':'Erase mode is off. Map panning is restored.');});
-  document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(regionData,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='antarctica-overlays.json';a.click();URL.revokeObjectURL(url);});
+  document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(regionData,null,2)+'\\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='regions.json';a.click();URL.revokeObjectURL(url);setHint('Downloaded regions.json. To publish these changes for everyone, replace page/antarctica/data/regions.json in the site repository with this file.');});
   document.getElementById('importData').addEventListener('change',function(e){var file=e.target.files&&e.target.files[0];if(!file)return;var reader=new FileReader();reader.onload=function(){try{var data=JSON.parse(reader.result);layerNames.forEach(function(k){if(Array.isArray(data[k]))regionData[k]=data[k].filter(function(r){return r&&typeof r.name==='string'&&typeof r.color==='string'&&Array.isArray(r.hexes);});});saveData();refreshRegions();renderAll();setHint('Overlay data imported.');}catch(err){setHint('Could not import that JSON file.');}};reader.readAsText(file);e.target.value='';});
   map.on('mousedown',function(e){if(!editMode)return;painting=true;lastPainted='';assignBrush(e.latlng);});
   map.on('mousemove',function(e){if(painting)assignBrush(e.latlng);});
@@ -179,6 +180,7 @@
   function escapeHtml(s){return String(s).replace(/[&<>\"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch];});}
 
   map.on('click',function(e){show(e);presentHex(e.latlng);});
+  fetch(DATA_URL,{cache:'no-store'}).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json();}).then(function(shared){if(!hasLocalDraft){applyRegionData(shared);renderAll();refreshRegions();setHint('Shared region data loaded. New edits are saved locally; download the JSON draft to publish them for everyone.');}else{setHint('A local draft is active and takes precedence over the shared site data. Download it as JSON to publish your changes.');}}).catch(function(err){console.warn('Could not load shared region data',err);if(!hasLocalDraft)setHint('Shared data could not be loaded. You can still create regions locally and download a JSON draft.');});
   renderAll();refreshRegions();updateBrushLabel();
 
   var grid=L.layerGroup();
