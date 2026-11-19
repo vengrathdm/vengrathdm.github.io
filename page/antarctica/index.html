@@ -73,8 +73,8 @@
   .pin-icon.pin-settlement span{background:#c5d0bb}
   .pin-icon.pin-landmark span{background:#d8b7a3}
   .pin-icon.pin-natural span{background:#9dbb91}
-  .pin-placement-active .leaflet-container{cursor:crosshair}
-  .pin-placement-active .leaflet-container *{cursor:crosshair!important}
+  .pin-placement-active .leaflet-container{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='36' viewBox='0 0 28 36'%3E%3Cpath d='M14 2C7.4 2 2 7.4 2 14c0 8 12 20 12 20s12-12 12-20C26 7.4 20.6 2 14 2Z' fill='%23eee5cc' stroke='%2328201a' stroke-width='2'/%3E%3Ccircle cx='14' cy='14' r='4' fill='%23665640'/%3E%3C/svg%3E") 14 34,crosshair}
+  .pin-placement-active .leaflet-container *{cursor:inherit!important}
   #presenter{padding:11px}
   #presenterBody{padding:0}
   #presenterAddress{font:1.55rem Voltaire,sans-serif;letter-spacing:.06em;color:#fff5df}
@@ -199,7 +199,7 @@
   }
   map.on('mousemove',show);
   var STORE='antarctica-hex-overlays-v1', DATA_URL='data/regions.json', layerNames=['biome','political','geographical'];
-  var regionData={biome:[],political:[],geographical:[]}, pinData=[], pinMarkers=L.layerGroup().addTo(map), overlayGroups={}, editMode=false, eraseMode=false, painting=false, lastPainted='', hasLocalDraft=false, placingPin=false, pendingPinHex='';
+  var regionData={biome:[],political:[],geographical:[]}, pinData=[], pinMarkers=L.layerGroup().addTo(map), overlayGroups={}, editMode=false, eraseMode=false, painting=false, lastPainted='', hasLocalDraft=false, hasLocalPins=false, placingPin=false, pendingPinHex='';
   function applyRegionData(data){
     layerNames.forEach(function(k){
       if(!Array.isArray(data&&data[k]))return;
@@ -212,7 +212,7 @@
     });
     pinData=Array.isArray(data&&data.pins)?data.pins.filter(function(p){return p&&typeof p.id==='string'&&typeof p.name==='string'&&typeof p.hex==='string'&&parseAddress(p.hex)&&['standard','ruin','settlement','landmark','natural'].indexOf(p.style)!==-1;}).map(function(p){return {id:p.id,name:p.name,style:p.style,description:typeof p.description==='string'?p.description:'',hex:p.hex};}):[];
   }
-  try{var saved=localStorage.getItem(STORE);if(saved){applyRegionData(JSON.parse(saved));hasLocalDraft=true;}}catch(err){console.warn('Could not load saved overlay data',err);}
+  try{var saved=localStorage.getItem(STORE);if(saved){var savedData=JSON.parse(saved);applyRegionData(savedData);hasLocalPins=Array.isArray(savedData.pins);hasLocalDraft=true;}}catch(err){console.warn('Could not load saved overlay data',err);}
   layerNames.forEach(function(k){overlayGroups[k]=L.layerGroup();});
   function exportableData(){return {biome:regionData.biome,political:regionData.political,geographical:regionData.geographical,pins:pinData};}
   function saveData(){try{localStorage.setItem(STORE,JSON.stringify(exportableData()));hasLocalDraft=true;}catch(err){setHint('Could not save in this browser. Download the JSON draft as a backup.');}}
@@ -366,7 +366,7 @@
   function selectHexAt(latlng){var event={latlng:latlng};show(event);presentHex(latlng);openPanel('presenter');}
   map.on('click',function(e){if(placingPin){var key=hexAddressAt(e.latlng);if(!key){cancelPinPlacement();return;}cancelPinPlacement();openPinDialog(key);return;}if(!document.getElementById('editor').hidden){show(e);presentHex(e.latlng);return;}selectHexAt(e.latlng);});
   document.addEventListener('click',function(e){if(!placingPin)return;var target=e.target;if(target.closest&&target.closest('#placePinButton'))return;if(target.closest&&target.closest('#pinDialog'))return;var mapPane=target.closest&&target.closest('.leaflet-map-pane'),nonHex=target.closest&&(target.closest('.leaflet-marker-icon')||target.closest('.leaflet-interactive'));if(!mapPane||nonHex||e.button!==0){cancelPinPlacement();}} ,true);
-  fetch(DATA_URL,{cache:'no-store'}).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json();}).then(function(shared){if(!hasLocalDraft){applyRegionData(shared);renderAll();refreshRegions();renderPins();}}).catch(function(err){console.warn('Could not load shared region data',err);if(!hasLocalDraft)setHint('Shared region data could not be loaded.');});
+  fetch(DATA_URL,{cache:'no-store'}).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json();}).then(function(shared){if(!hasLocalDraft){applyRegionData(shared);renderAll();refreshRegions();renderPins();}else if(!hasLocalPins){pinData=Array.isArray(shared.pins)?shared.pins:[];renderPins();}}).catch(function(err){console.warn('Could not load shared region data',err);if(!hasLocalDraft)setHint('Shared region data could not be loaded.');});
   enhanceEditorSelect(document.getElementById('layerSelect'));
   enhanceEditorSelect(document.getElementById('regionSelect'));
   renderAll();refreshRegions();updateBrushLabel();
