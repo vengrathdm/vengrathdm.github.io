@@ -34,9 +34,20 @@
   #editorTools[hidden]{display:none}
   #editor label{display:block;margin-top:9px;font-weight:600;color:#e7d9bb;font:600 12px/1.4 system-ui,sans-serif}
   #editor select,#editor input:not([type=color]):not([type=file]){box-sizing:border-box;width:100%;margin-top:4px;padding:7px 8px;border:1px solid #82745e;border-radius:3px;background:#fffaf0;color:#28201a;font:13px/1.35 system-ui,sans-serif}
+  #editor #regionName{min-height:34px;padding:7px 9px;border-color:#82745e;border-radius:3px;background:#fffaf0;color:#28201a;font:13px/1.35 system-ui,sans-serif;box-shadow:inset 0 1px 2px rgba(40,32,26,.08)}
+  #editor #regionName::placeholder{color:#8b806d;opacity:1}
+  #editor #regionName:focus{outline:2px solid rgba(213,189,139,.8);outline-offset:1px;border-color:#b9a47c}
   #editor select.editor-select-native{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;opacity:0!important;pointer-events:none!important}
   .editor-select{position:relative;width:100%;margin-top:4px;font:13px/1.35 system-ui,sans-serif}
-  .editor-select-trigger{box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;width:100%;min-height:34px;padding:7px 9px;border:1px solid #82745e;border-radius:3px;background:#fffaf0;color:#28201a;font:13px/1.35 system-ui,sans-serif;text-align:left;cursor:pointer}
+  .editor-select-trigger{box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:34px;padding:7px 9px;border:1px solid #82745e;border-radius:3px;background:#fffaf0;color:#28201a;font:13px/1.35 system-ui,sans-serif;text-align:left;cursor:pointer;overflow:hidden}
+  .editor-select-marquee{display:block;flex:1;min-width:0;overflow:hidden;white-space:nowrap}
+  .editor-select-track{display:flex;width:max-content;align-items:center;will-change:transform}
+  .editor-select-group{display:flex;flex:0 0 auto;align-items:center;gap:58px;white-space:nowrap}
+  .editor-select-group span{display:block;white-space:nowrap}
+  .editor-select-trigger.marquee-overflow:hover .editor-select-track{animation:editor-select-marquee var(--marquee-duration,5s) linear infinite}
+  @keyframes editor-select-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .editor-select-menu{overflow-x:hidden;overflow-y:auto}
+  .editor-select-option{box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .editor-select-trigger:after{content:'';width:7px;height:7px;margin:0 3px 4px 12px;border-right:1.5px solid #665640;border-bottom:1.5px solid #665640;transform:rotate(45deg);flex:0 0 auto}
   .editor-select-trigger:hover,.editor-select-trigger[aria-expanded=true]{background:#f0e4ca;border-color:#b9a47c}
   .editor-select-trigger:focus-visible,.editor-select-option:focus-visible{outline:2px solid #d5bd8b;outline-offset:2px}
@@ -85,7 +96,7 @@
   .present-swatch{width:10px;height:10px;border-radius:50%;flex:0 0 10px;border:1px solid rgba(255,255,255,.35)}
   .present-empty{color:#b4aa98;font-style:italic}
   #presenterIntro{color:#c5b99f;margin:0 0 8px}
-  #layersPanel label{display:flex;align-items:center;gap:9px;padding:8px 2px;margin:0;color:#e7d9bb;font:600 12px/1.4 system-ui,sans-serif;cursor:pointer;border-bottom:1px solid rgba(222,198,145,.14)}
+  #layersPanel label{display:flex;align-items:center;gap:9px;padding:8px 2px;margin:0;color:#efd59c;font:700 12px/1.4 Voltaire,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-bottom:1px solid rgba(222,198,145,.14)}
   #layersPanel input{accent-color:#d5bd8b;width:15px;height:15px;margin:0}
   #presenter{font:13px/1.45 system-ui,sans-serif}
   #presenterIntro{font:12px/1.5 system-ui,sans-serif}
@@ -227,8 +238,24 @@
     var menu=document.createElement('div');menu.className='editor-select-menu';menu.hidden=true;menu.setAttribute('role','listbox');
     var menuId='editor-select-menu-'+select.id;menu.id=menuId;trigger.setAttribute('aria-controls',menuId);wrap.appendChild(trigger);wrap.appendChild(menu);
     function close(){menu.hidden=true;trigger.setAttribute('aria-expanded','false');}
+    function setTriggerLabel(value){
+      trigger.innerHTML='';
+      var viewport=document.createElement('span');viewport.className='editor-select-marquee';
+      var track=document.createElement('span');track.className='editor-select-track';
+      var first=document.createElement('span');first.className='editor-select-group';
+      var second=document.createElement('span');second.className='editor-select-group';
+      var one=document.createElement('span');one.textContent=value;
+      var two=document.createElement('span');two.textContent=value;
+      first.appendChild(one);second.appendChild(two);track.appendChild(first);track.appendChild(second);viewport.appendChild(track);trigger.appendChild(viewport);
+      requestAnimationFrame(function(){
+        var overflowing=one.getBoundingClientRect().width>viewport.clientWidth+1;
+        trigger.classList.toggle('marquee-overflow',overflowing);
+        if(overflowing){var duration=Math.max(5,one.getBoundingClientRect().width/24);trigger.style.setProperty('--marquee-duration',duration+'s');}
+        else trigger.style.removeProperty('--marquee-duration');
+      });
+    }
     function sync(){
-      var chosen=select.options[select.selectedIndex];trigger.textContent=chosen?chosen.textContent:'Select…';
+      var chosen=select.options[select.selectedIndex];setTriggerLabel(chosen?chosen.textContent:'Select…');
       menu.innerHTML='';
       Array.prototype.forEach.call(select.options,function(option,index){
         var item=document.createElement('button');item.type='button';item.className='editor-select-option';item.setAttribute('role','option');item.setAttribute('aria-selected',option.selected?'true':'false');item.textContent=option.textContent;item.disabled=option.disabled;
@@ -238,6 +265,7 @@
     }
     function open(){sync();menu.hidden=false;trigger.setAttribute('aria-expanded','true');var current=menu.querySelector('[aria-selected=true]')||menu.querySelector('button');if(current)current.focus();}
     trigger.addEventListener('click',function(){if(menu.hidden)open();else close();});
+    window.addEventListener('resize',sync);
     trigger.addEventListener('keydown',function(e){
       if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();open();}
       else if(e.key==='Enter'||e.key===' '){e.preventDefault();if(menu.hidden)open();else close();}
