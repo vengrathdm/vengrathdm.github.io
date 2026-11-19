@@ -37,8 +37,8 @@
   #editor select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#665640 50%),linear-gradient(135deg,#665640 50%,transparent 50%);background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:28px}
   #editor input[type=color]{width:42px;height:28px;vertical-align:middle;margin:3px 0}
   #editor input[type=range]{width:100%;margin-top:5px;padding:0}
-  #editor button,#editor .file-button{margin:7px 4px 0 0;padding:7px 9px;border:1px solid #8a795a;border-radius:3px;background:#e5d7b8;color:#28201a;font:600 12px system-ui,sans-serif;cursor:pointer}
-  #editor button:hover,#editor .file-button:hover,#editor button.active{background:#665640;color:#fff8e8}
+  #editor button:not(.panel-close),#editor .file-button{margin:7px 4px 0 0;padding:7px 9px;border:1px solid #8a795a;border-radius:3px;background:#e5d7b8;color:#28201a;font:600 12px system-ui,sans-serif;cursor:pointer}
+  #editor button:not(.panel-close):hover,#editor .file-button:hover,#editor button.active{background:#665640;color:#fff8e8}
   .editor-section{margin:11px 0 0;padding:0 0 10px;border-bottom:1px solid rgba(222,198,145,.25)}
   .editor-section h3{margin:0;color:#efd59c;font:1rem Voltaire,sans-serif;letter-spacing:.12em;text-transform:uppercase}
   .editor-action-row{display:flex;flex-direction:column;align-items:center;gap:2px}
@@ -207,7 +207,7 @@
 
   function openPanel(id){closePanels();document.getElementById(id).hidden=false;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','true');}
   function selectHexAt(latlng){var event={latlng:latlng};show(event);presentHex(latlng);openPanel('presenter');}
-  map.on('click',function(e){selectHexAt(e.latlng);});
+  map.on('click',function(e){if(!document.getElementById('editor').hidden){show(e);presentHex(e.latlng);return;}selectHexAt(e.latlng);});
   fetch(DATA_URL,{cache:'no-store'}).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json();}).then(function(shared){if(!hasLocalDraft){applyRegionData(shared);renderAll();refreshRegions();}}).catch(function(err){console.warn('Could not load shared region data',err);if(!hasLocalDraft)setHint('Shared region data could not be loaded.');});
   renderAll();refreshRegions();updateBrushLabel();
 
