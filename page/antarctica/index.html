@@ -29,6 +29,7 @@
   #editor label{display:block;margin-top:9px;font-weight:600}
   #editor select,#editor input:not([type=color]):not([type=file]){box-sizing:border-box;width:100%;margin-top:3px;padding:5px;border:1px solid #82745e;border-radius:3px;background:#fffaf0;color:#28201a}
   #editor input[type=color]{width:42px;height:28px;vertical-align:middle;margin:3px 0}
+  #editor input[type=range]{width:100%;margin-top:5px;padding:0}
   #editor button,#editor .file-button{margin:7px 4px 0 0;padding:6px 9px;border:1px solid #665640;border-radius:3px;background:#e5d7b8;color:#28201a;font:600 12px system-ui,sans-serif;cursor:pointer}
   #editor button.active{background:#665640;color:#fff8e8}
   #editorHint{margin:8px 0 0;color:#665640;font-size:12px}
@@ -48,8 +49,9 @@
     <label>Region<select id="regionSelect"><option value="">Create a region first</option></select></label>
     <label>New region name<input id="regionName" type="text" placeholder="e.g. Temperate Forest"></label>
     <label>Region colour <input id="regionColor" type="color" value="#668b54"></label>
-    <button id="createRegion" type="button">Create region</button><button id="paintToggle" type="button" class="active">Paint: off</button><button id="eraseToggle" type="button">Erase: off</button>
-    <p id="editorHint">Create or select a region, then enable Paint and click hexes on the map. Changes save in this browser.</p>
+    <button id="createRegion" type="button">Create region</button><button id="paintToggle" type="button">Paint: off</button><button id="eraseToggle" type="button">Erase: off</button>
+    <label>Brush size <span id="brushSizeValue">1 hex</span><input id="brushSize" type="range" min="0" max="5" step="1" value="0"></label>
+    <p id="editorHint">Select a region, enable Paint, then hold and drag across the map. Brush size controls the radius. Changes save in this browser.</p>
     <button id="exportData" type="button">Export data</button><label class="file-button" for="importData">Import data</label><input id="importData" type="file" accept="application/json">
   </div>
 </div>
@@ -86,7 +88,7 @@
   }
   map.on('mousemove',show);
   var STORE='antarctica-hex-overlays-v1', layerNames=['biome','political','geographical'];
-  var regionData={biome:[],political:[],geographical:[]}, overlayGroups={}, editMode=false, eraseMode=false;
+  var regionData={biome:[],political:[],geographical:[]}, overlayGroups={}, editMode=false, eraseMode=false, painting=false, lastPainted='';
   try{var saved=localStorage.getItem(STORE);if(saved){var parsed=JSON.parse(saved);layerNames.forEach(function(k){if(Array.isArray(parsed[k]))regionData[k]=parsed[k];});}}catch(err){console.warn('Could not load saved overlay data',err);}
   layerNames.forEach(function(k){overlayGroups[k]=L.layerGroup().addTo(map);});
   function saveData(){try{localStorage.setItem(STORE,JSON.stringify(regionData));}catch(err){setHint('Could not save in this browser. Export the data as a backup.');}}
@@ -96,20 +98,32 @@
   function refreshRegions(preferred){var sel=document.getElementById('regionSelect'),arr=regionData[currentLayer()];sel.innerHTML='';arr.forEach(function(r){var o=document.createElement('option');o.value=r.id;o.textContent=r.name;sel.appendChild(o);});if(preferred&&arr.some(function(r){return r.id===preferred;}))sel.value=preferred;if(!arr.length){var o=document.createElement('option');o.value='';o.textContent='No regions yet';sel.appendChild(o);}}
   function addressKey(h){var i=Math.floor(h[0]/SC),j=Math.floor(h[1]/SR);return sid(i,j)+':'+two(h[0]%SC+1)+two(h[1]%SR+1);}
   function parseAddress(key){var m=/^([A-Z])(\d+):(\d{2})(\d{2})$/.exec(key);if(!m)return null;var si=m[1].charCodeAt(0)-65,sj=parseInt(m[2],10)-1,col=parseInt(m[3],10)-1,row=parseInt(m[4],10)-1;if(si<0||sj<0||col<0||col>=SC||row<0||row>=SR)return null;return [si*SC+col,sj*SR+row];}
-  function hexPolygon(key){var h=parseAddress(key);if(!h)return null;var cx=CS*h[0]/KPP,cy=S*(h[1]+0.5*(h[0]&1))/KPP,pts=[];for(var n=0;n<6;n++){var a=Math.PI*n/3;pts.push(ll(cx+R*Math.cos(a)/KPP,cy+R*Math.sin(a)/KPP));}return pts;}
-  function renderLayer(k){var group=overlayGroups[k];group.clearLayers();regionData[k].forEach(function(region){region.hexes.forEach(function(key){var pts=hexPolygon(key);if(pts)L.polygon(pts,{color:region.color,weight:0.7,opacity:0.9,fillColor:region.color,fillOpacity:0.34,interactive:false}).addTo(group);});});}
+  function hexVertices(key){var h=parseAddress(key);if(!h)return null;var cx=CS*h[0]/KPP,cy=S*(h[1]+0.5*(h[0]&1))/KPP,pts=[];for(var n=0;n<6;n++){var a=Math.PI*n/3;pts.push([cx+R*Math.cos(a)/KPP,cy+R*Math.sin(a)/KPP]);}return pts;}
+  function darker(hex){var n=parseInt(hex.slice(1),16),r=Math.max(0,((n>>16)&255)-65),g=Math.max(0,((n>>8)&255)-65),b=Math.max(0,(n&255)-65);return '#'+[r,g,b].map(function(v){return ('0'+v.toString(16)).slice(-2);}).join('');}
+  function renderLayer(k){var group=overlayGroups[k];group.clearLayers();regionData[k].forEach(function(region){var unique=Array.from(new Set(region.hexes)),edges=Object.create(null);unique.forEach(function(key){var pts=hexVertices(key);if(!pts)return;L.polygon(pts.map(function(p){return ll(p[0],p[1]);}),{stroke:false,fillColor:region.color,fillOpacity:0.34,interactive:false}).addTo(group);for(var n=0;n<6;n++){var a=pts[n],b=pts[(n+1)%6],ak=a[0].toFixed(2)+','+a[1].toFixed(2),bk=b[0].toFixed(2)+','+b[1].toFixed(2),id=ak<bk?ak+'|'+bk:bk+'|'+ak;if(!edges[id])edges[id]={count:0,a:a,b:b};edges[id].count++;}});Object.keys(edges).forEach(function(id){var e=edges[id];if(e.count===1)L.polyline([ll(e.a[0],e.a[1]),ll(e.b[0],e.b[1])],{color:darker(region.color),weight:2.2,opacity:1,interactive:false,lineCap:'round'}).addTo(group);});});}
   function renderAll(){layerNames.forEach(renderLayer);}
-  function assignHex(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var key=addressKey(h),arr=regionData[currentLayer()],region=selectedRegion();if(!eraseMode&&!region){setHint('Create or select a region before painting.');return;}arr.forEach(function(r){r.hexes=r.hexes.filter(function(x){return x!==key;});});if(!eraseMode)region.hexes.push(key);saveData();renderLayer(currentLayer());setHint((eraseMode?'Erased ':'Assigned ')+key+(region&&!eraseMode?' to '+region.name:'.'));}
+  function brushRadius(){return parseInt(document.getElementById('brushSize').value,10)||0;}
+  function brushKeys(center){var q0=center[0],r0=center[1]-(q0-(q0&1))/2,rad=brushRadius(),keys=[];for(var dq=-rad;dq<=rad;dq++){for(var dr=-rad;dr<=rad;dr++){if(Math.max(Math.abs(dq),Math.abs(dr),Math.abs(dq+dr))>rad)continue;var q=q0+dq,ar=r0+dr,row=ar+(q-(q&1))/2;if(q<0||row<0)continue;var si=Math.floor(q/SC),sj=Math.floor(row/SR),sheet=sid(si,sj);if(LAND.indexOf(sheet)<0)continue;keys.push(addressKey([q,row]));}}return keys;}
+  function assignBrush(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var center=addressKey(h);if(center===lastPainted)return;lastPainted=center;var arr=regionData[currentLayer()],region=selectedRegion();if(!eraseMode&&!region){setHint('Create or select a region before painting.');return;}brushKeys(h).forEach(function(key){arr.forEach(function(r){r.hexes=r.hexes.filter(function(x){return x!==key;});});if(!eraseMode)region.hexes.push(key);});saveData();renderLayer(currentLayer());}
+
   document.getElementById('editorToggle').addEventListener('click',function(){var tools=document.getElementById('editorTools');tools.hidden=!tools.hidden;this.textContent=tools.hidden?'Open editor':'Close editor';});
-  document.getElementById('layerSelect').addEventListener('change',function(){refreshRegions();document.getElementById('paintToggle').textContent='Paint: off';document.getElementById('paintToggle').classList.remove('active');editMode=false;});
+  function stopEditing(){editMode=false;eraseMode=false;painting=false;map.dragging.enable();document.getElementById('paintToggle').textContent='Paint: off';document.getElementById('paintToggle').classList.remove('active');document.getElementById('eraseToggle').textContent='Erase: off';document.getElementById('eraseToggle').classList.remove('active');}
+  function updateBrushLabel(){var r=brushRadius(),count=1+3*r*(r+1);document.getElementById('brushSizeValue').textContent=r===0?'1 hex':'radius '+r+' ('+count+' hexes)';}
+  document.getElementById('brushSize').addEventListener('input',updateBrushLabel);
+  document.getElementById('layerSelect').addEventListener('change',function(){stopEditing();refreshRegions();setHint('Select a region, enable Paint, then hold and drag across the map.');});
   document.getElementById('createRegion').addEventListener('click',function(){var name=document.getElementById('regionName').value.trim();if(!name){setHint('Enter a region name first.');return;}var region={id:'r'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),name:name,color:document.getElementById('regionColor').value,hexes:[]};regionData[currentLayer()].push(region);refreshRegions(region.id);saveData();setHint('Created '+name+'. Enable Paint to assign hexes.');});
   document.getElementById('regionSelect').addEventListener('change',function(){var r=selectedRegion();if(r){document.getElementById('regionName').value=r.name;document.getElementById('regionColor').value=r.color;}});
-  document.getElementById('paintToggle').addEventListener('click',function(){editMode=!editMode;eraseMode=false;document.getElementById('eraseToggle').textContent='Erase: off';document.getElementById('eraseToggle').classList.remove('active');this.textContent='Paint: '+(editMode?'on':'off');this.classList.toggle('active',editMode);setHint(editMode?'Paint mode is on. Click map hexes to assign them to the selected region.':'Paint mode is off.');});
-  document.getElementById('eraseToggle').addEventListener('click',function(){eraseMode=!eraseMode;editMode=eraseMode;document.getElementById('paintToggle').textContent='Paint: off';document.getElementById('paintToggle').classList.remove('active');this.textContent='Erase: '+(eraseMode?'on':'off');this.classList.toggle('active',eraseMode);setHint(eraseMode?'Erase mode is on. Click assigned hexes to clear them from this overlay layer.':'Erase mode is off.');});
+  document.getElementById('paintToggle').addEventListener('click',function(){editMode=!editMode;eraseMode=false;painting=false;map.dragging[editMode?'disable':'enable']();document.getElementById('eraseToggle').textContent='Erase: off';document.getElementById('eraseToggle').classList.remove('active');this.textContent='Paint: '+(editMode?'on':'off');this.classList.toggle('active',editMode);setHint(editMode?'Hold the mouse button and drag across hexes to paint. Map panning is paused while painting.':'Paint mode is off. Map panning is restored.');});
+  document.getElementById('eraseToggle').addEventListener('click',function(){eraseMode=!eraseMode;editMode=eraseMode;painting=false;map.dragging[editMode?'disable':'enable']();document.getElementById('paintToggle').textContent='Paint: off';document.getElementById('paintToggle').classList.remove('active');this.textContent='Erase: '+(eraseMode?'on':'off');this.classList.toggle('active',eraseMode);setHint(eraseMode?'Hold the mouse button and drag to erase hexes. Map panning is paused while erasing.':'Erase mode is off. Map panning is restored.');});
   document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(regionData,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='antarctica-overlays.json';a.click();URL.revokeObjectURL(url);});
   document.getElementById('importData').addEventListener('change',function(e){var file=e.target.files&&e.target.files[0];if(!file)return;var reader=new FileReader();reader.onload=function(){try{var data=JSON.parse(reader.result);layerNames.forEach(function(k){if(Array.isArray(data[k]))regionData[k]=data[k].filter(function(r){return r&&typeof r.name==='string'&&typeof r.color==='string'&&Array.isArray(r.hexes);});});saveData();refreshRegions();renderAll();setHint('Overlay data imported.');}catch(err){setHint('Could not import that JSON file.');}};reader.readAsText(file);e.target.value='';});
-  map.on('click',function(e){show(e);if(editMode)assignHex(e.latlng);});
-  renderAll();refreshRegions();
+  map.on('mousedown',function(e){if(!editMode)return;painting=true;lastPainted='';assignBrush(e.latlng);});
+  map.on('mousemove',function(e){if(painting)assignBrush(e.latlng);});
+  function endStroke(){painting=false;lastPainted='';}
+  map.on('mouseup',endStroke);
+  window.addEventListener('mouseup',endStroke);
+  map.on('click',function(e){show(e);});
+  renderAll();refreshRegions();updateBrushLabel();
 
   var grid=L.layerGroup();
   LAND.forEach(function(s){
