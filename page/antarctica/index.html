@@ -6,14 +6,18 @@
 <title>Antarctica Unfrozen: explore the map</title>
 <meta name="description" content="Pan and zoom the whole 5-mile hex map of an ice-free Antarctica moved to the Northern Hemisphere.">
 <link rel="stylesheet" href="leaflet/leaflet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Voltaire&display=swap" rel="stylesheet">
 <style>
   html,body{height:100%;margin:0}
   body{background:#24486c;color:#28201a;font:15px/1.4 Georgia,"Times New Roman",serif}
   #map{position:absolute;inset:0;background:#24486c}
   .panel{position:absolute;z-index:1000;background:rgba(238,229,204,.94);border:1px solid #28201a;border-radius:3px;box-shadow:0 2px 8px rgba(0,0,0,.3)}
-  #head{top:10px;left:54px;padding:8px 12px;max-width:calc(100vw - 130px)}
-  #head a{display:inline-block;color:#eee5cc;background:#7a2e1c;border:1px solid #28201a;border-radius:3px;padding:7px 12px;font:700 13px/1.2 system-ui,sans-serif;letter-spacing:.08em;text-decoration:none;white-space:nowrap}
-  #head a:hover{background:#5f2417}
+  #head{top:10px;left:10px;padding:0;max-width:calc(100vw - 20px);background:transparent;border:0;border-radius:0;box-shadow:none}
+  .home-brand{display:inline-flex;align-items:center;gap:.55rem;color:#f4efe5;text-decoration:none;font:1.2rem Voltaire,sans-serif;letter-spacing:.15em;white-space:nowrap;text-shadow:0 1px 5px rgba(0,0,0,.8)}
+  .home-brand img{width:2.5rem;height:2.5rem;object-fit:contain;filter:drop-shadow(0 0 14px rgba(215,184,120,.22))}
+  .home-brand:hover{color:#efd59c}
   #read{bottom:22px;left:10px;padding:6px 10px;font:600 14px/1.3 system-ui,sans-serif;min-width:11em}
   #read small{font-weight:400;color:#6b5d4c}
   .ruin{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#eee5cc;border:2px solid #28201a;font:700 17px/1 Georgia,serif;color:#28201a;box-shadow:0 1px 4px rgba(0,0,0,.4)}
@@ -24,7 +28,7 @@
 <body>
 <div id="map"></div>
 <div id="head" class="panel">
-  <a href="/" aria-label="VENGRATH home">VENGRATH (home)</a>
+  <a class="home-brand" href="/home/" aria-label="Vengrath — strona główna"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
 </div>
 <div id="read" class="panel"><small>Move over the map for hex references</small></div>
 <script src="leaflet/leaflet.js"></script>
