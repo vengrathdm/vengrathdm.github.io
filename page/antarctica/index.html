@@ -199,7 +199,7 @@
       if(hits.length>=2){
         var a=hits[0],b=hits[1];
         if(Math.hypot(a[0]-b[0],a[1]-b[1])>1)
-          L.polyline([ll(a[0],a[1]),ll(b[0],b[1])],{color:color,weight:1.25,opacity:.68,interactive:false,lineCap:'round'}).addTo(group);
+          L.polyline([ll(a[0],a[1]),ll(b[0],b[1])],{color:color,weight:0.8,opacity:.68,interactive:false,lineCap:'butt',smoothFactor:1,noClip:false}).addTo(group);
       }
     }
   }
