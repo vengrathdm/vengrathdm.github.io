@@ -46,8 +46,8 @@
   .editor-select-trigger:after{content:'';width:7px;height:7px;margin:0 3px 4px 12px;border-right:1.5px solid #665640;border-bottom:1.5px solid #665640;transform:rotate(45deg);flex:0 0 auto}
   .editor-select-trigger:hover,.editor-select-trigger[aria-expanded=true]{background:#f0e4ca;border-color:#b9a47c}
   .editor-select-trigger:focus-visible,.editor-select-option:focus-visible{outline:2px solid #d5bd8b;outline-offset:2px}
-  .editor-select-menu{position:absolute;z-index:1300;top:calc(100% + 4px);left:0;min-width:100%;width:max-content;max-width:min(320px,calc(100vw - 40px));overflow:visible;padding:4px;background:rgba(23,37,43,.98);border:1px solid rgba(222,198,145,.65);border-radius:4px;box-shadow:0 8px 22px rgba(0,0,0,.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-  .editor-select-menu[hidden]{display:none}
+  .editor-select-menu{position:fixed;z-index:200000;min-width:120px;max-width:calc(100vw - 16px);max-height:260px;overflow-x:hidden;overflow-y:auto;padding:4px;background:rgba(23,37,43,.98);border:1px solid rgba(222,198,145,.65);border-radius:4px;box-shadow:0 8px 22px rgba(0,0,0,.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+  .editor-select-menu[hidden]{display:none!important}\n  .editor-select-menu::-webkit-scrollbar{width:6px}.editor-select-menu::-webkit-scrollbar-thumb{background:#8d7958;border-radius:6px}.editor-select-menu::-webkit-scrollbar-track{background:rgba(12,22,27,.45)}
   .editor-select-option{display:block;width:100%;padding:7px 9px;border:0;border-radius:2px;background:transparent;color:#f3ead7;font:13px/1.4 system-ui,sans-serif;text-align:left;cursor:pointer}
   .editor-select-option:hover,.editor-select-option[aria-selected=true],.editor-select-option:focus{background:#665640;color:#fff2d4;outline:none}
   .editor-select-option:disabled{color:#958b78;cursor:default}
@@ -206,7 +206,7 @@
     <section class="editor-section">
       <h3>Region</h3>
       <div class="editor-field"><span class="editor-field-label">Region</span><select id="regionSelect"><option value="">Create a region first</option></select></div>
-      <div class="editor-action-row"><button id="createRegion" type="button">Create Region</button><button id="deleteRegion" type="button">Delete Region</button></div>
+      <div class="editor-action-row"><button id="createRegion" type="button">Create Region</button><button id="editRegion" type="button">Edit Region</button><button id="deleteRegion" type="button">Delete Region</button></div>
     </section>
     <section class="editor-section">
       <h3>Brush</h3>
@@ -229,7 +229,7 @@
       <label class="region-style-choice"><input type="radio" name="newRegionFill" value="tint"><span class="region-style-preview style-tint"></span><span class="region-style-name">Soft fill</span></label>
       <label class="region-style-choice"><input type="radio" name="newRegionFill" value="hatch"><span class="region-style-preview style-hatch"></span><span class="region-style-name">Hatched</span></label>
     </div></fieldset>
-    <div class="region-dialog-actions"><button type="button" data-close-region-dialog>Cancel</button><button type="submit" class="primary">Create Region</button></div>
+    <div class="region-dialog-actions"><button type="button" data-close-region-dialog>Cancel</button><button type="submit" id="saveRegionButton" class="primary">Create Region</button></div>
   </form>
 </div>
 <div id="regionDeleteDialog" class="region-dialog region-delete-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="regionDeleteTitle">
@@ -283,7 +283,7 @@
     read.innerHTML='Sheet '+sid(i,j)+' &middot; hex '+two(h[0]%SC+1)+two(h[1]%SR+1);
   }
   map.on('mousemove',show);
-  var STORE='antarctica-hex-overlays-v1', DATA_URL='data/regions.json', layerNames=['political','geographical'], regionNameMode='hide';
+  var STORE='antarctica-hex-overlays-v1', DATA_URL='data/regions.json', layerNames=['political','geographical'], regionNameMode='hide', editingRegionId='';
   var regionData={political:[],geographical:[]}, pinData=[], pinMarkers=L.layerGroup().addTo(map), overlayGroups={}, editMode=false, eraseMode=false, painting=false, lastPainted='', hasLocalDraft=false, hasLocalPins=false, placingPin=false, pendingPinHex='', editingPinId='';
   function applyRegionData(data){
     layerNames.forEach(function(k){
@@ -455,9 +455,10 @@
       action('View Pin Record',function(){selectHexAt(latlng);});
       action('Edit Pin',function(){openPinDialog(key,pins[0]);});
       action('Delete Pin',function(){var pin=pins[0];pinData=pinData.filter(function(p){return p.id!==pin.id;});saveData();renderPins();},'delete');
-    }else{
-      action('Create Pin',function(){openPinDialog(key);});
-    }
+    }else{action('Create Pin',function(){openPinDialog(key);});}
+    var assigned=[];
+    layerNames.forEach(function(layer){regionData[layer].forEach(function(region){if(region.hexes.indexOf(key)!==-1)assigned.push({layer:layer,region:region});});});
+    assigned.forEach(function(entry){action('Edit '+(entry.layer==='political'?'Political':'Geographical')+' Region',function(){openRegionEditor(entry.layer,entry.region);});});
     action('Copy Hex Reference',function(){copyMapText(key);});
     action('Center Map Here',function(){map.panTo(latlng);});
     menu.hidden=false;
@@ -491,13 +492,15 @@
   window.addEventListener('resize',closePinContextMenu);
   document.getElementById('pinForm').addEventListener('submit',function(e){e.preventDefault();if(!pendingPinHex)return;var name=document.getElementById('pinName').value.trim();if(!name){document.getElementById('pinName').focus();return;}var updated={id:editingPinId||('p'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)),name:name,style:document.getElementById('pinStyle').value,description:document.getElementById('pinDescription').value.trim(),hex:pendingPinHex};if(editingPinId){var index=pinData.findIndex(function(p){return p.id===editingPinId;});if(index!==-1)pinData[index]=updated;else pinData.push(updated);}else pinData.push(updated);saveData();renderPins();closePinDialog();cancelPinPlacement();});
   document.getElementById('layerSelect').addEventListener('change',function(){stopEditing();refreshRegions();setHint('Select a region, enable Paint, then hold and drag across the map.');});
-  function closeRegionDialogs(){document.getElementById('regionCreateDialog').hidden=true;document.getElementById('regionDeleteDialog').hidden=true;}
+  function closeRegionDialogs(){document.getElementById('regionCreateDialog').hidden=true;document.getElementById('regionDeleteDialog').hidden=true;editingRegionId='';document.getElementById('newRegionLayer').disabled=false;}
   document.querySelectorAll('[data-close-region-dialog]').forEach(function(button){button.addEventListener('click',closeRegionDialogs);});
-  document.getElementById('createRegion').addEventListener('click',function(){document.getElementById('newRegionLayer').value=currentLayer();document.getElementById('newRegionName').value='';document.getElementById('newRegionColor').value='#668b54';document.getElementById('newRegionDescription').value='';document.querySelector('input[name="newRegionFill"][value="'+(currentLayer()==='political'?'hatch':'none')+'"]').checked=true;updateNewRegionPreview();document.getElementById('regionCreateDialog').hidden=false;document.getElementById('newRegionName').focus();});
+  function openRegionEditor(layer,region){editingRegionId=region?region.id:'';document.getElementById('regionCreateTitle').textContent=region?'Edit Region':'Create Region';document.getElementById('saveRegionButton').textContent=region?'Save Changes':'Create Region';document.getElementById('newRegionLayer').value=layer||currentLayer();document.getElementById('newRegionLayer').disabled=!!region;document.getElementById('newRegionName').value=region?region.name:'';document.getElementById('newRegionColor').value=region?region.color:'#668b54';document.getElementById('newRegionDescription').value=region?(region.description||''):'';var style=region?(region.fillStyle||'none'):(layer==='political'?'hatch':'none');document.querySelector('input[name="newRegionFill"][value="'+style+'"]').checked=true;updateNewRegionPreview();document.getElementById('regionCreateDialog').hidden=false;document.getElementById('newRegionName').focus();}
+  document.getElementById('createRegion').addEventListener('click',function(){openRegionEditor(currentLayer(),null);});
+  document.getElementById('editRegion').addEventListener('click',function(){var region=selectedRegion();if(!region){setHint('Select a region to edit.');return;}openRegionEditor(currentLayer(),region);});
   function updateNewRegionPreview(){var color=document.getElementById('newRegionColor').value,preview=document.getElementById('newRegionColorPreview');preview.style.borderColor=color;preview.style.background='linear-gradient('+color+'22,'+color+'22),'+color+'18';document.querySelectorAll('.region-style-preview').forEach(function(sample){sample.style.borderColor=color;sample.style.background=sample.classList.contains('style-hatch')?'repeating-linear-gradient(135deg,'+color+' 0 2px,transparent 2px 6px)':sample.classList.contains('style-tint')?color+'35':'transparent';});}
   document.getElementById('newRegionColor').addEventListener('input',updateNewRegionPreview);
   document.querySelectorAll('input[name="newRegionFill"]').forEach(function(input){input.addEventListener('change',updateNewRegionPreview);});
-  document.getElementById('regionCreateForm').addEventListener('submit',function(e){e.preventDefault();var layer=document.getElementById('newRegionLayer').value,name=document.getElementById('newRegionName').value.trim().replace(/\\s+/g,' '),normalized=name.toLocaleLowerCase();if(!name)return;var duplicate=regionData[layer].some(function(r){return r.name.trim().replace(/\\s+/g,' ').toLocaleLowerCase()===normalized;});if(duplicate){setHint('A region with that name already exists in the '+layer+' layer.');document.getElementById('newRegionName').focus();return;}var region={id:'r'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),name:name,color:document.getElementById('newRegionColor').value,description:document.getElementById('newRegionDescription').value.trim(),fillStyle:document.querySelector('input[name="newRegionFill"]:checked').value,hexes:[]};regionData[layer].push(region);if(currentLayer()!==layer){document.getElementById('layerSelect').value=layer;document.getElementById('layerSelect').dispatchEvent(new Event('change',{bubbles:true}));}refreshRegions(region.id);saveData();renderLayer(layer);closeRegionDialogs();setHint('Created '+name+'. Enable Paint to assign hexes.');});
+  document.getElementById('regionCreateForm').addEventListener('submit',function(e){e.preventDefault();var layer=document.getElementById('newRegionLayer').value,name=document.getElementById('newRegionName').value.trim().replace(/\\s+/g,' '),normalized=name.toLocaleLowerCase();if(!name)return;var duplicate=regionData[layer].some(function(r){return r.id!==editingRegionId&&r.name.trim().replace(/\\s+/g,' ').toLocaleLowerCase()===normalized;});if(duplicate){setHint('A region with that name already exists in the '+layer+' layer.');document.getElementById('newRegionName').focus();return;}var existing=editingRegionId?regionData[layer].find(function(r){return r.id===editingRegionId;}):null;var region={id:editingRegionId||('r'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)),name:name,color:document.getElementById('newRegionColor').value,description:document.getElementById('newRegionDescription').value.trim(),fillStyle:document.querySelector('input[name="newRegionFill"]:checked').value,hexes:existing?existing.hexes:[]};if(existing){var idx=regionData[layer].findIndex(function(r){return r.id===editingRegionId;});regionData[layer][idx]=region;}else regionData[layer].push(region);if(currentLayer()!==layer){document.getElementById('layerSelect').value=layer;document.getElementById('layerSelect').dispatchEvent(new Event('change',{bubbles:true}));}refreshRegions(region.id);saveData();renderLayer(layer);closeRegionDialogs();editingRegionId='';document.getElementById('newRegionLayer').disabled=false;setHint((existing?'Updated ':'Created ')+name+'.');});
   function refreshDeleteRegionOptions(){var layer=document.getElementById('deleteRegionLayer').value,list=document.getElementById('deleteRegionList'),regions=regionData[layer];list.innerHTML='';document.getElementById('deleteRegionEmpty').hidden=regions.length!==0;document.getElementById('confirmDeleteRegion').disabled=true;regions.forEach(function(region,index){var label=document.createElement('label');label.className='delete-region-option';var radio=document.createElement('input');radio.type='radio';radio.name='deleteRegionChoice';radio.value=region.id;var swatch=document.createElement('span');swatch.className='delete-region-swatch';swatch.style.background=region.color;var details=document.createElement('span');var name=document.createElement('span');name.className='delete-region-name';name.textContent=region.name;var meta=document.createElement('div');meta.className='delete-region-meta';meta.textContent=layer==='political'?'Political':'Geographical';var visual=document.createElement('div');visual.className='delete-region-visual';var preview=document.createElement('span');preview.className='delete-region-preview style-'+(region.fillStyle||'none');preview.style.setProperty('--region-color',region.color);if(region.fillStyle==='tint')preview.style.setProperty('--region-fill','color-mix(in srgb,'+region.color+' 22%,transparent)');else preview.style.setProperty('--region-fill','transparent');var styleName=document.createElement('span');styleName.className='delete-region-style-name';styleName.textContent=region.fillStyle==='hatch'?'Hatched fill':region.fillStyle==='tint'?'Soft fill':'Borders only';visual.appendChild(preview);visual.appendChild(styleName);var desc=document.createElement('div');desc.className='delete-region-description';desc.textContent=region.description||'No description provided.';details.appendChild(name);details.appendChild(meta);details.appendChild(visual);details.appendChild(desc);label.appendChild(radio);label.appendChild(swatch);label.appendChild(details);radio.addEventListener('change',function(){list.querySelectorAll('.delete-region-option').forEach(function(item){item.classList.remove('selected');});label.classList.add('selected');document.getElementById('confirmDeleteRegion').disabled=false;});list.appendChild(label);});}
   document.getElementById('deleteRegion').addEventListener('click',function(){document.getElementById('deleteRegionLayer').value=currentLayer();refreshDeleteRegionOptions();document.getElementById('regionDeleteDialog').hidden=false;});
   document.getElementById('deleteRegionLayer').addEventListener('change',refreshDeleteRegionOptions);
@@ -536,8 +539,7 @@
     cancelPinPlacement();
   },true);
   fetch(DATA_URL,{cache:'no-store'}).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json();}).then(function(shared){if(!hasLocalDraft){applyRegionData(shared);renderAll();refreshRegions();renderPins();}else if(!hasLocalPins){pinData=Array.isArray(shared.pins)?shared.pins:[];renderPins();}}).catch(function(err){console.warn('Could not load shared region data',err);if(!hasLocalDraft)setHint('Shared region data could not be loaded.');});
-  enhanceEditorSelect(document.getElementById('layerSelect'));
-  enhanceEditorSelect(document.getElementById('regionSelect'));
+  ['layerSelect','regionSelect','newRegionLayer','deleteRegionLayer','pinStyle'].forEach(function(id){enhanceEditorSelect(document.getElementById(id));});
   renderAll();refreshRegions();updateBrushLabel();
 
   var grid=L.layerGroup();
