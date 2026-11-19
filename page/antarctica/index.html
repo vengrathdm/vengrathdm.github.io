@@ -144,7 +144,6 @@
 <div id="read" class="panel"><small>Move over the map for hex references</small></div>
 <section id="layersPanel" class="floating-panel" hidden>
   <div class="panel-head"><strong>Map layers</strong><button class="panel-close" data-close="layersPanel" type="button">Close</button></div>
-  <label><input type="checkbox" id="biomeLayer"> Biome overlays</label>
   <label><input type="checkbox" id="politicalLayer"> Political overlays</label>
   <label><input type="checkbox" id="geographicalLayer"> Geographical overlays</label>
   <label><input type="checkbox" id="sheetGrid"> Sheet boundaries</label>
@@ -156,7 +155,7 @@
 <div id="editor" class="floating-panel" hidden>
   <div class="panel-head"><strong>Hex overlays</strong><button class="panel-close" data-close="editor" type="button">Close</button></div>
   <div id="editorTools">
-    <div class="editor-field"><span class="editor-field-label">Overlay layer</span><select id="layerSelect"><option value="biome">Biome</option><option value="political">Political</option><option value="geographical">Geographical</option></select></div>
+    <div class="editor-field"><span class="editor-field-label">Overlay layer</span><select id="layerSelect"><option value="political">Political</option><option value="geographical">Geographical</option></select></div>
     <section class="editor-section">
       <h3>Region</h3>
       <div class="editor-field"><span class="editor-field-label">Region</span><select id="regionSelect"><option value="">Create a region first</option></select></div>
@@ -215,8 +214,8 @@
     read.innerHTML='Sheet '+sid(i,j)+' &middot; hex '+two(h[0]%SC+1)+two(h[1]%SR+1);
   }
   map.on('mousemove',show);
-  var STORE='antarctica-hex-overlays-v1', DATA_URL='data/regions.json', layerNames=['biome','political','geographical'];
-  var regionData={biome:[],political:[],geographical:[]}, pinData=[], pinMarkers=L.layerGroup().addTo(map), overlayGroups={}, editMode=false, eraseMode=false, painting=false, lastPainted='', hasLocalDraft=false, hasLocalPins=false, placingPin=false, pendingPinHex='', editingPinId='';
+  var STORE='antarctica-hex-overlays-v1', DATA_URL='data/regions.json', layerNames=['political','geographical'];
+  var regionData={political:[],geographical:[]}, pinData=[], pinMarkers=L.layerGroup().addTo(map), overlayGroups={}, editMode=false, eraseMode=false, painting=false, lastPainted='', hasLocalDraft=false, hasLocalPins=false, placingPin=false, pendingPinHex='', editingPinId='';
   function applyRegionData(data){
     layerNames.forEach(function(k){
       if(!Array.isArray(data&&data[k]))return;
@@ -231,7 +230,7 @@
   }
   try{var saved=localStorage.getItem(STORE);if(saved){var savedData=JSON.parse(saved);applyRegionData(savedData);hasLocalPins=Array.isArray(savedData.pins);hasLocalDraft=true;}}catch(err){console.warn('Could not load saved overlay data',err);}
   layerNames.forEach(function(k){overlayGroups[k]=L.layerGroup();});
-  function exportableData(){return {biome:regionData.biome,political:regionData.political,geographical:regionData.geographical,pins:pinData};}
+  function exportableData(){return {political:regionData.political,geographical:regionData.geographical,pins:pinData};}
   function saveData(){try{localStorage.setItem(STORE,JSON.stringify(exportableData()));hasLocalDraft=true;}catch(err){setHint('Could not save in this browser. Download the JSON draft as a backup.');}}
   function setHint(t){}
   function currentLayer(){return document.getElementById('layerSelect').value;}
@@ -307,7 +306,7 @@
     }
   }
   function regionLabel(region,keys,k,group){
-    if(k==='biome'||!keys.length)return;
+    if(!keys.length)return;
     var centers=keys.map(function(key){var h=parseAddress(key);return {key:key,x:CS*h[0]/KPP,y:S*(h[1]+0.5*(h[0]&1))/KPP};});
     var cx=centers.reduce(function(a,p){return a+p.x;},0)/centers.length,cy=centers.reduce(function(a,p){return a+p.y;},0)/centers.length,best=centers[0],distance=Infinity;
     centers.forEach(function(p){var d=Math.pow(p.x-cx,2)+Math.pow(p.y-cy,2);if(d<distance){distance=d;best=p;}});
@@ -316,30 +315,37 @@
   }
   function renderLayer(k){
     var group=overlayGroups[k];group.clearLayers();
+    var edgeOwners=Object.create(null),weight=k==='political'?2.1:4.2,opacity=k==='political'?.88:1;
     regionData[k].forEach(function(region){
-      var unique=Array.from(new Set(region.hexes)),edges=Object.create(null),valid=[];
+      var unique=Array.from(new Set(region.hexes)),valid=[];
       unique.forEach(function(key){
         var pts=hexVertices(key);if(!pts)return;valid.push(key);
-        if(k==='biome'){
-          L.polygon(pts.map(function(p){return ll(p[0],p[1]);}),{stroke:false,fillColor:region.color,fillOpacity:.34,interactive:false}).addTo(group);
-        }else if(k==='political'){
+        if(k==='political'){
           L.polygon(pts.map(function(p){return ll(p[0],p[1]);}),{stroke:false,fillColor:region.color,fillOpacity:.055,interactive:false}).addTo(group);
           hatchHex(pts,region.color,group);
         }
         for(var n=0;n<6;n++){
           var a=pts[n],b=pts[(n+1)%6],ak=a[0].toFixed(2)+','+a[1].toFixed(2),bk=b[0].toFixed(2)+','+b[1].toFixed(2),id=ak<bk?ak+'|'+bk:bk+'|'+ak;
-          if(!edges[id])edges[id]={count:0,a:a,b:b};edges[id].count++;
+          if(!edgeOwners[id])edgeOwners[id]={a:a,b:b,owners:Object.create(null)};
+          edgeOwners[id].owners[region.id]={color:region.color,count:(edgeOwners[id].owners[region.id]?edgeOwners[id].owners[region.id].count:0)+1};
         }
       });
-      Object.keys(edges).forEach(function(id){
-        var e=edges[id];if(e.count!==1)return;
-        if(k==='biome')return;
-        L.polyline([ll(e.a[0],e.a[1]),ll(e.b[0],e.b[1])],{
-          color:region.color,weight:k==='political'?2.1:4.2,opacity:k==='political'?.88:1,
-          interactive:false,lineCap:'round',lineJoin:'round'
-        }).addTo(group);
-      });
       regionLabel(region,valid,k,group);
+    });
+    Object.keys(edgeOwners).forEach(function(id){
+      var edge=edgeOwners[id],owners=Object.keys(edge.owners).map(function(key){return edge.owners[key];}).filter(function(owner){return owner.count===1;});
+      if(!owners.length)return;
+      var a=edge.a,b=edge.b;
+      if(owners.length===1){
+        L.polyline([ll(a[0],a[1]),ll(b[0],b[1])],{color:owners[0].color,weight:weight,opacity:opacity,interactive:false,lineCap:'butt',lineJoin:'round'}).addTo(group);
+        return;
+      }
+      var pa=map.project(ll(a[0],a[1]),Z),pb=map.project(ll(b[0],b[1]),Z),dx=pb.x-pa.x,dy=pb.y-pa.y,len=Math.hypot(dx,dy)||1,ox=-(dy/len)*1.25,oy=(dx/len)*1.25;
+      owners.slice(0,2).forEach(function(owner,index){
+        var sign=index===0?1:-1,shift=sign;
+        var p1=L.point(pa.x+ox*shift,pa.y+oy*shift),p2=L.point(pb.x+ox*shift,pb.y+oy*shift);
+        L.polyline([map.unproject(p1,Z),map.unproject(p2,Z)],{color:owner.color,weight:weight/2+0.5,opacity:opacity,interactive:false,lineCap:'butt',lineJoin:'round'}).addTo(group);
+      });
     });
   }
   function renderAll(){layerNames.forEach(renderLayer);}
@@ -381,7 +387,6 @@
   Object.keys(buttonIds).forEach(function(id){document.getElementById(buttonIds[id]).addEventListener('click',function(){togglePanel(id);});});
   document.querySelectorAll('[data-close]').forEach(function(button){button.addEventListener('click',function(){var id=this.getAttribute('data-close');document.getElementById(id).hidden=true;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','false');});});
   function setOverlayVisibility(key,visible){if(visible){overlayGroups[key].addTo(map);}else{map.removeLayer(overlayGroups[key]);}}
-  document.getElementById('biomeLayer').addEventListener('change',function(){setOverlayVisibility('biome',this.checked);});
   document.getElementById('politicalLayer').addEventListener('change',function(){setOverlayVisibility('political',this.checked);});
   document.getElementById('geographicalLayer').addEventListener('change',function(){setOverlayVisibility('geographical',this.checked);});
   function setBrushMode(mode,announce){editMode=mode!=='idle';eraseMode=mode==='erase';painting=false;lastPainted='';map.dragging[editMode?'disable':'enable']();document.querySelectorAll('#brushModeControl button').forEach(function(button){button.setAttribute('aria-pressed',button.dataset.mode===mode?'true':'false');});if(announce!==false){setHint(mode==='paint'?'Paint mode: hold and drag across hexes to assign the selected region. Map panning is paused.':mode==='erase'?'Erase mode: hold and drag across hexes to remove overlay assignments. Map panning is paused.':'Brush is idle. Map panning is restored.');}}
@@ -407,7 +412,7 @@
   function endStroke(){painting=false;lastPainted='';}
   map.on('mouseup',endStroke);
   window.addEventListener('mouseup',endStroke);
-  function presentHex(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var i=Math.floor(h[0]/SC),j=Math.floor(h[1]/SR),sheet=sid(i,j),hex=two(h[0]%SC+1)+two(h[1]%SR+1),key=sheet+':'+hex;document.getElementById('presenterAddress').textContent=sheet+' / '+hex;document.getElementById('presenterSub').textContent='Antarctica · Hex record';document.getElementById('presenterIntro').textContent='Recorded information for this hex.';var html='';layerNames.forEach(function(k){var found=null;regionData[k].some(function(r){if(r.hexes.indexOf(key)!==-1){found=r;return true;}return false;});html+='<div class="present-row"><div class="present-label">'+(k==='biome'?'Biome':k==='political'?'Political territory':'Geographical region')+'</div>';html+=found?'<div class="present-value"><span class="present-swatch" style="background:'+found.color+'"></span>'+escapeHtml(found.name)+'</div>':'<div class="present-empty">No information recorded</div>';html+='</div>';});var places=pinData.filter(function(pin){return pin.hex===key;});if(places.length){html+='<div class="present-row"><div class="present-label">Points of interest</div>'+places.map(function(x){return '<div class="present-value">'+escapeHtml(x.name)+'</div><div class="present-empty">'+escapeHtml(x.description)+'</div>';}).join('')+'</div>';}document.getElementById('presenterDetails').innerHTML=html;}
+  function presentHex(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var i=Math.floor(h[0]/SC),j=Math.floor(h[1]/SR),sheet=sid(i,j),hex=two(h[0]%SC+1)+two(h[1]%SR+1),key=sheet+':'+hex;document.getElementById('presenterAddress').textContent=sheet+' / '+hex;document.getElementById('presenterSub').textContent='Antarctica · Hex record';document.getElementById('presenterIntro').textContent='Recorded information for this hex.';var html='';layerNames.forEach(function(k){var found=null;regionData[k].some(function(r){if(r.hexes.indexOf(key)!==-1){found=r;return true;}return false;});html+='<div class="present-row"><div class="present-label">'+(k==='political'?'Political territory':'Geographical region')+'</div>';html+=found?'<div class="present-value"><span class="present-swatch" style="background:'+found.color+'"></span>'+escapeHtml(found.name)+'</div>':'<div class="present-empty">No information recorded</div>';html+='</div>';});var places=pinData.filter(function(pin){return pin.hex===key;});if(places.length){html+='<div class="present-row"><div class="present-label">Points of interest</div>'+places.map(function(x){return '<div class="present-value">'+escapeHtml(x.name)+'</div><div class="present-empty">'+escapeHtml(x.description)+'</div>';}).join('')+'</div>';}document.getElementById('presenterDetails').innerHTML=html;}
   function escapeHtml(s){return String(s).replace(/[&<>\"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch];});}
 
   function openPanel(id){closePanels();document.getElementById(id).hidden=false;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','true');}
