@@ -4,7 +4,7 @@ const TYPE_NAMES=Object.keys(TYPES),$=id=>document.getElementById(id),uid=p=>p+"
 let officialData,data,dirty=false,selected=null,activeTab="view",activeView="complete",layoutMode="force",wizard=null,confirmAction=null,viewports={complete:null,family:null,organization:null},toastTimer;
 let cy;
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const isImageUrl=value=>{try{const u=new URL(value);return /^https?:$/.test(u.protocol)&&/\\.(png|webp)$/i.test(u.pathname)}catch(_){return false}};
+const isImageUrl=value=>{try{const u=new URL(value);return /^https?:$/.test(u.protocol)&&/\.(png|webp)$/i.test(u.pathname)}catch(_){return false}};
 const md=s=>esc(s).replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\*(.+?)\*/g,"<em>$1</em>").replace(/\n/g,"<br>");
 const entity=id=>data.entities.find(x=>x.id===id),rel=id=>data.relationships.find(x=>x.id===id);
 function toast(s){$("toast").textContent=s;$("toast").classList.add("visible");clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("toast").classList.remove("visible"),2800)}
