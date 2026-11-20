@@ -52,7 +52,7 @@ The official file and exported files use the same schema:
 }
 ```
 
-Entity types: `Person`, `Family`, `Faction`, `Object`, `Event`, `Area`, `Location`.
+Entity types: `Person`, `Family`, `Faction`, `Object`, `Event`, `Institution`, `Location`.
 
 Relationship line styles: `solid`, `dotted`, `dashed`. Arrow directions: `none`, `towards`, `from`, `mutual`.
 
