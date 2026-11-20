@@ -64,7 +64,7 @@ function updateEntityReferenceOptions(){const dl=$("entityReferenceOptions");if(
 function markDirty(){setDirty(true);persistLocal();renderGraph();renderFilters();renderLegend();updateCount();updateEntityReferenceOptions()}
 function nodeElements(es,rs){
  const counts=new Map();rs.forEach(r=>{const key=[r.source,r.target].sort().join("|");counts.set(key,(counts.get(key)||0)+1)});
- const nodes=es.map((e,i)=>({data:{id:e.id,name:e.name,label:TYPES[e.type].glyph+" "+e.name,type:e.type,glyph:TYPES[e.type].glyph,shape:({Person:"ellipse",Family:"hexagon",Faction:"diamond",Object:"star",Event:"triangle",Institution:"rectangle",Location:"round-rectangle"})[e.type],image:e.imageUrl||"",fields:e.fields,notes:e.notes},position:e.positions?.[activeView]||e.position||{x:(i%5)*160-320,y:Math.floor(i/5)*135-180}}));
+ const nodes=es.map((e,i)=>({data:{id:e.id,name:e.name,label:TYPES[e.type].glyph+" "+e.name,type:e.type,glyph:TYPES[e.type].glyph,shape:TYPES[e.type].shape,image:e.imageUrl||"",fields:e.fields,notes:e.notes},position:e.positions?.[activeView]||e.position||{x:(i%5)*160-320,y:Math.floor(i/5)*135-180}}));
  const edges=rs.map(r=>({data:{id:r.id,source:r.source,target:r.target,type:r.type,note:r.note,color:r.color,lineStyle:r.lineStyle,direction:r.direction,curveStyle:counts.get([r.source,r.target].sort().join("|"))>1?"bezier":"straight"}}));
  return nodes.concat(edges)
 }
