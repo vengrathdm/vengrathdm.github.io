@@ -227,7 +227,7 @@ $("closeDossier").onclick=()=>{$("dossierWindow").hidden=true};
 
 $("createEntity").onclick=()=>entitySubmenu({x:innerWidth-355,y:95});
 $("createRelationship").onclick=()=>{if(data.entities.length<2){toast("Create at least two entities first.");return}startRelationshipWizard()};
-$("completeView").onclick=()=>{capture();activeView="complete";renderGraph();layout("force",false)};
+$("completeView").onclick=()=>{capture();activeView="complete";renderGraph();layout("force",true)};
 $("resetView").onclick=()=>{capture();layout("force",true);setDirty(true);persistLocal()};
 $("forceLayout").onclick=()=>{layout("force");setDirty(true);persistLocal()};
 $("zoomIn").onclick=()=>cy.zoom({level:cy.zoom()*1.2,renderedPosition:{x:innerWidth/2,y:innerHeight/2}});$("zoomOut").onclick=()=>cy.zoom({level:cy.zoom()/1.2,renderedPosition:{x:innerWidth/2,y:innerHeight/2}});
