@@ -62,7 +62,7 @@ function labels(group, data, poly) {
   ctx.font = "600 " + size + 'px "Fira Sans Extra Condensed",sans-serif';
   const lines = [];
   let line = "";
-  for (const word of data.title.split(/\s+/)) {
+  for (const word of data.title.split(/\\s+/)) {
     const next = line ? line + " " + word : word;
     if (ctx.measureText(next).width <= w * 0.78) line = next;
     else {
@@ -114,6 +114,7 @@ export class VoronoiShatter {
       momentum: 0,
       drag: null,
     });
+    this.wrapping = false;
     this.bind();
   }
   async mount() {
@@ -135,7 +136,7 @@ export class VoronoiShatter {
         .trim()
         .toLocaleLowerCase("pl")
         .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "");
+        .replace(/[\\u0300-\\u036f]/g, "");
     const q = normalize(this.search.value);
     return this.shuffled.filter((d) => {
       const isHidden = d.visibility === "hidden";
@@ -186,9 +187,6 @@ export class VoronoiShatter {
     for (let c = 0; c < cols; c++) {
       const rh = h / Math.max(1, counts[c]);
       for (let r = 0; r < counts[c]; r++) {
-        // A staggered, strongly-jittered lattice breaks the old column/row
-        // rhythm. The 16:10 source format informs the nominal cell footprint
-        // (tile : rh), while the offsets keep the resulting polygons organic.
         const stagger = r % 2 ? tile * 0.28 : 0;
         const xJitter = (Math.random() - 0.5) * tile * 0.58;
         const yJitter = (Math.random() - 0.5) * rh * 0.58;
@@ -265,9 +263,21 @@ export class VoronoiShatter {
     this.viewport.scrollLeft = world;
   }
   wrap() {
-    const w = this.board.offsetWidth / 3;
-    if (this.viewport.scrollLeft < 0.25 * w) this.viewport.scrollLeft += w;
-    else if (this.viewport.scrollLeft > 1.75 * w) this.viewport.scrollLeft -= w;
+    if (this.wrapping || !this.world) return;
+    const world = this.world,
+      left = this.viewport.scrollLeft;
+    // Keep the viewport in the middle copy. Re-centering by exactly one
+    // world-width preserves the visible content and allows either direction
+    // to continue indefinitely, including at the native scroll boundaries.
+    if (left < world) {
+      this.wrapping = true;
+      this.viewport.scrollLeft = left + world;
+      this.wrapping = false;
+    } else if (left >= world * 2) {
+      this.wrapping = true;
+      this.viewport.scrollLeft = left - world;
+      this.wrapping = false;
+    }
   }
   bind() {
     this.filters.addEventListener("click", (e) => {
@@ -298,6 +308,7 @@ export class VoronoiShatter {
         if (d) {
           e.preventDefault();
           this.viewport.scrollLeft += d * 2.5;
+          this.wrap();
         }
       },
       { passive: false },
@@ -322,6 +333,7 @@ export class VoronoiShatter {
         dx = e.clientX - this.drag.lastX,
         dt = Math.max(1, now - this.drag.lastTime);
       this.viewport.scrollLeft -= dx;
+      this.wrap();
       this.drag.velocity = (-dx / dt) * 16;
       this.drag.moved = Math.abs(this.drag.startX - e.clientX) > 8;
       this.drag.lastX = e.clientX;
