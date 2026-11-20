@@ -158,7 +158,7 @@ function confirm(message,action){$("confirmMessage").textContent=message;confirm
 $("cancelConfirm").onclick=closeDialogs;$("acceptConfirm").onclick=()=>{const fn=confirmAction;closeDialogs();confirmAction=null;fn?.()};
 function deleteEntity(e){const count=data.relationships.filter(r=>r.source===e.id||r.target===e.id).length;confirm("Delete "+e.name+"? "+count+" connected relationship(s) will also be deleted.",()=>{data.entities=data.entities.filter(x=>x.id!==e.id);data.relationships=data.relationships.filter(r=>r.source!==e.id&&r.target!==e.id);if(selected?.id===e.id)selected=null;markDirty();toast("Entity deleted.")})}
 function deleteRelationship(r){confirm("Delete "+r.type+" relationship?",()=>{data.relationships=data.relationships.filter(x=>x.id!==r.id);if(selected?.id===r.id)selected=null;markDirty();toast("Relationship deleted.")})}
-function relationshipTypePreset(name){return(data.metadata.relationshipTypes||[]).find(t=>t.name===name)||null}
+function relationshipTypePreset(name){return(data.metadata.relationshipTypes||[]).find(t=>t.name===name)||data.relationships.find(r=>r.type===name)||null}
 function startRelationshipWizard(existing=null,source=null,target=null){
  const preset=relationshipTypePreset(existing?.type);
  wizard={existingId:existing?.id||null,step:existing?2:source&&target?2:source?1:0,source:source||existing?.source||null,target:target||existing?.target||null,form:existing?{...clone(existing),description:preset?.description||""}:{type:"",note:"",color:"#d4a03c",lineStyle:"solid",direction:"none",description:""}};renderWizard();openDialog("relationshipDialog")
