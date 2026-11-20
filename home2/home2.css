@@ -110,3 +110,30 @@ button,input{font:inherit}
 .card-context-menu button:hover,.card-context-menu button:focus-visible{outline:none;background:rgb(225 229 237 / 10%);color:#fff}
 .context-menu-divider{height:1px;margin:.28rem .42rem;background:rgb(225 229 237 / 12%)}
 @media(prefers-reduced-motion:reduce){.card-context-menu.is-open{transition:none}}
+
+
+.context-preview-backdrop{position:fixed;inset:0;z-index:900;display:grid;place-items:center;padding:clamp(1rem,4vw,3.5rem);background:rgb(3 4 6 / 48%);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);opacity:0;transition:opacity .2s ease}
+.context-preview-backdrop[hidden]{display:none}
+.context-preview-backdrop.is-open{opacity:1}
+.context-preview-window{position:relative;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr);width:min(1120px,94vw);height:min(760px,84vh);min-height:360px;overflow:hidden;border:1px solid rgb(230 233 240 / 20%);border-radius:10px;background:rgb(13 14 17 / 98%);box-shadow:0 28px 100px rgb(0 0 0 / 62%),0 0 0 1px rgb(255 255 255 / 2%);transform:translateY(12px) scale(.985);transition:transform .22s cubic-bezier(.2,.75,.25,1)}
+.context-preview-backdrop.is-open .context-preview-window{transform:translateY(0) scale(1)}
+.context-preview-close{position:absolute;z-index:2;top:14px;right:14px;display:grid;place-items:center;width:38px;height:38px;border:1px solid rgb(230 233 240 / 24%);border-radius:50%;background:rgb(8 9 11 / 78%);color:#f0f1f4;font:300 27px/1 "Fira Sans Extra Condensed",sans-serif;cursor:pointer;transition:background .15s ease,border-color .15s ease}
+.context-preview-close:hover,.context-preview-close:focus-visible{outline:none;background:rgb(230 233 240 / 15%);border-color:rgb(230 233 240 / 48%)}
+.context-preview-art{min-width:0;min-height:0;background:#08090b;display:grid;place-items:center;overflow:hidden}
+.context-preview-art img{display:block;width:100%;height:100%;object-fit:contain}
+.context-preview-info{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:1rem;padding:clamp(1.5rem,4vw,3.2rem);border-left:1px solid rgb(230 233 240 / 10%);overflow:auto}
+.context-preview-category{color:#9297a2;font:.68rem "DM Mono",monospace;letter-spacing:.16em;text-transform:uppercase}
+.context-preview-info h2{margin:0;color:#f1f2f5;font:clamp(1.8rem,3.3vw,3.3rem)/1.02 Voltaire,sans-serif;letter-spacing:.035em}
+.context-preview-info p{margin:0;color:#aeb2bb;font:400 .92rem/1.7 "Fira Sans Extra Condensed",sans-serif}
+.context-preview-info>a{margin-top:1.2rem;color:#e2e4e9;text-decoration:none;font:.68rem "DM Mono",monospace;letter-spacing:.12em;border-bottom:1px solid rgb(230 233 240 / 35%);padding-bottom:.45rem}
+.context-preview-info>a b{margin-left:.5rem}
+@media(max-width:720px){
+ .context-preview-backdrop{padding:.7rem}
+ .context-preview-window{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto;width:100%;height:min(780px,90vh);min-height:0}
+ .context-preview-art{min-height:0}
+ .context-preview-info{gap:.55rem;padding:1.1rem 1.25rem 1.3rem;border-left:0;border-top:1px solid rgb(230 233 240 / 10%)}
+ .context-preview-info h2{font-size:1.8rem}
+ .context-preview-info p{font-size:.82rem}
+ .context-preview-info>a{margin-top:.35rem}
+}
+@media(prefers-reduced-motion:reduce){.context-preview-backdrop,.context-preview-window{transition:none}}
