@@ -48,13 +48,10 @@ function fitText(group,text,x,y,maxWidth,maxLines,fontSize,className,letterSpaci
  shown.forEach((part,i)=>{const span=svgEl("tspan",{x,dy:i===0?0:lineHeight});span.textContent=part;el.append(span)});
  group.append(el);return shown.length*lineHeight;
 }
-function makeWorld(items,width,height,worldIndex){
- const cellAspect=1.6;
- const cols=Math.max(3,Math.floor(width/(innerWidth<680?205:260)));
- const rows=Math.max(2,Math.min(3,Math.floor(height/(innerWidth<680?130:155))));
+function makeWorld(items,width,height,worldIndex,rows){
+ const cols=Math.ceil(items.length/rows);
  const cellW=width/cols,cellH=height/rows,random=seededRandom(93517+items.length*31);
- const sites=items.map((record,i)=>{const col=i%cols,row=Math.floor(i/cols);return[(col+.5)*cellW+(random()-.5)*cellW*.17,(row+.5)*cellH+(random()-.5)*cellH*.14,record]});
- // Balance site spacing to keep the resulting Voronoi facets close to the cover-art 16:10 format.
+ const sites=items.map((record,i)=>{const col=i%cols,row=Math.floor(i/cols);return[(col+.5)*cellW+(random()-.5)*cellW*.12,(row+.5)*cellH+(random()-.5)*cellH*.12,record]});
  const delaunay=d3.Delaunay.from(sites,d=>d[0],d=>d[1]),voronoi=delaunay.voronoi([0,0,width,height]);
  const svg=svgEl("svg",{width,height,viewBox:`0 0 ${width} ${height}`,role:"group","aria-label":"Kolekcja kampanii Vengrath"});
  const defs=svgEl("defs");svg.append(defs);
@@ -84,22 +81,13 @@ function build(){
  if(!items.length){worldWidth=0;return}
  const viewportHeight=viewport.clientHeight;
  const headingHeight=$(".board-heading").getBoundingClientRect().height+12;
- const usableHeight=Math.max(220,viewportHeight-headingHeight-58);
- const topPadding=innerWidth<680?8:12;
- const worldHeight=usableHeight-topPadding;
- const cols=Math.max(3,Math.floor((innerWidth*1.42)/(innerWidth<680?205:260)));
- const rows=Math.max(2,Math.min(3,Math.ceil(items.length/cols)));
- const targetCardH=Math.min(innerWidth<680?150:190,worldHeight/rows*.93);
- const targetCardW=targetCardH*1.6;
- worldWidth=Math.max(innerWidth*1.35,cols*targetCardW);
- const cellAspect=1.6;
- const worldCols=Math.max(3,Math.floor(worldWidth/(innerWidth<680?205:260)));
- const worldRows=Math.max(2,Math.min(3,Math.floor(worldHeight/(innerWidth<680?130:155))));
- // Stretch the site grid to the intended card proportions before Voronoi tessellation.
- const actualCellW=worldWidth/worldCols,actualCellH=worldHeight/worldRows;
- const fitWidth=Math.max(worldWidth,actualCellH*cellAspect*worldCols);
- worldWidth=fitWidth;
- for(let copy=0;copy<3;copy++)board.append(makeWorld(items,worldWidth,worldHeight,copy));
+ const worldHeight=Math.max(220,viewportHeight-headingHeight-70);
+ const rows=Math.min(items.length,innerWidth<680?4:5);
+ const cols=Math.ceil(items.length/rows);
+ const cellH=worldHeight/rows;
+ const cellW=cellH*1.6;
+ worldWidth=cols*cellW;
+ for(let copy=0;copy<3;copy++)board.append(makeWorld(items,worldWidth,worldHeight,copy,rows));
  board.style.height=worldHeight+"px";
  const oldWorld=viewport.scrollLeft;
  viewport.scrollLeft=worldWidth+Math.min(oldWorld%Math.max(1,worldWidth),worldWidth*.45);
@@ -116,7 +104,7 @@ search.addEventListener("input",()=>{hidePreview();build()});
 $("#clear-filters").addEventListener("click",()=>{search.value="";activeTag="Wszystko";filters.querySelectorAll("button").forEach(el=>el.classList.toggle("active",el.dataset.tag==="Wszystko"));build()});
 viewport.addEventListener("scroll",wrapScroll,{passive:true});
 viewport.addEventListener("wheel",e=>{if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){e.preventDefault();viewport.scrollLeft+=e.deltaY}},{passive:false});
-viewport.addEventListener("pointerdown",e=>{if(e.pointerType==="mouse"&&e.button!==0)return;if(e.target.closest(".cell"))return;stopInertia();dragging=true;suppressClick=false;lastPointerX=e.clientX;lastMoveTime=performance.now();velocity=0;viewport.classList.add("dragging");viewport.setPointerCapture?.(e.pointerId)});
+viewport.addEventListener("pointerdown",e=>{if(e.pointerType==="mouse"&&e.button!==0)return;stopInertia();dragging=true;suppressClick=false;lastPointerX=e.clientX;lastMoveTime=performance.now();velocity=0;viewport.classList.add("dragging");viewport.setPointerCapture?.(e.pointerId)});
 viewport.addEventListener("pointermove",e=>{if(!dragging)return;const now=performance.now(),dx=e.clientX-lastPointerX,dt=Math.max(1,now-lastMoveTime);viewport.scrollLeft-=dx;velocity=dx/dt;lastPointerX=e.clientX;lastMoveTime=now;if(Math.abs(dx)>3)suppressClick=true;wrapScroll()});
 const endDrag=()=>{if(!dragging)return;dragging=false;viewport.classList.remove("dragging");runInertia()};
 viewport.addEventListener("pointerup",endDrag);viewport.addEventListener("pointercancel",endDrag);viewport.addEventListener("lostpointercapture",endDrag);
