@@ -32,23 +32,25 @@
       <section class="tab-panel" id="viewPanel" role="tabpanel">
         <div class="panel-title"><h2>View configuration</h2><span class="eyebrow">01 / DISPLAY</span></div>
         <label class="search-label">Find an entity<input id="entitySearch" type="search" placeholder="Search names and properties…" autocomplete="off"><span id="searchResults" class="search-results"></span></label>
-        <div class="control-group">
-          <h3>Entity types</h3>
-          <div id="entityFilters" class="check-grid"></div>
-        </div>
-        <div class="control-group">
-          <h3>Relationship types</h3>
-          <div id="relationshipFilters" class="check-list"></div>
-        </div>
+        <div class="control-group filter-category-group"><div id="entityFilters" class="filter-category"></div></div>
+        <div class="control-group filter-category-group"><div id="relationshipFilters" class="filter-category"></div></div>
         <div class="control-group">
           <h3>Label visibility</h3>
-          <div class="segmented" id="labelStages" role="group" aria-label="Label visibility stages">
-            <button data-stage="2" aria-pressed="false">Large</button>
-            <button data-stage="3" aria-pressed="true">Medium</button>
-            <button data-stage="4" aria-pressed="false">Small</button>
+          <div class="label-control-block"><span class="label-control-title">Label size</span>
+            <div class="segmented" id="labelStages" role="group" aria-label="Label size"><button data-stage="2" aria-pressed="false">Large</button><button data-stage="3" aria-pressed="true">Medium</button><button data-stage="4" aria-pressed="false">Small</button></div>
           </div>
-          <label class="check-row"><input id="showEntityLabels" type="checkbox" checked> Entity names</label>
-          <label class="check-row"><input id="showRelationshipLabels" type="checkbox" checked> Relationship labels</label>
+          <div class="label-control-block"><span class="label-control-title">Entity label position</span>
+            <div class="segmented" data-label-position-group="entity" role="group" aria-label="Entity label position"><button data-value="above">Above</button><button data-value="middle" aria-pressed="true">Middle</button><button data-value="below">Below</button></div>
+          </div>
+          <div class="label-control-block"><span class="label-control-title">Entity label visibility</span>
+            <div class="segmented" data-label-mode-group="entity" role="group" aria-label="Entity label visibility"><button data-value="hide">Hide</button><button data-value="hover">Hover</button><button data-value="always" aria-pressed="true">Always</button></div>
+          </div>
+          <div class="label-control-block"><span class="label-control-title">Relationship label position</span>
+            <div class="segmented" data-label-position-group="relationship" role="group" aria-label="Relationship label position"><button data-value="above" aria-pressed="true">Above</button><button data-value="middle">Middle</button><button data-value="below">Below</button></div>
+          </div>
+          <div class="label-control-block"><span class="label-control-title">Relationship label visibility</span>
+            <div class="segmented" data-label-mode-group="relationship" role="group" aria-label="Relationship label visibility"><button data-value="hide">Hide</button><button data-value="hover">Hover</button><button data-value="always" aria-pressed="true">Always</button></div>
+          </div>
         </div>
         <div class="control-group reset-view-control">
           <button id="resetView" class="subtle-button">Reset View</button>
