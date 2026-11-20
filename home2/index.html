@@ -52,6 +52,15 @@
       </div>
     </main>
 
+    <div class="card-context-menu" id="card-context-menu" role="menu" aria-label="Opcje wpisu" hidden>
+      <button type="button" role="menuitem" data-action="preview">Pokaż podgląd</button>
+      <button type="button" role="menuitem" data-action="new-tab">Otwórz w nowej karcie</button>
+      <button type="button" role="menuitem" data-action="open-image">Otwórz obraz w nowej karcie</button>
+      <div class="context-menu-divider" aria-hidden="true"></div>
+      <button type="button" role="menuitem" data-action="copy-image">Kopiuj adres obrazu</button>
+      <button type="button" role="menuitem" data-action="copy-link">Kopiuj adres linku</button>
+    </div>
+
     <aside class="preview" id="preview" aria-hidden="true">
       <div class="preview-image-wrap">
         <img id="preview-image" alt="">
