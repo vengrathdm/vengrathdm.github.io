@@ -1,7 +1,7 @@
 const DATA_URL="./data/relationships.json";
 const TYPES={Person:{glyph:"♙",fields:["Role","Age","Affiliation"]},Family:{glyph:"⚜",fields:["Seat / estate","Motto"]},Faction:{glyph:"⚑",fields:["Purpose","Headquarters","Leader"]},Object:{glyph:"✧",fields:["Object type","Custodian"]},Event:{glyph:"◷",fields:["Date / period","Venue"]},Institution:{glyph:"♜",fields:["Institution type","Jurisdiction","Authority"]},Location:{glyph:"⌂",fields:["Location type","Area"]}};
 const TYPE_NAMES=Object.keys(TYPES),$=id=>document.getElementById(id),uid=p=>p+"-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,8),clone=x=>JSON.parse(JSON.stringify(x));
-let officialData,data,dirty=false,selected=null,activeTab="view",activeView="complete",layoutModes={complete:"force",family:"hierarchy",organization:"hierarchy"},wizard=null,confirmAction=null,viewports={complete:null,family:null,organization:null},toastTimer;
+let officialData,data,dirty=false,selected=null,activeTab="view",activeView="complete",layoutModes={complete:"force",family:"hierarchy",organization:"hierarchy",political:"force",characters:"force"},wizard=null,confirmAction=null,viewports={complete:null,family:null,organization:null,political:null,characters:null},toastTimer;
 let cy,labelStage=3;
 const STORAGE_KEY="heartwell.relationshipMap.v1";
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -41,6 +41,15 @@ function nodeElements(es,rs){
 }
 function viewData(){
  if(activeView==="complete")return{entities:data.entities,relationships:data.relationships};
+ if(activeView==="political"){
+  const allowed=new Set(["Family","Faction","Institution","Location"]);
+  const entities=data.entities.filter(e=>allowed.has(e.type)),ids=new Set(entities.map(e=>e.id));
+  return{entities,relationships:data.relationships.filter(r=>ids.has(r.source)&&ids.has(r.target))};
+ }
+ if(activeView==="characters"){
+  const entities=data.entities.filter(e=>e.type==="Person"),ids=new Set(entities.map(e=>e.id));
+  return{entities,relationships:data.relationships.filter(r=>ids.has(r.source)&&ids.has(r.target))};
+ }
  const type=activeView==="family"?"Family":"Faction",root=selected?.kind==="entity"?entity(selected.id):null,chosen=root?.type===type?root:data.entities.find(e=>e.type===type);
  if(!chosen)return{entities:[],relationships:[]};
  const ids=new Set([chosen.id]);let changed=true;while(changed){changed=false;data.relationships.forEach(r=>{if(ids.has(r.source)&&!ids.has(r.target)){ids.add(r.target);changed=true}if(ids.has(r.target)&&!ids.has(r.source)){ids.add(r.source);changed=true}})}
@@ -49,7 +58,7 @@ function viewData(){
 function capture(){if(cy&&cy.elements().length)viewports[activeView]={zoom:cy.zoom(),pan:clone(cy.pan())}}
 function layout(mode,fit=true){
  layoutModes[activeView]=mode;const opts=mode==="hierarchy"?{name:"breadthfirst",directed:true,spacingFactor:1.3,padding:55,animate:false,roots:cy.nodes().filter(n=>n.data("type")===(activeView==="family"?"Family":"Faction"))}:mode==="manual"?{name:"preset",fit:false}:{name:"cose",animate:false,randomize:false,idealEdgeLength:175,nodeRepulsion:9000,gravity:.2,fit};
- cy.layout(opts).run();$("activeViewLabel").textContent=(activeView==="complete"?"Complete Graph":activeView==="family"?"Family Tree":"Organization Graph")+" · "+(mode==="hierarchy"?"Hierarchical":mode==="manual"?"Manual":"Force-directed");if(fit&&mode!=="manual")cy.fit(cy.elements(),55)
+ cy.layout(opts).run();$("activeViewLabel").textContent=(activeView==="complete"?"Complete Graph":activeView==="family"?"Family Tree":activeView==="organization"?"Organization Graph":activeView==="political"?"Political Network":"Character Network")+" · "+(mode==="hierarchy"?"Hierarchical":mode==="manual"?"Manual":"Force-directed");if(fit&&mode!=="manual")cy.fit(cy.elements(),55)
 }
 function renderGraph(){
  if(!cy)return;const v=viewData();cy.elements().remove();cy.add(nodeElements(v.entities,v.relationships));
@@ -61,7 +70,7 @@ function renderGraph(){
  .selector('edge[direction="towards"]').style({"target-arrow-shape":"triangle"}).selector('edge[direction="from"]').style({"source-arrow-shape":"triangle"}).selector('edge[direction="mutual"]').style({"target-arrow-shape":"triangle","source-arrow-shape":"triangle"})
  .selector(".dimmed").style({opacity:.13}).selector(".selected").style({opacity:1,"border-width":4}).update();
  cy.nodes().style("text-opacity",$("showEntityLabels").checked?1:0).style("font-size",labelStage===2?26:labelStage===3?13:9);cy.edges().style("text-opacity",$("showRelationshipLabels").checked?1:0).style("font-size",labelStage===2?11:labelStage===3?10:7);
- layout(layoutModes[activeView]||(activeView==="complete"?"force":"hierarchy"),false);if(viewports[activeView])cy.viewport(viewports[activeView]);else if(cy.elements().length)cy.fit(cy.elements(),55);
+ layout(layoutModes[activeView]||(["complete","political","characters"].includes(activeView)?"force":"hierarchy"),false);if(viewports[activeView])cy.viewport(viewports[activeView]);else if(cy.elements().length)cy.fit(cy.elements(),55);
  if(selected){const el=cy.getElementById(selected.id);if(el.length){el.addClass("selected");if(selected.kind==="entity")el.closedNeighborhood().addClass("adjacent")}}
  updateCount();renderDossier();applyFilters();
 }
@@ -137,6 +146,8 @@ function refreshSavedViews(){const select=$("savedViews");if(!select)return;sele
 $("saveView").onclick=()=>{const name=prompt("Name this graph view:");if(!name?.trim())return;const view={name:name.trim(),activeView,layout:layoutModes[activeView],zoom:cy.zoom(),pan:cy.pan(),entityTypes:[...document.querySelectorAll("[data-entity-filter]:checked")].map(i=>i.dataset.entityFilter),relationshipTypes:[...document.querySelectorAll("[data-rel-filter]:checked")].map(i=>i.dataset.relFilter),selectedEntityId:selected?.kind==="entity"?selected.id:null};data.metadata.savedViews=savedViews().filter(v=>v.name!==view.name);data.metadata.savedViews.push(view);refreshSavedViews();$("savedViews").value=String(data.metadata.savedViews.length-1);setDirty(true);persistLocal();toast("Graph view saved.")};
 $("savedViews").onchange=e=>{const v=savedViews()[Number(e.target.value)];if(!v)return;activeView=v.activeView||"complete";layoutModes[activeView]=v.layout||layoutModes[activeView];selected=v.selectedEntityId&&entity(v.selectedEntityId)?{kind:"entity",id:v.selectedEntityId}:null;renderGraph();document.querySelectorAll("[data-entity-filter]").forEach(i=>i.checked=(v.entityTypes||TYPE_NAMES).includes(i.dataset.entityFilter));document.querySelectorAll("[data-rel-filter]").forEach(i=>i.checked=(v.relationshipTypes||[]).includes(i.dataset.relFilter));applyFilters();if(v.zoom&&v.pan)cy.viewport({zoom:v.zoom,pan:v.pan});$("activeViewLabel").textContent=v.name;openTab("view")};
 $("familyView").onclick=()=>{activeView="family";selected=null;renderGraph();layout("hierarchy",true)};
+$("politicalView").onclick=()=>{activeView="political";selected=null;renderGraph();layout("force",true)};
+$("characterView").onclick=()=>{activeView="characters";selected=null;renderGraph();layout("force",true)};
 $("organizationView").onclick=()=>{activeView="organization";selected=null;renderGraph();layout("hierarchy",true)};
 $("closeDossier").onclick=()=>{$("dossierWindow").hidden=true};
 (function makeDossierDraggable(){const head=$("dossierDrag"),win=$("dossierWindow");let drag=null;head.addEventListener("pointerdown",e=>{if(e.target.closest("button"))return;const r=win.getBoundingClientRect();drag={x:e.clientX-r.left,y:e.clientY-r.top};head.setPointerCapture(e.pointerId)});head.addEventListener("pointermove",e=>{if(!drag)return;win.style.left=Math.max(4,Math.min(innerWidth-win.offsetWidth,e.clientX-drag.x))+"px";win.style.top=Math.max(4,Math.min(innerHeight-win.offsetHeight,e.clientY-drag.y))+"px";win.style.right="auto";win.style.bottom="auto"});head.addEventListener("pointerup",()=>drag=null);head.addEventListener("pointercancel",()=>drag=null)})();
@@ -151,7 +162,7 @@ $("toggleLegend").onchange=e=>$("legend").hidden=!e.target.checked;$("closeLegen
 $("showEntityLabels").onchange=e=>cy.nodes().style("text-opacity",e.target.checked?1:0);$("showRelationshipLabels").onchange=e=>cy.edges().style("text-opacity",e.target.checked?1:0);
 $("labelStages").querySelectorAll("button").forEach(b=>b.onclick=()=>{$("labelStages").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));const n=Number(b.dataset.stage);labelStage=n;cy.nodes().style("font-size",n===2?26:n===3?13:9);cy.edges().style("font-size",n===2?11:n===3?10:7)});
 $("exportData").onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)+"\n"],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="heartwell-relationships.json";a.click();URL.revokeObjectURL(url);toast("Complete dataset exported.")};
-$("importData").onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const parsed=normalize(JSON.parse(await f.text()));confirm("Import will replace the current working dataset. Continue?",()=>{data=parsed;selected=null;activeView="complete";persistLocal();viewports={complete:null,family:null,organization:null};setDirty(true);renderGraph();renderFilters();renderLegend();openTab("view");toast("Dataset imported.")})}catch(err){toast("Import failed: "+err.message)}e.target.value=""};
+$("importData").onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const parsed=normalize(JSON.parse(await f.text()));confirm("Import will replace the current working dataset. Continue?",()=>{data=parsed;selected=null;activeView="complete";persistLocal();viewports={complete:null,family:null,organization:null,political:null,characters:null};setDirty(true);renderGraph();renderFilters();renderLegend();openTab("view");toast("Dataset imported.")})}catch(err){toast("Import failed: "+err.message)}e.target.value=""};
 $("reloadOfficial").onclick=()=>{const run=async()=>{try{officialData=await fetchOfficial();await clearLocal();data=clone(officialData);selected=null;viewports={complete:null,family:null,organization:null};setDirty(false);renderGraph();renderFilters();renderLegend();openTab("view");toast("Official data reloaded.")}catch(e){toast(e.message)}};if(dirty)confirm("Reload official data and discard all unexported changes?",run);else run()};
 
 document.addEventListener("click",e=>{if(!e.target.closest("#contextMenu"))hideContext()});document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>openTab(b.dataset.tab));
