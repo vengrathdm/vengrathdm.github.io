@@ -2,9 +2,104 @@
   "schemaVersion": 1,
   "metadata": {
     "id": "heartwell-relationships",
-    "name": "Heartwell Relationship Map",
-    "updatedAt": "2026-11-20"
+    "name": "Heartwell Relationship Map — Triangle Demo",
+    "updatedAt": "2026-11-20",
+    "layoutModes": {
+      "complete": "manual"
+    },
+    "relationshipTypes": [
+      {
+        "name": "CONNECTION",
+        "description": "A directed connection between two entities.",
+        "color": "#d4a03c",
+        "lineStyle": "solid",
+        "direction": "towards"
+      }
+    ]
   },
-  "entities": [],
-  "relationships": []
+  "entities": [
+    {
+      "id": "entity-1",
+      "type": "Person",
+      "name": "Entity 1",
+      "imageUrl": "",
+      "notes": "Mockup node 1. This is placeholder content for the relationship-map demo.",
+      "fields": {
+        "status": "Demo"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 0,
+          "y": -180
+        }
+      }
+    },
+    {
+      "id": "entity-2",
+      "type": "Person",
+      "name": "Entity 2",
+      "imageUrl": "",
+      "notes": "Mockup node 2. This is placeholder content for the relationship-map demo.",
+      "fields": {
+        "status": "Demo"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 190,
+          "y": 150
+        }
+      }
+    },
+    {
+      "id": "entity-3",
+      "type": "Person",
+      "name": "Entity 3",
+      "imageUrl": "",
+      "notes": "Mockup node 3. This is placeholder content for the relationship-map demo.",
+      "fields": {
+        "status": "Demo"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": -190,
+          "y": 150
+        }
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "relationship-1",
+      "source": "entity-1",
+      "target": "entity-2",
+      "type": "CONNECTION",
+      "note": "Directed mockup connection: Entity 1 → Entity 2.",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "relationship-2",
+      "source": "entity-2",
+      "target": "entity-3",
+      "type": "CONNECTION",
+      "note": "Directed mockup connection: Entity 2 → Entity 3.",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "relationship-3",
+      "source": "entity-3",
+      "target": "entity-1",
+      "type": "CONNECTION",
+      "note": "Directed mockup connection: Entity 3 → Entity 1.",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    }
+  ]
 }
