@@ -83,7 +83,7 @@ function build(){
  const items=visibleRecords();$("#count").textContent=String(items.length).padStart(2,"0")+" WPISÓW";board.replaceChildren();emptyState.hidden=items.length>0;
  if(!items.length){worldWidth=0;return}
  const viewportHeight=viewport.clientHeight;
- const headingHeight=.board-heading.getBoundingClientRect().height+12;
+ const headingHeight=$(".board-heading").getBoundingClientRect().height+12;
  const usableHeight=Math.max(220,viewportHeight-headingHeight-58);
  const topPadding=innerWidth<680?8:12;
  const worldHeight=usableHeight-topPadding;
