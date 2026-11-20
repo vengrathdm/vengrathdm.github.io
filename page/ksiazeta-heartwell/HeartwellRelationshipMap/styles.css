@@ -91,7 +91,7 @@
 .label-control-title{display:block;margin-bottom:4px;color:#c5b99f;font-size:10px;letter-spacing:.04em;text-transform:uppercase}
 .label-control-block .segmented{margin-bottom:0}
 
-.entity-style-section .dialog-field-grid{grid-template-columns:1fr 1fr;max-width:520px}
+.entity-style-section .dialog-field-grid{grid-template-columns:repeat(3,minmax(0,1fr));max-width:760px}
 .entity-style-grid input[type=color]{height:36px;padding:3px}
 .relationship-style-section{margin-top:14px;padding:11px 12px 3px;border:1px solid rgba(222,198,145,.24);border-radius:4px;background:rgba(5,12,15,.22)}
 .relationship-style-section h3{margin:0 0 9px;color:#efd59c;font:15px var(--display);letter-spacing:.1em;text-transform:uppercase}
