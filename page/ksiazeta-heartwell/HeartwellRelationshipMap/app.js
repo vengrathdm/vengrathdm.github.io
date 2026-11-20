@@ -166,14 +166,14 @@ function renderDossier(){
 }
 function focusEntity(id){const n=cy.getElementById(id);if(n.length)cy.animate({center:{eles:n},zoom:Math.max(cy.zoom(),1.15)},{duration:300})}
 function openEntityDialog(type,e=null){
- $("entityDialog").dataset.position="";$("entityImageFile").value="";$("imagePreview").hidden=true;$("notesPreview").hidden=true;$("toggleNotesPreview").textContent="Preview";$("entityDialogTitle").textContent=(e?"Edit ":"Create ")+type;$("entityType").innerHTML=TYPE_NAMES.map(t=>'<option>'+t+"</option>").join("");$("entityType").value=type;$("entityType").disabled=!!e;$("entityName").value=e?.name||"";$("entityImage").value=e?.imageUrl||"";$("entityNotes").value=e?.notes||"";if(e?.imageUrl){$("imagePreview").innerHTML='<img src="'+esc(e.imageUrl)+'" alt="Image preview">';$("imagePreview").hidden=false}
+ $("entityDialog").dataset.position="";$("entityImageFile").value="";$("imagePreview").hidden=true;$("notesPreview").hidden=false;$("entityDialogTitle").textContent=(e?"Edit ":"Create ")+type;$("entityType").innerHTML=TYPE_NAMES.map(t=>'<option>'+t+"</option>").join("");$("entityType").value=type;$("entityType").disabled=!!e;$("entityName").value=e?.name||"";$("entityImage").value=e?.imageUrl||"";$("entityNotes").value=e?.notes||"";if(e?.imageUrl){$("imagePreview").innerHTML='<img src="'+esc(e.imageUrl)+'" alt="Image preview">';$("imagePreview").hidden=false}
  $("entitySpecificFields").innerHTML='<div class="dialog-field-grid">'+TYPES[type].fields.map(label=>{const key=label.toLowerCase().replace(/[^a-z]+/g,"_");return'<label>'+esc(label)+'<input data-field="'+key+'" value="'+esc(e?.fields?.[key]||"")+'"></label>'}).join("")+"</div>";
  $("customFields").innerHTML="";(e?.customFields||[]).forEach(def=>addCustomField(def.key,e?.fields?.[def.key]??"",def.type||"text",def.options||""));const knownCustom=new Set((e?.customFields||[]).map(x=>x.key));Object.entries(e?.fields||{}).filter(([k])=>!knownCustom.has(k)&&!TYPES[type].fields.some(label=>label.toLowerCase().replace(/[^a-z]+/g,"_")===k)).forEach(([k,v])=>addCustomField(k,v,"text"));
  $("entityForm").dataset.editId=e?.id||"";openDialog("entityDialog")
 }
-$("entityNotes").addEventListener("input",()=>{if(!$("notesPreview").hidden)$("notesPreview").innerHTML=md($("entityNotes").value)});
+$("entityNotes").addEventListener("input",()=>{$("notesPreview").innerHTML=md($("entityNotes").value)});
 document.querySelectorAll("[data-md]").forEach(button=>button.onclick=()=>{const area=$("entityNotes"),parts=button.dataset.md.split("|"),start=area.selectionStart,end=area.selectionEnd,selected=area.value.slice(start,end)||"text";area.setRangeText(parts[0]+selected+parts[1],start,end,"select");area.focus();area.dispatchEvent(new Event("input"))});
-$("toggleNotesPreview").onclick=()=>{const preview=$("notesPreview");preview.hidden=!preview.hidden;preview.innerHTML=md($("entityNotes").value);$("toggleNotesPreview").textContent=preview.hidden?"Preview":"Edit source"};
+
 $("entityType").onchange=()=>{$("entityDialogTitle").textContent="Create "+$("entityType").value;$("entitySpecificFields").innerHTML='<div class="dialog-field-grid">'+TYPES[$("entityType").value].fields.map(label=>{const key=label.toLowerCase().replace(/[^a-z]+/g,"_");return '<label>'+esc(label)+'<input data-field="'+key+'"></label>'}).join("")+"</div>"};
 $("entityForm").onsubmit=e=>{e.preventDefault();const id=$("entityForm").dataset.editId,type=$("entityType").value,name=$("entityName").value.trim(),imageUrl=$("entityImage").value.trim();if(imageUrl&&!isImageUrl(imageUrl)){toast("Provide a PNG or WEBP image URL or upload a PNG/WEBP image.");return}const fields={},customFields=[];$("entitySpecificFields").querySelectorAll("[data-field]").forEach(i=>{if(i.value.trim())fields[i.dataset.field]=i.value.trim()});$("customFields").querySelectorAll(".custom-field-row").forEach(row=>{const key=row.querySelector("[data-custom-key]").value.trim(),input=row.querySelector("[data-custom-value]");if(key){if(input.type==="checkbox"||input.value.trim())fields[key]=input.type==="checkbox"?String(input.checked):input.value.trim();customFields.push({key,type:row.querySelector("[data-custom-type]").value,options:row.querySelector("[data-custom-options]").value})}});let record;if(id){record=entity(id);Object.assign(record,{name,imageUrl,notes:$("entityNotes").value,fields,customFields})}else{record={id:uid("entity"),type,name,imageUrl,notes:$("entityNotes").value,fields,customFields};const rawPosition=$("entityDialog").dataset.position;if(rawPosition){try{record.positions={[activeView]:JSON.parse(rawPosition)}}catch(_){}}data.entities.push(record)}closeDialogs();markDirty();setSelection("entity",record.id);toast(id?"Entity updated.":"Entity created.")};
 function addCustomField(key="",value="",type="text",options=""){
@@ -223,76 +223,13 @@ function entitySubmenu(p){$("contextMenu").innerHTML=createObjectMenuMarkup();pl
 function openSpecial(view,root){capture();activeView=view;selected={kind:"entity",id:root.id};renderGraph();layout("hierarchy",true);focusEntity(root.id);openTab("view");$("dossierWindow").hidden=false}
 $("entitySearch").addEventListener("input",()=>{const q=$("entitySearch").value.trim().toLocaleLowerCase();if(!q){$("searchResults").textContent="";return}const matches=data.entities.filter(e=>(e.name+" "+Object.values(e.fields||{}).join(" ")).toLocaleLowerCase().includes(q)).slice(0,6);$("searchResults").textContent=matches.length?matches.map(e=>e.name+" · "+e.type).join(" / "):"No matching entities";});
 $("entitySearch").addEventListener("keydown",e=>{if(e.key!=="Enter")return;const q=$("entitySearch").value.trim().toLocaleLowerCase();const match=data.entities.find(x=>(x.name+" "+Object.values(x.fields||{}).join(" ")).toLocaleLowerCase().includes(q));if(match){openTab("view");let n=cy.getElementById(match.id);if(!n.length&&activeView!=="complete"){capture();activeView="complete";renderGraph();n=cy.getElementById(match.id)}if(n.length)n.style("display","element");setSelection("entity",match.id);focusEntity(match.id);$("searchResults").textContent="Focused: "+match.name}else toast("No matching entity found.");});
-function savedViews(){return Array.isArray(data.metadata.savedViews)?data.metadata.savedViews:[]}
-function refreshSavedViews(){const select=$("savedViews");if(!select)return;select.innerHTML='<option value="">Saved views…</option>'+savedViews().map((v,i)=>'<option value="'+i+'">'+esc(v.name)+'</option>').join("")}
-$("saveView").onclick=()=>{const name=prompt("Name this graph view:");if(!name?.trim())return;const view={name:name.trim(),activeView,layout:layoutModes[activeView],zoom:cy.zoom(),pan:cy.pan(),entityTypes:[...document.querySelectorAll("[data-entity-filter]:checked")].map(i=>i.dataset.entityFilter),relationshipTypes:[...document.querySelectorAll("[data-rel-filter]:checked")].map(i=>i.dataset.relFilter),selectedEntityId:selected?.kind==="entity"?selected.id:null,showEntityLabels:$("showEntityLabels").checked,showRelationshipLabels:$("showRelationshipLabels").checked,labelStage};data.metadata.savedViews=savedViews().filter(v=>v.name!==view.name);data.metadata.savedViews.push(view);refreshSavedViews();$("savedViews").value=String(data.metadata.savedViews.length-1);setDirty(true);persistLocal();toast("Graph view saved.")};
-$("deleteSavedView").onclick=()=>{const raw=$("savedViews").value;if(raw===""){toast("Select a saved view first.");return}const i=Number(raw);if(!Number.isInteger(i)||!savedViews()[i]){toast("Select a saved view first.");return}data.metadata.savedViews.splice(i,1);refreshSavedViews();setDirty(true);persistLocal();toast("Saved view deleted.")};
-$("savedViews").onchange=e=>{if(e.target.value==="")return;const v=savedViews()[Number(e.target.value)];if(!v)return;activeView=v.activeView||"complete";layoutModes[activeView]=v.layout||layoutModes[activeView];selected=v.selectedEntityId&&entity(v.selectedEntityId)?{kind:"entity",id:v.selectedEntityId}:null;$("showEntityLabels").checked=v.showEntityLabels!==false;$("showRelationshipLabels").checked=v.showRelationshipLabels!==false;labelStage=v.labelStage||3;$("labelStages").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(Number(b.dataset.stage)===labelStage)));renderGraph();document.querySelectorAll("[data-entity-filter]").forEach(i=>i.checked=(v.entityTypes||TYPE_NAMES).includes(i.dataset.entityFilter));document.querySelectorAll("[data-rel-filter]").forEach(i=>i.checked=(v.relationshipTypes||[]).includes(i.dataset.relFilter));applyFilters();if(v.zoom&&v.pan)cy.viewport({zoom:v.zoom,pan:v.pan});$("activeViewLabel").textContent=v.name;openTab("view")};
-$("familyView").onclick=()=>{activeView="family";selected=null;renderGraph();layout("hierarchy",true)};
-$("politicalView").onclick=()=>{activeView="political";selected=null;renderGraph();layout("force",true)};
-$("characterView").onclick=()=>{activeView="characters";selected=null;renderGraph();layout("force",true)};
-$("organizationView").onclick=()=>{activeView="organization";selected=null;renderGraph();layout("hierarchy",true)};
 $("closeDossier").onclick=()=>{$("dossierWindow").hidden=true};
 
-$("addEntityType").onclick=()=>{
- const action=(prompt("Entity types: ADD, EDIT or REMOVE","ADD")||"").trim().toUpperCase();if(!action)return;
- if(action==="ADD"){
-  const name=prompt("New entity type name (2–32 characters):")?.trim();if(!name)return;
-  if(!/^[\p{L}\p{N} _-]{2,32}$/u.test(name)){toast("Use 2–32 letters, numbers, spaces, underscores or hyphens.");return}
-  if(TYPES[name]){toast("That entity type already exists.");return}
-  const glyph=prompt("Fallback symbol for this type:","✧")?.trim()||"✧";
-  const shape=prompt("Geometric shape: ellipse, hexagon, diamond, star, triangle, rectangle, round-rectangle","hexagon")||"hexagon";
-  const fields=(prompt("Default fields for this type (comma-separated):","Role, Status")||"").split(",").map(x=>x.trim()).filter(Boolean).slice(0,12);
-  if(!["ellipse","hexagon","diamond","star","triangle","rectangle","round-rectangle"].includes(shape)){toast("Unsupported geometric shape.");return}
-  data.metadata.entityTypes=Array.isArray(data.metadata.entityTypes)?data.metadata.entityTypes:[];data.metadata.entityTypes.push({name,glyph,shape,fields});applyEntityTypes(data.metadata);markDirty();toast("Entity type added.");return;
- }
- const name=prompt("Enter the exact entity type name:")?.trim();if(!name||!TYPES[name]){toast("Entity type not found.");return}
- if(action==="REMOVE"){
-  if(BUILTIN_TYPES[name]){toast("Built-in entity types cannot be removed.");return}
-  if(data.entities.some(e=>e.type===name)){toast("This type is in use. Reassign or delete its entities first.");return}
-  data.metadata.entityTypes=(data.metadata.entityTypes||[]).filter(x=>x.name!==name);applyEntityTypes(data.metadata);markDirty();toast("Entity type removed.");return;
- }
- if(action==="EDIT"){
-  const glyph=prompt("Fallback symbol:",TYPES[name].glyph)?.trim()||TYPES[name].glyph;
-  const shape=prompt("Geometric shape: ellipse, hexagon, diamond, star, triangle, rectangle, round-rectangle",TYPES[name].shape)||TYPES[name].shape;
-  const fields=(prompt("Default fields for this type (comma-separated):",TYPES[name].fields.join(", "))||"").split(",").map(x=>x.trim()).filter(Boolean).slice(0,12);
-  if(!["ellipse","hexagon","diamond","star","triangle","rectangle","round-rectangle"].includes(shape)){toast("Unsupported geometric shape.");return}
-  if(BUILTIN_TYPES[name]){data.metadata.entityTypeOverrides={...(data.metadata.entityTypeOverrides||{}),[name]:{glyph,shape,fields}}}
-  else{const def=data.metadata.entityTypes.find(x=>x.name===name);if(def)Object.assign(def,{glyph,shape,fields})}
-  applyEntityTypes(data.metadata);markDirty();toast("Entity type appearance updated.");return;
- }
- toast("Choose ADD, EDIT or REMOVE.");
-};
 $("createEntity").onclick=()=>entitySubmenu({x:innerWidth-355,y:95});
-$("manageRelationshipTypes").onclick=()=>{
- const action=(prompt("Relationship types: ADD, EDIT or REMOVE","ADD")||"").trim().toUpperCase();if(!action)return;
- data.metadata.relationshipTypes=Array.isArray(data.metadata.relationshipTypes)?data.metadata.relationshipTypes:[];
- if(action==="ADD"){
-  const name=prompt("New relationship type name:")?.trim();if(!name)return;
-  if(data.metadata.relationshipTypes.some(x=>x.name===name)){toast("That relationship type already exists.");return}
-  const description=prompt("Meaning / description:","")||"",color=prompt("Line color in #RRGGBB format:","#d4a03c")||"#d4a03c";
-  const lineStyle=prompt("Line style: solid, dotted or dashed","solid")||"solid",direction=prompt("Arrow direction: none, towards, from or mutual","none")||"none";
-  if(!/^#[0-9a-f]{6}$/i.test(color)||!["solid","dotted","dashed"].includes(lineStyle)||!["none","towards","from","mutual"].includes(direction)){toast("Invalid color, line style or arrow direction.");return}
-  data.metadata.relationshipTypes.push({name,description,color,lineStyle,direction});data.relationships.filter(r=>r.type===name).forEach(r=>Object.assign(r,{color,lineStyle,direction}));markDirty();toast("Relationship type preset added.");return;
- }
- const name=prompt("Enter the exact relationship type name:")?.trim();if(!name)return;
- let preset=data.metadata.relationshipTypes.find(x=>x.name===name);if(!preset){const existing=data.relationships.find(x=>x.type===name);if(!existing){toast("Relationship type preset not found.");return}preset={name,description:"",color:existing.color,lineStyle:existing.lineStyle,direction:existing.direction};data.metadata.relationshipTypes.push(preset)}
- if(action==="REMOVE"){data.metadata.relationshipTypes=data.metadata.relationshipTypes.filter(x=>x.name!==name);markDirty();toast("Preset removed. Existing relationships remain unchanged.");return}
- if(action==="EDIT"){
-  const description=prompt("Meaning / description:",preset.description||"")??preset.description;
-  const color=prompt("Line color in #RRGGBB format:",preset.color||"#d4a03c")||preset.color;
-  const lineStyle=prompt("Line style: solid, dotted or dashed",preset.lineStyle||"solid")||preset.lineStyle;
-  const direction=prompt("Arrow direction: none, towards, from or mutual",preset.direction||"none")||preset.direction;
-  if(!/^#[0-9a-f]{6}$/i.test(color)||!["solid","dotted","dashed"].includes(lineStyle)||!["none","towards","from","mutual"].includes(direction)){toast("Invalid color, line style or arrow direction.");return}
-  const item=data.metadata.relationshipTypes.find(x=>x.name===name);Object.assign(item,{description,color,lineStyle,direction});
-  data.relationships.filter(r=>r.type===name).forEach(r=>Object.assign(r,{color,lineStyle,direction}));markDirty();toast("Relationship type preset updated.");return;
- }
- toast("Choose ADD, EDIT or REMOVE.");
-};
 $("createRelationship").onclick=()=>{if(data.entities.length<2){toast("Create at least two entities first.");return}startRelationshipWizard()};
 $("completeView").onclick=()=>{capture();activeView="complete";renderGraph();layout("force",false)};
-$("fitGraph").onclick=()=>cy.fit(cy.elements(),55);$("resetView").onclick=()=>{cy.reset();cy.fit(cy.elements(),55)};
-$("forceLayout").onclick=()=>{layout("force");setDirty(true);persistLocal()};$("hierarchyLayout").onclick=()=>{layout("hierarchy");setDirty(true);persistLocal()};$("manualLayout").onclick=()=>{layout("manual",false);cy.nodes().grabify();saveCurrentPositions();toast("Manual positioning enabled.")};
+$("resetView").onclick=()=>{cy.reset();cy.fit(cy.elements(),55)};
+$("forceLayout").onclick=()=>{layout("force");setDirty(true);persistLocal()};
 $("zoomIn").onclick=()=>cy.zoom({level:cy.zoom()*1.2,renderedPosition:{x:innerWidth/2,y:innerHeight/2}});$("zoomOut").onclick=()=>cy.zoom({level:cy.zoom()/1.2,renderedPosition:{x:innerWidth/2,y:innerHeight/2}});
 $("toggleLegend").onchange=e=>$("legend").hidden=!e.target.checked;$("closeLegend").onclick=()=>{$("legend").hidden=true;$("toggleLegend").checked=false};
 $("showEntityLabels").onchange=e=>cy.nodes().style("text-opacity",e.target.checked?1:0);$("showRelationshipLabels").onchange=e=>cy.edges().style("text-opacity",e.target.checked?1:0);
@@ -315,5 +252,5 @@ cy.on("tap","node",e=>setSelection("entity",e.target.id()));cy.on("tap","edge",e
 cy.on("dbltap","node",e=>{setSelection("entity",e.target.id());$("dossierWindow").hidden=false;focusEntity(e.target.id())});
 cy.on("dragfree","node",e=>{const n=e.target,at=n.renderedPosition(),target=cy.nodes().filter(x=>x.id()!==n.id()&&x.renderedBoundingBox().x1<=at.x&&x.renderedBoundingBox().x2>=at.x&&x.renderedBoundingBox().y1<=at.y&&x.renderedBoundingBox().y2>=at.y).first();saveCurrentPositions();if(target.length)startRelationshipWizard(null,n.id(),target.id())});
 cy.on("mouseover","node,edge",e=>{const t=$("tooltip");t.textContent=e.target.isNode()?e.target.data("name"):e.target.data("type");t.hidden=false});cy.on("mousemove","node,edge",e=>{$("tooltip").style.left=(e.originalEvent.clientX+12)+"px";$("tooltip").style.top=(e.originalEvent.clientY+12)+"px"});cy.on("mouseout","node,edge",()=>$("tooltip").hidden=true);cy.on("pan zoom",capture);
-async function init(){try{officialData=await fetchOfficial();if(!await restoreLocal()){data=clone(officialData);setDirty(false);$("persistenceState").textContent="Autosave enabled · this browser only"}}catch(e){data={schemaVersion:1,metadata:{id:"heartwell-relationships",name:"Heartwell Relationship Map"},entities:[],relationships:[]};officialData=clone(data);await restoreLocal();toast("Official JSON unavailable: "+e.message)}layoutModes={...layoutModes,...(data.metadata.layoutModes||{})};renderGraph();renderFilters();renderLegend();updateCount();refreshSavedViews();$("entityReferenceOptions")?.remove();const dl=document.createElement("datalist");dl.id="entityReferenceOptions";dl.innerHTML=data.entities.map(e=>'<option value="'+esc(e.name)+'">').join("");document.body.append(dl)}
+async function init(){try{officialData=await fetchOfficial();if(!await restoreLocal()){data=clone(officialData);setDirty(false);$("persistenceState").textContent="Autosave enabled · this browser only"}}catch(e){data={schemaVersion:1,metadata:{id:"heartwell-relationships",name:"Heartwell Relationship Map"},entities:[],relationships:[]};officialData=clone(data);await restoreLocal();toast("Official JSON unavailable: "+e.message)}layoutModes={...layoutModes,...(data.metadata.layoutModes||{})};renderGraph();renderFilters();renderLegend();updateCount();$("entityReferenceOptions")?.remove();const dl=document.createElement("datalist");dl.id="entityReferenceOptions";dl.innerHTML=data.entities.map(e=>'<option value="'+esc(e.name)+'">').join("");document.body.append(dl)}
 init();
