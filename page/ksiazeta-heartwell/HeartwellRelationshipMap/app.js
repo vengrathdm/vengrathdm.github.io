@@ -154,6 +154,7 @@ function renderGraph(){
  if(selected){const el=cy.getElementById(selected.id);if(el.length){el.addClass("selected");if(selected.kind==="entity")el.closedNeighborhood().addClass("adjacent")}}
  updateCount();renderDossier();applyFilters();
 }
+function clearSelection(){selected=null;cy.elements().removeClass("selected adjacent dimmed");renderDossier()}
 function setSelection(kind,id){selected={kind,id};$("dossierWindow").hidden=false;cy.elements().removeClass("selected adjacent dimmed");const el=cy.getElementById(id);if(el.length){el.addClass("selected");const neighborhood=el.closedNeighborhood();neighborhood.addClass("adjacent");cy.elements().not(neighborhood).addClass("dimmed")}renderDossier()}
 function renderFilters(){
   const oldEntityShowAll=$("entityShowAll")?.checked??true,oldRelationshipShowAll=$("relationshipShowAll")?.checked??true;
@@ -243,7 +244,7 @@ function commitEntityPlacement(position){
  data.entities.push(record);selected=null;markDirty();setSelection("entity",record.id);toast("Entity placed.");
 }
 graphSurface.addEventListener("mousemove",e=>updateEntityPlacement(e.clientX,e.clientY));
-document.addEventListener("keydown",e=>{if(e.key==="Escape"&&pendingPlacement){e.preventDefault();cancelEntityPlacement()}});
+document.addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(pendingPlacement){e.preventDefault();cancelEntityPlacement();return}if(selected){e.preventDefault();clearSelection()}});
 
 function confirm(message,action){$("confirmMessage").textContent=message;confirmAction=action;openDialog("confirmDialog")}
 $("cancelConfirm").onclick=closeDialogs;$("acceptConfirm").onclick=()=>{const fn=confirmAction;closeDialogs();confirmAction=null;fn?.()};
@@ -324,7 +325,7 @@ function graphElementAt(renderedX,renderedY){
  return nearest;
 }
 
-cy.on("tap",e=>{if(pendingPlacement&&e.target===cy)commitEntityPlacement(e.position)});cy.on("tap","node",e=>setSelection("entity",e.target.id()));cy.on("tap","edge",e=>setSelection("relationship",e.target.id()));
+cy.on("tap",e=>{if(e.target!==cy)return;if(pendingPlacement)commitEntityPlacement(e.position);else if(selected)clearSelection()});cy.on("tap","node",e=>setSelection("entity",e.target.id()));cy.on("tap","edge",e=>setSelection("relationship",e.target.id()));
 cy.on("dbltap","node",e=>{setSelection("entity",e.target.id());$("dossierWindow").hidden=false;focusEntity(e.target.id())});
 cy.on("dragfree","node",e=>{const n=e.target,at=n.renderedPosition(),target=cy.nodes().filter(x=>x.id()!==n.id()&&x.renderedBoundingBox().x1<=at.x&&x.renderedBoundingBox().x2>=at.x&&x.renderedBoundingBox().y1<=at.y&&x.renderedBoundingBox().y2>=at.y).first();saveCurrentPositions();if(target.length)startRelationshipWizard(null,n.id(),target.id())});
 cy.on("mouseover","node,edge",e=>{const t=$("tooltip");t.textContent=e.target.isNode()?e.target.data("name"):e.target.data("type");t.hidden=false});cy.on("mousemove","node,edge",e=>{$("tooltip").style.left=(e.originalEvent.clientX+12)+"px";$("tooltip").style.top=(e.originalEvent.clientY+12)+"px"});cy.on("mouseout","node,edge",()=>$("tooltip").hidden=true);cy.on("pan zoom",capture);
