@@ -41,11 +41,15 @@ function normalize(source){
  const metadata=source.metadata&&typeof source.metadata==="object"?source.metadata:{id:"heartwell-relationships",name:"Heartwell Relationship Map"};
  applyEntityTypes(metadata);
  metadata.relationshipTypes=(Array.isArray(metadata.relationshipTypes)?metadata.relationshipTypes:[]).filter(t=>t&&typeof t.name==="string"&&t.name.trim()).map(t=>({name:t.name.trim().slice(0,80),description:typeof t.description==="string"?t.description:"",color:/^#[0-9a-f]{6}$/i.test(t.color||"")?t.color:"#d4a03c",lineStyle:["solid","dotted","dashed"].includes(t.lineStyle)?t.lineStyle:"solid",direction:["none","towards","from","mutual"].includes(t.direction)?t.direction:"none"}));
+ const validViews=new Set(["complete","family","organization","political","characters"]);
+ metadata.savedViews=(Array.isArray(metadata.savedViews)?metadata.savedViews:[]).filter(v=>v&&typeof v.name==="string"&&v.name.trim()).map(v=>({name:v.name.trim().slice(0,80),activeView:validViews.has(v.activeView)?v.activeView:"complete",layout:["force","hierarchy","manual"].includes(v.layout)?v.layout:"force",zoom:Number.isFinite(v.zoom)?Math.max(.12,Math.min(3,v.zoom)):1,pan:v.pan&&Number.isFinite(v.pan.x)&&Number.isFinite(v.pan.y)?{x:v.pan.x,y:v.pan.y}:{x:0,y:0},entityTypes:Array.isArray(v.entityTypes)?v.entityTypes.filter(x=>typeof x==="string"):TYPE_NAMES,relationshipTypes:Array.isArray(v.relationshipTypes)?v.relationshipTypes.filter(x=>typeof x==="string"):[],selectedEntityId:typeof v.selectedEntityId==="string"?v.selectedEntityId:null,showEntityLabels:v.showEntityLabels!==false,showRelationshipLabels:v.showRelationshipLabels!==false,labelStage:[2,3,4].includes(v.labelStage)?v.labelStage:3}));
+ metadata.layoutModes=metadata.layoutModes&&typeof metadata.layoutModes==="object"?Object.fromEntries(Object.entries(metadata.layoutModes).filter(([k,v])=>validViews.has(k)&&["force","hierarchy","manual"].includes(v))):{};
+
  const ids=new Set();
  const entities=source.entities.map(e=>{
   if(!e||typeof e.id!=="string"||!/^[A-Za-z0-9_-]{1,128}$/.test(e.id)||typeof e.name!=="string"||!e.name.trim()||!TYPES[e.type]||ids.has(e.id))throw Error("An entity has an invalid id, name, or type.");
   ids.add(e.id);if(e.imageUrl&&!isImageUrl(e.imageUrl))throw Error("Entity graphics must be PNG or WEBP images using HTTPS/HTTP or an embedded upload.");
-  return{id:e.id,type:e.type,name:e.name.trim(),imageUrl:e.imageUrl||"",notes:typeof e.notes==="string"?e.notes:"",fields:e.fields&&typeof e.fields==="object"?e.fields:{},customFields:Array.isArray(e.customFields)?e.customFields:[],positions:e.positions&&typeof e.positions==="object"?e.positions:{},position:e.position||null};
+  return{id:e.id,type:e.type,name:e.name.trim(),imageUrl:e.imageUrl||"",notes:typeof e.notes==="string"?e.notes:"",fields:e.fields&&typeof e.fields==="object"?e.fields:{},customFields:Array.isArray(e.customFields)?e.customFields.filter(x=>x&&typeof x.key==="string").map(x=>({key:x.key,type:["text","number","date","select","checkbox","entity"].includes(x.type)?x.type:"text",options:typeof x.options==="string"?x.options:""})):[],positions:e.positions&&typeof e.positions==="object"?e.positions:{},position:e.position||null};
  });
  const relationshipIds=new Set();
  const relationships=source.relationships.map(r=>{
