@@ -51,7 +51,7 @@ function fitText(group,text,x,y,maxWidth,maxLines,fontSize,className,letterSpaci
 function makeWorld(items,width,height,worldIndex,rows){
  const cols=Math.ceil(items.length/rows);
  const cellW=width/cols,cellH=height/rows,random=seededRandom(93517+items.length*31);
- const sites=items.map((record,i)=>{const col=i%cols,row=Math.floor(i/cols);return[(col+.5)*cellW+(random()-.5)*cellW*.12,(row+.5)*cellH+(random()-.5)*cellH*.12,record]});
+ const sites=items.map((record,i)=>{const col=i%cols,row=Math.floor(i/cols);const stagger=(row%2?-.13:.13)*cellW;return[(col+.5)*cellW+stagger+(random()-.5)*cellW*.3,(row+.5)*cellH+(random()-.5)*cellH*.3,record]});
  const delaunay=d3.Delaunay.from(sites,d=>d[0],d=>d[1]),voronoi=delaunay.voronoi([0,0,width,height]);
  const svg=svgEl("svg",{width,height,viewBox:`0 0 ${width} ${height}`,role:"group","aria-label":"Kolekcja kampanii Vengrath"});
  const defs=svgEl("defs");svg.append(defs);
@@ -95,7 +95,7 @@ function build(){
 }
 function showPreview(r){$("#preview-image").src=r.image||"";$("#preview-image").alt=r.title;$("#preview-category").textContent=r.category||"Kolekcja Vengrath";$("#preview-title").textContent=r.title;$("#preview-description").textContent=describe(r);preview.dataset.href=r.url;preview.setAttribute("aria-hidden","false");previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:1,y:0,duration:.22,ease:"power2.out",overwrite:true})}
 function hidePreview(){previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:0,y:10,duration:.16,ease:"power2.in",overwrite:true,onComplete:()=>preview.setAttribute("aria-hidden","true")})}
-function wrapScroll(){if(!worldWidth||dragging)return;const x=viewport.scrollLeft;if(x<worldWidth*.5)viewport.scrollLeft=x+worldWidth;if(x>worldWidth*2.5)viewport.scrollLeft=x-worldWidth}
+function wrapScroll(){if(!worldWidth)return;let x=viewport.scrollLeft;while(x<worldWidth){x+=worldWidth}while(x>=worldWidth*2){x-=worldWidth}if(x!==viewport.scrollLeft)viewport.scrollLeft=x}
 function stopInertia(){if(inertiaFrame)cancelAnimationFrame(inertiaFrame);inertiaFrame=0}
 function runInertia(){stopInertia();let last=performance.now();const tick=now=>{const dt=Math.min(32,now-last);last=now;if(Math.abs(velocity)<.025){velocity=0;inertiaFrame=0;return}viewport.scrollLeft-=velocity*dt;velocity*=Math.pow(.93,dt/16.67);wrapScroll();inertiaFrame=requestAnimationFrame(tick)};inertiaFrame=requestAnimationFrame(tick)}
 function entrance(){const intro=$("#intro"),app=$("#app");if(reducedMotion){intro.remove();gsap.set(app,{opacity:1});return}const tl=gsap.timeline({defaults:{ease:"power4.out"}});tl.set(app,{opacity:1}).from(".intro-rule",{scale:.55,rotation:-35,autoAlpha:0,duration:.32,ease:"back.out(1.8)"}).from(".intro img",{scale:1.8,rotation:18,filter:"brightness(3)",autoAlpha:0,duration:.22,ease:"power3.out"},"-=.2").from(".intro-kicker,.intro h1,.intro-subtitle",{y:12,autoAlpha:0,duration:.2,stagger:.035},"-=.1").to(".intro",{autoAlpha:0,scale:1.035,duration:.24,ease:"power2.in",onComplete:()=>intro.remove()},"+=.08").from(".topbar",{y:-8,autoAlpha:0,duration:.18},"-=.12").from(".board-heading",{y:6,autoAlpha:0,duration:.16},"-=.1")}
