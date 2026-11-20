@@ -3,7 +3,7 @@ import { gsap } from "https://cdn.jsdelivr.net/npm/gsap@3.13.0/index.js";
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 
 const $=s=>document.querySelector(s);
-const viewport=$("#viewport"),board=$("#board"),filters=$("#filters"),search=$("#search"),emptyState=$("#empty-state"),preview=$("#preview");
+const viewport=$("#viewport"),board=$("#board"),filters=$("#filters"),search=$("#search"),emptyState=$("#empty-state"),preview=$("#preview"),contextMenu=$("#card-context-menu");
 const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let records=[],activeTags=new Set(),resizeFrame=0,previewTween,previewEnabled=true;
 let renderer,scene,camera,clock,particleGeometry,particleMaterial;
@@ -82,6 +82,7 @@ function makeWorld(items,width,height,rows){
   fitText(labels,record.category||"",cx,categoryY,safeW,2,Math.max(7.5,Math.min(9.5,safeW/24)),"cell-tag",.3);
   anchor.append(labels);
   anchor.addEventListener("pointerenter",()=>showPreview(record));anchor.addEventListener("pointerleave",hidePreview);
+  anchor.addEventListener("contextmenu",e=>{e.preventDefault();openContextMenu(record,e.clientX,e.clientY)});
   anchor.addEventListener("focus",()=>showPreview(record));anchor.addEventListener("blur",hidePreview);
   svg.append(anchor);
  });
@@ -104,8 +105,43 @@ function build(){
  viewport.scrollLeft=worldWidth+Math.min(oldWorld%Math.max(1,worldWidth),worldWidth*.45);
  if(!reducedMotion)gsap.from(board.querySelectorAll(".cell"),{autoAlpha:0,scale:.97,transformOrigin:"50% 50%",duration:.65,stagger:{each:.009,from:"random"},ease:"power2.out",clearProps:"all"});
 }
-function showPreview(r){if(!previewEnabled)return;$("#preview-image").src=r.image||"";$("#preview-image").alt=r.title;$("#preview-category").textContent=r.category||"Kolekcja Vengrath";$("#preview-title").textContent=r.title;$("#preview-description").textContent=describe(r);preview.dataset.href=r.url;preview.setAttribute("aria-hidden","false");previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:1,y:0,duration:.22,ease:"power2.out",overwrite:true})}
+function showPreview(r,force=false){if(!previewEnabled&&!force)return;$("#preview-image").src=r.image||"";$("#preview-image").alt=r.title;$("#preview-category").textContent=r.category||"Kolekcja Vengrath";$("#preview-title").textContent=r.title;$("#preview-description").textContent=describe(r);preview.dataset.href=r.url;preview.setAttribute("aria-hidden","false");previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:1,y:0,duration:.22,ease:"power2.out",overwrite:true})}
 function hidePreview(){previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:0,y:10,duration:.16,ease:"power2.in",overwrite:true,onComplete:()=>preview.setAttribute("aria-hidden","true")})}
+
+function closeContextMenu(){contextMenu.classList.remove("is-open");contextMenu.hidden=true;contextMenu.removeAttribute("data-url");contextMenu.removeAttribute("data-image");contextMenu.removeAttribute("data-title")}
+function openContextMenu(record,x,y){
+ contextMenu.dataset.url=new URL(record.url,location.href).href;
+ contextMenu.dataset.image=new URL(record.image,location.href).href;
+ contextMenu.dataset.title=record.title||"";
+ contextMenu.hidden=false;contextMenu.classList.remove("is-open");
+ const pad=10,rect=contextMenu.getBoundingClientRect();
+ const left=Math.max(pad,Math.min(x,innerWidth-rect.width-pad));
+ const top=Math.max(pad,Math.min(y,innerHeight-rect.height-pad));
+ contextMenu.style.left=left+"px";contextMenu.style.top=top+"px";
+ requestAnimationFrame(()=>contextMenu.classList.add("is-open"));
+}
+async function copyAddress(value){
+ try{await navigator.clipboard.writeText(value)}
+ catch(error){
+  const field=document.createElement("textarea");field.value=value;field.style.position="fixed";field.style.opacity="0";document.body.append(field);field.select();
+  const copied=document.execCommand("copy");field.remove();if(!copied)throw error;
+ }
+}
+contextMenu.addEventListener("click",async e=>{
+ const button=e.target.closest("button[data-action]");if(!button)return;
+ const action=button.dataset.action,url=contextMenu.dataset.url,image=contextMenu.dataset.image,title=contextMenu.dataset.title;
+ closeContextMenu();
+ if(action==="preview"){const record=records.find(r=>new URL(r.url,location.href).href===url);if(record)showPreview(record,true)}
+ if(action==="new-tab")window.open(url,"_blank","noopener,noreferrer");
+ if(action==="open-image")window.open(image,"_blank","noopener,noreferrer");
+ if(action==="copy-image")try{await copyAddress(image);button.blur()}catch(error){console.warn("Could not copy image URL",error)}
+ if(action==="copy-link")try{await copyAddress(url);button.blur()}catch(error){console.warn("Could not copy link address",error)}
+});
+document.addEventListener("pointerdown",e=>{if(!contextMenu.hidden&&!contextMenu.contains(e.target))closeContextMenu()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!contextMenu.hidden){closeContextMenu();e.stopPropagation()}});
+viewport.addEventListener("scroll",()=>{if(!contextMenu.hidden)closeContextMenu()},{passive:true});
+window.addEventListener("resize",closeContextMenu);
+
 function wrapScroll(){if(!worldWidth)return;let x=viewport.scrollLeft;while(x<worldWidth){x+=worldWidth}while(x>=worldWidth*2){x-=worldWidth}if(x!==viewport.scrollLeft)viewport.scrollLeft=x}
 function stopInertia(){if(inertiaFrame)cancelAnimationFrame(inertiaFrame);inertiaFrame=0}
 function runInertia(){stopInertia();let last=performance.now();const tick=now=>{const dt=Math.min(32,now-last);last=now;if(Math.abs(velocity)<.025){velocity=0;inertiaFrame=0;return}viewport.scrollLeft-=velocity*dt;velocity*=Math.pow(.93,dt/16.67);wrapScroll();inertiaFrame=requestAnimationFrame(tick)};inertiaFrame=requestAnimationFrame(tick)}
