@@ -123,7 +123,9 @@
         <div id="entitySpecificFields"></div>
         <div class="custom-fields-head"><strong>Additional properties</strong><button type="button" id="addCustomField" class="subtle-button">Add property</button></div>
         <div id="customFields"></div>
-        <label>Notes <span class="muted">(Markdown supported)</span><textarea id="entityNotes" rows="5" placeholder="Record relevant campaign information…"></textarea></label>
+        <label>Notes <span class="muted">(Markdown source)</span></label>
+        <div class="markdown-toolbar"><button type="button" data-md="**|**">Bold</button><button type="button" data-md="*|*">Italic</button><button type="button" data-md="## |">Heading</button><button type="button" data-md="- |">List item</button><button type="button" data-md="`|`">Code</button><button type="button" id="toggleNotesPreview">Preview</button></div>
+        <textarea id="entityNotes" rows="5" placeholder="Record relevant campaign information…"></textarea><div id="notesPreview" class="markdown-preview" hidden></div>
         <div class="dialog-actions"><button type="button" class="subtle-button" data-close-dialog>Cancel</button><button type="submit" class="primary-button">Save Entity</button></div>
       </form>
     </section>
