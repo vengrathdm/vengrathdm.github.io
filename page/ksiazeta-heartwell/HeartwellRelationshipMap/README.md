@@ -25,7 +25,11 @@ The official file and exported files use the same schema:
   "metadata": {
     "id": "heartwell-relationships",
     "name": "Heartwell Relationship Map",
-    "updatedAt": "YYYY-MM-DD"
+    "updatedAt": "YYYY-MM-DD",
+    "entityTypes": [{ "name": "Guild", "glyph": "⚑", "shape": "hexagon", "fields": ["Purpose", "Headquarters"] }],
+    "entityTypeOverrides": { "Person": { "glyph": "♙", "shape": "ellipse", "fields": ["Role", "Age"] } },
+    "relationshipTypes": [{ "name": "ALLY", "description": "Formal mutual support", "color": "#d4a03c", "lineStyle": "solid", "direction": "mutual" }],
+    "layoutModes": { "complete": "force", "family": "hierarchy" }
   },
   "entities": [
     {
