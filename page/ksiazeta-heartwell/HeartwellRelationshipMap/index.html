@@ -28,7 +28,7 @@
       <nav class="tabs" role="tablist" aria-label="Relationship map panels">
         <button class="tab active" data-tab="view" role="tab" aria-selected="true">View</button>
         <button class="tab" data-tab="editor" role="tab" aria-selected="false">Editor</button>
-        <button class="tab" data-tab="dossier" role="tab" aria-selected="false">Dossier</button>
+        <button class="tab" data-tab="dossier" role="tab" aria-selected="false">Dossier ↗</button>
       </nav>
       <section class="tab-panel" id="viewPanel" role="tabpanel">
         <div class="panel-title"><h2>View configuration</h2><span class="eyebrow">01 / DISPLAY</span></div>
@@ -75,7 +75,8 @@
             <label class="subtle-button file-trigger" for="importData">Import Data</label>
             <input id="importData" type="file" accept="application/json,.json" hidden>
           </div>
-          <p id="dirtyState" class="status-line">Official data loaded · no unsaved changes</p>
+          <p id="dirtyState" class="status-line">Loading official data…</p>
+          <p id="persistenceState" class="status-line">Local autosave initializing…</p>
         </div>
         <div class="control-group">
           <h3>Create</h3>
@@ -90,18 +91,18 @@
             <button id="forceLayout" class="subtle-button">Force-directed layout</button>
             <button id="hierarchyLayout" class="subtle-button">Hierarchical layout</button>
             <button id="manualLayout" class="subtle-button">Manual positioning</button>
+            <button id="saveView" class="subtle-button">Save Current View</button>
+            <select id="savedViews" aria-label="Saved graph views"><option value="">Saved views…</option></select>
           </div>
           <p class="muted">Layout changes affect the current view only.</p>
         </div>
       </section>
-      <section class="tab-panel" id="dossierPanel" role="tabpanel" hidden>
-        <div class="panel-title"><h2>Dossier</h2><span class="eyebrow">03 / INSPECTION</span></div>
-        <div id="dossierContent" class="dossier-content">
-          <div class="empty-dossier"><span class="empty-mark">✧</span><p>Select an entity or relationship to inspect its dossier.</p></div>
-        </div>
-      </section>
       <div class="window-foot"><span id="graphCount">0 entities · 0 relationships</span><span>HEARTWELL / ARCHIVE</span></div>
     </section>
+    <aside id="dossierWindow" class="dossier-window panel" hidden>
+      <header id="dossierDrag" class="dossier-window-head"><div><span class="eyebrow">INSPECTION / RECORD</span><h2>Dossier</h2></div><button id="closeDossier" class="icon-button" aria-label="Close dossier">×</button></header>
+      <div id="dossierContent" class="dossier-content"><div class="empty-dossier"><span class="empty-mark">✧</span><p>Select an entity or relationship to inspect its dossier.</p></div></div>
+    </aside>
     <aside id="legend" class="legend panel" hidden>
       <div class="panel-title"><h2>Legend</h2><button id="closeLegend" class="icon-button" aria-label="Close legend">×</button></div>
       <div id="legendContent"></div>
@@ -115,7 +116,11 @@
         <label>Entity type<select id="entityType" required></select></label>
         <label>Name<input id="entityName" maxlength="120" required autocomplete="off"></label>
         <label>Graphic URL <span class="muted">(PNG or WEBP)</span><input id="entityImage" type="url" placeholder="https://…"></label>
+        <label>Or upload a portrait / emblem<input id="entityImageFile" type="file" accept="image/png,image/webp"></label>
+        <div id="imagePreview" class="image-preview" hidden></div>
         <div id="entitySpecificFields"></div>
+        <div class="custom-fields-head"><strong>Additional properties</strong><button type="button" id="addCustomField" class="subtle-button">Add property</button></div>
+        <div id="customFields"></div>
         <label>Notes <span class="muted">(Markdown supported)</span><textarea id="entityNotes" rows="5" placeholder="Record relevant campaign information…"></textarea></label>
         <div class="dialog-actions"><button type="button" class="subtle-button" data-close-dialog>Cancel</button><button type="submit" class="primary-button">Save Entity</button></div>
       </form>
