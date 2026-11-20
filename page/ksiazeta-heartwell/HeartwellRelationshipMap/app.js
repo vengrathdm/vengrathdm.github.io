@@ -229,7 +229,7 @@ $("manageRelationshipTypes").onclick=()=>{
   const description=prompt("Meaning / description:","")||"",color=prompt("Line color in #RRGGBB format:","#d4a03c")||"#d4a03c";
   const lineStyle=prompt("Line style: solid, dotted or dashed","solid")||"solid",direction=prompt("Arrow direction: none, towards, from or mutual","none")||"none";
   if(!/^#[0-9a-f]{6}$/i.test(color)||!["solid","dotted","dashed"].includes(lineStyle)||!["none","towards","from","mutual"].includes(direction)){toast("Invalid color, line style or arrow direction.");return}
-  data.metadata.relationshipTypes.push({name,description,color,lineStyle,direction});markDirty();toast("Relationship type preset added.");return;
+  data.metadata.relationshipTypes.push({name,description,color,lineStyle,direction});data.relationships.filter(r=>r.type===name).forEach(r=>Object.assign(r,{color,lineStyle,direction}));markDirty();toast("Relationship type preset added.");return;
  }
  const name=prompt("Enter the exact relationship type name:")?.trim();if(!name)return;
  let preset=data.metadata.relationshipTypes.find(x=>x.name===name);if(!preset){const existing=data.relationships.find(x=>x.type===name);if(!existing){toast("Relationship type preset not found.");return}preset={name,description:"",color:existing.color,lineStyle:existing.lineStyle,direction:existing.direction};data.metadata.relationshipTypes.push(preset)}
