@@ -304,10 +304,6 @@ bindThreeStateControls("[data-label-position-group=entity]",()=>entityLabelPosit
 bindThreeStateControls("[data-label-position-group=relationship]",()=>relationshipLabelPosition,v=>relationshipLabelPosition=v);
 bindThreeStateControls("[data-label-mode-group=entity]",()=>entityLabelMode,v=>entityLabelMode=v);
 bindThreeStateControls("[data-label-mode-group=relationship]",()=>relationshipLabelMode,v=>relationshipLabelMode=v);
-cy.on("mouseover","node",e=>{if(entityLabelMode==="hover")e.target.style("text-opacity",1)});
-cy.on("mouseout","node",e=>{if(entityLabelMode==="hover")e.target.style("text-opacity",0)});
-cy.on("mouseover","edge",e=>{if(relationshipLabelMode==="hover")e.target.style("text-opacity",1)});
-cy.on("mouseout","edge",e=>{if(relationshipLabelMode==="hover")e.target.style("text-opacity",0)});
 $("labelStages").querySelectorAll("button").forEach(b=>b.onclick=()=>{$("labelStages").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));labelStage=Number(b.dataset.stage);applyLabelStyles()});
 $("exportData").onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)+"\n"],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="heartwell-relationships.json";a.click();URL.revokeObjectURL(url);toast("Complete dataset exported.")};
 $("importData").onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const parsed=normalize(JSON.parse(await f.text()));confirm("Import will replace the current working dataset. Continue?",()=>{data=parsed;layoutModes={...layoutModes,...(data.metadata.layoutModes||{})};selected=null;activeView="complete";persistLocal();viewports={complete:null,family:null,organization:null,political:null,characters:null};setDirty(true);renderGraph();renderFilters();renderLegend();openTab("view");toast("Dataset imported.")})}catch(err){toast("Import failed: "+err.message)}e.target.value=""};
@@ -315,6 +311,11 @@ $("reloadOfficial").onclick=()=>{const run=async()=>{try{officialData=await fetc
 
 document.addEventListener("click",e=>{if(!e.target.closest("#contextMenu"))hideContext()});
 cy=cytoscape({container:$("graph"),elements:[],minZoom:.12,maxZoom:3,wheelSensitivity:.22,selectionType:"single",boxSelectionEnabled:false});
+cy.on("mouseover","node",e=>{if(entityLabelMode==="hover")e.target.style("text-opacity",1)});
+cy.on("mouseout","node",e=>{if(entityLabelMode==="hover")e.target.style("text-opacity",0)});
+cy.on("mouseover","edge",e=>{if(relationshipLabelMode==="hover")e.target.style("text-opacity",1)});
+cy.on("mouseout","edge",e=>{if(relationshipLabelMode==="hover")e.target.style("text-opacity",0)});
+
 function graphElementAt(renderedX,renderedY){
  const node=cy.nodes().filter(n=>{const b=n.renderedBoundingBox();return renderedX>=b.x1-3&&renderedX<=b.x2+3&&renderedY>=b.y1-3&&renderedY<=b.y2+3}).sort((a,b)=>{const pa=a.renderedPosition(),pb=b.renderedPosition();return Math.hypot(pa.x-renderedX,pa.y-renderedY)-Math.hypot(pb.x-renderedX,pb.y-renderedY)}).first();
  if(node.length)return node;
