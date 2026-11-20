@@ -3,12 +3,24 @@ const TYPES={Person:{glyph:"♙",fields:["Role","Age","Affiliation"]},Family:{gl
 const TYPE_NAMES=Object.keys(TYPES),$=id=>document.getElementById(id),uid=p=>p+"-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,8),clone=x=>JSON.parse(JSON.stringify(x));
 let officialData,data,dirty=false,selected=null,activeTab="view",activeView="complete",layoutModes={complete:"force",family:"hierarchy",organization:"hierarchy"},wizard=null,confirmAction=null,viewports={complete:null,family:null,organization:null},toastTimer;
 let cy;
+const STORAGE_KEY="heartwell.relationshipMap.v1";
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const isImageUrl=value=>{try{const u=new URL(value);return /^https?:$/.test(u.protocol)&&/\.(png|webp)$/i.test(u.pathname)}catch(_){return false}};
 const md=s=>esc(s).replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\*(.+?)\*/g,"<em>$1</em>").replace(/\n/g,"<br>");
 const entity=id=>data.entities.find(x=>x.id===id),rel=id=>data.relationships.find(x=>x.id===id);
 function toast(s){$("toast").textContent=s;$("toast").classList.add("visible");clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("toast").classList.remove("visible"),2800)}
-function setDirty(v){dirty=v;$("dirtyState").textContent=v?"Unsaved changes · export data to preserve":"Official data loaded · no unsaved changes";$("dirtyState").style.color=v?"#efc27a":"#b7ad98"}
+function setDirty(v){dirty=v;$("dirtyState").textContent=v?"Changes saved locally · export to publish":"Official data loaded · no unsaved changes";$("dirtyState").style.color=v?"#efc27a":"#b7ad98"}
+let saveTimer;
+function persistLocal(){
+ clearTimeout(saveTimer);saveTimer=setTimeout(()=>{
+  try{localStorage.setItem(STORAGE_KEY,JSON.stringify(data));$("persistenceState").textContent="Local autosave · saved in this browser";$("persistenceState").style.color="#b7c89c"}
+  catch(err){$("persistenceState").textContent="Local autosave unavailable · export a backup";$("persistenceState").style.color="#efc27a"}
+ },180);
+}
+function restoreLocal(){
+ try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return false;data=normalize(JSON.parse(raw));setDirty(true);$("persistenceState").textContent="Restored local working copy";return true}
+ catch(err){$("persistenceState").textContent="Saved local copy could not be read";return false}
+}
 function normalize(source){
  if(!source||source.schemaVersion!==1||!Array.isArray(source.entities)||!Array.isArray(source.relationships))throw Error("Expected schemaVersion 1 with entities and relationships arrays.");
  const ids=new Set(),entities=source.entities.map(e=>{if(!e||!e.id||!e.name?.trim()||!TYPES[e.type]||ids.has(e.id))throw Error("Invalid or duplicate entity.");ids.add(e.id);if(e.imageUrl&&!isImageUrl(e.imageUrl))throw Error("Image URL must point to a PNG or WEBP graphic over HTTP or HTTPS.");return{id:e.id,type:e.type,name:e.name.trim(),imageUrl:e.imageUrl||"",notes:e.notes||"",fields:e.fields||{},positions:e.positions&&typeof e.positions==="object"?e.positions:{},position:e.position||null}});
@@ -16,12 +28,12 @@ function normalize(source){
  return{schemaVersion:1,metadata:source.metadata||{id:"heartwell-relationships",name:"Heartwell Relationship Map"},entities,relationships};
 }
 async function fetchOfficial(){const r=await fetch(DATA_URL,{cache:"no-store"});if(!r.ok)throw Error("Official data could not be loaded ("+r.status+").");return normalize(await r.json())}
-function openTab(tab){activeTab=tab;document.querySelectorAll(".tab").forEach(b=>{const a=b.dataset.tab===tab;b.classList.toggle("active",a);b.setAttribute("aria-selected",String(a))});["view","editor","dossier"].forEach(k=>$(k+"Panel").hidden=k!==tab);if(tab==="dossier")renderDossier()}
+function openTab(tab){activeTab=tab;document.querySelectorAll(".tab").forEach(b=>{const a=b.dataset.tab===tab;b.classList.toggle("active",a);b.setAttribute("aria-selected",String(a))});["view","editor"].forEach(k=>$(k+"Panel").hidden=k!==tab)}
 function openDialog(id){$("modalShade").hidden=false;$(id).hidden=false;hideContext()}
 function closeDialogs(){["entityDialog","relationshipDialog","confirmDialog"].forEach(id=>$(id).hidden=true);$("modalShade").hidden=true;wizard=null}
 document.querySelectorAll("[data-close-dialog]").forEach(b=>b.onclick=closeDialogs);$("modalShade").onclick=()=>{if($("confirmDialog").hidden)closeDialogs()};
 function updateCount(){$("graphCount").textContent=data.entities.length+" entities · "+data.relationships.length+" relationships"}
-function markDirty(){setDirty(true);renderGraph();renderFilters();renderLegend();updateCount()}
+function markDirty(){setDirty(true);persistLocal();renderGraph();renderFilters();renderLegend();updateCount()}
 function nodeElements(es,rs){
  const counts=new Map();rs.forEach(r=>{const key=[r.source,r.target].sort().join("|");counts.set(key,(counts.get(key)||0)+1)});
  const nodes=es.map((e,i)=>({data:{id:e.id,name:e.name,label:TYPES[e.type].glyph+" "+e.name,type:e.type,glyph:TYPES[e.type].glyph,image:e.imageUrl||"",fields:e.fields,notes:e.notes},position:e.positions?.[activeView]||e.position||{x:(i%5)*160-320,y:Math.floor(i/5)*135-180}}));
@@ -53,7 +65,7 @@ function renderGraph(){
  if(selected){const el=cy.getElementById(selected.id);if(el.length){el.addClass("selected");if(selected.kind==="entity")el.closedNeighborhood().addClass("adjacent")}}
  updateCount();renderDossier();applyFilters();
 }
-function setSelection(kind,id){selected={kind,id};cy.elements().removeClass("selected adjacent dimmed");const el=cy.getElementById(id);if(el.length){el.addClass("selected");const neighborhood=el.closedNeighborhood();neighborhood.addClass("adjacent");cy.elements().not(neighborhood).addClass("dimmed")}if(activeTab==="dossier")renderDossier()}
+function setSelection(kind,id){selected={kind,id};$("dossierWindow").hidden=false;cy.elements().removeClass("selected adjacent dimmed");const el=cy.getElementById(id);if(el.length){el.addClass("selected");const neighborhood=el.closedNeighborhood();neighborhood.addClass("adjacent");cy.elements().not(neighborhood).addClass("dimmed")}renderDossier()}
 function renderFilters(){
  $("entityFilters").innerHTML=TYPE_NAMES.map(t=>'<label class="check-row"><input type="checkbox" data-entity-filter="'+t+'" checked> '+t+"</label>").join("");
  const types=[...new Set(data.relationships.map(r=>r.type))].sort();$("relationshipFilters").innerHTML=types.length?types.map(t=>'<label class="check-row"><input type="checkbox" data-rel-filter="'+esc(t)+'" checked> '+esc(t)+"</label>").join(""):'<span class="muted">No relationship types yet.</span>';
@@ -68,11 +80,23 @@ function renderDossier(){
 }
 function focusEntity(id){const n=cy.getElementById(id);if(n.length)cy.animate({center:{eles:n},zoom:Math.max(cy.zoom(),1.15)},{duration:300})}
 function openEntityDialog(type,e=null){
- $("entityDialog").dataset.position="";$("entityDialogTitle").textContent=(e?"Edit ":"Create ")+type;$("entityType").innerHTML=TYPE_NAMES.map(t=>'<option>'+t+"</option>").join("");$("entityType").value=type;$("entityType").disabled=!!e;$("entityName").value=e?.name||"";$("entityImage").value=e?.imageUrl||"";$("entityNotes").value=e?.notes||"";
- $("entitySpecificFields").innerHTML='<div class="dialog-field-grid">'+TYPES[type].fields.map((label,i)=>{const key=label.toLowerCase().replace(/[^a-z]+/g,"_");return'<label>'+esc(label)+'<input data-field="'+key+'" value="'+esc(e?.fields?.[key]||"")+'"></label>'}).join("")+"</div>";$("entityForm").dataset.editId=e?.id||"";openDialog("entityDialog")
+ $("entityDialog").dataset.position="";$("entityImageFile").value="";$("imagePreview").hidden=true;$("entityDialogTitle").textContent=(e?"Edit ":"Create ")+type;$("entityType").innerHTML=TYPE_NAMES.map(t=>'<option>'+t+"</option>").join("");$("entityType").value=type;$("entityType").disabled=!!e;$("entityName").value=e?.name||"";$("entityImage").value=e?.imageUrl||"";$("entityNotes").value=e?.notes||"";
+ $("entitySpecificFields").innerHTML='<div class="dialog-field-grid">'+TYPES[type].fields.map(label=>{const key=label.toLowerCase().replace(/[^a-z]+/g,"_");return'<label>'+esc(label)+'<input data-field="'+key+'" value="'+esc(e?.fields?.[key]||"")+'"></label>'}).join("")+"</div>";
+ $("customFields").innerHTML="";Object.entries(e?.fields||{}).filter(([k])=>!TYPES[type].fields.some(label=>label.toLowerCase().replace(/[^a-z]+/g,"_")===k)).forEach(([k,v])=>addCustomField(k,v,"text"));
+ $("entityForm").dataset.editId=e?.id||"";openDialog("entityDialog")
 }
 $("entityType").onchange=()=>{$("entityDialogTitle").textContent="Create "+$("entityType").value;$("entitySpecificFields").innerHTML='<div class="dialog-field-grid">'+TYPES[$("entityType").value].fields.map(label=>{const key=label.toLowerCase().replace(/[^a-z]+/g,"_");return '<label>'+esc(label)+'<input data-field="'+key+'"></label>'}).join("")+"</div>"};
-$("entityForm").onsubmit=e=>{e.preventDefault();const id=$("entityForm").dataset.editId,type=$("entityType").value,name=$("entityName").value.trim(),imageUrl=$("entityImage").value.trim();if(imageUrl&&!isImageUrl(imageUrl)){toast("Provide a PNG or WEBP image URL over HTTP or HTTPS.");return}const fields={};$("entitySpecificFields").querySelectorAll("[data-field]").forEach(i=>{if(i.value.trim())fields[i.dataset.field]=i.value.trim()});let record;if(id){record=entity(id);Object.assign(record,{name,imageUrl,notes:$("entityNotes").value,fields})}else{record={id:uid("entity"),type,name,imageUrl,notes:$("entityNotes").value,fields};const rawPosition=$("entityDialog").dataset.position;if(rawPosition){try{record.positions={[activeView]:JSON.parse(rawPosition)}}catch(_){}}data.entities.push(record)}closeDialogs();markDirty();setSelection("entity",record.id);toast(id?"Entity updated.":"Entity created.")};
+$("entityForm").onsubmit=e=>{e.preventDefault();const id=$("entityForm").dataset.editId,type=$("entityType").value,name=$("entityName").value.trim(),imageUrl=$("entityImage").value.trim();if(imageUrl&&!isImageUrl(imageUrl)){toast("Provide a PNG or WEBP image URL or upload a PNG/WEBP image.");return}const fields={};$("entitySpecificFields").querySelectorAll("[data-field]").forEach(i=>{if(i.value.trim())fields[i.dataset.field]=i.value.trim()});$("customFields").querySelectorAll(".custom-field-row").forEach(row=>{const key=row.querySelector("[data-custom-key]").value.trim(),input=row.querySelector("[data-custom-value]");if(key&&input.value.trim())fields[key]=input.type==="checkbox"?String(input.checked):input.value.trim()});let record;if(id){record=entity(id);Object.assign(record,{name,imageUrl,notes:$("entityNotes").value,fields})}else{record={id:uid("entity"),type,name,imageUrl,notes:$("entityNotes").value,fields};const rawPosition=$("entityDialog").dataset.position;if(rawPosition){try{record.positions={[activeView]:JSON.parse(rawPosition)}}catch(_){}}data.entities.push(record)}closeDialogs();markDirty();setSelection("entity",record.id);toast(id?"Entity updated.":"Entity created.")};
+function addCustomField(key="",value="",type="text"){
+ const row=document.createElement("div");row.className="custom-field-row";
+ row.innerHTML='<input data-custom-key placeholder="Property name" value="'+esc(key)+'"><select data-custom-type><option value="text">Text</option><option value="number">Number</option><option value="date">Date</option><option value="select">Dropdown</option><option value="checkbox">Checkbox</option><option value="entity">Entity reference</option></select><input data-custom-value placeholder="Value"><button type="button" class="icon-button" aria-label="Remove property">×</button>';
+ const kind=row.querySelector("[data-custom-type]");kind.value=type;const valueInput=row.querySelector("[data-custom-value]");
+ if(type==="checkbox"){valueInput.type="checkbox";valueInput.checked=value==="true"}else if(type==="number"||type==="date")valueInput.type=type;else if(type==="entity"){valueInput.setAttribute("list","entityReferenceOptions");}
+ kind.onchange=()=>{const t=kind.value;valueInput.type=t==="checkbox"?"checkbox":t==="number"||t==="date"?t:"text";if(t==="entity")valueInput.setAttribute("list","entityReferenceOptions");else valueInput.removeAttribute("list")};
+ row.querySelector("button").onclick=()=>row.remove();$("customFields").append(row);
+}
+$("addCustomField").onclick=()=>addCustomField();
+$("entityImageFile").onchange=async e=>{const file=e.target.files?.[0];if(!file)return;if(!["image/png","image/webp"].includes(file.type)){toast("Only PNG and WEBP graphics are supported.");e.target.value="";return}if(file.size>5*1024*1024){toast("Image must be 5 MB or smaller.");e.target.value="";return}const reader=new FileReader();reader.onload=()=>{$("entityImage").value=reader.result;$("imagePreview").innerHTML='<img src="'+reader.result+'" alt="Image preview">';$("imagePreview").hidden=false};reader.readAsDataURL(file)};
 function createEntity(type,position){openEntityDialog(type);$("entityDialog").dataset.position=position?JSON.stringify(position):""}
 function confirm(message,action){$("confirmMessage").textContent=message;confirmAction=action;openDialog("confirmDialog")}
 $("cancelConfirm").onclick=closeDialogs;$("acceptConfirm").onclick=()=>{const fn=confirmAction;closeDialogs();confirmAction=null;fn?.()};
@@ -118,5 +142,5 @@ cy.on("cxttap","node",e=>entityMenu(entity(e.target.id()),e.renderedPosition));c
 cy.on("cxttap",e=>{if(e.target===cy)entitySubmenu({...e.renderedPosition,graphPosition:e.position})});
 cy.on("free","node",e=>{const n=e.target,at=n.renderedPosition(),target=cy.nodes().filter(x=>x.id()!==n.id()&&x.renderedBoundingBox().x1<=at.x&&x.renderedBoundingBox().x2>=at.x&&x.renderedBoundingBox().y1<=at.y&&x.renderedBoundingBox().y2>=at.y).first();const record=entity(n.id());if(record){record.positions=record.positions||{};record.positions[activeView]=n.position();layoutModes[activeView]="manual";setDirty(true)}if(target.length)startRelationshipWizard(null,n.id(),target.id())});
 cy.on("mouseover","node,edge",e=>{const t=$("tooltip");t.textContent=e.target.isNode()?e.target.data("name"):e.target.data("type");t.hidden=false});cy.on("mousemove","node,edge",e=>{$("tooltip").style.left=(e.originalEvent.clientX+12)+"px";$("tooltip").style.top=(e.originalEvent.clientY+12)+"px"});cy.on("mouseout","node,edge",()=>$("tooltip").hidden=true);cy.on("pan zoom",capture);
-async function init(){try{officialData=await fetchOfficial();data=clone(officialData);setDirty(false)}catch(e){data={schemaVersion:1,metadata:{id:"heartwell-relationships",name:"Heartwell Relationship Map"},entities:[],relationships:[]};officialData=clone(data);toast("Official JSON unavailable: "+e.message)}renderGraph();renderFilters();renderLegend();updateCount()}
+async function init(){try{officialData=await fetchOfficial();if(!restoreLocal()){data=clone(officialData);setDirty(false);$("persistenceState").textContent="Autosave enabled · this browser only"}}catch(e){data={schemaVersion:1,metadata:{id:"heartwell-relationships",name:"Heartwell Relationship Map"},entities:[],relationships:[]};officialData=clone(data);restoreLocal();toast("Official JSON unavailable: "+e.message)}renderGraph();renderFilters();renderLegend();updateCount();$("entityReferenceOptions")?.remove();const dl=document.createElement("datalist");dl.id="entityReferenceOptions";dl.innerHTML=data.entities.map(e=>'<option value="'+esc(e.name)+'">').join("");document.body.append(dl)}
 init();
