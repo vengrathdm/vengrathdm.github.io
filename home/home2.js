@@ -8,6 +8,8 @@ let records=[],activeTags=new Set(),resizeFrame=0,previewTween,previewEnabled=fa
 let worldWidth=0,dragging=false,lastPointerX=0,lastMoveTime=0,velocity=0,inertiaFrame=0;
 let suppressClick=false,pressedCardHref=null;
 
+function seededRandom(seed){let v=seed>>>0;return()=>{v=(v*1664525+1013904223)>>>0;return v/4294967296}}
+
 function describe(r){const tags=r.tags||[];if(tags.includes("Aktywna"))return"Aktywna kampania w kolekcji Vengrath.";if(tags.includes("Zamknięta"))return"Zakończona kampania zachowana w kolekcji Vengrath.";if(tags.includes("W przygotowaniu"))return"Projekt przygotowywany do przyszłej realizacji.";if(tags.includes("Narzędzie"))return"Interaktywne narzędzie z kolekcji Vengrath.";if(tags.includes("Archiwum"))return"Kronika zachowana w archiwum Vengrath.";return"Odkryj tę część kolekcji Vengrath."}
 function normalize(v){return String(v??"").trim().toLocaleLowerCase("pl").normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
 function visibleRecords(){const q=normalize(search.value);return records.filter(r=>r.visibility!=="hidden"&&[...activeTags].every(tag=>(r.tags||[]).includes(tag))&&(!q||normalize(r.title).includes(q)||(r.tags||[]).some(tag=>normalize(tag).includes(q))))}
@@ -82,7 +84,6 @@ function build(){
  board.style.height=worldHeight+"px";
  const oldWorld=viewport.scrollLeft;
  viewport.scrollLeft=worldWidth+Math.min(oldWorld%Math.max(1,worldWidth),worldWidth*.45);
- if(!reducedMotion)gsap.from(board.querySelectorAll(".cell"),{autoAlpha:0,scale:.97,transformOrigin:"50% 50%",duration:.65,stagger:{each:.009,from:"random"},ease:"power2.out",clearProps:"all"});
 }
 function showPreview(r,force=false){if(!previewEnabled&&!force)return;$("#preview-image").src=r.image||"";$("#preview-image").alt=r.title;$("#preview-category").textContent=(r.tags||[]).join(" · ")||"Kolekcja Vengrath";$("#preview-title").textContent=r.title;$("#preview-description").textContent=describe(r);preview.dataset.href=r.url;preview.setAttribute("aria-hidden","false");previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:1,y:0,duration:.22,ease:"power2.out",overwrite:true})}
 function hidePreview(){previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:0,y:10,duration:.16,ease:"power2.in",overwrite:true,onComplete:()=>preview.setAttribute("aria-hidden","true")})}
