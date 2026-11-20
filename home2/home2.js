@@ -20,7 +20,7 @@ function startAtmosphere(){
   const count=680,positions=new Float32Array(count*3),random=seededRandom(271828);
   for(let i=0;i<count;i++){positions[i*3]=(random()-.5)*62;positions[i*3+1]=(random()-.5)*36;positions[i*3+2]=(random()-.5)*24}
   particleGeometry=new THREE.BufferGeometry();particleGeometry.setAttribute("position",new THREE.BufferAttribute(positions,3));
-  particleMaterial=new THREE.PointsMaterial({color:0xd7b878,size:1.35,transparent:true,opacity:.58,sizeAttenuation:true,depthWrite:false,blending:THREE.AdditiveBlending});
+  particleMaterial=new THREE.PointsMaterial({color:0xe7e9ef,size:1.45,transparent:true,opacity:.62,sizeAttenuation:true,depthWrite:false,blending:THREE.AdditiveBlending});
   const stars=new THREE.Points(particleGeometry,particleMaterial);scene.add(stars);
   const animate=()=>{requestAnimationFrame(animate);const t=clock.getElapsedTime();stars.rotation.y=Math.sin(t*.04)*.04;stars.rotation.x=Math.cos(t*.03)*.02;const p=particleGeometry.attributes.position.array;
    for(let i=0;i<count;i++){p[i*3+1]+=.002+(i%7)*.0003;if(p[i*3+1]>19)p[i*3+1]=-19}
@@ -29,7 +29,7 @@ function startAtmosphere(){
   addEventListener("resize",()=>{if(!renderer)return;camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
  }catch(e){console.warn("WebGL atmosphere unavailable",e);canvas.hidden=true}
 }
-function describe(r){if(r.type==="tool")return"An interactive Vengrath tool and part of the wider collection.";if(r.category==="Aktywna Kampania")return"An active campaign in the Vengrath collection.";if(r.category==="Zamknięta Kampania")return"A completed campaign preserved in the Vengrath archive.";if(r.category==="Archiwum")return"A chronicle preserved in the Vengrath archive.";return"Explore this part of the Vengrath collection."}
+function describe(r){if(r.type==="tool")return"Interaktywne narzędzie z kolekcji Vengrath.";if(r.category==="Aktywna Kampania")return"Aktywna kampania w kolekcji Vengrath.";if(r.category==="Zamknięta Kampania")return"Zakończona kampania zachowana w archiwum Vengrath.";if(r.category==="Archiwum")return"Kronika zachowana w archiwum Vengrath.";return"Odkryj tę część kolekcji Vengrath."}
 function normalize(v){return String(v??"").trim().toLocaleLowerCase("pl").normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
 function visibleRecords(){const q=normalize(search.value);return records.filter(r=>{if(r.visibility==="hidden")return q==="hidden"||q===normalize(r.title);return(activeTag==="Wszystko"||r.category===activeTag)&&(!q||normalize(r.title).includes(q)||normalize(r.category).includes(q))})}
 function renderFilters(){filters.replaceChildren();const cats=[...new Set(records.filter(r=>r.visibility!=="hidden").map(r=>r.category).filter(Boolean))];["Wszystko",...cats].forEach((label,i)=>{const b=document.createElement("button");b.type="button";b.className="filter"+(!i?" active":"");b.textContent=label;b.dataset.tag=label;filters.append(b)})}
@@ -56,7 +56,7 @@ function makeWorld(items,width,height,worldIndex){
  const sites=items.map((record,i)=>{const col=i%cols,row=Math.floor(i/cols);return[(col+.5)*cellW+(random()-.5)*cellW*.17,(row+.5)*cellH+(random()-.5)*cellH*.14,record]});
  // Balance site spacing to keep the resulting Voronoi facets close to the cover-art 16:10 format.
  const delaunay=d3.Delaunay.from(sites,d=>d[0],d=>d[1]),voronoi=delaunay.voronoi([0,0,width,height]);
- const svg=svgEl("svg",{width,height,viewBox:`0 0 ${width} ${height}`,role:"group","aria-label":"Vengrath campaign collection"});
+ const svg=svgEl("svg",{width,height,viewBox:`0 0 ${width} ${height}`,role:"group","aria-label":"Kolekcja kampanii Vengrath"});
  const defs=svgEl("defs");svg.append(defs);
  items.forEach((record,i)=>{
   const poly=voronoi.cellPolygon(i);if(!poly||poly.length<3)return;
@@ -80,7 +80,7 @@ function makeWorld(items,width,height,worldIndex){
  return svg;
 }
 function build(){
- const items=visibleRecords();$("#count").textContent=String(items.length).padStart(2,"0")+" ENTRIES";board.replaceChildren();emptyState.hidden=items.length>0;
+ const items=visibleRecords();$("#count").textContent=String(items.length).padStart(2,"0")+" WPISÓW";board.replaceChildren();emptyState.hidden=items.length>0;
  if(!items.length){worldWidth=0;return}
  const viewportHeight=viewport.clientHeight;
  const headingHeight=$("#board-heading").getBoundingClientRect().height+12;
@@ -105,12 +105,12 @@ function build(){
  viewport.scrollLeft=worldWidth+Math.min(oldWorld%Math.max(1,worldWidth),worldWidth*.45);
  if(!reducedMotion)gsap.from(board.querySelectorAll(".cell"),{autoAlpha:0,scale:.97,transformOrigin:"50% 50%",duration:.65,stagger:{each:.009,from:"random"},ease:"power2.out",clearProps:"all"});
 }
-function showPreview(r){$("#preview-image").src=r.image||"";$("#preview-image").alt=r.title;$("#preview-category").textContent=r.category||"Vengrath collection";$("#preview-title").textContent=r.title;$("#preview-description").textContent=describe(r);preview.dataset.href=r.url;preview.setAttribute("aria-hidden","false");previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:1,y:0,duration:.22,ease:"power2.out",overwrite:true})}
+function showPreview(r){$("#preview-image").src=r.image||"";$("#preview-image").alt=r.title;$("#preview-category").textContent=r.category||"Kolekcja Vengrath";$("#preview-title").textContent=r.title;$("#preview-description").textContent=describe(r);preview.dataset.href=r.url;preview.setAttribute("aria-hidden","false");previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:1,y:0,duration:.22,ease:"power2.out",overwrite:true})}
 function hidePreview(){previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:0,y:10,duration:.16,ease:"power2.in",overwrite:true,onComplete:()=>preview.setAttribute("aria-hidden","true")})}
 function wrapScroll(){if(!worldWidth||dragging)return;const x=viewport.scrollLeft;if(x<worldWidth*.5)viewport.scrollLeft=x+worldWidth;if(x>worldWidth*2.5)viewport.scrollLeft=x-worldWidth}
 function stopInertia(){if(inertiaFrame)cancelAnimationFrame(inertiaFrame);inertiaFrame=0}
 function runInertia(){stopInertia();let last=performance.now();const tick=now=>{const dt=Math.min(32,now-last);last=now;if(Math.abs(velocity)<.025){velocity=0;inertiaFrame=0;return}viewport.scrollLeft-=velocity*dt;velocity*=Math.pow(.93,dt/16.67);wrapScroll();inertiaFrame=requestAnimationFrame(tick)};inertiaFrame=requestAnimationFrame(tick)}
-function entrance(){const intro=$("#intro"),app=$("#app");if(reducedMotion){intro.remove();gsap.set(app,{opacity:1});return}gsap.timeline({defaults:{ease:"power3.out"}}).from(".intro-rule",{scale:.82,autoAlpha:0,duration:.9}).from(".intro img",{scale:.65,autoAlpha:0,duration:.65},"-=.55").from(".intro-kicker,.intro h1,.intro-subtitle",{y:18,autoAlpha:0,duration:.65,stagger:.12},"-=.35").to(".intro-progress span",{scaleX:1,duration:.5,ease:"power2.inOut"},"-=.2").to(intro,{autoAlpha:0,duration:.7,onComplete:()=>intro.remove()},"+=.08").to(app,{opacity:1,duration:.6},"<+.1").from(".topbar",{y:-12,autoAlpha:0,duration:.5},"<").from(".board-heading",{y:10,autoAlpha:0,duration:.4},"<+.1")}
+function entrance(){const intro=$("#intro"),app=$("#app");if(reducedMotion){intro.remove();gsap.set(app,{opacity:1});return}const tl=gsap.timeline({defaults:{ease:"power4.out"}});tl.set(app,{opacity:1}).from(".intro-rule",{scale:.55,rotation:-35,autoAlpha:0,duration:.32,ease:"back.out(1.8)"}).from(".intro img",{scale:1.8,rotation:18,filter:"brightness(3)",autoAlpha:0,duration:.22,ease:"power3.out"},"-=.2").from(".intro-kicker,.intro h1,.intro-subtitle",{y:12,autoAlpha:0,duration:.2,stagger:.035},"-=.1").to(".intro",{autoAlpha:0,scale:1.035,duration:.24,ease:"power2.in",onComplete:()=>intro.remove()},"+=.08").from(".topbar",{y:-8,autoAlpha:0,duration:.18},"-=.12").from(".board-heading",{y:6,autoAlpha:0,duration:.16},"-=.1")}
 filters.addEventListener("click",e=>{const b=e.target.closest("button[data-tag]");if(!b)return;activeTag=b.dataset.tag;filters.querySelectorAll("button").forEach(el=>el.classList.toggle("active",el===b));hidePreview();build()});
 search.addEventListener("input",()=>{hidePreview();build()});
 $("#clear-filters").addEventListener("click",()=>{search.value="";activeTag="Wszystko";filters.querySelectorAll("button").forEach(el=>el.classList.toggle("active",el.dataset.tag==="Wszystko"));build()});
