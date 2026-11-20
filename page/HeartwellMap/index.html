@@ -178,6 +178,10 @@
   #layersPanel .layer-name-control button{flex:1;min-width:0;padding:8px 4px;border:1px solid transparent;border-radius:2px;background:transparent;color:#c5b99f;font:600 11px/1.2 system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
   #layersPanel .layer-name-control button[aria-pressed=true]{background:#665640;border-color:#b9a47c;color:#fff2d4;box-shadow:inset 0 0 0 1px rgba(255,242,212,.08)}
   #layersPanel .layer-name-control button:hover{background:#514633;color:#fff2d4}
+  #layersPanel .pin-visibility-control{display:flex;width:100%;padding:3px;border:1px solid #8a795a;border-radius:4px;background:rgba(10,20,24,.72);gap:3px}
+  #layersPanel .pin-visibility-control button{flex:1;min-width:0;padding:8px 3px;border:1px solid transparent;border-radius:2px;background:transparent;color:#c5b99f;font:600 10px/1.2 system-ui,sans-serif;letter-spacing:.035em;text-transform:uppercase;cursor:pointer}
+  #layersPanel .pin-visibility-control button[aria-pressed=true]{background:#665640;border-color:#b9a47c;color:#fff2d4;box-shadow:inset 0 0 0 1px rgba(255,242,212,.08)}
+  #layersPanel .pin-visibility-control button:hover{background:#514633;color:#fff2d4}
   #presenter{font:13px/1.45 system-ui,sans-serif}
   #presenterIntro{font:12px/1.5 system-ui,sans-serif}
   .present-label{font:700 10px/1.4 system-ui,sans-serif}
@@ -189,6 +193,8 @@
   .popup-title{display:block;margin-bottom:3px;color:#efd59c;font:1.05rem Voltaire,sans-serif;letter-spacing:.1em;text-transform:uppercase}
   .popup-description{color:#f3ead7}
   .popup-reference{display:block;margin-top:5px;color:#c5b99f;font:10px/1.4 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+  .leaflet-tooltip.pin-name-tooltip{padding:4px 8px;border:1px solid rgba(213,189,139,.8);border-radius:3px;background:rgba(19,31,34,.94);color:#fff3d6;box-shadow:0 2px 8px rgba(0,0,0,.5);font:700 11px/1.25 Voltaire,Georgia,serif;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
+  .leaflet-tooltip.pin-name-tooltip:before{border-top-color:rgba(19,31,34,.94)}
   .map-region-label{background:transparent;border:0;white-space:nowrap;pointer-events:none}
   .map-region-label span{display:inline-block;transform:translate(-50%,-50%);max-width:320px;padding:5px 12px;border-radius:3px;color:#fff3d6;background:linear-gradient(180deg,rgba(19,31,34,.9),rgba(19,31,34,.76));font:700 20px/1.15 Voltaire,Georgia,serif;letter-spacing:.11em;text-transform:uppercase;text-shadow:0 2px 2px rgba(0,0,0,.95),0 0 8px rgba(0,0,0,.9);box-shadow:0 2px 8px rgba(0,0,0,.42);border-bottom:2px solid rgba(213,189,139,.9);-webkit-text-stroke:.25px rgba(40,32,26,.7)}
   .map-region-label-political span{font-style:normal}
@@ -222,6 +228,7 @@
   <label><input type="checkbox" id="politicalLayer" checked> Warstwy polityczne</label>
   <label><input type="checkbox" id="geographicalLayer" checked> Warstwy geograficzne</label>
   <div class="layer-name-control-wrap"><span class="layer-name-label">Nazwy regionów</span><div id="regionNameMode" class="layer-name-control" role="group" aria-label="Widoczność nazw regionów"><button type="button" data-mode="hide" aria-pressed="false">Ukryj</button><button type="button" data-mode="hover" aria-pressed="true">Po najechaniu</button><button type="button" data-mode="show" aria-pressed="false">Pokaż</button></div></div>
+  <div class="layer-name-control-wrap"><span class="layer-name-label">Widoczność markerów</span><div id="pinVisibilityMode" class="pin-visibility-control" role="group" aria-label="Widoczność markerów"><button type="button" data-mode="hidden" aria-pressed="false">Ukryj</button><button type="button" data-mode="hover" aria-pressed="true">Najedź</button><button type="button" data-mode="click" aria-pressed="false">Kliknij</button><button type="button" data-mode="always" aria-pressed="false">Zawsze</button></div></div>
 </section>
 <section id="presenter" class="floating-panel" hidden>
   <div class="panel-head"><strong>Karta terenu</strong><button class="panel-close" data-close="presenter" type="button">Zamknij</button></div>
@@ -319,8 +326,10 @@
     read.innerHTML='Arkusz '+sid(i,j)+' &middot; hex '+two(h[0]%SC+1)+two(h[1]%SR+1);
   }
   map.on('mousemove',show);
-  var STORE='heartwellmap-hex-overlays-v2', DATA_URL='data/regions.json', layerNames=['political','geographical'], regionNameMode='hover', editingRegionId='', brushMode='idle', regionChooserPurpose='edit';
+  var STORE='heartwellmap-hex-overlays-v2', DATA_URL='data/regions.json', layerNames=['political','geographical'], regionNameMode='hover', pinVisibilityMode='hover', editingRegionId='', brushMode='idle', regionChooserPurpose='edit';
   var regionData={political:[],geographical:[]}, pinData=[], pinMarkers=L.layerGroup().addTo(map), overlayGroups={}, editMode=false, eraseMode=false, painting=false, lastPainted='', hasLocalDraft=false, hasLocalPins=false, placingPin=false, pendingPinHex='', editingPinId='';
+  var PIN_VISIBILITY_STORE=STORE+'-pin-visibility';
+  try{var storedPinVisibility=localStorage.getItem(PIN_VISIBILITY_STORE);if(['hidden','hover','click','always'].indexOf(storedPinVisibility)!==-1)pinVisibilityMode=storedPinVisibility;}catch(e){}
   function applyRegionData(data){
     if(!data||typeof data!=='object'||!Array.isArray(data.political)||!Array.isArray(data.geographical))throw new Error('Plik musi zawierać tablice regionów politycznych i geograficznych.');
     var next={political:[],geographical:[]},nextPins=[];
@@ -481,7 +490,7 @@
   function renderAll(){layerNames.forEach(renderLayer);}
   function defaultPinColor(style){return {standard:'#eee5cc',ruin:'#d8c59a',settlement:'#c5d0bb',landmark:'#d8b7a3',natural:'#9dbb91'}[style]||'#eee5cc';}
   function pinIcon(style,color){var glyph={standard:'•',ruin:'✥',settlement:'⌂',landmark:'★',natural:'✿'}[style]||'•',safeColor=/^#[0-9a-f]{6}$/i.test(color||'')?color:defaultPinColor(style);return L.divIcon({className:'',html:'<div class="pin-icon pin-'+style+'" style="--pin-color:'+safeColor+'"><span><b>'+glyph+'</b></span></div>',iconSize:[28,34],iconAnchor:[14,32]});}
-  function renderPins(){pinMarkers.clearLayers();pinData.forEach(function(pin){var h=parseAddress(pin.hex);if(!h)return;var point=ll(CS*h[0]/KPP,S*(h[1]+0.5*(h[0]&1))/KPP);L.marker(point,{icon:pinIcon(pin.style,pin.color),title:pin.name}).bindPopup('<span class="popup-title">'+escapeHtml(pin.name)+'</span><span class="popup-description">'+escapeHtml(pin.description).replace(/\\n/g,'<br>')+'</span><span class="popup-reference">'+escapeHtml(pin.hex.replace(':',' · Hex '))+'</span>',{className:'editorial-popup'}).on('click',function(e){if(placingPin)cancelPinPlacement();selectHexAt(e.latlng);}).addTo(pinMarkers);});}
+  function renderPins(){pinMarkers.clearLayers();if(pinVisibilityMode==='hidden')return;pinData.forEach(function(pin,index){var h=parseAddress(pin.hex);if(!h)return;var point=ll(CS*h[0]/KPP,S*(h[1]+0.5*(h[0]&1))/KPP),marker=L.marker(point,{icon:pinIcon(pin.style,pin.color),title:pin.name}).bindPopup('<span class="popup-title">'+escapeHtml(pin.name)+'</span><span class="popup-description">'+escapeHtml(pin.description).replace(/\\n/g,'<br>')+'</span><span class="popup-reference">'+escapeHtml(pin.hex.replace(':',' · Hex '))+'</span>',{className:'editorial-popup'});if(pinVisibilityMode==='hover'||pinVisibilityMode==='always'){var labelOffset=[((index%3)-1)*12,-25-(Math.floor(index/3)%2)*5];marker.bindTooltip(escapeHtml(pin.name),{permanent:pinVisibilityMode==='always',direction:'top',offset:labelOffset,className:'pin-name-tooltip',opacity:1});}marker.on('click',function(e){if(placingPin)cancelPinPlacement();selectHexAt(e.latlng);}).addTo(pinMarkers);});}
   function cancelPinPlacement(){placingPin=false;pendingPinHex='';document.body.classList.remove('pin-placement-active');}
   function beginPinPlacement(){stopEditing();cancelPinPlacement();placingPin=true;document.body.classList.add('pin-placement-active');document.getElementById('editor').hidden=true;document.getElementById('editorButton').setAttribute('aria-expanded','false');}
   function hexAddressAt(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return null;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return null;var sheet=sid(Math.floor(h[0]/SC),Math.floor(h[1]/SR));if(LAND.indexOf(sheet)<0)return null;return addressKey(h);}
@@ -525,6 +534,8 @@
   document.getElementById('geographicalLayer').addEventListener('change',function(){setOverlayVisibility('geographical',this.checked);});
   setOverlayVisibility('political',true);setOverlayVisibility('geographical',true);
   document.querySelectorAll('#regionNameMode button').forEach(function(button){button.addEventListener('click',function(){regionNameMode=this.dataset.mode;document.querySelectorAll('#regionNameMode button').forEach(function(item){item.setAttribute('aria-pressed',item.dataset.mode===regionNameMode?'true':'false');});renderAll();});});
+  function setPinVisibilityMode(mode){if(['hidden','hover','click','always'].indexOf(mode)===-1)return;pinVisibilityMode=mode;try{localStorage.setItem(PIN_VISIBILITY_STORE,mode);}catch(e){}document.querySelectorAll('#pinVisibilityMode button').forEach(function(item){item.setAttribute('aria-pressed',item.dataset.mode===mode?'true':'false');});renderPins();}
+  document.querySelectorAll('#pinVisibilityMode button').forEach(function(button){button.addEventListener('click',function(){setPinVisibilityMode(this.dataset.mode);});});
   function syncBrushActivation(){var active=!document.getElementById('editor').hidden&&brushMode!=='idle';editMode=active;eraseMode=active&&brushMode==='erase';if(!active){painting=false;lastPainted='';}map.dragging[active?'disable':'enable']();}
   function setBrushMode(mode,announce){brushMode=mode;painting=false;lastPainted='';syncBrushActivation();document.querySelectorAll('#brushModeControl button').forEach(function(button){button.setAttribute('aria-pressed',button.dataset.mode===mode?'true':'false');});if(announce!==false){setHint(mode==='paint'?'Wybrano tryb malowania. Malowanie działa tylko wtedy, gdy panel edytora jest otwarty.':mode==='erase'?'Wybrano tryb wymazywania. Wymazywanie działa tylko wtedy, gdy panel edytora jest otwarty.':'Pędzel jest nieaktywny. Przesuwanie mapy jest ponownie dostępne.');}}
   function stopEditing(){setBrushMode('idle',false);}
