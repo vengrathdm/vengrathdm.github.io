@@ -1,4 +1,3 @@
-import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js";
 import { gsap } from "https://cdn.jsdelivr.net/npm/gsap@3.13.0/index.js";
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 
@@ -6,29 +5,9 @@ const $=s=>document.querySelector(s);
 const viewport=$("#viewport"),board=$("#board"),filters=$("#filters"),search=$("#search"),emptyState=$("#empty-state"),preview=$("#preview"),contextMenu=$("#card-context-menu"),contextPreview=$("#context-preview-backdrop");
 const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let records=[],activeTags=new Set(),resizeFrame=0,previewTween,previewEnabled=false;
-let renderer,scene,camera,clock,particleGeometry,particleMaterial;
 let worldWidth=0,dragging=false,lastPointerX=0,lastMoveTime=0,velocity=0,inertiaFrame=0;
 let suppressClick=false,pressedCardHref=null;
 
-function seededRandom(seed){let v=seed>>>0;return()=>{v=(v*1664525+1013904223)>>>0;return v/4294967296}}
-function startAtmosphere(){
- const canvas=$("#atmosphere");
- try{
-  renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:false});
-  renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.setSize(innerWidth,innerHeight);renderer.setClearColor(0,0);
-  scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(52,innerWidth/innerHeight,.1,100);camera.position.z=32;clock=new THREE.Clock();
-  const count=680,positions=new Float32Array(count*3),random=seededRandom(271828);
-  for(let i=0;i<count;i++){positions[i*3]=(random()-.5)*62;positions[i*3+1]=(random()-.5)*36;positions[i*3+2]=(random()-.5)*24}
-  particleGeometry=new THREE.BufferGeometry();particleGeometry.setAttribute("position",new THREE.BufferAttribute(positions,3));
-  particleMaterial=new THREE.PointsMaterial({color:0xe7e9ef,size:1.45,transparent:true,opacity:.62,sizeAttenuation:true,depthWrite:false,blending:THREE.AdditiveBlending});
-  const stars=new THREE.Points(particleGeometry,particleMaterial);scene.add(stars);
-  const animate=()=>{requestAnimationFrame(animate);const t=clock.getElapsedTime();stars.rotation.y=Math.sin(t*.04)*.04;stars.rotation.x=Math.cos(t*.03)*.02;const p=particleGeometry.attributes.position.array;
-   for(let i=0;i<count;i++){p[i*3+1]+=.002+(i%7)*.0003;if(p[i*3+1]>19)p[i*3+1]=-19}
-   particleGeometry.attributes.position.needsUpdate=true;renderer.render(scene,camera)};
-  animate();
-  addEventListener("resize",()=>{if(!renderer)return;camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
- }catch(e){console.warn("WebGL atmosphere unavailable",e);canvas.hidden=true}
-}
 function describe(r){const tags=r.tags||[];if(tags.includes("Aktywna"))return"Aktywna kampania w kolekcji Vengrath.";if(tags.includes("Zamknięta"))return"Zakończona kampania zachowana w kolekcji Vengrath.";if(tags.includes("W przygotowaniu"))return"Projekt przygotowywany do przyszłej realizacji.";if(tags.includes("Narzędzie"))return"Interaktywne narzędzie z kolekcji Vengrath.";if(tags.includes("Archiwum"))return"Kronika zachowana w archiwum Vengrath.";return"Odkryj tę część kolekcji Vengrath."}
 function normalize(v){return String(v??"").trim().toLocaleLowerCase("pl").normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
 function visibleRecords(){const q=normalize(search.value);return records.filter(r=>r.visibility!=="hidden"&&[...activeTags].every(tag=>(r.tags||[]).includes(tag))&&(!q||normalize(r.title).includes(q)||(r.tags||[]).some(tag=>normalize(tag).includes(q))))}
@@ -162,7 +141,6 @@ window.addEventListener("resize",closeContextMenu);
 function wrapScroll(){if(!worldWidth)return;let x=viewport.scrollLeft;while(x<worldWidth){x+=worldWidth}while(x>=worldWidth*2){x-=worldWidth}if(x!==viewport.scrollLeft)viewport.scrollLeft=x}
 function stopInertia(){if(inertiaFrame)cancelAnimationFrame(inertiaFrame);inertiaFrame=0}
 function runInertia(){stopInertia();let last=performance.now();const tick=now=>{const dt=Math.min(32,now-last);last=now;if(Math.abs(velocity)<.025){velocity=0;inertiaFrame=0;return}viewport.scrollLeft-=velocity*dt;velocity*=Math.pow(.93,dt/16.67);wrapScroll();inertiaFrame=requestAnimationFrame(tick)};inertiaFrame=requestAnimationFrame(tick)}
-function entrance(){const intro=$("#intro"),app=$("#app");if(reducedMotion){intro.remove();gsap.set(app,{opacity:1});return}const tl=gsap.timeline({defaults:{ease:"power4.out"}});tl.set(app,{opacity:1}).from(".intro-rule",{scale:.55,rotation:-35,autoAlpha:0,duration:.32,ease:"back.out(1.8)"}).from(".intro img",{scale:1.8,rotation:18,filter:"brightness(3)",autoAlpha:0,duration:.22,ease:"power3.out"},"-=.2").from(".intro-kicker,.intro h1,.intro-subtitle",{y:12,autoAlpha:0,duration:.2,stagger:.035},"-=.1").to(".intro",{autoAlpha:0,scale:1.035,duration:.24,ease:"power2.in",onComplete:()=>intro.remove()},"+=.08").from(".topbar",{y:-8,autoAlpha:0,duration:.18},"-=.12")}
 filters.addEventListener("click",e=>{const b=e.target.closest("button[data-tag]");if(!b)return;if(b.dataset.tag==="Wszystko")activeTags.clear();else{if(activeTags.has(b.dataset.tag))activeTags.delete(b.dataset.tag);else activeTags.add(b.dataset.tag)}syncFilterControls();hidePreview();build()});
 search.addEventListener("input",()=>{syncFilterControls();hidePreview();build()});
 $("#clear-filters").addEventListener("click",()=>{search.value="";activeTags.clear();syncFilterControls();hidePreview();build()});
@@ -176,5 +154,5 @@ const endDrag=()=>{if(!dragging)return;dragging=false;viewport.classList.remove(
 viewport.addEventListener("pointerup",endDrag);viewport.addEventListener("pointercancel",endDrag);viewport.addEventListener("lostpointercapture",endDrag);
 viewport.addEventListener("click",e=>{if(suppressClick){e.preventDefault();e.stopPropagation();suppressClick=false;return}if(!e.target.closest(".cell")&&preview.dataset.href)hidePreview()},true);
 window.addEventListener("resize",()=>{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(build)});
-async function init(){startAtmosphere();const response=await fetch("/core/data/site-pages.json",{cache:"no-cache"});if(!response.ok)throw new Error("Could not load Vengrath page registry");records=(await response.json()).filter(r=>typeof r.url==="string"&&r.url.startsWith("/page/")&&typeof r.title==="string"&&typeof r.image==="string");renderFilters();build();entrance()}
-init().catch(error=>{console.error(error);board.textContent="Nie udało się wczytać kolekcji Vengrath.";board.style.color="#ffb4b4";gsap.set($("#app"),{opacity:1});$("#intro")?.remove()});
+async function init(){const response=await fetch("/core/data/site-pages.json",{cache:"no-cache"});if(!response.ok)throw new Error("Could not load Vengrath page registry");records=(await response.json()).filter(r=>typeof r.url==="string"&&r.url.startsWith("/page/")&&typeof r.title==="string"&&typeof r.image==="string");renderFilters();build();gsap.set($("#app"),{opacity:1})}
+init().catch(error=>{console.error(error);board.textContent="Nie udało się wczytać kolekcji Vengrath.";board.style.color="#ffb4b4";gsap.set($("#app"),{opacity:1})});
