@@ -42,7 +42,7 @@ The official file and exported files use the same schema:
         { "key": "allegiance", "type": "select", "options": "Crown,Rebels,Neutral" }
       ],
       "fields": {
-        "role": "Courtier"
+        "occupation": "Courtier"
       },
       "positions": {
         "complete": { "x": 120, "y": 80 },
