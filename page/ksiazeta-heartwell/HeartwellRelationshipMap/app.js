@@ -206,8 +206,8 @@ $("addEntityType").onclick=()=>{
   const shape=prompt("Geometric shape: ellipse, hexagon, diamond, star, triangle, rectangle, round-rectangle",TYPES[name].shape)||TYPES[name].shape;
   const fields=(prompt("Default fields for this type (comma-separated):",TYPES[name].fields.join(", "))||"").split(",").map(x=>x.trim()).filter(Boolean).slice(0,12);
   if(!["ellipse","hexagon","diamond","star","triangle","rectangle","round-rectangle"].includes(shape)){toast("Unsupported geometric shape.");return}
-  if(BUILTIN_TYPES[name]){data.metadata.entityTypeOverrides={...(data.metadata.entityTypeOverrides||{}),[name]:{glyph,shape}}}
-  else{const def=data.metadata.entityTypes.find(x=>x.name===name);if(def)Object.assign(def,{glyph,shape})}
+  if(BUILTIN_TYPES[name]){data.metadata.entityTypeOverrides={...(data.metadata.entityTypeOverrides||{}),[name]:{glyph,shape,fields}}}
+  else{const def=data.metadata.entityTypes.find(x=>x.name===name);if(def)Object.assign(def,{glyph,shape,fields})}
   applyEntityTypes(data.metadata);markDirty();toast("Entity type appearance updated.");return;
  }
  toast("Choose ADD, EDIT or REMOVE.");
