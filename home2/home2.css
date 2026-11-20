@@ -64,7 +64,7 @@ button,input{font:inherit}
 .scroll-hint b{color:var(--gold);font-size:1rem;font-weight:400}
 .corner-mark{position:fixed;right:1.2rem;bottom:1rem;z-index:3;color:#93846d;font:.58rem "DM Mono",monospace;letter-spacing:.14em;pointer-events:none}
 .preview{position:fixed;z-index:5;right:clamp(1rem,3vw,3rem);bottom:3.1rem;width:min(21rem,calc(100vw - 2rem));border:1px solid rgb(220 224 232 / 30%);background:linear-gradient(145deg,rgb(29 25 21 / 97%),rgb(13 12 10 / 98%));box-shadow:0 24px 80px rgb(0 0 0 / 55%),0 0 42px rgb(215 184 120 / 10%);pointer-events:none;opacity:0;transform:translateY(12px);backdrop-filter:blur(18px)}
-.preview-image-wrap{position:relative;height:8.2rem;overflow:hidden;background:#17130f}
+.preview-image-wrap{position:relative;aspect-ratio:16 / 10;height:auto;overflow:hidden;background:#17130f}
 .preview-image-wrap::after{position:absolute;inset:0;content:"";background:linear-gradient(0deg,rgb(13 12 10 / 68%),transparent 65%)}
 .preview-image-wrap img{width:100%;height:100%;object-fit:cover;filter:saturate(.82)}
 .preview-index{position:absolute;z-index:1;right:.8rem;bottom:.65rem;color:#f0f1f4;font:.55rem "DM Mono",monospace;letter-spacing:.16em}
