@@ -106,7 +106,8 @@
         "lineStyle": "dotted",
         "direction": "mutual"
       }
-    ]
+    ],
+    "notes": "Compiled from all 55 article files listed in HeartwellWiki/articles/index.json, including the city atlas. The Wiki landing page describes seven districts, but the scanned canon currently names six district entries; no seventh district has been invented. Relationships marked RELATED_TO preserve explicit article cross-references or clearly stated contextual links; stronger relationship labels are used where the source describes the connection."
   },
   "entities": [
     {
@@ -1745,6 +1746,24 @@
           "y": 820
         }
       }
+    },
+    {
+      "id": "heartwell-city",
+      "type": "Location",
+      "name": "Heartwell",
+      "imageUrl": "",
+      "notes": "The city enclosed by walls and persistent fog, divided in the Wiki into named districts. Its wider surroundings include farms, forests, mining villages and a river port, all obscured by the surrounding mist.\n\nSource: [Heartwell w skrócie](https://vengrathdm.github.io/page/heartwellwiki/articles/w-skrocie.html)",
+      "fields": {
+        "Wiki section": "miasto",
+        "Wiki source": "https://vengrathdm.github.io/page/heartwellwiki/articles/w-skrocie.html"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 0,
+          "y": -1250
+        }
+      }
     }
   ],
   "relationships": [
@@ -2439,16 +2458,6 @@
       "direction": "towards"
     },
     {
-      "id": "rel-070",
-      "source": "dom-snow",
-      "target": "pawilon-nokturnu",
-      "type": "HEADQUARTERED_AT",
-      "note": "Miejsce jest opisane jako siedziba lub główna lokacja powiązana z organizacją.",
-      "color": "#b28a56",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
       "id": "rel-071",
       "source": "dom-snow",
       "target": "cichy-namiar",
@@ -2786,16 +2795,6 @@
       "note": "Salonowa wersja łączy Szum z magią iluzoryczną.",
       "color": "#9a8ac7",
       "lineStyle": "dotted",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-105",
-      "source": "dom-snow",
-      "target": "faustyna-ambrell",
-      "type": "MEMBER_OF",
-      "note": "Faustyna została zwerbowana przez Aurelię do prowadzenia laboratorium.",
-      "color": "#b28a56",
-      "lineStyle": "solid",
       "direction": "towards"
     },
     {
@@ -3189,16 +3188,6 @@
       "direction": "mutual"
     },
     {
-      "id": "rel-145",
-      "source": "dom-snow",
-      "target": "faustyna-ambrell",
-      "type": "LEADS",
-      "note": "Faustyna prowadzi laboratorium stworzone przez Aurelię.",
-      "color": "#c88a42",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
       "id": "rel-146",
       "source": "bracia-ossuary",
       "target": "marchetti",
@@ -3304,16 +3293,6 @@
       "target": "nienazwani",
       "type": "RELATED_TO",
       "note": "Nienazwani planują uwolnić więźniów i przejąć Zakład Karny.",
-      "color": "#a6a6a6",
-      "lineStyle": "dotted",
-      "direction": "mutual"
-    },
-    {
-      "id": "rel-157",
-      "source": "cyrk-zmyslow",
-      "target": "matthias-ravencroft",
-      "type": "RELATED_TO",
-      "note": "Artykuł Cyrku odsyła do Vivienne; Ocaleni wiążą Cyrk z krzywdami pary książęcej.",
       "color": "#a6a6a6",
       "lineStyle": "dotted",
       "direction": "mutual"
@@ -3527,6 +3506,76 @@
       "color": "#a6a6a6",
       "lineStyle": "dotted",
       "direction": "mutual"
+    },
+    {
+      "id": "rel-city-apetoria",
+      "source": "heartwell-city",
+      "target": "apetoria",
+      "type": "CONTAINS",
+      "note": "The district is one of the named districts of Heartwell.",
+      "color": "#8c9caa",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-city-erozja",
+      "source": "heartwell-city",
+      "target": "erozja",
+      "type": "CONTAINS",
+      "note": "The district is one of the named districts of Heartwell.",
+      "color": "#8c9caa",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-city-korona",
+      "source": "heartwell-city",
+      "target": "korona",
+      "type": "CONTAINS",
+      "note": "The district is one of the named districts of Heartwell.",
+      "color": "#8c9caa",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-city-senatorium",
+      "source": "heartwell-city",
+      "target": "senatorium",
+      "type": "CONTAINS",
+      "note": "The district is one of the named districts of Heartwell.",
+      "color": "#8c9caa",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-city-wisielcze-wzgorze",
+      "source": "heartwell-city",
+      "target": "wisielcze-wzgorze",
+      "type": "CONTAINS",
+      "note": "The district is one of the named districts of Heartwell.",
+      "color": "#8c9caa",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-city-zabraniec",
+      "source": "heartwell-city",
+      "target": "zabraniec",
+      "type": "CONTAINS",
+      "note": "The district is one of the named districts of Heartwell.",
+      "color": "#8c9caa",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-faustyna-dom-snow",
+      "source": "faustyna-ambrell",
+      "target": "dom-snow",
+      "type": "MEMBER_OF",
+      "note": "Faustyna Ambrell was recruited by Aurelia Desuenos to run the Cichy Namiar laboratory.",
+      "color": "#b28a56",
+      "lineStyle": "solid",
+      "direction": "towards"
     }
   ]
 }
