@@ -8,7 +8,18 @@ let cy,labelStage=3;
 const STORAGE_KEY="heartwell.relationshipMap.v1";
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const isImageUrl=value=>{if(/^data:image\/(png|webp);base64,/i.test(value))return true;try{const u=new URL(value);return /^https?:$/.test(u.protocol)&&/\.(png|webp)$/i.test(u.pathname)}catch(_){return false}};
-const md=s=>esc(s).split("\n").map(line=>line.replace(/^### (.+)$/,"<h4>$1</h4>").replace(/^## (.+)$/,"<h3>$1</h3>").replace(/^# (.+)$/,"<h2>$1</h2>").replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\*(.+?)\*/g,"<em>$1</em>").replace(/\x60([^\x60]+)\x60/g,"<code>$1</code>").replace(/\[([^\]]+)\]\((https?:\/\/[^ )]+)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')).map(line=>/^[-*] /.test(line)?"<li>"+line.slice(2)+"</li>":line).join("<br>").replace(/(?:<br>){2,}/g,"<br>");
+function md(source){
+ const inline=value=>value.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\*(.+?)\*/g,"<em>$1</em>").replace(/\x60([^\x60]+)\x60/g,"<code>$1</code>").replace(/\[([^\]]+)\]\((https?:\/\/[^ )]+)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+ const lines=esc(source||"").split(/\r?\n/);let html="",inList=false;
+ for(const raw of lines){const line=raw.trim();if(/^[-*] /.test(line)){if(!inList){html+="<ul>";inList=true}html+="<li>"+inline(line.slice(2))+"</li>";continue}
+  if(inList){html+="</ul>";inList=false}if(!line){continue}
+  if(/^### /.test(line))html+="<h4>"+inline(line.slice(4))+"</h4>";
+  else if(/^## /.test(line))html+="<h3>"+inline(line.slice(3))+"</h3>";
+  else if(/^# /.test(line))html+="<h2>"+inline(line.slice(2))+"</h2>";
+  else html+="<p>"+inline(line)+"</p>";
+ }
+ if(inList)html+="</ul>";return html;
+}
 const entity=id=>data.entities.find(x=>x.id===id),rel=id=>data.relationships.find(x=>x.id===id);
 function toast(s){$("toast").textContent=s;$("toast").classList.add("visible");clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("toast").classList.remove("visible"),2800)}
 function setDirty(v){dirty=v;$("dirtyState").textContent=v?"Working copy modified · local autosave pending":"Official data loaded · no unsaved changes";$("dirtyState").style.color=v?"#efc27a":"#b7ad98"}
