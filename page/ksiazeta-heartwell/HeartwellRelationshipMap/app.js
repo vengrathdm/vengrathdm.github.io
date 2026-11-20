@@ -33,7 +33,7 @@ function applyEntityTypes(metadata){
   if(!def||typeof def.name!=="string"||!/^[\p{L}\p{N} _-]{2,32}$/u.test(def.name)||TYPES[def.name]||!["ellipse","hexagon","diamond","star","triangle","rectangle","round-rectangle"].includes(def.shape)||typeof def.glyph!=="string"||!def.glyph.trim())return;
   TYPES[def.name]={glyph:def.glyph.slice(0,4),shape:def.shape,fields:Array.isArray(def.fields)?def.fields.filter(x=>typeof x==="string").slice(0,12):[]};
  });
- Object.entries(metadata?.entityTypeOverrides||{}).forEach(([name,def])=>{if(TYPES[name]&&def&&["ellipse","hexagon","diamond","star","triangle","rectangle","round-rectangle"].includes(def.shape))TYPES[name]={...TYPES[name],glyph:String(def.glyph||TYPES[name].glyph).slice(0,4),shape:def.shape}});
+ Object.entries(metadata?.entityTypeOverrides||{}).forEach(([name,def])=>{if(TYPES[name]&&def&&["ellipse","hexagon","diamond","star","triangle","rectangle","round-rectangle"].includes(def.shape))TYPES[name]={...TYPES[name],glyph:String(def.glyph||TYPES[name].glyph).slice(0,4),shape:def.shape,fields:Array.isArray(def.fields)?def.fields:TYPES[name].fields}});
  TYPE_NAMES=Object.keys(TYPES);
 }
 function normalize(source){
@@ -191,8 +191,9 @@ $("addEntityType").onclick=()=>{
   if(TYPES[name]){toast("That entity type already exists.");return}
   const glyph=prompt("Fallback symbol for this type:","✧")?.trim()||"✧";
   const shape=prompt("Geometric shape: ellipse, hexagon, diamond, star, triangle, rectangle, round-rectangle","hexagon")||"hexagon";
+  const fields=(prompt("Default fields for this type (comma-separated):","Role, Status")||"").split(",").map(x=>x.trim()).filter(Boolean).slice(0,12);
   if(!["ellipse","hexagon","diamond","star","triangle","rectangle","round-rectangle"].includes(shape)){toast("Unsupported geometric shape.");return}
-  data.metadata.entityTypes=Array.isArray(data.metadata.entityTypes)?data.metadata.entityTypes:[];data.metadata.entityTypes.push({name,glyph,shape,fields:[]});applyEntityTypes(data.metadata);markDirty();toast("Entity type added.");return;
+  data.metadata.entityTypes=Array.isArray(data.metadata.entityTypes)?data.metadata.entityTypes:[];data.metadata.entityTypes.push({name,glyph,shape,fields});applyEntityTypes(data.metadata);markDirty();toast("Entity type added.");return;
  }
  const name=prompt("Enter the exact entity type name:")?.trim();if(!name||!TYPES[name]){toast("Entity type not found.");return}
  if(action==="REMOVE"){
@@ -203,6 +204,7 @@ $("addEntityType").onclick=()=>{
  if(action==="EDIT"){
   const glyph=prompt("Fallback symbol:",TYPES[name].glyph)?.trim()||TYPES[name].glyph;
   const shape=prompt("Geometric shape: ellipse, hexagon, diamond, star, triangle, rectangle, round-rectangle",TYPES[name].shape)||TYPES[name].shape;
+  const fields=(prompt("Default fields for this type (comma-separated):",TYPES[name].fields.join(", "))||"").split(",").map(x=>x.trim()).filter(Boolean).slice(0,12);
   if(!["ellipse","hexagon","diamond","star","triangle","rectangle","round-rectangle"].includes(shape)){toast("Unsupported geometric shape.");return}
   if(BUILTIN_TYPES[name]){data.metadata.entityTypeOverrides={...(data.metadata.entityTypeOverrides||{}),[name]:{glyph,shape}}}
   else{const def=data.metadata.entityTypes.find(x=>x.name===name);if(def)Object.assign(def,{glyph,shape})}
