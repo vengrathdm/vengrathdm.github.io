@@ -82,7 +82,7 @@ function normalize(source){
   return{id:e.id,type:e.type,name:e.name.trim(),imageUrl:e.imageUrl||"",color:/^#[0-9a-f]{6}$/i.test(e.color||"")?e.color:"#26343a",borderColor:/^#[0-9a-f]{6}$/i.test(e.borderColor||"")?e.borderColor:"#d4a03c",lineStyle:["solid","dotted","dashed"].includes(e.lineStyle)?e.lineStyle:"solid",notes:typeof e.notes==="string"?e.notes:"",fields:e.fields&&typeof e.fields==="object"?e.fields:{},customFields:Array.isArray(e.customFields)?e.customFields.filter(x=>x&&typeof x.key==="string").map(x=>({key:x.key,type:["text","number","date","select","checkbox","entity"].includes(x.type)?x.type:"text",options:typeof x.options==="string"?x.options:""})):[],positions:e.positions&&typeof e.positions==="object"?e.positions:{},position:e.position||null};
  });
  const relationshipIds=new Set();
- const relacji=source.relationships.map(r=>{
+ const relationships=source.relationships.map(r=>{
   if(!r||typeof r.id!=="string"||!/^[A-Za-z0-9_-]{1,128}$/.test(r.id)||relationshipIds.has(r.id)||!ids.has(r.source)||!ids.has(r.target)||r.source===r.target||typeof r.type!=="string"||!r.type.trim())throw Error("Relacja ma nieprawidłowy identyfikator, typ lub punkt końcowy.");
   relationshipIds.add(r.id);
   if(!["none","towards","from","mutual"].includes(r.direction||"none")||!["solid","dotted","dashed"].includes(r.lineStyle||"solid")||!/^#[0-9a-f]{6}$/i.test(r.color||"#d4a03c"))throw Error("Nieprawidłowy styl relacji.");
