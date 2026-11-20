@@ -5,7 +5,7 @@ let officialData,data,dirty=false,selected=null,activeTab="view",activeView="com
 let cy;
 const STORAGE_KEY="heartwell.relationshipMap.v1";
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const isImageUrl=value=>{try{const u=new URL(value);return /^https?:$/.test(u.protocol)&&/\.(png|webp)$/i.test(u.pathname)}catch(_){return false}};
+const isImageUrl=value=>{if(/^data:image\/(png|webp);base64,/i.test(value))return true;try{const u=new URL(value);return /^https?:$/.test(u.protocol)&&/\.(png|webp)$/i.test(u.pathname)}catch(_){return false}};
 const md=s=>esc(s).split("\n").map(line=>line.replace(/^### (.+)$/,"<h4>$1</h4>").replace(/^## (.+)$/,"<h3>$1</h3>").replace(/^# (.+)$/,"<h2>$1</h2>").replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\*(.+?)\*/g,"<em>$1</em>").replace(/\x60([^\x60]+)\x60/g,"<code>$1</code>").replace(/\[([^\]]+)\]\((https?:\/\/[^ )]+)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')).map(line=>/^[-*] /.test(line)?"<li>"+line.slice(2)+"</li>":line).join("<br>").replace(/(?:<br>){2,}/g,"<br>");
 const entity=id=>data.entities.find(x=>x.id===id),rel=id=>data.relationships.find(x=>x.id===id);
 function toast(s){$("toast").textContent=s;$("toast").classList.add("visible");clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("toast").classList.remove("visible"),2800)}
