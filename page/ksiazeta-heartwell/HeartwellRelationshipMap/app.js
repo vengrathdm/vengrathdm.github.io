@@ -232,7 +232,6 @@ $("characterView").onclick=()=>{activeView="characters";selected=null;renderGrap
 $("organizationView").onclick=()=>{activeView="organization";selected=null;renderGraph();layout("hierarchy",true)};
 $("closeDossier").onclick=()=>{$("dossierWindow").hidden=true};
 (function makeDossierDraggable(){const head=$("dossierDrag"),win=$("dossierWindow");let drag=null;head.addEventListener("pointerdown",e=>{if(e.target.closest("button"))return;const r=win.getBoundingClientRect();drag={x:e.clientX-r.left,y:e.clientY-r.top};head.setPointerCapture(e.pointerId)});head.addEventListener("pointermove",e=>{if(!drag)return;win.style.left=Math.max(4,Math.min(innerWidth-win.offsetWidth,e.clientX-drag.x))+"px";win.style.top=Math.max(4,Math.min(innerHeight-win.offsetHeight,e.clientY-drag.y))+"px";win.style.right="auto";win.style.bottom="auto"});head.addEventListener("pointerup",()=>drag=null);head.addEventListener("pointercancel",()=>drag=null)})();
-refreshSavedViews();
 $("addEntityType").onclick=()=>{
  const action=(prompt("Entity types: ADD, EDIT or REMOVE","ADD")||"").trim().toUpperCase();if(!action)return;
  if(action==="ADD"){
