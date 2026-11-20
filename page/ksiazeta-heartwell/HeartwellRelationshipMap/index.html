@@ -28,7 +28,6 @@
       <nav class="tabs" role="tablist" aria-label="Relationship map panels">
         <button class="tab active" data-tab="view" role="tab" aria-selected="true">View</button>
         <button class="tab" data-tab="editor" role="tab" aria-selected="false">Editor</button>
-        <button class="tab" data-tab="dossier" role="tab" aria-selected="false">Dossier</button>
       </nav>
       <section class="tab-panel" id="viewPanel" role="tabpanel">
         <div class="panel-title"><h2>View configuration</h2><span class="eyebrow">01 / DISPLAY</span></div>
@@ -104,14 +103,10 @@
           <p class="muted">Layout changes affect the current view only.</p>
         </div>
       </section>
-      <section class="tab-panel" id="dossierPanel" role="tabpanel" hidden>
-        <div class="panel-title"><h2>Dossier</h2><span class="eyebrow">03 / INSPECTION</span></div>
-        <div id="dossierTabContent" class="dossier-content"><div class="empty-dossier"><span class="empty-mark">✧</span><p>Select an entity or relationship to inspect its dossier.</p></div></div>
-      </section>
       <div class="window-foot"><span id="graphCount">0 entities · 0 relationships</span><span>HEARTWELL / ARCHIVE</span></div>
     </section>
-    <aside id="dossierWindow" class="dossier-window panel" hidden>
-      <header id="dossierDrag" class="dossier-window-head"><div><span class="eyebrow">INSPECTION / RECORD</span><h2>Dossier</h2></div><button id="closeDossier" class="icon-button" aria-label="Close dossier">×</button></header>
+    <aside id="dossierWindow" class="dossier-window panel" hidden aria-label="Selected record dossier">
+      <header class="dossier-window-head"><div><span class="eyebrow">INSPECTION / RECORD</span><h2>Dossier</h2></div><button id="closeDossier" class="icon-button" aria-label="Close dossier">×</button></header>
       <div id="dossierContent" class="dossier-content"><div class="empty-dossier"><span class="empty-mark">✧</span><p>Select an entity or relationship to inspect its dossier.</p></div></div>
     </aside>
     <aside id="legend" class="legend panel" hidden>
