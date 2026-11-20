@@ -111,6 +111,7 @@ $("reloadOfficial").onclick=()=>{const run=async()=>{try{officialData=await fetc
 window.addEventListener("beforeunload",e=>{if(dirty){e.preventDefault();e.returnValue="You have unsaved changes.";return e.returnValue}});
 document.addEventListener("click",e=>{if(!e.target.closest("#contextMenu"))hideContext()});document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>openTab(b.dataset.tab));
 cy=cytoscape({container:$("graph"),elements:[],minZoom:.12,maxZoom:3,wheelSensitivity:.22,selectionType:"single",boxSelectionEnabled:false});
+cy.container().addEventListener("contextmenu",e=>e.preventDefault());
 cy.on("tap","node",e=>setSelection("entity",e.target.id()));cy.on("tap","edge",e=>setSelection("relationship",e.target.id()));
 cy.on("dbltap","node",e=>{setSelection("entity",e.target.id());openTab("dossier");focusEntity(e.target.id())});
 cy.on("cxttap","node",e=>entityMenu(entity(e.target.id()),e.renderedPosition));cy.on("cxttap","edge",e=>relationMenu(rel(e.target.id()),e.renderedPosition));
