@@ -1,6 +1,8 @@
 const DATA_URL="./data/relationships.json";
-const TYPES={Person:{glyph:"♙",fields:["Role","Age","Affiliation"]},Family:{glyph:"⚜",fields:["Seat / estate","Motto"]},Faction:{glyph:"⚑",fields:["Purpose","Headquarters","Leader"]},Object:{glyph:"✧",fields:["Object type","Custodian"]},Event:{glyph:"◷",fields:["Date / period","Venue"]},Institution:{glyph:"♜",fields:["Institution type","Jurisdiction","Authority"]},Location:{glyph:"⌂",fields:["Location type","Area"]}};
-const TYPE_NAMES=Object.keys(TYPES),$=id=>document.getElementById(id),uid=p=>p+"-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,8),clone=x=>JSON.parse(JSON.stringify(x));
+const TYPES={Person:{glyph:"♙",shape:"ellipse",fields:["Role","Age","Affiliation"]},Family:{glyph:"⚜",shape:"hexagon",fields:["Seat / estate","Motto"]},Faction:{glyph:"⚑",shape:"diamond",fields:["Purpose","Headquarters","Leader"]},Object:{glyph:"✧",shape:"star",fields:["Object type","Custodian"]},Event:{glyph:"◷",shape:"triangle",fields:["Date / period","Venue"]},Institution:{glyph:"♜",shape:"rectangle",fields:["Institution type","Jurisdiction","Authority"]},Location:{glyph:"⌂",shape:"round-rectangle",fields:["Location type","Area"]}};
+let TYPE_NAMES=Object.keys(TYPES);
+const $=id=>document.getElementById(id),uid=p=>p+"-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,8),clone=x=>JSON.parse(JSON.stringify(x));
+const BUILTIN_TYPES=clone(TYPES);
 let officialData,data,dirty=false,selected=null,activeTab="view",activeView="complete",layoutModes={complete:"force",family:"hierarchy",organization:"hierarchy",political:"force",characters:"force"},wizard=null,confirmAction=null,viewports={complete:null,family:null,organization:null,political:null,characters:null},toastTimer;
 let cy,labelStage=3;
 const STORAGE_KEY="heartwell.relationshipMap.v1";
@@ -25,6 +27,33 @@ async function restoreLocal(){
  catch(err){$("persistenceState").textContent="Saved local copy could not be read";return false}
 }
 async function clearLocal(){try{const db=await openLocalDb();await new Promise(resolve=>{const tx=db.transaction("state","readwrite");tx.objectStore("state").delete("working");tx.oncomplete=resolve;tx.onerror=resolve});db.close()}catch(_){}localStorage.removeItem(STORAGE_KEY)}
+function applyEntityTypes(metadata){
+ Object.keys(TYPES).forEach(k=>delete TYPES[k]);Object.assign(TYPES,clone(BUILTIN_TYPES));
+ (Array.isArray(metadata?.entityTypes)?metadata.entityTypes:[]).forEach(def=>{
+  if(!def||typeof def.name!=="string"||!/^[\p{L}\p{N} _-]{2,32}$/u.test(def.name)||TYPES[def.name]||!["ellipse","hexagon","diamond","star","triangle","rectangle","round-rectangle"].includes(def.shape)||typeof def.glyph!=="string"||!def.glyph.trim())return;
+  TYPES[def.name]={glyph:def.glyph.slice(0,4),shape:def.shape,fields:Array.isArray(def.fields)?def.fields.filter(x=>typeof x==="string").slice(0,12):[]};
+ });
+ TYPE_NAMES=Object.keys(TYPES);
+}
+function normalize(source){
+ if(!source||typeof source!=="object"||source.schemaVersion!==1||!Array.isArray(source.entities)||!Array.isArray(source.relationships))throw Error("Expected schemaVersion 1 with entities and relationships arrays.");
+ const metadata=source.metadata&&typeof source.metadata==="object"?source.metadata:{id:"heartwell-relationships",name:"Heartwell Relationship Map"};
+ applyEntityTypes(metadata);
+ const ids=new Set();
+ const entities=source.entities.map(e=>{
+  if(!e||typeof e.id!=="string"||!e.id||typeof e.name!=="string"||!e.name.trim()||!TYPES[e.type]||ids.has(e.id))throw Error("An entity has an invalid id, name, or type.");
+  ids.add(e.id);if(e.imageUrl&&!isImageUrl(e.imageUrl))throw Error("Entity graphics must be PNG or WEBP images using HTTPS/HTTP or an embedded upload.");
+  return{id:e.id,type:e.type,name:e.name.trim(),imageUrl:e.imageUrl||"",notes:typeof e.notes==="string"?e.notes:"",fields:e.fields&&typeof e.fields==="object"?e.fields:{},customFields:Array.isArray(e.customFields)?e.customFields:[],positions:e.positions&&typeof e.positions==="object"?e.positions:{},position:e.position||null};
+ });
+ const relationshipIds=new Set();
+ const relationships=source.relationships.map(r=>{
+  if(!r||typeof r.id!=="string"||!r.id||relationshipIds.has(r.id)||!ids.has(r.source)||!ids.has(r.target)||r.source===r.target||typeof r.type!=="string"||!r.type.trim())throw Error("A relationship has an invalid id, type, or endpoint.");
+  relationshipIds.add(r.id);
+  if(!["none","towards","from","mutual"].includes(r.direction||"none")||!["solid","dotted","dashed"].includes(r.lineStyle||"solid")||!/^#[0-9a-f]{6}$/i.test(r.color||"#d4a03c"))throw Error("Invalid relationship styling.");
+  return{id:r.id,source:r.source,target:r.target,type:r.type.trim(),note:typeof r.note==="string"?r.note:"",color:r.color||"#d4a03c",lineStyle:r.lineStyle||"solid",direction:r.direction||"none"};
+ });
+ return{schemaVersion:1,metadata,entities,relationships};
+}
 async function fetchOfficial(){const r=await fetch(DATA_URL,{cache:"no-store"});if(!r.ok)throw Error("Official data could not be loaded ("+r.status+").");return normalize(await r.json())}
 function openTab(tab){activeTab=tab;document.querySelectorAll(".tab").forEach(b=>{const a=b.dataset.tab===tab;b.classList.toggle("active",a);b.setAttribute("aria-selected",String(a))});["view","editor"].forEach(k=>$(k+"Panel").hidden=k!==tab)}
 function openDialog(id){$("modalShade").hidden=false;$(id).hidden=false;hideContext()}
@@ -153,6 +182,7 @@ $("organizationView").onclick=()=>{activeView="organization";selected=null;rende
 $("closeDossier").onclick=()=>{$("dossierWindow").hidden=true};
 (function makeDossierDraggable(){const head=$("dossierDrag"),win=$("dossierWindow");let drag=null;head.addEventListener("pointerdown",e=>{if(e.target.closest("button"))return;const r=win.getBoundingClientRect();drag={x:e.clientX-r.left,y:e.clientY-r.top};head.setPointerCapture(e.pointerId)});head.addEventListener("pointermove",e=>{if(!drag)return;win.style.left=Math.max(4,Math.min(innerWidth-win.offsetWidth,e.clientX-drag.x))+"px";win.style.top=Math.max(4,Math.min(innerHeight-win.offsetHeight,e.clientY-drag.y))+"px";win.style.right="auto";win.style.bottom="auto"});head.addEventListener("pointerup",()=>drag=null);head.addEventListener("pointercancel",()=>drag=null)})();
 refreshSavedViews();
+$("addEntityType").onclick=()=>{const name=prompt("New entity type name (2–32 characters):")?.trim();if(!name)return;if(TYPES[name]){toast("That entity type already exists.");return}const glyph=prompt("Fallback symbol for this type:", "✧")?.trim()||"✧";const shape=prompt("Geometric shape: ellipse, hexagon, diamond, star, triangle, rectangle, round-rectangle","hexagon")||"hexagon";if(!["ellipse","hexagon","diamond","star","triangle","rectangle","round-rectangle"].includes(shape)){toast("Unsupported geometric shape.");return}data.metadata.entityTypes=Array.isArray(data.metadata.entityTypes)?data.metadata.entityTypes:[];data.metadata.entityTypes.push({name,glyph,shape,fields:[]});applyEntityTypes(data.metadata);markDirty();toast("Entity type added.")};
 $("createEntity").onclick=()=>entitySubmenu({x:innerWidth-355,y:95});
 $("createRelationship").onclick=()=>{if(data.entities.length<2){toast("Create at least two entities first.");return}startRelationshipWizard()};
 $("completeView").onclick=()=>{capture();activeView="complete";renderGraph();layout("force",false)};
