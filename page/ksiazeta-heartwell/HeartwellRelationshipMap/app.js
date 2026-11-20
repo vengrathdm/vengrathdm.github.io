@@ -5,6 +5,21 @@ const $=id=>document.getElementById(id),uid=p=>p+"-"+Date.now().toString(36)+"-"
 const BUILTIN_TYPES=clone(TYPES);
 let officialData,data,dirty=false,selected=null,activeTab="view",activeView="complete",layoutModes={complete:"force",family:"hierarchy",organization:"hierarchy",political:"force",characters:"force"},wizard=null,confirmAction=null,viewports={complete:null,family:null,organization:null,political:null,characters:null},toastTimer;
 let cy,labelStage=3;
+const graphSurface=$("graph");
+document.querySelector("#controlWindow .tabs")?.addEventListener("click",e=>{
+ const button=e.target.closest(".tab[data-tab]");
+ if(!button)return;
+ e.preventDefault();e.stopPropagation();openTab(button.dataset.tab);
+},true);
+graphSurface?.addEventListener("contextmenu",e=>{
+ if(!graphSurface.contains(e.target)||!cy)return;
+ e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
+ const rect=graphSurface.getBoundingClientRect(),x=e.clientX-rect.left,y=e.clientY-rect.top;
+ const hit=graphElementAt(x,y),menuPosition={x:e.clientX,y:e.clientY};
+ if(hit?.isNode())entityMenu(entity(hit.id()),menuPosition);
+ else if(hit?.isEdge())relationMenu(rel(hit.id()),menuPosition);
+ else entitySubmenu({...menuPosition,graphPosition:{x:(x-cy.pan().x)/cy.zoom(),y:(y-cy.pan().y)/cy.zoom()}});
+},true);
 const STORAGE_KEY="heartwell.relationshipMap.v1";
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const isImageUrl=value=>{if(/^data:image\/(png|webp);base64,/i.test(value))return true;try{const u=new URL(value);return /^https?:$/.test(u.protocol)&&/\.(png|webp)$/i.test(u.pathname)}catch(_){return false}};
@@ -72,7 +87,7 @@ function normalize(source){
  return{schemaVersion:1,metadata,entities,relationships};
 }
 async function fetchOfficial(){const r=await fetch(DATA_URL,{cache:"no-store"});if(!r.ok)throw Error("Official data could not be loaded ("+r.status+").");return normalize(await r.json())}
-function openTab(tab){if(!["view","editor"].includes(tab))return;activeTab=tab;document.querySelectorAll(".tab[data-tab]").forEach(b=>{const active=b.dataset.tab===tab;b.classList.toggle("active",active);b.setAttribute("aria-selected",String(active))});["view","editor"].forEach(k=>{const panel=$(k+"Panel");if(panel)panel.hidden=k!==tab})}
+function openTab(tab){if(!["view","editor","dossier"].includes(tab))return;activeTab=tab;document.querySelectorAll("#controlWindow .tab[data-tab]").forEach(b=>{const active=b.dataset.tab===tab;b.classList.toggle("active",active);b.setAttribute("aria-selected",String(active))});["view","editor","dossier"].forEach(k=>{const panel=$(k+"Panel");if(panel)panel.hidden=k!==tab})}
 function openDialog(id){$("modalShade").hidden=false;$(id).hidden=false;hideContext()}
 function closeDialogs(){["entityDialog","relationshipDialog","confirmDialog"].forEach(id=>$(id).hidden=true);$("modalShade").hidden=true;wizard=null}
 document.querySelectorAll("[data-close-dialog]").forEach(b=>b.onclick=closeDialogs);$("modalShade").onclick=()=>{if($("confirmDialog").hidden)closeDialogs()};
@@ -132,9 +147,22 @@ function renderFilters(){
 function applyFilters(){if(!cy)return;const ets=[...document.querySelectorAll("[data-entity-filter]:checked")].map(i=>i.dataset.entityFilter),rts=[...document.querySelectorAll("[data-rel-filter]:checked")].map(i=>i.dataset.relFilter);cy.nodes().forEach(n=>n.style("display",ets.includes(n.data("type"))?"element":"none"));cy.edges().forEach(e=>e.style("display",rts.includes(e.data("type"))&&ets.includes(e.source().data("type"))&&ets.includes(e.target().data("type"))?"element":"none"))}
 function renderLegend(){$("legendContent").innerHTML='<div class="legend-section"><h3>Entity types</h3>'+TYPE_NAMES.map(t=>'<div class="legend-row"><span class="legend-icon">'+esc(TYPES[t].glyph)+'</span>'+esc(t)+"</div>").join("")+'</div><div class="legend-section"><h3>Relationship types & colors</h3>'+[...new Map([...(data.metadata.relationshipTypes||[]).map(r=>({type:r.name,color:r.color})),...data.relationships.map(r=>({type:r.type,color:r.color}))].map(r=>[r.type+"|"+r.color,r])).values()].map(({type,color})=>'<div class="legend-row"><span style="width:12px;height:12px;border-radius:50%;background:'+esc(color)+'"></span>'+esc(type)+"</div>").join("")+'</div><div class="legend-section"><h3>Line styles</h3><div class="legend-row"><span class="legend-line"></span> Solid</div><div class="legend-row"><span class="legend-line dashed"></span> Dashed</div><div class="legend-row"><span class="legend-line dotted"></span> Dotted</div><div class="legend-row">Arrow directions: none · towards · from · mutual</div></div>'}
 function renderDossier(){
- const host=$("dossierContent");if(!selected){host.innerHTML='<div class="empty-dossier"><span class="empty-mark">✧</span><p>Select an entity or relationship to inspect its dossier.</p></div>';return}
- if(selected.kind==="entity"){const e=entity(selected.id);if(!e){selected=null;renderDossier();return}const fields=Object.entries(e.fields||{}).filter(([,v])=>String(v).trim());host.innerHTML='<div class="dossier-type">'+e.type+'</div><h3 class="dossier-name">'+esc(e.name)+'</h3>'+(e.imageUrl?'<img class="dossier-image" src="'+esc(e.imageUrl)+'" alt="">':"")+(fields.length?'<dl class="dossier-fields">'+fields.map(([k,v])=>"<dt>"+esc(k)+"</dt><dd>"+esc(v)+"</dd>").join("")+"</dl>":"")+'<div class="dossier-notes">'+(e.notes?md(e.notes):'<span class="muted">No notes recorded.</span>')+'</div><div class="dossier-actions"><button id="dossierEdit" class="subtle-button">Edit</button><button id="dossierDelete" class="danger-button">Delete</button></div>';$("dossierEdit").onclick=()=>openEntityDialog(e.type,e);$("dossierDelete").onclick=()=>deleteEntity(e)}
- else{const r=rel(selected.id);if(!r){selected=null;renderDossier();return}host.innerHTML='<div class="dossier-type">RELATIONSHIP · '+r.direction+'</div><h3 class="dossier-name">'+esc(entity(r.source)?.name||"?")+" ↔ "+esc(entity(r.target)?.name||"?")+'</h3><dl class="dossier-fields"><dt>Type</dt><dd>'+esc(r.type)+'</dd><dt>Meaning</dt><dd>'+esc(relationshipTypePreset(r.type)?.description||"—")+'</dd><dt>Color</dt><dd>'+esc(r.color)+'</dd><dt>Line</dt><dd>'+esc(r.lineStyle)+'</dd><dt>Direction</dt><dd>'+esc(r.direction)+'</dd></dl><div class="dossier-notes">'+(r.note?md(r.note):'<span class="muted">No note recorded.</span>')+'</div><div class="dossier-actions"><button id="dossierEdit" class="subtle-button">Edit</button><button id="dossierDelete" class="danger-button">Delete</button></div>';$("dossierEdit").onclick=()=>startRelationshipWizard(r);$("dossierDelete").onclick=()=>deleteRelationship(r)}
+ const hosts=[$("dossierContent"),$("dossierTabContent")].filter(Boolean);
+ let markup="";
+ if(!selected)markup='<div class="empty-dossier"><span class="empty-mark">✧</span><p>Select an entity or relationship to inspect its dossier.</p></div>';
+ else if(selected.kind==="entity"){
+  const e=entity(selected.id);if(!e){selected=null;renderDossier();return}
+  const fields=Object.entries(e.fields||{}).filter(([,v])=>String(v).trim());
+  markup='<div class="dossier-type">'+e.type+'</div><h3 class="dossier-name">'+esc(e.name)+'</h3>'+(e.imageUrl?'<img class="dossier-image" src="'+esc(e.imageUrl)+'" alt="">':"")+(fields.length?'<dl class="dossier-fields">'+fields.map(([k,v])=>"<dt>"+esc(k)+"</dt><dd>"+esc(v)+"</dd>").join("")+"</dl>":"")+'<div class="dossier-notes">'+(e.notes?md(e.notes):'<span class="muted">No notes recorded.</span>')+'</div><div class="dossier-actions"><button data-dossier-action="edit" class="subtle-button">Edit</button><button data-dossier-action="delete" class="danger-button">Delete</button></div>';
+  hosts.forEach(host=>{host.innerHTML=markup;host.querySelector('[data-dossier-action="edit"]').onclick=()=>openEntityDialog(e.type,e);host.querySelector('[data-dossier-action="delete"]').onclick=()=>deleteEntity(e)});
+  return;
+ }else{
+  const r=rel(selected.id);if(!r){selected=null;renderDossier();return}
+  markup='<div class="dossier-type">RELATIONSHIP · '+r.direction+'</div><h3 class="dossier-name">'+esc(entity(r.source)?.name||"?")+" ↔ "+esc(entity(r.target)?.name||"?")+'</h3><dl class="dossier-fields"><dt>Type</dt><dd>'+esc(r.type)+'</dd><dt>Meaning</dt><dd>'+esc(relationshipTypePreset(r.type)?.description||"—")+'</dd><dt>Color</dt><dd>'+esc(r.color)+'</dd><dt>Line</dt><dd>'+esc(r.lineStyle)+'</dd><dt>Direction</dt><dd>'+esc(r.direction)+'</dd></dl><div class="dossier-notes">'+(r.note?md(r.note):'<span class="muted">No note recorded.</span>')+'</div><div class="dossier-actions"><button data-dossier-action="edit" class="subtle-button">Edit</button><button data-dossier-action="delete" class="danger-button">Delete</button></div>';
+  hosts.forEach(host=>{host.innerHTML=markup;host.querySelector('[data-dossier-action="edit"]').onclick=()=>startRelationshipWizard(r);host.querySelector('[data-dossier-action="delete"]').onclick=()=>deleteRelationship(r)});
+  return;
+ }
+ hosts.forEach(host=>host.innerHTML=markup);
 }
 function focusEntity(id){const n=cy.getElementById(id);if(n.length)cy.animate({center:{eles:n},zoom:Math.max(cy.zoom(),1.15)},{duration:300})}
 function openEntityDialog(type,e=null){
@@ -272,7 +300,7 @@ $("exportData").onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)+"\
 $("importData").onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const parsed=normalize(JSON.parse(await f.text()));confirm("Import will replace the current working dataset. Continue?",()=>{data=parsed;layoutModes={...layoutModes,...(data.metadata.layoutModes||{})};selected=null;activeView="complete";persistLocal();viewports={complete:null,family:null,organization:null,political:null,characters:null};setDirty(true);renderGraph();renderFilters();renderLegend();openTab("view");toast("Dataset imported.")})}catch(err){toast("Import failed: "+err.message)}e.target.value=""};
 $("reloadOfficial").onclick=()=>{const run=async()=>{try{officialData=await fetchOfficial();await clearLocal();data=clone(officialData);layoutModes={complete:"force",family:"hierarchy",organization:"hierarchy",political:"force",characters:"force"};selected=null;viewports={complete:null,family:null,organization:null};setDirty(false);renderGraph();renderFilters();renderLegend();openTab("view");toast("Official data reloaded.")}catch(e){toast(e.message)}};if(dirty)confirm("Reload official data and discard all unexported changes?",run);else run()};
 
-document.addEventListener("click",e=>{if(!e.target.closest("#contextMenu"))hideContext()});$("controlWindow").addEventListener("click",e=>{const button=e.target.closest(".tab[data-tab]");if(button){e.preventDefault();openTab(button.dataset.tab)}});
+document.addEventListener("click",e=>{if(!e.target.closest("#contextMenu"))hideContext()});
 cy=cytoscape({container:$("graph"),elements:[],minZoom:.12,maxZoom:3,wheelSensitivity:.22,selectionType:"single",boxSelectionEnabled:false});
 function graphElementAt(renderedX,renderedY){
  const node=cy.nodes().filter(n=>{const b=n.renderedBoundingBox();return renderedX>=b.x1-3&&renderedX<=b.x2+3&&renderedY>=b.y1-3&&renderedY<=b.y2+3}).sort((a,b)=>{const pa=a.renderedPosition(),pb=b.renderedPosition();return Math.hypot(pa.x-renderedX,pa.y-renderedY)-Math.hypot(pb.x-renderedX,pb.y-renderedY)}).first();
@@ -281,14 +309,7 @@ function graphElementAt(renderedX,renderedY){
  cy.edges().forEach(edge=>{const a=edge.source().renderedPosition(),b=edge.target().renderedPosition(),dx=b.x-a.x,dy=b.y-a.y,len2=dx*dx+dy*dy;const t=len2?Math.max(0,Math.min(1,((renderedX-a.x)*dx+(renderedY-a.y)*dy)/len2)):0;const distance=Math.hypot(renderedX-(a.x+t*dx),renderedY-(a.y+t*dy));if(distance<nearestDistance){nearestDistance=distance;nearest=edge}});
  return nearest;
 }
-cy.container().addEventListener("contextmenu",e=>{
- e.preventDefault();
- const rect=cy.container().getBoundingClientRect(),x=e.clientX-rect.left,y=e.clientY-rect.top;
- const hit=graphElementAt(x,y),menuPosition={x:e.clientX,y:e.clientY};
- if(hit?.isNode())entityMenu(entity(hit.id()),menuPosition);
- else if(hit?.isEdge())relationMenu(rel(hit.id()),menuPosition);
- else entitySubmenu({...menuPosition,graphPosition:{x:(x-cy.pan().x)/cy.zoom(),y:(y-cy.pan().y)/cy.zoom()}});
-});
+
 cy.on("tap","node",e=>setSelection("entity",e.target.id()));cy.on("tap","edge",e=>setSelection("relationship",e.target.id()));
 cy.on("dbltap","node",e=>{setSelection("entity",e.target.id());$("dossierWindow").hidden=false;focusEntity(e.target.id())});
 cy.on("dragfree","node",e=>{const n=e.target,at=n.renderedPosition(),target=cy.nodes().filter(x=>x.id()!==n.id()&&x.renderedBoundingBox().x1<=at.x&&x.renderedBoundingBox().x2>=at.x&&x.renderedBoundingBox().y1<=at.y&&x.renderedBoundingBox().y2>=at.y).first();saveCurrentPositions();if(target.length)startRelationshipWizard(null,n.id(),target.id())});
