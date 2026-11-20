@@ -13,7 +13,7 @@ Standalone GitHub Pages application for the Książęta Heartwell campaign.
 
 The map includes Complete Graph, Political Network, Family Tree, Organization Graph and Character Network views. Views can be filtered by entity and relationship type, laid out automatically or positioned manually, and saved with their filters, layout and viewport. Selecting a node or edge opens a movable, independently closable dossier. Parallel relationships are supported and labelled along their links.
 
-Entity records support built-in and configurable entity types, PNG/WEBP uploads or image URLs, standard and typed custom properties, and Markdown notes. Relationship records support user-defined labels, colors, line styles, arrow directions and Markdown notes.
+Entity records support built-in and configurable entity types, PNG/WEBP uploads or image URLs, standard and typed custom properties, and Markdown notes. Relationship records support user-defined labels, colors, line styles, arrow directions and Markdown notes. Saving a relationship also creates or updates a reusable relationship-type preset with its description and default styling in `metadata.relationshipTypes`.
 
 ## Official data format
 
