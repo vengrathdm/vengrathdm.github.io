@@ -3,583 +3,787 @@
     "id": "hof",
     "title": "Sala Chwały",
     "type": "archive",
-    "category": "Archiwum",
     "visibility": "public",
     "url": "/page/hof/",
     "image": "/core/graphics/voronoi/sala-chwaly.webp",
     "layout": "page-specific",
-    "manifest": "/page/hof/manifest.json"
+    "manifest": "/page/hof/manifest.json",
+    "tags": [
+      "Archiwum"
+    ]
   },
   {
     "id": "charactermancer",
-    "title": "Character Dossier",
+    "title": "Charactermancer",
     "type": "tool",
-    "category": "Narzędzie",
     "visibility": "public",
     "url": "/page/charactermancer/",
     "image": "/core/graphics/voronoi/charactermancer.webp",
     "layout": "page-specific",
-    "manifest": null
+    "manifest": null,
+    "tags": [
+      "Narzędzie"
+    ]
   },
   {
     "id": "ksiazeta-heartwell",
     "title": "Książęta Heartwell",
     "type": "campaign",
-    "category": "Aktywna Kampania",
     "visibility": "public",
     "url": "/page/ksiazeta-heartwell/",
     "image": "/core/graphics/voronoi/ksiazeta-heartwell.webp",
     "layout": "bespoke",
-    "manifest": null
+    "manifest": null,
+    "tags": [
+      "Kampania",
+      "Aktywna",
+      "Ravenloft",
+      "Homebrew"
+    ]
   },
   {
     "id": "heartwellwiki",
     "title": "Heartwell Wiki",
     "type": "wiki",
-    "category": "Hidden",
     "visibility": "hidden",
     "url": "/page/heartwellwiki/",
     "image": "/core/graphics/voronoi/heartwell-wiki.webp",
     "layout": "page-specific",
-    "manifest": null
+    "manifest": null,
+    "tags": [
+      "MG"
+    ]
   },
   {
     "id": "legends-of-barovia",
     "title": "Legends of Barovia",
     "type": "campaign",
-    "category": "Aktywna Kampania",
     "visibility": "public",
     "url": "/page/legends-of-barovia/",
     "image": "/core/graphics/voronoi/legends-of-barovia.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/legends-of-barovia/manifest.json"
+    "manifest": "/page/legends-of-barovia/manifest.json",
+    "tags": [
+      "Kampania",
+      "Aktywna",
+      "Ravenloft"
+    ]
   },
   {
     "id": "odyssey-of-the-dragonlords",
     "title": "Odyssey of the Dragonlords",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/odyssey-of-the-dragonlords/",
     "image": "/core/graphics/voronoi/odyssey-of-the-dragonlords.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/odyssey-of-the-dragonlords/manifest.json"
+    "manifest": "/page/odyssey-of-the-dragonlords/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta"
+    ]
   },
   {
     "id": "sands-of-doom",
     "title": "Sands of Doom",
     "type": "campaign",
-    "category": "Aktywna Kampania",
     "visibility": "public",
     "url": "/page/sands-of-doom/",
     "image": "/core/graphics/voronoi/sands-of-doom.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/sands-of-doom/manifest.json"
+    "manifest": "/page/sands-of-doom/manifest.json",
+    "tags": [
+      "Kampania",
+      "Aktywna",
+      "Third-Party"
+    ]
   },
   {
     "id": "tomb-of-annihilation",
     "title": "Tomb of Annihilation",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/tomb-of-annihilation/",
     "image": "/core/graphics/voronoi/tomb-of-annihilation.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/tomb-of-annihilation/manifest.json"
+    "manifest": "/page/tomb-of-annihilation/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Forgotten Realms"
+    ]
   },
   {
     "id": "rise-of-tiamat",
     "title": "Rise of Tiamat",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/rise-of-tiamat/",
     "image": "/core/graphics/voronoi/rise-of-tiamat.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/rise-of-tiamat/manifest.json"
+    "manifest": "/page/rise-of-tiamat/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Forgotten Realms"
+    ]
   },
   {
     "id": "barber-of-silverymoon",
     "title": "Barber of Silverymoon",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/barber-of-silverymoon/",
     "image": "/core/graphics/voronoi/barber-of-silverymoon.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/barber-of-silverymoon/manifest.json"
+    "manifest": "/page/barber-of-silverymoon/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Forgotten Realms",
+      "Third-Party"
+    ]
   },
   {
     "id": "menaces-of-irensberg",
     "title": "Menaces of Irensberg",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/menaces-of-irensberg/",
     "image": "/core/graphics/voronoi/mences-of-irensberg.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/menaces-of-irensberg/manifest.json"
+    "manifest": "/page/menaces-of-irensberg/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Homebrew"
+    ]
   },
   {
     "id": "turn-of-fortunes-wheel",
     "title": "Turn of Fortune's Wheel",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/turn-of-fortunes-wheel/",
     "image": "/core/graphics/voronoi/turn-of-fortunes-wheel.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/turn-of-fortunes-wheel/manifest.json"
+    "manifest": "/page/turn-of-fortunes-wheel/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Planescape"
+    ]
   },
   {
     "id": "mythic-odyssey-of-the-dragonlords",
     "title": "Mythic Odyssey of the Dragonlords",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/mythic-odyssey-of-the-dragonlords/",
     "image": "/core/graphics/voronoi/mythic-odyssey-of-the-dragonlords.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/mythic-odyssey-of-the-dragonlords/manifest.json"
+    "manifest": "/page/mythic-odyssey-of-the-dragonlords/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Third-Party"
+    ]
   },
   {
     "id": "ghoul-hour",
     "title": "Ghoul Hour",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/ghoul-hour/",
     "image": "/core/graphics/voronoi/ghoul-hour.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/ghoul-hour/manifest.json"
+    "manifest": "/page/ghoul-hour/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Homebrew"
+    ]
   },
   {
     "id": "the-sunless-citadel",
     "title": "The Sunless Citadel",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/the-sunless-citadel/",
     "image": "/core/graphics/voronoi/the-sunless-citadel.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/the-sunless-citadel/manifest.json"
+    "manifest": "/page/the-sunless-citadel/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Forgotten Realms"
+    ]
   },
   {
     "id": "neverwinter-intrygi-polnocnego-wybrzeza-mieczy",
     "title": "Noce Neverwinter",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/",
     "image": "/core/graphics/voronoi/neverwinter.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/manifest.json"
+    "manifest": "/page/neverwinter-intrygi-polnocnego-wybrzeza-mieczy/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Forgotten Realms",
+      "Homebrew"
+    ]
   },
   {
     "id": "rime-of-the-frostmaiden",
     "title": "Rime of the Frostmaiden",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/rime-of-the-frostmaiden/",
     "image": "/core/graphics/voronoi/rime-of-the-frostmaiden.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/rime-of-the-frostmaiden/manifest.json"
+    "manifest": "/page/rime-of-the-frostmaiden/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Forgotten Realms"
+    ]
   },
   {
     "id": "sons-of-azalin",
     "title": "Sons of Azalin",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/sons-of-azalin/",
     "image": "/core/graphics/voronoi/sons-of-azalin.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/sons-of-azalin/manifest.json"
+    "manifest": "/page/sons-of-azalin/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Ravenloft",
+      "Homebrew"
+    ]
   },
   {
     "id": "shadow-of-the-sword-coast",
     "title": "Shadow of the Sword Coast",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/shadow-of-the-sword-coast/",
     "image": "/core/graphics/voronoi/shadow-of-the-sword-coast.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/shadow-of-the-sword-coast/manifest.json"
+    "manifest": "/page/shadow-of-the-sword-coast/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Forgotten Realms",
+      "Homebrew"
+    ]
   },
   {
     "id": "forge-of-fury",
     "title": "Forge of Fury",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/forge-of-fury/",
     "image": "/core/graphics/voronoi/forge-of-fury.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/forge-of-fury/manifest.json"
+    "manifest": "/page/forge-of-fury/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Forgotten Realms"
+    ]
   },
   {
     "id": "lost-mine-of-phandelver",
     "title": "Lost Mine of Phandelver",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/lost-mine-of-phandelver/",
     "image": "/core/graphics/voronoi/lost-mine-of-phandelver.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/lost-mine-of-phandelver/manifest.json"
+    "manifest": "/page/lost-mine-of-phandelver/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Forgotten Realms"
+    ]
   },
   {
     "id": "drakkenheim",
     "title": "Drakkenheim",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/drakkenheim/",
     "image": "/core/graphics/voronoi/drakkenheim.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/drakkenheim/manifest.json"
+    "manifest": "/page/drakkenheim/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Third-Party"
+    ]
   },
   {
     "id": "dungeons-of-drakkenheim",
     "title": "Dungeons of Drakkenheim",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/dungeons-of-drakkenheim/",
     "image": "/core/graphics/voronoi/dungeons-of-drakkenheim.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/dungeons-of-drakkenheim/manifest.json"
+    "manifest": "/page/dungeons-of-drakkenheim/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Third-Party"
+    ]
   },
   {
     "id": "heroes-of-drakkenheim",
     "title": "Heroes of Drakkenheim",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/heroes-of-drakkenheim/",
     "image": "/core/graphics/voronoi/heroes-of-drakkenheim.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/heroes-of-drakkenheim/manifest.json"
+    "manifest": "/page/heroes-of-drakkenheim/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Third-Party"
+    ]
   },
   {
     "id": "gold-for-fools-and-princes",
     "title": "Gold for Fools and Princes",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/gold-for-fools-and-princes/",
     "image": "/core/graphics/voronoi/Gold-for-Fools-and-Princes.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/gold-for-fools-and-princes/manifest.json"
+    "manifest": "/page/gold-for-fools-and-princes/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Forgotten Realms"
+    ]
   },
   {
     "id": "dragon-of-icespire-peak",
     "title": "Dragon of Icespire Peak",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/dragon-of-icespire-peak/",
     "image": "/core/graphics/voronoi/dragon-of-icespire-peak.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/dragon-of-icespire-peak/manifest.json"
+    "manifest": "/page/dragon-of-icespire-peak/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Forgotten Realms"
+    ]
   },
   {
     "id": "echtra-midst-the-sidhe",
     "title": "Echtra midst the Sidhe",
     "type": "campaign",
-    "category": "Aktywna Kampania",
     "visibility": "public",
     "url": "/page/echtra-midst-the-sidhe/",
     "image": "/core/graphics/voronoi/echtra-midst-the-sidhe.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/echtra-midst-the-sidhe/manifest.json"
+    "manifest": "/page/echtra-midst-the-sidhe/manifest.json",
+    "tags": [
+      "Kampania",
+      "Aktywna",
+      "Homebrew"
+    ]
   },
   {
     "id": "echtra-zima-irgaeli",
     "title": "Echtra - Zima Irgaeli",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/echtra-zima-irgaeli/",
     "image": "/core/graphics/voronoi/echtra-zima-irgaeli.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/echtra-zima-irgaeli/manifest.json"
+    "manifest": "/page/echtra-zima-irgaeli/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Homebrew"
+    ]
   },
   {
     "id": "ku-chwale-tyra",
     "title": "Ku Chwale Tyra!",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/ku-chwale-tyra/",
     "image": "/core/graphics/voronoi/KuChwaleTyra.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/ku-chwale-tyra/manifest.json"
+    "manifest": "/page/ku-chwale-tyra/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta"
+    ]
   },
   {
     "id": "shards-of-the-past",
     "title": "Shards of the Past",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/shards-of-the-past/",
     "image": "/core/graphics/voronoi/shards-of-the-past.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/shards-of-the-past/manifest.json"
+    "manifest": "/page/shards-of-the-past/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Homebrew"
+    ]
   },
   {
     "id": "curse-of-strahd",
     "title": "Curse of Strahd",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/curse-of-strahd/",
     "image": "/core/graphics/voronoi/curse-of-strahd.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/curse-of-strahd/manifest.json"
+    "manifest": "/page/curse-of-strahd/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Ravenloft"
+    ]
   },
   {
     "id": "blood-red-snow-white",
     "title": "Blood Red Snow White",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/blood-red-snow-white/",
     "image": "/core/graphics/voronoi/blood-red-snow-white.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/blood-red-snow-white/manifest.json"
+    "manifest": "/page/blood-red-snow-white/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Homebrew",
+      "Ravenloft"
+    ]
   },
   {
     "id": "heroes-of-baldurs-gate",
     "title": "Bohaterowie Wrót Baldura",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/heroes-of-baldurs-gate/",
     "image": "/core/graphics/voronoi/heroes-of-baldurs-gate.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/heroes-of-baldurs-gate/manifest.json"
+    "manifest": "/page/heroes-of-baldurs-gate/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Forgotten Realms",
+      "Third-Party"
+    ]
   },
   {
     "id": "mayhem-in-earthspur-mines",
     "title": "Mayhem in Earthspur Mines",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/mayhem-in-earthspur-mines/",
     "image": "/core/graphics/voronoi/mayhem-in-earthspur-mines.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/mayhem-in-earthspur-mines/manifest.json"
+    "manifest": "/page/mayhem-in-earthspur-mines/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Forgotten Realms"
+    ]
   },
   {
     "id": "turn-back-the-endless-night",
     "title": "Turn Back the Endless Night",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/turn-back-the-endless-night/",
     "image": "/core/graphics/voronoi/turn-back-the-endless-night.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/turn-back-the-endless-night/manifest.json"
+    "manifest": "/page/turn-back-the-endless-night/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Forgotten Realms"
+    ]
   },
   {
     "id": "dragon-of-dampen-depths",
     "title": "Dragon of Dampen Depths",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/dragon-of-dampen-depths/",
     "image": "/core/graphics/voronoi/dragon-of-dampen-depths.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/dragon-of-dampen-depths/manifest.json"
+    "manifest": "/page/dragon-of-dampen-depths/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta"
+    ]
   },
   {
     "id": "menaces-of-gloomforest",
     "title": "Menaces of Gloomforest",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/menaces-of-gloomforest/",
     "image": "/core/graphics/voronoi/menaces-of-gloomforest.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/menaces-of-gloomforest/manifest.json"
+    "manifest": "/page/menaces-of-gloomforest/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Homebrew"
+    ]
   },
   {
     "id": "menaces-of-gloomforest-legacy",
     "title": "Menaces of Gloomforest Legacy",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/menaces-of-gloomforest-legacy/",
     "image": "/core/graphics/voronoi/menaces-of-gloomforest-legacy.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/menaces-of-gloomforest-legacy/manifest.json"
+    "manifest": "/page/menaces-of-gloomforest-legacy/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Homebrew"
+    ]
   },
   {
     "id": "samotnie-przeciw-jednosci",
     "title": "Samotnie Przeciw Jedności",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/samotnie-przeciw-jednosci/",
     "image": "/core/graphics/voronoi/samotnie-przeciw-jednosci.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/samotnie-przeciw-jednosci/manifest.json"
+    "manifest": "/page/samotnie-przeciw-jednosci/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Call of Cthulhu"
+    ]
   },
   {
     "id": "hand-of-glory",
     "title": "Ręka Chwały",
     "type": "campaign",
-    "category": "Zamknięta Kampania",
     "visibility": "public",
     "url": "/page/hand-of-glory/",
     "image": "/core/graphics/voronoi/hand-of-glory.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/hand-of-glory/manifest.json"
+    "manifest": "/page/hand-of-glory/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Call of Cthulhu"
+    ]
   },
   {
     "id": "trouble-below-the-mountains-of-ash",
     "title": "Trouble Below the Mountains of Ash",
     "type": "campaign",
-    "category": "Archiwum",
     "visibility": "public",
     "url": "/page/trouble-below-the-mountains-of-ash/",
     "image": "/core/graphics/voronoi/trouble-beneath-the-mountains-of-ash.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/trouble-below-the-mountains-of-ash/manifest.json"
+    "manifest": "/page/trouble-below-the-mountains-of-ash/manifest.json",
+    "tags": [
+      "Kampania",
+      "Homebrew"
+    ]
   },
   {
     "id": "assault-on-castle-blackrose",
     "title": "Assault on Castle Blackrose",
     "type": "campaign",
-    "category": "Archiwum",
     "visibility": "public",
     "url": "/page/assault-on-castle-blackrose/",
     "image": "/core/graphics/voronoi/assault-on-castle-blackrose.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/assault-on-castle-blackrose/manifest.json"
+    "manifest": "/page/assault-on-castle-blackrose/manifest.json",
+    "tags": [
+      "Kampania",
+      "Homebrew"
+    ]
   },
   {
     "id": "cemetery-of-dragons",
     "title": "Cemetery of Dragons",
     "type": "campaign",
-    "category": "Archiwum",
     "visibility": "public",
     "url": "/page/cemetery-of-dragons/",
     "image": "/core/graphics/voronoi/cemetary-of-dragons.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/cemetery-of-dragons/manifest.json"
+    "manifest": "/page/cemetery-of-dragons/manifest.json",
+    "tags": [
+      "Kampania",
+      "Homebrew"
+    ]
   },
   {
     "id": "adventure-of-arcane-collapse",
     "title": "Adventure of Arcane Collapse",
     "type": "campaign",
-    "category": "Archiwum",
     "visibility": "public",
     "url": "/page/adventure-of-arcane-collapse/",
     "image": "/core/graphics/voronoi/adventure-of-arcane-collapse.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/adventure-of-arcane-collapse/manifest.json"
+    "manifest": "/page/adventure-of-arcane-collapse/manifest.json",
+    "tags": [
+      "Kampania",
+      "Homebrew"
+    ]
   },
   {
     "id": "dom-malowanych-luster",
     "title": "Dom Malowanych Luster",
     "type": "campaign",
-    "category": "Archiwum",
     "visibility": "public",
     "url": "/page/dom-malowanych-luster/",
     "image": "/core/graphics/voronoi/dom-malowanych-luster.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/dom-malowanych-luster/manifest.json"
+    "manifest": "/page/dom-malowanych-luster/manifest.json",
+    "tags": [
+      "Kampania",
+      "Homebrew"
+    ]
   },
   {
     "id": "the-dragon-and-the-kraken",
     "title": "The Dragon and the Kraken",
     "type": "campaign",
-    "category": "Archiwum",
     "visibility": "public",
     "url": "/page/the-dragon-and-the-kraken/",
     "image": "/core/graphics/voronoi/dragon-and-the-kraken.webp",
     "layout": "campaign-shell",
-    "manifest": "/page/the-dragon-and-the-kraken/manifest.json"
+    "manifest": "/page/the-dragon-and-the-kraken/manifest.json",
+    "tags": [
+      "Kampania",
+      "Homebrew"
+    ]
   },
   {
     "id": "rise-of-the-drow",
     "title": "Rise of the Drow",
     "type": "campaign",
-    "category": "Hidden",
     "visibility": "hidden",
     "url": "/page/rise-of-the-drow/",
     "image": "/page/rise-of-the-drow/res/Graphics/hero-image.webp",
     "layout": "bespoke",
-    "manifest": null
+    "manifest": null,
+    "tags": [
+      "Kampania",
+      "W przygotowaniu",
+      "Third-Party",
+      "Forgotten Realms"
+    ]
   },
   {
     "id": "raiders-of-the-serpent-sea",
     "title": "Raiders of the Serpent Sea",
     "type": "campaign",
-    "category": "Hidden",
     "visibility": "hidden",
     "url": "/page/raiders-of-the-serpent-sea/",
     "image": "/core/graphics/voronoi/raiders-of-the-serpent-sea.webp",
     "layout": "bespoke",
-    "manifest": null
+    "manifest": null,
+    "tags": [
+      "Kampania",
+      "W przygotowaniu",
+      "Third-Party"
+    ]
   },
   {
     "id": "the-dragons-due",
     "title": "The Dragon's Due",
     "type": "campaign",
-    "category": "Aktywna Kampania",
     "visibility": "public",
     "url": "/page/the-dragons-due/",
     "image": "/core/graphics/voronoi/the-dragons-due.webp",
     "layout": "bespoke",
-    "manifest": "/page/the-dragons-due/manifest.json"
+    "manifest": "/page/the-dragons-due/manifest.json",
+    "tags": [
+      "Kampania",
+      "Aktywna",
+      "Homebrew",
+      "Forgotten Realms"
+    ]
   },
   {
     "id": "descent-into-avernus",
     "title": "Descent into Avernus",
     "type": "campaign",
-    "category": "Hidden",
     "visibility": "hidden",
     "url": "/page/descent-into-avernus/",
     "image": "/core/graphics/voronoi/descent-into-avernus.webp",
     "layout": "bespoke",
-    "manifest": "/page/descent-into-avernus/manifest.json"
+    "manifest": "/page/descent-into-avernus/manifest.json",
+    "tags": [
+      "Kampania",
+      "W przygotowaniu",
+      "Forgotten Realms"
+    ]
   },
   {
     "id": "curse-of-strahd-muppet-show",
     "title": "The Muppet Show: Curse of Strahd",
     "type": "campaign",
-    "category": "Hidden",
     "visibility": "hidden",
     "url": "/page/curse-of-strahd-muppet-show/",
     "image": "/core/graphics/voronoi/curse-of-strahd-muppets-musical.webp",
     "layout": "bespoke",
-    "manifest": null
+    "manifest": null,
+    "tags": [
+      "Kampania",
+      "W przygotowaniu",
+      "Homebrew",
+      "Ravenloft"
+    ]
   },
   {
     "id": "red-hand-of-doom",
     "title": "Red Hand of Doom",
     "type": "campaign",
-    "category": "Hidden",
     "visibility": "hidden",
     "url": "/page/red-hand-of-doom/",
     "image": "/core/graphics/voronoi/red-hand-of-doom.webp",
     "layout": "bespoke",
-    "manifest": null
+    "manifest": null,
+    "tags": [
+      "Kampania",
+      "W przygotowaniu"
+    ]
   },
   {
     "id": "fantasy-map",
-    "title": "Fantasy Map",
+    "title": "Antarctida",
     "type": "map",
-    "category": "Archiwum",
     "visibility": "public",
     "url": "/page/antarctica/",
     "image": "/core/graphics/voronoi/FantasyMap1.png",
     "layout": "page-specific",
-    "manifest": null
+    "manifest": null,
+    "tags": [
+      "MG"
+    ]
   }
 ]
