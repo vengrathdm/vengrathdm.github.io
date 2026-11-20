@@ -45,3 +45,39 @@
 /* Master filter overrides and entity placement mode */
 .filter-all{margin-bottom:7px;padding:7px 0 9px;border-bottom:1px solid rgba(222,198,145,.38);color:#efd59c;font-weight:700}.check-row:has(input:disabled){opacity:.48}#graph.placing-entity{cursor:crosshair}
 .reset-view-control{padding-top:2px}
+
+/* Entity create/edit form layout */
+#entityDialog{width:min(940px,calc(100vw - 32px))}
+#entityDialog form{display:grid;gap:13px}
+.entity-form-section{padding:0 0 13px;border-bottom:1px solid rgba(222,198,145,.24)}
+.entity-form-section>h3,.custom-fields-head h3{margin:0 0 10px;color:#efd59c;font:16px var(--display);letter-spacing:.1em;text-transform:uppercase}
+.entity-identity-grid{display:grid;grid-template-columns:minmax(170px,.8fr) minmax(300px,1.5fr);gap:0 14px;align-items:start}
+.entity-identity-grid>label:first-child{grid-column:1;grid-row:1}
+.entity-identity-grid .graphic-field{grid-column:2;grid-row:1}
+.entity-identity-grid .entity-name-field{grid-column:1/-1;grid-row:2}
+.field-label{display:block;color:#e7d9bb;font-size:12px}
+.graphic-inputs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px}
+.graphic-inputs label{margin-top:0!important}
+.graphic-inputs input[type=file]{font-size:11px;padding:6px}
+.entity-form-section #entitySpecificFields .dialog-field-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.entity-form-section .custom-field-row{grid-template-columns:minmax(100px,1fr) 110px minmax(100px,1fr) 28px}
+.additional-properties-section{padding-bottom:10px}
+.custom-fields-head{margin:0;padding:0;border:0}
+.custom-fields-head h3{margin:0}
+.description-editor-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:stretch}
+.description-editor,.description-preview{min-width:0}
+.description-editor label{margin-top:0}
+.description-editor textarea{min-height:210px;height:100%;resize:vertical}
+.description-preview>.field-label{margin:0 0 4px}
+.description-preview .markdown-preview{height:calc(100% - 20px);min-height:210px;margin-top:0;overflow:auto}
+@media(max-width:650px){
+ #entityDialog{width:calc(100vw - 20px);max-height:calc(100vh - 20px);padding:12px}
+ .entity-identity-grid{grid-template-columns:1fr}
+ .entity-identity-grid>label:first-child,.entity-identity-grid .graphic-field,.entity-identity-grid .entity-name-field{grid-column:1;grid-row:auto}
+ .entity-form-section #entitySpecificFields .dialog-field-grid{grid-template-columns:1fr}
+ .entity-form-section .custom-field-row{grid-template-columns:minmax(0,1fr) 85px 28px}
+ .entity-form-section .custom-field-row [data-custom-options]{grid-column:1/-2}
+ .description-editor-grid{grid-template-columns:1fr}
+ .description-editor textarea{min-height:150px}
+ .description-preview .markdown-preview{min-height:110px;height:auto}
+}
