@@ -81,3 +81,14 @@
  .description-editor textarea{min-height:150px}
  .description-preview .markdown-preview{min-height:110px;height:auto}
 }
+
+/* View filter headings and label controls */
+.filter-category-group{padding-top:9px}
+.filter-category .filter-heading-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px;padding-bottom:7px;border-bottom:1px solid rgba(222,198,145,.38)}
+.filter-category .filter-heading-row h3{margin:0}
+.filter-category .filter-heading-row .filter-all{flex:0 0 auto;margin:0;padding:0;border:0;color:#efd59c;white-space:nowrap}
+.filter-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 9px}
+.filter-options .check-row{min-width:0}
+.label-control-block{margin-top:9px}
+.label-control-title{display:block;margin-bottom:4px;color:#c5b99f;font-size:10px;letter-spacing:.04em;text-transform:uppercase}
+.label-control-block .segmented{margin-bottom:0}
