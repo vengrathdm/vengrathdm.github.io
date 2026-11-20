@@ -277,7 +277,7 @@ $("entitySearch").addEventListener("input",()=>{const q=$("entitySearch").value.
 $("entitySearch").addEventListener("keydown",e=>{if(e.key!=="Enter")return;const q=$("entitySearch").value.trim().toLocaleLowerCase();const match=data.entities.find(x=>(x.name+" "+Object.values(x.fields||{}).join(" ")).toLocaleLowerCase().includes(q));if(match){openTab("view");let n=cy.getElementById(match.id);if(!n.length&&activeView!=="complete"){capture();activeView="complete";renderGraph();n=cy.getElementById(match.id)}if(n.length)n.style("display","element");setSelection("entity",match.id);focusEntity(match.id);$("searchResults").textContent="Focused: "+match.name}else toast("No matching entity found.");});
 $("closeDossier").onclick=()=>{$("dossierWindow").hidden=true};
 
-$("createEntity").onclick=()=>entitySubmenu({x:innerWidth-355,y:95});
+$("createEntity").onclick=()=>createEntity("Person");
 $("createRelationship").onclick=()=>{if(data.entities.length<2){toast("Create at least two entities first.");return}startRelationshipWizard()};
 $("resetView").onclick=()=>{capture();layout("force",true);setDirty(true);persistLocal()};
 $("zoomIn").onclick=()=>cy.zoom({level:cy.zoom()*1.2,renderedPosition:{x:innerWidth/2,y:innerHeight/2}});$("zoomOut").onclick=()=>cy.zoom({level:cy.zoom()/1.2,renderedPosition:{x:innerWidth/2,y:innerHeight/2}});
