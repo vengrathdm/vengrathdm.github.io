@@ -55,7 +55,7 @@ The official file and exported files use the same schema:
 }
 ```
 
-Entity types: `Person`, `Family`, `Faction`, `Object`, `Event`, `Institution`, `Location`. Each type has standard fields, and records may also define typed custom fields (`text`, `number`, `date`, `select`, `checkbox`, `entity`).
+Built-in entity types: `Person`, `Family`, `Faction`, `Object`, `Event`, `Institution`, `Location`. Additional entity types can be configured in the Editor with a fallback glyph and geometric shape; these definitions are stored in `metadata.entityTypes`. Each type has standard fields, and records may also define typed custom fields (`text`, `number`, `date`, `select`, `checkbox`, `entity`).
 
 Relationship line styles: `solid`, `dotted`, `dashed`. Arrow directions: `none`, `towards`, `from`, `mutual`.
 
