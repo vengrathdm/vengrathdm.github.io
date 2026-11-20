@@ -31,11 +31,12 @@ button,input{font:inherit}
 .brand i{align-self:flex-start;margin-left:-.3rem;color:var(--gold);font:.65rem "DM Mono",monospace;letter-spacing:0}
 .filters{display:flex;flex:1 1 auto;align-items:center;gap:.28rem;min-width:0;overflow-x:auto;scrollbar-width:none;padding:.18rem 0}
 .filters::-webkit-scrollbar{display:none}
-.filter{position:relative;flex:0 0 auto;padding:.42rem .68rem;border:1px solid transparent;border-radius:2px;background:transparent;color:#858a94;font:.78rem "DM Mono",monospace;letter-spacing:.015em;cursor:pointer;white-space:nowrap;transition:color .2s,border-color .2s,background .2s}
+.filter{position:relative;flex:0 0 auto;padding:.42rem .68rem;border:1px solid transparent;border-radius:2px;background:transparent;color:#858a94;font:.88rem Voltaire,sans-serif;font-weight:400;letter-spacing:.1em;cursor:pointer;white-space:nowrap;transition:color .2s,border-color .2s,background .2s}
 .filter:hover{color:#e6e8ed;background:rgb(220 224 232 / 4%)}
 .filter.active{border-color:rgb(225 229 237 / 25%);background:rgb(220 224 232 / 11%);color:#f4f5f7;box-shadow:inset 0 -1px 0 rgb(255 255 255 / 24%)}
 .clear-filters,.preview-toggle{flex:0 0 auto;padding:.48rem .65rem;border:1px solid rgb(220 224 232 / 18%);border-radius:2px;background:rgb(220 224 232 / 3%);color:#9da2ac;font:.67rem "DM Mono",monospace;letter-spacing:.06em;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
 .clear-filters:hover,.preview-toggle:hover{border-color:rgb(220 224 232 / 35%);color:#f4f5f7}
+.preview-toggle{font-family:Voltaire,sans-serif;font-size:.88rem;font-weight:400;letter-spacing:.12em}
 .clear-filters[hidden]{display:none}
 .preview-toggle[aria-pressed="true"]{border-color:rgb(230 233 239 / 35%);background:rgb(230 233 239 / 13%);color:#f4f5f7}
 .preview-toggle[aria-pressed="false"]{background:transparent;color:#777d87}
