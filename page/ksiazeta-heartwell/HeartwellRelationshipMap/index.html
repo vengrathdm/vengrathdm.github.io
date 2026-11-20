@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17252b">
+  <title>Heartwell Relationship Map</title>
+  <meta name="description" content="The Heartwell campaign relationship archive.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Voltaire&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/cytoscape@3.30.4/dist/cytoscape.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main id="workspace" aria-label="Heartwell relationship map">
+    <div id="graph" aria-label="Relationship graph"></div>
+    <header class="brand panel">
+      <a href="/page/ksiazeta-heartwell/" aria-label="Return to the Heartwell campaign"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
+      <span class="brand-divider">/</span><strong>HEARTWELL · RELATIONSHIP ARCHIVE</strong>
+    </header>
+    <div class="canvas-tools panel" aria-label="Canvas controls">
+      <button id="zoomIn" title="Zoom in" aria-label="Zoom in">＋</button>
+      <button id="zoomOut" title="Zoom out" aria-label="Zoom out">−</button>
+    </div>
+    <section id="controlWindow" class="control-window panel" aria-label="Graph controls">
+      <nav class="tabs" role="tablist" aria-label="Relationship map panels">
+        <button class="tab active" data-tab="view" role="tab" aria-selected="true">View</button>
+        <button class="tab" data-tab="editor" role="tab" aria-selected="false">Editor</button>
+        <button class="tab" data-tab="dossier" role="tab" aria-selected="false">Dossier</button>
+      </nav>
+      <section class="tab-panel" id="viewPanel" role="tabpanel">
+        <div class="panel-title"><h2>View configuration</h2><span class="eyebrow">01 / DISPLAY</span></div>
+        <div class="control-group">
+          <h3>Entity types</h3>
+          <div id="entityFilters" class="check-grid"></div>
+        </div>
+        <div class="control-group">
+          <h3>Relationship types</h3>
+          <div id="relationshipFilters" class="check-list"></div>
+        </div>
+        <div class="control-group">
+          <h3>Label visibility</h3>
+          <div class="segmented" id="labelStages" role="group" aria-label="Label visibility stages">
+            <button data-stage="2" aria-pressed="false">2 stages</button>
+            <button data-stage="3" aria-pressed="true">3 stages</button>
+            <button data-stage="4" aria-pressed="false">4 stages</button>
+          </div>
+          <label class="check-row"><input id="showEntityLabels" type="checkbox" checked> Entity names</label>
+          <label class="check-row"><input id="showRelationshipLabels" type="checkbox" checked> Relationship labels</label>
+        </div>
+        <div class="control-group">
+          <h3>Graph view</h3>
+          <div class="button-stack">
+            <button id="completeView" class="subtle-button">Complete Graph</button>
+            <button id="fitGraph" class="subtle-button">Fit Entire Graph</button>
+            <button id="resetView" class="subtle-button">Reset View</button>
+          </div>
+          <p id="activeViewLabel" class="muted">Complete Graph · Force-directed</p>
+        </div>
+        <div class="control-group">
+          <h3>Legend</h3>
+          <label class="check-row"><input id="toggleLegend" type="checkbox"> Show legend</label>
+        </div>
+      </section>
+      <section class="tab-panel" id="editorPanel" role="tabpanel" hidden>
+        <div class="panel-title"><h2>Editor</h2><span class="eyebrow">02 / RECORDS</span></div>
+        <div class="control-group">
+          <h3>Data operations</h3>
+          <div class="button-stack">
+            <button id="reloadOfficial" class="subtle-button">Reload Official Data</button>
+            <button id="exportData" class="subtle-button">Export Data</button>
+            <label class="subtle-button file-trigger" for="importData">Import Data</label>
+            <input id="importData" type="file" accept="application/json,.json" hidden>
+          </div>
+          <p id="dirtyState" class="status-line">Official data loaded · no unsaved changes</p>
+        </div>
+        <div class="control-group">
+          <h3>Create</h3>
+          <div class="button-stack">
+            <button id="createRelationship" class="primary-button">Create Relationship</button>
+            <button id="createEntity" class="subtle-button">Create Entity</button>
+          </div>
+        </div>
+        <div class="control-group">
+          <h3>Automatic layout</h3>
+          <div class="button-stack">
+            <button id="forceLayout" class="subtle-button">Force-directed layout</button>
+            <button id="hierarchyLayout" class="subtle-button">Hierarchical layout</button>
+            <button id="manualLayout" class="subtle-button">Manual positioning</button>
+          </div>
+          <p class="muted">Layout changes affect the current view only.</p>
+        </div>
+      </section>
+      <section class="tab-panel" id="dossierPanel" role="tabpanel" hidden>
+        <div class="panel-title"><h2>Dossier</h2><span class="eyebrow">03 / INSPECTION</span></div>
+        <div id="dossierContent" class="dossier-content">
+          <div class="empty-dossier"><span class="empty-mark">✧</span><p>Select an entity or relationship to inspect its dossier.</p></div>
+        </div>
+      </section>
+      <div class="window-foot"><span id="graphCount">0 entities · 0 relationships</span><span>HEARTWELL / ARCHIVE</span></div>
+    </section>
+    <aside id="legend" class="legend panel" hidden>
+      <div class="panel-title"><h2>Legend</h2><button id="closeLegend" class="icon-button" aria-label="Close legend">×</button></div>
+      <div id="legendContent"></div>
+    </aside>
+    <div id="contextMenu" class="context-menu panel" hidden role="menu"></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <div id="modalShade" class="modal-shade" hidden></div>
+    <section id="entityDialog" class="dialog panel" hidden role="dialog" aria-modal="true" aria-labelledby="entityDialogTitle">
+      <div class="dialog-head"><div><span class="eyebrow">ENTITY RECORD</span><h2 id="entityDialogTitle">Create Entity</h2></div><button class="icon-button" data-close-dialog aria-label="Close">×</button></div>
+      <form id="entityForm">
+        <label>Entity type<select id="entityType" required></select></label>
+        <label>Name<input id="entityName" maxlength="120" required autocomplete="off"></label>
+        <label>Graphic URL <span class="muted">(PNG or WEBP)</span><input id="entityImage" type="url" placeholder="https://…"></label>
+        <div id="entitySpecificFields"></div>
+        <label>Notes <span class="muted">(Markdown supported)</span><textarea id="entityNotes" rows="5" placeholder="Record relevant campaign information…"></textarea></label>
+        <div class="dialog-actions"><button type="button" class="subtle-button" data-close-dialog>Cancel</button><button type="submit" class="primary-button">Save Entity</button></div>
+      </form>
+    </section>
+    <section id="relationshipDialog" class="dialog panel" hidden role="dialog" aria-modal="true" aria-labelledby="relationshipDialogTitle">
+      <div class="dialog-head"><div><span class="eyebrow">CONNECTION RECORD</span><h2 id="relationshipDialogTitle">Create Relationship</h2></div><button class="icon-button" data-close-dialog aria-label="Close">×</button></div>
+      <div id="relationshipWizard"></div>
+    </section>
+    <section id="confirmDialog" class="dialog panel compact-dialog" hidden role="alertdialog" aria-modal="true" aria-labelledby="confirmTitle">
+      <div class="dialog-head"><div><span class="eyebrow">CONFIRM ACTION</span><h2 id="confirmTitle">Confirm</h2></div></div>
+      <p id="confirmMessage"></p>
+      <div class="dialog-actions"><button id="cancelConfirm" class="subtle-button">Cancel</button><button id="acceptConfirm" class="danger-button">Confirm</button></div>
+    </section>
+    <div id="tooltip" class="graph-tooltip" hidden></div>
+  </main>
+</body>
+</html>
