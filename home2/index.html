@@ -61,6 +61,21 @@
       <button type="button" role="menuitem" data-action="copy-link">Kopiuj adres linku</button>
     </div>
 
+    <div class="context-preview-backdrop" id="context-preview-backdrop" hidden>
+      <section class="context-preview-window" id="context-preview-window" role="dialog" aria-modal="false" aria-labelledby="context-preview-title">
+        <button class="context-preview-close" id="context-preview-close" type="button" aria-label="Zamknij podgląd">×</button>
+        <div class="context-preview-art">
+          <img id="context-preview-image" alt="">
+        </div>
+        <div class="context-preview-info">
+          <span class="context-preview-category" id="context-preview-category"></span>
+          <h2 id="context-preview-title"></h2>
+          <p id="context-preview-description"></p>
+          <a id="context-preview-open" href="#" target="_blank" rel="noopener noreferrer">OTWÓRZ WPIS <b>↗</b></a>
+        </div>
+      </section>
+    </div>
+
     <aside class="preview" id="preview" aria-hidden="true">
       <div class="preview-image-wrap">
         <img id="preview-image" alt="">
