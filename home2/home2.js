@@ -49,16 +49,26 @@ function fitText(group,text,x,y,maxWidth,maxLines,fontSize,className,letterSpaci
  shown.forEach((part,i)=>{const span=svgEl("tspan",{x,dy:i===0?0:lineHeight});span.textContent=part;el.append(span)});
  group.append(el);return shown.length*lineHeight;
 }
-function makeWorld(items,width,height,worldIndex,rows){
- const cols=Math.ceil(items.length/rows);
- const cellW=width/cols,cellH=height/rows,random=seededRandom(93517+items.length*31);
- const sites=items.map((record,i)=>{const col=i%cols,row=Math.floor(i/cols);const stagger=(row%2?-.13:.13)*cellW;return[(col+.5)*cellW+stagger+(random()-.5)*cellW*.3,(row+.5)*cellH+(random()-.5)*cellH*.3,record]});
- const delaunay=d3.Delaunay.from(sites,d=>d[0],d=>d[1]),voronoi=delaunay.voronoi([0,0,width,height]);
- const svg=svgEl("svg",{width,height,viewBox:`0 0 ${width} ${height}`,role:"group","aria-label":"Kolekcja kampanii Vengrath"});
+function makeWorld(items,width,height,rows){
+ const cols=Math.ceil(items.length/rows),cellW=width/cols,cellH=height/rows;
+ const baseSites=items.map((record,i)=>{
+  const col=i%cols,row=Math.floor(i/cols),random=seededRandom(93517+i*7919+items.length*31);
+  const stagger=(row%2?-.13:.13)*cellW;
+  return[(col+.5)*cellW+stagger+(random()-.5)*cellW*.3,(row+.5)*cellH+(random()-.5)*cellH*.3,record,i];
+ });
+ // Build one continuous three-world surface. Ghost worlds keep Voronoi cells
+ // crossing each join naturally instead of clipping them into straight edges.
+ const sites=[];
+ for(let copy=-1;copy<=3;copy++)for(const site of baseSites)sites.push([site[0]+copy*width,site[1],site[2],copy,site[3]]);
+ const totalWidth=width*3;
+ const delaunay=d3.Delaunay.from(sites,d=>d[0],d=>d[1]),voronoi=delaunay.voronoi([0,0,totalWidth,height]);
+ const svg=svgEl("svg",{width:totalWidth,height,viewBox:`0 0 ${totalWidth} ${height}`,role:"group","aria-label":"Kolekcja kampanii Vengrath"});
  const defs=svgEl("defs");svg.append(defs);
- items.forEach((record,i)=>{
+ sites.forEach((site,i)=>{
+  const [sx,sy,record,copy,itemIndex]=site;
+  if(copy<0||copy>2)return;
   const poly=voronoi.cellPolygon(i);if(!poly||poly.length<3)return;
-  const id=`h2-${worldIndex}-${i}`,d=pathOf(poly),clip=svgEl("clipPath",{id});clip.append(svgEl("path",{d}));defs.append(clip);
+  const id=`h2-${copy}-${itemIndex}`,d=pathOf(poly),clip=svgEl("clipPath",{id});clip.append(svgEl("path",{d}));defs.append(clip);
   const xs=poly.map(p=>p[0]),ys=poly.map(p=>p[1]),x=Math.min(...xs),y=Math.min(...ys),w=Math.max(...xs)-x,h=Math.max(...ys)-y;
   const anchor=svgEl("a",{href:record.url,class:"cell",tabindex:"0","aria-label":record.title+" — "+(record.category||"Vengrath")});
   const image=svgEl("image",{x,y,width:w,height:h,href:record.image||"","preserveAspectRatio":"xMidYMid slice","clip-path":`url(#${id})`,class:"cell-image"});
@@ -82,12 +92,13 @@ function build(){
  if(!items.length){worldWidth=0;return}
  const viewportHeight=viewport.clientHeight;
  const worldHeight=Math.max(220,viewportHeight-58);
- const rows=Math.min(items.length,innerWidth<680?4:5);
+ const maxRows=innerWidth<680?4:5;
+ const rows=items.length<=3?1:items.length<=8?2:items.length<=15?3:items.length<=24?4:maxRows;
  const cols=Math.ceil(items.length/rows);
  const cellH=worldHeight/rows;
  const cellW=cellH*1.6;
  worldWidth=cols*cellW;
- for(let copy=0;copy<3;copy++)board.append(makeWorld(items,worldWidth,worldHeight,copy,rows));
+ board.append(makeWorld(items,worldWidth,worldHeight,rows));
  board.style.height=worldHeight+"px";
  const oldWorld=viewport.scrollLeft;
  viewport.scrollLeft=worldWidth+Math.min(oldWorld%Math.max(1,worldWidth),worldWidth*.45);
