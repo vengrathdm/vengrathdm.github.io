@@ -29,10 +29,10 @@ function startAtmosphere(){
   addEventListener("resize",()=>{if(!renderer)return;camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
  }catch(e){console.warn("WebGL atmosphere unavailable",e);canvas.hidden=true}
 }
-function describe(r){if(r.type==="tool")return"Interaktywne narzędzie z kolekcji Vengrath.";if(r.category==="Aktywna Kampania")return"Aktywna kampania w kolekcji Vengrath.";if(r.category==="Zamknięta Kampania")return"Zakończona kampania zachowana w archiwum Vengrath.";if(r.category==="Archiwum")return"Kronika zachowana w archiwum Vengrath.";return"Odkryj tę część kolekcji Vengrath."}
+function describe(r){const tags=r.tags||[];if(tags.includes("Aktywna"))return"Aktywna kampania w kolekcji Vengrath.";if(tags.includes("Zamknięta"))return"Zakończona kampania zachowana w kolekcji Vengrath.";if(tags.includes("W przygotowaniu"))return"Projekt przygotowywany do przyszłej realizacji.";if(tags.includes("Narzędzie"))return"Interaktywne narzędzie z kolekcji Vengrath.";if(tags.includes("Archiwum"))return"Kronika zachowana w archiwum Vengrath.";return"Odkryj tę część kolekcji Vengrath."}
 function normalize(v){return String(v??"").trim().toLocaleLowerCase("pl").normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
-function visibleRecords(){const q=normalize(search.value);return records.filter(r=>{if(r.visibility==="hidden")return q==="hidden"||q===normalize(r.title);return(!activeTags.size||activeTags.has(r.category))&&(!q||normalize(r.title).includes(q)||normalize(r.category).includes(q))})}
-function renderFilters(){filters.replaceChildren();const cats=[...new Set(records.filter(r=>r.visibility!=="hidden").map(r=>r.category).filter(Boolean))];["Wszystko",...cats].forEach(label=>{const b=document.createElement("button");b.type="button";b.className="filter";b.textContent=label;b.dataset.tag=label;filters.append(b)});syncFilterControls()}
+function visibleRecords(){const q=normalize(search.value);return records.filter(r=>r.visibility!=="hidden"&&[...activeTags].every(tag=>(r.tags||[]).includes(tag))&&(!q||normalize(r.title).includes(q)||(r.tags||[]).some(tag=>normalize(tag).includes(q))))}
+function renderFilters(){filters.replaceChildren();const tags=[...new Set(records.filter(r=>r.visibility!=="hidden").flatMap(r=>r.tags||[]))].sort((a,b)=>a.localeCompare(b,"pl"));["Wszystko",...tags].forEach(label=>{const b=document.createElement("button");b.type="button";b.className="filter";b.textContent=label;b.dataset.tag=label;filters.append(b)});syncFilterControls()}
 function syncFilterControls(){filters.querySelectorAll("button[data-tag]").forEach(b=>{const active=b.dataset.tag==="Wszystko"?!activeTags.size:activeTags.has(b.dataset.tag);b.classList.toggle("active",active);b.setAttribute("aria-pressed",String(active))});$("#clear-active-filters").hidden=!activeTags.size&&!search.value}
 function svgEl(name,attrs={}){const e=document.createElementNS("http://www.w3.org/2000/svg",name);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));return e}
 function pathOf(poly){return"M"+poly.map(p=>p.join(",")).join("L")+"Z"}
@@ -62,7 +62,7 @@ function makeWorld(items,width,height,rows){
  for(let copy=-1;copy<=3;copy++)for(const site of baseSites)sites.push([site[0]+copy*width,site[1],site[2],copy,site[3]]);
  const totalWidth=width*3;
  const delaunay=d3.Delaunay.from(sites,d=>d[0],d=>d[1]),voronoi=delaunay.voronoi([0,0,totalWidth,height]);
- const svg=svgEl("svg",{width:totalWidth,height,viewBox:`0 0 ${totalWidth} ${height}`,role:"group","aria-label":"Kolekcja kampanii Vengrath"});
+ const svg=svgEl("svg",{width:totalWidth,height,viewBox:`0 0 ${totalWidth} ${height}`,role:"group","aria-label":"Kolekcja wpisów Vengrath"});
  const defs=svgEl("defs");svg.append(defs);
  sites.forEach((site,i)=>{
   const [sx,sy,record,copy,itemIndex]=site;
@@ -70,7 +70,7 @@ function makeWorld(items,width,height,rows){
   const poly=voronoi.cellPolygon(i);if(!poly||poly.length<3)return;
   const id=`h2-${copy}-${itemIndex}`,d=pathOf(poly),clip=svgEl("clipPath",{id});clip.append(svgEl("path",{d}));defs.append(clip);
   const xs=poly.map(p=>p[0]),ys=poly.map(p=>p[1]),x=Math.min(...xs),y=Math.min(...ys),w=Math.max(...xs)-x,h=Math.max(...ys)-y;
-  const anchor=svgEl("a",{href:record.url,class:"cell",tabindex:"0","aria-label":record.title+" — "+(record.category||"Vengrath")});
+  const anchor=svgEl("a",{href:record.url,class:"cell",tabindex:"0","aria-label":record.title+" — "+(record.tags||[]).join(", ")});
   const image=svgEl("image",{x,y,width:w,height:h,href:record.image||"","preserveAspectRatio":"xMidYMid slice","clip-path":`url(#${id})`,class:"cell-image"});
   anchor.append(image,svgEl("path",{d,class:"cell-shade"}));
   const labels=svgEl("g",{"clip-path":`url(#${id})`});
@@ -79,7 +79,7 @@ function makeWorld(items,width,height,rows){
   const titleSize=Math.max(12,Math.min(23,safeW/(Math.min(record.title.length,18)*.57),safeH*.36));
   const titleLines=fitText(labels,record.title,cx,cy-titleSize*.45,safeW,2,titleSize,"cell-title");
   const categoryY=cy+Math.max(14,titleLines*titleSize*.72)+7;
-  fitText(labels,record.category||"",cx,categoryY,safeW,2,Math.max(7.5,Math.min(9.5,safeW/24)),"cell-tag",.3);
+  fitText(labels,(record.tags||[]).join(" · "),cx,categoryY,safeW,2,Math.max(7.5,Math.min(9.5,safeW/24)),"cell-tag",.3);
   anchor.append(labels);
   anchor.addEventListener("pointerenter",()=>showPreview(record));anchor.addEventListener("pointerleave",hidePreview);
   anchor.addEventListener("contextmenu",e=>{e.preventDefault();openContextMenu(record,e.clientX,e.clientY)});
@@ -105,13 +105,13 @@ function build(){
  viewport.scrollLeft=worldWidth+Math.min(oldWorld%Math.max(1,worldWidth),worldWidth*.45);
  if(!reducedMotion)gsap.from(board.querySelectorAll(".cell"),{autoAlpha:0,scale:.97,transformOrigin:"50% 50%",duration:.65,stagger:{each:.009,from:"random"},ease:"power2.out",clearProps:"all"});
 }
-function showPreview(r,force=false){if(!previewEnabled&&!force)return;$("#preview-image").src=r.image||"";$("#preview-image").alt=r.title;$("#preview-category").textContent=r.category||"Kolekcja Vengrath";$("#preview-title").textContent=r.title;$("#preview-description").textContent=describe(r);preview.dataset.href=r.url;preview.setAttribute("aria-hidden","false");previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:1,y:0,duration:.22,ease:"power2.out",overwrite:true})}
+function showPreview(r,force=false){if(!previewEnabled&&!force)return;$("#preview-image").src=r.image||"";$("#preview-image").alt=r.title;$("#preview-category").textContent=(r.tags||[]).join(" · ")||"Kolekcja Vengrath";$("#preview-title").textContent=r.title;$("#preview-description").textContent=describe(r);preview.dataset.href=r.url;preview.setAttribute("aria-hidden","false");previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:1,y:0,duration:.22,ease:"power2.out",overwrite:true})}
 function hidePreview(){previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:0,y:10,duration:.16,ease:"power2.in",overwrite:true,onComplete:()=>preview.setAttribute("aria-hidden","true")})}
 
 function openContextPreview(record){
  $("#context-preview-image").src=record.image||"";
  $("#context-preview-image").alt=record.title||"";
- $("#context-preview-category").textContent=record.category||"Kolekcja Vengrath";
+ $("#context-preview-category").textContent=(record.tags||[]).join(" · ")||"Kolekcja Vengrath";
  $("#context-preview-title").textContent=record.title||"";
  $("#context-preview-description").textContent=describe(record);
  $("#context-preview-open").href=record.url;
