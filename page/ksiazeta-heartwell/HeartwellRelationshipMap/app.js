@@ -72,7 +72,7 @@ function normalize(source){
  return{schemaVersion:1,metadata,entities,relationships};
 }
 async function fetchOfficial(){const r=await fetch(DATA_URL,{cache:"no-store"});if(!r.ok)throw Error("Official data could not be loaded ("+r.status+").");return normalize(await r.json())}
-function openTab(tab){activeTab=tab;document.querySelectorAll(".tab").forEach(b=>{const a=b.dataset.tab===tab;b.classList.toggle("active",a);b.setAttribute("aria-selected",String(a))});["view","editor"].forEach(k=>$(k+"Panel").hidden=k!==tab)}
+function openTab(tab){if(!["view","editor"].includes(tab))return;activeTab=tab;document.querySelectorAll(".tab[data-tab]").forEach(b=>{const active=b.dataset.tab===tab;b.classList.toggle("active",active);b.setAttribute("aria-selected",String(active))});["view","editor"].forEach(k=>{const panel=$(k+"Panel");if(panel)panel.hidden=k!==tab})}
 function openDialog(id){$("modalShade").hidden=false;$(id).hidden=false;hideContext()}
 function closeDialogs(){["entityDialog","relationshipDialog","confirmDialog"].forEach(id=>$(id).hidden=true);$("modalShade").hidden=true;wizard=null}
 document.querySelectorAll("[data-close-dialog]").forEach(b=>b.onclick=closeDialogs);$("modalShade").onclick=()=>{if($("confirmDialog").hidden)closeDialogs()};
@@ -272,13 +272,25 @@ $("exportData").onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)+"\
 $("importData").onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const parsed=normalize(JSON.parse(await f.text()));confirm("Import will replace the current working dataset. Continue?",()=>{data=parsed;layoutModes={...layoutModes,...(data.metadata.layoutModes||{})};selected=null;activeView="complete";persistLocal();viewports={complete:null,family:null,organization:null,political:null,characters:null};setDirty(true);renderGraph();renderFilters();renderLegend();openTab("view");toast("Dataset imported.")})}catch(err){toast("Import failed: "+err.message)}e.target.value=""};
 $("reloadOfficial").onclick=()=>{const run=async()=>{try{officialData=await fetchOfficial();await clearLocal();data=clone(officialData);layoutModes={complete:"force",family:"hierarchy",organization:"hierarchy",political:"force",characters:"force"};selected=null;viewports={complete:null,family:null,organization:null};setDirty(false);renderGraph();renderFilters();renderLegend();openTab("view");toast("Official data reloaded.")}catch(e){toast(e.message)}};if(dirty)confirm("Reload official data and discard all unexported changes?",run);else run()};
 
-document.addEventListener("click",e=>{if(!e.target.closest("#contextMenu"))hideContext()});document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>openTab(b.dataset.tab));
+document.addEventListener("click",e=>{if(!e.target.closest("#contextMenu"))hideContext()});$("controlWindow").addEventListener("click",e=>{const button=e.target.closest(".tab[data-tab]");if(button){e.preventDefault();openTab(button.dataset.tab)}});
 cy=cytoscape({container:$("graph"),elements:[],minZoom:.12,maxZoom:3,wheelSensitivity:.22,selectionType:"single",boxSelectionEnabled:false});
-cy.container().addEventListener("contextmenu",e=>e.preventDefault());
+function graphElementAt(renderedX,renderedY){
+ const node=cy.nodes().filter(n=>{const b=n.renderedBoundingBox();return renderedX>=b.x1-3&&renderedX<=b.x2+3&&renderedY>=b.y1-3&&renderedY<=b.y2+3}).sort((a,b)=>{const pa=a.renderedPosition(),pb=b.renderedPosition();return Math.hypot(pa.x-renderedX,pa.y-renderedY)-Math.hypot(pb.x-renderedX,pb.y-renderedY)}).first();
+ if(node.length)return node;
+ let nearest=null,nearestDistance=11;
+ cy.edges().forEach(edge=>{const a=edge.source().renderedPosition(),b=edge.target().renderedPosition(),dx=b.x-a.x,dy=b.y-a.y,len2=dx*dx+dy*dy;const t=len2?Math.max(0,Math.min(1,((renderedX-a.x)*dx+(renderedY-a.y)*dy)/len2)):0;const distance=Math.hypot(renderedX-(a.x+t*dx),renderedY-(a.y+t*dy));if(distance<nearestDistance){nearestDistance=distance;nearest=edge}});
+ return nearest;
+}
+cy.container().addEventListener("contextmenu",e=>{
+ e.preventDefault();
+ const rect=cy.container().getBoundingClientRect(),x=e.clientX-rect.left,y=e.clientY-rect.top;
+ const hit=graphElementAt(x,y),menuPosition={x:e.clientX,y:e.clientY};
+ if(hit?.isNode())entityMenu(entity(hit.id()),menuPosition);
+ else if(hit?.isEdge())relationMenu(rel(hit.id()),menuPosition);
+ else entitySubmenu({...menuPosition,graphPosition:{x:(x-cy.pan().x)/cy.zoom(),y:(y-cy.pan().y)/cy.zoom()}});
+});
 cy.on("tap","node",e=>setSelection("entity",e.target.id()));cy.on("tap","edge",e=>setSelection("relationship",e.target.id()));
 cy.on("dbltap","node",e=>{setSelection("entity",e.target.id());$("dossierWindow").hidden=false;focusEntity(e.target.id())});
-cy.on("cxttap","node",e=>entityMenu(entity(e.target.id()),e.renderedPosition));cy.on("cxttap","edge",e=>relationMenu(rel(e.target.id()),e.renderedPosition));
-cy.on("cxttap",e=>{if(e.target===cy)entitySubmenu({...e.renderedPosition,graphPosition:e.position})});
 cy.on("dragfree","node",e=>{const n=e.target,at=n.renderedPosition(),target=cy.nodes().filter(x=>x.id()!==n.id()&&x.renderedBoundingBox().x1<=at.x&&x.renderedBoundingBox().x2>=at.x&&x.renderedBoundingBox().y1<=at.y&&x.renderedBoundingBox().y2>=at.y).first();saveCurrentPositions();if(target.length)startRelationshipWizard(null,n.id(),target.id())});
 cy.on("mouseover","node,edge",e=>{const t=$("tooltip");t.textContent=e.target.isNode()?e.target.data("name"):e.target.data("type");t.hidden=false});cy.on("mousemove","node,edge",e=>{$("tooltip").style.left=(e.originalEvent.clientX+12)+"px";$("tooltip").style.top=(e.originalEvent.clientY+12)+"px"});cy.on("mouseout","node,edge",()=>$("tooltip").hidden=true);cy.on("pan zoom",capture);
 async function init(){try{officialData=await fetchOfficial();if(!await restoreLocal()){data=clone(officialData);setDirty(false);$("persistenceState").textContent="Autosave enabled · this browser only"}}catch(e){data={schemaVersion:1,metadata:{id:"heartwell-relationships",name:"Heartwell Relationship Map"},entities:[],relationships:[]};officialData=clone(data);await restoreLocal();toast("Official JSON unavailable: "+e.message)}layoutModes={...layoutModes,...(data.metadata.layoutModes||{})};renderGraph();renderFilters();renderLegend();updateCount();refreshSavedViews();$("entityReferenceOptions")?.remove();const dl=document.createElement("datalist");dl.id="entityReferenceOptions";dl.innerHTML=data.entities.map(e=>'<option value="'+esc(e.name)+'">').join("");document.body.append(dl)}
