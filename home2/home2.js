@@ -77,7 +77,7 @@ function makeWorld(items,width,height,worldIndex,rows){
  return svg;
 }
 function build(){
- const items=visibleRecords();$("#count").textContent=String(items.length).padStart(2,"0")+" WPISÓW";board.replaceChildren();emptyState.hidden=items.length>0;
+ const items=visibleRecords();board.replaceChildren();emptyState.hidden=items.length>0;
  if(!items.length){worldWidth=0;return}
  const viewportHeight=viewport.clientHeight;
  const headingHeight=$(".board-heading").getBoundingClientRect().height+12;
