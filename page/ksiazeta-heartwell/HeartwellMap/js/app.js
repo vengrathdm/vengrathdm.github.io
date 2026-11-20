@@ -328,3 +328,10 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
 
   L.control.zoom({position:'bottomright'}).addTo(map);
   L.control.scale({imperial:false,metric:false,position:'bottomright'}).addTo(map);
+})().catch(function(error){
+  console.error('Nie udało się uruchomić mapy Heartwell:', error);
+  var notice=document.createElement('div');
+  notice.style.cssText='position:fixed;z-index:999999;left:16px;right:16px;bottom:16px;padding:12px 14px;background:#17252b;color:#f3ead7;border:1px solid #b9a47c;border-radius:4px;font:14px/1.45 system-ui,sans-serif';
+  notice.textContent='Nie udało się uruchomić mapy. Odśwież stronę lub sprawdź połączenie. Szczegóły są dostępne w konsoli przeglądarki.';
+  document.body.appendChild(notice);
+});
