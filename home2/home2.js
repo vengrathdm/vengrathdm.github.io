@@ -2,320 +2,125 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.m
 import { gsap } from "https://cdn.jsdelivr.net/npm/gsap@3.13.0/index.js";
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 
-const $ = (selector) => document.querySelector(selector);
-const viewport = $("#viewport");
-const board = $("#board");
-const filters = $("#filters");
-const search = $("#search");
-const emptyState = $("#empty-state");
-const preview = $("#preview");
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-let records = [];
-let activeTag = "Wszystko";
-let resizeFrame = 0;
-let previewTween;
-let renderer;
-let scene;
-let camera;
-let particles;
-let particlePositions;
-let clock;
+const $=s=>document.querySelector(s);
+const viewport=$("#viewport"),board=$("#board"),filters=$("#filters"),search=$("#search"),emptyState=$("#empty-state"),preview=$("#preview");
+const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let records=[],activeTag="Wszystko",resizeFrame=0,previewTween;
+let renderer,scene,camera,clock,particleGeometry,particleMaterial;
+let worldWidth=0,dragging=false,lastPointerX=0,lastMoveTime=0,velocity=0,inertiaFrame=0;
+let suppressClick=false;
 
-// A tiny deterministic PRNG keeps each page in the same visual neighbourhood
-// after filtering, resizing, and returning to the page.
-function seededRandom(seed) {
-  let value = seed >>> 0;
-  return () => {
-    value = (value * 1664525 + 1013904223) >>> 0;
-    return value / 4294967296;
-  };
+function seededRandom(seed){let v=seed>>>0;return()=>{v=(v*1664525+1013904223)>>>0;return v/4294967296}}
+function startAtmosphere(){
+ const canvas=$("#atmosphere");
+ try{
+  renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:false});
+  renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.setSize(innerWidth,innerHeight);renderer.setClearColor(0,0);
+  scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(52,innerWidth/innerHeight,.1,100);camera.position.z=32;clock=new THREE.Clock();
+  const count=680,positions=new Float32Array(count*3),random=seededRandom(271828);
+  for(let i=0;i<count;i++){positions[i*3]=(random()-.5)*62;positions[i*3+1]=(random()-.5)*36;positions[i*3+2]=(random()-.5)*24}
+  particleGeometry=new THREE.BufferGeometry();particleGeometry.setAttribute("position",new THREE.BufferAttribute(positions,3));
+  particleMaterial=new THREE.PointsMaterial({color:0xd7b878,size:1.35,transparent:true,opacity:.58,sizeAttenuation:true,depthWrite:false,blending:THREE.AdditiveBlending});
+  const stars=new THREE.Points(particleGeometry,particleMaterial);scene.add(stars);
+  const animate=()=>{requestAnimationFrame(animate);const t=clock.getElapsedTime();stars.rotation.y=Math.sin(t*.04)*.04;stars.rotation.x=Math.cos(t*.03)*.02;const p=particleGeometry.attributes.position.array;
+   for(let i=0;i<count;i++){p[i*3+1]+=.002+(i%7)*.0003;if(p[i*3+1]>19)p[i*3+1]=-19}
+   particleGeometry.attributes.position.needsUpdate=true;renderer.render(scene,camera)};
+  animate();
+  addEventListener("resize",()=>{if(!renderer)return;camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
+ }catch(e){console.warn("WebGL atmosphere unavailable",e);canvas.hidden=true}
 }
-
-function startAtmosphere() {
-  const canvas = $("#atmosphere");
-  try {
-    renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x000000, 0);
-    scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, .1, 100);
-    camera.position.z = 32;
-    clock = new THREE.Clock();
-
-    const count = 430;
-    particlePositions = new Float32Array(count * 3);
-    const random = seededRandom(271828);
-    for (let i = 0; i < count; i++) {
-      particlePositions[i * 3] = (random() - .5) * 58;
-      particlePositions[i * 3 + 1] = (random() - .5) * 34;
-      particlePositions[i * 3 + 2] = (random() - .5) * 20;
-    }
-    const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute("position", new THREE.BufferAttribute(particlePositions, 3));
-    const material = new THREE.PointsMaterial({
-      color: 0xc9a96d, size: 1.15, transparent: true, opacity: .52,
-      sizeAttenuation: true, depthWrite: false, blending: THREE.AdditiveBlending
-    });
-    particles = new THREE.Points(geometry, material);
-    scene.add(particles);
-
-    const animate = () => {
-      requestAnimationFrame(animate);
-      const t = clock.getElapsedTime();
-      particles.rotation.y = Math.sin(t * .045) * .035;
-      particles.rotation.x = Math.cos(t * .035) * .018;
-      const positions = geometry.attributes.position.array;
-      for (let i = 0; i < count; i++) {
-        positions[i * 3 + 1] += .0018 + (i % 5) * .00025;
-        if (positions[i * 3 + 1] > 18) positions[i * 3 + 1] = -18;
-      }
-      geometry.attributes.position.needsUpdate = true;
-      renderer.render(scene, camera);
-    };
-    animate();
-    window.addEventListener("resize", () => {
-      if (!renderer || !camera) return;
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    });
-  } catch (error) {
-    console.warn("WebGL atmosphere unavailable; continuing without it.", error);
-    canvas.hidden = true;
-  }
+function describe(r){if(r.type==="tool")return"An interactive Vengrath tool and part of the wider collection.";if(r.category==="Aktywna Kampania")return"An active campaign in the Vengrath collection.";if(r.category==="Zamknięta Kampania")return"A completed campaign preserved in the Vengrath archive.";if(r.category==="Archiwum")return"A chronicle preserved in the Vengrath archive.";return"Explore this part of the Vengrath collection."}
+function normalize(v){return String(v??"").trim().toLocaleLowerCase("pl").normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
+function visibleRecords(){const q=normalize(search.value);return records.filter(r=>{if(r.visibility==="hidden")return q==="hidden"||q===normalize(r.title);return(activeTag==="Wszystko"||r.category===activeTag)&&(!q||normalize(r.title).includes(q)||normalize(r.category).includes(q))})}
+function renderFilters(){filters.replaceChildren();const cats=[...new Set(records.filter(r=>r.visibility!=="hidden").map(r=>r.category).filter(Boolean))];["Wszystko",...cats].forEach((label,i)=>{const b=document.createElement("button");b.type="button";b.className="filter"+(!i?" active":"");b.textContent=label;b.dataset.tag=label;filters.append(b)})}
+function svgEl(name,attrs={}){const e=document.createElementNS("http://www.w3.org/2000/svg",name);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));return e}
+function pathOf(poly){return"M"+poly.map(p=>p.join(",")).join("L")+"Z"}
+function fitText(group,text,x,y,maxWidth,maxLines,fontSize,className,letterSpacing=0){
+ const el=svgEl("text",{x,y,class:className,"font-size":fontSize,"letter-spacing":letterSpacing});
+ const words=String(text||"").split(/\s+/);let lines=[],line="";
+ const charWidth=fontSize*(className==="cell-title"?.54:.62)+letterSpacing;
+ const capacity=Math.max(5,Math.floor(maxWidth/charWidth));
+ for(const word of words){const next=line?line+" "+word:word;if(next.length>capacity&&line){lines.push(line);line=word}else line=next}
+ if(line)lines.push(line);
+ let shown=lines.slice(0,maxLines);
+ if(lines.length>maxLines&&shown.length){let last=shown[shown.length-1];shown[shown.length-1]=last.slice(0,Math.max(2,capacity-1)).trim()+"…"}
+ const lineHeight=fontSize*(className==="cell-title"?1.05:1.35);
+ shown.forEach((part,i)=>{const span=svgEl("tspan",{x,dy:i===0?0:lineHeight});span.textContent=part;el.append(span)});
+ group.append(el);return shown.length*lineHeight;
 }
-
-function describe(record) {
-  const category = record.category || "Collection";
-  if (record.type === "tool") return "An interactive Vengrath tool and part of the wider collection.";
-  if (category === "Aktywna Kampania") return "An active campaign in the Vengrath collection.";
-  if (category === "Zamknięta Kampania") return "A completed campaign preserved in the Vengrath archive.";
-  if (category === "Archiwum") return "A chronicle preserved in the Vengrath archive.";
-  return "Explore this part of the Vengrath collection.";
+function makeWorld(items,width,height,worldIndex){
+ const cellAspect=1.6;
+ const cols=Math.max(3,Math.floor(width/(innerWidth<680?205:260)));
+ const rows=Math.max(2,Math.min(3,Math.floor(height/(innerWidth<680?130:155))));
+ const cellW=width/cols,cellH=height/rows,random=seededRandom(93517+items.length*31);
+ const sites=items.map((record,i)=>{const col=i%cols,row=Math.floor(i/cols);return[(col+.5)*cellW+(random()-.5)*cellW*.17,(row+.5)*cellH+(random()-.5)*cellH*.14,record]});
+ // Balance site spacing to keep the resulting Voronoi facets close to the cover-art 16:10 format.
+ const delaunay=d3.Delaunay.from(sites,d=>d[0],d=>d[1]),voronoi=delaunay.voronoi([0,0,width,height]);
+ const svg=svgEl("svg",{width,height,viewBox:`0 0 ${width} ${height}`,role:"group","aria-label":"Vengrath campaign collection"});
+ const defs=svgEl("defs");svg.append(defs);
+ items.forEach((record,i)=>{
+  const poly=voronoi.cellPolygon(i);if(!poly||poly.length<3)return;
+  const id=`h2-${worldIndex}-${i}`,d=pathOf(poly),clip=svgEl("clipPath",{id});clip.append(svgEl("path",{d}));defs.append(clip);
+  const xs=poly.map(p=>p[0]),ys=poly.map(p=>p[1]),x=Math.min(...xs),y=Math.min(...ys),w=Math.max(...xs)-x,h=Math.max(...ys)-y;
+  const anchor=svgEl("a",{href:record.url,class:"cell",tabindex:"0","aria-label":record.title+" — "+(record.category||"Vengrath")});
+  const image=svgEl("image",{x,y,width:w,height:h,href:record.image||"","preserveAspectRatio":"xMidYMid slice","clip-path":`url(#${id})`,class:"cell-image"});
+  anchor.append(image,svgEl("path",{d,class:"cell-shade"}));
+  const labels=svgEl("g",{"clip-path":`url(#${id})`});
+  const cx=(Math.min(...xs)+Math.max(...xs))/2,cy=(Math.min(...ys)+Math.max(...ys))/2;
+  const safeW=Math.max(50,w*.72),safeH=Math.max(34,h*.58);
+  const titleSize=Math.max(12,Math.min(23,safeW/(Math.min(record.title.length,18)*.57),safeH*.36));
+  const titleLines=fitText(labels,record.title,cx,cy-titleSize*.45,safeW,2,titleSize,"cell-title");
+  const categoryY=cy+Math.max(14,titleLines*titleSize*.72)+7;
+  fitText(labels,record.category||"",cx,categoryY,safeW,2,Math.max(7.5,Math.min(9.5,safeW/24)),"cell-tag",.3);
+  anchor.append(labels);
+  anchor.addEventListener("pointerenter",()=>showPreview(record));anchor.addEventListener("pointerleave",hidePreview);
+  anchor.addEventListener("focus",()=>showPreview(record));anchor.addEventListener("blur",hidePreview);
+  svg.append(anchor);
+ });
+ return svg;
 }
-
-function visibleRecords() {
-  const normalize = (value) => String(value ?? "").trim().toLocaleLowerCase("pl")
-    .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  const query = normalize(search.value);
-  return records.filter((record) => {
-    if (record.visibility === "hidden") return query === "hidden" || query === normalize(record.title);
-    return (activeTag === "Wszystko" || record.category === activeTag) &&
-      (!query || normalize(record.title).includes(query) || normalize(record.category).includes(query));
-  });
+function build(){
+ const items=visibleRecords();$("#count").textContent=String(items.length).padStart(2,"0")+" ENTRIES";board.replaceChildren();emptyState.hidden=items.length>0;
+ if(!items.length){worldWidth=0;return}
+ const viewportHeight=viewport.clientHeight;
+ const headingHeight=$("#board-heading").getBoundingClientRect().height+12;
+ const usableHeight=Math.max(220,viewportHeight-headingHeight-58);
+ const topPadding=innerWidth<680?8:12;
+ const worldHeight=usableHeight-topPadding;
+ const cols=Math.max(3,Math.floor((innerWidth*1.42)/(innerWidth<680?205:260)));
+ const rows=Math.max(2,Math.min(3,Math.ceil(items.length/cols)));
+ const targetCardH=Math.min(innerWidth<680?150:190,worldHeight/rows*.93);
+ const targetCardW=targetCardH*1.6;
+ worldWidth=Math.max(innerWidth*1.35,cols*targetCardW);
+ const cellAspect=1.6;
+ const worldCols=Math.max(3,Math.floor(worldWidth/(innerWidth<680?205:260)));
+ const worldRows=Math.max(2,Math.min(3,Math.floor(worldHeight/(innerWidth<680?130:155))));
+ // Stretch the site grid to the intended card proportions before Voronoi tessellation.
+ const actualCellW=worldWidth/worldCols,actualCellH=worldHeight/worldRows;
+ const fitWidth=Math.max(worldWidth,actualCellH*cellAspect*worldCols);
+ worldWidth=fitWidth;
+ for(let copy=0;copy<3;copy++)board.append(makeWorld(items,worldWidth,worldHeight,copy));
+ board.style.height=worldHeight+"px";
+ const oldWorld=viewport.scrollLeft;
+ viewport.scrollLeft=worldWidth+Math.min(oldWorld%Math.max(1,worldWidth),worldWidth*.45);
+ if(!reducedMotion)gsap.from(board.querySelectorAll(".cell"),{autoAlpha:0,scale:.97,transformOrigin:"50% 50%",duration:.65,stagger:{each:.009,from:"random"},ease:"power2.out",clearProps:"all"});
 }
-
-function renderFilters() {
-  filters.replaceChildren();
-  const categories = [...new Set(records.filter(r => r.visibility !== "hidden").map(r => r.category).filter(Boolean))];
-  ["Wszystko", ...categories].forEach((label, index) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "filter" + (index === 0 ? " active" : "");
-    button.textContent = label;
-    button.dataset.tag = label;
-    filters.append(button);
-  });
-}
-
-function polygonPath(points) {
-  return points ? "M" + points.map(p => p.join(",")).join("L") + "Z" : "";
-}
-
-function makeSvgElement(name, attrs = {}) {
-  const element = document.createElementNS("http://www.w3.org/2000/svg", name);
-  for (const [key, value] of Object.entries(attrs)) element.setAttribute(key, value);
-  return element;
-}
-
-function addLabels(group, record, polygon) {
-  const xs = polygon.map(p => p[0]), ys = polygon.map(p => p[1]);
-  const minX = Math.min(...xs), maxX = Math.max(...xs);
-  const minY = Math.min(...ys), maxY = Math.max(...ys);
-  const centerX = (minX + maxX) / 2, centerY = (minY + maxY) / 2;
-  const width = maxX - minX, height = maxY - minY;
-  const fontSize = Math.max(13, Math.min(27, height * .22, width * .12));
-  const title = makeSvgElement("text", {
-    x: centerX, y: centerY - 2, class: "cell-title",
-    "font-size": fontSize
-  });
-  title.textContent = record.title;
-  group.append(title);
-  const tag = makeSvgElement("text", {
-    x: centerX, y: centerY + fontSize * .92 + 9, class: "cell-tag"
-  });
-  tag.textContent = (record.category || "").toLocaleUpperCase("pl");
-  group.append(tag);
-}
-
-function showPreview(record) {
-  $("#preview-image").src = record.image || "";
-  $("#preview-image").alt = record.title;
-  $("#preview-category").textContent = record.category || "Vengrath collection";
-  $("#preview-title").textContent = record.title;
-  $("#preview-description").textContent = describe(record);
-  preview.dataset.href = record.url;
-  preview.setAttribute("aria-hidden", "false");
-  if (previewTween) previewTween.kill();
-  previewTween = gsap.to(preview, { autoAlpha: 1, y: 0, duration: .24, ease: "power2.out", overwrite: true });
-}
-
-function hidePreview() {
-  if (previewTween) previewTween.kill();
-  previewTween = gsap.to(preview, { autoAlpha: 0, y: 10, duration: .18, ease: "power2.in", overwrite: true,
-    onComplete: () => preview.setAttribute("aria-hidden", "true") });
-}
-
-function build() {
-  const items = visibleRecords();
-  $("#count").textContent = String(items.length).padStart(2, "0") + " ENTRIES";
-  board.replaceChildren();
-  emptyState.hidden = items.length > 0;
-  if (!items.length) return;
-
-  const width = Math.max(680, viewport.clientWidth - 64);
-  const cellBase = window.innerWidth < 680 ? 165 : 225;
-  const columns = Math.max(2, Math.ceil(width / cellBase));
-  const rows = Math.ceil(items.length / columns);
-  const cellW = width / columns;
-  const cellH = Math.max(window.innerWidth < 680 ? 160 : 195, Math.min(260, (viewport.clientHeight - 100) / Math.max(2, Math.min(rows, 4))));
-  const height = Math.max(viewport.clientHeight - 40, rows * cellH + 30);
-  const random = seededRandom(93517 + items.length * 31);
-  const sites = items.map((record, index) => {
-    const col = index % columns;
-    const row = Math.floor(index / columns);
-    return [
-      (col + .5) * cellW + (random() - .5) * cellW * .32,
-      (row + .5) * cellH + (random() - .5) * cellH * .30,
-      record
-    ];
-  });
-  const delaunay = d3.Delaunay.from(sites, d => d[0], d => d[1]);
-  const voronoi = delaunay.voronoi([0, 0, width, height]);
-  const svg = makeSvgElement("svg", { width, height, viewBox: `0 0 ${width} ${height}`, role: "group", "aria-label": "Campaign collection" });
-  const defs = makeSvgElement("defs");
-  svg.append(defs);
-
-  items.forEach((record, index) => {
-    const polygon = voronoi.cellPolygon(index);
-    if (!polygon || polygon.length < 3) return;
-    const id = "home2-cell-" + index;
-    const d = polygonPath(polygon);
-    const clip = makeSvgElement("clipPath", { id });
-    clip.append(makeSvgElement("path", { d }));
-    defs.append(clip);
-
-    const anchor = makeSvgElement("a", {
-      href: record.url, class: "cell", tabindex: "0",
-      "aria-label": record.title + " — " + (record.category || "Vengrath")
-    });
-    anchor.dataset.index = String(index);
-    const xs = polygon.map(p => p[0]), ys = polygon.map(p => p[1]);
-    const x = Math.min(...xs), y = Math.min(...ys);
-    const w = Math.max(...xs) - x, h = Math.max(...ys) - y;
-    const image = makeSvgElement("image", {
-      x, y, width: w, height: h, href: record.image || "",
-      preserveAspectRatio: "xMidYMid slice", "clip-path": `url(#${id})`, class: "cell-image"
-    });
-    anchor.append(image);
-    anchor.append(makeSvgElement("path", { d, class: "cell-shade" }));
-    const labelGroup = makeSvgElement("g", { "clip-path": `url(#${id})` });
-    addLabels(labelGroup, record, polygon);
-    anchor.append(labelGroup);
-    anchor.addEventListener("pointerenter", () => showPreview(record));
-    anchor.addEventListener("pointerleave", hidePreview);
-    anchor.addEventListener("focus", () => showPreview(record));
-    anchor.addEventListener("blur", hidePreview);
-    svg.append(anchor);
-  });
-
-  board.append(svg);
-  if (!reducedMotion) {
-    gsap.from(svg.querySelectorAll(".cell"), {
-      autoAlpha: 0, scale: .94, transformOrigin: "50% 50%",
-      duration: .72, stagger: { each: .018, from: "random" }, ease: "power3.out", clearProps: "all"
-    });
-  }
-}
-
-function entrance() {
-  const intro = $("#intro");
-  const app = $("#app");
-  if (reducedMotion) {
-    intro.remove();
-    gsap.set(app, { opacity: 1 });
-    return;
-  }
-  const timeline = gsap.timeline({ defaults: { ease: "power3.out" } });
-  timeline.from(".intro-rule", { scale: .82, autoAlpha: 0, duration: .9 })
-    .from(".intro img", { scale: .65, autoAlpha: 0, duration: .65 }, "-=.55")
-    .from(".intro-kicker,.intro h1,.intro-subtitle", { y: 18, autoAlpha: 0, duration: .65, stagger: .12 }, "-=.35")
-    .to(".intro-progress span", { scaleX: 1, duration: .55, ease: "power2.inOut" }, "-=.2")
-    .to(intro, { autoAlpha: 0, duration: .8, ease: "power2.inOut", onComplete: () => intro.remove() }, "+=.12")
-    .to(app, { opacity: 1, duration: .65 }, "<+.12")
-    .from(".topbar", { y: -12, autoAlpha: 0, duration: .55 }, "<")
-    .from(".board-heading", { y: 10, autoAlpha: 0, duration: .45 }, "<+.1");
-}
-
-filters.addEventListener("click", event => {
-  const button = event.target.closest("button[data-tag]");
-  if (!button) return;
-  activeTag = button.dataset.tag;
-  filters.querySelectorAll("button").forEach(el => el.classList.toggle("active", el === button));
-  hidePreview();
-  build();
-});
-search.addEventListener("input", () => { hidePreview(); build(); });
-$("#clear-filters").addEventListener("click", () => {
-  search.value = "";
-  activeTag = "Wszystko";
-  filters.querySelectorAll("button").forEach(el => el.classList.toggle("active", el.dataset.tag === "Wszystko"));
-  build();
-});
-viewport.addEventListener("pointerdown", event => {
-  if (event.pointerType !== "mouse" || event.button !== 0 || event.target.closest(".cell")) return;
-  viewport.dataset.dragX = String(event.clientX);
-  viewport.dataset.dragY = String(event.clientY);
-  viewport.dataset.scrollLeft = String(viewport.scrollLeft);
-  viewport.dataset.scrollTop = String(viewport.scrollTop);
-  viewport.classList.add("dragging");
-  viewport.setPointerCapture(event.pointerId);
-});
-viewport.addEventListener("pointermove", event => {
-  if (!viewport.classList.contains("dragging")) return;
-  viewport.scrollLeft = Number(viewport.dataset.scrollLeft) - (event.clientX - Number(viewport.dataset.dragX));
-  viewport.scrollTop = Number(viewport.dataset.scrollTop) - (event.clientY - Number(viewport.dataset.dragY));
-});
-const endDrag = () => viewport.classList.remove("dragging");
-viewport.addEventListener("pointerup", endDrag);
-viewport.addEventListener("pointercancel", endDrag);
-viewport.addEventListener("click", event => {
-  if (event.target.closest(".cell")) return;
-  if (preview.dataset.href) hidePreview();
-});
-window.addEventListener("resize", () => {
-  cancelAnimationFrame(resizeFrame);
-  resizeFrame = requestAnimationFrame(build);
-});
-
-async function init() {
-  startAtmosphere();
-  const response = await fetch("/core/data/site-pages.json", { cache: "no-cache" });
-  if (!response.ok) throw new Error("Could not load Vengrath page registry.");
-  records = (await response.json()).filter(record =>
-    typeof record.url === "string" && record.url.startsWith("/page/") &&
-    typeof record.title === "string" && typeof record.image === "string"
-  );
-  renderFilters();
-  build();
-  entrance();
-}
-
-init().catch(error => {
-  console.error(error);
-  board.textContent = "Nie udało się wczytać kolekcji Vengrath.";
-  board.style.color = "#ffb4b4";
-  gsap.set($("#app"), { opacity: 1 });
-  $("#intro")?.remove();
-});
+function showPreview(r){$("#preview-image").src=r.image||"";$("#preview-image").alt=r.title;$("#preview-category").textContent=r.category||"Vengrath collection";$("#preview-title").textContent=r.title;$("#preview-description").textContent=describe(r);preview.dataset.href=r.url;preview.setAttribute("aria-hidden","false");previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:1,y:0,duration:.22,ease:"power2.out",overwrite:true})}
+function hidePreview(){previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:0,y:10,duration:.16,ease:"power2.in",overwrite:true,onComplete:()=>preview.setAttribute("aria-hidden","true")})}
+function wrapScroll(){if(!worldWidth||dragging)return;const x=viewport.scrollLeft;if(x<worldWidth*.5)viewport.scrollLeft=x+worldWidth;if(x>worldWidth*2.5)viewport.scrollLeft=x-worldWidth}
+function stopInertia(){if(inertiaFrame)cancelAnimationFrame(inertiaFrame);inertiaFrame=0}
+function runInertia(){stopInertia();let last=performance.now();const tick=now=>{const dt=Math.min(32,now-last);last=now;if(Math.abs(velocity)<.025){velocity=0;inertiaFrame=0;return}viewport.scrollLeft-=velocity*dt;velocity*=Math.pow(.93,dt/16.67);wrapScroll();inertiaFrame=requestAnimationFrame(tick)};inertiaFrame=requestAnimationFrame(tick)}
+function entrance(){const intro=$("#intro"),app=$("#app");if(reducedMotion){intro.remove();gsap.set(app,{opacity:1});return}gsap.timeline({defaults:{ease:"power3.out"}}).from(".intro-rule",{scale:.82,autoAlpha:0,duration:.9}).from(".intro img",{scale:.65,autoAlpha:0,duration:.65},"-=.55").from(".intro-kicker,.intro h1,.intro-subtitle",{y:18,autoAlpha:0,duration:.65,stagger:.12},"-=.35").to(".intro-progress span",{scaleX:1,duration:.5,ease:"power2.inOut"},"-=.2").to(intro,{autoAlpha:0,duration:.7,onComplete:()=>intro.remove()},"+=.08").to(app,{opacity:1,duration:.6},"<+.1").from(".topbar",{y:-12,autoAlpha:0,duration:.5},"<").from(".board-heading",{y:10,autoAlpha:0,duration:.4},"<+.1")}
+filters.addEventListener("click",e=>{const b=e.target.closest("button[data-tag]");if(!b)return;activeTag=b.dataset.tag;filters.querySelectorAll("button").forEach(el=>el.classList.toggle("active",el===b));hidePreview();build()});
+search.addEventListener("input",()=>{hidePreview();build()});
+$("#clear-filters").addEventListener("click",()=>{search.value="";activeTag="Wszystko";filters.querySelectorAll("button").forEach(el=>el.classList.toggle("active",el.dataset.tag==="Wszystko"));build()});
+viewport.addEventListener("scroll",wrapScroll,{passive:true});
+viewport.addEventListener("wheel",e=>{if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){e.preventDefault();viewport.scrollLeft+=e.deltaY}},{passive:false});
+viewport.addEventListener("pointerdown",e=>{if(e.pointerType==="mouse"&&e.button!==0)return;if(e.target.closest(".cell"))return;stopInertia();dragging=true;suppressClick=false;lastPointerX=e.clientX;lastMoveTime=performance.now();velocity=0;viewport.classList.add("dragging");viewport.setPointerCapture?.(e.pointerId)});
+viewport.addEventListener("pointermove",e=>{if(!dragging)return;const now=performance.now(),dx=e.clientX-lastPointerX,dt=Math.max(1,now-lastMoveTime);viewport.scrollLeft-=dx;velocity=dx/dt;lastPointerX=e.clientX;lastMoveTime=now;if(Math.abs(dx)>3)suppressClick=true;wrapScroll()});
+const endDrag=()=>{if(!dragging)return;dragging=false;viewport.classList.remove("dragging");runInertia()};
+viewport.addEventListener("pointerup",endDrag);viewport.addEventListener("pointercancel",endDrag);viewport.addEventListener("lostpointercapture",endDrag);
+viewport.addEventListener("click",e=>{if(suppressClick){e.preventDefault();e.stopPropagation();suppressClick=false;return}if(!e.target.closest(".cell")&&preview.dataset.href)hidePreview()},true);
+window.addEventListener("resize",()=>{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(build)});
+async function init(){startAtmosphere();const response=await fetch("/core/data/site-pages.json",{cache:"no-cache"});if(!response.ok)throw new Error("Could not load Vengrath page registry");records=(await response.json()).filter(r=>typeof r.url==="string"&&r.url.startsWith("/page/")&&typeof r.title==="string"&&typeof r.image==="string");renderFilters();build();entrance()}
+init().catch(error=>{console.error(error);board.textContent="Nie udało się wczytać kolekcji Vengrath.";board.style.color="#ffb4b4";gsap.set($("#app"),{opacity:1});$("#intro")?.remove()});
