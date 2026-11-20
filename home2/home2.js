@@ -5,7 +5,7 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 const $=s=>document.querySelector(s);
 const viewport=$("#viewport"),board=$("#board"),filters=$("#filters"),search=$("#search"),emptyState=$("#empty-state"),preview=$("#preview");
 const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-let records=[],activeTag="Wszystko",resizeFrame=0,previewTween;
+let records=[],activeTags=new Set(),resizeFrame=0,previewTween,previewEnabled=true;
 let renderer,scene,camera,clock,particleGeometry,particleMaterial;
 let worldWidth=0,dragging=false,lastPointerX=0,lastMoveTime=0,velocity=0,inertiaFrame=0;
 let suppressClick=false;
@@ -31,8 +31,9 @@ function startAtmosphere(){
 }
 function describe(r){if(r.type==="tool")return"Interaktywne narzędzie z kolekcji Vengrath.";if(r.category==="Aktywna Kampania")return"Aktywna kampania w kolekcji Vengrath.";if(r.category==="Zamknięta Kampania")return"Zakończona kampania zachowana w archiwum Vengrath.";if(r.category==="Archiwum")return"Kronika zachowana w archiwum Vengrath.";return"Odkryj tę część kolekcji Vengrath."}
 function normalize(v){return String(v??"").trim().toLocaleLowerCase("pl").normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
-function visibleRecords(){const q=normalize(search.value);return records.filter(r=>{if(r.visibility==="hidden")return q==="hidden"||q===normalize(r.title);return(activeTag==="Wszystko"||r.category===activeTag)&&(!q||normalize(r.title).includes(q)||normalize(r.category).includes(q))})}
-function renderFilters(){filters.replaceChildren();const cats=[...new Set(records.filter(r=>r.visibility!=="hidden").map(r=>r.category).filter(Boolean))];["Wszystko",...cats].forEach((label,i)=>{const b=document.createElement("button");b.type="button";b.className="filter"+(!i?" active":"");b.textContent=label;b.dataset.tag=label;filters.append(b)})}
+function visibleRecords(){const q=normalize(search.value);return records.filter(r=>{if(r.visibility==="hidden")return q==="hidden"||q===normalize(r.title);return(!activeTags.size||activeTags.has(r.category))&&(!q||normalize(r.title).includes(q)||normalize(r.category).includes(q))})}
+function renderFilters(){filters.replaceChildren();const cats=[...new Set(records.filter(r=>r.visibility!=="hidden").map(r=>r.category).filter(Boolean))];["Wszystko",...cats].forEach(label=>{const b=document.createElement("button");b.type="button";b.className="filter";b.textContent=label;b.dataset.tag=label;filters.append(b)});syncFilterControls()}
+function syncFilterControls(){filters.querySelectorAll("button[data-tag]").forEach(b=>{const active=b.dataset.tag==="Wszystko"?!activeTags.size:activeTags.has(b.dataset.tag);b.classList.toggle("active",active);b.setAttribute("aria-pressed",String(active))});$("#clear-active-filters").hidden=!activeTags.size&&!search.value}
 function svgEl(name,attrs={}){const e=document.createElementNS("http://www.w3.org/2000/svg",name);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));return e}
 function pathOf(poly){return"M"+poly.map(p=>p.join(",")).join("L")+"Z"}
 function fitText(group,text,x,y,maxWidth,maxLines,fontSize,className,letterSpacing=0){
@@ -80,8 +81,7 @@ function build(){
  const items=visibleRecords();board.replaceChildren();emptyState.hidden=items.length>0;
  if(!items.length){worldWidth=0;return}
  const viewportHeight=viewport.clientHeight;
- const headingHeight=$(".board-heading").getBoundingClientRect().height+12;
- const worldHeight=Math.max(220,viewportHeight-headingHeight-70);
+ const worldHeight=Math.max(220,viewportHeight-58);
  const rows=Math.min(items.length,innerWidth<680?4:5);
  const cols=Math.ceil(items.length/rows);
  const cellH=worldHeight/rows;
@@ -93,15 +93,17 @@ function build(){
  viewport.scrollLeft=worldWidth+Math.min(oldWorld%Math.max(1,worldWidth),worldWidth*.45);
  if(!reducedMotion)gsap.from(board.querySelectorAll(".cell"),{autoAlpha:0,scale:.97,transformOrigin:"50% 50%",duration:.65,stagger:{each:.009,from:"random"},ease:"power2.out",clearProps:"all"});
 }
-function showPreview(r){$("#preview-image").src=r.image||"";$("#preview-image").alt=r.title;$("#preview-category").textContent=r.category||"Kolekcja Vengrath";$("#preview-title").textContent=r.title;$("#preview-description").textContent=describe(r);preview.dataset.href=r.url;preview.setAttribute("aria-hidden","false");previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:1,y:0,duration:.22,ease:"power2.out",overwrite:true})}
+function showPreview(r){if(!previewEnabled)return;$("#preview-image").src=r.image||"";$("#preview-image").alt=r.title;$("#preview-category").textContent=r.category||"Kolekcja Vengrath";$("#preview-title").textContent=r.title;$("#preview-description").textContent=describe(r);preview.dataset.href=r.url;preview.setAttribute("aria-hidden","false");previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:1,y:0,duration:.22,ease:"power2.out",overwrite:true})}
 function hidePreview(){previewTween?.kill();previewTween=gsap.to(preview,{autoAlpha:0,y:10,duration:.16,ease:"power2.in",overwrite:true,onComplete:()=>preview.setAttribute("aria-hidden","true")})}
 function wrapScroll(){if(!worldWidth)return;let x=viewport.scrollLeft;while(x<worldWidth){x+=worldWidth}while(x>=worldWidth*2){x-=worldWidth}if(x!==viewport.scrollLeft)viewport.scrollLeft=x}
 function stopInertia(){if(inertiaFrame)cancelAnimationFrame(inertiaFrame);inertiaFrame=0}
 function runInertia(){stopInertia();let last=performance.now();const tick=now=>{const dt=Math.min(32,now-last);last=now;if(Math.abs(velocity)<.025){velocity=0;inertiaFrame=0;return}viewport.scrollLeft-=velocity*dt;velocity*=Math.pow(.93,dt/16.67);wrapScroll();inertiaFrame=requestAnimationFrame(tick)};inertiaFrame=requestAnimationFrame(tick)}
-function entrance(){const intro=$("#intro"),app=$("#app");if(reducedMotion){intro.remove();gsap.set(app,{opacity:1});return}const tl=gsap.timeline({defaults:{ease:"power4.out"}});tl.set(app,{opacity:1}).from(".intro-rule",{scale:.55,rotation:-35,autoAlpha:0,duration:.32,ease:"back.out(1.8)"}).from(".intro img",{scale:1.8,rotation:18,filter:"brightness(3)",autoAlpha:0,duration:.22,ease:"power3.out"},"-=.2").from(".intro-kicker,.intro h1,.intro-subtitle",{y:12,autoAlpha:0,duration:.2,stagger:.035},"-=.1").to(".intro",{autoAlpha:0,scale:1.035,duration:.24,ease:"power2.in",onComplete:()=>intro.remove()},"+=.08").from(".topbar",{y:-8,autoAlpha:0,duration:.18},"-=.12").from(".board-heading",{y:6,autoAlpha:0,duration:.16},"-=.1")}
-filters.addEventListener("click",e=>{const b=e.target.closest("button[data-tag]");if(!b)return;activeTag=b.dataset.tag;filters.querySelectorAll("button").forEach(el=>el.classList.toggle("active",el===b));hidePreview();build()});
-search.addEventListener("input",()=>{hidePreview();build()});
-$("#clear-filters").addEventListener("click",()=>{search.value="";activeTag="Wszystko";filters.querySelectorAll("button").forEach(el=>el.classList.toggle("active",el.dataset.tag==="Wszystko"));build()});
+function entrance(){const intro=$("#intro"),app=$("#app");if(reducedMotion){intro.remove();gsap.set(app,{opacity:1});return}const tl=gsap.timeline({defaults:{ease:"power4.out"}});tl.set(app,{opacity:1}).from(".intro-rule",{scale:.55,rotation:-35,autoAlpha:0,duration:.32,ease:"back.out(1.8)"}).from(".intro img",{scale:1.8,rotation:18,filter:"brightness(3)",autoAlpha:0,duration:.22,ease:"power3.out"},"-=.2").from(".intro-kicker,.intro h1,.intro-subtitle",{y:12,autoAlpha:0,duration:.2,stagger:.035},"-=.1").to(".intro",{autoAlpha:0,scale:1.035,duration:.24,ease:"power2.in",onComplete:()=>intro.remove()},"+=.08").from(".topbar",{y:-8,autoAlpha:0,duration:.18},"-=.12")}
+filters.addEventListener("click",e=>{const b=e.target.closest("button[data-tag]");if(!b)return;if(b.dataset.tag==="Wszystko")activeTags.clear();else{if(activeTags.has(b.dataset.tag))activeTags.delete(b.dataset.tag);else activeTags.add(b.dataset.tag)}syncFilterControls();hidePreview();build()});
+search.addEventListener("input",()=>{syncFilterControls();hidePreview();build()});
+$("#clear-filters").addEventListener("click",()=>{search.value="";activeTags.clear();syncFilterControls();hidePreview();build()});
+$("#clear-active-filters").addEventListener("click",()=>{$("#search").value="";activeTags.clear();syncFilterControls();hidePreview();build()});
+$("#preview-toggle").addEventListener("click",()=>{previewEnabled=!previewEnabled;const button=$("#preview-toggle");button.setAttribute("aria-pressed",String(previewEnabled));if(!previewEnabled)hidePreview()});
 viewport.addEventListener("scroll",wrapScroll,{passive:true});
 viewport.addEventListener("wheel",e=>{if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){e.preventDefault();viewport.scrollLeft+=e.deltaY}},{passive:false});
 viewport.addEventListener("pointerdown",e=>{if(e.pointerType==="mouse"&&e.button!==0)return;stopInertia();dragging=true;suppressClick=false;lastPointerX=e.clientX;lastMoveTime=performance.now();velocity=0;viewport.classList.add("dragging");viewport.setPointerCapture?.(e.pointerId)});
