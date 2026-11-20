@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Mapa Relacji — Książęta Heartwell</title>
+    <meta
+      content="Interaktywna mapa relacji Heartwell — postacie, rody, frakcje i powiązania."
+      name="description"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Voltaire&amp;family=Courier+Prime:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="heartwell.css" rel="stylesheet" />
+    <style>
+      body {
+        --theme-hero-image: url("/page/ksiazeta-heartwell/res/graphics/hero-image.jpg");
+      }
+    </style>
+    <style>
+      .youtube-playlist-btn {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 112px;
+        padding: 12px 0;
+        margin-top: 8px;
+        color: var(--amber);
+        border-top: 1px solid rgba(212, 160, 60, 0.45);
+        font-family: var(--display);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        text-align: center;
+      }
+      .youtube-playlist-btn:hover {
+        color: var(--paper);
+        background: rgba(255, 255, 255, 0.04);
+      }
+    </style>
+      <link rel="stylesheet" href="/core/templates/CampaignPage/CampaignStartup.css" />
+    <link rel="stylesheet" href="/core/templates/Cursor/Cursor.css">
+<style>
+      .heartwell-map-viewport{width:100%;height:min(78vh,1000px);min-height:680px;overflow:hidden;border:1px solid var(--kraft-dark);background:#17232a;box-shadow:8px 8px 0 rgba(0,0,0,.28)}
+      .heartwell-map-viewport iframe{display:block;width:100%;height:100%;border:0}
+      @media(max-width:640px){.heartwell-map-viewport{height:78vh;min-height:720px}}
+    </style>
+  </head>
+  <body class="ksiazeta-heartwell-page">
+    <button
+      class="heartwell-audio-toggle"
+      id="heartwellAudioToggle"
+      type="button"
+      aria-label="Włącz dźwięk"
+      aria-pressed="false"
+      title="Włącz dźwięk"
+    >
+      <svg
+        class="audio-icon audio-icon-muted"
+        viewBox="0 0 48 48"
+        aria-hidden="true"
+      >
+        <path d="M7 19h8l10-8v26l-10-8H7z"></path>
+        <path d="M31 18l10 12M41 18L31 30"></path>
+      </svg>
+      <svg
+        class="audio-icon audio-icon-playing"
+        viewBox="0 0 48 48"
+        aria-hidden="true"
+      >
+        <path d="M7 19h8l10-8v26l-10-8H7z"></path>
+        <path d="M32 18c3 3 3 9 0 12M37 13c6 6 6 16 0 22"></path>
+      </svg>
+    </button>
+    <audio
+      id="heartwellTheme"
+      src="/page/ksiazeta-heartwell/res/audio/heartwell-theme.mp3"
+      loop
+      preload="auto"
+      playsinline
+    ></audio>
+    <div class="shell">
+      <nav aria-label="Nawigacja Heartwell" class="tabs">
+        <a
+          class="global-vengrath"
+          href="/home/"
+          aria-label="Powrót do strony głównej Vengrath"
+          >VENGRATH</a
+        >
+        <div class="badge">KSIĄŻĘTA <br />HEARTWELL</div>
+        <div class="tab-list" id="tabList">
+          <a class="tab-btn" href="index.html">
+            <span>AKTA MIASTA</span>
+          </a>
+          <a class="tab-btn" href="miasto.html">
+            <span>MIASTO</span>
+          </a>
+          <a class="tab-btn" href="druzyna.html">
+            <span>DRUŻYNA</span>
+          </a>
+          <a class="tab-btn" href="zapisy.html">
+            <span>ZAPISKI Z KAMPANII</span>
+          </a>
+                  <a class="tab-btn" href="mapa.html">
+            <span>MAPA HEARTWELL</span>
+          </a>
+          <a class="tab-btn active" href="relacje.html">
+            <span>MAPA RELACJI</span>
+          </a>
+        </div>
+        <a
+          class="youtube-playlist-btn"
+          href="https://www.youtube.com/playlist?list=PLd6q-Ih5JcOA"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Otwórz playlistę Książęta Heartwell na YouTube"
+          >PLAYLISTA YOUTUBE</a
+        >
+        <div class="tabs-foot">
+          <span>VENGRATH · RAVENLOFT</span>
+        </div>
+      </nav>
+      <main class="pages">
+        <section class="page active" id="page-relationships">
+          <div class="file-strip">
+            <span>ARCHIWUM POWIĄZAŃ · HEARTWELL</span>
+            <span class="case-no">SIEĆ RELACJI / PODGLĄD</span>
+          </div>
+          <header class="city-atlas-hero">
+            <div class="city-atlas-copy">
+              <div class="kicker">REJESTR POSTACI · RODÓW · FRAKCJI</div>
+              <h1>Mapa Relacji</h1>
+              <p class="cover-sub">Interaktywna sieć powiązań Heartwell. Przeglądaj postacie, rody, frakcje, instytucje i miejsca oraz relacje, które łączą je w jedną strukturę.</p>
+            </div>
+            <a class="city-atlas-stamp" href="https://vengrathdm.github.io/page/ksiazeta-heartwell/HeartwellRelationshipMap/" target="_blank" rel="noopener noreferrer" aria-label="Otwórz samodzielną Mapę Relacji Heartwell">
+              <span>ARCHIWUM RELACJI</span>
+              <strong>HEARTWELL</strong>
+              <small>MAPA INTERAKTYWNA ↗</small>
+            </a>
+          </header>
+          <div class="heartwell-map-viewport">
+            <iframe src="HeartwellRelationshipMap/" title="Interaktywna Mapa Relacji Heartwell" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="relationship-map-entry" style="margin:18px 0 0;padding:18px 20px;border:1px solid var(--kraft-dark);background:rgba(36,31,46,.92);color:var(--paper);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+            <div>
+              <strong style="display:block;font-family:var(--display);font-size:18px;color:var(--amber);letter-spacing:.08em">OTWÓRZ PEŁNE ARCHIWUM POWIĄZAŃ</strong>
+              <span style="font-size:12px;color:#c9bea7">Uruchom Mapę Relacji w osobnej karcie, aby korzystać z pełnego widoku i narzędzi aplikacji.</span>
+            </div>
+            <a href="https://vengrathdm.github.io/page/ksiazeta-heartwell/HeartwellRelationshipMap/" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:10px 14px;background:var(--kraft);border:1px solid var(--kraft-dark);color:var(--ink);font-family:var(--display);font-weight:700;text-decoration:none;letter-spacing:.06em">OTWÓRZ MAPĘ RELACJI ↗</a>
+          </div>
+          <div class="page-foot">
+            <span>Heartwell · Archiwum powiązań</span>
+            <span>VENGRATH · RAVENLOFT</span>
+          </div>
+        </section>
+      </main>/main>
+    </div>
+    <script type="module" src="heartwell.js"></script>
+  </body>
+</html>
