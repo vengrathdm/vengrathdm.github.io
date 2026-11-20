@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "metadata": {
     "id": "heartwell-relationships",
-    "name": "Lost Mine of Phandelver — Demo Map",
+    "name": "Mapa demonstracyjna — Zaginiona Kopalnia Phandelver",
     "updatedAt": "2026-11-20",
     "layoutModes": {
       "complete": "force"
@@ -10,41 +10,41 @@
     "relationshipTypes": [
       {
         "name": "ALLY_OF",
-        "description": "A trusted ally or companion.",
+        "description": "Zaufany sojusznik lub towarzysz.",
         "color": "#83a98a",
         "lineStyle": "solid",
         "direction": "mutual"
       },
       {
         "name": "CAPTURED_BY",
-        "description": "A person held prisoner by another.",
+        "description": "Osoba przetrzymywana w niewoli przez inną osobę.",
         "color": "#c65c58",
         "lineStyle": "dashed",
         "direction": "towards"
       },
       {
         "name": "SERVES",
-        "description": "A subordinate serving a leader.",
+        "description": "Podwładny służący przywódcy.",
         "color": "#d4a03c",
         "lineStyle": "solid",
         "direction": "towards"
       },
       {
         "name": "SEEKS",
-        "description": "Pursues or searches for a person, place, or object.",
+        "description": "Poszukuje osoby, miejsca lub przedmiotu.",
         "color": "#9a8ac7",
         "lineStyle": "dotted",
         "direction": "towards"
       },
       {
         "name": "DISCOVERED",
-        "description": "Found or rediscovered a place.",
+        "description": "Odkrył lub ponownie odnalazł dane miejsce.",
         "color": "#8c9caa",
         "lineStyle": "solid",
         "direction": "towards"
       }
     ],
-    "notes": "A compact five-entity, five-relationship sample based on Lost Mine of Phandelver. This is demonstration data, not Heartwell canon."
+    "notes": "Zwięzły przykład obejmujący pięć obiektów i pięć relacji, oparty na przygodzie Zaginiona Kopalnia Phandelver. To dane demonstracyjne, nie kanon kampanii Heartwell."
   },
   "entities": [
     {
@@ -52,11 +52,11 @@
       "type": "Person",
       "name": "Gundren Rockseeker",
       "imageUrl": "",
-      "notes": "A dwarf prospector and one of the three Rockseeker brothers. He has rediscovered the lost Wave Echo Cave and is transporting supplies and information connected to the mine.",
+      "notes": "Krasnoludzki poszukiwacz złota i jeden z trzech braci Rockseekerów. Ponownie odkrył zaginioną Jaskinię Falującego Echa i przewozi zaopatrzenie oraz informacje związane z kopalnią.",
       "fields": {
-        "Occupation": "Prospector",
-        "Affiliation": "Rockseeker brothers",
-        "Status": "Missing at the start of the adventure"
+        "Occupation": "Poszukiwacz złota",
+        "Affiliation": "Bracia Rockseekerowie",
+        "Status": "Zaginiony na początku przygody"
       },
       "customFields": [],
       "positions": {
@@ -71,11 +71,11 @@
       "type": "Person",
       "name": "Sildar Hallwinter",
       "imageUrl": "",
-      "notes": "A human warrior and member of the Lords' Alliance. He accompanies Gundren toward Phandalin, is ambushed by goblins, and is taken prisoner.",
+      "notes": "Ludzki wojownik i członek Sojuszu Lordów. Towarzyszy Gundrenowi w drodze do Phandalin, zostaje napadnięty przez gobliny i wzięty do niewoli.",
       "fields": {
-        "Occupation": "Warrior; Lords' Alliance agent",
-        "Affiliation": "Lords' Alliance",
-        "Status": "Captured"
+        "Occupation": "Wojownik; agent Sojuszu Lordów",
+        "Affiliation": "Sojusz Lordów",
+        "Status": "Pojmany"
       },
       "customFields": [],
       "positions": {
@@ -90,11 +90,11 @@
       "type": "Person",
       "name": "Klarg",
       "imageUrl": "",
-      "notes": "A bugbear chief who commands the Cragmaw Hideout. He serves the Cragmaw goblins and is connected to the Black Spider's effort to intercept Gundren and the information he carries.",
+      "notes": "Wódz bugbearów dowodzący kryjówką Cragmaw. Służy goblinom Cragmaw i jest powiązany z działaniami Czarnego Pająka, który próbuje przechwycić Gundrena i przewożone przez niego informacje.",
       "fields": {
-        "Occupation": "Bugbear chief",
-        "Affiliation": "Cragmaw goblins",
-        "Location": "Cragmaw Hideout"
+        "Occupation": "Wódz bugbearów",
+        "Affiliation": "Gobliny Cragmaw",
+        "Location": "Kryjówka Cragmaw"
       },
       "customFields": [],
       "positions": {
@@ -109,11 +109,11 @@
       "type": "Person",
       "name": "Nezznar the Black Spider",
       "imageUrl": "",
-      "notes": "A drow villain orchestrating the search for Wave Echo Cave. He uses agents and the Cragmaw goblins to locate Gundren and secure control of the mine.",
+      "notes": "Drowi antagonista kierujący poszukiwaniami Jaskini Falującego Echa. Wykorzystuje swoich agentów i gobliny Cragmaw, by odnaleźć Gundrena i przejąć kontrolę nad kopalnią.",
       "fields": {
-        "Occupation": "Drow wizard",
-        "Affiliation": "Black Spider's network",
-        "Goal": "Control Wave Echo Cave"
+        "Occupation": "Drowi czarodziej",
+        "Affiliation": "Sieć Czarnego Pająka",
+        "Goal": "Przejąć kontrolę nad Jaskinią Falującego Echa"
       },
       "customFields": [],
       "positions": {
@@ -128,10 +128,10 @@
       "type": "Location",
       "name": "Wave Echo Cave",
       "imageUrl": "",
-      "notes": "The lost mine containing the Forge of Spells. Gundren has rediscovered its location, while the Black Spider seeks to claim it.",
+      "notes": "Zaginiona kopalnia, w której znajduje się Kuźnia Zaklęć. Gundren ponownie odkrył jej położenie, a Czarny Pająk pragnie ją zdobyć.",
       "fields": {
-        "LocationType": "Lost mine",
-        "Feature": "Forge of Spells"
+        "LocationType": "Zaginiona kopalnia",
+        "Feature": "Kuźnia Zaklęć"
       },
       "customFields": [],
       "positions": {
@@ -148,7 +148,7 @@
       "source": "gundren-rockseeker",
       "target": "sildar-hallwinter",
       "type": "ALLY_OF",
-      "note": "Sildar is accompanying Gundren on the journey to Phandalin.",
+      "note": "Sildar towarzyszy Gundrenowi w podróży do Phandalin.",
       "color": "#83a98a",
       "lineStyle": "solid",
       "direction": "mutual"
@@ -158,7 +158,7 @@
       "source": "gundren-rockseeker",
       "target": "klarg",
       "type": "CAPTURED_BY",
-      "note": "Klarg's goblins ambush Gundren's expedition and take him toward Cragmaw Castle.",
+      "note": "Gobliny Klarga napadają na wyprawę Gundrena i zabierają go w kierunku Zamku Cragmaw.",
       "color": "#c65c58",
       "lineStyle": "dashed",
       "direction": "towards"
@@ -168,7 +168,7 @@
       "source": "sildar-hallwinter",
       "target": "klarg",
       "type": "CAPTURED_BY",
-      "note": "Sildar is captured during the goblin ambush and held at Cragmaw Hideout.",
+      "note": "Sildar zostaje pojmany podczas goblińskiej zasadzki i jest przetrzymywany w Kryjówce Cragmaw.",
       "color": "#c65c58",
       "lineStyle": "dashed",
       "direction": "towards"
@@ -178,7 +178,7 @@
       "source": "klarg",
       "target": "black-spider",
       "type": "SERVES",
-      "note": "Klarg and the Cragmaw goblins operate within the Black Spider's network.",
+      "note": "Klarg i gobliny Cragmaw działają w ramach sieci Czarnego Pająka.",
       "color": "#d4a03c",
       "lineStyle": "solid",
       "direction": "towards"
@@ -188,7 +188,7 @@
       "source": "black-spider",
       "target": "wave-echo-cave",
       "type": "SEEKS",
-      "note": "The Black Spider wants to find and control Wave Echo Cave and the Forge of Spells.",
+      "note": "Czarny Pająk chce odnaleźć Jaskinię Falującego Echa i Kuźnię Zaklęć oraz przejąć nad nimi kontrolę.",
       "color": "#9a8ac7",
       "lineStyle": "dotted",
       "direction": "towards"
