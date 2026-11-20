@@ -220,6 +220,31 @@ $("addEntityType").onclick=()=>{
  toast("Choose ADD, EDIT or REMOVE.");
 };
 $("createEntity").onclick=()=>entitySubmenu({x:innerWidth-355,y:95});
+$("manageRelationshipTypes").onclick=()=>{
+ const action=(prompt("Relationship types: ADD, EDIT or REMOVE","ADD")||"").trim().toUpperCase();if(!action)return;
+ data.metadata.relationshipTypes=Array.isArray(data.metadata.relationshipTypes)?data.metadata.relationshipTypes:[];
+ if(action==="ADD"){
+  const name=prompt("New relationship type name:")?.trim();if(!name)return;
+  if(data.metadata.relationshipTypes.some(x=>x.name===name)){toast("That relationship type already exists.");return}
+  const description=prompt("Meaning / description:","")||"",color=prompt("Line color in #RRGGBB format:","#d4a03c")||"#d4a03c";
+  const lineStyle=prompt("Line style: solid, dotted or dashed","solid")||"solid",direction=prompt("Arrow direction: none, towards, from or mutual","none")||"none";
+  if(!/^#[0-9a-f]{6}$/i.test(color)||!["solid","dotted","dashed"].includes(lineStyle)||!["none","towards","from","mutual"].includes(direction)){toast("Invalid color, line style or arrow direction.");return}
+  data.metadata.relationshipTypes.push({name,description,color,lineStyle,direction});markDirty();toast("Relationship type preset added.");return;
+ }
+ const name=prompt("Enter the exact relationship type name:")?.trim();if(!name)return;
+ const preset=relationshipTypePreset(name);if(!preset){toast("Relationship type preset not found.");return}
+ if(action==="REMOVE"){data.metadata.relationshipTypes=data.metadata.relationshipTypes.filter(x=>x.name!==name);markDirty();toast("Preset removed. Existing relationships remain unchanged.");return}
+ if(action==="EDIT"){
+  const description=prompt("Meaning / description:",preset.description||"")??preset.description;
+  const color=prompt("Line color in #RRGGBB format:",preset.color||"#d4a03c")||preset.color;
+  const lineStyle=prompt("Line style: solid, dotted or dashed",preset.lineStyle||"solid")||preset.lineStyle;
+  const direction=prompt("Arrow direction: none, towards, from or mutual",preset.direction||"none")||preset.direction;
+  if(!/^#[0-9a-f]{6}$/i.test(color)||!["solid","dotted","dashed"].includes(lineStyle)||!["none","towards","from","mutual"].includes(direction)){toast("Invalid color, line style or arrow direction.");return}
+  const item=data.metadata.relationshipTypes.find(x=>x.name===name);Object.assign(item,{description,color,lineStyle,direction});
+  data.relationships.filter(r=>r.type===name).forEach(r=>Object.assign(r,{color,lineStyle,direction}));markDirty();toast("Relationship type preset updated.");return;
+ }
+ toast("Choose ADD, EDIT or REMOVE.");
+};
 $("createRelationship").onclick=()=>{if(data.entities.length<2){toast("Create at least two entities first.");return}startRelationshipWizard()};
 $("completeView").onclick=()=>{capture();activeView="complete";renderGraph();layout("force",false)};
 $("fitGraph").onclick=()=>cy.fit(cy.elements(),55);$("resetView").onclick=()=>{cy.reset();cy.fit(cy.elements(),55)};
