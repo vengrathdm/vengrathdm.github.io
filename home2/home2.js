@@ -5,7 +5,7 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 const $=s=>document.querySelector(s);
 const viewport=$("#viewport"),board=$("#board"),filters=$("#filters"),search=$("#search"),emptyState=$("#empty-state"),preview=$("#preview"),contextMenu=$("#card-context-menu"),contextPreview=$("#context-preview-backdrop");
 const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-let records=[],activeTags=new Set(),resizeFrame=0,previewTween,previewEnabled=true;
+let records=[],activeTags=new Set(),resizeFrame=0,previewTween,previewEnabled=false;
 let renderer,scene,camera,clock,particleGeometry,particleMaterial;
 let worldWidth=0,dragging=false,lastPointerX=0,lastMoveTime=0,velocity=0,inertiaFrame=0;
 let suppressClick=false,pressedCardHref=null;
