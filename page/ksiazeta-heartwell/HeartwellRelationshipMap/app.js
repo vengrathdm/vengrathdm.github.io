@@ -36,7 +36,7 @@ function layout(mode,fit=true){
  cy.layout(opts).run();$("activeViewLabel").textContent=(activeView==="complete"?"Complete Graph":activeView==="family"?"Family Tree":"Organization Graph")+" · "+(mode==="hierarchy"?"Hierarchical":mode==="manual"?"Manual":"Force-directed");if(fit&&mode!=="manual")cy.fit(cy.elements(),55)
 }
 function renderGraph(){
- if(!cy)return;capture();const v=viewData();cy.elements().remove();cy.add(nodeElements(v.entities,v.relationships));
+ if(!cy)return;const v=viewData();cy.elements().remove();cy.add(nodeElements(v.entities,v.relationships));
  cy.nodes().forEach(n=>{if(entity(n.id())?.imageUrl)n.addClass("has-image")});
  cy.style().selector("node").style({width:68,height:68,"background-color":"#26343a","border-width":2,"border-color":"#d4a03c",label:"data(label)",color:"#f1e6d0","font-family":"Voltaire","font-size":13,"text-valign":"center","text-halign":"center","text-wrap":"wrap","text-max-width":76,"text-outline-color":"#17252b","text-outline-width":2})
  .selector("node.has-image").style({"background-image":"data(image)","background-fit":"cover","background-clip":"node",label:"data(label)",color:"#f1e6d0","font-size":11,"text-background-color":"#17252b","text-background-opacity":.78,"text-background-padding":2})
