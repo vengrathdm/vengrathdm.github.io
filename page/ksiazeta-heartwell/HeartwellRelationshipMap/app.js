@@ -33,6 +33,7 @@ function applyEntityTypes(metadata){
   if(!def||typeof def.name!=="string"||!/^[\p{L}\p{N} _-]{2,32}$/u.test(def.name)||TYPES[def.name]||!["ellipse","hexagon","diamond","star","triangle","rectangle","round-rectangle"].includes(def.shape)||typeof def.glyph!=="string"||!def.glyph.trim())return;
   TYPES[def.name]={glyph:def.glyph.slice(0,4),shape:def.shape,fields:Array.isArray(def.fields)?def.fields.filter(x=>typeof x==="string").slice(0,12):[]};
  });
+ Object.entries(metadata?.entityTypeOverrides||{}).forEach(([name,def])=>{if(TYPES[name]&&def&&["ellipse","hexagon","diamond","star","triangle","rectangle","round-rectangle"].includes(def.shape))TYPES[name]={...TYPES[name],glyph:String(def.glyph||TYPES[name].glyph).slice(0,4),shape:def.shape}});
  TYPE_NAMES=Object.keys(TYPES);
 }
 function normalize(source){
@@ -182,7 +183,33 @@ $("organizationView").onclick=()=>{activeView="organization";selected=null;rende
 $("closeDossier").onclick=()=>{$("dossierWindow").hidden=true};
 (function makeDossierDraggable(){const head=$("dossierDrag"),win=$("dossierWindow");let drag=null;head.addEventListener("pointerdown",e=>{if(e.target.closest("button"))return;const r=win.getBoundingClientRect();drag={x:e.clientX-r.left,y:e.clientY-r.top};head.setPointerCapture(e.pointerId)});head.addEventListener("pointermove",e=>{if(!drag)return;win.style.left=Math.max(4,Math.min(innerWidth-win.offsetWidth,e.clientX-drag.x))+"px";win.style.top=Math.max(4,Math.min(innerHeight-win.offsetHeight,e.clientY-drag.y))+"px";win.style.right="auto";win.style.bottom="auto"});head.addEventListener("pointerup",()=>drag=null);head.addEventListener("pointercancel",()=>drag=null)})();
 refreshSavedViews();
-$("addEntityType").onclick=()=>{const name=prompt("New entity type name (2–32 characters):")?.trim();if(!name)return;if(TYPES[name]){toast("That entity type already exists.");return}const glyph=prompt("Fallback symbol for this type:", "✧")?.trim()||"✧";const shape=prompt("Geometric shape: ellipse, hexagon, diamond, star, triangle, rectangle, round-rectangle","hexagon")||"hexagon";if(!["ellipse","hexagon","diamond","star","triangle","rectangle","round-rectangle"].includes(shape)){toast("Unsupported geometric shape.");return}data.metadata.entityTypes=Array.isArray(data.metadata.entityTypes)?data.metadata.entityTypes:[];data.metadata.entityTypes.push({name,glyph,shape,fields:[]});applyEntityTypes(data.metadata);markDirty();toast("Entity type added.")};
+$("addEntityType").onclick=()=>{
+ const action=(prompt("Entity types: ADD, EDIT or REMOVE","ADD")||"").trim().toUpperCase();if(!action)return;
+ if(action==="ADD"){
+  const name=prompt("New entity type name (2–32 characters):")?.trim();if(!name)return;
+  if(!/^[\p{L}\p{N} _-]{2,32}$/u.test(name)){toast("Use 2–32 letters, numbers, spaces, underscores or hyphens.");return}
+  if(TYPES[name]){toast("That entity type already exists.");return}
+  const glyph=prompt("Fallback symbol for this type:","✧")?.trim()||"✧";
+  const shape=prompt("Geometric shape: ellipse, hexagon, diamond, star, triangle, rectangle, round-rectangle","hexagon")||"hexagon";
+  if(!["ellipse","hexagon","diamond","star","triangle","rectangle","round-rectangle"].includes(shape)){toast("Unsupported geometric shape.");return}
+  data.metadata.entityTypes=Array.isArray(data.metadata.entityTypes)?data.metadata.entityTypes:[];data.metadata.entityTypes.push({name,glyph,shape,fields:[]});applyEntityTypes(data.metadata);markDirty();toast("Entity type added.");return;
+ }
+ const name=prompt("Enter the exact entity type name:")?.trim();if(!name||!TYPES[name]){toast("Entity type not found.");return}
+ if(action==="REMOVE"){
+  if(BUILTIN_TYPES[name]){toast("Built-in entity types cannot be removed.");return}
+  if(data.entities.some(e=>e.type===name)){toast("This type is in use. Reassign or delete its entities first.");return}
+  data.metadata.entityTypes=(data.metadata.entityTypes||[]).filter(x=>x.name!==name);applyEntityTypes(data.metadata);markDirty();toast("Entity type removed.");return;
+ }
+ if(action==="EDIT"){
+  const glyph=prompt("Fallback symbol:",TYPES[name].glyph)?.trim()||TYPES[name].glyph;
+  const shape=prompt("Geometric shape: ellipse, hexagon, diamond, star, triangle, rectangle, round-rectangle",TYPES[name].shape)||TYPES[name].shape;
+  if(!["ellipse","hexagon","diamond","star","triangle","rectangle","round-rectangle"].includes(shape)){toast("Unsupported geometric shape.");return}
+  if(BUILTIN_TYPES[name]){data.metadata.entityTypeOverrides={...(data.metadata.entityTypeOverrides||{}),[name]:{glyph,shape}}}
+  else{const def=data.metadata.entityTypes.find(x=>x.name===name);if(def)Object.assign(def,{glyph,shape})}
+  applyEntityTypes(data.metadata);markDirty();toast("Entity type appearance updated.");return;
+ }
+ toast("Choose ADD, EDIT or REMOVE.");
+};
 $("createEntity").onclick=()=>entitySubmenu({x:innerWidth-355,y:95});
 $("createRelationship").onclick=()=>{if(data.entities.length<2){toast("Create at least two entities first.");return}startRelationshipWizard()};
 $("completeView").onclick=()=>{capture();activeView="complete";renderGraph();layout("force",false)};
