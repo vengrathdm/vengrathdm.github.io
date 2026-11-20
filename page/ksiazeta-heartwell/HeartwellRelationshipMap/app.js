@@ -4,7 +4,7 @@ let TYPE_NAMES=Object.keys(TYPES);
 const $=id=>document.getElementById(id),uid=p=>p+"-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,8),clone=x=>JSON.parse(JSON.stringify(x));
 const BUILTIN_TYPES=clone(TYPES);
 let officialData,data,dirty=false,selected=null,activeTab="view",activeView="complete",layoutModes={complete:"force",family:"hierarchy",organization:"hierarchy",political:"force",characters:"force"},wizard=null,confirmAction=null,viewports={complete:null,family:null,organization:null,political:null,characters:null},toastTimer;
-let cy,labelStage=3;
+let cy,labelStage=3,pendingPlacement=null;
 const graphSurface=$("graph");
 document.querySelector("#controlWindow .tabs")?.addEventListener("click",e=>{
  const button=e.target.closest(".tab[data-tab]");
@@ -37,13 +37,13 @@ function md(source){
 }
 const entity=id=>data.entities.find(x=>x.id===id),rel=id=>data.relationships.find(x=>x.id===id);
 function toast(s){$("toast").textContent=s;$("toast").classList.add("visible");clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("toast").classList.remove("visible"),2800)}
-function setDirty(v){dirty=v;$("dirtyState").textContent=v?"Working copy modified · local autosave pending":"Official data loaded · no unsaved changes";$("dirtyState").style.color=v?"#efc27a":"#b7ad98"}
+function setDirty(v){dirty=v;const status=$("dirtyState");if(status){status.textContent=v?"Working copy modified · local autosave pending":"Official data loaded · no unsaved changes";status.style.color=v?"#efc27a":"#b7ad98"}}
 let saveTimer;
 function openLocalDb(){return new Promise((resolve,reject)=>{if(!("indexedDB" in window)){reject(Error("IndexedDB unavailable"));return}const request=indexedDB.open("HeartwellRelationshipMap",1);request.onupgradeneeded=()=>{if(!request.result.objectStoreNames.contains("state"))request.result.createObjectStore("state",{keyPath:"id"})};request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error)})}
 async function persistLocal(){
  clearTimeout(saveTimer);saveTimer=setTimeout(async()=>{
-  try{const db=await openLocalDb();await new Promise((resolve,reject)=>{const tx=db.transaction("state","readwrite");tx.objectStore("state").put({id:"working",data});tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});db.close();$("persistenceState").textContent="Local autosave · saved in this browser";$("persistenceState").style.color="#b7c89c"}
-  catch(err){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(data));$("persistenceState").textContent="Local autosave · saved in this browser";$("persistenceState").style.color="#b7c89c"}catch(_){$("persistenceState").textContent="Local autosave unavailable · export a backup";$("persistenceState").style.color="#efc27a"}}
+  try{const db=await openLocalDb();await new Promise((resolve,reject)=>{const tx=db.transaction("state","readwrite");tx.objectStore("state").put({id:"working",data});tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});db.close();if($("persistenceState")){$("persistenceState").textContent="Local autosave · saved in this browser";$("persistenceState").style.color="#b7c89c"}}
+  catch(err){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(data));$("persistenceState").textContent="Local autosave · saved in this browser";$("persistenceState").style.color="#b7c89c"}catch(_){if($("persistenceState")){$("persistenceState").textContent="Local autosave unavailable · export a backup";$("persistenceState").style.color="#efc27a"}}}
  },180);
 }
 async function restoreLocal(){
@@ -91,7 +91,7 @@ function openTab(tab){if(!["view","editor"].includes(tab))return;activeTab=tab;d
 function openDialog(id){$("modalShade").hidden=false;$(id).hidden=false;hideContext()}
 function closeDialogs(){["entityDialog","relationshipDialog","confirmDialog"].forEach(id=>$(id).hidden=true);$("modalShade").hidden=true;wizard=null}
 document.querySelectorAll("[data-close-dialog]").forEach(b=>b.onclick=closeDialogs);$("modalShade").onclick=()=>{if($("confirmDialog").hidden)closeDialogs()};
-function updateCount(){$("graphCount").textContent=data.entities.length+" entities · "+data.relationships.length+" relationships"}
+function updateCount(){const el=$("graphCount");if(el)el.textContent=data.entities.length+" entities · "+data.relationships.length+" relationships"}
 function updateEntityReferenceOptions(){const dl=$("entityReferenceOptions");if(dl)dl.innerHTML=data.entities.map(e=>'<option value="'+esc(e.name)+'">').join("")}
 function markDirty(){setDirty(true);persistLocal();renderGraph();renderFilters();renderLegend();updateCount();updateEntityReferenceOptions()}
 function nodeElements(es,rs){
@@ -138,7 +138,7 @@ function enforceMinimumEntitySpacing(){
 }
 function layout(mode,fit=true){
  layoutModes[activeView]=mode;data.metadata.layoutModes={...(data.metadata.layoutModes||{}),[activeView]:mode};const opts=mode==="hierarchy"?{name:"breadthfirst",directed:true,spacingFactor:1.3,padding:55,animate:false,roots:cy.nodes().filter(n=>n.data("type")===(activeView==="family"?"Family":"Faction"))}:mode==="manual"?{name:"preset",fit:false}:{name:"cose",animate:false,randomize:false,idealEdgeLength:260,nodeRepulsion:18000,gravity:.12,fit};
- cy.layout(opts).run();if(mode==="force")enforceMinimumEntitySpacing();$("activeViewLabel").textContent=(activeView==="complete"?"Complete Graph":activeView==="family"?"Family Tree":activeView==="organization"?"Organization Graph":activeView==="political"?"Political Network":"Character Network")+" · "+(mode==="hierarchy"?"Hierarchical":mode==="manual"?"Manual":"Force-directed");if(fit&&mode!=="manual")cy.fit(cy.elements(),55)
+ cy.layout(opts).run();if(mode==="force")enforceMinimumEntitySpacing();const label=$("activeViewLabel");if(label)label.textContent=(activeView==="complete"?"Complete Graph":activeView==="family"?"Family Tree":activeView==="organization"?"Organization Graph":activeView==="political"?"Political Network":"Character Network")+" · "+(mode==="hierarchy"?"Hierarchical":mode==="manual"?"Manual":"Force-directed");if(fit&&mode!=="manual")cy.fit(cy.elements(),55)
 }
 function renderGraph(){
  if(!cy)return;const v=viewData();cy.elements().remove();cy.add(nodeElements(v.entities,v.relationships));
@@ -148,7 +148,7 @@ function renderGraph(){
  .selector("edge").style({width:2,"line-color":"data(color)","target-arrow-color":"data(color)","source-arrow-color":"data(color)","curve-style":"straight",label:"data(type)","font-family":"Courier Prime","font-size":10,"font-weight":"bold",color:"#f3ead7","text-background-color":"#17252b","text-background-opacity":.9,"text-background-padding":3,"text-rotation":"autorotate","text-margin-y":-8,"line-style":"solid","target-arrow-shape":"none","source-arrow-shape":"none"})
  .selector('edge[curveStyle="bezier"]').style({"curve-style":"bezier"}).selector('edge[lineStyle="dashed"]').style({"line-style":"dashed"}).selector('edge[lineStyle="dotted"]').style({"line-style":"dotted"})
  .selector('edge[direction="towards"]').style({"target-arrow-shape":"triangle"}).selector('edge[direction="from"]').style({"source-arrow-shape":"triangle"}).selector('edge[direction="mutual"]').style({"target-arrow-shape":"triangle","source-arrow-shape":"triangle"})
- .selector(".dimmed").style({opacity:.13}).selector(".selected").style({opacity:1,"border-width":4}).update();
+ .selector(".placement-preview").style({opacity:.62,"border-style":"dashed","border-color":"#f0d59a","background-opacity":.45,"events":"no"}).selector(".dimmed").style({opacity:.13}).selector(".selected").style({opacity:1,"border-width":4}).update();
  cy.nodes().style("text-opacity",$("showEntityLabels").checked?1:0).style("font-size",labelStage===2?26:labelStage===3?13:9);cy.edges().style("text-opacity",$("showRelationshipLabels").checked?1:0).style("font-size",labelStage===2?11:labelStage===3?10:7);
  layout(layoutModes[activeView]||(["complete","political","characters"].includes(activeView)?"force":"hierarchy"),false);if(viewports[activeView])cy.viewport(viewports[activeView]);else if(cy.elements().length)cy.fit(cy.elements(),55);
  if(selected){const el=cy.getElementById(selected.id);if(el.length){el.addClass("selected");if(selected.kind==="entity")el.closedNeighborhood().addClass("adjacent")}}
@@ -156,14 +156,15 @@ function renderGraph(){
 }
 function setSelection(kind,id){selected={kind,id};$("dossierWindow").hidden=false;cy.elements().removeClass("selected adjacent dimmed");const el=cy.getElementById(id);if(el.length){el.addClass("selected");const neighborhood=el.closedNeighborhood();neighborhood.addClass("adjacent");cy.elements().not(neighborhood).addClass("dimmed")}renderDossier()}
 function renderFilters(){
+ const oldEntityShowAll=$("entityShowAll")?.checked??true,oldRelationshipShowAll=$("relationshipShowAll")?.checked??true;
  const oldEntities=new Map([...$("entityFilters").querySelectorAll("input")].map(i=>[i.dataset.entityFilter,i.checked]));
  const oldRelations=new Map([...$("relationshipFilters").querySelectorAll("input")].map(i=>[i.dataset.relFilter,i.checked]));
- $("entityFilters").innerHTML=TYPE_NAMES.map(t=>'<label class="check-row"><input type="checkbox" data-entity-filter="'+t+'" '+(oldEntities.get(t)===false?"":"checked")+'> '+t+"</label>").join("");
+ $("entityFilters").innerHTML='<label class="check-row filter-all"><input id="entityShowAll" type="checkbox" '+(oldEntityShowAll?"checked":"")+'> Show all</label>'+TYPE_NAMES.map(t=>'<label class="check-row"><input type="checkbox" data-entity-filter="'+t+'" '+(oldEntities.get(t)===false?"":"checked")+'> '+t+"</label>").join("");
  const types=[...new Set(data.relationships.map(r=>r.type))].sort();
- $("relationshipFilters").innerHTML=types.length?types.map(t=>'<label class="check-row"><input type="checkbox" data-rel-filter="'+esc(t)+'" '+(oldRelations.get(t)===false?"":"checked")+'> '+esc(t)+"</label>").join(""):'<span class="muted">No relationship types yet.</span>';
- document.querySelectorAll("[data-entity-filter],[data-rel-filter]").forEach(i=>i.onchange=applyFilters)
+ $("relationshipFilters").innerHTML='<label class="check-row filter-all"><input id="relationshipShowAll" type="checkbox" '+(oldRelationshipShowAll?"checked":"")+'> Show all</label>'+(types.length?types.map(t=>'<label class="check-row"><input type="checkbox" data-rel-filter="'+esc(t)+'" '+(oldRelations.get(t)===false?"":"checked")+'> '+esc(t)+"</label>").join(""):'<span class="muted">No relationship types yet.</span>');
+ document.querySelectorAll("[data-entity-filter],[data-rel-filter],#entityShowAll,#relationshipShowAll").forEach(i=>i.onchange=applyFilters)
 }
-function applyFilters(){if(!cy)return;const ets=[...document.querySelectorAll("[data-entity-filter]:checked")].map(i=>i.dataset.entityFilter),rts=[...document.querySelectorAll("[data-rel-filter]:checked")].map(i=>i.dataset.relFilter);cy.nodes().forEach(n=>n.style("display",ets.includes(n.data("type"))?"element":"none"));cy.edges().forEach(e=>e.style("display",rts.includes(e.data("type"))&&ets.includes(e.source().data("type"))&&ets.includes(e.target().data("type"))?"element":"none"))}
+function applyFilters(){if(!cy)return;const showAllEntities=$("entityShowAll")?.checked??true,showAllRelationships=$("relationshipShowAll")?.checked??true;const ets=showAllEntities?TYPE_NAMES:[...document.querySelectorAll("[data-entity-filter]:checked")].map(i=>i.dataset.entityFilter),rts=showAllRelationships?[...new Set(data.relationships.map(r=>r.type))]:[...document.querySelectorAll("[data-rel-filter]:checked")].map(i=>i.dataset.relFilter);document.querySelectorAll("[data-entity-filter]").forEach(i=>i.disabled=showAllEntities);document.querySelectorAll("[data-rel-filter]").forEach(i=>i.disabled=showAllRelationships);cy.nodes().forEach(n=>n.style("display",ets.includes(n.data("type"))?"element":"none"));cy.edges().forEach(e=>e.style("display",rts.includes(e.data("type"))&&ets.includes(e.source().data("type"))&&ets.includes(e.target().data("type"))?"element":"none"))}
 function renderLegend(){$("legendContent").innerHTML='<div class="legend-section"><h3>Entity types</h3>'+TYPE_NAMES.map(t=>'<div class="legend-row"><span class="legend-icon">'+esc(TYPES[t].glyph)+'</span>'+esc(t)+"</div>").join("")+'</div><div class="legend-section"><h3>Relationship types & colors</h3>'+[...new Map([...(data.metadata.relationshipTypes||[]).map(r=>({type:r.name,color:r.color})),...data.relationships.map(r=>({type:r.type,color:r.color}))].map(r=>[r.type+"|"+r.color,r])).values()].map(({type,color})=>'<div class="legend-row"><span style="width:12px;height:12px;border-radius:50%;background:'+esc(color)+'"></span>'+esc(type)+"</div>").join("")+'</div><div class="legend-section"><h3>Line styles</h3><div class="legend-row"><span class="legend-line"></span> Solid</div><div class="legend-row"><span class="legend-line dashed"></span> Dashed</div><div class="legend-row"><span class="legend-line dotted"></span> Dotted</div><div class="legend-row">Arrow directions: none · towards · from · mutual</div></div>'}
 function renderDossier(){
  const hosts=[$("dossierContent")].filter(Boolean);
@@ -194,7 +195,7 @@ $("entityNotes").addEventListener("input",()=>{$("notesPreview").innerHTML=md($(
 document.querySelectorAll("[data-md]").forEach(button=>button.onclick=()=>{const area=$("entityNotes"),parts=button.dataset.md.split("|"),start=area.selectionStart,end=area.selectionEnd,selected=area.value.slice(start,end)||"text";area.setRangeText(parts[0]+selected+parts[1],start,end,"select");area.focus();area.dispatchEvent(new Event("input"))});
 
 $("entityType").onchange=()=>{$("entityDialogTitle").textContent="Create "+$("entityType").value;$("entitySpecificFields").innerHTML='<div class="dialog-field-grid">'+TYPES[$("entityType").value].fields.map(label=>{const key=label.toLowerCase().replace(/[^a-z]+/g,"_");return '<label>'+esc(label)+'<input data-field="'+key+'"></label>'}).join("")+"</div>"};
-$("entityForm").onsubmit=e=>{e.preventDefault();const id=$("entityForm").dataset.editId,type=$("entityType").value,name=$("entityName").value.trim(),imageUrl=$("entityImage").value.trim();if(imageUrl&&!isImageUrl(imageUrl)){toast("Provide a PNG or WEBP image URL or upload a PNG/WEBP image.");return}const fields={},customFields=[];$("entitySpecificFields").querySelectorAll("[data-field]").forEach(i=>{if(i.value.trim())fields[i.dataset.field]=i.value.trim()});$("customFields").querySelectorAll(".custom-field-row").forEach(row=>{const key=row.querySelector("[data-custom-key]").value.trim(),input=row.querySelector("[data-custom-value]");if(key){if(input.type==="checkbox"||input.value.trim())fields[key]=input.type==="checkbox"?String(input.checked):input.value.trim();customFields.push({key,type:row.querySelector("[data-custom-type]").value,options:row.querySelector("[data-custom-options]").value})}});let record;if(id){record=entity(id);Object.assign(record,{name,imageUrl,notes:$("entityNotes").value,fields,customFields})}else{record={id:uid("entity"),type,name,imageUrl,notes:$("entityNotes").value,fields,customFields};const rawPosition=$("entityDialog").dataset.position;if(rawPosition){try{record.positions={[activeView]:JSON.parse(rawPosition)}}catch(_){}}data.entities.push(record)}closeDialogs();markDirty();setSelection("entity",record.id);toast(id?"Entity updated.":"Entity created.")};
+$("entityForm").onsubmit=e=>{e.preventDefault();const id=$("entityForm").dataset.editId,type=$("entityType").value,name=$("entityName").value.trim(),imageUrl=$("entityImage").value.trim();if(imageUrl&&!isImageUrl(imageUrl)){toast("Provide a PNG or WEBP image URL or upload a PNG/WEBP image.");return}const fields={},customFields=[];$("entitySpecificFields").querySelectorAll("[data-field]").forEach(i=>{if(i.value.trim())fields[i.dataset.field]=i.value.trim()});$("customFields").querySelectorAll(".custom-field-row").forEach(row=>{const key=row.querySelector("[data-custom-key]").value.trim(),input=row.querySelector("[data-custom-value]");if(key){if(input.type==="checkbox"||input.value.trim())fields[key]=input.type==="checkbox"?String(input.checked):input.value.trim();customFields.push({key,type:row.querySelector("[data-custom-type]").value,options:row.querySelector("[data-custom-options]").value})}});let record;if(id){record=entity(id);Object.assign(record,{name,imageUrl,notes:$("entityNotes").value,fields,customFields})}else{record={id:uid("entity"),type,name,imageUrl,notes:$("entityNotes").value,fields,customFields};let initialPosition=null;const rawPosition=$("entityDialog").dataset.position;if(rawPosition){try{initialPosition=JSON.parse(rawPosition)}catch(_){}}closeDialogs();beginEntityPlacement(record,initialPosition);return}closeDialogs();markDirty();setSelection("entity",record.id);toast("Entity updated.")};
 function addCustomField(key="",value="",type="text",options=""){
  const row=document.createElement("div");row.className="custom-field-row";
  row.innerHTML='<input data-custom-key placeholder="Property name" value="'+esc(key)+'"><select data-custom-type><option value="text">Text</option><option value="number">Number</option><option value="date">Date</option><option value="select">Dropdown</option><option value="checkbox">Checkbox</option><option value="entity">Entity reference</option></select><input data-custom-value placeholder="Value"><input data-custom-options placeholder="Dropdown options (comma-separated)" hidden><button type="button" class="icon-button" aria-label="Remove property">×</button>';
@@ -212,6 +213,38 @@ function addCustomField(key="",value="",type="text",options=""){
 $("addCustomField").onclick=()=>addCustomField();
 $("entityImageFile").onchange=e=>{const file=e.target.files?.[0];if(!file)return;if(!["image/png","image/webp"].includes(file.type)){toast("Only PNG and WEBP graphics are supported.");e.target.value="";return}if(file.size>5*1024*1024){toast("Image must be 5 MB or smaller.");e.target.value="";return}const reader=new FileReader();reader.onload=()=>{$("entityImage").value=reader.result;$("imagePreview").innerHTML='<img src="'+reader.result+'" alt="Image preview">';$("imagePreview").hidden=false};reader.readAsDataURL(file)};
 function createEntity(type,position){openEntityDialog(type);$("entityDialog").dataset.position=position?JSON.stringify(position):""}
+function beginEntityPlacement(record,initialPosition=null){
+ cancelEntityPlacement(false);
+ const rect=graphSurface.getBoundingClientRect(),start=initialPosition||{x:(innerWidth/2-cy.pan().x)/cy.zoom(),y:(innerHeight/2-cy.pan().y)/cy.zoom()};
+ const previewId=uid("placement");
+ pendingPlacement={record,previewId,position:start};
+ cy.add({group:"nodes",data:{id:previewId,name:record.name,label:TYPES[record.type].glyph+" "+record.name,type:record.type,glyph:TYPES[record.type].glyph,shape:TYPES[record.type].shape,image:record.imageUrl||""},position:start,classes:"placement-preview",grabbable:false});
+ graphSurface.classList.add("placing-entity");
+ toast("Move the preview to an empty spot, then left-click to place it. Press Esc to cancel.");
+}
+function cancelEntityPlacement(showMessage=true){
+ if(!pendingPlacement)return;
+ const preview=cy?.getElementById(pendingPlacement.previewId);if(preview?.length)preview.remove();
+ pendingPlacement=null;graphSurface.classList.remove("placing-entity");
+ if(showMessage)toast("Entity placement cancelled.");
+}
+function updateEntityPlacement(clientX,clientY){
+ if(!pendingPlacement||!cy)return;
+ const rect=graphSurface.getBoundingClientRect(),pan=cy.pan(),zoom=cy.zoom();
+ const position={x:(clientX-rect.left-pan.x)/zoom,y:(clientY-rect.top-pan.y)/zoom};
+ pendingPlacement.position=position;const preview=cy.getElementById(pendingPlacement.previewId);if(preview.length)preview.position(position);
+}
+function commitEntityPlacement(position){
+ if(!pendingPlacement)return;
+ const pending=pendingPlacement,preview=cy.getElementById(pending.previewId);if(preview.length)preview.remove();
+ pendingPlacement=null;graphSurface.classList.remove("placing-entity");
+ saveCurrentPositions();
+ const record=pending.record;record.position=clone(position||pending.position);record.positions={...(record.positions||{}),[activeView]:clone(position||pending.position)};
+ data.entities.push(record);selected=null;markDirty();setSelection("entity",record.id);toast("Entity placed.");
+}
+graphSurface.addEventListener("mousemove",e=>updateEntityPlacement(e.clientX,e.clientY));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&pendingPlacement){e.preventDefault();cancelEntityPlacement()}});
+
 function confirm(message,action){$("confirmMessage").textContent=message;confirmAction=action;openDialog("confirmDialog")}
 $("cancelConfirm").onclick=closeDialogs;$("acceptConfirm").onclick=()=>{const fn=confirmAction;closeDialogs();confirmAction=null;fn?.()};
 function deleteEntity(e){const count=data.relationships.filter(r=>r.source===e.id||r.target===e.id).length;confirm("Delete "+e.name+"? "+count+" connected relationship(s) will also be deleted.",()=>{data.entities=data.entities.filter(x=>x.id!==e.id);data.relationships=data.relationships.filter(r=>r.source!==e.id&&r.target!==e.id);if(selected?.id===e.id)selected=null;markDirty();toast("Entity deleted.")})}
@@ -246,9 +279,7 @@ $("closeDossier").onclick=()=>{$("dossierWindow").hidden=true};
 
 $("createEntity").onclick=()=>entitySubmenu({x:innerWidth-355,y:95});
 $("createRelationship").onclick=()=>{if(data.entities.length<2){toast("Create at least two entities first.");return}startRelationshipWizard()};
-$("completeView").onclick=()=>{capture();activeView="complete";renderGraph();layout("force",true)};
 $("resetView").onclick=()=>{capture();layout("force",true);setDirty(true);persistLocal()};
-$("forceLayout").onclick=()=>{layout("force");setDirty(true);persistLocal()};
 $("zoomIn").onclick=()=>cy.zoom({level:cy.zoom()*1.2,renderedPosition:{x:innerWidth/2,y:innerHeight/2}});$("zoomOut").onclick=()=>cy.zoom({level:cy.zoom()/1.2,renderedPosition:{x:innerWidth/2,y:innerHeight/2}});
 $("toggleLegend").onchange=e=>$("legend").hidden=!e.target.checked;$("closeLegend").onclick=()=>{$("legend").hidden=true;$("toggleLegend").checked=false};
 $("showEntityLabels").onchange=e=>cy.nodes().style("text-opacity",e.target.checked?1:0);$("showRelationshipLabels").onchange=e=>cy.edges().style("text-opacity",e.target.checked?1:0);
@@ -267,7 +298,7 @@ function graphElementAt(renderedX,renderedY){
  return nearest;
 }
 
-cy.on("tap","node",e=>setSelection("entity",e.target.id()));cy.on("tap","edge",e=>setSelection("relationship",e.target.id()));
+cy.on("tap",e=>{if(pendingPlacement&&e.target===cy)commitEntityPlacement(e.position)});cy.on("tap","node",e=>setSelection("entity",e.target.id()));cy.on("tap","edge",e=>setSelection("relationship",e.target.id()));
 cy.on("dbltap","node",e=>{setSelection("entity",e.target.id());$("dossierWindow").hidden=false;focusEntity(e.target.id())});
 cy.on("dragfree","node",e=>{const n=e.target,at=n.renderedPosition(),target=cy.nodes().filter(x=>x.id()!==n.id()&&x.renderedBoundingBox().x1<=at.x&&x.renderedBoundingBox().x2>=at.x&&x.renderedBoundingBox().y1<=at.y&&x.renderedBoundingBox().y2>=at.y).first();saveCurrentPositions();if(target.length)startRelationshipWizard(null,n.id(),target.id())});
 cy.on("mouseover","node,edge",e=>{const t=$("tooltip");t.textContent=e.target.isNode()?e.target.data("name"):e.target.data("type");t.hidden=false});cy.on("mousemove","node,edge",e=>{$("tooltip").style.left=(e.originalEvent.clientX+12)+"px";$("tooltip").style.top=(e.originalEvent.clientY+12)+"px"});cy.on("mouseout","node,edge",()=>$("tooltip").hidden=true);cy.on("pan zoom",capture);
