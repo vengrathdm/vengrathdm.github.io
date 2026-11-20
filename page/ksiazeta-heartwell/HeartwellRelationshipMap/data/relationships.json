@@ -5,7 +5,7 @@
     "name": "Mapa demonstracyjna — Zaginiona Kopalnia Phandelver",
     "updatedAt": "2026-11-20",
     "layoutModes": {
-      "complete": "force"
+      "complete": "manual"
     },
     "relationshipTypes": [
       {
@@ -44,7 +44,8 @@
         "direction": "towards"
       }
     ],
-    "notes": "Zwięzły przykład obejmujący pięć obiektów i pięć relacji, oparty na przygodzie Zaginiona Kopalnia Phandelver. To dane demonstracyjne, nie kanon kampanii Heartwell."
+    "notes": "Zwięzły przykład obejmujący pięć obiektów i pięć relacji, oparty na przygodzie Zaginiona Kopalnia Phandelver. To dane demonstracyjne, nie kanon kampanii Heartwell.",
+    "savedViews": []
   },
   "entities": [
     {
@@ -52,6 +53,9 @@
       "type": "Person",
       "name": "Gundren Rockseeker",
       "imageUrl": "",
+      "color": "#355C6D",
+      "borderColor": "#FFFFFF",
+      "lineStyle": "solid",
       "notes": "Krasnoludzki poszukiwacz złota i jeden z trzech braci Rockseekerów. Ponownie odkrył zaginioną Jaskinię Falującego Echa i przewozi zaopatrzenie oraz informacje związane z kopalnią.",
       "fields": {
         "Occupation": "Poszukiwacz złota",
@@ -61,16 +65,20 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": -260,
-          "y": -100
+          "x": 159.0687731316857,
+          "y": -31.15327171064456
         }
-      }
+      },
+      "position": null
     },
     {
       "id": "sildar-hallwinter",
       "type": "Person",
       "name": "Sildar Hallwinter",
       "imageUrl": "",
+      "color": "#355C6D",
+      "borderColor": "#FFFFFF",
+      "lineStyle": "solid",
       "notes": "Ludzki wojownik i członek Sojuszu Lordów. Towarzyszy Gundrenowi w drodze do Phandalin, zostaje napadnięty przez gobliny i wzięty do niewoli.",
       "fields": {
         "Occupation": "Wojownik; agent Sojuszu Lordów",
@@ -80,16 +88,20 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": -260,
-          "y": 120
+          "x": -85.72247998761861,
+          "y": 81.87975652597261
         }
-      }
+      },
+      "position": null
     },
     {
       "id": "klarg",
       "type": "Person",
       "name": "Klarg",
       "imageUrl": "",
+      "color": "#355C6D",
+      "borderColor": "#FFFFFF",
+      "lineStyle": "solid",
       "notes": "Wódz bugbearów dowodzący kryjówką Cragmaw. Służy goblinom Cragmaw i jest powiązany z działaniami Czarnego Pająka, który próbuje przechwycić Gundrena i przewożone przez niego informacje.",
       "fields": {
         "Occupation": "Wódz bugbearów",
@@ -99,16 +111,20 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 0,
-          "y": 0
+          "x": 80.08847202380706,
+          "y": 119.3861318915646
         }
-      }
+      },
+      "position": null
     },
     {
       "id": "black-spider",
       "type": "Person",
       "name": "Nezznar the Black Spider",
       "imageUrl": "",
+      "color": "#355C6D",
+      "borderColor": "#FFFFFF",
+      "lineStyle": "solid",
       "notes": "Drowi antagonista kierujący poszukiwaniami Jaskini Falującego Echa. Wykorzystuje swoich agentów i gobliny Cragmaw, by odnaleźć Gundrena i przejąć kontrolę nad kopalnią.",
       "fields": {
         "Occupation": "Drowi czarodziej",
@@ -118,16 +134,20 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 260,
-          "y": 120
+          "x": 245.18592581153396,
+          "y": 159.91798051470758
         }
-      }
+      },
+      "position": null
     },
     {
       "id": "wave-echo-cave",
       "type": "Location",
       "name": "Wave Echo Cave",
       "imageUrl": "",
+      "color": "#3F716B",
+      "borderColor": "#FFFFFF",
+      "lineStyle": "solid",
       "notes": "Zaginiona kopalnia, w której znajduje się Kuźnia Zaklęć. Gundren ponownie odkrył jej położenie, a Czarny Pająk pragnie ją zdobyć.",
       "fields": {
         "LocationType": "Zaginiona kopalnia",
@@ -136,8 +156,163 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 260,
-          "y": -100
+          "x": 234.21237912003923,
+          "y": 329.56343808139155
+        }
+      },
+      "position": null
+    },
+    {
+      "id": "entity-mwozj319-d8dzwc",
+      "type": "Person",
+      "name": "pos",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": -176.91559747311723,
+        "y": 283.0016321469964
+      },
+      "positions": {
+        "complete": {
+          "x": -176.91559747311723,
+          "y": 283.0016321469964
+        }
+      }
+    },
+    {
+      "id": "entity-mwozj79r-a7cujr",
+      "type": "Family",
+      "name": "rod",
+      "imageUrl": "",
+      "color": "#704653",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": -94.92965442208175,
+        "y": 262.50514638423755
+      },
+      "positions": {
+        "complete": {
+          "x": -94.92965442208175,
+          "y": 262.50514638423755
+        }
+      }
+    },
+    {
+      "id": "entity-mwozjdqx-53x0lc",
+      "type": "Faction",
+      "name": "stro",
+      "imageUrl": "",
+      "color": "#65734a",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": -113.14685118875515,
+        "y": 338.9907998326828
+      },
+      "positions": {
+        "complete": {
+          "x": -113.14685118875515,
+          "y": 338.9907998326828
+        }
+      }
+    },
+    {
+      "id": "entity-mwozjj7j-kpzj02",
+      "type": "Object",
+      "name": "przed",
+      "imageUrl": "",
+      "color": "#8b6f47",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": -13.116681152898591,
+        "y": 324.936974290455
+      },
+      "positions": {
+        "complete": {
+          "x": -13.116681152898591,
+          "y": 324.936974290455
+        }
+      }
+    },
+    {
+      "id": "entity-mwozjopq-2w36y7",
+      "type": "Event",
+      "name": "wyd",
+      "imageUrl": "",
+      "color": "#66527a",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": -58.99828807017164,
+        "y": 398.5128844821181
+      },
+      "positions": {
+        "complete": {
+          "x": -58.99828807017164,
+          "y": 398.5128844821181
+        }
+      }
+    },
+    {
+      "id": "entity-mwozjuza-we3n8a",
+      "type": "Institution",
+      "name": "insty",
+      "imageUrl": "",
+      "color": "#526878",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 43.09862101601253,
+        "y": 248.46762942833325
+      },
+      "positions": {
+        "complete": {
+          "x": 43.09862101601253,
+          "y": 248.46762942833325
+        }
+      }
+    },
+    {
+      "id": "entity-mwozk18o-acsekv",
+      "type": "Location",
+      "name": "lok",
+      "imageUrl": "",
+      "color": "#3f716b",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 69.96622867027153,
+        "y": 374.9520593083833
+      },
+      "positions": {
+        "complete": {
+          "x": 69.96622867027153,
+          "y": 374.9520593083833
         }
       }
     }
