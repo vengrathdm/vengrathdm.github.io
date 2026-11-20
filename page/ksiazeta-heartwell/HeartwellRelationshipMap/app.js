@@ -47,10 +47,10 @@ async function persistLocal(){
  },180);
 }
 async function restoreLocal(){
- try{const db=await openLocalDb();const saved=await new Promise((resolve,reject)=>{const req=db.transaction("state","readonly").objectStore("state").get("working");req.onsuccess=()=>resolve(req.result?.data||null);req.onerror=()=>reject(req.error)});db.close();if(saved){data=normalize(saved);setDirty(true);$("persistenceState").textContent="Restored local working copy";return true}}
+ try{const db=await openLocalDb();const saved=await new Promise((resolve,reject)=>{const req=db.transaction("state","readonly").objectStore("state").get("working");req.onsuccess=()=>resolve(req.result?.data||null);req.onerror=()=>reject(req.error)});db.close();if(saved){data=normalize(saved);setDirty(true);if($("persistenceState"))$("persistenceState").textContent="Restored local working copy";return true}}
  catch(_){}
  try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return false;data=normalize(JSON.parse(raw));setDirty(true);$("persistenceState").textContent="Restored local working copy";return true}
- catch(err){$("persistenceState").textContent="Saved local copy could not be read";return false}
+ catch(err){if($("persistenceState"))$("persistenceState").textContent="Saved local copy could not be read";return false}
 }
 async function clearLocal(){try{const db=await openLocalDb();await new Promise(resolve=>{const tx=db.transaction("state","readwrite");tx.objectStore("state").delete("working");tx.oncomplete=resolve;tx.onerror=resolve});db.close()}catch(_){}localStorage.removeItem(STORAGE_KEY)}
 function applyEntityTypes(metadata){
