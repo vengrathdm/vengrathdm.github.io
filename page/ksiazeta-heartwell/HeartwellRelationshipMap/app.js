@@ -232,7 +232,7 @@ $("manageRelationshipTypes").onclick=()=>{
   data.metadata.relationshipTypes.push({name,description,color,lineStyle,direction});markDirty();toast("Relationship type preset added.");return;
  }
  const name=prompt("Enter the exact relationship type name:")?.trim();if(!name)return;
- const preset=relationshipTypePreset(name);if(!preset){toast("Relationship type preset not found.");return}
+ let preset=data.metadata.relationshipTypes.find(x=>x.name===name);if(!preset){const existing=data.relationships.find(x=>x.type===name);if(!existing){toast("Relationship type preset not found.");return}preset={name,description:"",color:existing.color,lineStyle:existing.lineStyle,direction:existing.direction};data.metadata.relationshipTypes.push(preset)}
  if(action==="REMOVE"){data.metadata.relationshipTypes=data.metadata.relationshipTypes.filter(x=>x.name!==name);markDirty();toast("Preset removed. Existing relationships remain unchanged.");return}
  if(action==="EDIT"){
   const description=prompt("Meaning / description:",preset.description||"")??preset.description;
