@@ -30,7 +30,7 @@
         <button class="tab" data-tab="editor" role="tab" aria-selected="false">Editor</button>
       </nav>
       <section class="tab-panel" id="viewPanel" role="tabpanel">
-        <div class="panel-title"><h2>View configuration</h2><span class="eyebrow">01 / DISPLAY</span></div>
+        <div class="panel-title"><h2>View configuration</h2></div>
         <label class="search-label">Find an entity<input id="entitySearch" type="search" placeholder="Search names and properties…" autocomplete="off"><span id="searchResults" class="search-results"></span></label>
         <div class="control-group filter-category-group"><div id="entityFilters" class="filter-category"></div></div>
         <div class="control-group filter-category-group"><div id="relationshipFilters" class="filter-category"></div></div>
@@ -61,7 +61,7 @@
         </div>
       </section>
       <section class="tab-panel" id="editorPanel" role="tabpanel" hidden>
-        <div class="panel-title"><h2>Editor</h2><span class="eyebrow">02 / RECORDS</span></div>
+        <div class="panel-title"><h2>Editor</h2></div>
         <div class="control-group">
           <h3>Data operations</h3>
           <div class="button-stack">
@@ -98,7 +98,8 @@
           <h3>Identity</h3>
           <div class="entity-identity-grid">
             <label>Entity type<select id="entityType" required></select></label>
-            <div class="graphic-field"><span class="field-label">Graphic</span><div class="graphic-inputs"><label>Link<input id="entityImage" type="text" placeholder="https://…"></label><label>Upload<input id="entityImageFile" type="file" accept="image/png,image/webp"></label></div></div>
+            <label>Graphic Link<input id="entityImage" type="text" placeholder="https://…"></label>
+            <label>Upload<input id="entityImageFile" type="file" accept="image/png,image/webp"></label>
             <label class="entity-name-field">Name<input id="entityName" maxlength="120" required autocomplete="off"></label>
           </div>
           <div id="imagePreview" class="image-preview" hidden></div>
@@ -114,9 +115,9 @@
         <section class="entity-form-section description-section">
           <h3>Description</h3>
           <div class="description-editor-grid">
-            <div class="description-editor"><label for="entityNotes">Editor <span class="muted">(Markdown)</span></label>
-              <div class="markdown-toolbar"><button type="button" data-md="**|**">Bold</button><button type="button" data-md="*|*">Italic</button><button type="button" data-md="## |">Heading</button><button type="button" data-md="- |">List item</button><button type="button" data-md="`|`">Code</button></div>
+            <div class="description-editor"><label for="entityNotes">Editor</label>
               <textarea id="entityNotes" rows="9" placeholder="Record relevant campaign information…"></textarea>
+              <div class="markdown-toolbar"><button type="button" data-md="**|**">Bold</button><button type="button" data-md="*|*">Italic</button><button type="button" data-md="## |">Heading</button><button type="button" data-md="- |">List item</button><button type="button" data-md="`|`">Code</button></div>
             </div>
             <div class="description-preview"><span class="field-label">Preview</span><div id="notesPreview" class="markdown-preview"></div></div>
           </div>
