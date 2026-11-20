@@ -9,6 +9,12 @@ Standalone GitHub Pages application for the Książęta Heartwell campaign.
 - `app.js` — Cytoscape graph, editing workflows, filtering, views and data operations.
 - `data/relationships.json` — official published dataset.
 
+## Application capabilities
+
+The map includes Complete Graph, Political Network, Family Tree, Organization Graph and Character Network views. Views can be filtered by entity and relationship type, laid out automatically or positioned manually, and saved with their filters, layout and viewport. Selecting a node or edge opens a movable, independently closable dossier. Parallel relationships are supported and labelled along their links.
+
+Entity records support built-in and configurable entity types, PNG/WEBP uploads or image URLs, standard and typed custom properties, and Markdown notes. Relationship records support user-defined labels, colors, line styles, arrow directions and Markdown notes.
+
 ## Official data format
 
 The official file and exported files use the same schema:
@@ -59,7 +65,7 @@ Built-in entity types: `Person`, `Family`, `Faction`, `Object`, `Event`, `Instit
 
 Relationship line styles: `solid`, `dotted`, `dashed`. Arrow directions: `none`, `towards`, `from`, `mutual`.
 
-Graphic URLs may point to PNG or WEBP images over HTTP or HTTPS; uploaded PNG/WEBP images are embedded as data URLs and included in exports. Entity positions are stored separately for each graph view. Notes are stored as Markdown source and rendered in the dossier. Custom field definitions are exported alongside their values.
+Graphic URLs may point to PNG or WEBP images over HTTP or HTTPS; uploaded PNG/WEBP images (up to 5 MB each) are embedded as data URLs and included in exports. Entity positions are stored separately for each graph view. Notes are stored as Markdown source and rendered in the dossier. Custom field definitions are exported alongside their values.
 
 ## Publishing edits
 
