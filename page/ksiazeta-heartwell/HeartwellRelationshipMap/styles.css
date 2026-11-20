@@ -41,3 +41,7 @@
 .dossier-notes a,.markdown-preview a{color:#e8c27b;text-decoration:underline}
 .dossier-notes code,.markdown-preview code{padding:1px 4px;background:rgba(0,0,0,.25);color:#f3d9a6}
 .dossier-notes li,.markdown-preview li{margin-left:18px}
+
+/* Master filter overrides and entity placement mode */
+.filter-all{margin-bottom:7px;padding:7px 0 9px;border-bottom:1px solid rgba(222,198,145,.38);color:#efd59c;font-weight:700}.check-row:has(input:disabled){opacity:.48}#graph.placing-entity{cursor:crosshair}
+.reset-view-control{padding-top:2px}
