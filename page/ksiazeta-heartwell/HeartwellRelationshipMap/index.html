@@ -50,13 +50,8 @@
           <label class="check-row"><input id="showEntityLabels" type="checkbox" checked> Entity names</label>
           <label class="check-row"><input id="showRelationshipLabels" type="checkbox" checked> Relationship labels</label>
         </div>
-        <div class="control-group">
-          <h3>Graph view</h3>
-          <div class="button-stack">
-            <button id="completeView" class="subtle-button">Complete Graph</button>
-            <button id="resetView" class="subtle-button">Reset View</button>
-          </div>
-          <p id="activeViewLabel" class="muted">Complete Graph · Force-directed</p>
+        <div class="control-group reset-view-control">
+          <button id="resetView" class="subtle-button">Reset View</button>
         </div>
         <div class="control-group">
           <h3>Legend</h3>
@@ -73,8 +68,6 @@
             <label class="subtle-button file-trigger" for="importData">Import Data</label>
             <input id="importData" type="file" accept="application/json,.json" hidden>
           </div>
-          <p id="dirtyState" class="status-line">Loading official data…</p>
-          <p id="persistenceState" class="status-line">Local autosave initializing…</p>
         </div>
         <div class="control-group">
           <h3>Create</h3>
@@ -83,14 +76,7 @@
             <button id="createEntity" class="subtle-button">Create Entity</button>
           </div>
         </div>
-        <div class="control-group">
-          <h3>Automatic layout</h3>
-          <div class="button-stack">
-            <button id="forceLayout" class="subtle-button">Force-directed layout</button>
-          </div>
-        </div>
       </section>
-      <div class="window-foot"><span id="graphCount">0 entities · 0 relationships</span><span>HEARTWELL / ARCHIVE</span></div>
     </section>
     <aside id="dossierWindow" class="dossier-window panel" hidden aria-label="Selected record dossier">
       <header class="dossier-window-head"><div><span class="eyebrow">INSPECTION / RECORD</span><h2>Dossier</h2></div><button id="closeDossier" class="icon-button" aria-label="Close dossier">×</button></header>
