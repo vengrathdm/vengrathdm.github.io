@@ -92,17 +92,33 @@
     <section id="entityDialog" class="dialog panel" hidden role="dialog" aria-modal="true" aria-labelledby="entityDialogTitle">
       <div class="dialog-head"><div><span class="eyebrow">ENTITY RECORD</span><h2 id="entityDialogTitle">Create Entity</h2></div><button class="icon-button" data-close-dialog aria-label="Close">×</button></div>
       <form id="entityForm">
-        <label>Entity type<select id="entityType" required></select></label>
-        <label>Name<input id="entityName" maxlength="120" required autocomplete="off"></label>
-        <label>Graphic URL <span class="muted">(PNG or WEBP)</span><input id="entityImage" type="text" placeholder="https://…"></label>
-        <label>Or upload a portrait / emblem<input id="entityImageFile" type="file" accept="image/png,image/webp"></label>
-        <div id="imagePreview" class="image-preview" hidden></div>
-        <div id="entitySpecificFields"></div>
-        <div class="custom-fields-head"><strong>Additional properties</strong><button type="button" id="addCustomField" class="subtle-button">Add property</button></div>
-        <div id="customFields"></div>
-        <label>Notes <span class="muted">(Markdown source)</span></label>
-        <div class="markdown-toolbar"><button type="button" data-md="**|**">Bold</button><button type="button" data-md="*|*">Italic</button><button type="button" data-md="## |">Heading</button><button type="button" data-md="- |">List item</button><button type="button" data-md="`|`">Code</button></div>
-        <textarea id="entityNotes" rows="5" placeholder="Record relevant campaign information…"></textarea><div id="notesPreview" class="markdown-preview"></div>
+        <section class="entity-form-section">
+          <h3>Identity</h3>
+          <div class="entity-identity-grid">
+            <label>Entity type<select id="entityType" required></select></label>
+            <div class="graphic-field"><span class="field-label">Graphic</span><div class="graphic-inputs"><label>Link<input id="entityImage" type="text" placeholder="https://…"></label><label>Upload<input id="entityImageFile" type="file" accept="image/png,image/webp"></label></div></div>
+            <label class="entity-name-field">Name<input id="entityName" maxlength="120" required autocomplete="off"></label>
+          </div>
+          <div id="imagePreview" class="image-preview" hidden></div>
+        </section>
+        <section class="entity-form-section">
+          <h3>Properties</h3>
+          <div id="entitySpecificFields"></div>
+          <div id="customFields"></div>
+        </section>
+        <section class="entity-form-section additional-properties-section">
+          <div class="custom-fields-head"><h3>Additional Properties</h3><button type="button" id="addCustomField" class="subtle-button">Add property</button></div>
+        </section>
+        <section class="entity-form-section description-section">
+          <h3>Description</h3>
+          <div class="description-editor-grid">
+            <div class="description-editor"><label for="entityNotes">Editor <span class="muted">(Markdown)</span></label>
+              <div class="markdown-toolbar"><button type="button" data-md="**|**">Bold</button><button type="button" data-md="*|*">Italic</button><button type="button" data-md="## |">Heading</button><button type="button" data-md="- |">List item</button><button type="button" data-md="`|`">Code</button></div>
+              <textarea id="entityNotes" rows="9" placeholder="Record relevant campaign information…"></textarea>
+            </div>
+            <div class="description-preview"><span class="field-label">Preview</span><div id="notesPreview" class="markdown-preview"></div></div>
+          </div>
+        </section>
         <div class="dialog-actions"><button type="button" class="subtle-button" data-close-dialog>Cancel</button><button type="submit" class="primary-button">Save Entity</button></div>
       </form>
     </section>
