@@ -15,7 +15,7 @@ function navigateFromTile(anchor,href){
  const tint=anchor.querySelector(".cell-shade");
  const rect=anchor.getBoundingClientRect();
  const d=tint?.getAttribute("d")||"";
- const numbers=d.match(/-?\\d+(?:\\.\\d+)?/g)?.map(Number)||[];
+ const numbers=d.match(/-?\d+(?:\.\d+)?/g)?.map(Number)||[];
  const matrix=tint?.getScreenCTM();
  const points=[];
  if(matrix)for(let i=0;i+1<numbers.length;i+=2){
@@ -88,7 +88,7 @@ function addModulePreload(value,base=location.href){
 }
 function cssResources(css,base){
  const imports=[...css.matchAll(/@import\\s+(?:url\\()?['"]?([^'")\\s;]+)['"]?\\)?/gi)].map(m=>m[1]);
- const fonts=[...css.matchAll(/url\\(\\s*(['"]?)([^'")]+)\\1\\s*\\)/gi)].map(m=>m[2]).filter(url=>/\\.(?:woff2?|ttf|otf)(?:[?#]|$)/i.test(url));
+ const fonts=[...css.matchAll(/url\\(\\s*(['"]?)([^'")]+)\\1\\s*\\)/gi)].map(m=>m[2]).filter(url=>/\.(?:woff2?|ttf|otf)(?:[?#]|$)/i.test(url));
  imports.slice(0,2).forEach(url=>{const href=allowedPrefetchUrl(url,base);if(href)inspectStylesheet(href.href)});
  fonts.slice(0,6).forEach(url=>addPrefetch(url,"font",base));
 }
