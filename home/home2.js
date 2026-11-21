@@ -4,47 +4,7 @@ const $=s=>document.querySelector(s);
 const viewport=$("#viewport"),board=$("#board"),filters=$("#filters"),search=$("#search"),emptyState=$("#empty-state"),preview=$("#preview"),contextMenu=$("#card-context-menu"),contextPreview=$("#context-preview-backdrop");
 let records=[],activeTags=new Set(),resizeFrame=0,previewEnabled=false;
 let worldWidth=0,dragging=false,lastPointerX=0,lastMoveTime=0,velocity=0,inertiaFrame=0;
-let suppressClick=false,pressedCardHref=null,tileNavigationStarted=false;
-
-function navigateFromTile(anchor,href){
- if(tileNavigationStarted)return;
- const target=new URL(href,location.href);
- if(target.origin!==location.origin){location.assign(target.href);return}
- tileNavigationStarted=true;
- const image=anchor.querySelector("image");
- const tint=anchor.querySelector(".cell-shade");
- const rect=anchor.getBoundingClientRect();
- const d=tint?.getAttribute("d")||"";
- const numbers=d.match(/-?\d+(?:\.\d+)?/g)?.map(Number)||[];
- const matrix=tint?.getScreenCTM();
- const points=[];
- if(matrix)for(let i=0;i+1<numbers.length;i+=2){
-  const point=new DOMPoint(numbers[i],numbers[i+1]).matrixTransform(matrix);
-  points.push([((point.x-rect.left)/rect.width)*100,((point.y-rect.top)/rect.height)*100]);
- }
- const overlay=document.createElement("div");
- overlay.setAttribute("aria-hidden","true");
- Object.assign(overlay.style,{
-  position:"fixed",left:rect.left+"px",top:rect.top+"px",
-  width:rect.width+"px",height:rect.height+"px",zIndex:"2147483647",
-  pointerEvents:"none",backgroundImage:"url("+JSON.stringify(image?.getAttribute("href")||"")+")",
-  backgroundSize:"100% 100%",backgroundPosition:"center",
-  clipPath:points.length>2?"polygon("+points.map(p=>p.map(v=>v+"%").join(" ")).join(",")+")":"none",
-  transformOrigin:"center center",willChange:"transform,border-radius",
-  transition:"transform 720ms cubic-bezier(.2,.78,.16,1), border-radius 720ms ease"
- });
- document.body.append(overlay);
- const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
- if(reduce){location.assign(target.href);return}
- const dx=innerWidth/2-(rect.left+rect.width/2);
- const dy=innerHeight/2-(rect.top+rect.height/2);
- const scale=Math.max(innerWidth/rect.width,innerHeight/rect.height)*1.12;
- requestAnimationFrame(()=>requestAnimationFrame(()=>{
-  overlay.style.transform="translate3d("+dx+"px,"+dy+"px,0) scale("+scale+")";
-  overlay.style.borderRadius="0";
- }));
- window.setTimeout(()=>location.assign(target.href),760);
-}
+let suppressClick=false,pressedCardHref=null;
 
 function seededRandom(seed){let v=seed>>>0;return()=>{v=(v*1664525+1013904223)>>>0;return v/4294967296}}
 
@@ -246,9 +206,9 @@ viewport.addEventListener("scroll",wrapScroll,{passive:true});
 viewport.addEventListener("wheel",e=>{if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){e.preventDefault();viewport.scrollLeft+=e.deltaY}},{passive:false});
 viewport.addEventListener("pointerdown",e=>{if(e.pointerType==="mouse"&&e.button!==0)return;pressedCardHref=e.pointerType==="mouse"&&e.button===0?e.target.closest(".cell")?.getAttribute("href")||null:null;stopInertia();dragging=true;suppressClick=false;lastPointerX=e.clientX;lastMoveTime=performance.now();velocity=0;viewport.classList.add("dragging");viewport.setPointerCapture?.(e.pointerId)});
 viewport.addEventListener("pointermove",e=>{if(!dragging)return;const now=performance.now(),dx=e.clientX-lastPointerX,dt=Math.max(1,now-lastMoveTime);viewport.scrollLeft-=dx;velocity=dx/dt;lastPointerX=e.clientX;lastMoveTime=now;if(Math.abs(dx)>3)suppressClick=true;wrapScroll()});
-const endDrag=()=>{if(!dragging)return;dragging=false;viewport.classList.remove("dragging");const destination=pressedCardHref;pressedCardHref=null;if(destination&&!suppressClick){const anchor=[...board.querySelectorAll(".cell")].find(cell=>cell.getAttribute("href")===destination);if(anchor)navigateFromTile(anchor,destination)}runInertia()};
+const endDrag=()=>{if(!dragging)return;dragging=false;viewport.classList.remove("dragging");const destination=pressedCardHref;pressedCardHref=null;if(destination&&!suppressClick)location.assign(new URL(destination,location.href).href);runInertia()};
 viewport.addEventListener("pointerup",endDrag);viewport.addEventListener("pointercancel",endDrag);viewport.addEventListener("lostpointercapture",endDrag);
-viewport.addEventListener("click",e=>{if(suppressClick){e.preventDefault();e.stopPropagation();suppressClick=false;return}const anchor=e.target.closest?.(".cell");if(anchor){e.preventDefault();e.stopPropagation();navigateFromTile(anchor,anchor.getAttribute("href"));return}if(preview.dataset.href)hidePreview()},true);
+viewport.addEventListener("click",e=>{if(suppressClick){e.preventDefault();e.stopPropagation();suppressClick=false;return}if(!e.target.closest(".cell")&&preview.dataset.href)hidePreview()},true);
 window.addEventListener("resize",()=>{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(build)});
 async function init(){const response=await fetch("/core/data/site-pages.json");if(!response.ok)throw new Error("Could not load Vengrath page registry");records=(await response.json()).filter(r=>typeof r.url==="string"&&r.url.startsWith("/page/")&&typeof r.title==="string"&&typeof r.image==="string");renderFilters();build()}
 init().catch(error=>{console.error(error);board.textContent="Nie udało się wczytać kolekcji Vengrath.";board.style.color="#ffb4b4";});
