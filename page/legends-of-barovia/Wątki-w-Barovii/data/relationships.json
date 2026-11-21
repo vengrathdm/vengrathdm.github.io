@@ -2026,6 +2026,46 @@
         "x": 1750,
         "y": 1650
       }
+    },
+    {
+      "id": "entity-ojciec-donnavich",
+      "type": "Person",
+      "name": "Ojciec Donnavich",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#BCA06A",
+      "lineStyle": "solid",
+      "notes": "Kapłan z Wioski Barovia i ojciec Doru. Został zabity przez syna po jego egzekucji.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Kapłan; duchowny",
+        "age": "Dorosły",
+        "status": "Martwy",
+        "affiliation": "Kościół w Wiosce Barovia; mieszkańcy Wioski Barovia"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "entity-doru",
+      "type": "Person",
+      "name": "Doru",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#BCA06A",
+      "lineStyle": "solid",
+      "notes": "Syn Ojca Donnavicha. Po egzekucji zabił ojca, a niedługo później sam został pokonany.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Nieustalone",
+        "age": "Młody dorosły",
+        "status": "Martwy",
+        "affiliation": "Rodzina Donnavich; Wioska Barovia"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
     }
   ],
   "relationships": [
@@ -3247,6 +3287,16 @@
       "note": "",
       "color": "#c43b35",
       "lineStyle": "dashed",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-donnavich-doru-parent",
+      "source": "entity-ojciec-donnavich",
+      "target": "entity-doru",
+      "type": "Rodzic-Dziecko",
+      "note": "Ojciec Donnavich jest ojcem Doru.",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
       "direction": "mutual"
     }
   ]
