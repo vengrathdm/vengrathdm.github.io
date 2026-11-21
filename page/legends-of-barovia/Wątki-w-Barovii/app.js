@@ -10,7 +10,7 @@ const plRelType=v=>({ALLY_OF:"Sojusznik",CAPTURED_BY:"Pojmany przez",SERVES:"Sł
 const $=id=>document.getElementById(id),uid=p=>p+"-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,8),clone=x=>JSON.parse(JSON.stringify(x));
 const BUILTIN_TYPES=clone(TYPES);
 let officialData,data,dirty=false,selected=null,activeTab="view",activeView="complete",layoutModes={complete:"force",family:"hierarchy",organization:"hierarchy",political:"force",characters:"force"},wizard=null,confirmAction=null,viewports={complete:null,family:null,organization:null,political:null,characters:null},toastTimer;
-let cy,labelStage=3,pendingPlacement=null,entityLabelPosition="middle",relationshipLabelPosition="above",entityLabelMode="always",relationshipLabelMode="always";
+let cy,labelStage=3,pendingPlacement=null,entityLabelPosition="below",relationshipLabelPosition="above",entityLabelMode="always",relationshipLabelMode="always";
 const graphSurface=$("graph");
 document.querySelector("#controlWindow .tabs")?.addEventListener("click",e=>{
  const button=e.target.closest(".tab[data-tab]");
