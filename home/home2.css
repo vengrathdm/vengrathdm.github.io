@@ -138,3 +138,21 @@ button,input{font:inherit}
  .context-preview-info>a{margin-top:.35rem}
 }
 @media(prefers-reduced-motion:reduce){.context-preview-backdrop,.context-preview-window{transition:none}}
+
+
+/* Home is intentionally static: avoid transition/animation and expensive blur work. */
+.home-app,
+.home-app *,
+.home-app *::before,
+.home-app *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+.topbar,
+.preview,
+.card-context-menu,
+.context-preview-backdrop {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
