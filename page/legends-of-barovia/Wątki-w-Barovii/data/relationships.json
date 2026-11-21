@@ -5,7 +5,7 @@
     "name": "Wątki w Barovii",
     "updatedAt": "2026-11-21",
     "layoutModes": {
-      "complete": "force",
+      "complete": "manual",
       "family": "hierarchy",
       "organization": "hierarchy",
       "political": "force",
@@ -58,7 +58,7 @@
       {
         "name": "Należy do",
         "description": "",
-        "color": "#00ff2a",
+        "color": "#83479e",
         "lineStyle": "solid",
         "direction": "towards"
       },
@@ -138,6 +138,48 @@
         "color": "#d4a03c",
         "lineStyle": "solid",
         "direction": "none"
+      },
+      {
+        "name": "Beznadziejnie zakochana",
+        "description": "",
+        "color": "#d4a03c",
+        "lineStyle": "solid",
+        "direction": "none"
+      },
+      {
+        "name": "Niepewność",
+        "description": "",
+        "color": "#d4a03c",
+        "lineStyle": "solid",
+        "direction": "none"
+      },
+      {
+        "name": "Sympatia",
+        "description": "",
+        "color": "#b65866",
+        "lineStyle": "solid",
+        "direction": "mutual"
+      },
+      {
+        "name": "Nieufność, strach",
+        "description": "",
+        "color": "#8b6113",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Niechęć",
+        "description": "",
+        "color": "#d4a03c",
+        "lineStyle": "solid",
+        "direction": "none"
+      },
+      {
+        "name": "To skomplikowane",
+        "description": "",
+        "color": "#d4a03c",
+        "lineStyle": "solid",
+        "direction": "none"
       }
     ],
     "notes": "Niezależny rejestr wątków kampanii Legends of Barovia. Zestaw startowy jest celowo pusty.",
@@ -163,8 +205,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1083.5329390280895,
-          "y": -46.32090898503509
+          "x": 2180.9917910432277,
+          "y": 342.9026007771194
         }
       },
       "position": {
@@ -191,8 +233,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1348.9409007504944,
-          "y": -44.69148750265356
+          "x": 2177.1407074587673,
+          "y": 607.7607813184662
         }
       },
       "position": {
@@ -219,8 +261,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1224.0540699409837,
-          "y": -311.5629125260481
+          "x": 1969.6770670173469,
+          "y": 230.39283493492428
         }
       },
       "position": {
@@ -247,8 +289,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 814.2159857277052,
-          "y": -45.81432672159019
+          "x": 1909.9264301290993,
+          "y": 766.388555711161
         }
       },
       "position": {
@@ -275,8 +317,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 983.3984532647795,
-          "y": 220.74834934023886
+          "x": 2437.6734613800145,
+          "y": 352.2960286871309
         }
       },
       "position": {
@@ -303,8 +345,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1872.6995225579412,
-          "y": 1682.1395833775732
+          "x": 223.21378024964793,
+          "y": 432.67349500772616
         }
       },
       "position": {
@@ -331,8 +373,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 2137.895087684143,
-          "y": 1838.2721267313964
+          "x": 67.14264950935069,
+          "y": 168.74586454544783
         }
       },
       "position": {
@@ -359,8 +401,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 2138.467974755782,
-          "y": 1573.874357738412
+          "x": 88.89492095151365,
+          "y": -97.6716587202618
         }
       },
       "position": {
@@ -387,8 +429,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 961.993639802299,
-          "y": 1456.7965318411782
+          "x": 742.6028823488195,
+          "y": 1581.2107033495058
         }
       },
       "position": {
@@ -415,8 +457,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1230.825125563316,
-          "y": 1126.205063167253
+          "x": 577.0038290756738,
+          "y": 1754.0959645924404
         }
       },
       "position": {
@@ -443,8 +485,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1228.9578317779567,
-          "y": 863.1717801309607
+          "x": 165.92961306703558,
+          "y": 1598.8995917917555
         }
       },
       "position": {
@@ -471,8 +513,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 963.798200611908,
-          "y": 1191.2111870678884
+          "x": 570.6136070994859,
+          "y": 1414.592762427778
         }
       },
       "position": {
@@ -499,8 +541,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 485.3756492472113,
-          "y": 1310.886094309404
+          "x": 1219.5869875125716,
+          "y": 1502.8630636133419
         }
       },
       "position": {
@@ -527,8 +569,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 311.1860167119853,
-          "y": 1475.112559646885
+          "x": 1526.4618458255554,
+          "y": 1402.0181942206796
         }
       },
       "position": {
@@ -555,8 +597,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 183.90211245921148,
-          "y": 1677.8714502489265
+          "x": 1415.0422016491957,
+          "y": 1641.100610129497
         }
       },
       "position": {
@@ -583,8 +625,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 136.74755105787688,
-          "y": 1311.1504246881077
+          "x": 1298.9528612096572,
+          "y": 1850.4701996985477
         }
       },
       "position": {
@@ -611,8 +653,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 9.463646805102371,
-          "y": 1513.9093152901496
+          "x": 1651.907425621187,
+          "y": 1675.8457633555008
         }
       },
       "position": {
@@ -639,8 +681,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1210.0689912475068,
-          "y": 1395.1340248165716
+          "x": 706.1036109461445,
+          "y": 918.0500275296594
         }
       },
       "position": {
@@ -667,8 +709,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 962.1003238224607,
-          "y": 922.4719912618137
+          "x": 307.2724817564035,
+          "y": 1867.6533165420417
         }
       },
       "position": {
@@ -695,8 +737,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 430.7365912132851,
-          "y": 825.7551004349815
+          "x": 572.1934603452721,
+          "y": 1993.4476312937145
         }
       },
       "position": {
@@ -723,8 +765,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 2598.486130628792,
-          "y": 1197.9886028978026
+          "x": 402.6720500963936,
+          "y": 153.02667921786394
         }
       },
       "position": {
@@ -751,8 +793,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 2587.0035390971584,
-          "y": 1463.9588662436768
+          "x": 402.80828462945396,
+          "y": -113.23037603102284
         }
       },
       "position": {
@@ -779,8 +821,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": -650.8081528948178,
-          "y": 2054.6818158331084
+          "x": -527.638530534832,
+          "y": 1420.6847665626872
         }
       },
       "position": {
@@ -807,8 +849,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": -891.0467009752172,
-          "y": 1597.6369798949988
+          "x": -462.03393955783304,
+          "y": 1955.9189299857421
         }
       },
       "position": {
@@ -835,8 +877,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": -498.00679304027085,
-          "y": 1777.6205783638698
+          "x": -837.1497817830962,
+          "y": 1553.2344223473751
         }
       },
       "position": {
@@ -857,8 +899,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": -308.07379331873017,
-          "y": 1544.5671727544695
+          "x": -571.0605522985909,
+          "y": 1689.9960012664114
         }
       },
       "position": {
@@ -879,8 +921,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 716.6906515673727,
-          "y": 1249.1954977680857
+          "x": 821.3090595821968,
+          "y": 1355.1184706980766
         }
       },
       "position": {
@@ -901,8 +943,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 2009.7894806378229,
-          "y": 1305.9224978733619
+          "x": 641.8149000239652,
+          "y": 107.8805101801811
         }
       },
       "position": {
@@ -923,8 +965,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1252.0237641155936,
-          "y": 220.06472453834772
+          "x": 1910.4342960241997,
+          "y": 497.8233671124085
         }
       },
       "position": {
@@ -951,8 +993,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 487.52609364913064,
-          "y": 2004.8266000136828
+          "x": 440.19257799549723,
+          "y": 1073.1963423232792
         }
       },
       "position": {
@@ -979,8 +1021,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 964.0822485876829,
-          "y": 631.5000042189783
+          "x": 1107.6142419213086,
+          "y": 2062.7427047778883
         }
       },
       "position": {
@@ -1007,8 +1049,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 163.535377164568,
-          "y": 788.1152843920418
+          "x": 1024.0382655256242,
+          "y": 1226.936921160981
         }
       },
       "position": {
@@ -1035,8 +1077,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 163.86892422437097,
-          "y": 1056.3402355835399
+          "x": 1514.2554955228336,
+          "y": 1055.415673782571
         }
       },
       "position": {
@@ -1063,8 +1105,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 429.3573356975472,
-          "y": 557.5820650929568
+          "x": 153.64848833597569,
+          "y": 798.9946646830821
         }
       },
       "position": {
@@ -1091,8 +1133,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 750.9848691666814,
-          "y": 1786.8869220688025
+          "x": 174.0159259980161,
+          "y": 1067.2713047478421
         }
       },
       "position": {
@@ -1119,8 +1161,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 696.3445378741242,
-          "y": 719.4495411852731
+          "x": 834.4503117291824,
+          "y": 1852.1947880881207
         }
       },
       "position": {
@@ -1147,8 +1189,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 696.5544205411009,
-          "y": 454.98051214437
+          "x": 1066.4860249281323,
+          "y": 1793.2729092971767
         }
       },
       "position": {
@@ -1164,19 +1206,19 @@
       "color": "#1d96bf",
       "borderColor": "#ffffff",
       "lineStyle": "solid",
-      "notes": "Członek drużyny. Szczegóły profesji i pochodzenia do uzupełnienia na podstawie informacji ujawnionych przez postać.",
+      "notes": "Giga urocza super babeczka",
       "fields": {
         "aliases": "Pchełka",
-        "occupation": "Nieustalone",
-        "age": "Nieustalony",
+        "occupation": "Profesjonalna pchła",
+        "age": "22",
         "status": "Żyje",
         "affiliation": "Drużyna"
       },
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 2320.5324563138447,
-          "y": 446.4045120539397
+          "x": 1504.5376859218522,
+          "y": 66.49283268554898
         }
       },
       "position": {
@@ -1203,8 +1245,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 2397.542450354677,
-          "y": 734.3498989642247
+          "x": 908.2633152121235,
+          "y": -340.08686606269407
         }
       },
       "position": {
@@ -1231,8 +1273,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 2720.5651899808554,
-          "y": 697.997343150232
+          "x": 1784.2236984544916,
+          "y": -268.81062844965425
         }
       },
       "position": {
@@ -1259,8 +1301,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 2639.171248007729,
-          "y": 321.61819228814215
+          "x": 1817.733176808219,
+          "y": -618.2444254156555
         }
       },
       "position": {
@@ -1281,8 +1323,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 2135.212094702012,
-          "y": 673.6428639270941
+          "x": 1456.3478408958779,
+          "y": -119.4837047430475
         }
       },
       "position": {
@@ -1309,8 +1351,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 957.3903724667907,
-          "y": -314.3678975079939
+          "x": 2353.858257456124,
+          "y": 75.3381557393817
         }
       },
       "position": {
@@ -1337,8 +1379,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": -574.0613022652929,
-          "y": 1464.331806643483
+          "x": -800.2711106301663,
+          "y": 1880.078391631092
         }
       },
       "position": {
@@ -1365,8 +1407,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1201.1914847032688,
-          "y": 1876.307362457638
+          "x": 1249.2517811861935,
+          "y": 1001.8268560725223
         }
       },
       "position": {
@@ -1393,8 +1435,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1288.9697437741634,
-          "y": 1650.4653400267457
+          "x": 1222.4922182240177,
+          "y": 737.2927180920299
         }
       },
       "position": {
@@ -1421,8 +1463,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1009.8121535358314,
-          "y": 1732.4799950969568
+          "x": 981.3157174341782,
+          "y": 975.8645170623267
         }
       },
       "position": {
@@ -1449,8 +1491,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 956.7444521567556,
-          "y": 2005.378689113797
+          "x": 954.8352772545431,
+          "y": 707.4431525502459
         }
       },
       "position": {
@@ -1477,8 +1519,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": -102.08534823138552,
-          "y": 1255.2497473221156
+          "x": 1260.0773226770611,
+          "y": 1266.9120247127526
         }
       },
       "position": {
@@ -1505,8 +1547,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 697.4031721271004,
-          "y": 1518.5626821969327
+          "x": 282.3490515858847,
+          "y": 1333.870060598506
         }
       },
       "position": {
@@ -1533,8 +1575,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 223.05359054696714,
-          "y": 1914.0483368478144
+          "x": 1102.6780560981647,
+          "y": 773.4156678987245
         }
       },
       "position": {
@@ -1561,8 +1603,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 696.7685694316912,
-          "y": 986.6263117846554
+          "x": 980.1532540108246,
+          "y": 1534.2298379987596
         }
       },
       "position": {
@@ -1589,8 +1631,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1475.2331947687308,
-          "y": 1407.1551476778363
+          "x": 687.3395093001999,
+          "y": 1156.7135322584313
         }
       },
       "position": {
@@ -1617,8 +1659,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 486.6026427028463,
-          "y": 1738.0373044014814
+          "x": 423.1810425971413,
+          "y": 806.6203841596988
         }
       },
       "position": {
@@ -1645,8 +1687,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 430.0098855515606,
-          "y": 1077.9762572256147
+          "x": 838.6069176571519,
+          "y": 2116.2216990645506
         }
       },
       "position": {
@@ -1667,8 +1709,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1552.8587547888526,
-          "y": 280.0290961751954
+          "x": 1708.2157789155278,
+          "y": 143.20778100935138
         }
       },
       "position": {
@@ -1695,8 +1737,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1673.5698460566894,
-          "y": -299.00151482427634
+          "x": 2154.8190359889177,
+          "y": -306.65988749539883
         }
       },
       "position": {
@@ -1717,8 +1759,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1494.4102800990697,
-          "y": 605.7773181038573
+          "x": 907.4741292275253,
+          "y": 384.48348068621
         }
       },
       "position": {
@@ -1739,8 +1781,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1762.2818091068789,
-          "y": 739.3536289750241
+          "x": 1172.0957117269695,
+          "y": 202.55557093251048
         }
       },
       "position": {
@@ -1767,8 +1809,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 685.4928630011261,
-          "y": -565.7477302486326
+          "x": 2814.161489531861,
+          "y": 80.99580144609547
         }
       },
       "position": {
@@ -1795,8 +1837,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 516.7110583117887,
-          "y": -834.9352622285861
+          "x": 3077.7554559571026,
+          "y": -31.97195256541022
         }
       },
       "position": {
@@ -1823,8 +1865,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": -101.13427664161554,
-          "y": 988.4489110443741
+          "x": 13.55682860922036,
+          "y": 1334.0568262450922
         }
       },
       "position": {
@@ -1845,8 +1887,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1820.427705311224,
-          "y": 269.66908187985075
+          "x": 1187.4654217905897,
+          "y": -239.40121649983257
         }
       },
       "position": {
@@ -1873,8 +1915,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 2112.124009870802,
-          "y": -113.52634227251986
+          "x": 1455.0242961379827,
+          "y": -654.0575944191751
         }
       },
       "position": {
@@ -1901,8 +1943,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 2087.67123874804,
-          "y": 153.76454782213887
+          "x": 1454.4713187567195,
+          "y": -388.5702425224615
         }
       },
       "position": {
@@ -1929,8 +1971,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1846.0123140719672,
-          "y": 6.118297063492491
+          "x": 1188.3805279441922,
+          "y": -507.4248700904775
         }
       },
       "position": {
@@ -1957,8 +1999,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1463.2330361741178,
-          "y": 1932.8210047902157
+          "x": 1646.810806271274,
+          "y": 526.5936718656711
         }
       },
       "position": {
@@ -1979,8 +2021,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1743.0683191925018,
-          "y": 1414.837009098877
+          "x": 1434.5094261820493,
+          "y": 415.9569509624794
         }
       },
       "position": {
@@ -2001,8 +2043,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1220.2638739922836,
-          "y": 2122.680605520064
+          "x": 1486.1187379825017,
+          "y": 787.1632814203506
         }
       },
       "position": {
@@ -2023,8 +2065,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1497.3817942059204,
-          "y": 1138.8471629969174
+          "x": 405.0590318220618,
+          "y": 1587.5206161839374
         }
       },
       "position": {
@@ -2045,8 +2087,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": -46.992401872912524,
-          "y": 1789.046284573996
+          "x": 1517.583458809041,
+          "y": 1948.0049206615777
         }
       },
       "position": {
@@ -2073,8 +2115,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 2164.841900711919,
-          "y": 1040.8450189328596
+          "x": 688.8546717156455,
+          "y": -606.1560485969815
         }
       },
       "position": null
@@ -2098,8 +2140,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1898.0437872884804,
-          "y": 1041.4564176355743
+          "x": 421.47187033818216,
+          "y": -510.433073984319
         }
       },
       "position": null
@@ -2117,8 +2159,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1494.6231259418585,
-          "y": 873.624815973097
+          "x": 1172.573922503655,
+          "y": 470.8991086768834
         }
       },
       "position": {
@@ -2384,7 +2426,7 @@
       "target": "entity-mwqae1oz-lybbmu",
       "type": "Należy do",
       "note": "",
-      "color": "#00ff2a",
+      "color": "#83479e",
       "lineStyle": "solid",
       "direction": "towards"
     },
@@ -2394,7 +2436,7 @@
       "target": "entity-mwqae1oz-lybbmu",
       "type": "Należy do",
       "note": "",
-      "color": "#00ff2a",
+      "color": "#83479e",
       "lineStyle": "solid",
       "direction": "towards"
     },
@@ -2404,7 +2446,7 @@
       "target": "entity-mwqae1oz-lybbmu",
       "type": "Należy do",
       "note": "",
-      "color": "#00ff2a",
+      "color": "#83479e",
       "lineStyle": "solid",
       "direction": "towards"
     },
@@ -2744,7 +2786,7 @@
       "target": "entity-mwqawdei-y4ai4i",
       "type": "Należy do",
       "note": "",
-      "color": "#00ff2a",
+      "color": "#83479e",
       "lineStyle": "solid",
       "direction": "towards"
     },
@@ -2754,7 +2796,7 @@
       "target": "entity-mwqawdei-y4ai4i",
       "type": "Należy do",
       "note": "",
-      "color": "#00ff2a",
+      "color": "#83479e",
       "lineStyle": "solid",
       "direction": "towards"
     },
@@ -2764,7 +2806,7 @@
       "target": "entity-mwqawdei-y4ai4i",
       "type": "Należy do",
       "note": "",
-      "color": "#00ff2a",
+      "color": "#83479e",
       "lineStyle": "solid",
       "direction": "towards"
     },
@@ -2774,7 +2816,7 @@
       "target": "entity-mwqawdei-y4ai4i",
       "type": "Należy do",
       "note": "",
-      "color": "#00ff2a",
+      "color": "#83479e",
       "lineStyle": "solid",
       "direction": "towards"
     },
@@ -2804,7 +2846,7 @@
       "target": "entity-mwqae1oz-lybbmu",
       "type": "Należy do",
       "note": "",
-      "color": "#00ff2a",
+      "color": "#83479e",
       "lineStyle": "solid",
       "direction": "towards"
     },
@@ -3094,7 +3136,7 @@
       "target": "entity-mwqae1oz-lybbmu",
       "type": "Należy do",
       "note": "",
-      "color": "#00ff2a",
+      "color": "#83479e",
       "lineStyle": "solid",
       "direction": "towards"
     },
@@ -3467,6 +3509,76 @@
       "color": "#d4a03c",
       "lineStyle": "solid",
       "direction": "none"
+    },
+    {
+      "id": "rel-mwqfvxmp-lux4hn",
+      "source": "entity-mwqaulty-9xwfh3",
+      "target": "entity-mwqa0v35-tfopz9",
+      "type": "Beznadziejnie zakochana",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "none"
+    },
+    {
+      "id": "rel-mwqfyc11-o12aya",
+      "source": "entity-mwqaulty-9xwfh3",
+      "target": "entity-mwqa1bqr-4skgwi",
+      "type": "Niepewność",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "none"
+    },
+    {
+      "id": "rel-mwqfyxy4-6epzou",
+      "source": "entity-mwqaulty-9xwfh3",
+      "target": "entity-mwqa3bwf-6bv3az",
+      "type": "Sympatia",
+      "note": "",
+      "color": "#b65866",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqg1xhl-tuir4n",
+      "source": "entity-mwqaulty-9xwfh3",
+      "target": "entity-mwqaarh3-qq8qw7",
+      "type": "Nieufność, strach",
+      "note": "",
+      "color": "#8b6113",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqg35ls-l3kaij",
+      "source": "entity-mwqaulty-9xwfh3",
+      "target": "entity-mwqakzkv-232mso",
+      "type": "Niechęć",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "none"
+    },
+    {
+      "id": "rel-mwqg7sg2-da29p1",
+      "source": "entity-mwqaulty-9xwfh3",
+      "target": "entity-mwqaksx9-yjeme3",
+      "type": "To skomplikowane",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "none"
+    },
+    {
+      "id": "rel-mwqgazqk-loz1br",
+      "source": "entity-mwqaulty-9xwfh3",
+      "target": "entity-mwqav4ef-4c11vc",
+      "type": "Należy do",
+      "note": "",
+      "color": "#83479e",
+      "lineStyle": "solid",
+      "direction": "towards"
     }
   ]
 }
