@@ -2031,7 +2031,7 @@
       "id": "entity-ojciec-donnavich",
       "type": "Person",
       "name": "Ojciec Donnavich",
-      "imageUrl": "",
+      "imageUrl": "https://vengrathdm.github.io/page/legends-of-barovia/W%C4%85tki-w-Barovii/data/res/Donavich_token.webp",
       "color": "#59323a",
       "borderColor": "#BCA06A",
       "lineStyle": "solid",
@@ -2051,7 +2051,7 @@
       "id": "entity-doru",
       "type": "Person",
       "name": "Doru",
-      "imageUrl": "",
+      "imageUrl": "https://vengrathdm.github.io/page/legends-of-barovia/W%C4%85tki-w-Barovii/data/res/Doru_token.webp",
       "color": "#59323a",
       "borderColor": "#BCA06A",
       "lineStyle": "solid",
@@ -3298,6 +3298,26 @@
       "color": "#d4a03c",
       "lineStyle": "dotted",
       "direction": "mutual"
+    },
+    {
+      "id": "rel-donnavich-vallaki",
+      "source": "entity-ojciec-donnavich",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-doru-vallaki",
+      "source": "entity-doru",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
     }
   ]
 }
