@@ -110,6 +110,20 @@
         "color": "#b630c0",
         "lineStyle": "dashed",
         "direction": "mutual"
+      },
+      {
+        "name": "Obsesja",
+        "description": "",
+        "color": "#b630c0",
+        "lineStyle": "dashed",
+        "direction": "towards"
+      },
+      {
+        "name": "Jest członkiem",
+        "description": "",
+        "color": "#00ff2a",
+        "lineStyle": "solid",
+        "direction": "towards"
       }
     ],
     "notes": "Niezależny rejestr wątków kampanii Legends of Barovia. Zestaw startowy jest celowo pusty.",
@@ -1555,6 +1569,116 @@
         "x": 2700,
         "y": 1600
       }
+    },
+    {
+      "id": "entity-davian-martikov",
+      "type": "Person",
+      "name": "Davian Martikov",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 500,
+          "y": 1450
+        }
+      },
+      "position": {
+        "x": 500,
+        "y": 1450
+      }
+    },
+    {
+      "id": "entity-czarodziej-win",
+      "type": "Location",
+      "name": "Czarodziej Win",
+      "imageUrl": "",
+      "color": "#334b5c",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 850,
+          "y": 1450
+        }
+      },
+      "position": {
+        "x": 850,
+        "y": 1450
+      }
+    },
+    {
+      "id": "entity-martikovovie",
+      "type": "Family",
+      "name": "Martikovovie",
+      "imageUrl": "",
+      "color": "#493b4d",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 450,
+          "y": 1650
+        }
+      },
+      "position": {
+        "x": 450,
+        "y": 1650
+      }
+    },
+    {
+      "id": "entity-vallakovichovie",
+      "type": "Family",
+      "name": "Vallakovichovie",
+      "imageUrl": "",
+      "color": "#493b4d",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1100,
+          "y": 1650
+        }
+      },
+      "position": {
+        "x": 1100,
+        "y": 1650
+      }
+    },
+    {
+      "id": "entity-wachterowie",
+      "type": "Family",
+      "name": "Wachterowie",
+      "imageUrl": "",
+      "color": "#493b4d",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1750,
+          "y": 1650
+        }
+      },
+      "position": {
+        "x": 1750,
+        "y": 1650
+      }
     }
   ],
   "relationships": [
@@ -2555,6 +2679,206 @@
       "type": "Mieszka w",
       "note": "",
       "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-request-1-lady-fiona-wachter",
+      "source": "entity-mwqa802d-ls6cx4",
+      "target": "entity-mwqa404p-u84avv",
+      "type": "Krytykuje",
+      "note": "",
+      "color": "#ff0000",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-request-2-vargas-vallakovich",
+      "source": "entity-mwqa404p-u84avv",
+      "target": "entity-mwqa802d-ls6cx4",
+      "type": "Krytykuje",
+      "note": "",
+      "color": "#ff0000",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-request-3-morgantha",
+      "source": "entity-morgantha-hag",
+      "target": "entity-bella-hag",
+      "type": "Rodzic-Dziecko",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-request-4-morgantha",
+      "source": "entity-morgantha-hag",
+      "target": "entity-ophelia-hag",
+      "type": "Rodzic-Dziecko",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-request-5-bella",
+      "source": "entity-bella-hag",
+      "target": "entity-ophelia-hag",
+      "type": "Rodzeństwo",
+      "note": "",
+      "color": "#3f10c1",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-request-6-davian-martikov",
+      "source": "entity-davian-martikov",
+      "target": "entity-mwqb02fa-srql4f",
+      "type": "Rodzic-Dziecko",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-request-7-izek-strazni",
+      "source": "entity-mwqaarh3-qq8qw7",
+      "target": "entity-mwqa3bwf-6bv3az",
+      "type": "Obsesja",
+      "note": "",
+      "color": "#b630c0",
+      "lineStyle": "dashed",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-request-8-urwin-martikov",
+      "source": "entity-mwqb02fa-srql4f",
+      "target": "entity-martikovovie",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-request-9-danika-martikov",
+      "source": "entity-mwqb0929-u8rd52",
+      "target": "entity-martikovovie",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-request-10-bray-martikov",
+      "source": "entity-mwqb13mb-868ho5",
+      "target": "entity-martikovovie",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-request-11-brom-martikov",
+      "source": "entity-mwqb1999-n7cogb",
+      "target": "entity-martikovovie",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-request-12-davian-martikov",
+      "source": "entity-davian-martikov",
+      "target": "entity-martikovovie",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-request-13-vargas-vallakovich",
+      "source": "entity-mwqa404p-u84avv",
+      "target": "entity-vallakovichovie",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-request-14-lydia-petrovna",
+      "source": "entity-mwqa4846-5flf7q",
+      "target": "entity-vallakovichovie",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-request-15-viktor-vallakovich",
+      "source": "entity-mwqa5zpy-m4d9ec",
+      "target": "entity-vallakovichovie",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-request-16-lady-fiona-wachter",
+      "source": "entity-mwqa802d-ls6cx4",
+      "target": "entity-wachterowie",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-request-17-nikolai-wachter-senior",
+      "source": "entity-mwqa895d-o79oya",
+      "target": "entity-wachterowie",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-request-18-nikolai-wachter-junior",
+      "source": "entity-mwqa8pk0-udfwd6",
+      "target": "entity-wachterowie",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-request-19-stella-wachter",
+      "source": "entity-mwqa973i-rjnj3f",
+      "target": "entity-wachterowie",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-request-20-karl-wachter",
+      "source": "entity-mwqa9sio-4yepb6",
+      "target": "entity-wachterowie",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#00ff2a",
       "lineStyle": "solid",
       "direction": "towards"
     }
