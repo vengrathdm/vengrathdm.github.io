@@ -142,12 +142,20 @@ function enforceMinimumEntitySpacing(){
   if(!adjusted)break;
  }
 }
+const FORCE_LAYOUT_SPREAD=2.5;
+function spreadForceLayout(){
+ const nodes=cy.nodes();if(nodes.length<2)return;
+ let centerX=0,centerY=0;
+ nodes.forEach(node=>{const p=node.position();centerX+=p.x;centerY+=p.y});
+ centerX/=nodes.length;centerY/=nodes.length;
+ nodes.forEach(node=>{const p=node.position();node.position({x:centerX+(p.x-centerX)*FORCE_LAYOUT_SPREAD,y:centerY+(p.y-centerY)*FORCE_LAYOUT_SPREAD})});
+}
 function layout(mode,fit=true){
  layoutModes[activeView]=mode;data.metadata.layoutModes={...(data.metadata.layoutModes||{}),[activeView]:mode};
  const pairCounts=new Map(),degree=new Map();
  cy.edges().forEach(edge=>{const a=edge.data("source"),b=edge.data("target"),key=[a,b].sort().join("|");pairCounts.set(key,(pairCounts.get(key)||0)+1);degree.set(a,(degree.get(a)||0)+1);degree.set(b,(degree.get(b)||0)+1)});
  const opts=mode==="hierarchy"?{name:"breadthfirst",directed:true,spacingFactor:1.3,padding:55,animate:false,roots:cy.nodes().filter(n=>n.data("type")===(activeView==="family"?"Family":"Faction"))}:mode==="manual"?{name:"preset",fit:false}:{name:"cose",animate:false,randomize:false,numIter:1800,idealEdgeLength:edge=>{const count=pairCounts.get([edge.data("source"),edge.data("target")].sort().join("|"))||1;return Math.max(88,205-(count-1)*32)},edgeElasticity:edge=>{const count=pairCounts.get([edge.data("source"),edge.data("target")].sort().join("|"))||1;return Math.min(260,105+(count-1)*55)},nodeRepulsion:node=>18000+Math.min(degree.get(node.id())||0,8)*1500,gravity:.09,componentSpacing:110,fit};
- cy.layout(opts).run();if(mode==="force")enforceMinimumEntitySpacing();const label=$("activeViewLabel");if(label)label.textContent=(activeView==="complete"?"Pełny graf":activeView==="family"?"Drzewo rodziny":activeView==="organization"?"Graf organizacji":activeView==="political"?"Sieć polityczna":"Sieć postaci")+" · "+(mode==="hierarchy"?"Hierarchiczny":mode==="manual"?"Ręczny":"Siłowy");if(fit&&mode!=="manual")cy.fit(cy.elements(),55)
+ cy.layout(opts).run();if(mode==="force"){enforceMinimumEntitySpacing();spreadForceLayout()}const label=$("activeViewLabel");if(label)label.textContent=(activeView==="complete"?"Pełny graf":activeView==="family"?"Drzewo rodziny":activeView==="organization"?"Graf organizacji":activeView==="political"?"Sieć polityczna":"Sieć postaci")+" · "+(mode==="hierarchy"?"Hierarchiczny":mode==="manual"?"Ręczny":"Siłowy");if(fit&&mode!=="manual")cy.fit(cy.elements(),55)
 }
 function renderGraph(){
  if(!cy)return;const v=viewData();cy.elements().remove();cy.add(nodeElements(v.entities,v.relationships));
