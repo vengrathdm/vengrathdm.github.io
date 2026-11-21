@@ -42,6 +42,34 @@
         "color": "#8c9caa",
         "lineStyle": "solid",
         "direction": "towards"
+      },
+      {
+        "name": "Jest członkiem",
+        "description": "",
+        "color": "#d4a03c",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Kontroluje",
+        "description": "",
+        "color": "#d4a03c",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Znajduje się w",
+        "description": "",
+        "color": "#d4a03c",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Działa w",
+        "description": "",
+        "color": "#d4a03c",
+        "lineStyle": "solid",
+        "direction": "none"
       }
     ],
     "notes": "Zwięzły przykład obejmujący pięć obiektów i pięć relacji, oparty na przygodzie Zaginiona Kopalnia Phandelver. To dane demonstracyjne, nie kanon kampanii Heartwell.",
@@ -49,124 +77,10 @@
   },
   "entities": [
     {
-      "id": "gundren-rockseeker",
+      "id": "entity-mwqgbm67-ta7yht",
       "type": "Person",
-      "name": "Gundren Rockseeker",
-      "imageUrl": "",
-      "color": "#355C6D",
-      "borderColor": "#FFFFFF",
-      "lineStyle": "solid",
-      "notes": "Krasnoludzki poszukiwacz złota i jeden z trzech braci Rockseekerów. Ponownie odkrył zaginioną Jaskinię Falującego Echa i przewozi zaopatrzenie oraz informacje związane z kopalnią.",
-      "fields": {
-        "Occupation": "Poszukiwacz złota",
-        "Affiliation": "Bracia Rockseekerowie",
-        "Status": "Zaginiony na początku przygody"
-      },
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 159.0687731316857,
-          "y": -31.15327171064456
-        }
-      },
-      "position": null
-    },
-    {
-      "id": "sildar-hallwinter",
-      "type": "Person",
-      "name": "Sildar Hallwinter",
-      "imageUrl": "",
-      "color": "#355C6D",
-      "borderColor": "#FFFFFF",
-      "lineStyle": "solid",
-      "notes": "Ludzki wojownik i członek Sojuszu Lordów. Towarzyszy Gundrenowi w drodze do Phandalin, zostaje napadnięty przez gobliny i wzięty do niewoli.",
-      "fields": {
-        "Occupation": "Wojownik; agent Sojuszu Lordów",
-        "Affiliation": "Sojusz Lordów",
-        "Status": "Pojmany"
-      },
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": -85.72247998761861,
-          "y": 81.87975652597261
-        }
-      },
-      "position": null
-    },
-    {
-      "id": "klarg",
-      "type": "Person",
-      "name": "Klarg",
-      "imageUrl": "",
-      "color": "#355C6D",
-      "borderColor": "#FFFFFF",
-      "lineStyle": "solid",
-      "notes": "Wódz bugbearów dowodzący kryjówką Cragmaw. Służy goblinom Cragmaw i jest powiązany z działaniami Czarnego Pająka, który próbuje przechwycić Gundrena i przewożone przez niego informacje.",
-      "fields": {
-        "Occupation": "Wódz bugbearów",
-        "Affiliation": "Gobliny Cragmaw",
-        "Location": "Kryjówka Cragmaw"
-      },
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 80.08847202380706,
-          "y": 119.3861318915646
-        }
-      },
-      "position": null
-    },
-    {
-      "id": "black-spider",
-      "type": "Person",
-      "name": "Nezznar the Black Spider",
-      "imageUrl": "",
-      "color": "#355C6D",
-      "borderColor": "#FFFFFF",
-      "lineStyle": "solid",
-      "notes": "Drowi antagonista kierujący poszukiwaniami Jaskini Falującego Echa. Wykorzystuje swoich agentów i gobliny Cragmaw, by odnaleźć Gundrena i przejąć kontrolę nad kopalnią.",
-      "fields": {
-        "Occupation": "Drowi czarodziej",
-        "Affiliation": "Sieć Czarnego Pająka",
-        "Goal": "Przejąć kontrolę nad Jaskinią Falującego Echa"
-      },
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 245.18592581153396,
-          "y": 159.91798051470758
-        }
-      },
-      "position": null
-    },
-    {
-      "id": "wave-echo-cave",
-      "type": "Location",
-      "name": "Wave Echo Cave",
-      "imageUrl": "",
-      "color": "#3F716B",
-      "borderColor": "#FFFFFF",
-      "lineStyle": "solid",
-      "notes": "Zaginiona kopalnia, w której znajduje się Kuźnia Zaklęć. Gundren ponownie odkrył jej położenie, a Czarny Pająk pragnie ją zdobyć.",
-      "fields": {
-        "LocationType": "Zaginiona kopalnia",
-        "Feature": "Kuźnia Zaklęć"
-      },
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 234.21237912003923,
-          "y": 329.56343808139155
-        }
-      },
-      "position": null
-    },
-    {
-      "id": "entity-mwozj319-d8dzwc",
-      "type": "Person",
-      "name": "pos",
-      "imageUrl": "",
+      "name": "Delilah Brooke",
+      "imageUrl": "https://vengrathdm.github.io/core/portraits/char-0121.webp",
       "color": "#355c6d",
       "borderColor": "#ffffff",
       "lineStyle": "solid",
@@ -174,108 +88,108 @@
       "fields": {},
       "customFields": [],
       "position": {
-        "x": -176.91559747311723,
-        "y": 283.0016321469964
+        "x": 92.06658291638222,
+        "y": -2468.0597897566986
       },
       "positions": {
         "complete": {
-          "x": -176.91559747311723,
-          "y": 283.0016321469964
+          "x": 40.27739742813321,
+          "y": 1558.6204497911845
         }
       }
     },
     {
-      "id": "entity-mwozj79r-a7cujr",
-      "type": "Family",
-      "name": "rod",
-      "imageUrl": "",
-      "color": "#704653",
+      "id": "entity-mwqgcihh-a89qm9",
+      "type": "Person",
+      "name": "Alderik Erikson",
+      "imageUrl": "https://vengrathdm.github.io/core/portraits/char-0123.webp",
+      "color": "#355c6d",
       "borderColor": "#ffffff",
       "lineStyle": "solid",
       "notes": "",
       "fields": {},
       "customFields": [],
       "position": {
-        "x": -94.92965442208175,
-        "y": 262.50514638423755
+        "x": 200.8020812015183,
+        "y": -2464.249983289697
       },
       "positions": {
         "complete": {
-          "x": -94.92965442208175,
-          "y": 262.50514638423755
+          "x": -307.42651735896646,
+          "y": 1839.8195645681092
         }
       }
     },
     {
-      "id": "entity-mwozjdqx-53x0lc",
+      "id": "entity-mwqgdasf-tpnx28",
+      "type": "Person",
+      "name": "James Blackwood",
+      "imageUrl": "https://vengrathdm.github.io/core/portraits/char-0122.webp",
+      "color": "#355c6d",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 94.8020812015183,
+        "y": -2326.249983289697
+      },
+      "positions": {
+        "complete": {
+          "x": -371.39085334103453,
+          "y": 1474.4557052394969
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgdo45-60y7xj",
+      "type": "Person",
+      "name": "Polter von Geist",
+      "imageUrl": "https://vengrathdm.github.io/core/portraits/char-0120.webp",
+      "color": "#355c6d",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 231.13541453485163,
+        "y": -2303.249983289697
+      },
+      "positions": {
+        "complete": {
+          "x": -372.7911722651059,
+          "y": 1117.891622486939
+        }
+      }
+    },
+    {
+      "id": "entity-mwqge81o-iz2fm6",
       "type": "Faction",
-      "name": "stro",
+      "name": "Drużyna",
       "imageUrl": "",
-      "color": "#65734a",
-      "borderColor": "#ffffff",
+      "color": "#ff00dd",
+      "borderColor": "#fbff00",
       "lineStyle": "solid",
       "notes": "",
       "fields": {},
       "customFields": [],
       "position": {
-        "x": -113.14685118875515,
-        "y": 338.9907998326828
+        "x": 162.13541453485163,
+        "y": -2386.249983289697
       },
       "positions": {
         "complete": {
-          "x": -113.14685118875515,
-          "y": 338.9907998326828
+          "x": -105.89968146053872,
+          "y": 1295.1387296573707
         }
       }
     },
     {
-      "id": "entity-mwozjj7j-kpzj02",
-      "type": "Object",
-      "name": "przed",
-      "imageUrl": "",
-      "color": "#8b6f47",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "position": {
-        "x": -13.116681152898591,
-        "y": 324.936974290455
-      },
-      "positions": {
-        "complete": {
-          "x": -13.116681152898591,
-          "y": 324.936974290455
-        }
-      }
-    },
-    {
-      "id": "entity-mwozjopq-2w36y7",
-      "type": "Event",
-      "name": "wyd",
-      "imageUrl": "",
-      "color": "#66527a",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "position": {
-        "x": -58.99828807017164,
-        "y": 398.5128844821181
-      },
-      "positions": {
-        "complete": {
-          "x": -58.99828807017164,
-          "y": 398.5128844821181
-        }
-      }
-    },
-    {
-      "id": "entity-mwozjuza-we3n8a",
+      "id": "entity-mwqgguk7-tuhh3u",
       "type": "Institution",
-      "name": "insty",
+      "name": "Rada Heartwell",
       "imageUrl": "",
       "color": "#526878",
       "borderColor": "#ffffff",
@@ -284,20 +198,199 @@
       "fields": {},
       "customFields": [],
       "position": {
-        "x": 43.09862101601253,
-        "y": 248.46762942833325
+        "x": 817.8433037950522,
+        "y": -40.322688111437344
       },
       "positions": {
         "complete": {
-          "x": 43.09862101601253,
-          "y": 248.46762942833325
+          "x": 494.4686322874545,
+          "y": 688.5354399787055
         }
       }
     },
     {
-      "id": "entity-mwozk18o-acsekv",
+      "id": "entity-mwqghot0-2uwwr8",
+      "type": "Person",
+      "name": "Percival Lysander Ignatious Sinclair",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {
+        "aliases": "Książę Korony",
+        "occupation": "Książę Korony"
+      },
+      "customFields": [],
+      "position": {
+        "x": 815.8003156291945,
+        "y": -224.1916230386108
+      },
+      "positions": {
+        "complete": {
+          "x": 583.5715211649754,
+          "y": 1294.8949485049811
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgj6xm-c7m2lx",
+      "type": "Person",
+      "name": "Isadora Crane",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 972.3356730984356,
+        "y": -126.79769008900521
+      },
+      "positions": {
+        "complete": {
+          "x": 163.10063613687674,
+          "y": 198.2961130040922
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgjflr-ke4sfd",
+      "type": "Person",
+      "name": "Javert Crane",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 681.2544085359253,
+        "y": -198.7336968726065
+      },
+      "positions": {
+        "complete": {
+          "x": 227.6863896990451,
+          "y": 655.2478471767231
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgjnq4-2bfon4",
+      "type": "Person",
+      "name": "Helena Corvus",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 679.4003877425336,
+        "y": -33.72584626073758
+      },
+      "positions": {
+        "complete": {
+          "x": 1039.4486463173218,
+          "y": 1088.2544604564898
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgk9ha-fhhnif",
+      "type": "Person",
+      "name": "Matthias Ravencroft",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 768.0225816666608,
+        "y": 83.8190720403016
+      },
+      "positions": {
+        "complete": {
+          "x": 764.4085607954325,
+          "y": 580.364313402149
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgkftg-xw2yd3",
+      "type": "Person",
+      "name": "Vivienne",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 894.837603934659,
+        "y": 87.15630946840682
+      },
+      "positions": {
+        "complete": {
+          "x": 1088.4581456351923,
+          "y": 816.2735527127998
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgkndh-3zkg9i",
+      "type": "Person",
+      "name": "Sabine Kessler",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 981.2349729067162,
+        "y": 12.624673574057047
+      },
+      "positions": {
+        "complete": {
+          "x": 471.3264359367014,
+          "y": 422.78971095020046
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgmbs5-uly40i",
+      "type": "Institution",
+      "name": "Miasto Heartwell",
+      "imageUrl": "",
+      "color": "#526878",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 538.6558302106671,
+        "y": 934.6010692425073
+      },
+      "positions": {
+        "complete": {
+          "x": 504.1768223435396,
+          "y": 956.2422143928392
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgneze-i2a8b3",
       "type": "Location",
-      "name": "lok",
+      "name": "Senatorium (Dzielnica)",
       "imageUrl": "",
       "color": "#3f716b",
       "borderColor": "#ffffff",
@@ -306,66 +399,614 @@
       "fields": {},
       "customFields": [],
       "position": {
-        "x": 69.96622867027153,
-        "y": 374.9520593083833
+        "x": 389.06450634541466,
+        "y": -106.3558490632881
       },
       "positions": {
         "complete": {
-          "x": 69.96622867027153,
-          "y": 374.9520593083833
+          "x": 736.8922009793603,
+          "y": 296.7692081525026
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgnvjt-yyd75m",
+      "type": "Location",
+      "name": "Zabraniec (Dzielnica)",
+      "imageUrl": "",
+      "color": "#3f716b",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 472.7964315150804,
+        "y": -59.02910874999878
+      },
+      "positions": {
+        "complete": {
+          "x": -45.029038716513185,
+          "y": 699.8274445125318
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgof8b-72uhlz",
+      "type": "Location",
+      "name": "Erozja (Dzielnica)",
+      "imageUrl": "",
+      "color": "#3f716b",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 500.46437200592646,
+        "y": -214.8432999352898
+      },
+      "positions": {
+        "complete": {
+          "x": 1026.6518980363899,
+          "y": 553.3760528082772
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgoug1-kquth2",
+      "type": "Location",
+      "name": "Wisielcze Wzgórze (Dzielnica)",
+      "imageUrl": "",
+      "color": "#3f716b",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 611.8642376664383,
+        "y": -101.2591231833954
+      },
+      "positions": {
+        "complete": {
+          "x": 236.3536925247384,
+          "y": 923.1434240382673
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgpenq-b9ko2z",
+      "type": "Location",
+      "name": "Apetoria (Dzielnica)",
+      "imageUrl": "",
+      "color": "#3f716b",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 332.2724179694675,
+        "y": -284.7412548595325
+      },
+      "positions": {
+        "complete": {
+          "x": 770.1855637507269,
+          "y": 1026.880658015783
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgpp79-f50klb",
+      "type": "Location",
+      "name": "Korona (Dzielnica)",
+      "imageUrl": "",
+      "color": "#3f716b",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 217.96013752044558,
+        "y": -209.01847035826958
+      },
+      "positions": {
+        "complete": {
+          "x": 317.50671680363234,
+          "y": 1221.8236021282546
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgqd9l-j7ros6",
+      "type": "Faction",
+      "name": "Kartel Szumu",
+      "imageUrl": "",
+      "color": "#65734a",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 954.0256921832474,
+        "y": 154.94879529915755
+      },
+      "positions": {
+        "complete": {
+          "x": 737.0126093235062,
+          "y": 28.059801357737797
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgqy2d-em56zd",
+      "type": "Person",
+      "name": "Marlow Kess",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {
+        "aliases": "Wujaszek"
+      },
+      "customFields": [],
+      "position": {
+        "x": 1064.1964963032908,
+        "y": -44.89591915115319
+      },
+      "positions": {
+        "complete": {
+          "x": 946.924056006862,
+          "y": -151.78423884400115
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgtiyf-jdu4kc",
+      "type": "Faction",
+      "name": "Kolekcja",
+      "imageUrl": "",
+      "color": "#65734a",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 44.51158753115907,
+        "y": -228.69894642305417
+      },
+      "positions": {
+        "complete": {
+          "x": 1001.3126083502757,
+          "y": 284.4438604466308
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgu4s1-7fcfbm",
+      "type": "Faction",
+      "name": "Salon Aurelii",
+      "imageUrl": "",
+      "color": "#65734a",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": -32.13811661387677,
+        "y": 164.21130171536484
+      },
+      "positions": {
+        "complete": {
+          "x": 469.5745469082574,
+          "y": 126.68404404474677
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgumhi-edzqyd",
+      "type": "Person",
+      "name": "Ruda",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {
+        "aliases": "Ruda"
+      },
+      "customFields": [],
+      "position": {
+        "x": -204.76097973042806,
+        "y": -377.48954858694725
+      },
+      "positions": {
+        "complete": {
+          "x": 1289.3944239882958,
+          "y": -164.30643987536837
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgv1h5-x22212",
+      "type": "Person",
+      "name": "Tobiasz Wrona",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": -426.33659507406105,
+        "y": -116.62290842947235
+      },
+      "positions": {
+        "complete": {
+          "x": 621.3989564053855,
+          "y": -234.84611742160325
+        }
+      }
+    },
+    {
+      "id": "entity-mwqgvail-qb9hra",
+      "type": "Person",
+      "name": "Brat Senn",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": -225.372664878673,
+        "y": -387.79539116106974
+      },
+      "positions": {
+        "complete": {
+          "x": 854.9983001274927,
+          "y": -539.5257589362013
         }
       }
     }
   ],
   "relationships": [
     {
-      "id": "rel-gundren-sildar",
-      "source": "gundren-rockseeker",
-      "target": "sildar-hallwinter",
-      "type": "ALLY_OF",
-      "note": "Sildar towarzyszy Gundrenowi w podróży do Phandalin.",
-      "color": "#83a98a",
-      "lineStyle": "solid",
-      "direction": "mutual"
-    },
-    {
-      "id": "rel-gundren-klarg",
-      "source": "gundren-rockseeker",
-      "target": "klarg",
-      "type": "CAPTURED_BY",
-      "note": "Gobliny Klarga napadają na wyprawę Gundrena i zabierają go w kierunku Zamku Cragmaw.",
-      "color": "#c65c58",
-      "lineStyle": "dashed",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-sildar-klarg",
-      "source": "sildar-hallwinter",
-      "target": "klarg",
-      "type": "CAPTURED_BY",
-      "note": "Sildar zostaje pojmany podczas goblińskiej zasadzki i jest przetrzymywany w Kryjówce Cragmaw.",
-      "color": "#c65c58",
-      "lineStyle": "dashed",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-klarg-spider",
-      "source": "klarg",
-      "target": "black-spider",
-      "type": "SERVES",
-      "note": "Klarg i gobliny Cragmaw działają w ramach sieci Czarnego Pająka.",
+      "id": "rel-mwqgekf3-xpbcru",
+      "source": "entity-mwqgdo45-60y7xj",
+      "target": "entity-mwqge81o-iz2fm6",
+      "type": "Jest członkiem",
+      "note": "",
       "color": "#d4a03c",
       "lineStyle": "solid",
       "direction": "towards"
     },
     {
-      "id": "rel-spider-cave",
-      "source": "black-spider",
-      "target": "wave-echo-cave",
-      "type": "SEEKS",
-      "note": "Czarny Pająk chce odnaleźć Jaskinię Falującego Echa i Kuźnię Zaklęć oraz przejąć nad nimi kontrolę.",
-      "color": "#9a8ac7",
-      "lineStyle": "dotted",
+      "id": "rel-mwqgepmz-9g7o0j",
+      "source": "entity-mwqgdasf-tpnx28",
+      "target": "entity-mwqge81o-iz2fm6",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgessu-nxwglh",
+      "source": "entity-mwqgbm67-ta7yht",
+      "target": "entity-mwqge81o-iz2fm6",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgevke-3461xu",
+      "source": "entity-mwqgcihh-a89qm9",
+      "target": "entity-mwqge81o-iz2fm6",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgkvoz-nbyhef",
+      "source": "entity-mwqgjflr-ke4sfd",
+      "target": "entity-mwqgguk7-tuhh3u",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgl16l-lpt7bx",
+      "source": "entity-mwqghot0-2uwwr8",
+      "target": "entity-mwqgguk7-tuhh3u",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgl4q9-wec86i",
+      "source": "entity-mwqgj6xm-c7m2lx",
+      "target": "entity-mwqgguk7-tuhh3u",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqglakq-v7ohvr",
+      "source": "entity-mwqgkndh-3zkg9i",
+      "target": "entity-mwqgguk7-tuhh3u",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgldim-ihva9v",
+      "source": "entity-mwqgkftg-xw2yd3",
+      "target": "entity-mwqgguk7-tuhh3u",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqglhng-toe0jj",
+      "source": "entity-mwqgk9ha-fhhnif",
+      "target": "entity-mwqgguk7-tuhh3u",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqglkt6-fhbyi7",
+      "source": "entity-mwqgjnq4-2bfon4",
+      "target": "entity-mwqgguk7-tuhh3u",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgmlt1-o3v0eo",
+      "source": "entity-mwqgguk7-tuhh3u",
+      "target": "entity-mwqgmbs5-uly40i",
+      "type": "Kontroluje",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgn068-wanm8j",
+      "source": "entity-mwqge81o-iz2fm6",
+      "target": "entity-mwqgmbs5-uly40i",
+      "type": "Znajduje się w",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgnj6e-kkv0ti",
+      "source": "entity-mwqgneze-i2a8b3",
+      "target": "entity-mwqgmbs5-uly40i",
+      "type": "Znajduje się w",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgnyws-nqsr0v",
+      "source": "entity-mwqgnvjt-yyd75m",
+      "target": "entity-mwqgmbs5-uly40i",
+      "type": "Znajduje się w",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgoig9-elnr24",
+      "source": "entity-mwqgof8b-72uhlz",
+      "target": "entity-mwqgmbs5-uly40i",
+      "type": "Znajduje się w",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgoxhv-0v0mwn",
+      "source": "entity-mwqgoug1-kquth2",
+      "target": "entity-mwqgmbs5-uly40i",
+      "type": "Znajduje się w",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgpsjj-40o4w7",
+      "source": "entity-mwqgpp79-f50klb",
+      "target": "entity-mwqgmbs5-uly40i",
+      "type": "Znajduje się w",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgpvx0-rm3mdh",
+      "source": "entity-mwqgpenq-b9ko2z",
+      "target": "entity-mwqgmbs5-uly40i",
+      "type": "Znajduje się w",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgqi2c-u34j1z",
+      "source": "entity-mwqgqd9l-j7ros6",
+      "target": "entity-mwqgneze-i2a8b3",
+      "type": "Działa w",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "none"
+    },
+    {
+      "id": "rel-mwqgr8v1-obzdlg",
+      "source": "entity-mwqgqy2d-em56zd",
+      "target": "entity-mwqgqd9l-j7ros6",
+      "type": "Kontroluje",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgsa0b-8ezdc7",
+      "source": "entity-mwqgkftg-xw2yd3",
+      "target": "entity-mwqgof8b-72uhlz",
+      "type": "Kontroluje",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgsfn0-6gdygi",
+      "source": "entity-mwqghot0-2uwwr8",
+      "target": "entity-mwqgpp79-f50klb",
+      "type": "Kontroluje",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgsm1e-a32ufp",
+      "source": "entity-mwqgk9ha-fhhnif",
+      "target": "entity-mwqgof8b-72uhlz",
+      "type": "Kontroluje",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgsrmw-8vj7d0",
+      "source": "entity-mwqgjflr-ke4sfd",
+      "target": "entity-mwqgoug1-kquth2",
+      "type": "Kontroluje",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgsws3-0zzf3e",
+      "source": "entity-mwqgjnq4-2bfon4",
+      "target": "entity-mwqgpenq-b9ko2z",
+      "type": "Kontroluje",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgt1s6-cxahiq",
+      "source": "entity-mwqgkndh-3zkg9i",
+      "target": "entity-mwqgnvjt-yyd75m",
+      "type": "Kontroluje",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgt77u-y0c04j",
+      "source": "entity-mwqgj6xm-c7m2lx",
+      "target": "entity-mwqgneze-i2a8b3",
+      "type": "Kontroluje",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgtoss-qp986b",
+      "source": "entity-mwqgtiyf-jdu4kc",
+      "target": "entity-mwqgneze-i2a8b3",
+      "type": "Działa w",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "none"
+    },
+    {
+      "id": "rel-mwqgua65-0zt7g8",
+      "source": "entity-mwqgu4s1-7fcfbm",
+      "target": "entity-mwqgneze-i2a8b3",
+      "type": "Działa w",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "none"
+    },
+    {
+      "id": "rel-mwqgutqi-jd8k49",
+      "source": "entity-mwqgumhi-edzqyd",
+      "target": "entity-mwqgqd9l-j7ros6",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgv557-pcfa30",
+      "source": "entity-mwqgv1h5-x22212",
+      "target": "entity-mwqgqd9l-j7ros6",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqgveu8-ieq08y",
+      "source": "entity-mwqgvail-qb9hra",
+      "target": "entity-mwqgqd9l-j7ros6",
+      "type": "Jest członkiem",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
       "direction": "towards"
     }
   ]
