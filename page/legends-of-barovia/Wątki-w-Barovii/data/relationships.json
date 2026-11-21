@@ -145,9 +145,13 @@
       "color": "#000000",
       "borderColor": "#ff0000",
       "lineStyle": "dotted",
-      "notes": "",
+      "notes": "Włada Barovią z zamku Ravenloft. Budzi strach wśród mieszkańców, którzy często unikają wypowiadania jego imienia.",
       "fields": {
-        "aliases": "Kraina"
+        "aliases": "Diabeł",
+        "occupation": "Władca Barovii",
+        "age": "Bardzo stary; dokładny wiek nieustalony",
+        "status": "Wampir; żyje",
+        "affiliation": "Ród von Zarovich; dwór Ravenloft"
       },
       "customFields": [],
       "positions": {
@@ -169,8 +173,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Jedna z kobiet związanych z dworem Strahda. Przebywa w zamku Ravenloft.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Członkini dworu Strahda",
+        "age": "Nieustalony",
+        "status": "Nieumarła; wampirzyca",
+        "affiliation": "Dwór Strahda"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -191,8 +201,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Jedna z kobiet związanych z dworem Strahda. Przebywa w zamku Ravenloft.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Członkini dworu Strahda",
+        "age": "Nieustalony",
+        "status": "Nieumarła; wampirzyca",
+        "affiliation": "Dwór Strahda"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -213,8 +229,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Jedna z kobiet związanych z dworem Strahda. Przebywa w zamku Ravenloft.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Członkini dworu Strahda",
+        "age": "Nieustalony",
+        "status": "Nieumarła; wampirzyca",
+        "affiliation": "Dwór Strahda"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -235,8 +257,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Osoba związana ze służbą Strahda. Szczegóły pochodzenia i funkcji nie są ustalone w publicznej wiedzy.",
+      "fields": {
+        "aliases": "Billy",
+        "occupation": "Służba dworska",
+        "age": "Nieustalony",
+        "status": "Nieumarły; wampir",
+        "affiliation": "Dwór Strahda"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -257,8 +285,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Przybrana córka Kolyana Indirovicha. Jej uroda i zainteresowanie, jakie wzbudza w Strahdzie, sprawiają, że znajduje się w niebezpiecznej sytuacji.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Szlachcianka; mieszkanka Barovii",
+        "age": "Młoda dorosła",
+        "status": "Żyje",
+        "affiliation": "Rodzina Kolyana; mieszkańcy Wioski Barovia"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -279,8 +313,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Syn Kolyana Indirovicha. Po śmierci ojca stara się zadbać o bezpieczeństwo mieszkańców i swojej siostry.",
+      "fields": {
+        "aliases": "Smark",
+        "occupation": "Szlachcic; następca burmistrza",
+        "age": "Dorosły",
+        "status": "Żyje",
+        "affiliation": "Rodzina Kolyanovich; Wioska Barovia"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -301,8 +341,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Były burmistrz Wioski Barovia i ojciec Ismarka. Przyjął Ireenę pod swój dach i wychował ją jak własną córkę.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Burmistrz Wioski Barovia",
+        "age": "Dorosły; starszy dorosły",
+        "status": "Zmarły",
+        "affiliation": "Rodzina Kolyanovich; Wioska Barovia"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -323,8 +369,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Rządzi Vallaki i organizuje regularne festiwale. Utrzymuje, że wymuszona radość i optymizm chronią miasto przed Strahdem.",
+      "fields": {
+        "aliases": "Baron Vallaki",
+        "occupation": "Burmistrz; baron",
+        "age": "Dorosły; starszy dorosły",
+        "status": "Żyje",
+        "affiliation": "Rodzina Vallakovich; władze Vallaki"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -345,8 +397,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Żona Vargasa i matka Viktora. Publicznie wspiera męża oraz jego politykę.",
+      "fields": {
+        "aliases": "Baronowa Vallaki",
+        "occupation": "Gospodyni; żona barona",
+        "age": "Dorosła",
+        "status": "Żyje",
+        "affiliation": "Rodzina Vallakovich"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -367,8 +425,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Duchowny związany z Vallaki. Brat Lydii Petrovny.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Duchowny",
+        "age": "Dorosły",
+        "status": "Żyje",
+        "affiliation": "Kościół w Vallaki; rodzina Petrovich"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -389,8 +453,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Syn barona i baronowej. Jest znany z odosobnienia.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Szlachcic",
+        "age": "Młody dorosły",
+        "status": "Żyje",
+        "affiliation": "Rodzina Vallakovich"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -411,8 +481,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Wpływowa szlachcianka z Vallaki. Jest polityczną przeciwniczką barona Vargasa i posiada własne grono zwolenników.",
+      "fields": {
+        "aliases": "Lady Wachter",
+        "occupation": "Szlachcianka; głowa rodu",
+        "age": "Dorosła; starsza dorosła",
+        "status": "Żyje",
+        "affiliation": "Rodzina Wachter; stronnictwo Wachterów"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -433,8 +509,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Mąż Lady Fiony i ojciec Nikolai Juniora, Stelli oraz Karla.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Szlachcic",
+        "age": "Dorosły; starszy dorosły",
+        "status": "Żyje; obłożnie chory",
+        "affiliation": "Rodzina Wachter"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -455,8 +537,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Syn Lady Fiony i Nikolai Seniora. Jeden z członków rodziny Wachterów.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Szlachcic",
+        "age": "Młody dorosły",
+        "status": "Żyje",
+        "affiliation": "Rodzina Wachter"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -477,8 +565,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Córka Lady Fiony i Nikolai Seniora. Należy do rodziny Wachterów. Dotknięta klątwą, która strzaskała jej umysł.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Szlachcianka",
+        "age": "Młoda dorosła",
+        "status": "Żyje",
+        "affiliation": "Rodzina Wachter"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -499,8 +593,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Syn Lady Fiony i Nikolai Seniora. Brat Nikolai Juniora i Stelli.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Szlachcic",
+        "age": "Młody dorosły",
+        "status": "Żyje",
+        "affiliation": "Rodzina Wachter"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -521,8 +621,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Wysoko postawiony funkcjonariusz straży Vallaki. Jest znany z brutalności i bezwzględnego wykonywania poleceń barona.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Kapitan straży miejskiej",
+        "age": "Dorosły",
+        "status": "Żyje",
+        "affiliation": "Straż miejska Vallaki; rodzina Vallakovich (przybrana)"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -543,8 +649,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Mieszkaniec Vallaki. Brak wystarczających informacji o zawodzie i pozycji społecznej.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Nieustalone",
+        "age": "Nieustalony",
+        "status": "Nieustalone",
+        "affiliation": "Mieszkańcy Vallaki"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -565,8 +677,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Mieszkaniec Vallaki. Brak wystarczających informacji o zawodzie i pozycji społecznej.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Nieustalone",
+        "age": "Nieustalony",
+        "status": "Nieustalone",
+        "affiliation": "Mieszkańcy Vallaki"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -587,8 +705,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Mieszkanka wioski, znana z rozpaczy i niepokojącego zachowania. Jej córka Gertruda zaginęła.",
+      "fields": {
+        "aliases": "Szalona Mary",
+        "occupation": "Mieszkanka Barovii",
+        "age": "Dorosła",
+        "status": "Żyje",
+        "affiliation": "Wioska Barovia"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -609,8 +733,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Córka Mary. Jej zaginięcie jest źródłem wielkiego cierpienia matki.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Nieustalone",
+        "age": "Młoda kobieta",
+        "status": "Zaginiona",
+        "affiliation": "Rodzina Mary; Wioska Barovia"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -631,8 +761,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Vistana związany z obozowiskiem i społecznością swojego ludu.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Członek Vistani",
+        "age": "Dorosły",
+        "status": "Żyje",
+        "affiliation": "Vistani"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -653,8 +789,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Jeden z ważniejszych przedstawicieli Vistani. Jest związany z obozowiskiem swojego ludu.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Przywódca obozowiska Vistani",
+        "age": "Dorosły",
+        "status": "Żyje",
+        "affiliation": "Vistani"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -670,13 +812,19 @@
     {
       "id": "entity-mwqadubs-gubq35",
       "type": "Person",
-      "name": "Madame Eve",
+      "name": "Madame Eva",
       "imageUrl": "https://vengrathdm.github.io/page/legends-of-barovia/W%C4%85tki-w-Barovii/data/res/Madam_Eve_token.webp",
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Znana wróżbitka Vistani. Odczytuje losy z kart i udziela podróżnym przepowiedni.",
+      "fields": {
+        "aliases": "Madame Eva",
+        "occupation": "Wróżbitka; przywódczyni obozowiska",
+        "age": "Starsza kobieta",
+        "status": "Żyje",
+        "affiliation": "Vistani"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -785,8 +933,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Dobrze sytuowany szlachcic. W Vallaki może być postrzegany jako człowiek o dobrych manierach i wysokiej pozycji.",
+      "fields": {
+        "aliases": "Vasili",
+        "occupation": "Szlachcic; zamożny podróżny",
+        "age": "Dorosły",
+        "status": "Żyje",
+        "affiliation": "Vallaki; nieustalone"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -807,8 +961,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Kolorowy i ekscentryczny podróżny. Występuje jako artysta i opowiada historie, przyciągając uwagę mieszkańców oraz gości Vallaki.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Wędrowny artysta; gawędziarz; treser zwierząt",
+        "age": "Starszy dorosły",
+        "status": "Żyje",
+        "affiliation": "Wędrowni artyści"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -829,8 +989,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Kowal, zginął w ataku wampirzych pomiotów na Vallaki.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Kowal",
+        "age": "Dorosły",
+        "status": "Martwy",
+        "affiliation": "Mieszkańcy Vallaki; rzemiosło"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -851,8 +1017,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Czeladnik kowala. Aresztowany za morderstwo Yeleny Arasek.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Czeladnik kowala",
+        "age": "Dorosły",
+        "status": "Żywy",
+        "affiliation": "Mieszkańcy Vallaki; rzemiosło"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -873,8 +1045,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Prowadził zakład pogrzebowy w Vallaki. Zginął podczas ataku wampirzych pomiotów na Vallaki.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Właściciel zakładu pogrzebowego",
+        "age": "Dorosły",
+        "status": "Martwy",
+        "affiliation": "Mieszkańcy Vallaki"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -895,8 +1073,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Garbarz z Vallaki, mąż Zelli Ragnar.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Garbarz",
+        "age": "Dorosły",
+        "status": "Żyje",
+        "affiliation": "Rodzina Ragnar; mieszkańcy Vallaki"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -917,8 +1101,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Prowadzi interesy w Vallaki. Współpracuje biznesowo z Szoldarem Szoldarovichem.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Kupiec; handlarz",
+        "age": "Dorosły",
+        "status": "Żyje",
+        "affiliation": "Mieszkańcy Vallaki; partner biznesowy Szoldara"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -939,8 +1129,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Prowadzi interesy w Vallaki. Jest partnerem biznesowym Yewgeniego Krushkina.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Kupiec; handlarz",
+        "age": "Dorosły",
+        "status": "Żyje",
+        "affiliation": "Mieszkańcy Vallaki; partner biznesowy Yewgeniego"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -961,8 +1157,14 @@
       "color": "#1d96bf",
       "borderColor": "#ffffff",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Członek drużyny. Szczegóły profesji i pochodzenia do uzupełnienia na podstawie informacji ujawnionych przez postać.",
+      "fields": {
+        "aliases": "Pchełka",
+        "occupation": "Nieustalone",
+        "age": "Nieustalony",
+        "status": "Żyje",
+        "affiliation": "Drużyna"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -983,8 +1185,14 @@
       "color": "#1fadab",
       "borderColor": "#ffffff",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Członkini drużyny. Szczegóły profesji i pochodzenia do uzupełnienia na podstawie informacji ujawnionych przez postać.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Nieustalone",
+        "age": "Nieustalony",
+        "status": "Żyje",
+        "affiliation": "Drużyna"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -1005,8 +1213,14 @@
       "color": "#1aadb7",
       "borderColor": "#ffffff",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Członek drużyny. Szczegóły profesji i pochodzenia do uzupełnienia na podstawie informacji ujawnionych przez postać.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Nieustalone",
+        "age": "Nieustalony",
+        "status": "Żyje",
+        "affiliation": "Drużyna"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -1027,8 +1241,14 @@
       "color": "#14bfe1",
       "borderColor": "#ffffff",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Członkini drużyny. Szczegóły profesji i pochodzenia do uzupełnienia na podstawie informacji ujawnionych przez postać.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Nieustalone",
+        "age": "Nieustalony",
+        "status": "Żyje",
+        "affiliation": "Drużyna"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -1071,8 +1291,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Wierny sługa Strahda i jedna z najbardziej wpływowych osób na zamku Ravenloft. Odpowiada za sprawy dworu i reprezentuje wolę swojego pana.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Zarządca; doradca Strahda",
+        "age": "Bardzo stary; dokładny wiek nieustalony",
+        "status": "Żyje; elf zmierzchu",
+        "affiliation": "Dwór Strahda"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -1093,8 +1319,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Członek społeczności Vallaki. Brat krwi Eliasza.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Członek społeczności Vallaki",
+        "age": "Nieustalony",
+        "status": "Nieustalone",
+        "affiliation": "Społeczność Vallaki"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -1115,8 +1347,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Gospodarz popularnej gospody w Vallaki. Mąż Daniki i ojciec Braya oraz Broma.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Gospodarz gospody Błękitna Woda",
+        "age": "Dorosły",
+        "status": "Żyje",
+        "affiliation": "Rodzina Martikov; gospoda Błękitna Woda"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -1137,8 +1375,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Żona Urwina. Współprowadzi gospodę i opiekuje się rodziną.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Gospodyni gospody",
+        "age": "Dorosła",
+        "status": "Żyje",
+        "affiliation": "Rodzina Martikov; gospoda Błękitna Woda"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -1159,8 +1403,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Syn Urwina i Daniki. Brat Broma.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Pomocnik w gospodzie; dziecko",
+        "age": "Dziecko",
+        "status": "Żyje",
+        "affiliation": "Rodzina Martikov"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -1181,8 +1431,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Syn Urwina i Daniki. Brat Braya.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Pomocnik w gospodzie; dziecko",
+        "age": "Dziecko",
+        "status": "Żyje",
+        "affiliation": "Rodzina Martikov"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -1203,8 +1459,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Osoba wykonująca polecenia Lady Fiony. Zajmuje się sprawami związanymi z jej domem i interesami.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Służący; agent Lady Wachter",
+        "age": "Dorosły",
+        "status": "Żyje",
+        "affiliation": "Dom Wachterów"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -1225,8 +1487,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Osoba mieszkająca w Vallaki. Brak wystarczających informacji o zawodzie i pozycji społecznej.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Mieszkaniec Vallaki",
+        "age": "Nieustalony",
+        "status": "Nieustalone",
+        "affiliation": "Mieszkańcy Vallaki"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -1247,9 +1515,13 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
+      "notes": "Krawiec związany z Vallaki. Zajmuje się szyciem i naprawą odzieży.",
       "fields": {
-        "occupation": "Krawiec"
+        "occupation": "Krawiec",
+        "aliases": "Nieustalone",
+        "age": "Dorosły",
+        "status": "Żyje",
+        "affiliation": "Mieszkańcy Vallaki; lokalne rzemiosło"
       },
       "customFields": [],
       "positions": {
@@ -1271,8 +1543,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Mieszkaniec Vallaki, który publicznie krytykował rządy barona.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Mieszkaniec Vallaki",
+        "age": "Dorosły",
+        "status": "Nieznany",
+        "affiliation": "Mieszkańcy Vallaki"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -1293,8 +1571,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Znany twórca zabawek i lalek. Jego sklep jest jednym z charakterystycznych miejsc w Vallaki.",
+      "fields": {
+        "aliases": "Blinsky",
+        "occupation": "Zabawkarz; właściciel sklepu z zabawkami",
+        "age": "Dorosły",
+        "status": "Żyje",
+        "affiliation": "Mieszkańcy Vallaki; sklep Blinsky’ego"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -1315,8 +1599,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Garbarz z Vallaki, żona Skrana Ragnara.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Garbarz",
+        "age": "Dorosła",
+        "status": "Żyje",
+        "affiliation": "Rodzina Ragnar; mieszkańcy Vallaki"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -1337,8 +1627,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Osoba służąca Lady Fionie Wachter. Szczegóły jego funkcji nie są ustalone.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Służący",
+        "age": "Nieustalony",
+        "status": "Żyje",
+        "affiliation": "Dom Wachterów"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -1381,8 +1677,14 @@
       "color": "#ffffff",
       "borderColor": "#6b9dbd",
       "lineStyle": "dashed",
-      "notes": "",
-      "fields": {},
+      "notes": "Tajemniczy przywódca opactwa w Krezk. Jest postacią o dużym autorytecie religijnym i społecznym w okolicy.",
+      "fields": {
+        "aliases": "Opat z Krezk",
+        "occupation": "Przywódca religijny; przełożony opactwa",
+        "age": "Nieustalony",
+        "status": "Nieustalone",
+        "affiliation": "Opactwo w Krezk"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -1447,9 +1749,13 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
+      "notes": "Brat Strahda. Jego zaręczyny z Tatyaną są częścią znanej historii rodu von Zarovich.",
       "fields": {
-        "status": "Martwy"
+        "status": "Martwy",
+        "aliases": "Nieustalone",
+        "occupation": "Książę; członek rodu von Zarovich",
+        "age": "Młody dorosły w chwili śmierci",
+        "affiliation": "Ród von Zarovich"
       },
       "customFields": [],
       "positions": {
@@ -1471,8 +1777,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Kobieta, która miała poślubić Sergeia von Zarovicha. Jej tragiczna historia jest związana z przeszłością Strahda.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Nieustalone",
+        "age": "Młoda dorosła w chwili śmierci",
+        "status": "Zmarła",
+        "affiliation": "Nieustalone"
+      },
       "customFields": [],
       "positions": {
         "complete": {
@@ -1493,9 +1805,13 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
+      "notes": "Alchemiczka mieszkająca w Vallaki i powiązana ze społecznością Vistani.",
       "fields": {
-        "occupation": "Alchemiczka"
+        "occupation": "Alchemiczka",
+        "aliases": "Nieustalone",
+        "age": "Dorosła",
+        "status": "Żyje",
+        "affiliation": "Mieszkańcy Vallaki; Vistani"
       },
       "customFields": [],
       "position": {
@@ -1534,8 +1850,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Wiedźma związana z Morganthą. Mieszka w Starym Kościogruchu i jest siostrą Ophelii.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Sprzedawczyni ciastek; pomocnica Morganthy",
+        "age": "Nieustalony",
+        "status": "Wiedźma",
+        "affiliation": "Wiedźmy ze Starego Kościogruchu"
+      },
       "customFields": [],
       "positions": {},
       "position": {
@@ -1551,8 +1873,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Wiedźma związana z Morganthą. Mieszka w Starym Kościogruchu i jest siostrą Belli.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Sprzedawczyni ciastek; pomocnica Morganthy",
+        "age": "Nieustalony",
+        "status": "Wiedźma",
+        "affiliation": "Wiedźmy ze Starego Kościogruchu"
+      },
       "customFields": [],
       "positions": {},
       "position": {
@@ -1568,8 +1896,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Starsza kobieta sprzedająca mieszkańcom Barovii ciastka. Według wiedzy drużyny jest wiedźmą i mieszka w Starym Kościogruchu.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Sprzedawczyni ciastek",
+        "age": "Nieustalony; wygląda na starszą kobietę",
+        "status": "Wiedźma",
+        "affiliation": "Wiedźmy ze Starego Kościogruchu"
+      },
       "customFields": [],
       "positions": {},
       "position": {
@@ -1585,8 +1919,14 @@
       "color": "#59323a",
       "borderColor": "#bca06a",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
+      "notes": "Starszy członek rodziny Martikovów, związany z prowadzeniem winnicy. Ojciec Urwina.",
+      "fields": {
+        "aliases": "Nieustalone",
+        "occupation": "Gospodarz winnicy",
+        "age": "Starszy dorosły",
+        "status": "Żyje",
+        "affiliation": "Rodzina Martikov; Winnica Czarodziej Win"
+      },
       "customFields": [],
       "positions": {
         "complete": {
