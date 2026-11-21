@@ -276,6 +276,12 @@
     font-weight: 400;
   }
 
+
+  .bleed-options { padding: 16px; background: var(--bg); border-radius: var(--radius-sm); }
+  .bleed-options .form-group { margin-bottom: 14px; }
+  input[type="color"] { width: 58px; height: 38px; padding: 3px; border: 1.5px solid var(--border); border-radius: 7px; background: white; cursor: pointer; vertical-align: middle; }
+  .bleed-help { color: var(--text-muted); font-size: 0.82rem; line-height: 1.55; margin-top: 8px; }
+
   /* Analysis Results */
   .analysis-item {
     display: flex;
@@ -538,6 +544,30 @@
         </label>
       </div>
 
+      <div class="form-group" id="bleedFillGroup">
+        <label for="bleedMode">Bleed fill method <span class="hint">— one choice applies to every page in this PDF</span></label>
+        <div class="bleed-options">
+          <select id="bleedMode">
+            <option value="white" selected>White (existing default)</option>
+            <option value="color">Custom flat colour</option>
+            <option value="intelligent">Intelligent edge extension</option>
+          </select>
+          <div id="bleedColorRow" style="display:none; margin-top:14px">
+            <label for="bleedColor">Bleed colour</label>
+            <input type="color" id="bleedColor" value="#ffffff">
+          </div>
+          <div id="intelligentBleedOptions" style="display:none; margin-top:14px">
+            <label for="bleedAlgorithm">Intelligent bleed method</label>
+            <select id="bleedAlgorithm">
+              <option value="stretch">Stretch + Extrapolate</option>
+              <option value="content">Content-Aware Reconstruction</option>
+              <option value="hybrid" selected>Hybrid</option>
+            </select>
+            <p class="bleed-help">The selected method is applied consistently to every page. Edge extension is generated only in the new bleed area; the original PDF page is placed over it. Content-Aware uses local edge texture and mirrored continuation, not semantic AI inpainting.</p>
+          </div>
+        </div>
+      </div>
+
       <div class="form-group">
         <label class="checkbox-group">
           <input type="checkbox" id="enforceMargins" checked>
@@ -677,6 +707,19 @@
     if (e.target.files.length) handleFile(e.target.files[0]);
   });
 
+  const bleedModeEl = document.getElementById('bleedMode');
+  const addBleedEl = document.getElementById('addBleed');
+  function refreshBleedControls() {
+    const enabled = addBleedEl.checked && document.getElementById('contentType').value === 'bleed';
+    document.getElementById('bleedFillGroup').style.display = enabled ? '' : 'none';
+    document.getElementById('bleedColorRow').style.display = enabled && bleedModeEl.value === 'color' ? '' : 'none';
+    document.getElementById('intelligentBleedOptions').style.display = enabled && bleedModeEl.value === 'intelligent' ? '' : 'none';
+  }
+  bleedModeEl.addEventListener('change', refreshBleedControls);
+  addBleedEl.addEventListener('change', refreshBleedControls);
+  document.getElementById('contentType').addEventListener('change', refreshBleedControls);
+  refreshBleedControls();
+
   async function handleFile(file) {
     originalPdfBytes = await file.arrayBuffer();
     originalPdfDoc = await PDFDocument.load(originalPdfBytes);
@@ -706,6 +749,7 @@
 
     show('fileInfoSection');
     show('configSection');
+    refreshBleedControls();
     hide('analysisSection');
     hide('adjustSection');
     hide('previewSection');
@@ -768,6 +812,9 @@
     const binding = document.getElementById('bindingType').value;
     const contentType = document.getElementById('contentType').value;
     const addBleed = document.getElementById('addBleed').checked;
+    const bleedMode = document.getElementById('bleedMode').value;
+    const bleedColor = document.getElementById('bleedColor').value;
+    const bleedAlgorithm = document.getElementById('bleedAlgorithm').value;
     const fileType = document.querySelector('input[name="fileType"]:checked').value;
 
     const pages = originalPdfDoc.getPages();
@@ -873,6 +920,9 @@
 
       // embedPages takes an array of PDFPage objects from a different PDFDocument
       const embeddedPages = await newPdf.embedPages(srcPages);
+      const pdfJsDoc = needsBleed && bleedMode === 'intelligent'
+        ? await pdfjsLib.getDocument({ data: new Uint8Array(originalPdfBytes.slice(0)) }).promise
+        : null;
 
       for (let i = 0; i < embeddedPages.length; i++) {
         const embedded = embeddedPages[i];
@@ -905,6 +955,21 @@
           offsetY = (targetHPt - epH) / 2;
         }
 
+        // Paint the new bleed area first. The source PDF page is drawn over it below,
+        // keeping the original page content (including vector text) intact.
+        if (needsBleed && bleedMode === 'color') {
+          const hex = bleedColor.replace('#', '');
+          const cr = parseInt(hex.slice(0, 2), 16) / 255;
+          const cg = parseInt(hex.slice(2, 4), 16) / 255;
+          const cb = parseInt(hex.slice(4, 6), 16) / 255;
+          newPage.drawRectangle({ x: 0, y: 0, width: targetWPt, height: targetHPt, color: rgb(cr, cg, cb) });
+        } else if (needsBleed && bleedMode === 'intelligent' &&
+                   Math.abs(ptToIn(epW) - trimW) < tolerance && Math.abs(ptToIn(epH) - trimH) < tolerance) {
+          const bleedPng = await createIntelligentBleedPng(pdfJsDoc, i + 1, bleedAlgorithm);
+          const bleedImage = await newPdf.embedPng(bleedPng);
+          newPage.drawImage(bleedImage, { x: 0, y: 0, width: targetWPt, height: targetHPt });
+        }
+
         newPage.drawPage(embedded, {
           x: offsetX,
           y: offsetY,
@@ -925,6 +990,15 @@
 
       if (adjustments.includes('add_bleed')) {
         adjItems.push({ type: 'pass', msg: `Added ${BLEED} in bleed margin on all sides. New page size: ${targetW.toFixed(3)} × ${targetH.toFixed(3)} in.` });
+      }
+      if (needsBleed) {
+        const bleedDescription = bleedMode === 'white' ? 'white fill' :
+          bleedMode === 'color' ? `custom colour ${bleedColor}` :
+          `intelligent edge extension (${document.getElementById('bleedAlgorithm').selectedOptions[0].text})`;
+        adjItems.push({ type: 'info', msg: `Bleed method used on this PDF: ${bleedDescription}.` });
+        if (bleedMode === 'intelligent' && adjustments.includes('resize')) {
+          adjItems.push({ type: 'warn', msg: 'Intelligent edge extension is currently applied to pages already at the selected trim size. Resized pages retain the existing centered-page behavior.' });
+        }
       }
       if (adjustments.includes('resize')) {
         adjItems.push({ type: 'pass', msg: `Resized pages from ${origWIn.toFixed(3)} × ${origHIn.toFixed(3)} in to ${targetW.toFixed(3)} × ${targetH.toFixed(3)} in (content scaled proportionally and centered).` });
@@ -973,6 +1047,72 @@
     btn.disabled = false;
   }
 
+  // Creates a bleed-sized raster backing layer. The original PDF page is drawn
+  // above this layer afterwards, so the source artwork is not rasterized in output.
+  async function createIntelligentBleedPng(pdfJsDoc, pageNumber, method) {
+    const pdfPage = await pdfJsDoc.getPage(pageNumber);
+    const viewport = pdfPage.getViewport({ scale: 2 });
+    const sourceCanvas = document.createElement('canvas');
+    sourceCanvas.width = Math.ceil(viewport.width);
+    sourceCanvas.height = Math.ceil(viewport.height);
+    const sourceCtx = sourceCanvas.getContext('2d', { willReadFrequently: true });
+    await pdfPage.render({ canvasContext: sourceCtx, viewport }).promise;
+
+    const sw = sourceCanvas.width, sh = sourceCanvas.height;
+    const bleedPx = Math.max(1, Math.round((BLEED * PTS_PER_INCH) * 2));
+    const source = sourceCtx.getImageData(0, 0, sw, sh);
+    const outputCanvas = document.createElement('canvas');
+    outputCanvas.width = sw + bleedPx * 2;
+    outputCanvas.height = sh + bleedPx * 2;
+    const outCtx = outputCanvas.getContext('2d');
+    const output = outCtx.createImageData(outputCanvas.width, outputCanvas.height);
+
+    function reflect(v, length) {
+      if (length <= 1) return 0;
+      const period = 2 * length - 2;
+      v = ((v % period) + period) % period;
+      return v < length ? v : period - v;
+    }
+    function edgeVariance(horizontal) {
+      const samples = horizontal ? sw : sh;
+      let sum = 0, sumSq = 0;
+      for (let i = 0; i < samples; i += Math.max(1, Math.floor(samples / 300))) {
+        const p = horizontal ? (i * 4) : (i * sw * 4);
+        const lum = source.data[p] * 0.2126 + source.data[p + 1] * 0.7152 + source.data[p + 2] * 0.0722;
+        sum += lum; sumSq += lum * lum;
+      }
+      const count = Math.ceil(samples / Math.max(1, Math.floor(samples / 300)));
+      const mean = sum / count;
+      return Math.max(0, sumSq / count - mean * mean);
+    }
+    const texturedX = edgeVariance(false) > 180;
+    const texturedY = edgeVariance(true) > 180;
+
+    for (let y = 0; y < outputCanvas.height; y++) {
+      const sy0 = y - bleedPx;
+      for (let x = 0; x < outputCanvas.width; x++) {
+        const sx0 = x - bleedPx;
+        const outsideX = sx0 < 0 || sx0 >= sw;
+        const outsideY = sy0 < 0 || sy0 >= sh;
+        let sx = sx0, sy = sy0;
+        const useMirrorX = method === 'content' || (method === 'hybrid' && texturedX);
+        const useMirrorY = method === 'content' || (method === 'hybrid' && texturedY);
+        if (outsideX) sx = useMirrorX ? reflect(sx0, sw) : Math.max(0, Math.min(sw - 1, sx0));
+        if (outsideY) sy = useMirrorY ? reflect(sy0, sh) : Math.max(0, Math.min(sh - 1, sy0));
+        const si = (sy * sw + sx) * 4;
+        const di = (y * outputCanvas.width + x) * 4;
+        output.data[di] = source.data[si];
+        output.data[di + 1] = source.data[si + 1];
+        output.data[di + 2] = source.data[si + 2];
+        output.data[di + 3] = source.data[si + 3];
+      }
+    }
+    outCtx.putImageData(output, 0, 0);
+    const blob = await new Promise(resolve => outputCanvas.toBlob(resolve, 'image/png'));
+    if (!blob) throw new Error('Could not generate intelligent bleed image.');
+    return new Uint8Array(await blob.arrayBuffer());
+  }
+
   async function renderPreview(pdfBytes, canvasId) {
     try {
       const loadingTask = pdfjsLib.getDocument({ data: new Uint8Array(pdfBytes) });
@@ -1015,6 +1155,10 @@
     processedPdfBytes = null;
     originalPdfDoc = null;
     fileInput.value = '';
+    document.getElementById('bleedMode').value = 'white';
+    document.getElementById('bleedAlgorithm').value = 'hybrid';
+    document.getElementById('bleedColor').value = '#ffffff';
+    refreshBleedControls();
     uploadZone.style.display = '';
     hide('fileInfoSection');
     hide('configSection');
