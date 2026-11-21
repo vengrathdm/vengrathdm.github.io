@@ -5,17 +5,2438 @@
     "name": "Wątki w Barovii",
     "updatedAt": "2026-11-21",
     "layoutModes": {
-      "complete": "force",
+      "complete": "manual",
       "family": "hierarchy",
       "organization": "hierarchy",
       "political": "force",
       "characters": "force"
     },
     "entityTypes": [],
-    "relationshipTypes": [],
+    "relationshipTypes": [
+      {
+        "name": "Służy",
+        "description": "",
+        "color": "#d4a03c",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Małżeństwo",
+        "description": "",
+        "color": "#d016a7",
+        "lineStyle": "solid",
+        "direction": "mutual"
+      },
+      {
+        "name": "Rodzeństwo",
+        "description": "",
+        "color": "#3f10c1",
+        "lineStyle": "solid",
+        "direction": "mutual"
+      },
+      {
+        "name": "Rodzic-Dziecko",
+        "description": "",
+        "color": "#d4a03c",
+        "lineStyle": "dotted",
+        "direction": "mutual"
+      },
+      {
+        "name": "Adopcja",
+        "description": "",
+        "color": "#3fd5cb",
+        "lineStyle": "dashed",
+        "direction": "none"
+      },
+      {
+        "name": "Przyszywane Rodzeństwo",
+        "description": "",
+        "color": "#d4a03c",
+        "lineStyle": "dotted",
+        "direction": "none"
+      },
+      {
+        "name": "Należy do",
+        "description": "",
+        "color": "#00ff2a",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Mieszka w",
+        "description": "",
+        "color": "#adaca8",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Czeladnik",
+        "description": "",
+        "color": "#d4a03c",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Mistrz",
+        "description": "",
+        "color": "#d4a03c",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Partner Biznesowy",
+        "description": "",
+        "color": "#d4a03c",
+        "lineStyle": "solid",
+        "direction": "mutual"
+      },
+      {
+        "name": "Krytykuje",
+        "description": "",
+        "color": "#ff0000",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Zastrasza",
+        "description": "",
+        "color": "#ff4000",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Zaręczeni",
+        "description": "",
+        "color": "#b630c0",
+        "lineStyle": "dashed",
+        "direction": "mutual"
+      }
+    ],
     "notes": "Niezależny rejestr wątków kampanii Legends of Barovia. Zestaw startowy jest celowo pusty.",
     "savedViews": []
   },
-  "entities": [],
-  "relationships": []
+  "entities": [
+    {
+      "id": "entity-mwqa0v35-tfopz9",
+      "type": "Person",
+      "name": "Strahd von Zarovich",
+      "imageUrl": "",
+      "color": "#000000",
+      "borderColor": "#ff0000",
+      "lineStyle": "dotted",
+      "notes": "",
+      "fields": {
+        "aliases": "Kraina"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 749.8539051485324,
+          "y": -1.7829927442231657
+        }
+      },
+      "position": {
+        "x": 1558.4477090909425,
+        "y": 569.7190176223571
+      }
+    },
+    {
+      "id": "entity-mwqa1396-68fwxv",
+      "type": "Person",
+      "name": "Anastrasya Karelova",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 809.3354350294336,
+          "y": 165.61238530288372
+        }
+      },
+      "position": {
+        "x": 1349.4917082581403,
+        "y": 454.8068968069716
+      }
+    },
+    {
+      "id": "entity-mwqa1bqr-4skgwi",
+      "type": "Person",
+      "name": "Ludmilla Villsevic",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1042.720875860819,
+          "y": 210.20366699727862
+        }
+      },
+      "position": {
+        "x": 1484.463343453354,
+        "y": 452.30742208113435
+      }
+    },
+    {
+      "id": "entity-mwqa1krz-v7r5gd",
+      "type": "Person",
+      "name": "Volenta Popofsky",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1059.7263161259987,
+          "y": -129.61712215896438
+        }
+      },
+      "position": {
+        "x": 1593.940336445027,
+        "y": 451.30763219079944
+      }
+    },
+    {
+      "id": "entity-mwqa1shf-j81u4b",
+      "type": "Person",
+      "name": "William Herrington",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 917.4416722519727,
+          "y": 325.11720467643397
+        }
+      },
+      "position": {
+        "x": 1711.915543504547,
+        "y": 445.80878779395744
+      }
+    },
+    {
+      "id": "entity-mwqa3bwf-6bv3az",
+      "type": "Person",
+      "name": "Ireena Kolyana",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1323.2116701959014,
+          "y": 318.60856597941194
+        }
+      },
+      "position": {
+        "x": 1777.4017813214841,
+        "y": 661.2635091611317
+      }
+    },
+    {
+      "id": "entity-mwqa3ivh-fhu1ge",
+      "type": "Person",
+      "name": "Ismark Kolyanovich",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1151.5508903250277,
+          "y": 349.4643387346529
+        }
+      },
+      "position": {
+        "x": 1872.8817158484685,
+        "y": 650.2658203674476
+      }
+    },
+    {
+      "id": "entity-mwqa3q1e-iwi8ly",
+      "type": "Person",
+      "name": "Kolyan Indirovich",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1301.2608499005225,
+          "y": 45.99861608774407
+        }
+      },
+      "position": {
+        "x": 1808.3952679218664,
+        "y": 575.281578592329
+      }
+    },
+    {
+      "id": "entity-mwqa404p-u84avv",
+      "type": "Person",
+      "name": "Vargas Vallakovich",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 486.22967659320307,
+          "y": 475.2055514667491
+        }
+      },
+      "position": {
+        "x": 1236.0155557051278,
+        "y": 671.2614080644805
+      }
+    },
+    {
+      "id": "entity-mwqa4846-5flf7q",
+      "type": "Person",
+      "name": "Lydia Petrovna",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 752.9793498440741,
+          "y": 622.5688622386915
+        }
+      },
+      "position": {
+        "x": 1340.4935992451265,
+        "y": 673.7608827903179
+      }
+    },
+    {
+      "id": "entity-mwqa5160-sn1y05",
+      "type": "Person",
+      "name": "Lucjan Petrovich",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 570.6531532933998,
+          "y": 639.2103323767365
+        }
+      },
+      "position": {
+        "x": 1391.6631765556765,
+        "y": 804.1714352032408
+      }
+    },
+    {
+      "id": "entity-mwqa5zpy-m4d9ec",
+      "type": "Person",
+      "name": "Viktor Vallakovich",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 656.0577312218348,
+          "y": 482.84962505254504
+        }
+      },
+      "position": {
+        "x": 1546.6306095575878,
+        "y": 785.1754272868774
+      }
+    },
+    {
+      "id": "entity-mwqa802d-ls6cx4",
+      "type": "Person",
+      "name": "Lady Fiona Wachter",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 469.6092934240095,
+          "y": 165.98749475765064
+        }
+      },
+      "position": {
+        "x": 1504.4851984714694,
+        "y": 858.9411128082909
+      }
+    },
+    {
+      "id": "entity-mwqa895d-o79oya",
+      "type": "Person",
+      "name": "Nikolai Wachter Senior",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 74.28940220781311,
+          "y": 258.2463756401844
+        }
+      },
+      "position": {
+        "x": 1646.4553628990275,
+        "y": 865.4397470954677
+      }
+    },
+    {
+      "id": "entity-mwqa8pk0-udfwd6",
+      "type": "Person",
+      "name": "Nikolai Wachter Junior",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 401.46970522847977,
+          "y": 622.5681900628839
+        }
+      },
+      "position": {
+        "x": 1456.8896023384152,
+        "y": 976.6038816867089
+      }
+    },
+    {
+      "id": "entity-mwqa973i-rjnj3f",
+      "type": "Person",
+      "name": "Stella Wachter",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 227.48389978417526,
+          "y": 121.72693466530137
+        }
+      },
+      "position": {
+        "x": 1671.844428760422,
+        "y": 1036.0913801616364
+      }
+    },
+    {
+      "id": "entity-mwqa9sio-4yepb6",
+      "type": "Person",
+      "name": "Karl Wachter",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 143.19911174842136,
+          "y": 430.18565180872656
+        }
+      },
+      "position": {
+        "x": 1783.3210015327656,
+        "y": 1087.0806645687153
+      }
+    },
+    {
+      "id": "entity-mwqaarh3-qq8qw7",
+      "type": "Person",
+      "name": "Izek Strazni",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 639.479893700161,
+          "y": 172.6191734149992
+        }
+      },
+      "position": {
+        "x": 1381.2453512720283,
+        "y": 811.1823492601743
+      }
+    },
+    {
+      "id": "entity-mwqackwo-vmre5y",
+      "type": "Person",
+      "name": "Milwoj",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 64.95571372521933,
+          "y": 581.1093764686779
+        }
+      },
+      "position": {
+        "x": 1078.7519959941603,
+        "y": 937.1005817522685
+      }
+    },
+    {
+      "id": "entity-mwqacpew-hpf8en",
+      "type": "Person",
+      "name": "Yeska",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 231.66662603735418,
+          "y": 614.3880740983888
+        }
+      },
+      "position": {
+        "x": 1178.8138975629581,
+        "y": 1006.806625541768
+      }
+    },
+    {
+      "id": "entity-mwqad3ow-k0tq7y",
+      "type": "Person",
+      "name": "\"Szalona\" Mary",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1117.1532356123018,
+          "y": 44.52768080104283
+        }
+      },
+      "position": {
+        "x": 1322.0757109417941,
+        "y": 1296.0836543715375
+      }
+    },
+    {
+      "id": "entity-mwqad8bz-kf0xmv",
+      "type": "Person",
+      "name": "Gertruda",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1228.286995885428,
+          "y": -107.54231210403348
+        }
+      },
+      "position": {
+        "x": 1527.7247874577106,
+        "y": 1298.8378830748757
+      }
+    },
+    {
+      "id": "entity-mwqadj6e-x8frbe",
+      "type": "Person",
+      "name": "Arrigal",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1889.7855434368382,
+          "y": -28.992066625443087
+        }
+      },
+      "position": {
+        "x": 1995.0870508583428,
+        "y": 1345.17242923381
+      }
+    },
+    {
+      "id": "entity-mwqadnpf-inlktu",
+      "type": "Person",
+      "name": "Luvash",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1856.910594000893,
+          "y": 257.6708981548926
+        }
+      },
+      "position": {
+        "x": 2199.7510199893986,
+        "y": 1232.719698942021
+      }
+    },
+    {
+      "id": "entity-mwqadubs-gubq35",
+      "type": "Person",
+      "name": "Madame Eve",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1729.3002779927558,
+          "y": -85.06772600919746
+        }
+      },
+      "position": {
+        "x": 2103.791356807072,
+        "y": 1320.4328285696165
+      }
+    },
+    {
+      "id": "entity-mwqae1oz-lybbmu",
+      "type": "Faction",
+      "name": "Vistani",
+      "imageUrl": "",
+      "color": "#493b4d",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1784.0120092196005,
+          "y": 104.09421914118589
+        }
+      },
+      "position": {
+        "x": 2004.8329541502978,
+        "y": 1201.2329344603202
+      }
+    },
+    {
+      "id": "entity-mwqaf1io-lkoycs",
+      "type": "Location",
+      "name": "Miasteczko Vallaki",
+      "imageUrl": "",
+      "color": "#3d514d",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 241.06817030607962,
+          "y": 291.18332313576593
+        }
+      },
+      "position": {
+        "x": 1483.9125858823122,
+        "y": 1468.7483704835067
+      }
+    },
+    {
+      "id": "entity-mwqafhmp-px202i",
+      "type": "Location",
+      "name": "Wioska Barovia",
+      "imageUrl": "",
+      "color": "#3d514d",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1211.5645956854644,
+          "y": 190.4097720960163
+        }
+      },
+      "position": {
+        "x": 1336.2246667657628,
+        "y": 1462.0012066659995
+      }
+    },
+    {
+      "id": "entity-mwqafntz-by4sd5",
+      "type": "Location",
+      "name": "Zamek Ravenloft",
+      "imageUrl": "",
+      "color": "#3d514d",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 948.8479450439779,
+          "y": 68.47197378881599
+        }
+      },
+      "position": {
+        "x": 1411.1931536269553,
+        "y": 1044.4267348491562
+      }
+    },
+    {
+      "id": "entity-mwqaksx9-yjeme3",
+      "type": "Person",
+      "name": "Vasili von Holtz",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": -90.62214320161142,
+          "y": 649.6333170592086
+        }
+      },
+      "position": {
+        "x": 1301.2871663944043,
+        "y": 1187.475339549175
+      }
+    },
+    {
+      "id": "entity-mwqakzkv-232mso",
+      "type": "Person",
+      "name": "Rictavio",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 686.0785490694019,
+          "y": 778.8515639542209
+        }
+      },
+      "position": {
+        "x": 1416.9647719346074,
+        "y": 1195.7380256591896
+      }
+    },
+    {
+      "id": "entity-mwqapfb8-euxos7",
+      "type": "Person",
+      "name": "Wayland",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 467.60296786456956,
+          "y": -114.69131555795624
+        }
+      },
+      "position": {
+        "x": 594.6622457924128,
+        "y": 515.8182908284268
+      }
+    },
+    {
+      "id": "entity-mwqapkzl-a0jena",
+      "type": "Person",
+      "name": "Horic Ginch",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 580.4605279898544,
+          "y": 12.565657881459003
+        }
+      },
+      "position": {
+        "x": 723.6551521149979,
+        "y": 519.900344825977
+      }
+    },
+    {
+      "id": "entity-mwqaqmce-33iuv9",
+      "type": "Person",
+      "name": "Henrik van der Voort",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 152.39084750380997,
+          "y": 764.7720856748745
+        }
+      },
+      "position": {
+        "x": 304.47249107930656,
+        "y": 645.2153302932182
+      }
+    },
+    {
+      "id": "entity-mwqaqvjx-1dn2ca",
+      "type": "Person",
+      "name": "Skran Ragnar",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 505.7324590715788,
+          "y": 797.8186987026712
+        }
+      },
+      "position": {
+        "x": 499.3905569184076,
+        "y": 726.9309809719183
+      }
+    },
+    {
+      "id": "entity-mwqarb3f-rm6jlh",
+      "type": "Person",
+      "name": "Yewgeni Krushkin",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 831.4297442165125,
+          "y": 471.7526309415067
+        }
+      },
+      "position": {
+        "x": 180.02480288972666,
+        "y": 692.4454770157696
+      }
+    },
+    {
+      "id": "entity-mwqaskyl-kfu6gy",
+      "type": "Person",
+      "name": "Szoldar Szoldarovich",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 747.4457039981436,
+          "y": 323.94640310234826
+        }
+      },
+      "position": {
+        "x": 225.00589500644227,
+        "y": 732.9284599208137
+      }
+    },
+    {
+      "id": "entity-mwqaulty-9xwfh3",
+      "type": "Person",
+      "name": "Pchełka",
+      "imageUrl": "",
+      "color": "#1d96bf",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1481.884120892605,
+          "y": 257.59173723616163
+        }
+      },
+      "position": {
+        "x": 910.1124007517031,
+        "y": 626.5148774484089
+      }
+    },
+    {
+      "id": "entity-mwqav4ef-4c11vc",
+      "type": "Person",
+      "name": "Damira Ashford",
+      "imageUrl": "",
+      "color": "#1fadab",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1562.66082760093,
+          "y": -51.43301814565076
+        }
+      },
+      "position": {
+        "x": 1001.5931757173479,
+        "y": 629.5142471194137
+      }
+    },
+    {
+      "id": "entity-mwqavidi-lpuqhq",
+      "type": "Person",
+      "name": "Luekher",
+      "imageUrl": "",
+      "color": "#1aadb7",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1398.0193540401574,
+          "y": -93.77903547605881
+        }
+      },
+      "position": {
+        "x": 916.6110350388801,
+        "y": 730.4930260432401
+      }
+    },
+    {
+      "id": "entity-mwqavvz6-uauhv1",
+      "type": "Person",
+      "name": "Pelagietta",
+      "imageUrl": "",
+      "color": "#14bfe1",
+      "borderColor": "#ffffff",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1622.0152229676892,
+          "y": 155.64071508412957
+        }
+      },
+      "position": {
+        "x": 1013.5906544013669,
+        "y": 728.9933412077377
+      }
+    },
+    {
+      "id": "entity-mwqawdei-y4ai4i",
+      "type": "Faction",
+      "name": "DRUŻYNA",
+      "imageUrl": "",
+      "color": "#a823cd",
+      "borderColor": "#eeff00",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1465.9023234610586,
+          "y": 88.34463341792504
+        }
+      },
+      "position": {
+        "x": 958.6022104329465,
+        "y": 680.5035315264943
+      }
+    },
+    {
+      "id": "entity-mwqaxfjf-w3bn5u",
+      "type": "Person",
+      "name": "Rahadin",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 879.5440406341285,
+          "y": -190.34920473635177
+        }
+      },
+      "position": {
+        "x": 902.1305926979736,
+        "y": -200.5355990971134
+      }
+    },
+    {
+      "id": "entity-mwqaz837-uovg7m",
+      "type": "Person",
+      "name": "Petra",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1637.9970203992955,
+          "y": 324.8878189023489
+        }
+      },
+      "position": {
+        "x": 1262.2318127939852,
+        "y": 251.44381819079265
+      }
+    },
+    {
+      "id": "entity-mwqb02fa-srql4f",
+      "type": "Person",
+      "name": "Urwin Martikov",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 60.705131682404236,
+          "y": 88.78998716695713
+        }
+      },
+      "position": {
+        "x": 68.82243591726584,
+        "y": -291.0184336963808
+      }
+    },
+    {
+      "id": "entity-mwqb0929-u8rd52",
+      "type": "Person",
+      "name": "Danika Martikov",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 372.6719095739322,
+          "y": 26.333838835930628
+        }
+      },
+      "position": {
+        "x": 168.30153000558988,
+        "y": -301.01633259972994
+      }
+    },
+    {
+      "id": "entity-mwqb13mb-868ho5",
+      "type": "Person",
+      "name": "Bray Martikov",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 55.17212542865203,
+          "y": -90.88809069548954
+        }
+      },
+      "position": {
+        "x": 48.363898800805956,
+        "y": -417.5313939361262
+      }
+    },
+    {
+      "id": "entity-mwqb1999-n7cogb",
+      "type": "Person",
+      "name": "Brom Martikov",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 219.69787800101685,
+          "y": -48.094671335768034
+        }
+      },
+      "position": {
+        "x": 163.3397361893212,
+        "y": -454.5236198785181
+      }
+    },
+    {
+      "id": "entity-mwqb2gxm-zxm98b",
+      "type": "Person",
+      "name": "Ernst Larnak",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 577.6303245241163,
+          "y": 331.86706550520154
+        }
+      },
+      "position": {
+        "x": 228.24922232789876,
+        "y": -54.13344751401579
+      }
+    },
+    {
+      "id": "entity-mwqb2xq6-xw8pdp",
+      "type": "Person",
+      "name": "Konik Halfinger",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": -93.32692678027531,
+          "y": 229.8779732079553
+        }
+      },
+      "position": {
+        "x": 585.6587000132157,
+        "y": 401.0432437672102
+      }
+    },
+    {
+      "id": "entity-mwqb4ltr-nae5kt",
+      "type": "Person",
+      "name": "Freedric",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {
+        "occupation": "Krawiec"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": -26.5980682964317,
+          "y": 421.8839863845026
+        }
+      },
+      "position": {
+        "x": 345.8295309855386,
+        "y": -243.664776466058
+      }
+    },
+    {
+      "id": "entity-mwqb5d8u-f8kswp",
+      "type": "Person",
+      "name": "Udo Lukovich",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 310.4205138414492,
+          "y": 463.7301000125177
+        }
+      },
+      "position": {
+        "x": -119.62695496370031,
+        "y": -77.26970419434939
+      }
+    },
+    {
+      "id": "entity-mwqb6vvo-plf4i4",
+      "type": "Person",
+      "name": "Gadolf Blinsky",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 407.79523037589917,
+          "y": 324.3810254557216
+        }
+      },
+      "position": {
+        "x": -123.27107082056428,
+        "y": 118.55650683998921
+      }
+    },
+    {
+      "id": "entity-mwqb90n3-yxr98c",
+      "type": "Person",
+      "name": "Zella Ragnar",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 333.47820559700176,
+          "y": 778.3794732803156
+        }
+      },
+      "position": {
+        "x": 414.7474772671222,
+        "y": 750.7824975062827
+      }
+    },
+    {
+      "id": "entity-mwqba9xj-pf0h0w",
+      "type": "Person",
+      "name": "Haliq",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": -31.852548773380207,
+        "y": 154.20251579622894
+      },
+      "positions": {
+        "complete": {
+          "x": -228.69246761012204,
+          "y": 112.85714471636544
+        }
+      }
+    },
+    {
+      "id": "entity-mwqbbbwj-tqfygj",
+      "type": "Institution",
+      "name": "Opactwo w Krezk",
+      "imageUrl": "",
+      "color": "#39444b",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1038.6330372291748,
+        "y": 655.7398432432699
+      },
+      "positions": {
+        "complete": {
+          "x": 912.7992991600247,
+          "y": 697.984026737913
+        }
+      }
+    },
+    {
+      "id": "entity-mwqbbow4-6tmumi",
+      "type": "Person",
+      "name": "Opat",
+      "imageUrl": "",
+      "color": "#ffffff",
+      "borderColor": "#6b9dbd",
+      "lineStyle": "dashed",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1054.8116606952085,
+        "y": 516.4239189524252
+      },
+      "positions": {
+        "complete": {
+          "x": 1149.186964247071,
+          "y": 495.75123341249366
+        }
+      }
+    },
+    {
+      "id": "entity-mwqbcbz5-bn4cur",
+      "type": "Location",
+      "name": "Krezk",
+      "imageUrl": "",
+      "color": "#3d514d",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1252.5503919467299,
+        "y": 734.8353357438784
+      },
+      "positions": {
+        "complete": {
+          "x": 1252.5503919467299,
+          "y": 734.8353357438784
+        }
+      }
+    },
+    {
+      "id": "entity-mwqbclz5-2wxzh0",
+      "type": "Location",
+      "name": "Berez",
+      "imageUrl": "",
+      "color": "#3d514d",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1331.6458844473384,
+        "y": 615.2932845781859
+      },
+      "positions": {
+        "complete": {
+          "x": 1331.6458844473384,
+          "y": 615.2932845781859
+        }
+      }
+    },
+    {
+      "id": "entity-mwqbcrrn-sr8rwh",
+      "type": "Location",
+      "name": "Krezk",
+      "imageUrl": "",
+      "color": "#3d514d",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1110.5380304115463,
+        "y": 733.0377109143192
+      },
+      "positions": {
+        "complete": {
+          "x": 1110.5380304115463,
+          "y": 733.0377109143192
+        }
+      }
+    },
+    {
+      "id": "entity-mwqbdk94-ceutue",
+      "type": "Person",
+      "name": "Sergei von Zarovich",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {
+        "status": "Martwy"
+      },
+      "customFields": [],
+      "position": {
+        "x": 706.5470321078948,
+        "y": -186.1331752066958
+      },
+      "positions": {
+        "complete": {
+          "x": 721.8268431591487,
+          "y": -196.02011176927186
+        }
+      }
+    },
+    {
+      "id": "entity-mwqbdyja-5hp18q",
+      "type": "Person",
+      "name": "Tatyana",
+      "imageUrl": "",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 800.0235232449775,
+        "y": -291.294227735914
+      },
+      "positions": {
+        "complete": {
+          "x": 863.8392046943321,
+          "y": -318.25860017930324
+        }
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel-mwqa22rh-naa3bu",
+      "source": "entity-mwqa1396-68fwxv",
+      "target": "entity-mwqa0v35-tfopz9",
+      "type": "Służy",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqa2cce-2w1ddo",
+      "source": "entity-mwqa1bqr-4skgwi",
+      "target": "entity-mwqa0v35-tfopz9",
+      "type": "Służy",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqa2t18-dzhwgv",
+      "source": "entity-mwqa1krz-v7r5gd",
+      "target": "entity-mwqa0v35-tfopz9",
+      "type": "Służy",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqa30i3-0o3v1z",
+      "source": "entity-mwqa1shf-j81u4b",
+      "target": "entity-mwqa0v35-tfopz9",
+      "type": "Służy",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqa4q09-q9ta9c",
+      "source": "entity-mwqa4846-5flf7q",
+      "target": "entity-mwqa404p-u84avv",
+      "type": "Małżeństwo",
+      "note": "",
+      "color": "#d016a7",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqa5agg-353bwm",
+      "source": "entity-mwqa5160-sn1y05",
+      "target": "entity-mwqa4846-5flf7q",
+      "type": "Rodzeństwo",
+      "note": "",
+      "color": "#3f10c1",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqa6pzs-lwp17r",
+      "source": "entity-mwqa5zpy-m4d9ec",
+      "target": "entity-mwqa4846-5flf7q",
+      "type": "Rodzic-Dziecko",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqa6ywc-6llt08",
+      "source": "entity-mwqa5zpy-m4d9ec",
+      "target": "entity-mwqa404p-u84avv",
+      "type": "Rodzic-Dziecko",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqa7bp3-osoy64",
+      "source": "entity-mwqa3ivh-fhu1ge",
+      "target": "entity-mwqa3q1e-iwi8ly",
+      "type": "Rodzic-Dziecko",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqa8cyf-232tzu",
+      "source": "entity-mwqa895d-o79oya",
+      "target": "entity-mwqa802d-ls6cx4",
+      "type": "Małżeństwo",
+      "note": "",
+      "color": "#d016a7",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqa8vv4-xijf60",
+      "source": "entity-mwqa8pk0-udfwd6",
+      "target": "entity-mwqa802d-ls6cx4",
+      "type": "Rodzic-Dziecko",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqa8ywm-4bki76",
+      "source": "entity-mwqa8pk0-udfwd6",
+      "target": "entity-mwqa895d-o79oya",
+      "type": "Rodzic-Dziecko",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqa9ar5-j4rnj7",
+      "source": "entity-mwqa973i-rjnj3f",
+      "target": "entity-mwqa802d-ls6cx4",
+      "type": "Rodzic-Dziecko",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqa9fyc-7m9kvw",
+      "source": "entity-mwqa973i-rjnj3f",
+      "target": "entity-mwqa895d-o79oya",
+      "type": "Rodzic-Dziecko",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqa9w0i-yn1ltv",
+      "source": "entity-mwqa9sio-4yepb6",
+      "target": "entity-mwqa895d-o79oya",
+      "type": "Rodzic-Dziecko",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqaa1ll-9p4b1p",
+      "source": "entity-mwqa9sio-4yepb6",
+      "target": "entity-mwqa802d-ls6cx4",
+      "type": "Rodzic-Dziecko",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqaa5vi-d08pyr",
+      "source": "entity-mwqa9sio-4yepb6",
+      "target": "entity-mwqa973i-rjnj3f",
+      "type": "Rodzeństwo",
+      "note": "",
+      "color": "#3f10c1",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqaa9fw-qclx96",
+      "source": "entity-mwqa973i-rjnj3f",
+      "target": "entity-mwqa8pk0-udfwd6",
+      "type": "Rodzeństwo",
+      "note": "",
+      "color": "#3f10c1",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqaacue-8jjmni",
+      "source": "entity-mwqa9sio-4yepb6",
+      "target": "entity-mwqa8pk0-udfwd6",
+      "type": "Rodzeństwo",
+      "note": "",
+      "color": "#3f10c1",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqabk8n-h8ejb8",
+      "source": "entity-mwqa3bwf-6bv3az",
+      "target": "entity-mwqa3q1e-iwi8ly",
+      "type": "Adopcja",
+      "note": "",
+      "color": "#3fd5cb",
+      "lineStyle": "dashed",
+      "direction": "none"
+    },
+    {
+      "id": "rel-mwqabz5a-k2xa1e",
+      "source": "entity-mwqa3ivh-fhu1ge",
+      "target": "entity-mwqa3bwf-6bv3az",
+      "type": "Przyszywane Rodzeństwo",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "none"
+    },
+    {
+      "id": "rel-mwqac69g-tt77wx",
+      "source": "entity-mwqaarh3-qq8qw7",
+      "target": "entity-mwqa5zpy-m4d9ec",
+      "type": "Przyszywane Rodzeństwo",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "none"
+    },
+    {
+      "id": "rel-mwqacdhe-snwtod",
+      "source": "entity-mwqaarh3-qq8qw7",
+      "target": "entity-mwqa404p-u84avv",
+      "type": "Adopcja",
+      "note": "",
+      "color": "#3fd5cb",
+      "lineStyle": "dashed",
+      "direction": "none"
+    },
+    {
+      "id": "rel-mwqactbg-57ivhf",
+      "source": "entity-mwqacpew-hpf8en",
+      "target": "entity-mwqackwo-vmre5y",
+      "type": "Adopcja",
+      "note": "",
+      "color": "#3fd5cb",
+      "lineStyle": "dashed",
+      "direction": "none"
+    },
+    {
+      "id": "rel-mwqadbuh-vqki1o",
+      "source": "entity-mwqad8bz-kf0xmv",
+      "target": "entity-mwqad3ow-k0tq7y",
+      "type": "Rodzic-Dziecko",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqaefpf-xxu80q",
+      "source": "entity-mwqadj6e-x8frbe",
+      "target": "entity-mwqae1oz-lybbmu",
+      "type": "Należy do",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqaekr5-b8aqoi",
+      "source": "entity-mwqadubs-gubq35",
+      "target": "entity-mwqae1oz-lybbmu",
+      "type": "Należy do",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqaep5m-i5qxor",
+      "source": "entity-mwqadnpf-inlktu",
+      "target": "entity-mwqae1oz-lybbmu",
+      "type": "Należy do",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqag3uw-7k08a6",
+      "source": "entity-mwqa0v35-tfopz9",
+      "target": "entity-mwqafntz-by4sd5",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqagd96-10vkk6",
+      "source": "entity-mwqa1396-68fwxv",
+      "target": "entity-mwqafntz-by4sd5",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqagw7u-gqpzpp",
+      "source": "entity-mwqa1shf-j81u4b",
+      "target": "entity-mwqafntz-by4sd5",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqah0ph-7ugyz6",
+      "source": "entity-mwqa1krz-v7r5gd",
+      "target": "entity-mwqafntz-by4sd5",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqah78c-9e8di2",
+      "source": "entity-mwqa1bqr-4skgwi",
+      "target": "entity-mwqafntz-by4sd5",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqai2ip-mqhsh6",
+      "source": "entity-mwqa3q1e-iwi8ly",
+      "target": "entity-mwqafhmp-px202i",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqai5ty-wctb6o",
+      "source": "entity-mwqa3ivh-fhu1ge",
+      "target": "entity-mwqafhmp-px202i",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqaib6i-p2f0i1",
+      "source": "entity-mwqa3bwf-6bv3az",
+      "target": "entity-mwqafhmp-px202i",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqaij14-2vnn53",
+      "source": "entity-mwqad8bz-kf0xmv",
+      "target": "entity-mwqafhmp-px202i",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqaimyr-g0pgck",
+      "source": "entity-mwqad3ow-k0tq7y",
+      "target": "entity-mwqafhmp-px202i",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqaiyla-f3ycgk",
+      "source": "entity-mwqacpew-hpf8en",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqaj1ma-9o4iij",
+      "source": "entity-mwqackwo-vmre5y",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqaj4q1-msay74",
+      "source": "entity-mwqa5160-sn1y05",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqaj9j3-41qcc9",
+      "source": "entity-mwqa404p-u84avv",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqajd2x-25u24x",
+      "source": "entity-mwqa4846-5flf7q",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqajljv-gyoi18",
+      "source": "entity-mwqa5zpy-m4d9ec",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqajpe0-l5fe8f",
+      "source": "entity-mwqaarh3-qq8qw7",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqajv92-y4mrnp",
+      "source": "entity-mwqa802d-ls6cx4",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqajy8l-a14gf5",
+      "source": "entity-mwqa8pk0-udfwd6",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqak2xx-m1hx53",
+      "source": "entity-mwqa895d-o79oya",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqak6v5-1vxrn6",
+      "source": "entity-mwqa973i-rjnj3f",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqakbex-ts71yq",
+      "source": "entity-mwqa9sio-4yepb6",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqal2qw-1ioql5",
+      "source": "entity-mwqakzkv-232mso",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqal7qh-pco9ti",
+      "source": "entity-mwqaksx9-yjeme3",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqaptc0-td15y0",
+      "source": "entity-mwqapkzl-a0jena",
+      "target": "entity-mwqapfb8-euxos7",
+      "type": "Czeladnik",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqaq25g-d6lz98",
+      "source": "entity-mwqapfb8-euxos7",
+      "target": "entity-mwqapkzl-a0jena",
+      "type": "Mistrz",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqaq9gs-swjmmh",
+      "source": "entity-mwqapfb8-euxos7",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqaqd5f-z86k8i",
+      "source": "entity-mwqapkzl-a0jena",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqaqpfl-rdzj49",
+      "source": "entity-mwqaqmce-33iuv9",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqar1ib-73iear",
+      "source": "entity-mwqaqvjx-1dn2ca",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqarecu-znwv60",
+      "source": "entity-mwqarb3f-rm6jlh",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqasnqc-pk8qqh",
+      "source": "entity-mwqaskyl-kfu6gy",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqasuiy-2cie9m",
+      "source": "entity-mwqaskyl-kfu6gy",
+      "target": "entity-mwqarb3f-rm6jlh",
+      "type": "Partner Biznesowy",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqawhmk-6iej7f",
+      "source": "entity-mwqavidi-lpuqhq",
+      "target": "entity-mwqawdei-y4ai4i",
+      "type": "Należy do",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqawks5-uf92xn",
+      "source": "entity-mwqaulty-9xwfh3",
+      "target": "entity-mwqawdei-y4ai4i",
+      "type": "Należy do",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqawntm-zslmcq",
+      "source": "entity-mwqav4ef-4c11vc",
+      "target": "entity-mwqawdei-y4ai4i",
+      "type": "Należy do",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqawqzv-9ma2eg",
+      "source": "entity-mwqavvz6-uauhv1",
+      "target": "entity-mwqawdei-y4ai4i",
+      "type": "Należy do",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqaxng3-k7a80t",
+      "source": "entity-mwqaxfjf-w3bn5u",
+      "target": "entity-mwqa0v35-tfopz9",
+      "type": "Służy",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqay9tj-oz5frs",
+      "source": "entity-mwqaxfjf-w3bn5u",
+      "target": "entity-mwqafntz-by4sd5",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqazbj8-ix1j88",
+      "source": "entity-mwqaz837-uovg7m",
+      "target": "entity-mwqae1oz-lybbmu",
+      "type": "Należy do",
+      "note": "",
+      "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqb0d2s-elrx4k",
+      "source": "entity-mwqb0929-u8rd52",
+      "target": "entity-mwqb02fa-srql4f",
+      "type": "Małżeństwo",
+      "note": "",
+      "color": "#d016a7",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqb1ccq-ciwmnh",
+      "source": "entity-mwqb1999-n7cogb",
+      "target": "entity-mwqb13mb-868ho5",
+      "type": "Rodzeństwo",
+      "note": "",
+      "color": "#3f10c1",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqb1g0m-kevjxe",
+      "source": "entity-mwqb13mb-868ho5",
+      "target": "entity-mwqb02fa-srql4f",
+      "type": "Rodzic-Dziecko",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqb1i8z-gv3szk",
+      "source": "entity-mwqb13mb-868ho5",
+      "target": "entity-mwqb0929-u8rd52",
+      "type": "Rodzic-Dziecko",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqb1m36-7o55pv",
+      "source": "entity-mwqb1999-n7cogb",
+      "target": "entity-mwqb02fa-srql4f",
+      "type": "Rodzic-Dziecko",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqb1ou6-f9iq5z",
+      "source": "entity-mwqb1999-n7cogb",
+      "target": "entity-mwqb0929-u8rd52",
+      "type": "Rodzic-Dziecko",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqb25is-uqlmpj",
+      "source": "entity-mwqaarh3-qq8qw7",
+      "target": "entity-mwqa5zpy-m4d9ec",
+      "type": "Służy",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqb2kyz-s16gkg",
+      "source": "entity-mwqb2gxm-zxm98b",
+      "target": "entity-mwqa802d-ls6cx4",
+      "type": "Służy",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqb31vf-gbilk3",
+      "source": "entity-mwqb2xq6-xw8pdp",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqb3ad4-li1jdt",
+      "source": "entity-mwqb2gxm-zxm98b",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqb3vy8-m2ze4v",
+      "source": "entity-mwqb0929-u8rd52",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqb3zty-ap1pp3",
+      "source": "entity-mwqb02fa-srql4f",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqb43z9-4liu90",
+      "source": "entity-mwqb1999-n7cogb",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqb47sq-9o1ch3",
+      "source": "entity-mwqb13mb-868ho5",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqb4put-f88l4q",
+      "source": "entity-mwqb4ltr-nae5kt",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqb5fjh-42klsc",
+      "source": "entity-mwqb5d8u-f8kswp",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqb5psh-hinyxo",
+      "source": "entity-mwqb5d8u-f8kswp",
+      "target": "entity-mwqa404p-u84avv",
+      "type": "Krytykuje",
+      "note": "",
+      "color": "#ff0000",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqb75vl-thfl8j",
+      "source": "entity-mwqb6vvo-plf4i4",
+      "target": "entity-mwqaarh3-qq8qw7",
+      "type": "Służy",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqb7f7q-jeca1d",
+      "source": "entity-mwqaarh3-qq8qw7",
+      "target": "entity-mwqb6vvo-plf4i4",
+      "type": "Zastrasza",
+      "note": "",
+      "color": "#ff4000",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqb8kvm-9y5uew",
+      "source": "entity-mwqb6vvo-plf4i4",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqb94c3-xskwkq",
+      "source": "entity-mwqb90n3-yxr98c",
+      "target": "entity-mwqaqvjx-1dn2ca",
+      "type": "Małżeństwo",
+      "note": "",
+      "color": "#d016a7",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqb9anw-yxluna",
+      "source": "entity-mwqb90n3-yxr98c",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqbadjn-939793",
+      "source": "entity-mwqba9xj-pf0h0w",
+      "target": "entity-mwqaf1io-lkoycs",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqbaiwf-jptcla",
+      "source": "entity-mwqba9xj-pf0h0w",
+      "target": "entity-mwqa802d-ls6cx4",
+      "type": "Służy",
+      "note": "",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqbbup8-6y35l8",
+      "source": "entity-mwqbbow4-6tmumi",
+      "target": "entity-mwqbbbwj-tqfygj",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwqbdp9j-lvmyku",
+      "source": "entity-mwqbdk94-ceutue",
+      "target": "entity-mwqa0v35-tfopz9",
+      "type": "Rodzeństwo",
+      "note": "",
+      "color": "#3f10c1",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "rel-mwqbeas8-m1k9g3",
+      "source": "entity-mwqbdyja-5hp18q",
+      "target": "entity-mwqbdk94-ceutue",
+      "type": "Zaręczeni",
+      "note": "",
+      "color": "#b630c0",
+      "lineStyle": "dashed",
+      "direction": "mutual"
+    }
+  ]
 }
