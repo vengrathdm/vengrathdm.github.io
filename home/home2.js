@@ -28,19 +28,62 @@ function fitText(group,text,x,y,maxWidth,maxLines,fontSize,className,letterSpaci
  shown.forEach((part,i)=>{const span=svgEl("tspan",{x,dy:i===0?0:lineHeight});span.textContent=part;el.append(span)});
  group.append(el);return shown.length*lineHeight;
 }
-const prefetchedPages=new Set();
-function prefetchPage(record){
- if(!record?.url)return;
- let url;
- try{url=new URL(record.url,location.href)}catch{return}
- if(url.origin!==location.origin||prefetchedPages.has(url.href))return;
- prefetchedPages.add(url.href);
+const prefetchedPages=new Set(),prefetchedAssets=new Set(),inspectedStylesheets=new Set();
+const PREFETCH_ORIGINS=new Set([location.origin,"https://cdn.jsdelivr.net","https://fonts.googleapis.com","https://fonts.gstatic.com"]);
+function allowedPrefetchUrl(value,base=location.href){
+ try{const url=new URL(value,base);return /^https?:$/.test(url.protocol)&&PREFETCH_ORIGINS.has(url.origin)?url:null}catch{return null}
+}
+function addPrefetch(value,as,base=location.href,priority="low"){
+ const url=allowedPrefetchUrl(value,base);if(!url||prefetchedAssets.has(url.href))return null;
+ prefetchedAssets.add(url.href);
  const link=document.createElement("link");
- link.rel="prefetch";
- link.href=url.href;
- link.as="document";
- link.fetchPriority="low";
- document.head.append(link);
+ link.rel="prefetch";link.href=url.href;link.as=as;link.fetchPriority=priority;
+ if(as==="font")link.crossOrigin="anonymous";
+ document.head.append(link);return url.href;
+}
+function addModulePreload(value,base=location.href){
+ const url=allowedPrefetchUrl(value,base);if(!url||prefetchedAssets.has(url.href))return;
+ prefetchedAssets.add(url.href);
+ const link=document.createElement("link");link.rel="modulepreload";link.href=url.href;link.crossOrigin=url.origin===location.origin?"same-origin":"anonymous";link.fetchPriority="low";document.head.append(link);
+}
+function cssResources(css,base){
+ const imports=[...css.matchAll(/@import\\s+(?:url\\()?['"]?([^'")\\s;]+)['"]?\\)?/gi)].map(m=>m[1]);
+ const fonts=[...css.matchAll(/url\\(\\s*(['"]?)([^'")]+)\\1\\s*\\)/gi)].map(m=>m[2]).filter(url=>/\\.(?:woff2?|ttf|otf)(?:[?#]|$)/i.test(url));
+ imports.slice(0,2).forEach(url=>{const href=allowedPrefetchUrl(url,base);if(href)inspectStylesheet(href.href)});
+ fonts.slice(0,6).forEach(url=>addPrefetch(url,"font",base));
+}
+async function inspectStylesheet(href){
+ const url=allowedPrefetchUrl(href);if(!url||inspectedStylesheets.has(url.href))return;
+ inspectedStylesheets.add(url.href);
+ try{const response=await fetch(url.href,{mode:"cors",credentials:url.origin===location.origin?"same-origin":"omit"});if(response.ok)cssResources(await response.text(),url.href)}catch{}
+}
+function prefetchDocumentAssets(doc,pageUrl){
+ const styles=[...doc.querySelectorAll('link[rel~="stylesheet"][href]')].map(el=>el.href).slice(0,4);
+ styles.forEach(href=>{const url=addPrefetch(href,"style",pageUrl);if(url)inspectStylesheet(url)});
+ const moduleScripts=[...doc.querySelectorAll('script[type="module"][src]')].map(el=>el.src).slice(0,4);
+ moduleScripts.forEach(src=>addModulePreload(src,pageUrl));
+ const classicScripts=[...doc.querySelectorAll('script[src]:not([type="module"])')].map(el=>el.src).slice(0,3);
+ classicScripts.forEach(src=>addPrefetch(src,"script",pageUrl));
+ const images=[];
+ doc.querySelectorAll("img[src],img[srcset],source[srcset],meta[property='og:image'][content]").forEach(el=>{
+  const src=el.getAttribute("src")||el.getAttribute("content")||el.getAttribute("srcset")?.split(",")[0]?.trim().split(/\\s+/)[0];
+  if(src)images.push(new URL(src,pageUrl).href);
+ });
+ doc.querySelectorAll("[style]").forEach(el=>{for(const match of el.getAttribute("style").matchAll(/url\\(\\s*(['"]?)([^'")]+)\\1\\s*\\)/gi))images.push(new URL(match[2],pageUrl).href)});
+ [...new Set(images)].slice(0,6).forEach(src=>addPrefetch(src,"image",pageUrl));
+ doc.querySelectorAll("style").forEach(el=>cssResources(el.textContent,pageUrl));
+}
+async function prefetchPage(record){
+ if(!record?.url)return;
+ const url=allowedPrefetchUrl(record.url);if(!url||url.origin!==location.origin||prefetchedPages.has(url.href))return;
+ prefetchedPages.add(url.href);
+ const link=document.createElement("link");link.rel="prefetch";link.href=url.href;link.as="document";link.fetchPriority="low";document.head.append(link);
+ try{
+  const response=await fetch(url.href,{credentials:"same-origin"});
+  if(!response.ok)return;
+  const html=await response.text(),doc=new DOMParser().parseFromString(html,"text/html");
+  prefetchDocumentAssets(doc,url.href);
+ }catch(error){console.debug("Page asset prefetch skipped",url.href,error)}
 }
 function makeWorld(items,width,height,rows){
  const cols=Math.ceil(items.length/rows),cellW=width/cols,cellH=height/rows;
