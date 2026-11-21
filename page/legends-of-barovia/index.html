@@ -66,7 +66,10 @@
     <link rel="stylesheet" href="./sections/characters/characters.css" />
     <link rel="stylesheet" href="./sections/chronicle/chronicle.css" />
     <link rel="stylesheet" href="./theme-fonts.css" />
-  </head>
+  <style>
+.lob-threads-panel{padding-bottom:34px}.lob-threads-intro{max-width:900px;margin:0 auto 24px;text-align:center}.lob-threads-intro h2{margin:8px 0 12px;color:var(--theme-accent-2,#bca06a);font-family:"Voltaire",sans-serif;font-size:clamp(32px,5vw,54px);letter-spacing:.06em;text-transform:uppercase}.lob-threads-intro p{max-width:760px;margin:0 auto 18px;color:#d7d2c8;font-family:"Brygada 1918",Georgia,serif;line-height:1.8}.lob-threads-open,.lob-threads-foot a{color:#bca06a;text-decoration:none;letter-spacing:.12em;font:12px "Fira Sans Extra Condensed",sans-serif}.lob-threads-open:hover,.lob-threads-foot a:hover{color:#eee9dc}.lob-threads-viewport{width:100%;height:min(82vh,1100px);min-height:700px;overflow:hidden;border:1px solid rgba(188,160,106,.6);background:#08090b;box-shadow:0 18px 48px rgba(0,0,0,.5)}.lob-threads-viewport iframe{display:block;width:100%;height:100%;border:0}.lob-threads-foot{display:flex;justify-content:space-between;gap:18px;padding:13px 2px;border-top:1px solid rgba(188,160,106,.25);color:#817d76;font:11px "Fira Sans Extra Condensed",sans-serif;letter-spacing:.1em}@media(max-width:700px){.lob-threads-viewport{height:78vh;min-height:680px}.lob-threads-foot{flex-direction:column}}
+</style>
+</head>
   <body class="legends-of-barovia-page campaign-startup-loading">
     <header
       class="subpage-hero"
@@ -168,6 +171,19 @@
         <section class="lob-section">
           <div id="campaign-chronicle" class="chronicle"></div>
         </section>
+      </section>
+
+      <section class="lob-tab-panel lob-threads-panel" id="threads" data-page-section="threads" hidden>
+        <section class="lob-section lob-threads-intro">
+          <div class="lob-section-mark">AKTA / 04 · REJESTR POWIĄZAŃ</div>
+          <h2>Wątki w Barovii</h2>
+          <p>Mapa postaci, miejsc, stronnictw, wydarzeń i zależności, które splatają się w historii Barovii. Wybierz element, aby otworzyć jego dossier, albo przełącz się do edytora, by rozwijać sieć powiązań.</p>
+          <a class="lob-threads-open" href="/page/legends-of-barovia/W%C4%85tki-w-Barovii/" target="_blank" rel="noopener noreferrer">OTWÓRZ MAPĘ W OSOBNYM OKNIE ↗</a>
+        </section>
+        <div class="lob-threads-viewport">
+          <iframe src="/page/legends-of-barovia/W%C4%85tki-w-Barovii/" title="Interaktywna mapa Wątki w Barovii" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="lob-threads-foot"><span>LEGENDS OF BAROVIA · WĄTKI</span><a href="/page/legends-of-barovia/W%C4%85tki-w-Barovii/" target="_blank" rel="noopener noreferrer">PEŁNY EKRAN / MAPA SAMODZIELNA ↗</a></div>
       </section>
     </main>
 

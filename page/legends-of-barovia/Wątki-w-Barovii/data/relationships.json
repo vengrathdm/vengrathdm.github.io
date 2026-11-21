@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "id": "barovia-threads",
+    "name": "Wątki w Barovii",
+    "updatedAt": "2026-11-21",
+    "layoutModes": {
+      "complete": "force",
+      "family": "hierarchy",
+      "organization": "hierarchy",
+      "political": "force",
+      "characters": "force"
+    },
+    "entityTypes": [],
+    "relationshipTypes": [],
+    "notes": "Niezależny rejestr wątków kampanii Legends of Barovia. Zestaw startowy jest celowo pusty.",
+    "savedViews": []
+  },
+  "entities": [],
+  "relationships": []
+}

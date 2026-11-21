@@ -80,6 +80,11 @@ async function initializeCampaignPage() {
         color: theme.colors.accent2,
       },
       {
+        text: "Wątki",
+        sectionLink: "threads",
+        color: theme.colors.accent2,
+      },
+      {
         text: "Kronika",
         sectionLink: "chronicle",
         color: theme.colors.accent2,
