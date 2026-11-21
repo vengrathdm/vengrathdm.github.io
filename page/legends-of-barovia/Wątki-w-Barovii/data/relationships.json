@@ -124,6 +124,13 @@
         "color": "#00ff2a",
         "lineStyle": "solid",
         "direction": "towards"
+      },
+      {
+        "name": "Konflikt",
+        "description": "",
+        "color": "#c43b35",
+        "lineStyle": "dashed",
+        "direction": "mutual"
       }
     ],
     "notes": "Niezależny rejestr wątków kampanii Legends of Barovia. Zestaw startowy jest celowo pusty.",
@@ -2881,6 +2888,26 @@
       "color": "#00ff2a",
       "lineStyle": "solid",
       "direction": "towards"
+    },
+    {
+      "id": "rel-davian-mieszka-w",
+      "source": "entity-davian-martikov",
+      "target": "entity-czarodziej-win",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-davian-konflikt",
+      "source": "entity-davian-martikov",
+      "target": "entity-mwqb02fa-srql4f",
+      "type": "Konflikt",
+      "note": "",
+      "color": "#c43b35",
+      "lineStyle": "dashed",
+      "direction": "mutual"
     }
   ]
 }
