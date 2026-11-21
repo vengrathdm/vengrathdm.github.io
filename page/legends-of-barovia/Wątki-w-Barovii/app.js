@@ -142,7 +142,7 @@ function enforceMinimumEntitySpacing(){
   if(!adjusted)break;
  }
 }
-const FORCE_LAYOUT_SPREAD=2.5;
+const FORCE_LAYOUT_SPREAD=1.9;
 function spreadForceLayout(){
  const nodes=cy.nodes();if(nodes.length<2)return;
  let centerX=0,centerY=0;
