@@ -28,6 +28,20 @@ function fitText(group,text,x,y,maxWidth,maxLines,fontSize,className,letterSpaci
  shown.forEach((part,i)=>{const span=svgEl("tspan",{x,dy:i===0?0:lineHeight});span.textContent=part;el.append(span)});
  group.append(el);return shown.length*lineHeight;
 }
+const prefetchedPages=new Set();
+function prefetchPage(record){
+ if(!record?.url)return;
+ let url;
+ try{url=new URL(record.url,location.href)}catch{return}
+ if(url.origin!==location.origin||prefetchedPages.has(url.href))return;
+ prefetchedPages.add(url.href);
+ const link=document.createElement("link");
+ link.rel="prefetch";
+ link.href=url.href;
+ link.as="document";
+ link.fetchPriority="low";
+ document.head.append(link);
+}
 function makeWorld(items,width,height,rows){
  const cols=Math.ceil(items.length/rows),cellW=width/cols,cellH=height/rows;
  const baseSites=items.map((record,i)=>{
@@ -60,9 +74,9 @@ function makeWorld(items,width,height,rows){
   const categoryY=cy+Math.max(14,titleLines*titleSize*.72)+7;
   fitText(labels,(record.tags||[]).join(" · "),cx,categoryY,safeW,2,Math.max(7.5,Math.min(9.5,safeW/24)),"cell-tag",.3);
   anchor.append(labels);
-  anchor.addEventListener("pointerenter",()=>showPreview(record));anchor.addEventListener("pointerleave",hidePreview);
+  anchor.addEventListener("pointerenter",()=>{prefetchPage(record);showPreview(record)});anchor.addEventListener("pointerleave",hidePreview);
   anchor.addEventListener("contextmenu",e=>{e.preventDefault();openContextMenu(record,e.clientX,e.clientY)});
-  anchor.addEventListener("focus",()=>showPreview(record));anchor.addEventListener("blur",hidePreview);
+  anchor.addEventListener("focus",()=>{prefetchPage(record);showPreview(record)});anchor.addEventListener("blur",hidePreview);
   svg.append(anchor);
  });
  return svg;
