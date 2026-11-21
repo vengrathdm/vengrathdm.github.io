@@ -1487,6 +1487,74 @@
           "y": 526.7358102222349
         }
       }
+    },
+    {
+      "id": "entity-stary-kosciogruch",
+      "type": "Location",
+      "name": "Stary Kościogruch",
+      "imageUrl": "",
+      "color": "#3d514d",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": {
+        "x": 2500,
+        "y": 1800
+      }
+    },
+    {
+      "id": "entity-bella-hag",
+      "type": "Person",
+      "name": "Bella",
+      "imageUrl": "https://vengrathdm.github.io/page/legends-of-barovia/W%C4%85tki-w-Barovii/data/res/Bella_Hag_token.webp",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": {
+        "x": 2300,
+        "y": 1600
+      }
+    },
+    {
+      "id": "entity-ophelia-hag",
+      "type": "Person",
+      "name": "Ophelia",
+      "imageUrl": "https://vengrathdm.github.io/page/legends-of-barovia/W%C4%85tki-w-Barovii/data/res/Offalia_Hag_token.webp",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": {
+        "x": 2500,
+        "y": 1550
+      }
+    },
+    {
+      "id": "entity-morgantha-hag",
+      "type": "Person",
+      "name": "Morgantha",
+      "imageUrl": "https://vengrathdm.github.io/page/legends-of-barovia/W%C4%85tki-w-Barovii/data/res/Morgantha_Hag_2_token.webp",
+      "color": "#59323a",
+      "borderColor": "#bca06a",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": {
+        "x": 2700,
+        "y": 1600
+      }
     }
   ],
   "relationships": [
@@ -2457,6 +2525,36 @@
       "type": "Należy do",
       "note": "",
       "color": "#00ff2a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-bella-hag-resides",
+      "source": "entity-bella-hag",
+      "target": "entity-stary-kosciogruch",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-ophelia-hag-resides",
+      "source": "entity-ophelia-hag",
+      "target": "entity-stary-kosciogruch",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-morgantha-hag-resides",
+      "source": "entity-morgantha-hag",
+      "target": "entity-stary-kosciogruch",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#adaca8",
       "lineStyle": "solid",
       "direction": "towards"
     }
