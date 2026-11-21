@@ -11,8 +11,39 @@ function navigateFromTile(anchor,href){
  const target=new URL(href,location.href);
  if(target.origin!==location.origin){location.assign(target.href);return}
  tileNavigationStarted=true;
- anchor.style.viewTransitionName="vengrath-tile";
- location.assign(target.href);
+ const image=anchor.querySelector("image");
+ const tint=anchor.querySelector(".cell-shade");
+ const rect=anchor.getBoundingClientRect();
+ const d=tint?.getAttribute("d")||"";
+ const numbers=d.match(/-?\\d+(?:\\.\\d+)?/g)?.map(Number)||[];
+ const matrix=tint?.getScreenCTM();
+ const points=[];
+ if(matrix)for(let i=0;i+1<numbers.length;i+=2){
+  const point=new DOMPoint(numbers[i],numbers[i+1]).matrixTransform(matrix);
+  points.push([((point.x-rect.left)/rect.width)*100,((point.y-rect.top)/rect.height)*100]);
+ }
+ const overlay=document.createElement("div");
+ overlay.setAttribute("aria-hidden","true");
+ Object.assign(overlay.style,{
+  position:"fixed",left:rect.left+"px",top:rect.top+"px",
+  width:rect.width+"px",height:rect.height+"px",zIndex:"2147483647",
+  pointerEvents:"none",backgroundImage:"url("+JSON.stringify(image?.getAttribute("href")||"")+")",
+  backgroundSize:"100% 100%",backgroundPosition:"center",
+  clipPath:points.length>2?"polygon("+points.map(p=>p.map(v=>v+"%").join(" ")).join(",")+")":"none",
+  transformOrigin:"center center",willChange:"transform,border-radius",
+  transition:"transform 720ms cubic-bezier(.2,.78,.16,1), border-radius 720ms ease"
+ });
+ document.body.append(overlay);
+ const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+ if(reduce){location.assign(target.href);return}
+ const dx=innerWidth/2-(rect.left+rect.width/2);
+ const dy=innerHeight/2-(rect.top+rect.height/2);
+ const scale=Math.max(innerWidth/rect.width,innerHeight/rect.height)*1.12;
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{
+  overlay.style.transform="translate3d("+dx+"px,"+dy+"px,0) scale("+scale+")";
+  overlay.style.borderRadius="0";
+ }));
+ window.setTimeout(()=>location.assign(target.href),760);
 }
 
 function seededRandom(seed){let v=seed>>>0;return()=>{v=(v*1664525+1013904223)>>>0;return v/4294967296}}
