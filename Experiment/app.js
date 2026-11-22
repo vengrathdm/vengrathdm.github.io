@@ -501,7 +501,9 @@ function setActiveDrawer(drawerId) {
     object.userData.targetZ = selected ? object.userData.openZ : 0;
     object.userData.face.material = selected ? materials.walnutEdge : materials.walnut;
   }
-  for (const volume of gazetteVolumes.values()) volume.book.visible = volume.entry.drawer === drawerId;
+  for (const volume of gazetteVolumes.values()) {
+    volume.book.visible = volume.entry.drawer === drawerId && volume !== activeVolume;
+  }
   drawerPanel.hidden = false;
   hint.style.opacity = "0";
   intro.style.opacity = ".3";
@@ -607,68 +609,175 @@ function safeGazetteUrl(entry) {
   return url.href;
 }
 
-function openGazette(entry) {
-  let url;
-  try { url = safeGazetteUrl(entry); }
-  catch (error) {
-    console.error(error);
-    alert("This record points to a missing or invalid gazette HTML file.");
-    return;
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  })[char]);
+}
+
+function pageDocument(entry, pageNumber, heading, blocks, variant = "") {
+  const content = blocks.map((block) => {
+    const tag = block.type === "quote" ? "blockquote" : block.type === "heading" ? "h2" : "p";
+    return "<" + tag + ">" + escapeHTML(block.text) + "</" + tag + ">";
+  }).join("");
+  return "<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><style>" +
+    "*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#eee5d2;color:#30271f}" +
+    "body{padding:29px 27px 22px;font-family:Georgia,serif}.page{height:100%;position:relative;overflow:hidden;padding-bottom:27px}" +
+    ".mast{display:flex;justify-content:space-between;gap:8px;padding-bottom:8px;border-bottom:3px double #4b3a2b;color:#766044;font:7px monospace;letter-spacing:.11em}" +
+    "h1{margin:30px 0 13px;font:32px/1.02 Georgia,serif;font-weight:400}h2{margin:22px 0 8px;font:20px/1.1 Georgia,serif;font-weight:500}" +
+    "p{margin:0 0 13px;font:16px/1.38 Georgia,serif;text-align:justify}blockquote{margin:22px 0;padding:12px 4px;border-top:1px solid #a78d62;border-bottom:1px solid #a78d62;color:#713b2d;font:italic 21px/1.2 Georgia,serif}" +
+    ".deck{margin:0 0 22px;color:#65543e;font:italic 18px/1.3 Georgia,serif}.rule{height:3px;margin:11px 0;background:#913d32}" +
+    ".page-foot{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;padding-top:7px;border-top:1px solid #a78d62;color:#806c50;font:7px monospace;letter-spacing:.12em}" +
+    ".cover{text-align:center;padding-top:60px}.cover .paper-name{font:37px Georgia,serif;letter-spacing:.08em}.cover .sub{margin:9px 0 38px;color:#816b4d;font:8px monospace;letter-spacing:.16em}" +
+    ".cover .issue{margin-bottom:20px;color:#922f28;font:8px monospace;letter-spacing:.15em}.cover h1{margin:0 auto 18px;max-width:95%;font:39px/1.02 Georgia,serif}.cover .deck{font-size:18px}" +
+    ".cover .bottom-seal{margin:45px auto 0;width:68px;height:68px;border:1px solid #a88958;border-radius:50%;display:grid;place-items:center;color:#8f392e;font:30px Georgia,serif}" +
+    ".colophon{text-align:center;padding-top:95px}.colophon h1{font-size:30px}.colophon p{text-align:center;font-style:italic}" +
+    "</style></head><body><article class='page " + variant + "'><header class='mast'><span>THE HEARTWELL GAZETTE</span><span>" +
+    escapeHTML(entry.issue) + "</span></header>" + heading + "<div class='rule'></div>" + content +
+    "<footer class='page-foot'><span>HEARTWELL · MUNICIPAL PRESS</span><span>" + String(pageNumber).padStart(2,"0") + " / 08</span></footer></article></body></html>";
+}
+
+function blankPageDocument() {
+  return "<!doctype html><html><head><meta charset='utf-8'><style>html,body{margin:0;width:100%;height:100%;background:#eee5d2}</style></head><body></body></html>";
+}
+
+async function prepareGazettePages(entry) {
+  const response = await fetch(safeGazetteUrl(entry));
+  if (!response.ok) throw new Error("Could not retrieve " + entry.title);
+  const parsed = new DOMParser().parseFromString(await response.text(), "text/html");
+  const title = parsed.querySelector("h1")?.textContent?.trim() || entry.title;
+  const deck = parsed.querySelector(".standfirst,.deck")?.textContent?.trim() || entry.excerpt || "";
+  const issue = parsed.querySelector(".issue")?.textContent?.trim() || entry.issue;
+  const nodes = [...parsed.querySelectorAll(".columns h2,.columns p,.columns blockquote,.cols h2,.cols p,.cols blockquote")];
+  const blocks = nodes.map((node) => ({
+    type: node.tagName.toLowerCase() === "h2" ? "heading" : node.tagName.toLowerCase() === "blockquote" ? "quote" : "paragraph",
+    text: node.textContent.trim()
+  })).filter((item) => item.text);
+  const filler = [
+    {type:"paragraph",text:"The notice has been entered into the public register and a copy retained for the municipal file. No further explanation has been issued."},
+    {type:"paragraph",text:"Readers familiar with the district will recognise the particulars set out above. The Gazette has received several accounts, though not all could be independently confirmed."},
+    {type:"quote",text:"The record remains open. The circumstances do not."},
+    {type:"paragraph",text:"This column is retained in the archive as part of the surviving edition. Further amendments, should they be received, will be filed with the original copy."}
+  ];
+  while (blocks.length < 18) blocks.push(...filler);
+  const pages = [];
+  const cover = "<section class='cover'><div class='paper-name'>THE GAZETTE</div><div class='sub'>A RECORD OF THE CITY AND ITS DISQUIET</div><div class='issue'>" +
+    escapeHTML(issue) + "</div><h1>" + escapeHTML(title) + "</h1><p class='deck'>" + escapeHTML(deck) + "</p><div class='bottom-seal'>H</div></section>";
+  pages.push(pageDocument(entry, 1, cover, [], "cover-page"));
+  const perPage = Math.ceil(blocks.length / 6);
+  for (let page = 0; page < 6; page++) {
+    const content = blocks.slice(page * perPage, (page + 1) * perPage);
+    pages.push(pageDocument(entry, page + 2, "<h1>" + escapeHTML(title) + "</h1>", content));
   }
-  const volume = gazetteVolumes.get(entry.slug);
-  if (!volume) return;
-  if (activeDrawerId !== entry.drawer) setActiveDrawer(entry.drawer);
+  const ending = "<section class='colophon'><div class='paper-name'>THE END</div><h1>" + escapeHTML(title) +
+    "</h1><p>Preserved in the Heartwell Municipal Archive.</p><p>Filed under " + escapeHTML(entry.drawer.toUpperCase()) +
+    ".</p><div class='bottom-seal'>V</div></section>";
+  pages.push(pageDocument(entry, 8, ending, [], "colophon-page"));
+  return pages;
+}
 
-  const book = volume.book;
-  book.updateWorldMatrix(true, false);
-  const source = book.getWorldPosition(new THREE.Vector3());
-  const sourceQuaternion = book.getWorldQuaternion(new THREE.Quaternion());
-  const sourceScale = book.getWorldScale(new THREE.Vector3());
-  scene.attach(book);
+function updateSpreadIndicator(volume) {
+  const label = volume.spread === 0 ? "COVER · 1 / 8"
+    : volume.spread === 4 ? "FINAL PAGE · 8 / 8"
+    : "PAGES " + (volume.spread * 2) + "–" + (volume.spread * 2 + 1) + " / 8";
+  $("#spread-indicator").textContent = label;
+  $("#prev-page").disabled = volume.spread === 0 || volume.turning;
+  $("#next-page").disabled = volume.spread === 4 || volume.turning;
+}
 
-  volume.originPosition = source.clone();
-  volume.originQuaternion = sourceQuaternion.clone();
-  volume.originScale = sourceScale.clone();
+function showSpread(volume, spread) {
+  volume.spread = THREE.MathUtils.clamp(spread, 0, 4);
+  const leftPage = volume.spread === 0 ? null : (volume.spread === 4 ? 8 : volume.spread * 2);
+  const rightPage = volume.spread === 0 ? 1 : (volume.spread === 4 ? null : volume.spread * 2 + 1);
+  volume.left.iframe.srcdoc = leftPage ? volume.pages[leftPage - 1] : blankPageDocument();
+  volume.right.iframe.srcdoc = rightPage ? volume.pages[rightPage - 1] : blankPageDocument();
+  volume.left.object.visible = Boolean(leftPage);
+  volume.right.object.visible = Boolean(rightPage);
+  volume.left.element.style.visibility = leftPage ? "visible" : "hidden";
+  volume.right.element.style.visibility = rightPage ? "visible" : "hidden";
+  updateSpreadIndicator(volume);
+}
+
+function turnPage(direction) {
+  const volume = activeVolume;
+  if (!volume || volume.turning || gazetteMotion) return;
+  const nextSpread = volume.spread + direction;
+  if (nextSpread < 0 || nextSpread > 4) return;
+  const backwards = direction < 0;
+  const currentPage = backwards ? (volume.spread === 4 ? 8 : volume.spread * 2) : (volume.spread === 0 ? 1 : volume.spread * 2 + 1);
+  const nextPage = backwards ? (nextSpread === 0 ? 1 : nextSpread * 2 + 1) : (nextSpread === 4 ? 8 : nextSpread * 2);
+  volume.flipFront.srcdoc = volume.pages[currentPage - 1] || blankPageDocument();
+  volume.flipBack.srcdoc = volume.pages[nextPage - 1] || blankPageDocument();
+  volume.flipPivot.visible = true;
+  volume.flipPivot.rotation.set(0, 0, 0);
+  volume.flipPivot.userData.start = performance.now();
+  volume.flipPivot.userData.duration = reducedMotion ? 0 : 720;
+  volume.flipPivot.userData.direction = direction;
+  volume.turning = true;
+  if (!backwards) volume.right.object.visible = false;
+  else volume.left.object.visible = false;
+  updateSpreadIndicator(volume);
+}
+
+function beginGazetteOpening(volume, source, sourceQuaternion, sourceScale) {
   activeVolume = volume;
-  activeGazette = entry;
-  readerLabel.textContent = entry.issue + " · " + entry.title;
+  activeGazette = volume.entry;
+  readerLabel.textContent = volume.entry.issue + " · " + volume.entry.title;
   updateReaderMark();
   drawerPanel.hidden = true;
   intro.classList.add("is-obscured");
   $(".catalogue-tools").classList.add("is-obscured");
   $(".scene-caption").classList.add("is-obscured");
   hint.style.opacity = "0";
-
   const destination = new THREE.Vector3(.45, 2.18, 3.55);
   const displayQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(-.06, -.10, 0));
-  book.position.copy(source);
-  book.quaternion.copy(displayQuaternion);
-  book.scale.copy(sourceScale);
+  volume.book.position.copy(source);
+  volume.book.quaternion.copy(displayQuaternion);
+  volume.book.scale.copy(sourceScale);
   volume.coverPivot.rotation.y = 0;
-  volume.cssObject.visible = false;
-  volume.element.style.visibility = "hidden";
-  volume.cssObject.position.copy(source);
-  volume.cssObject.quaternion.copy(displayQuaternion);
-  volume.cssObject.scale.setScalar(.0045 * sourceScale.x);
-  volume.iframe.src = url;
-
+  volume.left.object.visible = false;
+  volume.right.object.visible = false;
+  volume.flipPivot.visible = false;
+  volume.left.element.style.visibility = "hidden";
+  volume.right.element.style.visibility = "hidden";
   gazetteMotion = {
-    mode: "open", volume, start: performance.now(), duration: reducedMotion ? 0 : 1350,
-    from: source, to: destination, fromQuaternion: displayQuaternion,
-    toQuaternion: displayQuaternion, scaleFrom: sourceScale.x, scaleTo: 1
+    mode:"open", volume, start:performance.now(), duration:reducedMotion?0:1250,
+    from:source, to:destination, fromQuaternion:displayQuaternion,
+    toQuaternion:displayQuaternion, scaleFrom:sourceScale.x, scaleTo:1
   };
   reader.hidden = false;
+  volume.turning = false;
+  const pageJob = volume.pages ? Promise.resolve(volume.pages) : prepareGazettePages(volume.entry);
+  pageJob.then((pages) => {
+    volume.pages = pages;
+    if (activeVolume === volume && !reader.hidden) showSpread(volume, 0);
+  }).catch((error) => console.error("Could not paginate gazette", error));
+}
+
+function openGazette(entry) {
+  const volume = gazetteVolumes.get(entry.slug);
+  if (!volume) return;
+  if (activeDrawerId !== entry.drawer) setActiveDrawer(entry.drawer);
+  volume.book.updateWorldMatrix(true, false);
+  const source = volume.book.getWorldPosition(new THREE.Vector3());
+  const sourceQuaternion = volume.book.getWorldQuaternion(new THREE.Quaternion());
+  const sourceScale = volume.book.getWorldScale(new THREE.Vector3());
+  scene.attach(volume.book);
+  volume.originPosition = source.clone();
+  volume.originQuaternion = sourceQuaternion.clone();
+  volume.originScale = sourceScale.clone();
+  beginGazetteOpening(volume, source, sourceQuaternion, sourceScale);
 }
 
 function closeGazette() {
   if (activeVolume?.book.visible && activeVolume.originPosition) {
     reader.hidden = true;
     gazetteMotion = {
-      mode: "return", volume: activeVolume, start: performance.now(), duration: reducedMotion ? 0 : 950,
-      from: activeVolume.book.position.clone(), to: activeVolume.originPosition.clone(),
-      fromQuaternion: activeVolume.book.quaternion.clone(), toQuaternion: activeVolume.originQuaternion.clone(),
-      scaleFrom: activeVolume.book.scale.x, scaleTo: activeVolume.originScale.x,
-      coverFrom: activeVolume.coverPivot.rotation.y, coverTo: 0
+      mode:"return", volume:activeVolume, start:performance.now(), duration:reducedMotion?0:950,
+      from:activeVolume.book.position.clone(), to:activeVolume.originPosition.clone(),
+      fromQuaternion:activeVolume.book.quaternion.clone(), toQuaternion:activeVolume.originQuaternion.clone(),
+      scaleFrom:activeVolume.book.scale.x, scaleTo:activeVolume.originScale.x,
+      coverFrom:activeVolume.coverPivot.rotation.y, coverTo:0
     };
     return;
   }
@@ -678,9 +787,13 @@ function closeGazette() {
 function finishGazetteReturn() {
   gazetteMotion = null;
   if (activeVolume) {
-    activeVolume.cssObject.visible = false;
-    activeVolume.element.style.visibility = "hidden";
-    activeVolume.iframe.src = "about:blank";
+    activeVolume.left.object.visible = false;
+    activeVolume.right.object.visible = false;
+    activeVolume.flipPivot.visible = false;
+    activeVolume.left.element.style.visibility = "hidden";
+    activeVolume.right.element.style.visibility = "hidden";
+    activeVolume.left.iframe.srcdoc = blankPageDocument();
+    activeVolume.right.iframe.srcdoc = blankPageDocument();
     activeVolume.drawerGroup.attach(activeVolume.book);
     activeVolume.book.position.copy(activeVolume.localPosition);
     activeVolume.book.quaternion.copy(activeVolume.localQuaternion);
