@@ -145,3 +145,5 @@ button { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+.paper-entry-row { display:grid; grid-template-columns:minmax(0,1fr) 26px; gap:2px; align-items:stretch; border-bottom:1px solid rgba(207,181,139,.14); }
+.paper-entry-row > .paper-entry { border-bottom:0; }
