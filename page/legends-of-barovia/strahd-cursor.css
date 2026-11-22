@@ -1,0 +1,35 @@
+/* Legends of Barovia — Strahd's pointing hand cursor */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html body.legends-of-barovia-page,
+  html body.legends-of-barovia-page * {
+    cursor: none !important;
+  }
+
+  .strahd-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2147483647;
+    width: 72px;
+    height: 67px;
+    pointer-events: none;
+    opacity: 0;
+    background: url("./res/graphics/strahd-cursor.svg") 0 0 / contain no-repeat;
+    transform: translate3d(-2px, -2px, 0);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .75));
+    transition: opacity 100ms ease, filter 120ms ease;
+    will-change: transform;
+  }
+
+  .strahd-cursor.is-visible { opacity: 1; }
+  .strahd-cursor.is-hovering {
+    filter: drop-shadow(0 0 7px rgba(188, 160, 106, .85));
+  }
+  .strahd-cursor.is-pressed {
+    filter: drop-shadow(0 0 9px rgba(154, 35, 43, .95));
+  }
+}
+
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .strahd-cursor { display: none !important; }
+}
