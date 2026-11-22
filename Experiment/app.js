@@ -359,7 +359,7 @@ function applyFilters() {
     ? visible + " marked drawer" + (visible === 1 ? "" : "s") + " in index"
     : query
       ? visible + " matching drawer" + (visible === 1 ? "" : "s") + " of " + total
-      : total + " drawers indexed";
+      : gazettes.length + " papers indexed · " + total + " drawers";
   if (activeDrawerId) renderDrawerContents();
 }
 
@@ -673,6 +673,7 @@ function resize() {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
+  cssRenderer?.setSize(window.innerWidth, window.innerHeight);
 }
 
 function animate() {
