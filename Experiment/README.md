@@ -12,7 +12,7 @@ Public route: https://vengrathdm.github.io/Experiment/
 
 ## Cabinet features
 
-The cabinet currently has thirty narrow card-catalogue drawers. Each physical drawer is a separately selectable object that slides forward when opened, with its contents shown as individually accessible files in the drawer panel. Drawers and papers can both be marked for quick retrieval.
+The cabinet currently has thirty narrow card-catalogue drawers. Each physical drawer is a separately selectable object that slides forward when opened, with its contents shown as individually accessible files in the drawer panel. Selecting a gazette brings a red-bound volume forward and unfolds it before the standalone document opens. Drawers and papers can both be marked for quick retrieval.
 
 Search checks drawer labels, descriptions, gazette titles, issue identifiers, dates, excerpts and tags. The **Marked** filter shows drawers and papers that have been marked. Marks persist in the current browser using localStorage.
 
