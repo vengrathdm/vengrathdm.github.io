@@ -132,12 +132,17 @@ function createPageViewport(entry, side) {
   frame.src = "about:blank";
   const edge = document.createElement("div");
   edge.className = "page-edge";
-  element.append(edge, frame);
+  const grip = document.createElement("button");
+  grip.type = "button";
+  grip.className = "page-flip-grip " + side;
+  grip.setAttribute("aria-label", side === "right" ? "Hold and drag the page left to turn forward" : "Hold and drag the page right to turn backward");
+  grip.title = side === "right" ? "Hold and drag left to turn page" : "Hold and drag right to turn page";
+  element.append(edge, frame, grip);
   const object = new CSS3DObject(element);
   object.visible = false;
   object.scale.setScalar(.0045);
   cssScene.add(object);
-  return { element, iframe: frame, object };
+  return { element, iframe: frame, object, grip };
 }
 
 function createGazetteVolume(entry, drawerGroup, slot) {
@@ -179,8 +184,8 @@ function createGazetteVolume(entry, drawerGroup, slot) {
   book.userData.drawerId = entry.drawer;
 
   // Distinct cover, binding and paper block, plus two shallow page surfaces.
-  box(book, [3.82, 4.66, .15], [0, 0, -.08], redMaterial);
-  box(book, [3.65, 4.48, .10], [0, 0, .035], materials.paper);
+  box(book, [3.82, 4.66, .30], [0, 0, -.08], redMaterial);
+  box(book, [3.65, 4.48, .14], [0, 0, .055], materials.paper);
   box(book, [.12, 4.55, .13], [-1.81, 0, .07], materials.walnutEdge);
   for (const side of [-1, 1]) {
     const leaf = new THREE.Mesh(new THREE.PlaneGeometry(1.8, 4.3), paperMaterial);
@@ -228,8 +233,8 @@ function createGazetteVolume(entry, drawerGroup, slot) {
 
   const column = slot % 5;
   const depthRow = Math.floor(slot / 5);
-  book.position.set(-.42 + column * .21, -.02, .27 - depthRow * .20);
-  book.scale.setScalar(.052);
+  book.position.set(-.42 + column * .21, -.02, -.39 - depthRow * .10);
+  book.scale.setScalar(.048);
   book.visible = false;
   drawerGroup.add(book);
 
@@ -240,8 +245,10 @@ function createGazetteVolume(entry, drawerGroup, slot) {
     localQuaternion: book.quaternion.clone(),
     localScale: book.scale.clone(),
     originPosition: null, originQuaternion: null, originScale: null,
-    pages: null, spread: 0, turning: false
+    pages: null, spread: 0, turning: false, pageTurn: null
   };
+  left.grip.addEventListener("pointerdown", (event) => beginPageDrag(volume, -1, event));
+  right.grip.addEventListener("pointerdown", (event) => beginPageDrag(volume, 1, event));
   gazetteVolumes.set(entry.slug, volume);
   return volume;
 }
