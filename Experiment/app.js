@@ -55,6 +55,7 @@ let drawerObjects = [];
 let activeDrawerId = null;
 let activeGazette = null;
 let gazetteMotion = null;
+let activeGazetteOrigin = null;
 let markedOnly = false;
 let query = "";
 let pointerStart = null;
@@ -507,6 +508,7 @@ function openGazette(entry) {
 
   const source = cabinetRoot.localToWorld(drawerObject.position.clone());
   source.z += 1.1;
+  activeGazetteOrigin = source.clone();
   const destination = new THREE.Vector3(.45, 2.18, 3.55);
   physicalBook.visible = true;
   physicalBook.position.copy(source);
@@ -521,17 +523,37 @@ function openGazette(entry) {
 
   iframe.onload = () => { cssGazette.element.style.visibility = "visible"; };
   iframe.src = url;
-  gazetteMotion = { start: performance.now(), duration: reducedMotion ? 0 : 1350, from: source, to: destination, scaleFrom: .13, scaleTo: 1 };
+  gazetteMotion = { mode: "open", start: performance.now(), duration: reducedMotion ? 0 : 1350, from: source, to: destination, scaleFrom: .13, scaleTo: 1 };
   reader.hidden = false;
 }
 
 function closeGazette() {
+  if (physicalBook?.visible && activeGazetteOrigin) {
+    reader.hidden = true;
+    gazetteMotion = {
+      mode: "return",
+      start: performance.now(),
+      duration: reducedMotion ? 0 : 950,
+      from: physicalBook.position.clone(),
+      to: activeGazetteOrigin.clone(),
+      scaleFrom: physicalBook.scale.x,
+      scaleTo: .13,
+      coverFrom: coverPivot.rotation.y,
+      coverTo: 0
+    };
+    return;
+  }
+  finishGazetteReturn();
+}
+
+function finishGazetteReturn() {
   gazetteMotion = null;
   if (cssGazette) cssGazette.visible = false;
   if (physicalBook) physicalBook.visible = false;
   iframe.src = "about:blank";
   reader.hidden = true;
   activeGazette = null;
+  activeGazetteOrigin = null;
   drawerPanel.hidden = !activeDrawerId;
   intro.classList.remove("is-obscured");
   $(".catalogue-tools").classList.remove("is-obscured");
@@ -746,13 +768,18 @@ function animate() {
     physicalBook.position.lerpVectors(gazetteMotion.from, gazetteMotion.to, eased);
     const scale = THREE.MathUtils.lerp(gazetteMotion.scaleFrom, gazetteMotion.scaleTo, eased);
     physicalBook.scale.setScalar(scale);
-    coverPivot.rotation.y = Math.PI * .91 * Math.min(1, eased * 1.6);
+    coverPivot.rotation.y = gazetteMotion.mode === "return"
+      ? THREE.MathUtils.lerp(gazetteMotion.coverFrom, gazetteMotion.coverTo, eased)
+      : Math.PI * .91 * Math.min(1, eased * 1.6);
     const pagePosition = physicalBook.localToWorld(new THREE.Vector3(0, 0, .19));
     cssGazette.position.copy(pagePosition);
     cssGazette.rotation.copy(physicalBook.rotation);
     cssGazette.scale.setScalar(.0045 * scale);
-    if (t > .2) cssGazette.visible = true;
-    if (t >= 1) gazetteMotion = null;
+    if (gazetteMotion.mode === "open" && t > .2) cssGazette.visible = true;
+    if (t >= 1) {
+      if (gazetteMotion.mode === "return") finishGazetteReturn();
+      else gazetteMotion = null;
+    }
   }
 
   controls?.update();
