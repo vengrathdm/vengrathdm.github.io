@@ -3910,3 +3910,12 @@ h4 {
     height: 22px;
   }
 }
+
+
+/* Suppress the site-wide image cursor throughout Heartwell; use only the reticle above */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html body.ksiazeta-heartwell-page,
+  html body.ksiazeta-heartwell-page * {
+    cursor: none !important;
+  }
+}
