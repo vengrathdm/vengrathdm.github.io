@@ -1,0 +1,278 @@
+{
+  "version": 1,
+  "archive": "Heartwell Municipal Archive",
+  "drawers": [
+    {
+      "code": "01",
+      "id": "princes",
+      "label": "PRINCES",
+      "description": "The private papers and public actions of Heartwell's ruling houses."
+    },
+    {
+      "code": "02",
+      "id": "council",
+      "label": "COUNCIL",
+      "description": "Minutes, decrees, petitions and municipal notices."
+    },
+    {
+      "code": "03",
+      "id": "aorta",
+      "label": "AORTA",
+      "description": "Industrial records, foundry reports and the city's working districts."
+    },
+    {
+      "code": "04",
+      "id": "watch",
+      "label": "THE WATCH",
+      "description": "Missing persons, constabulary reports and unexplained incidents."
+    },
+    {
+      "code": "05",
+      "id": "societies",
+      "label": "SOCIETIES",
+      "description": "Private clubs, assemblies, invitations and restricted memberships."
+    },
+    {
+      "code": "06",
+      "id": "observatory",
+      "label": "OBSERVATORY",
+      "description": "Astronomical observations, unusual lights and weather records."
+    },
+    {
+      "code": "07",
+      "id": "municipal",
+      "label": "MUNICIPAL",
+      "description": "Civic services, public works and administrative correspondence."
+    },
+    {
+      "code": "08",
+      "id": "engineering",
+      "label": "ENGINEERING",
+      "description": "Plans, patents, machines and structural reports."
+    },
+    {
+      "code": "09",
+      "id": "undercity",
+      "label": "UNDERCITY",
+      "description": "Subterranean routes, sealed passages and forgotten infrastructure."
+    },
+    {
+      "code": "10",
+      "id": "medical",
+      "label": "MEDICAL",
+      "description": "Hospital notices, case records and public health circulars."
+    },
+    {
+      "code": "11",
+      "id": "judiciary",
+      "label": "JUDICIARY",
+      "description": "Hearings, warrants, proceedings and legal memoranda."
+    },
+    {
+      "code": "12",
+      "id": "commerce",
+      "label": "COMMERCE",
+      "description": "Trade circulars, market reports and commercial disputes."
+    },
+    {
+      "code": "13",
+      "id": "theatres",
+      "label": "THEATRES",
+      "description": "Programmes, reviews, performers and venue notices."
+    },
+    {
+      "code": "14",
+      "id": "press",
+      "label": "THE PRESS",
+      "description": "Editorial correspondence, corrections and unpublished proofs."
+    },
+    {
+      "code": "15",
+      "id": "cemeteries",
+      "label": "CEMETERIES",
+      "description": "Burial registers, memorials and cemetery administration."
+    },
+    {
+      "code": "16",
+      "id": "transport",
+      "label": "TRANSPORT",
+      "description": "Tram schedules, railway notices and road surveys."
+    },
+    {
+      "code": "17",
+      "id": "guilds",
+      "label": "GUILDS",
+      "description": "Guild charters, labour disputes and trade associations."
+    },
+    {
+      "code": "18",
+      "id": "education",
+      "label": "EDUCATION",
+      "description": "Schools, academies, lectures and examination notices."
+    },
+    {
+      "code": "19",
+      "id": "river",
+      "label": "THE RIVER",
+      "description": "Harbour records, river traffic and waterside reports."
+    },
+    {
+      "code": "20",
+      "id": "eastern",
+      "label": "EASTERN QUARTER",
+      "description": "Local notices and reports from the eastern districts."
+    },
+    {
+      "code": "21",
+      "id": "western",
+      "label": "WESTERN QUARTER",
+      "description": "Local notices and reports from the western districts."
+    },
+    {
+      "code": "22",
+      "id": "northern",
+      "label": "NORTHERN QUARTER",
+      "description": "Local notices and reports from the northern districts."
+    },
+    {
+      "code": "23",
+      "id": "southern",
+      "label": "SOUTHERN QUARTER",
+      "description": "Local notices and reports from the southern districts."
+    },
+    {
+      "code": "24",
+      "id": "foreign",
+      "label": "FOREIGN OFFICE",
+      "description": "Dispatches, visitors and correspondence from abroad."
+    },
+    {
+      "code": "25",
+      "id": "archives",
+      "label": "OLD ARCHIVE",
+      "description": "Recovered papers and records predating the current register."
+    },
+    {
+      "code": "26",
+      "id": "religious",
+      "label": "CHAPELS & ORDERS",
+      "description": "Public notices, endowments and institutional records."
+    },
+    {
+      "code": "27",
+      "id": "property",
+      "label": "PROPERTY",
+      "description": "Deeds, leases, valuations and disputed ownership."
+    },
+    {
+      "code": "28",
+      "id": "private",
+      "label": "PRIVATE FILES",
+      "description": "Unclassified papers held outside the public register."
+    },
+    {
+      "code": "29",
+      "id": "classified",
+      "label": "CLASSIFIED",
+      "description": "Restricted material and sealed submissions."
+    },
+    {
+      "code": "30",
+      "id": "miscellany",
+      "label": "MISCELLANY",
+      "description": "Items that resist every other filing system."
+    }
+  ],
+  "gazettes": [
+    {
+      "slug": "the-princes-convene",
+      "issue": "NO. 001 · VOL. VII",
+      "date": "18 October 1926",
+      "title": "The Princes Convene",
+      "drawer": "princes",
+      "excerpt": "Seven seats were occupied shortly after midnight. No statement was issued when the meeting ended, though the lights in the old council tower remained burning until dawn.",
+      "tags": [
+        "ruling houses",
+        "assembly",
+        "curfew",
+        "politics"
+      ],
+      "file": "./gazette/the-princes-convene.html"
+    },
+    {
+      "slug": "the-aorta-disappearances",
+      "issue": "NO. 002 · VOL. VII",
+      "date": "21 October 1926",
+      "title": "The Aorta Disappearances",
+      "drawer": "aorta",
+      "excerpt": "Three workers vanished beneath the municipal pressure tunnels. Their lamps were found still burning beside a locked service door.",
+      "tags": [
+        "missing persons",
+        "industrial",
+        "tunnels",
+        "Aorta"
+      ],
+      "file": "./gazette/the-aorta-disappearances.html"
+    },
+    {
+      "slug": "the-night-register",
+      "issue": "NO. 003 · SPECIAL EDITION",
+      "date": "31 October 1926",
+      "title": "The Night Register",
+      "drawer": "societies",
+      "excerpt": "The Assembly's published register lists forty-two guests. Three accounts describe a forty-third place at the high table.",
+      "tags": [
+        "assembly",
+        "guest list",
+        "palace",
+        "society"
+      ],
+      "file": "./gazette/the-night-register.html"
+    },
+    {
+      "slug": "the-iron-choir",
+      "issue": "NO. 004 · VOL. VIII",
+      "date": "04 November 1926",
+      "title": "The Iron Choir",
+      "drawer": "watch",
+      "excerpt": "Residents describe a chorus beneath the factory floor. The company says the building has been empty for eleven years.",
+      "tags": [
+        "foundry",
+        "sound",
+        "watch",
+        "incident"
+      ],
+      "file": "./gazette/the-iron-choir.html"
+    },
+    {
+      "slug": "the-astral-review",
+      "issue": "NO. 005 · THE ASTRAL REVIEW",
+      "date": "12 November 1926",
+      "title": "The Astral Review",
+      "drawer": "observatory",
+      "excerpt": "For seventeen minutes, witnesses saw a pale disc above the chimneys. It appeared in wet glass and polished metal, but not in the sky.",
+      "tags": [
+        "astronomy",
+        "observatory",
+        "phenomenon",
+        "eastern quarter"
+      ],
+      "file": "./gazette/the-astral-review.html"
+    },
+    {
+      "slug": "the-sunday-supplement",
+      "issue": "NO. 006 · SUNDAY SUPPLEMENT",
+      "date": "21 November 1926",
+      "title": "The Sunday Supplement",
+      "drawer": "municipal",
+      "excerpt": "A practical guide to Heartwell's public rooms, private clubs and the streets best avoided after the last tram.",
+      "tags": [
+        "city guide",
+        "theatres",
+        "public houses",
+        "travel"
+      ],
+      "file": "./gazette/the-sunday-supplement.html"
+    }
+  ]
+}
