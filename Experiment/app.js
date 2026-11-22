@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { CSS3DObject, CSS3DRenderer } from "three/addons/renderers/CSS3DRenderer.js";
 
 const $ = (selector) => document.querySelector(selector);
 const canvas = $("#scene");
@@ -18,12 +19,10 @@ const drawerContents = $("#drawer-contents");
 const drawerPosition = $("#drawer-position");
 const markDrawerButton = $("#mark-drawer");
 const reader = $("#reader");
-const reveal = $("#gazette-reveal");
-const revealCoverTitle = $("#reveal-cover-title");
-const revealTitle = $("#reveal-title");
+const css3dContainer = $("#css3d-container");
+const physicalGazette = $("#physical-gazette");
 const readerLabel = $("#reader-label");
 const iframe = $("#gazette-frame");
-const frameLoading = $("#frame-loading");
 const markIssueButton = $("#mark-issue");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -51,11 +50,11 @@ let drawers = [];
 let gazettes = [];
 let drawerById = new Map();
 let gazettesByDrawer = new Map();
-let renderer, scene, camera, controls, raycaster, pointer, cabinetRoot;
+let renderer, cssRenderer, cssScene, cssGazette, scene, camera, controls, raycaster, pointer, cabinetRoot, physicalBook, coverPivot;
 let drawerObjects = [];
 let activeDrawerId = null;
 let activeGazette = null;
-let revealTimer = null;
+let gazetteMotion = null;
 let markedOnly = false;
 let query = "";
 let pointerStart = null;
@@ -494,40 +493,51 @@ function openGazette(entry) {
     alert("This record points to a missing or invalid gazette HTML file.");
     return;
   }
+  const drawerObject = drawerObjects.find((item) => item.userData.drawerId === entry.drawer);
+  if (!drawerObject || !physicalBook || !cssGazette) return;
+
   activeGazette = entry;
   readerLabel.textContent = entry.issue + " · " + entry.title;
-  revealCoverTitle.textContent = entry.title;
-  revealTitle.textContent = entry.title.toUpperCase();
   updateReaderMark();
-  frameLoading.classList.remove("hidden");
-  hint.style.opacity = "0";
   drawerPanel.hidden = true;
-  intro.style.opacity = "0";
-  reveal.hidden = false;
-  reveal.classList.remove("is-opening");
-  void reveal.offsetWidth;
-  reveal.classList.add("is-opening");
-  window.clearTimeout(revealTimer);
-  revealTimer = window.setTimeout(() => {
-    reveal.hidden = true;
-    reveal.classList.remove("is-opening");
-    reader.hidden = false;
-    iframe.src = url;
-  }, reducedMotion ? 0 : 1840);
+  intro.classList.add("is-obscured");
+  $(".catalogue-tools").classList.add("is-obscured");
+  $(".scene-caption").classList.add("is-obscured");
+  hint.style.opacity = "0";
+
+  const source = cabinetRoot.localToWorld(drawerObject.position.clone());
+  source.z += 1.1;
+  const destination = new THREE.Vector3(.45, 2.18, 3.55);
+  physicalBook.visible = true;
+  physicalBook.position.copy(source);
+  physicalBook.scale.setScalar(.13);
+  physicalBook.rotation.set(-.06, -.10, 0);
+  coverPivot.rotation.y = 0;
+  cssGazette.visible = false;
+  cssGazette.element.style.visibility = "hidden";
+  cssGazette.position.copy(physicalBook.position);
+  cssGazette.rotation.copy(physicalBook.rotation);
+  cssGazette.scale.setScalar(.0045 * .13);
+
+  iframe.onload = () => { cssGazette.element.style.visibility = "visible"; };
+  iframe.src = url;
+  gazetteMotion = { start: performance.now(), duration: reducedMotion ? 0 : 1350, from: source, to: destination, scaleFrom: .13, scaleTo: 1 };
+  reader.hidden = false;
 }
 
 function closeGazette() {
-  window.clearTimeout(revealTimer);
-  reveal.hidden = true;
-  reveal.classList.remove("is-opening");
-  reader.hidden = true;
+  gazetteMotion = null;
+  if (cssGazette) cssGazette.visible = false;
+  if (physicalBook) physicalBook.visible = false;
   iframe.src = "about:blank";
+  reader.hidden = true;
   activeGazette = null;
   drawerPanel.hidden = !activeDrawerId;
-  intro.style.opacity = activeDrawerId ? ".3" : "1";
+  intro.classList.remove("is-obscured");
+  $(".catalogue-tools").classList.remove("is-obscured");
+  $(".scene-caption").classList.remove("is-obscured");
   hint.style.opacity = activeDrawerId ? "0" : "1";
 }
-
 function closeDrawer() {
   if (!activeDrawerId) return;
   for (const object of drawerObjects) object.userData.targetZ = 0;
@@ -567,13 +577,47 @@ function initControls() {
   markIssueButton.addEventListener("click", () => {
     if (activeGazette) toggleGazetteMark(activeGazette.slug);
   });
-  iframe.addEventListener("load", () => frameLoading.classList.add("hidden"));
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
-      if (!reader.hidden || !reveal.hidden) closeGazette();
+      if (!reader.hidden) closeGazette();
       else if (!drawerPanel.hidden) closeDrawer();
     }
   });
+}
+
+function addPhysicalGazette() {
+  physicalBook = new THREE.Group();
+  physicalBook.visible = false;
+  scene.add(physicalBook);
+
+  const coverMaterial = new THREE.MeshStandardMaterial({ color: 0x773027, roughness: .62 });
+  const goldMaterial = new THREE.MeshStandardMaterial({ color: 0xc09a60, metalness: .68, roughness: .35 });
+
+  // Stacked pages, a leather cover, binding and a small embossed crest form the 3D prop.
+  box(physicalBook, [3.82, 4.66, .15], [0, 0, -.08], coverMaterial);
+  box(physicalBook, [3.65, 4.48, .10], [0, 0, .035], materials.paper);
+  box(physicalBook, [.12, 4.55, .13], [-1.81, 0, .07], materials.walnutEdge);
+  box(physicalBook, [3.72, .025, .11], [0, 2.23, .11], goldMaterial, { cast: false });
+  box(physicalBook, [3.72, .025, .11], [0, -2.23, .11], goldMaterial, { cast: false });
+
+  coverPivot = new THREE.Group();
+  coverPivot.position.set(-1.82, 0, .14);
+  physicalBook.add(coverPivot);
+  box(coverPivot, [3.66, 4.49, .065], [1.83, 0, 0], coverMaterial);
+  box(coverPivot, [3.42, 4.25, .012], [1.83, 0, .04], goldMaterial, { cast: false });
+  box(coverPivot, [3.35, 4.18, .013], [1.83, 0, .05], coverMaterial, { cast: false });
+  const crest = new THREE.Mesh(new THREE.TorusGeometry(.23, .018, 8, 40), goldMaterial);
+  crest.position.set(1.83, .55, .065);
+  coverPivot.add(crest);
+  const medallion = new THREE.Mesh(new THREE.CylinderGeometry(.14, .14, .018, 40), goldMaterial);
+  medallion.rotation.x = Math.PI / 2;
+  medallion.position.set(1.83, .55, .065);
+  coverPivot.add(medallion);
+
+  cssGazette = new CSS3DObject(physicalGazette);
+  cssGazette.scale.setScalar(.0045);
+  cssGazette.visible = false;
+  cssScene.add(cssGazette);
 }
 
 function initThree() {
@@ -585,6 +629,14 @@ function initThree() {
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.05;
+
+  cssScene = new THREE.Scene();
+  cssRenderer = new CSS3DRenderer();
+  cssRenderer.setSize(window.innerWidth, window.innerHeight);
+  cssRenderer.domElement.style.position = "absolute";
+  cssRenderer.domElement.style.inset = "0";
+  cssRenderer.domElement.style.pointerEvents = "none";
+  css3dContainer.appendChild(cssRenderer.domElement);
 
   scene = new THREE.Scene();
   scene.fog = new THREE.FogExp2(0x17120e, .026);
@@ -609,6 +661,7 @@ function initThree() {
 
   addRoom();
   addCabinet();
+  addPhysicalGazette();
 
   controls = new OrbitControls(camera, canvas);
   controls.enableDamping = true;
@@ -685,8 +738,26 @@ function animate() {
     const speed = reducedMotion ? 1 : 1 - Math.pow(.0008, delta);
     object.position.z = THREE.MathUtils.lerp(current, target, speed);
   }
+
+  if (gazetteMotion && physicalBook && cssGazette) {
+    const elapsed = performance.now() - gazetteMotion.start;
+    const t = gazetteMotion.duration === 0 ? 1 : Math.min(1, elapsed / gazetteMotion.duration);
+    const eased = 1 - Math.pow(1 - t, 3);
+    physicalBook.position.lerpVectors(gazetteMotion.from, gazetteMotion.to, eased);
+    const scale = THREE.MathUtils.lerp(gazetteMotion.scaleFrom, gazetteMotion.scaleTo, eased);
+    physicalBook.scale.setScalar(scale);
+    coverPivot.rotation.y = Math.PI * .91 * Math.min(1, eased * 1.6);
+    const pagePosition = physicalBook.localToWorld(new THREE.Vector3(0, 0, .19));
+    cssGazette.position.copy(pagePosition);
+    cssGazette.rotation.copy(physicalBook.rotation);
+    cssGazette.scale.setScalar(.0045 * scale);
+    if (t > .2) cssGazette.visible = true;
+    if (t >= 1) gazetteMotion = null;
+  }
+
   controls?.update();
   renderer.render(scene, camera);
+  cssRenderer?.render(cssScene, camera);
 }
 
 function validateManifest(data) {
