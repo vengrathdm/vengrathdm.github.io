@@ -6,36 +6,23 @@ Public route: https://vengrathdm.github.io/Experiment/
 
 ## Experience
 
-The room and card-catalogue cabinet are rendered in Three.js. Thirty narrow drawers are generated from the manifest. Each drawer slides forward when selected; its filed papers can be searched, opened and marked.
+The archive has 30 card-catalogue drawers and 50 individual gazette volumes. Each miniature book is seated inside its assigned drawer, behind a lowered front lip that leaves the contents visible when the drawer is pulled out. A volume can be opened from its catalogue entry or physically grabbed and pulled out of the 3D drawer.
 
-The archive contains 50 independent gazette HTML documents in the gazette folder. Every entry owns a distinct miniature 3D volume, a CSS3D object and a dedicated iframe. The iframe stays on about:blank until that exact issue is selected; then its standalone HTML document is loaded into the viewport on the volume's pages. This keeps the catalogue lightweight without reusing one shared reader iframe.
+The reading room supports a full 360-degree horizontal orbit, broad vertical orbit, zoom and pan. In the reader, every gazette is divided into eight fixed pages. The opening page is right-only, the middle spreads show two pages, and the final page is left-only. Press and hold the narrow outer edge of a page and drag it across the spine to turn; releasing before the threshold returns it to its original side. The toolbar arrows and keyboard arrow/PageUp/PageDown keys are alternate controls.
 
-Selecting a paper extracts its own miniature volume from the open drawer, brings it forward, enlarges it and opens its cover. The live HTML viewport appears on the paper surface only after the cover has opened. Text remains selectable, links remain interactive, and the page can scroll inside the physical book while the rest of the room remains visible. It is not a flattened screenshot or a full-screen modal reader.
-
-Closing a gazette reverses the animation, closes the cover and returns that same volume to its originating drawer.
+Each volume has its own pair of live HTML page viewports and its own two-sided flip sheet. The source gazette file is parsed into page-sized HTML documents when the issue is first opened; each rendered page is non-scrollable. The document text is divided into the issue's eight-page layout rather than flattened into a screenshot.
 
 ## Files
 
-- index.html and styles.css — scene chrome and responsive UI.
-- app.js — Three.js cabinet, fifty physical book objects, CSS3D viewports and interactions.
-- gazettes.json — 30 drawer definitions and metadata for the 50 gazettes.
-- gazette/<slug>.html — independent, lightweight HTML page for each issue.
+- index.html and styles.css — scene chrome, page viewports and reading controls.
+- app.js — Three.js cabinet, physical volumes, CSS3D pages and input handling.
+- gazettes.json — drawer definitions and metadata for the 50 gazettes.
+- gazette/<slug>.html — independent source document for each issue.
 
-## Add another gazette
+## Adding a gazette
 
-1. Create a standalone HTML document under Experiment/gazette/.
-2. Add an object to the gazettes array in Experiment/gazettes.json, including a unique slug, title, issue, date, drawer, excerpt, tags, and file path such as ./gazette/my-new-issue.html.
-3. Use one of the existing drawer IDs, or add a new entry to the drawers array. Drawer geometry and the mini book are generated from the manifest.
+Create an independent HTML file under Experiment/gazette/ and add an entry to the gazettes array in Experiment/gazettes.json. Assign it to an existing drawer ID or add another drawer definition. The pagination parser uses the document's h1, standfirst/deck and article headings, paragraphs and blockquotes.
 
-GitHub Pages is a static host, so the browser cannot enumerate the folder automatically. The manifest is the explicit index that makes each HTML file discoverable without a server or GitHub API call.
+GitHub Pages is static hosting, so the browser cannot enumerate the folder automatically; gazettes.json is the explicit catalogue index.
 
-## Marks and search
-
-Search examines drawer labels and descriptions, titles, dates, excerpts and tags. Drawer marks and individual gazette marks persist in the current browser using localStorage. They are local to that browser and do not sync across devices or visitors.
-
-## Technical notes
-
-- Three.js 0.180.0, OrbitControls and CSS3DRenderer are loaded from jsDelivr.
-- The filing cabinet and miniature book volumes are WebGL geometry.
-- Each gazette has its own iframe and CSS3DObject; only the selected issue's iframe loads its document.
-- The mock issues are intentionally lightweight and use placeholder copy. Replace any file with a fuller designed gazette without changing the reader.
+Marks and search state persist locally in the visitor's browser. The mock article copy is intentionally lightweight and can be replaced without changing the 3D reader.
