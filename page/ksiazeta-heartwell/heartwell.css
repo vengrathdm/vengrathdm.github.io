@@ -3819,3 +3819,30 @@ h4 {
   font-weight: 700;
   letter-spacing: 0.08em;
 }
+
+
+/* Heartwell dossier scrollbar — matches the carbon, amber and stamped-red palette */
+.tab-list {
+  scrollbar-width: thin;
+  scrollbar-color: var(--amber) var(--carbon);
+  scrollbar-gutter: stable;
+}
+
+.tab-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tab-list::-webkit-scrollbar-track {
+  background: var(--carbon);
+  border-left: 1px solid rgba(212, 160, 60, 0.18);
+}
+
+.tab-list::-webkit-scrollbar-thumb {
+  background: var(--amber-dim);
+  border: 1px solid var(--carbon);
+  border-radius: 1px;
+}
+
+.tab-list::-webkit-scrollbar-thumb:hover {
+  background: var(--stamp-red);
+}
