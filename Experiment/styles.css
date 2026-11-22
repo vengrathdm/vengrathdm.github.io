@@ -1,0 +1,87 @@
+:root {
+  color-scheme: dark;
+  --ink: #e9dfcc;
+  --muted: #a69a84;
+  --brass: #b9975d;
+  --red: #9f342e;
+  --line: rgba(213, 188, 145, .23);
+}
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #100f0e; }
+body { color: var(--ink); font-family: "DM Mono", monospace; }
+button, a { font: inherit; }
+button { color: inherit; }
+#app { position: relative; width: 100%; height: 100%; min-height: 540px; overflow: hidden; isolation: isolate; background: radial-gradient(ellipse at 48% 42%, #37302a 0%, #171513 60%, #0b0b0a 100%); }
+#scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; outline: 0; cursor: grab; touch-action: none; }
+#scene:active { cursor: grabbing; }
+.atmosphere { position: absolute; inset: 0; pointer-events: none; z-index: 1; background: linear-gradient(180deg, rgba(8,8,8,.48) 0%, transparent 27%, transparent 66%, rgba(7,7,6,.44) 100%), radial-gradient(ellipse at 50% 46%, transparent 43%, rgba(0,0,0,.48) 100%); }
+.masthead { position: absolute; z-index: 3; top: 0; left: 0; right: 0; min-height: 76px; padding: 19px 34px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(218,196,158,.16); background: linear-gradient(180deg, rgba(10,10,9,.72), rgba(10,10,9,.08)); }
+.brand { color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 12px; letter-spacing: .16em; font-size: 12px; font-weight: 500; }
+.brand-mark { width: 34px; height: 34px; border: 1px solid rgba(185,151,93,.65); color: var(--brass); display: grid; place-items: center; font-family: "Cormorant Garamond", serif; font-size: 23px; letter-spacing: 0; }
+.brand small { display: block; margin-top: 5px; color: #8e826e; font-size: 8px; letter-spacing: .19em; font-weight: 400; }
+.masthead-right { display: flex; align-items: center; gap: 27px; color: #b9ad99; font-size: 9px; letter-spacing: .16em; }
+.archive-label { color: #d3c5ac; }
+.live-indicator { color: #8f866f; display: inline-flex; align-items: center; gap: 8px; }
+.live-indicator i, .reader-status i { width: 6px; height: 6px; display: inline-block; border-radius: 50%; background: #a8473e; box-shadow: 0 0 10px rgba(168,71,62,.7); }
+.intro { position: absolute; z-index: 2; top: 17%; left: 6.2%; width: min(390px, 34vw); pointer-events: none; text-shadow: 0 2px 18px rgba(0,0,0,.8); transition: opacity .45s ease, transform .45s ease; }
+.eyebrow { margin: 0 0 13px; color: var(--brass); font-size: 9px; letter-spacing: .23em; line-height: 1.7; }
+.intro h1 { margin: 0; max-width: 390px; font-family: "IM Fell English", "Cormorant Garamond", serif; font-size: clamp(35px, 4.3vw, 65px); font-weight: 400; line-height: .94; letter-spacing: -.035em; color: #eee2cb; }
+.intro > p:last-child { max-width: 280px; margin: 19px 0 0; color: #b1a58f; font-family: "Cormorant Garamond", serif; font-size: 19px; line-height: 1.35; }
+.interaction-hint { position: absolute; z-index: 3; bottom: 13.5%; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 12px; color: #c8bba4; font-size: 9px; letter-spacing: .11em; text-transform: uppercase; white-space: nowrap; padding: 11px 17px; background: rgba(15,14,12,.65); border: 1px solid rgba(213,188,145,.22); backdrop-filter: blur(8px); transition: opacity .3s ease, transform .3s ease; }
+.hint-key { color: #e0b66f; font-size: 8px; letter-spacing: .2em; }
+.issue-index { position: absolute; z-index: 3; right: 28px; bottom: 82px; width: 218px; padding: 13px 14px 14px; background: rgba(17,16,14,.68); border: 1px solid rgba(213,188,145,.18); backdrop-filter: blur(10px); }
+.index-label { display: block; margin-bottom: 10px; color: var(--brass); font-size: 8px; letter-spacing: .2em; }
+#issue-buttons { display: grid; gap: 5px; }
+.issue-choice { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; width: 100%; border: 0; border-top: 1px solid rgba(213,188,145,.12); padding: 8px 0 5px; background: transparent; color: #c7bba5; text-align: left; cursor: pointer; font-size: 9px; letter-spacing: .03em; transition: color .2s ease; }
+.issue-choice span:last-child { color: #827763; font-size: 8px; }
+.issue-choice:hover, .issue-choice:focus-visible { color: #e8bd79; outline: none; }
+.issue-choice:focus-visible { box-shadow: 0 0 0 1px var(--brass); }
+.room-footer { position: absolute; z-index: 3; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; padding: 19px 34px 18px; border-top: 1px solid rgba(218,196,158,.12); color: #827a69; font-size: 8px; letter-spacing: .14em; background: linear-gradient(0deg, rgba(7,7,6,.58), transparent); pointer-events: none; }
+.room-footer b { padding: 0 8px; color: var(--brass); font-weight: 400; }
+.reader-panel { position: absolute; z-index: 5; left: 50%; bottom: 6.5%; transform: translateX(-50%); width: min(700px, calc(100% - 40px)); padding: 17px 22px 15px; background: rgba(15,14,12,.88); border: 1px solid rgba(185,151,93,.48); box-shadow: 0 18px 65px rgba(0,0,0,.48); backdrop-filter: blur(14px); }
+.reader-topline, .reader-bottom { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+.reader-topline { color: #b89a67; font-size: 8px; letter-spacing: .17em; }
+.reader-status { display: inline-flex; align-items: center; gap: 7px; color: #9b917f; font-size: 8px; }
+.reader-panel h2 { margin: 10px 0 5px; color: #eee3d0; font-family: "IM Fell English", serif; font-size: clamp(25px, 3vw, 36px); font-weight: 400; line-height: 1; }
+.reader-panel > p { max-width: 610px; margin: 0; color: #b9ad9a; font-family: "Cormorant Garamond", serif; font-size: 17px; line-height: 1.4; }
+.reader-bottom { margin-top: 13px; padding-top: 11px; border-top: 1px solid rgba(213,188,145,.15); }
+.reader-instruction { color: #827967; font-size: 8px; letter-spacing: .13em; }
+#close-issue { border: 1px solid rgba(185,151,93,.5); padding: 8px 11px; background: rgba(111,40,35,.22); color: #e4d5be; cursor: pointer; font-size: 9px; letter-spacing: .06em; transition: background .2s ease, border-color .2s ease; }
+#close-issue:hover { background: rgba(142,48,42,.42); border-color: rgba(185,151,93,.85); }
+#close-issue span { margin-right: 5px; color: #d7a16c; font-size: 15px; vertical-align: -1px; }
+.loading { position: absolute; z-index: 10; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 16px; background: #100f0e; color: #b9aa91; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; transition: opacity .6s ease, visibility .6s ease; }
+.loading.done { opacity: 0; visibility: hidden; }
+.loading-seal { width: 48px; height: 48px; display: grid; place-items: center; border: 1px solid rgba(185,151,93,.5); color: var(--brass); font-family: "IM Fell English", serif; font-size: 30px; }
+.loading i { width: 95px; height: 1px; background: linear-gradient(90deg, transparent, #a98752, transparent); animation: pulse 1.3s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: .25; transform: scaleX(.55); } 50% { opacity: 1; transform: scaleX(1); } }
+.fallback { position: absolute; z-index: 12; inset: 0; display: grid; place-items: center; background: #100f0e; padding: 25px; }
+.fallback-card { max-width: 420px; padding: 32px; border: 1px solid var(--line); background: #191714; }
+.fallback-card h2 { margin: 0 0 10px; font-family: "IM Fell English", serif; font-size: 38px; font-weight: 400; }
+.fallback-card p:last-child { color: var(--muted); font-family: "Cormorant Garamond", serif; font-size: 19px; line-height: 1.45; }
+[hidden] { display: none !important; }
+@media (max-width: 760px) {
+  .masthead { min-height: 65px; padding: 13px 16px; }
+  .brand { font-size: 10px; gap: 8px; }
+  .brand-mark { width: 30px; height: 30px; }
+  .masthead-right { gap: 0; }
+  .archive-label { display: none; }
+  .live-indicator { font-size: 7px; }
+  .intro { top: 13%; left: 6%; width: 78%; }
+  .intro h1 { max-width: 300px; font-size: clamp(39px, 10vw, 57px); }
+  .intro > p:last-child { margin-top: 10px; font-size: 16px; max-width: 245px; }
+  .interaction-hint { bottom: 155px; font-size: 8px; }
+  .issue-index { left: 14px; right: 14px; bottom: 60px; width: auto; padding: 9px 11px; }
+  #issue-buttons { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
+  .issue-choice { display: block; font-size: 8px; line-height: 1.35; }
+  .issue-choice span:last-child { display: block; margin-top: 3px; }
+  .room-footer { padding: 12px 14px; font-size: 7px; }
+  .room-footer span:last-child { display: none; }
+  .reader-panel { bottom: 12px; width: calc(100% - 24px); padding: 13px 14px 12px; }
+  .reader-topline { font-size: 7px; letter-spacing: .1em; }
+  .reader-panel h2 { font-size: 27px; }
+  .reader-panel > p { font-size: 15px; }
+  .reader-instruction { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
