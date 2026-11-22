@@ -215,15 +215,15 @@ button { color: inherit; }
 
 
 /* Two real HTML page surfaces. The CSS3D page geometry maps 400×955 px to a paper leaf. */
-.physical-page { position:relative;width:400px;height:955px;overflow:hidden;background:#eee5d2;border:1px solid #aa9674;box-shadow:0 7px 22px rgba(0,0,0,.28),inset 0 0 0 8px rgba(180,157,118,.12);transform-origin:center center;pointer-events:none; }
+.physical-page { position:relative;width:520px;height:955px;overflow:hidden;background:#eee5d2;border:1px solid #aa9674;box-shadow:0 7px 22px rgba(0,0,0,.28),inset 0 0 0 8px rgba(180,157,118,.12);transform-origin:center center;pointer-events:none; }
 .physical-page .page-edge { position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(104,76,44,.11),transparent 8%,transparent 94%,rgba(104,76,44,.09)); }
 .physical-page iframe { position:absolute;inset:0;z-index:1;width:100%;height:100%;border:0;background:#eee5d2;pointer-events:auto; }
-.page-flip-grip { position:absolute;z-index:3;top:0;bottom:0;width:34px;padding:0;border:0;opacity:0;background:transparent;pointer-events:auto;touch-action:none;cursor:grab; }
+.page-flip-grip { position:absolute;z-index:3;top:0;bottom:0;width:48px;padding:0;border:0;opacity:0;background:transparent;pointer-events:auto;touch-action:none;cursor:grab; }
 .page-flip-grip:active { cursor:grabbing; }
 .page-flip-grip.right { right:0; }.page-flip-grip.left { left:0; }
 .page-flip-grip.right:hover { opacity:1;background:linear-gradient(90deg,transparent,rgba(115,68,42,.18)); }
 .page-flip-grip.left:hover { opacity:1;background:linear-gradient(270deg,transparent,rgba(115,68,42,.18)); }
-.physical-flip-sheet { position:relative;width:400px;height:955px;transform-style:preserve-3d;pointer-events:none; }
+.physical-flip-sheet { position:relative;width:520px;height:955px;transform-style:preserve-3d;pointer-events:none; }
 .flip-face { position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;background:#eee5d2;border:1px solid #aa9674;box-shadow:0 5px 17px rgba(0,0,0,.2); }
 .flip-face iframe { display:block;width:100%;height:100%;border:0;background:#eee5d2;pointer-events:none; }
 .flip-back { transform:rotateY(180deg); }
@@ -232,4 +232,23 @@ button { color: inherit; }
 .reader .page-controls button:hover:not(:disabled) { background:rgba(185,149,93,.18); }
 .reader .page-controls button:disabled { opacity:.25;cursor:default; }
 .reader #spread-indicator { min-width:112px;text-align:center;color:#b9a88c;font:7px "DM Mono",monospace;letter-spacing:.09em; }
-@media(max-width:680px) { .page-flip-grip{width:40px}.reader .page-controls{gap:3px;padding:3px}.reader #spread-indicator{min-width:90px;font-size:6px} }
+@media(max-width:680px) { .page-flip-grip{width:52px}.reader .page-controls{gap:3px;padding:3px}.reader #spread-indicator{min-width:90px;font-size:6px} }
+
+.page-flip-grip { transition:opacity .12s ease,background .12s ease; }
+.page-flip-grip:after {
+  content:"";position:absolute;top:48%;width:2px;height:54px;border-radius:2px;
+  background:linear-gradient(180deg,transparent,#a88c5f,transparent);opacity:.35;
+}
+.page-flip-grip.right:after { right:7px; }
+.page-flip-grip.left:after { left:7px; }
+.page-flip-grip:hover:after { opacity:.9; }
+.physical-flip-sheet { width:520px;height:955px; }
+.flip-face { box-shadow:0 10px 28px rgba(25,16,10,.26); }
+.flip-front:after {
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(46,31,17,.25),transparent 18%,transparent 82%,rgba(46,31,17,.08));
+}
+.flip-back:after {
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(270deg,rgba(46,31,17,.2),transparent 20%);
+}
