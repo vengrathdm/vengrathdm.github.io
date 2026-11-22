@@ -407,7 +407,7 @@ function renderDrawerContents() {
 
   for (const entry of entries) {
     const row = document.createElement("div");
-    row.className = "paper-entry";
+    row.className = "paper-entry-row";
     const open = document.createElement("button");
     open.className = "paper-entry";
     open.type = "button";
