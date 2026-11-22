@@ -7,6 +7,7 @@ const fallback = document.querySelector("#fallback");
 const readerPanel = document.querySelector("#reader-panel");
 const issueButtons = document.querySelector("#issue-buttons");
 const hint = document.querySelector("#interaction-hint");
+const issueIndex = document.querySelector("#issue-index");
 const intro = document.querySelector(".intro");
 const readerTitle = document.querySelector("#reader-title");
 const readerIssue = document.querySelector("#reader-issue");
@@ -573,13 +574,16 @@ function startOpen(issueObject) {
   cameraStartPosition.copy(camera.position); cameraEndPosition.copy(openCameraPosition);
   cameraStartTarget.copy(controls.target); cameraEndTarget.copy(openCameraTarget);
   controls.enabled = false;
-  hint.style.opacity = "0"; intro.style.opacity = ".15";
+  hint.style.opacity = "0";
+  issueIndex.style.opacity = "0"; issueIndex.style.pointerEvents = "none";
+  intro.style.opacity = "0";
   document.querySelector("#scene-title").textContent = "An issue from the archive";
   document.querySelector("#scene-copy").textContent = "The paper has been handled, folded and kept.";
 }
 
-function updateSpread(progress) {
+function updateSpread(progress, closing = false) {
   const t = easeInOut(progress);
+  const cameraT = closing ? 1 - t : t;
   spread.group.position.lerpVectors(spread.sourcePosition, spread.targetPosition, t);
   spread.group.scale.setScalar(.08 + t * 1.12);
   spread.group.rotation.set(0, 0, Math.sin(t * Math.PI) * -.025);
@@ -591,8 +595,8 @@ function updateSpread(progress) {
   spread.leftHinge.visible = t > .23;
   spread.rightHinge.visible = t > .23;
   activeIssue.visible = t < .38;
-  camera.position.lerpVectors(cameraStartPosition, cameraEndPosition, t);
-  controls.target.lerpVectors(cameraStartTarget, cameraEndTarget, t);
+  camera.position.lerpVectors(cameraStartPosition, cameraEndPosition, cameraT);
+  controls.target.lerpVectors(cameraStartTarget, cameraEndTarget, cameraT);
   controls.update();
 }
 
@@ -632,7 +636,9 @@ function finishClose() {
   if (activeIssue) activeIssue.visible = true;
   activeIssue = null; state = "room"; controls.enabled = true;
   controls.target.copy(roomCameraTarget); camera.position.copy(roomCameraPosition); controls.update();
-  hint.style.opacity = "1"; intro.style.opacity = "1";
+  hint.style.opacity = "1";
+  issueIndex.style.opacity = "1"; issueIndex.style.pointerEvents = "auto";
+  intro.style.opacity = "1";
   document.querySelector("#scene-title").textContent = "The Gazette Cabinet";
   document.querySelector("#scene-copy").textContent = "A few issues were kept. The city has changed since they were printed.";
 }
@@ -722,7 +728,7 @@ function animate() {
     const duration = reducedMotion ? 80 : 1900;
     const t = Math.min(1, elapsed / duration);
     const progress = state === "opening" ? t : 1 - t;
-    updateSpread(progress);
+    updateSpread(progress, state === "closing");
     if (t >= 1) {
       if (state === "opening") finishOpen();
       else finishClose();
@@ -751,10 +757,10 @@ async function init() {
     controls.minDistance = 8.2; controls.maxDistance = 13.5;
     controls.minPolarAngle = 1.28; controls.maxPolarAngle = 1.72;
     controls.minAzimuthAngle = -.43; controls.maxAzimuthAngle = .43;
+    await document.fonts.ready;
     setupLights(); addRoom(); makeIssueButtons(); setupInteraction(); resize();
     window.addEventListener("resize", resize);
-    document.fonts.ready.then(() => loading.classList.add("done"));
-    setTimeout(() => loading.classList.add("done"), 2500);
+    loading.classList.add("done");
     animate();
   } catch (error) {
     console.error("The Gazette Cabinet could not be initialized.", error);
