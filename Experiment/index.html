@@ -22,6 +22,8 @@
 <body>
 <main id="app">
   <canvas id="scene" aria-label="A three-dimensional archival card-catalogue cabinet"></canvas>
+  <div id="css3d-container" aria-hidden="true"></div>
+  <div id="physical-gazette" class="physical-gazette" aria-hidden="true"><div class="physical-paper-edge"></div><iframe id="gazette-frame" title="Selected gazette document" src="about:blank" loading="eager" sandbox="allow-scripts allow-same-origin allow-forms"></iframe></div>
   <div class="vignette" aria-hidden="true"></div>
   <header class="masthead">
     <a class="brand" href="/home/" aria-label="Return to Vengrath home">
@@ -85,41 +87,16 @@
     </div>
   </aside>
 
-  <section class="reader" id="reader" hidden aria-label="Gazette reader">
-    <header class="reader-bar">
-      <div class="reader-identity">
-        <span class="reader-seal">V</span>
-        <div>
-          <span class="reader-kicker">HEARTWELL MUNICIPAL ARCHIVE</span>
-          <strong id="reader-label">GAZETTE RECORD</strong>
-        </div>
-      </div>
-      <div class="reader-actions">
-        <button id="mark-issue" class="mark-button reader-mark" type="button" aria-pressed="false"><span>✦</span> Mark paper</button>
-        <button id="close-reader" class="return-button" type="button"><span>×</span> Return to cabinet</button>
-      </div>
-    </header>
-    <div class="reader-frame-wrap">
-      <iframe id="gazette-frame" title="Selected gazette document" src="about:blank" loading="eager" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
-      <div class="frame-loading" id="frame-loading"><span class="loading-seal">V</span><span>Retrieving the filed document</span></div>
+  <aside class="reader" id="reader" hidden aria-label="Gazette currently open in the room">
+    <div class="reader-identity">
+      <span class="reader-seal">V</span>
+      <div><span class="reader-kicker">A PHYSICAL COPY IS OPEN IN THE READING ROOM</span><strong id="reader-label">GAZETTE RECORD</strong></div>
     </div>
-  </section>
-
-  <div class="gazette-reveal" id="gazette-reveal" hidden aria-hidden="true">
-    <div class="reveal-book">
-      <div class="reveal-spread">
-        <div class="reveal-page reveal-page-left"><span>THE HEARTWELL GAZETTE</span><i></i><i></i><i></i><i></i><i></i><small>VOL. VII · MUNICIPAL PRESS</small></div>
-        <div class="reveal-page reveal-page-right"><span id="reveal-title">THE FILED REPORT</span><i></i><i></i><i></i><i></i><i></i><small>HEARTWELL · ARCHIVE COPY</small></div>
-      </div>
-      <div class="reveal-cover">
-        <span class="reveal-cover-mark">H</span>
-        <span class="reveal-cover-kicker">THE HEARTWELL GAZETTE</span>
-        <strong id="reveal-cover-title">A filed report</strong>
-        <span class="reveal-cover-rule"></span>
-        <small>PRINTED RECORDS · ESTABLISHED 1926</small>
-      </div>
+    <div class="reader-actions">
+      <button id="mark-issue" class="mark-button reader-mark" type="button" aria-pressed="false"><span>✦</span> Mark paper</button>
+      <button id="close-reader" class="return-button" type="button"><span>×</span> Return to drawer</button>
     </div>
-  </div>
+  </aside>
 
   <footer class="room-footer">
     <span>HEARTWELL · PERIODICALS &amp; PUBLIC RECORDS</span>
