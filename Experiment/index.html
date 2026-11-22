@@ -52,7 +52,7 @@
       <button id="filter-all" class="filter-button active" type="button">All drawers</button>
       <button id="filter-marked" class="filter-button" type="button"><span>✦</span> Marked</button>
     </div>
-    <p id="search-feedback" class="search-feedback" aria-live="polite">Thirty drawers indexed</p>
+    <p id="search-feedback" class="search-feedback" aria-live="polite">50 PAPERS · 30 DRAWERS</p>
   </section>
 
   <div class="scene-caption" aria-hidden="true">
@@ -92,8 +92,13 @@
       <div><span class="reader-kicker">A PHYSICAL COPY IS OPEN IN THE READING ROOM</span><strong id="reader-label">GAZETTE RECORD</strong></div>
     </div>
     <div class="reader-actions">
-      <button id="mark-issue" class="mark-button reader-mark" type="button" aria-pressed="false"><span>✦</span> Mark paper</button>
-      <button id="close-reader" class="return-button" type="button"><span>×</span> Return to drawer</button>
+      <div class="page-controls" aria-label="Turn gazette pages">
+        <button id="prev-page" type="button" aria-label="Turn to previous spread" disabled>‹</button>
+        <span id="spread-indicator">PAGE 1 / 6</span>
+        <button id="next-page" type="button" aria-label="Turn to next spread">›</button>
+      </div>
+      <button id="mark-issue" class="mark-button reader-mark" type="button" aria-pressed="false"><span>✦</span> Mark</button>
+      <button id="close-reader" class="return-button" type="button"><span>×</span> Return volume</button>
     </div>
   </aside>
 
