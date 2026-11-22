@@ -716,6 +716,7 @@ function resize() {
   const height = Math.max(1, canvas.clientHeight);
   renderer.setSize(width, height, false);
   camera.aspect = width / height;
+  camera.fov = width < 760 ? 64 : 42;
   camera.updateProjectionMatrix();
 }
 
