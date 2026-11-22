@@ -144,14 +144,12 @@ function createGazetteVolume(entry, drawerGroup, slot) {
       else line = candidate;
     }
     if (line) lines.push(line);
-    ctx.font = "bold 11px Georgia";
     lines.slice(0, 5).forEach((text, i) => ctx.fillText(text, w / 2, 85 + i * 14));
     ctx.fillStyle = "#d2b27d";
     ctx.font = "6px monospace";
     ctx.fillText("MUNICIPAL PRESS", w / 2, h - 24);
     ctx.fillText("1926", w / 2, h - 14);
   });
-  const coverMaterial = new THREE.MeshStandardMaterial({ map: coverArt.texture, color: 0xffffff, roughness: .72 });
   const redMaterial = new THREE.MeshStandardMaterial({ color: 0x743029, roughness: .7 });
   const goldMaterial = materials.brassLight;
   const book = new THREE.Group();
@@ -772,6 +770,7 @@ function initThree() {
   });
   canvas.addEventListener("pointerup", (event) => {
     if (!pointerStart) return;
+    if (!reader.hidden || gazetteMotion) { pointerStart = null; return; }
     const moved = Math.hypot(event.clientX - pointerStart.x, event.clientY - pointerStart.y);
     pointerStart = null;
     if (moved > 7) return;
