@@ -212,3 +212,24 @@ button { color: inherit; }
  .reader-mark,.return-button { padding:8px 6px;font-size:6px; }
  .physical-gazette { padding:12px;border-width:5px; }
 }
+
+
+/* Two real HTML page surfaces. The CSS3D page geometry maps 400×955 px to a paper leaf. */
+.physical-page { position:relative;width:400px;height:955px;overflow:hidden;background:#eee5d2;border:1px solid #aa9674;box-shadow:0 7px 22px rgba(0,0,0,.28),inset 0 0 0 8px rgba(180,157,118,.12);transform-origin:center center;pointer-events:none; }
+.physical-page .page-edge { position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(104,76,44,.11),transparent 8%,transparent 94%,rgba(104,76,44,.09)); }
+.physical-page iframe { position:absolute;inset:0;z-index:1;width:100%;height:100%;border:0;background:#eee5d2;pointer-events:auto; }
+.page-flip-grip { position:absolute;z-index:3;top:0;bottom:0;width:34px;padding:0;border:0;opacity:0;background:transparent;pointer-events:auto;touch-action:none;cursor:grab; }
+.page-flip-grip:active { cursor:grabbing; }
+.page-flip-grip.right { right:0; }.page-flip-grip.left { left:0; }
+.page-flip-grip.right:hover { opacity:1;background:linear-gradient(90deg,transparent,rgba(115,68,42,.18)); }
+.page-flip-grip.left:hover { opacity:1;background:linear-gradient(270deg,transparent,rgba(115,68,42,.18)); }
+.physical-flip-sheet { position:relative;width:400px;height:955px;transform-style:preserve-3d;pointer-events:none; }
+.flip-face { position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;background:#eee5d2;border:1px solid #aa9674;box-shadow:0 5px 17px rgba(0,0,0,.2); }
+.flip-face iframe { display:block;width:100%;height:100%;border:0;background:#eee5d2;pointer-events:none; }
+.flip-back { transform:rotateY(180deg); }
+.reader .page-controls { display:flex;align-items:center;gap:6px;padding:4px 6px;border:1px solid rgba(185,149,93,.32);color:#c9b99d; }
+.reader .page-controls button { width:22px;height:24px;padding:0;border:1px solid rgba(185,149,93,.25);background:transparent;color:#e4d2b2;font-size:18px;line-height:1;cursor:pointer; }
+.reader .page-controls button:hover:not(:disabled) { background:rgba(185,149,93,.18); }
+.reader .page-controls button:disabled { opacity:.25;cursor:default; }
+.reader #spread-indicator { min-width:112px;text-align:center;color:#b9a88c;font:7px "DM Mono",monospace;letter-spacing:.09em; }
+@media(max-width:680px) { .page-flip-grip{width:40px}.reader .page-controls{gap:3px;padding:3px}.reader #spread-indicator{min-width:90px;font-size:6px} }
