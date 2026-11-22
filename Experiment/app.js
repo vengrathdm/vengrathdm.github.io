@@ -664,6 +664,7 @@ function finishGazetteReturn() {
 function closeDrawer() {
   if (!activeDrawerId) return;
   for (const object of drawerObjects) object.userData.targetZ = 0;
+  for (const volume of gazetteVolumes.values()) volume.book.visible = false;
   activeDrawerId = null;
   drawerPanel.hidden = true;
   intro.style.opacity = "1";
