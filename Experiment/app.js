@@ -521,7 +521,6 @@ function openGazette(entry) {
   cssGazette.rotation.copy(physicalBook.rotation);
   cssGazette.scale.setScalar(.0045 * .13);
 
-  iframe.onload = () => { cssGazette.element.style.visibility = "visible"; };
   iframe.src = url;
   gazetteMotion = { mode: "open", start: performance.now(), duration: reducedMotion ? 0 : 1350, from: source, to: destination, scaleFrom: .13, scaleTo: 1 };
   reader.hidden = false;
@@ -548,7 +547,7 @@ function closeGazette() {
 
 function finishGazetteReturn() {
   gazetteMotion = null;
-  if (cssGazette) cssGazette.visible = false;
+  if (cssGazette) { cssGazette.visible = false; cssGazette.element.style.visibility = "hidden"; }
   if (physicalBook) physicalBook.visible = false;
   iframe.src = "about:blank";
   reader.hidden = true;
@@ -768,14 +767,22 @@ function animate() {
     physicalBook.position.lerpVectors(gazetteMotion.from, gazetteMotion.to, eased);
     const scale = THREE.MathUtils.lerp(gazetteMotion.scaleFrom, gazetteMotion.scaleTo, eased);
     physicalBook.scale.setScalar(scale);
-    coverPivot.rotation.y = gazetteMotion.mode === "return"
-      ? THREE.MathUtils.lerp(gazetteMotion.coverFrom, gazetteMotion.coverTo, eased)
-      : Math.PI * .91 * Math.min(1, eased * 1.6);
+    if (gazetteMotion.mode === "return") {
+      coverPivot.rotation.y = THREE.MathUtils.lerp(gazetteMotion.coverFrom, gazetteMotion.coverTo, eased);
+      cssGazette.visible = eased < .86;
+    } else {
+      const coverProgress = THREE.MathUtils.clamp((t - .42) / .58, 0, 1);
+      const coverEase = coverProgress * coverProgress * (3 - 2 * coverProgress);
+      coverPivot.rotation.y = Math.PI * .91 * coverEase;
+      if (coverProgress > .94) {
+        cssGazette.visible = true;
+        cssGazette.element.style.visibility = "visible";
+      }
+    }
     const pagePosition = physicalBook.localToWorld(new THREE.Vector3(0, 0, .19));
     cssGazette.position.copy(pagePosition);
     cssGazette.rotation.copy(physicalBook.rotation);
     cssGazette.scale.setScalar(.0045 * scale);
-    if (gazetteMotion.mode === "open" && t > .2) cssGazette.visible = true;
     if (t >= 1) {
       if (gazetteMotion.mode === "return") finishGazetteReturn();
       else gazetteMotion = null;
