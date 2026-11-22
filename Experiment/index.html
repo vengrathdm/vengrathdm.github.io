@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#11100e">
-  <meta name="description" content="A small Three.js experiment: a quiet room, a cabinet of gazettes, and a paper archive you can open.">
-  <title>The Gazette Cabinet — Vengrath Experiment</title>
+  <meta name="theme-color" content="#100e0c">
+  <meta name="description" content="A three-dimensional municipal archive of Heartwell: a card-catalogue cabinet containing independently filed gazettes.">
+  <title>The Heartwell Gazette Archive — Vengrath Experiment</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
@@ -20,61 +20,110 @@
   </script>
 </head>
 <body>
-  <main id="app">
-    <canvas id="scene" aria-label="A three-dimensional room containing a wooden cabinet full of old newspapers"></canvas>
-    <div class="atmosphere" aria-hidden="true"></div>
-    <header class="masthead">
-      <a class="brand" href="/home/" aria-label="Return to Vengrath home">
-        <span class="brand-mark">V</span>
-        <span>VENGRATH <small>EXPERIMENT No. 01</small></span>
-      </a>
-      <div class="masthead-right">
-        <span class="archive-label">THE HEARTWELL ARCHIVE</span>
-        <span class="live-indicator"><i></i> PRIVATE COLLECTION</span>
+<main id="app">
+  <canvas id="scene" aria-label="A three-dimensional archival card-catalogue cabinet"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <header class="masthead">
+    <a class="brand" href="/home/" aria-label="Return to Vengrath home">
+      <span class="brand-mark">V</span>
+      <span>VENGRATH <small>EXPERIMENT No. 01</small></span>
+    </a>
+    <div class="masthead-right">
+      <span class="archive-label">HEARTWELL MUNICIPAL ARCHIVE</span>
+      <span class="archive-status"><i></i> READING ROOM OPEN</span>
+    </div>
+  </header>
+
+  <section class="intro">
+    <p class="eyebrow">PERIODICALS · PUBLIC RECORDS · PRIVATE PAPERS</p>
+    <h1>The Gazette<br>Archive</h1>
+    <p>A filing cabinet for the printed memory of Heartwell. Every drawer has a history; every paper has its own place.</p>
+  </section>
+
+  <section class="catalogue-tools" aria-label="Catalogue search and filters">
+    <label class="search-label" for="archive-search">SEARCH THE INDEX</label>
+    <div class="search-field">
+      <span aria-hidden="true">⌕</span>
+      <input id="archive-search" type="search" placeholder="Title, subject, date, or keyword…" autocomplete="off">
+      <button id="clear-search" type="button" aria-label="Clear search" title="Clear search">×</button>
+    </div>
+    <div class="filter-row">
+      <button id="filter-all" class="filter-button active" type="button">All drawers</button>
+      <button id="filter-marked" class="filter-button" type="button"><span>✦</span> Marked</button>
+    </div>
+    <p id="search-feedback" class="search-feedback" aria-live="polite">Thirty drawers indexed</p>
+  </section>
+
+  <div class="scene-caption" aria-hidden="true">
+    <span class="caption-rule"></span>
+    <span>THE CENTRAL RECORDS ROOM</span>
+    <span class="caption-rule"></span>
+  </div>
+
+  <div class="interaction-hint" id="interaction-hint">
+    <span class="hint-key">SELECT</span>
+    <span>Choose a drawer to inspect its contents</span>
+  </div>
+
+  <aside class="drawer-panel" id="drawer-panel" hidden aria-labelledby="drawer-title">
+    <div class="drawer-panel-head">
+      <div>
+        <p class="eyebrow" id="drawer-code">INDEX 01 · CLASSIFIED RECORDS</p>
+        <h2 id="drawer-title">Drawer title</h2>
+      </div>
+      <button class="icon-button" id="close-drawer" type="button" aria-label="Close drawer">×</button>
+    </div>
+    <p class="drawer-description" id="drawer-description"></p>
+    <div class="drawer-panel-meta">
+      <span id="drawer-count">0 PAPERS</span>
+      <button id="mark-drawer" class="mark-button" type="button" aria-pressed="false"><span>✦</span> Mark drawer</button>
+    </div>
+    <div class="drawer-contents" id="drawer-contents"></div>
+    <div class="drawer-panel-foot">
+      <span>HEARTWELL · RECORDS OFFICE</span>
+      <span id="drawer-position">INDEX 01 / 30</span>
+    </div>
+  </aside>
+
+  <section class="reader" id="reader" hidden aria-label="Gazette reader">
+    <header class="reader-bar">
+      <div class="reader-identity">
+        <span class="reader-seal">V</span>
+        <div>
+          <span class="reader-kicker">HEARTWELL MUNICIPAL ARCHIVE</span>
+          <strong id="reader-label">GAZETTE RECORD</strong>
+        </div>
+      </div>
+      <div class="reader-actions">
+        <button id="mark-issue" class="mark-button reader-mark" type="button" aria-pressed="false"><span>✦</span> Mark paper</button>
+        <button id="close-reader" class="return-button" type="button"><span>×</span> Return to cabinet</button>
       </div>
     </header>
-    <section class="intro" aria-live="polite">
-      <p class="eyebrow">A ROOM OF PRINTED MEMORY</p>
-      <h1 id="scene-title">The Gazette Cabinet</h1>
-      <p id="scene-copy">A few issues were kept. The city has changed since they were printed.</p>
-    </section>
-    <div class="interaction-hint" id="interaction-hint">
-      <span class="hint-key">CLICK</span>
-      <span>Select a gazette in the cabinet</span>
+    <div class="reader-frame-wrap">
+      <iframe id="gazette-frame" title="Selected gazette document" src="about:blank" loading="eager" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+      <div class="frame-loading" id="frame-loading"><span class="loading-seal">V</span><span>Retrieving the filed document</span></div>
     </div>
-    <aside class="reader-panel" id="reader-panel" hidden aria-live="polite">
-      <div class="reader-topline">
-        <span id="reader-issue">ISSUE 001 · THE HEARTWELL GAZETTE</span>
-        <span class="reader-status"><i></i> OPEN ON THE DESK</span>
-      </div>
-      <h2 id="reader-title"></h2>
-      <p id="reader-excerpt"></p>
-      <div class="reader-bottom">
-        <span class="reader-instruction">THE PAPER IS OPEN IN FRONT OF YOU</span>
-        <button id="close-issue" type="button"><span>×</span> Return to cabinet</button>
-      </div>
-    </aside>
-    <nav class="issue-index" id="issue-index" aria-label="Gazette issue selection">
-      <span class="index-label">ON THE SHELVES</span>
-      <div id="issue-buttons"></div>
-    </nav>
-    <footer class="room-footer">
-      <span>HEARTWELL · PERIODICALS &amp; PUBLIC RECORDS</span>
-      <span>EST. 1926 <b>✦</b> ARCHIVE OF VENGRATH</span>
-    </footer>
-    <div class="loading" id="loading">
-      <div class="loading-seal">V</div>
-      <span>Preparing the archive</span>
-      <i></i>
+  </section>
+
+  <footer class="room-footer">
+    <span>HEARTWELL · PERIODICALS &amp; PUBLIC RECORDS</span>
+    <span><b>✦</b> EST. 1926 <b>✦</b> ARCHIVE OF VENGRATH</span>
+  </footer>
+
+  <div class="loading" id="loading">
+    <div class="loading-seal">V</div>
+    <span>Opening the records room</span>
+    <i></i>
+  </div>
+  <div class="fallback" id="fallback" hidden>
+    <div class="fallback-card">
+      <p class="eyebrow">THE RECORDS ROOM IS CLOSED</p>
+      <h2>This room needs WebGL.</h2>
+      <p>Your browser could not start the 3D scene. Try a modern browser with hardware acceleration enabled.</p>
     </div>
-    <div class="fallback" id="fallback" hidden>
-      <div class="fallback-card">
-        <p class="eyebrow">THE ARCHIVE IS CLOSED</p>
-        <h2>This room needs WebGL.</h2>
-        <p>Your browser could not start the 3D scene. Try a modern browser with hardware acceleration enabled.</p>
-      </div>
-    </div>
-  </main>
-  <script type="module" src="./app.js"></script>
+  </div>
+  <noscript><div class="fallback"><div class="fallback-card"><h2>JavaScript is required.</h2><p>The catalogue and its 3D cabinet need JavaScript to operate.</p></div></div></noscript>
+</main>
+<script type="module" src="./app.js"></script>
 </body>
 </html>
