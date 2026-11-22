@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11100e">
+  <meta name="description" content="A small Three.js experiment: a quiet room, a cabinet of gazettes, and a paper archive you can open.">
+  <title>The Gazette Cabinet — Vengrath Experiment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main id="app">
+    <canvas id="scene" aria-label="A three-dimensional room containing a wooden cabinet full of old newspapers"></canvas>
+    <div class="atmosphere" aria-hidden="true"></div>
+    <header class="masthead">
+      <a class="brand" href="/home/" aria-label="Return to Vengrath home">
+        <span class="brand-mark">V</span>
+        <span>VENGRATH <small>EXPERIMENT No. 01</small></span>
+      </a>
+      <div class="masthead-right">
+        <span class="archive-label">THE HEARTWELL ARCHIVE</span>
+        <span class="live-indicator"><i></i> PRIVATE COLLECTION</span>
+      </div>
+    </header>
+    <section class="intro" aria-live="polite">
+      <p class="eyebrow">A ROOM OF PRINTED MEMORY</p>
+      <h1 id="scene-title">The Gazette Cabinet</h1>
+      <p id="scene-copy">A few issues were kept. The city has changed since they were printed.</p>
+    </section>
+    <div class="interaction-hint" id="interaction-hint">
+      <span class="hint-key">CLICK</span>
+      <span>Select a gazette in the cabinet</span>
+    </div>
+    <aside class="reader-panel" id="reader-panel" hidden aria-live="polite">
+      <div class="reader-topline">
+        <span id="reader-issue">ISSUE 001 · THE HEARTWELL GAZETTE</span>
+        <span class="reader-status"><i></i> OPEN ON THE DESK</span>
+      </div>
+      <h2 id="reader-title"></h2>
+      <p id="reader-excerpt"></p>
+      <div class="reader-bottom">
+        <span class="reader-instruction">THE PAPER IS OPEN IN FRONT OF YOU</span>
+        <button id="close-issue" type="button"><span>×</span> Return to cabinet</button>
+      </div>
+    </aside>
+    <nav class="issue-index" id="issue-index" aria-label="Gazette issue selection">
+      <span class="index-label">ON THE SHELVES</span>
+      <div id="issue-buttons"></div>
+    </nav>
+    <footer class="room-footer">
+      <span>HEARTWELL · PERIODICALS &amp; PUBLIC RECORDS</span>
+      <span>EST. 1926 <b>✦</b> ARCHIVE OF VENGRATH</span>
+    </footer>
+    <div class="loading" id="loading">
+      <div class="loading-seal">V</div>
+      <span>Preparing the archive</span>
+      <i></i>
+    </div>
+    <div class="fallback" id="fallback" hidden>
+      <div class="fallback-card">
+        <p class="eyebrow">THE ARCHIVE IS CLOSED</p>
+        <h2>This room needs WebGL.</h2>
+        <p>Your browser could not start the 3D scene. Try a modern browser with hardware acceleration enabled.</p>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
