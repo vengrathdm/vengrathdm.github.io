@@ -56,6 +56,7 @@ let activeGazette = null;
 let gazetteMotion = null;
 let activeVolume = null;
 let volumeDrag = null;
+let pageDrag = null;
 let markedOnly = false;
 let query = "";
 let pointerStart = null;
@@ -233,7 +234,7 @@ function createGazetteVolume(entry, drawerGroup, slot) {
 
   const column = slot % 5;
   const depthRow = Math.floor(slot / 5);
-  book.position.set(-.42 + column * .21, -.02, -.39 - depthRow * .10);
+  book.position.set(-.42 + column * .21, -.08, -.29 - depthRow * .13);
   book.scale.setScalar(.048);
   book.visible = false;
   drawerGroup.add(book);
@@ -278,30 +279,30 @@ function createDrawer(drawer, index, column, row) {
     }
   }
 
-  const face = box(group, [width, height, .14], [0, 0, .12], materials.walnut);
+  const face = box(group, [width, .22, .14], [0, -.16, .12], materials.walnut);
   face.userData.drawerId = drawer.id;
   face.userData.pickable = true;
-  const facePlate = box(group, [.93, .36, .025], [0, .01, .198], materials.brass);
+  const facePlate = box(group, [.93, .12, .025], [0, -.15, .198], materials.brass);
   facePlate.userData.drawerId = drawer.id;
   facePlate.userData.pickable = true;
   const label = labelTexture(drawer, markedDrawers.has(drawer.id));
   const labelMat = new THREE.MeshStandardMaterial({ map: label.texture, roughness: .95 });
-  const labelMesh = box(group, [.79, .205, .014], [0, .025, .218], labelMat, { cast: false });
+  const labelMesh = box(group, [.79, .072, .014], [0, -.15, .218], labelMat, { cast: false });
   labelMesh.userData.drawerId = drawer.id;
   labelMesh.userData.pickable = true;
 
   const recess = new THREE.Mesh(new THREE.CylinderGeometry(.105, .105, .025, 32), materials.black);
   recess.rotation.x = Math.PI / 2;
-  recess.position.set(0, -.176, .222);
+  recess.position.set(0, -.235, .222);
   group.add(recess);
   const pull = new THREE.Mesh(new THREE.TorusGeometry(.066, .012, 8, 28), materials.brassLight);
-  pull.position.set(0, -.185, .245);
+  pull.position.set(0, -.235, .245);
   group.add(pull);
   const pin = new THREE.Mesh(new THREE.SphereGeometry(.021, 12, 8), materials.brassLight);
-  pin.position.set(0, -.185, .253);
+  pin.position.set(0, -.235, .253);
   group.add(pin);
   for (const sx of [-.43, .43]) {
-    for (const sy of [-.145, .145]) {
+    for (const sy of [-.22, -.08]) {
       const screw = new THREE.Mesh(new THREE.CylinderGeometry(.012, .012, .012, 12), materials.brassLight);
       screw.rotation.x = Math.PI / 2;
       screw.position.set(sx, sy, .22);
@@ -705,25 +706,49 @@ function showSpread(volume, spread) {
   updateSpreadIndicator(volume);
 }
 
-function turnPage(direction) {
-  const volume = activeVolume;
-  if (!volume || volume.turning || gazetteMotion) return;
+function preparePageFlip(volume, direction) {
   const nextSpread = volume.spread + direction;
-  if (nextSpread < 0 || nextSpread > 4) return;
+  if (nextSpread < 0 || nextSpread > 4) return false;
   const backwards = direction < 0;
   const currentPage = backwards ? (volume.spread === 4 ? 8 : volume.spread * 2) : (volume.spread === 0 ? 1 : volume.spread * 2 + 1);
   const nextPage = backwards ? (nextSpread === 0 ? 1 : nextSpread * 2 + 1) : (nextSpread === 4 ? 8 : nextSpread * 2);
   volume.flipFront.srcdoc = volume.pages[currentPage - 1] || blankPageDocument();
   volume.flipBack.srcdoc = volume.pages[nextPage - 1] || blankPageDocument();
+  volume.flipObject.position.x = direction > 0 ? .9 : -.9;
   volume.flipPivot.visible = true;
   volume.flipPivot.rotation.set(0, 0, 0);
-  volume.flipPivot.userData.start = performance.now();
-  volume.flipPivot.userData.duration = reducedMotion ? 0 : 720;
-  volume.flipPivot.userData.direction = direction;
   volume.turning = true;
-  if (!backwards) volume.right.object.visible = false;
+  if (direction > 0) volume.right.object.visible = false;
   else volume.left.object.visible = false;
   updateSpreadIndicator(volume);
+  return true;
+}
+function beginPageDrag(volume, direction, event) {
+  if (activeVolume !== volume || reader.hidden || gazetteMotion || volume.turning || pageDrag || !volume.pages) return;
+  event.preventDefault();
+  event.stopPropagation();
+  if (!preparePageFlip(volume, direction)) return;
+  pageDrag = { volume, direction, pointerId:event.pointerId, startX:event.clientX, progress:0, phase:"dragging", targetSpread:volume.spread+direction };
+  try { event.currentTarget.setPointerCapture(event.pointerId); } catch {}
+}
+function updatePageDrag(event) {
+  if (!pageDrag || pageDrag.pointerId !== event.pointerId || pageDrag.phase !== "dragging") return;
+  const distance = pageDrag.direction > 0 ? pageDrag.startX-event.clientX : event.clientX-pageDrag.startX;
+  pageDrag.progress = THREE.MathUtils.clamp(distance/Math.max(120,window.innerWidth*.14),0,1);
+  pageDrag.volume.pageTurn = pageDrag;
+}
+function finishPageDrag(event) {
+  if (!pageDrag || pageDrag.pointerId !== event.pointerId) return;
+  const drag=pageDrag; pageDrag=null;
+  drag.phase="settling"; drag.from=drag.progress; drag.to=drag.progress>=.32?1:0;
+  drag.start=performance.now(); drag.duration=reducedMotion?0:420;
+  drag.volume.pageTurn=drag;
+}
+function turnPage(direction) {
+  const volume=activeVolume;
+  if (!volume || volume.turning || gazetteMotion || !volume.pages) return;
+  if (!preparePageFlip(volume,direction)) return;
+  volume.pageTurn={direction,phase:"settling",progress:0,from:0,to:1,start:performance.now(),duration:reducedMotion?0:720,targetSpread:volume.spread+direction};
 }
 
 function beginGazetteOpening(volume, source, sourceQuaternion, sourceScale) {
@@ -832,6 +857,9 @@ function updateSearch() {
 }
 
 function initControls() {
+  document.addEventListener("pointermove", updatePageDrag);
+  document.addEventListener("pointerup", finishPageDrag);
+  document.addEventListener("pointercancel", finishPageDrag);
   $("#clear-search").addEventListener("click", () => {
     searchInput.value = "";
     updateSearch();
@@ -853,6 +881,8 @@ function initControls() {
   $("#close-drawer").addEventListener("click", closeDrawer);
   markDrawerButton.addEventListener("click", toggleDrawerMark);
   $("#close-reader").addEventListener("click", closeGazette);
+  $("#prev-page").addEventListener("click", () => turnPage(-1));
+  $("#next-page").addEventListener("click", () => turnPage(1));
   markIssueButton.addEventListener("click", () => {
     if (activeGazette) toggleGazetteMark(activeGazette.slug);
   });
@@ -910,18 +940,82 @@ function initThree() {
   controls = new OrbitControls(camera, canvas);
   controls.enableDamping = true;
   controls.dampingFactor = .045;
-  controls.enablePan = false;
-  controls.minDistance = 10;
-  controls.maxDistance = 17;
-  controls.minPolarAngle = Math.PI * .29;
-  controls.maxPolarAngle = Math.PI * .49;
-  controls.minAzimuthAngle = -.22;
-  controls.maxAzimuthAngle = .22;
+  controls.enablePan = true;
+  controls.screenSpacePanning = false;
+  controls.minDistance = 7.5;
+  controls.maxDistance = 25;
+  controls.minPolarAngle = .08;
+  controls.maxPolarAngle = Math.PI - .08;
+  controls.minAzimuthAngle = -Infinity;
+  controls.maxAzimuthAngle = Infinity;
   controls.target.set(.85, 2.0, -1.5);
   controls.update();
 
   raycaster = new THREE.Raycaster();
   pointer = new THREE.Vector2();
+  const pickGazetteVolume = (event) => {
+    pointer.x=(event.clientX/window.innerWidth)*2-1;
+    pointer.y=-(event.clientY/window.innerHeight)*2+1;
+    raycaster.setFromCamera(pointer,camera);
+    const hits=raycaster.intersectObjects(drawerObjects,true);
+    for (const hit of hits) {
+      let node=hit.object;
+      while (node && !node.userData.gazetteSlug) node=node.parent;
+      if (node?.userData.gazetteSlug) return gazetteVolumes.get(node.userData.gazetteSlug);
+    }
+    return null;
+  };
+  canvas.addEventListener("pointerdown",(event)=>{
+    if (!reader.hidden || volumeDrag || pageDrag) return;
+    const volume=pickGazetteVolume(event);
+    if (!volume || !volume.book.visible) return;
+    event.preventDefault(); event.stopImmediatePropagation();
+    const book=volume.book; book.updateWorldMatrix(true,false);
+    const source=book.getWorldPosition(new THREE.Vector3());
+    const sourceQuaternion=book.getWorldQuaternion(new THREE.Quaternion());
+    const sourceScale=book.getWorldScale(new THREE.Vector3());
+    scene.attach(book);
+    volume.originPosition=source.clone(); volume.originQuaternion=sourceQuaternion.clone(); volume.originScale=sourceScale.clone();
+    activeVolume=volume;
+    volumeDrag={volume,source,sourceQuaternion,sourceScale,
+      plane:new THREE.Plane().setFromNormalAndCoplanarPoint(camera.getWorldDirection(new THREE.Vector3()),source.clone()),
+      startX:event.clientX,startY:event.clientY,pointerId:event.pointerId,moved:false};
+    controls.enabled=false;
+    try { canvas.setPointerCapture(event.pointerId); } catch {}
+    drawerPanel.hidden=true;
+  },true);
+  canvas.addEventListener("pointermove",(event)=>{
+    if (!volumeDrag || volumeDrag.pointerId!==event.pointerId) return;
+    event.preventDefault();
+    if (Math.hypot(event.clientX-volumeDrag.startX,event.clientY-volumeDrag.startY)<4) return;
+    volumeDrag.moved=true;
+    pointer.x=(event.clientX/window.innerWidth)*2-1; pointer.y=-(event.clientY/window.innerHeight)*2+1;
+    raycaster.setFromCamera(pointer,camera);
+    const point=raycaster.ray.intersectPlane(volumeDrag.plane,new THREE.Vector3());
+    if (!point) return;
+    point.addScaledVector(camera.getWorldDirection(new THREE.Vector3()),-.24);
+    volumeDrag.volume.book.position.copy(point);
+    const tilt=THREE.MathUtils.clamp((event.clientX-volumeDrag.startX)/280,-.38,.38);
+    volumeDrag.volume.book.quaternion.copy(volumeDrag.sourceQuaternion).multiply(
+      new THREE.Quaternion().setFromEuler(new THREE.Euler(tilt*.22,tilt,-tilt*.18))
+    );
+  },true);
+  const releaseGazetteVolume=(event)=>{
+    if (!volumeDrag || volumeDrag.pointerId!==event.pointerId) return;
+    event.preventDefault(); event.stopImmediatePropagation();
+    const drag=volumeDrag; volumeDrag=null; controls.enabled=true;
+    if (drag.moved) {
+      beginGazetteOpening(drag.volume,drag.volume.book.position.clone(),drag.volume.book.quaternion.clone(),drag.sourceScale);
+    } else {
+      drag.volume.drawerGroup.attach(drag.volume.book);
+      drag.volume.book.position.copy(drag.volume.localPosition);
+      drag.volume.book.quaternion.copy(drag.volume.localQuaternion);
+      drag.volume.book.scale.copy(drag.volume.localScale);
+      activeVolume=null; drawerPanel.hidden=false;
+    }
+  };
+  canvas.addEventListener("pointerup",releaseGazetteVolume,true);
+  canvas.addEventListener("pointercancel",releaseGazetteVolume,true);
   canvas.addEventListener("pointerdown", (event) => {
     pointerStart = { x: event.clientX, y: event.clientY };
   });
@@ -946,13 +1040,7 @@ function initThree() {
       }
       if (selectedVolume || selectedDrawer) break;
     }
-    if (selectedVolume) {
-      const entry = gazettes.find((gazette) => gazette.slug === selectedVolume);
-      if (entry) {
-        if (activeDrawerId !== entry.drawer) setActiveDrawer(entry.drawer);
-        openGazette(entry);
-      }
-    } else if (selectedDrawer) setActiveDrawer(selectedDrawer);
+    if (selectedDrawer) setActiveDrawer(selectedDrawer);
   });
   canvas.addEventListener("pointermove", (event) => {
     if (pointerStart) return;
@@ -987,45 +1075,61 @@ function animate() {
   const delta = Math.min(clock.getDelta(), .05);
   for (const object of drawerObjects) {
     const target = object.userData.targetZ;
-    const current = object.position.z;
     const speed = reducedMotion ? 1 : 1 - Math.pow(.0008, delta);
-    object.position.z = THREE.MathUtils.lerp(current, target, speed);
+    object.position.z = THREE.MathUtils.lerp(object.position.z, target, speed);
   }
-
   if (gazetteMotion) {
     const volume = gazetteMotion.volume;
     const book = volume.book;
-    const cssObject = volume.cssObject;
-    const elapsed = performance.now() - gazetteMotion.start;
-    const t = gazetteMotion.duration === 0 ? 1 : Math.min(1, elapsed / gazetteMotion.duration);
+    const t = gazetteMotion.duration === 0 ? 1 : Math.min(1, (performance.now() - gazetteMotion.start) / gazetteMotion.duration);
     const eased = 1 - Math.pow(1 - t, 3);
     book.position.lerpVectors(gazetteMotion.from, gazetteMotion.to, eased);
     book.quaternion.slerpQuaternions(gazetteMotion.fromQuaternion, gazetteMotion.toQuaternion, eased);
-    const scale = THREE.MathUtils.lerp(gazetteMotion.scaleFrom, gazetteMotion.scaleTo, eased);
-    book.scale.setScalar(scale);
-
+    book.scale.setScalar(THREE.MathUtils.lerp(gazetteMotion.scaleFrom, gazetteMotion.scaleTo, eased));
     if (gazetteMotion.mode === "return") {
       volume.coverPivot.rotation.y = THREE.MathUtils.lerp(gazetteMotion.coverFrom, gazetteMotion.coverTo, eased);
-      cssObject.visible = eased < .86;
     } else {
-      const coverProgress = THREE.MathUtils.clamp((t - .42) / .58, 0, 1);
+      const coverProgress = THREE.MathUtils.clamp((t - .4) / .6, 0, 1);
       const coverEase = coverProgress * coverProgress * (3 - 2 * coverProgress);
       volume.coverPivot.rotation.y = Math.PI * .91 * coverEase;
-      if (coverProgress > .94) {
-        cssObject.visible = true;
-        volume.element.style.visibility = "visible";
-      }
     }
-    const pagePosition = book.localToWorld(new THREE.Vector3(0, 0, .19));
-    cssObject.position.copy(pagePosition);
-    cssObject.quaternion.copy(book.quaternion);
-    cssObject.scale.setScalar(.0045 * scale);
     if (t >= 1) {
       if (gazetteMotion.mode === "return") finishGazetteReturn();
       else gazetteMotion = null;
     }
   }
-
+  if (activeVolume?.book.visible) {
+    const volume = activeVolume;
+    const book = volume.book;
+    book.updateMatrixWorld(true);
+    const worldQuaternion = book.getWorldQuaternion(new THREE.Quaternion());
+    for (const [page, x] of [[volume.left, -.91], [volume.right, .91]]) {
+      const position = book.localToWorld(new THREE.Vector3(x, 0, .205));
+      page.object.position.copy(position);
+      page.object.quaternion.copy(worldQuaternion);
+      page.object.scale.setScalar(.0045 * book.scale.x);
+    }
+    const spine = book.localToWorld(new THREE.Vector3(0, 0, .215));
+    volume.flipPivot.position.copy(spine);
+    volume.flipPivot.quaternion.copy(worldQuaternion);
+    volume.flipPivot.scale.setScalar(book.scale.x);
+    if (volume.pageTurn) {
+      const turn = volume.pageTurn;
+      let progress = turn.progress || 0;
+      if (turn.phase === "settling") {
+        const elapsed = performance.now() - turn.start;
+        const t = turn.duration === 0 ? 1 : Math.min(1, elapsed / turn.duration);
+        progress = THREE.MathUtils.lerp(turn.from, turn.to, t * t * (3 - 2 * t));
+      }
+      volume.flipPivot.rotation.y = (turn.direction > 0 ? -1 : 1) * Math.PI * progress;
+      if (turn.phase === "settling" && (turn.duration === 0 || performance.now() - turn.start >= turn.duration)) {
+        volume.flipPivot.visible = false;
+        volume.turning = false;
+        volume.pageTurn = null;
+        showSpread(volume, turn.to >= .5 ? turn.targetSpread : volume.spread);
+      }
+    }
+  }
   controls?.update();
   renderer.render(scene, camera);
   cssRenderer?.render(cssScene, camera);
