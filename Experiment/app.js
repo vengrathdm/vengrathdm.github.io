@@ -734,6 +734,7 @@ function beginPageDrag(volume, direction, event) {
 }
 function updatePageDrag(event) {
   if (!pageDrag || pageDrag.pointerId !== event.pointerId || pageDrag.phase !== "dragging") return;
+  event.preventDefault();
   const volume = pageDrag.volume;
   const spine = volume.book.localToWorld(new THREE.Vector3(0, 0, .22)).project(camera);
   const outer = volume.book.localToWorld(new THREE.Vector3(pageDrag.direction > 0 ? 2.34 : -2.34, 0, .22)).project(camera);
@@ -746,7 +747,7 @@ function finishPageDrag(event) {
   if (!pageDrag || pageDrag.pointerId !== event.pointerId) return;
   const drag=pageDrag; pageDrag=null;
   drag.phase="settling"; drag.from=drag.progress; drag.to=drag.progress>=.32?1:0;
-  drag.start=performance.now(); drag.duration=reducedMotion?0:420;
+  drag.start=performance.now(); drag.duration=reducedMotion?0:560;
   drag.volume.pageTurn=drag;
 }
 function turnPage(direction) {
@@ -862,9 +863,9 @@ function updateSearch() {
 }
 
 function initControls() {
-  document.addEventListener("pointermove", updatePageDrag);
-  document.addEventListener("pointerup", finishPageDrag);
-  document.addEventListener("pointercancel", finishPageDrag);
+
+
+
   document.addEventListener("pointermove", updatePageDrag, { passive: false });
   document.addEventListener("pointerup", finishPageDrag);
   document.addEventListener("pointercancel", finishPageDrag);
