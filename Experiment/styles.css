@@ -38,7 +38,7 @@ button { color: inherit; }
 .issue-choice:focus-visible { box-shadow: 0 0 0 1px var(--brass); }
 .room-footer { position: absolute; z-index: 3; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; padding: 19px 34px 18px; border-top: 1px solid rgba(218,196,158,.12); color: #827a69; font-size: 8px; letter-spacing: .14em; background: linear-gradient(0deg, rgba(7,7,6,.58), transparent); pointer-events: none; }
 .room-footer b { padding: 0 8px; color: var(--brass); font-weight: 400; }
-.reader-panel { position: absolute; z-index: 5; left: 50%; bottom: 6.5%; transform: translateX(-50%); width: min(700px, calc(100% - 40px)); padding: 17px 22px 15px; background: rgba(15,14,12,.88); border: 1px solid rgba(185,151,93,.48); box-shadow: 0 18px 65px rgba(0,0,0,.48); backdrop-filter: blur(14px); }
+.reader-panel { position: absolute; z-index: 5; top: 94px; right: 26px; left: auto; bottom: auto; transform: none; width: min(330px, calc(100% - 40px)); padding: 15px 17px 13px; background: rgba(15,14,12,.88); border: 1px solid rgba(185,151,93,.48); box-shadow: 0 18px 65px rgba(0,0,0,.48); backdrop-filter: blur(14px); }
 .reader-topline, .reader-bottom { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
 .reader-topline { color: #b89a67; font-size: 8px; letter-spacing: .17em; }
 .reader-status { display: inline-flex; align-items: center; gap: 7px; color: #9b917f; font-size: 8px; }
@@ -60,6 +60,8 @@ button { color: inherit; }
 .fallback-card p:last-child { color: var(--muted); font-family: "Cormorant Garamond", serif; font-size: 19px; line-height: 1.45; }
 [hidden] { display: none !important; }
 @media (max-width: 760px) {
+  .reader-panel { top: 76px; right: 12px; width: min(310px, calc(100% - 24px)); padding: 11px 12px; }
+  .reader-panel > p { font-size: 14px; }
   .masthead { min-height: 65px; padding: 13px 16px; }
   .brand { font-size: 10px; gap: 8px; }
   .brand-mark { width: 30px; height: 30px; }
