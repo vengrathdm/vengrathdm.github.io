@@ -513,7 +513,7 @@ function openGazette(entry) {
     reveal.classList.remove("is-opening");
     reader.hidden = false;
     iframe.src = url;
-  }, reducedMotion ? 0 : 1420);
+  }, reducedMotion ? 0 : 1840);
 }
 
 function closeGazette() {
