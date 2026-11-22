@@ -55,6 +55,7 @@ let activeDrawerId = null;
 let activeGazette = null;
 let gazetteMotion = null;
 let activeVolume = null;
+let volumeDrag = null;
 let markedOnly = false;
 let query = "";
 let pointerStart = null;
@@ -120,6 +121,25 @@ function labelTexture(drawer, isMarked = false) {
   });
 }
 
+function createPageViewport(entry, side) {
+  const element = document.createElement("div");
+  element.className = "physical-page " + side;
+  element.style.visibility = "hidden";
+  const frame = document.createElement("iframe");
+  frame.title = entry.title + " — " + side + " page";
+  frame.loading = "eager";
+  frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-forms");
+  frame.src = "about:blank";
+  const edge = document.createElement("div");
+  edge.className = "page-edge";
+  element.append(edge, frame);
+  const object = new CSS3DObject(element);
+  object.visible = false;
+  object.scale.setScalar(.0045);
+  cssScene.add(object);
+  return { element, iframe: frame, object };
+}
+
 function createGazetteVolume(entry, drawerGroup, slot) {
   const coverArt = makeCanvasTexture(128, 192, (ctx, w, h) => {
     ctx.fillStyle = "#71302a";
@@ -144,6 +164,7 @@ function createGazetteVolume(entry, drawerGroup, slot) {
       else line = candidate;
     }
     if (line) lines.push(line);
+    ctx.font = "bold 11px Georgia";
     lines.slice(0, 5).forEach((text, i) => ctx.fillText(text, w / 2, 85 + i * 14));
     ctx.fillStyle = "#d2b27d";
     ctx.font = "6px monospace";
@@ -151,43 +172,59 @@ function createGazetteVolume(entry, drawerGroup, slot) {
     ctx.fillText("1926", w / 2, h - 14);
   });
   const redMaterial = new THREE.MeshStandardMaterial({ color: 0x743029, roughness: .7 });
-  const goldMaterial = materials.brassLight;
+  const paperMaterial = new THREE.MeshStandardMaterial({ color: 0xe2d5bd, roughness: .96 });
+  const coverArtMaterial = new THREE.MeshStandardMaterial({ map: coverArt.texture, roughness: .82 });
   const book = new THREE.Group();
   book.userData.gazetteSlug = entry.slug;
   book.userData.drawerId = entry.drawer;
 
+  // Distinct cover, binding and paper block, plus two shallow page surfaces.
   box(book, [3.82, 4.66, .15], [0, 0, -.08], redMaterial);
   box(book, [3.65, 4.48, .10], [0, 0, .035], materials.paper);
   box(book, [.12, 4.55, .13], [-1.81, 0, .07], materials.walnutEdge);
-  box(book, [3.72, .025, .11], [0, 2.23, .11], goldMaterial, { cast: false });
-  box(book, [3.72, .025, .11], [0, -2.23, .11], goldMaterial, { cast: false });
+  for (const side of [-1, 1]) {
+    const leaf = new THREE.Mesh(new THREE.PlaneGeometry(1.8, 4.3), paperMaterial);
+    leaf.position.set(side * .91, 0, .19);
+    book.add(leaf);
+  }
 
   const coverPivot = new THREE.Group();
   coverPivot.position.set(-1.82, 0, .14);
   book.add(coverPivot);
   box(coverPivot, [3.66, 4.49, .065], [1.83, 0, 0], redMaterial);
-  const coverLabel = new THREE.Mesh(
-    new THREE.PlaneGeometry(3.25, 4.03),
-    new THREE.MeshStandardMaterial({ map: coverArt.texture, roughness: .85 })
-  );
+  const coverLabel = new THREE.Mesh(new THREE.PlaneGeometry(3.25, 4.03), coverArtMaterial);
   coverLabel.position.set(1.83, 0, .041);
   coverPivot.add(coverLabel);
 
-  const element = document.createElement("div");
-  element.className = "physical-gazette";
-  element.style.visibility = "hidden";
-  const paperEdge = document.createElement("div");
-  paperEdge.className = "physical-paper-edge";
-  const frame = document.createElement("iframe");
-  frame.title = entry.title;
-  frame.loading = "eager";
-  frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-forms");
-  frame.src = "about:blank";
-  element.append(paperEdge, frame);
-  const cssObject = new CSS3DObject(element);
-  cssObject.visible = false;
-  cssObject.scale.setScalar(.0045 * .052);
-  cssScene.add(cssObject);
+  // Each record owns two independent, initially unloaded HTML page viewports.
+  const left = createPageViewport(entry, "left");
+  const right = createPageViewport(entry, "right");
+
+  // A two-sided page is rotated around the book's central spine during a turn.
+  const flipElement = document.createElement("div");
+  flipElement.className = "physical-flip-sheet";
+  const front = document.createElement("div");
+  front.className = "flip-face flip-front";
+  const back = document.createElement("div");
+  back.className = "flip-face flip-back";
+  const frontFrame = document.createElement("iframe");
+  const backFrame = document.createElement("iframe");
+  for (const frame of [frontFrame, backFrame]) {
+    frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-forms");
+    frame.src = "about:blank";
+  }
+  frontFrame.title = entry.title + " — turning page front";
+  backFrame.title = entry.title + " — turning page reverse";
+  front.append(frontFrame);
+  back.append(backFrame);
+  flipElement.append(front, back);
+  const flipObject = new CSS3DObject(flipElement);
+  flipObject.position.x = .9;
+  flipObject.scale.setScalar(.0045);
+  const flipPivot = new THREE.Group();
+  flipPivot.visible = false;
+  flipPivot.add(flipObject);
+  cssScene.add(flipPivot);
 
   const column = slot % 5;
   const depthRow = Math.floor(slot / 5);
@@ -197,13 +234,13 @@ function createGazetteVolume(entry, drawerGroup, slot) {
   drawerGroup.add(book);
 
   const volume = {
-    entry, book, coverPivot, cssObject, element, iframe: frame, drawerGroup,
+    entry, book, coverPivot, left, right, flipPivot, flipObject,
+    flipFront: frontFrame, flipBack: backFrame, drawerGroup,
     localPosition: book.position.clone(),
     localQuaternion: book.quaternion.clone(),
     localScale: book.scale.clone(),
-    originPosition: null,
-    originQuaternion: null,
-    originScale: null
+    originPosition: null, originQuaternion: null, originScale: null,
+    pages: null, spread: 0, turning: false
   };
   gazetteVolumes.set(entry.slug, volume);
   return volume;
