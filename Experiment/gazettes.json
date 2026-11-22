@@ -273,6 +273,646 @@
         "travel"
       ],
       "file": "./gazette/the-sunday-supplement.html"
+    },
+    {
+      "slug": "a-correction-to-the-evening-edition",
+      "issue": "NO. 007 · ARCHIVE REFERENCE",
+      "date": "07 November 1926",
+      "title": "A Correction to the Evening Edition",
+      "drawer": "press",
+      "excerpt": "A lightweight filed reference concerning a correction to the evening edition. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "correction",
+        "the",
+        "evening",
+        "edition"
+      ],
+      "file": "./gazette/a-correction-to-the-evening-edition.html"
+    },
+    {
+      "slug": "a-correction-to-yesterday-s-paper",
+      "issue": "NO. 008 · ARCHIVE REFERENCE",
+      "date": "08 November 1926",
+      "title": "A Correction to Yesterday S Paper",
+      "drawer": "press",
+      "excerpt": "A lightweight filed reference concerning a correction to yesterday s paper. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "correction",
+        "yesterday",
+        "paper"
+      ],
+      "file": "./gazette/a-correction-to-yesterday-s-paper.html"
+    },
+    {
+      "slug": "a-guild-charter-recovered",
+      "issue": "NO. 009 · ARCHIVE REFERENCE",
+      "date": "09 November 1926",
+      "title": "A Guild Charter Recovered",
+      "drawer": "guilds",
+      "excerpt": "A lightweight filed reference concerning a guild charter recovered. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "guild",
+        "charter",
+        "recovered"
+      ],
+      "file": "./gazette/a-guild-charter-recovered.html"
+    },
+    {
+      "slug": "a-lecture-on-clockwork",
+      "issue": "NO. 010 · ARCHIVE REFERENCE",
+      "date": "10 November 1926",
+      "title": "A Lecture on Clockwork",
+      "drawer": "archives",
+      "excerpt": "A lightweight filed reference concerning a lecture on clockwork. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "lecture",
+        "clockwork"
+      ],
+      "file": "./gazette/a-lecture-on-clockwork.html"
+    },
+    {
+      "slug": "a-letter-without-a-sender",
+      "issue": "NO. 011 · ARCHIVE REFERENCE",
+      "date": "11 November 1926",
+      "title": "A Letter Without a Sender",
+      "drawer": "private",
+      "excerpt": "A lightweight filed reference concerning a letter without a sender. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "letter",
+        "without",
+        "sender"
+      ],
+      "file": "./gazette/a-letter-without-a-sender.html"
+    },
+    {
+      "slug": "a-message-returned-to-sender",
+      "issue": "NO. 012 · ARCHIVE REFERENCE",
+      "date": "12 November 1926",
+      "title": "A Message Returned to Sender",
+      "drawer": "private",
+      "excerpt": "A lightweight filed reference concerning a message returned to sender. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "message",
+        "returned",
+        "sender"
+      ],
+      "file": "./gazette/a-message-returned-to-sender.html"
+    },
+    {
+      "slug": "a-notice-to-householders",
+      "issue": "NO. 013 · ARCHIVE REFERENCE",
+      "date": "13 November 1926",
+      "title": "A Notice to Householders",
+      "drawer": "municipal",
+      "excerpt": "A lightweight filed reference concerning a notice to householders. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "notice",
+        "householders"
+      ],
+      "file": "./gazette/a-notice-to-householders.html"
+    },
+    {
+      "slug": "a-petition-for-new-lamps",
+      "issue": "NO. 014 · ARCHIVE REFERENCE",
+      "date": "14 November 1926",
+      "title": "A Petition for New Lamps",
+      "drawer": "municipal",
+      "excerpt": "A lightweight filed reference concerning a petition for new lamps. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "petition",
+        "for",
+        "new",
+        "lamps"
+      ],
+      "file": "./gazette/a-petition-for-new-lamps.html"
+    },
+    {
+      "slug": "a-schedule-of-tram-bells",
+      "issue": "NO. 015 · ARCHIVE REFERENCE",
+      "date": "15 November 1926",
+      "title": "A Schedule of Tram Bells",
+      "drawer": "transport",
+      "excerpt": "A lightweight filed reference concerning a schedule of tram bells. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "schedule",
+        "tram",
+        "bells"
+      ],
+      "file": "./gazette/a-schedule-of-tram-bells.html"
+    },
+    {
+      "slug": "a-survey-of-the-lower-passages",
+      "issue": "NO. 016 · ARCHIVE REFERENCE",
+      "date": "16 November 1926",
+      "title": "A Survey of the Lower Passages",
+      "drawer": "undercity",
+      "excerpt": "A lightweight filed reference concerning a survey of the lower passages. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "survey",
+        "the",
+        "lower",
+        "passages"
+      ],
+      "file": "./gazette/a-survey-of-the-lower-passages.html"
+    },
+    {
+      "slug": "a-visitor-s-handbook-to-heartwell",
+      "issue": "NO. 017 · ARCHIVE REFERENCE",
+      "date": "17 November 1926",
+      "title": "A Visitor S Handbook to Heartwell",
+      "drawer": "municipal",
+      "excerpt": "A lightweight filed reference concerning a visitor s handbook to heartwell. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "visitor",
+        "handbook",
+        "heartwell"
+      ],
+      "file": "./gazette/a-visitor-s-handbook-to-heartwell.html"
+    },
+    {
+      "slug": "an-account-of-missing-keys",
+      "issue": "NO. 018 · ARCHIVE REFERENCE",
+      "date": "18 November 1926",
+      "title": "An Account of Missing Keys",
+      "drawer": "miscellany",
+      "excerpt": "A lightweight filed reference concerning an account of missing keys. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "account",
+        "missing",
+        "keys"
+      ],
+      "file": "./gazette/an-account-of-missing-keys.html"
+    },
+    {
+      "slug": "an-unclaimed-parcel",
+      "issue": "NO. 019 · ARCHIVE REFERENCE",
+      "date": "19 November 1926",
+      "title": "An Unclaimed Parcel",
+      "drawer": "property",
+      "excerpt": "A lightweight filed reference concerning an unclaimed parcel. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "unclaimed",
+        "parcel"
+      ],
+      "file": "./gazette/an-unclaimed-parcel.html"
+    },
+    {
+      "slug": "an-unusual-property-transfer",
+      "issue": "NO. 020 · ARCHIVE REFERENCE",
+      "date": "20 November 1926",
+      "title": "An Unusual Property Transfer",
+      "drawer": "property",
+      "excerpt": "A lightweight filed reference concerning an unusual property transfer. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "unusual",
+        "property",
+        "transfer"
+      ],
+      "file": "./gazette/an-unusual-property-transfer.html"
+    },
+    {
+      "slug": "engine-patent-no-48",
+      "issue": "NO. 021 · ARCHIVE REFERENCE",
+      "date": "21 November 1926",
+      "title": "Engine Patent no 48",
+      "drawer": "engineering",
+      "excerpt": "A lightweight filed reference concerning engine patent no 48. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "engine",
+        "patent"
+      ],
+      "file": "./gazette/engine-patent-no-48.html"
+    },
+    {
+      "slug": "foundry-coal-assessment",
+      "issue": "NO. 022 · ARCHIVE REFERENCE",
+      "date": "22 November 1926",
+      "title": "Foundry Coal Assessment",
+      "drawer": "aorta",
+      "excerpt": "A lightweight filed reference concerning foundry coal assessment. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "foundry",
+        "coal",
+        "assessment"
+      ],
+      "file": "./gazette/foundry-coal-assessment.html"
+    },
+    {
+      "slug": "ledger-of-the-north-ward",
+      "issue": "NO. 023 · ARCHIVE REFERENCE",
+      "date": "23 November 1926",
+      "title": "Ledger of the North Ward",
+      "drawer": "northern",
+      "excerpt": "A lightweight filed reference concerning ledger of the north ward. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "ledger",
+        "the",
+        "north",
+        "ward"
+      ],
+      "file": "./gazette/ledger-of-the-north-ward.html"
+    },
+    {
+      "slug": "market-prices-winter-quarter",
+      "issue": "NO. 024 · ARCHIVE REFERENCE",
+      "date": "24 November 1926",
+      "title": "Market Prices Winter Quarter",
+      "drawer": "commerce",
+      "excerpt": "A lightweight filed reference concerning market prices winter quarter. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "market",
+        "prices",
+        "winter",
+        "quarter"
+      ],
+      "file": "./gazette/market-prices-winter-quarter.html"
+    },
+    {
+      "slug": "minutes-from-the-blue-room",
+      "issue": "NO. 025 · ARCHIVE REFERENCE",
+      "date": "25 November 1926",
+      "title": "Minutes from the Blue Room",
+      "drawer": "societies",
+      "excerpt": "A lightweight filed reference concerning minutes from the blue room. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "minutes",
+        "from",
+        "the",
+        "blue",
+        "room"
+      ],
+      "file": "./gazette/minutes-from-the-blue-room.html"
+    },
+    {
+      "slug": "names-in-the-north-register",
+      "issue": "NO. 026 · ARCHIVE REFERENCE",
+      "date": "26 November 1926",
+      "title": "Names in the North Register",
+      "drawer": "northern",
+      "excerpt": "A lightweight filed reference concerning names in the north register. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "names",
+        "the",
+        "north",
+        "register"
+      ],
+      "file": "./gazette/names-in-the-north-register.html"
+    },
+    {
+      "slug": "on-the-matter-of-the-seventh-bell",
+      "issue": "NO. 027 · ARCHIVE REFERENCE",
+      "date": "27 November 1926",
+      "title": "On the Matter of the Seventh Bell",
+      "drawer": "classified",
+      "excerpt": "A lightweight filed reference concerning on the matter of the seventh bell. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "matter",
+        "the",
+        "seventh",
+        "bell"
+      ],
+      "file": "./gazette/on-the-matter-of-the-seventh-bell.html"
+    },
+    {
+      "slug": "record-of-a-sealed-hearing",
+      "issue": "NO. 028 · ARCHIVE REFERENCE",
+      "date": "28 November 1926",
+      "title": "Record of a Sealed Hearing",
+      "drawer": "watch",
+      "excerpt": "A lightweight filed reference concerning record of a sealed hearing. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "record",
+        "sealed",
+        "hearing"
+      ],
+      "file": "./gazette/record-of-a-sealed-hearing.html"
+    },
+    {
+      "slug": "report-from-the-west-bridge",
+      "issue": "NO. 029 · ARCHIVE REFERENCE",
+      "date": "01 November 1926",
+      "title": "Report from the West Bridge",
+      "drawer": "western",
+      "excerpt": "A lightweight filed reference concerning report from the west bridge. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "report",
+        "from",
+        "the",
+        "west",
+        "bridge"
+      ],
+      "file": "./gazette/report-from-the-west-bridge.html"
+    },
+    {
+      "slug": "snowfall-at-north-foundry",
+      "issue": "NO. 030 · ARCHIVE REFERENCE",
+      "date": "02 November 1926",
+      "title": "Snowfall at North Foundry",
+      "drawer": "aorta",
+      "excerpt": "A lightweight filed reference concerning snowfall at north foundry. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "snowfall",
+        "north",
+        "foundry"
+      ],
+      "file": "./gazette/snowfall-at-north-foundry.html"
+    },
+    {
+      "slug": "the-black-bird-theatre-programme",
+      "issue": "NO. 031 · ARCHIVE REFERENCE",
+      "date": "03 November 1926",
+      "title": "The Black Bird Theatre Programme",
+      "drawer": "theatres",
+      "excerpt": "A lightweight filed reference concerning the black bird theatre programme. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "black",
+        "bird",
+        "theatre",
+        "programme"
+      ],
+      "file": "./gazette/the-black-bird-theatre-programme.html"
+    },
+    {
+      "slug": "the-chapel-bell-inventory",
+      "issue": "NO. 032 · ARCHIVE REFERENCE",
+      "date": "04 November 1926",
+      "title": "The Chapel Bell Inventory",
+      "drawer": "religious",
+      "excerpt": "A lightweight filed reference concerning the chapel bell inventory. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "chapel",
+        "bell",
+        "inventory"
+      ],
+      "file": "./gazette/the-chapel-bell-inventory.html"
+    },
+    {
+      "slug": "the-chapels-winter-accounts",
+      "issue": "NO. 033 · ARCHIVE REFERENCE",
+      "date": "05 November 1926",
+      "title": "The Chapels Winter Accounts",
+      "drawer": "religious",
+      "excerpt": "A lightweight filed reference concerning the chapels winter accounts. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "chapels",
+        "winter",
+        "accounts"
+      ],
+      "file": "./gazette/the-chapels-winter-accounts.html"
+    },
+    {
+      "slug": "the-closed-tram-office",
+      "issue": "NO. 034 · ARCHIVE REFERENCE",
+      "date": "06 November 1926",
+      "title": "The Closed Tram Office",
+      "drawer": "transport",
+      "excerpt": "A lightweight filed reference concerning the closed tram office. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "closed",
+        "tram",
+        "office"
+      ],
+      "file": "./gazette/the-closed-tram-office.html"
+    },
+    {
+      "slug": "the-closed-west-gate",
+      "issue": "NO. 035 · ARCHIVE REFERENCE",
+      "date": "07 November 1926",
+      "title": "The Closed West Gate",
+      "drawer": "western",
+      "excerpt": "A lightweight filed reference concerning the closed west gate. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "closed",
+        "west",
+        "gate"
+      ],
+      "file": "./gazette/the-closed-west-gate.html"
+    },
+    {
+      "slug": "the-copper-saint-s-licence",
+      "issue": "NO. 036 · ARCHIVE REFERENCE",
+      "date": "08 November 1926",
+      "title": "The Copper Saint S Licence",
+      "drawer": "commerce",
+      "excerpt": "A lightweight filed reference concerning the copper saint s licence. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "copper",
+        "saint",
+        "licence"
+      ],
+      "file": "./gazette/the-copper-saint-s-licence.html"
+    },
+    {
+      "slug": "the-east-wall-repairs",
+      "issue": "NO. 037 · ARCHIVE REFERENCE",
+      "date": "09 November 1926",
+      "title": "The East Wall Repairs",
+      "drawer": "eastern",
+      "excerpt": "A lightweight filed reference concerning the east wall repairs. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "east",
+        "wall",
+        "repairs"
+      ],
+      "file": "./gazette/the-east-wall-repairs.html"
+    },
+    {
+      "slug": "the-empty-ward",
+      "issue": "NO. 038 · ARCHIVE REFERENCE",
+      "date": "10 November 1926",
+      "title": "The Empty Ward",
+      "drawer": "archives",
+      "excerpt": "A lightweight filed reference concerning the empty ward. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "empty",
+        "ward"
+      ],
+      "file": "./gazette/the-empty-ward.html"
+    },
+    {
+      "slug": "the-foundry-inspector-s-statement",
+      "issue": "NO. 039 · ARCHIVE REFERENCE",
+      "date": "11 November 1926",
+      "title": "The Foundry Inspector S Statement",
+      "drawer": "aorta",
+      "excerpt": "A lightweight filed reference concerning the foundry inspector s statement. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "foundry",
+        "inspector",
+        "statement"
+      ],
+      "file": "./gazette/the-foundry-inspector-s-statement.html"
+    },
+    {
+      "slug": "the-glassmaker-s-complaint",
+      "issue": "NO. 040 · ARCHIVE REFERENCE",
+      "date": "12 November 1926",
+      "title": "The Glassmaker S Complaint",
+      "drawer": "guilds",
+      "excerpt": "A lightweight filed reference concerning the glassmaker s complaint. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "glassmaker",
+        "complaint"
+      ],
+      "file": "./gazette/the-glassmaker-s-complaint.html"
+    },
+    {
+      "slug": "the-lantern-on-aster-street",
+      "issue": "NO. 041 · ARCHIVE REFERENCE",
+      "date": "13 November 1926",
+      "title": "The Lantern on Aster Street",
+      "drawer": "eastern",
+      "excerpt": "A lightweight filed reference concerning the lantern on aster street. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "lantern",
+        "aster",
+        "street"
+      ],
+      "file": "./gazette/the-lantern-on-aster-street.html"
+    },
+    {
+      "slug": "the-lower-passage-survey",
+      "issue": "NO. 042 · ARCHIVE REFERENCE",
+      "date": "14 November 1926",
+      "title": "The Lower Passage Survey",
+      "drawer": "undercity",
+      "excerpt": "A lightweight filed reference concerning the lower passage survey. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "lower",
+        "passage",
+        "survey"
+      ],
+      "file": "./gazette/the-lower-passage-survey.html"
+    },
+    {
+      "slug": "the-missing-tram-no-4",
+      "issue": "NO. 043 · ARCHIVE REFERENCE",
+      "date": "15 November 1926",
+      "title": "The Missing Tram no 4",
+      "drawer": "transport",
+      "excerpt": "A lightweight filed reference concerning the missing tram no 4. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "missing",
+        "tram"
+      ],
+      "file": "./gazette/the-missing-tram-no-4.html"
+    },
+    {
+      "slug": "the-observatory-s-missing-page",
+      "issue": "NO. 044 · ARCHIVE REFERENCE",
+      "date": "16 November 1926",
+      "title": "The Observatory S Missing Page",
+      "drawer": "observatory",
+      "excerpt": "A lightweight filed reference concerning the observatory s missing page. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "observatory",
+        "missing",
+        "page"
+      ],
+      "file": "./gazette/the-observatory-s-missing-page.html"
+    },
+    {
+      "slug": "the-old-cemetery-map",
+      "issue": "NO. 045 · ARCHIVE REFERENCE",
+      "date": "17 November 1926",
+      "title": "The Old Cemetery Map",
+      "drawer": "cemeteries",
+      "excerpt": "A lightweight filed reference concerning the old cemetery map. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "old",
+        "cemetery",
+        "map"
+      ],
+      "file": "./gazette/the-old-cemetery-map.html"
+    },
+    {
+      "slug": "the-river-s-second-current",
+      "issue": "NO. 046 · ARCHIVE REFERENCE",
+      "date": "18 November 1926",
+      "title": "The River S Second Current",
+      "drawer": "river",
+      "excerpt": "A lightweight filed reference concerning the river s second current. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "river",
+        "second",
+        "current"
+      ],
+      "file": "./gazette/the-river-s-second-current.html"
+    },
+    {
+      "slug": "the-second-observatory-notice",
+      "issue": "NO. 047 · ARCHIVE REFERENCE",
+      "date": "19 November 1926",
+      "title": "The Second Observatory Notice",
+      "drawer": "observatory",
+      "excerpt": "A lightweight filed reference concerning the second observatory notice. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "second",
+        "observatory",
+        "notice"
+      ],
+      "file": "./gazette/the-second-observatory-notice.html"
+    },
+    {
+      "slug": "the-southern-waterline",
+      "issue": "NO. 048 · ARCHIVE REFERENCE",
+      "date": "20 November 1926",
+      "title": "The Southern Waterline",
+      "drawer": "river",
+      "excerpt": "A lightweight filed reference concerning the southern waterline. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "southern",
+        "waterline"
+      ],
+      "file": "./gazette/the-southern-waterline.html"
+    },
+    {
+      "slug": "the-watchman-s-notebook",
+      "issue": "NO. 049 · ARCHIVE REFERENCE",
+      "date": "21 November 1926",
+      "title": "The Watchman S Notebook",
+      "drawer": "watch",
+      "excerpt": "A lightweight filed reference concerning the watchman s notebook. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "the",
+        "watchman",
+        "notebook"
+      ],
+      "file": "./gazette/the-watchman-s-notebook.html"
+    },
+    {
+      "slug": "visitors-from-the-border",
+      "issue": "NO. 050 · ARCHIVE REFERENCE",
+      "date": "22 November 1926",
+      "title": "Visitors from the Border",
+      "drawer": "municipal",
+      "excerpt": "A lightweight filed reference concerning visitors from the border. The surviving copy is brief; fuller particulars may be held in the associated office register.",
+      "tags": [
+        "visitors",
+        "from",
+        "the",
+        "border"
+      ],
+      "file": "./gazette/visitors-from-the-border.html"
     }
   ]
 }
