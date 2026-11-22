@@ -1,21 +1,33 @@
-# The Gazette Cabinet
+# The Heartwell Gazette Archive
 
-A standalone Three.js experiment for the Vengrath GitHub Pages site.
+A standalone Three.js card-catalogue archive for the Vengrath GitHub Pages site.
 
-Public route: /Experiment/
+Public route: https://vengrathdm.github.io/Experiment/
 
-## What it does
+## How it is organised
 
-- Builds a small, atmospheric 3D room and wooden cabinet from procedural geometry and canvas textures.
-- Places six individually selectable gazettes on the cabinet shelves.
-- A selection lifts the chosen issue out of the cabinet, brings it toward the viewer, and unfolds it into a two-page spread.
-- The spread is printed with issue-specific headlines and article text; the reader panel provides the issue's date and a short extract.
-- The cabinet can be revisited with the return button or Escape.
+- \`index.html\`, \`styles.css\` and \`app.js\` implement the room, searchable cabinet, drawer interactions and reader.
+- \`gazettes.json\` is the catalogue manifest. It defines the physical drawers and lists every gazette with its metadata and HTML file path.
+- \`gazette/<slug>.html\` contains one complete, independent document per gazette. The reader loads the selected file into a full-screen iframe; article copy is not embedded in the cabinet script.
 
-## Implementation
+## Cabinet features
 
-- Three.js 0.180.0 and its OrbitControls add-on are loaded as ES modules from jsDelivr.
-- No model, image or audio files are required. The room, furniture, covers, page layouts and textures are generated in the browser.
-- The experiment is isolated in this directory and does not modify the Vengrath homepage or shared campaign components.
+The cabinet currently has thirty narrow card-catalogue drawers. Each physical drawer is a separately selectable object that slides forward when opened, with its contents shown as individually accessible files in the drawer panel. Drawers and papers can both be marked for quick retrieval.
 
-Open index.html through GitHub Pages at https://vengrathdm.github.io/Experiment/.
+Search checks drawer labels, descriptions, gazette titles, issue identifiers, dates, excerpts and tags. The **Marked** filter shows drawers and papers that have been marked. Marks persist in the current browser using localStorage.
+
+## Add another gazette
+
+1. Create a standalone HTML document in \`Experiment/gazette/\`, for example \`Experiment/gazette/the-new-report.html\`.
+2. Add a gazette object to the \`gazettes\` array in \`Experiment/gazettes.json\`. Give it a unique \`slug\`, \`title\`, \`issue\`, \`date\`, \`drawer\`, \`excerpt\`, \`tags\` array and \`file\` path such as \`./gazette/the-new-report.html\`.
+3. To add a new drawer, add an object to the \`drawers\` array with a unique \`id\`, \`code\`, \`label\` and \`description\`. Drawer meshes are generated from the manifest.
+
+GitHub Pages is a static host, so the browser cannot enumerate the folder automatically. The manifest is the explicit index that makes each gazette discoverable without a server or GitHub API call. Additional gazettes can be filed into existing drawers; empty drawers are already available as categories.
+
+## Technical notes
+
+- Three.js 0.180.0 and OrbitControls are loaded as ES modules from jsDelivr.
+- The cabinet carcass, drawer geometry, labels and filing cards are generated in the browser.
+- Each gazette is a standalone HTML page. Its content and styling live in that HTML file; the cabinet app only reads metadata from the manifest and loads the document into an iframe.
+- Drawer and paper marks are stored locally per browser; they are not synced between visitors or devices.
+- The experiment is isolated in this directory and does not modify the homepage or shared campaign components.
