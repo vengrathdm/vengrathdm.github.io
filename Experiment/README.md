@@ -8,14 +8,16 @@ Public route: https://vengrathdm.github.io/Experiment/
 
 The room and card-catalogue cabinet are rendered in Three.js. Thirty narrow drawers are generated from the manifest. Each drawer slides forward when selected; its filed papers can be searched, opened and marked.
 
-The archive contains 50 independent gazette HTML documents in the gazette folder. Each one is loaded as a live HTML viewport and mounted onto a pseudo-physical open gazette object in the room. The viewport is transformed by Three.js CSS3D rendering into the same camera space as the WebGL cabinet. Text remains selectable, links remain interactive, and the page can scroll inside the physical paper surface. It is not a flattened screenshot or a full-screen modal reader.
+The archive contains 50 independent gazette HTML documents in the gazette folder. Every entry owns a distinct miniature 3D volume, a CSS3D object and a dedicated iframe. The iframe stays on about:blank until that exact issue is selected; then its standalone HTML document is loaded into the viewport on the volume's pages. This keeps the catalogue lightweight without reusing one shared reader iframe.
 
-Selecting a paper lifts the physical volume out of its filing drawer, brings it forward into the reading area and opens its cover. The reader controls remain outside the paper surface so the user can mark the issue or return it to the drawer without leaving the room. Closing a gazette reverses the motion and returns it to its originating drawer.
+Selecting a paper extracts its own miniature volume from the open drawer, brings it forward, enlarges it and opens its cover. The live HTML viewport appears on the paper surface only after the cover has opened. Text remains selectable, links remain interactive, and the page can scroll inside the physical book while the rest of the room remains visible. It is not a flattened screenshot or a full-screen modal reader.
+
+Closing a gazette reverses the animation, closes the cover and returns that same volume to its originating drawer.
 
 ## Files
 
 - index.html and styles.css — scene chrome and responsive UI.
-- app.js — Three.js cabinet, physical gazette prop, CSS3D viewport and interactions.
+- app.js — Three.js cabinet, fifty physical book objects, CSS3D viewports and interactions.
 - gazettes.json — 30 drawer definitions and metadata for the 50 gazettes.
 - gazette/<slug>.html — independent, lightweight HTML page for each issue.
 
@@ -23,7 +25,7 @@ Selecting a paper lifts the physical volume out of its filing drawer, brings it 
 
 1. Create a standalone HTML document under Experiment/gazette/.
 2. Add an object to the gazettes array in Experiment/gazettes.json, including a unique slug, title, issue, date, drawer, excerpt, tags, and file path such as ./gazette/my-new-issue.html.
-3. Use one of the existing drawer IDs, or add a new entry to the drawers array. Drawer geometry is generated from the manifest.
+3. Use one of the existing drawer IDs, or add a new entry to the drawers array. Drawer geometry and the mini book are generated from the manifest.
 
 GitHub Pages is a static host, so the browser cannot enumerate the folder automatically. The manifest is the explicit index that makes each HTML file discoverable without a server or GitHub API call.
 
@@ -33,7 +35,7 @@ Search examines drawer labels and descriptions, titles, dates, excerpts and tags
 
 ## Technical notes
 
-- Three.js 0.180.0 and OrbitControls are loaded from jsDelivr.
-- The 3D filing cabinet and physical book are WebGL geometry.
-- Each live document is a CSS3D object aligned with the WebGL camera and placed over the paper geometry.
+- Three.js 0.180.0, OrbitControls and CSS3DRenderer are loaded from jsDelivr.
+- The filing cabinet and miniature book volumes are WebGL geometry.
+- Each gazette has its own iframe and CSS3DObject; only the selected issue's iframe loads its document.
 - The mock issues are intentionally lightweight and use placeholder copy. Replace any file with a fuller designed gazette without changing the reader.
