@@ -185,21 +185,21 @@ function createGazetteVolume(entry, drawerGroup, slot) {
   book.userData.drawerId = entry.drawer;
 
   // Distinct cover, binding and paper block, plus two shallow page surfaces.
-  box(book, [3.82, 4.66, .30], [0, 0, -.08], redMaterial);
-  box(book, [3.65, 4.48, .14], [0, 0, .055], materials.paper);
-  box(book, [.12, 4.55, .13], [-1.81, 0, .07], materials.walnutEdge);
+  box(book, [4.82, 4.66, .30], [0, 0, -.08], redMaterial);
+  box(book, [4.64, 4.48, .14], [0, 0, .055], materials.paper);
+  box(book, [.12, 4.55, .13], [0, 0, .07], materials.walnutEdge);
   for (const side of [-1, 1]) {
-    const leaf = new THREE.Mesh(new THREE.PlaneGeometry(1.8, 4.3), paperMaterial);
-    leaf.position.set(side * .91, 0, .19);
+    const leaf = new THREE.Mesh(new THREE.PlaneGeometry(2.34, 4.3), paperMaterial);
+    leaf.position.set(side * 1.17, 0, .19);
     book.add(leaf);
   }
 
   const coverPivot = new THREE.Group();
-  coverPivot.position.set(-1.82, 0, .14);
+  coverPivot.position.set(0, 0, .14);
   book.add(coverPivot);
-  box(coverPivot, [3.66, 4.49, .065], [1.83, 0, 0], redMaterial);
-  const coverLabel = new THREE.Mesh(new THREE.PlaneGeometry(3.25, 4.03), coverArtMaterial);
-  coverLabel.position.set(1.83, 0, .041);
+  box(coverPivot, [2.34, 4.49, .065], [1.17, 0, 0], redMaterial);
+  const coverLabel = new THREE.Mesh(new THREE.PlaneGeometry(2.08, 4.03), coverArtMaterial);
+  coverLabel.position.set(1.17, 0, .041);
   coverPivot.add(coverLabel);
 
   // Each record owns two independent, initially unloaded HTML page viewports.
@@ -225,7 +225,7 @@ function createGazetteVolume(entry, drawerGroup, slot) {
   back.append(backFrame);
   flipElement.append(front, back);
   const flipObject = new CSS3DObject(flipElement);
-  flipObject.position.x = .9;
+  flipObject.position.x = 1.17;
   flipObject.scale.setScalar(.0045);
   const flipPivot = new THREE.Group();
   flipPivot.visible = false;
@@ -235,7 +235,7 @@ function createGazetteVolume(entry, drawerGroup, slot) {
   const column = slot % 5;
   const depthRow = Math.floor(slot / 5);
   book.position.set(-.42 + column * .21, -.08, -.29 - depthRow * .13);
-  book.scale.setScalar(.048);
+  book.scale.setScalar(.041);
   book.visible = false;
   drawerGroup.add(book);
 
@@ -714,7 +714,7 @@ function preparePageFlip(volume, direction) {
   const nextPage = backwards ? (nextSpread === 0 ? 1 : nextSpread * 2 + 1) : (nextSpread === 4 ? 8 : nextSpread * 2);
   volume.flipFront.srcdoc = volume.pages[currentPage - 1] || blankPageDocument();
   volume.flipBack.srcdoc = volume.pages[nextPage - 1] || blankPageDocument();
-  volume.flipObject.position.x = direction > 0 ? .9 : -.9;
+  volume.flipObject.position.x = direction > 0 ? 1.17 : -1.17;
   volume.flipPivot.visible = true;
   volume.flipPivot.rotation.set(0, 0, 0);
   volume.turning = true;
@@ -729,13 +729,18 @@ function beginPageDrag(volume, direction, event) {
   event.stopPropagation();
   if (!preparePageFlip(volume, direction)) return;
   pageDrag = { volume, direction, pointerId:event.pointerId, startX:event.clientX, progress:0, phase:"dragging", targetSpread:volume.spread+direction };
+  volume.pageTurn = pageDrag;
   try { event.currentTarget.setPointerCapture(event.pointerId); } catch {}
 }
 function updatePageDrag(event) {
   if (!pageDrag || pageDrag.pointerId !== event.pointerId || pageDrag.phase !== "dragging") return;
+  const volume = pageDrag.volume;
+  const spine = volume.book.localToWorld(new THREE.Vector3(0, 0, .22)).project(camera);
+  const outer = volume.book.localToWorld(new THREE.Vector3(pageDrag.direction > 0 ? 2.34 : -2.34, 0, .22)).project(camera);
+  const leafPixels = Math.abs(outer.x - spine.x) * window.innerWidth * .5;
   const distance = pageDrag.direction > 0 ? pageDrag.startX-event.clientX : event.clientX-pageDrag.startX;
-  pageDrag.progress = THREE.MathUtils.clamp(distance/Math.max(120,window.innerWidth*.14),0,1);
-  pageDrag.volume.pageTurn = pageDrag;
+  pageDrag.progress = THREE.MathUtils.clamp(distance / Math.max(140, leafPixels), 0, 1);
+  volume.pageTurn = pageDrag;
 }
 function finishPageDrag(event) {
   if (!pageDrag || pageDrag.pointerId !== event.pointerId) return;
@@ -858,6 +863,9 @@ function updateSearch() {
 
 function initControls() {
   document.addEventListener("pointermove", updatePageDrag);
+  document.addEventListener("pointerup", finishPageDrag);
+  document.addEventListener("pointercancel", finishPageDrag);
+  document.addEventListener("pointermove", updatePageDrag, { passive: false });
   document.addEventListener("pointerup", finishPageDrag);
   document.addEventListener("pointercancel", finishPageDrag);
   $("#clear-search").addEventListener("click", () => {
@@ -1103,8 +1111,8 @@ function animate() {
     const book = volume.book;
     book.updateMatrixWorld(true);
     const worldQuaternion = book.getWorldQuaternion(new THREE.Quaternion());
-    for (const [page, x] of [[volume.left, -.91], [volume.right, .91]]) {
-      const position = book.localToWorld(new THREE.Vector3(x, 0, .205));
+    for (const [page, x] of [[volume.left, -1], [volume.right, 1]]) {
+      const position = book.localToWorld(new THREE.Vector3(x * 1.17, 0, .205));
       page.object.position.copy(position);
       page.object.quaternion.copy(worldQuaternion);
       page.object.scale.setScalar(.0045 * book.scale.x);
@@ -1121,7 +1129,7 @@ function animate() {
         const t = turn.duration === 0 ? 1 : Math.min(1, elapsed / turn.duration);
         progress = THREE.MathUtils.lerp(turn.from, turn.to, t * t * (3 - 2 * t));
       }
-      volume.flipPivot.rotation.y = (turn.direction > 0 ? -1 : 1) * Math.PI * progress;
+      volume.flipPivot.quaternion.copy(worldQuaternion).multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), (turn.direction > 0 ? -1 : 1) * Math.PI * progress));
       if (turn.phase === "settling" && (turn.duration === 0 || performance.now() - turn.start >= turn.duration)) {
         volume.flipPivot.visible = false;
         volume.turning = false;
