@@ -18,6 +18,9 @@ const drawerContents = $("#drawer-contents");
 const drawerPosition = $("#drawer-position");
 const markDrawerButton = $("#mark-drawer");
 const reader = $("#reader");
+const reveal = $("#gazette-reveal");
+const revealCoverTitle = $("#reveal-cover-title");
+const revealTitle = $("#reveal-title");
 const readerLabel = $("#reader-label");
 const iframe = $("#gazette-frame");
 const frameLoading = $("#frame-loading");
@@ -52,6 +55,7 @@ let renderer, scene, camera, controls, raycaster, pointer, cabinetRoot;
 let drawerObjects = [];
 let activeDrawerId = null;
 let activeGazette = null;
+let revealTimer = null;
 let markedOnly = false;
 let query = "";
 let pointerStart = null;
@@ -492,16 +496,30 @@ function openGazette(entry) {
   }
   activeGazette = entry;
   readerLabel.textContent = entry.issue + " · " + entry.title;
+  revealCoverTitle.textContent = entry.title;
+  revealTitle.textContent = entry.title.toUpperCase();
   updateReaderMark();
   frameLoading.classList.remove("hidden");
-  reader.hidden = false;
-  iframe.src = url;
   hint.style.opacity = "0";
   drawerPanel.hidden = true;
   intro.style.opacity = "0";
+  reveal.hidden = false;
+  reveal.classList.remove("is-opening");
+  void reveal.offsetWidth;
+  reveal.classList.add("is-opening");
+  window.clearTimeout(revealTimer);
+  revealTimer = window.setTimeout(() => {
+    reveal.hidden = true;
+    reveal.classList.remove("is-opening");
+    reader.hidden = false;
+    iframe.src = url;
+  }, reducedMotion ? 0 : 1420);
 }
 
 function closeGazette() {
+  window.clearTimeout(revealTimer);
+  reveal.hidden = true;
+  reveal.classList.remove("is-opening");
   reader.hidden = true;
   iframe.src = "about:blank";
   activeGazette = null;
@@ -552,7 +570,7 @@ function initControls() {
   iframe.addEventListener("load", () => frameLoading.classList.add("hidden"));
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
-      if (!reader.hidden) closeGazette();
+      if (!reader.hidden || !reveal.hidden) closeGazette();
       else if (!drawerPanel.hidden) closeDrawer();
     }
   });
