@@ -1,3 +1,4 @@
+import "../Cursor/Cursor.js";
 export function createHomeButton() {
   const link = document.createElement("a");
   link.className = "vengrath-home-button";
