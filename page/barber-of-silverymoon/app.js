@@ -51,7 +51,7 @@ async function initialize() {
     }
     if (section === "chronicle" && !chronicleRendered) {
       document.querySelector("#chronicle-playlist").href = content.chronicle.playlistUrl || manifest.playlistUrl || "#";
-      document.querySelector("#chronicle-records").replaceChildren(...(content.chronicle.sessions || []).map((session) => makeChronicle(session, theme.colors.accent2)));
+      document.querySelector("#chronicle-records").replaceChildren(...(content.chronicle.sessions || []).map((session) => makeChronicle(session, accent)));
       chronicleRendered = true;
     }
   });
