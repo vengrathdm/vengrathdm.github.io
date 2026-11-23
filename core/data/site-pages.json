@@ -792,7 +792,7 @@
     "type": "map",
     "visibility": "public",
     "url": "/page/antarctica/",
-    "image": "/core/graphics/voronoi/FantasyMap1.png",
+    "image": "/core/graphics/voronoi/FantasyMap1.webp",
     "layout": "page-specific",
     "manifest": null,
     "tags": [
