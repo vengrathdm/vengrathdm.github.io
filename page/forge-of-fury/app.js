@@ -13,8 +13,8 @@ function mountNavbar(container,accent){
 }
 function initializeHero(content,theme){
  const hero=document.querySelector("#campaign-hero");hero.style.setProperty("--hero-background","url('"+theme.heroImage+"')");
- const copy=hero.querySelector(".subpage-hero__copy"),kicker=copy.querySelector(".campaign-startup-kicker"),lead=copy.querySelector(".campaign-startup-lead"),heading=copy.querySelector("h1");
- kicker.className="fof-hero-kicker";kicker.textContent=content.campaign.kicker;lead.className="fof-hero-lead";lead.textContent=content.campaign.lead;
+ const copy=hero.querySelector(".subpage-hero__copy"),kicker=copy.querySelector(".fof-hero-kicker"),lead=copy.querySelector(".fof-hero-lead"),heading=copy.querySelector("h1");
+ kicker.textContent=content.campaign.kicker;lead.textContent=content.campaign.lead;
  const accent=document.createElement("span");accent.className="fof-hero-title-accent";accent.textContent="Fury";heading.replaceChildren(document.createTextNode("Forge of"),document.createElement("br"),accent);
  const mount=document.createElement("div");mount.className="fof-navbar-mount";hero.prepend(mount);const mist=document.createElement("div");mist.className="fof-hero-mist-line";mist.setAttribute("aria-hidden","true");hero.append(mist);mountNavbar(mount,theme.colors.accent2);
 }
@@ -41,5 +41,39 @@ async function renderCharacters(characters){
  const container=document.querySelector("#character-gallery");container.replaceChildren();if(!selected.length){const empty=document.createElement("p");empty.className="character-gallery__empty";empty.textContent="Brak postaci spełniających kryteria.";container.append(empty);return;}
  const grid=document.createElement("div");grid.className="character-gallery";const definitions=new Map(achievements.map(item=>[item.id,item]));selected.forEach(character=>grid.append(createCharacterCard(character,definitions)));container.append(grid);
 }
-async function initializeCampaignPage(){const [manifest,theme,content]=await Promise.all([loadJson("./manifest.json"),loadJson("./theme.json"),loadJson("./content.json")]);applyTheme(theme);initializeHero(content,theme);renderCampaign(content.campaign);await renderCharacters(content.characters);}
-initializeCampaignPage().then(()=>document.body.classList.remove("campaign-startup-loading")).catch(error=>console.error("Nie udało się uruchomić strony Forge of Fury.",error));
+async function initializeCampaignPage() {
+  const [manifest, theme, content] = await Promise.all([
+    loadJson("./manifest.json"),
+    loadJson("./theme.json"),
+    loadJson("./content.json"),
+  ]);
+  applyTheme(theme);
+  initializeHero(content, theme);
+  renderCampaign(content.campaign);
+
+  let charactersPromise;
+  document.addEventListener("vengrath:sectionchange", (event) => {
+    if (event.detail?.section !== "characters" || charactersPromise) return;
+    charactersPromise = renderCharacters(content.characters).catch((error) => {
+      console.error("Nie udało się wczytać postaci Forge of Fury.", error);
+      charactersPromise = null;
+      document.querySelector("#character-gallery").replaceChildren(
+        Object.assign(document.createElement("p"), {
+          className: "character-gallery__empty",
+          textContent: "Nie udało się wczytać postaci. Spróbuj ponownie.",
+        }),
+      );
+    });
+  });
+
+  document.body.classList.remove("campaign-startup-loading");
+}
+initializeCampaignPage().catch((error) => {
+  console.error("Nie udało się uruchomić strony Forge of Fury.", error);
+  document.body.classList.remove("campaign-startup-loading");
+  const message = document.createElement("p");
+  message.className = "fof-load-error";
+  message.setAttribute("role", "alert");
+  message.textContent = "Nie udało się wczytać kampanii.";
+  document.body.prepend(message);
+});
