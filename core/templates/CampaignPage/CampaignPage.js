@@ -1,3 +1,4 @@
+import "../Cursor/Cursor.js";
 const CAMPAIGN_FILES = {
   manifest: "./manifest.json",
   theme: "./theme.json",
