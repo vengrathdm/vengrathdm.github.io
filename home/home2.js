@@ -118,6 +118,7 @@ function makeWorld(items,width,height,rows,buffer){
  const svgWidth=width+buffer*2;
  const svg=svgEl("svg",{width:svgWidth,height,viewBox:`0 0 ${svgWidth} ${height}`,role:"group","aria-label":"Kolekcja wpisów Vengrath"});
  const defs=svgEl("defs");svg.append(defs);
+ const copies={-1:periodicSites.filter(site=>site.copy===-1),0:periodicSites.filter(site=>site.copy===0),1:periodicSites.filter(site=>site.copy===1)};
  function renderCell(site,fullPoly,clipPoly,shiftX,instance,showLabels){
   if(clipPoly.length<3)return;
   const full=fullPoly.map(p=>[p[0]+shiftX+buffer,p[1]]);
