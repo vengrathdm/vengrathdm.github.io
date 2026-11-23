@@ -260,7 +260,7 @@ async function initialize() {
   }
 
   let galleryPromise;
-  let chronicleRendered = false;
+  let chroniclePromise;
   document.addEventListener("vengrath:sectionchange", (event) => {
     const section = event.detail?.section;
     if (section === "characters" && !galleryPromise) {
@@ -271,13 +271,23 @@ async function initialize() {
         gallery.replaceChildren(el("p", "character-gallery__empty", "Nie udało się wczytać galerii postaci."));
       });
     }
-    if (section === "chronicle" && !chronicleRendered) {
-      document.querySelector("#chronicle-records").replaceChildren(
-        ...(content.chronicle.sessions || []).map((session) =>
-          makeChronicle(session, accent),
-        ),
-      );
-      chronicleRendered = true;
+    if (section === "chronicle" && !chroniclePromise) {
+      const panel = document.querySelector("#chronicle");
+      const container = document.querySelector("#chronicle-records");
+      panel.setAttribute("aria-busy", "true");
+      chroniclePromise = loadJson("./chronicle.json").then((chronicle) => {
+        container.replaceChildren(
+          ...(chronicle.sessions || []).map((session) => makeChronicle(session, accent)),
+        );
+        panel.setAttribute("aria-busy", "false");
+      }).catch((error) => {
+        console.error("Nie udało się wczytać kroniki kampanii.", error);
+        chroniclePromise = null;
+        panel.setAttribute("aria-busy", "false");
+        container.replaceChildren(
+          el("p", "character-gallery__empty", "Nie udało się wczytać kroniki. Spróbuj ponownie."),
+        );
+      });
     }
   });
 
