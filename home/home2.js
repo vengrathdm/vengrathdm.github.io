@@ -210,5 +210,5 @@ const endDrag=()=>{if(!dragging)return;dragging=false;viewport.classList.remove(
 viewport.addEventListener("pointerup",endDrag);viewport.addEventListener("pointercancel",endDrag);viewport.addEventListener("lostpointercapture",endDrag);
 viewport.addEventListener("click",e=>{if(suppressClick){e.preventDefault();e.stopPropagation();suppressClick=false;return}if(!e.target.closest(".cell")&&preview.dataset.href)hidePreview()},true);
 window.addEventListener("resize",()=>{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(build)});
-async function init(){const response=await fetch("/core/data/site-pages.json");if(!response.ok)throw new Error("Could not load Vengrath page registry");records=(await response.json()).filter(r=>typeof r.url==="string"&&r.url.startsWith("/page/")&&typeof r.title==="string"&&typeof r.image==="string");renderFilters();build()}
+async function init(){const response=await fetch("/core/data/site-pages.json");if(!response.ok)throw new Error("Could not load Vengrath page registry");records=(await response.json()).filter(r=>typeof r.url==="string"&&r.url.startsWith("/")&&!r.url.startsWith("//")&&typeof r.title==="string"&&typeof r.image==="string");renderFilters();build()}
 init().catch(error=>{console.error(error);board.textContent="Nie udało się wczytać kolekcji Vengrath.";board.style.color="#ffb4b4";});
