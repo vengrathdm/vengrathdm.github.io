@@ -1,1 +1,811 @@
-{"schemaVersion":1,"metadata":{"id":"dragons-due-relationships","name":"The Dragon's Due — Mapa relacji","updatedAt":"2026-11-23","layoutModes":{"complete":"force","family":"hierarchy","organization":"hierarchy","political":"force","characters":"force"},"entityTypes":[],"relationshipTypes":[{"name":"Sojusznik","description":"Współpraca lub wzajemne wsparcie.","color":"#83a98a","lineStyle":"solid","direction":"mutual"},{"name":"Służy","description":"Podległość lub służba wobec osoby albo instytucji.","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"name":"Wrogość","description":"Otwarty konflikt lub wrogość.","color":"#c65c58","lineStyle":"dashed","direction":"mutual"},{"name":"Kontroluje","description":"Sprawowanie kontroli nad osobą, miejscem lub organizacją.","color":"#9a8ac7","lineStyle":"solid","direction":"towards"},{"name":"Należy do","description":"Członkostwo w organizacji lub stronnictwie.","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"name":"Znajduje się w","description":"","color":"#8c9caa","lineStyle":"dotted","direction":"towards"},{"name":"Rodzina","description":"Więź rodzinna.","color":"#d8bb63","lineStyle":"solid","direction":"mutual"},{"name":"Poszukuje","description":"Poszukiwanie osoby, miejsca lub przedmiotu.","color":"#9a8ac7","lineStyle":"dotted","direction":"towards"},{"name":"Odpowiada za","description":"Formalna odpowiedzialność lub jurysdykcja.","color":"#68468f","lineStyle":"solid","direction":"towards"},{"name":"Rodzeństwo","description":"","color":"#d8bb63","lineStyle":"solid","direction":"none"},{"name":"Właściciela","description":"","color":"#d8bb63","lineStyle":"solid","direction":"none"},{"name":"Mieszka w","description":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"name":"Zaatakowali","description":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"name":"Jest szefem","description":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"name":"Biorą zboże","description":"","color":"#d8bb63","lineStyle":"solid","direction":"from"},{"name":"Dostarcza rozkazy i pieniądze","description":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"name":"Dokonuje kontroli zboża","description":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"name":"Była w spichlerzu","description":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"name":"Przebywają w","description":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"}],"savedViews":[]},"entities":[{"id":"entity-mwtlqnjc-je6o96","type":"Person","name":"Tessaly Harnwick","imageUrl":"","color":"#68468f","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":1185,"y":753},"positions":{"complete":{"x":1207.9625735141526,"y":137.56642288971318}}},{"id":"entity-mwtlwt56-3hwaq0","type":"Person","name":"Corwin Harnwick","imageUrl":"","color":"#68468f","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":962.8127596781273,"y":692.1839507433118},"positions":{"complete":{"x":941.6155060896017,"y":278.42052912757526}}},{"id":"entity-mwtlx84m-wioc76","type":"Person","name":"Joryn Hael","imageUrl":"","color":"#68468f","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":912.0018655121564,"y":871.552528943667},"positions":{"complete":{"x":-71.53552653740718,"y":453.16372317765826}}},{"id":"entity-mwtlxhhy-nqskov","type":"Location","name":"Eveningstar","imageUrl":"","color":"#3d514d","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":1257.8832535094284,"y":917.4659875273757},"positions":{"complete":{"x":515.2755419670724,"y":704.7039716274089}}},{"id":"entity-mwtlxqxz-zjehm9","type":"Location","name":"Arabel","imageUrl":"","color":"#3d514d","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":1328.8960694522311,"y":740.5461271181516},"positions":{"complete":{"x":1473.2419005922377,"y":8.702469358107635}}},{"id":"entity-mwtly3k1-5hcaod","type":"Institution","name":"Firma Przewozowa Harnwick","imageUrl":"","color":"#453452","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":1234.0082550459,"y":594.8474185458495},"positions":{"complete":{"x":1473.8072875744474,"y":274.69903010006504}}},{"id":"entity-mwtlzejf-gp113o","type":"Institution","name":"Purpurowe Smoki","imageUrl":"","color":"#453452","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":1036.8864728598433,"y":1027.0461086804933},"positions":{"complete":{"x":-114.34404764618904,"y":190.45735498700773}}},{"id":"entity-mwtm0mci-5fh25r","type":"Faction","name":"Bandyci w Bedińskich Szatach","imageUrl":"","color":"#453452","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":1428.069139993041,"y":746.0557421481966},"positions":{"complete":{"x":246.53774142150803,"y":770.852165344162}}},{"id":"entity-mwtm1az1-fqq1eo","type":"Person","name":"Orsun Dathe","imageUrl":"","color":"#68468f","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":1383.992219752681,"y":705.651898594533},"positions":{"complete":{"x":57.70870642970078,"y":1037.1600565623667}}},{"id":"entity-mwtm2101-eea9r0","type":"Faction","name":"Bandyci z Lasu Hullack","imageUrl":"","color":"#453452","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":1636.2101522391865,"y":823.8025320166098},"positions":{"complete":{"x":196.1016328447398,"y":236.32020978798505}}},{"id":"entity-mwtm38b7-5mfzvp","type":"Person","name":"Orlic Dane","imageUrl":"","color":"#68468f","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":1655.799894568236,"y":627.9051087261195},"positions":{"complete":{"x":-369.5771784275366,"y":455.74905535193676}}},{"id":"entity-mwtm4ijm-dhpb8s","type":"Person","name":"Kobieta w czerwonym płaszczu","imageUrl":"","color":"#68468f","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":1608.6620770889617,"y":1007.4563663514448},"positions":{"complete":{"x":242.89110595816268,"y":505.07876256105124}}},{"id":"entity-mwtm64jw-uhsq1y","type":"Person","name":"Tavi","imageUrl":"","color":"#68468f","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":1353.3948545047838,"y":1276.9702632389044},"positions":{"complete":{"x":514.5629151463975,"y":972.1546740673019}}},{"id":"entity-mwtm6nit-4guiex","type":"Person","name":"Pell Ostrander","imageUrl":"","color":"#68468f","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":1434.3438085829123,"y":1352.2977621727186},"positions":{"complete":{"x":780.5697264569383,"y":813.1676894638788}}},{"id":"entity-mwtm8bpl-67myqx","type":"Person","name":"Hessa Bram","imageUrl":"","color":"#68468f","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":1563.224957339271,"y":1212.5294256439995},"positions":{"complete":{"x":595.2962388304397,"y":206.48369521360894}}},{"id":"entity-mwtmapcs-nm3kgs","type":"Location","name":"Wieża Thornwick","imageUrl":"","color":"#3d514d","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":1847.3083980851607,"y":828.1584329006356},"positions":{"complete":{"x":161.63733017984032,"y":-28.17366142461225}}},{"id":"entity-mwtmbwde-8hde6w","type":"Object","name":"Magiczny Miecz","imageUrl":"","color":"#8f7040","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":1048.7057625474706,"y":-224.86450297429008},"positions":{"complete":{"x":25.741436677866602,"y":-296.85514778338336}}},{"id":"entity-mwtmcvyc-469m7i","type":"Faction","name":"Bandyci z Młyna przy Arabel","imageUrl":"","color":"#453452","borderColor":"#d8bb63","lineStyle":"solid","notes":"","fields":{},"customFields":[],"position":{"x":445.1198367103253,"y":90.91960907663751},"positions":{"complete":{"x":844.0506774787599,"y":547.4519552558344}}}],"relationships":[{"id":"rel-mwtlx0nm-88wc5b","source":"entity-mwtlwt56-3hwaq0","target":"entity-mwtlqnjc-je6o96","type":"Rodzeństwo","note":"","color":"#d8bb63","lineStyle":"solid","direction":"none"},{"id":"rel-mwtlyfz4-trn8n7","source":"entity-mwtlqnjc-je6o96","target":"entity-mwtly3k1-5hcaod","type":"Właściciela","note":"","color":"#d8bb63","lineStyle":"solid","direction":"none"},{"id":"rel-mwtlytgn-byuflv","source":"entity-mwtly3k1-5hcaod","target":"entity-mwtlxqxz-zjehm9","type":"Znajduje się w","note":"","color":"#8c9caa","lineStyle":"dotted","direction":"towards"},{"id":"rel-mwtlzlmu-r0k5v4","source":"entity-mwtlx84m-wioc76","target":"entity-mwtlzejf-gp113o","type":"Należy do","note":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"id":"rel-mwtlzvu6-fcuti4","source":"entity-mwtlx84m-wioc76","target":"entity-mwtlxhhy-nqskov","type":"Mieszka w","note":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"id":"rel-mwtm04tq-gusfza","source":"entity-mwtlqnjc-je6o96","target":"entity-mwtlxqxz-zjehm9","type":"Mieszka w","note":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"id":"rel-mwtm0vyx-nlld69","source":"entity-mwtm0mci-5fh25r","target":"entity-mwtlxhhy-nqskov","type":"Zaatakowali","note":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"id":"rel-mwtm1mo1-wsnrzu","source":"entity-mwtm1az1-fqq1eo","target":"entity-mwtm0mci-5fh25r","type":"Jest szefem","note":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"id":"rel-mwtm2emp-bxyu98","source":"entity-mwtm2101-eea9r0","target":"entity-mwtm0mci-5fh25r","type":"Biorą zboże","note":"","color":"#d8bb63","lineStyle":"solid","direction":"from"},{"id":"rel-mwtm3m14-6ee3qo","source":"entity-mwtm38b7-5mfzvp","target":"entity-mwtm2101-eea9r0","type":"Jest szefem","note":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"id":"rel-mwtm4tfa-50arj3","source":"entity-mwtm4ijm-dhpb8s","target":"entity-mwtm0mci-5fh25r","type":"Dostarcza rozkazy i pieniądze","note":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"id":"rel-mwtm558l-cm845q","source":"entity-mwtm4ijm-dhpb8s","target":"entity-mwtm2101-eea9r0","type":"Dostarcza rozkazy i pieniądze","note":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"id":"rel-mwtm5owq-5rwem5","source":"entity-mwtlwt56-3hwaq0","target":"entity-mwtlxhhy-nqskov","type":"Dokonuje kontroli zboża","note":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"id":"rel-mwtm69zi-5g6uc2","source":"entity-mwtm64jw-uhsq1y","target":"entity-mwtlxhhy-nqskov","type":"Mieszka w","note":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"id":"rel-mwtm6tul-ansknr","source":"entity-mwtm6nit-4guiex","target":"entity-mwtlxhhy-nqskov","type":"Mieszka w","note":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"id":"rel-mwtm8h7s-9a805x","source":"entity-mwtm8bpl-67myqx","target":"entity-mwtlxhhy-nqskov","type":"Mieszka w","note":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"id":"rel-mwtm8wi0-1w4q4m","source":"entity-mwtm8bpl-67myqx","target":"entity-mwtlxhhy-nqskov","type":"Była w spichlerzu","note":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"id":"rel-mwtmb29j-cwti1v","source":"entity-mwtm2101-eea9r0","target":"entity-mwtmapcs-nm3kgs","type":"Przebywają w","note":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"id":"rel-mwtmc4sc-ckud8n","source":"entity-mwtmbwde-8hde6w","target":"entity-mwtmapcs-nm3kgs","type":"Znajduje się w","note":"","color":"#8c9caa","lineStyle":"dotted","direction":"towards"},{"id":"rel-mwtmd1iy-rsqt9k","source":"entity-mwtm4ijm-dhpb8s","target":"entity-mwtmcvyc-469m7i","type":"Dostarcza rozkazy i pieniądze","note":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"id":"rel-mwtmdbpx-1ozun4","source":"entity-mwtmcvyc-469m7i","target":"entity-mwtm6nit-4guiex","type":"Zaatakowali","note":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"},{"id":"rel-mwtmdhau-6ovzqy","source":"entity-mwtmcvyc-469m7i","target":"entity-mwtlwt56-3hwaq0","type":"Zaatakowali","note":"","color":"#d8bb63","lineStyle":"solid","direction":"towards"}]}
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "id": "dragons-due-relationships",
+    "name": "The Dragon's Due — Mapa relacji",
+    "updatedAt": "2026-11-23",
+    "layoutModes": {
+      "complete": "manual",
+      "family": "hierarchy",
+      "organization": "hierarchy",
+      "political": "force",
+      "characters": "force"
+    },
+    "entityTypes": [],
+    "relationshipTypes": [
+      {
+        "name": "Sojusznik",
+        "description": "Współpraca lub wzajemne wsparcie.",
+        "color": "#83a98a",
+        "lineStyle": "solid",
+        "direction": "mutual"
+      },
+      {
+        "name": "Służy",
+        "description": "Podległość lub służba wobec osoby albo instytucji.",
+        "color": "#d8bb63",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Wrogość",
+        "description": "Otwarty konflikt lub wrogość.",
+        "color": "#c65c58",
+        "lineStyle": "dashed",
+        "direction": "mutual"
+      },
+      {
+        "name": "Kontroluje",
+        "description": "Sprawowanie kontroli nad osobą, miejscem lub organizacją.",
+        "color": "#9a8ac7",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Należy do",
+        "description": "Członkostwo w organizacji lub stronnictwie.",
+        "color": "#d8bb63",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Znajduje się w",
+        "description": "",
+        "color": "#8c9caa",
+        "lineStyle": "dotted",
+        "direction": "towards"
+      },
+      {
+        "name": "Rodzina",
+        "description": "Więź rodzinna.",
+        "color": "#d8bb63",
+        "lineStyle": "solid",
+        "direction": "mutual"
+      },
+      {
+        "name": "Poszukuje",
+        "description": "Poszukiwanie osoby, miejsca lub przedmiotu.",
+        "color": "#9a8ac7",
+        "lineStyle": "dotted",
+        "direction": "towards"
+      },
+      {
+        "name": "Odpowiada za",
+        "description": "Formalna odpowiedzialność lub jurysdykcja.",
+        "color": "#68468f",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Rodzeństwo",
+        "description": "",
+        "color": "#d8bb63",
+        "lineStyle": "solid",
+        "direction": "none"
+      },
+      {
+        "name": "Właściciela",
+        "description": "",
+        "color": "#d8bb63",
+        "lineStyle": "solid",
+        "direction": "none"
+      },
+      {
+        "name": "Mieszka w",
+        "description": "",
+        "color": "#d8bb63",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Zaatakowali",
+        "description": "",
+        "color": "#d8bb63",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Jest szefem",
+        "description": "",
+        "color": "#d8bb63",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Biorą zboże",
+        "description": "",
+        "color": "#d8bb63",
+        "lineStyle": "solid",
+        "direction": "from"
+      },
+      {
+        "name": "Dostarcza rozkazy i pieniądze",
+        "description": "",
+        "color": "#d8bb63",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Dokonuje kontroli zboża",
+        "description": "",
+        "color": "#d8bb63",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Była w spichlerzu",
+        "description": "",
+        "color": "#d8bb63",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Przebywają w",
+        "description": "",
+        "color": "#d8bb63",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Martwi się o",
+        "description": "",
+        "color": "#d8bb63",
+        "lineStyle": "solid",
+        "direction": "towards"
+      }
+    ],
+    "savedViews": []
+  },
+  "entities": [
+    {
+      "id": "entity-mwtlqnjc-je6o96",
+      "type": "Person",
+      "name": "Tessaly Harnwick",
+      "imageUrl": "https://vengrathdm.github.io/page/the-dragons-due/Mapa-Relacji/data/res/Tessaly%20Harnwick.webp",
+      "color": "#68468f",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1185,
+        "y": 753
+      },
+      "positions": {
+        "complete": {
+          "x": -74.11464510026869,
+          "y": 372.3611725172948
+        }
+      }
+    },
+    {
+      "id": "entity-mwtlwt56-3hwaq0",
+      "type": "Person",
+      "name": "Corwin Harnwick",
+      "imageUrl": "https://vengrathdm.github.io/page/the-dragons-due/Mapa-Relacji/data/res/Corwin%20Harnwick.webp",
+      "color": "#68468f",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 962.8127596781273,
+        "y": 692.1839507433118
+      },
+      "positions": {
+        "complete": {
+          "x": 105.39132470297916,
+          "y": 462.2255762024939
+        }
+      }
+    },
+    {
+      "id": "entity-mwtlx84m-wioc76",
+      "type": "Person",
+      "name": "Joryn Hael",
+      "imageUrl": "https://vengrathdm.github.io/page/the-dragons-due/Mapa-Relacji/data/res/Captain%20Joryn%20Hael.webp",
+      "color": "#68468f",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 912.0018655121564,
+        "y": 871.552528943667
+      },
+      "positions": {
+        "complete": {
+          "x": 53.261329444105044,
+          "y": 742.3241940750218
+        }
+      }
+    },
+    {
+      "id": "entity-mwtlxhhy-nqskov",
+      "type": "Location",
+      "name": "Eveningstar",
+      "imageUrl": "",
+      "color": "#3d514d",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1257.8832535094284,
+        "y": 917.4659875273757
+      },
+      "positions": {
+        "complete": {
+          "x": 172.0418106477486,
+          "y": 923.8496817092998
+        }
+      }
+    },
+    {
+      "id": "entity-mwtlxqxz-zjehm9",
+      "type": "Location",
+      "name": "Arabel",
+      "imageUrl": "",
+      "color": "#3d514d",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1328.8960694522311,
+        "y": 740.5461271181516
+      },
+      "positions": {
+        "complete": {
+          "x": -368.58163446522224,
+          "y": 532.0326849821271
+        }
+      }
+    },
+    {
+      "id": "entity-mwtly3k1-5hcaod",
+      "type": "Institution",
+      "name": "Firma Przewozowa Harnwick",
+      "imageUrl": "",
+      "color": "#453452",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1234.0082550459,
+        "y": 594.8474185458495
+      },
+      "positions": {
+        "complete": {
+          "x": -376.8809964721975,
+          "y": 251.10162489867776
+        }
+      }
+    },
+    {
+      "id": "entity-mwtlzejf-gp113o",
+      "type": "Institution",
+      "name": "Purpurowe Smoki",
+      "imageUrl": "",
+      "color": "#453452",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1036.8864728598433,
+        "y": 1027.0461086804933
+      },
+      "positions": {
+        "complete": {
+          "x": -110.71194650988383,
+          "y": 821.3688333999515
+        }
+      }
+    },
+    {
+      "id": "entity-mwtm0mci-5fh25r",
+      "type": "Faction",
+      "name": "Bandyci w Bedińskich Szatach",
+      "imageUrl": "",
+      "color": "#453452",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1428.069139993041,
+        "y": 746.0557421481966
+      },
+      "positions": {
+        "complete": {
+          "x": 606.7553638934494,
+          "y": 782.1745099877963
+        }
+      }
+    },
+    {
+      "id": "entity-mwtm1az1-fqq1eo",
+      "type": "Person",
+      "name": "Orsun Dathe",
+      "imageUrl": "https://vengrathdm.github.io/page/the-dragons-due/Mapa-Relacji/data/res/Orsun%20Dathe.webp",
+      "color": "#68468f",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1383.992219752681,
+        "y": 705.651898594533
+      },
+      "positions": {
+        "complete": {
+          "x": 805.92627310306,
+          "y": 1001.6656021778075
+        }
+      }
+    },
+    {
+      "id": "entity-mwtm2101-eea9r0",
+      "type": "Faction",
+      "name": "Bandyci z Lasu Hullack",
+      "imageUrl": "",
+      "color": "#453452",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1636.2101522391865,
+        "y": 823.8025320166098
+      },
+      "positions": {
+        "complete": {
+          "x": 792.0295358066494,
+          "y": 517.805082091399
+        }
+      }
+    },
+    {
+      "id": "entity-mwtm38b7-5mfzvp",
+      "type": "Person",
+      "name": "Orlic Dane",
+      "imageUrl": "https://vengrathdm.github.io/page/the-dragons-due/Mapa-Relacji/data/res/Orlic%20Dane.webp",
+      "color": "#68468f",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1655.799894568236,
+        "y": 627.9051087261195
+      },
+      "positions": {
+        "complete": {
+          "x": 996.8949290459371,
+          "y": 563.3560614003324
+        }
+      }
+    },
+    {
+      "id": "entity-mwtm4ijm-dhpb8s",
+      "type": "Person",
+      "name": "Kobieta w czerwonym płaszczu",
+      "imageUrl": "https://vengrathdm.github.io/page/the-dragons-due/Mapa-Relacji/data/res/Sabra%20Quill.webp",
+      "color": "#68468f",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1608.6620770889617,
+        "y": 1007.4563663514448
+      },
+      "positions": {
+        "complete": {
+          "x": 559.0554984143553,
+          "y": 549.0697610602068
+        }
+      }
+    },
+    {
+      "id": "entity-mwtm64jw-uhsq1y",
+      "type": "Person",
+      "name": "Tavi",
+      "imageUrl": "https://vengrathdm.github.io/page/the-dragons-due/Mapa-Relacji/data/res/Tavi%20Greenmantle.webp",
+      "color": "#68468f",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1353.3948545047838,
+        "y": 1276.9702632389044
+      },
+      "positions": {
+        "complete": {
+          "x": -66.46802529462434,
+          "y": 1001.1182892406182
+        }
+      }
+    },
+    {
+      "id": "entity-mwtm6nit-4guiex",
+      "type": "Person",
+      "name": "Pell Ostrander",
+      "imageUrl": "https://vengrathdm.github.io/page/the-dragons-due/Mapa-Relacji/data/res/Pell%20Ostrander.webp",
+      "color": "#68468f",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1434.3438085829123,
+        "y": 1352.2977621727186
+      },
+      "positions": {
+        "complete": {
+          "x": 242.61270961476518,
+          "y": 621.4022131568897
+        }
+      }
+    },
+    {
+      "id": "entity-mwtm8bpl-67myqx",
+      "type": "Person",
+      "name": "Hessa Bram",
+      "imageUrl": "https://vengrathdm.github.io/page/the-dragons-due/Mapa-Relacji/data/res/Mother%20Hessa%20Bram.webp",
+      "color": "#68468f",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1563.224957339271,
+        "y": 1212.5294256439995
+      },
+      "positions": {
+        "complete": {
+          "x": 342.21224715988177,
+          "y": 1157.1113174943669
+        }
+      }
+    },
+    {
+      "id": "entity-mwtmapcs-nm3kgs",
+      "type": "Location",
+      "name": "Wieża Thornwick",
+      "imageUrl": "",
+      "color": "#3d514d",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1847.3083980851607,
+        "y": 828.1584329006356
+      },
+      "positions": {
+        "complete": {
+          "x": 655.5393267455895,
+          "y": 221.48387977062848
+        }
+      }
+    },
+    {
+      "id": "entity-mwtmbwde-8hde6w",
+      "type": "Object",
+      "name": "Magiczny Miecz",
+      "imageUrl": "",
+      "color": "#8f7040",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 1048.7057625474706,
+        "y": -224.86450297429008
+      },
+      "positions": {
+        "complete": {
+          "x": 919.4751997207167,
+          "y": 324.4536204412233
+        }
+      }
+    },
+    {
+      "id": "entity-mwtmcvyc-469m7i",
+      "type": "Faction",
+      "name": "Bandyci z Młyna przy Arabel",
+      "imageUrl": "",
+      "color": "#453452",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": 445.1198367103253,
+        "y": 90.91960907663751
+      },
+      "positions": {
+        "complete": {
+          "x": 388.0577660574373,
+          "y": 370.0888621388638
+        }
+      }
+    },
+    {
+      "id": "entity-mwto0cgx-lmv1f9",
+      "type": "Location",
+      "name": "Dziki sad w Lesie Królewskim",
+      "imageUrl": "",
+      "color": "#3d514d",
+      "borderColor": "#d8bb63",
+      "lineStyle": "solid",
+      "notes": "",
+      "fields": {},
+      "customFields": [],
+      "position": {
+        "x": -293.9209954393748,
+        "y": 993.9045250366219
+      },
+      "positions": {
+        "complete": {
+          "x": 121.38997764169432,
+          "y": 1203.6721049673301
+        }
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel-mwtlx0nm-88wc5b",
+      "source": "entity-mwtlwt56-3hwaq0",
+      "target": "entity-mwtlqnjc-je6o96",
+      "type": "Rodzeństwo",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "none"
+    },
+    {
+      "id": "rel-mwtlyfz4-trn8n7",
+      "source": "entity-mwtlqnjc-je6o96",
+      "target": "entity-mwtly3k1-5hcaod",
+      "type": "Właściciela",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "none"
+    },
+    {
+      "id": "rel-mwtlytgn-byuflv",
+      "source": "entity-mwtly3k1-5hcaod",
+      "target": "entity-mwtlxqxz-zjehm9",
+      "type": "Znajduje się w",
+      "note": "",
+      "color": "#8c9caa",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtlzlmu-r0k5v4",
+      "source": "entity-mwtlx84m-wioc76",
+      "target": "entity-mwtlzejf-gp113o",
+      "type": "Należy do",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtlzvu6-fcuti4",
+      "source": "entity-mwtlx84m-wioc76",
+      "target": "entity-mwtlxhhy-nqskov",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtm04tq-gusfza",
+      "source": "entity-mwtlqnjc-je6o96",
+      "target": "entity-mwtlxqxz-zjehm9",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtm0vyx-nlld69",
+      "source": "entity-mwtm0mci-5fh25r",
+      "target": "entity-mwtlxhhy-nqskov",
+      "type": "Zaatakowali",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtm1mo1-wsnrzu",
+      "source": "entity-mwtm1az1-fqq1eo",
+      "target": "entity-mwtm0mci-5fh25r",
+      "type": "Jest szefem",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtm2emp-bxyu98",
+      "source": "entity-mwtm2101-eea9r0",
+      "target": "entity-mwtm0mci-5fh25r",
+      "type": "Biorą zboże",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "from"
+    },
+    {
+      "id": "rel-mwtm3m14-6ee3qo",
+      "source": "entity-mwtm38b7-5mfzvp",
+      "target": "entity-mwtm2101-eea9r0",
+      "type": "Jest szefem",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtm4tfa-50arj3",
+      "source": "entity-mwtm4ijm-dhpb8s",
+      "target": "entity-mwtm0mci-5fh25r",
+      "type": "Dostarcza rozkazy i pieniądze",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtm558l-cm845q",
+      "source": "entity-mwtm4ijm-dhpb8s",
+      "target": "entity-mwtm2101-eea9r0",
+      "type": "Dostarcza rozkazy i pieniądze",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtm5owq-5rwem5",
+      "source": "entity-mwtlwt56-3hwaq0",
+      "target": "entity-mwtlxhhy-nqskov",
+      "type": "Dokonuje kontroli zboża",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtm69zi-5g6uc2",
+      "source": "entity-mwtm64jw-uhsq1y",
+      "target": "entity-mwtlxhhy-nqskov",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtm6tul-ansknr",
+      "source": "entity-mwtm6nit-4guiex",
+      "target": "entity-mwtlxhhy-nqskov",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtm8h7s-9a805x",
+      "source": "entity-mwtm8bpl-67myqx",
+      "target": "entity-mwtlxhhy-nqskov",
+      "type": "Mieszka w",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtm8wi0-1w4q4m",
+      "source": "entity-mwtm8bpl-67myqx",
+      "target": "entity-mwtlxhhy-nqskov",
+      "type": "Była w spichlerzu",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtmb29j-cwti1v",
+      "source": "entity-mwtm2101-eea9r0",
+      "target": "entity-mwtmapcs-nm3kgs",
+      "type": "Przebywają w",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtmc4sc-ckud8n",
+      "source": "entity-mwtmbwde-8hde6w",
+      "target": "entity-mwtmapcs-nm3kgs",
+      "type": "Znajduje się w",
+      "note": "",
+      "color": "#8c9caa",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtmd1iy-rsqt9k",
+      "source": "entity-mwtm4ijm-dhpb8s",
+      "target": "entity-mwtmcvyc-469m7i",
+      "type": "Dostarcza rozkazy i pieniądze",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtmdbpx-1ozun4",
+      "source": "entity-mwtmcvyc-469m7i",
+      "target": "entity-mwtm6nit-4guiex",
+      "type": "Zaatakowali",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwtmdhau-6ovzqy",
+      "source": "entity-mwtmcvyc-469m7i",
+      "target": "entity-mwtlwt56-3hwaq0",
+      "type": "Zaatakowali",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-mwto0qwg-gx4dxu",
+      "source": "entity-mwtm64jw-uhsq1y",
+      "target": "entity-mwto0cgx-lmv1f9",
+      "type": "Martwi się o",
+      "note": "",
+      "color": "#d8bb63",
+      "lineStyle": "solid",
+      "direction": "towards"
+    }
+  ]
+}
