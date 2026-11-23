@@ -1,1 +1,20 @@
-/* Legacy cursor stylesheet retained as an empty compatibility file. */
+/* Vengrath site-wide pointer — Heartwell-style DOM cursor. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html, body, body * { cursor: none !important; }
+  .vengrath-cursor {
+    position: fixed; top: 0; left: 0; z-index: 2147483647;
+    width: 34px; height: 34px; pointer-events: none; opacity: 0;
+    background: center / contain no-repeat url("/core/templates/Cursor/vengrath-compass.svg");
+    transform: translate3d(-50%, -50%, 0);
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,.75)) drop-shadow(0 0 5px rgba(190,145,72,.22));
+    transition: opacity 110ms ease, width 140ms ease, height 140ms ease, filter 140ms ease;
+    will-change: transform;
+  }
+  .vengrath-cursor.is-visible { opacity: 1; }
+  .vengrath-cursor.is-hovering {
+    width: 43px; height: 43px;
+    filter: drop-shadow(0 0 7px rgba(218,177,104,.55)) drop-shadow(0 1px 3px rgba(0,0,0,.8));
+  }
+  .vengrath-cursor.is-pressed { width: 27px; height: 27px; }
+}
+@media (prefers-reduced-motion: reduce) { .vengrath-cursor { transition: none !important; } }
