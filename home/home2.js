@@ -118,7 +118,7 @@ function makeWorld(items,width,height,rows,buffer){
  const svgWidth=width+buffer*2;
  const svg=svgEl("svg",{width:svgWidth,height,viewBox:`0 0 ${svgWidth} ${height}`,role:"group","aria-label":"Kolekcja wpisów Vengrath"});
  const defs=svgEl("defs");svg.append(defs);
- const copies={-1:periodicSites.filter(site=>site.copy===-1),0:periodicSites.filter(site=>site.copy===0),1:periodicSites.filter(site=>site.copy===1)};
+ const copies={left:periodicSites.filter(site=>site.copy===-1),center:periodicSites.filter(site=>site.copy===0),right:periodicSites.filter(site=>site.copy===1)};
  function renderCell(site,fullPoly,clipPoly,shiftX,instance,showLabels){
   if(clipPoly.length<3)return;
   const full=fullPoly.map(p=>[p[0]+shiftX+buffer,p[1]]);
@@ -150,17 +150,17 @@ function makeWorld(items,width,height,rows,buffer){
   }
   svg.append(anchor);
  }
- for(const site of copies[0]){
+ for(const site of copies.center){
   const poly=periodicCell(site,periodicSites,[0,width,height]);
   if(poly.length>=3)renderCell(site,poly,poly,0,"main",true);
  }
- for(const site of copies[-1]){
+ for(const site of copies.left){
   const poly=periodicCell(site,periodicSites,[-width,0,height]);
   if(poly.length<3)continue;
   const visible=clipHalfPlane(clipHalfPlane(poly,1,0,0),-1,0,buffer);
   if(visible.length>=3)renderCell(site,poly,visible,0,"left",false);
  }
- for(const site of copies[1]){
+ for(const site of copies.right){
   const poly=periodicCell(site,periodicSites,[width,2*width,height]);
   if(poly.length<3)continue;
   const visible=clipHalfPlane(clipHalfPlane(poly,1,0,width+buffer),-1,0,-width);
