@@ -1,0 +1,428 @@
+{
+  "kicker": "AKTA / KRONIKA",
+  "title": "Nagrania i odnośniki",
+  "description": "Nagrania sesji 0 oraz sesji 1–41 kampanii Klątwa Strahda.",
+  "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0iV1jQn2XOgFinqnMr5Zxix",
+  "sessions": [
+    {
+      "sessionNumber": 0,
+      "title": "Klątwa Strahda - Sesja 0",
+      "description": "Sesja wprowadzająca.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=_3ZYWLc_X3A"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 1,
+      "title": "Klątwa Strahda - S1 [D&D5e]",
+      "description": "Nagranie 1. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=nQg1kXHYrf4"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 2,
+      "title": "Klątwa Strahda - S2 [D&D5e]",
+      "description": "Nagranie 2. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=P3mkuOzb1D0"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 3,
+      "title": "Klątwa Strahda - S3 [D&D5e]",
+      "description": "Nagranie 3. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=6xOAzdkkuDM"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 4,
+      "title": "Klątwa Strahda - S4 [D&D5e]",
+      "description": "Nagranie 4. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=0mn84hxsl2g"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 5,
+      "title": "Klątwa Strahda - S5 [D&D5e]",
+      "description": "Nagranie 5. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=YyVqo-IpEyM"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 6,
+      "title": "Klątwa Strahda - S6 [D&D5e]",
+      "description": "Nagranie 6. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=RpMH_HOJMn4"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 7,
+      "title": "Klątwa Strahda - S7 [D&D5e]",
+      "description": "Nagranie 7. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=Q-e-rdaxWcI"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 8,
+      "title": "Klątwa Strahda - S8 [D&D5e]",
+      "description": "Nagranie 8. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=C0IVVBHH7yI"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 9,
+      "title": "Klątwa Strahda - S9 [D&D5e]",
+      "description": "Nagranie 9. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=xjTXVqn0PPk"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 10,
+      "title": "Klątwa Strahda - S10 [D&D5e]",
+      "description": "Nagranie 10. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=KGUyuWe04QI"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 11,
+      "title": "Klątwa Strahda - S11 [D&D5e]",
+      "description": "Nagranie 11. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=1Ln6qjjKqhE"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 12,
+      "title": "Klątwa Strahda - S12 [D&D5e]",
+      "description": "Nagranie 12. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=0bVNznM5d1M"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 13,
+      "title": "Klątwa Strahda - S13 [D&D5e]",
+      "description": "Nagranie 13. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=aHXpAVywpVw"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 14,
+      "title": "Klątwa Strahda - S14 [D&D5e]",
+      "description": "Nagranie 14. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=lERYPQxcqpU"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 15,
+      "title": "Klątwa Strahda - S15 [D&D5e]",
+      "description": "Nagranie 15. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=dgH725elP2o"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 16,
+      "title": "Klątwa Strahda - S16 [D&D5e]",
+      "description": "Nagranie 16. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=XUUUPHbc7YI"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 17,
+      "title": "Klątwa Strahda - S17 [D&D5e]",
+      "description": "Nagranie 17. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=O7znp3K8kC0"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 18,
+      "title": "Klątwa Strahda - S18 [D&D5e]",
+      "description": "Nagranie 18. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=R57IkkBJ9PQ"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 19,
+      "title": "Klątwa Strahda - S19 [D&D5e]",
+      "description": "Nagranie 19. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=5qH6lwi08Fw"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 20,
+      "title": "Klątwa Strahda - S20 [D&D5e]",
+      "description": "Nagranie 20. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=tlxu29gQkbk"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 21,
+      "title": "Klątwa Strahda - S21 [D&D5e]",
+      "description": "Nagranie 21. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=e-d9NAaCyvs"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 22,
+      "title": "Klątwa Strahda - S22 [D&D5e]",
+      "description": "Nagranie 22. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=PmiLlqwJDHE"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 23,
+      "title": "Klątwa Strahda - S23 [D&D5e]",
+      "description": "Nagranie 23. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=YattJ2fDVhc"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 24,
+      "title": "Klątwa Strahda - S24 [D&D5e]",
+      "description": "Nagranie 24. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=RIjXv8SZCSg"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 25,
+      "title": "Klątwa Strahda - S25 [D&D5e]",
+      "description": "Nagranie 25. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=euqWOXV3PH0"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 26,
+      "title": "Klątwa Strahda - S26 [D&D5e]",
+      "description": "Nagranie 26. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=1518HZ1gmgY"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 27,
+      "title": "Klątwa Strahda - S27 [D&D5e]",
+      "description": "Nagranie 27. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=haZAmaapZrQ"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 28,
+      "title": "Klątwa Strahda - S28 [D&D5e]",
+      "description": "Nagranie 28. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=cndJlIMzxsE"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 29,
+      "title": "Klątwa Strahda - S29 [D&D5e]",
+      "description": "Nagranie 29. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=g7j9FJyjNgk"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 30,
+      "title": "Klątwa Strahda - S30 [D&D5e]",
+      "description": "Nagranie 30. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=0oDMidPS7qQ"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 31,
+      "title": "Klątwa Strahda - S31 [D&D5e]",
+      "description": "Nagranie 31. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=hjGjS2WOFLk"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 32,
+      "title": "Klątwa Strahda - S32 [D&D5e]",
+      "description": "Nagranie 32. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=NONAdRVOjls"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 33,
+      "title": "Klątwa Strahda - S33 [D&D5e]",
+      "description": "Nagranie 33. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=NC-NgON3BJA"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 34,
+      "title": "Klątwa Strahda - S34 [D&D5e]",
+      "description": "Nagranie 34. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=ziaVdg5TwRc"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 35,
+      "title": "Klątwa Strahda - S35 [D&D5e]",
+      "description": "Nagranie 35. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=_eCtMa1p9RY"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 36,
+      "title": "Klątwa Strahda - S36 [D&D5e]",
+      "description": "Nagranie 36. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=R0Eq7v-sdTw"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 37,
+      "title": "Klątwa Strahda - S37 [D&D5e]",
+      "description": "Nagranie 37. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=8M8AWj_RFsw"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 38,
+      "title": "Klątwa Strahda - S38 [D&D5e]",
+      "description": "Nagranie 38. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=wU754v6J9aY"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 39,
+      "title": "Klątwa Strahda - S39 [D&D5e]",
+      "description": "Nagranie 39. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=T8afaUwbpt4"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 40,
+      "title": "Klątwa Strahda - S40 [D&D5e]",
+      "description": "Nagranie 40. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=A9Evme4gQwo"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 41,
+      "title": "Klątwa Strahda - S41 [D&D5e]",
+      "description": "Nagranie 41. sesji kampanii Klątwa Strahda.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=iqUMj3miP50"
+        }
+      ]
+    }
+  ]
+}
