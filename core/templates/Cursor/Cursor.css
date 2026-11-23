@@ -1,4 +1,1 @@
-/* Site-wide fallback cursor. Page-specific campaign rules load after this file and override it. */
-html, body, body * {
-  cursor: url("/core/graphics/cursors/default.png") 10 10, auto;
-}
+/* Legacy cursor stylesheet retained as an empty compatibility file. */
