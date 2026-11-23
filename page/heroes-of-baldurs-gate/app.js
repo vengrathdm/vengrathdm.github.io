@@ -51,8 +51,8 @@ async function initializeCampaignPage() {
     playlistUrl: manifest.playlistUrl || undefined,
     sections: [
       {text: "Kampania", sectionLink: "campaign", color: accent},
-      {text: "Postaci", sectionLink: "characters", color: theme.colors.accent2},
-      {text: "Kronika", sectionLink: "chronicle", color: theme.colors.accent2},
+      {text: "Postaci", sectionLink: "characters", color: accent},
+      {text: "Kronika", sectionLink: "chronicle", color: accent},
     ],
   });
 
