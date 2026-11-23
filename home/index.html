@@ -8,8 +8,11 @@
   <title>Vengrath — Home</title>
   <link rel="icon" href="/core/graphics/favicon/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3-delaunay@6.0.4/+esm" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&display=swap" rel="stylesheet">
+  <link rel="preload" href="/home/home2.css" as="style">
   <link rel="stylesheet" href="/home/home2.css">
   <link rel="stylesheet" href="/core/templates/Cursor/Cursor.css">
 </head>
@@ -19,7 +22,7 @@
   <div class="home-app" id="app">
     <header class="topbar">
       <a class="brand" href="/home/" aria-label="Vengrath — strona główna">
-        <img src="/core/graphics/favicon/mg-logo.png" alt="">
+        <img src="/core/graphics/favicon/mg-logo.png" alt="" fetchpriority="high" decoding="async">
         <span>VENGRATH</span>
       </a>
       <nav id="filters" class="filters" aria-label="Tagi"></nav>
@@ -79,6 +82,7 @@
     </aside>
   </div>
 
+  <link rel="modulepreload" href="/home/home2.js">
   <script type="module" src="/home/home2.js"></script>
   <script src="/core/templates/Cursor/Cursor.js" defer></script>
 </body>
