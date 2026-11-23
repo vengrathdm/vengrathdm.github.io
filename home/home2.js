@@ -149,18 +149,21 @@ function makeWorld(items,width,height,rows,buffer){
   }
   svg.append(anchor);
  }
- const copies={};
- for(const copy of [-1,0,1])copies[copy]=periodicSites.filter(site=>site.copy===copy);
- for(const copy of [0,-1,1]){
-  const clipLeft=copy===-1?-buffer:copy===0?0:width;
-  const clipRight=copy===-1?0:copy===0?width:width+buffer;
-  for(const site of copies[copy]){
-   const poly=periodicCell(site,periodicSites,[-buffer,width+buffer,height]);
-   if(poly.length<3)continue;
-   const clipped=clipHalfPlane(clipHalfPlane(poly,1,0,clipRight,1),-1,0,-clipLeft,1);
-   if(clipped.length<3)continue;
-   renderCell(site,poly,clipped,0,copy===0?"main":copy===-1?"left":"right",copy===0);
-  }
+ for(const site of copies[0]){
+  const poly=periodicCell(site,periodicSites,[0,width,height]);
+  if(poly.length>=3)renderCell(site,poly,poly,0,"main",true);
+ }
+ for(const site of copies[-1]){
+  const poly=periodicCell(site,periodicSites,[-width,0,height]);
+  if(poly.length<3)continue;
+  const visible=clipHalfPlane(clipHalfPlane(poly,1,0,0),-1,0,buffer);
+  if(visible.length>=3)renderCell(site,poly,visible,0,"left",false);
+ }
+ for(const site of copies[1]){
+  const poly=periodicCell(site,periodicSites,[width,2*width,height]);
+  if(poly.length<3)continue;
+  const visible=clipHalfPlane(clipHalfPlane(poly,1,0,width+buffer),-1,0,-width);
+  if(visible.length>=3)renderCell(site,poly,visible,0,"right",false);
  }
  return svg;
 }
