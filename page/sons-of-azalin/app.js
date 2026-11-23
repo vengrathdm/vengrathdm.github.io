@@ -1,4 +1,4 @@
-/* Drakkenheim — campaign-local runtime; shared template behavior is localized here. */
+/* Sons of Azalin — campaign-local runtime; shared template behavior is localized here. */
 const themeVars={base1:"--theme-base-1",base2:"--theme-base-2",base3:"--theme-base-3",base4:"--theme-base-4",base5:"--theme-base-5",accent1:"--theme-accent-1",accent2:"--theme-accent-2",text1:"--theme-text-1",text2:"--theme-text-2",text3:"--theme-text-3",textMuted:"--theme-text-muted",titleAccent:"--theme-title-accent",line1:"--theme-line-1",line2:"--theme-line-2",navBackground:"--theme-nav-background",navText:"--theme-nav-text",navActiveBackground:"--theme-nav-active-background"};
 async function loadJson(path){const r=await fetch(path);if(!r.ok)throw Error("Nie udało się wczytać pliku: "+path);return r.json();}
 function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
