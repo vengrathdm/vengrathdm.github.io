@@ -1,4 +1,10 @@
 /* Vengrath global pointer — shared Heartwell-style DOM tracking. */
+if (!document.querySelector('link[href="/core/templates/Cursor/Cursor.css"]')) {
+  const stylesheet = document.createElement("link");
+  stylesheet.rel = "stylesheet";
+  stylesheet.href = "/core/templates/Cursor/Cursor.css";
+  document.head.appendChild(stylesheet);
+}
 (() => {
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)");
   if (!finePointer.matches || document.querySelector(".vengrath-cursor")) return;
