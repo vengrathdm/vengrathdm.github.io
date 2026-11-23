@@ -29,6 +29,11 @@ function fitText(group,text,x,y,maxWidth,maxLines,fontSize,className,letterSpaci
  group.append(el);return shown.length*lineHeight;
 }
 const prefetchedPages=new Set(),prefetchedAssets=new Set(),inspectedStylesheets=new Set();
+const PREFETCH_LIMIT=4;
+let activePrefetches=0;
+const prefetchQueue=[];
+function schedulePrefetch(task){prefetchQueue.push(task);drainPrefetchQueue()}
+function drainPrefetchQueue(){while(activePrefetches<PREFETCH_LIMIT&&prefetchQueue.length){const task=prefetchQueue.shift();activePrefetches++;Promise.resolve().then(task).catch(()=>{}).finally(()=>{activePrefetches--;drainPrefetchQueue()})}}
 const PREFETCH_ORIGINS=new Set([location.origin,"https://cdn.jsdelivr.net","https://fonts.googleapis.com","https://fonts.gstatic.com"]);
 function allowedPrefetchUrl(value,base=location.href){
  try{const url=new URL(value,base);return /^https?:$/.test(url.protocol)&&PREFETCH_ORIGINS.has(url.origin)?url:null}catch{return null}
@@ -55,7 +60,7 @@ function cssResources(css,base){
 async function inspectStylesheet(href){
  const url=allowedPrefetchUrl(href);if(!url||inspectedStylesheets.has(url.href))return;
  inspectedStylesheets.add(url.href);
- try{const response=await fetch(url.href,{mode:"cors",credentials:url.origin===location.origin?"same-origin":"omit"});if(response.ok)cssResources(await response.text(),url.href)}catch{}
+ schedulePrefetch(async()=>{try{const response=await fetch(url.href,{mode:"cors",credentials:url.origin===location.origin?"same-origin":"omit"});if(response.ok)cssResources(await response.text(),url.href)}catch{}});
 }
 function prefetchDocumentAssets(doc,pageUrl){
  const styles=[...doc.querySelectorAll('link[rel~="stylesheet"][href]')].map(el=>el.href).slice(0,4);
