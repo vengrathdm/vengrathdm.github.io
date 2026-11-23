@@ -1,9 +1,10 @@
+import { Delaunay } from "https://cdn.jsdelivr.net/npm/d3-delaunay@6.0.4/+esm";
+
 const $=s=>document.querySelector(s);
 const viewport=$("#viewport"),board=$("#board"),filters=$("#filters"),search=$("#search"),emptyState=$("#empty-state"),preview=$("#preview"),contextMenu=$("#card-context-menu"),contextPreview=$("#context-preview-backdrop");
 let records=[],activeTags=new Set(),resizeFrame=0,previewEnabled=false;
-let worldWidth=0,scrollBuffer=0,dragging=false,lastPointerX=0,lastMoveTime=0,velocity=0,inertiaFrame=0;
+let worldWidth=0,dragging=false,lastPointerX=0,lastMoveTime=0,velocity=0,inertiaFrame=0;
 let suppressClick=false,pressedCardHref=null;
-const imageObserver="IntersectionObserver" in window?new IntersectionObserver(entries=>{for(const entry of entries){if(!entry.isIntersecting)continue;const image=entry.target,src=image.getAttribute("data-src");if(src&&!image.hasAttribute("href"))image.setAttribute("href",src);imageObserver.unobserve(image)}},{root:viewport,rootMargin:"900px 1100px",threshold:0}):null;
 
 function seededRandom(seed){let v=seed>>>0;return()=>{v=(v*1664525+1013904223)>>>0;return v/4294967296}}
 
@@ -84,108 +85,60 @@ async function prefetchPage(record){
   prefetchDocumentAssets(doc,url.href);
  }catch(error){console.debug("Page asset prefetch skipped",url.href,error)}
 }
-function clipHalfPlane(poly,a,b,c){
- const out=[];if(!poly.length)return out;
- for(let i=0;i<poly.length;i++){
-  const p=poly[i],q=poly[(i+1)%poly.length];
-  const dp=a*p[0]+b*p[1]-c,dq=a*q[0]+b*q[1]-c;
-  const pin=dp<=1e-7,qin=dq<=1e-7;
-  if(pin!==qin){const t=dp/(dp-dq);out.push([p[0]+(q[0]-p[0])*t,p[1]+(q[1]-p[1])*t])}
-  if(qin)out.push(q);
- }
- return out;
-}
-function periodicCell(site,sites,rect){
- let poly=[[rect[0],0],[rect[1],0],[rect[1],rect[2]],[rect[0],rect[2]]];
- for(const other of sites){
-  if(other===site)continue;
-  const a=2*(other.x-site.x),b=2*(other.y-site.y);
-  const c=other.x*other.x+other.y*other.y-site.x*site.x-site.y*site.y;
-  poly=clipHalfPlane(poly,a,b,c);if(poly.length<3)return[];
- }
- return poly;
-}
-function makeWorld(items,width,height,rows,buffer){
+function makeWorld(items,width,height,rows){
  const cols=Math.ceil(items.length/rows),cellW=width/cols,cellH=height/rows;
- const sites=items.map((record,i)=>{
+ const baseSites=items.map((record,i)=>{
   const col=i%cols,row=Math.floor(i/cols),random=seededRandom(93517+i*7919+items.length*31);
   const stagger=(row%2?-.13:.13)*cellW;
-  const x=((col+.5)*cellW+stagger+(random()-.5)*cellW*.3+width)%width;
-  return{x,y:(row+.5)*cellH+(random()-.5)*cellH*.3,record,itemIndex:i};
+  return[(col+.5)*cellW+stagger+(random()-.5)*cellW*.3,(row+.5)*cellH+(random()-.5)*cellH*.3,record,i];
  });
- const periodicSites=[];
- for(let copy=-2;copy<=2;copy++)for(const site of sites)periodicSites.push({...site,x:site.x+copy*width,copy});
- const svgWidth=width+buffer*2;
- const svg=svgEl("svg",{width:svgWidth,height,viewBox:`0 0 ${svgWidth} ${height}`,role:"group","aria-label":"Kolekcja wpisów Vengrath"});
+ // Build one continuous three-world surface. Ghost worlds keep Voronoi cells
+ // crossing each join naturally instead of clipping them into straight edges.
+ const sites=[];
+ for(let copy=-1;copy<=3;copy++)for(const site of baseSites)sites.push([site[0]+copy*width,site[1],site[2],copy,site[3]]);
+ const totalWidth=width*3;
+ const delaunay=Delaunay.from(sites,d=>d[0],d=>d[1]),voronoi=delaunay.voronoi([0,0,totalWidth,height]);
+ const svg=svgEl("svg",{width:totalWidth,height,viewBox:`0 0 ${totalWidth} ${height}`,role:"group","aria-label":"Kolekcja wpisów Vengrath"});
  const defs=svgEl("defs");svg.append(defs);
- const copies={left:periodicSites.filter(site=>site.copy===-1),center:periodicSites.filter(site=>site.copy===0),right:periodicSites.filter(site=>site.copy===1)};
- function renderCell(site,fullPoly,clipPoly,shiftX,instance,showLabels){
-  if(clipPoly.length<3)return;
-  const full=fullPoly.map(p=>[p[0]+shiftX+buffer,p[1]]);
-  const clipped=clipPoly.map(p=>[p[0]+shiftX+buffer,p[1]]);
-  const id=`h2-${instance}-${site.itemIndex}`,d=pathOf(clipped),clip=svgEl("clipPath",{id});
-  clip.append(svgEl("path",{d}));defs.append(clip);
-  const xs=full.map(p=>p[0]),ys=full.map(p=>p[1]);
-  const x=Math.min(...xs),y=Math.min(...ys),w=Math.max(...xs)-x,h=Math.max(...ys)-y;
-  if(w<=0||h<=0)return;
-  const record=site.record;
-  const anchor=svgEl("a",{href:record.url,class:"cell",tabindex:showLabels?"0":"-1","aria-label":record.title+" — "+(record.tags||[]).join(", ")});
-  const image=svgEl("image",{x,y,width:w,height:h,"data-src":record.image||"","preserveAspectRatio":"xMidYMid slice","clip-path":`url(#${id})`,class:"cell-image",fetchpriority:"low",decoding:"async"});
-  if(imageObserver)imageObserver.observe(image);else if(record.image)image.setAttribute("href",record.image);
+ sites.forEach((site,i)=>{
+  const [sx,sy,record,copy,itemIndex]=site;
+  if(copy<0||copy>2)return;
+  const poly=voronoi.cellPolygon(i);if(!poly||poly.length<3)return;
+  const id=`h2-${copy}-${itemIndex}`,d=pathOf(poly),clip=svgEl("clipPath",{id});clip.append(svgEl("path",{d}));defs.append(clip);
+  const xs=poly.map(p=>p[0]),ys=poly.map(p=>p[1]),x=Math.min(...xs),y=Math.min(...ys),w=Math.max(...xs)-x,h=Math.max(...ys)-y;
+  const anchor=svgEl("a",{href:record.url,class:"cell",tabindex:"0","aria-label":record.title+" — "+(record.tags||[]).join(", ")});
+  const image=svgEl("image",{x,y,width:w,height:h,href:record.image||"","preserveAspectRatio":"xMidYMid slice","clip-path":`url(#${id})`,class:"cell-image",fetchpriority:copy===1?"high":"low",decoding:"async"});
   anchor.append(image,svgEl("path",{d,class:"cell-shade"}));
-  if(showLabels){
-   const labels=svgEl("g",{"clip-path":`url(#${id})`});
-   const cx=(Math.min(...xs)+Math.max(...xs))/2,cy=(Math.min(...ys)+Math.max(...ys))/2;
-   const safeW=Math.max(50,w*.72),safeH=Math.max(34,h*.58);
-   const titleSize=Math.max(12,Math.min(23,safeW/(Math.min(record.title.length,18)*.57),safeH*.36));
-   const titleLines=fitText(labels,record.title,cx,cy-titleSize*.45,safeW,2,titleSize,"cell-title");
-   const categoryY=cy+Math.max(14,titleLines*titleSize*.72)+7;
-   fitText(labels,(record.tags||[]).join(" · "),cx,categoryY,safeW,2,Math.max(7.5,Math.min(9.5,safeW/24)),"cell-tag",.3);
-   anchor.append(labels);
-   anchor.addEventListener("pointerenter",()=>{prefetchPage(record);showPreview(record)});
-   anchor.addEventListener("pointerleave",hidePreview);
-   anchor.addEventListener("contextmenu",e=>{e.preventDefault();openContextMenu(record,e.clientX,e.clientY)});
-   anchor.addEventListener("focus",()=>{prefetchPage(record);showPreview(record)});
-   anchor.addEventListener("blur",hidePreview);
-  }
+  const labels=svgEl("g",{"clip-path":`url(#${id})`});
+  const cx=(Math.min(...xs)+Math.max(...xs))/2,cy=(Math.min(...ys)+Math.max(...ys))/2;
+  const safeW=Math.max(50,w*.72),safeH=Math.max(34,h*.58);
+  const titleSize=Math.max(12,Math.min(23,safeW/(Math.min(record.title.length,18)*.57),safeH*.36));
+  const titleLines=fitText(labels,record.title,cx,cy-titleSize*.45,safeW,2,titleSize,"cell-title");
+  const categoryY=cy+Math.max(14,titleLines*titleSize*.72)+7;
+  fitText(labels,(record.tags||[]).join(" · "),cx,categoryY,safeW,2,Math.max(7.5,Math.min(9.5,safeW/24)),"cell-tag",.3);
+  anchor.append(labels);
+  anchor.addEventListener("pointerenter",()=>{prefetchPage(record);showPreview(record)});anchor.addEventListener("pointerleave",hidePreview);
+  anchor.addEventListener("contextmenu",e=>{e.preventDefault();openContextMenu(record,e.clientX,e.clientY)});
+  anchor.addEventListener("focus",()=>{prefetchPage(record);showPreview(record)});anchor.addEventListener("blur",hidePreview);
   svg.append(anchor);
- }
- for(const site of copies.center){
-  const poly=periodicCell(site,periodicSites,[0,width,height]);
-  if(poly.length>=3)renderCell(site,poly,poly,0,"main",true);
- }
- for(const site of copies.left){
-  const poly=periodicCell(site,periodicSites,[-width,0,height]);
-  if(poly.length<3)continue;
-  const visible=clipHalfPlane(clipHalfPlane(poly,1,0,0),-1,0,buffer);
-  if(visible.length>=3)renderCell(site,poly,visible,0,"left",false);
- }
- for(const site of copies.right){
-  const poly=periodicCell(site,periodicSites,[width,2*width,height]);
-  if(poly.length<3)continue;
-  const visible=clipHalfPlane(clipHalfPlane(poly,1,0,width+buffer),-1,0,-width);
-  if(visible.length>=3)renderCell(site,poly,visible,0,"right",false);
- }
+ });
  return svg;
 }
 function build(){
- const items=visibleRecords(),oldWidth=worldWidth,oldBuffer=scrollBuffer,oldScroll=viewport.scrollLeft;
- const oldOffset=oldWidth?((oldScroll-oldBuffer)%oldWidth+oldWidth)%oldWidth:0;
- board.replaceChildren();if(imageObserver)imageObserver.disconnect();emptyState.hidden=items.length>0;
- if(!items.length){worldWidth=0;scrollBuffer=0;board.style.width="0px";return}
+ const items=visibleRecords();board.replaceChildren();emptyState.hidden=items.length>0;
+ if(!items.length){worldWidth=0;return}
  const viewportHeight=viewport.clientHeight;
  const worldHeight=Math.max(220,viewportHeight-58);
  const maxRows=innerWidth<680?4:5;
  const rows=items.length<=3?1:items.length<=8?2:items.length<=15?3:items.length<=24?4:maxRows;
  const cols=Math.ceil(items.length/rows);
  const cellH=worldHeight/rows;
- const cellW=Math.max(cellH*1.6,viewport.clientWidth/cols);
+ const cellW=cellH*1.6;
  worldWidth=cols*cellW;
- scrollBuffer=Math.min(viewport.clientWidth,worldWidth);
- board.append(makeWorld(items,worldWidth,worldHeight,rows,scrollBuffer));
- board.style.width=(worldWidth+scrollBuffer*2)+"px";
+ board.append(makeWorld(items,worldWidth,worldHeight,rows));
  board.style.height=worldHeight+"px";
- viewport.scrollLeft=scrollBuffer+(oldWidth?oldOffset/oldWidth*worldWidth:0);
+ const oldWorld=viewport.scrollLeft;
+ viewport.scrollLeft=worldWidth+Math.min(oldWorld%Math.max(1,worldWidth),worldWidth*.45);
 }
 function showPreview(r,force=false){if(!previewEnabled&&!force)return;$("#preview-image").src=r.image||"";$("#preview-image").alt=r.title;$("#preview-category").textContent=(r.tags||[]).join(" · ")||"Kolekcja Vengrath";$("#preview-title").textContent=r.title;$("#preview-description").textContent=describe(r);preview.dataset.href=r.url;preview.setAttribute("aria-hidden","false");preview.style.opacity="1";preview.style.transform="translateY(0)"}
 function hidePreview(){preview.style.opacity="0";preview.style.transform="translateY(0)";preview.setAttribute("aria-hidden","true")}
@@ -241,7 +194,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"){if(!contextMenu.hid
 viewport.addEventListener("scroll",()=>{if(!contextMenu.hidden)closeContextMenu()},{passive:true});
 window.addEventListener("resize",closeContextMenu);
 
-function wrapScroll(){if(!worldWidth)return;let x=viewport.scrollLeft;const maxPosition=worldWidth+scrollBuffer;while(x<0)x+=worldWidth;while(x>=maxPosition)x-=worldWidth;if(x!==viewport.scrollLeft)viewport.scrollLeft=x}
+function wrapScroll(){if(!worldWidth)return;let x=viewport.scrollLeft;while(x<worldWidth){x+=worldWidth}while(x>=worldWidth*2){x-=worldWidth}if(x!==viewport.scrollLeft)viewport.scrollLeft=x}
 function stopInertia(){if(inertiaFrame)cancelAnimationFrame(inertiaFrame);inertiaFrame=0}
 function runInertia(){stopInertia();let last=performance.now();const tick=now=>{const dt=Math.min(32,now-last);last=now;if(Math.abs(velocity)<.025){velocity=0;inertiaFrame=0;return}viewport.scrollLeft-=velocity*dt;velocity*=Math.pow(.93,dt/16.67);wrapScroll();inertiaFrame=requestAnimationFrame(tick)};inertiaFrame=requestAnimationFrame(tick)}
 filters.addEventListener("click",e=>{const b=e.target.closest("button[data-tag]");if(!b)return;if(b.dataset.tag==="Wszystko")activeTags.clear();else{if(activeTags.has(b.dataset.tag))activeTags.delete(b.dataset.tag);else activeTags.add(b.dataset.tag)}syncFilterControls();hidePreview();build()});
