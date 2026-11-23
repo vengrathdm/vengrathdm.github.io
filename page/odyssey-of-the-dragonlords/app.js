@@ -8,6 +8,214 @@ function ytTarget(value){try{const u=new URL(value),host=u.hostname.replace(/^ww
 let activeClose=null;
 function makeChronicle(session,accent){const article=el("article","chronicle-record");article.style.setProperty("--chronicle-accent",accent);const header=el("div","chronicle-record__header");header.tabIndex=0;header.setAttribute("role","button");header.setAttribute("aria-expanded","false");const raw=String(session.sessionNumber??session.number??"—").trim();const match=raw.match(/^S?0*(\d+)([A-Z]?)$/i);const number=match?String(Number(match[1])).padStart(2,"0")+match[2].toUpperCase():raw;const titleRaw=String(session.title||"Bez tytułu").trim();const titleValue=titleRaw.replace(/^.*?\bS\d+(?:P\d+)?\s*[-–—:]\s*/i,"").replace(/^.*?#\s*\d+\s*[-–—:]\s*/i,"").replace(/\s+S\d+(?:P\d+)?\s*\[[^\]]+\]$/i,"").trim()||titleRaw;header.append(el("span","chronicle-record__number",number),el("span","chronicle-record__title",titleValue));const date=el("time","chronicle-record__date",session.date||"");date.hidden=!session.date;if(session.date){const m=session.date.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);date.dateTime=m?m[3]+"-"+m[2]+"-"+m[1]:session.date}const recordings=el("div","chronicle-record__recordings");const players=el("div","chronicle-record__players");const links=Array.isArray(session.recordings)?session.recordings:[];recordings.hidden=!links.length;links.forEach((rec,i)=>{const part=rec.partNumber||(links.length>1?i+1:null);const label=links.length>1?"Odtwórz Część "+(part||i+1):"Odtwórz";const target=ytTarget(rec.url);if(target){const btn=el("button","chronicle-inline-player__toggle",label);btn.type="button";btn.setAttribute("aria-expanded","false");const panel=el("section","chronicle-inline-player");panel.hidden=true;const phead=el("header","chronicle-inline-player__header");phead.append(el("strong","chronicle-inline-player__title",titleValue),el("span","chronicle-inline-player__tag","NAGRANIE · YOUTUBE"));const video=el("div","chronicle-inline-player__video");const foot=el("footer","chronicle-inline-player__footer");const meta=el("span","", "SESJA "+number+(part?" · CZĘŚĆ "+part:""));const ext=el("a","","OTWÓRZ W YOUTUBE ↗");ext.href=rec.url;ext.target="_blank";ext.rel="noopener noreferrer";foot.append(meta,ext);panel.append(phead,video,foot);const close=()=>{video.replaceChildren();panel.hidden=true;btn.setAttribute("aria-expanded","false");btn.textContent=label;if(activeClose===close)activeClose=null};btn.addEventListener("click",e=>{e.stopPropagation();if(!panel.hidden){close();return}if(activeClose)activeClose();const iframe=el("iframe");iframe.src=target.videoId?"https://www.youtube-nocookie.com/embed/"+encodeURIComponent(target.videoId)+(target.playlistId?"?list="+encodeURIComponent(target.playlistId)+"&rel=0":"?rel=0"):"https://www.youtube-nocookie.com/embed/videoseries?list="+encodeURIComponent(target.playlistId);iframe.title=titleValue;iframe.loading="lazy";iframe.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";iframe.referrerPolicy="strict-origin-when-cross-origin";iframe.allowFullscreen=true;video.replaceChildren(iframe);panel.hidden=false;btn.setAttribute("aria-expanded","true");btn.textContent="ZAMKNIJ";activeClose=close});recordings.append(btn);players.append(panel)}else if(rec.url){const a=el("a","play-recording-button",label+" ▶");a.href=rec.url;a.target="_blank";a.rel="noopener noreferrer";a.addEventListener("click",e=>e.stopPropagation());recordings.append(a)}});recordings.addEventListener("click",e=>e.stopPropagation());header.append(date,recordings);const description=el("div","chronicle-record__description");description.hidden=true;description.append(el("p","",session.description||session.notes||""));const toggle=()=>{const open=description.hidden;description.hidden=!open;header.setAttribute("aria-expanded",String(open));article.classList.toggle("is-expanded",open)};header.addEventListener("click",toggle);header.addEventListener("keydown",e=>{if(e.target===header&&(e.key==="Enter"||e.key===" ")){e.preventDefault();toggle()}});article.append(header,players,description);return article}
 
+export class AudioPlayer {
+  constructor({
+    src,
+    storageKey = "vengrath-audio-state",
+    preload = "none",
+  }) {
+    this.audio = new Audio();
+    this.audio.loop = true;
+    this.audio.preload = preload;
+    this.audio.src = src;
+    this.storageKey = storageKey;
+    this.listeners = new Set();
+    this.audio.volume = 0.5;
+    this.restore();
+
+    ["play", "pause", "volumechange", "timeupdate", "loadedmetadata"].forEach(
+      (type) => {
+        this.audio.addEventListener(type, () => {
+          if (type === "loadedmetadata" && this.pendingTime > 0) {
+            this.audio.currentTime = Math.min(
+              this.pendingTime,
+              this.audio.duration || this.pendingTime,
+            );
+          }
+
+          this.persist();
+          this.emit();
+        });
+      },
+    );
+
+    window.addEventListener("pagehide", () => this.persist());
+  }
+
+  restore() {
+    try {
+      const state = JSON.parse(localStorage.getItem(this.storageKey) || "{}");
+      this.audio.volume = Math.max(0, Math.min(1, Number(state.volume ?? 0.5)));
+      this.pendingTime = Math.max(0, Number(state.time) || 0);
+    } catch {
+      this.pendingTime = 0;
+    }
+  }
+
+  persist() {
+    try {
+      localStorage.setItem(
+        this.storageKey,
+        JSON.stringify({
+          volume: this.audio.volume,
+          time: this.audio.currentTime || 0,
+        }),
+      );
+    } catch {
+      // Storage can be unavailable in private browsing or restricted contexts.
+    }
+  }
+
+  snapshot() {
+    return {
+      playing: !this.audio.paused,
+      volume: this.audio.volume,
+      time: this.audio.currentTime || 0,
+    };
+  }
+
+  subscribe(listener) {
+    this.listeners.add(listener);
+    listener(this.snapshot());
+    return () => this.listeners.delete(listener);
+  }
+
+  emit() {
+    const state = this.snapshot();
+    this.listeners.forEach((listener) => listener(state));
+  }
+
+  async play() {
+    try {
+      await this.audio.play();
+    } catch (error) {
+      // Browsers may block audible autoplay until the visitor interacts.
+      if (error?.name !== "NotAllowedError") {
+        console.error("Audio playback could not start.", error);
+      }
+    }
+
+    this.emit();
+  }
+
+  async toggle() {
+    if (this.audio.paused) {
+      await this.play();
+    } else {
+      this.audio.pause();
+      this.emit();
+    }
+  }
+
+  setVolume(value) {
+    this.audio.volume = Math.max(0, Math.min(1, value));
+    this.persist();
+    this.emit();
+  }
+
+  destroy() {
+    this.persist();
+    this.audio.pause();
+    this.audio.removeAttribute("src");
+    this.audio.load();
+    this.listeners.clear();
+  }
+}
+
+export function mountAudioPlayerButton(
+  player,
+  color = "#bca06a",
+  { autoplay = true } = {},
+) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "audio-player-button";
+  button.style.setProperty("--player-color", color);
+
+  const ring = document.createElement("span");
+  ring.className = "audio-player-ring";
+
+  const symbol = document.createElement("span");
+  symbol.className = "audio-player-symbol";
+  button.append(ring, symbol);
+
+  let dragging = false;
+
+  const point = (event) => {
+    const rect = button.getBoundingClientRect();
+    const x = event.clientX - (rect.left + rect.width / 2);
+    const y = event.clientY - (rect.top + rect.height / 2);
+    let angle = Math.atan2(y, x) + Math.PI / 2;
+
+    if (angle < 0) angle += Math.PI * 2;
+
+    return {
+      radius: Math.hypot(x, y),
+      volume: angle / (Math.PI * 2),
+    };
+  };
+
+  const updateVolume = (event) => player.setVolume(point(event).volume);
+
+  button.addEventListener("click", (event) => {
+    if (dragging) {
+      event.preventDefault();
+      return;
+    }
+
+    if (point(event).radius > 18) {
+      updateVolume(event);
+    } else {
+      player.toggle();
+    }
+  });
+
+  button.addEventListener("pointerdown", (event) => {
+    if (point(event).radius <= 18) return;
+
+    event.preventDefault();
+    dragging = true;
+    button.setPointerCapture(event.pointerId);
+    updateVolume(event);
+  });
+
+  button.addEventListener("pointermove", (event) => {
+    if (dragging) updateVolume(event);
+  });
+
+  button.addEventListener("pointerup", () => {
+    dragging = false;
+  });
+
+  button.addEventListener("pointercancel", () => {
+    dragging = false;
+  });
+
+  const unsubscribe = player.subscribe((state) => {
+    symbol.textContent = state.playing ? "Ⅱ" : "▶";
+    button.setAttribute(
+      "aria-label",
+      state.playing ? "Wstrzymaj audio" : "Odtwórz audio",
+    );
+    ring.style.setProperty("--volume", state.volume * 100 + "%");
+  });
+
+  document.body.append(button);
+
+  if (autoplay) {
+    // Browsers may require a user gesture before starting playback.
+    player.play();
+  }
+
+  return {
+    element: button,
+    destroy() {
+      unsubscribe();
+      button.remove();
+    },
+  };
+}
+
 async function initialize(){
  const [manifest,theme,content]=await Promise.all([loadJson("./manifest.json"),loadJson("./theme.json"),loadJson("./content.json")]);
  const root=document.documentElement;
