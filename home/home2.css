@@ -62,7 +62,7 @@ button,input{font:inherit}
 .cell-shade{fill:rgb(8 8 9 / 31%);stroke:rgb(225 229 237 / 44%);stroke-width:1.2;vector-effect:non-scaling-stroke;transition:fill .35s,stroke .35s,stroke-width .35s}
 .cell:hover .cell-shade,.cell:focus-visible .cell-shade{fill:rgb(10 8 7 / 8%);stroke:rgb(255 255 255 / 98%);stroke-width:2.2}
 .cell:hover .cell-image,.cell:focus-visible .cell-image{filter:saturate(1.22) brightness(1.13)}
-.cell-title{fill:#fff8eb;text-anchor:middle;font-family:"Fira Sans Extra Condensed",sans-serif;font-weight:600;paint-order:stroke;stroke:rgb(12 10 8 / 88%);stroke-linejoin:round;stroke-width:3.5px;pointer-events:none}
+.cell-title{fill:#fff8eb;text-anchor:middle;font-family:Voltaire,sans-serif;font-weight:400;letter-spacing:.08em;paint-order:stroke;stroke:rgb(12 10 8 / 88%);stroke-linejoin:round;stroke-width:3.5px;pointer-events:none}
 .cell-tag{fill:#f0f1f4;text-anchor:middle;font:500 9px "DM Mono",monospace;letter-spacing:.065em;paint-order:stroke;stroke:rgb(12 10 8 / 88%);stroke-width:2.5px;pointer-events:none}
 .empty-state{position:fixed;inset:4.2rem 0 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;z-index:3;background:rgb(16 14 12 / 88%);color:var(--muted);text-align:center}
 .empty-state[hidden]{display:none}
@@ -107,7 +107,7 @@ button,input{font:inherit}
 .card-context-menu{position:fixed;z-index:1000;min-width:218px;padding:.38rem;background:rgb(13 14 17 / 97%);border:1px solid rgb(225 229 237 / 19%);border-radius:8px;box-shadow:0 14px 44px rgb(0 0 0 / 48%),0 0 0 1px rgb(255 255 255 / 2%);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);opacity:0;transform:translateY(5px) scale(.985);transform-origin:top left}
 .card-context-menu[hidden]{display:none}
 .card-context-menu.is-open{opacity:1;transform:translateY(0) scale(1);transition:opacity .14s ease,transform .14s ease}
-.card-context-menu button{display:block;width:100%;padding:.68rem .78rem;border:0;border-radius:4px;background:transparent;color:#d9dce2;text-align:left;font: .76rem "DM Mono",monospace;cursor:pointer;transition:background .12s ease,color .12s ease}
+.card-context-menu button{display:block;width:100%;padding:.68rem .78rem;border:0;border-radius:4px;background:transparent;color:#d9dce2;text-align:left;font:1rem Voltaire,sans-serif;letter-spacing:.08em;cursor:pointer;transition:background .12s ease,color .12s ease}
 .card-context-menu button:hover,.card-context-menu button:focus-visible{outline:none;background:rgb(225 229 237 / 10%);color:#fff}
 .context-menu-divider{height:1px;margin:.28rem .42rem;background:rgb(225 229 237 / 12%)}
 @media(prefers-reduced-motion:reduce){.card-context-menu.is-open{transition:none}}
