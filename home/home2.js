@@ -53,7 +53,7 @@ function addModulePreload(value,base=location.href){
 }
 function cssResources(css,base){
  const imports=[...css.matchAll(/@import\s+(?:url\()?['"]?([^'")\s;]+)['"]?\)?/gi)].map(m=>m[1]);
- const fonts=[...css.matchAll(/url\(\s*(['"]?)([^'")]+)\\1\s*\)/gi)].map(m=>m[2]).filter(url=>/\.(?:woff2?|ttf|otf)(?:[?#]|$)/i.test(url));
+ const fonts=[...css.matchAll(/url\(\s*(['"]?)([^'")]+)\1\s*\)/gi)].map(m=>m[2]).filter(url=>/\.(?:woff2?|ttf|otf)(?:[?#]|$)/i.test(url));
  imports.slice(0,2).forEach(url=>{const href=allowedPrefetchUrl(url,base);if(href)inspectStylesheet(href.href)});
  fonts.slice(0,6).forEach(url=>addPrefetch(url,"font",base));
 }
@@ -74,7 +74,7 @@ function prefetchDocumentAssets(doc,pageUrl){
   const src=el.getAttribute("src")||el.getAttribute("content")||el.getAttribute("srcset")?.split(",")[0]?.trim().split(/\s+/)[0];
   if(src)images.push(new URL(src,pageUrl).href);
  });
- doc.querySelectorAll("[style]").forEach(el=>{for(const match of el.getAttribute("style").matchAll(/url\(\s*(['"]?)([^'")]+)\\1\s*\)/gi))images.push(new URL(match[2],pageUrl).href)});
+ doc.querySelectorAll("[style]").forEach(el=>{for(const match of el.getAttribute("style").matchAll(/url\(\s*(['"]?)([^'")]+)\1\s*\)/gi))images.push(new URL(match[2],pageUrl).href)});
  [...new Set(images)].slice(0,6).forEach(src=>addPrefetch(src,"image",pageUrl));
  doc.querySelectorAll("style").forEach(el=>cssResources(el.textContent,pageUrl));
 }
@@ -83,12 +83,14 @@ async function prefetchPage(record){
  const url=allowedPrefetchUrl(record.url);if(!url||url.origin!==location.origin||prefetchedPages.has(url.href))return;
  prefetchedPages.add(url.href);
  const link=document.createElement("link");link.rel="prefetch";link.href=url.href;link.as="document";link.fetchPriority="low";document.head.append(link);
- try{
-  const response=await fetch(url.href,{credentials:"same-origin"});
-  if(!response.ok)return;
-  const html=await response.text(),doc=new DOMParser().parseFromString(html,"text/html");
-  prefetchDocumentAssets(doc,url.href);
- }catch(error){console.debug("Page asset prefetch skipped",url.href,error)}
+ schedulePrefetch(async()=>{
+  try{
+   const response=await fetch(url.href,{credentials:"same-origin"});
+   if(!response.ok)return;
+   const html=await response.text(),doc=new DOMParser().parseFromString(html,"text/html");
+   prefetchDocumentAssets(doc,url.href);
+  }catch(error){console.debug("Page asset prefetch skipped",url.href,error)}
+ });
 }
 function makeWorld(items,width,height,rows){
  const cols=Math.ceil(items.length/rows),cellW=width/cols,cellH=height/rows;
