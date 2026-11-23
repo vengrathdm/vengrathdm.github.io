@@ -22,7 +22,6 @@ body::before{
 }
 body::after{z-index:0;opacity:.13;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");mix-blend-mode:screen}
 button,input{font:inherit}
-#atmosphere{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.92}
 .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.1;background:radial-gradient(ellipse at 50% 55%,transparent 20%,#000 115%)}
 .home-app{position:relative;z-index:2;display:flex;flex-direction:column;width:100%;height:100dvh;min-height:0;opacity:1}
 .topbar{position:relative;z-index:4;display:flex;flex:0 0 auto;align-items:center;gap:clamp(.75rem,2vw,1.75rem);min-height:4.2rem;padding:.45rem clamp(.75rem,1.6vw,1.5rem);border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgb(25 22 19 / 94%),rgb(19 17 15 / 78%));box-shadow:0 14px 40px rgb(0 0 0 / 18%);backdrop-filter:blur(16px)}
