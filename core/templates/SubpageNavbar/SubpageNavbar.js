@@ -1,3 +1,4 @@
+import "../Cursor/Cursor.js";
 import { createHomeButton } from "../HomeButton/HomeButton.js";
 import { createYouTubePlaylistButton } from "../YouTubePlaylistButton/YouTubePlaylistButton.js";
 import { createNavbarButton } from "./NavbarButton/NavbarButton.js";
