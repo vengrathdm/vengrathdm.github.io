@@ -107,33 +107,32 @@ function periodicCell(site,sites,rect){
 }
 function makeWorld(items,width,height,rows,buffer){
  const cols=Math.ceil(items.length/rows),cellW=width/cols,cellH=height/rows;
- const baseSites=items.map((record,i)=>{
+ const sites=items.map((record,i)=>{
   const col=i%cols,row=Math.floor(i/cols),random=seededRandom(93517+i*7919+items.length*31);
   const stagger=(row%2?-.13:.13)*cellW;
   const x=((col+.5)*cellW+stagger+(random()-.5)*cellW*.3+width)%width;
   return{x,y:(row+.5)*cellH+(random()-.5)*cellH*.3,record,itemIndex:i};
  });
- const sites=[];
- for(let copy=-2;copy<=2;copy++)for(const base of baseSites)sites.push({...base,x:base.x+copy*width,copy});
+ const periodicSites=[];
+ for(let copy=-2;copy<=2;copy++)for(const site of sites)periodicSites.push({...site,x:site.x+copy*width,copy});
  const svgWidth=width+buffer*2;
  const svg=svgEl("svg",{width:svgWidth,height,viewBox:`0 0 ${svgWidth} ${height}`,role:"group","aria-label":"Kolekcja wpisów Vengrath"});
  const defs=svgEl("defs");svg.append(defs);
- const strips=[{copy:-1,left:-buffer,right:0},{copy:0,left:0,right:width},{copy:1,left:width,right:width+buffer}];
- for(const strip of strips){
-  const targets=sites.filter(site=>site.copy===strip.copy);
-  for(const site of targets){
-   const poly=periodicCell(site,sites,[strip.left,strip.right,height]);if(poly.length<3)continue;
-   const shifted=poly.map(p=>[p[0]+buffer,p[1]]);
-   const id=`h2-${strip.copy}-${site.itemIndex}`,d=pathOf(shifted),clip=svgEl("clipPath",{id});
-   clip.append(svgEl("path",{d}));defs.append(clip);
-   const xs=shifted.map(p=>p[0]),ys=shifted.map(p=>p[1]);
-   const x=Math.min(...xs),y=Math.min(...ys),w=Math.max(...xs)-x,h=Math.max(...ys)-y;
-   if(w<=0||h<=0)continue;
-   const record=site.record;
-   const anchor=svgEl("a",{href:record.url,class:"cell",tabindex:"0","aria-label":record.title+" — "+(record.tags||[]).join(", ")});
-   const image=svgEl("image",{x,y,width:w,height:h,"data-src":record.image||"","preserveAspectRatio":"xMidYMid slice","clip-path":`url(#${id})`,class:"cell-image",fetchpriority:"low",decoding:"async"});
-   if(imageObserver)imageObserver.observe(image);else if(record.image)image.setAttribute("href",record.image);
-   anchor.append(image,svgEl("path",{d,class:"cell-shade"}));
+ function renderCell(site,fullPoly,clipPoly,shiftX,instance,showLabels){
+  if(clipPoly.length<3)return;
+  const full=fullPoly.map(p=>[p[0]+shiftX+buffer,p[1]]);
+  const clipped=clipPoly.map(p=>[p[0]+shiftX+buffer,p[1]]);
+  const id=`h2-${instance}-${site.itemIndex}`,d=pathOf(clipped),clip=svgEl("clipPath",{id});
+  clip.append(svgEl("path",{d}));defs.append(clip);
+  const xs=full.map(p=>p[0]),ys=full.map(p=>p[1]);
+  const x=Math.min(...xs),y=Math.min(...ys),w=Math.max(...xs)-x,h=Math.max(...ys)-y;
+  if(w<=0||h<=0)return;
+  const record=site.record;
+  const anchor=svgEl("a",{href:record.url,class:"cell",tabindex:showLabels?"0":"-1","aria-label":record.title+" — "+(record.tags||[]).join(", ")});
+  const image=svgEl("image",{x,y,width:w,height:h,"data-src":record.image||"","preserveAspectRatio":"xMidYMid slice","clip-path":`url(#${id})`,class:"cell-image",fetchpriority:"low",decoding:"async"});
+  if(imageObserver)imageObserver.observe(image);else if(record.image)image.setAttribute("href",record.image);
+  anchor.append(image,svgEl("path",{d,class:"cell-shade"}));
+  if(showLabels){
    const labels=svgEl("g",{"clip-path":`url(#${id})`});
    const cx=(Math.min(...xs)+Math.max(...xs))/2,cy=(Math.min(...ys)+Math.max(...ys))/2;
    const safeW=Math.max(50,w*.72),safeH=Math.max(34,h*.58);
@@ -147,8 +146,16 @@ function makeWorld(items,width,height,rows,buffer){
    anchor.addEventListener("contextmenu",e=>{e.preventDefault();openContextMenu(record,e.clientX,e.clientY)});
    anchor.addEventListener("focus",()=>{prefetchPage(record);showPreview(record)});
    anchor.addEventListener("blur",hidePreview);
-   svg.append(anchor);
   }
+  svg.append(anchor);
+ }
+ for(const site of sites){
+  const poly=periodicCell(site,periodicSites,[0,width,height]);if(poly.length<3)continue;
+  renderCell(site,poly,poly,0,"main",true);
+  const leftFragment=clipHalfPlane(clipHalfPlane(poly,1,0,width,1),-1,0,-(width-buffer),1);
+  if(leftFragment.length>=3)renderCell(site,poly,leftFragment,-width,"left",false);
+  const rightFragment=clipHalfPlane(clipHalfPlane(poly,-1,0,0,1),1,0,buffer,1);
+  if(rightFragment.length>=3)renderCell(site,poly,rightFragment,width,"right",false);
  }
  return svg;
 }
