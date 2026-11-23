@@ -17,70 +17,22 @@ function mountAudioPlayerButton(player,color){const b=el("button","audio-player-
 
 
 
-const themeVariables = {
-  base1: "--theme-base-1",
-  base2: "--theme-base-2",
-  base3: "--theme-base-3",
-  base4: "--theme-base-4",
-  base5: "--theme-base-5",
-  accent1: "--theme-accent-1",
-  accent2: "--theme-accent-2",
-  text1: "--theme-text-1",
-  text2: "--theme-text-2",
-  text3: "--theme-text-3",
-  textMuted: "--theme-text-muted",
-  titleAccent: "--theme-title-accent",
-  line1: "--theme-line-1",
-  line2: "--theme-line-2",
-  navBackground: "--theme-nav-background",
-  navText: "--theme-nav-text",
-  navActiveBackground: "--theme-nav-active-background",
-};
-
 async function readJson(path) {
   const response = await fetch(path);
   if (!response.ok) throw new Error("Nie udało się wczytać pliku: " + path);
   return response.json();
 }
 
-function applyTheme(theme) {
-  Object.entries(themeVariables).forEach(([key, property]) => {
-    if (theme.colors[key])
-      document.documentElement.style.setProperty(property, theme.colors[key]);
-  });
-  document.documentElement.style.setProperty(
-    "--theme-font-1",
-    theme.typography.heading,
-  );
-  document.documentElement.style.setProperty(
-    "--theme-font-2",
-    theme.typography.body,
-  );
-  document.documentElement.style.setProperty(
-    "--theme-font-3",
-    theme.typography.serif,
-  );
-  document.documentElement.style.setProperty(
-    "--campaign-accent",
-    theme.colors.accent2,
-  );
-  document.documentElement.style.setProperty(
-    "--chronicle-heading-font",
-    "var(--theme-font-1)",
-  );
-}
-
 async function initializeCampaignPage() {
-  const [manifest, theme, content] = await Promise.all([
+  const root = document.documentElement;
+  const accent =
+    getComputedStyle(root).getPropertyValue("--theme-accent-2").trim() || "#bca06a";
+  const [manifest, content] = await Promise.all([
     readJson("./manifest.json"),
-    readJson("./theme.json"),
     readJson("./content.json"),
   ]);
-  applyTheme(theme);
 
   const hero = document.querySelector("#campaign-hero");
-  hero.style.setProperty("--hero-background", "url('" + theme.heroImage + "')");
-  hero.style.setProperty("--campaign-accent", theme.colors.accent2);
   const copy = hero.querySelector(".subpage-hero__copy");
   const heading = copy.querySelector("h1");
   heading.replaceChildren(
@@ -99,7 +51,7 @@ async function initializeCampaignPage() {
   mountSubpageNavbar(navbar, {
     playlistUrl: manifest.playlistUrl || undefined,
     sections: [
-      {text: "Kampania", sectionLink: "campaign", color: theme.colors.accent2},
+      {text: "Kampania", sectionLink: "campaign", color: accent},
       {text: "Postaci", sectionLink: "characters", color: theme.colors.accent2},
       {text: "Kronika", sectionLink: "chronicle", color: theme.colors.accent2},
     ],
@@ -174,17 +126,30 @@ async function initializeCampaignPage() {
     if (section === "chronicle" && !chronicleRendered) {
       document.querySelector("#chronicle-records").replaceChildren(
         ...content.chronicle.sessions.map((session) =>
-          createChronicleRecord(session, {accent: theme.colors.accent2}),
+          createChronicleRecord(session, {accent}),
         ),
       );
       chronicleRendered = true;
     }
   });
 
+  const selectedSection = document.querySelector(
+    '.subpage-navbar-button[aria-pressed="true"]',
+  )?.dataset.section;
+  if (selectedSection) {
+    document.dispatchEvent(
+      new CustomEvent("vengrath:sectionchange", {
+        detail: { section: selectedSection },
+      }),
+    );
+  }
+
+  document.querySelector("main")?.setAttribute("aria-busy", "false");
   document.body.classList.remove("campaign-startup-loading");
 }
 initializeCampaignPage().catch((error) => {
   console.error("Nie udało się uruchomić strony Mayhem in Earthspur Mines.", error);
+  document.querySelector("main")?.setAttribute("aria-busy", "false");
   document.body.classList.remove("campaign-startup-loading");
   const message = el("p", "mim-load-error", "Nie udało się wczytać archiwum kampanii.");
   message.setAttribute("role", "alert");
