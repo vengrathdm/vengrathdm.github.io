@@ -233,7 +233,7 @@ mountAudioPlayerButton(campaignAudio, "#d4aa62");
 const pages = [...document.querySelectorAll(".page")];
 let navbar;
 let characterLoadPromise;
-let chronicleRendered = false;
+let chroniclePromise;
 
 function initializeNavbar(content) {
   if (navbar) return;
@@ -254,25 +254,28 @@ function initializeNavbar(content) {
         );
       });
     }
-    if (selected === "log" && !chronicleRendered) {
-      renderChronicle(content);
-      chronicleRendered = true;
+    if (selected === "log" && !chroniclePromise) {
+      const list = document.getElementById("log-list");
+      list.setAttribute("aria-busy", "true");
+      chroniclePromise = fetch("./chronicle.json")
+        .then((response) => {
+          if (!response.ok) throw new Error("Brak danych kroniki.");
+          return response.json();
+        })
+        .then((chronicle) => {
+          renderChronicle(chronicle);
+          list.setAttribute("aria-busy", "false");
+        })
+        .catch((error) => {
+          console.error("Nie udało się wczytać kroniki.", error);
+          chroniclePromise = null;
+          list.setAttribute("aria-busy", "false");
+          list.replaceChildren(node("p", "error", "Nie udało się pobrać kroniki. Spróbuj ponownie."));
+        });
     }
   });
 
-  const videoIds = [...new Set(content.chronicle.sessions.flatMap((session) =>
-    (session.recordings || []).map((recording) => {
-      try {
-        const url = new URL(recording.url);
-        return url.searchParams.get("v") || (url.hostname.includes("youtu.be") ? url.pathname.slice(1) : null);
-      } catch {
-        return null;
-      }
-    }).filter(Boolean),
-  ))];
-  const playlistUrl = videoIds.length
-    ? "https://www.youtube.com/watch_videos?video_ids=" + videoIds.join(",")
-    : null;
+  const playlistUrl = content.playlistUrl || null;
   navbar = mountSubpageNavbar(navbarMount, {
     playlistUrl,
     sections: [
@@ -339,11 +342,11 @@ async function loadCharacters(content) {
   });
 }
 
-function renderChronicle(content) {
+function renderChronicle(chronicle) {
   const list = document.getElementById("log-list");
   list.replaceChildren();
   let activePlayer = null;
-  [...content.chronicle.sessions].reverse().forEach((session) => {
+  [...chronicle.sessions].reverse().forEach((session) => {
     const entry = node("article", "log");
     const number = String(session.sessionNumber).padStart(2, "0");
     const title = session.title
