@@ -1,12 +1,10 @@
 /* Drakkenheim — campaign-local runtime; shared template behavior is localized here. */
-const themeVars={base1:"--theme-base-1",base2:"--theme-base-2",base3:"--theme-base-3",base4:"--theme-base-4",base5:"--theme-base-5",accent1:"--theme-accent-1",accent2:"--theme-accent-2",text1:"--theme-text-1",text2:"--theme-text-2",text3:"--theme-text-3",textMuted:"--theme-text-muted",titleAccent:"--theme-title-accent",line1:"--theme-line-1",line2:"--theme-line-2",navBackground:"--theme-nav-background",navText:"--theme-nav-text",navActiveBackground:"--theme-nav-active-background"};
 async function loadJson(path){const r=await fetch(path);if(!r.ok)throw Error("Nie udało się wczytać pliku: "+path);return r.json();}
 function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
-function applyTheme(theme){Object.entries(themeVars).forEach(([k,p])=>{if(theme.colors[k])document.documentElement.style.setProperty(p,theme.colors[k]);});document.documentElement.style.setProperty("--campaign-accent",theme.colors.accent2);document.documentElement.style.setProperty("--chronicle-heading-font","var(--theme-font-1)");}
 function homeButton(){const a=el("a","vengrath-home-button");a.href="/home/";a.setAttribute("aria-label","Vengrath — strona główna");const img=el("img");img.src="/core/graphics/favicon/favicon.ico";img.alt="";a.append(img,el("span","","VENGRATH"));return a;}
-function mountNavbar(mount,color,playlist){mount.classList.add("subpage-navbar");const left=el("div","subpage-navbar__left");left.append(homeButton());if(playlist){const a=el("a","youtube-playlist-button","YouTube Playlista");a.href=playlist;a.target="_blank";a.rel="noopener noreferrer";left.append(a);}const nav=el("nav","subpage-navbar__sections");nav.setAttribute("aria-label","Sekcje kampanii");const buttons=[["Kampania","campaign"],["Postaci","characters"],["Kronika","chronicle"]].map(([label,id],i)=>{const b=el("button","subpage-navbar-button",label);b.type="button";b.dataset.section=id;b.style.setProperty("--section-color",color);b.setAttribute("aria-pressed",String(i===0));b.addEventListener("click",()=>select(id));nav.append(b);return b;});mount.replaceChildren(left,nav);function select(id){document.querySelectorAll("[data-page-section]").forEach(s=>s.hidden=s.dataset.pageSection!==id);buttons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.section===id)));}const sc=()=>mount.classList.toggle("is-scrolled",window.scrollY>12);sc();window.addEventListener("scroll",sc,{passive:true});select("campaign");}
-function hero(content,theme,manifest){const h=document.querySelector("#campaign-hero");h.style.setProperty("--hero-background","url('"+theme.heroImage+"')");const copy=h.querySelector(".subpage-hero__copy"),heading=copy.querySelector("h1");const kicker=el("p","drakkenheim-hero-kicker",content.campaign.kicker);const lead=el("p","drakkenheim-hero-lead",content.campaign.lead);heading.replaceChildren(document.createTextNode("Drakkenheim"),document.createElement("br"),Object.assign(el("span","drakkenheim-hero-title-accent","Campaign")));heading.before(kicker);heading.after(lead);const nav=el("div","drakkenheim-navbar-mount");h.prepend(nav);const line=el("div","drakkenheim-hero-mist-line");line.setAttribute("aria-hidden","true");h.append(line);mountNavbar(nav,theme.colors.accent2,manifest.playlistUrl);}
-function renderCampaign(c){document.querySelector("#campaign-intro-title").textContent=c.introTitle;document.querySelector("#campaign-intro-copy").replaceChildren(...c.introParagraphs.map(t=>el("p","",t)));document.querySelector("#campaign-dossier").replaceChildren(...c.dossier.map(([label,value])=>{const row=el("div","ddc-case-row");const key=el("span","",label),detail=el("strong",label==="STATUS"?"ddc-active":"",value);row.append(key,detail);return row;}));document.querySelector("#party-title").textContent=c.partyTitle;document.querySelector("#party-description").textContent=c.partyDescription;document.querySelector("#party-image").src=c.partyImage;}
+function mountNavbar(mount,color,playlist){mount.classList.add("subpage-navbar");const left=el("div","subpage-navbar__left");left.append(homeButton());if(playlist){const a=el("a","youtube-playlist-button","YouTube Playlista");a.href=playlist;a.target="_blank";a.rel="noopener noreferrer";left.append(a);}const nav=el("nav","subpage-navbar__sections");nav.setAttribute("aria-label","Sekcje kampanii");const buttons=[["Kampania","campaign"],["Postaci","characters"],["Kronika","chronicle"]].map(([label,id],i)=>{const b=el("button","subpage-navbar-button",label);b.type="button";b.dataset.section=id;b.style.setProperty("--section-color",color);b.setAttribute("aria-pressed",String(i===0));b.addEventListener("click",()=>select(id));nav.append(b);return b;});mount.replaceChildren(left,nav);function select(id){document.querySelectorAll("[data-page-section]").forEach(s=>s.hidden=s.dataset.pageSection!==id);buttons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.section===id)));mount.dispatchEvent(new CustomEvent("vengrath:sectionchange",{bubbles:true,detail:{section:id}}));}const sc=()=>mount.classList.toggle("is-scrolled",window.scrollY>12);sc();window.addEventListener("scroll",sc,{passive:true});select("campaign");}
+function hero(content,accent,manifest){const h=document.querySelector("#campaign-hero");const copy=h.querySelector(".subpage-hero__copy"),heading=copy.querySelector("h1");heading.textContent=content.campaign.title;copy.querySelector(".drakkenheim-hero-kicker").textContent=content.campaign.kicker;copy.querySelector(".drakkenheim-hero-lead").textContent=content.campaign.lead;const nav=el("div","drakkenheim-navbar-mount");h.prepend(nav);const line=el("div","drakkenheim-hero-mist-line");line.setAttribute("aria-hidden","true");h.append(line);mountNavbar(nav,accent,manifest.playlistUrl);}
+function renderCampaign(c){document.querySelector("#campaign-intro-title").textContent=c.introTitle;document.querySelector("#campaign-intro-copy").replaceChildren(...c.introParagraphs.map(t=>el("p","",t)));document.querySelector("#campaign-dossier").replaceChildren(...c.dossier.map(([label,value])=>{const row=el("div","ddc-case-row");const key=el("span","",label),detail=el("strong",label==="STATUS"?"ddc-active":"",value);row.append(key,detail);return row;}));document.querySelector("#party-title").textContent=c.partyTitle||"";document.querySelector("#party-description").textContent=c.partyDescription||"";const image=document.querySelector("#party-image");if(c.partyImage){image.src=c.partyImage;image.loading="lazy";image.decoding="async";}}
 function renderMaterial(m){document.querySelector("#characters-kicker").textContent=m.kicker;document.querySelector("#characters-title").textContent=m.title;document.querySelector("#characters-description").textContent=m.description;const card=el("article","drakkenheim-material-card"),portrait=el("div","drakkenheim-material-card__portrait"),img=el("img");img.src=m.image;img.alt="Ruiny Drakkenheim";img.loading="lazy";portrait.append(img);const info=el("div","drakkenheim-material-card__info");info.append(el("div","drakkenheim-material-card__label",m.artifactLabel),el("strong","",m.artifactTitle),el("span","",m.artifactDescription));card.append(portrait,info);document.querySelector("#archive-material").replaceChildren(card);}
 function youtubeTarget(value){try{const u=new URL(value),host=u.hostname.replace(/^www\./,"").toLowerCase();if(host==="youtu.be")return {videoId:u.pathname.split("/").filter(Boolean)[0]};if(host.endsWith("youtube.com")||host.endsWith("youtube-nocookie.com")){const videoId=u.searchParams.get("v")||u.pathname.match(/^\/(?:embed|shorts|live)\/([^/?]+)/)?.[1],playlistId=u.searchParams.get("list");if(videoId)return {videoId,playlistId};if(playlistId)return {playlistId};}}catch{}return null;}
 let activePlayerClose=null;
@@ -14,5 +12,78 @@ function inlinePlayer(rec,session,number,part,label,accent){const target=youtube
 function renderChronicle(c,accent){document.querySelector("#chronicle-kicker").textContent=c.kicker;document.querySelector("#chronicle-title").textContent=c.title;document.querySelector("#chronicle-description").textContent=c.description;const root=document.querySelector("#campaign-chronicle");root.classList.add("chronicle");root.replaceChildren(...(c.sessions||[]).map(session=>{const article=el("article","chronicle-record");article.style.setProperty("--chronicle-accent",accent);const header=el("div","chronicle-record__header");header.tabIndex=0;header.setAttribute("role","button");header.setAttribute("aria-expanded","false");const raw=String(session.sessionNumber??session.number??"—").trim(),match=raw.match(/^S?0*(\d+)([A-Z]?)$/i),number=match?String(Number(match[1])).padStart(2,"0")+match[2].toUpperCase():raw;const titleRaw=String(session.title||"Bez tytułu").trim();const title=titleRaw.replace(/^.*?\bS\d+(?:P\d+)?\s*[-–—:]\s*/i,"").replace(/^.*?#\s*\d+\s*[-–—:]\s*/i,"").replace(/\s+S\d+(?:P\d+)?\s*\[[^\]]+\]$/i,"").trim()||titleRaw;header.append(el("span","chronicle-record__number",number),el("span","chronicle-record__title",title));const date=el("time","chronicle-record__date",session.date||"");date.hidden=!session.date;if(session.date){const m=session.date.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);date.dateTime=m?m[3]+"-"+m[2]+"-"+m[1]:session.date;}const recordings=el("div","chronicle-record__recordings"),players=el("div","chronicle-record__players");const links=Array.isArray(session.recordings)?session.recordings:[];recordings.hidden=!links.length;links.forEach((rec,i)=>{const part=rec.partNumber||(links.length>1?i+1:null),label=links.length>1?"Odtwórz Część "+(part||i+1):"Odtwórz";const player=inlinePlayer(rec,session,number,part,label,accent);if(player){recordings.append(player.button);players.append(player.panel);}else if(rec.url){const a=el("a","play-recording-button",label+" ▶");a.href=rec.url;a.target="_blank";a.rel="noopener noreferrer";recordings.append(a);}});recordings.addEventListener("click",e=>e.stopPropagation());header.append(date,recordings);const desc=el("div","chronicle-record__description");desc.hidden=true;desc.append(el("p","",session.description||session.notes||""));const toggle=()=>{const open=desc.hidden;desc.hidden=!open;header.setAttribute("aria-expanded",String(open));article.classList.toggle("is-expanded",open);};header.addEventListener("click",toggle);header.addEventListener("keydown",e=>{if(e.target===header&&(e.key==="Enter"||e.key===" ")){e.preventDefault();toggle();}});article.append(header,players,desc);return article;}));}
 class LocalAudioPlayer{constructor({src,storageKey="vengrath-audio-state"}){this.audio=new Audio();this.audio.loop=true;this.audio.preload="none";this.audio.src=src;this.storageKey=storageKey;this.listeners=new Set();this.audio.volume=.5;try{const s=JSON.parse(localStorage.getItem(storageKey)||"{}");this.audio.volume=Math.max(0,Math.min(1,Number(s.volume??.5)));this.pendingTime=Math.max(0,Number(s.time)||0);}catch{this.pendingTime=0;}["play","pause","volumechange","timeupdate","loadedmetadata"].forEach(type=>this.audio.addEventListener(type,()=>{if(type==="loadedmetadata"&&this.pendingTime>0)this.audio.currentTime=Math.min(this.pendingTime,this.audio.duration||this.pendingTime);this.persist();this.emit();}));window.addEventListener("pagehide",()=>this.persist());}persist(){try{localStorage.setItem(this.storageKey,JSON.stringify({volume:this.audio.volume,time:this.audio.currentTime||0}));}catch{}}snapshot(){return {playing:!this.audio.paused,volume:this.audio.volume};}subscribe(fn){this.listeners.add(fn);fn(this.snapshot());return ()=>this.listeners.delete(fn);}emit(){const s=this.snapshot();this.listeners.forEach(fn=>fn(s));}async toggle(){if(this.audio.paused){try{await this.audio.play();}catch(e){if(e?.name!=="NotAllowedError")console.error(e);}}else this.audio.pause();this.emit();}setVolume(v){this.audio.volume=Math.max(0,Math.min(1,v));this.persist();this.emit();}}
 function mountAudioButton(player,color){const button=el("button","audio-player-button");button.type="button";button.style.setProperty("--player-color",color);const ring=el("span","audio-player-ring"),symbol=el("span","audio-player-symbol");button.append(ring,symbol);let dragging=false;const point=e=>{const r=button.getBoundingClientRect(),x=e.clientX-(r.left+r.width/2),y=e.clientY-(r.top+r.height/2);let a=Math.atan2(y,x)+Math.PI/2;if(a<0)a+=Math.PI*2;return {radius:Math.hypot(x,y),volume:a/(Math.PI*2)};};const update=e=>player.setVolume(point(e).volume);button.addEventListener("click",e=>{if(dragging){e.preventDefault();return;}if(point(e).radius>18)update(e);else player.toggle();});button.addEventListener("pointerdown",e=>{if(point(e).radius<=18)return;e.preventDefault();dragging=true;button.setPointerCapture(e.pointerId);update(e);});button.addEventListener("pointermove",e=>{if(dragging)update(e);});button.addEventListener("pointerup",()=>dragging=false);button.addEventListener("pointercancel",()=>dragging=false);player.subscribe(s=>{symbol.textContent=s.playing?"Ⅱ":"▶";button.setAttribute("aria-label",s.playing?"Wstrzymaj audio":"Odtwórz audio");ring.style.setProperty("--volume",s.volume*100+"%");});document.body.append(button);}
-async function initialize(){const [manifest,theme,content]=await Promise.all([loadJson("./manifest.json"),loadJson("./theme.json"),loadJson("./content.json")]);applyTheme(theme);hero(content,theme,manifest);renderCampaign(content.campaign);renderMaterial(content.characters);renderChronicle(content.chronicle,theme.colors.accent2);if(manifest.audio?.src){const player=new LocalAudioPlayer({src:manifest.audio.src,storageKey:manifest.audio.continuationKey});mountAudioButton(player,theme.audioColor);}}
-initialize().then(()=>document.body.classList.remove("campaign-startup-loading")).catch(e=>console.error("Nie udało się uruchomić strony Drakkenheim.",e));
+async function initialize() {
+  // Theme tokens and hero artwork are shipped in the initial CSS and HTML.
+  const root = document.documentElement;
+  const accent =
+    getComputedStyle(root).getPropertyValue("--theme-accent-2").trim() || "#79d9f2";
+  const [manifest, content] = await Promise.all([
+    loadJson("./manifest.json"),
+    loadJson("./content.json"),
+  ]);
+  hero(content, accent, manifest);
+  renderCampaign({
+    ...content.campaign,
+    partyTitle: content.characters.artifactTitle,
+    partyDescription: content.characters.artifactDescription,
+    partyImage: content.characters.image,
+  });
+
+  let materialRendered = false;
+  let chroniclePromise;
+  document.addEventListener("vengrath:sectionchange", (event) => {
+    const section = event.detail?.section;
+    if (section === "characters" && !materialRendered) {
+      renderMaterial(content.characters);
+      materialRendered = true;
+    }
+    if (section === "chronicle" && !chroniclePromise) {
+      const panel = document.querySelector("#chronicle");
+      const container = document.querySelector("#campaign-chronicle");
+      panel.setAttribute("aria-busy", "true");
+      chroniclePromise = loadJson("./chronicle.json").then((chronicle) => {
+        renderChronicle(chronicle, accent);
+        panel.setAttribute("aria-busy", "false");
+      }).catch((error) => {
+        console.error("Nie udało się wczytać kroniki kampanii.", error);
+        chroniclePromise = null;
+        panel.setAttribute("aria-busy", "false");
+        container.replaceChildren(
+          el("p", "character-gallery__empty", "Nie udało się wczytać kroniki. Spróbuj ponownie."),
+        );
+      });
+    }
+  });
+
+  const selectedSection = document.querySelector(
+    '.subpage-navbar-button[aria-pressed="true"]',
+  )?.dataset.section;
+  if (selectedSection) {
+    document.dispatchEvent(
+      new CustomEvent("vengrath:sectionchange", {
+        detail: { section: selectedSection },
+      }),
+    );
+  }
+
+  document.querySelector("main")?.setAttribute("aria-busy", "false");
+  document.body.classList.remove("campaign-startup-loading");
+  if (manifest.audio?.src) {
+    const player = new LocalAudioPlayer({
+      src: manifest.audio.src,
+      storageKey: manifest.audio.continuationKey,
+    });
+    const audioColor =
+      getComputedStyle(root).getPropertyValue("--theme-audio-color").trim() || accent;
+    mountAudioButton(player, audioColor);
+  }
+}
+initialize().catch((error) => {
+  console.error("Nie udało się uruchomić strony Drakkenheim.", error);
+  document.querySelector("main")?.setAttribute("aria-busy", "false");
+  document.body.classList.remove("campaign-startup-loading");
+  const message = el("p", "drakkenheim-load-error", "Nie udało się wczytać archiwum kampanii.");
+  message.setAttribute("role", "alert");
+  document.body.prepend(message);
+});
+

@@ -9,11 +9,12 @@
     />
     <meta name="theme-color" content="#080706" />
     <title>Sands of Doom — Vengrath</title>
+    <link rel="preload" as="image" href="/page/sands-of-doom/res/graphics/sands-of-doom.jpg" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&amp;family=Voltaire&amp;family=Brygada+1918:wght@400;500;600;700&amp;display=block"
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&amp;family=Voltaire&amp;family=Brygada+1918:wght@400;500;600;700&amp;display=swap"
     />
       <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -24,18 +25,26 @@
       style="--hero-background: url('/page/sands-of-doom/res/graphics/sands-of-doom.jpg')"
     >
       <div class="subpage-hero__copy">
-        <p class="campaign-startup-kicker">
+        <p class="sands-hero-kicker">
           KIRAT · WIELKIE PUSTKOWIE · MROCZNE FANTASY
         </p>
         <h1>
-          SANDS OF DOOM
+          SANDS
+          <br />
+          <em class="sands-hero-title-accent">OF DOOM</em>
         </h1>
-        <p class="campaign-startup-lead">
+        <p class="sands-hero-lead">
           Piasek pamięta. Grobowce czekają. A pod ruinami dawnej cywilizacji coś wciąż oddycha.
         </p>
+        <div class="sands-sigils" aria-hidden="true">
+          <span>𓂀</span><span>☥</span><span>𓆣</span><span>𓃠</span>
+        </div>
+        <div class="sands-hero-seal" aria-hidden="true">
+          <span>THE WASTELAND</span><strong>KIRAT</strong><small>DOOM</small>
+        </div>
       </div>
     </header>
-    <main class="sands-content">
+    <main class="sands-content" aria-busy="true">
       <section
         class="sands-tab-panel"
         id="campaign"

@@ -1,6 +1,6 @@
 function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
 function createSubpageHero({title,backgroundImage,theme}){const hero=document.createElement("header");hero.className="subpage-hero";hero.style.setProperty("--hero-background","url('"+backgroundImage+"')");hero.style.setProperty("--campaign-accent",theme.accent);const copy=document.createElement("div");copy.className="subpage-hero__copy";copy.append(el("h1","",title));hero.append(copy);return hero;}
-function mountSubpageNavbar(mount,{sections=[],playlistUrl}){mount.classList.add("subpage-navbar");const left=el("div","subpage-navbar__left"),home=el("a","vengrath-home-button");home.href="/home/";home.setAttribute("aria-label","Vengrath — strona główna");const image=el("img");image.src="/core/graphics/favicon/favicon.ico";image.alt="";home.append(image,el("span","","VENGRATH"));left.append(home);if(playlistUrl){const link=el("a","youtube-playlist-button","YouTube Playlista");link.href=playlistUrl;link.target="_blank";link.rel="noopener noreferrer";left.append(link);}const nav=el("nav","subpage-navbar__sections");nav.setAttribute("aria-label","Sekcje kampanii");const buttons=sections.map((section,i)=>{const b=el("button","subpage-navbar-button",section.text);b.type="button";b.dataset.section=section.sectionLink;b.style.setProperty("--section-color",section.color||"#bca06a");b.setAttribute("aria-pressed",String(i===0));b.addEventListener("click",()=>{document.querySelectorAll("[data-page-section]").forEach(panel=>panel.hidden=panel.dataset.pageSection!==section.sectionLink);buttons.forEach(x=>x.setAttribute("aria-pressed",String(x===b)));});nav.append(b);return b;});mount.replaceChildren(left,nav);const update=()=>mount.classList.toggle("is-scrolled",window.scrollY>12);update();window.addEventListener("scroll",update,{passive:true});if(sections[0])document.querySelectorAll("[data-page-section]").forEach(panel=>panel.hidden=panel.dataset.pageSection!==sections[0].sectionLink);}
+function mountSubpageNavbar(mount,{sections=[],playlistUrl}){mount.classList.add("subpage-navbar");const left=el("div","subpage-navbar__left"),home=el("a","vengrath-home-button");home.href="/home/";home.setAttribute("aria-label","Vengrath — strona główna");const image=el("img");image.src="/core/graphics/favicon/favicon.ico";image.alt="";home.append(image,el("span","","VENGRATH"));left.append(home);if(playlistUrl){const link=el("a","youtube-playlist-button","YouTube Playlista");link.href=playlistUrl;link.target="_blank";link.rel="noopener noreferrer";left.append(link);}const nav=el("nav","subpage-navbar__sections");nav.setAttribute("aria-label","Sekcje kampanii");const buttons=sections.map((section,i)=>{const b=el("button","subpage-navbar-button",section.text);b.type="button";b.dataset.section=section.sectionLink;b.style.setProperty("--section-color",section.color||"#bca06a");b.setAttribute("aria-pressed",String(i===0));b.addEventListener("click",()=>{document.querySelectorAll("[data-page-section]").forEach(panel=>panel.hidden=panel.dataset.pageSection!==section.sectionLink);buttons.forEach(x=>x.setAttribute("aria-pressed",String(x===b)));mount.dispatchEvent(new CustomEvent("vengrath:sectionchange",{bubbles:true,detail:{section:section.sectionLink}}));});nav.append(b);return b;});mount.replaceChildren(left,nav);const update=()=>mount.classList.toggle("is-scrolled",window.scrollY>12);update();window.addEventListener("scroll",update,{passive:true});if(sections[0])document.querySelectorAll("[data-page-section]").forEach(panel=>panel.hidden=panel.dataset.pageSection!==sections[0].sectionLink);}
 class CharacterGallery{constructor(root,options){this.root=root;this.ids=options.characterIds||[];}async render(){const [cr,ar]=await Promise.all([fetch("/core/data/characters.json"),fetch("/core/data/achievements.json")]);if(!cr.ok||!ar.ok)throw Error("Nie udało się wczytać katalogu postaci.");const [all,ach]=await Promise.all([cr.json(),ar.json()]),byId=new Map(all.map(x=>[x.id,x])),defs=new Map(ach.map(x=>[x.id,x])),selected=[...new Set(this.ids)].map(id=>byId.get(id)).filter(Boolean);this.root.replaceChildren();if(!selected.length){this.root.append(el("p","character-gallery__empty","Brak postaci spełniających kryteria."));return;}const grid=el("div","character-gallery");selected.forEach(c=>{const card=el("article","character-card");card.dataset.status=c.status||"";const badges=el("div","character-card__achievements"),earned=(c.achievementIds||[]).map(id=>defs.get(id)).filter(Boolean);earned.forEach(a=>{const b=el("span","achievement-badge",a.icon||"✦");b.title=a.name||a.id;badges.append(b);});const portrait=el("div","character-card__portrait"),img=el("img");img.src=c.portrait;img.alt=c.character||"Portret postaci";img.loading="lazy";portrait.append(img,el("span","character-card__status",c.status||""));const body=el("div","character-card__body");body.append(el("h3","",c.character||"Nieznana postać"),el("p","character-card__player",c.player||"Nie podano"));for(const [l,v] of [["Kampanie",c.campaigns],["Klasy",c.classes],["Rasa",c.race]]){const row=el("div","character-card__row");row.append(el("span","character-card__label",l),el("span","character-card__value",Array.isArray(v)?v.join(", "):v||"Nie podano"));body.append(row);}card.append(badges,portrait,body,el("p","character-card__achievement-count",earned.length?earned.length+" osiągnięć":"Brak zdobytych osiągnięć"));grid.append(card);});this.root.append(grid);}}
 function ytTarget(value){try{const u=new URL(value),host=u.hostname.replace(/^www\./,"").toLowerCase();if(host==="youtu.be")return{videoId:u.pathname.split("/").filter(Boolean)[0]};if(host.endsWith("youtube.com")||host.endsWith("youtube-nocookie.com")){const videoId=u.searchParams.get("v")||u.pathname.match(/^\/(?:embed|shorts|live)\/([^/?]+)/)?.[1],playlistId=u.searchParams.get("list");if(videoId)return{videoId,playlistId};if(playlistId)return{playlistId};}}catch{}return null;}
 let activeChronicleClose=null;
@@ -13,74 +13,23 @@ function mountAudioPlayerButton(player,color,{autoplay=true}={}){const b=el("but
 
 
 
-const themeVariables = {
-  base1: "--theme-base-1",
-  base2: "--theme-base-2",
-  base3: "--theme-base-3",
-  base4: "--theme-base-4",
-  base5: "--theme-base-5",
-  accent1: "--theme-accent-1",
-  accent2: "--theme-accent-2",
-  text1: "--theme-text-1",
-  text2: "--theme-text-2",
-  text3: "--theme-text-3",
-  textMuted: "--theme-text-muted",
-  titleAccent: "--theme-title-accent",
-  line1: "--theme-line-1",
-  line2: "--theme-line-2",
-  navBackground: "--theme-nav-background",
-  navText: "--theme-nav-text",
-  navActiveBackground: "--theme-nav-active-background",
-};
-
 async function readJson(path) {
   const response = await fetch(path);
   if (!response.ok) throw new Error("Nie udało się wczytać pliku: " + path);
   return response.json();
 }
 
-function applyTheme(theme) {
-  Object.entries(themeVariables).forEach(([key, property]) => {
-    if (theme.colors[key])
-      document.documentElement.style.setProperty(property, theme.colors[key]);
-  });
-  document.documentElement.style.setProperty(
-    "--theme-font-1",
-    theme.typography.heading,
-  );
-  document.documentElement.style.setProperty(
-    "--theme-font-2",
-    theme.typography.body,
-  );
-  document.documentElement.style.setProperty(
-    "--theme-font-3",
-    theme.typography.serif,
-  );
-  document.documentElement.style.setProperty(
-    "--campaign-accent",
-    theme.colors.accent2,
-  );
-  document.documentElement.style.setProperty(
-    "--chronicle-heading-font",
-    "var(--theme-font-1)",
-  );
-}
-
 async function initializeCampaignPage() {
-  const [manifest, theme, content] = await Promise.all([
+  const root = document.documentElement;
+  const accent =
+    getComputedStyle(root).getPropertyValue("--theme-accent-2").trim() || "#bca06a";
+  const [manifest, content] = await Promise.all([
     readJson("./manifest.json"),
-    readJson("./theme.json"),
     readJson("./content.json"),
   ]);
-
-  applyTheme(theme);
-  const hero = createSubpageHero({
-    title: content.campaign.title,
-    backgroundImage: theme.heroImage,
-    theme: { accent: theme.colors.accent2 },
-  });
-  hero.id = "campaign-hero";
-  const heading = hero.querySelector("h1");
+  const hero = document.querySelector("#campaign-hero");
+  const copy = hero.querySelector(".subpage-hero__copy");
+  const heading = copy.querySelector("h1");
   heading.replaceChildren(
     document.createTextNode(content.campaign.heroFirstLine),
     document.createElement("br"),
@@ -89,141 +38,126 @@ async function initializeCampaignPage() {
       textContent: content.campaign.heroSecondLine,
     }),
   );
-  const kicker = document.createElement("p");
-  kicker.className = "dodd-hero-kicker";
-  kicker.textContent = content.campaign.kicker;
-  const lead = document.createElement("p");
-  lead.className = "dodd-hero-lead";
-  lead.textContent = content.campaign.lead;
-  heading.before(kicker);
-  heading.after(lead);
-
+  copy.querySelector(".dodd-hero-kicker").textContent = content.campaign.kicker;
+  copy.querySelector(".dodd-hero-lead").textContent = content.campaign.lead;
   const nav = document.createElement("div");
   nav.className = "dodd-navbar-mount";
   hero.prepend(nav);
-  document.querySelector("#campaign-hero").replaceWith(hero);
   mountSubpageNavbar(nav, {
     playlistUrl: manifest.playlistUrl || undefined,
     sections: [
-      {
-        text: "Kampania",
-        sectionLink: "campaign",
-        color: theme.colors.accent2,
-      },
-      {
-        text: "Postaci",
-        sectionLink: "characters",
-        color: theme.colors.accent2,
-      },
-      {
-        text: "Kronika",
-        sectionLink: "chronicle",
-        color: theme.colors.accent2,
-      },
+      {text: "Kampania", sectionLink: "campaign", color: accent},
+      {text: "Postaci", sectionLink: "characters", color: accent},
+      {text: "Kronika", sectionLink: "chronicle", color: accent},
     ],
   });
 
-  document.querySelector("#intro-title").textContent =
-    content.campaign.introTitle;
-  document.querySelector("#intro-copy").replaceChildren(
-    ...content.campaign.introParagraphs.map((text) => {
-      const paragraph = document.createElement("p");
-      paragraph.textContent = text;
-      return paragraph;
-    }),
-  );
-  document.querySelector("#campaign-dossier").replaceChildren(
-    ...content.campaign.dossier.map((item) => {
-      const row = document.createElement("div");
-      row.className = "dodd-dossier-row";
-      const label = document.createElement("span");
-      label.textContent = item.label;
-      const value = document.createElement("strong");
-      value.textContent = item.value;
-      if (item.label === "STATUS") value.className = "dodd-status";
-      row.append(label, value);
-      return row;
-    }),
-  );
-  document.querySelector("#party-title").textContent =
-    content.campaign.partyTitle;
-  document.querySelector("#party-description").textContent =
-    content.campaign.partyDescription;
-  document.querySelector("#party-image").src = content.campaign.partyImage;
-  document.querySelector("#party-image").alt = content.campaign.title;
-  document.querySelector("#manifesto-title").textContent =
-    content.campaign.manifestoTitle;
-  document.querySelector("#manifesto-quote").textContent =
-    "„" + content.campaign.manifesto + "”";
-  document.querySelector("#manifesto-tags").textContent =
-    content.campaign.manifestoTags;
+  document.querySelector("#intro-title").textContent = content.campaign.introTitle;
+  document.querySelector("#intro-copy").replaceChildren(...content.campaign.introParagraphs.map((text) => {
+    const paragraph = document.createElement("p");
+    paragraph.textContent = text;
+    return paragraph;
+  }));
+  document.querySelector("#campaign-dossier").replaceChildren(...content.campaign.dossier.map((item) => {
+    const row = document.createElement("div");
+    row.className = "dodd-dossier-row";
+    const label = document.createElement("span");
+    label.textContent = item.label;
+    const value = document.createElement("strong");
+    value.textContent = item.value;
+    if (item.label === "STATUS") value.className = "dodd-status";
+    row.append(label, value);
+    return row;
+  }));
+  document.querySelector("#party-title").textContent = content.campaign.partyTitle;
+  document.querySelector("#party-description").textContent = content.campaign.partyDescription;
+  const partyImage = document.querySelector("#party-image");
+  partyImage.src = content.campaign.partyImage;
+  partyImage.alt = content.campaign.title;
+  partyImage.loading = "lazy";
+  partyImage.decoding = "async";
+  document.querySelector("#manifesto-title").textContent = content.campaign.manifestoTitle;
+  document.querySelector("#manifesto-quote").textContent = "„" + content.campaign.manifesto + "”";
+  document.querySelector("#manifesto-tags").textContent = content.campaign.manifestoTags;
+  document.querySelector("#campaign-archive").replaceChildren(...content.campaign.archiveSections.map((section) => {
+    const article = document.createElement("article");
+    article.className = "dodd-archive-card";
+    article.append(
+      el("div", "dodd-section-mark", "AKTA / " + section.number),
+      el("h3", "", section.title),
+      el("p", "", section.description),
+    );
+    return article;
+  }));
 
-  document.querySelector("#campaign-archive").replaceChildren(
-    ...content.campaign.archiveSections.map((section) => {
-      const article = document.createElement("article");
-      article.className = "dodd-archive-card";
-      const kicker = document.createElement("div");
-      kicker.className = "dodd-section-mark";
-      kicker.textContent = "AKTA / " + section.number;
-      const title = document.createElement("h3");
-      title.textContent = section.title;
-      const description = document.createElement("p");
-      description.textContent = section.description;
-      article.append(kicker, title, description);
-      return article;
-    }),
-  );
-
-  document.querySelector("#characters-kicker").textContent =
-    content.characters.kicker;
-  document.querySelector("#characters-title").textContent =
-    content.characters.title;
-  document.querySelector("#characters-description").textContent =
-    content.characters.description;
-  await new CharacterGallery(document.querySelector("#character-gallery"), {
-    characterIds: content.characters.characterIds,
-  }).render();
-
-  document.querySelector("#chronicle-kicker").textContent =
-    content.chronicle.kicker;
-  document.querySelector("#chronicle-title").textContent =
-    content.chronicle.title;
-  document.querySelector("#chronicle-description").textContent =
-    content.chronicle.description;
+  document.querySelector("#characters-kicker").textContent = content.characters.kicker;
+  document.querySelector("#characters-title").textContent = content.characters.title;
+  document.querySelector("#characters-description").textContent = content.characters.description;
+  document.querySelector("#chronicle-kicker").textContent = content.chronicle.kicker;
+  document.querySelector("#chronicle-title").textContent = content.chronicle.title;
+  document.querySelector("#chronicle-description").textContent = content.chronicle.description;
   const playlist = document.querySelector("#chronicle-playlist");
   if (content.chronicle.playlistUrl) {
     playlist.href = content.chronicle.playlistUrl;
     playlist.hidden = false;
   }
-  document
-    .querySelector("#chronicle-records")
-    .replaceChildren(
-      ...content.chronicle.sessions.map((session) =>
-        createChronicleRecord(session, { accent: theme.colors.accent2 }),
-      ),
-    );
-
   document.querySelector("#footer-title").textContent =
     "VENGRATH · " + content.campaign.title.toUpperCase();
-  if (manifest.audio && manifest.audio.src) {
+
+  let characterPromise;
+  let chronicleRendered = false;
+  document.addEventListener("vengrath:sectionchange", (event) => {
+    const section = event.detail?.section;
+    if (section === "characters" && !characterPromise) {
+      characterPromise = new CharacterGallery(document.querySelector("#character-gallery"), {
+        characterIds: content.characters.characterIds,
+      }).render().catch((error) => {
+        console.error("Nie udało się wczytać postaci.", error);
+        characterPromise = null;
+        document.querySelector("#character-gallery").replaceChildren(
+          el("p", "character-gallery__empty", "Nie udało się wczytać postaci."),
+        );
+      });
+    }
+    if (section === "chronicle" && !chronicleRendered) {
+      document.querySelector("#chronicle-records").replaceChildren(
+        ...content.chronicle.sessions.map((session) =>
+          createChronicleRecord(session, {accent}),
+        ),
+      );
+      chronicleRendered = true;
+    }
+  });
+
+  const selectedSection = document.querySelector(
+    '.subpage-navbar-button[aria-pressed="true"]',
+  )?.dataset.section;
+  if (selectedSection) {
+    document.dispatchEvent(
+      new CustomEvent("vengrath:sectionchange", {
+        detail: { section: selectedSection },
+      }),
+    );
+  }
+
+  document.querySelector("main")?.setAttribute("aria-busy", "false");
+  document.body.classList.remove("campaign-startup-loading");
+  if (manifest.audio?.src) {
     const audioPlayer = new AudioPlayer({
       src: manifest.audio.src,
       storageKey: manifest.audio.continuationKey,
+      preload: "none",
     });
-    mountAudioPlayerButton(
-      audioPlayer,
-      theme.audioColor || theme.colors.accent1,
-    );
+    const audioColor =
+      getComputedStyle(root).getPropertyValue("--theme-audio-color").trim() || accent;
+    mountAudioPlayerButton(audioPlayer, audioColor);
   }
 }
-
-initializeCampaignPage()
-  .then(() => {
-    document.body.classList.remove("campaign-startup-loading");
-  })
-  .catch((error) => {
-    console.error(
-      "Nie udało się uruchomić strony Dragon of Dampen Depths.",
-      error,
-    );
-  });
+initializeCampaignPage().catch((error) => {
+  console.error("Nie udało się uruchomić strony Dragon of Dampen Depths.", error);
+  document.querySelector("main")?.setAttribute("aria-busy", "false");
+  document.body.classList.remove("campaign-startup-loading");
+  const message = el("p", "dodd-load-error", "Nie udało się wczytać archiwum kampanii.");
+  message.setAttribute("role", "alert");
+  document.body.prepend(message);
+});

@@ -1,7 +1,7 @@
 :root{--theme-base-1:#080a16;--theme-base-2:#101329;--theme-base-3:#191d38;--theme-base-4:#292e4b;--theme-accent-1:#c83f58;--theme-accent-2:#c8d4ec;--theme-text-1:#f8f8ff;--theme-text-2:#e0e4f4;--theme-text-3:#b6bfdc;--theme-line-1:#343b61;--theme-line-2:#9aa8ca;--theme-font-1:Voltaire,sans-serif;--theme-font-2:"Fira Sans Extra Condensed",sans-serif;--theme-font-3:"Brygada 1918",Georgia,serif;--campaign-accent:#c8d4ec;--chronicle-heading-font:var(--theme-font-1)}
 html{scroll-behavior:smooth}body.barber-page{margin:0;min-height:100vh;color:var(--theme-text-1);background:radial-gradient(ellipse at 75% 8%,#3c4677 0,transparent 34%),radial-gradient(ellipse at 10% 70%,#4a1b3c 0,transparent 30%),var(--theme-base-1);font-family:var(--theme-font-2);line-height:1.6}
 body.barber-page::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.14;background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,255,255,.025) 4px)}
-body.campaign-startup-loading>main,body.campaign-startup-loading>footer{display:none!important}body.campaign-startup-loading .subpage-hero__copy{visibility:hidden!important}
+body.campaign-startup-loading>main,body.campaign-startup-loading>footer{display:none!important}
 .campaign-startup-kicker{margin:0 0 1rem;color:var(--theme-accent-2);font:500 .7rem/1.5 "DM Mono",monospace;letter-spacing:.2em;text-transform:uppercase}
 .campaign-startup-lead{max-width:50rem;margin:1.5rem 0 0;color:var(--theme-text-2);font:clamp(1.05rem,1.8vw,1.35rem)/1.4 var(--theme-font-3)}
 .subpage-hero{position:relative;display:grid;place-items:center;width:100%;min-height:100vh;min-height:100svh;box-sizing:border-box;overflow:hidden;background:linear-gradient(#080a0b55,#080a0b99),var(--hero-background,linear-gradient(135deg,#171c1e,#0b0d0e));background-position:center;background-size:cover;color:#f1f2f2}
@@ -60,6 +60,7 @@ body.campaign-startup-loading>main,body.campaign-startup-loading>footer{display:
   --theme-base-3: #0b1c16;
   --theme-base-4: #10271d;
   --theme-accent-1: #9cff24;
+  --theme-audio-color: #9cff24;
   --theme-accent-2: #42bfff;
   --theme-text-1: #f2f4e9;
   --theme-text-2: #d5e0d6;

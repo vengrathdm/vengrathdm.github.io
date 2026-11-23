@@ -440,6 +440,7 @@ body.dodd-page {
   --theme-base-5: #17191d;
   --theme-base5: #17191d;
   --theme-accent-1: #8e2631;
+  --theme-audio-color: #8e2631;
   --theme-accent1: #8e2631;
   --theme-accent-2: #bca06a;
   --theme-accent2: #bca06a;
@@ -494,9 +495,7 @@ body.campaign-startup-loading > footer {
 }
 
 /* Keep hero copy in its final layout until the page theme and web fonts are ready. */
-body.campaign-startup-loading .subpage-hero__copy {
-  visibility: hidden;
-}
+
 
 body.campaign-startup-loading .subpage-hero {
   --hero-copy-ready: 0;
@@ -504,9 +503,7 @@ body.campaign-startup-loading .subpage-hero {
 
 
 /* Avoid showing the static placeholder hero while campaign data and theme initialize. */
-body.campaign-startup-loading .subpage-hero__copy {
-  visibility: hidden !important;
-}
+
 
 
 /* Keep page content in its final layout while all campaign theme fonts load. */

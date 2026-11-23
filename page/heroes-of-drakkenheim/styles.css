@@ -616,6 +616,7 @@ html {
   --theme-accent-1: #b95a67;
   --theme-accent1: #b95a67;
   --theme-accent-2: #c6a7df;
+  --theme-audio-color: #8b2020;
   --theme-accent2: #c6a7df;
   --theme-text-1: #f2edf4;
   --theme-text1: #f2edf4;
@@ -668,9 +669,7 @@ body.campaign-startup-loading > footer {
 }
 
 /* Keep hero copy in its final layout until the page theme and web fonts are ready. */
-body.campaign-startup-loading .subpage-hero__copy {
-  visibility: hidden;
-}
+
 
 body.campaign-startup-loading .subpage-hero {
   --hero-copy-ready: 0;
@@ -678,9 +677,7 @@ body.campaign-startup-loading .subpage-hero {
 
 
 /* Avoid showing the static placeholder hero while campaign data and theme initialize. */
-body.campaign-startup-loading .subpage-hero__copy {
-  visibility: hidden !important;
-}
+
 
 
 /* Keep page content in its final layout while all campaign theme fonts load. */

@@ -1,7 +1,5 @@
 /* Forge of Fury — campaign-local runtime. No shared JavaScript imports. */
-const themeVariables={base1:"--theme-base-1",base2:"--theme-base-2",base3:"--theme-base-3",base4:"--theme-base-4",base5:"--theme-base-5",accent1:"--theme-accent-1",accent2:"--theme-accent-2",text1:"--theme-text-1",text2:"--theme-text-2",text3:"--theme-text-3",textMuted:"--theme-text-muted",titleAccent:"--theme-title-accent",line1:"--theme-line-1",line2:"--theme-line-2",navBackground:"--theme-nav-background",navText:"--theme-nav-text",navActiveBackground:"--theme-nav-active-background"};
 async function loadJson(path){const response=await fetch(path);if(!response.ok)throw new Error("Nie udało się wczytać pliku: "+path);return response.json();}
-function applyTheme(theme){Object.entries(themeVariables).forEach(([key,property])=>{if(theme.colors[key])document.documentElement.style.setProperty(property,theme.colors[key]);});document.documentElement.style.setProperty("--campaign-accent",theme.colors.accent2);}
 function createHomeButton(){const link=document.createElement("a");link.className="vengrath-home-button";link.href="/home/";link.setAttribute("aria-label","Vengrath — strona główna");const image=document.createElement("img");image.src="/core/graphics/favicon/favicon.ico";image.alt="";const label=document.createElement("span");label.textContent="VENGRATH";link.append(image,label);return link;}
 function mountNavbar(container,accent){
  container.classList.add("subpage-navbar");const left=document.createElement("div");left.className="subpage-navbar__left";left.append(createHomeButton());
@@ -11,12 +9,12 @@ function mountNavbar(container,accent){
  function select(id){document.querySelectorAll("[data-page-section]").forEach(section=>{section.hidden=section.dataset.pageSection!==id;});buttons.forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.section===id)));container.dispatchEvent(new CustomEvent("vengrath:sectionchange",{bubbles:true,detail:{section:id}}));}
  const updateScroll=()=>container.classList.toggle("is-scrolled",window.scrollY>12);updateScroll();window.addEventListener("scroll",updateScroll,{passive:true});select("campaign");
 }
-function initializeHero(content,theme){
- const hero=document.querySelector("#campaign-hero");hero.style.setProperty("--hero-background","url('"+theme.heroImage+"')");
- const copy=hero.querySelector(".subpage-hero__copy"),kicker=copy.querySelector(".campaign-startup-kicker"),lead=copy.querySelector(".campaign-startup-lead"),heading=copy.querySelector("h1");
- kicker.className="fof-hero-kicker";kicker.textContent=content.campaign.kicker;lead.className="fof-hero-lead";lead.textContent=content.campaign.lead;
+function initializeHero(content,accentColor){
+ const hero=document.querySelector("#campaign-hero");
+ const copy=hero.querySelector(".subpage-hero__copy"),kicker=copy.querySelector(".fof-hero-kicker"),lead=copy.querySelector(".fof-hero-lead"),heading=copy.querySelector("h1");
+ kicker.textContent=content.campaign.kicker;lead.textContent=content.campaign.lead;
  const accent=document.createElement("span");accent.className="fof-hero-title-accent";accent.textContent="Fury";heading.replaceChildren(document.createTextNode("Forge of"),document.createElement("br"),accent);
- const mount=document.createElement("div");mount.className="fof-navbar-mount";hero.prepend(mount);const mist=document.createElement("div");mist.className="fof-hero-mist-line";mist.setAttribute("aria-hidden","true");hero.append(mist);mountNavbar(mount,theme.colors.accent2);
+ const mount=document.createElement("div");mount.className="fof-navbar-mount";hero.prepend(mount);const mist=document.createElement("div");mist.className="fof-hero-mist-line";mist.setAttribute("aria-hidden","true");hero.append(mist);mountNavbar(mount,accentColor);
 }
 function renderCampaign(campaign){
  document.querySelector("#campaign-intro-title").textContent=campaign.introTitle;
@@ -41,5 +39,54 @@ async function renderCharacters(characters){
  const container=document.querySelector("#character-gallery");container.replaceChildren();if(!selected.length){const empty=document.createElement("p");empty.className="character-gallery__empty";empty.textContent="Brak postaci spełniających kryteria.";container.append(empty);return;}
  const grid=document.createElement("div");grid.className="character-gallery";const definitions=new Map(achievements.map(item=>[item.id,item]));selected.forEach(character=>grid.append(createCharacterCard(character,definitions)));container.append(grid);
 }
-async function initializeCampaignPage(){const [manifest,theme,content]=await Promise.all([loadJson("./manifest.json"),loadJson("./theme.json"),loadJson("./content.json")]);applyTheme(theme);initializeHero(content,theme);renderCampaign(content.campaign);await renderCharacters(content.characters);}
-initializeCampaignPage().then(()=>document.body.classList.remove("campaign-startup-loading")).catch(error=>console.error("Nie udało się uruchomić strony Forge of Fury.",error));
+async function initializeCampaignPage() {
+  const accent =
+    getComputedStyle(document.documentElement)
+      .getPropertyValue("--theme-accent-2")
+      .trim() || "#d7b56d";
+  const [manifest, content] = await Promise.all([
+    loadJson("./manifest.json"),
+    loadJson("./content.json"),
+  ]);
+  initializeHero(content, accent);
+  renderCampaign(content.campaign);
+
+  let charactersPromise;
+  document.addEventListener("vengrath:sectionchange", (event) => {
+    if (event.detail?.section !== "characters" || charactersPromise) return;
+    charactersPromise = renderCharacters(content.characters).catch((error) => {
+      console.error("Nie udało się wczytać postaci Forge of Fury.", error);
+      charactersPromise = null;
+      document.querySelector("#character-gallery").replaceChildren(
+        Object.assign(document.createElement("p"), {
+          className: "character-gallery__empty",
+          textContent: "Nie udało się wczytać postaci. Spróbuj ponownie.",
+        }),
+      );
+    });
+  });
+
+  const selectedSection = document.querySelector(
+    '.subpage-navbar-button[aria-pressed="true"]',
+  )?.dataset.section;
+  if (selectedSection) {
+    document.dispatchEvent(
+      new CustomEvent("vengrath:sectionchange", {
+        detail: { section: selectedSection },
+      }),
+    );
+  }
+
+  document.querySelector("main")?.setAttribute("aria-busy", "false");
+  document.body.classList.remove("campaign-startup-loading");
+}
+initializeCampaignPage().catch((error) => {
+  console.error("Nie udało się uruchomić strony Forge of Fury.", error);
+  document.querySelector("main")?.setAttribute("aria-busy", "false");
+  document.body.classList.remove("campaign-startup-loading");
+  const message = document.createElement("p");
+  message.className = "fof-load-error";
+  message.setAttribute("role", "alert");
+  message.textContent = "Nie udało się wczytać kampanii.";
+  document.body.prepend(message);
+});

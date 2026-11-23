@@ -1,5 +1,5 @@
 function createSubpageHero({title,backgroundImage,theme}){const hero=document.createElement("header");hero.className="subpage-hero";hero.style.setProperty("--hero-background","url('"+backgroundImage+"')");hero.style.setProperty("--campaign-accent",theme.accent);const copy=document.createElement("div");copy.className="subpage-hero__copy";copy.append(el("h1","",title));hero.append(copy);return hero;}
-function mountSubpageNavbar(mount,{sections=[],playlistUrl}){mount.classList.add("subpage-navbar");const left=el("div","subpage-navbar__left"),home=el("a","vengrath-home-button");home.href="/home/";home.setAttribute("aria-label","Vengrath — strona główna");const image=el("img");image.src="/core/graphics/favicon/favicon.ico";image.alt="";home.append(image,el("span","","VENGRATH"));left.append(home);if(playlistUrl){const link=el("a","youtube-playlist-button","YouTube Playlista");link.href=playlistUrl;link.target="_blank";link.rel="noopener noreferrer";left.append(link);}const nav=el("nav","subpage-navbar__sections");nav.setAttribute("aria-label","Sekcje kampanii");const buttons=sections.map((section,i)=>{const b=el("button","subpage-navbar-button",section.text);b.type="button";b.dataset.section=section.sectionLink;b.style.setProperty("--section-color",section.color||"#bca06a");b.setAttribute("aria-pressed",String(i===0));b.addEventListener("click",()=>{document.querySelectorAll("[data-page-section]").forEach(panel=>panel.hidden=panel.dataset.pageSection!==section.sectionLink);buttons.forEach(x=>x.setAttribute("aria-pressed",String(x===b)));});nav.append(b);return b;});mount.replaceChildren(left,nav);const update=()=>mount.classList.toggle("is-scrolled",window.scrollY>12);update();window.addEventListener("scroll",update,{passive:true});if(sections[0])document.querySelectorAll("[data-page-section]").forEach(panel=>panel.hidden=panel.dataset.pageSection!==sections[0].sectionLink);}
+function mountSubpageNavbar(mount,{sections=[],playlistUrl}){mount.classList.add("subpage-navbar");const left=el("div","subpage-navbar__left"),home=el("a","vengrath-home-button");home.href="/home/";home.setAttribute("aria-label","Vengrath — strona główna");const image=el("img");image.src="/core/graphics/favicon/favicon.ico";image.alt="";home.append(image,el("span","","VENGRATH"));left.append(home);if(playlistUrl){const link=el("a","youtube-playlist-button","YouTube Playlista");link.href=playlistUrl;link.target="_blank";link.rel="noopener noreferrer";left.append(link);}const nav=el("nav","subpage-navbar__sections");nav.setAttribute("aria-label","Sekcje kampanii");const buttons=sections.map((section,i)=>{const b=el("button","subpage-navbar-button",section.text);b.type="button";b.dataset.section=section.sectionLink;b.style.setProperty("--section-color",section.color||"#bca06a");b.setAttribute("aria-pressed",String(i===0));b.addEventListener("click",()=>{document.querySelectorAll("[data-page-section]").forEach(panel=>panel.hidden=panel.dataset.pageSection!==section.sectionLink);buttons.forEach(x=>x.setAttribute("aria-pressed",String(x===b)));mount.dispatchEvent(new CustomEvent("vengrath:sectionchange",{bubbles:true,detail:{section:section.sectionLink}}));});nav.append(b);return b;});mount.replaceChildren(left,nav);const update=()=>mount.classList.toggle("is-scrolled",window.scrollY>12);update();window.addEventListener("scroll",update,{passive:true});if(sections[0])document.querySelectorAll("[data-page-section]").forEach(panel=>panel.hidden=panel.dataset.pageSection!==sections[0].sectionLink);}
 
 
 const colorVars = {
@@ -133,45 +133,41 @@ async function init() {
   ]);
   applyTheme(theme);
   document.title = manifest.title + " — Vengrath";
-  document.querySelector('meta[name="theme-color"]').content =
-    theme.colors.base1;
-  const hero = createSubpageHero({
-    title: data.campaign.title,
-    backgroundImage: theme.heroImage,
-    theme: { accent: theme.colors.accent2 },
-  });
+  document.querySelector('meta[name="theme-color"]').content = theme.colors.base1;
+
+  const hero = document.querySelector("#campaign-hero");
   hero.id = "top";
-  const heading = hero.querySelector("h1"),
-    kicker = el("p", "campaign-hero__kicker", data.campaign.kicker),
-    lead = el("p", "campaign-hero__lead", data.campaign.lead);
-  heading.before(kicker);
-  heading.after(lead);
+  hero.style.setProperty("--hero-background", "url('" + theme.heroImage + "')");
+  hero.style.setProperty("--campaign-accent", theme.colors.accent2);
+  const copy = hero.querySelector(".subpage-hero__copy");
+  copy.querySelector("h1").textContent = data.campaign.title;
+  copy.querySelector(".tbm-hero-kicker").textContent = data.campaign.kicker;
+  copy.querySelector(".tbm-hero-lead").textContent = data.campaign.lead;
   const nav = el("div", "campaign-navbar-mount");
   hero.prepend(nav);
-  document.querySelector("#campaign-hero").replaceWith(hero);
   mountSubpageNavbar(nav, {
     sections: [
-      {
-        text: "Kampania",
-        sectionLink: "campaign",
-        color: theme.colors.accent2,
-      },
-      {
-        text: "Materiały",
-        sectionLink: "materials",
-        color: theme.colors.accent2,
-      },
+      {text: "Kampania", sectionLink: "campaign", color: theme.colors.accent2},
+      {text: "Materiały", sectionLink: "materials", color: theme.colors.accent2},
     ],
   });
   renderCampaign(data.campaign);
-  renderMaterials(data);
   document.querySelector("#footer-title").textContent =
     "VENGRATH · " + manifest.title.toUpperCase();
+
+  let materialsRendered = false;
+  document.addEventListener("vengrath:sectionchange", (event) => {
+    if (event.detail?.section !== "materials" || materialsRendered) return;
+    renderMaterials(data);
+    materialsRendered = true;
+  });
+
+  document.body.classList.remove("campaign-startup-loading");
 }
-init()
-  .then(() => {
-    document.body.classList.remove("campaign-startup-loading");
-  })
-  .catch((error) =>
-    console.error("Nie udało się uruchomić strony kampanii.", error),
-  );
+init().catch((error) => {
+  console.error("Nie udało się uruchomić strony kampanii.", error);
+  document.body.classList.remove("campaign-startup-loading");
+  const message = el("p", "tbm-load-error", "Nie udało się wczytać archiwum przygody.");
+  message.setAttribute("role", "alert");
+  document.body.prepend(message);
+});

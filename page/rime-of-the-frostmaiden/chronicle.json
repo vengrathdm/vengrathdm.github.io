@@ -1,0 +1,129 @@
+{
+  "sessions": [
+    {
+      "sessionNumber": 1,
+      "title": "Rime of the Frostmaiden E01 - Cold-Blooded Killers",
+      "description": "Nagranie 1. sesji kampanii Rime of the Frostmaiden.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=42FxogWSfSo"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 2,
+      "title": "Rime of the Frostmaiden E02 - Zagubieni Rybacy",
+      "description": "Nagranie 2. sesji kampanii Rime of the Frostmaiden.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=MY5pT4CsGSw"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 3,
+      "title": "Rime of the Frostmaiden E03 - Droga przez Miasteczka",
+      "description": "Nagranie 3. sesji kampanii Rime of the Frostmaiden.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=QExtfpiAW70"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 4,
+      "title": "Rime of the Frostmaiden E04 - Potwór z Lac Dualdon",
+      "description": "Nagranie 4. sesji kampanii Rime of the Frostmaiden.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=agtEq9LmNBY"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 5,
+      "title": "Rime of the Frostmaiden E05 - Kopalnie Klejnotów",
+      "description": "Nagranie 5. sesji kampanii Rime of the Frostmaiden.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=SrQKy4W55Ww"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 6,
+      "title": "Rime of the Frostmaiden E06 - Do Kurchanu Kalvina",
+      "description": "Nagranie 6. sesji kampanii Rime of the Frostmaiden.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=DdN_wxJV8Gk"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 7,
+      "title": "Rime of the Frostmaiden E07 - Kurchan Kelvina",
+      "description": "Nagranie 7. sesji kampanii Rime of the Frostmaiden.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=SO6dUviD1hs"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 8,
+      "title": "Rime of the Frostmaiden E08 - Ku Id Ascendant",
+      "description": "Nagranie 8. sesji kampanii Rime of the Frostmaiden.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=QeAqNDaoX_8"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 9,
+      "title": "Rime of the Frostmaiden E09 - Id Ascendant",
+      "description": "Nagranie 9. sesji kampanii Rime of the Frostmaiden.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=y3dLLhDxOgc"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 10,
+      "title": "Rime of the Frostmaiden E10 - Grota Berserkerów",
+      "description": "Nagranie dziesiątej sesji kampanii, podzielone na dwie części.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=lEi7uj9bgFE",
+          "partNumber": 1
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=Soe3HFOURgs",
+          "partNumber": 2
+        }
+      ]
+    },
+    {
+      "sessionNumber": 11,
+      "title": "Rime of the Frostmaiden E11 - Twierdza Duergarów",
+      "description": "Nagranie jedenastej sesji kampanii Rime of the Frostmaiden.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=7_TtAe2nmLA"
+        }
+      ]
+    },
+    {
+      "sessionNumber": 12,
+      "title": "Rime of the Frostmaiden E12 - Chardarynowy Smok",
+      "description": "Nagranie dwunastej sesji kampanii Rime of the Frostmaiden.",
+      "recordings": [
+        {
+          "url": "https://www.youtube.com/watch?v=ptDJ0tQzkbQ"
+        }
+      ]
+    }
+  ]
+}
