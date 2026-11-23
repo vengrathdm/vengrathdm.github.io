@@ -266,7 +266,7 @@ async function initialize() {
     content.characters?.description || "";
 
   let galleryPromise;
-  let chronicleRendered = false;
+  let chroniclePromise;
   document.addEventListener("vengrath:sectionchange", (event) => {
     const section = event.detail?.section;
     if (section === "characters" && !galleryPromise) {
@@ -277,13 +277,25 @@ async function initialize() {
         gallery.replaceChildren(el("p", "character-gallery__empty", "Nie udało się wczytać galerii postaci."));
       });
     }
-    if (section === "chronicle" && !chronicleRendered) {
-      const playlist = document.querySelector("#chronicle-playlist");
-      playlist.href = content.chronicle.playlistUrl || manifest.playlistUrl || "#";
-      document.querySelector("#campaign-chronicle").replaceChildren(
-        ...(content.chronicle.sessions || []).map((session) => makeChronicle(session, accent)),
-      );
-      chronicleRendered = true;
+    if (section === "chronicle" && !chroniclePromise) {
+      const panel = document.querySelector("#chronicle");
+      const container = document.querySelector("#campaign-chronicle");
+      panel.setAttribute("aria-busy", "true");
+      chroniclePromise = loadJson("./chronicle.json").then((chronicle) => {
+        const playlist = document.querySelector("#chronicle-playlist");
+        playlist.href = chronicle.playlistUrl || manifest.playlistUrl || "#";
+        container.replaceChildren(
+          ...(chronicle.sessions || []).map((session) => makeChronicle(session, accent)),
+        );
+        panel.setAttribute("aria-busy", "false");
+      }).catch((error) => {
+        console.error("Nie udało się wczytać kroniki kampanii.", error);
+        chroniclePromise = null;
+        panel.setAttribute("aria-busy", "false");
+        container.replaceChildren(
+          el("p", "character-gallery__empty", "Nie udało się wczytać kroniki. Spróbuj ponownie."),
+        );
+      });
     }
   });
 
