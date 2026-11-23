@@ -1,101 +1,11 @@
-import { createSubpageHero } from "/core/templates/SubpageHero/SubpageHero.js";
-import { mountSubpageNavbar } from "/core/templates/SubpageNavbar/SubpageNavbar.js";
-import { renderCampaignSection } from "./sections/campaign/campaign.js";
-import { renderCharactersSection } from "./sections/characters/characters.js";
-import { renderChronicleSection } from "./sections/chronicle/chronicle.js";
-
-async function loadJson(path) {
-  const response = await fetch(path);
-  if (!response.ok) {
-    throw new Error("Nie udało się wczytać pliku: " + path);
-  }
-  return response.json();
-}
-
-async function initializeCampaignPage() {
-  const [manifest, theme, content] = await Promise.all([
-    loadJson("./manifest.json"),
-    loadJson("./theme.json"),
-    loadJson("./content.json"),
-  ]);
-
-  document.documentElement.style.setProperty(
-    "--theme-base-1",
-    theme.colors.base1,
-  );
-  document.documentElement.style.setProperty(
-    "--theme-accent-1",
-    theme.colors.accent1,
-  );
-  document.documentElement.style.setProperty(
-    "--theme-accent-2",
-    theme.colors.accent2,
-  );
-  document.documentElement.style.setProperty(
-    "--campaign-accent",
-    theme.colors.accent2,
-  );
-
-  const hero = createSubpageHero({
-    title: content.campaign.heroTitle,
-    backgroundImage: theme.heroImage,
-    theme: { accent: theme.colors.accent2 },
-  });
-  hero.id = "campaign-hero";
-  hero.id = "top";
-
-  const kicker = document.createElement("p");
-  kicker.className = "mg-hero-kicker";
-  kicker.textContent = content.campaign.kicker;
-
-  const lead = document.createElement("p");
-  lead.className = "mg-hero-lead";
-  lead.textContent = content.campaign.lead;
-
-  const heading = hero.querySelector("h1");
-  heading.before(kicker);
-  heading.after(lead);
-
-  const navbarMount = document.createElement("div");
-  navbarMount.className = "mg-navbar-mount";
-  hero.prepend(navbarMount);
-  document.querySelector("#campaign-hero").replaceWith(hero);
-
-  mountSubpageNavbar(navbarMount, {
-    playlistUrl: manifest.playlistUrl,
-    sections: [
-      {
-        text: "Kampania",
-        sectionLink: "campaign",
-        color: theme.colors.accent2,
-      },
-      {
-        text: "Postaci",
-        sectionLink: "characters",
-        color: theme.colors.accent2,
-      },
-      {
-        text: "Kronika",
-        sectionLink: "chronicle",
-        color: theme.colors.accent2,
-      },
-    ],
-  });
-
-  document.querySelector("#campaign-footer-label").textContent =
-    content.campaign.footerLabel;
-  renderCampaignSection(content.campaign);
-  await renderCharactersSection(content.characters);
-  renderChronicleSection(content.chronicle);
-}
-
-initializeCampaignPage()
-  .then(() => {
-    document.body.classList.remove("campaign-startup-loading");
-  })
-  .catch((error) => {
-    console.error(
-      "Nie udało się uruchomić strony " + "Menaces of Gloomforest" + ".",
-      error,
-    );
-  });
+/* Menaces of Gloomforest — campaign-local runtime. */
+async function json(path){const r=await fetch(path);if(!r.ok)throw Error("Nie udało się wczytać pliku: "+path);return r.json();}
+function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
+function applyTheme(t){Object.entries(t.colors||{}).forEach(([k,v])=>document.documentElement.style.setProperty("--theme-"+k.replace(/[A-Z]/g,m=>"-"+m.toLowerCase()),v));document.documentElement.style.setProperty("--campaign-accent",t.colors.accent2);}
+function home(){const a=el("a","vengrath-home-button");a.href="/home/";a.setAttribute("aria-label","Vengrath — strona główna");const i=el("img");i.src="/core/graphics/favicon/favicon.ico";i.alt="";a.append(i,el("span","","VENGRATH"));return a;}
+function navbar(mount,color,playlist){mount.classList.add("subpage-navbar");const left=el("div","subpage-navbar__left");left.append(home());if(playlist){const a=el("a","youtube-playlist-button","YouTube Playlista");a.href=playlist;a.target="_blank";a.rel="noopener noreferrer";left.append(a);}const nav=el("nav","subpage-navbar__sections");nav.setAttribute("aria-label","Sekcje kampanii");const buttons=[["Kampania","campaign"],["Postaci","characters"],["Kronika","chronicle"]].map(([label,id],i)=>{const b=el("button","subpage-navbar-button",label);b.type="button";b.dataset.section=id;b.style.setProperty("--section-color",color);b.setAttribute("aria-pressed",String(i===0));b.addEventListener("click",()=>select(id));nav.append(b);return b;});mount.replaceChildren(left,nav);function select(id){document.querySelectorAll("[data-page-section]").forEach(s=>s.hidden=s.dataset.pageSection!==id);buttons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.section===id)));}const sc=()=>mount.classList.toggle("is-scrolled",scrollY>12);sc();addEventListener("scroll",sc,{passive:true});select("campaign");}
+function campaign(c){const root=document.querySelector("#campaign-section-content");const card=el("section","ddc-card"),title=el("div","ddc-card-title");title.append(el("span","","01"),el("strong","","AKTA KAMPANII"));const body=el("div","ddc-card-body"),grid=el("div","ddc-intro-grid"),paper=el("article","ddc-paper");paper.append(el("div","ddc-section-mark",c.introLabel),el("h2","",c.introTitle));(c.introParagraphs||[]).forEach(t=>paper.append(el("p","",t)));const dossier=el("aside","ddc-case");dossier.append(el("div","ddc-case-label",c.dossierTitle));(c.dossier||[]).forEach(([k,v])=>{const row=el("div","ddc-case-row");row.append(el("span","",k),el("strong",k==="STATUS"?"ddc-active":"",v));dossier.append(row);});grid.append(paper,dossier);body.append(grid);card.append(title,body);root.replaceChildren(card);if(c.manifesto){const m=el("section","ddc-manifesto"),symbol=el("div","ddc-manifesto-symbol","✦"),text=el("div");text.append(el("div","ddc-section-mark",c.manifesto.label),el("p","",c.manifesto.text),el("span","",c.manifesto.attribution));m.append(symbol,text);root.append(m);}}
+async function gallery(data){document.querySelector("#characters-kicker").textContent=data.kicker;document.querySelector("#characters-title").textContent=data.title;document.querySelector("#characters-description").textContent=data.description;const [cr,ar]=await Promise.all([fetch("/core/data/characters.json"),fetch("/core/data/achievements.json")]);if(!cr.ok||!ar.ok)throw Error("Nie udało się wczytać danych postaci.");const [all,ach]=await Promise.all([cr.json(),ar.json()]),byId=new Map(all.map(x=>[x.id,x])),defs=new Map(ach.map(x=>[x.id,x]));const chosen=[...new Set(data.characterIds||[])].map(id=>byId.get(id)).filter(Boolean),root=document.querySelector("#character-gallery");root.replaceChildren();if(!chosen.length){root.append(el("p","character-gallery__empty",data.emptyMessage||"Brak postaci spełniających kryteria."));return;}const grid=el("div","character-gallery");chosen.forEach(c=>{const card=el("article","character-card");card.dataset.status=c.status||"";const badges=el("div","character-card__achievements"),earned=(c.achievementIds||[]).map(id=>defs.get(id)).filter(Boolean);earned.forEach(a=>{const b=el("span","achievement-badge",a.icon||"✦");b.title=a.name||a.id;b.setAttribute("aria-label",a.name||a.id);badges.append(b);});const portrait=el("div","character-card__portrait"),img=el("img");img.src=c.portrait;img.alt=c.character||"Portret postaci";img.loading="lazy";portrait.append(img,el("span","character-card__status",c.status||""));const body=el("div","character-card__body");body.append(el("h3","",c.character||"Nieznana postać"),el("p","character-card__player",c.player||"Nie podano"));for(const [label,value] of [["Kampanie",c.campaigns],["Klasy",c.classes],["Rasa",c.race]]){const row=el("div","character-card__row");row.append(el("span","character-card__label",label),el("span","character-card__value",Array.isArray(value)?value.join(", "):value||"Nie podano"));body.append(row);}card.append(badges,portrait,body,el("p","character-card__achievement-count",earned.length?earned.length+" osiągnięć":"Brak zdobytych osiągnięć"));grid.append(card);});root.append(grid);}
+function chronicle(data){const root=document.querySelector("#chronicle-section-content"),intro=el("section","ddc-section ddc-chronicle-intro");intro.append(el("div","ddc-section-mark",data.kicker),el("h2","",data.title),el("p","",data.description));const playlist=el("a","ddc-playlist-link",data.playlistLabel);playlist.href=data.playlistUrl;playlist.target="_blank";playlist.rel="noopener noreferrer";const playlistPanel=el("section","ddc-section ddc-playlist-panel");playlistPanel.append(playlist);const list=el("div","chronicle ddc-chronicle-list");(data.sessions||[]).forEach(s=>{const article=el("article","chronicle-record");article.style.setProperty("--chronicle-accent","#c1a56b");const head=el("div","chronicle-record__header");head.tabIndex=0;head.setAttribute("role","button");head.setAttribute("aria-expanded","false");const raw=String(s.sessionNumber??s.number??"—"),match=raw.match(/^S?0*(\d+)([A-Z]?)$/i),number=match?String(Number(match[1])).padStart(2,"0")+match[2].toUpperCase():raw;head.append(el("span","chronicle-record__number",number),el("span","chronicle-record__title",s.title||"Bez tytułu"));const date=el("time","chronicle-record__date",s.date||"");date.hidden=!s.date;if(s.date)date.dateTime=s.date;const recordings=el("div","chronicle-record__recordings");const recs=Array.isArray(s.recordings)?s.recordings:[];recordings.hidden=!recs.length;recs.forEach((r,i)=>{const a=el("a","play-recording-button",recs.length>1?"Odtwórz część "+(r.partNumber||i+1):"Odtwórz");a.href=r.url;a.target="_blank";a.rel="noopener noreferrer";recordings.append(a);});head.append(date,recordings);recordings.addEventListener("click",e=>e.stopPropagation());const desc=el("div","chronicle-record__description");desc.hidden=true;desc.append(el("p","",s.description||s.notes||""));const toggle=()=>{const open=desc.hidden;desc.hidden=!open;head.setAttribute("aria-expanded",String(open));article.classList.toggle("is-expanded",open);};head.addEventListener("click",toggle);head.addEventListener("keydown",e=>{if(e.target===head&&(e.key==="Enter"||e.key===" ")){e.preventDefault();toggle();}});article.append(head,desc);list.append(article);});const records=el("section","ddc-section ddc-chronicle-records");records.append(list);root.replaceChildren(intro,playlistPanel,records);}
+async function initialize(){const [manifest,theme,content]=await Promise.all([json("./manifest.json"),json("./theme.json"),json("./content.json")]);applyTheme(theme);const hero=document.querySelector("#campaign-hero");hero.id="top";hero.style.setProperty("--hero-background","url('"+theme.heroImage+"')");const copy=hero.querySelector(".subpage-hero__copy"),heading=copy.querySelector("h1");const kicker=el("p","mg-hero-kicker",content.campaign.kicker),lead=el("p","mg-hero-lead",content.campaign.lead);heading.before(kicker);heading.after(lead);const mount=el("div","mg-navbar-mount");hero.prepend(mount);navbar(mount,theme.colors.accent2,manifest.playlistUrl);document.querySelector("#campaign-footer-label").textContent=content.campaign.footerLabel;campaign(content.campaign);await gallery(content.characters);chronicle(content.chronicle);}
+initialize().then(()=>document.body.classList.remove("campaign-startup-loading")).catch(e=>{console.error("Nie udało się uruchomić strony Menaces of Gloomforest.",e);});

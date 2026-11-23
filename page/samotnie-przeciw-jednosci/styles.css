@@ -1,0 +1,1153 @@
+
+/* Localized from page/samotnie-przeciw-jednosci/page.css */
+:root {
+  --theme-base-1: #090d11;
+  --theme-base-2: #10171b;
+  --theme-base-3: #131b20;
+  --theme-base-4: #172126;
+  --theme-base-5: #1a2529;
+  --theme-accent-1: #2f7779;
+  --theme-accent-2: #c7a96b;
+  --theme-text-1: #f0eadb;
+  --theme-text-2: #d9d2c3;
+  --theme-text-3: #b1aaa0;
+  --theme-text-muted: #817d76;
+  --theme-title-accent: #78a6a3;
+  --theme-line-1: #35494b;
+  --theme-line-2: #477174;
+  --theme-nav-background: #10171b;
+  --theme-nav-text: #c9c5bc;
+  --theme-nav-active-background: #172126;
+  --theme-seal-border: #c7a96b;
+  --theme-seal-inner-border: #35494b;
+  --theme-seal-background: #08090bcc;
+  --theme-seal-small-text: #aaa397;
+  --theme-seal-main-text: #78a6a3;
+  --chronicle-heading-font: var(--theme-font-1);
+  --theme-font-1: "Voltaire", sans-serif;
+  --theme-font-2: "Fira Sans Extra Condensed", sans-serif;
+  --theme-font-3: "Brygada 1918", Georgia, serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body.samotnie-przeciw-jednosci-page {
+  margin: 0;
+  min-height: 100vh;
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 78% 8%, #183338 0, transparent 35%),
+    radial-gradient(ellipse at 8% 72%, #211d15 0, transparent 32%),
+    var(--theme-base-1);
+  color: var(--theme-text-1);
+  font-family: var(--theme-font-2);
+  line-height: 1.6;
+}
+body.samotnie-przeciw-jednosci-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 30;
+  opacity: 0.14;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 3px,
+    rgba(255, 255, 255, 0.025) 4px
+  );
+}
+.mg-navbar-mount {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1100;
+}
+.mg-hero-kicker {
+  margin: 0;
+  color: var(--theme-accent-2);
+  font: 400 0.85rem/1.4 var(--theme-font-1);
+  letter-spacing: 0.24em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.mg-hero-lead {
+  max-width: 68ch;
+  margin: 0;
+  color: var(--theme-text-2);
+  font: 1.15rem/1.7 var(--theme-font-3);
+  text-align: center;
+}
+.subpage-hero h1 {
+  max-width: 12ch;
+}
+.ddc-content {
+  width: min(1220px, calc(100% - 48px));
+  margin: auto;
+  padding: 70px 0 100px;
+}
+.ddc-tab-panel[hidden] {
+  display: none;
+}
+.ddc-card {
+  border: 1px solid var(--theme-line-1);
+  background: linear-gradient(145deg, var(--theme-base-3), var(--theme-base-1));
+  box-shadow: 0 20px 65px #0007;
+}
+.ddc-card-title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 28px;
+  border-bottom: 1px solid var(--theme-line-1);
+  background: var(--theme-base-1);
+}
+.ddc-card-title span {
+  font: 400 30px/1 var(--theme-font-1);
+  color: var(--theme-accent-2);
+}
+.ddc-card-title strong {
+  font: 700 12px/1 var(--theme-font-1);
+  letter-spacing: 3px;
+  color: var(--theme-text-1);
+}
+.ddc-card-body {
+  padding: 28px;
+}
+.ddc-intro-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 26px;
+  align-items: stretch;
+}
+.ddc-paper {
+  position: relative;
+  padding: 40px;
+  background: linear-gradient(135deg, var(--theme-base-5), var(--theme-base-2));
+  border: 1px solid var(--theme-line-1);
+  box-shadow: 0 20px 70px #0007;
+}
+.ddc-paper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 35px;
+  width: 1px;
+  height: 100%;
+  background: var(--theme-line-1);
+}
+.ddc-section-mark {
+  font: 400 13px/1 var(--theme-font-1);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--theme-accent-2);
+}
+.ddc-paper h2,
+.ddc-section h2,
+.ddc-section-head h2 {
+  font: 400 clamp(36px, 4vw, 58px)/0.95 var(--theme-font-1);
+  color: var(--theme-text-1);
+  margin: 12px 0 20px;
+}
+.ddc-paper p {
+  max-width: 72ch;
+  margin: 0 0 14px;
+  color: var(--theme-text-3);
+  font-family: var(--theme-font-3);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.ddc-case {
+  padding: 28px;
+  background: var(--theme-base-2);
+  border: 1px solid var(--theme-line-2);
+  box-shadow: 8px 8px 0 #050608;
+}
+.ddc-case-label {
+  padding-bottom: 12px;
+  margin-bottom: 5px;
+  color: var(--theme-accent-1);
+  font: 700 12px var(--theme-font-1);
+  letter-spacing: 3px;
+  border-bottom: 1px solid var(--theme-line-1);
+}
+.ddc-case-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--theme-line-1);
+  font-size: 13px;
+}
+.ddc-case-row span {
+  color: var(--theme-text-muted);
+  letter-spacing: 1px;
+}
+.ddc-case-row strong {
+  font-family: var(--theme-font-1);
+  font-size: 16px;
+  color: var(--theme-text-1);
+  text-align: right;
+}
+.ddc-case-row .ddc-active {
+  color: var(--theme-accent-1);
+}
+.ddc-party-portrait {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr;
+  gap: 0;
+  border: 1px solid var(--theme-line-1);
+  background: var(--theme-base-2);
+  box-shadow: 0 20px 70px #0007;
+  overflow: hidden;
+}
+.ddc-party-copy {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(145deg, var(--theme-base-5), var(--theme-base-2));
+}
+.ddc-party-copy h2 {
+  margin: 10px 0 16px;
+  font: 400 clamp(34px, 3.5vw, 50px)/0.95 var(--theme-font-1);
+  color: var(--theme-text-1);
+}
+.ddc-party-copy p {
+  margin: 0;
+  color: var(--theme-text-3);
+}
+.ddc-party-image {
+  margin: 0;
+  min-width: 0;
+  min-height: 390px;
+  background: var(--theme-base-1);
+}
+.ddc-party-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  object-fit: cover;
+  object-position: center;
+}
+.ddc-manifesto {
+  margin: 28px 0 75px;
+  padding: 27px 35px;
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  gap: 20px;
+  border-top: 1px solid var(--theme-accent-2);
+  border-bottom: 1px solid var(--theme-accent-2);
+  background: var(--theme-base-3);
+}
+.ddc-manifesto-symbol {
+  font-size: 48px;
+  color: var(--theme-accent-1);
+  text-align: center;
+}
+.ddc-manifesto p {
+  margin: 4px 0 10px;
+  color: var(--theme-text-2);
+  font: italic 25px var(--theme-font-3);
+}
+.ddc-manifesto span {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--theme-text-muted);
+}
+.ddc-section {
+  margin-top: 82px;
+}
+.ddc-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--theme-line-1);
+}
+.ddc-section-head > div {
+  min-width: 0;
+}
+.ddc-section-head p {
+  max-width: 470px;
+  margin: 0;
+  color: var(--theme-text-3);
+  font-size: 15px;
+}
+.ddc-character-intro {
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+.ddc-character-intro p,
+.ddc-chronicle-intro p {
+  max-width: 72ch;
+  margin: 0;
+  color: var(--theme-text-3);
+  font-size: 15px;
+}
+.ddc-character-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.ddc-playlist-link {
+  display: inline-block;
+  padding: 12px 17px;
+  border: 1px solid var(--theme-accent-2);
+  color: var(--theme-text-1);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  font: 700 12px var(--theme-font-1);
+}
+.ddc-playlist-link:hover {
+  background: var(--theme-base-3);
+  border-color: var(--theme-accent-2);
+}
+.ddc-playlist-panel {
+  margin-top: 24px;
+}
+.ddc-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 30px;
+  background: #07080a;
+  border-top: 1px solid var(--theme-line-1);
+  color: #6f726f;
+}
+.ddc-footer a {
+  color: var(--theme-accent-2);
+  text-decoration: none;
+}
+@media (max-width: 1050px) {
+  .ddc-character-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 900px) {
+  .ddc-intro-grid,
+  .ddc-party-portrait {
+    grid-template-columns: 1fr;
+  }
+  .ddc-party-image,
+  .ddc-party-image img {
+    min-height: 300px;
+  }
+  .ddc-section-head {
+    display: block;
+  }
+  .ddc-section-head p {
+    margin-top: 15px;
+  }
+}
+@media (max-width: 760px) {
+  .mg-hero-kicker {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+  }
+  .mg-hero-lead {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 620px) {
+  .ddc-content {
+    width: calc(100% - 28px);
+  }
+  .ddc-card-body {
+    padding: 18px;
+  }
+  .ddc-card-title {
+    padding: 16px 18px;
+  }
+  .ddc-paper {
+    padding: 25px;
+  }
+  .ddc-paper::after {
+    display: none;
+  }
+  .ddc-party-copy {
+    padding: 28px;
+  }
+  .ddc-manifesto {
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+  .ddc-manifesto-symbol {
+    text-align: left;
+  }
+  .ddc-character-grid {
+    grid-template-columns: 1fr;
+  }
+  .ddc-source-panel {
+    display: block;
+  }
+  .ddc-footer {
+    display: block;
+  }
+  .ddc-footer a {
+    display: block;
+    margin-top: 8px;
+  }
+}
+
+.ddc-character-intro {
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+#character-gallery {
+  min-width: 0;
+}
+.character-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+@media (max-width: 1050px) {
+  .character-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 620px) {
+  .character-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.ddc-chronicle-panel .ddc-section {
+  margin-top: 0;
+}
+.ddc-chronicle-panel .ddc-section + .ddc-section {
+  margin-top: 24px;
+}
+.ddc-footer {
+  box-sizing: border-box;
+}
+@media (max-width: 620px) {
+  .ddc-footer {
+    display: block;
+  }
+  .ddc-footer a {
+    display: block;
+    margin-top: 8px;
+  }
+}
+
+
+/* Localized from page/samotnie-przeciw-jednosci/theme-fonts.css */
+:root {
+  --theme-font-1: "Voltaire", sans-serif;
+  --theme-font-2: "Fira Sans Extra Condensed", sans-serif;
+  --theme-font-3: "Brygada 1918", Georgia, serif;
+}
+
+/* BEGIN GENERATED THEME VARIABLES */
+:root {
+  --theme-base-1: #090d11;
+  --theme-base1: #090d11;
+  --theme-base-2: #10171b;
+  --theme-base2: #10171b;
+  --theme-base-3: #131b20;
+  --theme-base3: #131b20;
+  --theme-base-4: #172126;
+  --theme-base4: #172126;
+  --theme-base-5: #1a2529;
+  --theme-base5: #1a2529;
+  --theme-accent-1: #2f7779;
+  --theme-accent1: #2f7779;
+  --theme-accent-2: #c7a96b;
+  --theme-accent2: #c7a96b;
+  --theme-text-1: #f0eadb;
+  --theme-text1: #f0eadb;
+  --theme-text-2: #d9d2c3;
+  --theme-text2: #d9d2c3;
+  --theme-text-3: #b1aaa0;
+  --theme-text3: #b1aaa0;
+  --theme-text-muted: #817d76;
+  --theme-textMuted: #817d76;
+  --theme-title-accent: #78a6a3;
+  --theme-titleAccent: #78a6a3;
+  --theme-line-1: #35494b;
+  --theme-line1: #35494b;
+  --theme-line-2: #477174;
+  --theme-line2: #477174;
+  --theme-nav-background: #10171b;
+  --theme-navBackground: #10171b;
+  --theme-nav-active-background: #172126;
+  --theme-navActiveBackground: #172126;
+  --theme-seal-border: #c7a96b;
+  --theme-sealBorder: #c7a96b;
+  --theme-seal-inner-border: #35494b;
+  --theme-sealInnerBorder: #35494b;
+  --theme-seal-main-text: #78a6a3;
+  --theme-sealMainText: #78a6a3;
+  --theme-font-1: "Voltaire", sans-serif;
+  --theme-font-2: "Fira Sans Extra Condensed", sans-serif;
+  --theme-font-3: "Brygada 1918", Georgia, serif;
+  --campaign-accent: #c7a96b;
+  --chronicle-heading-font: var(--theme-font-1);
+}
+/* END GENERATED THEME VARIABLES */
+
+
+/* Localized from core/templates/CampaignPage/CampaignStartup.css */
+body.campaign-startup-loading > main,
+body.campaign-startup-loading > footer {
+  display: none !important;
+}
+
+.campaign-startup-kicker {
+  margin: 0 0 1rem;
+  color: var(--theme-accent-2, var(--campaign-accent, #bca06a));
+  font: 500 0.7rem/1.5 "DM Mono", monospace;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.campaign-startup-lead {
+  max-width: 50rem;
+  margin: 1.5rem 0 0;
+  color: var(--theme-text-2, #d7d2c8);
+  font: clamp(1.05rem, 1.8vw, 1.35rem) / 1.4 var(--theme-font-3, Georgia, serif);
+}
+
+/* Keep hero copy in its final layout until the page theme and web fonts are ready. */
+body.campaign-startup-loading .subpage-hero__copy {
+  visibility: hidden;
+}
+
+body.campaign-startup-loading .subpage-hero {
+  --hero-copy-ready: 0;
+}
+
+
+/* Avoid showing the static placeholder hero while campaign data and theme initialize. */
+body.campaign-startup-loading .subpage-hero__copy {
+  visibility: hidden !important;
+}
+
+
+/* Keep page content in its final layout while all campaign theme fonts load. */
+body.campaign-fonts-loading > main,
+body.campaign-fonts-loading > footer {
+  visibility: hidden !important;
+}
+
+
+/* Localized from core/templates/HomeButton/HomeButton.css */
+.vengrath-home-button {
+  display: inline-flex;
+  height: 3.1rem;
+  min-height: 3.1rem;
+  box-sizing: border-box;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #41474a;
+  border-radius: 999px;
+  background: #111416;
+  color: #f1f2f2;
+  text-decoration: none;
+  font:
+    1rem Voltaire,
+    sans-serif;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.vengrath-home-button img {
+  width: 1.65rem;
+  height: 1.65rem;
+  object-fit: contain;
+}
+.vengrath-home-button:hover,
+.vengrath-home-button:focus-visible {
+  border-color: #bca06a;
+  outline-offset: 3px;
+}
+
+
+/* Localized from core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css */
+.youtube-playlist-button {
+  display: inline-flex;
+  min-width: 7.8rem;
+  min-height: 3.1rem;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.05rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid #ef4444;
+  border-radius: 999px;
+  background: #b91c1c;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font:
+    1rem/1 Voltaire,
+    sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.youtube-playlist-button span + span {
+  font-size: 0.82rem;
+}
+.youtube-playlist-button:hover,
+.youtube-playlist-button:focus-visible {
+  background: #dc2626;
+  outline-offset: 3px;
+}
+
+
+/* Localized from core/templates/SubpageNavbar/SubpageNavbar.css */
+.subpage-navbar {
+  position: fixed !important;
+  inset: 0 0 auto;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem clamp(0.75rem, 2vw, 1.5rem);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    backdrop-filter 180ms ease;
+}
+
+.subpage-navbar.is-scrolled {
+  background: rgb(11 13 14 / 94%);
+  border-bottom-color: #292e31;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.subpage-navbar__left,
+.subpage-navbar__sections {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.subpage-navbar__sections {
+  justify-content: flex-end;
+}
+
+@media (max-width: 760px) {
+  .subpage-navbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .subpage-navbar__left,
+  .subpage-navbar__sections {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .subpage-navbar__sections {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .subpage-navbar {
+    transition: none;
+  }
+}
+
+
+/* Localized from core/templates/SubpageNavbar/NavbarButton/NavbarButton.css */
+.subpage-navbar-button {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--section-color);
+  background: transparent;
+  color: var(--section-color);
+  font:
+    1rem Voltaire,
+    sans-serif;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.subpage-navbar-button[aria-pressed="true"],
+.subpage-navbar-button:hover {
+  background: var(--section-color);
+  color: #0b0d0e;
+}
+.subpage-navbar-button:focus-visible {
+  outline: 2px solid var(--section-color);
+  outline-offset: 3px;
+}
+
+
+/* Localized from core/templates/SubpageHero/SubpageHero.css */
+.subpage-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  box-sizing: border-box;
+  overflow: hidden;
+  background:
+    linear-gradient(#080a0b55, #080a0b99),
+    var(--hero-background, linear-gradient(135deg, #171c1e, #0b0d0e));
+  background-position: center;
+  background-size: cover;
+  color: #f1f2f2;
+}
+
+.subpage-hero__copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: var(--hero-copy-align, center);
+  gap: 2rem;
+  width: min(100%, 1200px);
+  box-sizing: border-box;
+  padding: clamp(1.5rem, 5vw, 5rem);
+  text-align: var(--hero-copy-text-align, center);
+  transform: translate(
+    var(--hero-copy-offset-x, 0px),
+    var(--hero-copy-offset-y, 0px)
+  );
+}
+
+.subpage-hero h1 {
+  margin: 0;
+  color: var(--campaign-accent);
+  font:
+    clamp(2.5rem, 7vw, 7rem) / 1.05 var(--theme-font-1, Voltaire),
+    serif;
+  letter-spacing: 0.03em;
+  text-wrap: balance;
+}
+
+.subpage-hero__image {
+  display: block;
+  width: min(100%, 1000px);
+  max-height: 55svh;
+  object-fit: contain;
+}
+
+@media (max-width: 620px) {
+  .subpage-hero {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .subpage-hero__copy {
+    gap: 1.25rem;
+    padding: 5rem 1.25rem 2rem;
+  }
+
+  .subpage-hero__image {
+    max-height: 42svh;
+  }
+}
+
+
+/* Localized from core/templates/CharacterCard/CharacterCard.css */
+.character-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+  border: 1px solid #292e31;
+  background: #111416;
+  color: #f1f2f2;
+  cursor: pointer;
+  transition:
+    border-color 0.18s,
+    transform 0.18s;
+}
+.character-card:hover,
+.character-card:focus-visible {
+  border-color: #bca06a;
+  transform: translateY(-3px);
+  outline-offset: 3px;
+}
+.character-card__portrait {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: #1b2022;
+}
+.character-card__portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.character-card__portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0.45rem;
+  border: 1px solid #bca06a80;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    #bca06a12,
+    transparent 22%,
+    transparent 78%,
+    #bca06a12
+  );
+}
+.character-card__status {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.65rem;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid #ffffff40;
+  background: #0b0d0edb;
+  font:
+    0.7rem "DM Mono",
+    monospace;
+  text-transform: uppercase;
+}
+.character-card__achievements {
+  position: absolute;
+  z-index: 2;
+  top: 0.55rem;
+  left: 0.55rem;
+  right: 0.55rem;
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+.character-card__body {
+  padding: 0.9rem;
+  display: grid;
+  gap: 0.5rem;
+}
+.character-card h3 {
+  margin: 0;
+  font:
+    600 1.1rem "Space Grotesk",
+    sans-serif;
+}
+.character-card__player {
+  margin: 0;
+  color: #bca06a;
+  font-size: 0.84rem;
+}
+.character-card__row {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+.character-card__label {
+  color: #858b8e;
+  text-transform: uppercase;
+  font:
+    0.65rem "DM Mono",
+    monospace;
+}
+.character-card__value {
+  overflow-wrap: anywhere;
+}
+.character-card__achievement-count {
+  margin: auto 0 0;
+  padding: 0.6rem 0.9rem;
+  border-top: 1px solid #292e31;
+  color: #858b8e;
+  font-size: 0.72rem;
+}
+
+
+/* Localized from core/templates/CharacterCard/Achievements/Achievements.css */
+.achievement-badge {
+  display: inline-grid;
+  place-items: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  border: 1px solid #bca06a99;
+  border-radius: 50%;
+  background: #111416ef;
+  color: #e0c78e;
+  font-size: 0.9rem;
+  cursor: help;
+}
+
+
+/* Localized from core/templates/CharacterGallery/CharacterGallery.css */
+.character-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  gap: 1rem;
+}
+.character-gallery__empty {
+  padding: 2rem;
+  text-align: center;
+  color: #aeb3b5;
+  border: 1px dashed #41474a;
+}
+
+
+/* Localized from core/templates/Chronicle/Chronicle.css */
+.chronicle {
+  display: grid;
+  gap: 0;
+  width: 100%;
+  --chronicle-accent: #bca06a;
+}
+.chronicle:empty::after {
+  content: "Brak zapisanych sesji.";
+  display: block;
+  padding: 1.5rem;
+  color: #858b8e;
+  border: 1px dashed #41474a;
+}
+
+
+/* Localized from core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css */
+.chronicle-record {
+  border: 1px solid #343a3d;
+  background: #111416;
+  color: #f1f2f2;
+}
+
+.chronicle-record + .chronicle-record {
+  border-top: 0;
+}
+
+.chronicle-record__header {
+  display: grid;
+  grid-template-columns: 4.2rem minmax(0, 1fr) auto auto;
+  grid-template-areas: "number title date recordings";
+  align-items: center;
+  gap: 1rem;
+  min-height: 4.2rem;
+  padding: 0.55rem 0.8rem;
+  cursor: pointer;
+}
+
+.chronicle-record__header:focus-visible {
+  outline: 2px solid var(--chronicle-accent);
+  outline-offset: -3px;
+}
+
+.chronicle-record__number {
+  grid-area: number;
+  color: var(--chronicle-accent);
+  font-family: var(--chronicle-heading-font, "Space Grotesk", sans-serif);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.chronicle-record__title {
+  grid-area: title;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-family: var(--chronicle-heading-font, "Space Grotesk", sans-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.chronicle-record__date {
+  grid-area: date;
+  color: var(--chronicle-accent);
+  font-family: var(--chronicle-heading-font, "Space Grotesk", sans-serif);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.chronicle-record__recordings {
+  grid-area: recordings;
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.chronicle-record__date[hidden],
+.chronicle-record__recordings[hidden] {
+  display: none;
+}
+
+.chronicle-record__description {
+  padding: 1rem 1.2rem 1.2rem 5.2rem;
+  border-top: 1px solid #292e31;
+  color: #c2c6c7;
+  line-height: 1.7;
+}
+
+.chronicle-record__description p {
+  margin: 0;
+  white-space: pre-line;
+}
+
+.chronicle-record.is-expanded .chronicle-record__header {
+  background: #ffffff04;
+}
+
+@media (max-width: 760px) {
+  .chronicle-record__header {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    grid-template-areas:
+      "number title"
+      ". date"
+      ". recordings";
+    gap: 0.65rem;
+  }
+
+  .chronicle-record__date {
+    white-space: normal;
+  }
+
+  .chronicle-record__recordings {
+    justify-content: flex-start;
+  }
+
+  .chronicle-record__description {
+    padding: 1rem;
+  }
+}
+
+.chronicle-record__players {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: 0.8rem;
+  padding: 0 0.8rem 0.8rem;
+}
+.chronicle-record__players:empty {
+  display: none;
+}
+.chronicle-inline-player {
+  min-width: 0;
+  overflow: hidden;
+  border: 2px solid var(--inline-player-accent, var(--chronicle-accent, #bca06a));
+  background: #111114;
+  color: #e4e4e7;
+  box-shadow: 0 10px 24px #0005;
+}
+.chronicle-inline-player[hidden] {
+  display: none;
+}
+.chronicle-inline-player__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--chronicle-accent, #bca06a);
+  background: #111416;
+  color: var(--chronicle-accent, #bca06a);
+  cursor: pointer;
+  font: 1rem Voltaire, sans-serif;
+  white-space: nowrap;
+}
+.chronicle-inline-player__toggle:hover,
+.chronicle-inline-player__toggle:focus-visible {
+  background: var(--chronicle-accent, #bca06a);
+  color: #0b0d0e;
+  outline-offset: 3px;
+}
+.chronicle-inline-player__header,
+.chronicle-inline-player__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+}
+.chronicle-inline-player__header {
+  border-bottom: 1px solid #27272a;
+}
+.chronicle-inline-player__title {
+  min-width: 0;
+  color: #fff;
+  font: 17px var(--chronicle-heading-font, Voltaire, sans-serif);
+  overflow-wrap: anywhere;
+}
+.chronicle-inline-player__tag {
+  flex-shrink: 0;
+  padding: 5px 8px;
+  border: 1px solid var(--inline-player-accent, var(--chronicle-accent, #bca06a));
+  color: var(--inline-player-accent, var(--chronicle-accent, #bca06a));
+  font: 10px var(--chronicle-heading-font, sans-serif);
+  letter-spacing: 1px;
+}
+.chronicle-inline-player__video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+.chronicle-inline-player__video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.chronicle-inline-player__footer {
+  background: #0d0d10;
+  color: #a1a1aa;
+  font: 11px var(--chronicle-heading-font, sans-serif);
+}
+.chronicle-inline-player__footer a {
+  color: var(--inline-player-accent, var(--chronicle-accent, #bca06a));
+  text-decoration: none;
+}
+.chronicle-inline-player__footer a:hover {
+  color: #fff;
+}
+@media (max-width: 760px) {
+  .chronicle-record__players {
+    padding: 0 0.65rem 0.65rem;
+  }
+  .chronicle-inline-player__header,
+  .chronicle-inline-player__footer {
+    padding: 10px;
+    align-items: flex-start;
+  }
+  .chronicle-inline-player__title {
+    font-size: 14px;
+  }
+  .chronicle-inline-player__tag,
+  .chronicle-inline-player__footer {
+    font-size: 9px;
+  }
+}
+
+
+/* Localized from core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css */
+.play-recording-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.5rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--chronicle-accent, #bca06a);
+  background: #111416;
+  color: var(--chronicle-accent, #bca06a);
+  font:
+    1rem Voltaire,
+    sans-serif;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.play-recording-button:hover,
+.play-recording-button:focus-visible {
+  background: var(--chronicle-accent, #bca06a);
+  color: #0b0d0e;
+  outline-offset: 3px;
+}
+.play-recording-button__icon {
+  font-size: 0.75em;
+}
+

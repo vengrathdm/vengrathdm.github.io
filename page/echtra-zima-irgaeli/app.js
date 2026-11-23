@@ -1,128 +1,20 @@
-import { createSubpageHero } from "/core/templates/SubpageHero/SubpageHero.js";
-import { mountSubpageNavbar } from "/core/templates/SubpageNavbar/SubpageNavbar.js";
-import { AudioPlayer } from "/core/templates/AudioPlayer/AudioPlayer.js";
-import { mountAudioPlayerButton } from "/core/templates/AudioPlayerButton/AudioPlayerButton.js";
-import { renderCampaignSection } from "./sections/campaign/campaign.js";
-import { renderGallerySection } from "./sections/gallery/gallery.js";
-import { renderCharactersSection } from "./sections/characters/characters.js";
-import { renderChronicleSection } from "./sections/chronicle/chronicle.js";
-const themeVariables = {
-  base1: "--theme-base-1",
-  base2: "--theme-base-2",
-  base3: "--theme-base-3",
-  base4: "--theme-base-4",
-  base5: "--theme-base-5",
-  accent1: "--theme-accent-1",
-  accent2: "--theme-accent-2",
-  text1: "--theme-text-1",
-  text2: "--theme-text-2",
-  text3: "--theme-text-3",
-  textMuted: "--theme-text-muted",
-  titleAccent: "--theme-title-accent",
-  line1: "--theme-line-1",
-  line2: "--theme-line-2",
-  navBackground: "--theme-nav-background",
-  navText: "--theme-nav-text",
-  navActiveBackground: "--theme-nav-active-background",
-};
-async function loadJson(path) {
-  const r = await fetch(path);
-  if (!r.ok) throw new Error("Nie udało się wczytać pliku: " + path);
-  return r.json();
-}
-function applyTheme(theme) {
-  Object.entries(themeVariables).forEach(([k, p]) => {
-    if (theme.colors[k])
-      document.documentElement.style.setProperty(p, theme.colors[k]);
-  });
-  document.documentElement.style.setProperty(
-    "--campaign-accent",
-    theme.colors.accent2,
-  );
-  document.documentElement.style.setProperty(
-    "--chronicle-heading-font",
-    "var(--theme-font-1)",
-  );
-}
-function initializeHero(content, theme) {
-  const hero = createSubpageHero({
-    title: content.campaign.title,
-    backgroundImage: theme.heroImage,
-    theme: { accent: theme.colors.accent2 },
-  });
-  hero.id = "campaign-hero";
-  const kicker = document.createElement("p");
-  kicker.className = "zima-hero-kicker";
-  kicker.textContent = content.campaign.kicker;
-  const lead = document.createElement("p");
-  lead.className = "zima-hero-lead";
-  lead.textContent = content.campaign.lead;
-  const h = hero.querySelector("h1");
-  h.replaceChildren(
-    document.createTextNode("Echtra — Zima"),
-    document.createElement("br"),
-    Object.assign(document.createElement("span"), {
-      className: "zima-hero-title-accent",
-      textContent: "Irgaeli",
-    }),
-  );
-  h.before(kicker);
-  h.after(lead);
-  const nav = document.createElement("div");
-  nav.className = "zima-navbar-mount";
-  hero.prepend(nav);
-  const line = document.createElement("div");
-  line.className = "zima-hero-mist-line";
-  line.setAttribute("aria-hidden", "true");
-  hero.append(line);
-  document.querySelector("#campaign-hero").replaceWith(hero);
-  mountSubpageNavbar(nav, {
-    sections: [
-      {
-        text: "Kampania",
-        sectionLink: "campaign",
-        color: theme.colors.accent2,
-      },
-      {
-        text: "Materiały",
-        sectionLink: "gallery",
-        color: theme.colors.accent2,
-      },
-      {
-        text: "Postacie",
-        sectionLink: "characters",
-        color: theme.colors.accent2,
-      },
-      {
-        text: "Kronika",
-        sectionLink: "chronicle",
-        color: theme.colors.accent2,
-      },
-    ],
-  });
-}
-async function initialize() {
-  const [manifest, theme, content] = await Promise.all([
-    loadJson("./manifest.json"),
-    loadJson("./theme.json"),
-    loadJson("./content.json"),
-  ]);
-  applyTheme(theme);
-  initializeHero(content, theme);
-  renderCampaignSection(content.campaign);
-  renderGallerySection(content.gallery);
-  await renderCharactersSection(content.characters);
-  renderChronicleSection(content.chronicle, theme.colors.accent2);
-  const player = new AudioPlayer({
-    src: manifest.audio.src,
-    storageKey: manifest.audio.continuationKey,
-  });
-  mountAudioPlayerButton(player, theme.audioColor);
-}
-initialize()
-  .then(() => {
-    document.body.classList.remove("campaign-startup-loading");
-  })
-  .catch((e) =>
-    console.error("Nie udało się uruchomić strony Echtra — Zima Irgaeli.", e),
-  );
+/* Drakkenheim — campaign-local runtime; shared template behavior is localized here. */
+const themeVars={base1:"--theme-base-1",base2:"--theme-base-2",base3:"--theme-base-3",base4:"--theme-base-4",base5:"--theme-base-5",accent1:"--theme-accent-1",accent2:"--theme-accent-2",text1:"--theme-text-1",text2:"--theme-text-2",text3:"--theme-text-3",textMuted:"--theme-text-muted",titleAccent:"--theme-title-accent",line1:"--theme-line-1",line2:"--theme-line-2",navBackground:"--theme-nav-background",navText:"--theme-nav-text",navActiveBackground:"--theme-nav-active-background"};
+async function loadJson(path){const r=await fetch(path);if(!r.ok)throw Error("Nie udało się wczytać pliku: "+path);return r.json();}
+function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
+function applyTheme(theme){Object.entries(themeVars).forEach(([k,p])=>{if(theme.colors[k])document.documentElement.style.setProperty(p,theme.colors[k]);});document.documentElement.style.setProperty("--campaign-accent",theme.colors.accent2);document.documentElement.style.setProperty("--chronicle-heading-font","var(--theme-font-1)");}
+function homeButton(){const a=el("a","vengrath-home-button");a.href="/home/";a.setAttribute("aria-label","Vengrath — strona główna");const img=el("img");img.src="/core/graphics/favicon/favicon.ico";img.alt="";a.append(img,el("span","","VENGRATH"));return a;}
+function mountNavbar(mount,color,playlist){mount.classList.add("subpage-navbar");const left=el("div","subpage-navbar__left");left.append(homeButton());if(playlist){const a=el("a","youtube-playlist-button","YouTube Playlista");a.href=playlist;a.target="_blank";a.rel="noopener noreferrer";left.append(a);}const nav=el("nav","subpage-navbar__sections");nav.setAttribute("aria-label","Sekcje kampanii");const buttons=[["Kampania","campaign"],["Materiały","gallery"],["Postaci","characters"],["Kronika","chronicle"]].map(([label,id],i)=>{const b=el("button","subpage-navbar-button",label);b.type="button";b.dataset.section=id;b.style.setProperty("--section-color",color);b.setAttribute("aria-pressed",String(i===0));b.addEventListener("click",()=>select(id));nav.append(b);return b;});mount.replaceChildren(left,nav);function select(id){document.querySelectorAll("[data-page-section]").forEach(s=>s.hidden=s.dataset.pageSection!==id);buttons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.section===id)));}const sc=()=>mount.classList.toggle("is-scrolled",window.scrollY>12);sc();window.addEventListener("scroll",sc,{passive:true});select("campaign");}
+function hero(content,theme,manifest){const h=document.querySelector("#campaign-hero");h.style.setProperty("--hero-background","url('"+theme.heroImage+"')");const copy=h.querySelector(".subpage-hero__copy"),heading=copy.querySelector("h1");const kicker=el("p","zima-hero-kicker",content.campaign.kicker);const lead=el("p","zima-hero-lead",content.campaign.lead);heading.replaceChildren(document.createTextNode("Echtra — Zima"),document.createElement("br"),Object.assign(el("span","zima-hero-title-accent","Campaign")));heading.before(kicker);heading.after(lead);const nav=el("div","zima-navbar-mount");h.prepend(nav);const line=el("div","zima-hero-mist-line");line.setAttribute("aria-hidden","true");h.append(line);mountNavbar(nav,theme.colors.accent2,manifest.playlistUrl);}
+function renderCampaign(c){document.querySelector("#campaign-intro-title").textContent=c.introTitle;document.querySelector("#campaign-intro-copy").replaceChildren(...c.introParagraphs.map(t=>el("p","",t)));document.querySelector("#campaign-dossier").replaceChildren(...c.dossier.map(([label,value])=>{const row=el("div","ddc-case-row");row.append(el("span","",label),el("strong",label==="STATUS"?"ddc-active":"",value));return row;}));}
+function renderGallery(g){document.querySelector("#gallery-kicker").textContent=g.kicker;document.querySelector("#gallery-title").textContent=g.title;document.querySelector("#gallery-description").textContent=g.description;document.querySelector("#campaign-gallery").replaceChildren(...g.items.map(item=>{const card=el("article","zima-gallery-card"),figure=el("figure","zima-gallery-card__image"),img=el("img");img.src=item.image;img.alt=item.alt;img.loading="lazy";figure.append(img);const copy=el("div","zima-gallery-card__copy");copy.append(el("div","zima-gallery-card__label",item.label),el("h3","",item.title));card.append(figure,copy);return card;}));}
+function renderMaterial(m){document.querySelector("#characters-kicker").textContent=m.kicker;document.querySelector("#characters-title").textContent=m.title;document.querySelector("#characters-description").textContent=m.description;return renderCharacterGallery(document.querySelector("#character-gallery"),m.characterIds||[]);}
+async function renderCharacterGallery(root,ids){const [cr,ar]=await Promise.all([fetch("/core/data/characters.json"),fetch("/core/data/achievements.json")]);if(!cr.ok||!ar.ok)throw Error("Nie udało się wczytać danych postaci.");const [catalog,achievements]=await Promise.all([cr.json(),ar.json()]);const byId=new Map(catalog.map(x=>[x.id,x]));const selected=[...new Set(ids)].map(id=>byId.get(id)).filter(Boolean);root.replaceChildren();if(!selected.length){root.append(el("p","character-gallery__empty","Brak postaci spełniających kryteria."));return;}const defs=new Map(achievements.map(x=>[x.id,x]));const grid=el("div","character-gallery");selected.forEach(c=>{const card=el("article","character-card");card.dataset.status=c.status||"";const badges=el("div","character-card__achievements");const earned=(c.achievementIds||[]).map(id=>defs.get(id)).filter(Boolean);earned.forEach(a=>{const b=el("span","achievement-badge",a.icon||"✦");b.title=a.name||a.id;b.setAttribute("aria-label",a.name||a.id);badges.append(b);});const portrait=el("div","character-card__portrait"),img=el("img");img.src=c.portrait;img.alt=c.character||"Portret postaci";img.loading="lazy";portrait.append(img,el("span","character-card__status",c.status||""));const body=el("div","character-card__body");body.append(el("h3","",c.character||"Nieznana postać"),el("p","character-card__player",c.player||"Nie podano"));for(const [label,value] of [["Kampanie",c.campaigns],["Klasy",c.classes],["Rasa",c.race]]){const row=el("div","character-card__row");row.append(el("span","character-card__label",label),el("span","character-card__value",Array.isArray(value)?value.join(", "):value||"Nie podano"));body.append(row);}card.append(badges,portrait,body,el("p","character-card__achievement-count",earned.length?earned.length+" osiągnięć":"Brak zdobytych osiągnięć"));grid.append(card);});root.append(grid);}
+function youtubeTarget(value){try{const u=new URL(value),host=u.hostname.replace(/^www\./,"").toLowerCase();if(host==="youtu.be")return {videoId:u.pathname.split("/").filter(Boolean)[0]};if(host.endsWith("youtube.com")||host.endsWith("youtube-nocookie.com")){const videoId=u.searchParams.get("v")||u.pathname.match(/^\/(?:embed|shorts|live)\/([^/?]+)/)?.[1],playlistId=u.searchParams.get("list");if(videoId)return {videoId,playlistId};if(playlistId)return {playlistId};}}catch{}return null;}
+let activePlayerClose=null;
+function inlinePlayer(rec,session,number,part,label,accent){const target=youtubeTarget(rec.url);if(!target)return null;const btn=el("button","chronicle-inline-player__toggle",label);btn.type="button";btn.setAttribute("aria-expanded","false");const panel=el("section","chronicle-inline-player");panel.hidden=true;const head=el("header","chronicle-inline-player__header");head.append(el("strong","chronicle-inline-player__title",session.title||"Nagranie sesji"),el("span","chronicle-inline-player__tag","NAGRANIE · YOUTUBE"));const video=el("div","chronicle-inline-player__video");const foot=el("footer","chronicle-inline-player__footer");const meta=el("span","","SESJA "+number+(part?" · CZĘŚĆ "+part:""));const external=el("a","","OTWÓRZ W YOUTUBE ↗");external.href=rec.url;external.target="_blank";external.rel="noopener noreferrer";foot.append(meta,external);panel.append(head,video,foot);const close=()=>{video.replaceChildren();panel.hidden=true;btn.setAttribute("aria-expanded","false");if(activePlayerClose===close)activePlayerClose=null;};btn.addEventListener("click",e=>{e.stopPropagation();if(!panel.hidden){close();return;}if(activePlayerClose)activePlayerClose();const frame=el("iframe");frame.src=target.videoId?"https://www.youtube-nocookie.com/embed/"+encodeURIComponent(target.videoId)+(target.playlistId?"?list="+encodeURIComponent(target.playlistId)+"&rel=0":"?rel=0"):"https://www.youtube-nocookie.com/embed/videoseries?list="+encodeURIComponent(target.playlistId);frame.title=session.title||"Nagranie sesji";frame.loading="lazy";frame.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";frame.referrerPolicy="strict-origin-when-cross-origin";frame.allowFullscreen=true;video.replaceChildren(frame);panel.hidden=false;btn.setAttribute("aria-expanded","true");activePlayerClose=close;});return {button:btn,panel};}
+function renderChronicle(c,accent){document.querySelector("#chronicle-kicker").textContent=c.kicker;document.querySelector("#chronicle-title").textContent=c.title;document.querySelector("#chronicle-description").textContent=c.description;const root=document.querySelector("#campaign-chronicle");root.classList.add("chronicle");root.replaceChildren(...(c.sessions||[]).map(session=>{const article=el("article","chronicle-record");article.style.setProperty("--chronicle-accent",accent);const header=el("div","chronicle-record__header");header.tabIndex=0;header.setAttribute("role","button");header.setAttribute("aria-expanded","false");const raw=String(session.sessionNumber??session.number??"—").trim(),match=raw.match(/^S?0*(\d+)([A-Z]?)$/i),number=match?String(Number(match[1])).padStart(2,"0")+match[2].toUpperCase():raw;const titleRaw=String(session.title||"Bez tytułu").trim();const title=titleRaw.replace(/^.*?\bS\d+(?:P\d+)?\s*[-–—:]\s*/i,"").replace(/^.*?#\s*\d+\s*[-–—:]\s*/i,"").replace(/\s+S\d+(?:P\d+)?\s*\[[^\]]+\]$/i,"").trim()||titleRaw;header.append(el("span","chronicle-record__number",number),el("span","chronicle-record__title",title));const date=el("time","chronicle-record__date",session.date||"");date.hidden=!session.date;if(session.date){const m=session.date.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);date.dateTime=m?m[3]+"-"+m[2]+"-"+m[1]:session.date;}const recordings=el("div","chronicle-record__recordings"),players=el("div","chronicle-record__players");const links=Array.isArray(session.recordings)?session.recordings:[];recordings.hidden=!links.length;links.forEach((rec,i)=>{const part=rec.partNumber||(links.length>1?i+1:null),label=links.length>1?"Odtwórz Część "+(part||i+1):"Odtwórz";const player=inlinePlayer(rec,session,number,part,label,accent);if(player){recordings.append(player.button);players.append(player.panel);}else if(rec.url){const a=el("a","play-recording-button",label+" ▶");a.href=rec.url;a.target="_blank";a.rel="noopener noreferrer";recordings.append(a);}});recordings.addEventListener("click",e=>e.stopPropagation());header.append(date,recordings);const desc=el("div","chronicle-record__description");desc.hidden=true;desc.append(el("p","",session.description||session.notes||""));const toggle=()=>{const open=desc.hidden;desc.hidden=!open;header.setAttribute("aria-expanded",String(open));article.classList.toggle("is-expanded",open);};header.addEventListener("click",toggle);header.addEventListener("keydown",e=>{if(e.target===header&&(e.key==="Enter"||e.key===" ")){e.preventDefault();toggle();}});article.append(header,players,desc);return article;}));}
+class LocalAudioPlayer{constructor({src,storageKey="vengrath-audio-state"}){this.audio=new Audio();this.audio.loop=true;this.audio.preload="none";this.audio.src=src;this.storageKey=storageKey;this.listeners=new Set();this.audio.volume=.5;try{const s=JSON.parse(localStorage.getItem(storageKey)||"{}");this.audio.volume=Math.max(0,Math.min(1,Number(s.volume??.5)));this.pendingTime=Math.max(0,Number(s.time)||0);}catch{this.pendingTime=0;}["play","pause","volumechange","timeupdate","loadedmetadata"].forEach(type=>this.audio.addEventListener(type,()=>{if(type==="loadedmetadata"&&this.pendingTime>0)this.audio.currentTime=Math.min(this.pendingTime,this.audio.duration||this.pendingTime);this.persist();this.emit();}));window.addEventListener("pagehide",()=>this.persist());}persist(){try{localStorage.setItem(this.storageKey,JSON.stringify({volume:this.audio.volume,time:this.audio.currentTime||0}));}catch{}}snapshot(){return {playing:!this.audio.paused,volume:this.audio.volume};}subscribe(fn){this.listeners.add(fn);fn(this.snapshot());return ()=>this.listeners.delete(fn);}emit(){const s=this.snapshot();this.listeners.forEach(fn=>fn(s));}async toggle(){if(this.audio.paused){try{await this.audio.play();}catch(e){if(e?.name!=="NotAllowedError")console.error(e);}}else this.audio.pause();this.emit();}setVolume(v){this.audio.volume=Math.max(0,Math.min(1,v));this.persist();this.emit();}}
+function mountAudioButton(player,color){const button=el("button","audio-player-button");button.type="button";button.style.setProperty("--player-color",color);const ring=el("span","audio-player-ring"),symbol=el("span","audio-player-symbol");button.append(ring,symbol);let dragging=false;const point=e=>{const r=button.getBoundingClientRect(),x=e.clientX-(r.left+r.width/2),y=e.clientY-(r.top+r.height/2);let a=Math.atan2(y,x)+Math.PI/2;if(a<0)a+=Math.PI*2;return {radius:Math.hypot(x,y),volume:a/(Math.PI*2)};};const update=e=>player.setVolume(point(e).volume);button.addEventListener("click",e=>{if(dragging){e.preventDefault();return;}if(point(e).radius>18)update(e);else player.toggle();});button.addEventListener("pointerdown",e=>{if(point(e).radius<=18)return;e.preventDefault();dragging=true;button.setPointerCapture(e.pointerId);update(e);});button.addEventListener("pointermove",e=>{if(dragging)update(e);});button.addEventListener("pointerup",()=>dragging=false);button.addEventListener("pointercancel",()=>dragging=false);player.subscribe(s=>{symbol.textContent=s.playing?"Ⅱ":"▶";button.setAttribute("aria-label",s.playing?"Wstrzymaj audio":"Odtwórz audio");ring.style.setProperty("--volume",s.volume*100+"%");});document.body.append(button);}
+async function initialize(){const [manifest,theme,content]=await Promise.all([loadJson("./manifest.json"),loadJson("./theme.json"),loadJson("./content.json")]);applyTheme(theme);hero(content,theme,manifest);renderCampaign(content.campaign);renderGallery(content.gallery);await renderMaterial(content.characters);renderChronicle(content.chronicle,theme.colors.accent2);if(manifest.audio?.src){const player=new LocalAudioPlayer({src:manifest.audio.src,storageKey:manifest.audio.continuationKey});mountAudioButton(player,theme.audioColor);}}
+initialize().then(()=>document.body.classList.remove("campaign-startup-loading")).catch(e=>console.error("Nie udało się uruchomić strony Drakkenheim.",e));

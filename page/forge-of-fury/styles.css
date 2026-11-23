@@ -1,0 +1,949 @@
+/* Localized from page/forge-of-fury/sections/campaign/campaign.css */
+html {
+  scroll-behavior: smooth;
+}
+
+.forge-of-fury-page {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 75% 8%, #9a4a1c 0, transparent 32%),
+    radial-gradient(circle at 10% 70%, #583014 0, transparent 30%),
+    var(--theme-base-1);
+  color: var(--theme-text-1);
+  font-family: var(--theme-font-2);
+  line-height: 1.6;
+}
+.forge-of-fury-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0.14;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 3px,
+    rgba(255, 255, 255, 0.025) 4px
+  );
+}
+.forge-of-fury-page .subpage-hero {
+  display: flex;
+  align-items: flex-end;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: #070607;
+}
+.forge-of-fury-page .subpage-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--hero-background, none) center / cover no-repeat;
+  filter: saturate(0.72) contrast(1.08);
+}
+.forge-of-fury-page .subpage-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 4, 5, 0.94),
+      rgba(5, 4, 5, 0.58) 48%,
+      rgba(5, 4, 5, 0.36)
+    ),
+    linear-gradient(0deg, rgba(5, 4, 5, 0.96), transparent 48%),
+    radial-gradient(
+      circle at 75% 42%,
+      transparent 0 17%,
+      rgba(5, 4, 5, 0.45) 70%
+    );
+}
+.forge-of-fury-page .subpage-hero__copy {
+  display: block;
+  z-index: 3;
+  width: min(1320px, calc(100% - 40px));
+  box-sizing: border-box;
+  margin: 0 auto 100px;
+  padding: 0;
+  text-align: left;
+}
+.fof-navbar-mount {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1100;
+}
+.fof-hero-kicker {
+  margin: 0;
+  color: var(--theme-accent-2);
+  font: 500 9px/1.4 var(--theme-font-2);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+.forge-of-fury-page .subpage-hero h1 {
+  margin: 24px 0 28px;
+  color: var(--theme-text-1);
+  font: 600 clamp(70px, 11vw, 155px)/0.76 var(--theme-font-1);
+  letter-spacing: -0.055em;
+  overflow-wrap: break-word;
+  text-transform: uppercase;
+  text-shadow: 0 25px 60px #000;
+}
+.forge-of-fury-page .subpage-hero .fof-hero-title-accent {
+  color: var(--theme-title-accent);
+  font-family: var(--theme-font-3);
+  font-size: 0.98em;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.03em;
+  text-transform: none;
+}
+.fof-hero-lead {
+  max-width: 690px;
+  margin: 0 0 30px;
+  color: var(--theme-text-2);
+  font-family: var(--theme-font-3);
+  font-size: 23px;
+  line-height: 1.25;
+}
+.fof-hero-mist-line {
+  position: absolute;
+  right: clamp(20px, 6vw, 90px);
+  bottom: 24px;
+  left: clamp(20px, 6vw, 90px);
+  z-index: 4;
+  height: 1px;
+  pointer-events: none;
+}
+.fof-hero-mist-line::after {
+  content: "↓";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #8b8173;
+  font: 500 24px/1 var(--theme-font-2);
+}
+
+.ddc-content {
+  width: min(1220px, calc(100% - 48px));
+  margin: auto;
+  padding: 70px 0 100px;
+}
+.ddc-tab-panel[hidden] {
+  display: none;
+}
+.ddc-card {
+  border: 1px solid #573b27;
+  background: linear-gradient(145deg, #2b1b11, #100b08);
+  box-shadow: 0 20px 65px #0007;
+}
+.ddc-card-title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 28px;
+  border-bottom: 1px solid #573b27;
+  background: #160f0a;
+}
+.ddc-card-title span {
+  color: var(--theme-accent-1);
+  font: 400 30px/1 var(--theme-font-1);
+}
+.ddc-card-title strong {
+  color: #d9d3c7;
+  font: 700 12px/1 var(--theme-font-1);
+  letter-spacing: 3px;
+}
+.ddc-card-body {
+  padding: 28px;
+}
+.ddc-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(250px, 0.65fr);
+  gap: 26px;
+  align-items: stretch;
+}
+.ddc-paper {
+  position: relative;
+  min-width: 0;
+  padding: 40px;
+  border: 1px solid var(--theme-line-1);
+  background: linear-gradient(135deg, #17191d, #101215);
+  box-shadow: 0 20px 70px #0007;
+}
+.ddc-paper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 35px;
+  width: 1px;
+  height: 100%;
+  background: #54351c;
+}
+.ddc-section-mark {
+  color: var(--theme-accent-2);
+  font: 400 13px/1 var(--theme-font-1);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.ddc-paper h2,
+.ddc-section h2 {
+  margin: 12px 0 20px;
+  color: #f6eee2;
+  font: 400 clamp(36px, 4vw, 58px)/0.95 var(--theme-font-1);
+}
+.ddc-paper p {
+  max-width: 72ch;
+  margin: 0 0 14px;
+  color: #e4d5c0;
+  font: 16px/1.6 var(--theme-font-3);
+}
+.ddc-case {
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid #91623a;
+  background: #100b08;
+  box-shadow: 8px 8px 0 #050608;
+}
+.ddc-case-label {
+  margin-bottom: 5px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #4b3a3c;
+  color: #b73b48;
+  font: 700 12px var(--theme-font-1);
+  letter-spacing: 3px;
+}
+.ddc-case-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #54351c;
+  font-size: 13px;
+}
+.ddc-case-row span {
+  color: #bda78b;
+  letter-spacing: 1px;
+}
+.ddc-case-row strong {
+  color: #f6eee2;
+  font: 16px var(--theme-font-1);
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+.ddc-case-row .ddc-active {
+  color: #e07836;
+}
+.ddc-party-portrait {
+  display: grid;
+  grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr);
+  gap: 0;
+  margin-top: 70px;
+  overflow: hidden;
+  border: 1px solid #573b27;
+  background: #1b120d;
+  box-shadow: 0 20px 70px #0007;
+}
+.ddc-party-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: 36px;
+  background: linear-gradient(145deg, #17191d, #1b120d);
+}
+.ddc-party-copy h2 {
+  margin: 10px 0 16px;
+  color: #f6eee2;
+  font: 400 clamp(34px, 3.5vw, 50px)/0.95 var(--theme-font-1);
+  overflow-wrap: anywhere;
+}
+.ddc-party-copy p {
+  margin: 0;
+  color: #bda78b;
+}
+.ddc-party-image {
+  min-width: 0;
+  min-height: 390px;
+  margin: 0;
+  background: #08090b;
+}
+.ddc-party-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  object-fit: cover;
+  object-position: center top;
+}
+.ddc-section {
+  margin-top: 82px;
+}
+.ddc-character-intro {
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+.ddc-character-intro p,
+.ddc-chronicle-intro p {
+  max-width: 72ch;
+  margin: 0;
+  color: #888b87;
+  font-size: 15px;
+}
+.ddc-chronicle-panel .ddc-section {
+  margin-top: 0;
+}
+.ddc-chronicle-panel .ddc-chronicle-records {
+  margin-top: 28px;
+}
+.ddc-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 30px;
+  border-top: 1px solid #573b27;
+  background: #100b08;
+  color: #907b63;
+}
+.ddc-footer a {
+  color: #d7b56d;
+  text-decoration: none;
+}
+.ddc-footer a:hover,
+.ddc-footer a:focus-visible {
+  color: var(--theme-accent-2);
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .ddc-intro-grid,
+  .ddc-party-portrait {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ddc-party-image,
+  .ddc-party-image img {
+    min-height: 300px;
+  }
+}
+@media (max-width: 620px) {
+  .forge-of-fury-page .subpage-hero {
+    min-height: 88vh;
+    min-height: 88svh;
+  }
+  .forge-of-fury-page .subpage-hero__copy {
+    width: calc(100% - 40px);
+    margin-bottom: 85px;
+  }
+  .forge-of-fury-page .subpage-hero h1 {
+    font-size: clamp(38px, 10vw, 58px);
+  }
+  .fof-hero-kicker {
+    font-size: 8px;
+    letter-spacing: 0.14em;
+  }
+  .fof-hero-lead {
+    font-size: 18px;
+  }
+  .fof-hero-mist-line {
+    right: 20px;
+    left: 20px;
+  }
+  .ddc-content {
+    width: calc(100% - 28px);
+    padding-top: 45px;
+  }
+  .ddc-card-body {
+    padding: 18px;
+  }
+  .ddc-card-title {
+    padding: 16px 18px;
+  }
+  .ddc-paper {
+    padding: 25px;
+  }
+  .ddc-paper::after {
+    display: none;
+  }
+  .ddc-case {
+    padding: 22px;
+  }
+  .ddc-party-copy {
+    padding: 28px;
+  }
+  .ddc-party-image,
+  .ddc-party-image img {
+    min-height: 260px;
+  }
+  .ddc-footer {
+    display: block;
+  }
+  .ddc-footer a {
+    display: block;
+    margin-top: 8px;
+  }
+}
+
+
+/* Localized from page/forge-of-fury/sections/characters/characters.css */
+.ddc-character-intro {
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+.ddc-character-intro p {
+  max-width: 72ch;
+  margin: 0;
+  color: #888b87;
+  font-size: 15px;
+}
+.forge-of-fury-page .character-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.forge-of-fury-page .character-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #573b27;
+  border-radius: 0;
+  background: linear-gradient(145deg, #2b1b11, #100b08);
+  box-shadow: 0 16px 45px #0006;
+  color: var(--theme-text-1);
+}
+.forge-of-fury-page .character-card:hover,
+.forge-of-fury-page .character-card:focus-visible {
+  border-color: var(--theme-accent-2);
+  transform: translateY(-3px);
+  outline-offset: 3px;
+}
+.forge-of-fury-page .character-card__portrait {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  border-bottom: 1px solid #4b3a3d;
+  background:
+    radial-gradient(circle at 50% 30%, #393338 0, transparent 38%),
+    linear-gradient(180deg, #242025, #0b0d10);
+}
+.forge-of-fury-page .character-card__portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(0.75);
+}
+.forge-of-fury-page .character-card__portrait::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px dashed #75666a;
+  opacity: 0.3;
+  pointer-events: none;
+}
+.forge-of-fury-page .character-card__status {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.65rem;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid #ffffff40;
+  background: #08090bdd;
+  color: #d7b56d;
+  font: 0.7rem var(--theme-font-2);
+  text-transform: uppercase;
+}
+.forge-of-fury-page .character-card__achievements {
+  position: absolute;
+  top: 0.55rem;
+  left: 0.55rem;
+  right: 0.55rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+.forge-of-fury-page .achievement-badge {
+  border-color: #d7b56d99;
+  background: #111216ef;
+  color: #e0c78e;
+}
+.forge-of-fury-page .character-card__body {
+  display: grid;
+  gap: 0.65rem;
+  padding: 22px;
+}
+.forge-of-fury-page .character-card h3 {
+  margin: 7px 0 2px;
+  color: #f6eee2;
+  font: 400 27px/1.1 var(--theme-font-1);
+  overflow-wrap: anywhere;
+}
+.forge-of-fury-page .character-card__player {
+  margin: 0;
+  color: #e4d5c0;
+  font-size: 14px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.forge-of-fury-page .character-card__row {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+.forge-of-fury-page .character-card__label {
+  color: #bda78b;
+  font: 0.7rem var(--theme-font-1);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.forge-of-fury-page .character-card__value {
+  min-width: 0;
+  color: #e4d5c0;
+  overflow-wrap: anywhere;
+}
+.forge-of-fury-page .character-card__achievement-count {
+  margin: auto 0 0;
+  padding: 0.6rem 0.9rem;
+  border-top: 1px solid #573b27;
+  color: #bda78b;
+  font-size: 0.72rem;
+}
+@media (max-width: 1050px) {
+  .forge-of-fury-page .character-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 620px) {
+  .forge-of-fury-page .character-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .forge-of-fury-page .character-card__portrait {
+    aspect-ratio: 4/4.2;
+  }
+}
+
+
+/* Localized from page/forge-of-fury/theme-fonts.css */
+:root {
+  --theme-font-1: "Voltaire", sans-serif;
+  --theme-font-2: "Fira Sans Extra Condensed", sans-serif;
+  --theme-font-3: "Brygada 1918", Georgia, serif;
+}
+
+/* BEGIN GENERATED THEME VARIABLES */
+:root {
+  --theme-base-1: #100b08;
+  --theme-base1: #100b08;
+  --theme-base-2: #1b120d;
+  --theme-base2: #1b120d;
+  --theme-base-3: #2b1b11;
+  --theme-base3: #2b1b11;
+  --theme-base-4: #3d2717;
+  --theme-base4: #3d2717;
+  --theme-base-5: #54351c;
+  --theme-base5: #54351c;
+  --theme-accent-1: #e07836;
+  --theme-accent1: #e07836;
+  --theme-accent-2: #d7b56d;
+  --theme-accent2: #d7b56d;
+  --theme-text-1: #f6eee2;
+  --theme-text1: #f6eee2;
+  --theme-text-2: #e4d5c0;
+  --theme-text2: #e4d5c0;
+  --theme-text-3: #bda78b;
+  --theme-text3: #bda78b;
+  --theme-text-muted: #907b63;
+  --theme-textMuted: #907b63;
+  --theme-title-accent: #f2d6a0;
+  --theme-titleAccent: #f2d6a0;
+  --theme-line-1: #573b27;
+  --theme-line1: #573b27;
+  --theme-line-2: #91623a;
+  --theme-line2: #91623a;
+  --theme-nav-background: #160f0a;
+  --theme-navBackground: #160f0a;
+  --theme-nav-text: #f0dfc5;
+  --theme-navText: #f0dfc5;
+  --theme-nav-active-background: #3b2516;
+  --theme-navActiveBackground: #3b2516;
+  --theme-font-1: "Voltaire", sans-serif;
+  --theme-font-2: "Fira Sans Extra Condensed", sans-serif;
+  --theme-font-3: "Brygada 1918", Georgia, serif;
+  --campaign-accent: #d7b56d;
+  --chronicle-heading-font: var(--theme-font-1);
+}
+/* END GENERATED THEME VARIABLES */
+
+
+/* Localized from core/templates/CampaignPage/CampaignStartup.css */
+body.campaign-startup-loading > main,
+body.campaign-startup-loading > footer {
+  display: none !important;
+}
+
+.campaign-startup-kicker {
+  margin: 0 0 1rem;
+  color: var(--theme-accent-2, var(--campaign-accent, #bca06a));
+  font: 500 0.7rem/1.5 "DM Mono", monospace;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.campaign-startup-lead {
+  max-width: 50rem;
+  margin: 1.5rem 0 0;
+  color: var(--theme-text-2, #d7d2c8);
+  font: clamp(1.05rem, 1.8vw, 1.35rem) / 1.4 var(--theme-font-3, Georgia, serif);
+}
+
+/* Keep hero copy in its final layout until the page theme and web fonts are ready. */
+body.campaign-startup-loading .subpage-hero__copy {
+  visibility: hidden;
+}
+
+body.campaign-startup-loading .subpage-hero {
+  --hero-copy-ready: 0;
+}
+
+
+/* Avoid showing the static placeholder hero while campaign data and theme initialize. */
+body.campaign-startup-loading .subpage-hero__copy {
+  visibility: hidden !important;
+}
+
+
+/* Keep page content in its final layout while all campaign theme fonts load. */
+body.campaign-fonts-loading > main,
+body.campaign-fonts-loading > footer {
+  visibility: hidden !important;
+}
+
+
+/* Localized from core/templates/SubpageHero/SubpageHero.css */
+.subpage-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  box-sizing: border-box;
+  overflow: hidden;
+  background:
+    linear-gradient(#080a0b55, #080a0b99),
+    var(--hero-background, linear-gradient(135deg, #171c1e, #0b0d0e));
+  background-position: center;
+  background-size: cover;
+  color: #f1f2f2;
+}
+
+.subpage-hero__copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: var(--hero-copy-align, center);
+  gap: 2rem;
+  width: min(100%, 1200px);
+  box-sizing: border-box;
+  padding: clamp(1.5rem, 5vw, 5rem);
+  text-align: var(--hero-copy-text-align, center);
+  transform: translate(
+    var(--hero-copy-offset-x, 0px),
+    var(--hero-copy-offset-y, 0px)
+  );
+}
+
+.subpage-hero h1 {
+  margin: 0;
+  color: var(--campaign-accent);
+  font:
+    clamp(2.5rem, 7vw, 7rem) / 1.05 var(--theme-font-1, Voltaire),
+    serif;
+  letter-spacing: 0.03em;
+  text-wrap: balance;
+}
+
+.subpage-hero__image {
+  display: block;
+  width: min(100%, 1000px);
+  max-height: 55svh;
+  object-fit: contain;
+}
+
+@media (max-width: 620px) {
+  .subpage-hero {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .subpage-hero__copy {
+    gap: 1.25rem;
+    padding: 5rem 1.25rem 2rem;
+  }
+
+  .subpage-hero__image {
+    max-height: 42svh;
+  }
+}
+
+
+/* Localized from core/templates/SubpageNavbar/SubpageNavbar.css */
+.subpage-navbar {
+  position: fixed !important;
+  inset: 0 0 auto;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem clamp(0.75rem, 2vw, 1.5rem);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    backdrop-filter 180ms ease;
+}
+
+.subpage-navbar.is-scrolled {
+  background: rgb(11 13 14 / 94%);
+  border-bottom-color: #292e31;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.subpage-navbar__left,
+.subpage-navbar__sections {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.subpage-navbar__sections {
+  justify-content: flex-end;
+}
+
+@media (max-width: 760px) {
+  .subpage-navbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .subpage-navbar__left,
+  .subpage-navbar__sections {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .subpage-navbar__sections {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .subpage-navbar {
+    transition: none;
+  }
+}
+
+
+/* Localized from core/templates/HomeButton/HomeButton.css */
+.vengrath-home-button {
+  display: inline-flex;
+  height: 3.1rem;
+  min-height: 3.1rem;
+  box-sizing: border-box;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #41474a;
+  border-radius: 999px;
+  background: #111416;
+  color: #f1f2f2;
+  text-decoration: none;
+  font:
+    1rem Voltaire,
+    sans-serif;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.vengrath-home-button img {
+  width: 1.65rem;
+  height: 1.65rem;
+  object-fit: contain;
+}
+.vengrath-home-button:hover,
+.vengrath-home-button:focus-visible {
+  border-color: #bca06a;
+  outline-offset: 3px;
+}
+
+
+/* Localized from core/templates/SubpageNavbar/NavbarButton/NavbarButton.css */
+.subpage-navbar-button {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--section-color);
+  background: transparent;
+  color: var(--section-color);
+  font:
+    1rem Voltaire,
+    sans-serif;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.subpage-navbar-button[aria-pressed="true"],
+.subpage-navbar-button:hover {
+  background: var(--section-color);
+  color: #0b0d0e;
+}
+.subpage-navbar-button:focus-visible {
+  outline: 2px solid var(--section-color);
+  outline-offset: 3px;
+}
+
+
+/* Localized from core/templates/CharacterCard/CharacterCard.css */
+.character-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+  border: 1px solid #292e31;
+  background: #111416;
+  color: #f1f2f2;
+  cursor: pointer;
+  transition:
+    border-color 0.18s,
+    transform 0.18s;
+}
+.character-card:hover,
+.character-card:focus-visible {
+  border-color: #bca06a;
+  transform: translateY(-3px);
+  outline-offset: 3px;
+}
+.character-card__portrait {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: #1b2022;
+}
+.character-card__portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.character-card__portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0.45rem;
+  border: 1px solid #bca06a80;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    #bca06a12,
+    transparent 22%,
+    transparent 78%,
+    #bca06a12
+  );
+}
+.character-card__status {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.65rem;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid #ffffff40;
+  background: #0b0d0edb;
+  font:
+    0.7rem "DM Mono",
+    monospace;
+  text-transform: uppercase;
+}
+.character-card__achievements {
+  position: absolute;
+  z-index: 2;
+  top: 0.55rem;
+  left: 0.55rem;
+  right: 0.55rem;
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+.character-card__body {
+  padding: 0.9rem;
+  display: grid;
+  gap: 0.5rem;
+}
+.character-card h3 {
+  margin: 0;
+  font:
+    600 1.1rem "Space Grotesk",
+    sans-serif;
+}
+.character-card__player {
+  margin: 0;
+  color: #bca06a;
+  font-size: 0.84rem;
+}
+.character-card__row {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+.character-card__label {
+  color: #858b8e;
+  text-transform: uppercase;
+  font:
+    0.65rem "DM Mono",
+    monospace;
+}
+.character-card__value {
+  overflow-wrap: anywhere;
+}
+.character-card__achievement-count {
+  margin: auto 0 0;
+  padding: 0.6rem 0.9rem;
+  border-top: 1px solid #292e31;
+  color: #858b8e;
+  font-size: 0.72rem;
+}
+
+
+/* Localized from core/templates/CharacterCard/Achievements/Achievements.css */
+.achievement-badge {
+  display: inline-grid;
+  place-items: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  border: 1px solid #bca06a99;
+  border-radius: 50%;
+  background: #111416ef;
+  color: #e0c78e;
+  font-size: 0.9rem;
+  cursor: help;
+}
+
+
+/* Localized from core/templates/CharacterGallery/CharacterGallery.css */
+.character-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  gap: 1rem;
+}
+.character-gallery__empty {
+  padding: 2rem;
+  text-align: center;
+  color: #aeb3b5;
+  border: 1px dashed #41474a;
+}
