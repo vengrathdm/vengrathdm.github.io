@@ -103,6 +103,7 @@ function renderEntries(records) {
 function renderHero(heroContent, theme) {
   const hero = createSubpageHero({
     title: heroContent.title,
+    backgroundImage: theme.heroImage,
     theme: { accent: theme.colors.accent2 },
   });
   hero.classList.add("fiery-hero");
