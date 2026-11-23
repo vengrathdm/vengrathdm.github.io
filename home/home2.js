@@ -241,7 +241,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"){if(!contextMenu.hid
 viewport.addEventListener("scroll",()=>{if(!contextMenu.hidden)closeContextMenu()},{passive:true});
 window.addEventListener("resize",closeContextMenu);
 
-function wrapScroll(){if(!worldWidth)return;let x=viewport.scrollLeft;while(x<scrollBuffer)x+=worldWidth;while(x>=scrollBuffer+worldWidth)x-=worldWidth;if(x!==viewport.scrollLeft)viewport.scrollLeft=x}
+function wrapScroll(){if(!worldWidth)return;let x=viewport.scrollLeft;const maxPosition=worldWidth+scrollBuffer;while(x<0)x+=worldWidth;while(x>=maxPosition)x-=worldWidth;if(x!==viewport.scrollLeft)viewport.scrollLeft=x}
 function stopInertia(){if(inertiaFrame)cancelAnimationFrame(inertiaFrame);inertiaFrame=0}
 function runInertia(){stopInertia();let last=performance.now();const tick=now=>{const dt=Math.min(32,now-last);last=now;if(Math.abs(velocity)<.025){velocity=0;inertiaFrame=0;return}viewport.scrollLeft-=velocity*dt;velocity*=Math.pow(.93,dt/16.67);wrapScroll();inertiaFrame=requestAnimationFrame(tick)};inertiaFrame=requestAnimationFrame(tick)}
 filters.addEventListener("click",e=>{const b=e.target.closest("button[data-tag]");if(!b)return;if(b.dataset.tag==="Wszystko")activeTags.clear();else{if(activeTags.has(b.dataset.tag))activeTags.delete(b.dataset.tag);else activeTags.add(b.dataset.tag)}syncFilterControls();hidePreview();build()});
