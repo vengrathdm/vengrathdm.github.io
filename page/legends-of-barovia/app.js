@@ -308,6 +308,18 @@ async function initialize() {
     }
   });
 
+  // Replay a tab selection made while the campaign data was still loading.
+  const selectedSection = document.querySelector(
+    '.subpage-navbar-button[aria-pressed="true"]',
+  )?.dataset.section;
+  if (selectedSection) {
+    document.dispatchEvent(
+      new CustomEvent("vengrath:sectionchange", {
+        detail: { section: selectedSection },
+      }),
+    );
+  }
+
   document.querySelector("main")?.setAttribute("aria-busy", "false");
   document.body.classList.remove("campaign-startup-loading");
   if (manifest.audio?.src) {
