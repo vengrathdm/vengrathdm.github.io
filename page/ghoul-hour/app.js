@@ -73,7 +73,7 @@ async function initialize() {
     }
     if (section === "chronicle" && !chronicleRendered) {
       document.querySelector("#chronicle-records").replaceChildren(
-        ...(content.chronicle.sessions || []).map((session) => makeChronicle(session, theme.colors.accent2)),
+        ...(content.chronicle.sessions || []).map((session) => makeChronicle(session, accent)),
       );
       chronicleRendered = true;
     }
