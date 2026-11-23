@@ -1,15 +1,5 @@
 /* Dragon of Icespire Peak — campaign-local runtime. No shared JavaScript imports. */
-const themeVariables = {
-  base1:"--theme-base-1",base2:"--theme-base-2",base3:"--theme-base-3",base4:"--theme-base-4",base5:"--theme-base-5",
-  accent1:"--theme-accent-1",accent2:"--theme-accent-2",text1:"--theme-text-1",text2:"--theme-text-2",text3:"--theme-text-3",
-  textMuted:"--theme-text-muted",titleAccent:"--theme-title-accent",line1:"--theme-line-1",line2:"--theme-line-2",
-  navBackground:"--theme-nav-background",navText:"--theme-nav-text",navActiveBackground:"--theme-nav-active-background"
-};
 async function loadJson(path){const response=await fetch(path);if(!response.ok)throw new Error("Nie udało się wczytać pliku: "+path);return response.json();}
-function applyTheme(theme){
-  Object.entries(themeVariables).forEach(([key,property])=>{if(theme.colors[key])document.documentElement.style.setProperty(property,theme.colors[key]);});
-  document.documentElement.style.setProperty("--campaign-accent",theme.colors.accent2);
-}
 function createHomeButton(){
   const link=document.createElement("a");link.className="vengrath-home-button";link.href="/home/";link.setAttribute("aria-label","Vengrath — strona główna");
   const image=document.createElement("img");image.src="/core/graphics/favicon/favicon.ico";image.alt="";
@@ -34,16 +24,15 @@ function mountNavbar(container,accent){
   const updateScroll=()=>container.classList.toggle("is-scrolled",window.scrollY>12);
   updateScroll();window.addEventListener("scroll",updateScroll,{passive:true});select("campaign");
 }
-function initializeHero(content,theme){
+function initializeHero(content,accent){
   const hero=document.querySelector("#campaign-hero");
-  hero.style.setProperty("--hero-background","url('"+theme.heroImage+"')");
   const copy=hero.querySelector(".subpage-hero__copy");
   const kicker=copy.querySelector(".campaign-startup-kicker");kicker.className="doip-hero-kicker";kicker.textContent=content.campaign.kicker;
   const lead=copy.querySelector(".campaign-startup-lead");lead.className="doip-hero-lead";lead.textContent=content.campaign.lead;
   const heading=copy.querySelector("h1");heading.replaceChildren(document.createTextNode("Dragon of"),document.createElement("br"),Object.assign(document.createElement("span"),{className:"doip-hero-title-accent",textContent:"Icespire Peak"}));
   const mount=document.createElement("div");mount.className="doip-navbar-mount";hero.prepend(mount);
   const mist=document.createElement("div");mist.className="doip-hero-mist-line";mist.setAttribute("aria-hidden","true");hero.append(mist);
-  mountNavbar(mount,theme.colors.accent2);
+  mountNavbar(mount,accent);
 }
 function renderCampaign(campaign){
   document.querySelector("#campaign-intro-title").textContent=campaign.introTitle;
@@ -91,13 +80,16 @@ async function renderCharacters(characters){
   selected.forEach(character=>grid.append(createCharacterCard(character,definitions)));container.append(grid);
 }
 async function initializeCampaignPage() {
-  const [manifest, theme, content] = await Promise.all([
+  // Theme tokens and hero artwork are shipped in the initial CSS and HTML.
+  const accent =
+    getComputedStyle(document.documentElement)
+      .getPropertyValue("--theme-accent-2")
+      .trim() || "#d9e8ee";
+  const [manifest, content] = await Promise.all([
     loadJson("./manifest.json"),
-    loadJson("./theme.json"),
     loadJson("./content.json"),
   ]);
-  applyTheme(theme);
-  initializeHero(content, theme);
+  initializeHero(content, accent);
   renderCampaign(content.campaign);
 
   let charactersPromise;
@@ -115,10 +107,23 @@ async function initializeCampaignPage() {
     });
   });
 
+  const selectedSection = document.querySelector(
+    '.subpage-navbar-button[aria-pressed="true"]',
+  )?.dataset.section;
+  if (selectedSection) {
+    document.dispatchEvent(
+      new CustomEvent("vengrath:sectionchange", {
+        detail: { section: selectedSection },
+      }),
+    );
+  }
+
+  document.querySelector("main")?.setAttribute("aria-busy", "false");
   document.body.classList.remove("campaign-startup-loading");
 }
 initializeCampaignPage().catch((error) => {
   console.error("Nie udało się uruchomić strony Dragon of Icespire Peak.", error);
+  document.querySelector("main")?.setAttribute("aria-busy", "false");
   document.body.classList.remove("campaign-startup-loading");
   const message = document.createElement("p");
   message.className = "doip-load-error";
