@@ -1,0 +1,1377 @@
+
+/* Localized from page/sons-of-azalin/sections/campaign/campaign.css */
+html {
+  scroll-behavior: smooth;
+}
+
+.sons-of-azalin-page {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 75% 8%, #29202b 0, transparent 32%),
+    radial-gradient(circle at 10% 70%, #211219 0, transparent 30%),
+    var(--theme-base-1);
+  color: var(--theme-text-1);
+  font-family: var(--theme-font-2);
+  line-height: 1.6;
+}
+.sons-of-azalin-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0.14;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 3px,
+    rgba(255, 255, 255, 0.025) 4px
+  );
+}
+.sons-of-azalin-page .subpage-hero {
+  display: flex;
+  align-items: flex-end;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: #070607;
+}
+.sons-of-azalin-page .subpage-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--hero-background, none) center / cover no-repeat;
+  filter: saturate(0.72) contrast(1.08);
+}
+.sons-of-azalin-page .subpage-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 4, 5, 0.94),
+      rgba(5, 4, 5, 0.58) 48%,
+      rgba(5, 4, 5, 0.36)
+    ),
+    linear-gradient(0deg, rgba(5, 4, 5, 0.96), transparent 48%),
+    radial-gradient(
+      circle at 75% 42%,
+      transparent 0 17%,
+      rgba(5, 4, 5, 0.45) 70%
+    );
+}
+.sons-of-azalin-page .subpage-hero__copy {
+  display: block;
+  z-index: 3;
+  width: min(1320px, calc(100% - 40px));
+  box-sizing: border-box;
+  margin: 0 auto 100px;
+  padding: 0;
+  text-align: left;
+}
+.soa-navbar-mount {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1100;
+}
+.soa-hero-kicker {
+  margin: 0;
+  color: var(--theme-accent-2);
+  font: 500 9px/1.4 var(--theme-font-2);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+.sons-of-azalin-page .subpage-hero h1 {
+  margin: 24px 0 28px;
+  color: var(--theme-text-1);
+  font: 600 clamp(70px, 11vw, 155px)/0.76 var(--theme-font-1);
+  letter-spacing: -0.055em;
+  overflow-wrap: break-word;
+  text-transform: uppercase;
+  text-shadow: 0 25px 60px #000;
+}
+.sons-of-azalin-page .subpage-hero .soa-hero-title-accent {
+  color: var(--theme-title-accent);
+  font-family: var(--theme-font-3);
+  font-size: 0.98em;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.03em;
+  text-transform: none;
+}
+.soa-hero-lead {
+  max-width: 690px;
+  margin: 0 0 30px;
+  color: var(--theme-text-2);
+  font-family: var(--theme-font-3);
+  font-size: 23px;
+  line-height: 1.25;
+}
+.soa-hero-mist-line {
+  position: absolute;
+  right: clamp(20px, 6vw, 90px);
+  bottom: 24px;
+  left: clamp(20px, 6vw, 90px);
+  z-index: 4;
+  height: 1px;
+  pointer-events: none;
+}
+.soa-hero-mist-line::after {
+  content: "↓";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #8b8173;
+  font: 500 24px/1 var(--theme-font-2);
+}
+
+.ddc-content {
+  width: min(1220px, calc(100% - 48px));
+  margin: auto;
+  padding: 70px 0 100px;
+}
+.ddc-tab-panel[hidden] {
+  display: none;
+}
+.ddc-card {
+  border: 1px solid #3a3d42;
+  background: linear-gradient(145deg, #13161a, #0d0f12);
+  box-shadow: 0 20px 65px #0007;
+}
+.ddc-card-title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 28px;
+  border-bottom: 1px solid #34373b;
+  background: #0a0c0f;
+}
+.ddc-card-title span {
+  color: var(--theme-accent-1);
+  font: 400 30px/1 var(--theme-font-1);
+}
+.ddc-card-title strong {
+  color: #d9d3c7;
+  font: 700 12px/1 var(--theme-font-1);
+  letter-spacing: 3px;
+}
+.ddc-card-body {
+  padding: 28px;
+}
+.ddc-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(250px, 0.65fr);
+  gap: 26px;
+  align-items: stretch;
+}
+.ddc-paper {
+  position: relative;
+  min-width: 0;
+  padding: 40px;
+  border: 1px solid var(--theme-line-1);
+  background: linear-gradient(135deg, #17191d, #101215);
+  box-shadow: 0 20px 70px #0007;
+}
+.ddc-paper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 35px;
+  width: 1px;
+  height: 100%;
+  background: #292c30;
+}
+.ddc-section-mark {
+  color: var(--theme-accent-2);
+  font: 400 13px/1 var(--theme-font-1);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.ddc-paper h2,
+.ddc-section h2 {
+  margin: 12px 0 20px;
+  color: #ece7dc;
+  font: 400 clamp(36px, 4vw, 58px)/0.95 var(--theme-font-1);
+}
+.ddc-paper p {
+  max-width: 72ch;
+  margin: 0 0 14px;
+  color: #aaa9a3;
+  font: 16px/1.6 var(--theme-font-3);
+}
+.ddc-case {
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid #46484b;
+  background: #0d0f12;
+  box-shadow: 8px 8px 0 #050608;
+}
+.ddc-case-label {
+  margin-bottom: 5px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #4b3a3c;
+  color: #b73b48;
+  font: 700 12px var(--theme-font-1);
+  letter-spacing: 3px;
+}
+.ddc-case-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #292c30;
+  font-size: 13px;
+}
+.ddc-case-row span {
+  color: #85827c;
+  letter-spacing: 1px;
+}
+.ddc-case-row strong {
+  color: #ddd7ca;
+  font: 16px var(--theme-font-1);
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+.ddc-case-row .ddc-active {
+  color: #b94a55;
+}
+.ddc-party-portrait {
+  display: grid;
+  grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr);
+  gap: 0;
+  margin-top: 70px;
+  overflow: hidden;
+  border: 1px solid #383b3f;
+  background: #0e1013;
+  box-shadow: 0 20px 70px #0007;
+}
+.ddc-party-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: 36px;
+  background: linear-gradient(145deg, #17191d, #0e1013);
+}
+.ddc-party-copy h2 {
+  margin: 10px 0 16px;
+  color: #ece7dc;
+  font: 400 clamp(34px, 3.5vw, 50px)/0.95 var(--theme-font-1);
+  overflow-wrap: anywhere;
+}
+.ddc-party-copy p {
+  margin: 0;
+  color: #92948f;
+}
+.ddc-party-image {
+  min-width: 0;
+  min-height: 390px;
+  margin: 0;
+  background: #08090b;
+}
+.ddc-party-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  object-fit: cover;
+  object-position: center top;
+}
+.ddc-section {
+  margin-top: 82px;
+}
+.ddc-character-intro {
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+.ddc-character-intro p,
+.ddc-chronicle-intro p {
+  max-width: 72ch;
+  margin: 0;
+  color: #888b87;
+  font-size: 15px;
+}
+.ddc-chronicle-panel .ddc-section {
+  margin-top: 0;
+}
+.ddc-chronicle-panel .ddc-chronicle-records {
+  margin-top: 28px;
+}
+.ddc-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 30px;
+  border-top: 1px solid #2f3135;
+  background: #07080a;
+  color: #6f726f;
+}
+.ddc-footer a {
+  color: #a99a7b;
+  text-decoration: none;
+}
+.ddc-footer a:hover,
+.ddc-footer a:focus-visible {
+  color: var(--theme-accent-2);
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .ddc-intro-grid,
+  .ddc-party-portrait {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ddc-party-image,
+  .ddc-party-image img {
+    min-height: 300px;
+  }
+}
+@media (max-width: 620px) {
+  .sons-of-azalin-page .subpage-hero {
+    min-height: 88vh;
+    min-height: 88svh;
+  }
+  .sons-of-azalin-page .subpage-hero__copy {
+    width: calc(100% - 40px);
+    margin-bottom: 85px;
+  }
+  .sons-of-azalin-page .subpage-hero h1 {
+    font-size: clamp(38px, 10vw, 58px);
+  }
+  .soa-hero-kicker {
+    font-size: 8px;
+    letter-spacing: 0.14em;
+  }
+  .soa-hero-lead {
+    font-size: 18px;
+  }
+  .soa-hero-mist-line {
+    right: 20px;
+    left: 20px;
+  }
+  .ddc-content {
+    width: calc(100% - 28px);
+    padding-top: 45px;
+  }
+  .ddc-card-body {
+    padding: 18px;
+  }
+  .ddc-card-title {
+    padding: 16px 18px;
+  }
+  .ddc-paper {
+    padding: 25px;
+  }
+  .ddc-paper::after {
+    display: none;
+  }
+  .ddc-case {
+    padding: 22px;
+  }
+  .ddc-party-copy {
+    padding: 28px;
+  }
+  .ddc-party-image,
+  .ddc-party-image img {
+    min-height: 260px;
+  }
+  .ddc-footer {
+    display: block;
+  }
+  .ddc-footer a {
+    display: block;
+    margin-top: 8px;
+  }
+}
+
+
+/* Localized from page/sons-of-azalin/sections/characters/characters.css */
+.ddc-character-intro {
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+.ddc-character-intro p {
+  max-width: 72ch;
+  margin: 0;
+  color: #888b87;
+  font-size: 15px;
+}
+.sons-of-azalin-page .character-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.sons-of-azalin-page .character-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #44383a;
+  border-radius: 0;
+  background: linear-gradient(145deg, #19171a, #0d0f12);
+  box-shadow: 0 16px 45px #0006;
+  color: var(--theme-text-1);
+}
+.sons-of-azalin-page .character-card:hover,
+.sons-of-azalin-page .character-card:focus-visible {
+  border-color: var(--theme-accent-2);
+  transform: translateY(-3px);
+  outline-offset: 3px;
+}
+.sons-of-azalin-page .character-card__portrait {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  border-bottom: 1px solid #4b3a3d;
+  background:
+    radial-gradient(circle at 50% 30%, #393338 0, transparent 38%),
+    linear-gradient(180deg, #242025, #0b0d10);
+}
+.sons-of-azalin-page .character-card__portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(0.75);
+}
+.sons-of-azalin-page .character-card__portrait::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px dashed #75666a;
+  opacity: 0.3;
+  pointer-events: none;
+}
+.sons-of-azalin-page .character-card__status {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.65rem;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid #ffffff40;
+  background: #08090bdd;
+  color: #c3a66d;
+  font: 0.7rem var(--theme-font-2);
+  text-transform: uppercase;
+}
+.sons-of-azalin-page .character-card__achievements {
+  position: absolute;
+  top: 0.55rem;
+  left: 0.55rem;
+  right: 0.55rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+.sons-of-azalin-page .achievement-badge {
+  border-color: #c3a66d99;
+  background: #111216ef;
+  color: #e0c78e;
+}
+.sons-of-azalin-page .character-card__body {
+  display: grid;
+  gap: 0.65rem;
+  padding: 22px;
+}
+.sons-of-azalin-page .character-card h3 {
+  margin: 7px 0 2px;
+  color: #c9c2b7;
+  font: 400 27px/1.1 var(--theme-font-1);
+  overflow-wrap: anywhere;
+}
+.sons-of-azalin-page .character-card__player {
+  margin: 0;
+  color: #aaa8a1;
+  font-size: 14px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.sons-of-azalin-page .character-card__row {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+.sons-of-azalin-page .character-card__label {
+  color: #928c89;
+  font: 0.7rem var(--theme-font-1);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.sons-of-azalin-page .character-card__value {
+  min-width: 0;
+  color: #aaa8a1;
+  overflow-wrap: anywhere;
+}
+.sons-of-azalin-page .character-card__achievement-count {
+  margin: auto 0 0;
+  padding: 0.6rem 0.9rem;
+  border-top: 1px solid #44383a;
+  color: #928c89;
+  font-size: 0.72rem;
+}
+@media (max-width: 1050px) {
+  .sons-of-azalin-page .character-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 620px) {
+  .sons-of-azalin-page .character-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sons-of-azalin-page .character-card__portrait {
+    aspect-ratio: 4/4.2;
+  }
+}
+
+
+/* Localized from page/sons-of-azalin/sections/chronicle/chronicle.css */
+.ddc-chronicle-panel .ddc-section {
+  margin-top: 0;
+}
+.ddc-chronicle-intro {
+  margin-bottom: 28px;
+}
+#campaign-chronicle {
+  width: 100%;
+  margin-top: 20px;
+  border-top: 1px solid #3c3e42;
+}
+#campaign-chronicle .chronicle-record {
+  border: 0;
+  border-bottom: 1px solid var(--theme-line-1);
+  border-radius: 0;
+  background: transparent;
+  color: var(--theme-text-1);
+}
+#campaign-chronicle .chronicle-record__header {
+  display: grid;
+  align-items: center;
+  gap: 15px;
+  min-height: 0;
+  padding: 19px 5px;
+  background: transparent;
+}
+#campaign-chronicle .chronicle-record__number {
+  color: var(--theme-accent-1);
+  font: 400 16px var(--theme-font-1);
+}
+#campaign-chronicle .chronicle-record__title {
+  min-width: 0;
+  color: #ddd8cc;
+  font: 400 19px var(--theme-font-1);
+  overflow-wrap: anywhere;
+}
+#campaign-chronicle .chronicle-record__recordings {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+#campaign-chronicle .play-recording-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 116px;
+  min-height: 0;
+  padding: 9px 13px;
+  border: 1px solid var(--theme-accent-2);
+  border-radius: 0;
+  background: #111216;
+  color: var(--theme-accent-2);
+  font: 700 10px/1.4 var(--theme-font-1);
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+#campaign-chronicle .play-recording-button:hover,
+#campaign-chronicle .play-recording-button:focus-visible {
+  background: var(--theme-accent-2);
+  color: #101114;
+  outline-offset: 3px;
+}
+#campaign-chronicle .chronicle-record__description {
+  padding: 0 5px 20px 105px;
+  border-top: 0;
+  color: #888b86;
+  font: 14px/1.6 var(--theme-font-2);
+}
+#campaign-chronicle .chronicle-record__description p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 760px) {
+  #campaign-chronicle .chronicle-record__header {
+    gap: 8px;
+  }
+  #campaign-chronicle .chronicle-record__recordings {
+    justify-content: flex-start;
+  }
+  #campaign-chronicle .chronicle-record__description {
+    padding: 0 5px 18px;
+  }
+}
+
+
+/* Localized from page/sons-of-azalin/theme-fonts.css */
+:root {
+  --theme-font-1: "Voltaire", sans-serif;
+  --theme-font-2: "Fira Sans Extra Condensed", sans-serif;
+  --theme-font-3: "Brygada 1918", Georgia, serif;
+}
+
+/* BEGIN GENERATED THEME VARIABLES */
+:root {
+  --theme-base-1: #08090d;
+  --theme-base1: #08090d;
+  --theme-base-2: #0c0e14;
+  --theme-base2: #0c0e14;
+  --theme-base-3: #11131b;
+  --theme-base3: #11131b;
+  --theme-base-4: #171923;
+  --theme-base4: #171923;
+  --theme-base-5: #20212b;
+  --theme-base5: #20212b;
+  --theme-accent-1: #8f2639;
+  --theme-accent1: #8f2639;
+  --theme-accent-2: #c3a66d;
+  --theme-accent2: #c3a66d;
+  --theme-text-1: #eee9e4;
+  --theme-text1: #eee9e4;
+  --theme-text-2: #d7d0cb;
+  --theme-text2: #d7d0cb;
+  --theme-text-3: #aaa2a3;
+  --theme-text3: #aaa2a3;
+  --theme-text-muted: #81777d;
+  --theme-textMuted: #81777d;
+  --theme-title-accent: #c9b9b3;
+  --theme-titleAccent: #c9b9b3;
+  --theme-line-1: #3c3039;
+  --theme-line1: #3c3039;
+  --theme-line-2: #58404a;
+  --theme-line2: #58404a;
+  --theme-nav-background: #101018;
+  --theme-navBackground: #101018;
+  --theme-nav-text: #d0c5c6;
+  --theme-navText: #d0c5c6;
+  --theme-nav-active-background: #251820;
+  --theme-navActiveBackground: #251820;
+  --theme-font-1: "Voltaire", sans-serif;
+  --theme-font-2: "Fira Sans Extra Condensed", sans-serif;
+  --theme-font-3: "Brygada 1918", Georgia, serif;
+  --campaign-accent: #c3a66d;
+  --chronicle-heading-font: var(--theme-font-1);
+}
+/* END GENERATED THEME VARIABLES */
+
+
+/* Localized from core/templates/CampaignPage/CampaignStartup.css */
+body.campaign-startup-loading > main,
+body.campaign-startup-loading > footer {
+  display: none !important;
+}
+
+.campaign-startup-kicker {
+  margin: 0 0 1rem;
+  color: var(--theme-accent-2, var(--campaign-accent, #bca06a));
+  font: 500 0.7rem/1.5 "DM Mono", monospace;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.campaign-startup-lead {
+  max-width: 50rem;
+  margin: 1.5rem 0 0;
+  color: var(--theme-text-2, #d7d2c8);
+  font: clamp(1.05rem, 1.8vw, 1.35rem) / 1.4 var(--theme-font-3, Georgia, serif);
+}
+
+/* Keep hero copy in its final layout until the page theme and web fonts are ready. */
+body.campaign-startup-loading .subpage-hero__copy {
+  visibility: hidden;
+}
+
+body.campaign-startup-loading .subpage-hero {
+  --hero-copy-ready: 0;
+}
+
+
+/* Avoid showing the static placeholder hero while campaign data and theme initialize. */
+body.campaign-startup-loading .subpage-hero__copy {
+  visibility: hidden !important;
+}
+
+
+/* Keep page content in its final layout while all campaign theme fonts load. */
+body.campaign-fonts-loading > main,
+body.campaign-fonts-loading > footer {
+  visibility: hidden !important;
+}
+
+
+/* Localized from core/templates/SubpageHero/SubpageHero.css */
+.subpage-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  box-sizing: border-box;
+  overflow: hidden;
+  background:
+    linear-gradient(#080a0b55, #080a0b99),
+    var(--hero-background, linear-gradient(135deg, #171c1e, #0b0d0e));
+  background-position: center;
+  background-size: cover;
+  color: #f1f2f2;
+}
+
+.subpage-hero__copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: var(--hero-copy-align, center);
+  gap: 2rem;
+  width: min(100%, 1200px);
+  box-sizing: border-box;
+  padding: clamp(1.5rem, 5vw, 5rem);
+  text-align: var(--hero-copy-text-align, center);
+  transform: translate(
+    var(--hero-copy-offset-x, 0px),
+    var(--hero-copy-offset-y, 0px)
+  );
+}
+
+.subpage-hero h1 {
+  margin: 0;
+  color: var(--campaign-accent);
+  font:
+    clamp(2.5rem, 7vw, 7rem) / 1.05 var(--theme-font-1, Voltaire),
+    serif;
+  letter-spacing: 0.03em;
+  text-wrap: balance;
+}
+
+.subpage-hero__image {
+  display: block;
+  width: min(100%, 1000px);
+  max-height: 55svh;
+  object-fit: contain;
+}
+
+@media (max-width: 620px) {
+  .subpage-hero {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .subpage-hero__copy {
+    gap: 1.25rem;
+    padding: 5rem 1.25rem 2rem;
+  }
+
+  .subpage-hero__image {
+    max-height: 42svh;
+  }
+}
+
+
+/* Localized from core/templates/SubpageNavbar/SubpageNavbar.css */
+.subpage-navbar {
+  position: fixed !important;
+  inset: 0 0 auto;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem clamp(0.75rem, 2vw, 1.5rem);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    backdrop-filter 180ms ease;
+}
+
+.subpage-navbar.is-scrolled {
+  background: rgb(11 13 14 / 94%);
+  border-bottom-color: #292e31;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.subpage-navbar__left,
+.subpage-navbar__sections {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.subpage-navbar__sections {
+  justify-content: flex-end;
+}
+
+@media (max-width: 760px) {
+  .subpage-navbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .subpage-navbar__left,
+  .subpage-navbar__sections {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .subpage-navbar__sections {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .subpage-navbar {
+    transition: none;
+  }
+}
+
+
+/* Localized from core/templates/HomeButton/HomeButton.css */
+.vengrath-home-button {
+  display: inline-flex;
+  height: 3.1rem;
+  min-height: 3.1rem;
+  box-sizing: border-box;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #41474a;
+  border-radius: 999px;
+  background: #111416;
+  color: #f1f2f2;
+  text-decoration: none;
+  font:
+    1rem Voltaire,
+    sans-serif;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.vengrath-home-button img {
+  width: 1.65rem;
+  height: 1.65rem;
+  object-fit: contain;
+}
+.vengrath-home-button:hover,
+.vengrath-home-button:focus-visible {
+  border-color: #bca06a;
+  outline-offset: 3px;
+}
+
+
+/* Localized from core/templates/YouTubePlaylistButton/YouTubePlaylistButton.css */
+.youtube-playlist-button {
+  display: inline-flex;
+  min-width: 7.8rem;
+  min-height: 3.1rem;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.05rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid #ef4444;
+  border-radius: 999px;
+  background: #b91c1c;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font:
+    1rem/1 Voltaire,
+    sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.youtube-playlist-button span + span {
+  font-size: 0.82rem;
+}
+.youtube-playlist-button:hover,
+.youtube-playlist-button:focus-visible {
+  background: #dc2626;
+  outline-offset: 3px;
+}
+
+
+/* Localized from core/templates/SubpageNavbar/NavbarButton/NavbarButton.css */
+.subpage-navbar-button {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--section-color);
+  background: transparent;
+  color: var(--section-color);
+  font:
+    1rem Voltaire,
+    sans-serif;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.subpage-navbar-button[aria-pressed="true"],
+.subpage-navbar-button:hover {
+  background: var(--section-color);
+  color: #0b0d0e;
+}
+.subpage-navbar-button:focus-visible {
+  outline: 2px solid var(--section-color);
+  outline-offset: 3px;
+}
+
+
+/* Localized from core/templates/CharacterCard/CharacterCard.css */
+.character-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+  border: 1px solid #292e31;
+  background: #111416;
+  color: #f1f2f2;
+  cursor: pointer;
+  transition:
+    border-color 0.18s,
+    transform 0.18s;
+}
+.character-card:hover,
+.character-card:focus-visible {
+  border-color: #bca06a;
+  transform: translateY(-3px);
+  outline-offset: 3px;
+}
+.character-card__portrait {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: #1b2022;
+}
+.character-card__portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.character-card__portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0.45rem;
+  border: 1px solid #bca06a80;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    #bca06a12,
+    transparent 22%,
+    transparent 78%,
+    #bca06a12
+  );
+}
+.character-card__status {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.65rem;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid #ffffff40;
+  background: #0b0d0edb;
+  font:
+    0.7rem "DM Mono",
+    monospace;
+  text-transform: uppercase;
+}
+.character-card__achievements {
+  position: absolute;
+  z-index: 2;
+  top: 0.55rem;
+  left: 0.55rem;
+  right: 0.55rem;
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+.character-card__body {
+  padding: 0.9rem;
+  display: grid;
+  gap: 0.5rem;
+}
+.character-card h3 {
+  margin: 0;
+  font:
+    600 1.1rem "Space Grotesk",
+    sans-serif;
+}
+.character-card__player {
+  margin: 0;
+  color: #bca06a;
+  font-size: 0.84rem;
+}
+.character-card__row {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+.character-card__label {
+  color: #858b8e;
+  text-transform: uppercase;
+  font:
+    0.65rem "DM Mono",
+    monospace;
+}
+.character-card__value {
+  overflow-wrap: anywhere;
+}
+.character-card__achievement-count {
+  margin: auto 0 0;
+  padding: 0.6rem 0.9rem;
+  border-top: 1px solid #292e31;
+  color: #858b8e;
+  font-size: 0.72rem;
+}
+
+
+/* Localized from core/templates/CharacterCard/Achievements/Achievements.css */
+.achievement-badge {
+  display: inline-grid;
+  place-items: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  border: 1px solid #bca06a99;
+  border-radius: 50%;
+  background: #111416ef;
+  color: #e0c78e;
+  font-size: 0.9rem;
+  cursor: help;
+}
+
+
+/* Localized from core/templates/CharacterGallery/CharacterGallery.css */
+.character-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  gap: 1rem;
+}
+.character-gallery__empty {
+  padding: 2rem;
+  text-align: center;
+  color: #aeb3b5;
+  border: 1px dashed #41474a;
+}
+
+
+/* Localized from core/templates/Chronicle/Chronicle.css */
+.chronicle {
+  display: grid;
+  gap: 0;
+  width: 100%;
+  --chronicle-accent: #bca06a;
+}
+.chronicle:empty::after {
+  content: "Brak zapisanych sesji.";
+  display: block;
+  padding: 1.5rem;
+  color: #858b8e;
+  border: 1px dashed #41474a;
+}
+
+
+/* Localized from core/templates/Chronicle/ChronicleRecord/ChronicleRecord.css */
+.chronicle-record {
+  border: 1px solid #343a3d;
+  background: #111416;
+  color: #f1f2f2;
+}
+
+.chronicle-record + .chronicle-record {
+  border-top: 0;
+}
+
+.chronicle-record__header {
+  display: grid;
+  grid-template-columns: 4.2rem minmax(0, 1fr) auto auto;
+  grid-template-areas: "number title date recordings";
+  align-items: center;
+  gap: 1rem;
+  min-height: 4.2rem;
+  padding: 0.55rem 0.8rem;
+  cursor: pointer;
+}
+
+.chronicle-record__header:focus-visible {
+  outline: 2px solid var(--chronicle-accent);
+  outline-offset: -3px;
+}
+
+.chronicle-record__number {
+  grid-area: number;
+  color: var(--chronicle-accent);
+  font-family: var(--chronicle-heading-font, "Space Grotesk", sans-serif);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.chronicle-record__title {
+  grid-area: title;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-family: var(--chronicle-heading-font, "Space Grotesk", sans-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.chronicle-record__date {
+  grid-area: date;
+  color: var(--chronicle-accent);
+  font-family: var(--chronicle-heading-font, "Space Grotesk", sans-serif);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.chronicle-record__recordings {
+  grid-area: recordings;
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.chronicle-record__date[hidden],
+.chronicle-record__recordings[hidden] {
+  display: none;
+}
+
+.chronicle-record__description {
+  padding: 1rem 1.2rem 1.2rem 5.2rem;
+  border-top: 1px solid #292e31;
+  color: #c2c6c7;
+  line-height: 1.7;
+}
+
+.chronicle-record__description p {
+  margin: 0;
+  white-space: pre-line;
+}
+
+.chronicle-record.is-expanded .chronicle-record__header {
+  background: #ffffff04;
+}
+
+@media (max-width: 760px) {
+  .chronicle-record__header {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    grid-template-areas:
+      "number title"
+      ". date"
+      ". recordings";
+    gap: 0.65rem;
+  }
+
+  .chronicle-record__date {
+    white-space: normal;
+  }
+
+  .chronicle-record__recordings {
+    justify-content: flex-start;
+  }
+
+  .chronicle-record__description {
+    padding: 1rem;
+  }
+}
+
+.chronicle-record__players {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: 0.8rem;
+  padding: 0 0.8rem 0.8rem;
+}
+.chronicle-record__players:empty {
+  display: none;
+}
+.chronicle-inline-player {
+  min-width: 0;
+  overflow: hidden;
+  border: 2px solid var(--inline-player-accent, var(--chronicle-accent, #bca06a));
+  background: #111114;
+  color: #e4e4e7;
+  box-shadow: 0 10px 24px #0005;
+}
+.chronicle-inline-player[hidden] {
+  display: none;
+}
+.chronicle-inline-player__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--chronicle-accent, #bca06a);
+  background: #111416;
+  color: var(--chronicle-accent, #bca06a);
+  cursor: pointer;
+  font: 1rem Voltaire, sans-serif;
+  white-space: nowrap;
+}
+.chronicle-inline-player__toggle:hover,
+.chronicle-inline-player__toggle:focus-visible {
+  background: var(--chronicle-accent, #bca06a);
+  color: #0b0d0e;
+  outline-offset: 3px;
+}
+.chronicle-inline-player__header,
+.chronicle-inline-player__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+}
+.chronicle-inline-player__header {
+  border-bottom: 1px solid #27272a;
+}
+.chronicle-inline-player__title {
+  min-width: 0;
+  color: #fff;
+  font: 17px var(--chronicle-heading-font, Voltaire, sans-serif);
+  overflow-wrap: anywhere;
+}
+.chronicle-inline-player__tag {
+  flex-shrink: 0;
+  padding: 5px 8px;
+  border: 1px solid var(--inline-player-accent, var(--chronicle-accent, #bca06a));
+  color: var(--inline-player-accent, var(--chronicle-accent, #bca06a));
+  font: 10px var(--chronicle-heading-font, sans-serif);
+  letter-spacing: 1px;
+}
+.chronicle-inline-player__video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+.chronicle-inline-player__video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.chronicle-inline-player__footer {
+  background: #0d0d10;
+  color: #a1a1aa;
+  font: 11px var(--chronicle-heading-font, sans-serif);
+}
+.chronicle-inline-player__footer a {
+  color: var(--inline-player-accent, var(--chronicle-accent, #bca06a));
+  text-decoration: none;
+}
+.chronicle-inline-player__footer a:hover {
+  color: #fff;
+}
+@media (max-width: 760px) {
+  .chronicle-record__players {
+    padding: 0 0.65rem 0.65rem;
+  }
+  .chronicle-inline-player__header,
+  .chronicle-inline-player__footer {
+    padding: 10px;
+    align-items: flex-start;
+  }
+  .chronicle-inline-player__title {
+    font-size: 14px;
+  }
+  .chronicle-inline-player__tag,
+  .chronicle-inline-player__footer {
+    font-size: 9px;
+  }
+}
+
+
+/* Localized from core/templates/Chronicle/PlayRecordingButton/PlayRecordingButton.css */
+.play-recording-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.5rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--chronicle-accent, #bca06a);
+  background: #111416;
+  color: var(--chronicle-accent, #bca06a);
+  font:
+    1rem Voltaire,
+    sans-serif;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.play-recording-button:hover,
+.play-recording-button:focus-visible {
+  background: var(--chronicle-accent, #bca06a);
+  color: #0b0d0e;
+  outline-offset: 3px;
+}
+.play-recording-button__icon {
+  font-size: 0.75em;
+}
+
+
+/* Localized from core/templates/AudioPlayerButton/AudioPlayerButton.css */
+.audio-player-button {
+  position: fixed;
+  z-index: 1000;
+  right: 1.35rem;
+  bottom: 1.35rem;
+  width: 4.2rem;
+  height: 4.2rem;
+  border: 0;
+  border-radius: 50%;
+  background: #111416;
+  color: var(--player-color);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 5px 24px #0008;
+  cursor: pointer;
+}
+.audio-player-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--player-color) var(--volume, 50%),
+    #6668 var(--volume, 50%)
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 4px),
+    #000 calc(100% - 3px)
+  );
+  touch-action: none;
+  cursor: ns-resize;
+}
+.audio-player-symbol {
+  font:
+    700 1.45rem/1 system-ui,
+    sans-serif;
+  pointer-events: none;
+}
+.audio-player-button:focus-visible {
+  outline: 2px solid var(--player-color);
+  outline-offset: 4px;
+}
+
