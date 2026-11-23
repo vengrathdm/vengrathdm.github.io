@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "id": "dragons-due-relationships",
+    "name": "The Dragon's Due — Mapa relacji",
+    "updatedAt": "2026-11-23",
+    "layoutModes": {
+      "complete": "force",
+      "family": "hierarchy",
+      "organization": "hierarchy",
+      "political": "force",
+      "characters": "force"
+    },
+    "entityTypes": [],
+    "relationshipTypes": [
+      {
+        "name": "Sojusznik",
+        "description": "Współpraca lub wzajemne wsparcie.",
+        "color": "#83a98a",
+        "lineStyle": "solid",
+        "direction": "mutual"
+      },
+      {
+        "name": "Służy",
+        "description": "Podległość lub służba wobec osoby albo instytucji.",
+        "color": "#d8bb63",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Wrogość",
+        "description": "Otwarty konflikt lub wrogość.",
+        "color": "#c65c58",
+        "lineStyle": "dashed",
+        "direction": "mutual"
+      },
+      {
+        "name": "Kontroluje",
+        "description": "Sprawowanie kontroli nad osobą, miejscem lub organizacją.",
+        "color": "#9a8ac7",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Należy do",
+        "description": "Członkostwo w organizacji lub stronnictwie.",
+        "color": "#d8bb63",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "Znajduje się w",
+        "description": "Powiązanie osoby lub obiektu z lokalizacją.",
+        "color": "#8c9caa",
+        "lineStyle": "dotted",
+        "direction": "towards"
+      },
+      {
+        "name": "Rodzina",
+        "description": "Więź rodzinna.",
+        "color": "#d8bb63",
+        "lineStyle": "solid",
+        "direction": "mutual"
+      },
+      {
+        "name": "Poszukuje",
+        "description": "Poszukiwanie osoby, miejsca lub przedmiotu.",
+        "color": "#9a8ac7",
+        "lineStyle": "dotted",
+        "direction": "towards"
+      },
+      {
+        "name": "Odpowiada za",
+        "description": "Formalna odpowiedzialność lub jurysdykcja.",
+        "color": "#68468f",
+        "lineStyle": "solid",
+        "direction": "towards"
+      }
+    ],
+    "savedViews": []
+  },
+  "entities": [],
+  "relationships": []
+}
