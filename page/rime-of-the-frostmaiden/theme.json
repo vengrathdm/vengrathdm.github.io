@@ -17,6 +17,6 @@
     "body": "\"Fira Sans Extra Condensed\", sans-serif",
     "serif": "\"Brygada 1918\", Georgia, serif"
   },
-  "heroImage": "/page/rime-of-the-frostmaiden/res/graphics/hero-image.jpg",
+  "heroImage": "/core/graphics/voronoi/rime-of-the-frostmaiden.webp",
   "audioColor": "#d0c4a1"
 }
