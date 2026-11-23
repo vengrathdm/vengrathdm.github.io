@@ -253,6 +253,8 @@ async function initialize(){
  root.style.setProperty("--campaign-accent",theme.colors.accent2);
  const hero=document.querySelector("#campaign-hero");
  hero.style.setProperty("--hero-background","url('"+theme.heroImage+"')");
+ hero.querySelector(".campaign-startup-kicker")?.remove();
+ hero.querySelector(".campaign-startup-lead")?.remove();
  const kicker=el("p","lob-hero-kicker",content.campaign.kicker);
  const heading=hero.querySelector("h1");
  heading.textContent=content.campaign.title;
