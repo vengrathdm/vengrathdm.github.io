@@ -1,7 +1,6 @@
 /* Curse of Strahd — campaign-local runtime. */
 async function json(p){const r=await fetch(p);if(!r.ok)throw Error("Nie udało się wczytać pliku: "+p);return r.json();}
 function el(t,c,x){const n=document.createElement(t);if(c)n.className=c;if(x!==undefined)n.textContent=x;return n;}
-function applyTheme(colors){const map={base1:"base-1",base2:"base-2",base3:"base-3",base4:"base-4",base5:"base-5",accent1:"accent-1",accent2:"accent-2",text1:"text-1",text2:"text-2",text3:"text-3",textMuted:"text-muted",titleAccent:"title-accent",line1:"line-1",line2:"line-2",navBackground:"nav-background",navText:"nav-text",navActiveBackground:"nav-active-background"};Object.entries(map).forEach(([k,v])=>{if(colors[k])document.documentElement.style.setProperty("--theme-"+v,colors[k]);});document.documentElement.style.setProperty("--campaign-accent",colors.accent2||"#bca06a");}
 function home(){const a=el("a","vengrath-home-button");a.href="/home/";a.setAttribute("aria-label","Vengrath — strona główna");const i=el("img");i.src="/core/graphics/favicon/favicon.ico";i.alt="";a.append(i,el("span","","VENGRATH"));return a;}
 function navbar(mount,color,playlist){mount.classList.add("subpage-navbar");const left=el("div","subpage-navbar__left");left.append(home());if(playlist){const a=el("a","youtube-playlist-button","YouTube Playlista");a.href=playlist;a.target="_blank";a.rel="noopener noreferrer";left.append(a);}const nav=el("nav","subpage-navbar__sections");nav.setAttribute("aria-label","Sekcje kampanii");const buttons=[["Kampania","campaign"],["Postaci","characters"],["Kronika","chronicle"]].map(([label,id],i)=>{const b=el("button","subpage-navbar-button",label);b.type="button";b.dataset.section=id;b.style.setProperty("--section-color",color);b.setAttribute("aria-pressed",String(i===0));b.addEventListener("click",()=>select(id));nav.append(b);return b;});mount.replaceChildren(left,nav);function select(id){document.querySelectorAll("[data-page-section]").forEach(s=>s.hidden=s.dataset.pageSection!==id);buttons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.section===id)));mount.dispatchEvent(new CustomEvent("vengrath:sectionchange",{bubbles:true,detail:{section:id}}));}const sc=()=>mount.classList.toggle("is-scrolled",scrollY>12);sc();addEventListener("scroll",sc,{passive:true});select("campaign");}
 function campaign(c){document.querySelector("#campaign-intro-title").textContent=c.introTitle;document.querySelector("#campaign-intro-copy").replaceChildren(...c.introParagraphs.map(t=>el("p","",t)));document.querySelector("#campaign-dossier").replaceChildren(...c.dossier.map(([k,v])=>{const row=el("div","ddc-case-row");row.append(el("span","",k),el("strong",k==="STATUS"?"ddc-active":"",v));return row;}));document.querySelector("#party-title").textContent=c.partyTitle;document.querySelector("#party-description").textContent=c.partyDescription;document.querySelector("#party-image").src=c.partyImage;}
@@ -10,14 +9,14 @@ function chronicle(c,accent){document.querySelector("#chronicle-kicker").textCon
 class LocalAudio{constructor(src,key){this.audio=new Audio(src);this.audio.loop=true;this.audio.preload="none";this.key=key;this.listeners=new Set();try{const s=JSON.parse(localStorage.getItem(key)||"{}");this.audio.volume=Math.max(0,Math.min(1,Number(s.volume??.5)));this.pendingTime=Math.max(0,Number(s.time)||0);}catch{this.pendingTime=0;}["play","pause","volumechange","timeupdate","loadedmetadata"].forEach(t=>this.audio.addEventListener(t,()=>{if(t==="loadedmetadata"&&this.pendingTime>0)this.audio.currentTime=Math.min(this.pendingTime,this.audio.duration||this.pendingTime);this.persist();this.emit();}));addEventListener("pagehide",()=>this.persist());}persist(){try{localStorage.setItem(this.key,JSON.stringify({volume:this.audio.volume,time:this.audio.currentTime||0}));}catch{}}snapshot(){return {playing:!this.audio.paused,volume:this.audio.volume};}subscribe(fn){this.listeners.add(fn);fn(this.snapshot());}emit(){const s=this.snapshot();this.listeners.forEach(fn=>fn(s));}async toggle(){if(this.audio.paused){try{await this.audio.play();}catch(e){if(e?.name!=="NotAllowedError")console.error(e);}}else this.audio.pause();this.emit();}setVolume(v){this.audio.volume=Math.max(0,Math.min(1,v));this.persist();this.emit();}}
 function audioButton(player,color){const b=el("button","audio-player-button");b.type="button";b.style.setProperty("--player-color",color);const ring=el("span","audio-player-ring"),symbol=el("span","audio-player-symbol");b.append(ring,symbol);let drag=false;const point=e=>{const r=b.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;let a=Math.atan2(y,x)+Math.PI/2;if(a<0)a+=Math.PI*2;return {radius:Math.hypot(x,y),volume:a/(Math.PI*2)};};const vol=e=>player.setVolume(point(e).volume);b.addEventListener("click",e=>{if(drag){e.preventDefault();return;}if(point(e).radius>18)vol(e);else player.toggle();});b.addEventListener("pointerdown",e=>{if(point(e).radius<=18)return;e.preventDefault();drag=true;b.setPointerCapture(e.pointerId);vol(e);});b.addEventListener("pointermove",e=>{if(drag)vol(e);});b.addEventListener("pointerup",()=>drag=false);b.addEventListener("pointercancel",()=>drag=false);player.subscribe(s=>{symbol.textContent=s.playing?"Ⅱ":"▶";b.setAttribute("aria-label",s.playing?"Wstrzymaj audio":"Odtwórz audio");ring.style.setProperty("--volume",s.volume*100+"%");});document.body.append(b);}
 async function initialize() {
-  const [manifest, theme, content] = await Promise.all([
+  const root = document.documentElement;
+  const accent =
+    getComputedStyle(root).getPropertyValue("--theme-accent-2").trim() || "#bca06a";
+  const [manifest, content] = await Promise.all([
     json("./manifest.json"),
-    json("./theme.json"),
     json("./content.json"),
   ]);
-  applyTheme(theme.colors);
   const hero = document.querySelector("#campaign-hero");
-  hero.style.setProperty("--hero-background", "url('" + theme.heroImage + "')");
   const heading = hero.querySelector("h1");
   const copy = hero.querySelector(".subpage-hero__copy");
   heading.replaceChildren(
@@ -29,7 +28,7 @@ async function initialize() {
   copy.querySelector(".curse-hero-lead").textContent = content.campaign.lead;
   const mount = el("div", "curse-navbar-mount");
   hero.prepend(mount);
-  navbar(mount, theme.colors.accent2, manifest.playlistUrl);
+  navbar(mount, accent, manifest.playlistUrl);
   campaign(content.campaign);
   document.querySelector("#characters-title").textContent = "Postaci";
   document.querySelector("#characters-description").textContent = "Bohaterowie tej rozgrywki.";
@@ -50,19 +49,32 @@ async function initialize() {
       });
     }
     if (section === "chronicle" && !chronicleRendered) {
-      chronicle(content.chronicle, theme.colors.accent2);
+      chronicle(content.chronicle, accent);
       chronicleRendered = true;
     }
   });
 
+  const selectedSection = document.querySelector(
+    '.subpage-navbar-button[aria-pressed="true"]',
+  )?.dataset.section;
+  if (selectedSection) {
+    document.dispatchEvent(
+      new CustomEvent("vengrath:sectionchange", {
+        detail: { section: selectedSection },
+      }),
+    );
+  }
+
+  document.querySelector("main")?.setAttribute("aria-busy", "false");
   document.body.classList.remove("campaign-startup-loading");
   audioButton(
     new LocalAudio("/page/curse-of-strahd/res/audio/curse-of-strahd.mp3", "vengrath-audio-curse-of-strahd"),
-    theme.colors.accent2,
+    accent,
   );
 }
 initialize().catch((error) => {
   console.error("Nie udało się uruchomić strony Curse of Strahd.", error);
+  document.querySelector("main")?.setAttribute("aria-busy", "false");
   document.body.classList.remove("campaign-startup-loading");
   const message = el("p", "curse-load-error", "Nie udało się wczytać archiwum kampanii.");
   message.setAttribute("role", "alert");
