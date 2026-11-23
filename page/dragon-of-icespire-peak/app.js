@@ -90,8 +90,39 @@ async function renderCharacters(characters){
   const grid=document.createElement("div");grid.className="character-gallery";const definitions=new Map(achievements.map(item=>[item.id,item]));
   selected.forEach(character=>grid.append(createCharacterCard(character,definitions)));container.append(grid);
 }
-async function initializeCampaignPage(){
-  const [manifest,theme,content]=await Promise.all([loadJson("./manifest.json"),loadJson("./theme.json"),loadJson("./content.json")]);
-  applyTheme(theme);initializeHero(content,theme);renderCampaign(content.campaign);await renderCharacters(content.characters);
+async function initializeCampaignPage() {
+  const [manifest, theme, content] = await Promise.all([
+    loadJson("./manifest.json"),
+    loadJson("./theme.json"),
+    loadJson("./content.json"),
+  ]);
+  applyTheme(theme);
+  initializeHero(content, theme);
+  renderCampaign(content.campaign);
+
+  let charactersPromise;
+  document.addEventListener("vengrath:sectionchange", (event) => {
+    if (event.detail?.section !== "characters" || charactersPromise) return;
+    charactersPromise = renderCharacters(content.characters).catch((error) => {
+      console.error("Nie udało się wczytać postaci Dragon of Icespire Peak.", error);
+      charactersPromise = null;
+      document.querySelector("#character-gallery").replaceChildren(
+        Object.assign(document.createElement("p"), {
+          className: "character-gallery__empty",
+          textContent: "Nie udało się wczytać postaci. Spróbuj ponownie.",
+        }),
+      );
+    });
+  });
+
+  document.body.classList.remove("campaign-startup-loading");
 }
-initializeCampaignPage().then(()=>document.body.classList.remove("campaign-startup-loading")).catch(error=>console.error("Nie udało się uruchomić strony Dragon of Icespire Peak.",error));
+initializeCampaignPage().catch((error) => {
+  console.error("Nie udało się uruchomić strony Dragon of Icespire Peak.", error);
+  document.body.classList.remove("campaign-startup-loading");
+  const message = document.createElement("p");
+  message.className = "doip-load-error";
+  message.setAttribute("role", "alert");
+  message.textContent = "Nie udało się wczytać kampanii.";
+  document.body.prepend(message);
+});
