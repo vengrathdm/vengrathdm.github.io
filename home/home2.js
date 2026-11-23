@@ -52,8 +52,8 @@ function addModulePreload(value,base=location.href){
  const link=document.createElement("link");link.rel="modulepreload";link.href=url.href;link.crossOrigin=url.origin===location.origin?"same-origin":"anonymous";link.fetchPriority="low";document.head.append(link);
 }
 function cssResources(css,base){
- const imports=[...css.matchAll(/@import\\s+(?:url\\()?['"]?([^'")\\s;]+)['"]?\\)?/gi)].map(m=>m[1]);
- const fonts=[...css.matchAll(/url\\(\\s*(['"]?)([^'")]+)\\1\\s*\\)/gi)].map(m=>m[2]).filter(url=>/\.(?:woff2?|ttf|otf)(?:[?#]|$)/i.test(url));
+ const imports=[...css.matchAll(/@import\s+(?:url\()?['"]?([^'")\s;]+)['"]?\)?/gi)].map(m=>m[1]);
+ const fonts=[...css.matchAll(/url\(\s*(['"]?)([^'")]+)\\1\s*\)/gi)].map(m=>m[2]).filter(url=>/\.(?:woff2?|ttf|otf)(?:[?#]|$)/i.test(url));
  imports.slice(0,2).forEach(url=>{const href=allowedPrefetchUrl(url,base);if(href)inspectStylesheet(href.href)});
  fonts.slice(0,6).forEach(url=>addPrefetch(url,"font",base));
 }
@@ -71,10 +71,10 @@ function prefetchDocumentAssets(doc,pageUrl){
  classicScripts.forEach(src=>addPrefetch(src,"script",pageUrl));
  const images=[];
  doc.querySelectorAll("img[src],img[srcset],source[srcset],meta[property='og:image'][content]").forEach(el=>{
-  const src=el.getAttribute("src")||el.getAttribute("content")||el.getAttribute("srcset")?.split(",")[0]?.trim().split(/\\s+/)[0];
+  const src=el.getAttribute("src")||el.getAttribute("content")||el.getAttribute("srcset")?.split(",")[0]?.trim().split(/\s+/)[0];
   if(src)images.push(new URL(src,pageUrl).href);
  });
- doc.querySelectorAll("[style]").forEach(el=>{for(const match of el.getAttribute("style").matchAll(/url\\(\\s*(['"]?)([^'")]+)\\1\\s*\\)/gi))images.push(new URL(match[2],pageUrl).href)});
+ doc.querySelectorAll("[style]").forEach(el=>{for(const match of el.getAttribute("style").matchAll(/url\(\s*(['"]?)([^'")]+)\\1\s*\)/gi))images.push(new URL(match[2],pageUrl).href)});
  [...new Set(images)].slice(0,6).forEach(src=>addPrefetch(src,"image",pageUrl));
  doc.querySelectorAll("style").forEach(el=>cssResources(el.textContent,pageUrl));
 }
@@ -112,7 +112,7 @@ function makeWorld(items,width,height,rows){
   const id=`h2-${copy}-${itemIndex}`,d=pathOf(poly),clip=svgEl("clipPath",{id});clip.append(svgEl("path",{d}));defs.append(clip);
   const xs=poly.map(p=>p[0]),ys=poly.map(p=>p[1]),x=Math.min(...xs),y=Math.min(...ys),w=Math.max(...xs)-x,h=Math.max(...ys)-y;
   const anchor=svgEl("a",{href:record.url,class:"cell",tabindex:"0","aria-label":record.title+" — "+(record.tags||[]).join(", ")});
-  const image=svgEl("image",{x,y,width:w,height:h,href:record.image||"","preserveAspectRatio":"xMidYMid slice","clip-path":`url(#${id})`,class:"cell-image",fetchpriority:copy===1?"high":"low",decoding:"async"});
+  const image=svgEl("image",{x,y,width:w,height:h,href:record.image||"","preserveAspectRatio":"xMidYMid slice","clip-path":`url(#${id})`,class:"cell-image",fetchpriority:copy===1?"high":"low",decoding:"async",loading:copy===1?"eager":"lazy"});
   anchor.append(image,svgEl("path",{d,class:"cell-shade"}));
   const labels=svgEl("g",{"clip-path":`url(#${id})`});
   const cx=(Math.min(...xs)+Math.max(...xs))/2,cy=(Math.min(...ys)+Math.max(...ys))/2;
