@@ -7,17 +7,15 @@ function renderAchievements(items){const f=document.createDocumentFragment();for
 function createCharacterCard(c,defs){const card=document.createElement("article");card.className="character-card";card.dataset.status=c.status||"";const earned=(Array.isArray(c.achievementIds)?c.achievementIds:[]).map(id=>defs.get(id)).filter(Boolean);const badges=document.createElement("div");badges.className="character-card__achievements";badges.append(renderAchievements(earned));const portrait=document.createElement("div");portrait.className="character-card__portrait";const img=document.createElement("img");img.src=c.portrait;img.alt=c.character||"Portret postaci";img.loading="lazy";portrait.append(img);const status=document.createElement("span");status.className="character-card__status";status.textContent=c.status||"";portrait.append(status);const body=document.createElement("div");body.className="character-card__body";const name=document.createElement("h3");name.textContent=c.character||"Nieznana postać";const player=document.createElement("p");player.className="character-card__player";player.textContent=c.player||"Nie podano";body.append(name,player);for(const [l,v] of [["Kampanie",c.campaigns],["Klasy",c.classes],["Rasa",c.race]]){const row=document.createElement("div");row.className="character-card__row";const label=document.createElement("span");label.className="character-card__label";label.textContent=l;const value=document.createElement("span");value.className="character-card__value";value.textContent=Array.isArray(v)?v.join(", "):v||"Nie podano";row.append(label,value);body.append(row);}const count=document.createElement("p");count.className="character-card__achievement-count";count.textContent=earned.length?earned.length+" osiągnięć":"Brak zdobytych osiągnięć";card.append(badges,portrait,body,count);return card;}
 async function renderCharacters(c){document.querySelector("#characters-kicker").textContent=c.kicker;document.querySelector("#characters-title").textContent=c.title;document.querySelector("#characters-description").textContent=c.description;const [cr,ar]=await Promise.all([fetch("/core/data/characters.json"),fetch("/core/data/achievements.json")]);if(!cr.ok||!ar.ok)throw new Error("Nie udało się wczytać danych postaci.");const [catalog,achievements]=await Promise.all([cr.json(),ar.json()]);const byId=new Map(catalog.map(x=>[x.id,x]));const selected=[...new Set(c.characterIds)].map(id=>byId.get(id)).filter(Boolean);const container=document.querySelector("#character-gallery");container.replaceChildren();if(!selected.length){const empty=document.createElement("p");empty.className="character-gallery__empty";empty.textContent=c.emptyMessage||"Brak postaci spełniających kryteria.";container.append(empty);return;}const grid=document.createElement("div");grid.className="character-gallery";const defs=new Map(achievements.map(x=>[x.id,x]));selected.forEach(x=>grid.append(createCharacterCard(x,defs)));container.append(grid);}
 async function initialize() {
-  const [manifest, theme, content] = await Promise.all([
+  const accent =
+    getComputedStyle(document.documentElement)
+      .getPropertyValue("--theme-accent-2")
+      .trim() || "#bca06a";
+  const [manifest, content] = await Promise.all([
     loadJson("./manifest.json"),
-    loadJson("./theme.json"),
     loadJson("./content.json"),
   ]);
-  document.documentElement.style.setProperty("--theme-base-1", theme.colors.base1);
-  document.documentElement.style.setProperty("--theme-accent-1", theme.colors.accent1);
-  document.documentElement.style.setProperty("--theme-accent-2", theme.colors.accent2);
-  document.documentElement.style.setProperty("--campaign-accent", theme.colors.accent2);
   const hero = document.querySelector("#campaign-hero");
-  hero.style.setProperty("--hero-background", "url('" + theme.heroImage + "')");
   hero.id = "top";
   const copy = hero.querySelector(".subpage-hero__copy");
   copy.querySelector(".mg-legacy-hero-kicker").textContent = content.campaign.kicker;
@@ -25,7 +23,7 @@ async function initialize() {
   const mount = document.createElement("div");
   mount.className = "mg-navbar-mount";
   hero.prepend(mount);
-  mountNavbar(mount, theme.colors.accent2);
+  mountNavbar(mount, accent);
   renderCampaign(content.campaign);
 
   let charactersPromise;
@@ -42,10 +40,24 @@ async function initialize() {
       );
     });
   });
+
+  const selectedSection = document.querySelector(
+    '.subpage-navbar-button[aria-pressed="true"]',
+  )?.dataset.section;
+  if (selectedSection) {
+    document.dispatchEvent(
+      new CustomEvent("vengrath:sectionchange", {
+        detail: { section: selectedSection },
+      }),
+    );
+  }
+
+  document.querySelector("main")?.setAttribute("aria-busy", "false");
   document.body.classList.remove("campaign-startup-loading");
 }
 initialize().catch((error) => {
   console.error("Nie udało się uruchomić strony Menaces of Gloomforest Legacy.", error);
+  document.querySelector("main")?.setAttribute("aria-busy", "false");
   document.body.classList.remove("campaign-startup-loading");
   const message = document.createElement("p");
   message.className = "mg-legacy-load-error";
