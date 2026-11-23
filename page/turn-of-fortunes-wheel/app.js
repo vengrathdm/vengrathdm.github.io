@@ -27,7 +27,7 @@ async function initialize(){
  Object.entries(theme.colors||{}).forEach(([k,v])=>root.style.setProperty("--theme-"+k.replace(/[A-Z]/g,m=>"-"+m.toLowerCase()),v));
  root.style.setProperty("--theme-font-1",theme.typography.heading);root.style.setProperty("--theme-font-2",theme.typography.body);root.style.setProperty("--theme-font-3",theme.typography.serif);root.style.setProperty("--campaign-accent",theme.colors.accent2);
  const hero=document.querySelector("#campaign-hero");hero.style.setProperty("--hero-background","url('"+theme.heroImage+"')");
- const heading=hero.querySelector("h1");heading.textContent=content.campaign.heroFirstLine;const accent=el("em","",content.campaign.heroSecondLine);heading.append(document.createElement("br"),accent);heading.before(el("p","campaign-startup-kicker",content.campaign.kicker));heading.after(el("p","campaign-startup-lead",content.campaign.lead));
+ hero.querySelector(".campaign-startup-kicker")?.remove();hero.querySelector(".campaign-startup-lead")?.remove();const heading=hero.querySelector("h1");heading.textContent=content.campaign.heroFirstLine;const accent=el("em","",content.campaign.heroSecondLine);heading.append(document.createElement("br"),accent);heading.before(el("p","campaign-startup-kicker",content.campaign.kicker));heading.after(el("p","campaign-startup-lead",content.campaign.lead));
  mountNavbar(manifest,theme);
  document.querySelector("#intro-title").textContent=content.campaign.introTitle;document.querySelector("#intro-copy").replaceChildren(...content.campaign.introParagraphs.map(s=>el("p","",s)));
  document.querySelector("#dossier").replaceChildren(...content.campaign.dossier.map(x=>{const row=el("p","turn-of-fortunes-wheel-dossier-row");row.textContent=x.label+" · "+x.value;return row}));
