@@ -26,6 +26,19 @@
     ]
   },
   {
+    "id": "lulu-pdf-trimmer",
+    "title": "Lulu PDF Trimmer",
+    "type": "tool",
+    "visibility": "public",
+    "url": "/Tools/lulupdfprep/",
+    "image": "/core/graphics/voronoi/LuluPDFTrimmer.webp",
+    "layout": "page-specific",
+    "manifest": null,
+    "tags": [
+      "Narzędzie"
+    ]
+  },
+  {
     "id": "ksiazeta-heartwell",
     "title": "Książęta Heartwell",
     "type": "campaign",
