@@ -244,26 +244,24 @@ export function mountAudioPlayerButton(
   document.addEventListener("pointerenter", () => cursor.classList.add("is-visible"));
 })();
 async function initialize() {
-  const [manifest, theme, content] = await Promise.all([
-    loadJson("./manifest.json"),
-    loadJson("./theme.json"),
+  // Theme tokens and the hero image are already present in the first HTML/CSS response.
+  // Fetch only the data required to populate the campaign shell.
+  const root = document.documentElement;
+  const accent =
+    getComputedStyle(root).getPropertyValue("--theme-accent-2").trim() || "#bca06a";
+  const manifestPromise = loadJson("./manifest.json").then((manifest) => {
+    mountNavbar(manifest, { colors: { accent2: accent } });
+    return manifest;
+  });
+  const [manifest, content] = await Promise.all([
+    manifestPromise,
     loadJson("./content.json"),
   ]);
-  const root = document.documentElement;
-  Object.entries(theme.colors || {}).forEach(([key, value]) => {
-    root.style.setProperty("--theme-" + key.replace(/[A-Z]/g, (letter) => "-" + letter.toLowerCase()), value);
-  });
-  root.style.setProperty("--theme-font-1", theme.typography.heading);
-  root.style.setProperty("--theme-font-2", theme.typography.body);
-  root.style.setProperty("--theme-font-3", theme.typography.serif);
-  root.style.setProperty("--campaign-accent", theme.colors.accent2);
 
   const hero = document.querySelector("#campaign-hero");
-  hero.style.setProperty("--hero-background", "url('" + theme.heroImage + "')");
   hero.querySelector(".lob-hero-kicker").textContent = content.campaign.kicker;
   hero.querySelector("h1").textContent = content.campaign.title;
   hero.querySelector(".lob-hero-lead").textContent = content.campaign.lead;
-  mountNavbar(manifest, theme);
 
   const campaign = content.campaign;
   document.querySelector("#campaign-intro-title").textContent = campaign.introTitle;
@@ -304,20 +302,28 @@ async function initialize() {
     }
     if (section === "chronicle" && !chronicleRendered) {
       document.querySelector("#campaign-chronicle").replaceChildren(
-        ...(content.chronicle.sessions || []).map((session) => makeChronicle(session, theme.colors.accent2)),
+        ...(content.chronicle.sessions || []).map((session) => makeChronicle(session, accent)),
       );
       chronicleRendered = true;
     }
   });
 
+  document.querySelector("main")?.setAttribute("aria-busy", "false");
   document.body.classList.remove("campaign-startup-loading");
   if (manifest.audio?.src) {
-    const player = new AudioPlayer({src: manifest.audio.src, storageKey: manifest.audio.continuationKey, preload: "none"});
-    mountAudioPlayerButton(player, theme.audioColor, {autoplay: false});
+    const player = new AudioPlayer({
+      src: manifest.audio.src,
+      storageKey: manifest.audio.continuationKey,
+      preload: "none",
+    });
+    const audioColor =
+      getComputedStyle(root).getPropertyValue("--theme-audio-color").trim() || accent;
+    mountAudioPlayerButton(player, audioColor, { autoplay: false });
   }
 }
 initialize().catch((error) => {
   console.error("Nie udało się uruchomić strony Legends of Barovia.", error);
+  document.querySelector("main")?.setAttribute("aria-busy", "false");
   document.body.classList.remove("campaign-startup-loading");
   const message = el("p", "lob-load-error", "Nie udało się uruchomić kampanii. Odśwież stronę lub spróbuj ponownie później.");
   message.setAttribute("role", "alert");
