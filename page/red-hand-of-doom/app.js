@@ -1,4 +1,5 @@
-import { createHomeButton } from "/core/templates/HomeButton/HomeButton.js";
+function createHomeButton(){const a=document.createElement("a");a.className="vengrath-home-button";a.href="/home/";a.setAttribute("aria-label","Vengrath — strona główna");const img=document.createElement("img");img.src="/core/graphics/favicon/favicon.ico";img.alt="";const label=document.createElement("span");label.textContent="VENGRATH";a.append(img,label);return a;}
+
 /* Wait for the intended display fonts before revealing the campaign UI. */
 const fontRequests = [
   document.fonts.load('400 3rem "Pirata One"'),
