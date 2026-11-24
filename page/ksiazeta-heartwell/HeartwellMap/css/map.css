@@ -6,6 +6,12 @@
   .home-brand{display:inline-flex;align-items:center;gap:.5rem;color:#f4efe5;text-decoration:none;font:1.15rem Voltaire,sans-serif;letter-spacing:.15em;white-space:nowrap;text-shadow:0 1px 6px rgba(0,0,0,.9)}
   .home-brand img{width:2.25rem;height:2.25rem;object-fit:contain;filter:drop-shadow(0 0 12px rgba(215,184,120,.25))}
   .home-brand:hover{color:#efd59c}
+
+  #toolsWindow{position:absolute;z-index:1100;top:12px;right:14px;width:336px;max-width:calc(100vw - 28px);overflow:hidden;background:rgba(20,35,43,.94);border:1px solid rgba(226,211,177,.42);border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.35);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+  #toolsWindow #toolbar{position:relative;z-index:1;display:flex;gap:5px;width:100%;padding:6px;background:transparent;border:0;border-radius:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+  #toolsWindow .tool-button{flex:1;min-width:0;padding:10px 14px;font:600 13px/1.2 system-ui,sans-serif;min-height:42px}
+  #toolsWindow .floating-panel{position:relative;top:auto;right:auto;width:100%;max-width:none;max-height:calc(100vh - 84px);padding:10px 12px 12px;border:0;border-top:1px solid rgba(226,211,177,.25);border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;overflow:auto}
+  #presenter.terrain-window{top:62px;left:14px;right:auto;bottom:14px;width:min(430px,calc(100vw - 28px));max-height:calc(100vh - 76px);padding:13px}
   #toolbar{position:absolute;z-index:1100;top:12px;right:14px;display:flex;gap:5px;padding:4px;background:rgba(20,35,43,.78);border:1px solid rgba(226,211,177,.32);border-radius:6px;box-shadow:0 3px 14px rgba(0,0,0,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
   .tool-button{border:1px solid #8a795a;border-radius:4px;background:#e5d7b8;color:#28201a;padding:7px 10px;font:600 12px/1.2 system-ui,sans-serif;cursor:pointer;white-space:nowrap}
   .tool-button:hover,.tool-button[aria-expanded=true]{background:#665640;border-color:#b9a47c;color:#fff8e8}
@@ -194,7 +200,13 @@
     #head{top:9px;left:9px}.home-brand{font-size:1rem}.home-brand img{width:1.9rem;height:1.9rem}
     #toolbar{top:54px;left:9px;right:9px;justify-content:flex-end;width:max-content;margin-left:auto}
     .tool-button{padding:7px 9px;font-size:11px}
-    .floating-panel{top:98px;right:9px;max-height:calc(100vh - 150px);width:270px}
+    #toolsWindow{top:54px;left:9px;right:9px;width:auto;max-width:none}
+    #toolsWindow #toolbar{padding:5px}
+    #toolsWindow .tool-button{padding:9px 12px;font-size:12px;min-height:40px}
+    #toolsWindow .floating-panel{max-height:calc(100vh - 126px)}
+    .floating-panel{top:98px;right:9px;max-height:calc(100vh - 150px);width:min(336px,calc(100vw - 18px))}
+    #presenter.terrain-window{top:98px;left:9px;right:auto;bottom:14px;width:min(430px,calc(100vw - 18px));max-height:calc(100vh - 126px)}
+
     #read{bottom:14px;left:9px;font-size:11px;min-width:0}
     .leaflet-bottom.leaflet-right{bottom:8px;right:8px}
   }
