@@ -62,6 +62,15 @@ h2{font-size:clamp(2.6rem,7vw,4.8rem);margin:4px 0 12px;color:var(--ink);text-sh
 .chip:hover{transform:translateY(-3px);box-shadow:0 8px 0 #511016,0 16px 28px #000a,0 0 24px rgba(228,75,50,.5);filter:brightness(1.15)}
 .chip:active{transform:translateY(4px);box-shadow:0 1px 0 #511016}
 
+
+.voronoi-card{display:flex;flex-direction:column;align-self:stretch;min-width:0;overflow:hidden;text-decoration:none;color:var(--ink);background:linear-gradient(145deg,#29312d,#111714);border:1px solid var(--gold);box-shadow:0 14px 34px #0009,inset 0 0 0 4px #0005;transition:transform .25s,box-shadow .25s}
+.voronoi-card:hover{transform:translateY(-5px);box-shadow:0 22px 42px #000c,0 0 22px #c6a46a55}
+.voronoi-card img{display:block;width:100%;height:100%;min-height:220px;max-height:360px;object-fit:cover;object-position:center}
+.voronoi-card span{padding:12px 14px;text-align:center;font:1rem var(--head);letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border-top:1px solid #c6a46a77}
+.intro{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(190px,.72fr)}
+@media(max-width:900px){.intro{grid-template-columns:1fr 1fr}.voronoi-card{grid-column:1/-1;max-width:340px;width:100%;justify-self:center}.voronoi-card img{height:240px}}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.voronoi-card{grid-column:auto;max-width:none}}
+
 /* party: tarot-style cards */
 .party{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
 @media(max-width:1040px){.party{grid-template-columns:repeat(2,1fr)}}
@@ -203,7 +212,7 @@ main>section.leave{position:absolute;top:0;left:0;right:0;display:block;z-index:
 <section id="intro"><div class="hero">
  <canvas id="embers"></canvas>
  <div class="scene" aria-hidden="true">
-  <img src="https://gaming-cdn.com/images/products/20498/orig/the-temple-of-elemental-evil-pc-steam-cover.jpg?v=1787214285" alt="">
+  <img src="https://vengrathdm.github.io/core/graphics/voronoi/temple-of-elemental-evil.webp" alt="">
  </div>
  <div class="wrap">
   
@@ -219,6 +228,10 @@ main>section.leave{position:absolute;top:0;left:0;right:0;display:block;z-index:
    <p>Czworo bohaterów podjęło trop. U jego kresu czeka coś starszego i bardziej głodnego — siła związana z czterema żywiołami: ziemią, wodą, powietrzem i ogniem.</p>
   </div>
   <div><p>Każdy ich czyn trafia do kroniki. Przemierzane trakty zostają naniesione na mapę, a sprzymierzeńcy i wrogowie splatają się w sieć powiązań.</p><a class="chip" href="#chronicle" data-i>Czytaj kronikę</a></div>
+  <a class="voronoi-card" href="https://vengrathdm.github.io/core/graphics/voronoi/temple-of-elemental-evil.webp" target="_blank" rel="noopener" aria-label="Otwórz Mapa Voronoi Świątyni Pierwotnego Zła">
+   <img src="https://vengrathdm.github.io/core/graphics/voronoi/temple-of-elemental-evil.webp" alt="Mapa Voronoi Świątyni Pierwotnego Zła" loading="lazy">
+   <span>Mapa Voronoi Świątyni Pierwotnego Zła</span>
+  </a>
  </div>
 </div></div></section>
 
