@@ -62,6 +62,15 @@ h2{font-size:clamp(2.6rem,7vw,4.8rem);margin:4px 0 12px;color:var(--ink);text-sh
 .chip:hover{transform:translateY(-3px);box-shadow:0 8px 0 #171813,0 16px 28px #000a,0 0 24px rgba(228,75,50,.5);filter:brightness(1.15)}
 .chip:active{transform:translateY(4px);box-shadow:0 1px 0 #171813}
 
+
+.voronoi-card{display:flex;flex-direction:column;align-self:stretch;min-width:0;overflow:hidden;text-decoration:none;color:var(--ink);background:linear-gradient(145deg,#29312d,#111714);border:1px solid var(--gold);box-shadow:0 14px 34px #0009,inset 0 0 0 4px #0005;transition:transform .25s,box-shadow .25s}
+.voronoi-card:hover{transform:translateY(-5px);box-shadow:0 22px 42px #000c,0 0 22px #c6a46a55}
+.voronoi-card img{display:block;width:100%;height:100%;min-height:220px;max-height:360px;object-fit:cover;object-position:center}
+.voronoi-card span{padding:12px 14px;text-align:center;font:1rem var(--head);letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border-top:1px solid #c6a46a77}
+.intro{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(190px,.72fr)}
+@media(max-width:900px){.intro{grid-template-columns:1fr 1fr}.voronoi-card{grid-column:1/-1;max-width:340px;width:100%;justify-self:center}.voronoi-card img{height:240px}}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.voronoi-card{grid-column:auto;max-width:none}}
+
 /* party: tarot-style cards */
 .party{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
 @media(max-width:1040px){.party{grid-template-columns:repeat(2,1fr)}}
@@ -190,7 +199,7 @@ main>section.leave{position:absolute;top:0;left:0;right:0;display:block;z-index:
 
 /* USER-SUPPLIED FULL-PAGE SECTION BACKDROP */
 main>section{
-  background-image:linear-gradient(180deg,rgba(10,15,12,.78),rgba(10,15,12,.86)),url("https://i.pinimg.com/originals/63/5c/d2/635cd2ab171658df6229d0d32e234154.gif");
+  background-image:linear-gradient(180deg,rgba(10,15,12,.78),rgba(10,15,12,.86)),url("https://vengrathdm.github.io/page/arcanum/res/background.gif");
   background-size:cover;
   background-position:center center;
   background-repeat:no-repeat;
@@ -241,7 +250,7 @@ body::after{opacity:.16;mix-blend-mode:soft-light}
 
 /* FIXED SHARED ARCANUM BACKDROP — stays anchored while panels transition */
 html,body{min-height:100%;background-color:#111713}
-body{background-image:linear-gradient(180deg,rgba(10,15,12,.74),rgba(10,15,12,.84)),url("https://i.pinimg.com/originals/63/5c/d2/635cd2ab171658df6229d0d32e234154.gif");background-size:cover;background-position:center center;background-repeat:no-repeat;background-attachment:fixed}
+body{background-image:linear-gradient(180deg,rgba(10,15,12,.74),rgba(10,15,12,.84)),url("https://vengrathdm.github.io/page/arcanum/res/background.gif");background-size:cover;background-position:center center;background-repeat:no-repeat;background-attachment:fixed}
 main>section,main>section.alt{background:transparent!important}
 #intro{background:transparent!important}
 #intro .hero{min-height:100svh;height:100svh}
@@ -266,7 +275,7 @@ main>section,main>section.alt{background:transparent!important}
 <section id="intro"><div class="hero">
  <canvas id="embers"></canvas>
  <div class="scene" aria-hidden="true">
-  <img src="https://i.imgur.com/FnzKqw1.jpeg" alt="">
+  <img src="https://vengrathdm.github.io/core/graphics/voronoi/arcanum.webp" alt="">
  </div>
  <div class="wrap">
   
@@ -282,6 +291,10 @@ main>section,main>section.alt{background:transparent!important}
    <p>Ekspedycja podąża śladem osobliwych artefaktów i sprzecznych świadectw. Każdy trop prowadzi głębiej w konflikt technologii z magią — i do pytań, na które nie ma prostych odpowiedzi.</p>
   </div>
   <div><p>Każdy odkryty warsztat, przebyta trasa i zawarty sojusz trafia do kroniki. Mapa porządkuje miejsca ekspedycji, a sprzymierzeńcy, rywale i frakcje splatają się w sieć zależności.</p><a class="chip" href="#chronicle" data-i>Czytaj kronikę</a></div>
+  <a class="voronoi-card" href="https://vengrathdm.github.io/core/graphics/voronoi/arcanum.webp" target="_blank" rel="noopener" aria-label="Otwórz Mapa Voronoi Arcanum">
+   <img src="https://vengrathdm.github.io/core/graphics/voronoi/arcanum.webp" alt="Mapa Voronoi Arcanum" loading="lazy">
+   <span>Mapa Voronoi Arcanum</span>
+  </a>
  </div>
 </div></div></section>
 
