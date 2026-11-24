@@ -1,0 +1,50 @@
+{
+  "campaign": {
+    "title": "ODYSSEY OF THE DRAGONLORDS",
+    "kicker": "EPICKA KAMPANIA FANTASY · THYLEA",
+    "lead": "Przysięga, która miała zakończyć wojnę bogów i tytanów, nie może trwać wiecznie. Na Thylei bohaterowie staną wobec przepowiedni, dawnych win i losu, którego nie wybrali.",
+    "introTitle": "Los bogów nie jest jeszcze przesądzony.",
+    "introKicker": "PRZEPOWIEDNIA THYLEI",
+    "introParagraphs": [
+      "Pięćset lat temu Dragonlordowie pokonali Tytanów i zawarli Przysięgę Pokoju, która na pokolenia odmieniła los Thylei. Teraz dawne konflikty powracają, a znaki przepowiedni wskazują, że nadchodzi czas nowych bohaterów.",
+      "To epicka opowieść o greckiej mitologii, boskich intrygach, potworach, dalekich wyspach i wyborach, których konsekwencje mogą zmienić cały świat.",
+      "Wyrusz z drużyną przez Mytros, zapomniane świątynie i wyspy pełne tajemnic. Każdy sojusz, każda próba i każda konfrontacja przybliża bohaterów do prawdy o ich przeznaczeniu."
+    ],
+    "dossier": [
+      {
+        "label": "ŚWIAT",
+        "value": "THYLEA"
+      },
+      {
+        "label": "ODCINKI",
+        "value": "61"
+      },
+      {
+        "label": "MOTYWY",
+        "value": "BOGOWIE · TYTANI"
+      },
+      {
+        "label": "TON",
+        "value": "EPICKI · MITOLOGICZNY"
+      }
+    ],
+    "partyKicker": "DZIEDZICTWO DRAGONLORDÓW",
+    "partyTitle": "Świat, który pamięta wojnę.",
+    "partyDescription": "Thylea jest krainą cudów i niebezpieczeństw, w której śmiertelni mierzą się z dziedzictwem bogów oraz tytanów.",
+    "partyImage": "/page/odyssey-of-the-dragonlords/res/graphics/constellations.jpg",
+    "constellationsImage": "/page/odyssey-of-the-dragonlords/res/graphics/constellations.jpg"
+  },
+  "characters": {
+    "kicker": "AKTA / 02",
+    "title": "Bohaterowie Thylei",
+    "description": "Sześć postaci przypisanych wyłącznie do kampanii Odyssey of the Dragonlords. Dane, statusy, portrety i osiągnięcia pobierane są ze wspólnego rejestru postaci Vengrath.",
+    "characterIds": [
+      "char-0079",
+      "char-0080",
+      "char-0081",
+      "char-0082",
+      "char-0083",
+      "char-0084"
+    ]
+  }
+}
