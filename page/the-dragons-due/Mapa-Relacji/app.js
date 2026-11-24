@@ -323,6 +323,45 @@ bindThreeStateControls("[data-label-mode-group=entity]",()=>entityLabelMode,v=>e
 bindThreeStateControls("[data-label-mode-group=relationship]",()=>relationshipLabelMode,v=>relationshipLabelMode=v);
 $("labelStages").querySelectorAll("button").forEach(b=>b.onclick=()=>{$("labelStages").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));labelStage=Number(b.dataset.stage);applyLabelStyles()});
 $("exportData").onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)+"\n"],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="dragons-due-relationships.json";a.click();URL.revokeObjectURL(url);toast("Wyeksportowano cały zestaw danych.")};
+$("uploadData").onclick=async()=>{
+ const button=$("uploadData"),originalLabel=button.textContent;
+ const GITHUB_TOKEN="WKLEJ_TUTAJ_FINE_GRAINED_GITHUB_TOKEN";
+ if(!GITHUB_TOKEN||GITHUB_TOKEN==="WKLEJ_TUTAJ_FINE_GRAINED_GITHUB_TOKEN"){toast("Najpierw wklej token GitHub do stałej GITHUB_TOKEN w app.js.");return}
+ button.disabled=true;button.textContent="Wysyłanie…";
+ try{
+  const apiUrl="https://api.github.com/repos/vengrathdm/vengrathdm.github.io/contents/page/the-dragons-due/Mapa-Relacji/data/relationships.json";
+  const headers={"Authorization":"Bearer "+GITHUB_TOKEN,"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28"};
+  const currentResponse=await fetch(apiUrl+"?ref=main",{headers});
+  if(!currentResponse.ok)throw new Error("Nie udało się pobrać informacji o obecnym pliku ("+currentResponse.status+"): "+(await currentResponse.text()));
+  const currentFile=await currentResponse.json();
+  const fileContent=JSON.stringify(data,null,2)+"\\n";
+  const bytes=new TextEncoder().encode(fileContent);
+  let binary="";
+  for(let i=0;i<bytes.length;i++)binary+=String.fromCharCode(bytes[i]);
+  const contentBase64=btoa(binary);
+  const uploadResponse=await fetch(apiUrl,{
+   method:"PUT",
+   headers:{...headers,"Content-Type":"application/json"},
+   body:JSON.stringify({
+    message:"Aktualizacja danych mapy relacji",
+    content:contentBase64,
+    sha:currentFile.sha,
+    branch:"main"
+   })
+  });
+  if(!uploadResponse.ok){
+   const errorBody=await uploadResponse.text();
+   throw new Error("GitHub odrzucił zapis ("+uploadResponse.status+"): "+errorBody);
+  }
+  const result=await uploadResponse.json();
+  toast("Dane zapisane na GitHub. Commit: "+result.commit.sha.slice(0,7));
+ }catch(error){
+  console.error("Błąd wysyłania danych na GitHub:",error);
+  toast("Nie udało się wysłać danych: "+error.message);
+ }finally{
+  button.disabled=false;button.textContent=originalLabel;
+ }
+};
 $("importData").onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const parsed=normalize(JSON.parse(await f.text()));confirm("Import zastąpi bieżący zestaw roboczy. Kontynuować?",()=>{data=parsed;layoutModes={...layoutModes,...(data.metadata.layoutModes||{})};selected=null;activeView="complete";persistLocal();viewports={complete:null,family:null,organization:null,political:null,characters:null};setDirty(true);renderGraph();renderFilters();renderLegend();openTab("view");toast("Zaimportowano zestaw danych.")})}catch(err){toast("Import nie powiódł się: "+err.message)}e.target.value=""};
 $("reloadOfficial").onclick=()=>{const run=async()=>{try{officialData=await fetchOfficial();await clearLocal();data=clone(officialData);layoutModes={complete:"force",family:"hierarchy",organization:"hierarchy",political:"force",characters:"force"};selected=null;viewports={complete:null,family:null,organization:null};setDirty(false);renderGraph();renderFilters();renderLegend();openTab("view");toast("Ponownie wczytano dane oficjalne.")}catch(e){toast(e.message)}};if(dirty)confirm("Ponownie wczytać dane oficjalne i odrzucić wszystkie niewyeksportowane zmiany?",run);else run()};
 
