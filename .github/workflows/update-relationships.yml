@@ -23,12 +23,22 @@ jobs:
       - name: Validate and write JSON
         env:
           RELATIONSHIPS_B64: ${{ github.event.client_payload.relationships_b64 }}
+          TARGET_PATH: ${{ github.event.client_payload.target_path || 'page/the-dragons-due/Mapa-Relacji/data/relationships.json' }}
         run: |
           python3 - <<'PY'
           import base64
           import json
           import os
           from pathlib import Path
+
+          allowed_targets = {
+              "page/the-dragons-due/Mapa-Relacji/data/relationships.json",
+              "page/ksiazeta-heartwell/HeartwellRelationshipMap/data/relationships.json",
+              "page/legends-of-barovia/Wątki-w-Barovii/data/relationships.json",
+          }
+          target_path = os.environ.get("TARGET_PATH", "")
+          if target_path not in allowed_targets:
+              raise SystemExit("Target path is not allowed")
 
           encoded = os.environ.get("RELATIONSHIPS_B64", "")
           if not encoded:
@@ -44,16 +54,18 @@ jobs:
           if not isinstance(parsed.get("entities"), list) or not isinstance(parsed.get("relationships"), list):
               raise SystemExit("JSON must contain entities and relationships arrays")
 
-          target = Path("page/the-dragons-due/Mapa-Relacji/data/relationships.json")
+          target = Path(target_path)
           target.parent.mkdir(parents=True, exist_ok=True)
-          target.write_text(json.dumps(parsed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          target.write_text(json.dumps(parsed, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
           PY
 
       - name: Commit and push
+        env:
+          TARGET_PATH: ${{ github.event.client_payload.target_path || 'page/the-dragons-due/Mapa-Relacji/data/relationships.json' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add page/the-dragons-due/Mapa-Relacji/data/relationships.json
+          git add -- "$TARGET_PATH"
           if git diff --cached --quiet; then
             echo "No data changes to commit."
             exit 0
