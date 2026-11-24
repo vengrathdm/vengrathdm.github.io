@@ -369,7 +369,10 @@ $("reloadOfficial").onclick=()=>{const run=async()=>{
 };if(dirty)confirm("Ponownie wczytać dane oficjalne i odrzucić wszystkie niewyeksportowane zmiany?",run);else run()};
 
 document.addEventListener("click",e=>{if(!e.target.closest("#contextMenu"))hideContext()});
-cy=cytoscape({container:$("graph"),elements:[],minZoom:.12,maxZoom:3,wheelSensitivity:.22,selectionType:"single",boxSelectionEnabled:false});
+const graphPixelRatio=Math.max(2,Math.min(window.devicePixelRatio||1,3));
+ cy=cytoscape({container:$("graph"),elements:[],minZoom:.12,maxZoom:3,wheelSensitivity:.22,pixelRatio:graphPixelRatio,motionBlur:false,textureOnViewport:false,selectionType:"single",boxSelectionEnabled:false});
+ if("ResizeObserver" in window){const graphResizeObserver=new ResizeObserver(()=>{if(cy)cy.resize()});graphResizeObserver.observe($("graph"));}
+ window.addEventListener("resize",()=>{if(cy)cy.resize()},{passive:true});
 cy.on("mouseover","node",e=>{if(entityLabelMode==="hover")e.target.style("text-opacity",1)});
 cy.on("mouseout","node",e=>{if(entityLabelMode==="hover")e.target.style("text-opacity",0)});
 cy.on("mouseover","edge",e=>{if(relationshipLabelMode==="hover")e.target.style("text-opacity",1)});
