@@ -23,13 +23,8 @@
 <div id="read" class="panel"><small>ATLAS · WSPÓŁRZĘDNE</small><span>Najedź na mapę, aby odczytać hex</span></div>
 <div id="mapStatus" role="status" aria-live="polite">DANE KAMPANII · ZAPIS LOKALNY</div>
 <section id="toolsPanel" class="floating-panel tools-window" hidden>
-  <div class="panel-head"><strong>Narzędzia mapy</strong><button class="panel-close" data-close="toolsPanel" type="button">Zamknij</button></div>
-  <nav class="tool-tabs" role="tablist" aria-label="Sekcje narzędzi mapy">
-    <button class="tool-tab active" type="button" role="tab" id="layersButtonTab" data-tool-section="layersPanel" aria-selected="true">Warstwy</button>
-    <button class="tool-tab" type="button" role="tab" id="editorButtonTab" data-tool-section="editor" aria-selected="false">Edytor</button>
-  </nav>
+  <div class="panel-head"><strong id="toolsTitle">Warstwy</strong><button class="panel-close" data-close="toolsPanel" type="button">Zamknij</button></div>
 <div id="layersPanel" class="tool-section">
-  <div class="panel-head"><strong>Warstwy mapy</strong><button class="panel-close" data-close="layersPanel" type="button">Zamknij</button></div>
   <label><input type="checkbox" id="politicalLayer" checked> Warstwy polityczne</label>
   <label><input type="checkbox" id="geographicalLayer" checked> Warstwy geograficzne</label>
   <div class="layer-name-control-wrap"><span class="layer-name-label">Nazwy regionów</span><div id="regionNameMode" class="layer-name-control" role="group" aria-label="Widoczność nazw regionów"><button type="button" data-mode="hide" aria-pressed="false">Ukryj</button><button type="button" data-mode="hover" aria-pressed="true">Po najechaniu</button><button type="button" data-mode="show" aria-pressed="false">Pokaż</button></div></div>
