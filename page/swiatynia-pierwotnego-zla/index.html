@@ -174,7 +174,7 @@ main>section.leave{position:absolute;top:0;left:0;right:0;display:block;z-index:
 <div id="torch"></div>
 <a class="vengrath-mark" href="/home/" aria-label="Powrót do Vengrath"><img src="/core/graphics/favicon/mg-logo.png" alt=""> VENGRATH <span>✦</span></a>
 <nav id="dock" aria-label="Nawigacja kampanii">
- <a href="#intro" data-i><svg viewBox="0 0 24 24"><path d="M3 21V10l9-7 9 7v11M9 21v-7h6v7"/></svg>Wstęp</a>
+ <a href="#intro" data-i><svg viewBox="0 0 24 24"><path d="M3 21V10l9-7 9 7v11M9 21v-7h6v7"/></svg>Kampania</a>
  <a href="#characters" data-i><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 15l4-8 4 8M9.5 12.5h5"/></svg>Drużyna</a>
  <a href="#chronicle" data-i><svg viewBox="0 0 24 24"><path d="M6 3h12v15a3 3 0 01-3 3H6a3 3 0 003-3V3M9 8h6M9 12h6"/></svg>Kronika</a>
  <a href="#map" data-i><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14"/></svg>Mapa</a>
@@ -186,9 +186,7 @@ main>section.leave{position:absolute;top:0;left:0;right:0;display:block;z-index:
 <section id="intro"><div class="hero">
  <canvas id="embers"></canvas>
  <div class="scene" aria-hidden="true">
-  <svg id="far" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMax slice"><path fill="#171c4a" d="M0 600V380l90-60 80 50 110-110 100 90 120-130 130 120 110-70 120 90 130-100 110 110V600z"/></svg>
-  <svg id="mid" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMax slice"><path fill="#0c0f2e" d="M330 600V300l30-50v-70l22-30 22 30v70l30 50V600zM780 600V290l30-60v-60l22-40 22 40v60l30 60V600zM480 600V260q120-190 240 0V600z"/><path fill="#b58cff" opacity=".9" d="M570 600V400q30-60 60 0V600z"/><g fill="#ff5a7a"><circle cx="392" cy="330" r="6"/><circle cx="832" cy="320" r="6"/></g></svg>
-  <svg id="near" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMax slice"><path fill="#050615" d="M0 600V520l120-30 90 40 150-50 100 30V600zM800 600V530l120-50 130 40 150-30V600z"/><g><path fill="#58e08a" d="M150 520l12 20h-24z"/><path fill="#4aa8ff" d="M330 540l12-20 12 20z"/><path fill="#ffe066" d="M860 520l12 20h-24z"/><path fill="#ff5a7a" d="M1010 540l12-20 12 20z"/></g></svg>
+  <img src="https://gaming-cdn.com/images/products/20498/orig/the-temple-of-elemental-evil-pc-steam-cover.jpg?v=1787214285" alt="">
  </div>
  <div class="wrap">
   <div class="kick">Archiwum kampanii Dungeons &amp; Dragons</div>
@@ -326,9 +324,8 @@ fetch('/core/data/characters.json').then(function(r){if(!r.ok)throw new Error('C
  }).catch(function(err){console.warn('Nie udało się wczytać postaci drużyny:',err)});
 
 /* torchlight + hero parallax */
-var T=$('#torch'),sc=[['far',8],['mid',18],['near',34]].map(function(p){return[$('#'+p[0]),p[1]]});
-addEventListener('pointermove',function(e){T.style.setProperty('--px',e.clientX+'px');T.style.setProperty('--py',e.clientY+'px');
- var x=e.clientX/innerWidth-.5;sc.forEach(function(s){s[0].style.transform='translateX('+(-x*s[1])+'px)'})});
+var T=$('#torch');
+addEventListener('pointermove',function(e){T.style.setProperty('--px',e.clientX+'px');T.style.setProperty('--py',e.clientY+'px')});
 
 /* embers */
 (function(){var c=$('#embers'),x=c.getContext('2d'),P=[],W,H;
