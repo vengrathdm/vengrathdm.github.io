@@ -10,7 +10,6 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   var CS=1.5*R, KPP=S/48, SC=mapConfig.projection.columnsPerSheet, SR=mapConfig.projection.rowsPerSheet, YS=mapConfig.projection.yScale;
   var LAND=mapConfig.projection.landSheets, POLE=mapConfig.projection.pole;
   var map=L.map('map',{crs:L.CRS.Simple,minZoom:mapConfig.view.minZoom,maxZoom:mapConfig.view.maxZoom,zoomSnap:mapConfig.view.zoomSnap,zoomDelta:mapConfig.view.zoomDelta,wheelPxPerZoomLevel:mapConfig.view.wheelPxPerZoomLevel,attributionControl:false,zoomControl:false});
-  L.control.zoom({position:'bottomright'}).addTo(map);
   var ll=function(px,py){return map.unproject([px,py],Z)};
   var bounds=L.latLngBounds(ll(0,HN),ll(WN,0));
   L.imageOverlay(mapConfig.image,bounds,{interactive:false}).addTo(map);
@@ -34,7 +33,7 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
     var h=hexOf(p.x*KPP,p.y*KPP);
     if(h[0]<0||h[1]<0){read.innerHTML='<small>Poza mapą</small>';return}
     var i=Math.floor(h[0]/SC), j=Math.floor(h[1]/SR);
-    read.innerHTML='Arkusz '+sid(i,j)+' &middot; pole '+two(h[0]%SC+1)+two(h[1]%SR+1);
+    read.innerHTML='Arkusz '+sid(i,j)+' &middot; hex '+two(h[0]%SC+1)+two(h[1]%SR+1);
   }
   map.on('mousemove',show);
   var STORE=mapConfig.storageKey, DATA_URL=mapConfig.dataUrl, layerNames=layerConfig.layerOrder.slice(), regionNameMode=layerConfig.regionNames.defaultMode, pinVisibilityMode=layerConfig.markers.visibility.defaultMode, editingRegionId='', brushMode=editorConfig.brush.defaultMode, regionChooserPurpose='edit';
@@ -63,7 +62,7 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   layerNames.forEach(function(k){overlayGroups[k]=L.layerGroup();});
   function exportableData(){return createCampaignData(regionData,pinData,hasLocalPins,{id:'swiatynia-pierwotnego-zla',name:'Świątynia Pierwotnego Zła',mapId:mapConfig.id});}
   function saveData(){if(writeJson(STORE,exportableData()))hasLocalDraft=true;else setHint('Nie udało się zapisać danych w tej przeglądarce. Pobierz kopię zapasową w formacie JSON.');}
-  function setHint(t){var status=document.getElementById('mapStatus');if(status&&t){status.textContent=t;status.classList.add('visible');}}
+  function setHint(t){}
   function currentLayer(){return document.getElementById('layerSelect').value;}
   function selectedRegion(){var id=document.getElementById('regionSelect').value;return regionData[currentLayer()].find(function(r){return r.id===id;});}
   var editorSelects=[];
@@ -204,7 +203,7 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   function pinIcon(style,color){var glyph={standard:'•',ruin:'✥',settlement:'⌂',landmark:'★',natural:'✿'}[style]||'•',safeColor=/^#[0-9a-f]{6}$/i.test(color||'')?color:defaultPinColor(style);return L.divIcon({className:'',html:'<div class="pin-icon pin-'+style+'" style="--pin-color:'+safeColor+'"><span><b>'+glyph+'</b></span></div>',iconSize:[28,34],iconAnchor:[14,32]});}
   function renderPins(){pinMarkers.clearLayers();if(pinVisibilityMode==='hidden')return;pinData.forEach(function(pin,index){var h=parseAddress(pin.hex);if(!h)return;var point=ll(CS*h[0]/KPP,S*(h[1]+0.5*(h[0]&1))/KPP),marker=L.marker(point,{icon:pinIcon(pin.style,pin.color),title:pin.name}).bindPopup('<span class="popup-title">'+escapeHtml(pin.name)+'</span><span class="popup-description">'+escapeHtml(pin.description).replace(/\\n/g,'<br>')+'</span><span class="popup-reference">'+escapeHtml(pin.hex.replace(':',' · Hex '))+'</span>',{className:'editorial-popup'});if(pinVisibilityMode==='hover'||pinVisibilityMode==='always'){var labelOffset=[((index%3)-1)*12,-25-(Math.floor(index/3)%2)*5];marker.bindTooltip(escapeHtml(pin.name),{permanent:pinVisibilityMode==='always',direction:'top',offset:labelOffset,className:'pin-name-tooltip',opacity:1});}marker.on('click',function(e){if(placingPin)cancelPinPlacement();selectHexAt(e.latlng);}).addTo(pinMarkers);});}
   function cancelPinPlacement(){placingPin=false;pendingPinHex='';document.body.classList.remove('pin-placement-active');}
-  function beginPinPlacement(){stopEditing();cancelPinPlacement();placingPin=true;document.body.classList.add('pin-placement-active');closePanels();}
+  function beginPinPlacement(){stopEditing();cancelPinPlacement();placingPin=true;document.body.classList.add('pin-placement-active');document.getElementById('editor').hidden=true;document.getElementById('editorButton').setAttribute('aria-expanded','false');}
   function hexAddressAt(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return null;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return null;var sheet=sid(Math.floor(h[0]/SC),Math.floor(h[1]/SR));if(LAND.indexOf(sheet)<0)return null;return addressKey(h);}
   function closePinContextMenu(){var menu=document.getElementById('pinContextMenu');menu.hidden=true;menu.innerHTML='';menu.dataset.hex='';}
   function copyMapText(value){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(value).catch(function(){setHint('Nie udało się skopiować do schowka.');});return;}var field=document.createElement('textarea');field.value=value;field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();try{document.execCommand('copy');}catch(err){setHint('Nie udało się skopiować do schowka.');}field.remove();}
@@ -228,43 +227,19 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
     var width=menu.offsetWidth,height=menu.offsetHeight,x=Math.max(8,Math.min(event.clientX,window.innerWidth-width-8)),y=Math.max(8,Math.min(event.clientY,window.innerHeight-height-8));
     menu.style.left=x+'px';menu.style.top=y+'px';
   }
-  function openPinDialog(key,pin){editingPinId=pin?pin.id:'';pendingPinHex=key;var dialog=document.getElementById('pinDialog');document.getElementById('pinDialogTitle').textContent=pin?'Edytuj punkt':'Dodaj punkt';document.getElementById('pinDialogAddress').textContent='Arkusz '+key.replace(':',' · Pole ');document.getElementById('pinName').value=pin?pin.name:'';document.getElementById('pinStyle').value=pin?pin.style:'standard';document.getElementById('pinColor').value=pin?(pin.color||defaultPinColor(pin.style)):defaultPinColor('standard');document.getElementById('pinDescription').value=pin?pin.description:'';updatePinPreview();dialog.hidden=false;dialog.style.display='block';requestAnimationFrame(function(){dialog.style.left='50vw';dialog.style.top='50vh';dialog.style.transform='translate(-50%,-50%)';document.getElementById('pinName').focus();});}
+  function openPinDialog(key,pin){editingPinId=pin?pin.id:'';pendingPinHex=key;var dialog=document.getElementById('pinDialog');document.getElementById('pinDialogTitle').textContent=pin?'Edytuj punkt':'Dodaj punkt';document.getElementById('pinDialogAddress').textContent='Arkusz '+key.replace(':',' · Hex ');document.getElementById('pinName').value=pin?pin.name:'';document.getElementById('pinStyle').value=pin?pin.style:'standard';document.getElementById('pinColor').value=pin?(pin.color||defaultPinColor(pin.style)):defaultPinColor('standard');document.getElementById('pinDescription').value=pin?pin.description:'';updatePinPreview();dialog.hidden=false;dialog.style.display='block';requestAnimationFrame(function(){dialog.style.left='50vw';dialog.style.top='50vh';dialog.style.transform='translate(-50%,-50%)';document.getElementById('pinName').focus();});}
   function closePinDialog(){var dialog=document.getElementById('pinDialog');dialog.hidden=true;dialog.style.display='none';pendingPinHex='';editingPinId='';}
   function brushRadius(){return parseInt(document.getElementById('brushSize').value,10)||0;}
   function brushKeys(center){var q0=center[0],r0=center[1]-(q0-(q0&1))/2,rad=brushRadius(),keys=[];for(var dq=-rad;dq<=rad;dq++){for(var dr=-rad;dr<=rad;dr++){if(Math.max(Math.abs(dq),Math.abs(dr),Math.abs(dq+dr))>rad)continue;var q=q0+dq,ar=r0+dr,row=ar+(q-(q&1))/2;if(q<0||row<0)continue;var si=Math.floor(q/SC),sj=Math.floor(row/SR),sheet=sid(si,sj);if(LAND.indexOf(sheet)<0)continue;keys.push(addressKey([q,row]));}}return keys;}
   function assignBrush(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var center=addressKey(h);if(center===lastPainted)return;lastPainted=center;var arr=regionData[currentLayer()],region=selectedRegion();if(!eraseMode&&!region){setHint('Przed malowaniem utwórz region lub wybierz istniejący.');return;}brushKeys(h).forEach(function(key){arr.forEach(function(r){r.hexes=r.hexes.filter(function(x){return x!==key;});});if(!eraseMode&&region.hexes.indexOf(key)===-1)region.hexes.push(key);});saveData();renderLayer(currentLayer());}
 
-  var activeToolSection='layersPanel';
-  function syncToolTabs(){
-    ['layersPanel','editor'].forEach(function(id){document.getElementById(id).hidden=activeToolSection!==id;});
-    document.getElementById('toolsTitle').textContent=activeToolSection==='layersPanel'?'Warstwy':'Edytor';
-    document.getElementById('layersButton').setAttribute('aria-expanded',String(!document.getElementById('toolsPanel').hidden&&activeToolSection==='layersPanel'));
-    document.getElementById('editorButton').setAttribute('aria-expanded',String(!document.getElementById('toolsPanel').hidden&&activeToolSection==='editor'));
-  }
-  function closePanels(){
-    document.getElementById('toolsPanel').hidden=true;
-    document.getElementById('presenter').hidden=true;
-    syncToolTabs();
-    syncBrushActivation();
-  }
-  function showToolSection(id){
-    if(id!=='layersPanel'&&id!=='editor')return;
-    activeToolSection=id;
-    document.getElementById('presenter').hidden=true;
-    document.getElementById('toolsPanel').hidden=false;
-    syncToolTabs();
-    syncBrushActivation();
-  }
-  function togglePanel(id){
-    var wasOpen=!document.getElementById('toolsPanel').hidden&&activeToolSection===id;
-    if(wasOpen)closePanels();else showToolSection(id);
-  }
-  function activateEditorPanel(){showToolSection('editor');}
+  var panelIds=['layersPanel','editor','presenter'],buttonIds={layersPanel:'layersButton',editor:'editorButton',presenter:'dossierButton'};
+  function closePanels(){panelIds.forEach(function(id){document.getElementById(id).hidden=true;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','false');});syncBrushActivation();}
+  function togglePanel(id){var panel=document.getElementById(id),wasOpen=!panel.hidden;closePanels();if(!wasOpen){panel.hidden=false;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','true');}syncBrushActivation();}
+  function activateEditorPanel(){closePanels();var panel=document.getElementById('editor');panel.hidden=false;document.getElementById('editorButton').setAttribute('aria-expanded','true');syncBrushActivation();}
   function selectRegionInEditor(layer,region){if(!region)return;document.getElementById('layerSelect').value=layer;document.getElementById('layerSelect').dispatchEvent(new Event('change',{bubbles:true}));refreshRegions(region.id);syncEditorSelect(document.getElementById('layerSelect'));syncEditorSelect(document.getElementById('regionSelect'));activateEditorPanel();setHint('Wybrano '+region.name+' w edytorze.');}
-  document.getElementById('layersButton').addEventListener('click',function(){togglePanel('layersPanel');});
-  document.getElementById('editorButton').addEventListener('click',function(){togglePanel('editor');});
-  document.querySelectorAll('[data-close]').forEach(function(button){button.addEventListener('click',function(){var id=this.getAttribute('data-close');if(id==='toolsPanel')closePanels();else{document.getElementById(id).hidden=true;syncBrushActivation();}});});
-  syncToolTabs();
+  Object.keys(buttonIds).forEach(function(id){document.getElementById(buttonIds[id]).addEventListener('click',function(){togglePanel(id);});});
+  document.querySelectorAll('[data-close]').forEach(function(button){button.addEventListener('click',function(){var id=this.getAttribute('data-close');document.getElementById(id).hidden=true;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','false');syncBrushActivation();});});
   function setOverlayVisibility(key,visible){if(visible){overlayGroups[key].addTo(map);}else{map.removeLayer(overlayGroups[key]);}}
   document.getElementById('politicalLayer').addEventListener('change',function(){setOverlayVisibility('political',this.checked);});
   document.getElementById('geographicalLayer').addEventListener('change',function(){setOverlayVisibility('geographical',this.checked);});
@@ -272,10 +247,10 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   document.querySelectorAll('#regionNameMode button').forEach(function(button){button.addEventListener('click',function(){regionNameMode=this.dataset.mode;document.querySelectorAll('#regionNameMode button').forEach(function(item){item.setAttribute('aria-pressed',item.dataset.mode===regionNameMode?'true':'false');});renderAll();});});
   function setPinVisibilityMode(mode){if(['hidden','hover','click','always'].indexOf(mode)===-1)return;pinVisibilityMode=mode;try{localStorage.setItem(PIN_VISIBILITY_STORE,mode);}catch(e){}document.querySelectorAll('#pinVisibilityMode button').forEach(function(item){item.setAttribute('aria-pressed',item.dataset.mode===mode?'true':'false');});renderPins();}
   document.querySelectorAll('#pinVisibilityMode button').forEach(function(button){button.addEventListener('click',function(){setPinVisibilityMode(this.dataset.mode);});});
-  function syncBrushActivation(){var active=!document.getElementById('toolsPanel').hidden&&!document.getElementById('editor').hidden&&brushMode!=='idle';editMode=active;eraseMode=active&&brushMode==='erase';if(!active){painting=false;lastPainted='';}map.dragging[active?'disable':'enable']();}
+  function syncBrushActivation(){var active=!document.getElementById('editor').hidden&&brushMode!=='idle';editMode=active;eraseMode=active&&brushMode==='erase';if(!active){painting=false;lastPainted='';}map.dragging[active?'disable':'enable']();}
   function setBrushMode(mode,announce){brushMode=mode;painting=false;lastPainted='';syncBrushActivation();document.querySelectorAll('#brushModeControl button').forEach(function(button){button.setAttribute('aria-pressed',button.dataset.mode===mode?'true':'false');});if(announce!==false){setHint(mode==='paint'?'Wybrano tryb malowania. Malowanie działa tylko wtedy, gdy panel edytora jest otwarty.':mode==='erase'?'Wybrano tryb wymazywania. Wymazywanie działa tylko wtedy, gdy panel edytora jest otwarty.':'Pędzel jest nieaktywny. Przesuwanie mapy jest ponownie dostępne.');}}
   function stopEditing(){setBrushMode('idle',false);}
-  function updateBrushLabel(){var r=brushRadius(),count=1+3*r*(r+1);document.getElementById('brushSizeValue').textContent=r===0?'1 pole':'promień '+r+' ('+count+' pól)';}
+  function updateBrushLabel(){var r=brushRadius(),count=1+3*r*(r+1);document.getElementById('brushSizeValue').textContent=r===0?'1 hex':'promień '+r+' ('+count+' hexów)';}
   document.getElementById('brushSize').addEventListener('input',updateBrushLabel);
   document.getElementById('placePinButton').addEventListener('click',beginPinPlacement);
   document.getElementById('cancelPin').addEventListener('click',function(){closePinDialog();cancelPinPlacement();});
@@ -315,20 +290,20 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
       setHint('Wczytano aktualne dane regionów i znaczników z GitHuba. Lokalne zmiany zostały zastąpione.');
     }).catch(function(err){console.error('Nie udało się ponownie wczytać danych z GitHuba:',err);setHint('Nie udało się wczytać danych z GitHuba: '+(err&&err.message?err.message:'błąd sieciowy'));}).finally(function(){button.disabled=false;button.textContent=original;});
   });
-  document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(exportableData(),null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='swiatynia-pierwotnego-zla-mapa.json';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);setHint('Pobrano pełne dane regionów i znaczników do pliku kopii zapasowej JSON.');});
-  document.getElementById('importData').addEventListener('change',function(e){var file=e.target.files&&e.target.files[0];if(!file)return;var reader=new FileReader();reader.onerror=function(){setHint('Nie udało się odczytać wybranego pliku JSON.');e.target.value='';};reader.onload=function(){try{var data=JSON.parse(String(reader.result).replace(/^\\uFEFF/,''));applyRegionData(data);hasLocalDraft=true;hasLocalPins=true;saveData();stopEditing();refreshRegions();renderAll();renderPins();document.getElementById('regionName').value='';document.getElementById('regionColor').value='#668b54';setHint('Zaimportowano '+regionData.political.length+' regionów politycznych, '+regionData.geographical.length+' regionów geograficznych oraz '+pinData.length+' znaczników. Zaimportowane dane zastąpiły dotychczasowe dane mapy w tej przeglądarce.');}catch(err){console.error('Import nakładek nie powiódł się:',err);setHint('Import nie powiódł się: '+(err&&err.message?err.message:'nieprawidłowy JSON'));}finally{e.target.value='';}};reader.readAsText(file);});
+  document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(exportableData(),null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='swiatynia-pierwotnego-zla-mapa.json';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);setHint('Pobrano pełne dane regionów i znaczników w pliku regions.json.');});
+  document.getElementById('importData').addEventListener('change',function(e){var file=e.target.files&&e.target.files[0];if(!file)return;var reader=new FileReader();reader.onerror=function(){setHint('Nie udało się odczytać wybranego pliku JSON.');e.target.value='';};reader.onload=function(){try{var data=JSON.parse(String(reader.result).replace(/^\\uFEFF/,''));applyRegionData(data);hasLocalDraft=true;hasLocalPins=true;saveData();stopEditing();refreshRegions();renderAll();renderPins();document.getElementById('regionName').value='';document.getElementById('regionColor').value='#668b54';setHint('Zaimportowano '+regionData.political.length+' Polityczna regions, '+regionData.geographical.length+' Geograficzna regions, and '+pinData.length+' pins. Zaimportowano data now replaces the current map data in this browser.');}catch(err){console.error('Import nakładek nie powiódł się:',err);setHint('Import nie powiódł się: '+(err&&err.message?err.message:'nieprawidłowy JSON'));}finally{e.target.value='';}};reader.readAsText(file);});
   map.on('mousedown',function(e){if(!editMode||document.getElementById('editor').hidden)return;painting=true;lastPainted='';assignBrush(e.latlng);});
   map.on('mousemove',function(e){if(painting&&editMode&&!document.getElementById('editor').hidden)assignBrush(e.latlng);});
   function endStroke(){painting=false;lastPainted='';}
   map.on('mouseup',endStroke);
   window.addEventListener('mouseup',endStroke);
-  function presentHex(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var i=Math.floor(h[0]/SC),j=Math.floor(h[1]/SR),sheet=sid(i,j),hex=two(h[0]%SC+1)+two(h[1]%SR+1),key=sheet+':'+hex;document.getElementById('presenterAddress').textContent=sheet+' / '+hex;document.getElementById('presenterSub').textContent='Greyhawk · Karta pola';document.getElementById('presenterIntro').textContent='Zapisane informacje o tym polu.';var html='';layerNames.forEach(function(k){var found=null;regionData[k].some(function(r){if(r.hexes.indexOf(key)!==-1){found=r;return true;}return false;});html+='<div class="present-row"><div class="present-label">'+(k==='political'?'Teren polityczny':'Region geograficzny')+'</div>';html+=found?'<div class="present-value"><span class="present-swatch" style="background:'+found.color+'"></span>'+escapeHtml(found.name)+'</div>':'<div class="present-empty">Brak zapisanych informacji</div>';html+='</div>';});var places=pinData.filter(function(pin){return pin.hex===key;});if(places.length){html+='<div class="present-row"><div class="present-label">Punkty zainteresowania</div>'+places.map(function(x){return '<div class="present-value">'+escapeHtml(x.name)+'</div><div class="present-empty">'+escapeHtml(x.description)+'</div>';}).join('')+'</div>';}document.getElementById('presenterDetails').innerHTML=html;}
+  function presentHex(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var i=Math.floor(h[0]/SC),j=Math.floor(h[1]/SR),sheet=sid(i,j),hex=two(h[0]%SC+1)+two(h[1]%SR+1),key=sheet+':'+hex;document.getElementById('presenterAddress').textContent=sheet+' / '+hex;document.getElementById('presenterSub').textContent='Greyhawk · Karta pola';document.getElementById('presenterIntro').textContent='Zapisane informacje o tym hexie.';var html='';layerNames.forEach(function(k){var found=null;regionData[k].some(function(r){if(r.hexes.indexOf(key)!==-1){found=r;return true;}return false;});html+='<div class="present-row"><div class="present-label">'+(k==='political'?'Polityczna territory':'Geograficzna region')+'</div>';html+=found?'<div class="present-value"><span class="present-swatch" style="background:'+found.color+'"></span>'+escapeHtml(found.name)+'</div>':'<div class="present-empty">Brak zapisanych informacji</div>';html+='</div>';});var places=pinData.filter(function(pin){return pin.hex===key;});if(places.length){html+='<div class="present-row"><div class="present-label">Punkty zainteresowania</div>'+places.map(function(x){return '<div class="present-value">'+escapeHtml(x.name)+'</div><div class="present-empty">'+escapeHtml(x.description)+'</div>';}).join('')+'</div>';}document.getElementById('presenterDetails').innerHTML=html;}
   function escapeHtml(s){return String(s).replace(/[&<>\"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch];});}
 
-  function openPanel(id){closePanels();document.getElementById(id).hidden=false;syncBrushActivation();}
+  function openPanel(id){closePanels();document.getElementById(id).hidden=false;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','true');}
   function selectHexAt(latlng){var event={latlng:latlng};show(event);presentHex(latlng);openPanel('presenter');}
   map.on('contextmenu',function(e){L.DomEvent.preventDefault(e);L.DomEvent.stopPropagation(e);if(placingPin)return;showMapContextMenu(e.latlng,e.originalEvent);});
-  map.on('click',function(e){closePinContextMenu();if(placingPin){var key=hexAddressAt(e.latlng);if(!key){cancelPinPlacement();return;}cancelPinPlacement();openPinDialog(key);return;}if(!document.getElementById('toolsPanel').hidden&&!document.getElementById('editor').hidden){show(e);presentHex(e.latlng);return;}selectHexAt(e.latlng);});
+  map.on('click',function(e){closePinContextMenu();if(placingPin){var key=hexAddressAt(e.latlng);if(!key){cancelPinPlacement();return;}cancelPinPlacement();openPinDialog(key);return;}if(!document.getElementById('editor').hidden){show(e);presentHex(e.latlng);return;}selectHexAt(e.latlng);});
   document.addEventListener('click',function(e){
     if(!placingPin)return;
     var target=e.target;
@@ -351,6 +326,7 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   ['layerSelect','regionSelect','newRegionLayer','deleteRegionLayer','pinStyle'].forEach(function(id){enhanceEditorSelect(document.getElementById(id));});
   renderAll();refreshRegions();updateBrushLabel();
 
+  L.control.zoom({position:'bottomright'}).addTo(map);
   L.control.scale({imperial:false,metric:false,position:'bottomright'}).addTo(map);
 })().catch(function(error){
   console.error('Nie udało się uruchomić mapy kampanii:', error);
