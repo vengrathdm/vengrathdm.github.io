@@ -1714,6 +1714,277 @@
       "customFields": [],
       "positions": {},
       "position": null
+    },
+    {
+      "id": "ody-loc-arkelon-river",
+      "type": "Location",
+      "name": "Arkelon River",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "River bordering the northern approaches to Estoria and the centaur-haunted steppes.",
+      "fields": {
+        "Location type": "Campaign site",
+        "Area": "Heartlands"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-greater-steppes",
+      "type": "Location",
+      "name": "Greater Steppes",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Vast northern grasslands and traditional territory of centaur tribes.",
+      "fields": {
+        "Location type": "Campaign site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-heartlands-woods",
+      "type": "Location",
+      "name": "Heartlands",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Settled central region of Thylea, including Mytros and surrounding settlements.",
+      "fields": {
+        "Location type": "Campaign site",
+        "Area": "Mytros region"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-sour-vintage",
+      "type": "Location",
+      "name": "The Sour Vintage",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Opening adventure location and vineyard where the heroes begin their first labor.",
+      "fields": {
+        "Location type": "Campaign site",
+        "Area": "Estoria region"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-great-games",
+      "type": "Location",
+      "name": "The Great Games",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Arena and festival grounds outside Mytros, site of the annual games.",
+      "fields": {
+        "Location type": "Campaign site",
+        "Area": "Mytros"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-ultros-harbor",
+      "type": "Location",
+      "name": "Harbor of Mytros",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Harbor where the ghost ship Ultros is encountered.",
+      "fields": {
+        "Location type": "Campaign site",
+        "Area": "Mytros"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-zakroth",
+      "type": "Location",
+      "name": "Zakroth's Prison Fort",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Prison fort featured in the New Pantheon chapter.",
+      "fields": {
+        "Location type": "Campaign site",
+        "Area": "Aresia region"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-karpathos",
+      "type": "Location",
+      "name": "Tomb of Karpathos",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Tomb explored in the New Pantheon chapter.",
+      "fields": {
+        "Location type": "Campaign site",
+        "Area": "Aresia region"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-sunken-kingdom",
+      "type": "Location",
+      "name": "The Sunken Kingdom",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Submerged kingdom explored in the campaign's eleventh chapter.",
+      "fields": {
+        "Location type": "Campaign site",
+        "Area": "Nether Sea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-temple-district",
+      "type": "Location",
+      "name": "Temple District",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "District of the Sunken City explored in the Sunken Kingdom chapter.",
+      "fields": {
+        "Location type": "Campaign site",
+        "Area": "Sunken City"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-chasm",
+      "type": "Location",
+      "name": "The Chasm",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Major site within the Sunken City.",
+      "fields": {
+        "Location type": "Campaign site",
+        "Area": "Sunken City"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-empyrean-palace",
+      "type": "Location",
+      "name": "The Empyrean Palace",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Finale location in Apokalypsis.",
+      "fields": {
+        "Location type": "Campaign site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-silver-colossus",
+      "type": "Location",
+      "name": "Colossus of Mytros",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Colossal guardian statue protecting Mytros; one of the twin Colossi.",
+      "fields": {
+        "Location type": "Campaign site",
+        "Area": "Mytros"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-estoria-palace",
+      "type": "Location",
+      "name": "Palace of Estoria",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Pythor's royal palace overlooking the farmlands of Estoria.",
+      "fields": {
+        "Location type": "Campaign site",
+        "Area": "Estoria"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-temple-five",
+      "type": "Location",
+      "name": "Temple of the Five",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Central temple and civic meeting place in Mytros.",
+      "fields": {
+        "Location type": "Campaign site",
+        "Area": "Mytros"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-faction-prophecy-heroes",
+      "type": "Faction",
+      "name": "Heroes of the Prophecy",
+      "imageUrl": "",
+      "color": "#1c5265",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "The mortal heroes chosen by Versi to avert the Doom of Thylea and confront the Titans.",
+      "fields": {
+        "Purpose": "Fulfil the Oracle's prophecy"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
     }
   ],
   "relationships": [
@@ -2493,6 +2764,226 @@
       "target": "ody-god-narsus",
       "type": "OATHSWORN_OF",
       "note": "Jasena was Narsus's Dragonlord rider.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-79",
+      "source": "ody-char-0079",
+      "target": "ody-faction-prophecy-heroes",
+      "type": "MEMBER_OF",
+      "note": "Campaign player character; player-party membership, not an NPC/sourcebook identity claim.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-80",
+      "source": "ody-char-0080",
+      "target": "ody-faction-prophecy-heroes",
+      "type": "MEMBER_OF",
+      "note": "Campaign player character; player-party membership, not an NPC/sourcebook identity claim.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-81",
+      "source": "ody-char-0081",
+      "target": "ody-faction-prophecy-heroes",
+      "type": "MEMBER_OF",
+      "note": "Campaign player character; player-party membership, not an NPC/sourcebook identity claim.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-82",
+      "source": "ody-char-0082",
+      "target": "ody-faction-prophecy-heroes",
+      "type": "MEMBER_OF",
+      "note": "Campaign player character; player-party membership, not an NPC/sourcebook identity claim.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-83",
+      "source": "ody-char-0083",
+      "target": "ody-faction-prophecy-heroes",
+      "type": "MEMBER_OF",
+      "note": "Campaign player character; player-party membership, not an NPC/sourcebook identity claim.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-84",
+      "source": "ody-char-0084",
+      "target": "ody-faction-prophecy-heroes",
+      "type": "MEMBER_OF",
+      "note": "Campaign player character; player-party membership, not an NPC/sourcebook identity claim.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-85",
+      "source": "ody-faction-prophecy-heroes",
+      "target": "ody-npc-versi",
+      "type": "CHOSEN_BY",
+      "note": "Versi's prophecy calls the heroes together.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-86",
+      "source": "ody-faction-prophecy-heroes",
+      "target": "ody-event-prophecy",
+      "type": "FULFILS",
+      "note": "The heroes are tasked with averting the Doom of Thylea.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-87",
+      "source": "ody-loc-arkelon-river",
+      "target": "ody-loc-estoria",
+      "type": "NEAR",
+      "note": "Estoria stands near the Arkelon River and the northern steppes.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-88",
+      "source": "ody-loc-greater-steppes",
+      "target": "ody-loc-estoria",
+      "type": "NORTH_OF",
+      "note": "The steppes lie beyond the Arkelon River.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-89",
+      "source": "ody-loc-sour-vintage",
+      "target": "ody-loc-estoria",
+      "type": "NEAR",
+      "note": "Opening adventure begins in the Estoria region.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-90",
+      "source": "ody-loc-great-games",
+      "target": "ody-loc-mytros-city",
+      "type": "OUTSIDE",
+      "note": "The annual Great Games are held outside Mytros.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-91",
+      "source": "ody-loc-ultros",
+      "target": "ody-loc-ultros-harbor",
+      "type": "ARRIVES_AT",
+      "note": "The ghost ship enters the harbor of Mytros.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-92",
+      "source": "ody-loc-zakroth",
+      "target": "ody-loc-aresia",
+      "type": "IN_REGION",
+      "note": "Prison fort appears in the Aresia chapter.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-93",
+      "source": "ody-loc-karpathos",
+      "target": "ody-loc-aresia",
+      "type": "IN_REGION",
+      "note": "Tomb appears in the Aresia chapter.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-94",
+      "source": "ody-loc-sunken-kingdom",
+      "target": "ody-loc-sunken-city",
+      "type": "INCLUDES",
+      "note": "The Sunken City is the central location of the Sunken Kingdom chapter.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-95",
+      "source": "ody-loc-temple-district",
+      "target": "ody-loc-sunken-city",
+      "type": "DISTRICT_OF",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-96",
+      "source": "ody-loc-chasm",
+      "target": "ody-loc-sunken-city",
+      "type": "SITE_WITHIN",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-97",
+      "source": "ody-loc-empyrean-palace",
+      "target": "ody-event-apokalypsis",
+      "type": "SETTING_OF",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-98",
+      "source": "ody-loc-silver-colossus",
+      "target": "ody-loc-mytros-city",
+      "type": "PROTECTS",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-99",
+      "source": "ody-loc-estoria-palace",
+      "target": "ody-loc-estoria",
+      "type": "LOCATED_IN",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-100",
+      "source": "ody-inst-temple-five",
+      "target": "ody-loc-temple-five",
+      "type": "LOCATED_AT",
+      "note": "",
       "color": "#b98a4d",
       "lineStyle": "solid",
       "direction": "towards"
