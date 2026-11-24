@@ -10,33 +10,32 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/map.css">
-    <link rel="stylesheet" href="/core/templates/Cursor/Cursor.css">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"></head>
+    <link rel="stylesheet" href="/core/templates/Cursor/Cursor.css"></head>
 <body class="ksiazeta-heartwell-page">
 <div id="map"></div>
 <div id="head" class="panel">
   <a class="home-brand" href="/page/swiatynia-pierwotnego-zla/" aria-label="Powrót do kampanii Świątynia Pierwotnego Zła"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
 </div>
 <div id="toolbar" role="toolbar" aria-label="Narzędzia mapy">
-  <button class="tool-button" id="layersButton" type="button" aria-expanded="false">Warstwy</button>
-  <button class="tool-button" id="editorButton" type="button" aria-expanded="false">Edytor</button>
-  <button class="tool-button" id="dossierButton" type="button" aria-expanded="false">Karta terenu</button>
+  <button class="tool-button" id="layersButton" type="button" aria-expanded="false" data-open-tool="layersPanel">Warstwy</button>
+  <button class="tool-button" id="editorButton" type="button" aria-expanded="false" data-open-tool="editor">Edytor</button>
 </div>
 <div id="read" class="panel"><small>ATLAS · WSPÓŁRZĘDNE</small><span>Najedź na mapę, aby odczytać hex</span></div>
 <div id="mapStatus" role="status" aria-live="polite">DANE KAMPANII · ZAPIS LOKALNY</div>
-<section id="layersPanel" class="floating-panel" hidden>
+<section id="toolsPanel" class="floating-panel tools-window" hidden>
+  <div class="panel-head"><strong>Narzędzia mapy</strong><button class="panel-close" data-close="toolsPanel" type="button">Zamknij</button></div>
+  <nav class="tool-tabs" role="tablist" aria-label="Sekcje narzędzi mapy">
+    <button class="tool-tab active" type="button" role="tab" id="layersButtonTab" data-tool-section="layersPanel" aria-selected="true">Warstwy</button>
+    <button class="tool-tab" type="button" role="tab" id="editorButtonTab" data-tool-section="editor" aria-selected="false">Edytor</button>
+  </nav>
+<div id="layersPanel" class="tool-section">
   <div class="panel-head"><strong>Warstwy mapy</strong><button class="panel-close" data-close="layersPanel" type="button">Zamknij</button></div>
   <label><input type="checkbox" id="politicalLayer" checked> Warstwy polityczne</label>
   <label><input type="checkbox" id="geographicalLayer" checked> Warstwy geograficzne</label>
   <div class="layer-name-control-wrap"><span class="layer-name-label">Nazwy regionów</span><div id="regionNameMode" class="layer-name-control" role="group" aria-label="Widoczność nazw regionów"><button type="button" data-mode="hide" aria-pressed="false">Ukryj</button><button type="button" data-mode="hover" aria-pressed="true">Po najechaniu</button><button type="button" data-mode="show" aria-pressed="false">Pokaż</button></div></div>
   <div class="layer-name-control-wrap"><span class="layer-name-label">Widoczność markerów</span><div id="pinVisibilityMode" class="pin-visibility-control" role="group" aria-label="Widoczność markerów"><button type="button" data-mode="hidden" aria-pressed="false">Ukryj</button><button type="button" data-mode="hover" aria-pressed="true">Najedź</button><button type="button" data-mode="click" aria-pressed="false">Kliknij</button><button type="button" data-mode="always" aria-pressed="false">Zawsze</button></div></div>
-</section>
-<section id="presenter" class="floating-panel" hidden>
-  <div class="panel-head"><strong>Karta terenu</strong><button class="panel-close" data-close="presenter" type="button">Zamknij</button></div>
-  <div id="presenterBody"><div id="presenterAddress">Nie wybrano pola</div><div id="presenterSub">Greyhawk · Oznaczenie hexu</div><p id="presenterIntro">Wybierz pole na mapie, aby wyświetlić zapisane o nim informacje.</p><div id="presenterDetails"></div></div>
-</section>
-<div id="editor" class="floating-panel" hidden>
-  <div class="panel-head"><strong>Świątynia · Nakładki hexów</strong><button class="panel-close" data-close="editor" type="button">Zamknij</button></div>
+</div>
+<div id="editor" class="tool-section" hidden>
   <div id="editorTools">
     <div class="editor-field"><span class="editor-field-label">Warstwa nakładki</span><select id="layerSelect"><option value="political">Polityczna</option><option value="geographical">Geograficzna</option></select></div>
     <section class="editor-section">
@@ -52,6 +51,13 @@
     <div class="editor-data-actions"><button id="reloadData" type="button">Przeładuj Oficjalne Dane</button><button id="exportData" type="button">Eksportuj dane</button><label class="file-button" for="importData">Importuj dane</label></div><input id="importData" type="file" accept="application/json">
   </div>
 </div>
+</section>
+
+<section id="presenter" class="floating-panel" hidden>
+  <div class="panel-head"><strong>Karta terenu</strong><button class="panel-close" data-close="presenter" type="button">Zamknij</button></div>
+  <div id="presenterBody"><div id="presenterAddress">Nie wybrano pola</div><div id="presenterSub">Greyhawk · Oznaczenie hexu</div><p id="presenterIntro">Wybierz pole na mapie, aby wyświetlić zapisane o nim informacje.</p><div id="presenterDetails"></div></div>
+</section>
+
 <div id="regionCreateDialog" class="region-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="regionCreateTitle">
   <h2 id="regionCreateTitle">Utwórz region</h2>
   <p class="region-dialog-sub">Skonfiguruj nowy region nakładki.</p>
