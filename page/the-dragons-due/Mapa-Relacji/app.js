@@ -331,7 +331,7 @@ $("githubTokenForm").onsubmit=async event=>{
  if(!token){toast("Wklej token GitHub, aby wysłać dane.");return}
  button.disabled=true;button.textContent="Wysyłanie…";closeDialogs();
  try{
-  const fileContent=JSON.stringify(data,null,2)+"\\n";
+  const fileContent=JSON.stringify(data,null,2)+"\n";
   const bytes=new TextEncoder().encode(fileContent);
   let binary="";
   for(let i=0;i<bytes.length;i++)binary+=String.fromCharCode(bytes[i]);
