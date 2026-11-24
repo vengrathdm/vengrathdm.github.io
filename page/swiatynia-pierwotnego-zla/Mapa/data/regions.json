@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "id": "swiatynia-pierwotnego-zla",
+    "name": "Dolina Hommlet",
+    "mapId": "homlett-valley",
+    "updatedAt": "2026-11-24"
+  },
+  "regions": {
+    "political": [
+      {
+        "id": "hommlet-village",
+        "name": "Hommlet i okolice",
+        "color": "#9a9b65",
+        "description": "Osada i jej najbliższe trakty.",
+        "fillStyle": "tint",
+        "hexes": [
+          "A1:3030",
+          "A1:3031",
+          "A1:3032",
+          "A1:3130",
+          "A1:3131",
+          "A1:3132",
+          "A1:3230",
+          "A1:3231",
+          "A1:3232"
+        ]
+      },
+      {
+        "id": "temple-grounds",
+        "name": "Ziemie skażone",
+        "color": "#a84f35",
+        "description": "Obszar wokół ruin dawnej świątyni.",
+        "fillStyle": "hatch",
+        "hexes": [
+          "A1:5550",
+          "A1:5551",
+          "A1:5552",
+          "A1:5650",
+          "A1:5651",
+          "A1:5652",
+          "A1:5750",
+          "A1:5751",
+          "A1:5752"
+        ]
+      }
+    ],
+    "geographical": [
+      {
+        "id": "moors",
+        "name": "Mokradła i trzęsawiska",
+        "color": "#647a61",
+        "description": "Podmokłe tereny wokół Moathouse.",
+        "fillStyle": "tint",
+        "hexes": [
+          "A1:4240",
+          "A1:4241",
+          "A1:4340",
+          "A1:4341",
+          "A1:4440",
+          "A1:4441"
+        ]
+      }
+    ]
+  },
+  "markers": [
+    {
+      "id": "pin-hommlet",
+      "name": "Hommlet",
+      "style": "settlement",
+      "color": "#b5c080",
+      "description": "Wioska, w której rozpoczęło się śledztwo. Gospoda, świątynia św. Cuthberta i siedziba sołtysa.",
+      "hex": "A1:3031"
+    },
+    {
+      "id": "pin-moathouse",
+      "name": "Moathouse",
+      "style": "ruin",
+      "color": "#c18a55",
+      "description": "Zrujnowana warownia i placówka zwiadowcza kultu.",
+      "hex": "A1:4241"
+    },
+    {
+      "id": "pin-mound",
+      "name": "Stary kurhan",
+      "style": "ruin",
+      "color": "#c18a55",
+      "description": "Komora grobowa z mapą czterech sanktuariów.",
+      "hex": "A1:4848"
+    },
+    {
+      "id": "pin-temple",
+      "name": "Ruiny Świątyni",
+      "style": "ruin",
+      "color": "#b45c3d",
+      "description": "Kompleks czterech skrzydeł żywiołów.",
+      "hex": "A1:5651"
+    },
+    {
+      "id": "pin-air",
+      "name": "Sanktuarium Powietrza",
+      "style": "landmark",
+      "color": "#a9b6bd",
+      "description": "Wieża, w której wiatr niesie szepty.",
+      "hex": "A1:5954"
+    },
+    {
+      "id": "pin-earth",
+      "name": "Sanktuarium Ziemi",
+      "style": "ruin",
+      "color": "#8b9a68",
+      "description": "Podziemna sala wsparta na kamiennych filarach.",
+      "hex": "A1:5350"
+    },
+    {
+      "id": "pin-fire",
+      "name": "Sanktuarium Ognia",
+      "style": "ruin",
+      "color": "#b45c3d",
+      "description": "Ołtarz, przy którym kamień pozostaje gorący.",
+      "hex": "A1:5750"
+    },
+    {
+      "id": "pin-water",
+      "name": "Sanktuarium Wody",
+      "style": "natural",
+      "color": "#7596a1",
+      "description": "Zalane korytarze i podziemny ciek.",
+      "hex": "A1:5554"
+    },
+    {
+      "id": "pin-inn",
+      "name": "Pod Wesołym Olbrzymem",
+      "style": "standard",
+      "color": "#b5c080",
+      "description": "Gospoda w Hommlet.",
+      "hex": "A1:3131"
+    }
+  ]
+}
