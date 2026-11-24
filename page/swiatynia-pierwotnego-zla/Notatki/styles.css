@@ -116,7 +116,7 @@ body{font-family:var(--body)!important}
 .canvas-tools{top:18px!important;right:20px!important;padding:5px!important;display:flex!important;gap:5px!important}
 .canvas-tools button,.icon-button{width:34px!important;height:34px!important;border:1px solid #53639e!important;border-radius:9px!important;background:#1a2246!important;color:#e8edff!important;font:600 17px var(--mono)!important;cursor:pointer!important}
 .canvas-tools button:hover,.icon-button:hover{background:#27335f!important;border-color:var(--aqua)!important;color:#fff!important;box-shadow:0 0 18px #7df0d233!important}
-.control-window{top:76px!important;left:20px!important;bottom:20px!important;width:340px!important;max-height:calc(100vh - 96px)!important;padding:14px!important;overflow:auto!important}
+.control-window{top:76px!important;right:20px!important;left:auto!important;bottom:20px!important;width:340px!important;max-height:calc(100vh - 96px)!important;padding:14px!important;overflow:auto!important}
 .tabs{display:flex!important;gap:5px!important;padding:4px!important;border:1px solid rgba(125,240,210,.16)!important;border-radius:10px!important;background:#090f27!important}
 .tab{flex:1!important;border:1px solid transparent!important;border-radius:7px!important;background:transparent!important;color:#9ba8d1!important;font:500 11px var(--mono)!important;letter-spacing:.12em!important;text-transform:uppercase!important;padding:10px 8px!important}
 .tab:hover{color:#fff!important;background:#1b254d!important}
