@@ -329,7 +329,7 @@ $("uploadData").onclick=async()=>{
  const token=tokenParts.join("");
  button.disabled=true;button.textContent="Wysyłanie…";
  try{
-  const fileContent=JSON.stringify(data,null,2)+"\\n";
+  const fileContent=JSON.stringify(data,null,2)+"\n";
   const bytes=new TextEncoder().encode(fileContent);
   let binary="";
   for(let i=0;i<bytes.length;i++)binary+=String.fromCharCode(bytes[i]);
