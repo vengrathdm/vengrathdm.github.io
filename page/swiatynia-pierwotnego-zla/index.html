@@ -56,7 +56,7 @@ h2{font-size:clamp(2.6rem,7vw,4.8rem);margin:4px 0 12px;color:var(--ink);text-sh
 .hero h1 b{font-weight:400;display:block;background:linear-gradient(#f3d18a,var(--fire) 60%,var(--blood));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .kick{font-size:1.3rem}
 .plaque{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 0;padding:0}
-.plaque div{padding:8px 16px;background:linear-gradient(#1f2448,#12163a);border:1px solid #6f2930;border-radius:4px;box-shadow:inset 0 1px 0 #5560b0,0 4px 10px #0008}
+.plaque div{padding:8px 16px;background:linear-gradient(#1f2448,#260c10);border:1px solid #6f2930;border-radius:4px;box-shadow:inset 0 1px 0 #5560b0,0 4px 10px #0008}
 .plaque dt{font:.95rem var(--head);color:var(--gold);letter-spacing:.08em}.plaque dd{margin:0;font-size:.95rem}
 .intro{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 @media(max-width:800px){.intro{grid-template-columns:1fr}}
@@ -75,7 +75,7 @@ h2{font-size:clamp(2.6rem,7vw,4.8rem);margin:4px 0 12px;color:var(--ink);text-sh
 .tilt{width:100%;height:100%;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .2s;transform-style:preserve-3d}
 .flip{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.3,1.3,.5,1)}
 .pc.turned .flip{transform:rotateY(180deg)}
-.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;padding:12px;background:linear-gradient(145deg,#2b3266,#12163a);border:2px solid var(--c);box-shadow:0 18px 40px #000a,0 0 0 1px #000,inset 0 0 0 5px #0a0d26,inset 0 0 0 6px color-mix(in srgb,var(--c) 55%,#000);color:var(--ink);display:flex;flex-direction:column;gap:8px;text-align:center;overflow:hidden}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;padding:12px;background:linear-gradient(145deg,#2b3266,#260c10);border:2px solid var(--c);box-shadow:0 18px 40px #000a,0 0 0 1px #000,inset 0 0 0 5px #0a0d26,inset 0 0 0 6px color-mix(in srgb,var(--c) 55%,#000);color:var(--ink);display:flex;flex-direction:column;gap:8px;text-align:center;overflow:hidden}
 .face.back{transform:rotateY(180deg);text-align:left}
 .face::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:12px;background:radial-gradient(circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.28),transparent 45%);mix-blend-mode:soft-light}
 button.facebtn{all:unset;display:flex;flex-direction:column;gap:8px;height:100%;padding:0}
@@ -126,13 +126,13 @@ button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 }
 
 /* embeds */
-.frame{position:relative;padding:clamp(10px,1.4vw,36px);border-radius:10px;background:linear-gradient(135deg,#74302a,#1c2040 60%,#54201e);box-shadow:0 30px 60px #000c,inset 0 2px 0 #8f9bdc,inset 0 0 0 3px #090b20}
+.frame{position:relative;padding:clamp(10px,1.4vw,36px);border-radius:10px;background:linear-gradient(135deg,#74302a,#1c2040 60%,#54201e);box-shadow:0 30px 60px #000c,inset 0 2px 0 #8f9bdc,inset 0 0 0 3px #18090b}
 .frame::before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:10px;
- background:radial-gradient(circle at 10px 10px,#e8efff 0 4px,#5b668f 5px,transparent 6px) 0 0/100% 100% no-repeat,
- radial-gradient(circle at calc(100% - 10px) 10px,#e8efff 0 4px,#5b668f 5px,transparent 6px) 0 0/100% 100% no-repeat,
- radial-gradient(circle at 10px calc(100% - 10px),#e8efff 0 4px,#5b668f 5px,transparent 6px) 0 0/100% 100% no-repeat,
- radial-gradient(circle at calc(100% - 10px) calc(100% - 10px),#e8efff 0 4px,#5b668f 5px,transparent 6px) 0 0/100% 100% no-repeat}
-.frame.book{background:linear-gradient(135deg,#2a1250,#120728);box-shadow:0 30px 60px #000c,inset 0 2px 0 #7b4ad0}
+ background:radial-gradient(circle at 10px 10px,#f5e8d2 0 4px,#5b668f 5px,transparent 6px) 0 0/100% 100% no-repeat,
+ radial-gradient(circle at calc(100% - 10px) 10px,#f5e8d2 0 4px,#5b668f 5px,transparent 6px) 0 0/100% 100% no-repeat,
+ radial-gradient(circle at 10px calc(100% - 10px),#f5e8d2 0 4px,#5b668f 5px,transparent 6px) 0 0/100% 100% no-repeat,
+ radial-gradient(circle at calc(100% - 10px) calc(100% - 10px),#f5e8d2 0 4px,#5b668f 5px,transparent 6px) 0 0/100% 100% no-repeat}
+.frame.book{background:linear-gradient(135deg,#2a1250,#260c10);box-shadow:0 30px 60px #000c,inset 0 2px 0 #7b4ad0}
 .frame.book::after{content:"";position:absolute;inset:9px;border:2px dashed #b89cff77;border-radius:6px;pointer-events:none}
 #map .wrap,#notes .wrap{width:100%;max-width:3840px;padding-inline:clamp(12px,2vw,72px)}
 #map .frame,#notes .frame{width:100%}
@@ -147,11 +147,11 @@ button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .kick.r{display:block}
 
 /* quest board */
-.board{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:34px;padding:36px;border-radius:12px;background:radial-gradient(#0003 1px,transparent 1.5px) 0 0/9px 9px,linear-gradient(135deg,#353c7a,#232857);box-shadow:inset 0 0 0 10px #171b45,inset 0 0 60px #000a,0 20px 50px #000a}
+.board{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:34px;padding:36px;border-radius:12px;background:radial-gradient(#0003 1px,transparent 1.5px) 0 0/9px 9px,linear-gradient(135deg,#353c7a,#4a171b);box-shadow:inset 0 0 0 10px #171b45,inset 0 0 60px #000a,0 20px 50px #000a}
 .note{position:relative;padding:28px 22px 22px;background:linear-gradient(var(--paper),var(--paper2));color:#2b1011;transform:rotate(var(--r,-1.5deg));box-shadow:0 8px 16px #0008;transition:transform .3s,box-shadow .3s}
 .note:nth-child(2){--r:1.2deg}.note:nth-child(3){--r:-.6deg}.note:nth-child(4){--r:1.8deg}
 .note:hover{transform:rotate(0) scale(1.05) translateY(-6px);box-shadow:0 22px 30px #000a;z-index:2}
-.note::before{content:"";position:absolute;top:-9px;left:50%;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff9fc0,var(--blood));box-shadow:0 4px 5px #0007}
+.note::before{content:"";position:absolute;top:-9px;left:50%;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e0a45a,var(--blood));box-shadow:0 4px 5px #0007}
 .note h3{font-size:1.6rem;color:var(--blood);margin-bottom:6px}
 .note p,.note ul{margin:0;padding-left:0;list-style-position:inside}
 #overview .board{grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch;gap:26px}
