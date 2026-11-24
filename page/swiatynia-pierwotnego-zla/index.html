@@ -265,7 +265,7 @@ function renderParty(){
   var c=DATA.characters[i]||null,card=el('article','pc'+(c?'':' empty'));card.dataset.el=i;
   var tilt=el('div','tilt'),flip=el('div','flip');
   var sub=[c&&c.race,c&&c['class'],c&&c.level?'Lv '+c.level:''].filter(Boolean).join(' · ')||'Rasa · Klasa · Poziom';
-  var front=el('div','face front'),fb=el('button','facebtn');fb.dataset.i='';fb.setAttribute('aria-label','Odwróć kartę, aby poznać historię: '+(c&&c.name||'bohatera')+' — historia postaci');
+  var front=el('div','face front'),fb=el('button','facebtn');fb.dataset.i='';fb.setAttribute('aria-label','Odwróć kartę, aby poznać historię postaci: '+(c&&c.name||'bohatera'));
   var pt=el('div','portrait');if(c&&c.portrait){var im=el('img');im.src=c.portrait;im.alt='';pt.append(im)}else pt.append(el('span','',c&&c.name?c.name[0]:'?'));
   fb.append(pt,el('h3','',c&&c.name||'Bohater drużyny'),el('div','sub',sub),el('div','hint','Odwróć kartę ↻'));
   front.append(glyph(i),fb);
