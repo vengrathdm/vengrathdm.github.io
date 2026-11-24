@@ -176,3 +176,16 @@ input,select,textarea,.dialog input,.dialog select,.dialog textarea,.search-labe
 .context-menu button:hover,.context-menu-item:focus-within>button{background:#795036!important;color:#fff0d0!important}
 .dossier-name{color:#f0e5cc!important}
 .dossier-image{border:1px solid #b3955d!important}
+
+/* ARCANUM TYPOGRAPHY + GEARWORK */
+:root{--display:'Tektur',system-ui,sans-serif;--mono:'Teko',Arial,sans-serif}
+html,body,#workspace{font-family:'Teko',Arial,sans-serif!important;font-size:16px;font-weight:500;line-height:1.3}
+button,input,select,textarea,.brand,.tab,.panel-title,.control-group,.dossier-content,.legend{font-family:'Teko',Arial,sans-serif!important;font-weight:500}
+h1,h2,h3,h4,.panel-title h2,.dialog h2,.control-group h3,.brand strong,.dossier-name{font-family:'Tektur',system-ui,sans-serif!important;font-weight:900!important}
+button,.tab,.subtle-button,.primary-button,.danger-button,.file-trigger{font-weight:700!important;letter-spacing:.04em}
+.brand{position:absolute}
+.brand:after{content:'⚙';position:absolute;right:-36px;top:3px;color:#d0b477;font:900 29px/1 'Tektur',sans-serif;opacity:.82;text-shadow:0 2px 5px #000;pointer-events:none;animation:notes-gear 26s linear infinite}
+.canvas-tools:after{content:'⚙';position:absolute;right:calc(100% + 7px);bottom:-4px;color:#c9aa70;font:900 22px/1 'Tektur',sans-serif;opacity:.75;pointer-events:none;animation:notes-gear 20s linear infinite reverse}
+.canvas-tools{position:fixed}
+@keyframes notes-gear{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.brand:after,.canvas-tools:after{animation:none}}
