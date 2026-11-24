@@ -191,6 +191,44 @@ main>section.leave{position:absolute;top:0;left:0;right:0;display:block;z-index:
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 .vengrath-mark{position:fixed;z-index:60;top:20px;left:24px;display:flex;align-items:center;gap:9px;color:#b9b199;text-decoration:none;font:1rem var(--head);letter-spacing:.18em;text-shadow:0 2px 8px #000}.vengrath-mark img{width:30px;height:30px;object-fit:contain}.vengrath-mark span{color:var(--gold)}
 @media(max-width:520px){.vengrath-mark{top:9px;left:12px;font-size:.8rem}.vengrath-mark img{width:23px;height:23px}#dock{gap:0;padding:4px}#dock a{padding:5px 6px;font-size:.72rem}#dock svg{width:18px;height:18px}}
+
+/* ARCANUM INDUSTRIAL VICTORIAN ART DIRECTION */
+:root{--bg:#121714;--bg2:#1d2522;--stone:#29312d;--ink:#e9dfc9;--mute:#b6ad96;--gold:#c6a46a;--paper:#dfd0ae;--paper2:#bda77c;--fire:#b86a3e;--blood:#693c2d}
+body{background-color:#121714;background-image:radial-gradient(ellipse at 50% 0%,#33413a55,transparent 58%),linear-gradient(90deg,#0d1210 0,#1b211d 50%,#0d1210 100%)}
+body::after{opacity:.16;mix-blend-mode:soft-light}
+#dock{background:linear-gradient(180deg,#39423b,#1c2521 55%,#101613);border:2px solid #9a8050;border-radius:3px;box-shadow:0 12px 34px #000,inset 0 1px 0 #e2c58a,inset 0 -4px 0 #0a0e0c}
+#dock::before{content:"";position:absolute;inset:4px;pointer-events:none;border:1px solid #bba16b66;border-radius:2px}
+#dock a{font-family:var(--head);letter-spacing:.1em;text-transform:uppercase}
+#dock a.on{color:#e1bc79;background:linear-gradient(#70482e,#38291f);box-shadow:inset 0 0 0 1px #d1ad6e,inset 0 0 14px #000}
+.hero{background:radial-gradient(ellipse at 50% 80%,#37453e,#121714 68%)}
+.scene::after{background:linear-gradient(180deg,rgba(9,15,13,.12),rgba(9,15,13,.22) 42%,rgba(9,15,13,.94)),linear-gradient(90deg,rgba(9,15,13,.38),transparent 52%,rgba(9,15,13,.35))}
+.hero .wrap{max-width:1380px}
+.hero h1{font-family:var(--head);letter-spacing:.035em;background:linear-gradient(#f2e5c7 0%,#c6a46a 48%,#765238 100%);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 3px 0 #080b09) drop-shadow(0 0 34px #d29b4c44)}
+.hero h1 b{background:linear-gradient(#e6d6b2,#b97946 65%,#633b2a);-webkit-background-clip:text;background-clip:text}
+.kick{font-family:var(--head);font-style:normal;text-transform:uppercase;letter-spacing:.2em;color:#d0b47a;font-size:.83rem}
+.plaque div{background:linear-gradient(145deg,#39443d,#1c2521 65%,#141b18);border:1px solid #9b8051;border-radius:2px;box-shadow:inset 0 1px 0 #dfc58d,inset 0 -3px 0 #101512,0 6px 15px #0009;position:relative}
+.plaque div::after{content:"";position:absolute;inset:4px;border:1px solid #c7a96a33;pointer-events:none}
+.plaque dt{color:#d8b977;text-transform:uppercase;font-size:.75rem;letter-spacing:.15em}
+.chip{background:linear-gradient(#b77945,#70442c);border:1px solid #d3b274;border-radius:2px;color:#f0e3c8;box-shadow:0 5px 0 #101512,0 0 0 3px #26302a,0 10px 22px #000a,inset 0 1px 0 #f0d8a2}
+.chip:hover{box-shadow:0 8px 0 #101512,0 0 0 3px #26302a,0 16px 28px #000a,0 0 24px #c99b5744}
+.face{border-radius:3px!important;background:linear-gradient(145deg,#3a453e,#202a25 58%,#151c19)!important;box-shadow:0 18px 40px #000a,0 0 0 1px #090d0b,inset 0 0 0 4px #111815,inset 0 0 0 5px #b79a5b66!important}
+.face::before{content:"";position:absolute;inset:7px;border:1px solid #c2a56a55;pointer-events:none;z-index:1}
+.portrait{border-radius:2px!important;background:radial-gradient(circle at 50% 35%,#526052,#1b241f 70%)!important;border:1px solid #9c8051}
+.turn{border-radius:2px!important;font-family:var(--head);text-transform:uppercase;letter-spacing:.12em}
+.chron::before{border-color:#b98c55}
+.seal{border-radius:3px!important;background:linear-gradient(145deg,#dfc17d,#8b5d34 55%,#44301f)!important;color:#171b17!important;box-shadow:0 5px 12px #000,inset 0 0 0 3px #d8bd7d,inset 0 0 0 5px #6b4b2d!important}
+.sheet{border-radius:1px!important;background:linear-gradient(105deg,#e8dbbd,#d0bd91)!important;color:#35291d!important;box-shadow:0 8px 20px #0009,inset 0 0 0 1px #8b7046,inset 0 0 24px #8a6b3b33!important}
+.frame,.frame.book{border-radius:3px;background:linear-gradient(145deg,#a68b55,#354039 24%,#1b2520 70%,#a68b55);box-shadow:0 30px 60px #000c,inset 0 1px 0 #ead39b,inset 0 0 0 3px #111814}
+.frame::before{border-radius:3px;background:radial-gradient(circle at 12px 12px,#ead9a8 0 3px,#8d7044 4px,transparent 6px) 0 0/100% 100% no-repeat}
+.frame.book::after{border:1px solid #d3b579;border-radius:1px}
+#map .mount,#notes .mount{background:#171e1a;box-shadow:inset 0 0 0 1px #9a8051,inset 0 0 40px #000}
+.workspace-direct-link{background:linear-gradient(#26312b,#141b17);border-top:1px solid #a68b55;color:#dfc17d;font-family:var(--head);letter-spacing:.1em;text-transform:uppercase}
+.board{background:radial-gradient(circle,#9c8553 0 1px,transparent 1.5px) 0 0/16px 16px,linear-gradient(145deg,#36423a,#1b2520);box-shadow:inset 0 0 0 8px #121916,inset 0 0 0 10px #9a8051,inset 0 0 60px #000a,0 20px 50px #000a}
+.note{border-radius:1px;background:linear-gradient(110deg,#e7d9b8,#cdb98e);color:#34291d;box-shadow:0 8px 16px #0008,inset 0 0 0 1px #9c8051}
+.note::before{border-radius:50%;background:radial-gradient(circle at 35% 30%,#e7d39a,#9d7841 65%,#3a2c1c);box-shadow:0 2px 0 #4c3923,0 4px 7px #0009}
+#overview .status-stamp{border-color:#a65d3a;color:#a65d3a}
+@media(max-width:700px){#dock a{letter-spacing:.04em}}
+
 </style>
 <script src="/core/templates/Cursor/Cursor.js" defer></script>
 </head>
