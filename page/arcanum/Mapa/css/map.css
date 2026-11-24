@@ -242,15 +242,3 @@ input::placeholder,textarea::placeholder{color:#a99b7c!important}
 .leaflet-control-scale-line{background:#1d2a22dd!important;border-color:#d1b579!important;color:#eadfc8!important}
 .leaflet-control-attribution{background:#111713cc!important;color:#b9ad91!important}
 .leaflet-control-attribution a{color:#d6b879!important}
-
-/* ARCANUM TYPOGRAPHY + GEARWORK */
-:root{--map-display:'Tektur',system-ui,sans-serif;--map-body:'Teko',Arial,sans-serif}
-html,body{font-family:'Teko',Arial,sans-serif!important;font-weight:500;font-size:17px;line-height:1.25}
-button,input,select,textarea,.leaflet-container,.floating-panel,.panel{font-family:'Teko',Arial,sans-serif!important;font-weight:500}
-h1,h2,h3,h4,.home-brand,.panel-head strong,.editor-section h3{font-family:'Tektur',system-ui,sans-serif!important;font-weight:900!important}
-.tool-button,.panel-close,.editor-action-row button,.file-button{font-family:'Teko',Arial,sans-serif!important;font-weight:700!important;letter-spacing:.08em}
-#toolsWindow{position:absolute}
-#toolsWindow:after{content:'⚙';position:absolute;right:9px;bottom:5px;color:#d0b477;font:900 25px/1 'Tektur',sans-serif;opacity:.22;pointer-events:none;animation:map-gear 36s linear infinite}
-#head:after{content:'⚙';position:absolute;left:calc(100% + 9px);top:0;color:#d0b477;font:900 28px/1 'Tektur',sans-serif;opacity:.8;text-shadow:0 2px 5px #000;pointer-events:none;animation:map-gear 24s linear infinite reverse}
-@keyframes map-gear{to{transform:rotate(360deg)}}
-@media(prefers-reduced-motion:reduce){#toolsWindow:after,#head:after{animation:none}}
