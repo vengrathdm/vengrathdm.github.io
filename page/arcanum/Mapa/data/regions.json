@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "metadata": {
-    "id": "swiatynia-pierwotnego-zla",
-    "name": "Dolina Hommlet",
-    "mapId": "homlett-valley",
+    "id": "arcanum-world",
+    "name": "Arcanum",
+    "mapId": "arcanum-world",
     "updatedAt": "2026-11-24"
   },
   "regions": {
