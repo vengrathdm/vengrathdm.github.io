@@ -21,11 +21,6 @@
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:20px/1.55 var(--body);overflow-x:hidden}
-/* grain + torchlight. No cursor property is set anywhere: the existing custom cursor stays visible. */
-body::after{content:"";position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.12;mix-blend-mode:overlay;
- background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
-#torch{position:fixed;inset:0;z-index:40;pointer-events:none;background:radial-gradient(circle 420px at var(--px,50%) var(--py,30%),transparent 0,rgba(0,0,0,.42) 100%)}
-@media (hover:none){#torch{display:none}}
 h1,h2,h3{font-family:var(--head);font-weight:400;margin:0;line-height:1}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .wrap{max-width:1200px;margin:0 auto;padding:0 22px}
@@ -192,10 +187,8 @@ main>section.leave{position:absolute;top:0;left:0;right:0;display:block;z-index:
 .vengrath-mark{position:fixed;z-index:60;top:20px;left:24px;display:flex;align-items:center;gap:9px;color:#aeb9ee;text-decoration:none;font:1rem var(--head);letter-spacing:.18em;text-shadow:0 2px 8px #000}.vengrath-mark img{width:30px;height:30px;object-fit:contain}.vengrath-mark span{color:var(--gold)}
 @media(max-width:520px){.vengrath-mark{top:9px;left:12px;font-size:.8rem}.vengrath-mark img{width:23px;height:23px}#dock{gap:0;padding:4px}#dock a{padding:5px 6px;font-size:.72rem}#dock svg{width:18px;height:18px}}
 </style>
-<script src="/core/templates/Cursor/Cursor.js" defer></script>
 </head>
 <body>
-<div id="torch"></div>
 <a class="vengrath-mark" href="/home/" aria-label="Powrót do Vengrath"><img src="/core/graphics/favicon/mg-logo.png" alt=""> VENGRATH <span>✦</span></a>
 <nav id="dock" aria-label="Nawigacja kampanii">
  <a href="#intro" data-i><svg viewBox="0 0 24 24"><path d="M3 21V10l9-7 9 7v11M9 21v-7h6v7"/></svg>Kampania</a>
@@ -213,13 +206,13 @@ main>section.leave{position:absolute;top:0;left:0;right:0;display:block;z-index:
   <img src="https://gaming-cdn.com/images/products/20498/orig/the-temple-of-elemental-evil-pc-steam-cover.jpg?v=1787214285" alt="">
  </div>
  <div class="wrap">
-  <div class="kick">Archiwum kampanii Dungeons &amp; Dragons</div>
+  
   <h1>Świątynia <b>Pierwotnego Zła</b></h1>
   <dl class="plaque" id="facts"></dl>
  </div>
 </div>
 <div class="alt introblk"><div class="tear"></div><div class="wrap">
- <div class="kick">Zapis wydarzeń</div><h2>Przed Bramą</h2>
+ <h2>Przed Bramą</h2>
  <div class="intro">
   <div id="introText">
    <p>Niegdyś bastion złowrogiej potęgi, Świątynia Pierwotnego Zła została obalona, lecz jej cień nigdy nie opuścił pogranicza. Na traktach grasują bandyci, w gospodach krążą szepty, a dawne kulty budzą się w zapomnianych miejscach.</p>
@@ -230,29 +223,29 @@ main>section.leave{position:absolute;top:0;left:0;right:0;display:block;z-index:
 </div></div></section>
 
 <section id="characters"><div class="tear"></div><div class="wrap">
- <div class="kick">Czworo, którzy się odważyli</div><h2>Drużyna</h2>
+ <h2>Drużyna</h2>
  <p class="lede">Odwróć kartę, aby poznać pełną historię każdego z czworga bohaterów.</p>
  <div class="party" id="party"></div>
 </div></section>
 
 <section id="chronicle" class="alt"><div class="tear"></div><div class="wrap">
- <div class="kick">Zapieczętowane i poświadczone</div><h2>Kronika</h2>
+ <h2>Kronika</h2>
  <p class="lede">Przełam pieczęć, aby rozwinąć pełny zapis wydarzeń.</p>
  <ol class="chron" id="chron"></ol>
 </div></section>
 
 <section id="map"><div class="tear"></div><div class="wrap">
- <div class="kick">Na stole narad</div><h2>Mapa kampanii</h2>
+ <h2>Mapa kampanii</h2>
  <div class="frame"><div class="mount" id="map-mount" data-embed="map" aria-label="Interaktywna mapa kampanii"><iframe src="/page/swiatynia-pierwotnego-zla/Mapa/" title="Interaktywna mapa kampanii — Atlas Doliny Hommlet" loading="lazy" allow="fullscreen"></iframe></div><a class="workspace-direct-link" href="/page/swiatynia-pierwotnego-zla/Mapa/" target="_blank" rel="noopener">Otwórz mapę w osobnej karcie ↗</a></div>
 </div></section>
 
 <section id="notes" class="alt"><div class="tear"></div><div class="wrap">
- <div class="kick">Oprawione w skórę</div><h2>Notatki i powiązania</h2>
+ <h2>Notatki i powiązania</h2>
  <div class="frame book"><div class="mount notes" id="notes-mount" data-embed="notes" aria-label="Interaktywna mapa myśli kampanii"><iframe src="/page/swiatynia-pierwotnego-zla/Notatki/" title="Interaktywna mapa myśli — Archiwum powiązań" loading="lazy" allow="fullscreen"></iframe></div><a class="workspace-direct-link" href="/page/swiatynia-pierwotnego-zla/Notatki/" target="_blank" rel="noopener">Otwórz mapę myśli w osobnej karcie ↗</a></div>
 </div></section>
 
 <section id="overview"><div class="tear"></div><div class="wrap">
- <div class="kick">Przypięte do tablicy</div><h2>Stan kampanii</h2>
+ <h2>Stan kampanii</h2>
  <div class="board" id="ov"></div>
 </div></section>
 </main>
@@ -370,9 +363,6 @@ fetch('/core/data/characters.json').then(function(r){if(!r.ok)throw new Error('C
   window.CampaignHub.setCharacters(players);
  }).catch(function(err){console.warn('Nie udało się wczytać postaci drużyny:',err)});
 
-/* torchlight + hero parallax */
-var T=$('#torch');
-addEventListener('pointermove',function(e){T.style.setProperty('--px',e.clientX+'px');T.style.setProperty('--py',e.clientY+'px')});
 
 /* embers */
 (function(){var c=$('#embers'),x=c.getContext('2d'),P=[],W,H;
