@@ -2,32 +2,31 @@
 <html lang="pl">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090b1c">
   <title>Archiwum powiązań — Świątynia Pierwotnego Zła</title>
-  <meta name="description" content="Interaktywna mapa myśli, postaci, frakcji, miejsc i relacji kampanii Świątynia Pierwotnego Zła.">
+  <meta name="description" content="Archiwum relacji kampanii Świątynia Pierwotnego Zła.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/cytoscape@3.30.4/dist/cytoscape.min.js"></script>
   <script defer src="app.js"></script>
-  <link rel="stylesheet" href="/core/templates/Cursor/Cursor.css">
-  <script src="/core/templates/Cursor/Cursor.js" defer></script>
+    <link rel="stylesheet" href="/core/templates/Cursor/Cursor.css">
 </head>
-<body class="ksiazeta-heartwell-page">
-  <main id="workspace" aria-label="Sieć powiązań Świątyni Pierwotnego Zła">
+<body class="swiatynia-pierwotnego-zla-page">
+  <main id="workspace" aria-label="Mapa relacji Świątyni Pierwotnego Zła">
     <div id="graph" aria-label="Graf relacji"></div>
     <header class="brand panel">
       <a href="/page/swiatynia-pierwotnego-zla/" aria-label="Powrót do kampanii Świątynia Pierwotnego Zła"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
+      <span class="brand-divider">/</span><strong>ŚWIĄTYNIA PIERWOTNEGO ZŁA · ARCHIWUM POWIĄZAŃ</strong>
     </header>
     <div class="canvas-tools panel" aria-label="Sterowanie planszą">
       <button id="zoomIn" title="Przybliż" aria-label="Przybliż">＋</button>
       <button id="zoomOut" title="Oddal" aria-label="Oddal">−</button>
     </div>
     <section id="controlWindow" class="control-window panel" aria-label="Sterowanie grafem">
-      <div class="workspace-status"><span id="graphCount" class="graph-count"></span><span id="persistenceState" class="persistence-state">Ładowanie archiwum…</span></div>
-      <nav class="tabs" role="tablist" aria-label="Panele archiwum powiązań">
+      <nav class="tabs" role="tablist" aria-label="Panele mapy relacji">
         <button class="tab active" data-tab="view" role="tab" aria-selected="true">Widok</button>
         <button class="tab" data-tab="editor" role="tab" aria-selected="false">Edytor</button>
       </nav>
@@ -69,7 +68,7 @@
           <div class="button-stack">
             <button id="reloadOfficial" class="subtle-button">Wczytaj dane oficjalne</button>
             <button id="exportData" class="subtle-button">Eksportuj dane</button>
-            <button id="uploadData" class="subtle-button">Zapisz kopię lokalną</button>
+            <button id="uploadData" class="subtle-button">Wrzuć dane na serwer</button>
             <label class="subtle-button file-trigger" for="importData">Importuj dane</label>
             <input id="importData" type="file" accept="application/json,.json" hidden>
           </div>
