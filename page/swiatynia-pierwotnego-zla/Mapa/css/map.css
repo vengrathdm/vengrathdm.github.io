@@ -198,19 +198,3 @@
     #read{bottom:14px;left:9px;font-size:11px;min-width:0}
     .leaflet-bottom.leaflet-right{bottom:8px;right:8px}
   }
-
-/* Świątynia Pierwotnego Zła — kamień, pergamin i żar żywiołów */
-body{background:#171813;color:#e8dfc8;font-family:'IM Fell English',Georgia,serif}
-#map{background:#171813}
-.home-brand{font-family:'Cinzel',serif!important;letter-spacing:.18em!important;color:#e8dfc8!important}
-.home-brand:hover{color:#d6b66d!important}
-#toolbar{background:rgba(23,24,19,.88)!important;border-color:rgba(200,164,93,.48)!important}
-.tool-button{background:#28291f!important;color:#e8dfc8!important;border-color:#8b7548!important;font-family:'IBM Plex Mono',monospace!important}
-.tool-button:hover,.tool-button[aria-expanded=true]{background:#8c4c32!important;color:#fff0d0!important;border-color:#d1a85e!important}
-#read,.floating-panel{background:rgba(25,27,21,.94)!important;color:#e8dfc8!important;border-color:rgba(200,164,93,.52)!important;font-family:'IBM Plex Mono',monospace!important}
-.panel-head strong{font-family:'Cinzel',serif!important;color:#d6b66d!important}
-.panel-close,.editor-action-row button,.editor-data-actions button,.editor-data-actions .file-button,.region-dialog button,.pin-dialog-actions button{background:#292b21!important;color:#e8dfc8!important;border-color:#88734b!important}
-.panel-close:hover,.editor-action-row button:hover,.editor-data-actions button:hover,.region-dialog button:hover,.pin-dialog-actions button:hover{background:#75412e!important;color:#fff0d0!important}
-.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#20231c;color:#e8dfc8;border:1px solid #c8a45d}
-.leaflet-popup-content a{color:#d8b56c}
-.leaflet-control-zoom a{background:#20231c!important;color:#e8dfc8!important;border-color:#776744!important}

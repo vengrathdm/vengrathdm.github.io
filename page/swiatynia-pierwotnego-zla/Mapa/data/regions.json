@@ -9,7 +9,7 @@
   "regions": {
     "political": [
       {
-        "id": "hommlet-village",
+        "id": "hommlet",
         "name": "Hommlet i okolice",
         "color": "#9a9b65",
         "description": "Osada i jej najbliższe trakty.",
@@ -27,10 +27,10 @@
         ]
       },
       {
-        "id": "temple-grounds",
+        "id": "temple",
         "name": "Ziemie skażone",
         "color": "#a84f35",
-        "description": "Obszar wokół ruin dawnej świątyni.",
+        "description": "Obszar wokół ruin świątyni.",
         "fillStyle": "hatch",
         "hexes": [
           "A1:5550",
@@ -48,7 +48,7 @@
     "geographical": [
       {
         "id": "moors",
-        "name": "Mokradła i trzęsawiska",
+        "name": "Mokradła",
         "color": "#647a61",
         "description": "Podmokłe tereny wokół Moathouse.",
         "fillStyle": "tint",
@@ -69,7 +69,7 @@
       "name": "Hommlet",
       "style": "settlement",
       "color": "#b5c080",
-      "description": "Wioska, w której rozpoczęło się śledztwo. Gospoda, świątynia św. Cuthberta i siedziba sołtysa.",
+      "description": "Wioska, w której rozpoczęło się śledztwo.",
       "hex": "A1:3031"
     },
     {
