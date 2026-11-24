@@ -70,7 +70,7 @@ function applyEntityTypes(metadata){
 }
 function normalize(source){
  if(!source||typeof source!=="object"||source.schemaVersion!==1||!Array.isArray(source.entities)||!Array.isArray(source.relationships))throw Error("Oczekiwano schemaVersion 1 oraz tablic obiektów i relacji.");
- const metadata=source.metadata&&typeof source.metadata==="object"?source.metadata:{id:"heartwell-relationships",name:"Heartwell Relationship Map"};
+ const metadata=source.metadata&&typeof source.metadata==="object"?source.metadata:{id:"swiatynia-relations",name:"Świątynia Pierwotnego Zła — sieć powiązań"};
  applyEntityTypes(metadata);
  metadata.relationshipTypes=(Array.isArray(metadata.relationshipTypes)?metadata.relationshipTypes:[]).filter(t=>t&&typeof t.name==="string"&&t.name.trim()).map(t=>({name:t.name.trim().slice(0,80),description:typeof t.description==="string"?t.description:"",color:/^#[0-9a-f]{6}$/i.test(t.color||"")?t.color:"#d4a03c",lineStyle:["solid","dotted","dashed"].includes(t.lineStyle)?t.lineStyle:"solid",direction:["none","towards","from","mutual"].includes(t.direction)?t.direction:"none"}));
  const validViews=new Set(["complete","family","organization","political","characters"]);
