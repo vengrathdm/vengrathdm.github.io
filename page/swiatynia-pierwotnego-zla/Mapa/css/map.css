@@ -298,3 +298,24 @@ html,body{background:var(--campaign-bg)!important;color:var(--campaign-ink)!impo
  .floating-panel{top:112px!important;right:10px!important;width:min(310px,calc(100vw - 20px))!important;max-height:calc(100vh - 165px)!important}
  #presenter{top:112px!important;left:10px!important;max-height:calc(100vh - 165px)!important}
 }
+
+
+/* Unified map tools window and compact controls */
+#toolbar{align-items:center!important;gap:7px!important;padding:5px!important}
+#toolsPanel{width:330px!important;max-width:calc(100vw - 28px)!important;padding:12px!important}
+.tool-tabs{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin:0 0 10px;padding:4px;border:1px solid #3c4486;border-radius:9px;background:#0b102a}
+.tool-tab{min-height:36px;border:1px solid transparent;border-radius:7px;background:transparent;color:#aeb9ee;font:12px var(--campaign-mono);cursor:pointer}
+.tool-tab:hover,.tool-tab.active{border-color:var(--campaign-accent);background:linear-gradient(135deg,#303d78,#51427f);color:#fff}
+.tool-section{display:block;max-height:calc(100vh - 190px);overflow:auto}
+.tool-section[hidden]{display:none!important}
+#toolsPanel .panel-head{margin-bottom:10px}
+#toolsPanel .panel-head strong{font-size:1.45rem!important}
+#head{padding:5px 9px!important;border:1px solid #5968a877!important;border-radius:10px!important;background:linear-gradient(135deg,#171d43df,#0b102add)!important;box-shadow:0 8px 24px #0007!important}
+.home-brand{display:flex!important;align-items:center!important;gap:10px!important;padding:2px 4px!important;font:1.2rem var(--campaign-head)!important;letter-spacing:.12em!important;line-height:1!important}
+.home-brand img{display:block!important;flex:0 0 auto;width:34px!important;height:34px!important;margin:0!important}
+.home-brand span{display:block!important;line-height:1!important}
+@media(max-width:600px){
+ #toolbar{top:58px!important;left:10px!important;right:10px!important;max-width:none!important;justify-content:flex-start!important}
+ #toolsPanel{top:112px!important;right:10px!important;width:min(330px,calc(100vw - 20px))!important;max-height:calc(100vh - 165px)!important}
+ .tool-section{max-height:calc(100vh - 235px)}
+}
