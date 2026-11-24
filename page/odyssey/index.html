@@ -75,19 +75,18 @@ h2{font-size:clamp(2.6rem,7vw,4.8rem);margin:4px 0 12px;color:var(--ink);text-sh
 .party{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
 @media(max-width:1040px){.party{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.party{grid-template-columns:1fr;max-width:340px;margin:0 auto}}
-.pc{--c:var(--earth);perspective:900px;aspect-ratio:3/4.6}
+.pc{--c:var(--earth);perspective:900px;aspect-ratio:1/1.12}
 .pc[data-el="1"]{--c:var(--water)}.pc[data-el="2"]{--c:var(--air)}.pc[data-el="3"]{--c:var(--fire)}
 .tilt{width:100%;height:100%;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .2s;transform-style:preserve-3d}
 .flip{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.3,1.3,.5,1)}
 .pc.turned .flip{transform:rotateY(180deg)}
-.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;padding:12px;background:linear-gradient(145deg,#12394b,#0b2b3d);border:2px solid var(--c);box-shadow:0 18px 40px #000a,0 0 0 1px #000,inset 0 0 0 5px #071c2b,inset 0 0 0 6px color-mix(in srgb,var(--c) 55%,#000);color:var(--ink);display:flex;flex-direction:column;gap:8px;text-align:center;overflow:hidden}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:2px;padding:12px;background:linear-gradient(145deg,#12394b,#0b2b3d);border:2px solid var(--c);box-shadow:0 18px 40px #000a,0 0 0 1px #000,inset 0 0 0 5px #071c2b,inset 0 0 0 6px color-mix(in srgb,var(--c) 55%,#000);color:var(--ink);display:flex;flex-direction:column;gap:8px;text-align:center;overflow:hidden}
 .face.back{transform:rotateY(180deg);text-align:left}
-.face::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:12px;background:radial-gradient(circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.28),transparent 45%);mix-blend-mode:soft-light}
+.face::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:0;background:radial-gradient(circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.28),transparent 45%);mix-blend-mode:soft-light}
 button.facebtn{all:unset;display:flex;flex-direction:column;gap:8px;height:100%;padding:0}
 button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .pc:hover .face{box-shadow:0 22px 50px #000,0 0 36px color-mix(in srgb,var(--c) 55%,transparent),inset 0 0 0 5px #071c2b,inset 0 0 0 6px var(--c)}
-.glyph{position:absolute;top:18px;left:18px;width:30px;height:30px;stroke:var(--c);fill:none;stroke-width:2.2;z-index:2;filter:drop-shadow(0 0 6px var(--c))}
-.portrait{flex:1;min-height:0;margin:6px;border-radius:8px;background:radial-gradient(circle at 50% 35%,color-mix(in srgb,var(--c) 40%,#000),#071c2b);display:grid;place-items:center;overflow:hidden;box-shadow:inset 0 0 24px #000}
+.portrait{flex:1;min-height:0;margin:9px 6px;border-radius:0;background:radial-gradient(circle at 50% 35%,color-mix(in srgb,var(--c) 40%,#000),#071c2b);display:grid;place-items:center;overflow:hidden;box-shadow:inset 0 0 24px #000}
 .portrait img{width:100%;height:100%;object-fit:cover}
 .portrait span{font:7rem var(--head);color:color-mix(in srgb,var(--c) 60%,transparent)}
 .face h3{font-size:1.7rem;overflow-wrap:anywhere}
@@ -221,6 +220,27 @@ h2{color:#f4eddb;text-shadow:0 2px 0 #06141d,0 0 28px #4c9bb044}
 .recording-link:hover{background:#173e50;color:#f4eddb}
 @media(max-width:900px){.party{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.party{grid-template-columns:1fr}}
+
+
+/* Hellenic hero cards: squared marble plaques, ivory meander and bronze rules */
+.pc{aspect-ratio:1/1.12}
+.face{border-radius:2px!important;border:2px solid #f4eddb!important;outline:1px solid #b87942;outline-offset:-5px;background:linear-gradient(145deg,#174457,#0b2b3d 58%,#071c2b)!important;box-shadow:0 18px 40px #000a,0 0 0 1px #b87942,inset 0 0 0 5px #071c2b,inset 0 0 0 6px #e4c078!important}
+.face::before{content:'';position:absolute;z-index:1;inset:7px;pointer-events:none;border:1px solid rgba(244,237,219,.55);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='12' viewBox='0 0 48 12'%3E%3Cpath d='M0 1h10v10H2V4h5v4H4 M14 1h10v10h-8V4h5v4h-3 M28 1h10v10h-8V4h5v4h-3 M42 1h6' fill='none' stroke='%23f4eddb' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:repeat-x;background-position:top left,bottom left;background-size:48px 12px;box-shadow:inset 0 0 0 1px rgba(228,192,120,.5)}
+.face>*{position:relative;z-index:2}
+.face::after{border-radius:0}
+.portrait{border:1px solid #e4c078!important;outline:1px solid rgba(244,237,219,.65);outline-offset:3px}
+.pc:hover .face{box-shadow:0 22px 50px #000,0 0 26px rgba(228,192,120,.25),inset 0 0 0 5px #071c2b,inset 0 0 0 6px #e4c078!important}
+.sub{color:#e4c078}
+.turn{border-radius:2px;border-color:#f4eddb;color:#f4eddb}
+.turn:hover{background:#f4eddb;color:#071c2b}
+/* The bottom dock is a Hellenic bronze-and-marble navigation plaque */
+#dock{position:fixed;border-radius:2px;padding:9px 12px;background:linear-gradient(180deg,#174457,#071c2b);border:2px solid #e4c078;outline:1px solid #b87942;outline-offset:3px;box-shadow:0 12px 32px #000c,inset 0 1px 0 #fff8}
+#dock::before{content:'';position:absolute;inset:3px;pointer-events:none;border:1px solid rgba(244,237,219,.5);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='12' viewBox='0 0 48 12'%3E%3Cpath d='M0 1h10v10H2V4h5v4H4 M14 1h10v10h-8V4h5v4h-3 M28 1h10v10h-8V4h5v4h-3 M42 1h6' fill='none' stroke='%23f4eddb' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:repeat-x;background-position:top left,bottom left;background-size:48px 12px;opacity:.8}
+#dock a{position:relative;z-index:1;border-radius:2px;padding:11px 12px;color:#d8ded8;letter-spacing:.08em}
+#dock a:hover{transform:translateY(-4px);color:#071c2b;background:#e4c078}
+#dock a.on{color:#071c2b;background:#f4eddb;box-shadow:inset 0 0 0 1px #b87942}
+#dock svg{stroke:currentColor;stroke-width:1.8}
+@media(max-width:520px){#dock{padding:7px 8px}#dock a{padding:8px 7px;font-size:.72rem}#dock svg{width:19px;height:19px}}
 
 /* Aegean visual language: marble, bronze and restrained Greek-key ornament */
 :root{--bg:#071c2b;--bg2:#0b2b3d;--stone:#12394b;--ink:#f4eddb;--mute:#a9bec2;--gold:#e4c078;--paper:#f4eddb;--paper2:#b8a783;--pink:#12394b;--earth:#b87942;--water:#4f8290;--air:#e4c078;--fire:#6b9aa2;--blood:#174457;--head:'Caesar Dressing',Georgia,serif;--body:'Brygada 1918',Georgia,serif}
@@ -381,9 +401,6 @@ var DATA={
 };
 var $=function(s){return document.querySelector(s)};
 function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.textContent=h;return e}
-var GL=['M4 20L12 4l8 16zM7 14h10','M4 6h16L12 20z','M12 4L4 19h16zM4 14h16','M12 20L4 5h16zM6 12h12'];
-var NS='http://www.w3.org/2000/svg';
-function glyph(i){var s=document.createElementNS(NS,'svg');s.setAttribute('viewBox','0 0 24 24');s.setAttribute('class','glyph');var p=document.createElementNS(NS,'path');p.setAttribute('d',[ 'M12 3L3 20h18zM7 14h10','M12 21L3 4h18z','M12 3L3 20h18zM4 12h16','M12 21L3 4h18zM7 11h10'][i]);s.append(p);return s}
 
 function renderFacts(){var f=$('#facts');f.innerHTML='';DATA.facts.forEach(function(p){var d=el('div');d.append(el('dt','',p[0]),el('dd','',p[1]));f.append(d)})}
 
@@ -396,14 +413,14 @@ function renderParty(){
   var front=el('div','face front'),fb=el('button','facebtn');fb.dataset.i='';fb.setAttribute('aria-label','Odwróć kartę, aby poznać historię postaci: '+(c&&c.name||'bohatera'));
   var pt=el('div','portrait');if(c&&c.portrait){var im=el('img');im.src=c.portrait;im.alt='';pt.append(im)}else pt.append(el('span','',c&&c.name?c.name[0]:'?'));
   fb.append(pt,el('h3','',c&&c.name||'Bohater drużyny'),el('div','sub',sub),el('div','hint','Odwróć kartę ↻'));
-  front.append(glyph(i),fb);
+  front.append(fb);
   var back=el('div','face back');back.setAttribute('aria-hidden','true');
   var sc=el('div','scroll');
   if(c&&c.stats){var u=el('ul','stats');['STR','DEX','CON','INT','WIS','CHA'].forEach(function(k){var li=el('li');li.append(el('b','',k),document.createTextNode(c.stats[k]!=null?c.stats[k]:'–'));u.append(li)});sc.append(u)}
   sc.append(el('p','',c&&c.bio||'Historia tej postaci pojawi się tutaj po wczytaniu danych bohatera.'));
   if(c&&c.player)sc.append(el('p','sub','Gracz: '+c.player)); if(c&&c.status)sc.append(el('p','sub','Status: '+c.status));
   var tb=el('button','turn','Wróć na awers');tb.dataset.i='';tb.tabIndex=-1;
-  back.append(glyph(i),el('h3','',c&&c.name||'Character name'),sc,tb);
+  back.append(el('h3','',c&&c.name||'Character name'),sc,tb);
   function t(){var o=card.classList.toggle('turned');back.setAttribute('aria-hidden',!o);front.setAttribute('aria-hidden',o);tb.tabIndex=o?0:-1;fb.tabIndex=o?-1:0}
   fb.onclick=t;tb.onclick=t;
   flip.append(front,back);tilt.append(flip);card.append(tilt);
@@ -453,7 +470,7 @@ function renderAll(){renderFacts();renderParty();renderChron();renderOverview()}
 renderAll();
 fetch('./chronicle.json').then(function(r){if(!r.ok)throw new Error('Chronicle unavailable');return r.json()}).then(function(d){DATA.chronicle=d.sessions||[];renderChron()}).catch(function(e){console.warn('Nie udało się wczytać kroniki Odyssey:',e)});
 window.CampaignHub={
- setCharacters:function(a){DATA.characters=(a||[]).slice(0,4);renderParty()},
+ setCharacters:function(a){DATA.characters=(a||[]).slice(0,6);renderParty()},
  setChronicle:function(a){DATA.chronicle=a||[];renderChron()},
  setFacts:function(a){DATA.facts=a;renderFacts()},
  setOverview:function(a){DATA.overview=a;renderOverview()},
@@ -465,7 +482,7 @@ fetch('/core/data/characters.json').then(function(r){if(!r.ok)throw new Error('C
  .then(function(records){
   var ids=['char-0079','char-0080','char-0081','char-0082','char-0083','char-0084'];
   var players=ids.map(function(id){return records.find(function(c){return c.id===id})}).filter(Boolean).map(function(c){
-   return {name:c.character,player:c.player,race:c.race,'class':(c.classes||[]).join(' / '),bio:c.history,portrait:c.portrait};
+   return {name:c.character,player:c.player,race:c.race,'class':(c.classes||[]).join(' / '),bio:c.history,portrait:c.portrait,status:c.status};
   });
   window.CampaignHub.setCharacters(players);
  }).catch(function(err){console.warn('Nie udało się wczytać postaci drużyny:',err)});
