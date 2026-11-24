@@ -2,28 +2,63 @@
   "schemaVersion": 1,
   "metadata": {
     "id": "odyssey-relations",
-    "name": "Odyssey of the Dragonlords — archiwum powiązań",
-    "updatedAt": "2026-11-24",
+    "name": "Odyssey of the Dragonlords — pełna mapa relacji",
+    "updatedAt": "2026-11-25",
     "layoutModes": {
       "complete": "force"
     },
     "relationshipTypes": [
       {
-        "name": "MEMBER_OF",
-        "description": "Należy do drużyny",
-        "color": "#83a98a",
+        "name": "FAMILY",
+        "description": "Pokrewieństwo i związki",
+        "color": "#b98a4d",
+        "lineStyle": "solid",
+        "direction": "mutual"
+      },
+      {
+        "name": "DIVINE",
+        "description": "Relacje boskie, patronat i kult",
+        "color": "#8a6caa",
         "lineStyle": "solid",
         "direction": "towards"
       },
       {
-        "name": "CHRONICLED_AT",
-        "description": "Miejsce wymienione w kronice",
-        "color": "#d4a03c",
+        "name": "POLITICAL",
+        "description": "Władza, sojusze i rywalizacja",
+        "color": "#397082",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "ORGANIZATION",
+        "description": "Przynależność i działalność organizacji",
+        "color": "#6e987b",
+        "lineStyle": "dashed",
+        "direction": "towards"
+      },
+      {
+        "name": "GEOGRAPHY",
+        "description": "Położenie i powiązania geograficzne",
+        "color": "#6b91b2",
         "lineStyle": "dotted",
+        "direction": "towards"
+      },
+      {
+        "name": "HISTORY",
+        "description": "Wydarzenia historyczne i udział",
+        "color": "#a77a56",
+        "lineStyle": "dashed",
+        "direction": "towards"
+      },
+      {
+        "name": "PERSONAL",
+        "description": "Relacje osobiste, służba i konflikty",
+        "color": "#b66b68",
+        "lineStyle": "solid",
         "direction": "towards"
       }
     ],
-    "notes": "Bohaterowie pochodzą z rejestru kampanii. Miejsca i postacie dodatkowe są wymienione w tytułach sesji; szczegóły fabularne można uzupełniać w edytorze.",
+    "notes": "Mapa oparta na Campaign Book (Appendix D: Dramatis Personae oraz rozdziały 1–12) i osobno oznaczonych wpisach Kroniki kampanii. Relacje źródłowe są opisane w notatkach krawędzi. Wpisy z Kroniki niepotwierdzone w podręczniku są oznaczone jako wymagające potwierdzenia przy stole.",
     "savedViews": []
   },
   "entities": [
@@ -190,196 +225,1247 @@
       }
     },
     {
-      "id": "ody-loc-mytros",
-      "type": "Location",
+      "id": "ody-titan-thylea",
+      "type": "Person",
+      "name": "Thylea",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Elder goddess and Mother of All; created the land as a refuge for nature and fey. Takes the form of a colossal world-tree at the heart of the sacred forest.",
+      "fields": {
+        "Affiliation": "Elder Titans"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-titan-kentimane",
+      "type": "Person",
+      "name": "Kentimane",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Husband and guardian of Thylea; personification of destructive natural forces. His sleeping body manifests as colossal stone arms across the land.",
+      "fields": {
+        "Affiliation": "Elder Titans"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-titan-sydon",
+      "type": "Person",
+      "name": "Sydon",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Twin Titan; Lord of Storms and Oceans. Seeks dominion over Thylea and demands worship and sacrifice.",
+      "fields": {
+        "Affiliation": "Titans"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-titan-lutheria",
+      "type": "Person",
+      "name": "Lutheria",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Twin Titan; Lady of Dreams and Death. Sister-wife of Sydon; seeks souls and the transformation of mortals into beasts.",
+      "fields": {
+        "Affiliation": "Titans"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-god-mytros",
+      "type": "Person",
       "name": "Mytros",
       "imageUrl": "",
-      "color": "#397082",
-      "borderColor": "#d9b66f",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
       "lineStyle": "solid",
-      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "notes": "Goddess of Dawn, Silver Queen; ancient silver dragon Balmytria. Ascended after sacrificing herself to protect Mytros and forge the Oath of Peace.",
       "fields": {
-        "Source": "Tytuły sesji"
+        "Affiliation": "Five Gods"
       },
       "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 134,
-          "y": 737
-        }
-      },
-      "position": {
-        "x": 150,
-        "y": 850
-      }
+      "positions": {},
+      "position": null
     },
     {
-      "id": "ody-loc-yonder",
-      "type": "Location",
-      "name": "Wyspa Yonder",
+      "id": "ody-god-volkan",
+      "type": "Person",
+      "name": "Volkan",
       "imageUrl": "",
-      "color": "#397082",
-      "borderColor": "#d9b66f",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
       "lineStyle": "solid",
-      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "notes": "God of Forges; ancient bronze dragon and husband of Balmytria. Father of Kyrah, Pythor, Vallus and Narsus.",
       "fields": {
-        "Source": "Tytuły sesji"
+        "Affiliation": "Five Gods"
       },
       "customFields": [],
-      "positions": {
-        "complete": {
-          "x": -208,
-          "y": -289
-        }
-      },
-      "position": {
-        "x": 810,
-        "y": 850
-      }
+      "positions": {},
+      "position": null
     },
     {
-      "id": "ody-loc-fire-island",
-      "type": "Location",
-      "name": "Wyspa Ognia",
+      "id": "ody-god-pythor",
+      "type": "Person",
+      "name": "Pythor",
       "imageUrl": "",
-      "color": "#397082",
-      "borderColor": "#d9b66f",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
       "lineStyle": "solid",
-      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "notes": "God of Battle; king of Estoria. Ancient bronze dragon; father of Hexia and other demigod offspring.",
       "fields": {
-        "Source": "Tytuły sesji"
+        "Affiliation": "Five Gods"
       },
       "customFields": [],
-      "positions": {
-        "complete": {
-          "x": -208,
-          "y": 737
-        }
-      },
-      "position": {
-        "x": 1140,
-        "y": 850
-      }
+      "positions": {},
+      "position": null
     },
     {
-      "id": "ody-loc-indigo-cliffs",
-      "type": "Location",
-      "name": "Klify Indygo",
+      "id": "ody-god-kyrah",
+      "type": "Person",
+      "name": "Kyrah",
       "imageUrl": "",
-      "color": "#397082",
-      "borderColor": "#d9b66f",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
       "lineStyle": "solid",
-      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "notes": "Goddess of Music and Poetry; trickster and court poet of Mytros. Formerly a bronze dragon, oathsworn mount of Estor Arkelander.",
       "fields": {
-        "Source": "Tytuły sesji"
+        "Affiliation": "Five Gods"
       },
       "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 818,
-          "y": 395
-        }
-      },
-      "position": {
-        "x": 150,
-        "y": 1060
-      }
+      "positions": {},
+      "position": null
     },
     {
-      "id": "ody-loc-helios-garden",
-      "type": "Location",
-      "name": "Ogród Heliosa",
+      "id": "ody-god-vallus",
+      "type": "Person",
+      "name": "Vallus",
       "imageUrl": "",
-      "color": "#397082",
-      "borderColor": "#d9b66f",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
       "lineStyle": "solid",
-      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "notes": "Goddess of Wisdom; queen of Mytros and wife of King Acastus. Daughter of Mytros and Volkan.",
       "fields": {
-        "Source": "Tytuły sesji"
+        "Affiliation": "Five Gods"
       },
       "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 476,
-          "y": 395
-        }
-      },
-      "position": {
-        "x": 480,
-        "y": 1060
-      }
+      "positions": {},
+      "position": null
     },
     {
-      "id": "ody-loc-island-time",
-      "type": "Location",
-      "name": "Wyspa Czasu",
+      "id": "ody-god-narsus",
+      "type": "Person",
+      "name": "Narsus",
       "imageUrl": "",
-      "color": "#397082",
-      "borderColor": "#d9b66f",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
       "lineStyle": "solid",
-      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "notes": "Forgotten God of Beauty; one of the original bronze dragons in Volkan and Balmytria's family; oathsworn of Jasena Ventrak.",
       "fields": {
-        "Source": "Tytuły sesji"
+        "Affiliation": "Forgotten Gods"
       },
       "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 134.00000000000006,
-          "y": 395
-        }
-      },
-      "position": {
-        "x": 810,
-        "y": 1060
-      }
+      "positions": {},
+      "position": null
     },
     {
-      "id": "ody-loc-rocs-nest",
-      "type": "Location",
-      "name": "Gniazdo Roców",
+      "id": "ody-god-helios",
+      "type": "Person",
+      "name": "Helios",
       "imageUrl": "",
-      "color": "#397082",
-      "borderColor": "#d9b66f",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
       "lineStyle": "solid",
-      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "notes": "Forgotten God of the Sun; associated with the Garden of Helios.",
       "fields": {
-        "Source": "Tytuły sesji"
+        "Affiliation": "Forgotten Gods"
       },
       "customFields": [],
-      "positions": {
-        "complete": {
-          "x": -208,
-          "y": 395
-        }
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-acastus",
+      "type": "Person",
+      "name": "King Acastus",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "King of Mytros, last surviving Arkelander descendant; married to Vallus. Ambitious and insecure; secretly aided by Lutheria and allied with the Order of Sydon.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-estor",
+      "type": "Person",
+      "name": "Estor Arkelander",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Dragonlord and captain of the ghost ship Ultros; oathsworn of Kyrah. Cursed by Lutheria to roam the oceans as a ghost; haunts Acastus's dreams.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-adonis",
+      "type": "Person",
+      "name": "Adonis Neurdagon",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Dragonlord, oathsworn of Pythor; lover and partner of Aesop. Rescued Aesop and founded the Neurdagon dynasty; killed in the final stand of the Dragonlords.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-aesop",
+      "type": "Person",
+      "name": "Aesop",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Elven priest and Keeper of the Dragon Shrine in Estoria; lover of Adonis Neurdagon and advocate for restoring the Dragonlords.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-versi",
+      "type": "Person",
+      "name": "Versi, the Oracle",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Water nymph, daughter of Sydon and Delphea. Prophecies the Dragonlords and Five Gods; brokered the meeting that led to the Oath of Peace.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-delphea",
+      "type": "Person",
+      "name": "Delphea",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Naiad; mother of Versi and former partner of Sydon.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-darien",
+      "type": "Person",
+      "name": "Darien",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Rightful heir to the Amazon throne on Themis; daughter of Queen Thesilea. Imprisoned by the medusae who usurped her family.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-thesilea",
+      "type": "Person",
+      "name": "Queen Thesilea",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Amazon queen of Themis and mother of Darien; one of the three matriarchs murdered by usurping medusae.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-helen",
+      "type": "Person",
+      "name": "Queen Helen",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Ruler of Aresia; sovereign of the rival kingdom to Mytros.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-kruul",
+      "type": "Person",
+      "name": "King Kruul",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "King of the centaurs; encountered during the heroes' labors.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-anora",
+      "type": "Person",
+      "name": "Anora",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "A named figure in the campaign's recorded sessions; details of her role in the sourcebook/campaign need table-specific confirmation.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-xander",
+      "type": "Person",
+      "name": "Xander Huorath",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Greatest of the Dragonlords; Balmytria's oathsworn rider. His tomb lies in the Necropolis at Telamok.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-taran",
+      "type": "Person",
+      "name": "Taran Neurdagon",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Descendant of Adonis Neurdagon; member of the surviving Neurdagon dynasty in Mytros.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-gaius",
+      "type": "Person",
+      "name": "Gaius",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Named NPC in the Dramatis Personae; associated with the campaign's mortal cast. Details should be confirmed against the relevant encounter.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-loreus",
+      "type": "Person",
+      "name": "Loreus",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Named NPC in the Dramatis Personae; details and campaign role recorded in the sourcebook.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-moxena",
+      "type": "Person",
+      "name": "Moxena",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Named NPC in the Dramatis Personae; details and campaign role recorded in the sourcebook.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-nessa",
+      "type": "Person",
+      "name": "Nessa",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Named NPC in the Dramatis Personae; details and campaign role recorded in the sourcebook.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-pholon",
+      "type": "Person",
+      "name": "Pholon",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Named NPC in the Dramatis Personae; details and campaign role recorded in the sourcebook.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-steros",
+      "type": "Person",
+      "name": "Steros",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Jancan cyclops artificer from Praxys; skilled craftsman and wielder of a magic monocle. His father was captured by Amazons on Themis.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-chondrus",
+      "type": "Person",
+      "name": "Chondrus",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Tiefling NPC listed in the Dramatis Personae.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-hexia",
+      "type": "Person",
+      "name": "Hexia",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Dragon associated with Pythor; his former wife and mother of his children.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-icarus",
+      "type": "Person",
+      "name": "Icarus",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Adult silver dragon mount of King Acastus; aged unnaturally quickly from an egg.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-rizon",
+      "type": "Person",
+      "name": "Rizon Phobas",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Dragonlord and oathsworn of Volkan; chronicler/voice quoted in the account of the First War.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-jasena",
+      "type": "Person",
+      "name": "Jasena Ventrak",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Dragonlord and oathsworn of Narsus.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-npc-estoria-priest",
+      "type": "Person",
+      "name": "Aesop's Dragon Shrine",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Dragonlord memorial and archive maintained by Aesop in Estoria.",
+      "fields": {
+        "Affiliation": "Estoria"
       },
-      "position": {
-        "x": 1140,
-        "y": 1060
-      }
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-faction-dragonlords",
+      "type": "Faction",
+      "name": "Order of the Dragonlords",
+      "imageUrl": "",
+      "color": "#1c5265",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Ancient order of dragon-riding champions who led the First War; heroes are called to restore the order.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-faction-centaurs",
+      "type": "Faction",
+      "name": "Centaurs of Thylea",
+      "imageUrl": "",
+      "color": "#1c5265",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Native tribes of the steppes; fought the Dragonlords in the First War; fiercely loyal to native gods.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-faction-amazons",
+      "type": "Faction",
+      "name": "Amazons of Themis",
+      "imageUrl": "",
+      "color": "#1c5265",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Warrior society of Themis; their matriarchal throne was usurped by medusae.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-faction-order-sydon",
+      "type": "Faction",
+      "name": "Order of Sydon",
+      "imageUrl": "",
+      "color": "#1c5265",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Zealous order that serves Sydon, influences Mytros politics and seeks to enforce his worship.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-faction-snake",
+      "type": "Faction",
+      "name": "Cult of the Snake",
+      "imageUrl": "",
+      "color": "#1c5265",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Thieves' guild operating in Mytros, headquartered in the aqueducts.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-faction-oldwood",
+      "type": "Faction",
+      "name": "Druids of the Oldwood",
+      "imageUrl": "",
+      "color": "#1c5265",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Druidic order devoted to the Mother Goddess Thylea; oppose mortal encroachment on the Heartlands.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-faction-five",
+      "type": "Faction",
+      "name": "The Five Gods",
+      "imageUrl": "",
+      "color": "#1c5265",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Pantheon of Mytros, Volkan, Pythor, Kyrah and Vallus; divine patrons of settler civilization.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-faction-titans",
+      "type": "Faction",
+      "name": "The Titans",
+      "imageUrl": "",
+      "color": "#1c5265",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Native divine powers of Thylea, including the Elder Titans and their children.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-inst-temple-five",
+      "type": "Institution",
+      "name": "Temple of the Five",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Oldest civic building in Mytros; religious and political council seat.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-inst-oracle-temple",
+      "type": "Institution",
+      "name": "Temple of the Oracle",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Temple and hot springs south of Estoria; home of Versi.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-inst-dragon-shrine",
+      "type": "Institution",
+      "name": "Dragon Shrine of Estoria",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Aesop's shrine preserving Dragonlord history and prophecies.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-thylea",
+      "type": "Location",
+      "name": "Thylea",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "The Lost Land; continent and archipelago at the center of the campaign.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-forgotten-sea",
+      "type": "Location",
+      "name": "Forgotten Sea",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Vast ocean surrounding Thylea.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-heartlands",
+      "type": "Location",
+      "name": "Heartlands",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Central settled region of Thylea.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-oldwood",
+      "type": "Location",
+      "name": "Oldwood",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Ancient forest and sacred grove of the druids.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-mytros-city",
+      "type": "Location",
+      "name": "City of Mytros",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Largest city and political, commercial and religious center of Thylea.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Kingdom of Mytros"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-estoria",
+      "type": "Location",
+      "name": "City of Estoria",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Ancient stronghold ruled by Pythor; home of the Dragon Shrine and Mithral Forge.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Kingdom of Estoria"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-aresia",
+      "type": "Location",
+      "name": "City of Aresia",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Eastern warrior kingdom and long-standing rival of Mytros.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Kingdom of Aresia"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-telamok",
+      "type": "Location",
+      "name": "Necropolis at Telamok",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Ancient necropolis and site of Xander Huorath's tomb.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-xander-tomb",
+      "type": "Location",
+      "name": "Tomb of Xander",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Tomb of the Dragonlord Xander Huorath in Telamok.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-mithral-forge",
+      "type": "Location",
+      "name": "Mithral Forge",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Ancient forge in Estoria, connected with Volkan and Steros.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-mossy-temple",
+      "type": "Location",
+      "name": "Mossy Temple",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Ancient temple in the Great Labors region.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-ultros",
+      "type": "Location",
+      "name": "The Ultros",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Ghost ship associated with Estor Arkelander and the Dragonlords.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-cerulean-gulf",
+      "type": "Location",
+      "name": "Cerulean Gulf",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Central gulf and island region of Thylea.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
     },
     {
       "id": "ody-loc-island-fates",
       "type": "Location",
-      "name": "Wyspa Losów",
+      "name": "Island of the Fates",
       "imageUrl": "",
       "color": "#397082",
-      "borderColor": "#d9b66f",
+      "borderColor": "#e4c078",
       "lineStyle": "solid",
-      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "notes": "Island in the Cerulean Gulf.",
       "fields": {
-        "Source": "Tytuły sesji"
+        "Location type": "Region / site",
+        "Area": "Thylea"
       },
       "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 818,
-          "y": 53
-        }
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-island-exiles",
+      "type": "Location",
+      "name": "Island of the Exiles",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Island in the Cerulean Gulf.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
       },
-      "position": {
-        "x": 150,
-        "y": 1270
-      }
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-chimera",
+      "type": "Location",
+      "name": "Island of the Chimera",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Island in the Cerulean Gulf.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-scorpion",
+      "type": "Location",
+      "name": "Scorpion Island",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Island in the Cerulean Gulf.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-indigo",
+      "type": "Location",
+      "name": "Indigo Island",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Island in the Cerulean Gulf.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-fire",
+      "type": "Location",
+      "name": "Fire Island",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Island of the lizard king and Steros's father.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-yonder",
+      "type": "Location",
+      "name": "Island of Yonder",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Island in the Cerulean Gulf.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-themis",
+      "type": "Location",
+      "name": "Island of Themis",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Amazon island; home of Darien and the usurping medusae.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-dragon-island",
+      "type": "Location",
+      "name": "Island of the Dragon",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Island in the Forgotten Sea.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-time",
+      "type": "Location",
+      "name": "Island of Time",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Island in the Forgotten Sea.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-typhon",
+      "type": "Location",
+      "name": "Typhon, the Maw",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Massive sea-monster location/landmark in the Forgotten Sea.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-rocs",
+      "type": "Location",
+      "name": "Aerie of the Roc",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Roc aerie in the Forgotten Sea.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-helios",
+      "type": "Location",
+      "name": "Garden of Helios",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Forgotten Sea location associated with Helios.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-praxys",
+      "type": "Location",
+      "name": "Praxys, Tower of Sydon",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Stronghold of Sydon; located above the sea.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-hypnos",
+      "type": "Location",
+      "name": "Hypnos, Throne of Dreams",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Lutheria's domain and throne in the Nether Sea.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-prison-cube",
+      "type": "Location",
+      "name": "The Prison Cube",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Prison location in the Nether Sea.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-nether-sea",
+      "type": "Location",
+      "name": "Nether Sea",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Underworld sea and realm of Lutheria.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-sunken-city",
+      "type": "Location",
+      "name": "Sunken City",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Sunken kingdom location in the campaign's later chapters.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-aresia-prison",
+      "type": "Location",
+      "name": "Zakroth's Prison Fort",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Prison fort in Aresia's sphere.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-karpathos",
+      "type": "Location",
+      "name": "Tomb of Karpathos",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Tomb in the Aresian chapter.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
     },
     {
       "id": "ody-loc-embarkion",
@@ -387,144 +1473,1029 @@
       "name": "Embarkion",
       "imageUrl": "",
       "color": "#397082",
-      "borderColor": "#d9b66f",
+      "borderColor": "#e4c078",
       "lineStyle": "solid",
-      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "notes": "Place named in the recorded campaign chronicle; sourcebook location association not fully confirmed.",
       "fields": {
-        "Source": "Tytuły sesji"
+        "Location type": "Region / site",
+        "Area": "Thylea"
       },
       "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 476,
-          "y": 53
-        }
-      },
-      "position": {
-        "x": 480,
-        "y": 1270
-      }
+      "positions": {},
+      "position": null
     },
     {
-      "id": "ody-npc-0",
-      "type": "Person",
-      "name": "Pythor",
+      "id": "ody-loc-yonder-campaign",
+      "type": "Location",
+      "name": "Wyspa Yonder",
       "imageUrl": "",
-      "color": "#8a6c48",
-      "borderColor": "#d9b66f",
+      "color": "#397082",
+      "borderColor": "#e4c078",
       "lineStyle": "solid",
-      "notes": "Wymieniony w tytule nagrania; szczegóły do uzupełnienia w notatkach.",
+      "notes": "Campaign chronicle name variant of Island of Yonder.",
       "fields": {
-        "Source": "Tytuł sesji"
+        "Location type": "Region / site",
+        "Area": "Thylea"
       },
       "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 134,
-          "y": 53
-        }
-      },
-      "position": {
-        "x": 150,
-        "y": 1450
-      }
+      "positions": {},
+      "position": null
     },
     {
-      "id": "ody-npc-1",
-      "type": "Person",
-      "name": "Anora",
+      "id": "ody-loc-island-time-campaign",
+      "type": "Location",
+      "name": "Wyspa Czasu",
       "imageUrl": "",
-      "color": "#8a6c48",
-      "borderColor": "#d9b66f",
+      "color": "#397082",
+      "borderColor": "#e4c078",
       "lineStyle": "solid",
-      "notes": "Wymieniony w tytule nagrania; szczegóły do uzupełnienia w notatkach.",
+      "notes": "Campaign chronicle name variant of Island of Time.",
       "fields": {
-        "Source": "Tytuł sesji"
+        "Location type": "Region / site",
+        "Area": "Thylea"
       },
       "customFields": [],
-      "positions": {
-        "complete": {
-          "x": -208,
-          "y": 53
-        }
-      },
-      "position": {
-        "x": 570,
-        "y": 1450
-      }
+      "positions": {},
+      "position": null
     },
     {
-      "id": "ody-npc-2",
-      "type": "Person",
-      "name": "Król Kruul",
+      "id": "ody-loc-rocs-campaign",
+      "type": "Location",
+      "name": "Gniazdo Roców",
       "imageUrl": "",
-      "color": "#8a6c48",
-      "borderColor": "#d9b66f",
+      "color": "#397082",
+      "borderColor": "#e4c078",
       "lineStyle": "solid",
-      "notes": "Wymieniony w tytule nagrania; szczegóły do uzupełnienia w notatkach.",
+      "notes": "Campaign chronicle name variant of Aerie of the Roc.",
       "fields": {
-        "Source": "Tytuł sesji"
+        "Location type": "Region / site",
+        "Area": "Thylea"
       },
       "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 818,
-          "y": -289
-        }
-      },
-      "position": {
-        "x": 990,
-        "y": 1450
-      }
+      "positions": {},
+      "position": null
     },
     {
-      "id": "ody-npc-3",
-      "type": "Person",
-      "name": "Xander Huorath",
+      "id": "ody-loc-indigo-campaign",
+      "type": "Location",
+      "name": "Klify Indygo",
       "imageUrl": "",
-      "color": "#8a6c48",
-      "borderColor": "#d9b66f",
+      "color": "#397082",
+      "borderColor": "#e4c078",
       "lineStyle": "solid",
-      "notes": "Wymieniony w tytule nagrania; szczegóły do uzupełnienia w notatkach.",
+      "notes": "Campaign chronicle reference; verify whether this is a distinct site from Indigo Island.",
       "fields": {
-        "Source": "Tytuł sesji"
+        "Location type": "Region / site",
+        "Area": "Thylea"
       },
       "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 476,
-          "y": -289
-        }
-      },
-      "position": {
-        "x": 150,
-        "y": 1650
-      }
+      "positions": {},
+      "position": null
     },
     {
-      "id": "ody-npc-4",
-      "type": "Person",
-      "name": "Themis",
+      "id": "ody-loc-helios-campaign",
+      "type": "Location",
+      "name": "Ogród Heliosa",
       "imageUrl": "",
-      "color": "#8a6c48",
-      "borderColor": "#d9b66f",
+      "color": "#397082",
+      "borderColor": "#e4c078",
       "lineStyle": "solid",
-      "notes": "Wymieniony w tytule nagrania; szczegóły do uzupełnienia w notatkach.",
+      "notes": "Campaign chronicle name variant of Garden of Helios.",
       "fields": {
-        "Source": "Tytuł sesji"
+        "Location type": "Region / site",
+        "Area": "Thylea"
       },
       "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 134,
-          "y": -289
-        }
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-fates-campaign",
+      "type": "Location",
+      "name": "Wyspa Losów",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Campaign chronicle name variant of Island of the Fates.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
       },
-      "position": {
-        "x": 570,
-        "y": 1650
-      }
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-loc-mytros-campaign",
+      "type": "Location",
+      "name": "Mytros",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Campaign chronicle's city reference.",
+      "fields": {
+        "Location type": "Region / site",
+        "Area": "Thylea"
+      },
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-event-first-war",
+      "type": "Event",
+      "name": "The First War",
+      "imageUrl": "",
+      "color": "#7c647f",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "War between the Dragonlords and the Titans; ended with the appearance of the Five Gods and the Oath of Peace.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-event-oath",
+      "type": "Event",
+      "name": "The Oath of Peace",
+      "imageUrl": "",
+      "color": "#7c647f",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Five-hundred-year truce between the Five Gods and Titans, negotiated with Versi.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-event-prophecy",
+      "type": "Event",
+      "name": "The Oracle's Prophecy",
+      "imageUrl": "",
+      "color": "#7c647f",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Prophecy of the Doom of Thylea and the heroes' quest to avert it.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-event-apokalypsis",
+      "type": "Event",
+      "name": "Apokalypsis",
+      "imageUrl": "",
+      "color": "#7c647f",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Final cataclysmic conflict involving the Nether Titans and the fate of Thylea.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-object-oath-scroll",
+      "type": "Object",
+      "name": "Scroll of the Oath of Peace",
+      "imageUrl": "",
+      "color": "#b87942",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Scroll delivered by Damon and containing the Oath of Peace.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-object-pythor-hammer",
+      "type": "Object",
+      "name": "Pythor's Hammer",
+      "imageUrl": "",
+      "color": "#b87942",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Relic associated with Pythor and the Mithral Forge.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-object-golden-heart",
+      "type": "Object",
+      "name": "The Golden Heart",
+      "imageUrl": "",
+      "color": "#b87942",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Important artifact/quest object in the Cerulean Gulf chapter.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
+    },
+    {
+      "id": "ody-object-antikythera",
+      "type": "Object",
+      "name": "Antikythera Components",
+      "imageUrl": "",
+      "color": "#b87942",
+      "borderColor": "#e4c078",
+      "lineStyle": "solid",
+      "notes": "Components sought during the heroes' voyage.",
+      "fields": {},
+      "customFields": [],
+      "positions": {},
+      "position": null
     }
   ],
-  "relationships": []
+  "relationships": [
+    {
+      "id": "rel-1",
+      "source": "ody-titan-thylea",
+      "target": "ody-titan-kentimane",
+      "type": "SPOUSE",
+      "note": "Kentimane is Thylea's husband.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-2",
+      "source": "ody-titan-thylea",
+      "target": "ody-loc-thylea",
+      "type": "CREATED",
+      "note": "Thylea created the land that bears her name.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-3",
+      "source": "ody-titan-thylea",
+      "target": "ody-loc-oldwood",
+      "type": "SACRED_REALM",
+      "note": "The Oldwood's druids worship Thylea.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-4",
+      "source": "ody-titan-kentimane",
+      "target": "ody-loc-thylea",
+      "type": "GUARDS",
+      "note": "Kentimane is the guardian of Thylea.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-5",
+      "source": "ody-titan-sydon",
+      "target": "ody-titan-lutheria",
+      "type": "SIBLING_AND_SPOUSE",
+      "note": "The Twin Titans are sister-wife and brother-husband.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-6",
+      "source": "ody-titan-sydon",
+      "target": "ody-loc-praxys",
+      "type": "RULES_FROM",
+      "note": "Sydon surveys the world from Praxys.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-7",
+      "source": "ody-titan-lutheria",
+      "target": "ody-loc-nether-sea",
+      "type": "RULES",
+      "note": "Lutheria's underworld domain.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-8",
+      "source": "ody-titan-lutheria",
+      "target": "ody-loc-hypnos",
+      "type": "DWELLS_AT",
+      "note": "Lutheria's throne of dreams.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-9",
+      "source": "ody-titan-sydon",
+      "target": "ody-npc-versi",
+      "type": "FATHER_OF",
+      "note": "Versi is Sydon's daughter.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-10",
+      "source": "ody-npc-delphea",
+      "target": "ody-npc-versi",
+      "type": "MOTHER_OF",
+      "note": "Delphea is Versi's mother.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-11",
+      "source": "ody-god-mytros",
+      "target": "ody-god-volkan",
+      "type": "SPOUSE",
+      "note": "Mytros/Balmytria and Volkan were spouses.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-12",
+      "source": "ody-god-mytros",
+      "target": "ody-god-pythor",
+      "type": "PARENT_OF",
+      "note": "Pythor is their son.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-13",
+      "source": "ody-god-mytros",
+      "target": "ody-god-vallus",
+      "type": "PARENT_OF",
+      "note": "Vallus is their daughter.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-14",
+      "source": "ody-god-volkan",
+      "target": "ody-god-kyrah",
+      "type": "PARENT_OF",
+      "note": "Kyrah is their daughter.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-15",
+      "source": "ody-god-volkan",
+      "target": "ody-god-narsus",
+      "type": "PARENT_OF",
+      "note": "Narsus is their child.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-16",
+      "source": "ody-god-volkan",
+      "target": "ody-god-pythor",
+      "type": "PARENT_OF",
+      "note": "Pythor is their son.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-17",
+      "source": "ody-god-volkan",
+      "target": "ody-god-vallus",
+      "type": "PARENT_OF",
+      "note": "Vallus is their daughter.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-18",
+      "source": "ody-god-pythor",
+      "target": "ody-loc-estoria",
+      "type": "RULES",
+      "note": "Pythor is king of Estoria.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-19",
+      "source": "ody-god-vallus",
+      "target": "ody-loc-mytros-city",
+      "type": "RULES",
+      "note": "Vallus serves as queen and patron goddess of Mytros.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-20",
+      "source": "ody-npc-acastus",
+      "target": "ody-loc-mytros-city",
+      "type": "RULES",
+      "note": "Acastus is king of Mytros.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-21",
+      "source": "ody-npc-acastus",
+      "target": "ody-god-vallus",
+      "type": "SPOUSE",
+      "note": "Acastus is married to Vallus.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-22",
+      "source": "ody-npc-acastus",
+      "target": "ody-titan-lutheria",
+      "type": "SECRETLY_AIDED_BY",
+      "note": "Lutheria secretly gave Acastus dragon eggs.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-23",
+      "source": "ody-npc-acastus",
+      "target": "ody-faction-order-sydon",
+      "type": "RELIES_ON",
+      "note": "Acastus depends on the Order of Sydon to maintain peace with the Titans.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-24",
+      "source": "ody-npc-acastus",
+      "target": "ody-npc-estor",
+      "type": "DESCENDANT_OF",
+      "note": "Acastus is a descendant of Estor Arkelander.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-25",
+      "source": "ody-npc-acastus",
+      "target": "ody-npc-icarus",
+      "type": "RIDES",
+      "note": "Icarus is Acastus's dragon mount.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-26",
+      "source": "ody-npc-estor",
+      "target": "ody-god-kyrah",
+      "type": "OATHSWORN_OF",
+      "note": "Estor was Kyrah's Dragonlord rider.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-27",
+      "source": "ody-npc-estor",
+      "target": "ody-loc-ultros",
+      "type": "CAPTAIN_OF",
+      "note": "Estor is captain of the ghost ship Ultros.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-28",
+      "source": "ody-titan-lutheria",
+      "target": "ody-npc-estor",
+      "type": "CURSED",
+      "note": "Lutheria cursed Estor to roam the oceans as a ghost.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-29",
+      "source": "ody-npc-adonis",
+      "target": "ody-god-pythor",
+      "type": "OATHSWORN_OF",
+      "note": "Adonis was Pythor's Dragonlord rider.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-30",
+      "source": "ody-npc-aesop",
+      "target": "ody-npc-adonis",
+      "type": "LOVER_OF",
+      "note": "Aesop and Adonis were lovers.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-31",
+      "source": "ody-npc-adonis",
+      "target": "ody-npc-taran",
+      "type": "ANCESTOR_OF",
+      "note": "Adonis founded the Neurdagon dynasty.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-32",
+      "source": "ody-npc-aesop",
+      "target": "ody-inst-dragon-shrine",
+      "type": "KEEPER_OF",
+      "note": "Aesop maintains the Dragon Shrine.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-33",
+      "source": "ody-inst-dragon-shrine",
+      "target": "ody-loc-estoria",
+      "type": "LOCATED_IN",
+      "note": "The shrine is in Estoria.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-34",
+      "source": "ody-npc-xander",
+      "target": "ody-god-mytros",
+      "type": "OATHSWORN_OF",
+      "note": "Xander Huorath was Balmytria's rider.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-35",
+      "source": "ody-npc-xander",
+      "target": "ody-loc-xander-tomb",
+      "type": "BURIED_AT",
+      "note": "Xander's tomb is in Telamok.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-36",
+      "source": "ody-loc-xander-tomb",
+      "target": "ody-loc-telamok",
+      "type": "LOCATED_IN",
+      "note": "Tomb lies in the Necropolis at Telamok.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-37",
+      "source": "ody-npc-versi",
+      "target": "ody-inst-oracle-temple",
+      "type": "RESIDES_AT",
+      "note": "Versi dwells at the Temple of the Oracle.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-38",
+      "source": "ody-inst-oracle-temple",
+      "target": "ody-loc-estoria",
+      "type": "SOUTH_OF",
+      "note": "The temple lies south of Estoria.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-39",
+      "source": "ody-npc-versi",
+      "target": "ody-event-oath",
+      "type": "BROKERED",
+      "note": "Versi arranged the meeting that forged the Oath of Peace.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-40",
+      "source": "ody-faction-five",
+      "target": "ody-event-oath",
+      "type": "SWORE",
+      "note": "The Five Gods swore the Oath of Peace.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-41",
+      "source": "ody-faction-titans",
+      "target": "ody-event-oath",
+      "type": "SWORE",
+      "note": "The Titans swore the Oath of Peace.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-42",
+      "source": "ody-faction-dragonlords",
+      "target": "ody-event-first-war",
+      "type": "FOUGHT_IN",
+      "note": "Dragonlords led the First War against the Titans.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-43",
+      "source": "ody-faction-titans",
+      "target": "ody-event-first-war",
+      "type": "FOUGHT_IN",
+      "note": "The Titans fought the Dragonlords.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-44",
+      "source": "ody-event-first-war",
+      "target": "ody-event-oath",
+      "type": "FOLLOWED_BY",
+      "note": "The First War ended with the Oath of Peace.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-45",
+      "source": "ody-npc-thesilea",
+      "target": "ody-npc-darien",
+      "type": "MOTHER_OF",
+      "note": "Thesilea is Darien's mother.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-46",
+      "source": "ody-npc-darien",
+      "target": "ody-loc-themis",
+      "type": "HEIR_OF",
+      "note": "Darien is heir to the Amazon throne on Themis.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-47",
+      "source": "ody-faction-amazons",
+      "target": "ody-loc-themis",
+      "type": "BASED_ON",
+      "note": "The Amazons dwell on Themis.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-48",
+      "source": "ody-npc-steros",
+      "target": "ody-loc-praxys",
+      "type": "BORN_AND_RAISED_AT",
+      "note": "Steros was born and raised among cyclopes at Praxys.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-49",
+      "source": "ody-npc-steros",
+      "target": "ody-loc-themis",
+      "type": "SEEKS_FATHER_ON",
+      "note": "Steros seeks to rescue his father from Amazons on Themis.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-50",
+      "source": "ody-npc-steros",
+      "target": "ody-titan-sydon",
+      "type": "SERVES",
+      "note": "Steros was sent by Sydon to replace his captured father.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-51",
+      "source": "ody-faction-order-sydon",
+      "target": "ody-titan-sydon",
+      "type": "WORSHIPS",
+      "note": "The Order venerates Sydon above all other gods.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-52",
+      "source": "ody-faction-snake",
+      "target": "ody-loc-mytros-city",
+      "type": "OPERATES_IN",
+      "note": "The Cult of the Snake operates in Mytros.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-53",
+      "source": "ody-faction-oldwood",
+      "target": "ody-loc-oldwood",
+      "type": "DWELLS_IN",
+      "note": "The druids maintain a grove in the Oldwood.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-54",
+      "source": "ody-inst-temple-five",
+      "target": "ody-loc-mytros-city",
+      "type": "LOCATED_IN",
+      "note": "The Temple of the Five stands in Mytros.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-55",
+      "source": "ody-faction-five",
+      "target": "ody-inst-temple-five",
+      "type": "WORSHIPPED_AT",
+      "note": "Temple of the Five is dedicated to the pantheon.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-56",
+      "source": "ody-npc-helen",
+      "target": "ody-loc-aresia",
+      "type": "RULES",
+      "note": "Queen Helen rules Aresia.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-57",
+      "source": "ody-loc-aresia",
+      "target": "ody-loc-mytros-city",
+      "type": "RIVAL_OF",
+      "note": "The kingdoms have a long history of wars.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-58",
+      "source": "ody-god-helios",
+      "target": "ody-loc-helios",
+      "type": "ASSOCIATED_WITH",
+      "note": "The Garden of Helios is named for Helios.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-59",
+      "source": "ody-object-oath-scroll",
+      "target": "ody-event-oath",
+      "type": "RECORDS",
+      "note": "The scroll contains the Oath of Peace.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-60",
+      "source": "ody-object-golden-heart",
+      "target": "ody-loc-cerulean-gulf",
+      "type": "FOUND_IN_REGION",
+      "note": "The Golden Heart is part of the Cerulean Gulf chapter.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-61",
+      "source": "ody-loc-cerulean-gulf",
+      "target": "ody-loc-forgotten-sea",
+      "type": "PART_OF",
+      "note": "The Cerulean Gulf lies within the Forgotten Sea.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-62",
+      "source": "ody-loc-themis",
+      "target": "ody-loc-cerulean-gulf",
+      "type": "ISLAND_IN",
+      "note": "Themis is an island in the Cerulean Gulf.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-63",
+      "source": "ody-loc-island-fates",
+      "target": "ody-loc-cerulean-gulf",
+      "type": "ISLAND_IN",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-64",
+      "source": "ody-loc-island-exiles",
+      "target": "ody-loc-cerulean-gulf",
+      "type": "ISLAND_IN",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-65",
+      "source": "ody-loc-chimera",
+      "target": "ody-loc-cerulean-gulf",
+      "type": "ISLAND_IN",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-66",
+      "source": "ody-loc-scorpion",
+      "target": "ody-loc-cerulean-gulf",
+      "type": "ISLAND_IN",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-67",
+      "source": "ody-loc-indigo",
+      "target": "ody-loc-cerulean-gulf",
+      "type": "ISLAND_IN",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-68",
+      "source": "ody-loc-fire",
+      "target": "ody-loc-cerulean-gulf",
+      "type": "ISLAND_IN",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-69",
+      "source": "ody-loc-yonder",
+      "target": "ody-loc-cerulean-gulf",
+      "type": "ISLAND_IN",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-70",
+      "source": "ody-loc-dragon-island",
+      "target": "ody-loc-forgotten-sea",
+      "type": "ISLAND_IN",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-71",
+      "source": "ody-loc-time",
+      "target": "ody-loc-forgotten-sea",
+      "type": "ISLAND_IN",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-72",
+      "source": "ody-loc-rocs",
+      "target": "ody-loc-forgotten-sea",
+      "type": "LANDMARK_IN",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-73",
+      "source": "ody-loc-typhon",
+      "target": "ody-loc-forgotten-sea",
+      "type": "LANDMARK_IN",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-74",
+      "source": "ody-loc-praxys",
+      "target": "ody-loc-forgotten-sea",
+      "type": "STRONGHOLD_OVERLOOKS",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-75",
+      "source": "ody-loc-nether-sea",
+      "target": "ody-loc-hypnos",
+      "type": "CONTAINS",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-76",
+      "source": "ody-loc-nether-sea",
+      "target": "ody-loc-prison-cube",
+      "type": "CONTAINS",
+      "note": "",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-77",
+      "source": "ody-npc-rizon",
+      "target": "ody-god-volkan",
+      "type": "OATHSWORN_OF",
+      "note": "Rizon was Volkan's Dragonlord rider.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "rel-78",
+      "source": "ody-npc-jasena",
+      "target": "ody-god-narsus",
+      "type": "OATHSWORN_OF",
+      "note": "Jasena was Narsus's Dragonlord rider.",
+      "color": "#b98a4d",
+      "lineStyle": "solid",
+      "direction": "towards"
+    }
+  ]
 }
