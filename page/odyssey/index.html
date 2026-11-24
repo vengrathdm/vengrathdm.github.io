@@ -185,6 +185,7 @@ button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 #overview .status-tag.active{color:#4f8290}
 #overview .status-tag.suspected{color:#a96a25}
 #overview .status-tag.unknown{color:#59608a}
+#overview .status-tag.resolved{color:#527b64}
 #overview .status-note.clue{grid-column:span 2}
 #overview .status-quote{margin:4px 0 0;padding:8px 0 8px 14px;border-left:3px solid #174457;color:#174457;font:italic 1.5rem/1.25 var(--body)}
 @media(max-width:850px){#overview .board{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}#overview .status-note.situation{grid-column:span 2}}
@@ -332,7 +333,6 @@ main>section,main>section.alt{background:transparent!important}
 
 <section id="chronicle" class="alt"><div class="tear"></div><div class="wrap">
  <h2>Kronika</h2>
- <p class="lede">57 wpisów kampanii — wybierz sesję, aby rozwinąć wpis i otworzyć jedno lub oba nagrania.</p>
  <ol class="chron" id="chron"></ol>
 </div></section>
 
@@ -366,10 +366,6 @@ var DATA={
       "57"
     ],
     [
-      "NAGRANIA",
-      "61 CZĘŚCI"
-    ],
-    [
       "MOTYWY",
       "BOGOWIE · TYTANI"
     ]
@@ -382,12 +378,6 @@ var DATA={
       "title": "Przysięga Thylei",
       "meta": "Thylea · Dragonlordowie · przepowiednia",
       "stamp": "Kronika kampanii"
-    },
-    {
-      "kind": "metric",
-      "title": "Nagrania",
-      "value": "57",
-      "detail": "Wpisy kroniki — od S1 do S57"
     },
     {
       "kind": "metric",
@@ -418,19 +408,19 @@ var DATA={
       "title": "Wątki kampanii",
       "items": [
         {
-          "text": "Przepowiednia Thylei",
+          "text": "Przysięga Pokoju",
           "status": "Centralny",
           "level": "active"
         },
         {
-          "text": "Dziedzictwo Dragonlordów",
+          "text": "Dziedzictwo Smoczych Lordów",
           "status": "Powracający",
           "level": "suspected"
         },
         {
           "text": "Konflikt bogów i tytanów",
-          "status": "Nierozstrzygnięty",
-          "level": "unknown"
+          "status": "Rozstrzygnięty",
+          "level": "resolved"
         }
       ]
     },
