@@ -323,38 +323,35 @@ bindThreeStateControls("[data-label-mode-group=entity]",()=>entityLabelMode,v=>e
 bindThreeStateControls("[data-label-mode-group=relationship]",()=>relationshipLabelMode,v=>relationshipLabelMode=v);
 $("labelStages").querySelectorAll("button").forEach(b=>b.onclick=()=>{$("labelStages").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));labelStage=Number(b.dataset.stage);applyLabelStyles()});
 $("exportData").onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)+"\n"],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="dragons-due-relationships.json";a.click();URL.revokeObjectURL(url);toast("Wyeksportowano cały zestaw danych.")};
-$("uploadData").onclick=async()=>{
- const button=$("uploadData"),originalLabel=button.textContent;
- const GITHUB_TOKEN="WKLEJ_TUTAJ_FINE_GRAINED_GITHUB_TOKEN";
- if(!GITHUB_TOKEN||GITHUB_TOKEN==="WKLEJ_TUTAJ_FINE_GRAINED_GITHUB_TOKEN"){toast("Najpierw wklej token GitHub do stałej GITHUB_TOKEN w app.js.");return}
- button.disabled=true;button.textContent="Wysyłanie…";
+$("uploadData").onclick=()=>{ $("githubToken").value="";openDialog("githubTokenDialog");$("githubToken").focus() };
+$("githubTokenForm").onsubmit=async event=>{
+ event.preventDefault();
+ const button=$("uploadData"),originalLabel=button.textContent,token=$("githubToken").value.trim();
+ $("githubToken").value="";
+ if(!token){toast("Wklej token GitHub, aby wysłać dane.");return}
+ button.disabled=true;button.textContent="Wysyłanie…";closeDialogs();
  try{
-  const apiUrl="https://api.github.com/repos/vengrathdm/vengrathdm.github.io/contents/page/the-dragons-due/Mapa-Relacji/data/relationships.json";
-  const headers={"Authorization":"Bearer "+GITHUB_TOKEN,"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28"};
-  const currentResponse=await fetch(apiUrl+"?ref=main",{headers});
-  if(!currentResponse.ok)throw new Error("Nie udało się pobrać informacji o obecnym pliku ("+currentResponse.status+"): "+(await currentResponse.text()));
-  const currentFile=await currentResponse.json();
-  const fileContent=JSON.stringify(data,null,2)+"\n";
+  const fileContent=JSON.stringify(data,null,2)+"\\n";
   const bytes=new TextEncoder().encode(fileContent);
   let binary="";
   for(let i=0;i<bytes.length;i++)binary+=String.fromCharCode(bytes[i]);
-  const contentBase64=btoa(binary);
-  const uploadResponse=await fetch(apiUrl,{
-   method:"PUT",
-   headers:{...headers,"Content-Type":"application/json"},
-   body:JSON.stringify({
-    message:"Aktualizacja danych mapy relacji",
-    content:contentBase64,
-    sha:currentFile.sha,
-    branch:"main"
-   })
+  const relationshipsB64=btoa(binary);
+  if(relationshipsB64.length>60000)throw new Error("Zestaw danych jest za duży do wysłania tą metodą (limit 60 000 znaków).");
+  const response=await fetch("https://api.github.com/repos/vengrathdm/vengrathdm.github.io/dispatches",{
+   method:"POST",
+   headers:{
+    "Authorization":"Bearer "+token,
+    "Accept":"application/vnd.github+json",
+    "Content-Type":"application/json",
+    "X-GitHub-Api-Version":"2022-11-28"
+   },
+   body:JSON.stringify({event_type:"update_relationships",client_payload:{relationships_b64:relationshipsB64}})
   });
-  if(!uploadResponse.ok){
-   const errorBody=await uploadResponse.text();
-   throw new Error("GitHub odrzucił zapis ("+uploadResponse.status+"): "+errorBody);
+  if(!response.ok){
+   const errorBody=await response.text();
+   throw new Error("GitHub odrzucił żądanie ("+response.status+"): "+errorBody);
   }
-  const result=await uploadResponse.json();
-  toast("Dane zapisane na GitHub. Commit: "+result.commit.sha.slice(0,7));
+  toast("Wysłano dane do GitHub Actions. Po zakończeniu workflow plik relationships.json zostanie zaktualizowany.");
  }catch(error){
   console.error("Błąd wysyłania danych na GitHub:",error);
   toast("Nie udało się wysłać danych: "+error.message);
