@@ -35,6 +35,8 @@ jobs:
               "page/the-dragons-due/Mapa-Relacji/data/relationships.json",
               "page/ksiazeta-heartwell/HeartwellRelationshipMap/data/relationships.json",
               "page/legends-of-barovia/Wątki-w-Barovii/data/relationships.json",
+              "page/arcanum/Notatki/data/relationships.json",
+              "page/swiatynia-pierwotnego-zla/Notatki/data/relationships.json",
           }
           target_path = os.environ.get("TARGET_PATH", "")
           if target_path not in allowed_targets:
