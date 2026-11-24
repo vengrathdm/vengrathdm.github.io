@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mapa — Arcanum</title>
-<meta name="description" content="Interaktywna mapa Doliny Hommlet z edytowalną siatką pól, regionami i znacznikami.">
+<meta name="description" content="Atlas Arcanum: mapa kontynentu, granice królestw, krainy i miejsca ważne dla podróży Żyjącego.">
 <link rel="stylesheet" href="leaflet/leaflet.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,14 +52,14 @@
 </div>
 <section id="presenter" class="floating-panel terrain-window" hidden>
   <div class="panel-head"><strong>Karta terenu</strong><button class="panel-close" data-close="presenter" type="button">Zamknij</button></div>
-  <div id="presenterBody"><div id="presenterAddress">Nie wybrano hexu</div><div id="presenterSub">Antarktyda · Oznaczenie hexu</div><p id="presenterIntro">Wybierz dowolny hex na mapie, aby wyświetlić zapisane o nim informacje.</p><div id="presenterDetails"></div></div>
+  <div id="presenterBody"><div id="presenterAddress">Nie wybrano hexu</div><div id="presenterSub">Arcanum · Oznaczenie hexu</div><p id="presenterIntro">Wybierz pole mapy, aby sprawdzić przypisany region, lokalizację lub notatkę z podróży po Arcanum.</p><div id="presenterDetails"></div></div>
 </section>
 <div id="regionCreateDialog" class="region-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="regionCreateTitle">
   <h2 id="regionCreateTitle">Utwórz region</h2>
   <p class="region-dialog-sub">Skonfiguruj nowy region nakładki.</p>
   <form id="regionCreateForm">
     <label>Warstwa<select id="newRegionLayer"><option value="political">Polityczna</option><option value="geographical">Geograficzna</option></select></label>
-    <label>Nazwa regionu<input id="newRegionName" type="text" maxlength="100" required placeholder="np. Las umiarkowany"></label>
+    <label>Nazwa regionu<input id="newRegionName" type="text" maxlength="100" required placeholder="np. Góry Szarej Skały"></label>
     <label>Kolor regionu<div class="region-color-control"><input id="newRegionColor" type="color" value="#668b54"><span id="newRegionColorPreview" class="region-sample" aria-label="Podgląd koloru regionu"></span></div></label>
     <label>Opis<textarea id="newRegionDescription" maxlength="1000" placeholder="Opisz ten region..."></textarea></label>
     <fieldset class="region-style-field"><legend>Styl wypełnienia</legend><div class="region-style-choices">
@@ -89,7 +89,7 @@
   <h2 id="pinDialogTitle">Dodaj punkt</h2>
   <p class="pin-dialog-sub" id="pinDialogAddress">Wybrany hex</p>
   <form id="pinForm">
-    <label>Nazwa znacznika<input id="pinName" type="text" maxlength="100" required placeholder="np. Stare obserwatorium"></label>
+    <label>Nazwa znacznika<input id="pinName" type="text" maxlength="100" required placeholder="np. Stacja kolejowa w Tarancie"></label>
     <label>Rodzaj znacznika<select id="pinStyle"><option value="standard">Zwykły</option><option value="ruin">Ruiny</option><option value="settlement">Osada</option><option value="landmark">Punkt orientacyjny</option><option value="natural">Obiekt przyrodniczy</option></select><span id="pinStylePreview" class="pin-style-preview" aria-label="Podgląd wyglądu znacznika"></span></label>
     <label>Kolor znacznika<div class="pin-color-control"><input id="pinColor" type="color" value="#eee5cc"><span id="pinColorPreview" class="pin-color-sample"></span></div></label>
     <label>Opis<textarea id="pinDescription" maxlength="2000" placeholder="Opisz to miejsce..."></textarea></label>
