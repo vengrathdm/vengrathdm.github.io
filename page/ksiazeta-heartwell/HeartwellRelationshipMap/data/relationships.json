@@ -1,1013 +1,580 @@
 {
   "schemaVersion": 1,
   "metadata": {
-    "id": "heartwell-relationships",
-    "name": "Mapa demonstracyjna — Zaginiona Kopalnia Phandelver",
-    "updatedAt": "2026-11-20",
+    "id": "swiatynia-relations",
+    "name": "Świątynia Pierwotnego Zła — sieć powiązań",
+    "updatedAt": "2026-11-24",
     "layoutModes": {
-      "complete": "force"
+      "complete": "manual"
     },
     "relationshipTypes": [
       {
         "name": "ALLY_OF",
-        "description": "Zaufany sojusznik lub towarzysz.",
+        "description": "Sojusz lub współpraca",
         "color": "#83a98a",
         "lineStyle": "solid",
         "direction": "mutual"
       },
       {
-        "name": "CAPTURED_BY",
-        "description": "Osoba przetrzymywana w niewoli przez inną osobę.",
-        "color": "#c65c58",
-        "lineStyle": "dashed",
-        "direction": "towards"
-      },
-      {
         "name": "SERVES",
-        "description": "Podwładny służący przywódcy.",
+        "description": "Służy / podlega",
         "color": "#d4a03c",
         "lineStyle": "solid",
         "direction": "towards"
       },
       {
         "name": "SEEKS",
-        "description": "Poszukuje osoby, miejsca lub przedmiotu.",
+        "description": "Poszukuje",
         "color": "#9a8ac7",
         "lineStyle": "dotted",
         "direction": "towards"
       },
       {
-        "name": "DISCOVERED",
-        "description": "Odkrył lub ponownie odnalazł dane miejsce.",
+        "name": "CONTROLS",
+        "description": "Kontroluje",
+        "color": "#c65c58",
+        "lineStyle": "dashed",
+        "direction": "towards"
+      },
+      {
+        "name": "LOCATED_IN",
+        "description": "Znajduje się w",
         "color": "#8c9caa",
         "lineStyle": "solid",
         "direction": "towards"
       },
       {
-        "name": "Jest członkiem",
-        "description": "",
-        "color": "#d4a03c",
-        "lineStyle": "solid",
-        "direction": "towards"
+        "name": "OPPOSES",
+        "description": "Jest wrogiem",
+        "color": "#c65c58",
+        "lineStyle": "dashed",
+        "direction": "mutual"
       },
       {
-        "name": "Kontroluje",
-        "description": "",
+        "name": "SEEKS_RELIC",
+        "description": "Poszukuje reliktu",
         "color": "#d4a03c",
-        "lineStyle": "solid",
+        "lineStyle": "dotted",
         "direction": "towards"
-      },
-      {
-        "name": "Znajduje się w",
-        "description": "",
-        "color": "#d4a03c",
-        "lineStyle": "solid",
-        "direction": "towards"
-      },
-      {
-        "name": "Działa w",
-        "description": "",
-        "color": "#d4a03c",
-        "lineStyle": "solid",
-        "direction": "none"
       }
     ],
-    "notes": "Zwięzły przykład obejmujący pięć obiektów i pięć relacji, oparty na przygodzie Zaginiona Kopalnia Phandelver. To dane demonstracyjne, nie kanon kampanii Heartwell.",
+    "notes": "Makietowa baza powiązań postaci, frakcji, lokacji, przedmiotów i wydarzeń.",
     "savedViews": []
   },
   "entities": [
     {
-      "id": "entity-mwqgbm67-ta7yht",
-      "type": "Person",
-      "name": "Delilah Brooke",
-      "imageUrl": "https://vengrathdm.github.io/core/portraits/char-0121.webp",
-      "color": "#355c6d",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 1741.0673383025098,
-          "y": 1063.824843821048
-        }
-      },
-      "position": {
-        "x": 92.06658291638222,
-        "y": -2468.0597897566986
-      }
-    },
-    {
-      "id": "entity-mwqgcihh-a89qm9",
-      "type": "Person",
-      "name": "Alderik Erikson",
-      "imageUrl": "https://vengrathdm.github.io/core/portraits/char-0123.webp",
-      "color": "#355c6d",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 1564.6256026638039,
-          "y": 734.4984774024733
-        }
-      },
-      "position": {
-        "x": 200.8020812015183,
-        "y": -2464.249983289697
-      }
-    },
-    {
-      "id": "entity-mwqgdasf-tpnx28",
-      "type": "Person",
-      "name": "James Blackwood",
-      "imageUrl": "https://vengrathdm.github.io/core/portraits/char-0122.webp",
-      "color": "#355c6d",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 1246.1376305147369,
-          "y": 882.3876918687832
-        }
-      },
-      "position": {
-        "x": 94.8020812015183,
-        "y": -2326.249983289697
-      }
-    },
-    {
-      "id": "entity-mwqgdo45-60y7xj",
-      "type": "Person",
-      "name": "Polter von Geist",
-      "imageUrl": "https://vengrathdm.github.io/core/portraits/char-0120.webp",
-      "color": "#355c6d",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 1462.5257606863265,
-          "y": 450.0059634166455
-        }
-      },
-      "position": {
-        "x": 231.13541453485163,
-        "y": -2303.249983289697
-      }
-    },
-    {
-      "id": "entity-mwqge81o-iz2fm6",
+      "id": "spz-party",
       "type": "Faction",
       "name": "Drużyna",
       "imageUrl": "",
-      "color": "#ff00dd",
-      "borderColor": "#fbff00",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 1296.496516999273,
-          "y": 622.4781357828131
-        }
-      },
-      "position": {
-        "x": 162.13541453485163,
-        "y": -2386.249983289697
-      }
-    },
-    {
-      "id": "entity-mwqgguk7-tuhh3u",
-      "type": "Institution",
-      "name": "Rada Heartwell",
-      "imageUrl": "",
-      "color": "#526878",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 521.54501698314,
-          "y": 151.45316685757922
-        }
-      },
-      "position": {
-        "x": 817.8433037950522,
-        "y": -40.322688111437344
-      }
-    },
-    {
-      "id": "entity-mwqghot0-2uwwr8",
-      "type": "Person",
-      "name": "Percival Lysander Ignatious Sinclair",
-      "imageUrl": "",
-      "color": "#355c6d",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {
-        "aliases": "Książę Korony",
-        "occupation": "Książę Korony"
-      },
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 790.2043630214889,
-          "y": 101.86117656395072
-        }
-      },
-      "position": {
-        "x": 815.8003156291945,
-        "y": -224.1916230386108
-      }
-    },
-    {
-      "id": "entity-mwqgj6xm-c7m2lx",
-      "type": "Person",
-      "name": "Isadora Crane",
-      "imageUrl": "",
-      "color": "#355c6d",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 720.0573277236484,
-          "y": 722.7481943541902
-        }
-      },
-      "position": {
-        "x": 972.3356730984356,
-        "y": -126.79769008900521
-      }
-    },
-    {
-      "id": "entity-mwqgjflr-ke4sfd",
-      "type": "Person",
-      "name": "Javert Crane",
-      "imageUrl": "",
-      "color": "#355c6d",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 759.8043002688304,
-          "y": -420.5002003221032
-        }
-      },
-      "position": {
-        "x": 681.2544085359253,
-        "y": -198.7336968726065
-      }
-    },
-    {
-      "id": "entity-mwqgjnq4-2bfon4",
-      "type": "Person",
-      "name": "Helena Corvus",
-      "imageUrl": "",
-      "color": "#355c6d",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 492.50731346536645,
-          "y": 419.1238529356093
-        }
-      },
-      "position": {
-        "x": 679.4003877425336,
-        "y": -33.72584626073758
-      }
-    },
-    {
-      "id": "entity-mwqgk9ha-fhhnif",
-      "type": "Person",
-      "name": "Matthias Ravencroft",
-      "imageUrl": "",
-      "color": "#355c6d",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 307.02672406781437,
-          "y": -78.83449851181945
-        }
-      },
-      "position": {
-        "x": 768.0225816666608,
-        "y": 83.8190720403016
-      }
-    },
-    {
-      "id": "entity-mwqgkftg-xw2yd3",
-      "type": "Person",
-      "name": "Vivienne",
-      "imageUrl": "",
-      "color": "#355c6d",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": -39.19145120409701,
-          "y": 252.55577425296013
-        }
-      },
-      "position": {
-        "x": 894.837603934659,
-        "y": 87.15630946840682
-      }
-    },
-    {
-      "id": "entity-mwqgkndh-3zkg9i",
-      "type": "Person",
-      "name": "Sabine Kessler",
-      "imageUrl": "",
-      "color": "#355c6d",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 1105.1959740919465,
-          "y": 205.7618116859055
-        }
-      },
-      "position": {
-        "x": 981.2349729067162,
-        "y": 12.624673574057047
-      }
-    },
-    {
-      "id": "entity-mwqgmbs5-uly40i",
-      "type": "Institution",
-      "name": "Miasto Heartwell",
-      "imageUrl": "",
-      "color": "#526878",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 762.9755135288555,
-          "y": 382.85357072800946
-        }
-      },
-      "position": {
-        "x": 538.6558302106671,
-        "y": 934.6010692425073
-      }
-    },
-    {
-      "id": "entity-mwqgneze-i2a8b3",
-      "type": "Location",
-      "name": "Senatorium (Dzielnica)",
-      "imageUrl": "",
-      "color": "#3f716b",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 620.2751659412709,
-          "y": 989.8217352920976
-        }
-      },
-      "position": {
-        "x": 389.06450634541466,
-        "y": -106.3558490632881
-      }
-    },
-    {
-      "id": "entity-mwqgnvjt-yyd75m",
-      "type": "Location",
-      "name": "Zabraniec (Dzielnica)",
-      "imageUrl": "",
-      "color": "#3f716b",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 1031.3498206914269,
-          "y": 472.03876711736484
-        }
-      },
-      "position": {
-        "x": 472.7964315150804,
-        "y": -59.02910874999878
-      }
-    },
-    {
-      "id": "entity-mwqgof8b-72uhlz",
-      "type": "Location",
-      "name": "Erozja (Dzielnica)",
-      "imageUrl": "",
-      "color": "#3f716b",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 228.00556675121567,
-          "y": 188.02497201007964
-        }
-      },
-      "position": {
-        "x": 500.46437200592646,
-        "y": -214.8432999352898
-      }
-    },
-    {
-      "id": "entity-mwqgoug1-kquth2",
-      "type": "Location",
-      "name": "Wisielcze Wzgórze (Dzielnica)",
-      "imageUrl": "",
-      "color": "#3f716b",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 575.7170671909377,
-          "y": -171.92730961311509
-        }
-      },
-      "position": {
-        "x": 611.8642376664383,
-        "y": -101.2591231833954
-      }
-    },
-    {
-      "id": "entity-mwqgpenq-b9ko2z",
-      "type": "Location",
-      "name": "Apetoria (Dzielnica)",
-      "imageUrl": "",
-      "color": "#3f716b",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 356.8414874640106,
-          "y": 683.847603356083
-        }
-      },
-      "position": {
-        "x": 332.2724179694675,
-        "y": -284.7412548595325
-      }
-    },
-    {
-      "id": "entity-mwqgpp79-f50klb",
-      "type": "Location",
-      "name": "Korona (Dzielnica)",
-      "imageUrl": "",
-      "color": "#3f716b",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 972.019868858622,
-          "y": -105.02672915969288
-        }
-      },
-      "position": {
-        "x": 217.96013752044558,
-        "y": -209.01847035826958
-      }
-    },
-    {
-      "id": "entity-mwqgqd9l-j7ros6",
-      "type": "Faction",
-      "name": "Kartel Szumu",
-      "imageUrl": "",
       "color": "#65734a",
-      "borderColor": "#ffffff",
+      "borderColor": "#d4a03c",
       "lineStyle": "solid",
-      "notes": "",
+      "notes": "Bohaterowie badający dolinę.",
       "fields": {},
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 81.66536949297563,
-          "y": 754.3018491254318
+          "x": 670.3849346836848,
+          "y": 393.95153332313316
         }
       },
       "position": {
-        "x": 954.0256921832474,
-        "y": 154.94879529915755
+        "x": 600,
+        "y": 450
       }
     },
     {
-      "id": "entity-mwqgqy2d-em56zd",
+      "id": "spz-pelagietta",
       "type": "Person",
-      "name": "Marlow Kess",
+      "name": "Pelagietta",
       "imageUrl": "",
       "color": "#355c6d",
-      "borderColor": "#ffffff",
+      "borderColor": "#d4a03c",
       "lineStyle": "solid",
-      "notes": "",
-      "fields": {
-        "aliases": "Wujaszek"
-      },
+      "notes": "Zwiadowczyni. Jej amulet reaguje na relikty żywiołów.",
+      "fields": {},
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 11.628720235226751,
-          "y": 1022.7669661843546
+          "x": 925.6552941359465,
+          "y": 282.2336752182985
         }
       },
       "position": {
-        "x": 1064.1964963032908,
-        "y": -44.89591915115319
+        "x": 420,
+        "y": 250
       }
     },
     {
-      "id": "entity-mwqgtiyf-jdu4kc",
+      "id": "spz-luekher",
+      "type": "Person",
+      "name": "Luekher",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Paladyn, który przysiągł chronić mieszkańców.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 822.9397370199191,
+          "y": 613.4713151780214
+        }
+      },
+      "position": {
+        "x": 600,
+        "y": 180
+      }
+    },
+    {
+      "id": "spz-damira",
+      "type": "Person",
+      "name": "Damira",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Bardka i mistrzyni kamuflażu.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 936.3077639894885,
+          "y": 393.19379217475273
+        }
+      },
+      "position": {
+        "x": 780,
+        "y": 250
+      }
+    },
+    {
+      "id": "spz-pchelka",
+      "type": "Person",
+      "name": "Pchełka",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Druidka wyczuwająca skażenie ziemi.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 885.5196020136731,
+          "y": 513.9080507111438
+        }
+      },
+      "position": {
+        "x": 780,
+        "y": 570
+      }
+    },
+    {
+      "id": "spz-cult",
       "type": "Faction",
-      "name": "Kolekcja",
+      "name": "Kult Pierwotnego Zła",
       "imageUrl": "",
-      "color": "#65734a",
-      "borderColor": "#ffffff",
+      "color": "#8b2020",
+      "borderColor": "#d4a03c",
       "lineStyle": "solid",
-      "notes": "",
+      "notes": "Tajny kult czterech żywiołów.",
       "fields": {},
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 444.78747343400926,
-          "y": 1253.8072498393158
+          "x": 168.79386814796572,
+          "y": 303.0429476019855
         }
       },
       "position": {
-        "x": 44.51158753115907,
-        "y": -228.69894642305417
+        "x": 1050,
+        "y": 440
       }
     },
     {
-      "id": "entity-mwqgu4s1-7fcfbm",
+      "id": "spz-fire",
       "type": "Faction",
-      "name": "Salon Aurelii",
+      "name": "Odłam Ognia",
       "imageUrl": "",
-      "color": "#65734a",
+      "color": "#a84f35",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Rytualiści ognia.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 107.35920383739156,
+          "y": -162.8826931005405
+        }
+      },
+      "position": {
+        "x": 1260,
+        "y": 200
+      }
+    },
+    {
+      "id": "spz-water",
+      "type": "Faction",
+      "name": "Odłam Wody",
+      "imageUrl": "",
+      "color": "#527b91",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Kultyści zalanych podziemi.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": -398.01919434498393,
+          "y": 355.8269300660508
+        }
+      },
+      "position": {
+        "x": 1300,
+        "y": 430
+      }
+    },
+    {
+      "id": "spz-earth",
+      "type": "Faction",
+      "name": "Odłam Ziemi",
+      "imageUrl": "",
+      "color": "#78804e",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Strażnicy kamiennych krypt.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": -201.8335873093231,
+          "y": 778.4209244311397
+        }
+      },
+      "position": {
+        "x": 1260,
+        "y": 660
+      }
+    },
+    {
+      "id": "spz-air",
+      "type": "Faction",
+      "name": "Odłam Powietrza",
+      "imageUrl": "",
+      "color": "#8798a0",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Wieszczowie z wieży.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": -319.64815822431433,
+          "y": 52.682481391723954
+        }
+      },
+      "position": {
+        "x": 1030,
+        "y": 760
+      }
+    },
+    {
+      "id": "spz-hommlet",
+      "type": "Location",
+      "name": "Hommlet",
+      "imageUrl": "",
+      "color": "#3f716b",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Osada i baza wypadowa.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 671.1934774281177,
+          "y": 139.54939660423526
+        }
+      },
+      "position": {
+        "x": 180,
+        "y": 680
+      }
+    },
+    {
+      "id": "spz-moathouse",
+      "type": "Location",
+      "name": "Moathouse",
+      "imageUrl": "",
+      "color": "#8B6F47",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Zrujnowana warownia kultystów.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 241.56012334214086,
+          "y": -48.808015349670825
+        }
+      },
+      "position": {
+        "x": 450,
+        "y": 820
+      }
+    },
+    {
+      "id": "spz-temple",
+      "type": "Location",
+      "name": "Ruiny Świątyni",
+      "imageUrl": "",
+      "color": "#8B6F47",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Kompleks czterech skrzydeł i piątej komnaty.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 405.39388137940034,
+          "y": 488.37268390257015
+        }
+      },
+      "position": {
+        "x": 950,
+        "y": 1000
+      }
+    },
+    {
+      "id": "spz-amulet",
+      "type": "Object",
+      "name": "Amulet czterech znaków",
+      "imageUrl": "",
+      "color": "#8B6F47",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Przedmiot noszony przez Pelagiettę.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 645.4207093711293,
+          "y": -3.721542268573423
+        }
+      },
+      "position": {
+        "x": 230,
+        "y": 430
+      }
+    },
+    {
+      "id": "spz-ritual",
+      "type": "Event",
+      "name": "Rytuał pięciu kręgów",
+      "imageUrl": "",
+      "color": "#66527A",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Obrzęd mający połączyć cztery sanktuaria.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 113.50424384943084,
+          "y": 687.9239321666624
+        }
+      },
+      "position": {
+        "x": 790,
+        "y": 940
+      }
+    },
+    {
+      "id": "entity-mwurk7in-gocvfr",
+      "type": "Family",
+      "name": "l",
+      "imageUrl": "",
+      "color": "#704653",
       "borderColor": "#ffffff",
       "lineStyle": "solid",
       "notes": "",
       "fields": {},
       "customFields": [],
+      "position": {
+        "x": 503.9400730939053,
+        "y": -13.469257772349067
+      },
       "positions": {
         "complete": {
-          "x": 792.1185581768486,
-          "y": 1255.2898051934362
+          "x": 503.9400730939053,
+          "y": -13.469257772349067
         }
-      },
-      "position": {
-        "x": -32.13811661387677,
-        "y": 164.21130171536484
-      }
-    },
-    {
-      "id": "entity-mwqgumhi-edzqyd",
-      "type": "Person",
-      "name": "Ruda",
-      "imageUrl": "",
-      "color": "#355c6d",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {
-        "aliases": "Ruda"
-      },
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": -295.19118937622807,
-          "y": 1237.792981002282
-        }
-      },
-      "position": {
-        "x": -204.76097973042806,
-        "y": -377.48954858694725
-      }
-    },
-    {
-      "id": "entity-mwqgv1h5-x22212",
-      "type": "Person",
-      "name": "Tobiasz Wrona",
-      "imageUrl": "",
-      "color": "#355c6d",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": -495.86598766249085,
-          "y": 805.5300727398605
-        }
-      },
-      "position": {
-        "x": -426.33659507406105,
-        "y": -116.62290842947235
-      }
-    },
-    {
-      "id": "entity-mwqgvail-qb9hra",
-      "type": "Person",
-      "name": "Brat Senn",
-      "imageUrl": "",
-      "color": "#355c6d",
-      "borderColor": "#ffffff",
-      "lineStyle": "solid",
-      "notes": "",
-      "fields": {},
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": -183.3502224367396,
-          "y": 733.520085739555
-        }
-      },
-      "position": {
-        "x": -225.372664878673,
-        "y": -387.79539116106974
       }
     }
   ],
   "relationships": [
     {
-      "id": "rel-mwqgekf3-xpbcru",
-      "source": "entity-mwqgdo45-60y7xj",
-      "target": "entity-mwqge81o-iz2fm6",
-      "type": "Jest członkiem",
-      "note": "",
+      "id": "spz-rel-0",
+      "source": "spz-pelagietta",
+      "target": "spz-party",
+      "type": "ALLY_OF",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#83a98a",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "spz-rel-1",
+      "source": "spz-luekher",
+      "target": "spz-party",
+      "type": "ALLY_OF",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#83a98a",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "spz-rel-2",
+      "source": "spz-damira",
+      "target": "spz-party",
+      "type": "ALLY_OF",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#83a98a",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "spz-rel-3",
+      "source": "spz-pchelka",
+      "target": "spz-party",
+      "type": "ALLY_OF",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#83a98a",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "spz-rel-4",
+      "source": "spz-party",
+      "target": "spz-hommlet",
+      "type": "LOCATED_IN",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#8c9caa",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "spz-rel-5",
+      "source": "spz-party",
+      "target": "spz-moathouse",
+      "type": "SEEKS",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#9a8ac7",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    },
+    {
+      "id": "spz-rel-6",
+      "source": "spz-party",
+      "target": "spz-temple",
+      "type": "SEEKS",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#9a8ac7",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    },
+    {
+      "id": "spz-rel-7",
+      "source": "spz-cult",
+      "target": "spz-temple",
+      "type": "CONTROLS",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#c65c58",
+      "lineStyle": "dashed",
+      "direction": "towards"
+    },
+    {
+      "id": "spz-rel-8",
+      "source": "spz-fire",
+      "target": "spz-cult",
+      "type": "SERVES",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
       "color": "#d4a03c",
       "lineStyle": "solid",
       "direction": "towards"
     },
     {
-      "id": "rel-mwqgepmz-9g7o0j",
-      "source": "entity-mwqgdasf-tpnx28",
-      "target": "entity-mwqge81o-iz2fm6",
-      "type": "Jest członkiem",
-      "note": "",
+      "id": "spz-rel-9",
+      "source": "spz-water",
+      "target": "spz-cult",
+      "type": "SERVES",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
       "color": "#d4a03c",
       "lineStyle": "solid",
       "direction": "towards"
     },
     {
-      "id": "rel-mwqgessu-nxwglh",
-      "source": "entity-mwqgbm67-ta7yht",
-      "target": "entity-mwqge81o-iz2fm6",
-      "type": "Jest członkiem",
-      "note": "",
+      "id": "spz-rel-10",
+      "source": "spz-earth",
+      "target": "spz-cult",
+      "type": "SERVES",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
       "color": "#d4a03c",
       "lineStyle": "solid",
       "direction": "towards"
     },
     {
-      "id": "rel-mwqgevke-3461xu",
-      "source": "entity-mwqgcihh-a89qm9",
-      "target": "entity-mwqge81o-iz2fm6",
-      "type": "Jest członkiem",
-      "note": "",
+      "id": "spz-rel-11",
+      "source": "spz-air",
+      "target": "spz-cult",
+      "type": "SERVES",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
       "color": "#d4a03c",
       "lineStyle": "solid",
       "direction": "towards"
     },
     {
-      "id": "rel-mwqgkvoz-nbyhef",
-      "source": "entity-mwqgjflr-ke4sfd",
-      "target": "entity-mwqgguk7-tuhh3u",
-      "type": "Jest członkiem",
-      "note": "",
+      "id": "spz-rel-12",
+      "source": "spz-pelagietta",
+      "target": "spz-amulet",
+      "type": "ALLY_OF",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#83a98a",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "spz-rel-13",
+      "source": "spz-cult",
+      "target": "spz-ritual",
+      "type": "SEEKS_RELIC",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
       "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    },
+    {
+      "id": "spz-rel-14",
+      "source": "spz-ritual",
+      "target": "spz-temple",
+      "type": "LOCATED_IN",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#8c9caa",
       "lineStyle": "solid",
       "direction": "towards"
     },
     {
-      "id": "rel-mwqgl16l-lpt7bx",
-      "source": "entity-mwqghot0-2uwwr8",
-      "target": "entity-mwqgguk7-tuhh3u",
-      "type": "Jest członkiem",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgl4q9-wec86i",
-      "source": "entity-mwqgj6xm-c7m2lx",
-      "target": "entity-mwqgguk7-tuhh3u",
-      "type": "Jest członkiem",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqglakq-v7ohvr",
-      "source": "entity-mwqgkndh-3zkg9i",
-      "target": "entity-mwqgguk7-tuhh3u",
-      "type": "Jest członkiem",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgldim-ihva9v",
-      "source": "entity-mwqgkftg-xw2yd3",
-      "target": "entity-mwqgguk7-tuhh3u",
-      "type": "Jest członkiem",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqglhng-toe0jj",
-      "source": "entity-mwqgk9ha-fhhnif",
-      "target": "entity-mwqgguk7-tuhh3u",
-      "type": "Jest członkiem",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqglkt6-fhbyi7",
-      "source": "entity-mwqgjnq4-2bfon4",
-      "target": "entity-mwqgguk7-tuhh3u",
-      "type": "Jest członkiem",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgmlt1-o3v0eo",
-      "source": "entity-mwqgguk7-tuhh3u",
-      "target": "entity-mwqgmbs5-uly40i",
-      "type": "Kontroluje",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgn068-wanm8j",
-      "source": "entity-mwqge81o-iz2fm6",
-      "target": "entity-mwqgmbs5-uly40i",
-      "type": "Znajduje się w",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgnj6e-kkv0ti",
-      "source": "entity-mwqgneze-i2a8b3",
-      "target": "entity-mwqgmbs5-uly40i",
-      "type": "Znajduje się w",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgnyws-nqsr0v",
-      "source": "entity-mwqgnvjt-yyd75m",
-      "target": "entity-mwqgmbs5-uly40i",
-      "type": "Znajduje się w",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgoig9-elnr24",
-      "source": "entity-mwqgof8b-72uhlz",
-      "target": "entity-mwqgmbs5-uly40i",
-      "type": "Znajduje się w",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgoxhv-0v0mwn",
-      "source": "entity-mwqgoug1-kquth2",
-      "target": "entity-mwqgmbs5-uly40i",
-      "type": "Znajduje się w",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgpsjj-40o4w7",
-      "source": "entity-mwqgpp79-f50klb",
-      "target": "entity-mwqgmbs5-uly40i",
-      "type": "Znajduje się w",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgpvx0-rm3mdh",
-      "source": "entity-mwqgpenq-b9ko2z",
-      "target": "entity-mwqgmbs5-uly40i",
-      "type": "Znajduje się w",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgqi2c-u34j1z",
-      "source": "entity-mwqgqd9l-j7ros6",
-      "target": "entity-mwqgneze-i2a8b3",
-      "type": "Działa w",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "none"
-    },
-    {
-      "id": "rel-mwqgr8v1-obzdlg",
-      "source": "entity-mwqgqy2d-em56zd",
-      "target": "entity-mwqgqd9l-j7ros6",
-      "type": "Kontroluje",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgsa0b-8ezdc7",
-      "source": "entity-mwqgkftg-xw2yd3",
-      "target": "entity-mwqgof8b-72uhlz",
-      "type": "Kontroluje",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgsfn0-6gdygi",
-      "source": "entity-mwqghot0-2uwwr8",
-      "target": "entity-mwqgpp79-f50klb",
-      "type": "Kontroluje",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgsm1e-a32ufp",
-      "source": "entity-mwqgk9ha-fhhnif",
-      "target": "entity-mwqgof8b-72uhlz",
-      "type": "Kontroluje",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgsrmw-8vj7d0",
-      "source": "entity-mwqgjflr-ke4sfd",
-      "target": "entity-mwqgoug1-kquth2",
-      "type": "Kontroluje",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgsws3-0zzf3e",
-      "source": "entity-mwqgjnq4-2bfon4",
-      "target": "entity-mwqgpenq-b9ko2z",
-      "type": "Kontroluje",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgt1s6-cxahiq",
-      "source": "entity-mwqgkndh-3zkg9i",
-      "target": "entity-mwqgnvjt-yyd75m",
-      "type": "Kontroluje",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgt77u-y0c04j",
-      "source": "entity-mwqgj6xm-c7m2lx",
-      "target": "entity-mwqgneze-i2a8b3",
-      "type": "Kontroluje",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgtoss-qp986b",
-      "source": "entity-mwqgtiyf-jdu4kc",
-      "target": "entity-mwqgneze-i2a8b3",
-      "type": "Działa w",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "none"
-    },
-    {
-      "id": "rel-mwqgua65-0zt7g8",
-      "source": "entity-mwqgu4s1-7fcfbm",
-      "target": "entity-mwqgneze-i2a8b3",
-      "type": "Działa w",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "none"
-    },
-    {
-      "id": "rel-mwqgutqi-jd8k49",
-      "source": "entity-mwqgumhi-edzqyd",
-      "target": "entity-mwqgqd9l-j7ros6",
-      "type": "Jest członkiem",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgv557-pcfa30",
-      "source": "entity-mwqgv1h5-x22212",
-      "target": "entity-mwqgqd9l-j7ros6",
-      "type": "Jest członkiem",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
-    },
-    {
-      "id": "rel-mwqgveu8-ieq08y",
-      "source": "entity-mwqgvail-qb9hra",
-      "target": "entity-mwqgqd9l-j7ros6",
-      "type": "Jest członkiem",
-      "note": "",
-      "color": "#d4a03c",
-      "lineStyle": "solid",
-      "direction": "towards"
+      "id": "spz-rel-15",
+      "source": "spz-cult",
+      "target": "spz-party",
+      "type": "OPPOSES",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#c65c58",
+      "lineStyle": "dashed",
+      "direction": "mutual"
     }
   ]
 }
