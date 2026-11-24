@@ -1,0 +1,26 @@
+{
+  "colors": {
+    "base1": "#071b2a",
+    "base2": "#0c2b3d",
+    "base3": "#143b50",
+    "base4": "#1c4c60",
+    "base5": "#2a6370",
+    "accent1": "#b87942",
+    "accent2": "#e7c982",
+    "text1": "#f5f0e4",
+    "text2": "#e5e0d2",
+    "text3": "#b8c5c6",
+    "textMuted": "#8ea4a8",
+    "titleAccent": "#fff4d8",
+    "line1": "#345363",
+    "line2": "#98734c"
+  },
+  "typography": {
+    "heading": "\"Caesar Dressing\", \"Voltaire\", sans-serif",
+    "body": "\"Fira Sans Extra Condensed\", sans-serif",
+    "serif": "\"Brygada 1918\", Georgia, serif"
+  },
+  "fontsUrl": "https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap",
+  "heroImage": "/core/graphics/voronoi/odyssey-of-the-dragonlords.webp",
+  "audioColor": "#e7c982"
+}
