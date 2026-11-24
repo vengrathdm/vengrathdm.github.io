@@ -44,12 +44,13 @@ function md(source){
 const entity=id=>data.entities.find(x=>x.id===id),rel=id=>data.relationships.find(x=>x.id===id);
 function toast(s){$("toast").textContent=s;$("toast").classList.add("visible");clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("toast").classList.remove("visible"),2800)}
 function setDirty(v){dirty=v;const status=$("dirtyState");if(status){status.textContent=v?"Kopia robocza zmieniona · oczekiwanie na zapis lokalny":"Wczytano dane oficjalne · brak niezapisanych zmian";status.style.color=v?"#e0a45a":"#c49a7b"}}
-let saveTimer;
+let saveTimer,saveGeneration=0;
 function openLocalDb(){return new Promise((resolve,reject)=>{if(!("indexedDB" in window)){reject(Error("IndexedDB jest niedostępne"));return}const request=indexedDB.open("VengrathTempleRelationshipMap",1);request.onupgradeneeded=()=>{if(!request.result.objectStoreNames.contains("state"))request.result.createObjectStore("state",{keyPath:"id"})};request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error)})}
 async function persistLocal(){
- clearTimeout(saveTimer);saveTimer=setTimeout(async()=>{
-  try{const db=await openLocalDb();await new Promise((resolve,reject)=>{const tx=db.transaction("state","readwrite");tx.objectStore("state").put({id:"working",data});tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});db.close();if($("persistenceState")){$("persistenceState").textContent="Zapis lokalny · dane zapisane w tej przeglądarce";$("persistenceState").style.color="#bd8c45"}}
-  catch(err){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(data));if($("persistenceState")){$("persistenceState").textContent="Zapis lokalny · dane zapisane w tej przeglądarce";$("persistenceState").style.color="#bd8c45"}}catch(_){if($("persistenceState")){$("persistenceState").textContent="Zapis lokalny niedostępny · wyeksportuj kopię zapasową";$("persistenceState").style.color="#e0a45a"}}}
+ clearTimeout(saveTimer);const generation=saveGeneration;saveTimer=setTimeout(async()=>{
+  if(generation!==saveGeneration)return;
+  try{const db=await openLocalDb();if(generation!==saveGeneration){db.close();return}await new Promise((resolve,reject)=>{const tx=db.transaction("state","readwrite");tx.objectStore("state").put({id:"working",data});tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});db.close();if(generation===saveGeneration&&$("persistenceState")){$("persistenceState").textContent="Zapis lokalny · dane zapisane w tej przeglądarce";$("persistenceState").style.color="#bd8c45"}}
+  catch(err){if(generation!==saveGeneration)return;try{localStorage.setItem(STORAGE_KEY,JSON.stringify(data));if($("persistenceState")){$("persistenceState").textContent="Zapis lokalny · dane zapisane w tej przeglądarce";$("persistenceState").style.color="#bd8c45"}}catch(_){if($("persistenceState")){$("persistenceState").textContent="Zapis lokalny niedostępny · wyeksportuj kopię zapasową";$("persistenceState").style.color="#e0a45a"}}}
  },180);
 }
 async function restoreLocal(){
@@ -58,7 +59,11 @@ async function restoreLocal(){
  try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return false;data=normalize(JSON.parse(raw));setDirty(true);if($("persistenceState"))$("persistenceState").textContent="Przywrócono lokalną kopię roboczą";return true}
  catch(err){if($("persistenceState"))$("persistenceState").textContent="Nie udało się odczytać zapisanej kopii lokalnej";return false}
 }
-async function clearLocal(){try{const db=await openLocalDb();await new Promise(resolve=>{const tx=db.transaction("state","readwrite");tx.objectStore("state").delete("working");tx.oncomplete=resolve;tx.onerror=resolve});db.close()}catch(_){}localStorage.removeItem(STORAGE_KEY)}
+async function clearLocal(){
+ saveGeneration++;clearTimeout(saveTimer);saveTimer=null;
+ try{const db=await openLocalDb();await new Promise((resolve,reject)=>{const tx=db.transaction("state","readwrite");tx.objectStore("state").delete("working");tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error("Nie udało się wyczyścić lokalnej kopii."))});db.close()}catch(_){}
+ try{localStorage.removeItem(STORAGE_KEY)}catch(_){}
+}
 function applyEntityTypes(metadata){
  Object.keys(TYPES).forEach(k=>delete TYPES[k]);Object.assign(TYPES,clone(BUILTIN_TYPES));
  (Array.isArray(metadata?.entityTypes)?metadata.entityTypes:[]).forEach(def=>{
@@ -346,7 +351,19 @@ $("uploadData").onclick=async()=>{
  finally{button.disabled=false;button.textContent=originalLabel;}
 };
 $("importData").onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const parsed=normalize(JSON.parse(await f.text()));confirm("Import zastąpi bieżący zestaw roboczy. Kontynuować?",()=>{data=parsed;layoutModes={...layoutModes,...(data.metadata.layoutModes||{})};selected=null;activeView="complete";persistLocal();viewports={complete:null,family:null,organization:null,political:null,characters:null};setDirty(true);renderGraph();renderFilters();renderLegend();openTab("view");toast("Zaimportowano zestaw danych.")})}catch(err){toast("Import nie powiódł się: "+err.message)}e.target.value=""};
-$("reloadOfficial").onclick=()=>{const run=async()=>{try{officialData=await fetchOfficial();await clearLocal();data=clone(officialData);layoutModes={complete:"force",family:"hierarchy",organization:"hierarchy",political:"force",characters:"force"};selected=null;viewports={complete:null,family:null,organization:null};setDirty(false);renderGraph();renderFilters();renderLegend();openTab("view");toast("Ponownie wczytano dane oficjalne.")}catch(e){toast(e.message)}};if(dirty)confirm("Ponownie wczytać dane oficjalne i odrzucić wszystkie niewyeksportowane zmiany?",run);else run()};
+$("reloadOfficial").onclick=()=>{const run=async()=>{
+ const button=$("reloadOfficial"),label=button.textContent;if(button.disabled)return;button.disabled=true;button.textContent="Wczytywanie…";
+ try{
+  const latest=await fetchOfficial();await clearLocal();officialData=latest;data=clone(latest);
+  layoutModes={complete:"force",family:"hierarchy",organization:"hierarchy",political:"force",characters:"force"};
+  selected=null;activeView="complete";viewports={complete:null,family:null,organization:null,political:null,characters:null};
+  setDirty(false);renderGraph();renderFilters();renderLegend();updateCount();updateEntityReferenceOptions();
+  $("dossierWindow").hidden=true;openTab("view");
+  if($("persistenceState")){$("persistenceState").textContent="Dane oficjalne · lokalna kopia robocza wyczyszczona";$("persistenceState").style.color="#bd8c45"}
+  toast("Ponownie wczytano dane oficjalne.");
+ }catch(e){toast("Nie udało się wczytać danych oficjalnych: "+e.message)}
+ finally{button.disabled=false;button.textContent=label}
+};if(dirty)confirm("Ponownie wczytać dane oficjalne i odrzucić wszystkie niewyeksportowane zmiany?",run);else run()};
 
 document.addEventListener("click",e=>{if(!e.target.closest("#contextMenu"))hideContext()});
 cy=cytoscape({container:$("graph"),elements:[],minZoom:.12,maxZoom:3,wheelSensitivity:.22,selectionType:"single",boxSelectionEnabled:false});
