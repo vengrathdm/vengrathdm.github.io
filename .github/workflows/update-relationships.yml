@@ -1,0 +1,62 @@
+name: Update relationship map data
+
+on:
+  repository_dispatch:
+    types: [update_relationships]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-relationship-map-data
+  cancel-in-progress: false
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Validate and write JSON
+        env:
+          RELATIONSHIPS_B64: ${{ github.event.client_payload.relationships_b64 }}
+        run: |
+          python3 - <<'PY'
+          import base64
+          import json
+          import os
+          from pathlib import Path
+
+          encoded = os.environ.get("RELATIONSHIPS_B64", "")
+          if not encoded:
+              raise SystemExit("Missing relationship data payload")
+          try:
+              raw = base64.b64decode(encoded, validate=True)
+              parsed = json.loads(raw)
+          except Exception as exc:
+              raise SystemExit(f"Invalid relationship data: {exc}")
+
+          if not isinstance(parsed, dict):
+              raise SystemExit("Expected a JSON object")
+          if not isinstance(parsed.get("entities"), list) or not isinstance(parsed.get("relationships"), list):
+              raise SystemExit("JSON must contain entities and relationships arrays")
+
+          target = Path("page/the-dragons-due/Mapa-Relacji/data/relationships.json")
+          target.parent.mkdir(parents=True, exist_ok=True)
+          target.write_text(json.dumps(parsed, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+          PY
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add page/the-dragons-due/Mapa-Relacji/data/relationships.json
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+            exit 0
+          fi
+          git commit -m "Update relationship map data"
+          git push origin HEAD:main
