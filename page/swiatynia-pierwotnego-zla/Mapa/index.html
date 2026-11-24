@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dolina Hommlet — Mapa kampanii</title>
+<title>Atlas Doliny Hommlet — Świątynia Pierwotnego Zła</title>
 <meta name="description" content="Interaktywna mapa Doliny Hommlet: siatka hexów, regiony, znaczniki i edytor.">
 <link rel="stylesheet" href="leaflet/leaflet.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,14 +30,15 @@ body{background:#211e19!important;color:#e9dfc7!important;font-family:'IBM Plex 
 <body class="ksiazeta-heartwell-page">
 <div id="map"></div>
 <div id="head" class="panel">
-  <a class="home-brand" href="/page/swiatynia-pierwotnego-zla/" aria-label="Vengrath — strona główna"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
+  <a class="home-brand" href="/page/swiatynia-pierwotnego-zla/" aria-label="Powrót do kampanii Świątynia Pierwotnego Zła"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
 </div>
 <div id="toolbar" role="toolbar" aria-label="Narzędzia mapy">
   <button class="tool-button" id="layersButton" type="button" aria-expanded="false">Warstwy</button>
   <button class="tool-button" id="editorButton" type="button" aria-expanded="false">Edytor</button>
   <button class="tool-button" id="dossierButton" type="button" aria-expanded="false">Karta terenu</button>
 </div>
-<div id="read" class="panel"><small>Najedź na mapę, aby wyświetlić oznaczenie hexu</small></div>
+<div id="read" class="panel"><small>ATLAS · WSPÓŁRZĘDNE</small><span>Najedź na mapę, aby odczytać hex</span></div>
+<div id="mapStatus" role="status" aria-live="polite">DANE KAMPANII · ZAPIS LOKALNY</div>
 <section id="layersPanel" class="floating-panel" hidden>
   <div class="panel-head"><strong>Warstwy mapy</strong><button class="panel-close" data-close="layersPanel" type="button">Zamknij</button></div>
   <label><input type="checkbox" id="politicalLayer" checked> Warstwy polityczne</label>
