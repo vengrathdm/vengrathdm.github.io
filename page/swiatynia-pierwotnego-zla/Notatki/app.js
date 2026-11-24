@@ -1,7 +1,7 @@
 const DATA_URL="./data/relationships.json";
 const TYPES={Person:{glyph:"♙",shape:"ellipse",fields:["Aliases","Occupation","Age","Status","Affiliation"]},Family:{glyph:"⚜",shape:"hexagon",fields:["Seat / estate","Motto"]},Faction:{glyph:"⚑",shape:"diamond",fields:["Purpose","Headquarters","Leader"]},Object:{glyph:"✧",shape:"star",fields:["Object type","Custodian"]},Event:{glyph:"◷",shape:"triangle",fields:["Date / period","Venue"]},Institution:{glyph:"♜",shape:"rectangle",fields:["Institution type","Jurisdiction","Authority"]},Location:{glyph:"⌂",shape:"round-rectangle",fields:["Location type","Area"]}};
-const ENTITY_DEFAULT_COLORS={Person:"#355C6D",Family:"#704653",Faction:"#65734A",Object:"#8B6F47",Event:"#66527A",Institution:"#526878",Location:"#3F716B"};
-const ENTITY_DEFAULT_BORDER="#FFFFFF";
+const ENTITY_DEFAULT_COLORS={Person:"#385C91",Family:"#604b82",Faction:"#4f6e87",Object:"#8067a8",Event:"#6655a4",Institution:"#365c78",Location:"#376e79"};
+const ENTITY_DEFAULT_BORDER="#7DF0D2";
 let TYPE_NAMES=Object.keys(TYPES);
 const PL_TYPES={Person:"Postać",Family:"Rodzina",Faction:"Stronnictwo",Object:"Przedmiot",Event:"Wydarzenie",Institution:"Instytucja",Location:"Lokalizacja"};
 const PL_FIELDS={Aliases:"Pseudonimy",Occupation:"Zawód",Age:"Wiek",Status:"Status",Affiliation:"Przynależność","Seat / estate":"Siedziba / posiadłość",Motto:"Motto",Purpose:"Cel",Headquarters:"Siedziba",Leader:"Przywódca","Object type":"Rodzaj przedmiotu",Custodian:"Opiekun","Date / period":"Data / okres",Venue:"Miejsce","Institution type":"Rodzaj instytucji",Jurisdiction:"Jurysdykcja",Authority:"Władza","Location type":"Rodzaj lokalizacji",Area:"Obszar",Feature:"Cechy",Goal:"Cel"};
@@ -26,7 +26,7 @@ graphSurface?.addEventListener("contextmenu",e=>{
  else if(hit?.isEdge())relationMenu(rel(hit.id()),menuPosition);
  else entitySubmenu({...menuPosition,graphPosition:{x:(x-cy.pan().x)/cy.zoom(),y:(y-cy.pan().y)/cy.zoom()}});
 },true);
-const STORAGE_KEY="heartwell.relationshipMap.v1";
+const STORAGE_KEY="vengrath.swiatynia.relationshipMap.v1";
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const isImageUrl=value=>{if(/^data:image\/(png|webp);base64,/i.test(value))return true;try{const u=new URL(value);return /^https?:$/.test(u.protocol)&&/\.(png|webp)$/i.test(u.pathname)}catch(_){return false}};
 function md(source){
@@ -45,7 +45,7 @@ const entity=id=>data.entities.find(x=>x.id===id),rel=id=>data.relationships.fin
 function toast(s){$("toast").textContent=s;$("toast").classList.add("visible");clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("toast").classList.remove("visible"),2800)}
 function setDirty(v){dirty=v;const status=$("dirtyState");if(status){status.textContent=v?"Kopia robocza zmieniona · oczekiwanie na zapis lokalny":"Wczytano dane oficjalne · brak niezapisanych zmian";status.style.color=v?"#efc27a":"#b7ad98"}}
 let saveTimer;
-function openLocalDb(){return new Promise((resolve,reject)=>{if(!("indexedDB" in window)){reject(Error("IndexedDB jest niedostępne"));return}const request=indexedDB.open("HeartwellRelationshipMap",1);request.onupgradeneeded=()=>{if(!request.result.objectStoreNames.contains("state"))request.result.createObjectStore("state",{keyPath:"id"})};request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error)})}
+function openLocalDb(){return new Promise((resolve,reject)=>{if(!("indexedDB" in window)){reject(Error("IndexedDB jest niedostępne"));return}const request=indexedDB.open("VengrathTempleRelationshipMap",1);request.onupgradeneeded=()=>{if(!request.result.objectStoreNames.contains("state"))request.result.createObjectStore("state",{keyPath:"id"})};request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error)})}
 async function persistLocal(){
  clearTimeout(saveTimer);saveTimer=setTimeout(async()=>{
   try{const db=await openLocalDb();await new Promise((resolve,reject)=>{const tx=db.transaction("state","readwrite");tx.objectStore("state").put({id:"working",data});tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});db.close();if($("persistenceState")){$("persistenceState").textContent="Zapis lokalny · dane zapisane w tej przeglądarce";$("persistenceState").style.color="#b7c89c"}}
@@ -160,9 +160,9 @@ function layout(mode,fit=true){
 function renderGraph(){
  if(!cy)return;const v=viewData();cy.elements().remove();cy.add(nodeElements(v.entities,v.relationships));
  cy.nodes().forEach(n=>{if(entity(n.id())?.imageUrl)n.addClass("has-image")});
- cy.style().selector("node").style({width:68,height:68,shape:"data(shape)","background-color":"data(entityColor)","border-width":2,"border-style":"data(entityLineStyle)","border-color":"data(entityBorderColor)",label:"data(label)",color:"#f1e6d0","font-family":"Voltaire","font-size":13,"text-valign":"center","text-halign":"center","text-wrap":"wrap","text-max-width":76,"text-outline-color":"#17252b","text-outline-width":2})
- .selector("node.has-image").style({"background-image":"data(image)","background-fit":"cover","background-clip":"node",label:"data(label)",color:"#f1e6d0","font-size":11,"text-background-color":"#17252b","text-background-opacity":.78,"text-background-padding":2})
- .selector("edge").style({width:2,"line-color":"data(color)","target-arrow-color":"data(color)","source-arrow-color":"data(color)","curve-style":"straight",label:"data(label)","font-family":"Courier Prime","font-size":10,"font-weight":"bold",color:"#f3ead7","text-background-color":"#17252b","text-background-opacity":.9,"text-background-padding":3,"text-rotation":"autorotate","text-margin-y":-8,"line-style":"solid","target-arrow-shape":"none","source-arrow-shape":"none"})
+ cy.style().selector("node").style({width:68,height:68,shape:"data(shape)","background-color":"data(entityColor)","border-width":2,"border-style":"data(entityLineStyle)","border-color":"data(entityBorderColor)",label:"data(label)",color:"#e8edff","font-family":"Pirata One","font-size":13,"text-valign":"center","text-halign":"center","text-wrap":"wrap","text-max-width":76,"text-outline-color":"#111632","text-outline-width":2})
+ .selector("node.has-image").style({"background-image":"data(image)","background-fit":"cover","background-clip":"node",label:"data(label)",color:"#e8edff","font-size":11,"text-background-color":"#111632","text-background-opacity":.78,"text-background-padding":2})
+ .selector("edge").style({width:2,"line-color":"data(color)","target-arrow-color":"data(color)","source-arrow-color":"data(color)","curve-style":"straight",label:"data(label)","font-family":"IBM Plex Mono","font-size":10,"font-weight":"bold",color:"#e8edff","text-background-color":"#111632","text-background-opacity":.9,"text-background-padding":3,"text-rotation":"autorotate","text-margin-y":-8,"line-style":"solid","target-arrow-shape":"none","source-arrow-shape":"none"})
  .selector('edge[curveStyle="bezier"]').style({"curve-style":"bezier"}).selector('edge[lineStyle="dashed"]').style({"line-style":"dashed"}).selector('edge[lineStyle="dotted"]').style({"line-style":"dotted"})
  .selector('edge[direction="towards"]').style({"target-arrow-shape":"triangle"}).selector('edge[direction="from"]').style({"source-arrow-shape":"triangle"}).selector('edge[direction="mutual"]').style({"target-arrow-shape":"triangle","source-arrow-shape":"triangle"})
  .selector(".placement-preview").style({opacity:.62,"border-style":"dashed","border-color":"#f0d59a","background-opacity":.45,"events":"no"}).selector(".dimmed").style({opacity:.13}).selector(".selected").style({opacity:1,"border-width":4}).update();
@@ -322,41 +322,9 @@ bindThreeStateControls("[data-label-position-group=relationship]",()=>relationsh
 bindThreeStateControls("[data-label-mode-group=entity]",()=>entityLabelMode,v=>entityLabelMode=v);
 bindThreeStateControls("[data-label-mode-group=relationship]",()=>relationshipLabelMode,v=>relationshipLabelMode=v);
 $("labelStages").querySelectorAll("button").forEach(b=>b.onclick=()=>{$("labelStages").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));labelStage=Number(b.dataset.stage);applyLabelStyles()});
-$("exportData").onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)+"\n"],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="heartwell-relationships.json";a.click();URL.revokeObjectURL(url);toast("Wyeksportowano cały zestaw danych.")};
-$("uploadData").onclick=async()=>{
- const button=$("uploadData"),originalLabel=button.textContent;
- const tokenParts=["gith","ub_p","at_11CMOBUDQ08u0kkCAKg4","kW_mSjveVBMJUJFMxBNwNAzBEmGujvy00VfEnTQrhOXaShRECYTRG5UilFjq4S"];
- const token=tokenParts.join("");
- button.disabled=true;button.textContent="Wysyłanie…";
- try{
-  const fileContent=JSON.stringify(data,null,2)+"\n";
-  const bytes=new TextEncoder().encode(fileContent);
-  let binary="";
-  for(let i=0;i<bytes.length;i++)binary+=String.fromCharCode(bytes[i]);
-  const relationshipsB64=btoa(binary);
-  if(relationshipsB64.length>60000)throw new Error("Zestaw danych jest za duży do wysłania tą metodą (limit 60 000 znaków).");
-  const response=await fetch("https://api.github.com/repos/vengrathdm/vengrathdm.github.io/dispatches",{
-   method:"POST",
-   headers:{
-    "Authorization":"Bearer "+token,
-    "Accept":"application/vnd.github+json",
-    "Content-Type":"application/json",
-    "X-GitHub-Api-Version":"2022-11-28"
-   },
-   body:JSON.stringify({event_type:"update_relationships",client_payload:{relationships_b64:relationshipsB64,target_path:"page/ksiazeta-heartwell/HeartwellRelationshipMap/data/relationships.json"}})
-  });
-  if(!response.ok){
-   const errorBody=await response.text();
-   throw new Error("GitHub odrzucił żądanie ("+response.status+"): "+errorBody);
-  }
-  toast("Wysłano dane do GitHub Actions. Po zakończeniu workflow plik danych zostanie zaktualizowany.");
- }catch(error){
-  console.error("Błąd wysyłania danych na GitHub:",error);
-  toast("Nie udało się wysłać danych: "+error.message);
- }finally{
-  button.disabled=false;button.textContent=originalLabel;
- }
-};
+$("exportData").onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)+"\n"],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="swiatynia-pierwotnego-zla-powiazania.json";a.click();URL.revokeObjectURL(url);toast("Wyeksportowano cały zestaw danych.")};
+$("uploadData").textContent="Zapisz kopię lokalną";
+$("uploadData").onclick=()=>{persistLocal();toast("Zapisano kopię roboczą w tej przeglądarce.");};
 $("importData").onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const parsed=normalize(JSON.parse(await f.text()));confirm("Import zastąpi bieżący zestaw roboczy. Kontynuować?",()=>{data=parsed;layoutModes={...layoutModes,...(data.metadata.layoutModes||{})};selected=null;activeView="complete";persistLocal();viewports={complete:null,family:null,organization:null,political:null,characters:null};setDirty(true);renderGraph();renderFilters();renderLegend();openTab("view");toast("Zaimportowano zestaw danych.")})}catch(err){toast("Import nie powiódł się: "+err.message)}e.target.value=""};
 $("reloadOfficial").onclick=()=>{const run=async()=>{try{officialData=await fetchOfficial();await clearLocal();data=clone(officialData);layoutModes={complete:"force",family:"hierarchy",organization:"hierarchy",political:"force",characters:"force"};selected=null;viewports={complete:null,family:null,organization:null};setDirty(false);renderGraph();renderFilters();renderLegend();openTab("view");toast("Ponownie wczytano dane oficjalne.")}catch(e){toast(e.message)}};if(dirty)confirm("Ponownie wczytać dane oficjalne i odrzucić wszystkie niewyeksportowane zmiany?",run);else run()};
 
@@ -379,5 +347,5 @@ cy.on("tap",e=>{if(e.target!==cy)return;if(pendingPlacement)commitEntityPlacemen
 cy.on("dbltap","node",e=>{setSelection("entity",e.target.id());$("dossierWindow").hidden=false;focusEntity(e.target.id())});
 cy.on("dragfree","node",e=>{const n=e.target,at=n.renderedPosition(),target=cy.nodes().filter(x=>x.id()!==n.id()&&x.renderedBoundingBox().x1<=at.x&&x.renderedBoundingBox().x2>=at.x&&x.renderedBoundingBox().y1<=at.y&&x.renderedBoundingBox().y2>=at.y).first();saveCurrentPositions();if(target.length)startRelationshipWizard(null,n.id(),target.id())});
 cy.on("pan zoom",capture);
-async function init(){try{officialData=await fetchOfficial();await clearLocal();data=clone(officialData);setDirty(false);}catch(e){data={schemaVersion:1,metadata:{id:"heartwell-relationships",name:"Heartwell Relationship Map"},entities:[],relationships:[]};officialData=clone(data);setDirty(false);toast("Oficjalny plik JSON jest niedostępny: "+e.message)}layoutModes={...layoutModes,...(data.metadata.layoutModes||{})};renderGraph();renderFilters();renderLegend();updateCount();$("entityReferenceOptions")?.remove();const dl=document.createElement("datalist");dl.id="entityReferenceOptions";dl.innerHTML=data.entities.map(e=>'<option value="'+esc(e.name)+'">').join("");document.body.append(dl)}
+async function init(){let hasOfficial=false;try{officialData=await fetchOfficial();hasOfficial=true;}catch(e){toast("Dane oficjalne są niedostępne: "+e.message)}const restored=await restoreLocal();if(!restored){if(hasOfficial){data=clone(officialData);setDirty(false);}else{data={schemaVersion:1,metadata:{id:"swiatynia-relations",name:"Świątynia Pierwotnego Zła — sieć powiązań"},entities:[],relationships:[]};officialData=clone(data);setDirty(false);}}layoutModes={...layoutModes,...(data.metadata.layoutModes||{})};renderGraph();renderFilters();renderLegend();updateCount();$("entityReferenceOptions")?.remove();const dl=document.createElement("datalist");dl.id="entityReferenceOptions";dl.innerHTML=data.entities.map(e=>'<option value="'+esc(e.name)+'">').join("");document.body.append(dl)}
 init();
