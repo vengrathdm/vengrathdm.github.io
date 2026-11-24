@@ -135,6 +135,9 @@ button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .mount{height:clamp(380px,64vh,700px);display:grid;place-items:center;text-align:center;color:var(--mute);background:#05061a;box-shadow:inset 0 0 40px #000,inset 0 0 0 1px #000;border-radius:4px}
 .mount.notes{height:clamp(440px,72vh,780px)}
 .mount>*:not(.ph){width:100%;height:100%}
+.mount iframe{display:block;width:100%;height:100%;border:0;border-radius:4px;background:#090b1c}
+.workspace-direct-link{position:relative;z-index:2;display:block;padding:10px 14px;text-align:right;color:var(--gold);font:11px/1.4 system-ui,sans-serif;letter-spacing:.04em;text-decoration:none;background:#090b1c;border-top:1px solid #5968a844}
+.workspace-direct-link:hover{color:#fff;text-decoration:underline}
 .ph small{display:block;font:1.2rem var(--head);color:var(--gold);letter-spacing:.1em}
 .ph code{font-size:.85rem;opacity:.7}
 .kick.r{display:block}
@@ -216,12 +219,12 @@ main>section.leave{position:absolute;top:0;left:0;right:0;display:block;z-index:
 
 <section id="map"><div class="tear"></div><div class="wrap">
  <div class="kick">Na stole narad</div><h2>Mapa kampanii</h2>
- <div class="frame"><div class="mount" id="map-mount" data-embed="map" aria-label="Miejsce na dostarczony widok mapy"><a class="ph" href="/page/swiatynia-pierwotnego-zla/Mapa/" aria-label="Otwórz interaktywną mapę kampanii"><small>Atlas Doliny Hommlet</small>Otwórz interaktywną mapę kampanii<br><span>Przeglądaj heksy, regiony i znaczniki →</span></a></div></div>
+ <div class="frame"><div class="mount" id="map-mount" data-embed="map" aria-label="Interaktywna mapa kampanii"><iframe src="/page/swiatynia-pierwotnego-zla/Mapa/" title="Interaktywna mapa kampanii — Atlas Doliny Hommlet" loading="lazy" allow="fullscreen"></iframe></div><a class="workspace-direct-link" href="/page/swiatynia-pierwotnego-zla/Mapa/" target="_blank" rel="noopener">Otwórz mapę w osobnej karcie ↗</a></div>
 </div></section>
 
 <section id="notes" class="alt"><div class="tear"></div><div class="wrap">
  <div class="kick">Oprawione w skórę</div><h2>Notatki i powiązania</h2>
- <div class="frame book"><div class="mount notes" id="notes-mount" data-embed="notes" aria-label="Miejsce na dostarczony widok notatek"><a class="ph" href="/page/swiatynia-pierwotnego-zla/Notatki/" aria-label="Otwórz interaktywną mapę myśli"><small>Archiwum powiązań</small>Otwórz interaktywną mapę myśli<br><span>Łącz postacie, frakcje, miejsca i tropy →</span></a></div></div>
+ <div class="frame book"><div class="mount notes" id="notes-mount" data-embed="notes" aria-label="Interaktywna mapa myśli kampanii"><iframe src="/page/swiatynia-pierwotnego-zla/Notatki/" title="Interaktywna mapa myśli — Archiwum powiązań" loading="lazy" allow="fullscreen"></iframe></div><a class="workspace-direct-link" href="/page/swiatynia-pierwotnego-zla/Notatki/" target="_blank" rel="noopener">Otwórz mapę myśli w osobnej karcie ↗</a></div>
 </div></section>
 
 <section id="overview"><div class="tear"></div><div class="wrap">
