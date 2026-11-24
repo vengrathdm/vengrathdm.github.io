@@ -89,7 +89,7 @@ button.facebtn{all:unset;display:flex;flex-direction:column;gap:8px;height:100%;
 button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .pc:hover .face{box-shadow:0 22px 50px #000,0 0 36px color-mix(in srgb,var(--c) 55%,transparent),inset 0 0 0 5px #071c2b,inset 0 0 0 6px var(--c)}
 .portrait{flex:1;min-height:0;margin:9px 6px;border-radius:0;background:radial-gradient(circle at 50% 35%,color-mix(in srgb,var(--c) 40%,#000),#071c2b);display:grid;place-items:center;overflow:hidden;box-shadow:inset 0 0 24px #000}
-.portrait img{width:100%;height:100%;object-fit:cover}
+.portrait img{width:100%;height:100%;object-fit:contain}
 .portrait span{font:7rem var(--head);color:color-mix(in srgb,var(--c) 60%,transparent)}
 .face h3{font-size:1.7rem;overflow-wrap:anywhere}
 .sub{font-style:italic;color:var(--c);font-size:.95rem;min-height:2.7em}
@@ -225,7 +225,7 @@ h2{color:#f4eddb;text-shadow:0 2px 0 #06141d,0 0 28px #4c9bb044}
 
 
 /* Hellenic hero cards: squared marble plaques, ivory meander and bronze rules */
-.pc{aspect-ratio:1/1.12}
+.pc{aspect-ratio:4/5}
 .face{border-radius:2px!important;border:2px solid #f4eddb!important;outline:1px solid #b87942;outline-offset:-5px;background:linear-gradient(145deg,#174457,#0b2b3d 58%,#071c2b)!important;box-shadow:0 18px 40px #000a,0 0 0 1px #b87942,inset 0 0 0 5px #071c2b,inset 0 0 0 6px #e4c078!important}
 .face::before{content:'';position:absolute;z-index:1;inset:7px;pointer-events:none;border:1px solid rgba(244,237,219,.55);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='12' viewBox='0 0 48 12'%3E%3Cpath d='M0 1h10v10H2V4h5v4H4 M14 1h10v10h-8V4h5v4h-3 M28 1h10v10h-8V4h5v4h-3 M42 1h6' fill='none' stroke='%23f4eddb' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:repeat-x;background-position:top left,bottom left;background-size:48px 12px;box-shadow:inset 0 0 0 1px rgba(228,192,120,.5)}
 .face>*{position:relative;z-index:2}
@@ -291,7 +291,6 @@ section:not(.hero)::before{content:'';position:absolute;top:0;left:22px;right:22
 
 <section id="characters"><div class="tear"></div><div class="wrap">
  <h2>Drużyna</h2>
- <p class="lede">Odwróć kartę, aby zobaczyć dane sześciu bohaterów kampanii.</p>
  <div class="party" id="party"></div>
 </div></section>
 
@@ -412,9 +411,10 @@ function renderParty(){
   var c=DATA.characters[i]||null,card=el('article','pc'+(c?'':' empty'));card.dataset.el=i;
   var tilt=el('div','tilt'),flip=el('div','flip');
   var sub=[c&&c.race,c&&c['class'],c&&c.level?'Lv '+c.level:''].filter(Boolean).join(' · ')||'Rasa · Klasa · Poziom';
-  var front=el('div','face front'),fb=el('button','facebtn');fb.dataset.i='';fb.setAttribute('aria-label','Odwróć kartę, aby poznać historię postaci: '+(c&&c.name||'bohatera'));
+  var front=el('div','face front'),fb=el('div','facebtn');
   var pt=el('div','portrait');if(c&&c.portrait){var im=el('img');im.src=c.portrait;im.alt='';pt.append(im)}else pt.append(el('span','',c&&c.name?c.name[0]:'?'));
-  fb.append(pt,el('h3','',c&&c.name||'Bohater drużyny'),el('div','sub',sub),el('div','hint','Odwróć kartę ↻'));
+  var ft=el('button','turn','Rewers');ft.type='button';ft.setAttribute('aria-label','Odwróć kartę, aby poznać historię postaci: '+(c&&c.name||'bohatera'));
+  fb.append(pt,el('h3','',c&&c.name||'Bohater drużyny'),el('div','sub',sub),ft);
   front.append(fb);
   var back=el('div','face back');back.setAttribute('aria-hidden','true');
   var sc=el('div','scroll');
@@ -424,7 +424,7 @@ function renderParty(){
   var tb=el('button','turn','Wróć na awers');tb.dataset.i='';tb.tabIndex=-1;
   back.append(el('h3','',c&&c.name||'Character name'),sc,tb);
   function t(){var o=card.classList.toggle('turned');back.setAttribute('aria-hidden',!o);front.setAttribute('aria-hidden',o);tb.tabIndex=o?0:-1;fb.tabIndex=o?-1:0}
-  fb.onclick=t;tb.onclick=t;
+  ft.onclick=t;tb.onclick=t;
   flip.append(front,back);tilt.append(flip);card.append(tilt);
   card.addEventListener('pointermove',function(e){var r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
    tilt.style.setProperty('--ry',((x-.5)*14)+'deg');tilt.style.setProperty('--rx',((.5-y)*14)+'deg');
