@@ -97,3 +97,28 @@
 .relationship-style-section{margin-top:14px;padding:11px 12px 3px;border:1px solid rgba(120,64,71,.24);border-radius:4px;background:rgba(5,12,15,.22)}
 .relationship-style-section h3{margin:0 0 9px;color:#c8a45d;font:15px var(--display);letter-spacing:.1em;text-transform:uppercase}
 .relationship-style-section .dialog-field-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+
+/* Arcanum industrial archive / drafting-room skin */
+:root{--palette-bg:#121714;--palette-panel:#202a25;--palette-surface:#2a362f;--palette-ink:#e9dfc9;--palette-muted:#b6ad96;--palette-gold:#d0b477;--palette-red:#b97848;--palette-blood:#70452f;--kraft:#c6a46a;--kraft-dark:#70452f;--paper:#e9dfc9;--paper-shadow:#1b2520;--carbon:#121714;--carbon-light:#29352e;--stamp-red:#a85f3b;--amber:#d0b477;--soot:#121714;--ink:#e9dfc9;--ink-fade:#b6ad96;--panel:rgba(29,40,33,.96);--panel-line:rgba(174,143,82,.72);--muted:#b6ad96}
+body,#workspace{background-color:#121714}
+#workspace{background-image:radial-gradient(circle at 15% 18%,#9c815122 0 1px,transparent 2px),radial-gradient(circle at 80% 70%,#9c815122 0 1px,transparent 2px),linear-gradient(135deg,#17211b,#101613 55%,#1d2821)!important}
+#workspace:before{opacity:.18;background:repeating-linear-gradient(0deg,transparent 0 5px,#b69b5b0d 6px),linear-gradient(90deg,transparent 49.8%,#b69b5b0b 50%,transparent 50.2%)}
+.panel,.control-window,.dossier-window,.dialog,.legend{background:linear-gradient(145deg,rgba(49,63,53,.97),rgba(19,28,23,.97));border:1px solid #a88d58;border-radius:2px;box-shadow:0 10px 32px #000b,inset 0 1px 0 #e3c98f,inset 0 0 0 3px #17201a}
+.control-window::before,.dossier-window::before,.legend::before,.dialog::before{content:"";position:absolute;inset:5px;border:1px solid #c4a66a33;pointer-events:none}
+.tabs{background:linear-gradient(#2c3930,#1b2720);border-bottom:1px solid #94794a}
+.tab{border-radius:1px;color:#c5b99e}
+.tab.active{background:linear-gradient(#93613d,#62412c);border:1px solid #d4b574;color:#fff0d0}
+.panel-title h2,.dialog h2,.control-group h3,.legend-section h3,.relationship-style-section h3{color:#d7b977}
+.subtle-button,.primary-button,.danger-button,.file-trigger,.canvas-tools button,.icon-button,.segmented button[aria-pressed=true]{background:linear-gradient(#35443a,#1c2922);border:1px solid #9b8051;border-radius:2px;color:#eadfc7;box-shadow:inset 0 1px 0 #e2c98b44}
+.primary-button{background:linear-gradient(#95623e,#60412c);border-color:#d2b574;color:#fff0d0}
+.subtle-button:hover,.file-trigger:hover,.canvas-tools button:hover,.icon-button:hover{background:linear-gradient(#95623e,#60412c);color:#fff0d0}
+.dialog input,.dialog select,.dialog textarea,.search-label input{background:#151e19;border:1px solid #92794d;color:#eadfc7;border-radius:1px}
+.dossier-notes,.markdown-preview{background:linear-gradient(110deg,#e7d9b8,#d1bd91);color:#352a1e;border:1px solid #a68a55}
+.dossier-notes h2,.dossier-notes h3,.dossier-notes h4,.markdown-preview h2,.markdown-preview h3,.markdown-preview h4{color:#70472f}
+.legend-icon,.node-fallback{background:linear-gradient(#35443a,#1a251f);border:1px solid #c7a66b;color:#ecdcb8}
+.graph-tooltip,.context-menu,.context-submenu,.toast{background:rgba(29,41,34,.98);border:1px solid #a88d58;color:#eadfc7}
+.context-menu button:hover,.context-menu-item:focus-within>button{background:#795036;color:#fff0d0}
+.dossier-name{color:#f0e5cc}
+.dossier-image{border:1px solid #b3955d}
+
