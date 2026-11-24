@@ -60,9 +60,9 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   }
   try{var savedData=readJson(STORE);if(savedData){applyRegionData(savedData);hasLocalPins=savedData.markerEdits===true||savedData.pinsEdited===true||(Array.isArray(savedData.markers)&&savedData.markers.length>0)||(Array.isArray(savedData.pins)&&savedData.pins.length>0);hasLocalDraft=true;}}catch(err){console.warn('Nie udało się wczytać zapisanych danych nakładek',err);}
   layerNames.forEach(function(k){overlayGroups[k]=L.layerGroup();});
-  function exportableData(){return createCampaignData(regionData,pinData,hasLocalPins,{id:'heartwell',name:'Heartwell',mapId:mapConfig.id});}
+  function exportableData(){return createCampaignData(regionData,pinData,hasLocalPins,{id:'swiatynia-pierwotnego-zla',name:'Świątynia Pierwotnego Zła',mapId:mapConfig.id});}
   function saveData(){if(writeJson(STORE,exportableData()))hasLocalDraft=true;else setHint('Nie udało się zapisać danych w tej przeglądarce. Pobierz kopię zapasową w formacie JSON.');}
-  function setHint(t){}
+  function setHint(t){var status=document.getElementById('mapStatus');if(status&&t){status.textContent=t;status.classList.add('visible');}}
   function currentLayer(){return document.getElementById('layerSelect').value;}
   function selectedRegion(){var id=document.getElementById('regionSelect').value;return regionData[currentLayer()].find(function(r){return r.id===id;});}
   var editorSelects=[];
@@ -290,7 +290,7 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
       setHint('Wczytano aktualne dane regionów i znaczników z GitHuba. Lokalne zmiany zostały zastąpione.');
     }).catch(function(err){console.error('Nie udało się ponownie wczytać danych z GitHuba:',err);setHint('Nie udało się wczytać danych z GitHuba: '+(err&&err.message?err.message:'błąd sieciowy'));}).finally(function(){button.disabled=false;button.textContent=original;});
   });
-  document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(exportableData(),null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='heartwell-campaign.json';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);setHint('Pobrano pełne dane regionów i znaczników w pliku regions.json.');});
+  document.getElementById('exportData').addEventListener('click',function(){var blob=new Blob([JSON.stringify(exportableData(),null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='swiatynia-pierwotnego-zla-mapa.json';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);setHint('Pobrano pełne dane regionów i znaczników w pliku regions.json.');});
   document.getElementById('importData').addEventListener('change',function(e){var file=e.target.files&&e.target.files[0];if(!file)return;var reader=new FileReader();reader.onerror=function(){setHint('Nie udało się odczytać wybranego pliku JSON.');e.target.value='';};reader.onload=function(){try{var data=JSON.parse(String(reader.result).replace(/^\\uFEFF/,''));applyRegionData(data);hasLocalDraft=true;hasLocalPins=true;saveData();stopEditing();refreshRegions();renderAll();renderPins();document.getElementById('regionName').value='';document.getElementById('regionColor').value='#668b54';setHint('Zaimportowano '+regionData.political.length+' Polityczna regions, '+regionData.geographical.length+' Geograficzna regions, and '+pinData.length+' pins. Zaimportowano data now replaces the current map data in this browser.');}catch(err){console.error('Import nakładek nie powiódł się:',err);setHint('Import nie powiódł się: '+(err&&err.message?err.message:'nieprawidłowy JSON'));}finally{e.target.value='';}};reader.readAsText(file);});
   map.on('mousedown',function(e){if(!editMode||document.getElementById('editor').hidden)return;painting=true;lastPainted='';assignBrush(e.latlng);});
   map.on('mousemove',function(e){if(painting&&editMode&&!document.getElementById('editor').hidden)assignBrush(e.latlng);});
@@ -329,7 +329,7 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   L.control.zoom({position:'bottomright'}).addTo(map);
   L.control.scale({imperial:false,metric:false,position:'bottomright'}).addTo(map);
 })().catch(function(error){
-  console.error('Nie udało się uruchomić mapy Heartwell:', error);
+  console.error('Nie udało się uruchomić mapy kampanii:', error);
   var notice=document.createElement('div');
   notice.style.cssText='position:fixed;z-index:999999;left:16px;right:16px;bottom:16px;padding:12px 14px;background:#17252b;color:#f3ead7;border:1px solid #b9a47c;border-radius:4px;font:14px/1.45 system-ui,sans-serif';
   notice.textContent='Nie udało się uruchomić mapy. Odśwież stronę lub sprawdź połączenie. Szczegóły są dostępne w konsoli przeglądarki.';
