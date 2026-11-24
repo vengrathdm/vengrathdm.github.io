@@ -825,5 +825,20 @@
       "Makieta",
       "Arcanum"
     ]
+  },
+  {
+    "id": "odyssey",
+    "title": "Odyssey",
+    "type": "campaign",
+    "visibility": "public",
+    "url": "/page/odyssey/",
+    "image": "/core/graphics/voronoi/odyssey-of-the-dragonlords.webp",
+    "layout": "campaign-shell",
+    "manifest": "/page/odyssey/manifest.json",
+    "tags": [
+      "Kampania",
+      "Zamknięta",
+      "Third-Party"
+    ]
   }
 ]
