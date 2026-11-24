@@ -2,45 +2,32 @@
 <html lang="pl">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111214">
-  <title>Sieć powiązań — Świątynia Pierwotnego Zła</title>
-  <meta name="description" content="Archiwum relacji, frakcji i tropów kampanii Świątynia Pierwotnego Zła.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090b1c">
+  <title>Archiwum powiązań — Świątynia Pierwotnego Zła</title>
+  <meta name="description" content="Interaktywna mapa myśli, postaci, frakcji, miejsc i relacji kampanii Świątynia Pierwotnego Zła.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Voltaire&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/cytoscape@3.30.4/dist/cytoscape.min.js"></script>
   <script defer src="app.js"></script>
-    <link rel="stylesheet" href="/core/templates/Cursor/Cursor.css">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"><style>
-:root{--kraft:#c9a876;--kraft-dark:#a8875a;--paper:#e8dfc8;--paper-shadow:#d9cdac;--carbon:#29291f;--carbon-light:#3c3528;--stamp-red:#a84f35;--amber:#c8a45d;--soot:#171813;--ink:#29291f;--ink-fade:#8e856e;--display:'Cinzel',serif;--mono:'IBM Plex Mono',monospace;--panel:#191b15f2;--panel-line:#c8a45d8c;--muted:#b9b199}
-body{font-family:var(--mono)!important;background:#171813!important;color:var(--paper)!important}#workspace{background-color:#171813!important;background-image:radial-gradient(ellipse at 50% 50%,#54432a 0%,#25251d 55%,#171813 100%)!important}.panel{background:var(--panel)!important;border-color:var(--panel-line)!important}.brand{font-family:var(--display)!important;color:var(--paper)!important}.brand strong{color:#d6b66d!important}.tab,.panel-title h2,.dialog h2,.dossier-name,.dossier-window-head h2,.entity-form-section>h3{font-family:var(--display)!important}.tab.active,.primary-button{background:#75412e!important;border-color:#d1a85e!important;color:#fff0d0!important}.subtle-button,.canvas-tools button,.icon-button{background:#292b21!important;color:#e8dfc8!important;border-color:#88734b!important}.subtle-button:hover,.canvas-tools button:hover,.icon-button:hover{background:#75412e!important;color:#fff0d0!important}.graph-tooltip{background:#20231c!important;border-color:#c8a45d!important;color:#e8dfc8!important}
-</style><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"><style>
-:root{--kraft:#c9a876;--kraft-dark:#a8875a;--paper:#e9dfc7;--paper-shadow:#d9c9a7;--carbon:#25221e;--carbon-light:#3b332a;--stamp-red:#8c382c;--amber:#c5a36a;--soot:#171611;--ink:#2b251f;--ink-fade:#77674f;--display:'Cormorant Garamond',serif;--mono:'IBM Plex Mono',monospace;--panel:#25221ef2;--panel-line:#a9956c;--muted:#b9a98a}
-body{font-family:var(--mono)!important;background:#211e19!important;color:var(--paper)!important}
-#workspace{background-color:#211e19!important;background-image:radial-gradient(ellipse at 50% 50%,#4b4030 0%,#29241f 58%,#171611 100%)!important}
-.panel{background:var(--panel)!important;border-color:#9b8159!important;box-shadow:0 14px 35px #0005!important}
-.brand{font:600 12px var(--mono)!important;color:#e9dfc7!important;letter-spacing:.12em}.brand strong{color:#d0ac70!important}
-.tab,.panel-title h2,.dialog h2,.dossier-name,.dossier-window-head h2,.entity-form-section>h3{font-family:var(--display)!important}
-.tab.active,.primary-button{background:#8c382c!important;border-color:#c5a36a!important;color:#f3e8d2!important}
-.subtle-button,.canvas-tools button,.icon-button{background:#332c23!important;color:#e9dfc7!important;border-color:#9b8159!important}
-.subtle-button:hover,.canvas-tools button:hover,.icon-button:hover{background:#8c382c!important;color:#f3e8d2!important}
-.graph-tooltip{background:#e9dfc7!important;border-color:#a9956c!important;color:#2b251f!important}
-</style></head>
+  <link rel="stylesheet" href="/core/templates/Cursor/Cursor.css">
+  <script src="/core/templates/Cursor/Cursor.js" defer></script>
+</head>
 <body class="ksiazeta-heartwell-page">
   <main id="workspace" aria-label="Sieć powiązań Świątyni Pierwotnego Zła">
     <div id="graph" aria-label="Graf relacji"></div>
     <header class="brand panel">
-      <a href="/page/swiatynia-pierwotnego-zla/" aria-label="Powrót do kampanii Heartwell"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
-      <span class="brand-divider">/</span><strong>ŚWIĄTYNIA · SIEĆ POWIĄZAŃ</strong>
+      <a href="/page/swiatynia-pierwotnego-zla/" aria-label="Powrót do kampanii Świątynia Pierwotnego Zła"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
+      <span class="brand-divider">/</span><strong>ŚWIĄTYNIA · ARCHIWUM POWIĄZAŃ</strong><span id="graphCount" class="graph-count"></span><span id="persistenceState" class="persistence-state">Ładowanie archiwum…</span>
     </header>
     <div class="canvas-tools panel" aria-label="Sterowanie planszą">
       <button id="zoomIn" title="Przybliż" aria-label="Przybliż">＋</button>
       <button id="zoomOut" title="Oddal" aria-label="Oddal">−</button>
     </div>
     <section id="controlWindow" class="control-window panel" aria-label="Sterowanie grafem">
-      <nav class="tabs" role="tablist" aria-label="Panele mapy relacji">
+      <nav class="tabs" role="tablist" aria-label="Panele archiwum powiązań">
         <button class="tab active" data-tab="view" role="tab" aria-selected="true">Widok</button>
         <button class="tab" data-tab="editor" role="tab" aria-selected="false">Edytor</button>
       </nav>
@@ -82,7 +69,7 @@ body{font-family:var(--mono)!important;background:#211e19!important;color:var(--
           <div class="button-stack">
             <button id="reloadOfficial" class="subtle-button">Wczytaj dane oficjalne</button>
             <button id="exportData" class="subtle-button">Eksportuj dane</button>
-            <button id="uploadData" class="subtle-button">Wrzuć dane na serwer</button>
+            <button id="uploadData" class="subtle-button">Zapisz kopię lokalną</button>
             <label class="subtle-button file-trigger" for="importData">Importuj dane</label>
             <input id="importData" type="file" accept="application/json,.json" hidden>
           </div>
