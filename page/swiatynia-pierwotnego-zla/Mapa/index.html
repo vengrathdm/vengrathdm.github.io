@@ -17,6 +17,7 @@
 <div id="head" class="panel">
   <a class="home-brand" href="/page/swiatynia-pierwotnego-zla/" aria-label="Vengrath — strona główna"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
 </div>
+<div id="read" class="panel"><small>Najedź na mapę, aby wyświetlić oznaczenie hexu</small></div>
 <div id="toolsWindow">
 <div id="toolbar" role="toolbar" aria-label="Narzędzia mapy">
   <button class="tool-button" id="layersButton" type="button" aria-expanded="false">Warstwy</button>
@@ -29,11 +30,8 @@
   <div class="layer-name-control-wrap"><span class="layer-name-label">Nazwy regionów</span><div id="regionNameMode" class="layer-name-control" role="group" aria-label="Widoczność nazw regionów"><button type="button" data-mode="hide" aria-pressed="false">Ukryj</button><button type="button" data-mode="hover" aria-pressed="true">Po najechaniu</button><button type="button" data-mode="show" aria-pressed="false">Pokaż</button></div></div>
   <div class="layer-name-control-wrap"><span class="layer-name-label">Widoczność markerów</span><div id="pinVisibilityMode" class="pin-visibility-control" role="group" aria-label="Widoczność markerów"><button type="button" data-mode="hidden" aria-pressed="false">Ukryj</button><button type="button" data-mode="hover" aria-pressed="true">Najedź</button><button type="button" data-mode="click" aria-pressed="false">Kliknij</button><button type="button" data-mode="always" aria-pressed="false">Zawsze</button></div></div>
 </section>
-<div id="read" class="panel"><small>Najedź na mapę, aby wyświetlić oznaczenie hexu</small></div>
-<section id="presenter" class="floating-panel terrain-window" hidden>
-  <div class="panel-head"><strong>Karta terenu</strong><button class="panel-close" data-close="presenter" type="button">Zamknij</button></div>
-  <div id="presenterBody"><div id="presenterAddress">Nie wybrano hexu</div><div id="presenterSub">Antarktyda · Oznaczenie hexu</div><p id="presenterIntro">Wybierz dowolny hex na mapie, aby wyświetlić zapisane o nim informacje.</p><div id="presenterDetails"></div></div>
-</section>
+
+
 <div id="editor" class="floating-panel" hidden>
   <div class="panel-head"><strong>Świątynia · Nakładki pól</strong><button class="panel-close" data-close="editor" type="button">Zamknij</button></div>
   <div id="editorTools">
@@ -52,6 +50,10 @@
   </div>
 </div>
 </div>
+<section id="presenter" class="floating-panel terrain-window" hidden>
+  <div class="panel-head"><strong>Karta terenu</strong><button class="panel-close" data-close="presenter" type="button">Zamknij</button></div>
+  <div id="presenterBody"><div id="presenterAddress">Nie wybrano hexu</div><div id="presenterSub">Antarktyda · Oznaczenie hexu</div><p id="presenterIntro">Wybierz dowolny hex na mapie, aby wyświetlić zapisane o nim informacje.</p><div id="presenterDetails"></div></div>
+</section>
 <div id="regionCreateDialog" class="region-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="regionCreateTitle">
   <h2 id="regionCreateTitle">Utwórz region</h2>
   <p class="region-dialog-sub">Skonfiguruj nowy region nakładki.</p>
