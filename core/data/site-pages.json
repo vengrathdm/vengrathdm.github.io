@@ -798,5 +798,21 @@
     "tags": [
       "MG"
     ]
+  },
+  {
+    "id": "swiatynia-pierwotnego-zla",
+    "title": "Świątynia Pierwotnego Zła",
+    "type": "campaign",
+    "visibility": "public",
+    "url": "/page/swiatynia-pierwotnego-zla/",
+    "image": "/page/swiatynia-pierwotnego-zla/res/cover.svg",
+    "layout": "bespoke",
+    "manifest": "/page/swiatynia-pierwotnego-zla/manifest.json",
+    "tags": [
+      "Kampania",
+      "Makieta",
+      "Greyhawk",
+      "D&D 5e"
+    ]
   }
 ]
