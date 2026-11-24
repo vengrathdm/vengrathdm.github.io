@@ -1,130 +1,351 @@
-<!doctype html>
-<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#171813">
-<title>Świątynia Pierwotnego Zła — Vengrath</title><meta name="description" content="Archiwum kampanii Dungeons & Dragons 5e: Świątynia Pierwotnego Zła.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/core/templates/Cursor/Cursor.css">
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Świątynia Pierwotnego Zła — Vengrath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#171813;--ink2:#20231c;--panel:#27291f;--paper:#e8dfc8;--muted:#b9b199;--gold:#c8a45d;--rust:#a84f35;--moss:#66734c;--line:#666044;--display:'Cinzel',serif;--body:'IM Fell English',serif;--mono:'IBM Plex Mono',monospace}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:17px}button,a{font:inherit}a{color:var(--gold)}button{cursor:pointer}.topbar{position:sticky;top:0;z-index:20;background:#171813ed;border-bottom:1px solid #756943;backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:12px clamp(16px,4vw,56px)}.brand{font:600 12px var(--mono);letter-spacing:.22em;color:var(--gold);text-decoration:none}.nav{display:flex;gap:4px;flex-wrap:wrap}.nav button{border:0;background:transparent;color:var(--muted);padding:10px 12px;font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase}.nav button:hover,.nav button.active{color:var(--gold);background:#c8a45d14}.hero{min-height:560px;display:grid;align-items:end;padding:clamp(32px,7vw,92px);position:relative;overflow:hidden;background:linear-gradient(90deg,#151710f5 0%,#171813c9 52%,#17181355 100%),url('res/cover.svg') center/cover}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--ink),transparent 42%);pointer-events:none}.hero-content{position:relative;z-index:1;max-width:850px}.eyebrow,.kicker{font:500 11px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}h1,h2,h3{font-family:var(--display);font-weight:500}h1{font-size:clamp(42px,7vw,88px);line-height:1.02;margin:18px 0 20px;max-width:900px}h1 span{display:block;color:var(--gold);font-size:.48em;letter-spacing:.16em;margin-bottom:12px}h2{font-size:clamp(28px,4vw,44px);margin:0 0 12px}h3{font-size:20px}.lede{font-size:clamp(18px,2vw,23px);max-width:660px;color:#e2dac5;line-height:1.55}.hero-meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.pill{border:1px solid #a18a55;padding:7px 11px;color:var(--gold);font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase}.hero-actions{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 17px;border:1px solid var(--gold);background:var(--gold);color:#171813;text-decoration:none;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase}.btn.ghost{background:transparent;color:var(--paper);border-color:#777052}.wrap{width:min(1180px,calc(100% - 36px));margin:auto}.section{display:none;padding:68px 0 90px;min-height:75vh}.section.active{display:block}.section-head{margin-bottom:30px;border-bottom:1px solid var(--line);padding-bottom:18px;display:flex;justify-content:space-between;gap:20px;align-items:end}.section-head p{color:var(--muted);max-width:620px;margin:0}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0}.stat,.panel{background:var(--ink2);border:1px solid #514d37;padding:20px}.stat strong{display:block;font:500 32px var(--display);color:var(--gold)}.stat span{font:10px var(--mono);color:var(--muted);letter-spacing:.12em;text-transform:uppercase}.columns{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.note{border-left:3px solid var(--rust);padding:12px 18px;background:#a84f3512;color:var(--muted)}.character-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.character{background:var(--ink2);border:1px solid var(--line);overflow:hidden}.portrait{height:250px;background:linear-gradient(145deg,#3a392b,#171813);position:relative}.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 20%}.character-body{padding:17px}.character h3{margin:0 0 6px;color:var(--gold)}.character p{margin:4px 0;color:var(--muted);font-size:15px}.micro{font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#9e987f}.records{display:grid;gap:14px}.record{border:1px solid var(--line);background:var(--ink2)}.record summary{cursor:pointer;list-style:none;padding:18px 20px;display:grid;grid-template-columns:60px 1fr auto;gap:15px;align-items:center}.record summary::-webkit-details-marker{display:none}.record summary:after{content:'＋';color:var(--gold);font:18px var(--mono)}.record[open] summary:after{content:'−'}.record-no{font:24px var(--display);color:var(--gold)}.record-title{font:500 18px var(--display)}.record-date{font:10px var(--mono);color:var(--muted)}.record-body{padding:0 22px 22px 95px;color:#d6cfb8;line-height:1.6}.record-body p{margin:8px 0}.record-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}.record-actions a{font:11px var(--mono);text-transform:uppercase}.video-wrap{display:none;margin-top:16px;aspect-ratio:16/9;background:#080908}.video-wrap iframe{width:100%;height:100%;border:0}.relationship-frame{width:100%;height:700px;border:1px solid var(--line);background:#171813}.map-frame{width:100%;height:620px;border:1px solid var(--line);background:#1c211b}.map-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.thread-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.thread{border:1px solid var(--line);background:var(--ink2);padding:20px}.thread h3{margin:8px 0;color:var(--gold)}.thread p{color:var(--muted);margin:8px 0}.thread .status{font:10px var(--mono);color:#d4b46c;text-transform:uppercase;letter-spacing:.1em}.dashboard-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.bar{height:8px;background:#414232;margin:12px 0}.bar i{display:block;height:100%;background:var(--gold)}.quest{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #514d37;padding:12px 0}.quest:last-child{border:0}.tag{font:10px var(--mono);color:var(--gold);border:1px solid #756943;padding:4px 7px;white-space:nowrap}.graph-wrap{height:420px;background:#171813;border:1px solid var(--line);position:relative}.graph-wrap canvas{width:100%;height:100%}.footer{padding:28px;text-align:center;border-top:1px solid var(--line);color:#8f8a75;font:10px var(--mono);letter-spacing:.12em}.subtle{color:var(--muted)}@media(max-width:850px){.topbar{align-items:flex-start;gap:8px;flex-direction:column}.nav{width:100%;overflow:auto;flex-wrap:nowrap}.nav button{white-space:nowrap}.character-grid{grid-template-columns:repeat(2,1fr)}.columns,.dashboard-grid{grid-template-columns:1fr}.relationship-frame{height:620px}.stats{grid-template-columns:repeat(2,1fr)}.portrait{height:220px}.record summary{grid-template-columns:42px 1fr auto}.record-body{padding-left:20px}.hero{min-height:520px}}@media(max-width:480px){.character-grid,.thread-grid{grid-template-columns:1fr}.portrait{height:300px}.section-head{display:block}.hero{padding:28px 20px}}
-</style><style>
-body{background-image:radial-gradient(ellipse at 50% 0%,#a0743d22,transparent 55%),repeating-linear-gradient(135deg,transparent 0 40px,#c8a45d05 41px 42px);background-attachment:fixed}.topbar{padding:9px clamp(16px,4vw,56px);border-bottom:1px solid #c8a45d77;box-shadow:0 8px 30px #0005}.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);letter-spacing:.18em;color:#eee4ce}.brand img{width:32px;height:32px;object-fit:contain;filter:drop-shadow(0 0 9px #c8a45d55)}.brand i{font-style:normal;color:var(--rust)}.brand small{font:9px var(--mono);letter-spacing:.12em;color:var(--muted)}
-.nav button{position:relative;transition:color .2s,background .2s,transform .2s}.nav button:after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .22s}.nav button:hover{transform:translateY(-1px)}.nav button:hover:after,.nav button.active:after{transform:scaleX(1)}
-.hero{isolation:isolate;background-image:linear-gradient(90deg,#11130ff5,#171813ad 58%,#1718131a),url('res/cover.svg');border-bottom:1px solid #796743}.hero:before{content:"";position:absolute;z-index:0;right:7%;top:12%;width:min(35vw,420px);aspect-ratio:1;border:1px solid #c8a45d55;border-radius:50%;box-shadow:0 0 0 18px #c8a45d0c,0 0 0 42px #c8a45d08;pointer-events:none}.hero h1{text-shadow:0 5px 25px #0008}
-.section-head{position:relative;padding-bottom:22px}.section-head:after{content:"✦";position:absolute;right:8px;bottom:-11px;padding:0 8px;background:var(--ink);color:var(--gold)}
-.panel,.character,.record,.thread{box-shadow:0 12px 34px #0003;transition:border-color .25s,box-shadow .25s,transform .25s}.panel:hover,.character:hover,.thread:hover{border-color:#b18b4e;box-shadow:0 15px 40px #0005}.character{position:relative}.character:before{content:"";position:absolute;z-index:1;inset:8px;border:1px solid #c8a45d30;pointer-events:none}
-.record{overflow:hidden;transition:border-color .22s,box-shadow .22s,transform .22s}.record summary{position:relative;transition:background .22s}.record summary:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transition:transform .22s}.record:hover{border-color:#c8a45d;box-shadow:0 10px 28px #0006;transform:translateY(-2px)}.record summary:hover,.record[open] summary{background:linear-gradient(90deg,#c8a45d1b,transparent 72%)}.record summary:hover:before,.record[open] summary:before{transform:scaleY(1)}.record summary:hover .record-no,.record summary:hover .record-title{color:#e6c57c}.record summary:focus-visible{outline:2px solid var(--gold);outline-offset:-3px}.record[open] .record-body{animation:record-reveal .28s ease-out}@keyframes record-reveal{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:translateY(0)}}
-.btn{transition:transform .2s,background .2s,box-shadow .2s}.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px #0005;background:#dfbd75}.stat{position:relative;overflow:hidden}.stat:after{content:"";position:absolute;right:-18px;bottom:-32px;width:90px;height:90px;border:1px solid #c8a45d22;border-radius:50%}
-@media(max-width:700px){.brand small,.brand i{display:none}.brand img{width:27px;height:27px}.hero:before{right:-10%;top:20%;width:60vw}}
-</style><script src="/core/templates/Cursor/Cursor.js" defer></script><style id="elemental-art-direction">
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
-:root{--soot:#171611;--carbon:#25221e;--carbon2:#342d26;--paper:#e9dfc7;--paper2:#d9c9a7;--paper-light:#f1e9d7;--ink:#2b251f;--ink-soft:#625747;--muted:#a99b7d;--gold:#c5a36a;--gold-light:#e0c58e;--blood:#8c382c;--fire:#b85a32;--water:#527d88;--earth:#78804d;--air:#8b9da3;--line:#a9956c;--display:'Cormorant Garamond',Georgia,serif;--body:'IM Fell English',Georgia,serif;--mono:'IBM Plex Mono',monospace}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--soot);color:var(--ink);font-family:var(--body);font-size:17px}
-body:before{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.17;background-image:repeating-linear-gradient(0deg,#fff0 0 2px,#201b1408 3px),radial-gradient(ellipse at 12% 15%,#fff3,transparent 45%);mix-blend-mode:multiply}
-a{color:var(--blood)}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--fire);outline-offset:3px}
-.shell{display:flex;min-height:100vh;background:var(--soot)}
-.tabs{width:104px;flex:0 0 104px;position:sticky;top:0;height:100vh;z-index:50;display:flex;flex-direction:column;align-items:center;padding:20px 0 15px;background:linear-gradient(180deg,#2d2924,#1c1a17 78%);border-right:1px solid #786346;box-shadow:8px 0 30px #0003}
-.global-vengrath{display:flex;flex-direction:column;align-items:center;gap:7px;color:var(--gold-light);text-decoration:none;font:600 9px var(--mono);letter-spacing:.17em;margin:0 0 28px}.global-vengrath img{width:42px;height:42px;object-fit:contain;filter:sepia(.45) drop-shadow(0 0 8px #c5a36a55)}
-.tab-list{display:flex;flex:1;min-height:0;width:100%;flex-direction:column;align-items:center;gap:5px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--gold) #28231e}
-.tab-btn{position:relative;flex:0 0 106px;width:100%;height:106px;border:0;border-left:3px solid transparent;background:transparent;color:#b4a68c;font:500 10px var(--mono);letter-spacing:.13em;writing-mode:vertical-rl;text-orientation:mixed;transition:background .25s,color .25s,border-color .25s}
-.tab-btn span{transform:rotate(180deg)}.tab-btn:hover{color:var(--paper-light);background:#ffffff0a}.tab-btn.active{color:#f1e7d0;background:linear-gradient(90deg,#9b483329,transparent);border-left-color:var(--fire)}
-.tab-btn:nth-child(2).active{border-left-color:var(--air)}.tab-btn:nth-child(3).active{border-left-color:var(--gold)}.tab-btn:nth-child(4).active{border-left-color:var(--earth)}.tab-btn:nth-child(5).active{border-left-color:var(--water)}
-.youtube-playlist-btn{margin-top:16px;padding:12px 0;writing-mode:vertical-rl;transform:rotate(180deg);color:#c8b58e;text-decoration:none;font:9px var(--mono);letter-spacing:.15em;border-top:1px solid #766449;border-bottom:1px solid #766449}.youtube-playlist-btn:hover{color:#fff0d0}.tabs-foot{margin-top:15px;color:#88795f;font:8px var(--mono);letter-spacing:.12em;writing-mode:vertical-rl}
-.pages{min-width:0;flex:1;position:relative;background-color:var(--paper);background-image:radial-gradient(ellipse at 16% 7%,#fff7,transparent 38%),radial-gradient(ellipse at 94% 80%,#8d754018,transparent 42%),repeating-linear-gradient(0deg,transparent 0 5px,#6f5c3d08 6px)}
-.section{display:none;max-width:1600px;margin:0 auto;padding:0 clamp(24px,5vw,82px) 90px;animation:folioIn .45s ease both}.section.active{display:block}@keyframes folioIn{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
-.file-strip{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap;border-bottom:1px solid #66543a;padding:26px 0 11px;margin-bottom:26px;color:#6c5d48;font:600 10px var(--mono);letter-spacing:.12em}.file-strip .case-no{color:var(--blood)}
-.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);gap:clamp(28px,5vw,76px);align-items:center;min-height:630px;padding:24px 0 46px;border-bottom:1px solid #8f7b58}
-.hero-content{max-width:690px}.eyebrow,.kicker,.micro{font:600 10px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--blood)}
-.hero h1{font:500 clamp(66px,8.2vw,128px)/.79 var(--display);letter-spacing:-.045em;margin:22px 0 22px;color:#2c241e;max-width:720px}.hero h1 em{display:block;padding-left:clamp(18px,4vw,66px);font-weight:400;color:#85513b}
-.lede{max-width:54ch;font:italic clamp(19px,1.8vw,24px)/1.5 var(--body);color:#5c4e3d;margin:0 0 25px}
-.hero-meta{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}.pill{border:1px solid #a9956c;padding:7px 10px;color:#65543c;font:9px var(--mono);letter-spacing:.08em;text-transform:uppercase;background:#e3d6ba80}.pill:last-child i{display:inline-block;width:6px;height:6px;margin-right:6px;border-radius:50%;background:#687d50;box-shadow:0 0 0 3px #687d5025}
-.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 34px}.btn{display:inline-flex;align-items:center;gap:13px;padding:12px 18px;border:1px solid #5d4b36;background:transparent;color:#423629;text-decoration:none;font:600 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;transition:background .2s,color .2s,transform .2s,border-color .2s}.btn:hover{background:#332b24;color:#f1e7d0;transform:translateY(-2px);border-color:#332b24}.btn.primary{background:var(--blood);border-color:var(--blood);color:#f4e9d2}.btn.primary:hover{background:#5e281f}.btn b{font-size:15px;font-weight:400}
-.hero-quote{display:grid;grid-template-columns:34px 1fr;column-gap:12px;max-width:490px;border-top:1px solid #ad9870;padding-top:16px}.quote-mark{grid-row:span 2;font:56px/.8 var(--display);color:var(--fire)}.hero-quote p{margin:0;color:#4c3d30;font:italic 21px/1.2 var(--display)}.hero-quote small{margin-top:8px;color:#86775d;font:8px var(--mono);letter-spacing:.1em}
-.hero-visual{position:relative;min-height:560px;aspect-ratio:4/5;background:#1b1b18;box-shadow:0 24px 46px #33251640;overflow:hidden;border:1px solid #7c6544}.hero-visual:before{content:"";position:absolute;inset:12px;border:1px solid #d1b77d77;z-index:2;pointer-events:none}.hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#17161100 35%,#171611b8 100%);pointer-events:none}
-.hero-visual img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:saturate(.84) contrast(1.08)}
-.hero-plate-top,.hero-plate-bottom{position:absolute;z-index:3;left:28px;right:28px;color:#e8d9b6}.hero-plate-top{top:30px;font:9px var(--mono);letter-spacing:.18em}.hero-plate-top span{color:#d36a40}.hero-plate-bottom{bottom:28px;display:flex;flex-direction:column;gap:5px;border-top:1px solid #d7bd83;padding-top:13px}.hero-plate-bottom strong{font:500 44px/.95 var(--display)}.hero-plate-bottom span{font:8px var(--mono);letter-spacing:.18em;color:#d7c69f}
-.element-seals{position:absolute;z-index:3;right:26px;top:28%;display:grid;grid-template-columns:repeat(2,38px);gap:8px}.seal{display:grid;place-items:center;width:38px;height:38px;border:1px solid currentColor;border-radius:50%;font:600 13px var(--display);background:#17161199;box-shadow:0 0 0 4px #17161155}.seal.fire{color:#db7b4c}.seal.water{color:#83b4bd}.seal.earth{color:#b2b57b}.seal.air{color:#b8c9ca}
-.wrap{max-width:1420px;margin:0 auto}.stats{display:grid;grid-template-columns:repeat(4,1fr);margin:0 0 52px;border-bottom:1px solid #9d8963;border-top:1px solid #9d8963}.stat{padding:20px 24px 18px;border-right:1px solid #b3a17c;position:relative;background:#e3d7bd55}.stat:last-child{border:0}.stat strong{display:block;font:600 44px/.95 var(--display);color:#8a392d}.stat span{display:block;margin-top:8px;color:#75664e;font:9px var(--mono);letter-spacing:.12em;text-transform:uppercase}
-.columns{display:grid;grid-template-columns:1.35fr .65fr;gap:22px}.panel{position:relative;padding:30px;background:#eee5d1;border:1px solid #b8a47c;box-shadow:0 8px 20px #42341c12}.panel:before{content:"";position:absolute;inset:7px;border:1px solid #cbb995;pointer-events:none}.panel h2,.panel h3{font:600 34px/1.05 var(--display);color:#32271f;margin:10px 0 15px}.panel p{font:16px/1.65 var(--body);color:#554936}.panel .subtle{font:10px var(--mono);color:#87775d}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin:45px 0 28px;padding-bottom:16px;border-bottom:1px solid #95815d}.section-head h2{font:600 clamp(36px,5vw,58px)/.95 var(--display);color:#2b241d;margin:8px 0 0}.section-head>p{max-width:44ch;margin:0;color:#76674f;font:italic 15px/1.5 var(--body)}
-.character-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.character{background:#292620;border:1px solid #8b7652;box-shadow:0 10px 24px #35271725;transition:transform .25s,box-shadow .25s}.character:hover{transform:translateY(-6px);box-shadow:0 18px 30px #3527173d}.portrait{height:290px;background:#39342b;overflow:hidden;position:relative}.portrait:after{content:"";position:absolute;inset:8px;border:1px solid #d0b77a80;pointer-events:none}.portrait img{width:100%;height:100%;object-fit:cover;filter:sepia(.18) contrast(1.06)}.character-body{padding:19px 20px 22px;color:#e9dfc7}.character-body .micro{color:#d0ae71;font-size:8px}.character-body h3{font:600 31px/1 var(--display);margin:9px 0;color:#f0e5cb}.character-body p{font:13px/1.5 var(--body);color:#c7b99a;margin:5px 0}.character-body p.subtle{font-size:12px;color:#9e9279;margin-top:12px}
-.note{padding:12px 16px;border-left:3px solid var(--fire);background:#d8c9a7;color:#67563d;font:12px/1.5 var(--mono)}
-.records{display:grid;gap:12px}.record{background:#eee5d2;border:1px solid #b5a078;box-shadow:0 4px 12px #3c2d1c12;transition:transform .22s,box-shadow .22s,border-color .22s}.record:hover{transform:translateY(-2px);box-shadow:0 10px 24px #3c2d1c25;border-color:#8d4b36}.record summary{list-style:none;display:grid;grid-template-columns:62px 1fr auto;gap:18px;align-items:center;padding:20px 24px;cursor:pointer;position:relative;transition:background .22s}.record summary::-webkit-details-marker{display:none}.record summary:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#a9956c;transform:scaleY(0);transition:transform .2s}.record:hover summary:before,.record[open] summary:before{transform:scaleY(1)}.record summary:hover{background:#e4d6b8}.record-no{font:500 32px var(--display);color:#9b4c35}.record-title{font:600 25px var(--display);color:#30271e}.record-date{font:9px var(--mono);letter-spacing:.1em;color:#817158}.record summary:after{content:"＋";color:#8b5039;font:20px var(--mono)}.record[open] summary:after{content:"−"}.record-body{padding:8px 34px 28px 104px;color:#554936;font:15px/1.7 var(--body);animation:reveal .28s ease}.record-body b{color:#7e392b}.record-actions{display:flex;gap:15px;align-items:center;flex-wrap:wrap;margin-top:20px}.record-actions a{font:10px var(--mono);letter-spacing:.08em;color:#8c3a2e}.video-wrap{display:none;margin-top:18px}.video-wrap iframe{width:100%;height:350px;border:1px solid #a28a5f}
-@keyframes reveal{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
-.map-actions{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:20px 0}.micro{font-size:9px;color:#78684d}.map-frame,.relationship-frame{display:block;width:100%;height:740px;border:1px solid #9b8158;background:#222;box-shadow:0 14px 32px #392d1c28}.thread-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.thread{background:#e8dec8;border:1px solid #b3a078;padding:22px;transition:transform .2s,box-shadow .2s}.thread:hover{transform:translateY(-3px);box-shadow:0 10px 22px #372a1d20}.thread h3{font:600 26px var(--display);margin:12px 0 8px}.thread p{font:14px/1.55 var(--body);color:#6a5a43}.status{font:8px var(--mono);letter-spacing:.12em;color:#8b392c}
-.dashboard-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.bar{height:8px;background:#c7b897;margin:18px 0}.bar i{display:block;height:100%;background:linear-gradient(90deg,#8b3d2e,#c59c55)}.quest{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #c6b48f;font:12px var(--mono);color:#554936}.quest b,.tag{color:#8b3c2d}.footer{padding:22px clamp(24px,5vw,82px);border-top:1px solid #9a865e;background:#d9c9a7;color:#6e5a3d;font:9px var(--mono);letter-spacing:.16em;text-align:center}
-@media(max-width:1050px){.hero{grid-template-columns:1fr 0.8fr;gap:26px}.hero-visual{min-height:460px}.character-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:760px){.tabs{width:68px;flex-basis:68px}.global-vengrath img{width:32px;height:32px}.global-vengrath{font-size:7px}.tab-btn{height:88px;flex-basis:88px;font-size:8px}.youtube-playlist-btn{font-size:7px}.section{padding:0 18px 55px}.file-strip{font-size:8px}.hero{grid-template-columns:1fr;padding:16px 0 30px;min-height:0}.hero h1{font-size:clamp(56px,12vw,88px)}.hero-visual{min-height:380px;max-height:520px;aspect-ratio:4/3}.element-seals{top:18%}.stats{grid-template-columns:repeat(2,1fr);margin-bottom:32px}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid #b3a17c}.columns,.dashboard-grid{grid-template-columns:1fr}.section-head{display:block}.section-head>p{margin-top:14px}.character-grid,.thread-grid{grid-template-columns:1fr 1fr}.record summary{grid-template-columns:42px 1fr auto;padding:16px 12px;gap:10px}.record-no{font-size:25px}.record-title{font-size:20px}.record-body{padding:8px 18px 22px}.map-frame,.relationship-frame{height:600px}}
-@media(max-width:480px){.tabs{width:56px;flex-basis:56px}.tab-btn{font-size:7px;flex-basis:78px;height:78px}.global-vengrath span{font-size:6px}.character-grid,.thread-grid{grid-template-columns:1fr}.hero-meta .pill{font-size:8px}.hero-visual{min-height:330px}.stat{padding:16px 12px}.stat strong{font-size:36px}.map-frame,.relationship-frame{height:520px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
-</style></head>
+:root{
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#090b1c;--bg2:#12152e;--stone:#1b2048;--ink:#e8ecff;--mute:#8d97c4;--gold:#7df0d2;
+  --paper:#dfe6f5;--paper2:#b9c4e0;--pink:#1b2048;
+  --earth:#58e08a;--water:#4aa8ff;--air:#ffe066;--fire:#ff5a7a;--blood:#6a1fd0;
+  --head:'Pirata One',Georgia,serif;--body:'IM Fell English',Georgia,'Times New Roman',serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#090b1c;--bg2:#12152e}}
+:root[data-theme="dark"]{--bg:#090b1c;--bg2:#12152e}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#0c0e24;--bg2:#151a3a}}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:20px/1.55 var(--body);overflow-x:hidden}
+/* grain + torchlight. No cursor property is set anywhere: the existing custom cursor stays visible. */
+body::after{content:"";position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.12;mix-blend-mode:overlay;
+ background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+#torch{position:fixed;inset:0;z-index:40;pointer-events:none;background:radial-gradient(circle 420px at var(--px,50%) var(--py,30%),transparent 0,rgba(0,0,0,.42) 100%)}
+@media (hover:none){#torch{display:none}}
+h1,h2,h3{font-family:var(--head);font-weight:400;margin:0;line-height:1}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+section{position:relative;padding:110px 0 70px}
+.kick{font-style:italic;color:var(--gold);font-size:1.05rem}
+h2{font-size:clamp(2.6rem,7vw,4.8rem);margin:4px 0 12px;color:var(--ink);text-shadow:0 2px 0 #000,0 0 28px rgba(255,90,122,.25)}
+.lede{color:var(--mute);max-width:56ch;margin:0 0 40px}
+.tear{position:absolute;left:0;right:0;top:-1px;height:34px;background:var(--bg);clip-path:polygon(0 0,100% 0,100% 30%,96% 80%,91% 40%,86% 90%,80% 35%,74% 85%,68% 30%,61% 95%,55% 40%,48% 85%,42% 30%,35% 90%,28% 40%,21% 80%,14% 30%,8% 85%,3% 35%,0 70%)}
+.alt{background:linear-gradient(var(--bg2),var(--bg))}
+
+/* dock */
+#dock{position:fixed;z-index:60;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;gap:2px;padding:6px;background:linear-gradient(#232850,#0f1230);border:2px solid #3c4486;border-radius:14px;box-shadow:0 10px 30px #000,inset 0 1px 0 #5e6ac0;max-width:calc(100vw - 16px)}
+#dock a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 10px;border-radius:9px;text-decoration:none;color:var(--mute);font:.95rem var(--head);letter-spacing:.04em;transition:transform .2s,background .2s,color .2s,box-shadow .2s}
+#dock svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7}
+#dock a:hover{transform:translateY(-6px) scale(1.12);color:var(--gold);background:#00000055}
+#dock a:active{transform:translateY(-2px) scale(1)}
+#dock a.on{color:var(--fire);background:#000000aa;box-shadow:inset 0 0 12px rgba(255,90,122,.4)}
+@media(max-width:520px){#dock a{padding:6px 7px;font-size:.78rem}}
+
+/* hero */
+.hero{min-height:100svh;padding:0;display:grid;align-items:end;overflow:hidden;background:radial-gradient(ellipse at 50% 80%,#2a1260,var(--bg) 65%)}
+#embers{position:absolute;inset:0;width:100%;height:100%}
+.scene{position:absolute;inset:0}
+.scene svg{position:absolute;left:-5%;bottom:0;width:110%;height:78%;transition:transform .15s linear}
+.hero .wrap{position:relative;z-index:2;padding-bottom:150px;padding-top:140px}
+.hero h1{font-size:clamp(3.4rem,13vw,10rem);line-height:.88;background:linear-gradient(#f2f4ff,#9aa6e8 55%,#4a5498);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 4px 0 #000) drop-shadow(0 0 40px rgba(255,90,122,.35))}
+.hero h1 b{font-weight:400;display:block;background:linear-gradient(#d6c2ff,var(--fire) 60%,var(--blood));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .kick{font-size:1.3rem}
+.plaque{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 0;padding:0}
+.plaque div{padding:8px 16px;background:linear-gradient(#1f2448,#12163a);border:1px solid #3c4486;border-radius:4px;box-shadow:inset 0 1px 0 #5560b0,0 4px 10px #0008}
+.plaque dt{font:.95rem var(--head);color:var(--gold);letter-spacing:.08em}.plaque dd{margin:0;font-size:.95rem}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media(max-width:800px){.intro{grid-template-columns:1fr}}
+.intro p{margin:0 0 1em}
+.intro #introText p:first-child::first-letter{font:5rem/.8 var(--head);float:left;padding:6px 10px 0 0;color:var(--fire);text-shadow:0 0 18px rgba(255,90,122,.6)}
+.chip{display:inline-block;margin-top:6px;padding:14px 28px;background:linear-gradient(#a66bff,var(--blood));color:#f4eeff;font:1.4rem var(--head);letter-spacing:.06em;text-decoration:none;border-radius:4px;box-shadow:0 5px 0 #2a0c52,0 10px 20px #0009;transition:transform .15s,box-shadow .15s,filter .2s}
+.chip:hover{transform:translateY(-3px);box-shadow:0 8px 0 #2a0c52,0 16px 28px #000a,0 0 24px rgba(255,90,122,.5);filter:brightness(1.15)}
+.chip:active{transform:translateY(4px);box-shadow:0 1px 0 #2a0c52}
+
+/* party: tarot-style cards */
+.party{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+@media(max-width:1040px){.party{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.party{grid-template-columns:1fr;max-width:340px;margin:0 auto}}
+.pc{--c:var(--earth);perspective:900px;aspect-ratio:3/4.6}
+.pc[data-el="1"]{--c:var(--water)}.pc[data-el="2"]{--c:var(--air)}.pc[data-el="3"]{--c:var(--fire)}
+.tilt{width:100%;height:100%;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .2s;transform-style:preserve-3d}
+.flip{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.3,1.3,.5,1)}
+.pc.turned .flip{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;padding:12px;background:linear-gradient(145deg,#2b3266,#12163a);border:2px solid var(--c);box-shadow:0 18px 40px #000a,0 0 0 1px #000,inset 0 0 0 5px #0a0d26,inset 0 0 0 6px color-mix(in srgb,var(--c) 55%,#000);color:var(--ink);display:flex;flex-direction:column;gap:8px;text-align:center;overflow:hidden}
+.face.back{transform:rotateY(180deg);text-align:left}
+.face::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:12px;background:radial-gradient(circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.28),transparent 45%);mix-blend-mode:soft-light}
+button.facebtn{all:unset;display:flex;flex-direction:column;gap:8px;height:100%;padding:0}
+button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.pc:hover .face{box-shadow:0 22px 50px #000,0 0 36px color-mix(in srgb,var(--c) 55%,transparent),inset 0 0 0 5px #0a0d26,inset 0 0 0 6px var(--c)}
+.glyph{position:absolute;top:18px;left:18px;width:30px;height:30px;stroke:var(--c);fill:none;stroke-width:2.2;z-index:2;filter:drop-shadow(0 0 6px var(--c))}
+.portrait{flex:1;min-height:0;margin:6px;border-radius:8px;background:radial-gradient(circle at 50% 35%,color-mix(in srgb,var(--c) 40%,#000),#0c0806);display:grid;place-items:center;overflow:hidden;box-shadow:inset 0 0 24px #000}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.portrait span{font:7rem var(--head);color:color-mix(in srgb,var(--c) 60%,transparent)}
+.face h3{font-size:1.7rem;overflow-wrap:anywhere}
+.sub{font-style:italic;color:var(--c);font-size:.95rem;min-height:2.7em}
+.hint{font-size:.78rem;color:var(--mute);letter-spacing:.15em;text-transform:uppercase}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:30px 8px 0;font-size:.98rem;scrollbar-width:thin;scrollbar-color:var(--c) transparent}
+.scroll p{margin:0 0 10px;color:#c5cdf0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0;margin:0 0 10px;list-style:none}
+.stats li{background:#0006;border:1px solid #ffffff22;border-radius:6px;text-align:center;font-size:1.1rem}
+.stats b{display:block;font:.8rem var(--head);color:var(--c);letter-spacing:.1em}
+.turn{position:relative;z-index:3;align-self:center;background:none;border:1px solid var(--c);color:var(--c);padding:4px 16px;font:1rem var(--head);border-radius:20px;transition:background .2s,color .2s,transform .15s}
+.turn:hover{background:var(--c);color:#000;transform:scale(1.06)}
+.pc.empty .face h3,.pc.empty .scroll p{opacity:.65;font-style:italic}
+
+/* chronicle */
+.chron{list-style:none;margin:0;padding:0;position:relative}
+.chron::before{content:"";position:absolute;left:30px;top:0;bottom:0;border-left:3px dotted #5e6ac0}
+.ev{position:relative;padding-left:84px;margin-bottom:26px}
+.seal{all:unset;position:absolute;left:0;top:8px;width:62px;height:62px;border-radius:50% 46% 52% 48%;background:radial-gradient(circle at 35% 30%,#c9a8ff,var(--blood) 60%,#2a0c52);box-shadow:0 5px 12px #000,inset 0 -4px 6px #0006,inset 0 3px 4px #e0d0ff66;display:grid;place-items:center;font:1.7rem var(--head);color:#2a0c52;text-shadow:0 1px 0 #e0d0ff88;transition:transform .25s,box-shadow .25s}
+.seal:hover{transform:scale(1.14) rotate(-8deg);box-shadow:0 8px 18px #000,0 0 26px rgba(181,140,255,.7),inset 0 -4px 6px #0006}
+.seal:active{transform:scale(.92)}
+.seal:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.ev.open .seal{background:radial-gradient(circle at 35% 30%,#d6c2ff,var(--gold) 60%,#0e5a4a);color:#00352c;box-shadow:0 0 30px rgba(125,240,210,.7),0 5px 12px #000}
+.sheet{background:linear-gradient(100deg,var(--paper),var(--paper2));color:#171b3a;border-radius:3px 12px 3px 12px;padding:16px 22px;box-shadow:0 8px 20px #0009,inset 0 0 30px #5a68b055;transition:transform .25s,box-shadow .25s;transform:rotate(var(--r,-.4deg))}
+.ev:nth-child(even) .sheet{--r:.5deg}
+.ev:hover .sheet{transform:rotate(0) translateX(6px);box-shadow:0 14px 28px #000a,inset 0 0 30px #5a68b055}
+.ev .date{font:1rem var(--head);color:var(--blood);letter-spacing:.1em}
+.ev h3{font-size:1.8rem}.ev .sumtxt{margin:2px 0 0}
+.detail{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
+.ev.open .detail{grid-template-rows:1fr}
+.detail>div{overflow:hidden}
+.detail p{margin:12px 0 0;padding-top:12px;border-top:2px dashed #4a528a88}
+.cue{font-style:italic;font-size:.9rem;color:var(--blood);margin-top:6px}
+.ev.open .cue::before{content:"Roll up scroll ▲"}.ev:not(.open) .cue::before{content:"Unroll scroll ▼"}
+@media(min-width:900px){
+ .chron::before{left:50%}
+ .ev{width:50%;padding:0 56px 0 0;margin-bottom:-6px}
+ .ev:nth-child(even){margin-left:50%;padding:0 0 0 56px}
+ .seal{left:auto;right:-31px}.ev:nth-child(even) .seal{right:auto;left:-31px}
+ .ev{margin-bottom:22px}
+}
+
+/* embeds */
+.frame{position:relative;padding:20px;border-radius:10px;background:linear-gradient(135deg,#4a5280,#1c2040 60%,#38406e);box-shadow:0 30px 60px #000c,inset 0 2px 0 #8f9bdc,inset 0 0 0 3px #090b20}
+.frame::before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:10px;
+ background:radial-gradient(circle at 10px 10px,#e8efff 0 4px,#5b668f 5px,transparent 6px) 0 0/100% 100% no-repeat,
+ radial-gradient(circle at calc(100% - 10px) 10px,#e8efff 0 4px,#5b668f 5px,transparent 6px) 0 0/100% 100% no-repeat,
+ radial-gradient(circle at 10px calc(100% - 10px),#e8efff 0 4px,#5b668f 5px,transparent 6px) 0 0/100% 100% no-repeat,
+ radial-gradient(circle at calc(100% - 10px) calc(100% - 10px),#e8efff 0 4px,#5b668f 5px,transparent 6px) 0 0/100% 100% no-repeat}
+.frame.book{background:linear-gradient(135deg,#2a1250,#120728);box-shadow:0 30px 60px #000c,inset 0 2px 0 #7b4ad0}
+.frame.book::after{content:"";position:absolute;inset:9px;border:2px dashed #b89cff77;border-radius:6px;pointer-events:none}
+.mount{height:clamp(380px,64vh,700px);display:grid;place-items:center;text-align:center;color:var(--mute);background:#05061a;box-shadow:inset 0 0 40px #000,inset 0 0 0 1px #000;border-radius:4px}
+.mount.notes{height:clamp(440px,72vh,780px)}
+.mount>*:not(.ph){width:100%;height:100%}
+.ph small{display:block;font:1.2rem var(--head);color:var(--gold);letter-spacing:.1em}
+.ph code{font-size:.85rem;opacity:.7}
+.kick.r{display:block}
+
+/* quest board */
+.board{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:34px;padding:36px;border-radius:12px;background:radial-gradient(#0003 1px,transparent 1.5px) 0 0/9px 9px,linear-gradient(135deg,#353c7a,#232857);box-shadow:inset 0 0 0 10px #171b45,inset 0 0 60px #000a,0 20px 50px #000a}
+.note{position:relative;padding:28px 22px 22px;background:linear-gradient(var(--paper),var(--paper2));color:#171b3a;transform:rotate(var(--r,-1.5deg));box-shadow:0 8px 16px #0008;transition:transform .3s,box-shadow .3s}
+.note:nth-child(2){--r:1.2deg}.note:nth-child(3){--r:-.6deg}.note:nth-child(4){--r:1.8deg}
+.note:hover{transform:rotate(0) scale(1.05) translateY(-6px);box-shadow:0 22px 30px #000a;z-index:2}
+.note::before{content:"";position:absolute;top:-9px;left:50%;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff9fc0,var(--blood));box-shadow:0 4px 5px #0007}
+.note h3{font-size:1.6rem;color:var(--blood);margin-bottom:6px}
+.note p,.note ul{margin:0;padding-left:0;list-style-position:inside}
+footer{padding:60px 0 130px;text-align:center;color:var(--mute);font-style:italic}
+.tear{display:none}.introblk .tear{display:block}.introblk{padding:110px 0 70px}
+section{min-height:100svh}#intro{padding:0;min-height:0}.hero{position:relative}
+main{position:relative;overflow-x:hidden}
+main>section{display:none}main>section.active{display:block}
+main>section.leave{position:absolute;top:0;left:0;right:0;display:block;z-index:3;pointer-events:none}
+@keyframes outL{to{transform:translateX(-115%) translateY(-30px) rotate(-4deg);opacity:0}}
+@keyframes outR{to{transform:translateX(115%) translateY(-30px) rotate(4deg);opacity:0}}
+@keyframes inR{from{transform:translateX(115%) translateY(50px) rotate(4deg);opacity:0}60%{opacity:1}}
+@keyframes inL{from{transform:translateX(-115%) translateY(50px) rotate(-4deg);opacity:0}60%{opacity:1}}
+.out-l{animation:outL .65s cubic-bezier(.6,0,.9,.4) forwards}.out-r{animation:outR .65s cubic-bezier(.6,0,.9,.4) forwards}
+.in-r{animation:inR .72s cubic-bezier(.2,.9,.25,1.05) both}.in-l{animation:inL .72s cubic-bezier(.2,.9,.25,1.05) both}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.vengrath-mark{position:fixed;z-index:60;top:20px;left:24px;display:flex;align-items:center;gap:9px;color:#aeb9ee;text-decoration:none;font:1rem var(--head);letter-spacing:.18em;text-shadow:0 2px 8px #000}.vengrath-mark img{width:30px;height:30px;object-fit:contain}.vengrath-mark span{color:var(--gold)}
+@media(max-width:520px){.vengrath-mark{top:9px;left:12px;font-size:.8rem}.vengrath-mark img{width:23px;height:23px}#dock{gap:0;padding:4px}#dock a{padding:5px 6px;font-size:.72rem}#dock svg{width:18px;height:18px}}
+</style>
+<script src="/core/templates/Cursor/Cursor.js" defer></script>
+</head>
 <body>
-<div class="shell">
-<nav class="tabs" aria-label="Nawigacja kampanii">
-<a class="global-vengrath" href="/home/" aria-label="Powrót do Vengrath"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
-<div class="tab-list" id="tabList">
-<button class="tab-btn active" data-target="home"><span>AKTA ŚWIĄTYNI</span></button>
-<button class="tab-btn" data-target="characters"><span>DRUŻYNA</span></button>
-<button class="tab-btn" data-target="chronicle"><span>KRONIKA</span></button>
-<button class="tab-btn" data-target="map"><span>MAPA DOLINY</span></button>
-<button class="tab-btn" data-target="notes"><span>SIEĆ POWIĄZAŃ</span></button>
-<button class="tab-btn" data-target="dashboard"><span>WYWIAD MG</span></button>
-</div>
-<a class="youtube-playlist-btn" href="/page/swiatynia-pierwotnego-zla/Mapa/" aria-label="Otwórz mapę kampanii">MAPA KAMPANII</a>
-<div class="tabs-foot"><span>GREYHAWK · 591 CY</span></div>
+<div id="torch"></div>
+<a class="vengrath-mark" href="/home/" aria-label="Powrót do Vengrath"><img src="/core/graphics/favicon/mg-logo.png" alt=""> VENGRATH <span>✦</span></a>
+<nav id="dock" aria-label="Nawigacja kampanii">
+ <a href="#intro" data-i><svg viewBox="0 0 24 24"><path d="M3 21V10l9-7 9 7v11M9 21v-7h6v7"/></svg>Wstęp</a>
+ <a href="#characters" data-i><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 15l4-8 4 8M9.5 12.5h5"/></svg>Drużyna</a>
+ <a href="#chronicle" data-i><svg viewBox="0 0 24 24"><path d="M6 3h12v15a3 3 0 01-3 3H6a3 3 0 003-3V3M9 8h6M9 12h6"/></svg>Kronika</a>
+ <a href="#map" data-i><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14"/></svg>Mapa</a>
+ <a href="#notes" data-i><svg viewBox="0 0 24 24"><path d="M5 3h12a2 2 0 012 2v16H7a2 2 0 01-2-2zM9 8h6M9 12h6"/></svg>Notatki</a>
+ <a href="#overview" data-i><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>Status</a>
 </nav>
-<main class="pages">
-<section class="section active" id="home">
-<div class="file-strip"><span>ARCHIWUM ZAKONU · GREYHAWK · DOLINA HOMMLET</span><span class="case-no">DOSSIER 001 / 591 CY</span></div>
-<div class="hero">
-<div class="hero-content">
-<div class="eyebrow">TOM I · CZTERY ŻYWIOŁY · PIĄTA KOMNATA</div>
-<h1>Świątynia <em>Pierwotnego</em> Zła</h1>
-<p class="lede">Pod wzgórzami Hommlet coś wciąż oddycha. Cztery dawne sanktuaria czekają na znak, a piąta komnata nie figuruje na żadnej mapie.</p>
-<div class="hero-meta"><span class="pill">Greyhawk · 591 CY</span><span class="pill">D&D 5e · 2024</span><span class="pill">Poziomy 1–14</span><span class="pill"><i></i> Kampania aktywna</span></div>
-<div class="hero-actions"><button class="btn primary" data-jump="chronicle">Otwórz kronikę <b>↗</b></button><button class="btn" data-jump="map">Zbadaj dolinę</button></div>
-<div class="hero-quote"><span class="quote-mark">“</span><p>Kamień pamięta pierwszy oddech.</p><small>FRAGMENT Z TABLICZKI ODNALEZIONEJ POD KURHANEM</small></div>
+
+<main>
+<section id="intro"><div class="hero">
+ <canvas id="embers"></canvas>
+ <div class="scene" aria-hidden="true">
+  <svg id="far" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMax slice"><path fill="#171c4a" d="M0 600V380l90-60 80 50 110-110 100 90 120-130 130 120 110-70 120 90 130-100 110 110V600z"/></svg>
+  <svg id="mid" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMax slice"><path fill="#0c0f2e" d="M330 600V300l30-50v-70l22-30 22 30v70l30 50V600zM780 600V290l30-60v-60l22-40 22 40v60l30 60V600zM480 600V260q120-190 240 0V600z"/><path fill="#b58cff" opacity=".9" d="M570 600V400q30-60 60 0V600z"/><g fill="#ff5a7a"><circle cx="392" cy="330" r="6"/><circle cx="832" cy="320" r="6"/></g></svg>
+  <svg id="near" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMax slice"><path fill="#050615" d="M0 600V520l120-30 90 40 150-50 100 30V600zM800 600V530l120-50 130 40 150-30V600z"/><g><path fill="#58e08a" d="M150 520l12 20h-24z"/><path fill="#4aa8ff" d="M330 540l12-20 12 20z"/><path fill="#ffe066" d="M860 520l12 20h-24z"/><path fill="#ff5a7a" d="M1010 540l12-20 12 20z"/></g></svg>
+ </div>
+ <div class="wrap">
+  <div class="kick">Archiwum kampanii Dungeons &amp; Dragons</div>
+  <h1>Świątynia <b>Pierwotnego Zła</b></h1>
+  <dl class="plaque" id="facts"></dl>
+ </div>
 </div>
-<div class="hero-visual">
-<img src="res/cover.svg" alt="Cztery żywioły otaczające ruiny pradawnej świątyni">
-<div class="hero-plate-top">FIG. 01 <span>·</span> THE ELEMENTAL TEMPLE</div>
-<div class="hero-plate-bottom"><strong>Świątynia</strong><span>PLAN · CZTERY OŁTARZE · PIĄTY KRĄG</span></div>
-<div class="element-seals" aria-label="Cztery żywioły"><span class="seal fire">F</span><span class="seal water">W</span><span class="seal earth">Z</span><span class="seal air">P</span></div>
-</div>
-</div>
-<div class="wrap"><div class="stats"><div class="stat"><strong>03</strong><span>Sesje w kronice</span></div><div class="stat"><strong>04</strong><span>Bohaterów drużyny</span></div><div class="stat"><strong>06</strong><span>Wątków aktywnych</span></div><div class="stat"><strong>12</strong><span>Odkrytych miejsc</span></div></div><div class="columns"><article class="panel"><div class="kicker">WPROWADZENIE</div><h2>Doliny nie zapominają</h2><p>W pobliżu spokojnej wioski Hommlet od lat narasta niepokój. Kupcy znikają na trakcie, zwierzęta omijają stare kurhany, a w ruinach dawnej świątyni pojawiają się światła, których nie powinno tam być.</p><p>Drużyna przybywa do Hommlet, by zbadać serię zaginięć. Trop prowadzi od gospody Pod Wesołym Olbrzymem, przez Moathouse, aż ku rozległemu kompleksowi świątynnemu, gdzie cztery żywioły służą jednemu, znacznie starszemu złu.</p></article><aside class="panel"><div class="kicker">OSTATNI WPIS</div><h3>03 · Szepty spod kurhanu</h3><p class="subtle">18 dnia Planting, 591 CY</p><p>Po powrocie z Moathouse bohaterowie odkrywają, że ktoś w Hommlet zna ich imiona. W skrzynce na listy czeka gliniana tabliczka z symbolem czterech żywiołów.</p><button class="btn ghost" data-jump="chronicle">Czytaj zapis</button></aside></div></div></section>
-<section class="section" id="characters"><div class="wrap"><div class="section-head"><div><div class="kicker">DRUŻYNA · REJESTR POSTACI</div><h2>Ci, którzy zeszli do doliny</h2></div><p>Cztery postaci demonstracyjne pobrane z głównego rejestru Vengrath. Dane graczy, ras i klas zachowano z pliku characters.json.</p></div><div class="character-grid">
-<article class="character"><div class="portrait"><img src="/core/portraits/char-0001.webp" alt="Portret Pelagietty" loading="lazy"></div><div class="character-body"><div class="micro">CHAR-0001 · ŁOWCZYNI</div><h3>Pelagietta</h3><p>Niziołka · Łowczyni</p><p>Gracz: Miauriusz</p><p class="subtle">Zwiadowczyni, która słyszy więcej, niż mówi. W dolinie szuka śladów zwierząt uciekających z lasu.</p></div></article>
-<article class="character"><div class="portrait"><img src="/core/portraits/char-0002.webp" alt="Portret Luekh era" loading="lazy"></div><div class="character-body"><div class="micro">CHAR-0002 · PALADYN</div><h3>Luekher</h3><p>Elf · Paladyn</p><p>Gracz: Aureli</p><p class="subtle">Strażnik przysięgi i sumienia drużyny. Wierzy, że zło można pokonać, zanim zapuści korzenie.</p></div></article>
-<article class="character"><div class="portrait"><img src="/core/portraits/char-0003.webp" alt="Portret Damiry" loading="lazy"></div><div class="character-body"><div class="micro">CHAR-0003 · BARD</div><h3>Damira</h3><p>Odmieniec · Bardka</p><p>Gracz: Kajetan</p><p class="subtle">Mistrzyni słowa i kamuflażu. Jej pieśni potrafią otworzyć drzwi, których nie otworzy stal.</p></div></article>
-<article class="character"><div class="portrait"><img src="/core/portraits/char-0004.webp" alt="Portret Pchełki" loading="lazy"></div><div class="character-body"><div class="micro">CHAR-0004 · DRUIDKA</div><h3>Pchełka</h3><p>Człowiek · Druidka</p><p>Gracz: Zuza</p><p class="subtle">Opiekunka dzikiej przyrody. Czuje, że ziemia wokół świątyni jest chora, a korzenie pamiętają dawny rytuał.</p></div></article>
-</div><p class="note" style="margin-top:20px">Uwaga makietowa: postaci są prawdziwymi rekordami z istniejącego rejestru, ale ich przypisanie do Świątyni Pierwotnego Zła oraz opis fabularny są demonstracyjne.</p></div></section>
-<section class="section" id="chronicle"><div class="wrap"><div class="section-head"><div><div class="kicker">DZIENNIK WYPRAWY</div><h2>Kronika sesji</h2></div><p>Numerowane wpisy, daty w kalendarzu Greyhawku, streszczenia, notatki MG oraz odnośniki do materiałów wideo.</p></div><div class="records">
-<details class="record" open><summary><span class="record-no">01</span><span><span class="record-title">Droga do Hommlet</span><br><span class="record-date">4 Planting, 591 CY · 12.04.2026</span></span></summary><div class="record-body"><p>Podróżni spotykają się na trakcie do Hommlet. Po napaści goblinów odnajdują ślady prowadzące do starego młyna. W gospodzie Pod Wesołym Olbrzymem poznają sołtysa i dowiadują się o zniknięciu dwóch furmanów.</p><p><b>Najważniejsze ustalenia:</b> ktoś płaci za informacje o przybyszach; w okolicy widziano ludzi z symbolem złamanego trójkąta; kapłan Rufus prosi o dyskrecję.</p><p><b>Notatka MG:</b> Jaroo rozpoznaje na amulecie drużyny znak dawnego kultu, ale nie chce rozmawiać przy świadkach.</p><div class="record-actions"><a href="https://www.youtube.com/results?search_query=Swatynia+Pierwotnego+Zla+sesja+01+Droga+do+Hommlet" target="_blank" rel="noopener">Otwórz nagranie na YouTube ↗</a><button class="btn ghost" data-video="https://www.youtube.com/embed?listType=search&list=Swatynia+Pierwotnego+Zla+sesja+01">Odtwarzacz demonstracyjny</button></div><div class="video-wrap"><iframe title="Odtwarzacz sesji 1" allowfullscreen loading="lazy"></iframe></div></div></details>
-<details class="record"><summary><span class="record-no">02</span><span><span class="record-title">Cień nad Moathouse</span><br><span class="record-date">11 Planting, 591 CY · 19.04.2026</span></span></summary><div class="record-body"><p>Drużyna rusza tropem zaginionych furmanów. W ruinach Moathouse odkrywa podziemne przejście, ślady kultystów i pierwsze dowody, że świątynia nie jest jedynie ruiną. W walce z jaszczuroludźmi ginie przewodnik, a Pelagietta odnajduje mapę z zaznaczonymi czterema sanktuariami.</p><p><b>Najważniejsze ustalenia:</b> Moathouse służy jako placówka zwiadowcza; kult działa w czterech odłamach żywiołów; ktoś w Hommlet dostarcza im żywność.</p><p><b>Notatka MG:</b> Wśród dokumentów znajduje się rachunek podpisany inicjałami „L. B.”.</p><div class="record-actions"><a href="https://www.youtube.com/results?search_query=Swatynia+Pierwotnego+Zla+sesja+02+Cien+nad+Moathouse" target="_blank" rel="noopener">Otwórz nagranie na YouTube ↗</a><button class="btn ghost" data-video="https://www.youtube.com/embed?listType=search&list=Swatynia+Pierwotnego+Zla+sesja+02">Odtwarzacz demonstracyjny</button></div><div class="video-wrap"><iframe title="Odtwarzacz sesji 2" allowfullscreen loading="lazy"></iframe></div></div></details>
-<details class="record"><summary><span class="record-no">03</span><span><span class="record-title">Szepty spod kurhanu</span><br><span class="record-date">18 Planting, 591 CY · 26.04.2026</span></span></summary><div class="record-body"><p>Po powrocie do wioski bohaterowie konfrontują się z nieufnością mieszkańców. W starym kurhanie odnajdują komnatę z mapą kompleksu świątynnego oraz śladami rytuału, który miał połączyć cztery żywioły. Damira podszywa się pod posłańca kultu i zdobywa hasło: „Kamień pamięta pierwszy oddech”.</p><p><b>Najważniejsze ustalenia:</b> cztery odłamy nie są zgodne; kapłan z Hommlet ukrywa część historii; pod świątynią znajduje się starsza, piąta komnata.</p><p><b>Notatka MG:</b> Następny etap prowadzi do ruin świątyni. Zegar rytuału już ruszył.</p><div class="record-actions"><a href="https://www.youtube.com/results?search_query=Swatynia+Pierwotnego+Zla+sesja+03+Szepty+spod+kurhanu" target="_blank" rel="noopener">Otwórz nagranie na YouTube ↗</a><button class="btn ghost" data-video="https://www.youtube.com/embed?listType=search&list=Swatynia+Pierwotnego+Zla+sesja+03">Odtwarzacz demonstracyjny</button></div><div class="video-wrap"><iframe title="Odtwarzacz sesji 3" allowfullscreen loading="lazy"></iframe></div></div></details></div><p class="note" style="margin-top:18px">Nagrania są makietowe: odnośniki prowadzą do wyszukiwania odpowiednich sesji na YouTube. Po dodaniu właściwego filmu można wkleić jego identyfikator do odtwarzacza osadzonego.</p></div></section>
-<section class="section" id="map"><div class="wrap"><div class="section-head"><div><div class="kicker">GEOGRAFIA · DOLINA HOMMLET</div><h2>Mapa kampanii</h2></div><p>Interaktywna mapa lokalizacji, szlaków i miejsc związanych z kultem. Pełny widok dostępny również jako osobna podstrona.</p></div><div class="map-actions"><span class="micro">WARSTWA: GREYHAWK / OKOLICE HOMMLET</span><a class="btn ghost" href="Mapa/">Otwórz mapę na pełnym ekranie ↗</a></div><iframe class="map-frame" src="Mapa/" title="Interaktywna mapa kampanii Świątynia Pierwotnego Zła" loading="lazy"></iframe></div></section>
-<section class="section" id="notes"><div class="wrap"><div class="section-head"><div><div class="kicker">REJESTR DOCHODZENIA</div><h2>Notatki i powiązania</h2></div><p>Mapa wątków, frakcji, postaci niezależnych i tropów. Wybierz węzeł, aby zobaczyć jego znaczenie w śledztwie.</p></div><div class="map-actions"><span class="micro">INTERAKTYWNY GRAF · POSTACI · FRAKCJE · MIEJSCA · TROPU</span><a class="btn ghost" href="Notatki/">Otwórz sieć powiązań na pełnym ekranie ↗</a></div><iframe class="relationship-frame" src="Notatki/" title="Interaktywna sieć powiązań kampanii" loading="lazy"></iframe><div class="thread-grid" style="margin-top:16px">
-<article class="thread"><span class="status">AKTYWNY · GŁÓWNY</span><h3>Cztery odłamy żywiołów</h3><p>Kult powietrza, ziemi, ognia i wody rywalizuje o wpływy, ale wszystkie odłamy służą jednemu planowi.</p></article>
-<article class="thread"><span class="status">AKTYWNY · ŚLEDCZY</span><h3>Zdrajca w Hommlet</h3><p>Rachunki z Moathouse wskazują na osobę dostarczającą kultystom zapasy i informacje.</p></article>
-<article class="thread"><span class="status">NIEZWERYFIKOWANY</span><h3>Piąta komnata</h3><p>Pod kompleksem ma istnieć starsze sanktuarium, którego nie ma na żadnej znanej mapie.</p></article>
-<article class="thread"><span class="status">AKTYWNY · OSOBISTY</span><h3>Amulet Pelagietty</h3><p>Symbol na amulecie reaguje na obecność reliktów żywiołów. Pochodzenie przedmiotu pozostaje nieznane.</p></article>
-<article class="thread"><span class="status">ZAMKNIĘTY</span><h3>Zaginieni furmani</h3><p>Ślady wskazują na Moathouse. Odnalezione dokumenty potwierdzają transport zaopatrzenia dla kultu.</p></article>
-<article class="thread"><span class="status">AKTYWNY · POLITYCZNY</span><h3>Spór o Hommlet</h3><p>Jaroo, Rufus i sołtys mają różne wersje historii ruin. Ich interesy nie są zbieżne.</p></article>
+<div class="alt introblk"><div class="tear"></div><div class="wrap">
+ <div class="kick">Zapis wydarzeń</div><h2>Przed Bramą</h2>
+ <div class="intro">
+  <div id="introText">
+   <p>Niegdyś bastion złowrogiej potęgi, Świątynia Pierwotnego Zła została obalona, lecz jej cień nigdy nie opuścił pogranicza. Na traktach grasują bandyci, w gospodach krążą szepty, a dawne kulty budzą się w zapomnianych miejscach.</p>
+   <p>Czworo bohaterów podjęło trop. U jego kresu czeka coś starszego i bardziej głodnego — siła związana z czterema żywiołami: ziemią, wodą, powietrzem i ogniem.</p>
+  </div>
+  <div><p>Każdy ich czyn trafia do kroniki. Przemierzane trakty zostają naniesione na mapę, a sprzymierzeńcy i wrogowie splatają się w sieć powiązań.</p><a class="chip" href="#chronicle" data-i>Czytaj kronikę</a></div>
+ </div>
 </div></div></section>
-<section class="section" id="dashboard"><div class="wrap"><div class="section-head"><div><div class="kicker">CENTRUM DOWODZENIA MG</div><h2>Panel wywiadowczy kampanii</h2></div><p>Przegląd postępu, aktywnych zagrożeń, tropów i stanu eksploracji. Dane przykładowe dla makiety.</p></div>
-<div class="stats"><div class="stat"><strong>03</strong><span>Odbyte sesje</span></div><div class="stat"><strong>14</strong><span>Poziom docelowy</span></div><div class="stat"><strong>06</strong><span>Otwarte wątki</span></div><div class="stat"><strong>12</strong><span>Znane lokalizacje</span></div></div>
-<div class="dashboard-grid"><article class="panel"><div class="kicker">POSTĘP KAMPANII</div><h3>Eksploracja doliny</h3><p class="subtle">Wprowadzenie i pierwsze śledztwo</p><div class="bar"><i style="width:24%"></i></div><div class="quest"><span>Hommlet i sojusznicy</span><b>Ukończono</b></div><div class="quest"><span>Moathouse</span><b>Ukończono</b></div><div class="quest"><span>Ruiny świątyni</span><span class="tag">W toku</span></div><div class="quest"><span>Podziemne sanktuarium</span><span class="tag">Nieodkryte</span></div></article>
-<article class="panel"><div class="kicker">ZAGROŻENIA</div><h3>Poziom ryzyka: wysoki</h3><div class="quest"><span>Kult żywiołów</span><span class="tag">Krytyczny</span></div><div class="quest"><span>Agent w Hommlet</span><span class="tag">Podejrzenie</span></div><div class="quest"><span>Rytuał czterech ołtarzy</span><span class="tag">Narastający</span></div><div class="quest"><span>Nieznany patron kultu</span><span class="tag">Nieznany</span></div></article>
-<article class="panel"><div class="kicker">CELE NA NASTĘPNĄ SESJĘ</div><h3>Plan operacyjny</h3><div class="quest"><span>Przesłuchać Jaroo bez świadków</span><span class="tag">Priorytet</span></div><div class="quest"><span>Zbadać rachunek „L. B.”</span><span class="tag">Wysoki</span></div><div class="quest"><span>Ustalić położenie wejścia do świątyni</span><span class="tag">Wysoki</span></div></article>
-<article class="panel"><div class="kicker">KONTROLA DANYCH</div><h3>Stan archiwum</h3><div class="quest"><span>Postaci</span><b>4 / 4</b></div><div class="quest"><span>Sesje</span><b>3 / 3</b></div><div class="quest"><span>Mapa</span><b>12 znaczników</b></div><div class="quest"><span>Wątki</span><b>6 zapisów</b></div></article></div></div></section>
-<footer class="footer">VENGRATH · ARCHIWUM ŚWIĄTYNI · GREYHAWK · 591 CY</footer></main></div>
+
+<section id="characters"><div class="tear"></div><div class="wrap">
+ <div class="kick">Czworo, którzy się odważyli</div><h2>Drużyna</h2>
+ <p class="lede">Odwróć kartę, aby poznać pełną historię każdego z czworga bohaterów.</p>
+ <div class="party" id="party"></div>
+</div></section>
+
+<section id="chronicle" class="alt"><div class="tear"></div><div class="wrap">
+ <div class="kick">Zapieczętowane i poświadczone</div><h2>Kronika</h2>
+ <p class="lede">Przełam pieczęć, aby rozwinąć pełny zapis wydarzeń.</p>
+ <ol class="chron" id="chron"></ol>
+</div></section>
+
+<section id="map"><div class="tear"></div><div class="wrap">
+ <div class="kick">Na stole narad</div><h2>Mapa kampanii</h2>
+ <div class="frame"><div class="mount" id="map-mount" data-embed="map" aria-label="Miejsce na dostarczony widok mapy"><div class="ph"><small>Widok mapy</small>Przestrzeń na interaktywną mapę kampanii<br><code>CampaignHub.mounts.map</code></div></div></div>
+</div></section>
+
+<section id="notes" class="alt"><div class="tear"></div><div class="wrap">
+ <div class="kick">Oprawione w skórę</div><h2>Notatki i powiązania</h2>
+ <div class="frame book"><div class="mount notes" id="notes-mount" data-embed="notes" aria-label="Miejsce na dostarczony widok notatek"><div class="ph"><small>Widok notatek</small>Przestrzeń na dostarczony widok notatek i powiązań<br><code>CampaignHub.mounts.notes</code></div></div></div>
+</div></section>
+
+<section id="overview"><div class="tear"></div><div class="wrap">
+ <div class="kick">Przypięte do tablicy</div><h2>Stan kampanii</h2>
+ <div class="board" id="ov"></div>
+</div></section>
+</main>
+<footer>VENGRATH · Świątynia Pierwotnego Zła · Greyhawk · 591 CY</footer>
+
 <script>
-const sections=[...document.querySelectorAll('.section')],nav=[...document.querySelectorAll('[data-target]')];
-function show(id){sections.forEach(s=>s.classList.toggle('active',s.id===id));nav.forEach(b=>b.classList.toggle('active',b.dataset.target===id));history.replaceState(null,'','#'+id);if(id==='notes')drawGraph();if(id==='map'){const f=document.querySelector('.map-frame');if(f)f.contentWindow.postMessage('resize-map','*')}}
-nav.forEach(b=>b.addEventListener('click',()=>show(b.dataset.target)));
-document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.jump)));
-document.querySelectorAll('[data-video]').forEach(b=>b.addEventListener('click',()=>{const box=b.closest('.record-body').querySelector('.video-wrap');box.style.display=box.style.display==='block'?'none':'block';box.querySelector('iframe').src=box.style.display==='block'?b.dataset.video:'';}));
-if(location.hash&&document.querySelector(location.hash+'.section'))show(location.hash.slice(1));
-function drawGraph(){const c=document.getElementById('threadGraph');if(!c)return;const r=c.getBoundingClientRect(),d=devicePixelRatio||1;c.width=r.width*d;c.height=r.height*d;const x=c.getContext('2d');x.scale(d,d);const nodes=[['Kult żywiołów',.5,.5],['Hommlet',.18,.28],['Moathouse',.22,.75],['Cztery ołtarze',.78,.25],['Piąta komnata',.82,.72],['Amulet',.5,.88],['Zdrajca',.14,.5]];const edges=[[0,1],[0,2],[0,3],[0,4],[0,5],[1,6],[2,6],[3,4],[5,4]];x.strokeStyle='#756943';x.lineWidth=1;edges.forEach(([a,b])=>{x.beginPath();x.moveTo(nodes[a][1]*r.width,nodes[a][2]*r.height);x.lineTo(nodes[b][1]*r.width,nodes[b][2]*r.height);x.stroke()});nodes.forEach((n,i)=>{const px=n[1]*r.width,py=n[2]*r.height;x.beginPath();x.arc(px,py,i===0?30:23,0,Math.PI*2);x.fillStyle=i===0?'#a84f35':'#34392b';x.fill();x.strokeStyle='#c8a45d';x.stroke();x.fillStyle='#e8dfc8';x.textAlign='center';x.font='11px IBM Plex Mono';x.fillText(n[0],px,py+43)})}
-window.addEventListener('resize',()=>{if(document.getElementById('notes').classList.contains('active'))drawGraph()});
-</script></body></html>
+/* DATA: placeholders only. Replace via CampaignHub.set*() */
+var DATA={
+ facts:[["Świat","Greyhawk"],["Data","591 CY"],["Region","Dolina Hommlet"],["System","D&D 5e · 2024"]],
+ characters:[
+  {name:"Pelagietta",player:"Miauriusz",race:"Niziołka",class:"Łowczyni",level:"—",bio:"Zwiadowczyni, która słyszy więcej, niż mówi. W dolinie szuka śladów zwierząt uciekających z lasu.",portrait:"/core/portraits/char-0001.webp"},
+  {name:"Luekher",player:"Aureli",race:"Elf",class:"Paladyn",level:"—",bio:"Strażnik przysięgi i sumienia drużyny. Wierzy, że zło można pokonać, zanim zapuści korzenie.",portrait:"/core/portraits/char-0002.webp"},
+  {name:"Damira",player:"Kajetan",race:"Odmieniec",class:"Bardka",level:"—",bio:"Mistrzyni słowa i kamuflażu. Jej pieśni potrafią otworzyć drzwi, których nie otworzy stal.",portrait:"/core/portraits/char-0003.webp"},
+  {name:"Pchełka",player:"Zuza",race:"Człowiek",class:"Druidka",level:"—",bio:"Opiekunka dzikiej przyrody. Czuje, że ziemia wokół świątyni jest chora, a korzenie pamiętają dawny rytuał.",portrait:"/core/portraits/char-0004.webp"}
+ ],
+ chronicle:[
+  {date:"4 Planting, 591 CY · 12.04.2026",title:"Droga do Hommlet",summary:"Podróżni spotykają się na trakcie do Hommlet. Po napaści goblinów odnajdują ślady prowadzące do starego młyna.",details:"W gospodzie Pod Wesołym Olbrzymem poznają sołtysa i dowiadują się o zniknięciu dwóch furmanów. Ktoś płaci za informacje o przybyszach; w okolicy widziano ludzi z symbolem złamanego trójkąta; kapłan Rufus prosi o dyskrecję. Jaroo rozpoznaje na amulecie drużyny znak dawnego kultu, ale nie chce rozmawiać przy świadkach."},
+  {date:"11 Planting, 591 CY · 19.04.2026",title:"Cień nad Moathouse",summary:"Drużyna rusza tropem zaginionych furmanów. W ruinach Moathouse odkrywa podziemne przejście i ślady kultystów.",details:"Walka z jaszczuroludźmi kończy się śmiercią przewodnika, a Pelagietta odnajduje mapę z zaznaczonymi czterema sanktuariami. Moathouse służy jako placówka zwiadowcza; kult działa w czterech odłamach żywiołów; ktoś w Hommlet dostarcza im żywność. Wśród dokumentów znajduje się rachunek podpisany inicjałami „L. B.”."},
+  {date:"18 Planting, 591 CY · 26.04.2026",title:"Szepty spod kurhanu",summary:"Po powrocie do wioski bohaterowie konfrontują się z nieufnością mieszkańców. W starym kurhanie odnajdują komnatę z mapą kompleksu świątynnego.",details:"Ślady wskazują na rytuał, który miał połączyć cztery żywioły. Damira podszywa się pod posłańca kultu i zdobywa hasło: „Kamień pamięta pierwszy oddech”. Cztery odłamy nie są zgodne; kapłan z Hommlet ukrywa część historii; pod świątynią znajduje się starsza, piąta komnata. Następny etap prowadzi do ruin świątyni. Zegar rytuału już ruszył."}
+ ],
+ overview:[
+  {title:"Ostatni zapis",text:"Sesja 03 · Szepty spod kurhanu. Drużyna odkryła ślady rytuału czterech żywiołów i istnienie piątej komnaty."},
+  {title:"Aktywne wątki",items:["Cztery odłamy żywiołów","Zdrajca w Hommlet","Piąta komnata","Amulet Pelagietty"]},
+  {title:"Stan wyprawy",text:"3 sesje zapisane · 4 bohaterów · Greyhawk, 591 CY"},
+  {title:"Następny trop",text:"Ruiny Świątyni Pierwotnego Zła. Zegar rytuału już ruszył."}
+ ]
+};
+var $=function(s){return document.querySelector(s)};
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.textContent=h;return e}
+var GL=['M4 20L12 4l8 16zM7 14h10','M4 6h16L12 20z','M12 4L4 19h16zM4 14h16','M12 20L4 5h16zM6 12h12'];
+var NS='http://www.w3.org/2000/svg';
+function glyph(i){var s=document.createElementNS(NS,'svg');s.setAttribute('viewBox','0 0 24 24');s.setAttribute('class','glyph');var p=document.createElementNS(NS,'path');p.setAttribute('d',[ 'M12 3L3 20h18zM7 14h10','M12 21L3 4h18z','M12 3L3 20h18zM4 12h16','M12 21L3 4h18zM7 11h10'][i]);s.append(p);return s}
+
+function renderFacts(){var f=$('#facts');f.innerHTML='';DATA.facts.forEach(function(p){var d=el('div');d.append(el('dt','',p[0]),el('dd','',p[1]));f.append(d)})}
+
+function renderParty(){
+ var P=$('#party');P.innerHTML='';
+ for(var i=0;i<4;i++){(function(i){
+  var c=DATA.characters[i]||null,card=el('article','pc'+(c?'':' empty'));card.dataset.el=i;
+  var tilt=el('div','tilt'),flip=el('div','flip');
+  var sub=[c&&c.race,c&&c['class'],c&&c.level?'Lv '+c.level:''].filter(Boolean).join(' · ')||'Rasa · Klasa · Poziom';
+  var front=el('div','face front'),fb=el('button','facebtn');fb.dataset.i='';fb.setAttribute('aria-label','Odwróć kartę, aby poznać historię: '+(c&&c.name||'character')+'\u2019s story');
+  var pt=el('div','portrait');if(c&&c.portrait){var im=el('img');im.src=c.portrait;im.alt='';pt.append(im)}else pt.append(el('span','',c&&c.name?c.name[0]:'?'));
+  fb.append(pt,el('h3','',c&&c.name||'Bohater drużyny'),el('div','sub',sub),el('div','hint','Odwróć kartę ↻'));
+  front.append(glyph(i),fb);
+  var back=el('div','face back');back.setAttribute('aria-hidden','true');
+  var sc=el('div','scroll');
+  if(c&&c.stats){var u=el('ul','stats');['STR','DEX','CON','INT','WIS','CHA'].forEach(function(k){var li=el('li');li.append(el('b','',k),document.createTextNode(c.stats[k]!=null?c.stats[k]:'–'));u.append(li)});sc.append(u)}
+  sc.append(el('p','',c&&c.bio||'This hero\u2019s story appears here once character data is loaded.'));
+  if(c&&c.player)sc.append(el('p','sub','Gracz: '+c.player));
+  var tb=el('button','turn','Wróć na awers');tb.dataset.i='';tb.tabIndex=-1;
+  back.append(glyph(i),el('h3','',c&&c.name||'Character name'),sc,tb);
+  function t(){var o=card.classList.toggle('turned');back.setAttribute('aria-hidden',!o);front.setAttribute('aria-hidden',o);tb.tabIndex=o?0:-1;fb.tabIndex=o?-1:0}
+  fb.onclick=t;tb.onclick=t;
+  flip.append(front,back);tilt.append(flip);card.append(tilt);
+  card.addEventListener('pointermove',function(e){var r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+   tilt.style.setProperty('--ry',((x-.5)*14)+'deg');tilt.style.setProperty('--rx',((.5-y)*14)+'deg');
+   card.querySelectorAll('.face').forEach(function(f){f.style.setProperty('--mx',x*100+'%');f.style.setProperty('--my',y*100+'%')})});
+  card.addEventListener('pointerleave',function(){tilt.style.setProperty('--rx','0deg');tilt.style.setProperty('--ry','0deg')});
+  P.append(card)})(i)}
+}
+
+function renderChron(){
+ var L=$('#chron');L.innerHTML='';
+ DATA.chronicle.forEach(function(e,i){
+  var li=el('li','ev'),sl=el('button','seal',String(i+1));sl.dataset.i='';sl.setAttribute('aria-expanded','false');sl.setAttribute('aria-controls','d'+i);sl.setAttribute('aria-label','Toggle details: '+e.title);
+  var sh=el('div','sheet');sh.append(el('div','date',e.date),el('h3','',e.title),el('p','sumtxt',e.summary));
+  var d=el('div','detail');d.id='d'+i;var w=el('div');w.append(el('p','',e.details));d.append(w);
+  sh.append(d,el('div','cue'));
+  function t(){var o=li.classList.toggle('open');sl.setAttribute('aria-expanded',o)}
+  sl.onclick=t;sh.onclick=function(ev){if(ev.target===sh||ev.target.closest('.date,h3,.sumtxt,.cue'))t()};sh.dataset.i='';
+  li.append(sl,sh);L.append(li)})
+}
+
+function renderOverview(){
+ var O=$('#ov');O.innerHTML='';
+ DATA.overview.forEach(function(o){var c=el('div','note');c.append(el('h3','',o.title));
+  if(o.items){var u=el('ul');o.items.forEach(function(x){u.append(el('li','',x))});c.append(u)}else c.append(el('p','',o.text));O.append(c)})
+}
+function renderAll(){renderFacts();renderParty();renderChron();renderOverview()}
+renderAll();
+window.CampaignHub={
+ setCharacters:function(a){DATA.characters=(a||[]).slice(0,4);renderParty()},
+ setChronicle:function(a){DATA.chronicle=a||[];renderChron()},
+ setFacts:function(a){DATA.facts=a;renderFacts()},
+ setOverview:function(a){DATA.overview=a;renderOverview()},
+ mounts:{map:$('#map-mount'),notes:$('#notes-mount')}
+};
+
+/* torchlight + hero parallax */
+var T=$('#torch'),sc=[['far',8],['mid',18],['near',34]].map(function(p){return[$('#'+p[0]),p[1]]});
+addEventListener('pointermove',function(e){T.style.setProperty('--px',e.clientX+'px');T.style.setProperty('--py',e.clientY+'px');
+ var x=e.clientX/innerWidth-.5;sc.forEach(function(s){s[0].style.transform='translateX('+(-x*s[1])+'px)'})});
+
+/* embers */
+(function(){var c=$('#embers'),x=c.getContext('2d'),P=[],W,H;
+ function rs(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;P.forEach(function(p){p.x=Math.random()*W;p.y=Math.random()*H})}rs();addEventListener('resize',rs);
+ if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+ for(var i=0;i<60;i++)P.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*2+.5,v:Math.random()*.6+.2,s:Math.random()*Math.PI*2});
+ (function f(){x.clearRect(0,0,W,H);P.forEach(function(p){p.y-=p.v;p.s+=.02;p.x+=Math.sin(p.s)*.5;if(p.y<-5){p.y=H+5;p.x=Math.random()*W}
+  x.fillStyle='rgba('+(150+p.r*30|0)+',140,255,'+(.3+p.y/H*.6)+')';x.beginPath();x.arc(p.x,p.y,p.r,0,6.3);x.fill()});requestAnimationFrame(f)})()})();
+
+/* exclusive sections, swipe transitions */
+var links=[].slice.call(document.querySelectorAll('#dock a')),views=[].slice.call(document.querySelectorAll('main>section[id]')),cur=null,busy=false,pending=null,reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function mark(id){links.forEach(function(a){var on=a.getAttribute('href')==='#'+id;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')})}
+function go(id){
+ var nx=document.getElementById(id);if(!nx||views.indexOf(nx)<0)return;
+ if(busy){pending=id;return}
+ if(nx===cur)return;
+ scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+ var old=cur,dir=old?(views.indexOf(nx)>views.indexOf(old)?1:-1):0;
+ nx.classList.add('active');cur=nx;mark(id);dispatchEvent(new Event('resize'));
+ if(!old||reduce){if(old)old.classList.remove('active');return}
+ busy=true;
+ old.classList.add('leave',dir>0?'out-l':'out-r');nx.classList.add(dir>0?'in-r':'in-l');
+ setTimeout(function(){old.classList.remove('active','leave','out-l','out-r');nx.classList.remove('in-r','in-l');busy=false;
+  if(pending){var p=pending;pending=null;go(p)}},730)
+}
+addEventListener('hashchange',function(){go(location.hash.slice(1)||'intro')});
+go(views.some(function(v){return '#'+v.id===location.hash})?location.hash.slice(1):'intro');
+</script>
+</body>
+</html>
