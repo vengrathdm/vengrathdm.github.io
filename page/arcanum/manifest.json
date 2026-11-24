@@ -1,11 +1,11 @@
 {
-  "id": "swiatynia-pierwotnego-zla",
-  "title": "Świątynia Pierwotnego Zła",
+  "id": "arcanum",
+  "title": "Arcanum",
   "language": "pl",
-  "campaign": "Świątynia Pierwotnego Zła",
-  "module": "The Temple of Elemental Evil",
+  "campaign": "Arcanum",
+  "module": "Arcanum: Of Steamworks and Magick Obscura",
   "edition": "Dungeons & Dragons 5e (2024)",
-  "entry": "/page/swiatynia-pierwotnego-zla/",
+  "entry": "/page/arcanum/",
   "theme": "./theme.json",
   "content": "./content.json",
   "sections": [
@@ -17,5 +17,5 @@
     "dashboard"
   ],
   "status": "Kampania aktywna · makieta",
-  "map": "/page/swiatynia-pierwotnego-zla/Mapa/"
+  "map": "/page/arcanum/Mapa/"
 }
