@@ -323,7 +323,7 @@ bindThreeStateControls("[data-label-mode-group=entity]",()=>entityLabelMode,v=>e
 bindThreeStateControls("[data-label-mode-group=relationship]",()=>relationshipLabelMode,v=>relationshipLabelMode=v);
 $("labelStages").querySelectorAll("button").forEach(b=>b.onclick=()=>{$("labelStages").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));labelStage=Number(b.dataset.stage);applyLabelStyles()});
 $("exportData").onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)+"\n"],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="dragons-due-relationships.json";a.click();URL.revokeObjectURL(url);toast("Wyeksportowano cały zestaw danych.")};
-$("uploadData").onclick=()=>{ $("githubToken").value="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";$("githubTokenForm").requestSubmit() };
+$("uploadData").onclick=()=>{ $("githubToken").value="sss";$("githubTokenForm").requestSubmit() };
 $("githubTokenForm").onsubmit=async event=>{
  event.preventDefault();
  const button=$("uploadData"),originalLabel=button.textContent,token=$("githubToken").value.trim();
