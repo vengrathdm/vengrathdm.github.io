@@ -177,3 +177,11 @@ input,select,textarea,.dialog input,.dialog select,.dialog textarea,.search-labe
 .context-menu button:hover,.context-menu-item:focus-within>button{background:#795036!important;color:#fff0d0!important}
 .dossier-name{color:#f0e5cc!important}
 .dossier-image{border:1px solid #b3955d!important}
+
+/* Visible, themed scrollbars for the Notes tab content */
+.tab-panel{scrollbar-width:thin;scrollbar-color:#c8a45d rgba(23,24,19,.72);scrollbar-gutter:stable}
+.tab-panel::-webkit-scrollbar{width:10px;height:10px}
+.tab-panel::-webkit-scrollbar-track{background:linear-gradient(180deg,rgba(23,24,19,.92),rgba(39,41,31,.86));border-left:1px solid rgba(200,164,93,.22);border-radius:5px}
+.tab-panel::-webkit-scrollbar-thumb{min-height:34px;background:linear-gradient(180deg,#c8a45d,#70402e);border:2px solid #20231c;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(232,223,200,.18)}
+.tab-panel::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#e8dfc8,#a84f35)}
+.tab-panel::-webkit-scrollbar-corner{background:#171813}
