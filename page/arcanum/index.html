@@ -192,6 +192,21 @@ main>section.leave{position:absolute;top:0;left:0;right:0;display:block;z-index:
 .vengrath-mark{position:fixed;z-index:60;top:20px;left:24px;display:flex;align-items:center;gap:9px;color:#b9b199;text-decoration:none;font:1rem var(--head);letter-spacing:.18em;text-shadow:0 2px 8px #000}.vengrath-mark img{width:30px;height:30px;object-fit:contain}.vengrath-mark span{color:var(--gold)}
 @media(max-width:520px){.vengrath-mark{top:9px;left:12px;font-size:.8rem}.vengrath-mark img{width:23px;height:23px}#dock{gap:0;padding:4px}#dock a{padding:5px 6px;font-size:.72rem}#dock svg{width:18px;height:18px}}
 
+
+/* USER-SUPPLIED FULL-PAGE SECTION BACKDROP */
+main>section{
+  background-image:linear-gradient(180deg,rgba(10,15,12,.78),rgba(10,15,12,.86)),url("https://i.pinimg.com/originals/63/5c/d2/635cd2ab171658df6229d0d32e234154.gif");
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
+@media(max-width:700px){
+  main>section{background-attachment:scroll}
+}
+#intro .hero{min-height:100svh;height:100svh}
+#intro .hero .scene img{width:100%;height:100%;object-fit:cover;object-position:center center}
+
 /* ARCANUM INDUSTRIAL VICTORIAN ART DIRECTION */
 :root{--bg:#121714;--bg2:#1d2522;--stone:#29312d;--ink:#e9dfc9;--mute:#b6ad96;--gold:#c6a46a;--paper:#dfd0ae;--paper2:#bda77c;--fire:#b86a3e;--blood:#693c2d}
 body{background-color:#121714;background-image:radial-gradient(ellipse at 50% 0%,#33413a55,transparent 58%),linear-gradient(90deg,#0d1210 0,#1b211d 50%,#0d1210 100%)}
@@ -248,7 +263,7 @@ body::after{opacity:.16;mix-blend-mode:soft-light}
 <section id="intro"><div class="hero">
  <canvas id="embers"></canvas>
  <div class="scene" aria-hidden="true">
-  <img src="./res/cover.svg" alt="">
+  <img src="https://e.snmc.io/lk/lv/x/ec247abcff193b8cdb231d44a6619b22/8887133" alt="">
  </div>
  <div class="wrap">
   <div class="kick">Archiwum kampanii Dungeons &amp; Dragons</div>
