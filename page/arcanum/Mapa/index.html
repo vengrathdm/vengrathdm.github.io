@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mapa — Świątynia Pierwotnego Zła</title>
+<title>Mapa — Arcanum</title>
 <meta name="description" content="Interaktywna mapa Doliny Hommlet z edytowalną siatką pól, regionami i znacznikami.">
 <link rel="stylesheet" href="leaflet/leaflet.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/map.css">
     <link rel="stylesheet" href="/core/templates/Cursor/Cursor.css">
 </head>
-<body class="swiatynia-pierwotnego-zla-page">
+<body class="arcanum-page">
 <div id="map"></div>
 <div id="head" class="panel">
-  <a class="home-brand" href="/page/swiatynia-pierwotnego-zla/" aria-label="Vengrath — strona główna"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
+  <a class="home-brand" href="/page/arcanum/" aria-label="Vengrath — strona główna"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
 </div>
 <div id="read" class="panel"><small>Najedź na mapę, aby wyświetlić oznaczenie hexu</small></div>
 <div id="toolsWindow">
@@ -33,7 +33,7 @@
 
 
 <div id="editor" class="floating-panel" hidden>
-  <div class="panel-head"><strong>Świątynia · Nakładki pól</strong><button class="panel-close" data-close="editor" type="button">Zamknij</button></div>
+  <div class="panel-head"><strong>Arcanum · Nakładki mapy</strong><button class="panel-close" data-close="editor" type="button">Zamknij</button></div>
   <div id="editorTools">
     <div class="editor-field"><span class="editor-field-label">Warstwa nakładki</span><select id="layerSelect"><option value="political">Polityczna</option><option value="geographical">Geograficzna</option></select></div>
     <section class="editor-section">
