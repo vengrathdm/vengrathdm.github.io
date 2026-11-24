@@ -235,12 +235,7 @@ main>section.leave{position:absolute;top:0;left:0;right:0;display:block;z-index:
 /* DATA: placeholders only. Replace via CampaignHub.set*() */
 var DATA={
  facts:[["Świat","Greyhawk"],["Data","591 CY"],["Region","Dolina Hommlet"],["System","D&D 5e · 2024"]],
- characters:[
-  {name:"Pelagietta",player:"Miauriusz",race:"Niziołka",class:"Łowczyni",level:"—",bio:"Zwiadowczyni, która słyszy więcej, niż mówi. W dolinie szuka śladów zwierząt uciekających z lasu.",portrait:"/core/portraits/char-0001.webp"},
-  {name:"Luekher",player:"Aureli",race:"Elf",class:"Paladyn",level:"—",bio:"Strażnik przysięgi i sumienia drużyny. Wierzy, że zło można pokonać, zanim zapuści korzenie.",portrait:"/core/portraits/char-0002.webp"},
-  {name:"Damira",player:"Kajetan",race:"Odmieniec",class:"Bardka",level:"—",bio:"Mistrzyni słowa i kamuflażu. Jej pieśni potrafią otworzyć drzwi, których nie otworzy stal.",portrait:"/core/portraits/char-0003.webp"},
-  {name:"Pchełka",player:"Zuza",race:"Człowiek",class:"Druidka",level:"—",bio:"Opiekunka dzikiej przyrody. Czuje, że ziemia wokół świątyni jest chora, a korzenie pamiętają dawny rytuał.",portrait:"/core/portraits/char-0004.webp"}
- ],
+ characters:[],
  chronicle:[
   {date:"4 Planting, 591 CY · 12.04.2026",title:"Droga do Hommlet",summary:"Podróżni spotykają się na trakcie do Hommlet. Po napaści goblinów odnajdują ślady prowadzące do starego młyna.",details:"W gospodzie Pod Wesołym Olbrzymem poznają sołtysa i dowiadują się o zniknięciu dwóch furmanów. Ktoś płaci za informacje o przybyszach; w okolicy widziano ludzi z symbolem złamanego trójkąta; kapłan Rufus prosi o dyskrecję. Jaroo rozpoznaje na amulecie drużyny znak dawnego kultu, ale nie chce rozmawiać przy świadkach."},
   {date:"11 Planting, 591 CY · 19.04.2026",title:"Cień nad Moathouse",summary:"Drużyna rusza tropem zaginionych furmanów. W ruinach Moathouse odkrywa podziemne przejście i ślady kultystów.",details:"Walka z jaszczuroludźmi kończy się śmiercią przewodnika, a Pelagietta odnajduje mapę z zaznaczonymi czterema sanktuariami. Moathouse służy jako placówka zwiadowcza; kult działa w czterech odłamach żywiołów; ktoś w Hommlet dostarcza im żywność. Wśród dokumentów znajduje się rachunek podpisany inicjałami „L. B.”."},
@@ -314,6 +309,16 @@ window.CampaignHub={
  setOverview:function(a){DATA.overview=a;renderOverview()},
  mounts:{map:$('#map-mount'),notes:$('#notes-mount')}
 };
+// Load only the four player-character records assigned to this campaign page.
+// NPCs and every other character in the shared registry are deliberately excluded.
+fetch('/core/data/characters.json').then(function(r){if(!r.ok)throw new Error('Character registry unavailable');return r.json()})
+ .then(function(records){
+  var ids=['char-0001','char-0002','char-0003','char-0004'];
+  var players=ids.map(function(id){return records.find(function(c){return c.id===id})}).filter(Boolean).map(function(c){
+   return {name:c.character,player:c.player,race:c.race,'class':(c.classes||[]).join(' / '),bio:c.history,portrait:c.portrait};
+  });
+  window.CampaignHub.setCharacters(players);
+ }).catch(function(err){console.warn('Nie udało się wczytać postaci drużyny:',err)});
 
 /* torchlight + hero parallax */
 var T=$('#torch'),sc=[['far',8],['mid',18],['near',34]].map(function(p){return[$('#'+p[0]),p[1]]});
