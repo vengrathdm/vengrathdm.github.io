@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Arcanum — Vengrath</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Teko:wght@500;700&family=Tektur:wght@900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 <style>
 
 :root{
@@ -13,20 +13,20 @@
   --bg:#171813;--bg2:#20231c;--stone:#27291f;--ink:#e8dfc8;--mute:#b9b199;--gold:#c8a45d;
   --paper:#e8dfc8;--paper2:#d6cfb8;--pink:#27291f;
   --earth:#8b8055;--water:#a84f35;--air:#f2cc68;--fire:#a84f35;--blood:#70402e;
-  --head:'Tektur',system-ui,sans-serif;--body:'Teko',Arial,sans-serif;
+  --head:'Cinzel',Georgia,serif;--body:'IM Fell English',Georgia,'Times New Roman',serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171813;--bg2:#20231c}}
 :root[data-theme="dark"]{--bg:#171813;--bg2:#20231c}
 
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:500 21px/1.35 var(--body);overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--ink);font:20px/1.55 var(--body);overflow-x:hidden}
 /* grain + torchlight. No cursor property is set anywhere: the existing custom cursor stays visible. */
 body::after{content:"";position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.12;mix-blend-mode:overlay;
  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
 #torch{position:fixed;inset:0;z-index:40;pointer-events:none;background:radial-gradient(circle 420px at var(--px,50%) var(--py,30%),transparent 0,rgba(0,0,0,.42) 100%)}
 @media (hover:none){#torch{display:none}}
-h1,h2,h3{font-family:var(--head);font-weight:900;margin:0;line-height:1}
+h1,h2,h3{font-family:var(--head);font-weight:400;margin:0;line-height:1}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .wrap{max-width:1200px;margin:0 auto;padding:0 22px}
 section{position:relative;padding:110px 0 70px}
@@ -38,7 +38,7 @@ h2{font-size:clamp(2.6rem,7vw,4.8rem);margin:4px 0 12px;color:var(--ink);text-sh
 
 /* dock */
 #dock{position:fixed;z-index:60;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;gap:2px;padding:6px;background:linear-gradient(#27291f,#20231c);border:2px solid #8b8055;border-radius:14px;box-shadow:0 10px 30px #000,inset 0 1px 0 #a24a35;max-width:calc(100vw - 16px)}
-#dock a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 10px;border-radius:9px;text-decoration:none;color:var(--mute);font:700 1.05rem var(--body);letter-spacing:.07em;transition:transform .2s,background .2s,color .2s,box-shadow .2s}
+#dock a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 10px;border-radius:9px;text-decoration:none;color:var(--mute);font:.95rem var(--head);letter-spacing:.04em;transition:transform .2s,background .2s,color .2s,box-shadow .2s}
 #dock svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7}
 #dock a:hover{transform:translateY(-6px) scale(1.12);color:var(--gold);background:#00000055}
 #dock a:active{transform:translateY(-2px) scale(1)}
@@ -465,21 +465,3 @@ go(views.some(function(v){return '#'+v.id===location.hash})?location.hash.slice(
 </script>
 </body>
 </html>
-<style>
-/* ARCANUM TYPOGRAPHY: Tektur Black headings, Teko Bold/Medium interface and copy */
-:root{--head:'Tektur',system-ui,sans-serif;--body:'Teko',Arial,sans-serif}
-body{font-family:'Teko',Arial,sans-serif;font-weight:500;font-size:21px;line-height:1.35}
-h1,h2,h3,h4,h5,h6,.kick,.panel-title,.status-value{font-family:'Tektur',system-ui,sans-serif;font-weight:900}
-strong,b,.chip,#dock a,.workspace-direct-link,.status-tag{font-weight:700}
-.kick{font-size:1rem;letter-spacing:.08em;font-style:normal}
-.plaque dt,.plaque dd{font-family:'Teko',Arial,sans-serif;font-weight:700;font-size:1.12rem}
-/* Brass gearwork: restrained rotating instrument details */
-#dock:before{content:'⚙';position:absolute;right:-17px;top:-19px;color:#d0b477;font:700 30px/1 'Teko',sans-serif;text-shadow:0 2px 5px #000;animation:gear-turn 18s linear infinite;pointer-events:none}
-#dock:after{content:'⚙';position:absolute;left:-15px;bottom:-18px;color:#9c7847;font:700 24px/1 'Teko',sans-serif;text-shadow:0 2px 5px #000;animation:gear-turn 24s linear infinite reverse;pointer-events:none}
-#map .frame:before,#notes .frame:before{content:'⚙';position:absolute;z-index:3;right:12px;top:9px;color:#d0b477;font:900 27px/1 'Tektur',sans-serif;opacity:.9;text-shadow:0 2px 5px #000;pointer-events:none}
-.frame{position:relative}
-#overview .board:after{content:'⚙';position:absolute;right:16px;bottom:8px;color:#c9aa70;font:900 56px/1 'Tektur',sans-serif;opacity:.28;pointer-events:none;animation:gear-turn 42s linear infinite}
-.board{position:relative;overflow:hidden}
-@keyframes gear-turn{to{transform:rotate(360deg)}}
-@media(prefers-reduced-motion:reduce){#dock:before,#dock:after,#overview .board:after{animation:none}}
-</style>
