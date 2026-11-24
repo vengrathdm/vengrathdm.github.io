@@ -1,10 +1,11 @@
+@font-face{font-family:'MoriaDF';src:url('/page/swiatynia-pierwotnego-zla/res/Moria_DF.TTF') format('truetype');font-weight:400;font-style:normal;font-display:swap}
 :root{--map-bg:#18090b;--map-panel:#260c10;--map-surface:#3a1116;--map-ink:#f5e8d2;--map-muted:#c49a7b;--map-gold:#f0b64a;--map-red:#e44b32;--map-blood:#8f1823;--map-line:#784047}
   html,body{height:100%;margin:0}
   body{background:#18090b;color:#f5e8d2;font:15px/1.4 'IM Fell English',Georgia,serif}
   #map{position:absolute;inset:0;background:#18090b}
   .panel{position:absolute;z-index:1000;border:1px solid rgba(120,64,71,.42);border-radius:5px;box-shadow:0 5px 22px rgba(0,0,0,.28);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
   #head{top:12px;left:14px;padding:0;background:transparent;border:0;box-shadow:none}
-  .home-brand{display:inline-flex;align-items:center;gap:.5rem;color:#f5e8d2;text-decoration:none;font:1.15rem Pirata One,sans-serif;letter-spacing:.15em;white-space:nowrap;text-shadow:0 1px 6px rgba(0,0,0,.9)}
+  .home-brand{display:inline-flex;align-items:center;gap:.5rem;color:#f5e8d2;text-decoration:none;font:1.15rem MoriaDF,sans-serif;letter-spacing:.15em;white-space:nowrap;text-shadow:0 1px 6px rgba(0,0,0,.9)}
   .home-brand img{width:2.25rem;height:2.25rem;object-fit:contain;filter:drop-shadow(0 0 12px rgba(240,182,74,.25))}
   .home-brand:hover{color:#f0b64a}
   #toolsWindow{position:absolute;z-index:1100;top:12px;right:14px;width:336px;max-width:calc(100vw - 28px);overflow:hidden;background:rgba(38,12,16,.94);border:1px solid rgba(120,64,71,.6);border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.35);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
