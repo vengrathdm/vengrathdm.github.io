@@ -243,3 +243,14 @@ input::placeholder,textarea::placeholder{color:#a99b7c!important}
 .leaflet-control-scale-line{background:#1d2a22dd!important;border-color:#d1b579!important;color:#eadfc8!important}
 .leaflet-control-attribution{background:#111713cc!important;color:#b9ad91!important}
 .leaflet-control-attribution a{color:#d6b879!important}
+
+/* Keep the Warstwy / Edytor panels inside their actual window width */
+#toolsWindow{box-sizing:border-box;min-width:0}
+#toolbar,#layersPanel,#editor,#editorTools{box-sizing:border-box;min-width:0;max-width:100%}
+#layersPanel,#editor{width:100%;padding-left:12px;padding-right:12px;overflow-x:hidden;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#c8a45d rgba(23,24,19,.72)}
+#layersPanel::-webkit-scrollbar,#editor::-webkit-scrollbar{width:9px}
+#layersPanel::-webkit-scrollbar-track,#editor::-webkit-scrollbar-track{background:rgba(23,24,19,.8);border-left:1px solid #66604455;border-radius:5px}
+#layersPanel::-webkit-scrollbar-thumb,#editor::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#c8a45d,#70402e);border:2px solid #20231c;border-radius:6px}
+#layersPanel::-webkit-scrollbar-thumb:hover,#editor::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#e8dfc8,#a84f35)}
+#layersPanel label,#editor label,.editor-field,.editor-section,.editor-data-actions,.editor-action-row{min-width:0;max-width:100%;overflow-wrap:anywhere}
+#layersPanel .layer-name-control,#layersPanel .pin-visibility-control{box-sizing:border-box;min-width:0;max-width:100%}
