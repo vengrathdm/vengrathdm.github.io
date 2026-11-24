@@ -97,3 +97,11 @@
 .relationship-style-section{margin-top:14px;padding:11px 12px 3px;border:1px solid rgba(120,64,71,.24);border-radius:4px;background:rgba(5,12,15,.22)}
 .relationship-style-section h3{margin:0 0 9px;color:#f0b64a;font:15px var(--display);letter-spacing:.1em;text-transform:uppercase}
 .relationship-style-section .dialog-field-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+/* Visible, themed scrollbars for the Notes tab content */
+.tab-panel{scrollbar-width:thin;scrollbar-color:#f0b64a rgba(24,9,11,.78);scrollbar-gutter:stable}
+.tab-panel::-webkit-scrollbar{width:10px;height:10px}
+.tab-panel::-webkit-scrollbar-track{background:linear-gradient(180deg,rgba(24,9,11,.94),rgba(58,17,22,.88));border-left:1px solid rgba(240,182,74,.22);border-radius:5px}
+.tab-panel::-webkit-scrollbar-thumb{min-height:34px;background:linear-gradient(180deg,#f0b64a,#8f1823);border:2px solid #260c10;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(245,232,210,.18)}
+.tab-panel::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#f5e8d2,#e44b32)}
+.tab-panel::-webkit-scrollbar-corner{background:#18090b}
