@@ -204,7 +204,7 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   function pinIcon(style,color){var glyph={standard:'•',ruin:'✥',settlement:'⌂',landmark:'★',natural:'✿'}[style]||'•',safeColor=/^#[0-9a-f]{6}$/i.test(color||'')?color:defaultPinColor(style);return L.divIcon({className:'',html:'<div class="pin-icon pin-'+style+'" style="--pin-color:'+safeColor+'"><span><b>'+glyph+'</b></span></div>',iconSize:[28,34],iconAnchor:[14,32]});}
   function renderPins(){pinMarkers.clearLayers();if(pinVisibilityMode==='hidden')return;pinData.forEach(function(pin,index){var h=parseAddress(pin.hex);if(!h)return;var point=ll(CS*h[0]/KPP,S*(h[1]+0.5*(h[0]&1))/KPP),marker=L.marker(point,{icon:pinIcon(pin.style,pin.color),title:pin.name}).bindPopup('<span class="popup-title">'+escapeHtml(pin.name)+'</span><span class="popup-description">'+escapeHtml(pin.description).replace(/\\n/g,'<br>')+'</span><span class="popup-reference">'+escapeHtml(pin.hex.replace(':',' · Hex '))+'</span>',{className:'editorial-popup'});if(pinVisibilityMode==='hover'||pinVisibilityMode==='always'){var labelOffset=[((index%3)-1)*12,-25-(Math.floor(index/3)%2)*5];marker.bindTooltip(escapeHtml(pin.name),{permanent:pinVisibilityMode==='always',direction:'top',offset:labelOffset,className:'pin-name-tooltip',opacity:1});}marker.on('click',function(e){if(placingPin)cancelPinPlacement();selectHexAt(e.latlng);}).addTo(pinMarkers);});}
   function cancelPinPlacement(){placingPin=false;pendingPinHex='';document.body.classList.remove('pin-placement-active');}
-  function beginPinPlacement(){stopEditing();cancelPinPlacement();placingPin=true;document.body.classList.add('pin-placement-active');document.getElementById('editor').hidden=true;document.getElementById('editorButton').setAttribute('aria-expanded','false');}
+  function beginPinPlacement(){stopEditing();cancelPinPlacement();placingPin=true;document.body.classList.add('pin-placement-active');closePanels();}
   function hexAddressAt(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return null;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return null;var sheet=sid(Math.floor(h[0]/SC),Math.floor(h[1]/SR));if(LAND.indexOf(sheet)<0)return null;return addressKey(h);}
   function closePinContextMenu(){var menu=document.getElementById('pinContextMenu');menu.hidden=true;menu.innerHTML='';menu.dataset.hex='';}
   function copyMapText(value){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(value).catch(function(){setHint('Nie udało się skopiować do schowka.');});return;}var field=document.createElement('textarea');field.value=value;field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();try{document.execCommand('copy');}catch(err){setHint('Nie udało się skopiować do schowka.');}field.remove();}
@@ -234,13 +234,41 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   function brushKeys(center){var q0=center[0],r0=center[1]-(q0-(q0&1))/2,rad=brushRadius(),keys=[];for(var dq=-rad;dq<=rad;dq++){for(var dr=-rad;dr<=rad;dr++){if(Math.max(Math.abs(dq),Math.abs(dr),Math.abs(dq+dr))>rad)continue;var q=q0+dq,ar=r0+dr,row=ar+(q-(q&1))/2;if(q<0||row<0)continue;var si=Math.floor(q/SC),sj=Math.floor(row/SR),sheet=sid(si,sj);if(LAND.indexOf(sheet)<0)continue;keys.push(addressKey([q,row]));}}return keys;}
   function assignBrush(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var center=addressKey(h);if(center===lastPainted)return;lastPainted=center;var arr=regionData[currentLayer()],region=selectedRegion();if(!eraseMode&&!region){setHint('Przed malowaniem utwórz region lub wybierz istniejący.');return;}brushKeys(h).forEach(function(key){arr.forEach(function(r){r.hexes=r.hexes.filter(function(x){return x!==key;});});if(!eraseMode&&region.hexes.indexOf(key)===-1)region.hexes.push(key);});saveData();renderLayer(currentLayer());}
 
-  var panelIds=['layersPanel','editor','presenter'],buttonIds={layersPanel:'layersButton',editor:'editorButton',presenter:'dossierButton'};
-  function closePanels(){panelIds.forEach(function(id){document.getElementById(id).hidden=true;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','false');});syncBrushActivation();}
-  function togglePanel(id){var panel=document.getElementById(id),wasOpen=!panel.hidden;closePanels();if(!wasOpen){panel.hidden=false;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','true');}syncBrushActivation();}
-  function activateEditorPanel(){closePanels();var panel=document.getElementById('editor');panel.hidden=false;document.getElementById('editorButton').setAttribute('aria-expanded','true');syncBrushActivation();}
+  var activeToolSection='layersPanel';
+  function syncToolTabs(){
+    ['layersPanel','editor'].forEach(function(id){
+      var active=activeToolSection===id,tab=document.querySelector('[data-tool-section="'+id+'"]'),section=document.getElementById(id);
+      section.hidden=!active;
+      tab.classList.toggle('active',active);
+      tab.setAttribute('aria-selected',String(active));
+    });
+    document.getElementById('layersButton').setAttribute('aria-expanded',String(!document.getElementById('toolsPanel').hidden&&activeToolSection==='layersPanel'));
+    document.getElementById('editorButton').setAttribute('aria-expanded',String(!document.getElementById('toolsPanel').hidden&&activeToolSection==='editor'));
+  }
+  function closePanels(){
+    document.getElementById('toolsPanel').hidden=true;
+    document.getElementById('presenter').hidden=true;
+    syncToolTabs();
+    syncBrushActivation();
+  }
+  function showToolSection(id){
+    if(id!=='layersPanel'&&id!=='editor')return;
+    activeToolSection=id;
+    document.getElementById('presenter').hidden=true;
+    document.getElementById('toolsPanel').hidden=false;
+    syncToolTabs();
+    syncBrushActivation();
+  }
+  function togglePanel(id){
+    var wasOpen=!document.getElementById('toolsPanel').hidden&&activeToolSection===id;
+    if(wasOpen)closePanels();else showToolSection(id);
+  }
+  function activateEditorPanel(){showToolSection('editor');}
   function selectRegionInEditor(layer,region){if(!region)return;document.getElementById('layerSelect').value=layer;document.getElementById('layerSelect').dispatchEvent(new Event('change',{bubbles:true}));refreshRegions(region.id);syncEditorSelect(document.getElementById('layerSelect'));syncEditorSelect(document.getElementById('regionSelect'));activateEditorPanel();setHint('Wybrano '+region.name+' w edytorze.');}
-  Object.keys(buttonIds).forEach(function(id){document.getElementById(buttonIds[id]).addEventListener('click',function(){togglePanel(id);});});
-  document.querySelectorAll('[data-close]').forEach(function(button){button.addEventListener('click',function(){var id=this.getAttribute('data-close');document.getElementById(id).hidden=true;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','false');syncBrushActivation();});});
+  document.getElementById('layersButton').addEventListener('click',function(){togglePanel('layersPanel');});
+  document.getElementById('editorButton').addEventListener('click',function(){togglePanel('editor');});
+  document.querySelectorAll('[data-close]').forEach(function(button){button.addEventListener('click',function(){var id=this.getAttribute('data-close');if(id==='toolsPanel')closePanels();else{document.getElementById(id).hidden=true;syncBrushActivation();}});});
+  syncToolTabs();
   function setOverlayVisibility(key,visible){if(visible){overlayGroups[key].addTo(map);}else{map.removeLayer(overlayGroups[key]);}}
   document.getElementById('politicalLayer').addEventListener('change',function(){setOverlayVisibility('political',this.checked);});
   document.getElementById('geographicalLayer').addEventListener('change',function(){setOverlayVisibility('geographical',this.checked);});
@@ -248,7 +276,7 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   document.querySelectorAll('#regionNameMode button').forEach(function(button){button.addEventListener('click',function(){regionNameMode=this.dataset.mode;document.querySelectorAll('#regionNameMode button').forEach(function(item){item.setAttribute('aria-pressed',item.dataset.mode===regionNameMode?'true':'false');});renderAll();});});
   function setPinVisibilityMode(mode){if(['hidden','hover','click','always'].indexOf(mode)===-1)return;pinVisibilityMode=mode;try{localStorage.setItem(PIN_VISIBILITY_STORE,mode);}catch(e){}document.querySelectorAll('#pinVisibilityMode button').forEach(function(item){item.setAttribute('aria-pressed',item.dataset.mode===mode?'true':'false');});renderPins();}
   document.querySelectorAll('#pinVisibilityMode button').forEach(function(button){button.addEventListener('click',function(){setPinVisibilityMode(this.dataset.mode);});});
-  function syncBrushActivation(){var active=!document.getElementById('editor').hidden&&brushMode!=='idle';editMode=active;eraseMode=active&&brushMode==='erase';if(!active){painting=false;lastPainted='';}map.dragging[active?'disable':'enable']();}
+  function syncBrushActivation(){var active=!document.getElementById('toolsPanel').hidden&&!document.getElementById('editor').hidden&&brushMode!=='idle';editMode=active;eraseMode=active&&brushMode==='erase';if(!active){painting=false;lastPainted='';}map.dragging[active?'disable':'enable']();}
   function setBrushMode(mode,announce){brushMode=mode;painting=false;lastPainted='';syncBrushActivation();document.querySelectorAll('#brushModeControl button').forEach(function(button){button.setAttribute('aria-pressed',button.dataset.mode===mode?'true':'false');});if(announce!==false){setHint(mode==='paint'?'Wybrano tryb malowania. Malowanie działa tylko wtedy, gdy panel edytora jest otwarty.':mode==='erase'?'Wybrano tryb wymazywania. Wymazywanie działa tylko wtedy, gdy panel edytora jest otwarty.':'Pędzel jest nieaktywny. Przesuwanie mapy jest ponownie dostępne.');}}
   function stopEditing(){setBrushMode('idle',false);}
   function updateBrushLabel(){var r=brushRadius(),count=1+3*r*(r+1);document.getElementById('brushSizeValue').textContent=r===0?'1 pole':'promień '+r+' ('+count+' pól)';}
@@ -301,10 +329,10 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   function presentHex(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var i=Math.floor(h[0]/SC),j=Math.floor(h[1]/SR),sheet=sid(i,j),hex=two(h[0]%SC+1)+two(h[1]%SR+1),key=sheet+':'+hex;document.getElementById('presenterAddress').textContent=sheet+' / '+hex;document.getElementById('presenterSub').textContent='Greyhawk · Karta pola';document.getElementById('presenterIntro').textContent='Zapisane informacje o tym polu.';var html='';layerNames.forEach(function(k){var found=null;regionData[k].some(function(r){if(r.hexes.indexOf(key)!==-1){found=r;return true;}return false;});html+='<div class="present-row"><div class="present-label">'+(k==='political'?'Teren polityczny':'Region geograficzny')+'</div>';html+=found?'<div class="present-value"><span class="present-swatch" style="background:'+found.color+'"></span>'+escapeHtml(found.name)+'</div>':'<div class="present-empty">Brak zapisanych informacji</div>';html+='</div>';});var places=pinData.filter(function(pin){return pin.hex===key;});if(places.length){html+='<div class="present-row"><div class="present-label">Punkty zainteresowania</div>'+places.map(function(x){return '<div class="present-value">'+escapeHtml(x.name)+'</div><div class="present-empty">'+escapeHtml(x.description)+'</div>';}).join('')+'</div>';}document.getElementById('presenterDetails').innerHTML=html;}
   function escapeHtml(s){return String(s).replace(/[&<>\"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch];});}
 
-  function openPanel(id){closePanels();document.getElementById(id).hidden=false;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','true');}
+  function openPanel(id){closePanels();document.getElementById(id).hidden=false;syncBrushActivation();}
   function selectHexAt(latlng){var event={latlng:latlng};show(event);presentHex(latlng);openPanel('presenter');}
   map.on('contextmenu',function(e){L.DomEvent.preventDefault(e);L.DomEvent.stopPropagation(e);if(placingPin)return;showMapContextMenu(e.latlng,e.originalEvent);});
-  map.on('click',function(e){closePinContextMenu();if(placingPin){var key=hexAddressAt(e.latlng);if(!key){cancelPinPlacement();return;}cancelPinPlacement();openPinDialog(key);return;}if(!document.getElementById('editor').hidden){show(e);presentHex(e.latlng);return;}selectHexAt(e.latlng);});
+  map.on('click',function(e){closePinContextMenu();if(placingPin){var key=hexAddressAt(e.latlng);if(!key){cancelPinPlacement();return;}cancelPinPlacement();openPinDialog(key);return;}if(!document.getElementById('toolsPanel').hidden&&!document.getElementById('editor').hidden){show(e);presentHex(e.latlng);return;}selectHexAt(e.latlng);});
   document.addEventListener('click',function(e){
     if(!placingPin)return;
     var target=e.target;
@@ -327,7 +355,6 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   ['layerSelect','regionSelect','newRegionLayer','deleteRegionLayer','pinStyle'].forEach(function(id){enhanceEditorSelect(document.getElementById(id));});
   renderAll();refreshRegions();updateBrushLabel();
 
-  L.control.zoom({position:'bottomright'}).addTo(map);
   L.control.scale({imperial:false,metric:false,position:'bottomright'}).addTo(map);
 })().catch(function(error){
   console.error('Nie udało się uruchomić mapy kampanii:', error);
