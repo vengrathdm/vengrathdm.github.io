@@ -106,3 +106,6 @@
 .tab-panel::-webkit-scrollbar-corner{background:#071c2b}
 
 :root{--palette-bg:#071c2b;--palette-panel:#0b2b3d;--palette-surface:#12394b;--palette-ink:#f4eddb;--palette-muted:#a9bec2;--palette-gold:#e4c078;--palette-red:#b87942;--palette-blood:#174457;--kraft:#e4c078;--kraft-dark:#b87942;--paper:#f4eddb;--paper-shadow:#12394b;--carbon:#071c2b;--carbon-light:#12394b;--stamp-red:#b87942;--amber:#e4c078;--soot:#071c2b;--ink:#f4eddb;--ink-fade:#a9bec2;--display:'Caesar Dressing',serif;--panel:rgba(11,43,61,.94);--panel-line:rgba(169,138,88,.65);--muted:#a9bec2}#workspace{background:radial-gradient(ellipse at 50% 10%,#1c4a5d,transparent 55%),linear-gradient(160deg,#071c2b,#0b2b3d)}.panel{border-color:#34596a}.brand,.brand strong{color:#f4eddb}.canvas-tools button,.icon-button{background:#12394b;border-color:#34596a;color:#f4eddb}
+
+/* Campaign workspace background */
+#workspace{background:linear-gradient(180deg,rgba(4,16,25,.30),rgba(4,16,25,.48)),url("./res/background.webp") center center/cover no-repeat}
