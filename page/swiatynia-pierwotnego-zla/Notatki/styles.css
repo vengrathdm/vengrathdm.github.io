@@ -206,3 +206,19 @@ input:not([type=checkbox]):not([type=color]):not([type=range]),select,textarea{f
  .control-window{top:58px!important;right:10px!important;width:min(100vw - 20px,420px)!important;max-height:calc(100vh - 70px)!important}
  .dossier-window{top:78px!important;left:10px!important;right:10px!important}
 }
+
+
+/* Compact workspace identity; operational status belongs with the controls */
+.brand{width:auto!important;max-width:calc(100vw - 32px)!important;min-height:48px!important;padding:6px 12px!important;gap:0!important;border-radius:11px!important}
+.brand a{display:flex!important;align-items:center!important;gap:10px!important;font:1.25rem var(--display)!important;letter-spacing:.14em!important;line-height:1!important;white-space:nowrap!important}
+.brand a img{display:block!important;flex:0 0 auto!important;width:32px!important;height:32px!important;margin:0!important}
+.brand-divider,.brand strong,.brand .graph-count,.brand .persistence-state{display:none!important}
+.workspace-status{display:flex;flex-direction:column;gap:3px;padding:9px 13px 8px;border-bottom:1px solid rgba(89,104,168,.28);background:rgba(9,13,35,.35)}
+.workspace-status .graph-count{font:10px var(--mono)!important;color:#b9c4e0!important}
+.workspace-status .persistence-state{font:9px/1.4 var(--mono)!important;color:#8d97c4!important;overflow-wrap:anywhere}
+@media(max-width:620px){
+ .brand{top:10px!important;left:10px!important;padding:5px 9px!important;min-height:42px!important}
+ .brand a{font-size:1.1rem!important}
+ .brand a img{width:29px!important;height:29px!important}
+ .workspace-status{padding:7px 10px}
+}
