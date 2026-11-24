@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "metadata": {
-    "id": "swiatynia-relations",
-    "name": "Świątynia Pierwotnego Zła — sieć powiązań",
+    "id": "arcanum-relations",
+    "name": "Arcanum — sieć powiązań",
     "updatedAt": "2026-11-24",
     "layoutModes": {
       "complete": "force"
@@ -11,28 +11,28 @@
       {
         "name": "ALLY_OF",
         "description": "Sojusz lub współpraca",
-        "color": "#83a98a",
+        "color": "#8b8055",
         "lineStyle": "solid",
         "direction": "mutual"
       },
       {
         "name": "SERVES",
         "description": "Służy / podlega",
-        "color": "#d4a03c",
+        "color": "#c8a45d",
         "lineStyle": "solid",
         "direction": "towards"
       },
       {
         "name": "SEEKS",
         "description": "Poszukuje",
-        "color": "#9a8ac7",
+        "color": "#b9b199",
         "lineStyle": "dotted",
         "direction": "towards"
       },
       {
         "name": "CONTROLS",
         "description": "Kontroluje",
-        "color": "#c65c58",
+        "color": "#a84f35",
         "lineStyle": "dashed",
         "direction": "towards"
       },
@@ -46,14 +46,14 @@
       {
         "name": "OPPOSES",
         "description": "Jest wrogiem",
-        "color": "#c65c58",
+        "color": "#a84f35",
         "lineStyle": "dashed",
         "direction": "mutual"
       },
       {
         "name": "SEEKS_RELIC",
         "description": "Poszukuje reliktu",
-        "color": "#d4a03c",
+        "color": "#c8a45d",
         "lineStyle": "dotted",
         "direction": "towards"
       }
