@@ -803,9 +803,9 @@
     "id": "swiatynia-pierwotnego-zla",
     "title": "Świątynia Pierwotnego Zła",
     "type": "campaign",
-    "visibility": "public",
+    "visibility": "hidden",
     "url": "/page/swiatynia-pierwotnego-zla/",
-    "image": "/page/swiatynia-pierwotnego-zla/res/cover.svg",
+    "image": "/core/graphics/voronoi/temple-of-elemental-evil.webp",
     "layout": "bespoke",
     "manifest": "/page/swiatynia-pierwotnego-zla/manifest.json",
     "tags": [
@@ -813,6 +813,17 @@
       "Makieta",
       "Greyhawk",
       "D&D 5e"
+    ]
+  },
+  {
+    "title": "Arcanum",
+    "url": "/page/arcanum/",
+    "image": "/core/graphics/voronoi/arcanum.webp",
+    "visibility": "hidden",
+    "tags": [
+      "Kampania",
+      "Makieta",
+      "Arcanum"
     ]
   }
 ]
