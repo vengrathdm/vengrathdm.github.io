@@ -206,3 +206,14 @@
     #read{bottom:14px;left:9px;font-size:11px;min-width:0}
     .leaflet-bottom.leaflet-right{bottom:8px;right:8px}
   }
+
+/* Keep the Warstwy / Edytor panels inside their actual window width */
+#toolsWindow{box-sizing:border-box;min-width:0}
+#toolbar,#layersPanel,#editor,#editorTools{box-sizing:border-box;min-width:0;max-width:100%}
+#layersPanel,#editor{width:100%;padding-left:12px;padding-right:12px;overflow-x:hidden;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#f0b64a rgba(24,9,11,.78)}
+#layersPanel::-webkit-scrollbar,#editor::-webkit-scrollbar{width:9px}
+#layersPanel::-webkit-scrollbar-track,#editor::-webkit-scrollbar-track{background:rgba(24,9,11,.86);border-left:1px solid #78404755;border-radius:5px}
+#layersPanel::-webkit-scrollbar-thumb,#editor::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#f0b64a,#8f1823);border:2px solid #260c10;border-radius:6px}
+#layersPanel::-webkit-scrollbar-thumb:hover,#editor::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#f5e8d2,#e44b32)}
+#layersPanel label,#editor label,.editor-field,.editor-section,.editor-data-actions,.editor-action-row{min-width:0;max-width:100%;overflow-wrap:anywhere}
+#layersPanel .layer-name-control,#layersPanel .pin-visibility-control{box-sizing:border-box;min-width:0;max-width:100%}
