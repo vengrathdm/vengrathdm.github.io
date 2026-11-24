@@ -2,17 +2,18 @@
   "schemaVersion": 1,
   "metadata": {
     "id": "arcanum-world",
-    "name": "Arcanum",
+    "name": "Arcanum — atlas kontynentu",
     "mapId": "arcanum-world",
-    "updatedAt": "2026-11-24"
+    "updatedAt": "2026-11-24",
+    "notes": "Nazwy i opisy odnoszą się do świata gry Arcanum: Of Steamworks and Magick Obscura. Znaczniki są rozmieszczone na zachowanej siatce mapy projektu i mają charakter orientacyjny, nie są odwzorowaniem współrzędnych z gry."
   },
   "regions": {
     "political": [
       {
-        "id": "hommlet",
-        "name": "Hommlet i okolice",
+        "id": "unified-kingdom",
+        "name": "Zjednoczone Królestwo",
         "color": "#9a9b65",
-        "description": "Osada i jej najbliższe trakty.",
+        "description": "Uprzemysłowione państwo z Tarantem i Ashbury jako głównymi ośrodkami.",
         "fillStyle": "tint",
         "hexes": [
           "A1:3030",
@@ -27,10 +28,10 @@
         ]
       },
       {
-        "id": "temple",
-        "name": "Ziemie skażone",
+        "id": "cumbria",
+        "name": "Królestwo Cumbrii",
         "color": "#a84f35",
-        "description": "Obszar wokół ruin świątyni.",
+        "description": "Podupadłe królestwo ze stolicą w Dernholm; tradycja ściera się tu z nowoczesnością.",
         "fillStyle": "hatch",
         "hexes": [
           "A1:5550",
@@ -47,10 +48,10 @@
     ],
     "geographical": [
       {
-        "id": "moors",
-        "name": "Mokradła",
+        "id": "glimmering-forest",
+        "name": "Lśniący Las",
         "color": "#647a61",
-        "description": "Podmokłe tereny wokół Moathouse.",
+        "description": "Leśna kraina elfów, w której technologia spotyka się z nieufnością i starą magią.",
         "fillStyle": "tint",
         "hexes": [
           "A1:4240",
@@ -65,76 +66,76 @@
   },
   "markers": [
     {
-      "id": "pin-hommlet",
-      "name": "Hommlet",
-      "style": "settlement",
-      "color": "#b5c080",
-      "description": "Wioska, w której rozpoczęło się śledztwo.",
+      "id": "pin-crash",
+      "name": "Wrak IFS Zephyr",
+      "style": "ruin",
+      "color": "#c18a55",
+      "description": "Miejsce katastrofy sterowca. Początek historii Żyjącego.",
       "hex": "A1:3031"
     },
     {
-      "id": "pin-moathouse",
-      "name": "Moathouse",
-      "style": "ruin",
-      "color": "#c18a55",
-      "description": "Zrujnowana warownia i placówka zwiadowcza kultu.",
+      "id": "pin-shrouded",
+      "name": "Zamglone Wzgórza",
+      "style": "settlement",
+      "color": "#b5c080",
+      "description": "Górnicze miasteczko, kopalnia Bessie Toone i pierwsze zderzenie magii z maszyną parową.",
+      "hex": "A1:3131"
+    },
+    {
+      "id": "pin-tarant",
+      "name": "Tarant",
+      "style": "settlement",
+      "color": "#b5c080",
+      "description": "Stolica Zjednoczonego Królestwa, miasto fabryk, kolei, gazet i gwałtownych przemian.",
+      "hex": "A1:3231"
+    },
+    {
+      "id": "pin-blackroot",
+      "name": "Black Root",
+      "style": "settlement",
+      "color": "#b5c080",
+      "description": "Miasto Cumbrii, związane z handlem i warsztatem Liama.",
       "hex": "A1:4241"
     },
     {
-      "id": "pin-mound",
-      "name": "Stary kurhan",
-      "style": "ruin",
+      "id": "pin-dernholm",
+      "name": "Dernholm",
+      "style": "landmark",
       "color": "#c18a55",
-      "description": "Komora grobowa z mapą czterech sanktuariów.",
+      "description": "Stolica Cumbrii i siedziba króla Praetora.",
       "hex": "A1:4848"
     },
     {
-      "id": "pin-temple",
-      "name": "Ruiny Świątyni",
-      "style": "ruin",
-      "color": "#b45c3d",
-      "description": "Kompleks czterech skrzydeł żywiołów.",
+      "id": "pin-caladon",
+      "name": "Caladon",
+      "style": "settlement",
+      "color": "#b5c080",
+      "description": "Nadmorskie królestwo rządzone przez króla Farada.",
       "hex": "A1:5651"
     },
     {
-      "id": "pin-air",
-      "name": "Sanktuarium Powietrza",
+      "id": "pin-qintarra",
+      "name": "Qintarra",
       "style": "landmark",
-      "color": "#a9b6bd",
-      "description": "Wieża, w której wiatr niesie szepty.",
+      "color": "#8b9a68",
+      "description": "Ukryte miasto elfów w Lśniącym Lesie, niechętne technologicznym wpływom.",
       "hex": "A1:5954"
     },
     {
-      "id": "pin-earth",
-      "name": "Sanktuarium Ziemi",
-      "style": "ruin",
+      "id": "pin-wheel",
+      "name": "Klan Koła",
+      "style": "landmark",
       "color": "#8b9a68",
-      "description": "Podziemna sala wsparta na kamiennych filarach.",
+      "description": "Jedna z najważniejszych twierdz krasnoludów w Górach Szarej Skały.",
       "hex": "A1:5350"
     },
     {
-      "id": "pin-fire",
-      "name": "Sanktuarium Ognia",
-      "style": "ruin",
-      "color": "#b45c3d",
-      "description": "Ołtarz, przy którym kamień pozostaje gorący.",
-      "hex": "A1:5750"
-    },
-    {
-      "id": "pin-water",
-      "name": "Sanktuarium Wody",
-      "style": "natural",
+      "id": "pin-tulla",
+      "name": "Tulla",
+      "style": "landmark",
       "color": "#7596a1",
-      "description": "Zalane korytarze i podziemny ciek.",
-      "hex": "A1:5554"
-    },
-    {
-      "id": "pin-inn",
-      "name": "Pod Wesołym Olbrzymem",
-      "style": "standard",
-      "color": "#b5c080",
-      "description": "Gospoda w Hommlet.",
-      "hex": "A1:3131"
+      "description": "Miasto magów, do którego technologia nie ma wstępu.",
+      "hex": "A1:5750"
     }
   ]
 }
