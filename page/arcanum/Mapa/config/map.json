@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "id": "homlett-valley",
-  "title": "Dolina Hommlet",
+  "id": "arcanum-world",
+  "title": "Arcanum",
   "image": "./map.svg",
   "dataUrl": "./data/regions.json",
-  "storageKey": "vengrath-swiatynia-hex-overlays-v1",
+  "storageKey": "vengrath.arcanum.hex-overlays.v1",
   "dimensions": {
     "width": 1582,
     "height": 2048
