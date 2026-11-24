@@ -1835,23 +1835,6 @@
       "position": null
     },
     {
-      "id": "ody-loc-karpathos",
-      "type": "Location",
-      "name": "Tomb of Karpathos",
-      "imageUrl": "",
-      "color": "#397082",
-      "borderColor": "#e4c078",
-      "lineStyle": "solid",
-      "notes": "Tomb explored in the New Pantheon chapter.",
-      "fields": {
-        "Location type": "Campaign site",
-        "Area": "Aresia region"
-      },
-      "customFields": [],
-      "positions": {},
-      "position": null
-    },
-    {
       "id": "ody-loc-sunken-kingdom",
       "type": "Location",
       "name": "The Sunken Kingdom",
