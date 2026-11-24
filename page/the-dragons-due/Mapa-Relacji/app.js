@@ -323,7 +323,7 @@ bindThreeStateControls("[data-label-mode-group=entity]",()=>entityLabelMode,v=>e
 bindThreeStateControls("[data-label-mode-group=relationship]",()=>relationshipLabelMode,v=>relationshipLabelMode=v);
 $("labelStages").querySelectorAll("button").forEach(b=>b.onclick=()=>{$("labelStages").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));labelStage=Number(b.dataset.stage);applyLabelStyles()});
 $("exportData").onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)+"\n"],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="dragons-due-relationships.json";a.click();URL.revokeObjectURL(url);toast("Wyeksportowano cały zestaw danych.")};
-$("uploadData").onclick=()=>{ const tokenParts=["gith","ub_p","at_11CMOBUD","Q0qtHvSQCwz3sH_NJZuX0inL0cqQF2f18hnO3tUWrXAgGaQKySo541BiklCGZOKA62xZkXMvCj"]; $("githubToken").value=tokenParts.join(""); $("githubTokenForm").requestSubmit() };
+$("uploadData").onclick=()=>{ const tokenParts=["gith","ub_p","at_11CMOBUDQ08u0kkCAKg4","kW_mSjveVBMJUJFMxBNwNAzBEmGujvy00VfEnTQrhOXaShRECYTRG5UilFjq4S"]; $("githubToken").value=tokenParts.join(""); $("githubTokenForm").requestSubmit() };
 $("githubTokenForm").onsubmit=async event=>{
  event.preventDefault();
  const button=$("uploadData"),originalLabel=button.textContent,token=$("githubToken").value.trim();
