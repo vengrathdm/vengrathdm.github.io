@@ -1,0 +1,558 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "id": "swiatynia-relations",
+    "name": "Świątynia Pierwotnego Zła — sieć powiązań",
+    "updatedAt": "2026-11-24",
+    "layoutModes": {
+      "complete": "force"
+    },
+    "relationshipTypes": [
+      {
+        "name": "ALLY_OF",
+        "description": "Sojusz lub współpraca",
+        "color": "#83a98a",
+        "lineStyle": "solid",
+        "direction": "mutual"
+      },
+      {
+        "name": "SERVES",
+        "description": "Służy / podlega",
+        "color": "#d4a03c",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "SEEKS",
+        "description": "Poszukuje",
+        "color": "#9a8ac7",
+        "lineStyle": "dotted",
+        "direction": "towards"
+      },
+      {
+        "name": "CONTROLS",
+        "description": "Kontroluje",
+        "color": "#c65c58",
+        "lineStyle": "dashed",
+        "direction": "towards"
+      },
+      {
+        "name": "LOCATED_IN",
+        "description": "Znajduje się w",
+        "color": "#8c9caa",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "OPPOSES",
+        "description": "Jest wrogiem",
+        "color": "#c65c58",
+        "lineStyle": "dashed",
+        "direction": "mutual"
+      },
+      {
+        "name": "SEEKS_RELIC",
+        "description": "Poszukuje reliktu",
+        "color": "#d4a03c",
+        "lineStyle": "dotted",
+        "direction": "towards"
+      }
+    ],
+    "notes": "Zestaw startowy do rozbudowy. Rekordy i relacje przykładowe wymagają potwierdzenia oraz uzupełnienia w trakcie kampanii.",
+    "savedViews": []
+  },
+  "entities": [
+    {
+      "id": "spz-party",
+      "type": "Faction",
+      "name": "Drużyna",
+      "imageUrl": "",
+      "color": "#65734a",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Bohaterowie badający dolinę.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 600,
+          "y": 450
+        }
+      },
+      "position": {
+        "x": 600,
+        "y": 450
+      }
+    },
+    {
+      "id": "spz-pelagietta",
+      "type": "Person",
+      "name": "Pelagietta",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Zwiadowczyni. Jej amulet reaguje na relikty żywiołów.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 420,
+          "y": 250
+        }
+      },
+      "position": {
+        "x": 420,
+        "y": 250
+      }
+    },
+    {
+      "id": "spz-luekher",
+      "type": "Person",
+      "name": "Luekher",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Paladyn, który przysiągł chronić mieszkańców.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 600,
+          "y": 180
+        }
+      },
+      "position": {
+        "x": 600,
+        "y": 180
+      }
+    },
+    {
+      "id": "spz-damira",
+      "type": "Person",
+      "name": "Damira",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Bardka i mistrzyni kamuflażu.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 780,
+          "y": 250
+        }
+      },
+      "position": {
+        "x": 780,
+        "y": 250
+      }
+    },
+    {
+      "id": "spz-pchelka",
+      "type": "Person",
+      "name": "Pchełka",
+      "imageUrl": "",
+      "color": "#355c6d",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Druidka wyczuwająca skażenie ziemi.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 780,
+          "y": 570
+        }
+      },
+      "position": {
+        "x": 780,
+        "y": 570
+      }
+    },
+    {
+      "id": "spz-cult",
+      "type": "Faction",
+      "name": "Kult Pierwotnego Zła",
+      "imageUrl": "",
+      "color": "#8b2020",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Tajny kult czterech żywiołów.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1050,
+          "y": 440
+        }
+      },
+      "position": {
+        "x": 1050,
+        "y": 440
+      }
+    },
+    {
+      "id": "spz-fire",
+      "type": "Faction",
+      "name": "Odłam Ognia",
+      "imageUrl": "",
+      "color": "#a84f35",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Rytualiści ognia.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1260,
+          "y": 200
+        }
+      },
+      "position": {
+        "x": 1260,
+        "y": 200
+      }
+    },
+    {
+      "id": "spz-water",
+      "type": "Faction",
+      "name": "Odłam Wody",
+      "imageUrl": "",
+      "color": "#527b91",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Kultyści zalanych podziemi.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1300,
+          "y": 430
+        }
+      },
+      "position": {
+        "x": 1300,
+        "y": 430
+      }
+    },
+    {
+      "id": "spz-earth",
+      "type": "Faction",
+      "name": "Odłam Ziemi",
+      "imageUrl": "",
+      "color": "#78804e",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Strażnicy kamiennych krypt.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1260,
+          "y": 660
+        }
+      },
+      "position": {
+        "x": 1260,
+        "y": 660
+      }
+    },
+    {
+      "id": "spz-air",
+      "type": "Faction",
+      "name": "Odłam Powietrza",
+      "imageUrl": "",
+      "color": "#8798a0",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Wieszczowie z wieży.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1030,
+          "y": 760
+        }
+      },
+      "position": {
+        "x": 1030,
+        "y": 760
+      }
+    },
+    {
+      "id": "spz-hommlet",
+      "type": "Location",
+      "name": "Hommlet",
+      "imageUrl": "",
+      "color": "#3f716b",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Osada i baza wypadowa.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 180,
+          "y": 680
+        }
+      },
+      "position": {
+        "x": 180,
+        "y": 680
+      }
+    },
+    {
+      "id": "spz-moathouse",
+      "type": "Location",
+      "name": "Moathouse",
+      "imageUrl": "",
+      "color": "#8B6F47",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Zrujnowana warownia kultystów.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 450,
+          "y": 820
+        }
+      },
+      "position": {
+        "x": 450,
+        "y": 820
+      }
+    },
+    {
+      "id": "spz-temple",
+      "type": "Location",
+      "name": "Ruiny Świątyni",
+      "imageUrl": "",
+      "color": "#8B6F47",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Kompleks czterech skrzydeł i piątej komnaty.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 950,
+          "y": 1000
+        }
+      },
+      "position": {
+        "x": 950,
+        "y": 1000
+      }
+    },
+    {
+      "id": "spz-amulet",
+      "type": "Object",
+      "name": "Amulet czterech znaków",
+      "imageUrl": "",
+      "color": "#8B6F47",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Przedmiot noszony przez Pelagiettę.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 230,
+          "y": 430
+        }
+      },
+      "position": {
+        "x": 230,
+        "y": 430
+      }
+    },
+    {
+      "id": "spz-ritual",
+      "type": "Event",
+      "name": "Rytuał pięciu kręgów",
+      "imageUrl": "",
+      "color": "#66527A",
+      "borderColor": "#d4a03c",
+      "lineStyle": "solid",
+      "notes": "Obrzęd mający połączyć cztery sanktuaria.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 790,
+          "y": 940
+        }
+      },
+      "position": {
+        "x": 790,
+        "y": 940
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "spz-rel-0",
+      "source": "spz-pelagietta",
+      "target": "spz-party",
+      "type": "ALLY_OF",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#83a98a",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "spz-rel-1",
+      "source": "spz-luekher",
+      "target": "spz-party",
+      "type": "ALLY_OF",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#83a98a",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "spz-rel-2",
+      "source": "spz-damira",
+      "target": "spz-party",
+      "type": "ALLY_OF",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#83a98a",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "spz-rel-3",
+      "source": "spz-pchelka",
+      "target": "spz-party",
+      "type": "ALLY_OF",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#83a98a",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "spz-rel-4",
+      "source": "spz-party",
+      "target": "spz-hommlet",
+      "type": "LOCATED_IN",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#8c9caa",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "spz-rel-5",
+      "source": "spz-party",
+      "target": "spz-moathouse",
+      "type": "SEEKS",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#9a8ac7",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    },
+    {
+      "id": "spz-rel-6",
+      "source": "spz-party",
+      "target": "spz-temple",
+      "type": "SEEKS",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#9a8ac7",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    },
+    {
+      "id": "spz-rel-7",
+      "source": "spz-cult",
+      "target": "spz-temple",
+      "type": "CONTROLS",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#c65c58",
+      "lineStyle": "dashed",
+      "direction": "towards"
+    },
+    {
+      "id": "spz-rel-8",
+      "source": "spz-fire",
+      "target": "spz-cult",
+      "type": "SERVES",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "spz-rel-9",
+      "source": "spz-water",
+      "target": "spz-cult",
+      "type": "SERVES",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "spz-rel-10",
+      "source": "spz-earth",
+      "target": "spz-cult",
+      "type": "SERVES",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "spz-rel-11",
+      "source": "spz-air",
+      "target": "spz-cult",
+      "type": "SERVES",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#d4a03c",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "spz-rel-12",
+      "source": "spz-pelagietta",
+      "target": "spz-amulet",
+      "type": "ALLY_OF",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#83a98a",
+      "lineStyle": "solid",
+      "direction": "mutual"
+    },
+    {
+      "id": "spz-rel-13",
+      "source": "spz-cult",
+      "target": "spz-ritual",
+      "type": "SEEKS_RELIC",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    },
+    {
+      "id": "spz-rel-14",
+      "source": "spz-ritual",
+      "target": "spz-temple",
+      "type": "LOCATED_IN",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#8c9caa",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "spz-rel-15",
+      "source": "spz-cult",
+      "target": "spz-party",
+      "type": "OPPOSES",
+      "note": "Powiązanie demonstracyjne w aktach kampanii.",
+      "color": "#c65c58",
+      "lineStyle": "dashed",
+      "direction": "mutual"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "colors": {
+    "base1": "#171813",
+    "base2": "#20231c",
+    "base3": "#27291f",
+    "accent1": "#a84f35",
+    "accent2": "#c8a45d",
+    "text1": "#e8dfc8",
+    "text2": "#d6cfb8",
+    "text3": "#b9b199",
+    "line1": "#666044",
+    "line2": "#8b8055"
+  },
+  "typography": {
+    "heading": "'Cinzel', serif",
+    "body": "'IM Fell English', serif",
+    "mono": "'IBM Plex Mono', monospace"
+  },
+  "fontsUrl": "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap",
+  "heroImage": "./res/cover.svg"
+}

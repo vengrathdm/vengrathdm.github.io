@@ -1,0 +1,78 @@
+{
+  "campaign": {
+    "title": "Świątynia Pierwotnego Zła",
+    "setting": "Greyhawk",
+    "location": "Dolina Hommlet",
+    "calendar": "591 CY",
+    "system": "Dungeons & Dragons 5e (2024)",
+    "levels": "1–14",
+    "status": "Aktywna",
+    "summary": "Drużyna bada odradzający się kult czterech żywiołów i tajemnicę ruin Świątyni Pierwotnego Zła."
+  },
+  "characters": [
+    {
+      "id": "char-0001",
+      "name": "Pelagietta",
+      "player": "Miauriusz",
+      "race": "Niziołka",
+      "class": "Łowczyni",
+      "portrait": "/core/portraits/char-0001.webp"
+    },
+    {
+      "id": "char-0002",
+      "name": "Luekher",
+      "player": "Aureli",
+      "race": "Elf",
+      "class": "Paladyn",
+      "portrait": "/core/portraits/char-0002.webp"
+    },
+    {
+      "id": "char-0003",
+      "name": "Damira",
+      "player": "Kajetan",
+      "race": "Odmieniec",
+      "class": "Bardka",
+      "portrait": "/core/portraits/char-0003.webp"
+    },
+    {
+      "id": "char-0004",
+      "name": "Pchełka",
+      "player": "Zuza",
+      "race": "Człowiek",
+      "class": "Druidka",
+      "portrait": "/core/portraits/char-0004.webp"
+    }
+  ],
+  "sessions": [
+    {
+      "number": 1,
+      "title": "Droga do Hommlet",
+      "date": "4 Planting, 591 CY",
+      "realDate": "2026-04-12",
+      "youtubeSearch": "Swatynia Pierwotnego Zla sesja 01 Droga do Hommlet"
+    },
+    {
+      "number": 2,
+      "title": "Cień nad Moathouse",
+      "date": "11 Planting, 591 CY",
+      "realDate": "2026-04-19",
+      "youtubeSearch": "Swatynia Pierwotnego Zla sesja 02 Cien nad Moathouse"
+    },
+    {
+      "number": 3,
+      "title": "Szepty spod kurhanu",
+      "date": "18 Planting, 591 CY",
+      "realDate": "2026-04-26",
+      "youtubeSearch": "Swatynia Pierwotnego Zla sesja 03 Szepty spod kurhanu"
+    }
+  ],
+  "map": "./Mapa/",
+  "threads": [
+    "Cztery odłamy żywiołów",
+    "Zdrajca w Hommlet",
+    "Piąta komnata",
+    "Amulet Pelagietty",
+    "Zaginieni furmani",
+    "Spór o Hommlet"
+  ]
+}

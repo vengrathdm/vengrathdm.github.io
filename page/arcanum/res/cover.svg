@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500"><defs>
+<linearGradient id="night" x2="0" y2="1"><stop stop-color="#34342e"/><stop offset=".5" stop-color="#1d201b"/><stop offset="1" stop-color="#11120f"/></linearGradient>
+<radialGradient id="ember"><stop stop-color="#d77c45" stop-opacity=".8"/><stop offset="1" stop-color="#9d3e25" stop-opacity="0"/></radialGradient>
+<radialGradient id="mist"><stop stop-color="#80aab0" stop-opacity=".65"/><stop offset="1" stop-color="#527d88" stop-opacity="0"/></radialGradient>
+<radialGradient id="moss"><stop stop-color="#a8a56b" stop-opacity=".5"/><stop offset="1" stop-color="#78804d" stop-opacity="0"/></radialGradient>
+<radialGradient id="wind"><stop stop-color="#c2d0c8" stop-opacity=".5"/><stop offset="1" stop-color="#8b9da3" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="76" height="76" patternUnits="userSpaceOnUse"><path d="M38 0L76 22V58L38 80 0 58V22Z" fill="none" stroke="#c5a36a" stroke-opacity=".12" stroke-width="1"/></pattern>
+<filter id="blur"><feGaussianBlur stdDeviation="34"/></filter>
+</defs>
+<rect width="1200" height="1500" fill="url(#night)"/><rect width="1200" height="1500" fill="url(#grid)"/>
+<g filter="url(#blur)"><ellipse cx="180" cy="330" rx="260" ry="300" fill="url(#ember)"/><ellipse cx="1020" cy="330" rx="260" ry="300" fill="url(#mist)"/><ellipse cx="200" cy="1120" rx="270" ry="300" fill="url(#moss)"/><ellipse cx="1000" cy="1120" rx="270" ry="300" fill="url(#wind)"/></g>
+<g fill="none" stroke="#c5a36a" stroke-opacity=".45" stroke-width="2"><circle cx="600" cy="730" r="470"/><circle cx="600" cy="730" r="420"/><circle cx="600" cy="730" r="350"/><path d="M600 240V1220M110 730H1090M254 384L946 1076M946 384L254 1076"/></g>
+<g fill="none" stroke="#d6c394" stroke-opacity=".32" stroke-width="4"><path d="M110 1290L250 1120 370 1180 490 970 600 1020 710 900 840 1040 970 970 1090 1140"/><path d="M140 420L290 500 380 400 500 490 600 360 710 470 840 390 950 500 1080 420"/></g>
+<g fill="#11120f" stroke="#c5a36a" stroke-width="5" stroke-opacity=".75">
+<path d="M345 1040V640L430 565V465L510 565V430L600 340L690 430V565L770 465V565L855 640V1040Z"/>
+<path d="M410 1040V735L485 680V580L540 680V1040M660 1040V680L715 580V680L790 735V1040"/>
+<path d="M525 1040V800L600 720L675 800V1040Z"/>
+<path d="M560 1040V870L600 825L640 870V1040Z"/>
+</g>
+<g fill="none" stroke="#c5a36a" stroke-width="7" stroke-opacity=".7"><path d="M300 1040H900M370 640H830M430 565H770M510 565V430M690 565V430"/><path d="M600 340V210M570 250L600 210 630 250"/></g>
+<g fill="none" stroke="#b85a32" stroke-width="5" stroke-opacity=".75"><path d="M120 300Q220 180 320 300T520 300"/><path d="M80 360Q210 260 340 360T560 360"/></g>
+<g fill="none" stroke="#527d88" stroke-width="5" stroke-opacity=".75"><path d="M680 360Q820 250 950 360T1140 360"/><path d="M700 420Q840 320 980 420T1160 420"/></g>
+<g fill="none" stroke="#78804d" stroke-width="6" stroke-opacity=".8"><path d="M100 1180Q260 1040 360 1180T600 1180"/><path d="M60 1250Q230 1110 390 1250T660 1250"/></g>
+<g fill="none" stroke="#8b9da3" stroke-width="5" stroke-opacity=".8"><path d="M650 1220Q820 1080 950 1220T1180 1220"/><path d="M680 1300Q850 1150 1000 1300T1200 1300"/></g>
+<g fill="#e9dfc7" font-family="Georgia,serif" text-anchor="middle"><text x="600" y="1370" font-size="28" letter-spacing="13" opacity=".65">THE ELEMENTAL TEMPLE</text><text x="600" y="1410" font-size="15" letter-spacing="8" opacity=".5">GREYHAWK · 591 CY</text></g>
+<g fill="none" stroke="#c5a36a" stroke-width="3"><circle cx="600" cy="730" r="65"/><path d="M600 645V815M515 730H685M540 670L660 790M660 670L540 790"/></g>
+<g fill="#c5a36a" font-family="Georgia,serif" font-size="30" text-anchor="middle"><text x="600" y="741">V</text></g>
+<rect x="28" y="28" width="1144" height="1444" fill="none" stroke="#c5a36a" stroke-opacity=".55" stroke-width="3"/>
+</svg>
