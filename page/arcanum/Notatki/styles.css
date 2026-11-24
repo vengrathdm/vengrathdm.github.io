@@ -122,3 +122,57 @@ body,#workspace{background-color:#121714}
 .dossier-name{color:#f0e5cc}
 .dossier-image{border:1px solid #b3955d}
 
+
+
+/* ARCANUM: INDUSTRIAL ARCHIVE / VICTORIAN DRAFTING ROOM */
+:root{
+ --palette-bg:#111713;--palette-panel:#1c2721;--palette-surface:#29372e;
+ --palette-ink:#eadfc8;--palette-muted:#b9ad91;--palette-gold:#c9aa70;
+ --palette-red:#b97848;--palette-blood:#704832;--kraft:#c9aa70;--kraft-dark:#704832;
+ --paper:#e6d7b7;--paper-shadow:#172019;--carbon:#111713;--carbon-light:#26342c;
+ --stamp-red:#a75e3d;--amber:#c9aa70;--soot:#111713;--ink:#eadfc8;--ink-fade:#b9ad91;
+ --panel:rgba(27,39,32,.97);--panel-line:rgba(185,151,91,.78);--muted:#b9ad91
+}
+html,body,#workspace{background:#111713;color:#eadfc8}
+#workspace{background:
+ radial-gradient(circle at 50% 0%,rgba(112,133,101,.12),transparent 42%),
+ repeating-linear-gradient(0deg,rgba(198,169,108,.025) 0 1px,transparent 1px 5px),
+ linear-gradient(145deg,#1a261f,#101612 70%)!important}
+.panel,.window,.dossier-window,.legend,.dialog{
+ background:linear-gradient(145deg,rgba(47,62,51,.98),rgba(20,30,24,.98))!important;
+ border:1px solid #a58a57!important;border-radius:2px!important;
+ box-shadow:0 12px 32px #000b,inset 0 1px 0 #e2ca91,inset 0 0 0 3px rgba(8,13,10,.55)!important;
+ color:#eadfc8!important
+}
+.panel:before,.window:before,.dossier-window:before,.legend:before,.dialog:before{
+ border-color:#c4a66a55!important
+}
+.brand a,.brand a span,.panel-title h2,.dialog h2,.control-group h3,.legend-section h3,.relationship-style-section h3{
+ color:#d7b977!important;font-family:'Cinzel',serif!important;letter-spacing:.08em
+}
+button,.subtle-button,.primary-button,.danger-button,.file-trigger,.canvas-tools button,.icon-button,.segmented button{
+ border:1px solid #9e8351!important;border-radius:2px!important;
+ background:linear-gradient(180deg,#39483c,#1d2a22)!important;color:#eadfc8!important;
+ box-shadow:inset 0 1px 0 #e2c98b44,0 2px 5px #0005
+}
+.primary-button,.segmented button[aria-pressed=true]{
+ background:linear-gradient(#986641,#63442e)!important;border-color:#d2b574!important;color:#fff0d0!important
+}
+button:hover,.subtle-button:hover,.file-trigger:hover,.canvas-tools button:hover,.icon-button:hover{
+ background:linear-gradient(#9a6841,#62442e)!important;color:#fff0d0!important
+}
+input,select,textarea,.dialog input,.dialog select,.dialog textarea,.search-label input{
+ background:#121b16!important;border:1px solid #92794d!important;color:#eadfc8!important;border-radius:1px!important
+}
+.dossier-notes,.markdown-preview{
+ background:linear-gradient(110deg,#e9ddc1,#cdb98f)!important;color:#35291d!important;
+ border:1px solid #a68a55!important;box-shadow:inset 0 0 22px #8b704433
+}
+.dossier-notes h2,.dossier-notes h3,.dossier-notes h4,.markdown-preview h2,.markdown-preview h3,.markdown-preview h4{color:#70472f!important}
+.legend-icon,.node-fallback{background:linear-gradient(#39483c,#1a251f)!important;border:1px solid #c7a66b!important;color:#ecdcb8!important}
+.graph-tooltip,.context-menu,.context-submenu,.toast{
+ background:rgba(27,39,32,.98)!important;border:1px solid #a88d58!important;color:#eadfc7!important
+}
+.context-menu button:hover,.context-menu-item:focus-within>button{background:#795036!important;color:#fff0d0!important}
+.dossier-name{color:#f0e5cc!important}
+.dossier-image{border:1px solid #b3955d!important}
