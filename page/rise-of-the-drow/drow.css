@@ -125,7 +125,7 @@ footer {
       rgba(12, 8, 20, 0.18) 100%
     ),
     linear-gradient(90deg, rgba(12, 8, 20, 0.58), transparent 85%),
-    url("res/Graphics/hero-image.webp") center 42% / cover no-repeat;
+    url("https://vengrathdm.github.io/core/graphics/voronoi/rise-of-the-drow.webp") center 42% / cover no-repeat;
   z-index: 0;
 }
 .glow {
