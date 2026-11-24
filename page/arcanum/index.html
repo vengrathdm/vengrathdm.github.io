@@ -21,11 +21,6 @@
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:20px/1.55 var(--body);overflow-x:hidden}
-/* grain + torchlight. No cursor property is set anywhere: the existing custom cursor stays visible. */
-body::after{content:"";position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.12;mix-blend-mode:overlay;
- background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
-#torch{position:fixed;inset:0;z-index:40;pointer-events:none;background:radial-gradient(circle 420px at var(--px,50%) var(--py,30%),transparent 0,rgba(0,0,0,.42) 100%)}
-@media (hover:none){#torch{display:none}}
 h1,h2,h3{font-family:var(--head);font-weight:400;margin:0;line-height:1}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .wrap{max-width:1200px;margin:0 auto;padding:0 22px}
@@ -255,10 +250,8 @@ main>section,main>section.alt{background:transparent!important}
 
 @font-face{font-family:'Morpheus';src:url('/page/arcanum/res/MORPHEUS.TTF') format('truetype');font-style:normal;font-weight:400;font-display:swap}
 </style>
-<script src="/core/templates/Cursor/Cursor.js" defer></script>
 </head>
 <body>
-<div id="torch"></div>
 <a class="vengrath-mark" href="/home/" aria-label="Powrót do Vengrath"><img src="/core/graphics/favicon/mg-logo.png" alt=""> VENGRATH <span>✦</span></a>
 <nav id="dock" aria-label="Nawigacja kampanii">
  <a href="#intro" data-i><svg viewBox="0 0 24 24"><path d="M3 21V10l9-7 9 7v11M9 21v-7h6v7"/></svg>Kampania</a>
@@ -276,13 +269,13 @@ main>section,main>section.alt{background:transparent!important}
   <img src="https://i.imgur.com/FnzKqw1.jpeg" alt="">
  </div>
  <div class="wrap">
-  <div class="kick">Kroniki świata Arcanum</div>
+  
   <h1>Arcanum <b>Steamworks &amp; Magick Obscura</b></h1>
   <dl class="plaque" id="facts"></dl>
  </div>
 </div>
 <div class="alt introblk"><div class="tear"></div><div class="wrap">
- <div class="kick">Dziennik ekspedycji</div><h2>Między parą a magią</h2>
+ <h2>Między parą a magią</h2>
  <div class="intro">
   <div id="introText">
    <p>W Arcanum postęp nie nadchodzi bez kosztów. Kolej żelazna przecina dawne trakty, fabryczne kominy zasnuwają niebo, a wynalazki zmieniają układ sił między miastami, gildami i starymi rodami.</p>
@@ -293,29 +286,29 @@ main>section,main>section.alt{background:transparent!important}
 </div></div></section>
 
 <section id="characters"><div class="tear"></div><div class="wrap">
- <div class="kick">Załoga ekspedycji</div><h2>Drużyna</h2>
+ <h2>Drużyna</h2>
  <p class="lede">Odwróć kartę, aby poznać historię członków ekspedycji.</p>
  <div class="party" id="party"></div>
 </div></section>
 
 <section id="chronicle" class="alt"><div class="tear"></div><div class="wrap">
- <div class="kick">Raporty, listy i świadectwa</div><h2>Kronika ekspedycji</h2>
+ <h2>Kronika ekspedycji</h2>
  <p class="lede">Otwórz wpis, aby przejrzeć raport i zebrane świadectwa.</p>
  <ol class="chron" id="chron"></ol>
 </div></section>
 
 <section id="map"><div class="tear"></div><div class="wrap">
- <div class="kick">Atlas i wykresy podróży</div><h2>Mapa Arcanum</h2>
+ <h2>Mapa Arcanum</h2>
  <div class="frame"><div class="mount" id="map-mount" data-embed="map" aria-label="Interaktywna mapa świata Arcanum"><iframe src="/page/arcanum/Mapa/" title="Interaktywna mapa świata Arcanum" loading="lazy" allow="fullscreen"></iframe></div><a class="workspace-direct-link" href="/page/arcanum/Mapa/" target="_blank" rel="noopener">Otwórz mapę w osobnej karcie ↗</a></div>
 </div></section>
 
 <section id="notes" class="alt"><div class="tear"></div><div class="wrap">
- <div class="kick">Akta i korespondencja</div><h2>Archiwum ekspedycji</h2>
+ <h2>Archiwum ekspedycji</h2>
  <div class="frame book"><div class="mount notes" id="notes-mount" data-embed="notes" aria-label="Interaktywne archiwum ekspedycji"><iframe src="/page/arcanum/Notatki/" title="Archiwum postaci, frakcji i powiązań Arcanum" loading="lazy" allow="fullscreen"></iframe></div><a class="workspace-direct-link" href="/page/arcanum/Notatki/" target="_blank" rel="noopener">Otwórz mapę myśli w osobnej karcie ↗</a></div>
 </div></section>
 
 <section id="overview"><div class="tear"></div><div class="wrap">
- <div class="kick">Tablica operacyjna</div><h2>Stan ekspedycji</h2>
+ <h2>Stan ekspedycji</h2>
  <div class="board" id="ov"></div>
 </div></section>
 </main>
@@ -433,9 +426,6 @@ fetch('/core/data/characters.json').then(function(r){if(!r.ok)throw new Error('C
   window.CampaignHub.setCharacters(players);
  }).catch(function(err){console.warn('Nie udało się wczytać postaci drużyny:',err)});
 
-/* torchlight + hero parallax */
-var T=$('#torch');
-addEventListener('pointermove',function(e){T.style.setProperty('--px',e.clientX+'px');T.style.setProperty('--py',e.clientY+'px')});
 
 /* embers */
 (function(){var c=$('#embers'),x=c.getContext('2d'),P=[],W,H;
