@@ -5,7 +5,7 @@
     "name": "Odyssey of the Dragonlords — archiwum powiązań",
     "updatedAt": "2026-11-24",
     "layoutModes": {
-      "complete": "force"
+      "complete": "manual"
     },
     "relationshipTypes": [
       {
@@ -40,8 +40,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 720,
-          "y": 460
+          "x": 232.69047149469856,
+          "y": 346.9631444792279
         }
       },
       "position": {
@@ -67,8 +67,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 350,
-          "y": 160
+          "x": -330.8658378511016,
+          "y": 175.8612953606023
         }
       },
       "position": {
@@ -94,8 +94,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 680,
-          "y": 160
+          "x": 817.2544512455388,
+          "y": 318.7278728414849
         }
       },
       "position": {
@@ -121,8 +121,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1010,
-          "y": 160
+          "x": 500.8210673629742,
+          "y": 244.8808426505334
         }
       },
       "position": {
@@ -148,8 +148,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 350,
-          "y": 410
+          "x": 759.7704079229455,
+          "y": 643.0935157040345
         }
       },
       "position": {
@@ -175,8 +175,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 680,
-          "y": 410
+          "x": 230.3063320961095,
+          "y": 82.73828494515831
         }
       },
       "position": {
@@ -202,8 +202,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1010,
-          "y": 410
+          "x": 417.8726236068253,
+          "y": 570.6754073172818
         }
       },
       "position": {
@@ -226,36 +226,12 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 150,
-          "y": 850
+          "x": 149.38866342199515,
+          "y": 927.5511889919894
         }
       },
       "position": {
         "x": 150,
-        "y": 850
-      }
-    },
-    {
-      "id": "ody-loc-telamok",
-      "type": "Location",
-      "name": "Telamok",
-      "imageUrl": "",
-      "color": "#397082",
-      "borderColor": "#d9b66f",
-      "lineStyle": "solid",
-      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
-      "fields": {
-        "Source": "Tytuły sesji"
-      },
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 480,
-          "y": 850
-        }
-      },
-      "position": {
-        "x": 480,
         "y": 850
       }
     },
@@ -274,8 +250,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 810,
-          "y": 850
+          "x": -32.093110164769655,
+          "y": 332.0403650261524
         }
       },
       "position": {
@@ -298,8 +274,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1140,
-          "y": 850
+          "x": -196.39056754617087,
+          "y": 817.383497569708
         }
       },
       "position": {
@@ -322,8 +298,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 150,
-          "y": 1060
+          "x": -334.29663595131007,
+          "y": 503.82079718856903
         }
       },
       "position": {
@@ -346,8 +322,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 480,
-          "y": 1060
+          "x": -182.36076282696962,
+          "y": -119.47076438234114
         }
       },
       "position": {
@@ -370,8 +346,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 810,
-          "y": 1060
+          "x": 447.5051312497223,
+          "y": -206.68949978828886
         }
       },
       "position": {
@@ -394,8 +370,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 1140,
-          "y": 1060
+          "x": 68.87194791115053,
+          "y": 614.9751715524321
         }
       },
       "position": {
@@ -418,8 +394,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 150,
-          "y": 1270
+          "x": 123.22380192409071,
+          "y": -227.97438167996398
         }
       },
       "position": {
@@ -442,8 +418,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 480,
-          "y": 1270
+          "x": 734.5071494709304,
+          "y": -20.760916029756913
         }
       },
       "position": {
@@ -466,8 +442,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 150,
-          "y": 1450
+          "x": 1501.2544512455388,
+          "y": -227.97438167996398
         }
       },
       "position": {
@@ -490,8 +466,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 570,
-          "y": 1450
+          "x": 1843.2544512455388,
+          "y": -227.97438167996398
         }
       },
       "position": {
@@ -514,8 +490,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 990,
-          "y": 1450
+          "x": 2185.254451245539,
+          "y": -227.97438167996398
         }
       },
       "position": {
@@ -538,8 +514,8 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 150,
-          "y": 1650
+          "x": -334.29663595131007,
+          "y": 1269.5511889919892
         }
       },
       "position": {
@@ -562,36 +538,12 @@
       "customFields": [],
       "positions": {
         "complete": {
-          "x": 570,
-          "y": 1650
+          "x": 7.703364048689878,
+          "y": 1269.5511889919892
         }
       },
       "position": {
         "x": 570,
-        "y": 1650
-      }
-    },
-    {
-      "id": "ody-npc-5",
-      "type": "Person",
-      "name": "Sydon",
-      "imageUrl": "",
-      "color": "#8a6c48",
-      "borderColor": "#d9b66f",
-      "lineStyle": "solid",
-      "notes": "Wymieniony w tytule nagrania; szczegóły do uzupełnienia w notatkach.",
-      "fields": {
-        "Source": "Tytuł sesji"
-      },
-      "customFields": [],
-      "positions": {
-        "complete": {
-          "x": 990,
-          "y": 1650
-        }
-      },
-      "position": {
-        "x": 990,
         "y": 1650
       }
     }
@@ -661,16 +613,6 @@
       "id": "ody-rel-place-mytros",
       "source": "ody-party",
       "target": "ody-loc-mytros",
-      "type": "CHRONICLED_AT",
-      "note": "Miejsce wymienione w tytule sesji lub kronice.",
-      "color": "#d4a03c",
-      "lineStyle": "dotted",
-      "direction": "towards"
-    },
-    {
-      "id": "ody-rel-place-telamok",
-      "source": "ody-party",
-      "target": "ody-loc-telamok",
       "type": "CHRONICLED_AT",
       "note": "Miejsce wymienione w tytule sesji lub kronice.",
       "color": "#d4a03c",
