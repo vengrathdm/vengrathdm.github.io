@@ -198,3 +198,38 @@
     #read{bottom:14px;left:9px;font-size:11px;min-width:0}
     .leaflet-bottom.leaflet-right{bottom:8px;right:8px}
   }
+
+/* Temple campaign art direction — indigo observatory / elemental archive */
+:root{--void:#090b1c;--night:#111632;--panel:#10162beF;--panel-edge:#5968a8;--mist:#dce6ff;--muted:#929ec9;--aqua:#7df0d2;--violet:#9c83f5;--gold:#f3d17a;--ember:#ff7896}
+html,body{background:var(--void)!important;color:var(--mist)!important;font-family:'IBM Plex Mono',monospace!important}
+#map{background:#090d21!important}
+.leaflet-container{background:#090d21!important;font:13px/1.45 'IBM Plex Mono',monospace!important}
+.panel,.floating-panel{background:rgba(12,17,39,.94)!important;color:var(--mist)!important;border:1px solid rgba(125,240,210,.3)!important;border-radius:12px!important;box-shadow:0 16px 48px rgba(0,0,0,.42),inset 0 1px rgba(255,255,255,.045)!important;backdrop-filter:blur(18px)!important}
+#head{top:18px!important;left:20px!important}
+.home-brand{font:1rem 'Pirata One',serif!important;letter-spacing:.16em!important;color:#e7ebff!important;text-shadow:0 0 24px rgba(125,240,210,.18)!important}
+.home-brand img{width:34px!important;height:34px!important;filter:drop-shadow(0 0 10px rgba(125,240,210,.32))!important}
+.home-brand:hover{color:var(--aqua)!important}
+#toolbar{top:18px!important;right:20px!important;background:rgba(12,17,39,.88)!important;border:1px solid rgba(125,240,210,.28)!important;border-radius:999px!important;padding:5px!important;box-shadow:0 10px 32px #0007!important}
+.tool-button,.panel-close,.editor-action-row button,.editor-data-actions button,.region-dialog button,.pin-dialog-actions button{background:#1a2246!important;color:#dce6ff!important;border:1px solid #53639e!important;border-radius:7px!important;font:500 11px 'IBM Plex Mono',monospace!important;letter-spacing:.04em}
+.tool-button:hover,.tool-button[aria-expanded=true],.panel-close:hover,.editor-action-row button:hover,.editor-data-actions button:hover{background:#27335f!important;border-color:var(--aqua)!important;color:#fff!important;box-shadow:0 0 16px #7df0d222!important}
+#read{bottom:18px!important;left:20px!important;background:rgba(12,17,39,.9)!important;border:1px solid rgba(125,240,210,.28)!important;color:#e4eaff!important;border-radius:9px!important;font:11px 'IBM Plex Mono',monospace!important;box-shadow:0 10px 32px #0006!important}
+#read small{color:var(--aqua)!important;letter-spacing:.12em!important;text-transform:uppercase}
+#mapStatus{position:absolute;z-index:1200;left:20px;bottom:65px;max-width:min(520px,calc(100vw - 40px));padding:8px 12px;border:1px solid rgba(156,131,245,.34);border-radius:8px;background:rgba(12,17,39,.92);color:#aeb9e7;font:10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.04em;opacity:0;transform:translateY(5px);transition:opacity .2s,transform .2s;pointer-events:none}
+#mapStatus.visible{opacity:1;transform:translateY(0)}
+.floating-panel{top:76px!important;right:20px!important;width:310px!important;max-height:calc(100vh - 105px)!important;padding:15px!important}
+.panel-head{color:#e9edff!important;border-bottom:1px solid rgba(125,240,210,.22)!important;padding-bottom:10px!important;margin-bottom:12px!important;font:600 12px 'IBM Plex Mono',monospace!important;letter-spacing:.12em!important;text-transform:uppercase}
+.floating-panel label,.editor-field-label,.layer-name-label,.editor-section h3{color:#b8c5ef!important;font:11px 'IBM Plex Mono',monospace!important}
+.floating-panel input:not([type=checkbox]):not([type=color]):not([type=range]),.floating-panel select,.floating-panel textarea,.region-dialog input:not([type=color]),.region-dialog select,.region-dialog textarea,#pinDialog input:not([type=color]),#pinDialog select,#pinDialog textarea{background:#0c122b!important;color:#e8edff!important;border:1px solid #465486!important;border-radius:7px!important}
+.floating-panel input:focus,.floating-panel select:focus,.floating-panel textarea:focus,.region-dialog input:focus,.region-dialog textarea:focus,#pinDialog input:focus,#pinDialog textarea:focus{outline:1px solid var(--aqua)!important;border-color:var(--aqua)!important}
+.region-dialog,#pinDialog{background:#111832!important;color:#e8edff!important;border:1px solid #6574b3!important;border-radius:14px!important;box-shadow:0 24px 90px #000b!important}
+.region-dialog h2,#pinDialog h2{font:2rem 'Pirata One',serif!important;color:#e7ebff!important}
+.region-dialog-sub,.pin-dialog-sub{color:#aab5dc!important}
+.region-style-field,.region-style-choice,.region-delete-dialog .delete-region-list{border-color:#465486!important}
+.region-style-name{color:#dce6ff!important}
+.leaflet-control-zoom a,.leaflet-control-attribution{background:#111832!important;color:#dce6ff!important;border-color:#53639e!important}
+.leaflet-control-scale-line{background:#111832dd!important;color:#dce6ff!important;border-color:#7df0d2!important}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#111832!important;color:#e8edff!important;border:1px solid #6574b3!important}
+.leaflet-popup-content a{color:var(--aqua)!important}
+.leaflet-tooltip{background:#111832!important;color:#e8edff!important;border:1px solid #6574b3!important}
+.ruin{background:#1b2851!important;border:2px solid var(--aqua)!important;color:#f4f5ff!important;box-shadow:0 0 14px #7df0d244!important}
+@media(max-width:600px){#head{top:9px!important;left:9px!important}#toolbar{top:54px!important;left:9px!important;right:auto!important;max-width:calc(100vw - 18px)}.floating-panel{top:104px!important;right:9px!important;width:min(310px,calc(100vw - 18px))!important;max-height:calc(100vh - 155px)!important}#read{left:9px!important;bottom:12px!important}#mapStatus{left:9px;bottom:58px;max-width:calc(100vw - 18px)}}
