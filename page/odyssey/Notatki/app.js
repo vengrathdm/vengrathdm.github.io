@@ -28,7 +28,7 @@ graphSurface?.addEventListener("contextmenu",e=>{
 },true);
 const STORAGE_KEY="vengrath.swiatynia.relationshipMap.v1";
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const isImageUrl=value=>{if(/^data:image\/(png|webp);base64,/i.test(value))return true;try{const u=new URL(value);return /^https?:$/.test(u.protocol)&&/\.(png|webp)$/i.test(u.pathname)}catch(_){return false}};
+const isImageUrl=value=>{if(/^data:image\/(png|webp);base64,/i.test(value))return true;try{const u=new URL(value,window.location.href);return /^https?:$/.test(u.protocol)&&u.origin===window.location.origin&&/\.(png|webp)$/i.test(u.pathname)||/^https?:$/.test(u.protocol)&&/\.(png|webp)$/i.test(u.pathname)}catch(_){return false}};
 function md(source){
  const inline=value=>value.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\*(.+?)\*/g,"<em>$1</em>").replace(/\x60([^\x60]+)\x60/g,"<code>$1</code>").replace(/\[([^\]]+)\]\((https?:\/\/[^ )]+)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
  const lines=esc(source||"").split(/\r?\n/);let html="",inList=false;
