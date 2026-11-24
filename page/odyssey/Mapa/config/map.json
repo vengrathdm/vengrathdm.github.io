@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "id": "thylea-journey-map",
   "title": "Thylea — schematyczny atlas wyprawy",
-  "image": "./map.svg",
+  "image": "./map.webp",
   "dataUrl": "./data/regions.json",
   "storageKey": "vengrath-odyssey-map-v1",
   "dimensions": {
-    "width": 1582,
-    "height": 2048
+    "width": 1445,
+    "height": 1870
   },
   "projection": {
     "baseZoom": 2,
