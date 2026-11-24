@@ -233,3 +233,13 @@ html,body{background:var(--void)!important;color:var(--mist)!important;font-fami
 .leaflet-tooltip{background:#111832!important;color:#e8edff!important;border:1px solid #6574b3!important}
 .ruin{background:#1b2851!important;border:2px solid var(--aqua)!important;color:#f4f5ff!important;box-shadow:0 0 14px #7df0d244!important}
 @media(max-width:600px){#head{top:9px!important;left:9px!important}#toolbar{top:54px!important;left:9px!important;right:auto!important;max-width:calc(100vw - 18px)}.floating-panel{top:104px!important;right:9px!important;width:min(310px,calc(100vw - 18px))!important;max-height:calc(100vh - 155px)!important}#read{left:9px!important;bottom:12px!important}#mapStatus{left:9px;bottom:58px;max-width:calc(100vw - 18px)}}
+
+
+/* Compact bottom-right zoom control; keep the selected-hex dossier clear of the brand. */
+.leaflet-bottom.leaflet-right{right:18px!important;bottom:18px!important}
+.leaflet-control-zoom{display:flex!important;flex-direction:column!important;gap:5px!important;border:0!important;box-shadow:none!important}
+.leaflet-control-zoom a{display:grid!important;place-items:center!important;width:34px!important;height:34px!important;line-height:32px!important;border:1px solid #53639e!important;border-radius:9px!important;background:#111832!important;color:#dce6ff!important;font:600 20px/1 'IBM Plex Mono',monospace!important;box-shadow:0 8px 22px #0008!important}
+.leaflet-control-zoom a:first-child{border-radius:9px!important}
+.leaflet-control-zoom a:last-child{border-radius:9px!important}
+#presenter{top:90px!important;left:20px!important;right:auto!important}
+@media(max-width:600px){.leaflet-bottom.leaflet-right{right:10px!important;bottom:12px!important}#presenter{top:104px!important;left:9px!important;right:auto!important;max-height:calc(100vh - 155px)!important}}
