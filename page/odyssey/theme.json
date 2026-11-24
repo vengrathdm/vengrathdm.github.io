@@ -1,26 +1,21 @@
 {
   "colors": {
-    "base1": "#071b2a",
-    "base2": "#0c2b3d",
-    "base3": "#143b50",
-    "base4": "#1c4c60",
-    "base5": "#2a6370",
+    "base1": "#071c2b",
+    "base2": "#0b2b3d",
+    "base3": "#12394b",
     "accent1": "#b87942",
-    "accent2": "#e7c982",
-    "text1": "#f5f0e4",
-    "text2": "#e5e0d2",
-    "text3": "#b8c5c6",
-    "textMuted": "#8ea4a8",
-    "titleAccent": "#fff4d8",
-    "line1": "#345363",
-    "line2": "#98734c"
+    "accent2": "#e4c078",
+    "text1": "#f4eddb",
+    "text2": "#d8ded8",
+    "text3": "#a9bec2",
+    "line1": "#34596a",
+    "line2": "#a98a58"
   },
   "typography": {
-    "heading": "\"Caesar Dressing\", \"Voltaire\", sans-serif",
-    "body": "\"Fira Sans Extra Condensed\", sans-serif",
-    "serif": "\"Brygada 1918\", Georgia, serif"
+    "heading": "'Caesar Dressing', serif",
+    "body": "'Brygada 1918', serif",
+    "mono": "'IBM Plex Mono', monospace"
   },
-  "fontsUrl": "https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap",
-  "heroImage": "/core/graphics/voronoi/odyssey-of-the-dragonlords.webp",
-  "audioColor": "#e7c982"
+  "fontsUrl": "https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Brygada+1918:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap",
+  "heroImage": "/core/graphics/voronoi/odyssey-of-the-dragonlords.webp"
 }

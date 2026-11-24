@@ -1,0 +1,761 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "id": "odyssey-relations",
+    "name": "Odyssey of the Dragonlords — archiwum powiązań",
+    "updatedAt": "2026-11-24",
+    "layoutModes": {
+      "complete": "force"
+    },
+    "relationshipTypes": [
+      {
+        "name": "MEMBER_OF",
+        "description": "Należy do drużyny",
+        "color": "#83a98a",
+        "lineStyle": "solid",
+        "direction": "towards"
+      },
+      {
+        "name": "CHRONICLED_AT",
+        "description": "Miejsce wymienione w kronice",
+        "color": "#d4a03c",
+        "lineStyle": "dotted",
+        "direction": "towards"
+      }
+    ],
+    "notes": "Bohaterowie pochodzą z rejestru kampanii. Miejsca i postacie dodatkowe są wymienione w tytułach sesji; szczegóły fabularne można uzupełniać w edytorze.",
+    "savedViews": []
+  },
+  "entities": [
+    {
+      "id": "ody-party",
+      "type": "Faction",
+      "name": "Drużyna Odyssey",
+      "imageUrl": "",
+      "color": "#315c6d",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Sześcioro bohaterów przypisanych do kampanii w rejestrze Vengrath.",
+      "fields": {},
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 720,
+          "y": 460
+        }
+      },
+      "position": {
+        "x": 720,
+        "y": 460
+      }
+    },
+    {
+      "id": "ody-char-0079",
+      "type": "Person",
+      "name": "Rina",
+      "imageUrl": "/core/portraits/char-0079.webp",
+      "color": "#355c6d",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Gracz: wpoluwiatr · Siren · Sorcerer / Warlock · Status: Zwycięska",
+      "fields": {
+        "Player": "wpoluwiatr",
+        "Status": "Zwycięska",
+        "Race": "Siren",
+        "Class": "Sorcerer / Warlock"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 350,
+          "y": 160
+        }
+      },
+      "position": {
+        "x": 350,
+        "y": 160
+      }
+    },
+    {
+      "id": "ody-char-0080",
+      "type": "Person",
+      "name": "Theron",
+      "imageUrl": "/core/portraits/char-0080.webp",
+      "color": "#355c6d",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Gracz: shrimphead · Human · Paladin · Status: Wycofana",
+      "fields": {
+        "Player": "shrimphead",
+        "Status": "Wycofana",
+        "Race": "Human",
+        "Class": "Paladin"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 680,
+          "y": 160
+        }
+      },
+      "position": {
+        "x": 680,
+        "y": 160
+      }
+    },
+    {
+      "id": "ody-char-0081",
+      "type": "Person",
+      "name": "Xavier",
+      "imageUrl": "/core/portraits/char-0081.webp",
+      "color": "#355c6d",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Gracz: archangelss · Siren · Cleric · Status: Zwycięska",
+      "fields": {
+        "Player": "archangelss",
+        "Status": "Zwycięska",
+        "Race": "Siren",
+        "Class": "Cleric"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1010,
+          "y": 160
+        }
+      },
+      "position": {
+        "x": 1010,
+        "y": 160
+      }
+    },
+    {
+      "id": "ody-char-0082",
+      "type": "Person",
+      "name": "Xastar",
+      "imageUrl": "/core/portraits/char-0082.webp",
+      "color": "#355c6d",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Gracz: lecpowode · Minotaur · Fighter · Status: Zwycięska",
+      "fields": {
+        "Player": "lecpowode",
+        "Status": "Zwycięska",
+        "Race": "Minotaur",
+        "Class": "Fighter"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 350,
+          "y": 410
+        }
+      },
+      "position": {
+        "x": 350,
+        "y": 410
+      }
+    },
+    {
+      "id": "ody-char-0083",
+      "type": "Person",
+      "name": "Vespera",
+      "imageUrl": "/core/portraits/char-0083.webp",
+      "color": "#355c6d",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Gracz: Maria · Nymph · Paladin · Status: Zwycięska",
+      "fields": {
+        "Player": "Maria",
+        "Status": "Zwycięska",
+        "Race": "Nymph",
+        "Class": "Paladin"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 680,
+          "y": 410
+        }
+      },
+      "position": {
+        "x": 680,
+        "y": 410
+      }
+    },
+    {
+      "id": "ody-char-0084",
+      "type": "Person",
+      "name": "Zander",
+      "imageUrl": "/core/portraits/char-0084.webp",
+      "color": "#355c6d",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Gracz: Koar · Half-Orc · Bard · Status: Wycofana",
+      "fields": {
+        "Player": "Koar",
+        "Status": "Wycofana",
+        "Race": "Half-Orc",
+        "Class": "Bard"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1010,
+          "y": 410
+        }
+      },
+      "position": {
+        "x": 1010,
+        "y": 410
+      }
+    },
+    {
+      "id": "ody-loc-mytros",
+      "type": "Location",
+      "name": "Mytros",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "fields": {
+        "Source": "Tytuły sesji"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 150,
+          "y": 850
+        }
+      },
+      "position": {
+        "x": 150,
+        "y": 850
+      }
+    },
+    {
+      "id": "ody-loc-telamok",
+      "type": "Location",
+      "name": "Telamok",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "fields": {
+        "Source": "Tytuły sesji"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 480,
+          "y": 850
+        }
+      },
+      "position": {
+        "x": 480,
+        "y": 850
+      }
+    },
+    {
+      "id": "ody-loc-yonder",
+      "type": "Location",
+      "name": "Wyspa Yonder",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "fields": {
+        "Source": "Tytuły sesji"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 810,
+          "y": 850
+        }
+      },
+      "position": {
+        "x": 810,
+        "y": 850
+      }
+    },
+    {
+      "id": "ody-loc-fire-island",
+      "type": "Location",
+      "name": "Wyspa Ognia",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "fields": {
+        "Source": "Tytuły sesji"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1140,
+          "y": 850
+        }
+      },
+      "position": {
+        "x": 1140,
+        "y": 850
+      }
+    },
+    {
+      "id": "ody-loc-indigo-cliffs",
+      "type": "Location",
+      "name": "Klify Indygo",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "fields": {
+        "Source": "Tytuły sesji"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 150,
+          "y": 1060
+        }
+      },
+      "position": {
+        "x": 150,
+        "y": 1060
+      }
+    },
+    {
+      "id": "ody-loc-helios-garden",
+      "type": "Location",
+      "name": "Ogród Heliosa",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "fields": {
+        "Source": "Tytuły sesji"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 480,
+          "y": 1060
+        }
+      },
+      "position": {
+        "x": 480,
+        "y": 1060
+      }
+    },
+    {
+      "id": "ody-loc-island-time",
+      "type": "Location",
+      "name": "Wyspa Czasu",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "fields": {
+        "Source": "Tytuły sesji"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 810,
+          "y": 1060
+        }
+      },
+      "position": {
+        "x": 810,
+        "y": 1060
+      }
+    },
+    {
+      "id": "ody-loc-rocs-nest",
+      "type": "Location",
+      "name": "Gniazdo Roców",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "fields": {
+        "Source": "Tytuły sesji"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 1140,
+          "y": 1060
+        }
+      },
+      "position": {
+        "x": 1140,
+        "y": 1060
+      }
+    },
+    {
+      "id": "ody-loc-island-fates",
+      "type": "Location",
+      "name": "Wyspa Losów",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "fields": {
+        "Source": "Tytuły sesji"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 150,
+          "y": 1270
+        }
+      },
+      "position": {
+        "x": 150,
+        "y": 1270
+      }
+    },
+    {
+      "id": "ody-loc-embarkion",
+      "type": "Location",
+      "name": "Embarkion",
+      "imageUrl": "",
+      "color": "#397082",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Nazwa miejsca wymieniona w tytułach nagrań kampanii.",
+      "fields": {
+        "Source": "Tytuły sesji"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 480,
+          "y": 1270
+        }
+      },
+      "position": {
+        "x": 480,
+        "y": 1270
+      }
+    },
+    {
+      "id": "ody-npc-0",
+      "type": "Person",
+      "name": "Pythor",
+      "imageUrl": "",
+      "color": "#8a6c48",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Wymieniony w tytule nagrania; szczegóły do uzupełnienia w notatkach.",
+      "fields": {
+        "Source": "Tytuł sesji"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 150,
+          "y": 1450
+        }
+      },
+      "position": {
+        "x": 150,
+        "y": 1450
+      }
+    },
+    {
+      "id": "ody-npc-1",
+      "type": "Person",
+      "name": "Anora",
+      "imageUrl": "",
+      "color": "#8a6c48",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Wymieniony w tytule nagrania; szczegóły do uzupełnienia w notatkach.",
+      "fields": {
+        "Source": "Tytuł sesji"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 570,
+          "y": 1450
+        }
+      },
+      "position": {
+        "x": 570,
+        "y": 1450
+      }
+    },
+    {
+      "id": "ody-npc-2",
+      "type": "Person",
+      "name": "Król Kruul",
+      "imageUrl": "",
+      "color": "#8a6c48",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Wymieniony w tytule nagrania; szczegóły do uzupełnienia w notatkach.",
+      "fields": {
+        "Source": "Tytuł sesji"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 990,
+          "y": 1450
+        }
+      },
+      "position": {
+        "x": 990,
+        "y": 1450
+      }
+    },
+    {
+      "id": "ody-npc-3",
+      "type": "Person",
+      "name": "Xander Huorath",
+      "imageUrl": "",
+      "color": "#8a6c48",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Wymieniony w tytule nagrania; szczegóły do uzupełnienia w notatkach.",
+      "fields": {
+        "Source": "Tytuł sesji"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 150,
+          "y": 1650
+        }
+      },
+      "position": {
+        "x": 150,
+        "y": 1650
+      }
+    },
+    {
+      "id": "ody-npc-4",
+      "type": "Person",
+      "name": "Themis",
+      "imageUrl": "",
+      "color": "#8a6c48",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Wymieniony w tytule nagrania; szczegóły do uzupełnienia w notatkach.",
+      "fields": {
+        "Source": "Tytuł sesji"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 570,
+          "y": 1650
+        }
+      },
+      "position": {
+        "x": 570,
+        "y": 1650
+      }
+    },
+    {
+      "id": "ody-npc-5",
+      "type": "Person",
+      "name": "Sydon",
+      "imageUrl": "",
+      "color": "#8a6c48",
+      "borderColor": "#d9b66f",
+      "lineStyle": "solid",
+      "notes": "Wymieniony w tytule nagrania; szczegóły do uzupełnienia w notatkach.",
+      "fields": {
+        "Source": "Tytuł sesji"
+      },
+      "customFields": [],
+      "positions": {
+        "complete": {
+          "x": 990,
+          "y": 1650
+        }
+      },
+      "position": {
+        "x": 990,
+        "y": 1650
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "ody-rel-member-0",
+      "source": "ody-char-0079",
+      "target": "ody-party",
+      "type": "MEMBER_OF",
+      "note": "Przypisanie do kampanii w rejestrze postaci.",
+      "color": "#83a98a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "ody-rel-member-1",
+      "source": "ody-char-0080",
+      "target": "ody-party",
+      "type": "MEMBER_OF",
+      "note": "Przypisanie do kampanii w rejestrze postaci.",
+      "color": "#83a98a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "ody-rel-member-2",
+      "source": "ody-char-0081",
+      "target": "ody-party",
+      "type": "MEMBER_OF",
+      "note": "Przypisanie do kampanii w rejestrze postaci.",
+      "color": "#83a98a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "ody-rel-member-3",
+      "source": "ody-char-0082",
+      "target": "ody-party",
+      "type": "MEMBER_OF",
+      "note": "Przypisanie do kampanii w rejestrze postaci.",
+      "color": "#83a98a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "ody-rel-member-4",
+      "source": "ody-char-0083",
+      "target": "ody-party",
+      "type": "MEMBER_OF",
+      "note": "Przypisanie do kampanii w rejestrze postaci.",
+      "color": "#83a98a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "ody-rel-member-5",
+      "source": "ody-char-0084",
+      "target": "ody-party",
+      "type": "MEMBER_OF",
+      "note": "Przypisanie do kampanii w rejestrze postaci.",
+      "color": "#83a98a",
+      "lineStyle": "solid",
+      "direction": "towards"
+    },
+    {
+      "id": "ody-rel-place-mytros",
+      "source": "ody-party",
+      "target": "ody-loc-mytros",
+      "type": "CHRONICLED_AT",
+      "note": "Miejsce wymienione w tytule sesji lub kronice.",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    },
+    {
+      "id": "ody-rel-place-telamok",
+      "source": "ody-party",
+      "target": "ody-loc-telamok",
+      "type": "CHRONICLED_AT",
+      "note": "Miejsce wymienione w tytule sesji lub kronice.",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    },
+    {
+      "id": "ody-rel-place-yonder",
+      "source": "ody-party",
+      "target": "ody-loc-yonder",
+      "type": "CHRONICLED_AT",
+      "note": "Miejsce wymienione w tytule sesji lub kronice.",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    },
+    {
+      "id": "ody-rel-place-fire-island",
+      "source": "ody-party",
+      "target": "ody-loc-fire-island",
+      "type": "CHRONICLED_AT",
+      "note": "Miejsce wymienione w tytule sesji lub kronice.",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    },
+    {
+      "id": "ody-rel-place-indigo-cliffs",
+      "source": "ody-party",
+      "target": "ody-loc-indigo-cliffs",
+      "type": "CHRONICLED_AT",
+      "note": "Miejsce wymienione w tytule sesji lub kronice.",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    },
+    {
+      "id": "ody-rel-place-helios-garden",
+      "source": "ody-party",
+      "target": "ody-loc-helios-garden",
+      "type": "CHRONICLED_AT",
+      "note": "Miejsce wymienione w tytule sesji lub kronice.",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    },
+    {
+      "id": "ody-rel-place-island-time",
+      "source": "ody-party",
+      "target": "ody-loc-island-time",
+      "type": "CHRONICLED_AT",
+      "note": "Miejsce wymienione w tytule sesji lub kronice.",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    },
+    {
+      "id": "ody-rel-place-rocs-nest",
+      "source": "ody-party",
+      "target": "ody-loc-rocs-nest",
+      "type": "CHRONICLED_AT",
+      "note": "Miejsce wymienione w tytule sesji lub kronice.",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    },
+    {
+      "id": "ody-rel-place-island-fates",
+      "source": "ody-party",
+      "target": "ody-loc-island-fates",
+      "type": "CHRONICLED_AT",
+      "note": "Miejsce wymienione w tytule sesji lub kronice.",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    },
+    {
+      "id": "ody-rel-place-embarkion",
+      "source": "ody-party",
+      "target": "ody-loc-embarkion",
+      "type": "CHRONICLED_AT",
+      "note": "Miejsce wymienione w tytule sesji lub kronice.",
+      "color": "#d4a03c",
+      "lineStyle": "dotted",
+      "direction": "towards"
+    }
+  ]
+}

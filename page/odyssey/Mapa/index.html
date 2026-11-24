@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa Thylei</title>
+<meta name="description" content="Schematyczny atlas podróży po Thylei z edytowalną siatką pól, regionami i znacznikami.">
+<link rel="stylesheet" href="leaflet/leaflet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Brygada+1918:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/map.css">
+</head>
+<body class="odyssey-page">
+<div id="map"></div>
+<div id="head" class="panel">
+  <a class="home-brand" href="/page/odyssey/" aria-label="Vengrath — strona główna"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
+</div>
+<div id="read" class="panel"><small>Najedź na mapę, aby wyświetlić oznaczenie hexu</small></div>
+<div id="toolsWindow">
+<div id="toolbar" role="toolbar" aria-label="Narzędzia mapy">
+  <button class="tool-button" id="layersButton" type="button" aria-expanded="false">Warstwy</button>
+  <button class="tool-button" id="editorButton" type="button" aria-expanded="false">Edytor</button>
+</div>
+<section id="layersPanel" class="floating-panel" hidden>
+  <div class="panel-head"><strong>Warstwy mapy</strong><button class="panel-close" data-close="layersPanel" type="button">Zamknij</button></div>
+  <label><input type="checkbox" id="politicalLayer" checked> Warstwy polityczne</label>
+  <label><input type="checkbox" id="geographicalLayer" checked> Warstwy geograficzne</label>
+  <div class="layer-name-control-wrap"><span class="layer-name-label">Nazwy regionów</span><div id="regionNameMode" class="layer-name-control" role="group" aria-label="Widoczność nazw regionów"><button type="button" data-mode="hide" aria-pressed="false">Ukryj</button><button type="button" data-mode="hover" aria-pressed="true">Po najechaniu</button><button type="button" data-mode="show" aria-pressed="false">Pokaż</button></div></div>
+  <div class="layer-name-control-wrap"><span class="layer-name-label">Widoczność markerów</span><div id="pinVisibilityMode" class="pin-visibility-control" role="group" aria-label="Widoczność markerów"><button type="button" data-mode="hidden" aria-pressed="false">Ukryj</button><button type="button" data-mode="hover" aria-pressed="true">Najedź</button><button type="button" data-mode="click" aria-pressed="false">Kliknij</button><button type="button" data-mode="always" aria-pressed="false">Zawsze</button></div></div>
+</section>
+
+
+<div id="editor" class="floating-panel" hidden>
+  <div class="panel-head"><strong>Odyssey · Nakładki pól</strong><button class="panel-close" data-close="editor" type="button">Zamknij</button></div>
+  <div id="editorTools">
+    <div class="editor-field"><span class="editor-field-label">Warstwa nakładki</span><select id="layerSelect"><option value="political">Polityczna</option><option value="geographical">Geograficzna</option></select></div>
+    <section class="editor-section">
+      <h3>Region</h3>
+      <div class="editor-field"><span class="editor-field-label">Region</span><select id="regionSelect"><option value="">Najpierw utwórz region</option></select></div>
+      <div class="editor-action-row"><button id="createRegion" type="button">Utwórz region</button><button id="editRegion" type="button">Edytuj region</button><button id="deleteRegion" type="button">Usuń region</button></div>
+    </section>
+    <section class="editor-section">
+      <h3>Pędzel</h3>
+      <div class="editor-action-row"><div id="brushModeControl" class="brush-mode-control" role="group" aria-label="Tryb pędzla"><button type="button" data-mode="idle" aria-pressed="true">Bezczynny</button><button type="button" data-mode="paint" aria-pressed="false">Maluj</button><button type="button" data-mode="erase" aria-pressed="false">Wymaż</button></div><button id="placePinButton" type="button">Dodaj znacznik</button></div>
+      <label>Rozmiar pędzla <span id="brushSizeValue">1 hex</span><input id="brushSize" type="range" min="0" max="5" step="1" value="0"></label>
+    </section>
+    <div class="editor-data-actions"><button id="reloadData" type="button">Przeładuj Oficjalne Dane</button><button id="exportData" type="button">Eksportuj dane</button><label class="file-button" for="importData">Importuj dane</label></div><input id="importData" type="file" accept="application/json">
+  </div>
+</div>
+</div>
+<section id="presenter" class="floating-panel terrain-window" hidden>
+  <div class="panel-head"><strong>Karta terenu</strong><button class="panel-close" data-close="presenter" type="button">Zamknij</button></div>
+  <div id="presenterBody"><div id="presenterAddress">Nie wybrano hexu</div><div id="presenterSub">Antarktyda · Oznaczenie hexu</div><p id="presenterIntro">Wybierz dowolny hex na mapie, aby wyświetlić zapisane o nim informacje.</p><div id="presenterDetails"></div></div>
+</section>
+<div id="regionCreateDialog" class="region-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="regionCreateTitle">
+  <h2 id="regionCreateTitle">Utwórz region</h2>
+  <p class="region-dialog-sub">Skonfiguruj nowy region nakładki.</p>
+  <form id="regionCreateForm">
+    <label>Warstwa<select id="newRegionLayer"><option value="political">Polityczna</option><option value="geographical">Geograficzna</option></select></label>
+    <label>Nazwa regionu<input id="newRegionName" type="text" maxlength="100" required placeholder="np. Las umiarkowany"></label>
+    <label>Kolor regionu<div class="region-color-control"><input id="newRegionColor" type="color" value="#668b54"><span id="newRegionColorPreview" class="region-sample" aria-label="Podgląd koloru regionu"></span></div></label>
+    <label>Opis<textarea id="newRegionDescription" maxlength="1000" placeholder="Opisz ten region..."></textarea></label>
+    <fieldset class="region-style-field"><legend>Styl wypełnienia</legend><div class="region-style-choices">
+      <label class="region-style-choice"><input type="radio" name="newRegionFill" value="none" checked><span class="region-style-preview style-none"></span><span class="region-style-name">Tylko obramowanie</span></label>
+      <label class="region-style-choice"><input type="radio" name="newRegionFill" value="tint"><span class="region-style-preview style-tint"></span><span class="region-style-name">Delikatne wypełnienie</span></label>
+      <label class="region-style-choice"><input type="radio" name="newRegionFill" value="hatch"><span class="region-style-preview style-hatch"></span><span class="region-style-name">Kreskowanie</span></label>
+    </div></fieldset>
+    <div class="region-dialog-actions"><button type="button" data-close-region-dialog>Anuluj</button><button type="submit" id="saveRegionButton" class="primary">Utwórz region</button></div>
+  </form>
+</div>
+<div id="regionChooseDialog" class="region-dialog region-delete-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="regionChooseTitle">
+  <h2 id="regionChooseTitle">Wybierz region do edycji</h2>
+  <p class="region-dialog-sub">Wybierz istniejący region, który chcesz edytować.</p>
+  <div id="editRegionList" class="delete-region-list"></div>
+  <p id="editRegionEmpty" class="region-dialog-sub" hidden>Brak regionów dostępnych do edycji.</p>
+  <div class="region-dialog-actions"><button type="button" id="cancelChooseRegion">Anuluj</button><button type="button" id="chooseRegionNext" class="primary" disabled>Przejdź do edycji</button></div>
+</div>
+<div id="regionDeleteDialog" class="region-dialog region-delete-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="regionDeleteTitle">
+  <h2 id="regionDeleteTitle">Usuń region</h2>
+  <p class="region-dialog-sub">Wybierz region do usunięcia. Lista jest filtrowana według warstwy.</p>
+  <label>Warstwa<select id="deleteRegionLayer"><option value="political">Polityczna</option><option value="geographical">Geograficzna</option></select></label>
+  <div id="deleteRegionList" class="delete-region-list"></div>
+  <p id="deleteRegionEmpty" class="region-dialog-sub" hidden>W tej warstwie nie ma żadnych regionów.</p>
+  <div class="region-dialog-actions"><button type="button" data-close-region-dialog>Anuluj</button><button type="button" id="confirmDeleteRegion" class="danger" disabled>Usuń wybrany region</button></div>
+</div>
+<div id="pinDialog" hidden role="dialog" aria-modal="true" aria-labelledby="pinDialogTitle">
+  <h2 id="pinDialogTitle">Dodaj punkt</h2>
+  <p class="pin-dialog-sub" id="pinDialogAddress">Wybrany hex</p>
+  <form id="pinForm">
+    <label>Nazwa znacznika<input id="pinName" type="text" maxlength="100" required placeholder="np. Stare obserwatorium"></label>
+    <label>Rodzaj znacznika<select id="pinStyle"><option value="standard">Zwykły</option><option value="ruin">Ruiny</option><option value="settlement">Osada</option><option value="landmark">Punkt orientacyjny</option><option value="natural">Obiekt przyrodniczy</option></select><span id="pinStylePreview" class="pin-style-preview" aria-label="Podgląd wyglądu znacznika"></span></label>
+    <label>Kolor znacznika<div class="pin-color-control"><input id="pinColor" type="color" value="#eee5cc"><span id="pinColorPreview" class="pin-color-sample"></span></div></label>
+    <label>Opis<textarea id="pinDescription" maxlength="2000" placeholder="Opisz to miejsce..."></textarea></label>
+    <div class="pin-dialog-actions"><button type="button" id="cancelPin">Anuluj</button><button type="submit" class="primary">Zapisz znacznik</button></div>
+  </form>
+</div>
+<div id="pinContextMenu" hidden role="menu" aria-label="Działania na mapie"></div>
+<script src="leaflet/leaflet.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

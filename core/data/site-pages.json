@@ -833,12 +833,13 @@
     "visibility": "public",
     "url": "/page/odyssey/",
     "image": "/core/graphics/voronoi/odyssey-of-the-dragonlords.webp",
-    "layout": "campaign-shell",
+    "layout": "bespoke",
     "manifest": "/page/odyssey/manifest.json",
     "tags": [
       "Kampania",
       "Zamknięta",
-      "Third-Party"
+      "Third-Party",
+      "Thylea"
     ]
   }
 ]

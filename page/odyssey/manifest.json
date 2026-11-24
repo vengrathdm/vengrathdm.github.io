@@ -1,19 +1,20 @@
 {
   "id": "odyssey",
-  "title": "Odyssey",
+  "title": "Odyssey of the Dragonlords",
   "language": "pl",
   "campaign": "Odyssey of the Dragonlords",
   "entry": "/page/odyssey/",
   "theme": "./theme.json",
   "content": "./content.json",
   "sections": [
-    "campaign",
+    "home",
     "characters",
-    "chronicle"
+    "chronicle",
+    "map",
+    "notes",
+    "dashboard"
   ],
-  "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0jPybJxVsDrhvpVm2eMnOUy",
-  "audio": {
-    "src": "/page/odyssey-of-the-dragonlords/res/audio/odyssey.mp3",
-    "continuationKey": "odysseyCampaignTheme"
-  }
+  "status": "Archiwum kampanii · 61 nagrań",
+  "map": "/page/odyssey/Mapa/",
+  "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0jPybJxVsDrhvpVm2eMnOUy"
 }

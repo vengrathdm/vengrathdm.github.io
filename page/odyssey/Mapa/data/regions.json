@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "id": "odyssey-thylea",
+    "name": "Thylea — atlas kampanii",
+    "mapId": "thylea-journey-map",
+    "updatedAt": "2026-11-24",
+    "notes": "Mapa schematyczna oparta na nazwach miejsc z tytułów nagrań; położenia są orientacyjne i nie reprodukują mapy z podręcznika."
+  },
+  "regions": {
+    "political": [
+      {
+        "id": "mytros-reach",
+        "name": "Okolice Mytros",
+        "color": "#b58a50",
+        "description": "Obszar wokół Mytros, miejsca powracającego w kronice.",
+        "fillStyle": "tint",
+        "hexes": [
+          "A1:2930",
+          "A1:2931",
+          "A1:3030",
+          "A1:3031",
+          "A1:3130",
+          "A1:3131"
+        ]
+      }
+    ],
+    "geographical": [
+      {
+        "id": "thylean-isles",
+        "name": "Wyspy Thylei",
+        "color": "#527b91",
+        "description": "Schematyczny archipelag miejsc wymienionych w kronice.",
+        "fillStyle": "hatch",
+        "hexes": [
+          "A1:4241",
+          "A1:4242",
+          "A1:4341",
+          "A1:4342",
+          "A1:5551",
+          "A1:5552",
+          "A1:5651",
+          "A1:5652"
+        ]
+      }
+    ]
+  },
+  "markers": [
+    {
+      "id": "pin-mytros",
+      "name": "Mytros",
+      "style": "settlement",
+      "color": "#d9b66f",
+      "description": "Miejsce powracające w kronice, w tym finałowa bitwa.",
+      "hex": "A1:3031"
+    },
+    {
+      "id": "pin-telamok",
+      "name": "Telamok",
+      "style": "ruin",
+      "color": "#c18a55",
+      "description": "Nazwa pojawia się w tytule sesji 6.",
+      "hex": "A1:4241"
+    },
+    {
+      "id": "pin-yonder",
+      "name": "Wyspa Yonder",
+      "style": "natural",
+      "color": "#7596a1",
+      "description": "Odcinek poświęcony Wyspie Yonder.",
+      "hex": "A1:4848"
+    },
+    {
+      "id": "pin-fire-island",
+      "name": "Wyspa Ognia",
+      "style": "natural",
+      "color": "#bd7048",
+      "description": "Odcinek poświęcony Wyspie Ognia.",
+      "hex": "A1:5651"
+    },
+    {
+      "id": "pin-indigo-cliffs",
+      "name": "Klify Indygo",
+      "style": "landmark",
+      "color": "#879eb0",
+      "description": "Odcinek poświęcony Klifom Indygo.",
+      "hex": "A1:5954"
+    },
+    {
+      "id": "pin-helios-garden",
+      "name": "Ogród Heliosa",
+      "style": "landmark",
+      "color": "#d8bc76",
+      "description": "Odcinek poświęcony Ogrodowi Heliosa.",
+      "hex": "A1:5350"
+    },
+    {
+      "id": "pin-island-time",
+      "name": "Wyspa Czasu",
+      "style": "natural",
+      "color": "#6c9da4",
+      "description": "Odcinek poświęcony Wyspie Czasu.",
+      "hex": "A1:5554"
+    },
+    {
+      "id": "pin-rocs-nest",
+      "name": "Gniazdo Roców",
+      "style": "landmark",
+      "color": "#c18a55",
+      "description": "Odcinek poświęcony Gniazdu Roców.",
+      "hex": "A1:3438"
+    },
+    {
+      "id": "pin-island-fates",
+      "name": "Wyspa Losów",
+      "style": "natural",
+      "color": "#8d8fb5",
+      "description": "Odcinek poświęcony Wyspie Losów.",
+      "hex": "A1:6662"
+    },
+    {
+      "id": "pin-embarkion",
+      "name": "Embarkion",
+      "style": "landmark",
+      "color": "#d9b66f",
+      "description": "Nazwa pojawia się w tytule sesji 24.",
+      "hex": "A1:2322"
+    }
+  ]
+}

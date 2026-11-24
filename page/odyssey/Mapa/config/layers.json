@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "layerOrder": [
+    "political",
+    "geographical"
+  ],
+  "regionNames": {
+    "defaultMode": "hover",
+    "modes": [
+      "hide",
+      "hover",
+      "show"
+    ]
+  },
+  "markers": {
+    "visibility": {
+      "defaultMode": "hover",
+      "modes": [
+        "hidden",
+        "hover",
+        "click",
+        "always"
+      ]
+    }
+  }
+}
