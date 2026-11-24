@@ -303,9 +303,6 @@ html,body{background:var(--campaign-bg)!important;color:var(--campaign-ink)!impo
 /* Unified map tools window and compact controls */
 #toolbar{align-items:center!important;gap:7px!important;padding:5px!important}
 #toolsPanel{width:330px!important;max-width:calc(100vw - 28px)!important;padding:12px!important}
-.tool-tabs{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin:0 0 10px;padding:4px;border:1px solid #3c4486;border-radius:9px;background:#0b102a}
-.tool-tab{min-height:36px;border:1px solid transparent;border-radius:7px;background:transparent;color:#aeb9ee;font:12px var(--campaign-mono);cursor:pointer}
-.tool-tab:hover,.tool-tab.active{border-color:var(--campaign-accent);background:linear-gradient(135deg,#303d78,#51427f);color:#fff}
 .tool-section{display:block;max-height:calc(100vh - 190px);overflow:auto}
 .tool-section[hidden]{display:none!important}
 #toolsPanel .panel-head{margin-bottom:10px}
