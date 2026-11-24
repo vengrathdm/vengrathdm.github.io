@@ -1,0 +1,21 @@
+{
+  "id": "swiatynia-pierwotnego-zla",
+  "title": "Świątynia Pierwotnego Zła",
+  "language": "pl",
+  "campaign": "Świątynia Pierwotnego Zła",
+  "module": "The Temple of Elemental Evil",
+  "edition": "Dungeons & Dragons 5e (2024)",
+  "entry": "/page/swiatynia-pierwotnego-zla/",
+  "theme": "./theme.json",
+  "content": "./content.json",
+  "sections": [
+    "home",
+    "characters",
+    "chronicle",
+    "map",
+    "notes",
+    "dashboard"
+  ],
+  "status": "Kampania aktywna · makieta",
+  "map": "/page/swiatynia-pierwotnego-zla/Mapa/"
+}
