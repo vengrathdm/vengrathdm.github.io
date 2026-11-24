@@ -10,6 +10,7 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   var CS=1.5*R, KPP=S/48, SC=mapConfig.projection.columnsPerSheet, SR=mapConfig.projection.rowsPerSheet, YS=mapConfig.projection.yScale;
   var LAND=mapConfig.projection.landSheets, POLE=mapConfig.projection.pole;
   var map=L.map('map',{crs:L.CRS.Simple,minZoom:mapConfig.view.minZoom,maxZoom:mapConfig.view.maxZoom,zoomSnap:mapConfig.view.zoomSnap,zoomDelta:mapConfig.view.zoomDelta,wheelPxPerZoomLevel:mapConfig.view.wheelPxPerZoomLevel,attributionControl:false,zoomControl:false});
+  L.control.zoom({position:'bottomright'}).addTo(map);
   var ll=function(px,py){return map.unproject([px,py],Z)};
   var bounds=L.latLngBounds(ll(0,HN),ll(WN,0));
   L.imageOverlay(mapConfig.image,bounds,{interactive:false}).addTo(map);
