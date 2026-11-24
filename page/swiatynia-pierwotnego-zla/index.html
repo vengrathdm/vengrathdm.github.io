@@ -265,14 +265,14 @@ function renderParty(){
   var c=DATA.characters[i]||null,card=el('article','pc'+(c?'':' empty'));card.dataset.el=i;
   var tilt=el('div','tilt'),flip=el('div','flip');
   var sub=[c&&c.race,c&&c['class'],c&&c.level?'Lv '+c.level:''].filter(Boolean).join(' · ')||'Rasa · Klasa · Poziom';
-  var front=el('div','face front'),fb=el('button','facebtn');fb.dataset.i='';fb.setAttribute('aria-label','Odwróć kartę, aby poznać historię: '+(c&&c.name||'character')+'\u2019s story');
+  var front=el('div','face front'),fb=el('button','facebtn');fb.dataset.i='';fb.setAttribute('aria-label','Odwróć kartę, aby poznać historię: '+(c&&c.name||'bohatera')+' — historia postaci');
   var pt=el('div','portrait');if(c&&c.portrait){var im=el('img');im.src=c.portrait;im.alt='';pt.append(im)}else pt.append(el('span','',c&&c.name?c.name[0]:'?'));
   fb.append(pt,el('h3','',c&&c.name||'Bohater drużyny'),el('div','sub',sub),el('div','hint','Odwróć kartę ↻'));
   front.append(glyph(i),fb);
   var back=el('div','face back');back.setAttribute('aria-hidden','true');
   var sc=el('div','scroll');
   if(c&&c.stats){var u=el('ul','stats');['STR','DEX','CON','INT','WIS','CHA'].forEach(function(k){var li=el('li');li.append(el('b','',k),document.createTextNode(c.stats[k]!=null?c.stats[k]:'–'));u.append(li)});sc.append(u)}
-  sc.append(el('p','',c&&c.bio||'This hero\u2019s story appears here once character data is loaded.'));
+  sc.append(el('p','',c&&c.bio||'Historia tej postaci pojawi się tutaj po wczytaniu danych bohatera.'));
   if(c&&c.player)sc.append(el('p','sub','Gracz: '+c.player));
   var tb=el('button','turn','Wróć na awers');tb.dataset.i='';tb.tabIndex=-1;
   back.append(glyph(i),el('h3','',c&&c.name||'Character name'),sc,tb);
@@ -289,7 +289,7 @@ function renderParty(){
 function renderChron(){
  var L=$('#chron');L.innerHTML='';
  DATA.chronicle.forEach(function(e,i){
-  var li=el('li','ev'),sl=el('button','seal',String(i+1));sl.dataset.i='';sl.setAttribute('aria-expanded','false');sl.setAttribute('aria-controls','d'+i);sl.setAttribute('aria-label','Toggle details: '+e.title);
+  var li=el('li','ev'),sl=el('button','seal',String(i+1));sl.dataset.i='';sl.setAttribute('aria-expanded','false');sl.setAttribute('aria-controls','d'+i);sl.setAttribute('aria-label','Rozwiń szczegóły: '+e.title);
   var sh=el('div','sheet');sh.append(el('div','date',e.date),el('h3','',e.title),el('p','sumtxt',e.summary));
   var d=el('div','detail');d.id='d'+i;var w=el('div');w.append(el('p','',e.details));d.append(w);
   sh.append(d,el('div','cue'));
