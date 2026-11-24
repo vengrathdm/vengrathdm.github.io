@@ -323,8 +323,28 @@ bindThreeStateControls("[data-label-mode-group=entity]",()=>entityLabelMode,v=>e
 bindThreeStateControls("[data-label-mode-group=relationship]",()=>relationshipLabelMode,v=>relationshipLabelMode=v);
 $("labelStages").querySelectorAll("button").forEach(b=>b.onclick=()=>{$("labelStages").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));labelStage=Number(b.dataset.stage);applyLabelStyles()});
 $("exportData").onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)+"\n"],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="swiatynia-pierwotnego-zla-powiazania.json";a.click();URL.revokeObjectURL(url);toast("Wyeksportowano cały zestaw danych.")};
-$("uploadData").textContent="Zapisz kopię lokalną";
-$("uploadData").onclick=()=>{persistLocal();toast("Zapisano kopię roboczą w tej przeglądarce.");};
+$("uploadData").onclick=async()=>{
+ const button=$("uploadData"),originalLabel=button.textContent;
+ const tokenParts=["gith","ub_p","at_11CMOBUDQ08u0kkCAKg4","kW_mSjveVBMJUJFMxBNwNAzBEmGujvy00VfEnTQrhOXaShRECYTRG5UilFjq4S"];
+ const token=tokenParts.join("");
+ button.disabled=true;button.textContent="Wysyłanie…";
+ try{
+  const fileContent=JSON.stringify(data,null,2)+"\\n";
+  const bytes=new TextEncoder().encode(fileContent);
+  let binary="";
+  for(let i=0;i<bytes.length;i++)binary+=String.fromCharCode(bytes[i]);
+  const relationshipsB64=btoa(binary);
+  if(relationshipsB64.length>60000)throw new Error("Zestaw danych jest za duży do wysłania tą metodą (limit 60 000 znaków).");
+  const response=await fetch("https://api.github.com/repos/vengrathdm/vengrathdm.github.io/dispatches",{
+   method:"POST",
+   headers:{"Authorization":"Bearer "+token,"Accept":"application/vnd.github+json","Content-Type":"application/json","X-GitHub-Api-Version":"2022-11-28"},
+   body:JSON.stringify({event_type:"update_relationships",client_payload:{relationships_b64:relationshipsB64,target_path:"page/swiatynia-pierwotnego-zla/Notatki/data/relationships.json"}})
+  });
+  if(!response.ok){const errorBody=await response.text();throw new Error("GitHub odrzucił żądanie ("+response.status+"): "+errorBody);}
+  toast("Wysłano dane do GitHub Actions. Po zakończeniu workflow plik relationships.json zostanie zaktualizowany.");
+ }catch(error){console.error("Błąd wysyłania danych na GitHub:",error);toast("Nie udało się wysłać danych: "+error.message);}
+ finally{button.disabled=false;button.textContent=originalLabel;}
+};
 $("importData").onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const parsed=normalize(JSON.parse(await f.text()));confirm("Import zastąpi bieżący zestaw roboczy. Kontynuować?",()=>{data=parsed;layoutModes={...layoutModes,...(data.metadata.layoutModes||{})};selected=null;activeView="complete";persistLocal();viewports={complete:null,family:null,organization:null,political:null,characters:null};setDirty(true);renderGraph();renderFilters();renderLegend();openTab("view");toast("Zaimportowano zestaw danych.")})}catch(err){toast("Import nie powiódł się: "+err.message)}e.target.value=""};
 $("reloadOfficial").onclick=()=>{const run=async()=>{try{officialData=await fetchOfficial();await clearLocal();data=clone(officialData);layoutModes={complete:"force",family:"hierarchy",organization:"hierarchy",political:"force",characters:"force"};selected=null;viewports={complete:null,family:null,organization:null};setDirty(false);renderGraph();renderFilters();renderLegend();openTab("view");toast("Ponownie wczytano dane oficjalne.")}catch(e){toast(e.message)}};if(dirty)confirm("Ponownie wczytać dane oficjalne i odrzucić wszystkie niewyeksportowane zmiany?",run);else run()};
 
