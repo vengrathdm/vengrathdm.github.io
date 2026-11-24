@@ -700,7 +700,7 @@
     "type": "campaign",
     "visibility": "hidden",
     "url": "/page/rise-of-the-drow/",
-    "image": "/page/rise-of-the-drow/res/Graphics/hero-image.webp",
+    "image": "/core/graphics/voronoi/rise-of-the-drow.webp",
     "layout": "bespoke",
     "manifest": null,
     "tags": [
