@@ -236,12 +236,8 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
 
   var activeToolSection='layersPanel';
   function syncToolTabs(){
-    ['layersPanel','editor'].forEach(function(id){
-      var active=activeToolSection===id,tab=document.querySelector('[data-tool-section="'+id+'"]'),section=document.getElementById(id);
-      section.hidden=!active;
-      tab.classList.toggle('active',active);
-      tab.setAttribute('aria-selected',String(active));
-    });
+    ['layersPanel','editor'].forEach(function(id){document.getElementById(id).hidden=activeToolSection!==id;});
+    document.getElementById('toolsTitle').textContent=activeToolSection==='layersPanel'?'Warstwy':'Edytor';
     document.getElementById('layersButton').setAttribute('aria-expanded',String(!document.getElementById('toolsPanel').hidden&&activeToolSection==='layersPanel'));
     document.getElementById('editorButton').setAttribute('aria-expanded',String(!document.getElementById('toolsPanel').hidden&&activeToolSection==='editor'));
   }
