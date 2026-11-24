@@ -276,6 +276,18 @@ main>section,main>section.alt{background:transparent!important}
 @media(max-width:700px){body{background-attachment:scroll}}
 
 </style>
+
+<style id="odyssey-audio-style">
+#odyssey-audio{position:fixed;z-index:1200;right:24px;bottom:24px;width:68px;height:68px;touch-action:none;user-select:none}
+#odyssey-audio .audio-ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(#c49a58 0deg,var(--audio-progress,#c49a58) 0deg,rgba(220,207,177,.22) 0deg);box-shadow:0 5px 24px #0008;cursor:ns-resize}
+#odyssey-audio .audio-ring:before{content:"";position:absolute;inset:5px;border-radius:50%;background:rgba(5,24,37,.96);border:1px solid rgba(214,185,128,.55)}
+#odyssey-audio button{position:absolute;inset:10px;border:1px solid rgba(214,185,128,.5);border-radius:50%;background:linear-gradient(145deg,#17394b,#071b2a);color:#e9d7ae;display:grid;place-items:center;cursor:pointer;padding:0}
+#odyssey-audio button svg{width:22px;height:22px;fill:currentColor}
+#odyssey-audio .audio-tip{position:absolute;right:0;bottom:76px;white-space:nowrap;padding:5px 9px;border:1px solid #b99761;background:#071b2aeb;color:#e9d7ae;font:11px/1.2 Georgia,serif;letter-spacing:.06em;border-radius:3px;opacity:0;pointer-events:none;transition:opacity .2s}
+#odyssey-audio:hover .audio-tip,#odyssey-audio:focus-within .audio-tip{opacity:1}
+@media(max-width:700px){#odyssey-audio{right:14px;bottom:86px;width:60px;height:60px}}
+@media(prefers-reduced-motion:reduce){#odyssey-audio .audio-tip{transition:none}}
+</style>
 </head>
 <body>
   
@@ -540,6 +552,33 @@ function go(id){
 }
 addEventListener('hashchange',function(){go(location.hash.slice(1)||'intro')});
 go(views.some(function(v){return '#'+v.id===location.hash})?location.hash.slice(1):'intro');
+</script>
+
+<!-- Odyssey ambient soundtrack; intentionally only on the campaign hub, not the full-view Map or Notes pages. -->
+<div id="odyssey-audio" aria-label="Sterowanie muzyką Odyssey">
+ <div class="audio-ring" role="slider" aria-label="Głośność" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65" tabindex="0"></div>
+ <button type="button" aria-label="Odtwórz muzykę" aria-pressed="false">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+ </button>
+ <span class="audio-tip">PRZECIĄGNIJ PIERŚCIEŃ · GŁOŚNOŚĆ</span>
+ <audio id="odyssey-soundtrack" src="/page/odyssey/res/odyssey.mp3" preload="none" loop></audio>
+</div>
+<script>
+(function(){
+ var root=document.getElementById('odyssey-audio');if(!root)return;
+ var audio=root.querySelector('audio'),button=root.querySelector('button'),ring=root.querySelector('.audio-ring'),drag=false;
+ audio.volume=.65;
+ function paint(){var v=Math.round(audio.volume*100),deg=audio.volume*360;ring.style.background='conic-gradient(#c49a58 0deg '+deg+'deg,rgba(220,207,177,.22) '+deg+'deg 360deg)';ring.setAttribute('aria-valuenow',v)}
+ function state(){var playing=!audio.paused;button.setAttribute('aria-pressed',String(playing));button.setAttribute('aria-label',playing?'Wstrzymaj muzykę':'Odtwórz muzykę');button.innerHTML=playing?'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>':'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>'}
+ button.addEventListener('click',function(){if(audio.paused)audio.play().catch(function(){});else audio.pause()});
+ audio.addEventListener('play',state);audio.addEventListener('pause',state);audio.addEventListener('ended',state);
+ function setFromPointer(e){var r=ring.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,a=Math.atan2(e.clientY-cy,e.clientX-cx)+Math.PI/2;if(a<0)a+=Math.PI*2;audio.volume=Math.max(0,Math.min(1,a/(Math.PI*2)));paint()}
+ ring.addEventListener('pointerdown',function(e){drag=true;ring.setPointerCapture(e.pointerId);setFromPointer(e);e.preventDefault()});
+ ring.addEventListener('pointermove',function(e){if(drag)setFromPointer(e)});
+ ring.addEventListener('pointerup',function(){drag=false});ring.addEventListener('pointercancel',function(){drag=false});
+ ring.addEventListener('keydown',function(e){if(e.key==='ArrowUp'||e.key==='ArrowRight'){audio.volume=Math.min(1,audio.volume+.05);e.preventDefault()}else if(e.key==='ArrowDown'||e.key==='ArrowLeft'){audio.volume=Math.max(0,audio.volume-.05);e.preventDefault()}else return;paint()});
+ paint();state();
+})();
 </script>
 </body>
 </html>
