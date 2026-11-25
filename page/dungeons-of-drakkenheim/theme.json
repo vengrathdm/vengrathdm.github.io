@@ -1,29 +1,29 @@
 {
   "colors": {
-    "base1": "#090a10",
-    "base2": "#11121d",
-    "base3": "#1a1b2b",
-    "base4": "#25243b",
-    "base5": "#33304c",
-    "accent1": "#9a7bda",
-    "accent2": "#b8a1e8",
-    "text1": "#f0edf8",
-    "text2": "#d9d3e8",
-    "text3": "#b4abc9",
-    "textMuted": "#827a9d",
-    "titleAccent": "#d8c9ff",
-    "line1": "#403b5d",
-    "line2": "#77669d",
-    "navBackground": "#0e0f19",
-    "navText": "#e2dff0",
-    "navActiveBackground": "#29263e"
+    "base1": "#100d0e",
+    "base2": "#1b1516",
+    "base3": "#302326",
+    "base4": "#572b2d",
+    "base5": "#554047",
+    "accent1": "#8f342d",
+    "accent2": "#c45b3c",
+    "text1": "#e9e0d2",
+    "text2": "#d4c6b6",
+    "text3": "#b8aaa0",
+    "textMuted": "#8e817c",
+    "titleAccent": "#d66b4d",
+    "line1": "#554047",
+    "line2": "#8f342d",
+    "navBackground": "#1b1516",
+    "navText": "#e9e0d2",
+    "navActiveBackground": "#302326"
   },
   "typography": {
-    "heading": "\"Voltaire\", sans-serif",
-    "body": "\"Fira Sans Extra Condensed\", sans-serif",
-    "serif": "\"Brygada 1918\", Georgia, serif"
+    "heading": "'Cinzel', serif",
+    "body": "'IM Fell English', Georgia, serif",
+    "serif": "'IM Fell English', Georgia, serif"
   },
-  "fontsUrl": "https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Voltaire&family=Brygada+1918:wght@400;500;600;700&display=swap",
+  "fontsUrl": "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap",
   "heroImage": "/core/graphics/voronoi/dungeons-of-drakkenheim.webp",
-  "audioColor": "#8b2020"
+  "audioColor": "#c45b3c"
 }
