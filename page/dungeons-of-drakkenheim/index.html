@@ -127,7 +127,11 @@ button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .seal:active{filter:brightness(1.15)}
 .seal:focus-visible{outline:2px solid #d8c5ff;outline-offset:5px}
 .crystal-growth{position:absolute;z-index:0;inset:0;pointer-events:none;overflow:visible}
-.crystal-growth img{position:absolute;display:block;width:var(--crystal-size,155px);height:var(--crystal-size,155px);object-fit:contain;opacity:.94;filter:drop-shadow(0 5px 8px #000b);transform:translate(-50%,-50%) rotate(var(--crystal-rotation,0deg)) scaleX(var(--crystal-flip-x,1)) scaleY(var(--crystal-flip-y,1));transform-origin:center}
+.crystal-growth img{position:absolute;display:block;width:var(--crystal-size,155px);height:var(--crystal-size,155px);object-fit:contain;opacity:.94;filter:drop-shadow(0 5px 8px #000b);transform:translate(-50%,-50%) rotate(var(--crystal-rotation,0deg)) scaleX(var(--crystal-flip-x,1)) scaleY(var(--crystal-flip-y,1));transform-origin:center;transition:left .12s linear,top .12s linear;animation:crystal-emerge .42s cubic-bezier(.2,.8,.2,1) both}
+@keyframes crystal-emerge{from{opacity:0;scale:.35}to{opacity:.94;scale:1}}
+.sheet{padding-bottom:calc(17px + var(--sheet-extra,0px));transition:padding-bottom .72s cubic-bezier(.2,.75,.25,1),box-shadow .3s}
+.sheet{transform:none}
+.ev:hover .sheet{transform:none}
 .sheet{position:relative;z-index:1;overflow:visible;background:radial-gradient(ellipse at 12% 8%,#fff9 0,transparent 34%),radial-gradient(ellipse at 90% 92%,#8b6b9b30 0,transparent 42%),repeating-linear-gradient(4deg,transparent 0 5px,#6b4d6810 6px,#fff2 7px),linear-gradient(105deg,#eee5d5 0%,#d8c9b7 48%,#c8b7a6 100%);color:#211827;border:1px solid #a78bfa55;border-left:5px solid #6d4aa8;border-radius:2px 9px 3px 7px;padding:19px 24px 17px;box-shadow:0 9px 22px #000a,inset 0 0 24px #60445b30,inset 0 0 0 1px #fff7;transition:transform .3s,box-shadow .3s;transform:scale(var(--sheet-scale,1));transform-origin:center}
 .sheet::before{content:"";position:absolute;inset:5px;pointer-events:none;border:1px solid #80677a35;border-radius:1px 5px 2px 4px;opacity:.8}
 .sheet::after{content:"";position:absolute;right:0;top:0;width:34px;height:34px;pointer-events:none;background:linear-gradient(225deg,#9d8b7b 0 12%,#e5d7c7 13% 48%,#b8a797 49% 51%,transparent 53%);filter:drop-shadow(-2px 2px 2px #39233b44);opacity:.8}
@@ -423,30 +427,44 @@ function renderParty(){
 
 function renderChron(){
  var L=$('#chron');L.innerHTML='';
- function growCrystals(li,sh,seedScale){
+ function growCrystals(li,sh){
   var old=li.querySelector('.crystal-growth');if(old)old.remove();
-  sh.style.setProperty('--sheet-scale',seedScale);
+  if(li._crystalObserver)li._crystalObserver.disconnect();
   var growth=el('div','crystal-growth');growth.setAttribute('aria-hidden','true');
-  // Measure the rendered parchment so every crystal centre sits exactly on its perimeter.
-  var paper=sh.getBoundingClientRect(),parent=li.getBoundingClientRect();
-  var sx=paper.left-parent.left,sy=paper.top-parent.top,sw=paper.width,shh=paper.height;
-  function place(x,y){
+  var edges={top:[],bottom:[],left:[],right:[]};
+  function add(edge,distance){
    var im=el('img');im.src='/page/dungeons-of-drakkenheim/res/graphics/brylka.webp';im.alt='';im.draggable=false;
    var size=155*(.9+Math.random()*.2);
    im.style.setProperty('--crystal-size',size+'px');
    im.style.setProperty('--crystal-rotation',(Math.random()*360)+'deg');
    im.style.setProperty('--crystal-flip-x',Math.random()<.5?-1:1);
    im.style.setProperty('--crystal-flip-y',Math.random()<.5?-1:1);
-   im.style.left=x+'px';im.style.top=y+'px';growth.append(im);
+   im.dataset.distance=distance;im.dataset.edge=edge;growth.append(im);edges[edge].push(im);
   }
-  // Walk each side independently. The 35–55px step is deliberately much
-  // smaller than the 140–170px crystals, producing a dense overlapping fringe.
-  var d;
-  for(d=0;d<=sw;){place(sx+d,sy);d+=35+Math.random()*20}
-  for(d=0;d<=sw;){place(sx+d,sy+shh);d+=35+Math.random()*20}
-  for(d=0;d<=shh;){place(sx,sy+d);d+=35+Math.random()*20}
-  for(d=0;d<=shh;){place(sx+sw,sy+d);d+=35+Math.random()*20}
-  li.insertBefore(growth,sh);
+  function fill(edge,length){
+   var nodes=edges[edge],last=nodes.length?Number(nodes[nodes.length-1].dataset.distance):0;
+   if(!nodes.length)add(edge,0);
+   while(last<length-12){last+=35+Math.random()*20;add(edge,last)}
+   nodes.forEach(function(im){im.hidden=Number(im.dataset.distance)>length+12});
+  }
+  function sync(){
+   if(!sh.isConnected)return;
+   var paper=sh.getBoundingClientRect(),parent=li.getBoundingClientRect();
+   var sx=paper.left-parent.left,sy=paper.top-parent.top,sw=paper.width,shh=paper.height;
+   ['top','bottom'].forEach(function(edge){fill(edge,sw)});
+   ['left','right'].forEach(function(edge){fill(edge,shh)});
+   Object.keys(edges).forEach(function(edge){
+    edges[edge].forEach(function(im){
+     var d=Number(im.dataset.distance);
+     if(edge==='top'){im.style.left=(sx+d)+'px';im.style.top=sy+'px'}
+     else if(edge==='bottom){im.style.left=(sx+d)+'px';im.style.top=(sy+shh)+'px'}
+     else if(edge==='left'){im.style.left=sx+'px';im.style.top=(sy+d)+'px'}
+     else{im.style.left=(sx+sw)+'px';im.style.top=(sy+d)+'px'}
+    });
+   });
+  }
+  li.insertBefore(growth,sh);sync();
+  if(window.ResizeObserver){li._crystalObserver=new ResizeObserver(sync);li._crystalObserver.observe(sh)}
  }
  DATA.chronicle.forEach(function(e,i){
   var li=el('li','ev'),sl=el('button','seal');var crystal=el('img');crystal.src='/page/dungeons-of-drakkenheim/res/graphics/brylka.webp';crystal.alt='';crystal.draggable=false;sl.append(crystal,el('span','seal-number',String(e.sessionNumber||i+1)));sl.dataset.i='';sl.setAttribute('aria-expanded','false');sl.setAttribute('aria-controls','d'+i);sl.setAttribute('aria-label','Rozwiń szczegóły: '+e.title);
@@ -455,16 +473,16 @@ function renderChron(){
   (e.recordings||[]).forEach(function(rec){var a=el('a','recording-link',rec.label||'Oglądaj na YouTube');a.href=rec.url;a.target='_blank';a.rel='noopener noreferrer';w.append(a)});
   d.append(w);sh.append(d,el('div','cue'));
   function t(){var o=li.classList.toggle('open');sl.setAttribute('aria-expanded',o)}
-  var sheetScaleIndex=0,sheetScales=[.92,1,1.08];
+  var expansionIndex=0,expansionLevels=[0,58,116];
   sl.onclick=t;
   sh.onclick=function(ev){
    if(ev.target.closest('a'))return;
-   sheetScaleIndex=(sheetScaleIndex+1)%sheetScales.length;
-   growCrystals(li,sh,sheetScales[sheetScaleIndex]);
+   expansionIndex=(expansionIndex+1)%expansionLevels.length;
+   sh.style.setProperty('--sheet-extra',expansionLevels[expansionIndex]+'px');
    if(ev.target===sh||ev.target.closest('.date,h3,.sumtxt,.cue'))t();
   };
   sh.dataset.i='';
-  li.append(sl,sh);L.append(li);growCrystals(li,sh,.94+Math.random()*.12)
+  li.append(sl,sh);L.append(li);growCrystals(li,sh)
  })
 }
 
