@@ -118,11 +118,14 @@ button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .chron{list-style:none;margin:0;padding:8px 0 8px 2px;position:relative}
 .chron::before{content:"";position:absolute;left:30px;top:0;bottom:0;border-left:2px dotted #8b5bd6;opacity:.72}
 .ev{position:relative;padding-left:84px;margin-bottom:28px;isolation:isolate}
-.seal{all:unset;position:absolute;z-index:2;left:0;top:18px;width:62px;height:62px;display:grid;place-items:center;clip-path:polygon(50% 0,88% 24%,100% 68%,50% 100%,0 68%,12% 24%);background:linear-gradient(135deg,#f0e8ff 0 10%,#b58aff 11% 24%,#6d4aa8 25% 48%,#38205f 49% 68%,#d8c5ff 69% 78%,#4b267f 79%);box-shadow:0 5px 14px #000b,inset 0 0 0 2px #e8d9ff88;font:1.45rem var(--head);color:#f5edff;text-shadow:0 2px 4px #160b28;transition:transform .3s,filter .3s;cursor:pointer}
-.seal:hover{transform:scale(1.12) rotate(-7deg);filter:drop-shadow(0 0 9px #a78bfa)}
-.seal:active{transform:scale(.94)}
+.seal{all:unset;position:absolute;z-index:2;left:0;top:18px;width:62px;height:62px;display:grid;place-items:center;cursor:pointer}
+.seal img{display:block;width:100%;height:100%;object-fit:contain;transform:rotate(0);filter:drop-shadow(0 5px 7px #0009);transform-origin:center}
+.seal .seal-number{position:absolute;inset:0;display:grid;place-items:center;font:1.05rem var(--head);font-weight:700;color:#f5edff;text-shadow:0 1px 4px #160b28;pointer-events:none}
+.ev:nth-child(even) .seal img{transform:scaleY(-1)}
+.ev .seal:hover img,.ev.open .seal img{transform:rotate(-5deg)}
+.ev:nth-child(even) .seal:hover img,.ev:nth-child(even).open .seal img{transform:rotate(5deg) scaleY(-1)}
+.seal:active{filter:brightness(1.15)}
 .seal:focus-visible{outline:2px solid #d8c5ff;outline-offset:5px}
-.ev.open .seal{filter:drop-shadow(0 0 12px #b58aff);background:linear-gradient(135deg,#fff 0 10%,#d8c5ff 11% 28%,#8b5bd6 29% 54%,#49385f 55% 72%,#e7d8ff 73% 82%,#6d4aa8 83%)}
 .sheet{position:relative;overflow:hidden;background:radial-gradient(ellipse at 12% 8%,#fff9 0,transparent 34%),radial-gradient(ellipse at 90% 92%,#8b6b9b30 0,transparent 42%),repeating-linear-gradient(4deg,transparent 0 5px,#6b4d6810 6px,#fff2 7px),linear-gradient(105deg,#eee5d5 0%,#d8c9b7 48%,#c8b7a6 100%);color:#211827;border:1px solid #a78bfa55;border-left:5px solid #6d4aa8;border-radius:2px 9px 3px 7px;padding:19px 24px 17px;box-shadow:0 9px 22px #000a,inset 0 0 24px #60445b30,inset 0 0 0 1px #fff7;transition:transform .3s,box-shadow .3s;transform:rotate(var(--r,-.35deg))}
 .sheet::before{content:"";position:absolute;inset:5px;pointer-events:none;border:1px solid #80677a35;border-radius:1px 5px 2px 4px;opacity:.8}
 .sheet::after{content:"";position:absolute;right:0;top:0;width:34px;height:34px;pointer-events:none;background:linear-gradient(225deg,#9d8b7b 0 12%,#e5d7c7 13% 48%,#b8a797 49% 51%,transparent 53%);filter:drop-shadow(-2px 2px 2px #39233b44);opacity:.8}
@@ -419,7 +422,7 @@ function renderParty(){
 function renderChron(){
  var L=$('#chron');L.innerHTML='';
  DATA.chronicle.forEach(function(e,i){
-  var li=el('li','ev'),sl=el('button','seal',String(e.sessionNumber||i+1));sl.dataset.i='';sl.setAttribute('aria-expanded','false');sl.setAttribute('aria-controls','d'+i);sl.setAttribute('aria-label','Rozwiń szczegóły: '+e.title);
+  var li=el('li','ev'),sl=el('button','seal');var crystal=el('img');crystal.src='/page/dungeons-of-drakkenheim/res/graphics/brylka.webp';crystal.alt='';crystal.draggable=false;sl.append(crystal,el('span','seal-number',String(e.sessionNumber||i+1)));sl.dataset.i='';sl.setAttribute('aria-expanded','false');sl.setAttribute('aria-controls','d'+i);sl.setAttribute('aria-label','Rozwiń szczegóły: '+e.title);
   var sh=el('div','sheet');sh.append(el('div','date','ODCINEK '+String(e.sessionNumber||i+1).padStart(2,'0')),el('h3','',e.title),el('p','sumtxt',e.description||'Nagranie sesji kampanii Dungeons of Drakkenheim.'));
   var d=el('div','detail'),w=el('div');w.append(el('p','',e.description||'Nagranie sesji kampanii Dungeons of Drakkenheim.'));
   (e.recordings||[]).forEach(function(rec){var a=el('a','recording-link',rec.label||'Oglądaj na YouTube');a.href=rec.url;a.target='_blank';a.rel='noopener noreferrer';w.append(a)});
