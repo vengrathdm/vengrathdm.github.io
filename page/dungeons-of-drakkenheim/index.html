@@ -127,12 +127,12 @@ button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .seal:active{filter:brightness(1.15)}
 .seal:focus-visible{outline:2px solid #d8c5ff;outline-offset:5px}
 .crystal-growth{position:absolute;z-index:0;inset:0;pointer-events:none;overflow:visible}
-.crystal-growth img{position:absolute;display:block;width:var(--crystal-size,84px);height:var(--crystal-size,84px);object-fit:contain;opacity:.94;filter:drop-shadow(0 5px 8px #000b);transform:translate(-50%,-50%) rotate(var(--crystal-rotation,0deg)) scale(var(--crystal-flip,1));transform-origin:center}
-.sheet{position:relative;z-index:1;overflow:visible;background:radial-gradient(ellipse at 12% 8%,#fff9 0,transparent 34%),radial-gradient(ellipse at 90% 92%,#8b6b9b30 0,transparent 42%),repeating-linear-gradient(4deg,transparent 0 5px,#6b4d6810 6px,#fff2 7px),linear-gradient(105deg,#eee5d5 0%,#d8c9b7 48%,#c8b7a6 100%);color:#211827;border:1px solid #a78bfa55;border-left:5px solid #6d4aa8;border-radius:2px 9px 3px 7px;padding:19px 24px 17px;box-shadow:0 9px 22px #000a,inset 0 0 24px #60445b30,inset 0 0 0 1px #fff7;transition:transform .3s,box-shadow .3s;transform:rotate(var(--r,-.35deg)) scale(var(--sheet-scale,1));transform-origin:center}
+.crystal-growth img{position:absolute;display:block;width:var(--crystal-size,155px);height:var(--crystal-size,155px);object-fit:contain;opacity:.94;filter:drop-shadow(0 5px 8px #000b);transform:translate(-50%,-50%) rotate(var(--crystal-rotation,0deg)) scaleX(var(--crystal-flip-x,1)) scaleY(var(--crystal-flip-y,1));transform-origin:center}
+.sheet{position:relative;z-index:1;overflow:visible;background:radial-gradient(ellipse at 12% 8%,#fff9 0,transparent 34%),radial-gradient(ellipse at 90% 92%,#8b6b9b30 0,transparent 42%),repeating-linear-gradient(4deg,transparent 0 5px,#6b4d6810 6px,#fff2 7px),linear-gradient(105deg,#eee5d5 0%,#d8c9b7 48%,#c8b7a6 100%);color:#211827;border:1px solid #a78bfa55;border-left:5px solid #6d4aa8;border-radius:2px 9px 3px 7px;padding:19px 24px 17px;box-shadow:0 9px 22px #000a,inset 0 0 24px #60445b30,inset 0 0 0 1px #fff7;transition:transform .3s,box-shadow .3s;transform:scale(var(--sheet-scale,1));transform-origin:center}
 .sheet::before{content:"";position:absolute;inset:5px;pointer-events:none;border:1px solid #80677a35;border-radius:1px 5px 2px 4px;opacity:.8}
 .sheet::after{content:"";position:absolute;right:0;top:0;width:34px;height:34px;pointer-events:none;background:linear-gradient(225deg,#9d8b7b 0 12%,#e5d7c7 13% 48%,#b8a797 49% 51%,transparent 53%);filter:drop-shadow(-2px 2px 2px #39233b44);opacity:.8}
 .ev:nth-child(even) .sheet{--r:.4deg}
-.ev:hover .sheet{transform:rotate(0) translateX(4px) scale(var(--sheet-scale,1));box-shadow:0 15px 30px #000b,inset 0 0 24px #60445b30,inset 0 0 0 1px #fff7}
+.ev:hover .sheet{transform:scale(var(--sheet-scale,1));box-shadow:0 15px 30px #000b,inset 0 0 24px #60445b30,inset 0 0 0 1px #fff7}
 .ev .date{position:relative;z-index:1;display:flex;align-items:center;gap:9px;font: .78rem 'IBM Plex Mono',monospace;font-weight:600;color:#68447e;letter-spacing:.12em;text-transform:uppercase}
 .ev .date::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,#8b5bd688,transparent)}
 .ev h3{position:relative;z-index:1;font-size:1.8rem;line-height:1.15;margin:7px 0 2px;color:#24182d}
@@ -425,24 +425,28 @@ function renderChron(){
  var L=$('#chron');L.innerHTML='';
  function growCrystals(li,sh,seedScale){
   var old=li.querySelector('.crystal-growth');if(old)old.remove();
-  var growth=el('div','crystal-growth');growth.setAttribute('aria-hidden','true');
-  var count=14+Math.floor(Math.random()*7),edges=['top','bottom','left','right'];
-  var sx=sh.offsetLeft,sy=sh.offsetTop,sw=sh.offsetWidth,shh=sh.offsetHeight;
-  for(var n=0;n<count;n++){
-   var edge=edges[Math.floor(Math.random()*edges.length)],im=el('img');
-   im.src='/page/dungeons-of-drakkenheim/res/graphics/brylka.webp';im.alt='';im.draggable=false;
-   var size=124+Math.random()*62,rotation=Math.floor(Math.random()*360),flip=(Math.random()<.5?-1:1),protrude=22+Math.random()*54;
-   im.style.setProperty('--crystal-size',size+'px');
-   im.style.setProperty('--crystal-rotation',rotation+'deg');
-   im.style.setProperty('--crystal-flip',flip);
-   if(edge==='top'){im.style.left=(sx+Math.random()*sw)+'px';im.style.top=(sy-protrude)+'px'}
-   else if(edge==='bottom'){im.style.left=(sx+Math.random()*sw)+'px';im.style.top=(sy+shh+protrude)+'px'}
-   else if(edge==='left'){im.style.left=(sx-protrude)+'px';im.style.top=(sy+Math.random()*shh)+'px'}
-   else{im.style.left=(sx+sw+protrude)+'px';im.style.top=(sy+Math.random()*shh)+'px'}
-   growth.append(im);
-  }
-  li.insertBefore(growth,sh);
   sh.style.setProperty('--sheet-scale',seedScale);
+  var growth=el('div','crystal-growth');growth.setAttribute('aria-hidden','true');
+  // Measure the rendered parchment so every crystal centre sits exactly on its perimeter.
+  var paper=sh.getBoundingClientRect(),parent=li.getBoundingClientRect();
+  var sx=paper.left-parent.left,sy=paper.top-parent.top,sw=paper.width,shh=paper.height;
+  function place(x,y){
+   var im=el('img');im.src='/page/dungeons-of-drakkenheim/res/graphics/brylka.webp';im.alt='';im.draggable=false;
+   var size=155*(.9+Math.random()*.2);
+   im.style.setProperty('--crystal-size',size+'px');
+   im.style.setProperty('--crystal-rotation',(Math.random()*360)+'deg');
+   im.style.setProperty('--crystal-flip-x',Math.random()<.5?-1:1);
+   im.style.setProperty('--crystal-flip-y',Math.random()<.5?-1:1);
+   im.style.left=x+'px';im.style.top=y+'px';growth.append(im);
+  }
+  // Walk each side independently. The 35–55px step is deliberately much
+  // smaller than the 140–170px crystals, producing a dense overlapping fringe.
+  var d;
+  for(d=0;d<=sw;){place(sx+d,sy);d+=35+Math.random()*20}
+  for(d=0;d<=sw;){place(sx+d,sy+shh);d+=35+Math.random()*20}
+  for(d=0;d<=shh;){place(sx,sy+d);d+=35+Math.random()*20}
+  for(d=0;d<=shh;){place(sx+sw,sy+d);d+=35+Math.random()*20}
+  li.insertBefore(growth,sh);
  }
  DATA.chronicle.forEach(function(e,i){
   var li=el('li','ev'),sl=el('button','seal');var crystal=el('img');crystal.src='/page/dungeons-of-drakkenheim/res/graphics/brylka.webp';crystal.alt='';crystal.draggable=false;sl.append(crystal,el('span','seal-number',String(e.sessionNumber||i+1)));sl.dataset.i='';sl.setAttribute('aria-expanded','false');sl.setAttribute('aria-controls','d'+i);sl.setAttribute('aria-label','Rozwiń szczegóły: '+e.title);
