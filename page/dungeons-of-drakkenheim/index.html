@@ -131,12 +131,12 @@ button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .crystal-growth img.crystal-retiring{opacity:0;scale:.35}
 .sheet{transform:none}
 .ev:hover .sheet{transform:none}
-.sheet{padding-bottom:calc(17px + var(--sheet-extra,0px));transition:padding-bottom .72s cubic-bezier(.2,.75,.25,1),transform .3s,box-shadow .3s}
 .sheet{position:relative;z-index:1;overflow:visible;background:radial-gradient(ellipse at 12% 8%,#fff9 0,transparent 34%),radial-gradient(ellipse at 90% 92%,#8b6b9b30 0,transparent 42%),repeating-linear-gradient(4deg,transparent 0 5px,#6b4d6810 6px,#fff2 7px),linear-gradient(105deg,#eee5d5 0%,#d8c9b7 48%,#c8b7a6 100%);color:#211827;border:1px solid #a78bfa55;border-left:5px solid #6d4aa8;border-radius:2px 9px 3px 7px;padding:19px 24px 17px;box-shadow:0 9px 22px #000a,inset 0 0 24px #60445b30,inset 0 0 0 1px #fff7;transition:transform .3s,box-shadow .3s;transform:scale(var(--sheet-scale,1));transform-origin:center}
 .sheet::before{content:"";position:absolute;inset:5px;pointer-events:none;border:1px solid #80677a35;border-radius:1px 5px 2px 4px;opacity:.8}
 .sheet::after{content:"";position:absolute;right:0;top:0;width:34px;height:34px;pointer-events:none;background:linear-gradient(225deg,#9d8b7b 0 12%,#e5d7c7 13% 48%,#b8a797 49% 51%,transparent 53%);filter:drop-shadow(-2px 2px 2px #39233b44);opacity:.8}
 .ev:nth-child(even) .sheet{--r:.4deg}
 .ev:hover .sheet{transform:scale(var(--sheet-scale,1));box-shadow:0 15px 30px #000b,inset 0 0 24px #60445b30,inset 0 0 0 1px #fff7}
+.sheet{padding-bottom:calc(17px + var(--sheet-extra,0px));transition:padding-bottom .72s cubic-bezier(.2,.75,.25,1),transform .3s,box-shadow .3s}
 .ev .date{position:relative;z-index:1;display:flex;align-items:center;gap:9px;font: .78rem 'IBM Plex Mono',monospace;font-weight:600;color:#68447e;letter-spacing:.12em;text-transform:uppercase}
 .ev .date::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,#8b5bd688,transparent)}
 .ev h3{position:relative;z-index:1;font-size:1.8rem;line-height:1.15;margin:7px 0 2px;color:#24182d}
