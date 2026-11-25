@@ -26,7 +26,7 @@ function App(){
  useEffect(()=>{localStorage.setItem('fa-sessions',JSON.stringify(sessions))},[sessions]);
  useEffect(()=>{const fn=(e:KeyboardEvent)=>{if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1)};window.addEventListener('keydown',fn);return()=>window.removeEventListener('keydown',fn)},[active]);
  const currentIndex=sections.findIndex(s=>s.id===active);
- function navigate(id:Section){location.hash=id;setActive(id);window.scrollTo({top:0,behavior:'instant' as ScrollBehavior})}
+ function navigate(id:Section){location.hash=id;setActive(id);window.scrollTo({top:0,behavior:'auto'})}
  function go(delta:number){navigate(sections[(currentIndex+delta+sections.length)%sections.length].id)}
  function ping(message:string){setToast(message);window.setTimeout(()=>setToast(''),2200)}
  function addNote(){if(!newNote.title.trim())return;setNotes(n=>[{...newNote,id:Date.now(),pinned:false},...n]);setNewNote({title:'',body:'',tag:'CLUE'});ping('Note pinned to the field journal.')}
