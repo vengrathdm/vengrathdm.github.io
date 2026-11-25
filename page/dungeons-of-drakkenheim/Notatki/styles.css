@@ -108,4 +108,4 @@
 :root{--palette-bg:#0c0914;--palette-panel:#151020;--palette-surface:#241b35;--palette-ink:#eee8f7;--palette-muted:#b9aecb;--palette-gold:#a78bfa;--palette-red:#6d4aa8;--palette-blood:#39254f;--kraft:#a78bfa;--kraft-dark:#6d4aa8;--paper:#eee8f7;--paper-shadow:#241b35;--carbon:#0c0914;--carbon-light:#241b35;--stamp-red:#6d4aa8;--amber:#a78bfa;--soot:#0c0914;--ink:#eee8f7;--ink-fade:#b9aecb;--display:'Cinzel',serif;--panel:rgba(27,21,22,.94);--panel-line:rgba(169,138,88,.65);--muted:#b9aecb}#workspace{background:radial-gradient(ellipse at 50% 10%,#241b35,transparent 55%),linear-gradient(160deg,#0c0914,#151020)}.panel{border-color:#49385f}.brand,.brand strong{color:#eee8f7}.canvas-tools button,.icon-button{background:#241b35;border-color:#49385f;color:#eee8f7}
 
 /* Campaign workspace background */
-#workspace{background:linear-gradient(180deg,rgba(4,16,25,.30),rgba(4,16,25,.48)),url("/core/graphics/voronoi/dungeons-of-drakkenheim.webp") center center/cover no-repeat}
+#workspace{background:linear-gradient(180deg,rgba(4,16,25,.30),rgba(4,16,25,.48)),url("/page/dungeons-of-drakkenheim/res/graphics/background.webp") center center/cover no-repeat}
