@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "drakkenheim-map",
   "title": "Drakkenheim — atlas kampanii",
-  "image": "/core/graphics/voronoi/dungeons-of-drakkenheim.webp",
+  "image": "/page/dungeons-of-drakkenheim/Mapa/map.png",
   "dataUrl": "./data/regions.json",
   "storageKey": "vengrath-drakkenheim-map-v1",
   "dimensions": {
