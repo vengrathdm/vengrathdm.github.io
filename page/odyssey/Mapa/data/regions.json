@@ -5,11 +5,221 @@
     "name": "Thylea — atlas kampanii",
     "mapId": "thylea-journey-map",
     "updatedAt": "2026-11-25",
-    "notes": "Puste warstwy regionów i znaczników — przeznaczone do ręcznego uzupełnienia."
+    "notes": "Znaczniki i współrzędne zaimportowane z pliku odyssey-mapa.json."
   },
   "regions": {
     "political": [],
     "geographical": []
   },
-  "markers": []
+  "markers": [
+    {
+      "id": "pmwvcto1z48aa",
+      "name": "Kwaśny Trunek",
+      "style": "settlement",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:1914"
+    },
+    {
+      "id": "pmwvctv8l26xf",
+      "name": "Estoria",
+      "style": "settlement",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:1513"
+    },
+    {
+      "id": "pmwvcue6hbkyj",
+      "name": "Nekropolia na Telamoku",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:1314"
+    },
+    {
+      "id": "pmwvcupbcrpx6",
+      "name": "Mithralowa Kuźnia",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:1014"
+    },
+    {
+      "id": "pmwvcutorfhxh",
+      "name": "Smocza Wyspa",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:0512"
+    },
+    {
+      "id": "pmwvcv5xj3a0f",
+      "name": "Wyspa Typhon",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:3211"
+    },
+    {
+      "id": "pmwvcvbxjzu53",
+      "name": "Wyspa Czasu",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:3219"
+    },
+    {
+      "id": "pmwvcvu93pmvo",
+      "name": "Aresia",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:2423"
+    },
+    {
+      "id": "pmwvcvzjrdfhn",
+      "name": "Wyspa Skorpiona",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:2227"
+    },
+    {
+      "id": "pmwvcw3xvmf7x",
+      "name": "Gniazdo Roka",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:2830"
+    },
+    {
+      "id": "pmwvcwaca8c91",
+      "name": "Ogród Heliosa",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:2434"
+    },
+    {
+      "id": "pmwvcwgzjxpsx",
+      "name": "Praxys - Wieża Sydona",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:2936"
+    },
+    {
+      "id": "pmwvcwkjb23fj",
+      "name": "Wyspa Themis",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:1729"
+    },
+    {
+      "id": "pmwvcwrr78zri",
+      "name": "Kharibdys",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:0729"
+    },
+    {
+      "id": "pmwvcwvu3mxhq",
+      "name": "Zguba Tytana",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:1127"
+    },
+    {
+      "id": "pmwvcx1en2rlu",
+      "name": "Złote Serce Thylei",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:1124"
+    },
+    {
+      "id": "pmwvcx7wf41tq",
+      "name": "Wyspy Indygo",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:0523"
+    },
+    {
+      "id": "pmwvcxckj2yd4",
+      "name": "Wyspa Chimery",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:1523"
+    },
+    {
+      "id": "pmwvcxhbfrjtv",
+      "name": "Wyspa Losów",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:1524"
+    },
+    {
+      "id": "pmwvcxlu33rz9",
+      "name": "Wyspa Wygnańców",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:1821"
+    },
+    {
+      "id": "pmwvcxs2nij24",
+      "name": "Wyspa Ognia",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:1520"
+    },
+    {
+      "id": "pmwvcxw4vuav6",
+      "name": "Wyspa Yonder",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:2020"
+    },
+    {
+      "id": "pmwvcxzmrcj57",
+      "name": "Mytros",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:1416"
+    },
+    {
+      "id": "pmwvcy4gan97d",
+      "name": "Zamszona Świątynia",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:1716"
+    },
+    {
+      "id": "pmwvcyaaz9tcg",
+      "name": "Świątynia Wyroczni",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:1714"
+    },
+    {
+      "id": "pmwvcyfqv45rr",
+      "name": "Martwe Wodospady",
+      "style": "standard",
+      "color": "#f4e5c9",
+      "description": "",
+      "hex": "A1:2414"
+    }
+  ],
+  "markerEdits": true
 }
