@@ -464,7 +464,7 @@ function renderChron(){
    if(ev.target===sh||ev.target.closest('.date,h3,.sumtxt,.cue'))t();
   };
   sh.dataset.i='';
-  li.append(sl,sh);growCrystals(li,sh,.94+Math.random()*.12);L.append(li)
+  li.append(sl,sh);L.append(li);growCrystals(li,sh,.94+Math.random()*.12)
  })
 }
 
