@@ -426,18 +426,19 @@ function renderChron(){
  function growCrystals(li,sh,seedScale){
   var old=li.querySelector('.crystal-growth');if(old)old.remove();
   var growth=el('div','crystal-growth');growth.setAttribute('aria-hidden','true');
-  var count=12+Math.floor(Math.random()*7),edges=['top','bottom','left','right'];
+  var count=14+Math.floor(Math.random()*7),edges=['top','bottom','left','right'];
+  var sx=sh.offsetLeft,sy=sh.offsetTop,sw=sh.offsetWidth,shh=sh.offsetHeight;
   for(var n=0;n<count;n++){
    var edge=edges[Math.floor(Math.random()*edges.length)],im=el('img');
    im.src='/page/dungeons-of-drakkenheim/res/graphics/brylka.webp';im.alt='';im.draggable=false;
-   var size=70+Math.random()*42,rotation=Math.floor(Math.random()*360),flip=(Math.random()<.5?-1:1);
+   var size=124+Math.random()*62,rotation=Math.floor(Math.random()*360),flip=(Math.random()<.5?-1:1),protrude=22+Math.random()*54;
    im.style.setProperty('--crystal-size',size+'px');
    im.style.setProperty('--crystal-rotation',rotation+'deg');
    im.style.setProperty('--crystal-flip',flip);
-   if(edge==='top'){im.style.left=(Math.random()*112-6)+'%';im.style.top=(-12-Math.random()*38)+'px'}
-   else if(edge==='bottom'){im.style.left=(Math.random()*112-6)+'%';im.style.top='calc(100% + '+(12+Math.random()*38)+'px)'}
-   else if(edge==='left'){im.style.left=(-12-Math.random()*38)+'px';im.style.top=(Math.random()*112-6)+'%'}
-   else{im.style.left='calc(100% + '+(12+Math.random()*38)+'px)';im.style.top=(Math.random()*112-6)+'%'}
+   if(edge==='top'){im.style.left=(sx+Math.random()*sw)+'px';im.style.top=(sy-protrude)+'px'}
+   else if(edge==='bottom'){im.style.left=(sx+Math.random()*sw)+'px';im.style.top=(sy+shh+protrude)+'px'}
+   else if(edge==='left'){im.style.left=(sx-protrude)+'px';im.style.top=(sy+Math.random()*shh)+'px'}
+   else{im.style.left=(sx+sw+protrude)+'px';im.style.top=(sy+Math.random()*shh)+'px'}
    growth.append(im);
   }
   li.insertBefore(growth,sh);
