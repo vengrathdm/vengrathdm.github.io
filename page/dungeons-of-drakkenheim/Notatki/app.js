@@ -45,7 +45,7 @@ const entity=id=>data.entities.find(x=>x.id===id),rel=id=>data.relationships.fin
 function toast(s){$("toast").textContent=s;$("toast").classList.add("visible");clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("toast").classList.remove("visible"),2800)}
 function setDirty(v){dirty=v;const status=$("dirtyState");if(status){status.textContent=v?"Kopia robocza zmieniona · oczekiwanie na zapis lokalny":"Wczytano dane oficjalne · brak niezapisanych zmian";status.style.color=v?"#e0a45a":"#c49a7b"}}
 let saveTimer,saveGeneration=0;
-function openLocalDb(){return new Promise((resolve,reject)=>{if(!("indexedDB" in window)){reject(Error("IndexedDB jest niedostępne"));return}const request=indexedDB.open("VengrathOdysseyRelationshipMap",1);request.onupgradeneeded=()=>{if(!request.result.objectStoreNames.contains("state"))request.result.createObjectStore("state",{keyPath:"id"})};request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error)})}
+function openLocalDb(){return new Promise((resolve,reject)=>{if(!("indexedDB" in window)){reject(Error("IndexedDB jest niedostępne"));return}const request=indexedDB.open("VengrathDrakkenheimRelationshipMap",1);request.onupgradeneeded=()=>{if(!request.result.objectStoreNames.contains("state"))request.result.createObjectStore("state",{keyPath:"id"})};request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error)})}
 async function persistLocal(){
  clearTimeout(saveTimer);const generation=saveGeneration;saveTimer=setTimeout(async()=>{
   if(generation!==saveGeneration)return;
@@ -54,10 +54,10 @@ async function persistLocal(){
  },180);
 }
 async function restoreLocal(){
- const restore=source=>{if(!source||source.metadata?.id!=="odyssey-relations")return false;data=normalize(source);setDirty(true);if($("persistenceState"))$("persistenceState").textContent="Przywrócono lokalną kopię roboczą";persistLocal();return true};
+ const restore=source=>{if(!source||source.metadata?.id!=="drakkenheim-relations")return false;data=normalize(source);setDirty(true);if($("persistenceState"))$("persistenceState").textContent="Przywrócono lokalną kopię roboczą";persistLocal();return true};
  try{const db=await openLocalDb();const saved=await new Promise((resolve,reject)=>{const req=db.transaction("state","readonly").objectStore("state").get("working");req.onsuccess=()=>resolve(req.result?.data||null);req.onerror=()=>reject(req.error)});db.close();if(restore(saved))return true}catch(_){}
  try{const raw=localStorage.getItem(STORAGE_KEY);if(raw&&restore(JSON.parse(raw)))return true}catch(_){}
- // Migrate an Odyssey working copy left in the old shared Świątynia storage namespace.
+ // Migrate an Drakkenheim working copy left in the old shared Świątynia storage namespace.
  try{const legacyDb=await new Promise((resolve,reject)=>{const req=indexedDB.open("VengrathTempleRelationshipMap",1);req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)});const legacy=await new Promise((resolve,reject)=>{const req=legacyDb.transaction("state","readonly").objectStore("state").get("working");req.onsuccess=()=>resolve(req.result?.data||null);req.onerror=()=>reject(req.error)});legacyDb.close();if(restore(legacy))return true}catch(_){}
  try{const legacyRaw=localStorage.getItem("vengrath.swiatynia.relationshipMap.v1");if(legacyRaw&&restore(JSON.parse(legacyRaw)))return true}catch(_){}
  return false;
@@ -78,7 +78,7 @@ function applyEntityTypes(metadata){
 }
 function normalize(source){
  if(!source||typeof source!=="object"||source.schemaVersion!==1||!Array.isArray(source.entities)||!Array.isArray(source.relationships))throw Error("Oczekiwano schemaVersion 1 oraz tablic obiektów i relacji.");
- const metadata=source.metadata&&typeof source.metadata==="object"?source.metadata:{id:"odyssey-relations",name:"Dungeons of Drakkenheim — sieć powiązań"};
+ const metadata=source.metadata&&typeof source.metadata==="object"?source.metadata:{id:"drakkenheim-relations",name:"Dungeons of Drakkenheim — sieć powiązań"};
  applyEntityTypes(metadata);
  metadata.relationshipTypes=(Array.isArray(metadata.relationshipTypes)?metadata.relationshipTypes:[]).filter(t=>t&&typeof t.name==="string"&&t.name.trim()).map(t=>({name:t.name.trim().slice(0,80),description:typeof t.description==="string"?t.description:"",color:/^#[0-9a-f]{6}$/i.test(t.color||"")?t.color:"#d45a36",lineStyle:["solid","dotted","dashed"].includes(t.lineStyle)?t.lineStyle:"solid",direction:["none","towards","from","mutual"].includes(t.direction)?t.direction:"none"}));
  const validViews=new Set(["complete","family","organization","political","characters"]);
@@ -390,5 +390,5 @@ cy.on("tap",e=>{if(e.target!==cy)return;if(pendingPlacement)commitEntityPlacemen
 cy.on("dbltap","node",e=>{setSelection("entity",e.target.id());$("dossierWindow").hidden=false;focusEntity(e.target.id())});
 cy.on("dragfree","node",e=>{const n=e.target,at=n.renderedPosition(),target=cy.nodes().filter(x=>x.id()!==n.id()&&x.renderedBoundingBox().x1<=at.x&&x.renderedBoundingBox().x2>=at.x&&x.renderedBoundingBox().y1<=at.y&&x.renderedBoundingBox().y2>=at.y).first();saveCurrentPositions();if(target.length)startRelationshipWizard(null,n.id(),target.id())});
 cy.on("pan zoom",capture);
-async function init(){let hasOfficial=false;try{officialData=await fetchOfficial();hasOfficial=true;}catch(e){toast("Dane oficjalne są niedostępne: "+e.message)}const restored=await restoreLocal();if(!restored){if(hasOfficial){data=clone(officialData);setDirty(false);}else{data={schemaVersion:1,metadata:{id:"odyssey-relations",name:"Dungeons of Drakkenheim — sieć powiązań"},entities:[],relationships:[]};officialData=clone(data);setDirty(false);}}layoutModes={...layoutModes,...(data.metadata.layoutModes||{})};renderGraph();renderFilters();renderLegend();updateCount();$("entityReferenceOptions")?.remove();const dl=document.createElement("datalist");dl.id="entityReferenceOptions";dl.innerHTML=data.entities.map(e=>'<option value="'+esc(e.name)+'">').join("");document.body.append(dl)}
+async function init(){let hasOfficial=false;try{officialData=await fetchOfficial();hasOfficial=true;}catch(e){toast("Dane oficjalne są niedostępne: "+e.message)}const restored=await restoreLocal();if(!restored){if(hasOfficial){data=clone(officialData);setDirty(false);}else{data={schemaVersion:1,metadata:{id:"drakkenheim-relations",name:"Dungeons of Drakkenheim — sieć powiązań"},entities:[],relationships:[]};officialData=clone(data);setDirty(false);}}layoutModes={...layoutModes,...(data.metadata.layoutModes||{})};renderGraph();renderFilters();renderLegend();updateCount();$("entityReferenceOptions")?.remove();const dl=document.createElement("datalist");dl.id="entityReferenceOptions";dl.innerHTML=data.entities.map(e=>'<option value="'+esc(e.name)+'">').join("");document.body.append(dl)}
 init();
