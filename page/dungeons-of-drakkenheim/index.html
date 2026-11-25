@@ -121,6 +121,9 @@ button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .face.back>.turn{margin-top:auto}
 
 /* Section titles: Drakkenheim Display, uppercase, with the campaign title gradient */
+.section-title-art{display:block;width:auto;max-width:100%;height:clamp(54px,8vw,100px);object-fit:contain;margin:0 auto}
+@media(max-width:600px){.section-title-art{height:clamp(46px,10vw,72px)}}
+
 #characters h2,#chronicle h2,#map h2,#notes h2,#overview h2{font-family:var(--head);text-transform:uppercase;background:linear-gradient(#eee8f7,#a78bfa 55%,#6d4aa8);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-shadow:none}
 
 /* chronicle */
@@ -326,27 +329,27 @@ main>section,main>section.alt{background:transparent!important}
 </div></div></section>
 
 <section id="characters"><div class="tear"></div><div class="wrap">
- <h2>Postaci</h2>
+ <h2><img class="section-title-art" src="/page/dungeons-of-drakkenheim/res/graphics/postaci.webp" alt="Postaci"></h2>
  <div class="party" id="party"></div>
 </div></section>
 
 <section id="chronicle" class="alt"><div class="tear"></div><div class="wrap">
- <h2>Kronika</h2>
+ <h2><img class="section-title-art" src="/page/dungeons-of-drakkenheim/res/graphics/kronika.webp" alt="Kronika"></h2>
  <ol class="chron" id="chron"></ol>
 </div></section>
 
 <section id="map"><div class="tear"></div><div class="wrap">
- <h2>Mapa</h2>
+ <h2><img class="section-title-art" src="/page/dungeons-of-drakkenheim/res/graphics/mapa.webp" alt="Mapa"></h2>
  <div class="frame"><div class="mount" id="map-mount" data-embed="map" aria-label="Interaktywna mapa kampanii"><iframe src="/page/dungeons-of-drakkenheim/Mapa/" title="Interaktywna mapa kampanii — Atlas Drakkenheim" loading="lazy" allow="fullscreen"></iframe></div><a class="workspace-direct-link" href="/page/dungeons-of-drakkenheim/Mapa/" target="_blank" rel="noopener">Otwórz mapę w osobnej karcie ↗</a></div>
 </div></section>
 
 <section id="notes" class="alt"><div class="tear"></div><div class="wrap">
- <h2>Notatki</h2>
+ <h2><img class="section-title-art" src="/page/dungeons-of-drakkenheim/res/graphics/notatki.webp" alt="Notatki"></h2>
  <div class="frame book"><div class="mount notes" id="notes-mount" data-embed="notes" aria-label="Interaktywna mapa myśli kampanii"><iframe src="/page/dungeons-of-drakkenheim/Notatki/" title="Interaktywna mapa myśli — Archiwum bohaterów i wątków" loading="lazy" allow="fullscreen"></iframe></div><a class="workspace-direct-link" href="/page/dungeons-of-drakkenheim/Notatki/" target="_blank" rel="noopener">Otwórz Notatki w osobnej karcie ↗</a></div>
 </div></section>
 
 <section id="overview"><div class="tear"></div><div class="wrap">
- <h2>Status</h2>
+ <h2><img class="section-title-art" src="/page/dungeons-of-drakkenheim/res/graphics/status.webp" alt="Status"></h2>
  <div class="board" id="ov"></div>
 </div></section>
 </main>
