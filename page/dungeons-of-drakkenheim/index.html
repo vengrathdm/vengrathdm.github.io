@@ -25,7 +25,13 @@
 @media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#0c0914;--bg2:#151020}}
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:20px/1.55 var(--body);overflow-x:hidden}
+html{background:var(--bg)}
+body{margin:0;background:transparent;color:var(--ink);font:20px/1.55 var(--body);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:var(--bg) url('/page/dungeons-of-drakkenheim/res/graphics/background.webp') center center/cover no-repeat}
+main{position:relative;z-index:1}
+#screen-crystals{position:fixed;inset:0;z-index:55;pointer-events:none;overflow:visible}
+#screen-crystals img{position:absolute;display:block;width:var(--crystal-size,155px);height:var(--crystal-size,155px);object-fit:contain;opacity:.94;filter:drop-shadow(0 5px 8px #000b);transform:translate(-50%,-50%) rotate(var(--crystal-rotation,0deg)) scaleX(var(--crystal-flip-x,1)) scaleY(var(--crystal-flip-y,1));translate:0 0;transform-origin:center;transition:opacity .72s cubic-bezier(.2,.75,.25,1),scale .72s cubic-bezier(.2,.75,.25,1),translate .72s cubic-bezier(.2,.75,.25,1)}
+#screen-crystals img.crystal-entering{opacity:0;scale:.35;translate:var(--crystal-enter-x,0px) var(--crystal-enter-y,0px)}
 h1,h2,h3{font-family:'Cinzel',Georgia,serif;font-weight:600;margin:0;line-height:1}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .wrap{max-width:1200px;margin:0 auto;padding:0 22px}
@@ -34,7 +40,7 @@ section{position:relative;padding:110px 0 70px}
 h2{font-size:clamp(2.6rem,7vw,4.8rem);margin:4px 0 12px;color:var(--ink);text-shadow:0 2px 0 #000,0 0 28px rgba(196,91,60,.25)}
 .lede{color:var(--mute);max-width:56ch;margin:0 0 40px}
 .tear{position:absolute;left:0;right:0;top:-1px;height:34px;background:var(--bg);clip-path:polygon(0 0,100% 0,100% 30%,96% 80%,91% 40%,86% 90%,80% 35%,74% 85%,68% 30%,61% 95%,55% 40%,48% 85%,42% 30%,35% 90%,28% 40%,21% 80%,14% 30%,8% 85%,3% 35%,0 70%)}
-.alt{background:linear-gradient(var(--bg2),var(--bg))}
+.alt{background:transparent}
 
 /* dock */
 #dock{position:fixed;z-index:60;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;gap:2px;padding:6px;background:linear-gradient(#151020,#151020);border:2px solid #49385f;border-radius:14px;box-shadow:0 10px 30px #000,inset 0 1px 0 #6d4aa8;max-width:calc(100vw - 16px)}
@@ -334,6 +340,39 @@ main>section,main>section.alt{background:transparent!important}
 
 
 <script>
+/* Fixed viewport crystal frame */
+(function(){
+ var frame=el('div');frame.id='screen-crystals';frame.setAttribute('aria-hidden','true');document.body.append(frame);
+ var edges={top:[],bottom:[],left:[],right:[]};
+ function add(edge,distance){
+  var im=el('img');im.src='/page/dungeons-of-drakkenheim/res/graphics/brylka.webp';im.alt='';im.draggable=false;
+  im.style.setProperty('--crystal-size',(155*(.9+Math.random()*.2))+'px');
+  im.style.setProperty('--crystal-rotation',(Math.random()*360)+'deg');
+  im.style.setProperty('--crystal-flip-x',Math.random()<.5?-1:1);
+  im.style.setProperty('--crystal-flip-y',Math.random()<.5?-1:1);
+  var inward={top:[0,28],bottom:[0,-28],left:[28,0],right:[-28,0]}[edge];
+  im.style.setProperty('--crystal-enter-x',inward[0]+'px');im.style.setProperty('--crystal-enter-y',inward[1]+'px');
+  im.dataset.distance=distance;im.classList.add('crystal-entering');frame.append(im);edges[edge].push(im);
+  requestAnimationFrame(function(){im.classList.remove('crystal-entering')});
+ }
+ function sync(){
+  var w=document.documentElement.clientWidth,h=window.innerHeight;
+  ['top','bottom'].forEach(function(edge){
+   var nodes=edges[edge],last=nodes.length?Number(nodes[nodes.length-1].dataset.distance):0;
+   if(!nodes.length)add(edge,0);
+   while(last<w-12){last+=35+Math.random()*20;add(edge,last)}
+   nodes.forEach(function(im){im.style.left=Math.min(Number(im.dataset.distance),w)+'px';im.style.top=(edge==='top'?0:h)+'px'});
+  });
+  ['left','right'].forEach(function(edge){
+   var nodes=edges[edge],last=nodes.length?Number(nodes[nodes.length-1].dataset.distance):0;
+   if(!nodes.length)add(edge,0);
+   while(last<h-12){last+=35+Math.random()*20;add(edge,last)}
+   nodes.forEach(function(im){im.style.top=Math.min(Number(im.dataset.distance),h)+'px';im.style.left=(edge==='left'?0:w)+'px'});
+  });
+ }
+ sync();addEventListener('resize',sync,{passive:true});
+})();
+ 
 /* DATA: placeholders only. Replace via CampaignHub.set*() */
 var DATA={
   "characters": [],
