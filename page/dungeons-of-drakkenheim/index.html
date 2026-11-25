@@ -473,12 +473,12 @@ function renderChron(){
   (e.recordings||[]).forEach(function(rec){var a=el('a','recording-link',rec.label||'Oglądaj na YouTube');a.href=rec.url;a.target='_blank';a.rel='noopener noreferrer';w.append(a)});
   d.append(w);sh.append(d,el('div','cue'));
   function t(){var o=li.classList.toggle('open');sl.setAttribute('aria-expanded',o)}
-  var expansionIndex=0,expansionLevels=[0,58,116];
+  var expansionHeight=0;
   sl.onclick=t;
   sh.onclick=function(ev){
    if(ev.target.closest('a'))return;
-   expansionIndex=(expansionIndex+1)%expansionLevels.length;
-   sh.style.setProperty('--sheet-extra',expansionLevels[expansionIndex]+'px');
+   expansionHeight+=48;
+   sh.style.setProperty('--sheet-extra',expansionHeight+'px');
    if(ev.target===sh||ev.target.closest('.date,h3,.sumtxt,.cue'))t();
   };
   sh.dataset.i='';
