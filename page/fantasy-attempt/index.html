@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10131c"><meta name="description" content="A living archive for a strange and wonderful fantasy campaign.">
+<title>Fantasy Attempt — The Unwritten World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./src/styles.css">
+<script type="importmap">{"imports":{"react":"https://esm.sh/react@18.3.1","react-dom/client":"https://esm.sh/react-dom@18.3.1/client"}}</script>
+<script src="https://unpkg.com/@babel/standalone@7.26.10/babel.min.js"></script>
+</head>
+<body><div id="root"><div class="boot">WAKING THE WORLD<span>✦</span></div></div>
+<script type="module">
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+const response=await fetch('./src/App.tsx');
+if(!response.ok)throw new Error('Could not load campaign application');
+const source=await response.text();
+const compiled=Babel.transform(source,{filename:'App.tsx',presets:[['typescript',{allExtensions:true,isTSX:true}],['react',{runtime:'classic'}]],sourceType:'module'}).code;
+const moduleUrl=URL.createObjectURL(new Blob([compiled],{type:'text/javascript'}));
+const {default:App}=await import(moduleUrl);
+createRoot(document.getElementById('root')).render(React.createElement(App));
+</script></body></html>
