@@ -128,8 +128,8 @@ button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .seal:active{filter:brightness(1.15)}
 .seal:focus-visible{outline:2px solid #d8c5ff;outline-offset:5px}
 .crystal-growth{position:absolute;z-index:0;inset:0;pointer-events:none;overflow:visible}
-.crystal-growth img{position:absolute;display:block;width:var(--crystal-size,155px);height:var(--crystal-size,155px);object-fit:contain;opacity:.94;filter:drop-shadow(0 5px 8px #000b);transform:translate(-50%,-50%) rotate(var(--crystal-rotation,0deg)) scaleX(var(--crystal-flip-x,1)) scaleY(var(--crystal-flip-y,1));transform-origin:center;transition:opacity .72s cubic-bezier(.2,.75,.25,1),scale .72s cubic-bezier(.2,.75,.25,1)}
-.crystal-growth img.crystal-retiring{opacity:0;scale:.35}
+.crystal-growth img{position:absolute;display:block;width:var(--crystal-size,155px);height:var(--crystal-size,155px);object-fit:contain;opacity:.94;filter:drop-shadow(0 5px 8px #000b);transform:translate(-50%,-50%) rotate(var(--crystal-rotation,0deg)) scaleX(var(--crystal-flip-x,1)) scaleY(var(--crystal-flip-y,1));translate:0 0;transform-origin:center;transition:opacity .72s cubic-bezier(.2,.75,.25,1),scale .72s cubic-bezier(.2,.75,.25,1),translate .72s cubic-bezier(.2,.75,.25,1)}
+.crystal-growth img.crystal-retiring{opacity:0;scale:.35;translate:var(--crystal-hide-x,0px) var(--crystal-hide-y,0px)}
 .sheet{transform:none}
 .ev:hover .sheet{transform:none}
 .sheet{position:relative;z-index:1;overflow:visible;background:radial-gradient(ellipse at 12% 8%,#fff9 0,transparent 34%),radial-gradient(ellipse at 90% 92%,#8b6b9b30 0,transparent 42%),repeating-linear-gradient(4deg,transparent 0 5px,#6b4d6810 6px,#fff2 7px),linear-gradient(105deg,#eee5d5 0%,#d8c9b7 48%,#c8b7a6 100%);color:#211827;border:1px solid #a78bfa55;border-left:5px solid #6d4aa8;border-radius:2px 9px 3px 7px;padding:19px 24px 17px;box-shadow:0 9px 22px #000a,inset 0 0 24px #60445b30,inset 0 0 0 1px #fff7;transition:transform .3s,box-shadow .3s;transform:scale(var(--sheet-scale,1));transform-origin:center}
@@ -440,11 +440,14 @@ function renderChron(){
    im.style.setProperty('--crystal-rotation',(Math.random()*360)+'deg');
    im.style.setProperty('--crystal-flip-x',Math.random()<.5?-1:1);
    im.style.setProperty('--crystal-flip-y',Math.random()<.5?-1:1);
+   var inward={top:[0,30],bottom:[0,-30],left:[30,0],right:[-30,0]}[edge];
+   im.style.setProperty('--crystal-hide-x',inward[0]+'px');
+   im.style.setProperty('--crystal-hide-y',inward[1]+'px');
    im.dataset.distance=distance;im.dataset.edge=edge;
-   im.hidden=false;im.style.opacity='0';im.style.scale='.35';
+   im.hidden=false;im.classList.add('crystal-retiring');
    im.addEventListener('transitionend',function(ev){if(ev.propertyName==='opacity'&&im.classList.contains('crystal-retiring'))im.hidden=true});
    growth.append(im);edges[edge].push(im);
-   requestAnimationFrame(function(){im.style.opacity='';im.style.scale=''});
+   requestAnimationFrame(function(){im.classList.remove('crystal-retiring')});
   }
   function fill(edge,length){
    var nodes=edges[edge],last=nodes.length?Number(nodes[nodes.length-1].dataset.distance):0;
