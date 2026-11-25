@@ -1,22 +1,22 @@
 {
   "colors": {
-    "base1": "#100d0e",
-    "base2": "#1b1516",
-    "base3": "#302326",
-    "base4": "#572b2d",
-    "base5": "#554047",
-    "accent1": "#8f342d",
-    "accent2": "#c45b3c",
-    "text1": "#e9e0d2",
-    "text2": "#d4c6b6",
-    "text3": "#b8aaa0",
-    "textMuted": "#8e817c",
-    "titleAccent": "#d66b4d",
-    "line1": "#554047",
-    "line2": "#8f342d",
-    "navBackground": "#1b1516",
-    "navText": "#e9e0d2",
-    "navActiveBackground": "#302326"
+    "base1": "#0c0914",
+    "base2": "#151020",
+    "base3": "#241b35",
+    "base4": "#39254f",
+    "base5": "#49385f",
+    "accent1": "#6d4aa8",
+    "accent2": "#a78bfa",
+    "text1": "#eee8f7",
+    "text2": "#d6cbe8",
+    "text3": "#b9aecb",
+    "textMuted": "#8d82a3",
+    "titleAccent": "#c4a7ff",
+    "line1": "#49385f",
+    "line2": "#6d4aa8",
+    "navBackground": "#151020",
+    "navText": "#eee8f7",
+    "navActiveBackground": "#241b35"
   },
   "typography": {
     "heading": "'Cinzel', serif",
@@ -25,5 +25,5 @@
   },
   "fontsUrl": "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap",
   "heroImage": "/core/graphics/voronoi/dungeons-of-drakkenheim.webp",
-  "audioColor": "#c45b3c"
+  "audioColor": "#a78bfa"
 }
