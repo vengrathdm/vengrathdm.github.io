@@ -1,6 +1,6 @@
 import { el } from './dom.js';
 export function initScreenCrystalFrame(){
-{
+
  var frame=el('div');frame.id='screen-crystals';frame.setAttribute('aria-hidden','true');document.body.append(frame);
  var edges={top:[],bottom:[],left:[],right:[]};
  function add(edge,distance){
