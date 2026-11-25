@@ -115,31 +115,37 @@ button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .face.back>.turn{margin-top:auto}
 
 /* chronicle */
-.chron{list-style:none;margin:0;padding:0;position:relative}
-.chron::before{content:"";position:absolute;left:30px;top:0;bottom:0;border-left:3px dotted #6d4aa8}
-.ev{position:relative;padding-left:84px;margin-bottom:26px}
-.seal{all:unset;position:absolute;left:0;top:8px;width:62px;height:62px;border-radius:50% 46% 52% 48%;background:linear-gradient(135deg,#d8c5ff 0 12%,#8b5bd6 13% 34%,#4b267f 35% 55%,#b58aff 56% 72%,#38205f 73%);clip-path:polygon(50% 0,88% 24%,100% 68%,50% 100%,0 68%,12% 24%);border-radius:0;box-shadow:0 5px 12px #000,inset 0 -4px 6px #0006,inset 0 3px 4px #a78bfa66;display:grid;place-items:center;font:1.7rem var(--head);color:#0c0914;text-shadow:0 1px 0 #a78bfa88;transition:transform .25s,box-shadow .25s}
-.seal:hover{transform:scale(1.14) rotate(-8deg);box-shadow:0 8px 18px #000,0 0 26px rgba(228,192,120,.7),inset 0 -4px 6px #0006}
-.seal:active{transform:scale(.92)}
-.seal:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
-.ev.open .seal{background:linear-gradient(135deg,#f0e8ff 0 12%,#b58aff 13% 34%,#6d4aa8 35% 55%,#d8c5ff 56% 72%,#49385f 73%);color:#0c0914;box-shadow:0 0 30px rgba(167,139,250,.9),0 5px 12px #000}
-.sheet{background:linear-gradient(100deg,var(--paper),var(--paper2));color:#0c0914;border-radius:3px 12px 3px 12px;padding:16px 22px;box-shadow:0 8px 20px #0009,inset 0 0 30px #49385f55;transition:transform .25s,box-shadow .25s;transform:rotate(var(--r,-.4deg))}
-.ev:nth-child(even) .sheet{--r:.5deg}
-.ev:hover .sheet{transform:rotate(0) translateX(6px);box-shadow:0 14px 28px #000a,inset 0 0 30px #49385f55}
-.ev .date{font:1rem var(--head);color:var(--blood);letter-spacing:.1em}
-.ev h3{font-size:1.8rem}.ev .sumtxt{margin:2px 0 0;font-family:'IM Fell English',Georgia,serif;font-size:1.45rem;line-height:1.25}
-.detail{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
+.chron{list-style:none;margin:0;padding:8px 0 8px 2px;position:relative}
+.chron::before{content:"";position:absolute;left:30px;top:0;bottom:0;border-left:2px dotted #8b5bd6;opacity:.72}
+.ev{position:relative;padding-left:84px;margin-bottom:28px;isolation:isolate}
+.seal{all:unset;position:absolute;z-index:2;left:0;top:18px;width:62px;height:62px;display:grid;place-items:center;clip-path:polygon(50% 0,88% 24%,100% 68%,50% 100%,0 68%,12% 24%);background:linear-gradient(135deg,#f0e8ff 0 10%,#b58aff 11% 24%,#6d4aa8 25% 48%,#38205f 49% 68%,#d8c5ff 69% 78%,#4b267f 79%);box-shadow:0 5px 14px #000b,inset 0 0 0 2px #e8d9ff88;font:1.45rem var(--head);color:#f5edff;text-shadow:0 2px 4px #160b28;transition:transform .3s,filter .3s;cursor:pointer}
+.seal:hover{transform:scale(1.12) rotate(-7deg);filter:drop-shadow(0 0 9px #a78bfa)}
+.seal:active{transform:scale(.94)}
+.seal:focus-visible{outline:2px solid #d8c5ff;outline-offset:5px}
+.ev.open .seal{filter:drop-shadow(0 0 12px #b58aff);background:linear-gradient(135deg,#fff 0 10%,#d8c5ff 11% 28%,#8b5bd6 29% 54%,#49385f 55% 72%,#e7d8ff 73% 82%,#6d4aa8 83%)}
+.sheet{position:relative;overflow:hidden;background:radial-gradient(ellipse at 12% 8%,#fff9 0,transparent 34%),radial-gradient(ellipse at 90% 92%,#8b6b9b30 0,transparent 42%),repeating-linear-gradient(4deg,transparent 0 5px,#6b4d6810 6px,#fff2 7px),linear-gradient(105deg,#eee5d5 0%,#d8c9b7 48%,#c8b7a6 100%);color:#211827;border:1px solid #a78bfa55;border-left:5px solid #6d4aa8;border-radius:2px 9px 3px 7px;padding:19px 24px 17px;box-shadow:0 9px 22px #000a,inset 0 0 24px #60445b30,inset 0 0 0 1px #fff7;transition:transform .3s,box-shadow .3s;transform:rotate(var(--r,-.35deg))}
+.sheet::before{content:"";position:absolute;inset:5px;pointer-events:none;border:1px solid #80677a35;border-radius:1px 5px 2px 4px;opacity:.8}
+.sheet::after{content:"";position:absolute;right:0;top:0;width:34px;height:34px;pointer-events:none;background:linear-gradient(225deg,#9d8b7b 0 12%,#e5d7c7 13% 48%,#b8a797 49% 51%,transparent 53%);filter:drop-shadow(-2px 2px 2px #39233b44);opacity:.8}
+.ev:nth-child(even) .sheet{--r:.4deg}
+.ev:hover .sheet{transform:rotate(0) translateX(4px);box-shadow:0 15px 30px #000b,inset 0 0 24px #60445b30,inset 0 0 0 1px #fff7}
+.ev .date{position:relative;z-index:1;display:flex;align-items:center;gap:9px;font: .78rem 'IBM Plex Mono',monospace;font-weight:600;color:#68447e;letter-spacing:.12em;text-transform:uppercase}
+.ev .date::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,#8b5bd688,transparent)}
+.ev h3{position:relative;z-index:1;font-size:1.8rem;line-height:1.15;margin:7px 0 2px;color:#24182d}
+.ev .sumtxt{position:relative;z-index:1;margin:4px 0 0;font-family:'IM Fell English',Georgia,serif;font-size:1.35rem;line-height:1.3;color:#403044}
+.detail{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.2,.75,.25,1)}
 .ev.open .detail{grid-template-rows:1fr}
 .detail>div{overflow:hidden}
-.detail p{margin:12px 0 0;padding-top:12px;border-top:2px dashed #49385f88;font-family:'IM Fell English',Georgia,serif;font-size:1.55rem;line-height:1.3}
-.cue{font-style:italic;font-size:.9rem;color:var(--blood);margin-top:6px}
-.ev.open .cue::before{content:"Roll up scroll ▲"}.ev:not(.open) .cue::before{content:"Unroll scroll ▼"}
+.detail p{margin:14px 0 0;padding:13px 4px 0;border-top:1px solid #795b7c88;font-family:'IM Fell English',Georgia,serif;font-size:1.4rem;line-height:1.38;color:#35263a}
+.recording-link{position:relative;z-index:1;display:inline-flex;align-items:center;gap:7px;margin:12px 8px 0 0;padding:7px 12px;border:1px solid #76518c88;border-radius:2px 7px 2px 7px;background:linear-gradient(135deg,#f4eafa,#d9c8e5);color:#432858;font:600 .78rem 'IBM Plex Mono',monospace;text-decoration:none;transition:background .2s,transform .2s}
+.recording-link::before{content:"↗";font-size:1rem}
+.recording-link:hover{background:#fff4ff;transform:translateY(-2px)}
+.cue{position:relative;z-index:1;font:italic .82rem 'IM Fell English',Georgia,serif;color:#694b75;margin-top:9px;letter-spacing:.03em}
+.ev.open .cue::before{content:"Zwiń zwój ▲"}.ev:not(.open) .cue::before{content:"Rozwiń zwój ▼"}
 @media(min-width:900px){
  .chron::before{left:50%}
- .ev{width:50%;padding:0 56px 0 0;margin-bottom:-6px}
+ .ev{width:50%;padding:0 56px 0 0;margin-bottom:24px}
  .ev:nth-child(even){margin-left:50%;padding:0 0 0 56px}
  .seal{left:auto;right:-31px}.ev:nth-child(even) .seal{right:auto;left:-31px}
- .ev{margin-bottom:22px}
 }
 
 /* embeds */
