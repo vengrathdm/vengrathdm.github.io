@@ -348,25 +348,25 @@ var DATA={
     {
       "kind": "metric",
       "title": "Sesje",
-      "value": "36",
+      "value": "",
       "detail": "Sesje zapisane w kronice kampanii"
     },
     {
       "kind": "metric",
       "title": "Bohaterowie",
-      "value": "5",
+      "value": "",
       "detail": "Pięcioro bohaterów kampanii Drakkenheim."
     },
     {
       "kind": "metric",
       "title": "Oś opowieści",
-      "value": "Delirium i Mgła",
+      "value": "",
       "detail": "Tajemnice zrujnowanego miasta"
     },
     {
       "kind": "metric",
-      "title": "Ostatnia sesja",
-      "value": "Ostatnia sesja",
+      "title": "",
+      "value": "",
       "detail": "36 zapisanych spotkań"
     },
     {
@@ -506,11 +506,12 @@ function renderOverview(){
  var O=$('#ov');O.innerHTML='';
  DATA.overview.forEach(function(o){
   var c=el('article','note status-note '+(o.kind||''));
-  var head=el('h3','',o.title);c.append(head);
+  if(o.title)c.append(el('h3','',o.title));
   if(o.kind==='situation'){
    c.append(el('p','status-meta',o.meta),el('span','status-stamp',o.stamp));
   }else if(o.kind==='metric'){
-   c.append(el('strong','status-value',o.value),el('p','status-detail',o.detail));
+   if(o.value)c.append(el('strong','status-value',o.value));
+   c.append(el('p','status-detail',o.detail));
   }else if(o.kind==='threats'){
    var list=el('ul','status-threats');
    o.items.forEach(function(item){var li=el('li','status-threat');li.append(el('span','status-threat-name',item.text),el('span','status-tag '+item.level,item.status));list.append(li)});
