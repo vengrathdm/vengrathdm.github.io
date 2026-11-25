@@ -207,7 +207,7 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
     });
   }
   function renderAll(){layerNames.forEach(renderLayer);}
-  function defaultPinColor(style){return {standard:'#f4e5c9',ruin:'#e0a45a',settlement:'#bd8c45',landmark:'#d45a36',natural:'#a96a25'}[style]||'#f4e5c9';}
+  function defaultPinColor(style){return {standard:'#e9e0d2',ruin:'#c45b3c',settlement:'#8f342d',landmark:'#c45b3c',natural:'#8f342d'}[style]||'#e9e0d2';}
   function pinIcon(style,color){var glyph={standard:'•',ruin:'✥',settlement:'⌂',landmark:'★',natural:'✿'}[style]||'•',safeColor=/^#[0-9a-f]{6}$/i.test(color||'')?color:defaultPinColor(style);return L.divIcon({className:'',html:'<div class="pin-icon pin-'+style+'" style="--pin-color:'+safeColor+'"><span><b>'+glyph+'</b></span></div>',iconSize:[28,34],iconAnchor:[14,32]});}
   function renderPins(){pinMarkers.clearLayers();if(pinVisibilityMode==='hidden')return;pinData.forEach(function(pin,index){var h=parseAddress(pin.hex);if(!h)return;var point=ll(CS*h[0]/KPP,S*(h[1]+0.5*(h[0]&1))/KPP),marker=L.marker(point,{icon:pinIcon(pin.style,pin.color),title:pin.name}).bindPopup('<span class="popup-title">'+escapeHtml(pin.name)+'</span><span class="popup-description">'+escapeHtml(pin.description).replace(/\\n/g,'<br>')+'</span><span class="popup-reference">'+escapeHtml(pin.hex.replace(':',' · Hex '))+'</span>',{className:'editorial-popup'});if(pinVisibilityMode==='hover'||pinVisibilityMode==='always'){var labelOffset=[((index%3)-1)*12,-25-(Math.floor(index/3)%2)*5];marker.bindTooltip(escapeHtml(pin.name),{permanent:pinVisibilityMode==='always',direction:'top',offset:labelOffset,className:'pin-name-tooltip',opacity:1});}marker.on('click',function(e){if(placingPin)cancelPinPlacement();selectHexAt(e.latlng);}).addTo(pinMarkers);});}
   function cancelPinPlacement(){placingPin=false;pendingPinHex='';document.body.classList.remove('pin-placement-active');}
@@ -338,7 +338,7 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
 })().catch(function(error){
   console.error('Nie udało się uruchomić mapy kampanii:', error);
   var notice=document.createElement('div');
-  notice.style.cssText='position:fixed;z-index:999999;left:16px;right:16px;bottom:16px;padding:12px 14px;background:#260c10;color:#f5e8d2;border:1px solid #f0b64a;border-radius:4px;font:14px/1.45 system-ui,sans-serif';
+  notice.style.cssText='position:fixed;z-index:999999;left:16px;right:16px;bottom:16px;padding:12px 14px;background:#100d0e;color:#e9e0d2;border:1px solid #c45b3c;border-radius:4px;font:14px/1.45 system-ui,sans-serif';
   notice.textContent='Nie udało się uruchomić mapy. Odśwież stronę lub sprawdź połączenie. Szczegóły są dostępne w konsoli przeglądarki.';
   document.body.appendChild(notice);
 });
