@@ -18,7 +18,7 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   L.imageOverlay('./map2.webp',secondMapBounds,{interactive:false}).addTo(map);
   var combinedBounds=L.latLngBounds(ll(0,Math.max(HN,secondMap.height)),ll(secondMapLeft+secondMap.width,0));
   map.setMaxBounds(combinedBounds.pad(mapConfig.view.maxBoundsPadding));
-  var m=/^#(\\d+(?:\\.\\d+)?)\\/(\\d+)\\/(\\d+)$/.exec(location.hash);
+  var m=/^#(\d+(?:\.\d+)?)\/(\d+)\/(\d+)$/.exec(location.hash);
   if(m) map.setView(ll(+m[2],+m[3]),Math.min(Z,+m[1])); else map.fitBounds(bounds);
   map.on('moveend',function(){var p=map.project(map.getCenter(),Z);
     history.replaceState(null,'','#'+map.getZoom()+'/'+Math.round(p.x)+'/'+Math.round(p.y));});
