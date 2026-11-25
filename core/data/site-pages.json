@@ -83,20 +83,6 @@
     ]
   },
   {
-    "id": "odyssey-of-the-dragonlords",
-    "title": "Odyssey of the Dragonlords",
-    "type": "campaign",
-    "visibility": "public",
-    "url": "/page/odyssey-of-the-dragonlords/",
-    "image": "/core/graphics/voronoi/odyssey-of-the-dragonlords.webp",
-    "layout": "campaign-shell",
-    "manifest": "/page/odyssey-of-the-dragonlords/manifest.json",
-    "tags": [
-      "Kampania",
-      "Zamknięta"
-    ]
-  },
-  {
     "id": "sands-of-doom",
     "title": "Sands of Doom",
     "type": "campaign",

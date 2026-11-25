@@ -16,7 +16,8 @@
     "rowsPerSheet": 68,
     "yScale": 5873,
     "landSheets": [
-      "A1"
+      "A1",
+      "A2"
     ],
     "pole": [
       0,
