@@ -208,63 +208,20 @@ main>section.leave{position:absolute;top:0;left:0;right:0;display:block;z-index:
 @media(max-width:520px){.vengrath-mark{top:9px;left:12px;font-size:.8rem}.vengrath-mark img{width:23px;height:23px}#dock{gap:0;padding:4px}#dock a{padding:5px 6px;font-size:.72rem}#dock svg{width:18px;height:18px}}
 .campaign-background-video{position:fixed;inset:0;z-index:-1;width:100%;height:100%;object-fit:cover;opacity:.34;pointer-events:none}html{background:#0c0914}body{background:linear-gradient(180deg,rgba(24,9,11,.68),rgba(24,9,11,.82));}#chronicle.alt,#notes.alt{background:transparent;}
  
-/* DRAKKENHEIM — ash, rust and corrupted stone palette */
-:root{--bg:#0c0914;--bg2:#151020;--stone:#39254f;--ink:#eee8f7;--mute:#b4c4c5;--gold:#a78bfa;--paper:#eee8f7;--paper2:#b9aecb;--pink:#241b35;--earth:#6d4aa8;--water:#4c9bb0;--air:#a78bfa;--fire:#a78bfa;--blood:#70518f;--head:'Greek Freak Polish','Voltaire',Georgia,serif;--body:'Brygada 1918',Georgia,serif}
-body{background:radial-gradient(ellipse at 50% 0%,#17465b 0,transparent 42%),linear-gradient(160deg,#0c0914,#0a2a3a 55%,#071923);color:var(--ink)}
-h2{color:#eee8f7;text-shadow:0 2px 0 #06141d,0 0 28px #4c9bb044}
-.kick,.date,.status-meta{color:#a78bfa}
-.chip{background:linear-gradient(#6d4aa8,#74482d);border-color:#a78bfa;color:#fff1d1;box-shadow:0 5px 0 #04121b,0 0 0 3px #292044,0 10px 22px #000a,inset 0 1px 0 #f5d99d}
-.plaque div{background:linear-gradient(145deg,#1c4a5b,#102b3a 65%,#091c28);border-color:#6d4aa8;box-shadow:inset 0 1px 0 #f0d69c,inset 0 -3px 0 #08141b,0 6px 15px #0009}
-.plaque dt{color:#a78bfa}
-.face{background:linear-gradient(145deg,#17485b,#151020 58%,#0c0914)!important;box-shadow:0 18px 40px #000a,0 0 0 1px #06131c,inset 0 0 0 4px #0a1e2a,inset 0 0 0 5px #d0aa6c66!important}
-.portrait{background:radial-gradient(circle at 50% 35%,#4a7180,#102c3b 70%)!important;border-color:#6d4aa8}
-.seal{background:linear-gradient(145deg,#a78bfa,#a36e3e 55%,#5b3b2b)!important;color:#102330!important;box-shadow:0 5px 12px #000,inset 0 0 0 3px #c4a7ff,inset 0 0 0 5px #76502f!important}
-.sheet{background:linear-gradient(105deg,#eee8f7,#d0c09a)!important;color:#241b35!important;box-shadow:0 8px 20px #0009,inset 0 0 0 1px #a98c5d,inset 0 0 24px #8a6b3b33!important}
-.sheet h3{color:#292044}.sheet .sumtxt{color:#38464a}.sheet .date{color:#85643d}
-.frame,.frame.book{background:linear-gradient(145deg,#6d4aa8,#234858 24%,#0d2a3a 70%,#6d4aa8);box-shadow:0 30px 60px #000c,inset 0 1px 0 #c4a7ff,inset 0 0 0 3px #0a202d}
-#map .mount,#notes .mount{background:#0b2636;box-shadow:inset 0 0 0 1px #6d4aa8,inset 0 0 40px #000}
-.workspace-direct-link{background:linear-gradient(#163e51,#091f2d);border-top:1px solid #6d4aa8;color:#a78bfa}
-.board{background:radial-gradient(circle,#d5b77b 0 1px,transparent 1.5px) 0 0/16px 16px,linear-gradient(145deg,#1a4b5c,#151020);box-shadow:inset 0 0 0 8px #091b27,inset 0 0 0 10px #6d4aa8,inset 0 0 60px #000a,0 20px 50px #000a}
-.note{background:linear-gradient(110deg,#eee8f7,#cbb88e);color:#241b35;box-shadow:0 8px 16px #0008,inset 0 0 0 1px #6d4aa8}
-.vengrath-mark{color:#a78bfa}
+/* Drakkenheim purple theme refinements */
+:root{
+ --bg:#0c0914;--bg2:#151020;--stone:#241b35;--ink:#eee8f7;--mute:#b9aecb;
+ --gold:#a78bfa;--paper:#eee8f7;--paper2:#c4b5d9;--pink:#241b35;
+ --earth:#6d4aa8;--water:#77708f;--air:#a78bfa;--fire:#8462bb;--blood:#39254f;
+ --head:'Cinzel',Georgia,serif;--body:'IM Fell English',Georgia,'Times New Roman',serif;
+}
+body{color:var(--ink)}
 .party{grid-template-columns:repeat(3,minmax(0,1fr))}
-.recording-link{display:inline-flex;margin:12px 10px 0 0;padding:8px 13px;border:1px solid #9b7648;background:#0b2a3a;color:#6b4b28;border-radius:2px;text-decoration:none;font:600 .85rem 'Fira Sans Extra Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase}
-.recording-link:hover{background:#173e50;color:#eee8f7}
+.recording-link{display:inline-flex;margin:12px 10px 0 0;padding:8px 13px;border:1px solid #6d4aa8;background:#151020;color:#a78bfa;border-radius:4px;text-decoration:none;font:600 .85rem system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.recording-link:hover{background:#241b35;color:#eee8f7}
 @media(max-width:900px){.party{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.party{grid-template-columns:1fr}}
 
-
-/* Hellenic hero cards: squared marble plaques, ivory meander and bronze rules */
-.pc{aspect-ratio:3/5}
-.face{border-radius:2px!important;border:2px solid #eee8f7!important;outline:1px solid #6d4aa8;outline-offset:-5px;background:linear-gradient(145deg,#39254f,#151020 58%,#0c0914)!important;box-shadow:0 18px 40px #000a,0 0 0 1px #6d4aa8,inset 0 0 0 5px #0c0914,inset 0 0 0 6px #a78bfa!important}
-.face::before{content:'';position:absolute;z-index:1;inset:7px;pointer-events:none;border:1px solid rgba(244,237,219,.55);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='12' viewBox='0 0 48 12'%3E%3Cpath d='M0 1h10v10H2V4h5v4H4 M14 1h10v10h-8V4h5v4h-3 M28 1h10v10h-8V4h5v4h-3 M42 1h6' fill='none' stroke='%23f4eddb' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:repeat-x;background-position:top left,bottom left;background-size:48px 12px;box-shadow:inset 0 0 0 1px rgba(228,192,120,.5)}
-.face>*{position:relative;z-index:2}
-.face::after{border-radius:0}
-.portrait{border:1px solid #a78bfa!important;outline:1px solid rgba(244,237,219,.65);outline-offset:3px}
-.pc:hover .face{box-shadow:0 22px 50px #000,0 0 26px rgba(228,192,120,.25),inset 0 0 0 5px #0c0914,inset 0 0 0 6px #a78bfa!important}
-.sub{color:#a78bfa}
-.turn{border-radius:2px;border-color:#eee8f7;color:#eee8f7}
-.turn:hover{background:#eee8f7;color:#0c0914}
-/* The bottom dock is a Hellenic bronze-and-marble navigation plaque */
-#dock{position:fixed;border-radius:2px;padding:9px 12px;background:linear-gradient(180deg,#39254f,#0c0914);border:2px solid #a78bfa;outline:1px solid #6d4aa8;outline-offset:3px;box-shadow:0 12px 32px #000c,inset 0 1px 0 #fff8}
-#dock::before{content:'';position:absolute;inset:3px;pointer-events:none;border:1px solid rgba(244,237,219,.5);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='12' viewBox='0 0 48 12'%3E%3Cpath d='M0 1h10v10H2V4h5v4H4 M14 1h10v10h-8V4h5v4h-3 M28 1h10v10h-8V4h5v4h-3 M42 1h6' fill='none' stroke='%23f4eddb' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:repeat-x;background-position:top left,bottom left;background-size:48px 12px;opacity:.8}
-#dock a{position:relative;z-index:1;border-radius:2px;padding:11px 12px;color:#d6cbe8;letter-spacing:.08em}
-#dock a:hover{transform:translateY(-4px);color:#0c0914;background:#a78bfa}
-#dock a.on{color:#0c0914;background:#eee8f7;box-shadow:inset 0 0 0 1px #6d4aa8}
-#dock svg{stroke:currentColor;stroke-width:1.8}
-@media(max-width:520px){#dock{padding:7px 8px}#dock a{padding:8px 7px;font-size:.72rem}#dock svg{width:19px;height:19px}}
-
-#overview .kyrah-thanks{margin:clamp(48px,8vw,110px) 0 24px;text-align:center;color:#fff;font:clamp(2.8rem,7vw,6.2rem)/1.12 'IM Fell English',Georgia,serif;text-shadow:0 3px 14px #000,0 0 24px #fff3;transform:rotate(-3deg)}
-#overview .kyrah-thanks span{display:block;margin-top:12px;margin-left:22%;font-size:.72em}
-/* Aegean visual language: marble, bronze and restrained Greek-key ornament */
-:root{--bg:#0c0914;--bg2:#151020;--stone:#241b35;--ink:#eee8f7;--mute:#b9aecb;--gold:#a78bfa;--paper:#eee8f7;--paper2:#c4b5d9;--pink:#241b35;--earth:#6d4aa8;--water:#77708f;--air:#a78bfa;--fire:#8462bb;--blood:#39254f;--head:'Cinzel',Georgia,serif;--body:'Brygada 1918',Georgia,serif}
-body{background-image:radial-gradient(ellipse at 50% 0%,rgba(78,130,144,.13),transparent 55%),repeating-linear-gradient(90deg,transparent 0 79px,rgba(228,192,120,.018) 80px)}
-section:not(.hero)::before{content:'';position:absolute;top:0;left:22px;right:22px;height:5px;opacity:.48;background:repeating-linear-gradient(90deg,var(--gold) 0 10px,transparent 10px 14px,var(--gold) 14px 18px,transparent 18px 26px);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-#dock{background:linear-gradient(#39254f,#0c0914);border-color:#6d4aa8;box-shadow:0 10px 30px #000,inset 0 1px 0 #a78bfa}
-.face{background:linear-gradient(145deg,#39254f,#0c0914);box-shadow:0 18px 40px #000a,0 0 0 1px #000,inset 0 0 0 5px #0c0914,inset 0 0 0 6px color-mix(in srgb,var(--c) 55%,#000)}
-.sheet{box-shadow:0 8px 20px #0009,inset 0 0 30px rgba(52,89,106,.25)}
-
- 
 /* DRAKKENHEIM GLOBAL FULL-PAGE BACKDROP */
 body{
  min-height:100%;
