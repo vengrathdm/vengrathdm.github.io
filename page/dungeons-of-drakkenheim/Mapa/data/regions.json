@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "id": "drakkenheim-atlas",
+    "name": "Drakkenheim — atlas kampanii",
+    "mapId": "drakkenheim-map",
+    "notes": "Nowy atlas kampanii Drakkenheim."
+  },
+  "regions": {
+    "political": [],
+    "geographical": []
+  },
+  "markers": [],
+  "markerEdits": false
+}
