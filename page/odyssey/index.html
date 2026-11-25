@@ -230,6 +230,8 @@ h2{color:#f4eddb;text-shadow:0 2px 0 #06141d,0 0 28px #4c9bb044}
 .party{grid-template-columns:repeat(3,minmax(0,1fr))}
 .recording-link{display:inline-flex;margin:12px 10px 0 0;padding:8px 13px;border:1px solid #9b7648;background:#0b2a3a;color:#6b4b28;border-radius:2px;text-decoration:none;font:600 .85rem 'Fira Sans Extra Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase}
 .recording-link:hover{background:#173e50;color:#f4eddb}
+.recap-link{display:inline-flex;align-items:center;justify-content:center;margin:12px 12px 0 0;padding:9px 18px;border:1px solid #e4c078;background:linear-gradient(145deg,#174457,#071c2b);color:#e4c078;border-radius:2px;font:600 .9rem 'Fira Sans Extra Condensed',sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;box-shadow:inset 0 0 0 1px #e4c07833,0 3px 8px #0005;transition:transform .18s,background .18s,box-shadow .18s}
+.recap-link::before{content:"✦";font-size:.78em;margin-right:9px;color:#f4eddb}.recap-link:hover{background:linear-gradient(145deg,#34596a,#12394b);color:#fff2d3;transform:translateY(-2px);box-shadow:0 5px 14px #0008,0 0 16px #e4c07833}.recap-link:active{transform:translateY(1px)}
 @media(max-width:900px){.party{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.party{grid-template-columns:1fr}}
 
@@ -458,6 +460,7 @@ function renderChron(){
   var li=el('li','ev'),sl=el('button','seal',String(e.sessionNumber||i+1));sl.dataset.i='';sl.setAttribute('aria-expanded','false');sl.setAttribute('aria-controls','d'+i);sl.setAttribute('aria-label','Rozwiń szczegóły: '+e.title);
   var sh=el('div','sheet');sh.append(el('div','date','ODCINEK '+String(e.sessionNumber||i+1).padStart(2,'0')),el('h3','',e.title),el('p','sumtxt',e.description||'Nagranie sesji kampanii Odyssey of the Dragonlords.'));
   var d=el('div','detail'),w=el('div');w.append(el('p','',e.description||'Nagranie sesji kampanii Odyssey of the Dragonlords.'));
+  var recap=el('button','recap-link','RECAP');recap.type='button';recap.dataset.recapSrc='./record-player/'+{"1":"001-Wielki-Dzik.json","2":"002-Bohaterowie-Wyroczni.json","3":"003-Pythor-brak-dzwieku.json","4":"004-Anora-i-Skradziony-Rog.json","5":"005-Zamchlona-Swiatynia-i-Przysiega-dla-Demetrii.json","6":"006-Zbyt-Dobra-Aktorka-i-Wkroczenie-na-Telamok.json","7":"007-Grobowiec-Xandera-Huoratha.json","8":"008-Krol-Kruul-i-Gra-w-Zagadki.json","9":"009-Kuroliszki-i-Strazniczka-Kuzni.json","10":"010-Wezwani-Przez-Krola.json","11":"011-Wezwani-Przez-Krolowa.json","12":"012-Mytros-i-Boreas.json","13":"013-Lutherianie.json","14":"014-Z-Pomoca-Anorze.json","15":"015-Po-Ultrosa.json","16":"016-Pani-Kapitan.json","17":"017-Mroczne-Sprawy-Mytros.json","18":"018-W-Pytorze.json","19":"019-Mowcie-Moim-Jezykiem.json","20":"020-Aesopa-Smazone-Oliwki-i-Kurczak.json","21":"021-Bohaterowie-Nuggetsow-na-Olimpiadzie.json","22":"022-Igrzyska-z-Wlosami-na-Klatce.json","23":"023-Rydwany-Kyrry.json","24":"024-Nocne-Niebo-i-Embarkion.json","25":"025-Zlote-Serce-Thylei.json","26":"026-Wyspa-Yonder.json","27":"027-Czesci-Antykihery.json","28":"028-Wyspa-Losow.json","29":"029-Powrot-do-Mytros.json","30":"030-McMytros-brak-dzwieku.json","31":"031-Uwolniony-Estor.json","32":"032-Wiedzma-Lotosu.json","33":"033-Wiezi-i-Opowiesci.json","34":"034-Themis.json","35":"035-Themis.json","36":"036-Wyspa-Ognia.json","37":"037-Hyc-do-Wulkanu.json","38":"038-Zguba-Tytanow.json","39":"039-Gniew-Pana-Sztormow.json","40":"040-Bij-Mnie-Po-Mordzie.json","41":"041-Klify-Indygo.json","42":"042-Ogrod-Heliosa.json","43":"043-Gniazdo-Rocow.json","44":"044-Wyspa-Czasu.json","45":"045-Glod.json","46":"046-Paszcza-Typhona.json","47":"047-Najbardziej-Meskie-Miasto.json","48":"048-Hexia.json","49":"049-Leze-Hexii.json","50":"050-Wyspa-Wygnancow.json","51":"051-Podziemne-Morze.json","52":"052-Szklana-Pulapka.json","53":"053-Hypnos-Tron-Snow.json","54":"054-Lutheria-Pani-Koszmarow.json","55":"055-Madrosc-Sydona.json","56":"056-Koniec-Sydona.json","57":"057-Bitwa-o-Mytros.json"}[String(e.sessionNumber||i+1)];recap.dataset.recapTitle=e.title;w.append(recap);
   (e.recordings||[]).forEach(function(rec){var a=el('a','recording-link',rec.label||'Oglądaj na YouTube');a.href=rec.url;a.target='_blank';a.rel='noopener noreferrer';w.append(a)});
   d.append(w);sh.append(d,el('div','cue'));
   function t(){var o=li.classList.toggle('open');sl.setAttribute('aria-expanded',o)}
@@ -564,5 +567,6 @@ go(views.some(function(v){return '#'+v.id===location.hash})?location.hash.slice(
  paint();state();
 })();
 </script>
+<script src="./record-player/record-player.js" defer></script>
 </body>
 </html>
