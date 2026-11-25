@@ -9,7 +9,7 @@
 <style>
 
 @font-face{font-family:'Greek Freak Polish';src:url('/page/odyssey/res/Greek-Freak-Polish.ttf') format('truetype');font-display:swap}
-@font-face{font-family:'Autography';src:url('/page/odyssey/res/gasdrifo.otf') format('opentype');font-display:swap}
+@font-face{font-family:'Autography';src:url('/page/odyssey/res/Autography.otf') format('opentype');font-display:swap}
 :root{
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
   --bg:#071c2b;--bg2:#0b2b3d;--stone:#12394b;--ink:#f4eddb;--mute:#a9bec2;--gold:#e4c078;
@@ -253,6 +253,8 @@ h2{color:#f4eddb;text-shadow:0 2px 0 #06141d,0 0 28px #4c9bb044}
 #dock svg{stroke:currentColor;stroke-width:1.8}
 @media(max-width:520px){#dock{padding:7px 8px}#dock a{padding:8px 7px;font-size:.72rem}#dock svg{width:19px;height:19px}}
 
+#overview .kyrah-thanks{margin:clamp(48px,8vw,110px) 0 24px;text-align:center;color:#fff;font:clamp(2.8rem,7vw,6.2rem)/1.12 'Autography',cursive;text-shadow:0 3px 14px #000,0 0 24px #fff3}
+#overview .kyrah-thanks span{display:block;margin-top:12px;font-size:.72em}
 /* Aegean visual language: marble, bronze and restrained Greek-key ornament */
 :root{--bg:#071c2b;--bg2:#0b2b3d;--stone:#12394b;--ink:#f4eddb;--mute:#a9bec2;--gold:#e4c078;--paper:#f4eddb;--paper2:#b8a783;--pink:#12394b;--earth:#b87942;--water:#4f8290;--air:#e4c078;--fire:#6b9aa2;--blood:#174457;--head:'Greek Freak Polish',Georgia,serif;--body:'Brygada 1918',Georgia,serif}
 body{background-image:radial-gradient(ellipse at 50% 0%,rgba(78,130,144,.13),transparent 55%),repeating-linear-gradient(90deg,transparent 0 79px,rgba(228,192,120,.018) 80px)}
@@ -348,6 +350,7 @@ main>section,main>section.alt{background:transparent!important}
 <section id="overview"><div class="tear"></div><div class="wrap">
  <h2>Status</h2>
  <div class="board" id="ov"></div>
+ <p class="kyrah-thanks">Dziękuję Wam za najpiękniejsze wspomnienia!<span>~ Kyrah</span></p>
 </div></section>
 </main>
 
@@ -374,7 +377,7 @@ var DATA={
       "kind": "metric",
       "title": "Bohaterowie",
       "value": "6",
-      "detail": "Postacie graczy z rejestru Vengrath"
+      "detail": "Szóstka wspaniałych bohaterów która wraz z przyjaciółmi ocaliła Thyleę."
     },
     {
       "kind": "metric",
