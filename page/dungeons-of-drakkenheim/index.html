@@ -1,150 +1,81 @@
 <!doctype html>
 <html lang="pl">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Piętnaście lat po katastrofie miasto nadal stoi. Fioletowe Haze, delirium i ruiny, do których wchodzą ci, którzy sądzą, że potrafią wrócić."
-    />
-    <meta name="theme-color" content="#090a10" />
-    <title>Dungeons of Drakkenheim — Vengrath</title>
-    <link rel="preload" as="image" href="/core/graphics/voronoi/dungeons-of-drakkenheim.webp" fetchpriority="high" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&amp;family=Voltaire&amp;family=Brygada+1918:wght@400;500;600;700&amp;display=swap"
-    />
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-      <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body class="dungeons-of-drakkenheim-page campaign-startup-loading">
-    <header
-      class="subpage-hero"
-      id="campaign-hero"
-      style="--hero-background: url('/core/graphics/voronoi/dungeons-of-drakkenheim.webp')"
-    >
-      <div class="subpage-hero__copy">
-        <p class="dungeons-hero-kicker">
-          D&amp;D · ARCHIWUM KAMPANII
-        </p>
-        <h1>
-          Dungeons of
-          <br />
-          <span class="dungeons-hero-title-accent">Drakkenheim</span>
-        </h1>
-        <p class="dungeons-hero-lead">
-          Piętnaście lat po katastrofie Drakkenheim wciąż pulsuje fioletową poświatą Haze. Ruiny są
-          pełne delirium, politycznych ambicji i rzeczy, które nigdy nie powinny się obudzić.
-        </p>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#09090c">
+<meta name="description" content="Archiwum kampanii Dungeons of Drakkenheim.">
+<title>Dungeons of Drakkenheim — Archiwum kampanii</title>
+<link rel="preload" as="image" href="/core/graphics/voronoi/dungeons-of-drakkenheim.webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Voltaire&family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Brygada+1918:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body class="drakkenheim">
+<header class="hero" id="poczatek">
+  <div class="hero-image" aria-hidden="true"></div><div class="hero-shade"></div>
+  <div class="heraldic-rails" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="hero-top"><a class="brand" href="/home/" aria-label="Powrót do Vengrath">VENGRATH<span> / ARCHIWUM</span></a><span class="hero-classification">AKTA KAMPANII · D&amp;D</span></div>
+  <div class="hero-copy">
+    <p class="eyebrow">MIASTO PO KATASTROFIE · AKTA GŁÓWNE</p>
+    <h1>Dungeons <small>of</small><b>Drakkenheim</b></h1>
+    <p class="hero-deck">Miasto jest raną, która nie chce się zabliźnić. To archiwum wypraw, ludzi i decyzji podjętych na jej krawędzi.</p>
+    <a class="hero-enter" href="#archiwum">WEJDŹ DO ARCHIWUM <span>↓</span></a>
+  </div>
+  <div class="hero-index"><span>DD / ARCHIVE</span><span>EDYCJA I</span><span>VENGRATH</span></div>
+</header>
+<div class="app-shell" id="archiwum">
+  <aside class="rail">
+    <a class="rail-brand" href="#poczatek">D<span>D</span></a>
+    <div class="rail-caption">DRakkenheim · AKTA</div>
+    <nav class="main-nav" aria-label="Nawigacja archiwum">
+      <button class="nav-item active" data-section="kampania"><span class="nav-num">01</span><span>Kampania</span></button>
+      <button class="nav-item" data-section="postaci"><span class="nav-num">02</span><span>Postaci</span></button>
+      <button class="nav-item" data-section="kronika"><span class="nav-num">03</span><span>Kronika</span></button>
+      <button class="nav-item" data-section="mapa"><span class="nav-num">04</span><span>Mapa</span></button>
+      <button class="nav-item" data-section="notatki"><span class="nav-num">05</span><span>Notatki</span></button>
+      <button class="nav-item" data-section="status"><span class="nav-num">06</span><span>Status</span></button>
+    </nav>
+    <div class="rail-bottom"><span class="live-dot"></span><span>ARCHIWUM LOKALNE</span></div>
+  </aside>
+  <main class="workspace">
+    <header class="workspace-head"><div><span class="micro-label">VENGRATH / DUNGEONS OF DRAKKENHEIM</span><p id="section-breadcrumb">01 — KAMPANIA</p></div><a href="#poczatek" class="back-top">POCZĄTEK ↑</a></header>
+    <section class="view active" id="view-kampania" data-view="kampania">
+      <div class="section-heading"><div><span class="eyebrow">AKTA GŁÓWNE / 01</span><h2>Kampania</h2><p>Przegląd archiwum i punkt wejścia do spraw Drakkenheim.</p></div><span class="seal">DD<br><small>EST. CAMPAIGN</small></span></div>
+      <div class="campaign-grid">
+        <article class="feature-panel"><div class="panel-topline"><span>RAPORT / MIASTO</span><span>01—06</span></div><h3>Drakkenheim<br><em>nie zapomina.</em></h3><p>Piętnaście lat po katastrofie miasto nadal stoi. Haze przesącza się przez ruiny, delirium zmienia tych, którzy zbyt długo pozostają w skażonej strefie, a każda wyprawa w głąb miasta ma swoją cenę.</p><p>To miejsce nie jest jedynie celem ekspedycji. Jest układem sił, tajemnic i konsekwencji, których nie da się zamknąć w granicach murów.</p><div class="feature-foot"><span>STATUS DOKUMENTU</span><strong>OTWARTE AKTA</strong></div></article>
+        <div class="campaign-side"><article class="stat-tile violet"><span>KRONIKA</span><strong id="campaign-sessions">36</strong><small>zapisanych sesji</small></article><article class="stat-tile green"><span>POSTACI</span><strong id="campaign-characters">05</strong><small>zachowanych kart</small></article><article class="quote-tile"><span class="quote-mark">“</span><p>Każda wyprawa zostawia ślad. Nie każdy ślad prowadzi z powrotem.</p><small>NOTA ARCHIWALNA</small></article></div>
       </div>
-    </header>
-    <main class="ddc-content" aria-busy="true">
-      <section class="ddc-tab-panel" id="campaign" data-page-section="campaign">
-        <section class="ddc-card">
-          <div class="ddc-card-title">
-            <span>01</span><strong>AKTA KAMPANII</strong>
-          </div>
-          <div class="ddc-card-body">
-            <div class="ddc-intro-grid">
-              <article class="ddc-paper">
-                <div class="ddc-section-mark">O KAMPANII</div>
-                <h2 id="campaign-intro-title"></h2>
-                <div id="campaign-intro-copy"></div>
-              </article>
-              <aside class="ddc-case" aria-label="Dossier kampanii">
-                <div class="ddc-case-label">DOSSIER</div>
-                <div id="campaign-dossier"></div>
-              </aside>
-            </div>
-          </div>
-        </section>
-        <section class="ddc-party-portrait">
-          <div class="ddc-party-copy">
-            <div class="ddc-section-mark">ARCHIWUM</div>
-            <h2 id="party-title"></h2>
-            <p id="party-description"></p>
-          </div>
-          <figure class="ddc-party-image">
-            <img
-              id="party-image"
-              alt="Thomos — postać z Dungeons of Drakkenheim"
-              loading="lazy"
-            />
-          </figure>
-        </section>
-      </section>
-
-      <section
-        class="ddc-tab-panel"
-        id="characters"
-        data-page-section="characters"
-        hidden
-      >
-        <section class="ddc-section ddc-character-intro">
-          <div class="ddc-section-mark" id="characters-kicker"></div>
-          <h2 id="characters-title"></h2>
-          <p id="characters-description"></p>
-        </section>
-        <section class="ddc-section ddc-character-group">
-          <div class="ddc-section-head">
-            <div>
-              <div class="ddc-section-mark">AKTA / STATUS</div>
-              <h2 id="living-title"></h2>
-            </div>
-            <p id="living-description"></p>
-          </div>
-          <div id="living-character-gallery" aria-live="polite"></div>
-        </section>
-        <section class="ddc-section ddc-character-group ddc-dead-characters">
-          <div class="ddc-section-head">
-            <div>
-              <div class="ddc-section-mark">AKTA / STATUS</div>
-              <h2 id="dead-title"></h2>
-            </div>
-            <p id="dead-description"></p>
-          </div>
-          <div id="dead-character-gallery" aria-live="polite"></div>
-        </section>
-      </section>
-
-      <section
-        class="ddc-tab-panel ddc-chronicle-panel"
-        id="chronicle"
-        data-page-section="chronicle"
-        hidden
-      >
-        <section class="ddc-section ddc-chronicle-intro">
-          <div class="ddc-section-mark" id="chronicle-kicker"></div>
-          <h2 id="chronicle-title"></h2>
-          <p id="chronicle-description"></p>
-        </section>
-        <section class="ddc-section ddc-chronicle-records">
-          <div id="campaign-chronicle" class="chronicle"></div>
-        </section>
-      </section>
-    </main>
-    <footer class="ddc-footer">
-      <span>VENGRATH · DUNGEONS OF DRAKKENHEIM</span>
-      <a href="#campaign-hero">POWRÓT NA GÓRĘ ↑</a>
-    </footer>
-    <script type="module" src="./app.js"></script>
-  </body>
+      <div class="faction-band"><div class="band-heading"><span>HERALDYKA / KLUCZ WIZUALNY</span><span>PIĘĆ ZNAKÓW · JEDNO MIASTO</span></div><div class="faction-stripes"><div class="stripe stripe-black"><b>ŻAR</b><span>01</span></div><div class="stripe stripe-green"><b>WŁADZA</b><span>02</span></div><div class="stripe stripe-blue"><b>WIARA</b><span>03</span></div><div class="stripe stripe-red"><b>TAJEMNICA</b><span>04</span></div><div class="stripe stripe-purple"><b>HORYZONT</b><span>05</span></div></div><p class="muted-note">Motywy heraldyczne stanowią oprawę archiwum, nie przypisanie symboli do frakcji świata gry.</p></div>
+      <div class="quick-links"><button data-go="kronika">OTWÓRZ KRONIKĘ <span>↗</span></button><button data-go="postaci">ZOBACZ POSTACI <span>↗</span></button><button data-go="mapa">PRZEJDŹ DO MAPY <span>↗</span></button></div>
+    </section>
+    <section class="view" id="view-postaci" data-view="postaci">
+      <div class="section-heading"><div><span class="eyebrow">REJESTR OSÓB / 02</span><h2>Postaci</h2><p>Zachowane karty bohaterów kampanii, w tym wpisy poległych.</p></div><span class="section-count" id="character-count">05 / KART</span></div>
+      <div class="filter-row"><div class="segmented"><button class="filter active" data-filter="all">Wszyscy</button><button class="filter" data-filter="living">Żyjący</button><button class="filter" data-filter="dead">Polegli</button></div><span class="micro-label">REJESTR POSTACI / DRK</span></div>
+      <div class="character-grid" id="character-grid"><div class="loading-state">Otwieranie rejestru…</div></div>
+    </section>
+    <section class="view" id="view-kronika" data-view="kronika">
+      <div class="section-heading"><div><span class="eyebrow">ZAPIS PRZEBIEGU / 03</span><h2>Kronika</h2><p>Chronologiczny rejestr sesji i zachowanych nagrań.</p></div><span class="section-count">36 / WPISÓW</span></div>
+      <div class="chronicle-tools"><label class="search-field"><span>⌕</span><input id="chronicle-search" type="search" placeholder="Szukaj numeru lub tytułu…" aria-label="Szukaj sesji"></label><span id="chronicle-result-count" class="micro-label">36 WPISÓW</span></div>
+      <div class="timeline" id="chronicle-list"><div class="loading-state">Odczytywanie kroniki…</div></div>
+    </section>
+    <section class="view" id="view-mapa" data-view="mapa">
+      <div class="section-heading"><div><span class="eyebrow">ATLAS / 04</span><h2>Mapa</h2><p>Roboczy atlas wypraw. Dodawaj własne punkty, opisy i oznaczenia.</p></div><span class="section-count">ATLAS WŁASNY</span></div>
+      <div class="map-layout"><div class="map-board-wrap"><div class="map-toolbar"><span>PLANSZA KARTOGRAFICZNA</span><span id="map-point-count">0 PUNKTÓW</span></div><div class="map-board" id="map-board" role="application" aria-label="Plansza mapy. Kliknij, aby dodać znacznik."><div class="map-compass">N<svg viewBox="0 0 40 50" aria-hidden="true"><path d="M20 2L34 43 20 34 6 43Z" fill="none" stroke="currentColor"/><path d="M20 2V34" stroke="currentColor"/></svg></div><div class="map-placeholder"><span>ATLAS / DRK</span><strong>PLANSZA<br>EKSPEDYCJI</strong><small>KLIKNIJ W DOWOLNYM MIEJSCU, ABY DODAĆ ZNACZNIK</small></div><div id="map-markers"></div></div><p class="muted-note">Położenie znaczników jest zapisywane w tej przeglądarce. Plansza jest warstwą roboczą — nie przedstawia kanonicznej mapy miasta.</p></div><form class="editor-panel" id="map-form"><span class="eyebrow">NOWY WPIS / MAPA</span><h3>Znacznik</h3><label>Nazwa punktu<input id="map-name" maxlength="70" placeholder="np. punkt ekspedycji" required></label><label>Rodzaj<select id="map-type"><option value="place">Miejsce</option><option value="danger">Zagrożenie</option><option value="clue">Ślad</option><option value="route">Trasa</option></select></label><label>Opis<textarea id="map-description" rows="3" maxlength="500" placeholder="Notatka do punktu…"></textarea></label><div class="form-hint" id="map-hint">Wybierz miejsce na planszy, aby ustawić współrzędne.</div><button class="primary-button" type="submit">ZAPISZ ZNACZNIK</button><button class="text-button" type="button" id="map-cancel">WYCZYŚĆ WYBÓR</button></form></div>
+    </section>
+    <section class="view" id="view-notatki" data-view="notatki">
+      <div class="section-heading"><div><span class="eyebrow">NOTATNIK TERENOWY / 05</span><h2>Notatki</h2><p>Osobisty rejestr odkryć, tropów i spraw do sprawdzenia.</p></div><span class="section-count" id="note-count">00 / WPISÓW</span></div>
+      <div class="notes-layout"><form class="editor-panel note-editor" id="note-form"><span class="eyebrow">NOWY DOKUMENT</span><h3>Dodaj notatkę</h3><label>Tytuł<input id="note-title" maxlength="100" placeholder="Tytuł wpisu" required></label><label>Kategoria<select id="note-category"><option>Ogólne</option><option>Śledztwo</option><option>Postać</option><option>Frakcja</option><option>Lokacja</option><option>Do sprawdzenia</option></select></label><label>Treść<textarea id="note-body" rows="7" maxlength="5000" placeholder="Zapisz informacje, trop lub pytanie…" required></textarea></label><button class="primary-button" type="submit">ZAPISZ W ARCHIWUM</button></form><div class="notes-list-wrap"><div class="notes-list-head"><span>REJESTR NOTATEK</span><span id="notes-storage-label">ZAPIS LOKALNY</span></div><div class="notes-list" id="notes-list"><div class="empty-state">Archiwum notatek jest puste.</div></div></div></div>
+    </section>
+    <section class="view" id="view-status" data-view="status">
+      <div class="section-heading"><div><span class="eyebrow">CENTRUM KONTROLI / 06</span><h2>Status</h2><p>Stan narzędzi archiwum i własne znaczniki postępu kampanii.</p></div><span class="section-count">PANEL OPERACYJNY</span></div>
+      <div class="status-overview" id="status-overview"></div>
+      <div class="status-workspace"><div><div class="subheading"><h3>Rejestr spraw</h3><span class="micro-label">EDYTOWALNE</span></div><form class="status-add" id="status-form"><input id="status-title" maxlength="90" placeholder="Nowa sprawa / cel…" required><button type="submit">DODAJ +</button></form><div class="status-list" id="status-list"></div></div><aside class="status-note"><span class="eyebrow">INFORMACJA SYSTEMOWA</span><h3>Twoje archiwum.</h3><p>Notatki, znaczniki mapy i rejestr spraw zapisują się lokalnie w przeglądarce. Nie są wysyłane na serwer ani współdzielone z innymi urządzeniami.</p><p>Postaci i kronika są odczytywane z zachowanych danych kampanii.</p><button class="text-button" id="export-data" type="button">EKSPORTUJ DANE LOKALNE ↓</button></aside></div>
+    </section>
+    <footer class="workspace-footer"><span>VENGRATH ARCHIVE SYSTEM</span><span>DUNGEONS OF DRAKKENHEIM · <span id="footer-year">2026</span></span></footer>
+  </main>
+</div>
+<script src="./app.js" defer></script>
+</body>
 </html>
