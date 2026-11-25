@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "drakkenheim-map",
+  "title": "Drakkenheim — atlas kampanii",
+  "image": "/core/graphics/voronoi/dungeons-of-drakkenheim.webp",
+  "dataUrl": "./data/regions.json",
+  "storageKey": "vengrath-drakkenheim-map-v1",
+  "dimensions": {
+    "width": 1445,
+    "height": 1870
+  },
+  "projection": {
+    "baseZoom": 2,
+    "hexSize": 8.04672,
+    "columnsPerSheet": 96,
+    "rowsPerSheet": 68,
+    "yScale": 5873,
+    "landSheets": [
+      "A1",
+      "A2"
+    ],
+    "pole": [
+      0,
+      0
+    ]
+  },
+  "view": {
+    "minZoom": 1,
+    "maxZoom": 5,
+    "zoomSnap": 0.25,
+    "zoomDelta": 0.5,
+    "wheelPxPerZoomLevel": 60,
+    "maxBoundsPadding": 0.15
+  }
+}
