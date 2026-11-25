@@ -1198,14 +1198,12 @@ h4 {
 }
 .party-card {
   position: relative;
-  min-height: 430px;
   display: flex;
   flex-direction: column;
   background: var(--paper);
   color: var(--ink);
   border: 2px solid var(--ink);
   border-radius: 2px;
-  padding: 24px 20px 20px;
   box-shadow: 5px 5px 0 rgba(26, 18, 35, 0.55);
   overflow: hidden;
 }
@@ -1236,14 +1234,10 @@ h4 {
   letter-spacing: 0.14em;
   color: var(--stamp-red);
   font-weight: 700;
-  margin-bottom: 42px;
 }
 .party-card h3 {
   font-family: "Cinzel", serif;
-  font-size: 27px;
   line-height: 1.05;
-  color: var(--ink);
-  margin: 0;
 }
 .party-divider {
   width: 100%;
@@ -1260,21 +1254,15 @@ h4 {
 }
 .party-card h4 {
   font-family: "Cinzel", serif;
-  font-size: 21px;
-  line-height: 1.1;
-  color: var(--ink);
-  margin: 0 0 13px;
 }
 .party-card p {
   font-family: "Cinzel", serif;
   font-size: 13px;
-  line-height: 1.5;
   color: var(--ink-fade);
   margin: 0;
 }
 .party-link {
   display: inline-block;
-  margin-top: 18px;
   font-family: "Cinzel", serif;
   font-size: 11px;
   letter-spacing: 0.07em;
@@ -3792,10 +3780,6 @@ h4 {
   background: rgb(104 70 143 / 94%);
 }
 
-.audio-player-symbol {
-  font-family: var(--display);
-}
-
 @media (max-width: 640px) {
   .audio-player-button {
     right: 16px;
@@ -4635,25 +4619,6 @@ h4 {
 }
 
 /* Campaign hero image: preserve the source artwork's 16:10 ratio at every breakpoint. */
-#page-overview .heartwell-hero-visual {
-  width: 100%;
-  height: auto;
-  min-height: 0;
-  aspect-ratio: 16 / 10;
-  align-self: start;
-}
-
-#page-overview .heartwell-hero-visual img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  object-fit: contain;
-  object-position: center;
-  transform: none;
-}
-
 
 /* Campaign landing hero — clean artwork with a separate archival caption. */
 #page-overview .cover-grid.heartwell-cover-grid {
@@ -4675,6 +4640,7 @@ h4 {
   height: auto;
   min-height: 0;
   aspect-ratio: 16 / 10;
+  align-self: start;
   overflow: hidden;
   border: 1px solid rgba(201, 194, 216, 0.7);
   background: #fff;
@@ -4691,6 +4657,8 @@ h4 {
 }
 
 #page-overview .heartwell-hero-visual img {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -5127,11 +5095,7 @@ body.campaign-startup-loading > footer {
   font: clamp(1.05rem, 1.8vw, 1.35rem) / 1.4 var(--theme-font-3, Georgia, serif);
 }
 
-/* Keep hero copy in its final layout until the page theme and web fonts are ready. */
-body.campaign-startup-loading .subpage-hero__copy {
-  visibility: hidden;
-}
-
+/* Keep hero copy hidden until campaign data and theme initialization finish. */
 body.campaign-startup-loading .subpage-hero {
   --hero-copy-ready: 0;
 }
