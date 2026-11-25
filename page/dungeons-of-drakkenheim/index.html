@@ -185,10 +185,11 @@ button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 #map .mount iframe,#notes .mount iframe{z-index:1}
 #map .wrap,#notes .wrap{width:100%;max-width:3840px;padding-inline:clamp(12px,2vw,72px)}
 #map .frame,#notes .frame{width:100%}
-#map .mount,#notes .mount{height:clamp(460px,78svh,1800px);display:grid;place-items:center;text-align:center;color:var(--mute);background:#0c0914;box-shadow:inset 0 0 40px #000,inset 0 0 0 1px #70518f;border-radius:4px}
+#map h2,#notes h2{margin-bottom:22px}
+#map .mount,#notes .mount{width:85%;height:calc(clamp(460px,78svh,1800px) * .85);margin-inline:auto;display:grid;place-items:center;text-align:center;color:var(--mute);background:#0c0914;box-shadow:inset 0 0 40px #000,inset 0 0 0 1px #70518f;border-radius:4px}
 #map .mount>*:not(.ph),#notes .mount>*:not(.ph){width:100%;height:100%;min-width:0;min-height:0}
 #map .mount iframe,#notes .mount iframe{display:block;width:100%;height:100%;border:0;border-radius:4px;background:#0c0914}
-@media(max-width:700px){#map .wrap,#notes .wrap{padding-inline:10px}#map .mount,#notes .mount{height:76svh;min-height:440px}}
+@media(max-width:700px){#map .wrap,#notes .wrap{padding-inline:10px}#map .mount,#notes .mount{width:85%;height:calc(76svh * .85);min-height:374px}}
 .workspace-direct-link{position:relative;z-index:2;display:block;padding:10px 14px;text-align:right;color:var(--gold);font:11px/1.4 system-ui,sans-serif;letter-spacing:.04em;text-decoration:none;background:#0c0914;border-top:1px solid #6d4aa866}
 .workspace-direct-link:hover{color:#fff;text-decoration:underline}
 .ph small{display:block;font:1.2rem var(--head);color:var(--gold);letter-spacing:.1em}
