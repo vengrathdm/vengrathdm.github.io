@@ -485,7 +485,7 @@ function renderChron(){
   sl.onclick=t;
   sh.onclick=function(ev){
    if(ev.target.closest('a'))return;
-   expansionHeight+=48;
+   expansionHeight=expansionHeight===0?96:0;
    sh.style.setProperty('--sheet-extra',expansionHeight+'px');
    if(ev.target===sh||ev.target.closest('.date,h3,.sumtxt,.cue'))t();
   };
