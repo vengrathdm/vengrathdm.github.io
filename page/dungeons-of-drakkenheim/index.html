@@ -446,7 +446,7 @@ function renderChron(){
  }
  DATA.chronicle.forEach(function(e,i){
   var li=el('li','ev'),sl=el('button','seal');var crystal=el('img');crystal.src='/page/dungeons-of-drakkenheim/res/graphics/brylka.webp';crystal.alt='';crystal.draggable=false;sl.append(crystal,el('span','seal-number',String(e.sessionNumber||i+1)));sl.dataset.i='';sl.setAttribute('aria-expanded','false');sl.setAttribute('aria-controls','d'+i);sl.setAttribute('aria-label','Rozwiń szczegóły: '+e.title);
-  var sh=el('div','sheet');growCrystals(li,sh,.94+Math.random()*.12);sh.append(el('div','date','ODCINEK '+String(e.sessionNumber||i+1).padStart(2,'0')),el('h3','',e.title),el('p','sumtxt',e.description||'Nagranie sesji kampanii Dungeons of Drakkenheim.'));
+  var sh=el('div','sheet');sh.append(el('div','date','ODCINEK '+String(e.sessionNumber||i+1).padStart(2,'0')),el('h3','',e.title),el('p','sumtxt',e.description||'Nagranie sesji kampanii Dungeons of Drakkenheim.'));
   var d=el('div','detail'),w=el('div');w.append(el('p','',e.description||'Nagranie sesji kampanii Dungeons of Drakkenheim.'));
   (e.recordings||[]).forEach(function(rec){var a=el('a','recording-link',rec.label||'Oglądaj na YouTube');a.href=rec.url;a.target='_blank';a.rel='noopener noreferrer';w.append(a)});
   d.append(w);sh.append(d,el('div','cue'));
@@ -460,7 +460,7 @@ function renderChron(){
    if(ev.target===sh||ev.target.closest('.date,h3,.sumtxt,.cue'))t();
   };
   sh.dataset.i='';
-  li.append(sl,sh);L.append(li)
+  li.append(sl,sh);growCrystals(li,sh,.94+Math.random()*.12);L.append(li)
  })
 }
 
