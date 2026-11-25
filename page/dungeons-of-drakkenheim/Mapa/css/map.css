@@ -74,15 +74,15 @@
   .region-dialog input:not([type=color]):not([type=radio]):focus,.region-dialog textarea:focus{outline:0;border-color:#c45b3c;background:rgba(13,25,30,.96);box-shadow:0 0 0 2px rgba(240,182,74,.18)}
   .region-dialog .editor-select-trigger{width:100%;min-height:36px;background:rgba(7,28,43,.82);color:#e9e0d2;border-color:rgba(52,89,106,.55)}
   .region-dialog .editor-select-trigger:after{border-color:#c45b3c}
-  .region-dialog .editor-select-trigger:hover,.region-dialog .editor-select-trigger[aria-expanded=true]{background:#111632;border-color:#c45b3c}
+  .region-dialog .editor-select-trigger:hover,.region-dialog .editor-select-trigger[aria-expanded=true]{background:#1b1516;border-color:#c45b3c}
   .region-dialog .editor-select-menu{z-index:200010}
   .region-dialog input[type=color]{height:36px;padding:3px}
   .region-dialog textarea{min-height:72px;resize:vertical}
-  .region-dialog input[type=color],#pinDialog input[type=color]{box-sizing:border-box;width:52px;height:36px;margin:0;padding:3px;border:1px solid rgba(85,64,71,.6);border-radius:3px;background:#111632;cursor:pointer}
+  .region-dialog input[type=color],#pinDialog input[type=color]{box-sizing:border-box;width:52px;height:36px;margin:0;padding:3px;border:1px solid rgba(85,64,71,.6);border-radius:3px;background:#1b1516;cursor:pointer}
   .region-dialog input[type=radio],#pinDialog input[type=radio]{accent-color:#c45b3c}
   .region-color-control{display:flex;align-items:center;gap:10px;margin-top:4px}
   .region-dialog .region-color-control input[type=color]{width:52px;height:36px;margin:0;padding:3px}
-  .region-sample{display:block;width:64px;height:26px;border:2px solid #376e79;border-radius:3px;background:rgba(102,139,84,.16)}
+  .region-sample{display:block;width:64px;height:26px;border:2px solid #64777b;border-radius:3px;background:rgba(102,139,84,.16)}
   .region-style-field{margin:12px 0 0;padding:0;border:0}
   .region-style-field legend{padding:0;color:#e9e0d2;font:600 12px/1.4 'IBM Plex Mono',monospace}
   .region-style-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:7px}
@@ -94,7 +94,7 @@
   .region-style-preview.style-hatch{background:repeating-linear-gradient(135deg,rgba(142,169,111,.9) 0 2px,transparent 2px 6px)}
   .region-style-name{font-size:10px;color:#e9e0d2;text-align:center}
   .delete-region-visual{display:flex;align-items:center;gap:8px;margin-top:5px}
-  .delete-region-preview{display:block;width:76px;height:25px;flex:0 0 76px;border:2px solid var(--region-color,#376e79);border-radius:2px;background:var(--region-fill,transparent)}
+  .delete-region-preview{display:block;width:76px;height:25px;flex:0 0 76px;border:2px solid var(--region-color,#64777b);border-radius:2px;background:var(--region-fill,transparent)}
   .delete-region-preview.style-hatch{background:repeating-linear-gradient(135deg,var(--region-color) 0 2px,transparent 2px 6px)}
   .delete-region-preview.style-tint{background:color-mix(in srgb,var(--region-color) 22%,transparent)}
   .delete-region-style-name{color:#b8aaa0;font-size:10px}
@@ -132,7 +132,7 @@
   #pinDialog input:not([type=color]):not([type=radio]):focus,#pinDialog textarea:focus{outline:0;border-color:#c45b3c;background:rgba(13,25,30,.96);box-shadow:0 0 0 2px rgba(240,182,74,.18)}
   #pinDialog .editor-select-trigger{width:100%;min-height:36px;background:rgba(7,28,43,.82);color:#e9e0d2;border-color:rgba(52,89,106,.55)}
   #pinDialog .editor-select-trigger:after{border-color:#c45b3c}
-  #pinDialog .editor-select-trigger:hover,#pinDialog .editor-select-trigger[aria-expanded=true]{background:#111632;border-color:#c45b3c}
+  #pinDialog .editor-select-trigger:hover,#pinDialog .editor-select-trigger[aria-expanded=true]{background:#1b1516;border-color:#c45b3c}
   #pinDialog .editor-select-menu{z-index:200010}
   #pinDialog textarea{min-height:88px;resize:vertical}
   .pin-dialog-actions{display:flex;justify-content:flex-end;gap:7px;margin-top:12px}
@@ -145,7 +145,7 @@
   .pin-style-preview{display:flex;align-items:center;justify-content:center;min-height:58px;margin-top:8px;padding:8px;border:1px solid rgba(52,89,106,.28);border-radius:4px;background:rgba(7,28,43,.48)}
   .pin-style-preview .pin-icon{transform:scale(1.25);transform-origin:center}
   .pin-color-control{display:flex;align-items:center;gap:10px;margin-top:4px}
-  #pinDialog .pin-color-control input[type=color]{width:52px;height:36px;margin:0;padding:3px;border:1px solid rgba(85,64,71,.6);border-radius:3px;background:#111632;cursor:pointer}
+  #pinDialog .pin-color-control input[type=color]{width:52px;height:36px;margin:0;padding:3px;border:1px solid rgba(85,64,71,.6);border-radius:3px;background:#1b1516;cursor:pointer}
   .pin-color-sample{display:block;width:64px;height:26px;border:2px solid rgba(255,255,255,.55);border-radius:3px;background:#302326}
   .pin-icon.pin-ruin span{background:#8f342d}
   .pin-icon.pin-settlement span{background:#b8aaa0}
