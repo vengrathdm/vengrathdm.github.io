@@ -321,9 +321,9 @@ main>section,main>section.alt{background:transparent!important}
  <div class="intro">
   <div id="introText"><p>Pięćset lat po zwycięstwie bohaterów i zawarciu Przysięgi Pokoju dawne konflikty znów budzą się do życia. Klątwa Drakkenheim prowadzi nowych bohaterów ku wydarzeniom, które mogą odmienić los całej krainy.</p><p>Drakkenheim to świat greckiej mitologii, boskich intryg, potworów i odległych wysp. W cieniu dawnych przysiąg drużyna mierzy się z konsekwencjami sporów bogów i Tytanów, odkrywając, komu można zaufać i jaką cenę ma przeznaczenie.</p></div>
   <div><p>Kronika kampanii Dungeons of Drakkenheim. Wybierz sesję, aby rozwinąć szczegóły i przejść do nagrania.</p><a class="chip" href="#chronicle" data-i>Czytaj kronikę</a></div>
-  <a class="voronoi-card" href="/page/dungeons-of-drakkenheim/res/kyrah.webp" target="_blank" rel="noopener" aria-label="Otwórz Poetka Kyrah">
-   <img src="/page/dungeons-of-drakkenheim/res/kyrah.webp" alt="Poetka Kyrah" loading="lazy">
-   <span>Poetka Kyrah</span>
+  <a class="voronoi-card" href="/core/graphics/voronoi/dungeons-of-drakkenheim.webp" target="_blank" rel="noopener" aria-label="Otwórz Drakkenheim">
+   <img src="/core/graphics/voronoi/dungeons-of-drakkenheim.webp" alt="Drakkenheim" loading="lazy">
+   <span>Drakkenheim</span>
   </a>
  </div>
 </div></div></section>
@@ -340,7 +340,7 @@ main>section,main>section.alt{background:transparent!important}
 
 <section id="map"><div class="tear"></div><div class="wrap">
  <h2>Mapa</h2>
- <div class="frame"><div class="mount" id="map-mount" data-embed="map" aria-label="Interaktywna mapa kampanii"><iframe src="/page/dungeons-of-drakkenheim/Mapa/" title="Interaktywna mapa kampanii — Atlas Thylei" loading="lazy" allow="fullscreen"></iframe></div><a class="workspace-direct-link" href="/page/dungeons-of-drakkenheim/Mapa/" target="_blank" rel="noopener">Otwórz mapę w osobnej karcie ↗</a></div>
+ <div class="frame"><div class="mount" id="map-mount" data-embed="map" aria-label="Interaktywna mapa kampanii"><iframe src="/page/dungeons-of-drakkenheim/Mapa/" title="Interaktywna mapa kampanii — Atlas Drakkenheim" loading="lazy" allow="fullscreen"></iframe></div><a class="workspace-direct-link" href="/page/dungeons-of-drakkenheim/Mapa/" target="_blank" rel="noopener">Otwórz mapę w osobnej karcie ↗</a></div>
 </div></section>
 
 <section id="notes" class="alt"><div class="tear"></div><div class="wrap">
@@ -351,7 +351,7 @@ main>section,main>section.alt{background:transparent!important}
 <section id="overview"><div class="tear"></div><div class="wrap">
  <h2>Status</h2>
  <div class="board" id="ov"></div>
- <p class="kyrah-thanks">Dziękuję Wam za najpiękniejsze wspomnienia!<span>~ Kyrah</span></p>
+ <p class="kyrah-thanks">Niech prawda o Drakkenheim ujrzy światło dzienne.<span>~ Kronikarz</span></p>
 </div></section>
 </main>
 
@@ -364,7 +364,7 @@ var DATA={
   "overview": [
     {
       "kind": "situation",
-      "title": "Przysięga Thylei",
+      "title": "Przysięga Drakkenheim",
       "meta": "Drakkenheim · wygnańcy · przepowiednia",
       "stamp": "Kronika kampanii"
     },
@@ -537,13 +537,13 @@ go(views.some(function(v){return '#'+v.id===location.hash})?location.hash.slice(
 </script>
 
 <!-- Odyssey ambient soundtrack; intentionally only on the campaign hub, not the full-view Map or Notes pages. -->
-<div id="odyssey-audio" aria-label="Sterowanie muzyką Odyssey">
+<div id="odyssey-audio" aria-label="Sterowanie muzyką Drakkenheim">
  <div class="audio-ring" role="slider" aria-label="Głośność" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65" tabindex="0"></div>
  <button type="button" aria-label="Odtwórz muzykę" aria-pressed="false">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
  </button>
  <span class="audio-tip">PRZECIĄGNIJ PIERŚCIEŃ · GŁOŚNOŚĆ</span>
- <audio id="odyssey-soundtrack" src="/page/dungeons-of-drakkenheim/res/odyssey.mp3" preload="none" loop></audio>
+ <audio id="odyssey-soundtrack" src="/page/dungeons-of-drakkenheim/res/audio/Drakkenheim.mp3" preload="none" loop></audio>
 </div>
 <script>
 (function(){
