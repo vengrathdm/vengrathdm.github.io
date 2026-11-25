@@ -116,11 +116,11 @@ button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .chron{list-style:none;margin:0;padding:0;position:relative}
 .chron::before{content:"";position:absolute;left:30px;top:0;bottom:0;border-left:3px dotted #6d4aa8}
 .ev{position:relative;padding-left:84px;margin-bottom:26px}
-.seal{all:unset;position:absolute;left:0;top:8px;width:62px;height:62px;border-radius:50% 46% 52% 48%;background:radial-gradient(circle at 35% 30%,#a78bfa,var(--blood) 60%,#0c0914);box-shadow:0 5px 12px #000,inset 0 -4px 6px #0006,inset 0 3px 4px #a78bfa66;display:grid;place-items:center;font:1.7rem var(--head);color:#0c0914;text-shadow:0 1px 0 #a78bfa88;transition:transform .25s,box-shadow .25s}
+.seal{all:unset;position:absolute;left:0;top:8px;width:62px;height:62px;border-radius:50% 46% 52% 48%;background:linear-gradient(135deg,#d8c5ff 0 12%,#8b5bd6 13% 34%,#4b267f 35% 55%,#b58aff 56% 72%,#38205f 73%);clip-path:polygon(50% 0,88% 24%,100% 68%,50% 100%,0 68%,12% 24%);border-radius:0;box-shadow:0 5px 12px #000,inset 0 -4px 6px #0006,inset 0 3px 4px #a78bfa66;display:grid;place-items:center;font:1.7rem var(--head);color:#0c0914;text-shadow:0 1px 0 #a78bfa88;transition:transform .25s,box-shadow .25s}
 .seal:hover{transform:scale(1.14) rotate(-8deg);box-shadow:0 8px 18px #000,0 0 26px rgba(228,192,120,.7),inset 0 -4px 6px #0006}
 .seal:active{transform:scale(.92)}
 .seal:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
-.ev.open .seal{background:radial-gradient(circle at 35% 30%,#eee8f7,var(--gold) 60%,#49385f);color:#0c0914;box-shadow:0 0 30px rgba(228,192,120,.7),0 5px 12px #000}
+.ev.open .seal{background:linear-gradient(135deg,#f0e8ff 0 12%,#b58aff 13% 34%,#6d4aa8 35% 55%,#d8c5ff 56% 72%,#49385f 73%);color:#0c0914;box-shadow:0 0 30px rgba(167,139,250,.9),0 5px 12px #000}
 .sheet{background:linear-gradient(100deg,var(--paper),var(--paper2));color:#0c0914;border-radius:3px 12px 3px 12px;padding:16px 22px;box-shadow:0 8px 20px #0009,inset 0 0 30px #49385f55;transition:transform .25s,box-shadow .25s;transform:rotate(var(--r,-.4deg))}
 .ev:nth-child(even) .sheet{--r:.5deg}
 .ev:hover .sheet{transform:rotate(0) translateX(6px);box-shadow:0 14px 28px #000a,inset 0 0 30px #49385f55}
@@ -297,12 +297,12 @@ main>section,main>section.alt{background:transparent!important}
   
 <a class="vengrath-mark" href="/home/" aria-label="Powrót do Vengrath"><img src="/core/graphics/favicon/mg-logo.png" alt=""> VENGRATH <span>✦</span></a>
 <nav id="dock" aria-label="Nawigacja kampanii">
- <a href="#intro" data-i><svg viewBox="0 0 24 24"><path d="M2 9L12 3l10 6H2zM4 10v9M8 10v9M12 10v9M16 10v9M20 10v9M2 21h20"/></svg>Kampania</a>
- <a href="#characters" data-i><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3 8-8 10-5-2-8-5-8-10V6zM8 10l4-3 4 3-4 7z"/></svg>Postaci</a>
- <a href="#chronicle" data-i><svg viewBox="0 0 24 24"><path d="M6 3h11a3 3 0 010 6H7a3 3 0 000 6h11a3 3 0 010 6H6a3 3 0 010-6V6a3 3 0 013-3zM9 6h7M9 12h6M9 18h7"/></svg>Kronika</a>
- <a href="#map" data-i><svg viewBox="0 0 24 24"><path d="M2 16l10-12 10 12-10 4zM12 4v16M2 16h20"/></svg>Mapa</a>
- <a href="#notes" data-i><svg viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5"/></svg>Notatki</a>
- <a href="#overview" data-i><svg viewBox="0 0 24 24"><path d="M12 21c-5-2-8-6-8-12 4 0 7 2 8 6 1-4 4-6 8-6 0 6-3 10-8 12zM12 15v6"/></svg>Status</a>
+ <a href="#intro" data-i><svg viewBox="0 0 24 24"><path d="M3 20V9l9-6 9 6v11h-6v-7H9v7zM3 20h18"/></svg>Kampania</a>
+ <a href="#characters" data-i><svg viewBox="0 0 24 24"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM17 10a3 3 0 1 0 0-6M2 21v-2a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v2zM16 14a5 5 0 0 1 6 5v2h-4"/></svg>Postaci</a>
+ <a href="#chronicle" data-i><svg viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5M8 19h8"/></svg>Kronika</a>
+ <a href="#map" data-i><svg viewBox="0 0 24 24"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3zM9 3v15M15 6v15"/></svg>Mapa</a>
+ <a href="#notes" data-i><svg viewBox="0 0 24 24"><path d="M5 3h11l3 3v15H5zM15 3v4h4M8 11h8M8 15h8M8 19h5"/></svg>Notatki</a>
+ <a href="#overview" data-i><svg viewBox="0 0 24 24"><path d="M3 19h18M5 16l4-5 4 3 6-8M16 6h3v3"/></svg>Status</a>
 </nav>
 
 <main>
@@ -351,7 +351,6 @@ main>section,main>section.alt{background:transparent!important}
 <section id="overview"><div class="tear"></div><div class="wrap">
  <h2>Status</h2>
  <div class="board" id="ov"></div>
- <p class="kyrah-thanks">Niech prawda o Drakkenheim ujrzy światło dzienne.<span>~ Kronikarz</span></p>
 </div></section>
 </main>
 
@@ -426,7 +425,7 @@ function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null
 
 function renderParty(){
  var P=$('#party');P.innerHTML='';
- for(var i=0;i<6;i++){(function(i){
+ for(var i=0;i<5;i++){(function(i){
   var c=DATA.characters[i]||null,card=el('article','pc'+(c?'':' empty'));card.dataset.el=i;
   var tilt=el('div','tilt'),flip=el('div','flip');
   var sub=[c&&c.race,c&&c['class'],c&&c.level?'Lv '+c.level:''].filter(Boolean).join(' · ')||'Rasa · Klasa · Poziom';
@@ -491,7 +490,7 @@ function renderAll(){renderParty();renderChron();renderOverview()}
 renderAll();
 fetch('./chronicle.json').then(function(r){if(!r.ok)throw new Error('Chronicle unavailable');return r.json()}).then(function(d){DATA.chronicle=d.sessions||[];renderChron()}).catch(function(e){console.warn('Nie udało się wczytać kroniki Drakkenheim:',e)});
 window.CampaignHub={
- setCharacters:function(a){DATA.characters=(a||[]).slice(0,6);renderParty()},
+ setCharacters:function(a){DATA.characters=(a||[]).slice(0,5);renderParty()},
  setChronicle:function(a){DATA.chronicle=a||[];renderChron()},
  setOverview:function(a){DATA.overview=a;renderOverview()},
  mounts:{map:$('#map-mount'),notes:$('#notes-mount')}
