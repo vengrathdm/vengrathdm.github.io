@@ -1,46 +1,568 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#09090c"><meta name="description" content="Archiwum kampanii Dungeons of Drakkenheim.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dungeons of Drakkenheim — Vengrath</title>
-<link rel="preload" as="image" href="/core/graphics/voronoi/dungeons-of-drakkenheim.webp" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Voltaire&family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Brygada+1918:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+:root{
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#100d0e;--bg2:#1b1516;--stone:#302326;--ink:#e9e0d2;--mute:#b8aaa0;--gold:#c45b3c;
+  --paper:#e9e0d2;--paper2:#b7a38c;--pink:#302326;
+  --earth:#8f342d;--water:#64777b;--air:#c45b3c;--fire:#a94a3f;--blood:#572b2d;
+  --head:'Cinzel',Georgia,serif;--body:'IM Fell English',Georgia,'Times New Roman',serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#100d0e;--bg2:#1b1516}}
+:root[data-theme="dark"]{--bg:#100d0e;--bg2:#1b1516}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#100d0e;--bg2:#1b1516}}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:20px/1.55 var(--body);overflow-x:hidden}
+h1,h2,h3{font-family:var(--head);font-weight:400;margin:0;line-height:1}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+section{position:relative;padding:110px 0 70px}
+.kick{font-style:italic;color:var(--gold);font-size:1.05rem}
+h2{font-size:clamp(2.6rem,7vw,4.8rem);margin:4px 0 12px;color:var(--ink);text-shadow:0 2px 0 #000,0 0 28px rgba(78,130,144,.25)}
+.lede{color:var(--mute);max-width:56ch;margin:0 0 40px}
+.tear{position:absolute;left:0;right:0;top:-1px;height:34px;background:var(--bg);clip-path:polygon(0 0,100% 0,100% 30%,96% 80%,91% 40%,86% 90%,80% 35%,74% 85%,68% 30%,61% 95%,55% 40%,48% 85%,42% 30%,35% 90%,28% 40%,21% 80%,14% 30%,8% 85%,3% 35%,0 70%)}
+.alt{background:linear-gradient(var(--bg2),var(--bg))}
+
+/* dock */
+#dock{position:fixed;z-index:60;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;gap:2px;padding:6px;background:linear-gradient(#1b1516,#1b1516);border:2px solid #554047;border-radius:14px;box-shadow:0 10px 30px #000,inset 0 1px 0 #8f342d;max-width:calc(100vw - 16px)}
+#dock a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 10px;border-radius:9px;text-decoration:none;color:var(--mute);font:.95rem var(--head);letter-spacing:.04em;transition:transform .2s,background .2s,color .2s,box-shadow .2s}
+#dock svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7}
+#dock a:hover{transform:translateY(-6px) scale(1.12);color:var(--gold);background:#00000055}
+#dock a:active{transform:translateY(-2px) scale(1)}
+#dock a.on{color:var(--fire);background:#000000aa;box-shadow:inset 0 0 12px rgba(78,130,144,.4)}
+@media(max-width:520px){#dock a{padding:6px 7px;font-size:.78rem}}
+
+/* hero */
+.hero{min-height:100svh;padding:0;display:grid;align-items:end;overflow:hidden;background:radial-gradient(ellipse at 50% 80%,#302326,var(--bg) 65%)}
+#embers{position:absolute;inset:0;width:100%;height:100%}
+.scene{position:absolute;inset:0;z-index:0;overflow:hidden}
+.scene img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center center}
+.scene::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,9,11,.18) 0%,rgba(24,9,11,.28) 42%,rgba(24,9,11,.92) 100%),linear-gradient(90deg,rgba(24,9,11,.3),transparent 52%,rgba(24,9,11,.22));pointer-events:none}
+#embers{z-index:1}
+.hero .wrap{position:relative;z-index:2;padding-bottom:150px;padding-top:140px}
+.hero h1{font-size:clamp(3.4rem,13vw,10rem);line-height:.88;background:linear-gradient(#e9e0d2,#c45b3c 55%,#8f342d);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 4px 0 #000) drop-shadow(0 0 40px rgba(78,130,144,.35))}
+.hero h1 b{font-weight:400;display:block;background:linear-gradient(#e9e0d2,var(--fire) 60%,var(--blood));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .kick{font-size:1.3rem}
+.plaque{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 0;padding:0}
+.plaque div{padding:8px 16px;background:linear-gradient(#1b1516,#1b1516);border:1px solid #554047;border-radius:4px;box-shadow:inset 0 1px 0 #554047,0 4px 10px #0008}
+.plaque dt{font:.95rem var(--head);color:var(--gold);letter-spacing:.08em}.plaque dd{margin:0;font-size:.95rem}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media(max-width:800px){.intro{grid-template-columns:1fr}}
+.intro p{margin:0 0 1em}
+.intro #introText p:first-child::first-letter{font:5rem/.8 var(--head);float:left;padding:6px 10px 0 0;color:var(--fire);text-shadow:0 0 18px rgba(78,130,144,.6)}
+.chip{display:inline-block;margin-top:6px;padding:14px 28px;background:linear-gradient(#8f342d,var(--blood));color:#e9e0d2;font:1.4rem var(--head);letter-spacing:.06em;text-decoration:none;border-radius:4px;box-shadow:0 5px 0 #100d0e,0 10px 20px #0009;transition:transform .15s,box-shadow .15s,filter .2s}
+.chip:hover{transform:translateY(-3px);box-shadow:0 8px 0 #100d0e,0 16px 28px #000a,0 0 24px rgba(78,130,144,.5);filter:brightness(1.15)}
+.chip:active{transform:translateY(4px);box-shadow:0 1px 0 #100d0e}
+
+
+.voronoi-card{display:flex;flex-direction:column;align-self:stretch;min-width:0;overflow:hidden;text-decoration:none;color:var(--ink);background:linear-gradient(145deg,#572b2d,#100d0e);border:1px solid var(--gold);box-shadow:0 14px 34px #0009,inset 0 0 0 4px #0005;transition:transform .25s,box-shadow .25s}
+.voronoi-card:hover{transform:translateY(-5px);box-shadow:0 22px 42px #000c,0 0 22px #c45b3c55}
+.voronoi-card img{display:block;width:100%;height:100%;min-height:220px;max-height:360px;object-fit:cover;object-position:center}
+.voronoi-card span{padding:12px 14px;text-align:center;font:1rem var(--head);letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border-top:1px solid #c45b3c77}
+.intro{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(190px,.72fr)}
+@media(max-width:900px){.intro{grid-template-columns:1fr 1fr}.voronoi-card{grid-column:1/-1;max-width:340px;width:100%;justify-self:center}.voronoi-card img{height:240px}}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.voronoi-card{grid-column:auto;max-width:none}}
+
+/* party: tarot-style cards */
+.party{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+@media(max-width:1040px){.party{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.party{grid-template-columns:1fr;max-width:340px;margin:0 auto}}
+.pc{--c:var(--earth);perspective:900px;aspect-ratio:1/1.12}
+.pc[data-el="1"]{--c:var(--water)}.pc[data-el="2"]{--c:var(--air)}.pc[data-el="3"]{--c:var(--fire)}
+.tilt{width:100%;height:100%;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .2s;transform-style:preserve-3d}
+.flip{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.3,1.3,.5,1)}
+.pc.turned .flip{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:2px;padding:12px;background:linear-gradient(145deg,#302326,#1b1516);border:2px solid var(--c);box-shadow:0 18px 40px #000a,0 0 0 1px #000,inset 0 0 0 5px #100d0e,inset 0 0 0 6px color-mix(in srgb,var(--c) 55%,#000);color:var(--ink);display:flex;flex-direction:column;gap:8px;text-align:center;overflow:hidden}
+.face.back{transform:rotateY(180deg);text-align:left}
+.face::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:0;background:radial-gradient(circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.28),transparent 45%);mix-blend-mode:soft-light}
+button.facebtn{all:unset;display:flex;flex-direction:column;gap:8px;height:100%;padding:0}
+button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.pc:hover .face{box-shadow:0 22px 50px #000,0 0 36px color-mix(in srgb,var(--c) 55%,transparent),inset 0 0 0 5px #100d0e,inset 0 0 0 6px var(--c)}
+.portrait{flex:none;width:calc(100% - 12px);aspect-ratio:4/5;height:auto;margin:9px 6px;border-radius:0;background:radial-gradient(circle at 50% 35%,color-mix(in srgb,var(--c) 40%,#000),#100d0e);display:grid;place-items:center;overflow:hidden;box-shadow:inset 0 0 24px #000}
+.portrait img{width:100%;height:100%;object-fit:contain}
+.portrait span{font:7rem var(--head);color:color-mix(in srgb,var(--c) 60%,transparent)}
+.face h3{font-size:1.7rem;overflow-wrap:anywhere}
+.sub{font-style:italic;color:var(--c);font-size:.95rem;min-height:2.7em}
+.hint{font-size:.78rem;color:var(--mute);letter-spacing:.15em;text-transform:uppercase}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:30px 8px 0;font-size:.98rem;scrollbar-width:thin;scrollbar-color:var(--c) transparent}
+.scroll p{margin:0 0 10px;color:#d4c6b6}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0;margin:0 0 10px;list-style:none}
+.stats li{background:#0006;border:1px solid #ffffff22;border-radius:6px;text-align:center;font-size:1.1rem}
+.stats b{display:block;font:.8rem var(--head);color:var(--c);letter-spacing:.1em}
+.turn{position:relative;z-index:3;align-self:center;background:none;border:1px solid var(--c);color:var(--c);padding:4px 16px;font:1rem var(--head);border-radius:20px;transition:background .2s,color .2s,transform .15s}
+.turn:hover{background:var(--c);color:#000;transform:scale(1.06)}
+.pc.empty .face h3,.pc.empty .scroll p{opacity:.65;font-style:italic}
+
+
+/* Keep the front and reverse controls aligned; give reverse-side content breathing room */
+.face .turn{margin-top:auto;flex-shrink:0}
+.face.back{padding:26px 24px 20px}
+.face.back>h3{padding:0 8px;margin:8px 0 0}
+.face.back .scroll{padding:18px 8px 0}
+.face.back>.turn{margin-top:auto}
+
+/* chronicle */
+.chron{list-style:none;margin:0;padding:0;position:relative}
+.chron::before{content:"";position:absolute;left:30px;top:0;bottom:0;border-left:3px dotted #8f342d}
+.ev{position:relative;padding-left:84px;margin-bottom:26px}
+.seal{all:unset;position:absolute;left:0;top:8px;width:62px;height:62px;border-radius:50% 46% 52% 48%;background:radial-gradient(circle at 35% 30%,#c45b3c,var(--blood) 60%,#100d0e);box-shadow:0 5px 12px #000,inset 0 -4px 6px #0006,inset 0 3px 4px #c45b3c66;display:grid;place-items:center;font:1.7rem var(--head);color:#100d0e;text-shadow:0 1px 0 #c45b3c88;transition:transform .25s,box-shadow .25s}
+.seal:hover{transform:scale(1.14) rotate(-8deg);box-shadow:0 8px 18px #000,0 0 26px rgba(228,192,120,.7),inset 0 -4px 6px #0006}
+.seal:active{transform:scale(.92)}
+.seal:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.ev.open .seal{background:radial-gradient(circle at 35% 30%,#e9e0d2,var(--gold) 60%,#554047);color:#100d0e;box-shadow:0 0 30px rgba(228,192,120,.7),0 5px 12px #000}
+.sheet{background:linear-gradient(100deg,var(--paper),var(--paper2));color:#100d0e;border-radius:3px 12px 3px 12px;padding:16px 22px;box-shadow:0 8px 20px #0009,inset 0 0 30px #55404755;transition:transform .25s,box-shadow .25s;transform:rotate(var(--r,-.4deg))}
+.ev:nth-child(even) .sheet{--r:.5deg}
+.ev:hover .sheet{transform:rotate(0) translateX(6px);box-shadow:0 14px 28px #000a,inset 0 0 30px #55404755}
+.ev .date{font:1rem var(--head);color:var(--blood);letter-spacing:.1em}
+.ev h3{font-size:1.8rem}.ev .sumtxt{margin:2px 0 0;font-family:'IM Fell English',Georgia,serif;font-size:1.45rem;line-height:1.25}
+.detail{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
+.ev.open .detail{grid-template-rows:1fr}
+.detail>div{overflow:hidden}
+.detail p{margin:12px 0 0;padding-top:12px;border-top:2px dashed #55404788;font-family:'IM Fell English',Georgia,serif;font-size:1.55rem;line-height:1.3}
+.cue{font-style:italic;font-size:.9rem;color:var(--blood);margin-top:6px}
+.ev.open .cue::before{content:"Roll up scroll ▲"}.ev:not(.open) .cue::before{content:"Unroll scroll ▼"}
+@media(min-width:900px){
+ .chron::before{left:50%}
+ .ev{width:50%;padding:0 56px 0 0;margin-bottom:-6px}
+ .ev:nth-child(even){margin-left:50%;padding:0 0 0 56px}
+ .seal{left:auto;right:-31px}.ev:nth-child(even) .seal{right:auto;left:-31px}
+ .ev{margin-bottom:22px}
+}
+
+/* embeds */
+.frame{position:relative;padding:clamp(10px,1.4vw,36px);border-radius:10px;background:linear-gradient(135deg,#572b2d,#302326 58%,#554047);box-shadow:0 30px 60px #000c,inset 0 2px 0 #c45b3c,inset 0 0 0 3px #100d0e}
+.frame::before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:10px;
+ background:radial-gradient(circle at 10px 10px,#e9e0d2 0 4px,#8f342d 5px,transparent 6px) 0 0/100% 100% no-repeat,
+ radial-gradient(circle at calc(100% - 10px) 10px,#e9e0d2 0 4px,#8f342d 5px,transparent 6px) 0 0/100% 100% no-repeat,
+ radial-gradient(circle at 10px calc(100% - 10px),#e9e0d2 0 4px,#8f342d 5px,transparent 6px) 0 0/100% 100% no-repeat,
+ radial-gradient(circle at calc(100% - 10px) calc(100% - 10px),#e9e0d2 0 4px,#8f342d 5px,transparent 6px) 0 0/100% 100% no-repeat}
+.frame.book{background:linear-gradient(135deg,#554047,#1b1516 62%,#302326);box-shadow:0 30px 60px #000c,inset 0 2px 0 #c45b3c}
+.frame.book::after{content:"";position:absolute;inset:9px;border:2px dashed #c45b3c88;border-radius:6px;pointer-events:none}
+#map .wrap,#notes .wrap{width:100%;max-width:3840px;padding-inline:clamp(12px,2vw,72px)}
+#map .frame,#notes .frame{width:100%}
+#map .mount,#notes .mount{height:clamp(460px,78svh,1800px);display:grid;place-items:center;text-align:center;color:var(--mute);background:#100d0e;box-shadow:inset 0 0 40px #000,inset 0 0 0 1px #784047;border-radius:4px}
+#map .mount>*:not(.ph),#notes .mount>*:not(.ph){width:100%;height:100%;min-width:0;min-height:0}
+#map .mount iframe,#notes .mount iframe{display:block;width:100%;height:100%;border:0;border-radius:4px;background:#100d0e}
+@media(max-width:700px){#map .wrap,#notes .wrap{padding-inline:10px}#map .mount,#notes .mount{height:76svh;min-height:440px}}
+.workspace-direct-link{position:relative;z-index:2;display:block;padding:10px 14px;text-align:right;color:var(--gold);font:11px/1.4 system-ui,sans-serif;letter-spacing:.04em;text-decoration:none;background:#100d0e;border-top:1px solid #8f342d66}
+.workspace-direct-link:hover{color:#fff;text-decoration:underline}
+.ph small{display:block;font:1.2rem var(--head);color:var(--gold);letter-spacing:.1em}
+.ph code{font-size:.85rem;opacity:.7}
+.kick.r{display:block}
+
+/* quest board */
+.board{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:34px;padding:36px;border-radius:12px;background:radial-gradient(#0003 1px,transparent 1.5px) 0 0/9px 9px,linear-gradient(135deg,#353c7a,#1b1516);box-shadow:inset 0 0 0 10px #171b45,inset 0 0 60px #000a,0 20px 50px #000a}
+.note{position:relative;padding:28px 22px 22px;background:linear-gradient(var(--paper),var(--paper2));color:#100d0e;transform:rotate(var(--r,-1.5deg));box-shadow:0 8px 16px #0008;transition:transform .3s,box-shadow .3s}
+.note:nth-child(2){--r:1.2deg}.note:nth-child(3){--r:-.6deg}.note:nth-child(4){--r:1.8deg}
+.note:hover{transform:rotate(0) scale(1.05) translateY(-6px);box-shadow:0 22px 30px #000a;z-index:2}
+.note::before{content:"";position:absolute;top:-9px;left:50%;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#c45b3c,var(--blood));box-shadow:0 4px 5px #0007}
+.note h3{font-size:1.6rem;color:var(--blood);margin-bottom:6px}
+.note p,.note ul{margin:0;padding-left:0;list-style-position:inside}
+#overview .board{grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch;gap:26px}
+#overview .status-note{min-height:190px;display:flex;flex-direction:column;gap:10px;padding:25px 22px 22px}
+#overview .status-note h3{font-size:clamp(1.35rem,2.2vw,1.8rem)}
+#overview .status-note.situation{grid-column:span 4;min-height:120px;display:grid;grid-template-columns:1fr auto;align-content:center;align-items:center;gap:4px 20px}
+#overview .status-note.situation h3{font-size:clamp(2rem,4vw,3rem);margin:0}
+#overview .status-meta{font-style:italic;color:#75413a}
+#overview .status-stamp{grid-column:2;grid-row:1/3;align-self:center;padding:8px 12px;border:3px double #64777b;color:#64777b;font:1.15rem var(--head);letter-spacing:.08em;transform:rotate(-5deg)}
+#overview .status-value{font:clamp(1.8rem,3vw,2.7rem)/1 var(--head);color:#572b2d}
+#overview .status-detail{font-size:1rem;line-height:1.4}
+#overview .status-note.threats{grid-column:span 2}
+#overview .status-threats{list-style:none;display:grid;gap:12px}
+#overview .status-threat{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px dashed #59608a88;padding-bottom:8px}
+#overview .status-threat-name{font-size:1rem}
+#overview .status-tag{flex:none;padding:3px 7px;border:1px solid currentColor;border-radius:3px;font: .78rem var(--head);letter-spacing:.04em;text-transform:uppercase}
+#overview .status-tag.active{color:#64777b}
+#overview .status-tag.suspected{color:#a96a25}
+#overview .status-tag.unknown{color:#59608a}
+#overview .status-tag.resolved{color:#527b64}
+#overview .status-note.clue{grid-column:span 2}
+#overview .status-quote{margin:4px 0 0;padding:8px 0 8px 14px;border-left:3px solid #572b2d;color:#572b2d;font:italic 1.5rem/1.25 var(--body)}
+@media(max-width:850px){#overview .board{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}#overview .status-note.situation{grid-column:span 2}}
+@media(max-width:520px){#overview .board{grid-template-columns:1fr;padding:26px 20px;gap:22px}#overview .status-note.situation,#overview .status-note.threats,#overview .status-note.clue{grid-column:span 1}#overview .status-note.situation{grid-template-columns:1fr auto}#overview .status-stamp{grid-column:2;grid-row:1/3;font-size:.9rem;padding:6px 8px}#overview .status-note{min-height:0}}
+footer{padding:60px 0 130px;text-align:center;color:var(--mute);font-style:italic}
+.tear{display:none}.introblk .tear{display:block}.introblk{padding:110px 0 70px}
+section{min-height:100svh}#intro{padding:0;min-height:0}.hero{position:relative}
+main{position:relative;overflow-x:hidden}
+main>section{display:none}main>section.active{display:block}
+main>section.leave{position:absolute;top:0;left:0;right:0;display:block;z-index:3;pointer-events:none}
+@keyframes outL{to{transform:translateX(-115%) translateY(-30px) rotate(-4deg);opacity:0}}
+@keyframes outR{to{transform:translateX(115%) translateY(-30px) rotate(4deg);opacity:0}}
+@keyframes inR{from{transform:translateX(115%) translateY(50px) rotate(4deg);opacity:0}60%{opacity:1}}
+@keyframes inL{from{transform:translateX(-115%) translateY(50px) rotate(-4deg);opacity:0}60%{opacity:1}}
+.out-l{animation:outL .65s cubic-bezier(.6,0,.9,.4) forwards}.out-r{animation:outR .65s cubic-bezier(.6,0,.9,.4) forwards}
+.in-r{animation:inR .72s cubic-bezier(.2,.9,.25,1.05) both}.in-l{animation:inL .72s cubic-bezier(.2,.9,.25,1.05) both}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.vengrath-mark{position:fixed;z-index:60;top:20px;left:24px;display:flex;align-items:center;gap:9px;color:#aeb9ee;text-decoration:none;font:1rem var(--head);letter-spacing:.18em;text-shadow:0 2px 8px #000}.vengrath-mark img{width:30px;height:30px;object-fit:contain}.vengrath-mark span{color:var(--gold)}
+@media(max-width:520px){.vengrath-mark{top:9px;left:12px;font-size:.8rem}.vengrath-mark img{width:23px;height:23px}#dock{gap:0;padding:4px}#dock a{padding:5px 6px;font-size:.72rem}#dock svg{width:18px;height:18px}}
+.campaign-background-video{position:fixed;inset:0;z-index:-1;width:100%;height:100%;object-fit:cover;opacity:.34;pointer-events:none}html{background:#100d0e}body{background:linear-gradient(180deg,rgba(24,9,11,.68),rgba(24,9,11,.82));}#chronicle.alt,#notes.alt{background:transparent;}
+ 
+/* ODYSSEY — Aegean bronze, marble and deep-sea palette */
+:root{--bg:#100d0e;--bg2:#1b1516;--stone:#572b2d;--ink:#e9e0d2;--mute:#b4c4c5;--gold:#c45b3c;--paper:#e8dec8;--paper2:#c9b88f;--pink:#302326;--earth:#8f342d;--water:#4c9bb0;--air:#c45b3c;--fire:#c8754d;--blood:#743a43;--head:'Greek Freak Polish','Voltaire',Georgia,serif;--body:'Brygada 1918',Georgia,serif}
+body{background:radial-gradient(ellipse at 50% 0%,#17465b 0,transparent 42%),linear-gradient(160deg,#100d0e,#0a2a3a 55%,#071923);color:var(--ink)}
+h2{color:#e9e0d2;text-shadow:0 2px 0 #06141d,0 0 28px #4c9bb044}
+.kick,.date,.status-meta{color:#c45b3c}
+.chip{background:linear-gradient(#8f342d,#74482d);border-color:#c45b3c;color:#fff1d1;box-shadow:0 5px 0 #04121b,0 0 0 3px #16384a,0 10px 22px #000a,inset 0 1px 0 #f5d99d}
+.plaque div{background:linear-gradient(145deg,#1c4a5b,#102b3a 65%,#091c28);border-color:#8f342d;box-shadow:inset 0 1px 0 #f0d69c,inset 0 -3px 0 #08141b,0 6px 15px #0009}
+.plaque dt{color:#c45b3c}
+.face{background:linear-gradient(145deg,#17485b,#0c2939 58%,#100d0e)!important;box-shadow:0 18px 40px #000a,0 0 0 1px #06131c,inset 0 0 0 4px #0a1e2a,inset 0 0 0 5px #d0aa6c66!important}
+.portrait{background:radial-gradient(circle at 50% 35%,#4a7180,#102c3b 70%)!important;border-color:#8f342d}
+.seal{background:linear-gradient(145deg,#c45b3c,#a36e3e 55%,#5b3b2b)!important;color:#102330!important;box-shadow:0 5px 12px #000,inset 0 0 0 3px #f0d79b,inset 0 0 0 5px #76502f!important}
+.sheet{background:linear-gradient(105deg,#e8dec8,#d0c09a)!important;color:#26333a!important;box-shadow:0 8px 20px #0009,inset 0 0 0 1px #a98c5d,inset 0 0 24px #8a6b3b33!important}
+.sheet h3{color:#16384a}.sheet .sumtxt{color:#38464a}.sheet .date{color:#85643d}
+.frame,.frame.book{background:linear-gradient(145deg,#8f342d,#234858 24%,#0d2a3a 70%,#8f342d);box-shadow:0 30px 60px #000c,inset 0 1px 0 #f0d79b,inset 0 0 0 3px #0a202d}
+#map .mount,#notes .mount{background:#0b2636;box-shadow:inset 0 0 0 1px #8f342d,inset 0 0 40px #000}
+.workspace-direct-link{background:linear-gradient(#163e51,#091f2d);border-top:1px solid #8f342d;color:#c45b3c}
+.board{background:radial-gradient(circle,#d5b77b 0 1px,transparent 1.5px) 0 0/16px 16px,linear-gradient(145deg,#1a4b5c,#0c2939);box-shadow:inset 0 0 0 8px #091b27,inset 0 0 0 10px #8f342d,inset 0 0 60px #000a,0 20px 50px #000a}
+.note{background:linear-gradient(110deg,#e8dec8,#cbb88e);color:#26333a;box-shadow:0 8px 16px #0008,inset 0 0 0 1px #8f342d}
+.vengrath-mark{color:#c45b3c}
+.party{grid-template-columns:repeat(3,minmax(0,1fr))}
+.recording-link{display:inline-flex;margin:12px 10px 0 0;padding:8px 13px;border:1px solid #9b7648;background:#0b2a3a;color:#6b4b28;border-radius:2px;text-decoration:none;font:600 .85rem 'Fira Sans Extra Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.recording-link:hover{background:#173e50;color:#e9e0d2}
+@media(max-width:900px){.party{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.party{grid-template-columns:1fr}}
+
+
+/* Hellenic hero cards: squared marble plaques, ivory meander and bronze rules */
+.pc{aspect-ratio:3/5}
+.face{border-radius:2px!important;border:2px solid #e9e0d2!important;outline:1px solid #8f342d;outline-offset:-5px;background:linear-gradient(145deg,#572b2d,#1b1516 58%,#100d0e)!important;box-shadow:0 18px 40px #000a,0 0 0 1px #8f342d,inset 0 0 0 5px #100d0e,inset 0 0 0 6px #c45b3c!important}
+.face::before{content:'';position:absolute;z-index:1;inset:7px;pointer-events:none;border:1px solid rgba(244,237,219,.55);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='12' viewBox='0 0 48 12'%3E%3Cpath d='M0 1h10v10H2V4h5v4H4 M14 1h10v10h-8V4h5v4h-3 M28 1h10v10h-8V4h5v4h-3 M42 1h6' fill='none' stroke='%23f4eddb' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:repeat-x;background-position:top left,bottom left;background-size:48px 12px;box-shadow:inset 0 0 0 1px rgba(228,192,120,.5)}
+.face>*{position:relative;z-index:2}
+.face::after{border-radius:0}
+.portrait{border:1px solid #c45b3c!important;outline:1px solid rgba(244,237,219,.65);outline-offset:3px}
+.pc:hover .face{box-shadow:0 22px 50px #000,0 0 26px rgba(228,192,120,.25),inset 0 0 0 5px #100d0e,inset 0 0 0 6px #c45b3c!important}
+.sub{color:#c45b3c}
+.turn{border-radius:2px;border-color:#e9e0d2;color:#e9e0d2}
+.turn:hover{background:#e9e0d2;color:#100d0e}
+/* The bottom dock is a Hellenic bronze-and-marble navigation plaque */
+#dock{position:fixed;border-radius:2px;padding:9px 12px;background:linear-gradient(180deg,#572b2d,#100d0e);border:2px solid #c45b3c;outline:1px solid #8f342d;outline-offset:3px;box-shadow:0 12px 32px #000c,inset 0 1px 0 #fff8}
+#dock::before{content:'';position:absolute;inset:3px;pointer-events:none;border:1px solid rgba(244,237,219,.5);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='12' viewBox='0 0 48 12'%3E%3Cpath d='M0 1h10v10H2V4h5v4H4 M14 1h10v10h-8V4h5v4h-3 M28 1h10v10h-8V4h5v4h-3 M42 1h6' fill='none' stroke='%23f4eddb' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:repeat-x;background-position:top left,bottom left;background-size:48px 12px;opacity:.8}
+#dock a{position:relative;z-index:1;border-radius:2px;padding:11px 12px;color:#d4c6b6;letter-spacing:.08em}
+#dock a:hover{transform:translateY(-4px);color:#100d0e;background:#c45b3c}
+#dock a.on{color:#100d0e;background:#e9e0d2;box-shadow:inset 0 0 0 1px #8f342d}
+#dock svg{stroke:currentColor;stroke-width:1.8}
+@media(max-width:520px){#dock{padding:7px 8px}#dock a{padding:8px 7px;font-size:.72rem}#dock svg{width:19px;height:19px}}
+
+#overview .kyrah-thanks{margin:clamp(48px,8vw,110px) 0 24px;text-align:center;color:#fff;font:clamp(2.8rem,7vw,6.2rem)/1.12 'Autography',cursive;text-shadow:0 3px 14px #000,0 0 24px #fff3;transform:rotate(-3deg)}
+#overview .kyrah-thanks span{display:block;margin-top:12px;margin-left:22%;font-size:.72em}
+/* Aegean visual language: marble, bronze and restrained Greek-key ornament */
+:root{--bg:#100d0e;--bg2:#1b1516;--stone:#302326;--ink:#e9e0d2;--mute:#b8aaa0;--gold:#c45b3c;--paper:#e9e0d2;--paper2:#b7a38c;--pink:#302326;--earth:#8f342d;--water:#64777b;--air:#c45b3c;--fire:#a94a3f;--blood:#572b2d;--head:'Cinzel',Georgia,serif;--body:'Brygada 1918',Georgia,serif}
+body{background-image:radial-gradient(ellipse at 50% 0%,rgba(78,130,144,.13),transparent 55%),repeating-linear-gradient(90deg,transparent 0 79px,rgba(228,192,120,.018) 80px)}
+section:not(.hero)::before{content:'';position:absolute;top:0;left:22px;right:22px;height:5px;opacity:.48;background:repeating-linear-gradient(90deg,var(--gold) 0 10px,transparent 10px 14px,var(--gold) 14px 18px,transparent 18px 26px);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+#dock{background:linear-gradient(#572b2d,#100d0e);border-color:#8f342d;box-shadow:0 10px 30px #000,inset 0 1px 0 #c45b3c}
+.face{background:linear-gradient(145deg,#572b2d,#100d0e);box-shadow:0 18px 40px #000a,0 0 0 1px #000,inset 0 0 0 5px #100d0e,inset 0 0 0 6px color-mix(in srgb,var(--c) 55%,#000)}
+.sheet{box-shadow:0 8px 20px #0009,inset 0 0 30px rgba(52,89,106,.25)}
+
+ 
+/* ODYSSEY GLOBAL FULL-PAGE BACKDROP */
+body{
+ min-height:100%;
+ background-color:#100d0e;
+ background-image:linear-gradient(180deg,rgba(4,16,25,.76),rgba(4,16,25,.84)),url("/page/dungeons-of-drakkenheim/res/background.webp");
+ background-size:cover;
+ background-position:center center;
+ background-repeat:no-repeat;
+ background-attachment:fixed;
+}
+main>section,main>section.alt{background:transparent!important}
+#intro{background:transparent!important}
+@media(max-width:700px){body{background-attachment:scroll}}
+
+</style>
+
+<style id="odyssey-audio-style">
+#odyssey-audio{position:fixed;z-index:1200;right:24px;bottom:24px;width:68px;height:68px;touch-action:none;user-select:none}
+#odyssey-audio .audio-ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(#c49a58 0deg,var(--audio-progress,#c49a58) 0deg,rgba(220,207,177,.22) 0deg);box-shadow:0 5px 24px #0008;cursor:ns-resize}
+#odyssey-audio .audio-ring:before{content:"";position:absolute;inset:5px;border-radius:50%;background:rgba(5,24,37,.96);border:1px solid rgba(214,185,128,.55)}
+#odyssey-audio button{position:absolute;inset:10px;border:1px solid rgba(214,185,128,.5);border-radius:50%;background:linear-gradient(145deg,#17394b,#071b2a);color:#e9d7ae;display:grid;place-items:center;cursor:pointer;padding:0}
+#odyssey-audio button svg{width:22px;height:22px;fill:currentColor}
+#odyssey-audio .audio-tip{position:absolute;right:0;bottom:76px;white-space:nowrap;padding:5px 9px;border:1px solid #b99761;background:#071b2aeb;color:#e9d7ae;font:11px/1.2 Georgia,serif;letter-spacing:.06em;border-radius:3px;opacity:0;pointer-events:none;transition:opacity .2s}
+#odyssey-audio:hover .audio-tip,#odyssey-audio:focus-within .audio-tip{opacity:1}
+@media(max-width:700px){#odyssey-audio{right:14px;bottom:86px;width:60px;height:60px}}
+@media(prefers-reduced-motion:reduce){#odyssey-audio .audio-tip{transition:none}}
+</style>
 </head>
-<body class="drakkenheim">
-<header class="hero" id="poczatek"><div class="hero-image" aria-hidden="true"></div><div class="hero-shade"></div><div class="hero-top"><a class="brand" href="/home/">VENGRATH <span>/ ARCHIWUM</span></a><span class="hero-classification">AKTA KAMPANII · D&amp;D</span></div><div class="hero-copy"><p class="eyebrow">MIASTO PO KATASTROFIE · AKTA GŁÓWNE</p><h1>Dungeons <small>of</small><b>Drakkenheim</b></h1><p class="hero-deck">Miasto jest raną, która nie chce się zabliźnić. To archiwum wypraw, ludzi i decyzji podjętych na jej krawędzi.</p><button class="hero-enter" data-go="kampania">WEJDŹ DO ARCHIWUM <span>↓</span></button></div><div class="hero-index"><span>DD / ARCHIVE</span><span>EDYCJA II</span><span>VENGRATH</span></div></header>
-<div class="app-shell" id="archiwum">
-<aside class="rail"><a class="rail-brand" href="#poczatek" aria-label="Początek">D<span>D</span></a><div class="rail-caption">DRAKKENHEIM · AKTA</div>
-<nav class="main-nav" id="dock" aria-label="Nawigacja kampanii">
-<button class="nav-item active" data-section="kampania"><span class="nav-num">01</span><span>Kampania</span></button>
-<button class="nav-item" data-section="postaci"><span class="nav-num">02</span><span>Postaci</span></button>
-<button class="nav-item" data-section="kronika"><span class="nav-num">03</span><span>Kronika</span></button>
-<button class="nav-item" data-section="mapa"><span class="nav-num">04</span><span>Mapa</span></button>
-<button class="nav-item" data-section="notatki"><span class="nav-num">05</span><span>Notatki</span></button>
-<button class="nav-item" data-section="status"><span class="nav-num">06</span><span>Status</span></button>
-</nav><div class="rail-bottom"><span class="live-dot"></span><span>ARCHIWUM LOKALNE</span></div></aside>
-<main class="workspace"><header class="workspace-head"><div><span class="micro-label">VENGRATH / DUNGEONS OF DRAKKENHEIM</span><p id="section-breadcrumb">01 — KAMPANIA</p></div><button class="back-top" data-go="kampania">AKTA GŁÓWNE ↑</button></header>
-<section class="view active" id="view-kampania" data-view="kampania"><div class="section-heading"><div><span class="eyebrow">AKTA GŁÓWNE / 01</span><h2>Kampania</h2><p>Przegląd kampanii i skróty do najważniejszych rejestrów.</p></div><span class="seal">DD<br><small>AKTA MIEJSKIE</small></span></div>
-<div class="campaign-grid"><article class="feature-panel"><div class="panel-topline"><span>RAPORT / MIASTO</span><span>01—06</span></div><h3>Drakkenheim<br><em>nie zapomina.</em></h3><p>Piętnaście lat po katastrofie miasto nadal stoi. Haze przesącza się przez ruiny, delirium zmienia tych, którzy zbyt długo pozostają w skażonej strefie, a każda wyprawa w głąb miasta ma swoją cenę.</p><p>To miejsce nie jest jedynie celem ekspedycji. Jest układem sił, tajemnic i konsekwencji, których nie da się zamknąć w granicach murów.</p><div class="feature-foot"><span>STATUS DOKUMENTU</span><strong>OTWARTE AKTA</strong></div></article>
-<div class="campaign-side"><article class="stat-tile violet"><span>KRONIKA</span><strong id="campaign-sessions">36</strong><small>zapisanych sesji</small></article><article class="stat-tile green"><span>POSTACI</span><strong id="campaign-characters">05</strong><small>zachowanych kart</small></article><article class="quote-tile"><span class="quote-mark">“</span><p>Każda wyprawa zostawia ślad. Nie każdy ślad prowadzi z powrotem.</p><small>NOTA ARCHIWALNA</small></article></div></div>
-<div class="quick-links"><button data-go="kronika">OTWÓRZ KRONIKĘ ↗</button><button data-go="postaci">ZOBACZ POSTACI ↗</button><button data-go="mapa">PRZEJDŹ DO MAPY ↗</button><button data-go="notatki">OTWÓRZ NOTATKI ↗</button></div>
-</section>
-<section class="view" id="view-postaci" data-view="postaci"><div class="section-heading"><div><span class="eyebrow">REJESTR OSÓB / 02</span><h2>Postaci</h2><p>Zachowane karty bohaterów kampanii, w tym wpisy poległych.</p></div><span class="section-count" id="character-count">05 / KART</span></div><div class="filter-row"><div class="segmented"><button class="filter active" data-filter="all">Wszyscy</button><button class="filter" data-filter="living">Żyjący</button><button class="filter" data-filter="dead">Poległe</button></div><span class="micro-label">REJESTR POSTACI / DRK</span></div><div class="character-grid" id="character-grid"><div class="loading-state">Otwieranie rejestru…</div></div></section>
-<section class="view" id="view-kronika" data-view="kronika"><div class="section-heading"><div><span class="eyebrow">ZAPIS PRZEBIEGU / 03</span><h2>Kronika</h2><p>Chronologiczny rejestr sesji i zachowanych nagrań.</p></div><span class="section-count">36 / WPISÓW</span></div><div class="chronicle-tools"><label class="search-field"><span>⌕</span><input id="chronicle-search" type="search" placeholder="Szukaj numeru lub tytułu…" aria-label="Szukaj sesji"></label><span id="chronicle-result-count" class="micro-label">36 WPISÓW</span></div><div class="timeline" id="chronicle-list"><div class="loading-state">Odczytywanie kroniki…</div></div></section>
-<section class="view view-wide" id="view-mapa" data-view="mapa"><div class="section-heading"><div><span class="eyebrow">ATLAS EKSPEDYCJI / 04</span><h2>Mapa</h2><p>Interaktywny atlas roboczy: oznaczaj miejsca, grupuj je w regiony i zapisuj własne opisy.</p></div><span class="section-count" id="map-point-count">0 PUNKTÓW</span></div>
-<div class="map-workspace"><div class="map-stage"><div class="map-toolbar"><span>PLANSZA KARTOGRAFICZNA · WIDOK ROBOCZY</span><div><button id="map-zoom-out" aria-label="Pomniejsz">−</button><button id="map-zoom-in" aria-label="Powiększ">+</button><button id="map-reset">RESET WIDOKU</button></div></div><div class="map-board" id="map-board" role="application" aria-label="Plansza mapy Drakkenheim"><svg id="map-svg" viewBox="0 0 1200 760" role="img" aria-label="Robocza plansza z siatką kartograficzną"><defs><pattern id="map-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#b69a6b" stroke-opacity=".16" stroke-width="1"/></pattern><pattern id="map-hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><path d="M0 0V12" stroke="#bd9b66" stroke-opacity=".2" stroke-width="3"/></pattern></defs><rect width="1200" height="760" fill="#111116"/><rect width="1200" height="760" fill="url(#map-grid)"/><g id="map-regions"></g><g id="map-routes"></g><g id="map-markers"></g><g pointer-events="none" fill="#c6a46a" opacity=".6" font-family="IBM Plex Mono" font-size="12"><text x="30" y="36">DRAKKENHEIM / SEKTOR ROBOCZY</text><text x="1160" y="36" text-anchor="end">N ↑</text><text x="30" y="735">WSPÓŁRZĘDNE LOKALNE · NIEKANONICZNA PLANSZA</text></g></svg><div class="map-empty" id="map-empty"><span>ATLAS / DRK</span><strong>PLANSZA<br>EKSPEDYCJI</strong><small>WYBIERZ TRYB EDYCJI I KLIKNIJ NA PLANSZY</small></div></div><p class="muted-note">To pusta plansza robocza, nie kanoniczna mapa miasta. Gdy dostarczysz mapę Drakkenheim, będzie można podłożyć ją jako tło bez utraty znaczników i regionów.</p></div>
-<aside class="map-controls"><div class="tool-tabs"><button class="tool-tab active" data-map-tab="point">Znacznik</button><button class="tool-tab" data-map-tab="region">Region</button><button class="tool-tab" data-map-tab="layers">Warstwy</button></div>
-<div class="map-tab-panel" data-map-panel="point"><span class="eyebrow">REJESTR MIEJSC</span><h3>Dodaj znacznik</h3><form id="map-form"><label>Nazwa<input id="map-name" maxlength="90" required placeholder="Nazwa miejsca"></label><label>Rodzaj<select id="map-type"><option value="place">Miejsce</option><option value="danger">Zagrożenie</option><option value="clue">Trop</option><option value="faction">Frakcja</option><option value="route">Trasa</option></select></label><label>Opis<textarea id="map-description" rows="4" maxlength="3000" placeholder="Informacje o miejscu…"></textarea></label><p class="form-hint" id="map-hint">Kliknij planszę, aby wskazać położenie.</p><button class="primary-button" type="submit">ZAPISZ ZNACZNIK</button><button class="text-button" id="map-clear" type="button">WYCZYŚĆ WYBÓR</button></form><div class="record-list" id="map-records"></div></div>
-<div class="map-tab-panel" data-map-panel="region" hidden><span class="eyebrow">OBSZARY I STREFY</span><h3>Regiony</h3><form id="region-form"><label>Nazwa regionu<input id="region-name" required maxlength="80" placeholder="Nazwa obszaru"></label><label>Kolor<input id="region-color" type="color" value="#7954a6"></label><label>Opis<textarea id="region-description" rows="3" maxlength="1500"></textarea></label><p class="form-hint">Klikaj kolejne punkty na planszy, aby wyznaczyć wierzchołki regionu.</p><button class="primary-button" type="submit">ZAPISZ REGION</button><button class="text-button" type="button" id="region-cancel">ANULUJ RYSOWANIE</button></form><div class="record-list" id="region-records"></div></div>
-<div class="map-tab-panel" data-map-panel="layers" hidden><span class="eyebrow">KONTROLA WIDOKU</span><h3>Warstwy mapy</h3><label class="check-row"><input type="checkbox" id="toggle-markers" checked> Znaczniki</label><label class="check-row"><input type="checkbox" id="toggle-regions" checked> Regiony</label><label class="check-row"><input type="checkbox" id="toggle-routes" checked> Trasy</label><hr><button class="subtle-button" id="map-export">EKSPORTUJ DANE JSON</button><label class="subtle-button file-trigger" for="map-import">IMPORTUJ DANE JSON</label><input id="map-import" type="file" accept="application/json" hidden><button class="danger-button" id="map-clear-all">WYCZYŚĆ MAPĘ</button></div></aside></div></section>
-<section class="view view-wide" id="view-notatki" data-view="notatki"><div class="section-heading"><div><span class="eyebrow">SIEĆ POWIĄZAŃ / 05</span><h2>Notatki</h2><p>Graf wiedzy kampanii. Łącz postacie, frakcje, miejsca, przedmioty i wydarzenia w sieć zależności.</p></div><span class="section-count" id="graph-count">0 OBIEKTÓW · 0 RELACJI</span></div>
-<div class="graph-layout"><div class="graph-surface-wrap"><div class="graph-toolbar"><div class="segmented"><button class="graph-filter active" data-graph-filter="all">Wszystko</button><button class="graph-filter" data-graph-filter="Person">Postacie</button><button class="graph-filter" data-graph-filter="Faction">Frakcje</button><button class="graph-filter" data-graph-filter="Location">Miejsca</button></div><div><button id="graph-fit">DOPASUJ</button><button id="graph-add-link">POŁĄCZ</button><button id="graph-add-node">+ OBIEKT</button></div></div><div class="graph-canvas" id="graph-canvas"><svg id="graph-svg" viewBox="0 0 1200 760" aria-label="Graf relacji kampanii"><defs><marker id="edge-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#c5a66e"/></marker></defs><g id="graph-edges"></g><g id="graph-nodes"></g></svg><div class="graph-empty" id="graph-empty"><strong>ARCHIWUM POWIĄZAŃ</strong><span>Utwórz obiekt, a następnie połącz go z innymi wpisami.</span></div></div><p class="muted-note">Przeciągaj obiekty, aby zmieniać układ. Wybierz dwa obiekty i użyj „Połącz”, aby utworzyć relację. Dane są zapisywane lokalnie.</p></div>
-<aside class="graph-inspector"><div class="inspector-head"><span class="eyebrow">KARTA REKORDU</span><button id="graph-clear-selection" aria-label="Wyczyść wybór">×</button></div><div id="graph-inspector-content"><div class="empty-state">Wybierz obiekt lub relację na grafie, aby otworzyć jego kartę.</div></div><div class="graph-actions"><button class="primary-button" id="graph-edit" disabled>EDYTUJ OBIEKT</button><button class="subtle-button" id="graph-delete" disabled>USUŃ ZAZNACZENIE</button><hr><button class="subtle-button" id="graph-export">EKSPORTUJ GRAF JSON</button><label class="subtle-button file-trigger" for="graph-import">IMPORTUJ GRAF JSON</label><input id="graph-import" type="file" accept="application/json" hidden></div></aside></div>
-<dialog id="entity-dialog" class="editor-dialog"><form id="entity-form" method="dialog"><div class="dialog-heading"><span class="eyebrow">NOWY REKORD</span><button type="button" class="dialog-close" data-close="entity-dialog">×</button></div><h3 id="entity-dialog-title">Utwórz obiekt</h3><label>Typ<select id="entity-type"><option value="Person">Postać</option><option value="Faction">Frakcja</option><option value="Location">Lokalizacja</option><option value="Object">Przedmiot</option><option value="Event">Wydarzenie</option><option value="Institution">Instytucja</option></select></label><label>Nazwa<input id="entity-name" required maxlength="100"></label><label>Opis<textarea id="entity-description" rows="6" maxlength="6000"></textarea></label><div class="dialog-actions"><button type="button" class="subtle-button" data-close="entity-dialog">ANULUJ</button><button class="primary-button" type="submit">ZAPISZ OBIEKT</button></div></form></dialog>
-<dialog id="relation-dialog" class="editor-dialog"><form id="relation-form" method="dialog"><div class="dialog-heading"><span class="eyebrow">NOWE POWIĄZANIE</span><button type="button" class="dialog-close" data-close="relation-dialog">×</button></div><h3>Utwórz relację</h3><label>Obiekt źródłowy<select id="relation-source" required></select></label><label>Rodzaj relacji<input id="relation-label" required maxlength="90" placeholder="np. należy do, zna, odkrył"></label><label>Obiekt docelowy<select id="relation-target" required></select></label><div class="dialog-actions"><button type="button" class="subtle-button" data-close="relation-dialog">ANULUJ</button><button class="primary-button" type="submit">ZAPISZ RELACJĘ</button></div></form></dialog>
-</section>
-<section class="view" id="view-status" data-view="status"><div class="section-heading"><div><span class="eyebrow">TABLICA OPERACYJNA / 06</span><h2>Status</h2><p>Stan archiwum i prywatna lista spraw do dalszego prowadzenia.</p></div><span class="section-count">PANEL KAMPANII</span></div><div class="status-overview"><article class="status-metric"><span>SESJE</span><strong id="status-sessions">36</strong><small>zapisanych wpisów</small></article><article class="status-metric"><span>POSTACI</span><strong id="status-characters">05</strong><small>zachowanych kart</small></article><article class="status-metric"><span>PUNKTY MAPY</span><strong id="status-points">00</strong><small>własne znaczniki</small></article><article class="status-metric"><span>NOTATKI</span><strong id="status-entities">00</strong><small>obiekty w grafie</small></article></div><div class="status-workspace"><div><div class="subheading"><h3>Lista spraw</h3><span class="micro-label">ZAPIS LOKALNY</span></div><form class="status-add" id="task-form"><input id="task-input" required maxlength="180" placeholder="Dodaj zadanie lub przypomnienie…"><button class="primary-button">DODAJ</button></form><div class="status-list" id="task-list"></div></div><article class="status-note"><span class="eyebrow">INFORMACJE O ARCHIWUM</span><h3>Stan zachowanych danych</h3><p>Karty postaci i kronika są odczytywane z rejestrów kampanii. Mapa, graf powiązań i lista spraw zapisują się w pamięci tej przeglądarki.</p><p>Użyj eksportu JSON w Mapie i Notatkach, aby utworzyć kopię zapasową własnych danych.</p><p id="storage-status" class="storage-status">Sprawdzanie pamięci lokalnej…</p></article></div></section>
-<footer class="workspace-footer"><span>DUNGEONS OF DRAKKENHEIM</span><span>VENGRATH · ARCHIWUM KAMPANII</span></footer></main></div>
-<script src="./app.js"></script></body></html>
+<body>
+  
+<a class="vengrath-mark" href="/home/" aria-label="Powrót do Vengrath"><img src="/core/graphics/favicon/mg-logo.png" alt=""> VENGRATH <span>✦</span></a>
+<nav id="dock" aria-label="Nawigacja kampanii">
+ <a href="#intro" data-i><svg viewBox="0 0 24 24"><path d="M2 9L12 3l10 6H2zM4 10v9M8 10v9M12 10v9M16 10v9M20 10v9M2 21h20"/></svg>Kampania</a>
+ <a href="#characters" data-i><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3 8-8 10-5-2-8-5-8-10V6zM8 10l4-3 4 3-4 7z"/></svg>Postaci</a>
+ <a href="#chronicle" data-i><svg viewBox="0 0 24 24"><path d="M6 3h11a3 3 0 010 6H7a3 3 0 000 6h11a3 3 0 010 6H6a3 3 0 010-6V6a3 3 0 013-3zM9 6h7M9 12h6M9 18h7"/></svg>Kronika</a>
+ <a href="#map" data-i><svg viewBox="0 0 24 24"><path d="M2 16l10-12 10 12-10 4zM12 4v16M2 16h20"/></svg>Mapa</a>
+ <a href="#notes" data-i><svg viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5"/></svg>Notatki</a>
+ <a href="#overview" data-i><svg viewBox="0 0 24 24"><path d="M12 21c-5-2-8-6-8-12 4 0 7 2 8 6 1-4 4-6 8-6 0 6-3 10-8 12zM12 15v6"/></svg>Status</a>
+</nav>
+
+<main>
+<section id="intro"><div class="hero">
+ <canvas id="embers"></canvas>
+ <div class="scene" aria-hidden="true">
+  <img src="https://vengrathdm.github.io/core/graphics/voronoi/dungeons-of-drakkenheim.webp" alt="">
+ </div>
+ <div class="wrap">
+  
+  <h1>DUNGEONS <b>OF DRAKKENHEIM</b></h1>
+ </div>
+</div>
+<div class="alt introblk"><div class="tear"></div><div class="wrap">
+ <h2>Klątwa Drakkenheim</h2>
+ <div class="intro">
+  <div id="introText"><p>Pięćset lat po zwycięstwie bohaterów i zawarciu Przysięgi Pokoju dawne konflikty znów budzą się do życia. Klątwa Drakkenheim prowadzi nowych bohaterów ku wydarzeniom, które mogą odmienić los całej krainy.</p><p>Drakkenheim to świat greckiej mitologii, boskich intryg, potworów i odległych wysp. W cieniu dawnych przysiąg drużyna mierzy się z konsekwencjami sporów bogów i Tytanów, odkrywając, komu można zaufać i jaką cenę ma przeznaczenie.</p></div>
+  <div><p>Kronika kampanii Dungeons of Drakkenheim. Wybierz sesję, aby rozwinąć szczegóły i przejść do nagrania.</p><a class="chip" href="#chronicle" data-i>Czytaj kronikę</a></div>
+  <a class="voronoi-card" href="/page/dungeons-of-drakkenheim/res/kyrah.webp" target="_blank" rel="noopener" aria-label="Otwórz Poetka Kyrah">
+   <img src="/page/dungeons-of-drakkenheim/res/kyrah.webp" alt="Poetka Kyrah" loading="lazy">
+   <span>Poetka Kyrah</span>
+  </a>
+ </div>
+</div></div></section>
+
+<section id="characters"><div class="tear"></div><div class="wrap">
+ <h2>Postaci</h2>
+ <div class="party" id="party"></div>
+</div></section>
+
+<section id="chronicle" class="alt"><div class="tear"></div><div class="wrap">
+ <h2>Kronika</h2>
+ <ol class="chron" id="chron"></ol>
+</div></section>
+
+<section id="map"><div class="tear"></div><div class="wrap">
+ <h2>Mapa</h2>
+ <div class="frame"><div class="mount" id="map-mount" data-embed="map" aria-label="Interaktywna mapa kampanii"><iframe src="/page/dungeons-of-drakkenheim/Mapa/" title="Interaktywna mapa kampanii — Atlas Thylei" loading="lazy" allow="fullscreen"></iframe></div><a class="workspace-direct-link" href="/page/dungeons-of-drakkenheim/Mapa/" target="_blank" rel="noopener">Otwórz mapę w osobnej karcie ↗</a></div>
+</div></section>
+
+<section id="notes" class="alt"><div class="tear"></div><div class="wrap">
+ <h2>Notatki</h2>
+ <div class="frame book"><div class="mount notes" id="notes-mount" data-embed="notes" aria-label="Interaktywna mapa myśli kampanii"><iframe src="/page/dungeons-of-drakkenheim/Notatki/" title="Interaktywna mapa myśli — Archiwum bohaterów i wątków" loading="lazy" allow="fullscreen"></iframe></div><a class="workspace-direct-link" href="/page/dungeons-of-drakkenheim/Notatki/" target="_blank" rel="noopener">Otwórz Notatki w osobnej karcie ↗</a></div>
+</div></section>
+
+<section id="overview"><div class="tear"></div><div class="wrap">
+ <h2>Status</h2>
+ <div class="board" id="ov"></div>
+ <p class="kyrah-thanks">Dziękuję Wam za najpiękniejsze wspomnienia!<span>~ Kyrah</span></p>
+</div></section>
+</main>
+
+
+<script>
+/* DATA: placeholders only. Replace via CampaignHub.set*() */
+var DATA={
+  "characters": [],
+  "chronicle": [],
+  "overview": [
+    {
+      "kind": "situation",
+      "title": "Przysięga Thylei",
+      "meta": "Drakkenheim · wygnańcy · przepowiednia",
+      "stamp": "Kronika kampanii"
+    },
+    {
+      "kind": "metric",
+      "title": "Sesje",
+      "value": "36",
+      "detail": "Sesje zapisane w kronice kampanii"
+    },
+    {
+      "kind": "metric",
+      "title": "Bohaterowie",
+      "value": "5",
+      "detail": "Szóstka wspaniałych bohaterów która wraz z przyjaciółmi ocaliła Thyleę."
+    },
+    {
+      "kind": "metric",
+      "title": "Oś opowieści",
+      "value": "Delirium i Mgła",
+      "detail": "Tajemnice zrujnowanego miasta"
+    },
+    {
+      "kind": "metric",
+      "title": "Ostatnia sesja",
+      "value": "Ostatnia sesja",
+      "detail": "36 zapisanych spotkań"
+    },
+    {
+      "kind": "threats",
+      "title": "Wątki kampanii",
+      "items": [
+        {
+          "text": "Źródła delirium",
+          "status": "Centralny",
+          "level": "active"
+        },
+        {
+          "text": "Frakcje Drakkenheim",
+          "status": "Powracający",
+          "level": "suspected"
+        },
+        {
+          "text": "Tajemnica Mgły",
+          "status": "Rozstrzygnięty",
+          "level": "resolved"
+        }
+      ]
+    },
+    {
+      "kind": "clue",
+      "title": "Ostatni wpis kroniki",
+      "quote": "„Miasto nie odda swoich sekretów bez walki”.",
+      "text": "Wybierz wpis w Kronice, aby otworzyć zapis sesji."
+    }
+  ]
+};
+var $=function(s){return document.querySelector(s)};
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.textContent=h;return e}
+
+function renderParty(){
+ var P=$('#party');P.innerHTML='';
+ for(var i=0;i<6;i++){(function(i){
+  var c=DATA.characters[i]||null,card=el('article','pc'+(c?'':' empty'));card.dataset.el=i;
+  var tilt=el('div','tilt'),flip=el('div','flip');
+  var sub=[c&&c.race,c&&c['class'],c&&c.level?'Lv '+c.level:''].filter(Boolean).join(' · ')||'Rasa · Klasa · Poziom';
+  var front=el('div','face front'),fb=el('div','facebtn');
+  var pt=el('div','portrait');if(c&&c.portrait){var im=el('img');im.src=c.portrait;im.alt='';pt.append(im)}else pt.append(el('span','',c&&c.name?c.name[0]:'?'));
+  var ft=el('button','turn','Rewers');ft.type='button';ft.setAttribute('aria-label','Odwróć kartę, aby poznać historię postaci: '+(c&&c.name||'bohatera'));
+  fb.append(pt,el('h3','',c&&c.name||'Bohater drużyny'),el('div','sub',sub),ft);
+  front.append(fb);
+  var back=el('div','face back');back.setAttribute('aria-hidden','true');
+  var sc=el('div','scroll');
+  if(c&&c.stats){var u=el('ul','stats');['STR','DEX','CON','INT','WIS','CHA'].forEach(function(k){var li=el('li');li.append(el('b','',k),document.createTextNode(c.stats[k]!=null?c.stats[k]:'–'));u.append(li)});sc.append(u)}
+  sc.append(el('p','',c&&c.bio||'Historia postaci nie została jeszcze uzupełniona.'));
+  if(c&&c.player)sc.append(el('p','sub','Gracz: '+c.player)); if(c&&c.status)sc.append(el('p','sub','Status: '+c.status));
+  var tb=el('button','turn','Wróć na awers');tb.dataset.i='';tb.tabIndex=-1;
+  back.append(el('h3','',c&&c.name||'Character name'),sc,tb);
+  function t(){var o=card.classList.toggle('turned');back.setAttribute('aria-hidden',!o);front.setAttribute('aria-hidden',o);tb.tabIndex=o?0:-1;fb.tabIndex=o?-1:0}
+  ft.onclick=t;tb.onclick=t;
+  flip.append(front,back);tilt.append(flip);card.append(tilt);
+  card.addEventListener('pointermove',function(e){var r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+   tilt.style.setProperty('--ry',((x-.5)*14)+'deg');tilt.style.setProperty('--rx',((.5-y)*14)+'deg');
+   card.querySelectorAll('.face').forEach(function(f){f.style.setProperty('--mx',x*100+'%');f.style.setProperty('--my',y*100+'%')})});
+  card.addEventListener('pointerleave',function(){tilt.style.setProperty('--rx','0deg');tilt.style.setProperty('--ry','0deg')});
+  P.append(card)})(i)}
+}
+
+function renderChron(){
+ var L=$('#chron');L.innerHTML='';
+ DATA.chronicle.forEach(function(e,i){
+  var li=el('li','ev'),sl=el('button','seal',String(e.sessionNumber||i+1));sl.dataset.i='';sl.setAttribute('aria-expanded','false');sl.setAttribute('aria-controls','d'+i);sl.setAttribute('aria-label','Rozwiń szczegóły: '+e.title);
+  var sh=el('div','sheet');sh.append(el('div','date','ODCINEK '+String(e.sessionNumber||i+1).padStart(2,'0')),el('h3','',e.title),el('p','sumtxt',e.description||'Nagranie sesji kampanii Dungeons of Drakkenheim.'));
+  var d=el('div','detail'),w=el('div');w.append(el('p','',e.description||'Nagranie sesji kampanii Dungeons of Drakkenheim.'));
+  (e.recordings||[]).forEach(function(rec){var a=el('a','recording-link',rec.label||'Oglądaj na YouTube');a.href=rec.url;a.target='_blank';a.rel='noopener noreferrer';w.append(a)});
+  d.append(w);sh.append(d,el('div','cue'));
+  function t(){var o=li.classList.toggle('open');sl.setAttribute('aria-expanded',o)}
+  sl.onclick=t;sh.onclick=function(ev){if(ev.target===sh||ev.target.closest('.date,h3,.sumtxt,.cue'))t()};sh.dataset.i='';
+  li.append(sl,sh);L.append(li)
+ })
+}
+
+function renderOverview(){
+ var O=$('#ov');O.innerHTML='';
+ DATA.overview.forEach(function(o){
+  var c=el('article','note status-note '+(o.kind||''));
+  var head=el('h3','',o.title);c.append(head);
+  if(o.kind==='situation'){
+   c.append(el('p','status-meta',o.meta),el('span','status-stamp',o.stamp));
+  }else if(o.kind==='metric'){
+   c.append(el('strong','status-value',o.value),el('p','status-detail',o.detail));
+  }else if(o.kind==='threats'){
+   var list=el('ul','status-threats');
+   o.items.forEach(function(item){var li=el('li','status-threat');li.append(el('span','status-threat-name',item.text),el('span','status-tag '+item.level,item.status));list.append(li)});
+   c.append(list);
+  }else if(o.kind==='clue'){
+   c.append(el('blockquote','status-quote',o.quote),el('p','status-detail',o.text));
+  }else if(o.items){
+   var u=el('ul');o.items.forEach(function(x){u.append(el('li','',x))});c.append(u);
+  }else c.append(el('p','',o.text||''));
+  O.append(c);
+ });
+}
+function renderAll(){renderParty();renderChron();renderOverview()}
+renderAll();
+fetch('./chronicle.json').then(function(r){if(!r.ok)throw new Error('Chronicle unavailable');return r.json()}).then(function(d){DATA.chronicle=d.sessions||[];renderChron()}).catch(function(e){console.warn('Nie udało się wczytać kroniki Odyssey:',e)});
+window.CampaignHub={
+ setCharacters:function(a){DATA.characters=(a||[]).slice(0,6);renderParty()},
+ setChronicle:function(a){DATA.chronicle=a||[];renderChron()},
+ setOverview:function(a){DATA.overview=a;renderOverview()},
+ mounts:{map:$('#map-mount'),notes:$('#notes-mount')}
+};
+// Load only the six player-character records assigned to Dungeons of Drakkenheim.
+// NPCs and every other character in the shared registry are deliberately excluded.
+fetch('/core/data/characters.json').then(function(r){if(!r.ok)throw new Error('Character registry unavailable');return r.json()})
+ .then(function(records){
+  var ids=['char-0045','char-0046','char-0047','char-0048','char-0049'];
+  var players=ids.map(function(id){return records.find(function(c){return c.id===id})}).filter(Boolean).map(function(c){
+   return {name:c.character,player:c.player,race:c.race,'class':(c.classes||[]).join(' / '),bio:c.history,portrait:c.portrait,status:c.status};
+  });
+  window.CampaignHub.setCharacters(players);
+ }).catch(function(err){console.warn('Nie udało się wczytać postaci drużyny:',err)});
+
+
+/* embers */
+(function(){var c=$('#embers'),x=c.getContext('2d'),P=[],W,H;
+ function rs(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;P.forEach(function(p){p.x=Math.random()*W;p.y=Math.random()*H})}rs();addEventListener('resize',rs);
+ if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+ for(var i=0;i<60;i++)P.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*2+.5,v:Math.random()*.6+.2,s:Math.random()*Math.PI*2});
+ (function f(){x.clearRect(0,0,W,H);P.forEach(function(p){p.y-=p.v;p.s+=.02;p.x+=Math.sin(p.s)*.5;if(p.y<-5){p.y=H+5;p.x=Math.random()*W}
+  x.fillStyle='rgba('+(150+p.r*30|0)+',140,255,'+(.3+p.y/H*.6)+')';x.beginPath();x.arc(p.x,p.y,p.r,0,6.3);x.fill()});requestAnimationFrame(f)})()})();
+
+/* exclusive sections, swipe transitions */
+var links=[].slice.call(document.querySelectorAll('#dock a')),views=[].slice.call(document.querySelectorAll('main>section[id]')),cur=null,busy=false,pending=null,reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function mark(id){links.forEach(function(a){var on=a.getAttribute('href')==='#'+id;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')})}
+function go(id){
+ var nx=document.getElementById(id);if(!nx||views.indexOf(nx)<0)return;
+ if(busy){pending=id;return}
+ if(nx===cur)return;
+ scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+ var old=cur,dir=old?(views.indexOf(nx)>views.indexOf(old)?1:-1):0;
+ nx.classList.add('active');cur=nx;mark(id);dispatchEvent(new Event('resize'));
+ if(!old||reduce){if(old)old.classList.remove('active');return}
+ busy=true;
+ old.classList.add('leave',dir>0?'out-l':'out-r');nx.classList.add(dir>0?'in-r':'in-l');
+ setTimeout(function(){old.classList.remove('active','leave','out-l','out-r');nx.classList.remove('in-r','in-l');busy=false;
+  if(pending){var p=pending;pending=null;go(p)}},730)
+}
+addEventListener('hashchange',function(){go(location.hash.slice(1)||'intro')});
+go(views.some(function(v){return '#'+v.id===location.hash})?location.hash.slice(1):'intro');
+</script>
+
+<!-- Odyssey ambient soundtrack; intentionally only on the campaign hub, not the full-view Map or Notes pages. -->
+<div id="odyssey-audio" aria-label="Sterowanie muzyką Odyssey">
+ <div class="audio-ring" role="slider" aria-label="Głośność" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65" tabindex="0"></div>
+ <button type="button" aria-label="Odtwórz muzykę" aria-pressed="false">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+ </button>
+ <span class="audio-tip">PRZECIĄGNIJ PIERŚCIEŃ · GŁOŚNOŚĆ</span>
+ <audio id="odyssey-soundtrack" src="/page/dungeons-of-drakkenheim/res/odyssey.mp3" preload="none" loop></audio>
+</div>
+<script>
+(function(){
+ var root=document.getElementById('odyssey-audio');if(!root)return;
+ var audio=root.querySelector('audio'),button=root.querySelector('button'),ring=root.querySelector('.audio-ring'),drag=false;
+ audio.volume=.5;
+ function paint(){var v=Math.round(audio.volume*100),deg=audio.volume*360;ring.style.background='conic-gradient(#c49a58 0deg '+deg+'deg,rgba(220,207,177,.22) '+deg+'deg 360deg)';ring.setAttribute('aria-valuenow',v)}
+ function state(){var playing=!audio.paused;button.setAttribute('aria-pressed',String(playing));button.setAttribute('aria-label',playing?'Wstrzymaj muzykę':'Odtwórz muzykę');button.innerHTML=playing?'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>':'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>'}
+ button.addEventListener('click',function(){if(audio.paused)audio.play().catch(function(){});else audio.pause()});
+ // Attempt autoplay on page load; browsers may defer it until a user gesture.
+ audio.play().catch(function(){state()});
+ audio.addEventListener('play',state);audio.addEventListener('pause',state);audio.addEventListener('ended',state);
+ function setFromPointer(e){var r=ring.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,a=Math.atan2(e.clientY-cy,e.clientX-cx)+Math.PI/2;if(a<0)a+=Math.PI*2;audio.volume=Math.max(0,Math.min(1,a/(Math.PI*2)));paint()}
+ ring.addEventListener('pointerdown',function(e){drag=true;ring.setPointerCapture(e.pointerId);setFromPointer(e);e.preventDefault()});
+ ring.addEventListener('pointermove',function(e){if(drag)setFromPointer(e)});
+ ring.addEventListener('pointerup',function(){drag=false});ring.addEventListener('pointercancel',function(){drag=false});
+ ring.addEventListener('keydown',function(e){if(e.key==='ArrowUp'||e.key==='ArrowRight'){audio.volume=Math.min(1,audio.volume+.05);e.preventDefault()}else if(e.key==='ArrowDown'||e.key==='ArrowLeft'){audio.volume=Math.max(0,audio.volume-.05);e.preventDefault()}else return;paint()});
+ paint();state();
+})();
+</script>
+</body>
+</html>
