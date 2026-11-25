@@ -1,5 +1,5 @@
 export function initCampaignAudio(){
-{
+
  var root=document.getElementById('odyssey-audio');if(!root)return;
  var audio=root.querySelector('audio'),button=root.querySelector('button'),ring=root.querySelector('.audio-ring'),drag=false;
  audio.volume=.5;
