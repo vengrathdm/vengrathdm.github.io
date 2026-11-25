@@ -457,14 +457,14 @@ function renderChron(){
     edges[edge].forEach(function(im){
      var d=Number(im.dataset.distance);
      if(edge==='top'){im.style.left=(sx+d)+'px';im.style.top=sy+'px'}
-     else if(edge==='bottom){im.style.left=(sx+d)+'px';im.style.top=(sy+shh)+'px'}
+     else if(edge==='bottom'){im.style.left=(sx+d)+'px';im.style.top=(sy+shh)+'px'}
      else if(edge==='left'){im.style.left=sx+'px';im.style.top=(sy+d)+'px'}
      else{im.style.left=(sx+sw)+'px';im.style.top=(sy+d)+'px'}
     });
    });
   }
   li.insertBefore(growth,sh);sync();
-  if(window.ResizeObserver){li._crystalObserver=new ResizeObserver(sync);li._crystalObserver.observe(sh)}
+  if(window.ResizeObserver){li._crystalObserver=new ResizeObserver(sync);li._crystalObserver.observe(sh,{box:'border-box'})}
  }
  DATA.chronicle.forEach(function(e,i){
   var li=el('li','ev'),sl=el('button','seal');var crystal=el('img');crystal.src='/page/dungeons-of-drakkenheim/res/graphics/brylka.webp';crystal.alt='';crystal.draggable=false;sl.append(crystal,el('span','seal-number',String(e.sessionNumber||i+1)));sl.dataset.i='';sl.setAttribute('aria-expanded','false');sl.setAttribute('aria-controls','d'+i);sl.setAttribute('aria-label','Rozwiń szczegóły: '+e.title);
