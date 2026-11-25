@@ -5,9 +5,12 @@ import { readJson, writeJson } from "./storage.js";
 (async function(){
   const settings = await loadMapConfiguration();
   const mapConfig = settings.map, layerConfig = settings.layers, editorConfig = settings.editor;
-var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
+  const mapImage = new Image();
+  mapImage.src = mapConfig.image;
+  await mapImage.decode();
+  var WN=mapImage.naturalWidth||mapConfig.dimensions.width, HN=mapImage.naturalHeight||mapConfig.dimensions.height;
   var Z=mapConfig.projection.baseZoom, S=mapConfig.projection.hexSize, R=S/Math.sqrt(3);
-  var CS=1.5*R, KPP=S/48, SC=mapConfig.projection.columnsPerSheet, SR=mapConfig.projection.rowsPerSheet, YS=mapConfig.projection.yScale;
+  var CS=1.5*R, KPP=S/48*(mapConfig.dimensions.width/WN), SC=mapConfig.projection.columnsPerSheet, SR=mapConfig.projection.rowsPerSheet, YS=mapConfig.projection.yScale;
   var LAND=mapConfig.projection.landSheets, POLE=mapConfig.projection.pole;
   var map=L.map('map',{crs:L.CRS.Simple,minZoom:mapConfig.view.minZoom,maxZoom:mapConfig.view.maxZoom,zoomSnap:mapConfig.view.zoomSnap,zoomDelta:mapConfig.view.zoomDelta,wheelPxPerZoomLevel:mapConfig.view.wheelPxPerZoomLevel,attributionControl:false,zoomControl:false});
   var ll=function(px,py){return map.unproject([px,py],Z)};
