@@ -291,6 +291,10 @@ main>section,main>section.alt{background:transparent!important}
 #odyssey-audio:hover .audio-tip,#odyssey-audio:focus-within .audio-tip{opacity:1}
 @media(max-width:700px){#odyssey-audio{right:14px;bottom:86px;width:60px;height:60px}}
 @media(prefers-reduced-motion:reduce){#odyssey-audio .audio-tip{transition:none}}
+
+/* Chronicle recap launcher */
+#chron .recap-link{display:inline-flex;align-items:center;justify-content:center;margin:10px 10px 4px 0;padding:8px 18px;border:1px solid var(--gold);background:linear-gradient(135deg,#173e50,#0b2635);color:#f4eddb;font:600 12px/1.2 var(--body);letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+#chron .recap-link:hover{background:#24566a;border-color:#f4d99d;transform:translateY(-1px)}
 </style>
 </head>
 <body>
@@ -458,6 +462,7 @@ function renderChron(){
   var li=el('li','ev'),sl=el('button','seal',String(e.sessionNumber||i+1));sl.dataset.i='';sl.setAttribute('aria-expanded','false');sl.setAttribute('aria-controls','d'+i);sl.setAttribute('aria-label','Rozwiń szczegóły: '+e.title);
   var sh=el('div','sheet');sh.append(el('div','date','ODCINEK '+String(e.sessionNumber||i+1).padStart(2,'0')),el('h3','',e.title),el('p','sumtxt',e.description||'Nagranie sesji kampanii Odyssey of the Dragonlords.'));
   var d=el('div','detail'),w=el('div');w.append(el('p','',e.description||'Nagranie sesji kampanii Odyssey of the Dragonlords.'));
+  var recap=el('button','recap-link','RECAP');recap.type='button';recap.dataset.recapSrc='./record-player/'+String(e.sessionNumber||i+1).padStart(3,'0')+'-'+(e.title||'').replace(/^S\\d+\\s*[—–-]\\s*/,'').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').replace(/[łŁ]/g,function(c){return c==='ł'?'l':'L'}).replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,'')+'.json';recap.dataset.recapTitle=e.title||'';w.append(recap);
   (e.recordings||[]).forEach(function(rec){var a=el('a','recording-link',rec.label||'Oglądaj na YouTube');a.href=rec.url;a.target='_blank';a.rel='noopener noreferrer';w.append(a)});
   d.append(w);sh.append(d,el('div','cue'));
   function t(){var o=li.classList.toggle('open');sl.setAttribute('aria-expanded',o)}
@@ -564,5 +569,6 @@ go(views.some(function(v){return '#'+v.id===location.hash})?location.hash.slice(
  paint();state();
 })();
 </script>
+<script src="./record-player/record-player.js" defer></script>
 </body>
 </html>
