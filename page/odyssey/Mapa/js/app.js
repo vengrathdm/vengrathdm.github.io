@@ -19,7 +19,7 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   var combinedBounds=L.latLngBounds(ll(0,Math.max(HN,secondMap.height)),ll(secondMapLeft+secondMap.width,0));
   map.setMaxBounds(combinedBounds.pad(mapConfig.view.maxBoundsPadding));
   var m=/^#(\d+(?:\.\d+)?)\/(\d+)\/(\d+)$/.exec(location.hash);
-  if(m) map.setView(ll(+m[2],+m[3]),Math.min(Z,+m[1])); else map.fitBounds(bounds);
+  if(m) map.setView(ll(+m[2],+m[3]),Math.min(Z,+m[1])); else map.fitBounds(combinedBounds);
   map.on('moveend',function(){var p=map.project(map.getCenter(),Z);
     history.replaceState(null,'','#'+map.getZoom()+'/'+Math.round(p.x)+'/'+Math.round(p.y));});
 
@@ -29,12 +29,16 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
     if(dq>dr&&dq>ds) rq=-rr-rs; else if(dr>ds) rr=-rq-rs;
     return [rq, rr+(rq-(rq&1))/2];
   }
+  function hexAtMapPoint(p){
+    if(p.x>=0&&p.x<=WN&&p.y>=0&&p.y<=HN)return hexOf(p.x*KPP,p.y*KPP);
+    if(p.x>=secondMapLeft&&p.x<=secondMapLeft+secondMap.width&&p.y>=0&&p.y<=secondMap.height){var h=hexOf((p.x-secondMapLeft)*KPP,p.y*KPP);h[1]+=SR;return h;}
+    return null;
+  }
   var sid=function(i,j){return String.fromCharCode(65+i)+(j+1)}, two=function(n){return (n<10?'0':'')+n};
   var read=document.getElementById('read');
   function show(e){
     var p=map.project(e.latlng,Z);
-    if(p.x<0||p.y<0||p.x>WN||p.y>HN){read.innerHTML='<small>Poza mapą</small>';return}
-    var h=hexOf(p.x*KPP,p.y*KPP);
+    var h=hexAtMapPoint(p);if(!h){read.innerHTML='<small>Poza mapą</small>';return}
     if(h[0]<0||h[1]<0){read.innerHTML='<small>Poza mapą</small>';return}
     var i=Math.floor(h[0]/SC), j=Math.floor(h[1]/SR);
     read.innerHTML='Arkusz '+sid(i,j)+' &middot; hex '+two(h[0]%SC+1)+two(h[1]%SR+1);
@@ -208,7 +212,7 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   function renderPins(){pinMarkers.clearLayers();if(pinVisibilityMode==='hidden')return;pinData.forEach(function(pin,index){var h=parseAddress(pin.hex);if(!h)return;var point=ll(CS*h[0]/KPP,S*(h[1]+0.5*(h[0]&1))/KPP),marker=L.marker(point,{icon:pinIcon(pin.style,pin.color),title:pin.name}).bindPopup('<span class="popup-title">'+escapeHtml(pin.name)+'</span><span class="popup-description">'+escapeHtml(pin.description).replace(/\\n/g,'<br>')+'</span><span class="popup-reference">'+escapeHtml(pin.hex.replace(':',' · Hex '))+'</span>',{className:'editorial-popup'});if(pinVisibilityMode==='hover'||pinVisibilityMode==='always'){var labelOffset=[((index%3)-1)*12,-25-(Math.floor(index/3)%2)*5];marker.bindTooltip(escapeHtml(pin.name),{permanent:pinVisibilityMode==='always',direction:'top',offset:labelOffset,className:'pin-name-tooltip',opacity:1});}marker.on('click',function(e){if(placingPin)cancelPinPlacement();selectHexAt(e.latlng);}).addTo(pinMarkers);});}
   function cancelPinPlacement(){placingPin=false;pendingPinHex='';document.body.classList.remove('pin-placement-active');}
   function beginPinPlacement(){stopEditing();cancelPinPlacement();placingPin=true;document.body.classList.add('pin-placement-active');document.getElementById('editor').hidden=true;document.getElementById('editorButton').setAttribute('aria-expanded','false');}
-  function hexAddressAt(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return null;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return null;var sheet=sid(Math.floor(h[0]/SC),Math.floor(h[1]/SR));if(LAND.indexOf(sheet)<0)return null;return addressKey(h);}
+  function hexAddressAt(latlng){var p=map.project(latlng,Z),h=hexAtMapPoint(p);if(!h||h[0]<0||h[1]<0)return null;var sheet=sid(Math.floor(h[0]/SC),Math.floor(h[1]/SR));if(LAND.indexOf(sheet)<0)return null;return addressKey(h);}
   function closePinContextMenu(){var menu=document.getElementById('pinContextMenu');menu.hidden=true;menu.innerHTML='';menu.dataset.hex='';}
   function copyMapText(value){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(value).catch(function(){setHint('Nie udało się skopiować do schowka.');});return;}var field=document.createElement('textarea');field.value=value;field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();try{document.execCommand('copy');}catch(err){setHint('Nie udało się skopiować do schowka.');}field.remove();}
   function showMapContextMenu(latlng,event){
@@ -235,7 +239,7 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   function closePinDialog(){var dialog=document.getElementById('pinDialog');dialog.hidden=true;dialog.style.display='none';pendingPinHex='';editingPinId='';}
   function brushRadius(){return parseInt(document.getElementById('brushSize').value,10)||0;}
   function brushKeys(center){var q0=center[0],r0=center[1]-(q0-(q0&1))/2,rad=brushRadius(),keys=[];for(var dq=-rad;dq<=rad;dq++){for(var dr=-rad;dr<=rad;dr++){if(Math.max(Math.abs(dq),Math.abs(dr),Math.abs(dq+dr))>rad)continue;var q=q0+dq,ar=r0+dr,row=ar+(q-(q&1))/2;if(q<0||row<0)continue;var si=Math.floor(q/SC),sj=Math.floor(row/SR),sheet=sid(si,sj);if(LAND.indexOf(sheet)<0)continue;keys.push(addressKey([q,row]));}}return keys;}
-  function assignBrush(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var center=addressKey(h);if(center===lastPainted)return;lastPainted=center;var arr=regionData[currentLayer()],region=selectedRegion();if(!eraseMode&&!region){setHint('Przed malowaniem utwórz region lub wybierz istniejący.');return;}brushKeys(h).forEach(function(key){arr.forEach(function(r){r.hexes=r.hexes.filter(function(x){return x!==key;});});if(!eraseMode&&region.hexes.indexOf(key)===-1)region.hexes.push(key);});saveData();renderLayer(currentLayer());}
+  function assignBrush(latlng){var p=map.project(latlng,Z),h=hexAtMapPoint(p);if(!h||h[0]<0||h[1]<0)return;var center=addressKey(h);if(center===lastPainted)return;lastPainted=center;var arr=regionData[currentLayer()],region=selectedRegion();if(!eraseMode&&!region){setHint('Przed malowaniem utwórz region lub wybierz istniejący.');return;}brushKeys(h).forEach(function(key){arr.forEach(function(r){r.hexes=r.hexes.filter(function(x){return x!==key;});});if(!eraseMode&&region.hexes.indexOf(key)===-1)region.hexes.push(key);});saveData();renderLayer(currentLayer());}
 
   var panelIds=['layersPanel','editor'],buttonIds={layersPanel:'layersButton',editor:'editorButton'};
   function closePanels(){panelIds.forEach(function(id){document.getElementById(id).hidden=true;document.getElementById(buttonIds[id]).setAttribute('aria-expanded','false');});syncBrushActivation();}
@@ -301,7 +305,7 @@ var WN=mapConfig.dimensions.width, HN=mapConfig.dimensions.height;
   function endStroke(){painting=false;lastPainted='';}
   map.on('mouseup',endStroke);
   window.addEventListener('mouseup',endStroke);
-  function presentHex(latlng){var p=map.project(latlng,Z);if(p.x<0||p.y<0||p.x>WN||p.y>HN)return;var h=hexOf(p.x*KPP,p.y*KPP);if(h[0]<0||h[1]<0)return;var i=Math.floor(h[0]/SC),j=Math.floor(h[1]/SR),sheet=sid(i,j),hex=two(h[0]%SC+1)+two(h[1]%SR+1),key=sheet+':'+hex;document.getElementById('presenterAddress').textContent=sheet+' / '+hex;document.getElementById('presenterSub').textContent='Thylea · Karta pola';document.getElementById('presenterIntro').textContent='Zapisane informacje o tym hexie.';var html='';layerNames.forEach(function(k){var found=null;regionData[k].some(function(r){if(r.hexes.indexOf(key)!==-1){found=r;return true;}return false;});html+='<div class="present-row"><div class="present-label">'+(k==='political'?'Polityczna territory':'Geograficzna region')+'</div>';html+=found?'<div class="present-value"><span class="present-swatch" style="background:'+found.color+'"></span>'+escapeHtml(found.name)+'</div>':'<div class="present-empty">Brak zapisanych informacji</div>';html+='</div>';});var places=pinData.filter(function(pin){return pin.hex===key;});if(places.length){html+='<div class="present-row"><div class="present-label">Punkty zainteresowania</div>'+places.map(function(x){return '<div class="present-value">'+escapeHtml(x.name)+'</div><div class="present-empty">'+escapeHtml(x.description)+'</div>';}).join('')+'</div>';}document.getElementById('presenterDetails').innerHTML=html;}
+  function presentHex(latlng){var p=map.project(latlng,Z),h=hexAtMapPoint(p);if(!h||h[0]<0||h[1]<0)return;var i=Math.floor(h[0]/SC),j=Math.floor(h[1]/SR),sheet=sid(i,j),hex=two(h[0]%SC+1)+two(h[1]%SR+1),key=sheet+':'+hex;document.getElementById('presenterAddress').textContent=sheet+' / '+hex;document.getElementById('presenterSub').textContent='Thylea · Karta pola';document.getElementById('presenterIntro').textContent='Zapisane informacje o tym hexie.';var html='';layerNames.forEach(function(k){var found=null;regionData[k].some(function(r){if(r.hexes.indexOf(key)!==-1){found=r;return true;}return false;});html+='<div class="present-row"><div class="present-label">'+(k==='political'?'Polityczna territory':'Geograficzna region')+'</div>';html+=found?'<div class="present-value"><span class="present-swatch" style="background:'+found.color+'"></span>'+escapeHtml(found.name)+'</div>':'<div class="present-empty">Brak zapisanych informacji</div>';html+='</div>';});var places=pinData.filter(function(pin){return pin.hex===key;});if(places.length){html+='<div class="present-row"><div class="present-label">Punkty zainteresowania</div>'+places.map(function(x){return '<div class="present-value">'+escapeHtml(x.name)+'</div><div class="present-empty">'+escapeHtml(x.description)+'</div>';}).join('')+'</div>';}document.getElementById('presenterDetails').innerHTML=html;}
   function escapeHtml(s){return String(s).replace(/[&<>\"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch];});}
 
   function selectHexAt(latlng){var event={latlng:latlng};show(event);presentHex(latlng);document.getElementById('presenter').hidden=false;}
