@@ -115,7 +115,8 @@ button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .face.back>.turn{margin-top:auto}
 
 /* chronicle */
-.chron{list-style:none;margin:0;padding:8px 0 8px 2px;position:relative}
+.chron{list-style:none;margin:0;padding:84px 0 8px 2px;position:relative}
+#chronicle h2{margin-bottom:30px}
 .chron::before{content:"";position:absolute;left:76px;top:0;bottom:0;border-left:2px dotted #8b5bd6;opacity:.72}
 .ev{position:relative;padding-left:177px;margin-bottom:28px;isolation:isolate}
 .seal{all:unset;position:absolute;z-index:2;left:0;top:18px;width:155px;height:155px;display:grid;place-items:center;cursor:pointer}
@@ -136,7 +137,7 @@ button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .sheet::after{content:"";position:absolute;right:0;top:0;width:34px;height:34px;pointer-events:none;background:linear-gradient(225deg,#9d8b7b 0 12%,#e5d7c7 13% 48%,#b8a797 49% 51%,transparent 53%);filter:drop-shadow(-2px 2px 2px #39233b44);opacity:.8}
 .ev:nth-child(even) .sheet{--r:.4deg}
 .ev:hover .sheet{transform:scale(var(--sheet-scale,1));box-shadow:0 15px 30px #000b,inset 0 0 24px #60445b30,inset 0 0 0 1px #fff7}
-.sheet{padding-bottom:calc(17px + var(--sheet-extra,0px));transition:padding-bottom .72s cubic-bezier(.2,.75,.25,1),transform .3s,box-shadow .3s}
+.sheet{padding-bottom:17px}
 .ev .date{position:relative;z-index:1;display:flex;align-items:center;gap:9px;font: .78rem 'IBM Plex Mono',monospace;font-weight:600;color:#68447e;letter-spacing:.12em;text-transform:uppercase}
 .ev .date::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,#8b5bd688,transparent)}
 .ev h3{position:relative;z-index:1;font-size:1.8rem;line-height:1.15;margin:7px 0 2px;color:#24182d}
@@ -480,14 +481,15 @@ function renderChron(){
   var d=el('div','detail'),w=el('div');w.append(el('p','',e.description||'Nagranie sesji kampanii Dungeons of Drakkenheim.'));
   (e.recordings||[]).forEach(function(rec){var a=el('a','recording-link',rec.label||'Oglądaj na YouTube');a.href=rec.url;a.target='_blank';a.rel='noopener noreferrer';w.append(a)});
   d.append(w);sh.append(d,el('div','cue'));
-  function t(){var o=li.classList.toggle('open');sl.setAttribute('aria-expanded',o)}
-  var expansionHeight=0;
-  sl.onclick=t;
+  function toggleEntry(){
+   var open=li.classList.toggle('open');
+   sl.setAttribute('aria-expanded',String(open));
+   sl.setAttribute('aria-label',(open?'Zwiń':'Rozwiń')+' szczegóły: '+e.title);
+  }
+  sl.onclick=toggleEntry;
   sh.onclick=function(ev){
    if(ev.target.closest('a'))return;
-   expansionHeight=expansionHeight===0?96:0;
-   sh.style.setProperty('--sheet-extra',expansionHeight+'px');
-   if(ev.target===sh||ev.target.closest('.date,h3,.sumtxt,.cue'))t();
+   toggleEntry();
   };
   sh.dataset.i='';
   li.append(sl,sh);L.append(li);growCrystals(li,sh)
