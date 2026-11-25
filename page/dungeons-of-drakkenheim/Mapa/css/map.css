@@ -219,3 +219,8 @@
 #layersPanel .layer-name-control,#layersPanel .pin-visibility-control{box-sizing:border-box;min-width:0;max-width:100%}
 
 :root{--map-bg:#0c0914;--map-panel:#151020;--map-surface:#241b35;--map-ink:#eee8f7;--map-muted:#b9aecb;--map-gold:#a78bfa;--map-red:#6d4aa8;--map-blood:#39254f;--map-line:#49385f}body,#map{background:#0c0914;color:#eee8f7}.panel,#toolsWindow{background-color:rgba(27,21,22,.94);border-color:rgba(169,138,88,.6)}.tool-button{font-family:'Cinzel',serif;border-color:#49385f;background:#241b35;color:#eee8f7}.tool-button:hover,.tool-button[aria-expanded=true]{background:#39254f;border-color:#a78bfa}.home-brand{font-family:'Cinzel',serif;color:#eee8f7}.home-brand:hover{color:#a78bfa}
+
+
+/* Drakkenheim campaign background */
+html,body{background:#0c0914 url('/page/dungeons-of-drakkenheim/res/graphics/background.webp') center center/cover fixed no-repeat;color:#eee8f7}
+#map{background:transparent}
