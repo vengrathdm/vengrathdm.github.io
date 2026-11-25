@@ -10,7 +10,10 @@
   "sections": [
     "campaign",
     "characters",
-    "chronicle"
+    "chronicle",
+    "map",
+    "notes",
+    "status"
   ],
   "playlistUrl": null,
   "audio": {
