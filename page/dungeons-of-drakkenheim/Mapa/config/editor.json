@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "brush": {
+    "defaultMode": "idle",
+    "modes": [
+      "idle",
+      "paint",
+      "erase"
+    ]
+  },
+  "regionFillStyles": [
+    "none",
+    "tint",
+    "hatch"
+  ],
+  "markerStyles": [
+    "standard",
+    "ruin",
+    "settlement",
+    "landmark",
+    "natural"
+  ]
+}
