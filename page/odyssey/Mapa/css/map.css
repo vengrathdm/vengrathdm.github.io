@@ -1,3 +1,4 @@
+@font-face{font-family:'Greek Freak Polish';src:url('../../res/Greek-Freak-Polish.ttf') format('truetype');font-style:normal;font-weight:100 900;font-display:swap;}
 :root{--map-bg:#071c2b;--map-panel:#0b2b3d;--map-surface:#12394b;--map-ink:#f4eddb;--map-muted:#a9bec2;--map-gold:#e4c078;--map-red:#b87942;--map-blood:#174457;--map-line:#34596a}
   html,body{height:100%;margin:0}
   body{background:#071c2b;color:#f4eddb;font:15px/1.4 'Fira Sans Extra Condensed',Georgia,serif}
@@ -185,12 +186,12 @@
   .popup-title{display:block;margin-bottom:3px;color:#e4c078;font:1.05rem Caesar Dressing,sans-serif;letter-spacing:.1em;text-transform:uppercase}
   .popup-description{color:#f4eddb}
   .popup-reference{display:block;margin-top:5px;color:#a9bec2;font:10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
-  .leaflet-tooltip.pin-name-tooltip{padding:4px 8px;border:1px solid rgba(240,182,74,.8);border-radius:3px;background:rgba(19,31,34,.94);color:#f4eddb;box-shadow:0 2px 8px rgba(0,0,0,.5);font:700 11px/1.25 Caesar Dressing,'Fira Sans Extra Condensed','Fira Sans Extra Condensed',serif;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
+  .leaflet-tooltip.pin-name-tooltip{padding:4px 8px;border:1px solid rgba(240,182,74,.8);border-radius:3px;background:rgba(19,31,34,.94);color:#f4eddb;box-shadow:0 2px 8px rgba(0,0,0,.5);font:700 11px/1.25 'Greek Freak Polish',serif;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
   .leaflet-tooltip.pin-name-tooltip:before{border-top-color:rgba(19,31,34,.94)}
   .map-region-label{background:transparent;border:0;white-space:nowrap;pointer-events:none}
-  .map-region-label span{display:inline-block;transform:translate(-50%,-50%);max-width:320px;padding:5px 12px;border-radius:3px;color:#f4eddb;background:linear-gradient(180deg,rgba(19,31,34,.9),rgba(19,31,34,.76));font:700 20px/1.15 Caesar Dressing,'Fira Sans Extra Condensed','Fira Sans Extra Condensed',serif;letter-spacing:.11em;text-transform:uppercase;text-shadow:0 2px 2px rgba(0,0,0,.95),0 0 8px rgba(0,0,0,.9);box-shadow:0 2px 8px rgba(0,0,0,.42);border-bottom:2px solid rgba(240,182,74,.9);-webkit-text-stroke:.25px rgba(40,32,26,.7)}
+  .map-region-label span{display:inline-block;transform:translate(-50%,-50%);max-width:320px;padding:5px 12px;border-radius:3px;color:#f4eddb;background:linear-gradient(180deg,rgba(19,31,34,.9),rgba(19,31,34,.76));font:700 20px/1.15 'Greek Freak Polish',serif;letter-spacing:.11em;text-transform:uppercase;text-shadow:0 2px 2px rgba(0,0,0,.95),0 0 8px rgba(0,0,0,.9);box-shadow:0 2px 8px rgba(0,0,0,.42);border-bottom:2px solid rgba(240,182,74,.9);-webkit-text-stroke:.25px rgba(40,32,26,.7)}
   .map-region-label-political span{font-style:normal}
-  .map-region-label-geographical span{font:italic 700 19px/1.15 'Fira Sans Extra Condensed',Georgia,serif;letter-spacing:.14em;color:#f4eddb;border:1px solid rgba(240,182,74,.8);border-bottom:2px solid rgba(240,182,74,.95);background:linear-gradient(180deg,rgba(31,43,43,.92),rgba(20,30,33,.82))}
+  .map-region-label-geographical span{font:italic 700 19px/1.15 'Greek Freak Polish',Georgia,serif;letter-spacing:.14em;color:#f4eddb;border:1px solid rgba(240,182,74,.8);border-bottom:2px solid rgba(240,182,74,.95);background:linear-gradient(180deg,rgba(31,43,43,.92),rgba(20,30,33,.82))}
   .leaflet-bottom.leaflet-right{bottom:8px;right:10px}
   .leaflet-control-zoom a{background:rgba(20,35,43,.84)!important;color:#f4eddb!important;border-color:rgba(52,89,106,.35)!important}
   .leaflet-control-scale-line{background:rgba(20,35,43,.65);border-color:#f4eddb;color:#f4eddb;text-shadow:none}
