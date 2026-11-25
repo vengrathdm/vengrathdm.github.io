@@ -311,7 +311,6 @@ main>section,main>section.alt{background:transparent!important}
  <div class="wrap">
   
   <h1>ODYSSEY <b>OF THE DRAGONLORDS</b></h1>
-  <dl class="plaque" id="facts"></dl>
  </div>
 </div>
 <div class="alt introblk"><div class="tear"></div><div class="wrap">
@@ -356,20 +355,6 @@ main>section,main>section.alt{background:transparent!important}
 <script>
 /* DATA: placeholders only. Replace via CampaignHub.set*() */
 var DATA={
-  "facts": [
-    [
-      "ŚWIAT",
-      "THYLEA"
-    ],
-    [
-      "SESJE",
-      "57"
-    ],
-    [
-      "MOTYWY",
-      "BOGOWIE · TYTANI"
-    ]
-  ],
   "characters": [],
   "chronicle": [],
   "overview": [
@@ -435,8 +420,6 @@ var DATA={
 var $=function(s){return document.querySelector(s)};
 function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.textContent=h;return e}
 
-function renderFacts(){var f=$('#facts');f.innerHTML='';DATA.facts.forEach(function(p){var d=el('div');d.append(el('dt','',p[0]),el('dd','',p[1]));f.append(d)})}
-
 function renderParty(){
  var P=$('#party');P.innerHTML='';
  for(var i=0;i<6;i++){(function(i){
@@ -500,13 +483,12 @@ function renderOverview(){
   O.append(c);
  });
 }
-function renderAll(){renderFacts();renderParty();renderChron();renderOverview()}
+function renderAll(){renderParty();renderChron();renderOverview()}
 renderAll();
 fetch('./chronicle.json').then(function(r){if(!r.ok)throw new Error('Chronicle unavailable');return r.json()}).then(function(d){DATA.chronicle=d.sessions||[];renderChron()}).catch(function(e){console.warn('Nie udało się wczytać kroniki Odyssey:',e)});
 window.CampaignHub={
  setCharacters:function(a){DATA.characters=(a||[]).slice(0,6);renderParty()},
  setChronicle:function(a){DATA.chronicle=a||[];renderChron()},
- setFacts:function(a){DATA.facts=a;renderFacts()},
  setOverview:function(a){DATA.overview=a;renderOverview()},
  mounts:{map:$('#map-mount'),notes:$('#notes-mount')}
 };
