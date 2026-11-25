@@ -185,7 +185,7 @@ button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 #map .mount iframe,#notes .mount iframe{z-index:1}
 #map .wrap,#notes .wrap{width:100%;max-width:3840px;padding-inline:clamp(12px,2vw,72px)}
 #map .frame,#notes .frame{width:100%}
-#map h2,#notes h2{margin-bottom:22px}
+#map .section-heading,#notes .section-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:66px}\n#map .section-heading h2,#notes .section-heading h2{margin:0}\n#map .workspace-direct-link,#notes .workspace-direct-link{display:inline-flex;flex:0 0 auto;align-items:center;padding:8px 12px;text-align:right;background:transparent;border:1px solid #6d4aa866;border-radius:3px}\n@media(max-width:600px){#map .section-heading,#notes .section-heading{gap:10px;align-items:flex-start;flex-wrap:wrap}#map .workspace-direct-link,#notes .workspace-direct-link{margin-left:auto}}
 #map .mount,#notes .mount{width:85%;height:calc(clamp(460px,78svh,1800px) * .85);margin-inline:auto;display:grid;place-items:center;text-align:center;color:var(--mute);background:#0c0914;box-shadow:inset 0 0 40px #000,inset 0 0 0 1px #70518f;border-radius:4px}
 #map .mount>*:not(.ph),#notes .mount>*:not(.ph){width:100%;height:100%;min-width:0;min-height:0}
 #map .mount iframe,#notes .mount iframe{display:block;width:100%;height:100%;border:0;border-radius:4px;background:#0c0914}
@@ -331,13 +331,13 @@ main>section,main>section.alt{background:transparent!important}
 </div></section>
 
 <section id="map"><div class="tear"></div><div class="wrap">
- <h2>Mapa</h2>
- <div class="frame"><div class="mount" id="map-mount" data-embed="map" aria-label="Interaktywna mapa kampanii"><iframe src="/page/dungeons-of-drakkenheim/Mapa/" title="Interaktywna mapa kampanii — Atlas Drakkenheim" loading="lazy" allow="fullscreen"></iframe></div><a class="workspace-direct-link" href="/page/dungeons-of-drakkenheim/Mapa/" target="_blank" rel="noopener">Otwórz mapę w osobnej karcie ↗</a></div>
+ <div class="section-heading"><h2>Mapa</h2><a class="workspace-direct-link" href="/page/dungeons-of-drakkenheim/Mapa/" target="_blank" rel="noopener">Otwórz mapę w osobnej karcie ↗</a></div>
+ <div class="frame"><div class="mount" id="map-mount" data-embed="map" aria-label="Interaktywna mapa kampanii"><iframe src="/page/dungeons-of-drakkenheim/Mapa/" title="Interaktywna mapa kampanii — Atlas Drakkenheim" loading="lazy" allow="fullscreen"></iframe></div></div>
 </div></section>
 
 <section id="notes" class="alt"><div class="tear"></div><div class="wrap">
- <h2>Notatki</h2>
- <div class="frame book"><div class="mount notes" id="notes-mount" data-embed="notes" aria-label="Interaktywna mapa myśli kampanii"><iframe src="/page/dungeons-of-drakkenheim/Notatki/" title="Interaktywna mapa myśli — Archiwum bohaterów i wątków" loading="lazy" allow="fullscreen"></iframe></div><a class="workspace-direct-link" href="/page/dungeons-of-drakkenheim/Notatki/" target="_blank" rel="noopener">Otwórz Notatki w osobnej karcie ↗</a></div>
+ <div class="section-heading"><h2>Notatki</h2><a class="workspace-direct-link" href="/page/dungeons-of-drakkenheim/Notatki/" target="_blank" rel="noopener">Otwórz Notatki w osobnej karcie ↗</a></div>
+ <div class="frame book"><div class="mount notes" id="notes-mount" data-embed="notes" aria-label="Interaktywna mapa myśli kampanii"><iframe src="/page/dungeons-of-drakkenheim/Notatki/" title="Interaktywna mapa myśli — Archiwum bohaterów i wątków" loading="lazy" allow="fullscreen"></iframe></div></div>
 </div></section>
 
 <section id="overview"><div class="tear"></div><div class="wrap">
