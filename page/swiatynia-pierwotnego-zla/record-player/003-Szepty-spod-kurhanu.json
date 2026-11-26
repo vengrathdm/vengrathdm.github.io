@@ -1,0 +1,57 @@
+{
+  "title": "S3 — Szepty spod kurhanu",
+  "sessionNumber": 3,
+  "secondsPerMoment": 9,
+  "moments": [
+    {
+      "image": "https://vengrathdm.github.io/core/graphics/voronoi/temple-of-elemental-evil.webp",
+      "transition": "t-fade",
+      "blocks": [
+        {
+          "text": "Szepty spod kurhanu",
+          "x": 50,
+          "y": 38,
+          "width": "88%",
+          "font": "Cinzel",
+          "fontSize": "clamp(25px,4.5vw,60px)",
+          "align": "center"
+        },
+        {
+          "text": "18 Planting, 591 CY · 26.04.2026",
+          "x": 50,
+          "y": 58,
+          "width": "84%",
+          "font": "Georgia",
+          "fontSize": "clamp(13px,1.8vw,22px)",
+          "align": "center",
+          "letterSpacing": ".08em"
+        }
+      ]
+    },
+    {
+      "image": "https://vengrathdm.github.io/core/graphics/voronoi/temple-of-elemental-evil.webp",
+      "transition": "t-wipe",
+      "blocks": [
+        {
+          "text": "Po powrocie do wioski bohaterowie konfrontują się z nieufnością mieszkańców. W starym kurhanie odnajdują komnatę z mapą kompleksu świątynnego.",
+          "x": 50,
+          "y": 29,
+          "width": "82%",
+          "font": "Georgia",
+          "fontSize": "clamp(16px,2.1vw,27px)",
+          "align": "center"
+        },
+        {
+          "text": "Ślady wskazują na rytuał, który miał połączyć cztery żywioły. Damira podszywa się pod posłańca kultu i zdobywa hasło: „Kamień pamięta pierwszy oddech”. Cztery odłamy nie są zgodne; kapłan z Hommlet ukrywa część historii; pod świątynią znajduje się starsza, piąta komnata. Następny etap prowadzi do ruin świątyni. Zegar rytuału już ruszył.",
+          "x": 50,
+          "y": 66,
+          "width": "82%",
+          "font": "Georgia",
+          "fontSize": "clamp(13px,1.55vw,20px)",
+          "align": "center",
+          "letterSpacing": ".01em"
+        }
+      ]
+    }
+  ]
+}
