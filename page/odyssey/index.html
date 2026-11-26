@@ -125,11 +125,13 @@ button.facebtn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .ev:nth-child(even) .sheet{--r:.5deg}
 .ev:hover .sheet{transform:rotate(0) translateX(6px);box-shadow:0 14px 28px #000a,inset 0 0 30px #34596a55}
 .ev .date{font:1rem var(--head);color:var(--blood);letter-spacing:.1em}
-.ev h3{font-size:1.8rem}.ev .sumtxt{margin:2px 0 0;font-family:'Gasdrifo',cursive;font-size:1.45rem;line-height:1.25}
+.ev h3{font-size:1.8rem}.ev .sumtxt{margin:2px 0 0;font-family:'Gasdrifo',cursive;font-size:1.25rem;line-height:1.25}
 .detail{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
 .ev.open .detail{grid-template-rows:1fr}
 .detail>div{overflow:hidden}
-.detail p{margin:12px 0 0;padding-top:12px;border-top:2px dashed #34596a88;font-family:'Gasdrifo',cursive;font-size:1.55rem;line-height:1.3}
+.detail p.detail-text{margin:12px 0 0;padding-top:12px;border-top:1px solid #34596a55;font-family:Georgia,'Palatino Linotype',serif;font-size:1.02rem;line-height:1.62;letter-spacing:.005em;color:#172f3b}
+.detail p.detail-text:first-child{margin-top:14px}
+.detail p.detail-text+p.detail-text{border-top:0;padding-top:0;margin-top:10px}
 .cue{font-style:italic;font-size:.9rem;color:var(--blood);margin-top:6px}
 .ev.open .cue::before{content:"Roll up scroll ▲"}.ev:not(.open) .cue::before{content:"Unroll scroll ▼"}
 @media(min-width:900px){
@@ -460,8 +462,9 @@ function renderChron(){
  var L=$('#chron');L.innerHTML='';
  DATA.chronicle.forEach(function(e,i){
   var li=el('li','ev'),sl=el('button','seal',String(e.sessionNumber||i+1));sl.dataset.i='';sl.setAttribute('aria-expanded','false');sl.setAttribute('aria-controls','d'+i);sl.setAttribute('aria-label','Rozwiń szczegóły: '+e.title);
-  var sh=el('div','sheet');sh.append(el('div','date','ODCINEK '+String(e.sessionNumber||i+1).padStart(2,'0')),el('h3','',e.title),el('p','sumtxt',e.description||'Nagranie sesji kampanii Odyssey of the Dragonlords.'));
-  var d=el('div','detail'),w=el('div');w.append(el('p','',e.description||'Nagranie sesji kampanii Odyssey of the Dragonlords.'));
+  var sh=el('div','sheet');sh.append(el('div','date','ODCINEK '+String(e.sessionNumber||i+1).padStart(2,'0')),el('h3','',e.title),el('p','sumtxt',e.teaser||'Kolejny rozdział wyprawy przez Thyleę.'));
+  var d=el('div','detail'),w=el('div');
+  (e.description||'').split(/\\n\\s*\\n/).filter(Boolean).forEach(function(p){w.append(el('p','detail-text',p))});
   var recap=el('button','recap-link','RECAP');recap.type='button';recap.dataset.recapSrc='./record-player/'+String(e.sessionNumber||i+1).padStart(3,'0')+'-'+(e.title||'').replace(/^S\d+\s*[—–-]\s*/,'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[łŁ]/g,function(c){return c==='ł'?'l':'L'}).replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,'')+'.json';recap.dataset.recapTitle=e.title||'';w.append(recap);
   (e.recordings||[]).forEach(function(rec){var a=el('a','recording-link',rec.label||'Oglądaj na YouTube');a.href=rec.url;a.target='_blank';a.rel='noopener noreferrer';w.append(a)});
   d.append(w);sh.append(d,el('div','cue'));
@@ -494,7 +497,7 @@ function renderOverview(){
 }
 function renderAll(){renderParty();renderChron();renderOverview()}
 renderAll();
-Promise.all([fetch('./chronicle.json'),fetch('./chronicle-records.json')]).then(function(rs){if(!rs[0].ok||!rs[1].ok)throw new Error('Chronicle unavailable');return Promise.all([rs[0].json(),rs[1].json()])}).then(function(ds){var records={};(ds[1].sessions||[]).forEach(function(s){records[s.sessionNumber]=s.summary});DATA.chronicle=(ds[0].sessions||[]).map(function(s){return Object.assign({},s,{description:records[s.sessionNumber]||s.description})});renderChron()}).catch(function(e){console.warn('Nie udało się wczytać kroniki Odyssey:',e)});
+Promise.all([fetch('./chronicle.json'),fetch('./chronicle-records.json')]).then(function(rs){if(!rs[0].ok||!rs[1].ok)throw new Error('Chronicle unavailable');return Promise.all([rs[0].json(),rs[1].json()])}).then(function(ds){var records={};(ds[1].sessions||[]).forEach(function(s){records[s.sessionNumber]=s});DATA.chronicle=(ds[0].sessions||[]).map(function(s){var r=records[s.sessionNumber]||{};return Object.assign({},s,{description:r.summary||s.description,teaser:r.teaser||'Kolejny rozdział wyprawy przez Thyleę.'})});renderChron()}).catch(function(e){console.warn('Nie udało się wczytać kroniki Odyssey:',e)});
 window.CampaignHub={
  setCharacters:function(a){DATA.characters=(a||[]).slice(0,6);renderParty()},
  setChronicle:function(a){DATA.chronicle=a||[];renderChron()},
