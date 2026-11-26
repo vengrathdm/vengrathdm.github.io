@@ -8,43 +8,12 @@
       "transition": "t-fade",
       "blocks": [
         {
-          "text": "S55 — Mądrość Sydona",
+          "text": "Mądrość Sydona",
           "x": 50,
           "y": 38,
           "width": "88%",
           "font": "Cinzel",
           "fontSize": "clamp(25px,4.5vw,60px)",
-          "align": "center"
-        }
-      ]
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1920&q=85",
-      "transition": "t-wipe",
-      "blocks": [
-        {
-          "text": "MIEJSCE NA OPIS SCENY",
-          "x": 50,
-          "y": 72,
-          "width": "84%",
-          "font": "Georgia",
-          "fontSize": "clamp(15px,2.2vw,28px)",
-          "align": "center",
-          "letterSpacing": ".12em"
-        }
-      ]
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=85",
-      "transition": "t-fade",
-      "blocks": [
-        {
-          "text": "DODAJ WSPOMNIENIE",
-          "x": 50,
-          "y": 50,
-          "width": "84%",
-          "font": "Georgia",
-          "fontSize": "clamp(18px,2.8vw,36px)",
           "align": "center"
         }
       ]
