@@ -1,0 +1,57 @@
+{
+  "title": "S1 — Ślady na stalowym szlaku",
+  "sessionNumber": 1,
+  "secondsPerMoment": 9,
+  "moments": [
+    {
+      "image": "https://vengrathdm.github.io/core/graphics/voronoi/arcanum.webp",
+      "transition": "t-fade",
+      "blocks": [
+        {
+          "text": "Ślady na stalowym szlaku",
+          "x": 50,
+          "y": 38,
+          "width": "88%",
+          "font": "Cinzel",
+          "fontSize": "clamp(25px,4.5vw,60px)",
+          "align": "center"
+        },
+        {
+          "text": "Raport 01 · Początek ekspedycji",
+          "x": 50,
+          "y": 58,
+          "width": "84%",
+          "font": "Georgia",
+          "fontSize": "clamp(13px,1.8vw,22px)",
+          "align": "center",
+          "letterSpacing": ".08em"
+        }
+      ]
+    },
+    {
+      "image": "https://vengrathdm.github.io/core/graphics/voronoi/arcanum.webp",
+      "transition": "t-wipe",
+      "blocks": [
+        {
+          "text": "Pierwsze doniesienia prowadzą do warsztatu, który zamilkł po nocnej eksplozji. Świadkowie wspominają o skrzyni przewożonej pod eskortą.",
+          "x": 50,
+          "y": 29,
+          "width": "82%",
+          "font": "Georgia",
+          "fontSize": "clamp(16px,2.1vw,27px)",
+          "align": "center"
+        },
+        {
+          "text": "Wśród zgliszcz znaleziono stopiony mechanizm, fragment mapy kolejowej i rachunek opłacony przez nieznanego pośrednika. Zeznania robotników są sprzeczne, a lokalny zarządca odmawia udostępnienia ksiąg. Pochodzenie skrzyni i cel transportu pozostają nieustalone.",
+          "x": 50,
+          "y": 66,
+          "width": "82%",
+          "font": "Georgia",
+          "fontSize": "clamp(13px,1.55vw,20px)",
+          "align": "center",
+          "letterSpacing": ".01em"
+        }
+      ]
+    }
+  ]
+}
