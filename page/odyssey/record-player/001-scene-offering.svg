@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+<defs>
+ <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#111d2b"/><stop offset=".55" stop-color="#27202a"/><stop offset="1" stop-color="#090d13"/></linearGradient>
+ <radialGradient id="flame"><stop stop-color="#fff1b0"/><stop offset=".18" stop-color="#ffbd54"/><stop offset=".48" stop-color="#c84e24" stop-opacity=".65"/><stop offset="1" stop-color="#c84e24" stop-opacity="0"/></radialGradient>
+ <linearGradient id="fire" x2="0" y2="1"><stop stop-color="#fff0b3"/><stop offset=".3" stop-color="#f4a33e"/><stop offset="1" stop-color="#a92d1c"/></linearGradient>
+ <filter id="soft"><feGaussianBlur stdDeviation="28"/></filter>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<circle cx="820" cy="550" r="490" fill="url(#flame)" filter="url(#soft)"/>
+<path d="M0 0H1600V900H0Z" fill="none" stroke="#d7b77d" stroke-opacity=".25" stroke-width="3"/>
+<!-- cavern and distant ridges -->
+<path d="M0 0L230 0L330 180L420 0L590 0L680 180L800 0L980 0L1080 150L1200 0H1600V900H0Z" fill="#0a1219" opacity=".65"/>
+<path d="M0 700Q220 630 430 700T850 690T1250 680T1600 710V900H0Z" fill="#080e14"/>
+<!-- pyre -->
+<g transform="translate(570 330)">
+ <path d="M40 380L190 190L350 385L520 170L670 385" fill="none" stroke="#573a2a" stroke-width="38" stroke-linecap="round"/>
+ <path d="M130 380Q30 210 180 80Q190 200 270 160Q250 60 340 0Q360 150 420 190Q490 100 520 60Q610 250 480 380Z" fill="url(#fire)" stroke="#f1b25d" stroke-width="8"/>
+ <path d="M245 375Q160 240 275 135Q280 250 350 220Q390 160 410 110Q490 270 400 375Z" fill="#fff0b4" opacity=".85"/>
+</g>
+<!-- ritual figure -->
+<g transform="translate(270 330)">
+ <path d="M120 190Q80 120 125 65Q170 15 215 70Q255 120 215 195L265 500H65Z" fill="#111a22" stroke="#c3a36f" stroke-width="7"/>
+ <circle cx="168" cy="55" r="39" fill="#1a2027" stroke="#d4b47d" stroke-width="7"/>
+ <path d="M118 220L15 400M218 220L310 360" stroke="#111a22" stroke-width="35" stroke-linecap="round"/>
+ <path d="M310 360L420 150" stroke="#c8a56d" stroke-width="12"/>
+ <path d="M405 165L430 130L455 165M430 130V80" fill="none" stroke="#d7c39a" stroke-width="10"/>
+ <path d="M130 480L100 700M220 480L260 700" stroke="#111a22" stroke-width="34"/>
+ <path d="M115 90Q160 0 210 80" fill="none" stroke="#9d724c" stroke-width="18"/>
+</g>
+<!-- wind / divine response -->
+<g fill="none" stroke="#d9c28f" stroke-width="9" opacity=".7">
+ <path d="M50 300Q250 230 440 310T850 290T1300 310T1580 250"/>
+ <path d="M0 390Q210 330 390 390T770 370T1150 390T1600 340"/>
+ <path d="M130 510Q310 455 480 510T850 500T1230 520T1550 470"/>
+</g>
+<g fill="#f4d68c" opacity=".85"><path d="M1120 220l15 35l35 15l-35 15l-15 35l-15-35l-35-15l35-15z"/><path d="M1320 400l10 24l24 10l-24 10l-10 24l-10-24l-24-10l24-10z"/><path d="M980 150l8 18l18 8l-18 8l-8 18l-8-18l-18-8l18-8z"/></g>
+<rect x="22" y="22" width="1556" height="856" fill="none" stroke="#d9bd88" stroke-opacity=".75" stroke-width="3"/>
+</svg>
