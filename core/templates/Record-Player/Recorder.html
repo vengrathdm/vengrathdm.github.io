@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Session Recorder</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:#101116;color:#f4f2ed;font:16px system-ui,sans-serif}
+main{width:min(100%,980px)}header{display:flex;justify-content:space-between;gap:16px;align-items:baseline;margin-bottom:12px}h1{font-size:1.1rem;margin:0}#status,.muted{color:#aaa;font-size:.85rem}
+#stage{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#24242b;border-radius:12px}
+#image{width:100%;height:100%;object-fit:cover;display:block}#caption{position:absolute;inset:auto 7% 9%;text-align:center;white-space:pre-wrap;text-shadow:0 2px 12px #000;font:600 clamp(18px,3vw,34px)/1.25 Georgia,serif}
+#controls{display:flex;align-items:center;gap:12px;padding-top:14px}button{border:1px solid #565663;border-radius:7px;padding:9px 14px;color:inherit;background:#292a33;cursor:pointer}button:disabled{opacity:.4;cursor:default}#progress{flex:1;accent-color:#d6c18c}#counter{min-width:70px;text-align:right;color:#aaa;font-size:.85rem;font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<main>
+<header><h1 id="title">Session Recorder</h1><span id="status">Choose a session JSON file</span></header>
+<section id="stage"><img id="image" alt=""><div id="caption"></div></section>
+<div id="controls">
+<button id="load">Open session JSON</button><input id="file" type="file" accept=".json,application/json" hidden>
+<button id="play" disabled>Play</button><input id="progress" type="range" min="0" max="0" value="0" step="1" aria-label="Moment">
+<span id="counter">0 / 0</span>
+</div>
+<p class="muted">Select <code>sessiondataentry.json</code>. The player uses a responsive 16:9 frame.</p>
+</main>
+<script>
+(()=>{
+const $=id=>document.getElementById(id);let data=null,index=0,timer=null,playing=false;
+$('load').onclick=()=>$('file').click();
+$('file').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{load(JSON.parse(await f.text()),f.name)}catch(err){$('status').textContent='Invalid session JSON: '+err.message}};
+function load(d,name){if(!d||!Array.isArray(d.moments)||!d.moments.length)throw Error('Expected a non-empty moments array');stop();data=d;index=0;$('title').textContent=d.title||name;$('status').textContent=d.moments.length+' moments · '+(Number(d.secondsPerMoment)||8)+' seconds each';$('progress').max=d.moments.length-1;$('play').disabled=false;render()}
+function render(){const m=data.moments[index],img=$('image');if(m.image){img.src=m.image;img.style.visibility='visible';img.onerror=()=>img.style.visibility='hidden'}else{img.removeAttribute('src');img.style.visibility='hidden'}$('caption').textContent=(m.blocks||[]).map(b=>b.text||'').filter(Boolean).join('\n');$('progress').value=index;$('counter').textContent=(index+1)+' / '+data.moments.length}
+function stop(){if(timer)clearInterval(timer);timer=null;playing=false;$('play').textContent='Play'}
+function next(){if(index>=data.moments.length-1){stop();return}index++;render()}
+$('play').onclick=()=>{if(!data)return;if(playing){stop();return}if(index===data.moments.length-1)index=0;playing=true;$('play').textContent='Pause';render();timer=setInterval(next,Math.max(1,Number(data.secondsPerMoment)||8)*1000)};
+$('progress').oninput=e=>{if(!data)return;index=Number(e.target.value);render()};
+})();
+</script>
+</body>
+</html>
