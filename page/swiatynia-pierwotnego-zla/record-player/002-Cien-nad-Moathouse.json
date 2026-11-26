@@ -1,0 +1,57 @@
+{
+  "title": "S2 — Cień nad Moathouse",
+  "sessionNumber": 2,
+  "secondsPerMoment": 9,
+  "moments": [
+    {
+      "image": "https://vengrathdm.github.io/core/graphics/voronoi/temple-of-elemental-evil.webp",
+      "transition": "t-fade",
+      "blocks": [
+        {
+          "text": "Cień nad Moathouse",
+          "x": 50,
+          "y": 38,
+          "width": "88%",
+          "font": "Cinzel",
+          "fontSize": "clamp(25px,4.5vw,60px)",
+          "align": "center"
+        },
+        {
+          "text": "11 Planting, 591 CY · 19.04.2026",
+          "x": 50,
+          "y": 58,
+          "width": "84%",
+          "font": "Georgia",
+          "fontSize": "clamp(13px,1.8vw,22px)",
+          "align": "center",
+          "letterSpacing": ".08em"
+        }
+      ]
+    },
+    {
+      "image": "https://vengrathdm.github.io/core/graphics/voronoi/temple-of-elemental-evil.webp",
+      "transition": "t-wipe",
+      "blocks": [
+        {
+          "text": "Drużyna rusza tropem zaginionych furmanów. W ruinach Moathouse odkrywa podziemne przejście i ślady kultystów.",
+          "x": 50,
+          "y": 29,
+          "width": "82%",
+          "font": "Georgia",
+          "fontSize": "clamp(16px,2.1vw,27px)",
+          "align": "center"
+        },
+        {
+          "text": "Walka z jaszczuroludźmi kończy się śmiercią przewodnika, a Pelagietta odnajduje mapę z zaznaczonymi czterema sanktuariami. Moathouse służy jako placówka zwiadowcza; kult działa w czterech odłamach żywiołów; ktoś w Hommlet dostarcza im żywność. Wśród dokumentów znajduje się rachunek podpisany inicjałami „L. B.”.",
+          "x": 50,
+          "y": 66,
+          "width": "82%",
+          "font": "Georgia",
+          "fontSize": "clamp(13px,1.55vw,20px)",
+          "align": "center",
+          "letterSpacing": ".01em"
+        }
+      ]
+    }
+  ]
+}
