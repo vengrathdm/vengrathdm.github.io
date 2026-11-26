@@ -332,7 +332,7 @@ function renderChron(){
   var sh=el('div','sheet');sh.append(el('div','date',e.date),el('h3','',e.title),el('p','sumtxt',e.summary));
   var d=el('div','detail');d.id='d'+i;var w=el('div');w.append(el('p','',e.details));d.append(w);
   sh.append(d,el('div','cue'));
-   var recap=el('button','recap-link','RECAP');recap.type='button';recap.dataset.recapSrc='./record-player/'+String(i+1).padStart(3,'0')+'-'+(e.title||'').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').replace(/[łŁ]/g,function(c){return c==='ł'?'l':'L'}).replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,'')+'.json';recap.dataset.recapTitle=e.title||'';sh.append(recap);
+   var recap=el('button','recap-link','RECAP');recap.type='button';recap.dataset.recapSrc='./record-player/'+String(i+1).padStart(3,'0')+'-'+(e.title||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[łŁ]/g,function(c){return c==='ł'?'l':'L'}).replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,'')+'.json';recap.dataset.recapTitle=e.title||'';sh.append(recap);
   function t(){var o=li.classList.toggle('open');sl.setAttribute('aria-expanded',o)}
   sl.onclick=t;sh.onclick=function(ev){if(ev.target===sh||ev.target.closest('.date,h3,.sumtxt,.cue'))t()};sh.dataset.i='';
   li.append(sl,sh);L.append(li)})
