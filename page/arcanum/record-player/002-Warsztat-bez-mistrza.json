@@ -1,0 +1,57 @@
+{
+  "title": "S2 — Warsztat bez mistrza",
+  "sessionNumber": 2,
+  "secondsPerMoment": 9,
+  "moments": [
+    {
+      "image": "https://vengrathdm.github.io/core/graphics/voronoi/arcanum.webp",
+      "transition": "t-fade",
+      "blocks": [
+        {
+          "text": "Warsztat bez mistrza",
+          "x": 50,
+          "y": 38,
+          "width": "88%",
+          "font": "Cinzel",
+          "fontSize": "clamp(25px,4.5vw,60px)",
+          "align": "center"
+        },
+        {
+          "text": "Raport 02 · Dochodzenie",
+          "x": 50,
+          "y": 58,
+          "width": "84%",
+          "font": "Georgia",
+          "fontSize": "clamp(13px,1.8vw,22px)",
+          "align": "center",
+          "letterSpacing": ".08em"
+        }
+      ]
+    },
+    {
+      "image": "https://vengrathdm.github.io/core/graphics/voronoi/arcanum.webp",
+      "transition": "t-wipe",
+      "blocks": [
+        {
+          "text": "Ślady prowadzą do opuszczonej hali produkcyjnej, gdzie magia i mechanika zostały połączone w nieznanym urządzeniu.",
+          "x": 50,
+          "y": 29,
+          "width": "82%",
+          "font": "Georgia",
+          "fontSize": "clamp(16px,2.1vw,27px)",
+          "align": "center"
+        },
+        {
+          "text": "Na miejscu odnaleziono schemat z brakującymi stronami, narzędzia należące do kilku różnych cechów i ślady pośpiesznego demontażu. Urządzenie nie przypomina standardowych konstrukcji przemysłowych. Nie wiadomo, kto je zbudował ani dlaczego zostało ukryte.",
+          "x": 50,
+          "y": 66,
+          "width": "82%",
+          "font": "Georgia",
+          "fontSize": "clamp(13px,1.55vw,20px)",
+          "align": "center",
+          "letterSpacing": ".01em"
+        }
+      ]
+    }
+  ]
+}
