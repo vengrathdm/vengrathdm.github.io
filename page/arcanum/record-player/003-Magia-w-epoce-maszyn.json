@@ -1,0 +1,57 @@
+{
+  "title": "S3 — Magia w epoce maszyn",
+  "sessionNumber": 3,
+  "secondsPerMoment": 9,
+  "moments": [
+    {
+      "image": "https://vengrathdm.github.io/core/graphics/voronoi/arcanum.webp",
+      "transition": "t-fade",
+      "blocks": [
+        {
+          "text": "Magia w epoce maszyn",
+          "x": 50,
+          "y": 38,
+          "width": "88%",
+          "font": "Cinzel",
+          "fontSize": "clamp(25px,4.5vw,60px)",
+          "align": "center"
+        },
+        {
+          "text": "Raport 03 · Nierozstrzygnięte tropy",
+          "x": 50,
+          "y": 58,
+          "width": "84%",
+          "font": "Georgia",
+          "fontSize": "clamp(13px,1.8vw,22px)",
+          "align": "center",
+          "letterSpacing": ".08em"
+        }
+      ]
+    },
+    {
+      "image": "https://vengrathdm.github.io/core/graphics/voronoi/arcanum.webp",
+      "transition": "t-wipe",
+      "blocks": [
+        {
+          "text": "Zebrane dokumenty wskazują na próbę wykorzystania energii magicznej do zasilania konstrukcji przemysłowej.",
+          "x": 50,
+          "y": 29,
+          "width": "82%",
+          "font": "Georgia",
+          "fontSize": "clamp(16px,2.1vw,27px)",
+          "align": "center"
+        },
+        {
+          "text": "Notatki techniczne zawierają symbole, których nie rozpoznają miejscowi rzemieślnicy. Część świadków mówi o sabotażu, inni o eksperymencie wymykającym się spod kontroli. Ekspedycja musi ustalić, kto finansuje przedsięwzięcie i jakie konsekwencje przyniesie jego uruchomienie.",
+          "x": 50,
+          "y": 66,
+          "width": "82%",
+          "font": "Georgia",
+          "fontSize": "clamp(13px,1.55vw,20px)",
+          "align": "center",
+          "letterSpacing": ".01em"
+        }
+      ]
+    }
+  ]
+}
