@@ -1,0 +1,57 @@
+{
+  "title": "S1 — Droga do Hommlet",
+  "sessionNumber": 1,
+  "secondsPerMoment": 9,
+  "moments": [
+    {
+      "image": "https://vengrathdm.github.io/core/graphics/voronoi/temple-of-elemental-evil.webp",
+      "transition": "t-fade",
+      "blocks": [
+        {
+          "text": "Droga do Hommlet",
+          "x": 50,
+          "y": 38,
+          "width": "88%",
+          "font": "Cinzel",
+          "fontSize": "clamp(25px,4.5vw,60px)",
+          "align": "center"
+        },
+        {
+          "text": "4 Planting, 591 CY · 12.04.2026",
+          "x": 50,
+          "y": 58,
+          "width": "84%",
+          "font": "Georgia",
+          "fontSize": "clamp(13px,1.8vw,22px)",
+          "align": "center",
+          "letterSpacing": ".08em"
+        }
+      ]
+    },
+    {
+      "image": "https://vengrathdm.github.io/core/graphics/voronoi/temple-of-elemental-evil.webp",
+      "transition": "t-wipe",
+      "blocks": [
+        {
+          "text": "Podróżni spotykają się na trakcie do Hommlet. Po napaści goblinów odnajdują ślady prowadzące do starego młyna.",
+          "x": 50,
+          "y": 29,
+          "width": "82%",
+          "font": "Georgia",
+          "fontSize": "clamp(16px,2.1vw,27px)",
+          "align": "center"
+        },
+        {
+          "text": "W gospodzie Pod Wesołym Olbrzymem poznają sołtysa i dowiadują się o zniknięciu dwóch furmanów. Ktoś płaci za informacje o przybyszach; w okolicy widziano ludzi z symbolem złamanego trójkąta; kapłan Rufus prosi o dyskrecję. Jaroo rozpoznaje na amulecie drużyny znak dawnego kultu, ale nie chce rozmawiać przy świadkach.",
+          "x": 50,
+          "y": 66,
+          "width": "82%",
+          "font": "Georgia",
+          "fontSize": "clamp(13px,1.55vw,20px)",
+          "align": "center",
+          "letterSpacing": ".01em"
+        }
+      ]
+    }
+  ]
+}
