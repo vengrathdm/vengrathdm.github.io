@@ -1,20 +1,116 @@
 {
   "title": "S1 — Wielki Dzik",
   "sessionNumber": 1,
-  "secondsPerMoment": 8,
+  "secondsPerMoment": 9,
   "moments": [
     {
-      "image": "https://vengrathdm.github.io/core/graphics/voronoi/odyssey-of-the-dragonlords.webp",
+      "image": "001-scene-tavern.svg",
       "transition": "t-fade",
       "blocks": [
         {
-          "text": "Wielki Dzik",
+          "text": "SCENA I  ·  POCZĄTEK PRZEPOWIEDNI",
           "x": 50,
-          "y": 38,
+          "y": 17,
           "width": "88%",
           "font": "Cinzel",
-          "fontSize": "clamp(25px,4.5vw,60px)",
-          "align": "center"
+          "fontSize": "clamp(11px,1.4vw,17px)",
+          "align": "center",
+          "color": "#e4c078",
+          "letterSpacing": ".22em"
+        },
+        {
+          "text": "Gorzki Trunek",
+          "x": 50,
+          "y": 69,
+          "width": "88%",
+          "font": "Cinzel",
+          "fontSize": "clamp(30px,5vw,66px)",
+          "align": "center",
+          "color": "#fff2d3"
+        },
+        {
+          "text": "Pięcioro nieznajomych spotyka Kyrę. Wyrocznia wskazuje ich jako tych, którzy mogą odmienić los Thylei.",
+          "x": 50,
+          "y": 84,
+          "width": "78%",
+          "font": "Georgia",
+          "fontSize": "clamp(13px,1.8vw,23px)",
+          "align": "center",
+          "color": "#f3dfb8"
+        }
+      ]
+    },
+    {
+      "image": "001-scene-boar.svg",
+      "transition": "t-wipe",
+      "blocks": [
+        {
+          "text": "SCENA II  ·  PRÓBA WYBRAŃCÓW",
+          "x": 50,
+          "y": 17,
+          "width": "88%",
+          "font": "Cinzel",
+          "fontSize": "clamp(11px,1.4vw,17px)",
+          "align": "center",
+          "color": "#e4c078",
+          "letterSpacing": ".22em"
+        },
+        {
+          "text": "Czerwonooki dzik",
+          "x": 50,
+          "y": 69,
+          "width": "88%",
+          "font": "Cinzel",
+          "fontSize": "clamp(29px,4.8vw,62px)",
+          "align": "center",
+          "color": "#fff2d3"
+        },
+        {
+          "text": "W jaskini bestia dopada łowców, a potem rzuca się na bohaterów. Jej ostatnie słowa brzmią jak złowieszcza przepowiednia.",
+          "x": 50,
+          "y": 84,
+          "width": "82%",
+          "font": "Georgia",
+          "fontSize": "clamp(13px,1.75vw,22px)",
+          "align": "center",
+          "color": "#f3dfb8"
+        }
+      ]
+    },
+    {
+      "image": "001-scene-offering.svg",
+      "transition": "t-fade",
+      "blocks": [
+        {
+          "text": "SCENA III  ·  OFIARA DLA PYTHORA",
+          "x": 50,
+          "y": 17,
+          "width": "88%",
+          "font": "Cinzel",
+          "fontSize": "clamp(11px,1.4vw,17px)",
+          "align": "center",
+          "color": "#e4c078",
+          "letterSpacing": ".22em"
+        },
+        {
+          "text": "Ogień przyjmuje ofiarę",
+          "x": 50,
+          "y": 69,
+          "width": "90%",
+          "font": "Cinzel",
+          "fontSize": "clamp(28px,4.5vw,58px)",
+          "align": "center",
+          "color": "#fff2d3"
+        },
+        {
+          "text": "Aera składa dzika Pythorowi. Płomień, nagły wiatr i odległy śmiech potwierdzają, że rytuał został przyjęty.",
+          "x": 50,
+          "y": 84,
+          "width": "82%",
+          "font": "Georgia",
+          "fontSize": "clamp(13px,1.75vw,22px)",
+          "align": "center",
+          "color": "#f3dfb8"
         }
       ]
     }
