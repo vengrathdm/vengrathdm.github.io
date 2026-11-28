@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#11170f">
+<meta name="description" content="Echtra midst the Sidhe — interaktywne archiwum kampanii D&D w Irgaelii. Kronika, atlas, plemiona, bóstwa i koło roku.">
+<title>Echtra midst the Sidhe — Vengrath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almendra+SC:wght@400;700&family=Uncial+Antiqua&family=Brygada+1918:ital,wght@0,400;0,600;1,400&family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body class="echtra-rework">
+<div class="grain" aria-hidden="true"></div>
+<header class="hero" id="top">
+  <div class="hero-art" aria-hidden="true"></div>
+  <div class="hero-shade"></div>
+  <a class="brand" href="/home/" aria-label="Vengrath — strona główna"><img src="/core/graphics/favicon/mg-logo.png" alt=""><span>VENGRATH</span></a>
+  <div class="hero-copy">
+    <p class="eyebrow" id="hero-kicker">D&D · ARCHIWUM KAMPANII · IRGAELIA</p>
+    <h1>Echtra <em>midst the</em><span>Sidhe</span></h1>
+    <p class="hero-subtitle" id="hero-subtitle">Rok, który odmówił umrzeć.</p>
+    <p class="hero-lede" id="hero-description">Archiwum wyprawy przez Irgaelię — od ognia Samhain po mrok Dworu Morrígan.</p>
+    <div class="hero-actions"><a class="button button-gold" href="#campaign" data-open-section="campaign">Wejdź do kroniki <span>↘</span></a><a class="button button-quiet" id="playlist-link" href="https://www.youtube.com/playlist?list=PL-Lm83myvu0gjfyGW9ErTPXe7NhqmRLGn" target="_blank" rel="noopener">Playlista sesji ↗</a></div>
+  </div>
+  <div class="hero-foot"><span>IRGAELIA · 8 BÓSTW · 9 PLEMION</span><span>„All sídhe are open at Samhain”</span></div>
+  <div class="wheel-mark" aria-hidden="true"><span>✦</span><i></i><b>᚛ ᚜</b></div>
+</header>
+<nav class="main-nav" aria-label="Nawigacja kampanii">
+  <a href="#campaign" data-nav="campaign" class="active">Kampania</a>
+  <a href="#seasons" data-nav="seasons">Koło roku</a>
+  <a href="#chapters" data-nav="chapters">Rozdziały</a>
+  <a href="#atlas" data-nav="atlas">Atlas</a>
+  <a href="#world" data-nav="world">Świat</a>
+  <a href="#party" data-nav="party">Drużyna</a>
+  <a href="#chronicle" data-nav="chronicle">Kronika</a>
+  <a href="#notes" data-nav="notes">Notatnik</a>
+</nav>
+<main>
+<section class="section overview-section" id="campaign">
+  <div class="section-head"><div><p class="eyebrow">01 / AKTA GŁÓWNE</p><h2 id="intro-title">Koło roku nie zatrzyma się samo.</h2></div><p class="section-aside">IRGAELIA · ARCHIWUM WYPRAWY</p></div>
+  <div class="overview-grid">
+    <article class="manuscript" id="intro-copy"></article>
+    <aside class="campaign-file">
+      <div class="file-top"><span>VENGRATH / CAMPAIGN FILE</span><span class="file-seal">᚛᚜</span></div>
+      <div class="file-title">Dossier kampanii</div>
+      <div id="campaign-facts" class="fact-list"></div>
+      <div class="file-bottom"><span>AKTA OTWARTE</span><span>IRG / 001</span></div>
+    </aside>
+  </div>
+  <div class="milestone-panel">
+    <div class="milestone-head"><div><p class="eyebrow">OŚ PRZEZNACZENIA</p><h3>Pięć zdarzeń zmieniających świat</h3></div><span class="micro-label">KAMPANIJNE KAMIENIE MILOWE</span></div>
+    <div id="milestones" class="milestone-grid"></div>
+  </div>
+</section>
+<section class="section seasons-section" id="seasons">
+  <div class="section-head"><div><p class="eyebrow">02 / ANNUS MIRABILIS</p><h2>Koło roku</h2></div><p class="section-aside">PROLOG + PIĘĆ AKTÓW</p></div>
+  <p class="section-lede">Każda pora przynosi nowy porządek, nowego przeciwnika i konsekwencje poprzednich wyborów. Wybierz część cyklu, aby przejść do jej rozdziałów.</p>
+  <div class="wheel-layout"><div class="year-wheel" id="year-wheel" aria-label="Koło sześciu etapów kampanii"><div class="wheel-center"><span>IRGAELIA</span><b>THE<br>TURNING<br>YEAR</b><small>᚛ ᚜</small></div></div><div id="acts-list" class="acts-list"></div></div>
+</section>
+<section class="section chapters-section" id="chapters">
+  <div class="section-head"><div><p class="eyebrow">03 / DZIENNIK WYPRAWY</p><h2>Rozdziały</h2></div><p class="section-aside">14 ROZDZIAŁÓW · POZIOMY 1–14</p></div>
+  <div class="chapter-toolbar"><div id="chapter-filters" class="filter-row"></div><div class="progress-readout"><span id="chapter-progress-label">0 / 14 ukończonych</span><div class="progress-track"><i id="chapter-progress"></i></div></div></div>
+  <div id="chapters-grid" class="chapters-grid"></div>
+</section>
+<section class="section atlas-section" id="atlas">
+  <div class="section-head"><div><p class="eyebrow">04 / TABULA IRGAELIAE</p><h2>Atlas Irgaelii</h2></div><p class="section-aside">SCHEMAT LOKALIZACJI · NIE MAPA GEOGRAFICZNA</p></div>
+  <p class="section-lede">Schemat zbiera miejsca, które pojawiają się w kampanii. Wybierz znacznik, aby otworzyć kartę lokacji i powiązany wpis kompendium.</p>
+  <div class="atlas-frame"><div class="atlas-topline"><span>ATLAS / REGIONUM</span><span>IRGAELIA · THE OTHERWORLD</span></div><div class="atlas-layout"><div class="atlas-canvas"><svg id="atlas-svg" viewBox="0 0 1000 520" role="img" aria-label="Schematyczny atlas najważniejszych lokacji kampanii"></svg><div class="atlas-legend"><span><i class="legend-dot mortal"></i>Świat śmiertelników</span><span><i class="legend-dot winter"></i>Domena Zimy</span><span><i class="legend-dot fae"></i>Drugi Świat</span></div></div><aside class="location-card" id="location-card"><p class="eyebrow">KARTA LOKACJI</p><h3>Wybierz miejsce</h3><p>Znaczniki na schemacie otwierają opis lokacji i prowadzą do wpisów w kompendium Irgaelii.</p></aside></div><div class="atlas-bottomline"><span>VENGRATH · CARTOGRAPHIA</span><a href="/page/EchtraLore/">OTWÓRZ PEŁNE KOMPENDIUM ↗</a></div></div>
+</section>
+<section class="section world-section" id="world">
+  <div class="section-head"><div><p class="eyebrow">05 / MUNDI CODEX</p><h2>Świat Irgaelii</h2></div><a class="text-link" href="/page/EchtraLore/">Pełne kompendium świata ↗</a></div>
+  <div class="world-tabs" role="tablist" aria-label="Kategorie kompendium"><button class="active" data-world-tab="tribes" role="tab" aria-selected="true">Plemiona</button><button data-world-tab="gods" role="tab" aria-selected="false">Bóstwa</button><button data-world-tab="courts" role="tab" aria-selected="false">Sidhe i Dwory</button></div>
+  <div id="world-content" class="world-content"></div>
+</section>
+<section class="section party-section" id="party">
+  <div class="section-head"><div><p class="eyebrow">06 / PERSONAE</p><h2>Drużyna</h2></div><p class="section-aside">KARTOTEKA BOHATERÓW</p></div>
+  <p class="section-lede">Postacie przypisane do kampanii w archiwum Vengrath. Statusy i portrety pobierane są ze wspólnego rejestru.</p>
+  <div id="party-grid" class="party-grid"><p class="loading-note">Wczytywanie kart postaci…</p></div>
+</section>
+<section class="section chronicle-section" id="chronicle">
+  <div class="section-head"><div><p class="eyebrow">07 / ACTA SESSIONUM</p><h2>Kronika sesji</h2></div><p class="section-aside" id="session-count">REJESTR NAGRAŃ</p></div>
+  <p class="section-lede">Oryginalne tytuły i nagrania zarejestrowane w archiwum kampanii. Odtwarzacz otwiera się bezpośrednio przy wybranym wpisie.</p>
+  <div class="chronicle-toolbar"><input id="session-search" type="search" placeholder="Szukaj w tytułach sesji…" aria-label="Szukaj sesji"><span id="session-filter-count"></span></div>
+  <div id="chronicle-list" class="chronicle-list"><p class="loading-note">Wczytywanie kroniki…</p></div>
+</section>
+<section class="section notes-section" id="notes">
+  <div class="section-head"><div><p class="eyebrow">08 / LIBER MEMORIAE</p><h2>Notatnik kronikarza</h2></div><p class="section-aside">LOKALNE NOTATKI PRZEGLĄDARKI</p></div>
+  <p class="section-lede">Prywatny notes do zapisywania decyzji, tropów, obietnic fae i konsekwencji. Wpisy są przechowywane lokalnie w tej przeglądarce.</p>
+  <div class="notes-layout"><form id="note-form" class="note-form"><label for="note-title">Tytuł zapisu</label><input id="note-title" maxlength="100" required placeholder="np. Dług wobec Ryla"><label for="note-category">Kategoria</label><select id="note-category"><option>Wydarzenie</option><option>NPC</option><option>Obietnica / Dług</option><option>Tajemnica</option><option>Decyzja drużyny</option></select><label for="note-body">Treść</label><textarea id="note-body" rows="5" required placeholder="Zapisz, co wydarzyło się przy stole…"></textarea><button class="button button-gold" type="submit">Zapisz notatkę +</button><p class="storage-hint">Notatki nie są wysyłane na serwer i nie synchronizują się między urządzeniami.</p></form><div class="notes-list-wrap"><div class="notes-list-head"><span>ARCHIWUM WPISÓW</span><button id="export-notes" class="text-button" type="button">Eksportuj JSON ↓</button></div><div id="notes-list" class="notes-list"></div></div></div>
+</section>
+</main>
+<footer class="site-footer"><div><span class="footer-mark">᚛᚜</span><strong>VENGRATH</strong><span>ECHTRA MIDST THE SIDHE</span></div><a href="#top">POWRÓT NA GÓRĘ ↑</a><p>Irgaelia pamięta. Koło roku obraca się dalej.</p></footer>
+<button class="audio-button" id="audio-toggle" type="button" aria-label="Odtwórz muzykę kampanii" title="Muzyka kampanii"><span class="audio-ring"></span><span id="audio-symbol">▶</span></button>
+<audio id="campaign-audio" preload="none" loop></audio>
+<script src="./app.js" defer></script>
+</body></html>
