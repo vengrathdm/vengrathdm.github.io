@@ -155,3 +155,19 @@ button,input{font:inherit}
   -webkit-backdrop-filter: none !important;
   backdrop-filter: none !important;
 }
+
+
+/* Compact tag dropdowns retain the existing filter-button visual language. */
+.filters{overflow:visible;flex-wrap:wrap}
+.filter-group{position:relative;flex:0 0 auto}
+.filter-trigger{display:inline-flex;align-items:center;gap:.35rem}
+.filter-group.is-open>.filter-trigger{color:#f4f5f7}
+.filter-menu{position:absolute;top:calc(100% + .35rem);left:0;z-index:30;display:flex;flex-direction:column;gap:.08rem;min-width:max(100%,11.5rem);max-width:min(19rem,calc(100vw - 1.4rem));max-height:min(58vh,24rem);overflow-y:auto;padding:.32rem;border:1px solid rgb(220 224 232 / 19%);border-radius:3px;background:linear-gradient(180deg,rgb(29 26 23 / 98%),rgb(13 13 15 / 99%));box-shadow:0 14px 38px rgb(0 0 0 / 48%)}
+.filter-menu[hidden]{display:none}
+.filter-option{display:block;width:100%;padding:.4rem .58rem;text-align:left;letter-spacing:.055em}
+.filter-option.active{border-color:rgb(225 229 237 / 25%);background:rgb(220 224 232 / 11%);color:#f4f5f7;box-shadow:inset 2px 0 0 rgb(225 229 237 / 52%)}
+.filter-trigger:focus-visible,.filter-option:focus-visible{outline:1px solid rgb(225 229 237 / 55%);outline-offset:1px}
+@media(max-width:680px){
+ .filters{align-items:flex-start;overflow:visible;flex-wrap:wrap;row-gap:.2rem}
+ .filter-menu{max-width:calc(100vw - 1.4rem);max-height:52vh}
+}
