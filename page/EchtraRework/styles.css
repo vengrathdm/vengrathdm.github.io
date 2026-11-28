@@ -45,3 +45,40 @@
  .hero{height:100svh;min-height:0}
  .hero-copy{padding-top:clamp(105px,19svh,155px);padding-bottom:clamp(90px,16svh,130px)}
 }
+
+
+/* Floating left-side navigation: persistent across every campaign section */
+.main-nav{
+ position:fixed;left:16px;top:50%;transform:translateY(-50%);
+ z-index:50;width:158px;max-height:calc(100svh - 36px);
+ display:flex;flex-direction:column;justify-content:center;align-items:stretch;
+ flex-wrap:nowrap;gap:4px;padding:12px 10px;
+ background:rgba(17,23,15,.94);border:1px solid var(--line);
+ box-shadow:0 16px 42px #0008;backdrop-filter:blur(16px);
+}
+.main-nav a{display:block;padding:11px 10px;border-bottom:0;border-left:2px solid transparent;line-height:1.25}
+.main-nav a:hover,.main-nav a.active{border-left-color:var(--gold);border-bottom-color:transparent;background:#bca66a12}
+main>.section{
+ width:min(1220px,calc(100% - clamp(230px,20vw,285px)));
+ margin-left:clamp(195px,17vw,240px);margin-right:auto;
+}
+.hero-copy{width:min(1200px,calc(100% - clamp(230px,20vw,285px)));margin-left:clamp(195px,17vw,240px);margin-right:24px}
+.brand{left:clamp(195px,17vw,240px)}
+.hero-foot{left:clamp(195px,17vw,240px)}
+@media(max-width:760px){
+ .main-nav{left:7px;width:62px;padding:8px 5px;gap:5px}
+ .main-nav a{padding:9px 5px;text-align:center;font-size:8px;letter-spacing:.015em;overflow-wrap:anywhere}
+ main>.section{width:calc(100% - 88px);margin-left:78px;margin-right:10px;padding-top:62px}
+ .hero-copy{width:calc(100% - 94px);margin-left:78px;margin-right:16px}
+ .brand{left:78px}
+ .hero-foot{left:78px;right:14px;font-size:8px}
+ .wheel-mark{right:12px;width:115px;height:115px;top:15%;opacity:.35}
+}
+@media(max-width:420px){
+ .main-nav{width:54px;left:5px;padding:6px 3px}
+ .main-nav a{font-size:7px;padding:8px 3px}
+ main>.section{width:calc(100% - 72px);margin-left:66px;margin-right:6px}
+ .hero-copy{width:calc(100% - 80px);margin-left:66px}
+ .brand{left:66px}
+ .hero-foot{left:66px;right:8px}
+}
