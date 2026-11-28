@@ -253,3 +253,23 @@ main{margin-left:126px}
 @media(prefers-reduced-motion:reduce){
  *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+/* Exact component vocabulary used by the campaign renderer. */
+.filter-chip{border:1px solid rgba(217,180,119,.42);border-radius:0;background:transparent;color:var(--bone);font:12px var(--mono);letter-spacing:.08em}
+.filter-chip.active,.filter-chip:hover{background:var(--copper);border-color:var(--copper2);color:#172019}
+.chapter-card-top,.chapter-footer,.chapter-meta,.chapter-places{color:#53604e}
+.chapter-card-top,.chapter-footer{font:11px var(--mono);letter-spacing:.08em}
+.chapter-act{font:11px var(--mono);color:#8b5e38;letter-spacing:.1em}
+.complete-button{border:1px solid #a87b4c;border-radius:0;background:transparent;color:#344333}
+.complete-button:hover,.complete-button[aria-pressed="true"]{background:#a87b4c;color:#f0e7d0}
+.session-row{border:1px solid rgba(217,180,119,.42);border-radius:0;background:rgba(33,49,38,.9);padding:22px}
+.session-number{font:18px var(--uncial);color:var(--copper2)}
+.session-title{font:500 24px var(--display);color:var(--paper)}
+.session-player{border-radius:0;border:1px solid rgba(217,180,119,.4)}
+.note-entry{border-bottom:1px dotted rgba(217,180,119,.42);padding:18px 0}
+.note-entry h3{font:500 24px var(--display);color:var(--paper)}
+.note-entry p,.note-meta{color:#c2c7b4}
+.act-symbol{font:24px var(--uncial);color:var(--copper2)}
+.world-leader{font:500 22px var(--display);color:var(--copper2)}
+.world-sub{font:italic 17px var(--display);color:#c7c7b1}
+.world-symbol{font:24px var(--uncial);color:var(--copper2)}
