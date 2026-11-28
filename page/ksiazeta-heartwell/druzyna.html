@@ -39,6 +39,34 @@
         color: var(--paper);
         background: rgba(255, 255, 255, 0.04);
       }
+
+      .character-sheet-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 38px;
+        margin-top: 8px;
+        padding: 9px 16px;
+        border: 2px solid var(--stamp-red);
+        background: rgba(139, 32, 32, 0.08);
+        color: var(--stamp-red);
+        font-family: var(--display);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+      }
+      .character-sheet-link:hover {
+        background: var(--stamp-red);
+        color: var(--paper);
+        transform: translateY(-1px);
+      }
+      .character-sheet-link:focus-visible {
+        outline: 2px solid var(--amber);
+        outline-offset: 3px;
+      }
     </style>
     <link rel="stylesheet" href="/core/templates/Cursor/Cursor.css">
 </head>
@@ -150,11 +178,7 @@
                 wybór, by milczeć.
               </p>
               <div class="party-tags">
-                <a
-                  class="party-tag-link"
-                  href="/page/ksiazeta-heartwell/player-characters/polter-von-geist.html"
-                  >POLTER VON GEIST</a
-                >
+                <a class="character-sheet-link" href="/page/ksiazeta-heartwell/postaci/polter-von-geist.html">KARTA POSTACI</a>
               </div>
             </article>
             <article class="party-card">
@@ -174,7 +198,7 @@
                 konsekwencje.
               </p>
               <div class="party-tags">
-                <span>WOJOWNIK · REWOLWEROWIEC</span>
+                <a class="character-sheet-link" href="/page/ksiazeta-heartwell/postaci/james-blackwood.html">KARTA POSTACI</a>
               </div>
             </article>
             <article class="party-card">
@@ -193,7 +217,7 @@
                 niebezpieczeństwa kryjące się tuż poza zasięgiem latarni.
               </p>
               <div class="party-tags">
-                <span>ŁOWCA MIEJSKI</span>
+                <a class="character-sheet-link" href="/page/ksiazeta-heartwell/postaci/delilah-brooke.html">KARTA POSTACI</a>
               </div>
             </article>
             <article class="party-card">
@@ -213,7 +237,7 @@
                 go ku własnej legendzie.
               </p>
               <div class="party-tags">
-                <span>ARTIFICER</span>
+                <a class="character-sheet-link" href="/page/ksiazeta-heartwell/postaci/alderik-erikson.html">KARTA POSTACI</a>
               </div>
             </article>
           </div>
