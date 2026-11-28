@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "id": "echtra",
+    "name": "Echtra — nakładki mapy Irgaelii",
+    "mapId": "echtra-map"
+  },
+  "regions": {
+    "political": [],
+    "geographical": []
+  },
+  "markers": [],
+  "markerEdits": false
+}

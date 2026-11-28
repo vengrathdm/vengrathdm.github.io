@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "echtra-map",
+  "title": "Irgaelia",
+  "image": "map.jpg",
+  "dataUrl": "data/regions.json",
+  "storageKey": "echtra.map.overlays.v1",
+  "dimensions": {
+    "width": 1582,
+    "height": 2048
+  },
+  "projection": {
+    "baseZoom": 2,
+    "hexSize": 8.04672,
+    "columnsPerSheet": 96,
+    "rowsPerSheet": 68,
+    "yScale": 5873,
+    "landSheets": [
+      "A1"
+    ],
+    "pole": [
+      0,
+      0
+    ]
+  },
+  "view": {
+    "minZoom": 1,
+    "maxZoom": 5,
+    "zoomSnap": 0.25,
+    "zoomDelta": 0.5,
+    "wheelPxPerZoomLevel": 60,
+    "maxBoundsPadding": 0.15
+  }
+}

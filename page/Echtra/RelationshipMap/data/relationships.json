@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "id": "echtra-relationships",
+    "name": "Echtra — mapa relacji",
+    "updatedAt": "2026-11-28",
+    "entityTypes": [],
+    "entityTypeOverrides": {},
+    "relationshipTypes": [],
+    "layoutModes": {
+      "complete": "force",
+      "family": "hierarchy",
+      "organization": "hierarchy",
+      "political": "force",
+      "characters": "force"
+    },
+    "savedViews": []
+  },
+  "entities": [],
+  "relationships": []
+}

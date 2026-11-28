@@ -8,3 +8,9 @@
 .tl .ev:nth-of-type(even):before{left:-51px;right:auto}
 .campaign-audio{display:block;width:100%;max-width:420px;margin:24px 0 0;accent-color:var(--mal)}
 @media(max-width:860px){.tl:before{left:18px}.tl .ev,.tl .ev:nth-of-type(even){width:auto;margin-left:46px}.tl .ev:before,.tl .ev:nth-of-type(even):before{left:-46px;right:auto}}
+
+/* Embedded campaign tools */
+.vp.module-vp{display:block;min-height:78vh;height:78vh;padding:0;overflow:hidden;text-align:left;background:#07100d;border:1px solid rgba(217,180,90,.5)}
+.vp.module-vp:before,.vp.module-vp:after{pointer-events:none}
+.module-iframe{display:block;width:100%;height:100%;min-height:78vh;border:0;background:#111214}
+@media(max-width:860px){.vp.module-vp{height:82vh;min-height:82vh}.module-iframe{min-height:82vh}}
