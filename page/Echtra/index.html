@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#07100d"><title>Echtra midst the Sidhe — Archiwum kampanii</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Cormorant+SC:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas><svg class="bgknot" id="bgknot" aria-hidden="true"></svg><div class="aura" id="aura"></div>
+<header><div class="brand"><i></i><span>ECHTRA MIDST THE SIDHE</span><i></i></div><nav id="nav" aria-label="Sekcje kampanii"></nav><div class="braid" id="hb"></div></header>
+<main>
+<section class="pane on" id="intro" aria-label="Intro">
+ <div class="hero"><div><div class="kick" id="kicker"></div><h1>Echtra<em>midst the Sidhe</em></h1><p class="lede" id="lede"></p><svg class="ogham" id="ogham" viewBox="0 0 520 46" aria-hidden="true"></svg><div class="cta"><button class="btn" data-go="postaci">POZNAJ POSTACI</button><button class="btn" data-go="kronika">CZYTAJ KRONIKĘ</button></div></div><svg class="tri" viewBox="0 0 400 400" id="tri" aria-hidden="true"></svg></div>
+ <div class="pillars" id="pillars"></div><div class="split"><article class="vel scroll rv"><h3>Archiwum Irgaelii</h3><div id="intro-copy"></div><blockquote>Irgaelia — kraina, w której granica między światem śmiertelników a Drugim Światem jest cienka.</blockquote></article><aside class="rules rv"><h3>Wątki świata</h3><ul id="world-notes"></ul></aside></div><div class="stats rv" id="stats"></div>
+</section>
+<section class="pane" id="postaci" aria-label="Postaci"><div class="sec-h"><small>DRAMATIS PERSONAE</small><h2>Drużyna Irgaelii</h2><p>Sześć kart postaci zarejestrowanych w archiwum kampanii. Kliknij kartę, by otworzyć dossier.</p></div><div class="chips" id="chips" role="group" aria-label="Filtr postaci"></div><div class="grid" id="grid"></div></section>
+<section class="pane" id="kronika" aria-label="Kronika"><div class="sec-h"><small>ANNALES IRGAELIAE</small><h2>Kronika</h2><p>Oryginalne tytuły i nagrania sesji. Rozwiń wpis, aby otworzyć nagranie.</p></div><div class="tl" id="tl"><svg class="vine" id="vine" preserveAspectRatio="none" aria-hidden="true"></svg></div></section>
+<section class="pane" id="notatki" aria-label="Notatki"><div class="sec-h"><small>LIBER SECRETORUM</small><h2>Notatki</h2><p>Prywatna księga drużyny.</p></div><div class="vp" id="notes-viewport" data-viewport="notatki"><div class="braid t"></div><div class="braid b"></div><div><svg viewBox="0 0 80 80" id="pn" aria-hidden="true"></svg><h3>Viewport Notatek</h3><p>Kontener gotowy na moduł notatek lub osadzenie zewnętrznego komponentu.</p><code>#notes-viewport</code></div></div></section>
+<section class="pane" id="mapa" aria-label="Mapa"><div class="sec-h"><small>TABULA IRGAELIAE</small><h2>Mapa</h2><p>Mapa Irgaelii — moduł do podłączenia.</p></div><div class="vp" id="map-viewport" data-viewport="mapa"><div class="braid t"></div><div class="braid b"></div><div><svg viewBox="0 0 80 80" id="pm" aria-hidden="true"></svg><h3>Viewport Mapy</h3><p>Kontener gotowy na interaktywną mapę kampanii.</p><code>#map-viewport</code></div></div><div class="legend"><span>◆ MIEJSCA</span><span>▲ ŚWIĘTE MIEJSCA</span><span>● SIDHE</span><span>≈ GRANICA ŚWIATÓW</span></div></section>
+<section class="pane" id="status" aria-label="Status"><div class="sec-h"><small>STATUS QUO</small><h2>Status kampanii</h2><p>Koło Roku i rejestr danych, które są faktycznie zapisane w archiwum.</p></div><div class="stgrid"><div class="vel wheel"><svg viewBox="0 0 400 400" id="wheel" aria-label="Koło Roku"></svg><div class="wheel-caption">KOŁO ROKU · CYKL ŚWIĄT</div></div><div class="status-stack"><div class="vel status-panel"><h3>Stan drużyny</h3><p id="health-note"></p><div id="rings" class="rings"></div></div><div class="vel status-panel"><h3>Wpływ Drugiego Świata</h3><p id="corruption-note"></p><div class="unknown-track"><span>Dane nieustalone</span></div></div><div class="vel status-panel"><h3>Wątki kampanii</h3><p id="threads-note"></p><div id="thr"></div></div></div></div></section>
+</main><footer>◆ ECHTRA MIDST THE SIDHE · ARCHIWUM KAMPANII ◆</footer><dialog id="dossier"></dialog><script src="./app.js" defer></script>
+</body></html>
