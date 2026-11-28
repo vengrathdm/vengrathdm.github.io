@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jedwab Głębin — Kampania</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ins:.37;--sumi:#07090f;--ai:#101a30;--shu:#d8412f;--shu2:#ff6a4d;--kin:#c8a95b;--kin2:#f0dc9a;--jade:#3d8b7a;--glow:#7dffb2;--bone:#ece4d0;--mute:#9a9486;
+--serif:'Cormorant Garamond',Georgia,serif;--jp:'Noto Serif JP','Cormorant Garamond',serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--sumi);color:var(--bone);font:500 1.25rem/1.7 var(--serif);overflow-x:hidden}
+body::after{content:"";position:fixed;inset:0;z-index:72;pointer-events:none;opacity:.07;mix-blend-mode:overlay;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+#main{filter:saturate(calc(1 - var(--ins)*.55)) hue-rotate(calc(var(--ins)*-22deg));transition:filter 1s}
+#vig{position:fixed;inset:0;pointer-events:none;z-index:70;background:radial-gradient(ellipse at center,transparent 38%,#000 125%);opacity:calc(.2 + var(--ins)*.8);transition:opacity 1s}
+#fx{position:fixed;inset:0;z-index:60;pointer-events:none}
+.wh{position:fixed;z-index:75;pointer-events:none;color:var(--glow);font:italic 500 1.4rem var(--serif);text-shadow:0 0 14px var(--glow);animation:wh 4.5s ease forwards;letter-spacing:.2em}
+@keyframes wh{0%{opacity:0;transform:translateY(10px) scale(.9)}25%{opacity:.8}100%{opacity:0;transform:translateY(-40px) scale(1.15);filter:blur(3px)}}
+.gl{text-shadow:calc(var(--ins)*3px) 0 #ff2d2d99,calc(var(--ins)*-3px) 0 #25e5ff88}
+body[data-l=hi] .gl{animation:gl 2.6s steps(1) infinite}
+@keyframes gl{0%,88%,100%{clip-path:none;transform:none}90%{clip-path:inset(20% 0 55% 0);transform:translateX(-8px)}93%{clip-path:inset(60% 0 10% 0);transform:translateX(9px)}96%{clip-path:inset(0 0 80% 0);transform:translateX(-4px)}}
+.jt{animation:jt .5s steps(2) 2}@keyframes jt{50%{transform:translate(3px,-2px) skewX(5deg);color:var(--glow)}}
+/* nav */
+#nav{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:80;display:flex;flex-direction:column;gap:12px;align-items:center}
+#nav a{display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;color:var(--mute);transition:.4s}
+.hk{width:38px;height:38px;display:grid;place-items:center;background:var(--shu);color:#ffe9d6;font:700 1.2rem var(--jp);border-radius:4px;box-shadow:inset 0 0 0 2px #ffd9c455;filter:url(#rough);transform:rotate(-3deg);transition:.4s}
+#nav a span{writing-mode:vertical-rl;font:700 .68rem var(--serif);letter-spacing:.35em;text-transform:uppercase;max-height:0;overflow:hidden;transition:.5s;opacity:0}
+#nav a:hover span,#nav a.on span{max-height:90px;opacity:1}
+#nav a:hover .hk,#nav a.on .hk{background:var(--shu2);transform:rotate(0) scale(1.14);box-shadow:0 0 24px var(--shu),inset 0 0 0 2px #ffd9c4aa}
+#nav a.on{color:var(--kin2)}
+/* common */
+section{position:relative;padding:14vh 9vw 12vh}
+.hd{position:relative;margin-bottom:4rem;padding-left:.5rem}
+.hd .wm{position:absolute;left:-1vw;top:-40px;writing-mode:vertical-rl;font:700 clamp(7rem,16vw,13rem)/1 var(--jp);color:transparent;-webkit-text-stroke:1px #c8a95b33;pointer-events:none;user-select:none}
+.hd small{display:block;font:700 .82rem var(--serif);letter-spacing:.55em;color:var(--shu2);text-transform:uppercase;margin-left:clamp(5rem,12vw,9rem)}
+.hd h2{font:300 clamp(3rem,8vw,6.2rem)/1.05 var(--serif);letter-spacing:.12em;text-transform:uppercase;margin-left:clamp(5rem,12vw,9rem);background:linear-gradient(100deg,var(--bone),var(--kin2) 40%,var(--kin));-webkit-background-clip:text;background-clip:text;color:transparent}
+.brush{height:12px;margin:1rem 0 0 clamp(5rem,12vw,9rem);width:min(360px,60%);background:linear-gradient(90deg,var(--shu),var(--shu2) 70%,transparent);filter:url(#rough);border-radius:6px}
+.rv{opacity:0;transform:translateY(40px);filter:blur(6px);transition:1.2s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none;filter:none}
+/* hero */
+.hero{position:relative;height:100vh;min-height:660px;overflow:hidden;background:#07090f}
+.hero>svg{position:absolute;inset:0;width:100%;height:100%}
+.drift{animation:dr 38s ease-in-out infinite alternate}.drift.b{animation-duration:55s;animation-direction:alternate-reverse}
+@keyframes dr{to{transform:translateX(-160px)}}
+.vk{position:absolute;left:5vw;top:13vh;writing-mode:vertical-rl;font:700 clamp(2.6rem,6vw,5rem) var(--jp);letter-spacing:.25em;color:var(--kin);text-shadow:0 0 34px #c8a95b66;z-index:3}
+.vk2{position:absolute;left:calc(5vw + clamp(4rem,8vw,6.5rem));top:15vh;writing-mode:vertical-rl;font:500 clamp(.9rem,1.5vw,1.2rem) var(--jp);letter-spacing:.5em;color:var(--mute);z-index:3}
+.htx{position:absolute;left:0;right:0;bottom:9vh;text-align:center;z-index:3;padding:0 8vw;background:radial-gradient(ellipse at 50% 70%,#07090fcc,transparent 70%)}
+.ey{font:700 .85rem var(--serif);letter-spacing:.6em;color:var(--shu2);text-transform:uppercase}
+h1{font:300 clamp(3.6rem,11vw,9rem)/1 var(--serif);letter-spacing:.07em;background:linear-gradient(100deg,var(--bone) 20%,var(--kin2) 50%,var(--bone) 80%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 24px #000)}
+.sub{font:italic 500 clamp(1.1rem,2.4vw,1.6rem) var(--serif);color:var(--kin2);margin-top:.6rem}
+.btn{display:inline-flex;align-items:center;gap:1rem;margin-top:1.8rem;padding:.8rem 2.2rem;border:1px solid var(--kin);color:var(--kin2);text-decoration:none;font:700 .85rem var(--serif);letter-spacing:.4em;text-transform:uppercase;transition:.5s;position:relative;overflow:hidden;background:#07090f99}
+.btn::before{content:"";position:absolute;inset:0;background:var(--shu);transform:translateX(-101%);transition:.5s;z-index:-1}
+.btn:hover{border-color:var(--shu);color:#fff;box-shadow:0 0 36px #d8412f88;z-index:0}.btn:hover::before{transform:none}
+.pro{display:grid;grid-template-columns:1.5fr 1fr;gap:6vw;max-width:1200px;margin:auto}
+.pro p.l::first-letter{float:left;font:700 5.4rem/.85 var(--jp);color:var(--shu2);padding:.4rem .8rem 0 0;text-shadow:0 0 24px #d8412f77}
+.pro p{color:#d6cfba}
+.fct{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-content:start}
+.fct div{border-left:2px solid var(--shu);padding:.2rem 1rem;font:700 .72rem var(--serif);letter-spacing:.3em;color:var(--mute);text-transform:uppercase}.fct b{display:block;font:300 2.8rem/1.1 var(--serif);color:var(--kin2);letter-spacing:0}
+/* postaci */
+.flt{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.flt button{background:none;border:1px solid #c8a95b55;color:var(--mute);padding:.4rem 1.5rem;font:700 .75rem var(--serif);letter-spacing:.3em;text-transform:uppercase;cursor:pointer;transition:.3s}
+.flt button.on,.flt button:hover{border-color:var(--shu);color:#fff;background:#d8412f33;box-shadow:0 0 18px #d8412f44}
+.rail{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x proximity;padding:34px 9vw 50px;margin:0 -9vw;scrollbar-width:thin;scrollbar-color:var(--shu) transparent}
+.cd{flex:0 0 250px;height:410px;scroll-snap-align:center;position:relative;cursor:pointer;background:linear-gradient(170deg,#18223c,#0a0e19);border:1px solid #c8a95b66;transition:.5s cubic-bezier(.2,.8,.3,1);overflow:hidden;box-shadow:0 20px 40px #000a}
+.cd::before{content:"";position:absolute;inset:8px;border:1px solid #c8a95b2a;z-index:1;pointer-events:none}
+.cd svg.en{position:absolute;left:-40px;top:70px;width:330px;opacity:.9}.cd svg.en circle{fill:none;stroke:var(--c);stroke-width:5;stroke-linecap:round;stroke-dasharray:640;stroke-dashoffset:120;filter:drop-shadow(0 0 8px var(--c));transition:1.4s}
+.cd:hover svg.en circle,.cd.sel svg.en circle{stroke-dashoffset:0;transform-origin:center;transform:rotate(80deg)}
+.cd .nm{position:absolute;right:24px;top:22px;writing-mode:vertical-rl;font:700 3.8rem/1 var(--jp);color:var(--c);text-shadow:0 0 30px var(--c);z-index:2}
+.cd .tg{position:absolute;left:18px;top:18px;z-index:2;width:34px;height:34px;font-size:1rem}
+.cd .bt{position:absolute;left:22px;right:22px;bottom:22px;z-index:2}.cd h3{font:700 1.5rem/1.15 var(--serif);color:var(--kin2)}.cd small{font-style:italic;color:var(--mute);font-size:1.05rem}
+.sanb{height:4px;background:#ffffff1a;margin-top:.8rem}.sanb i{display:block;height:100%;background:var(--c);box-shadow:0 0 8px var(--c)}
+.cd:hover{transform:translateY(-10px)}.cd.sel{transform:translateY(-16px);border-color:var(--shu);box-shadow:0 0 0 1px var(--shu),0 30px 70px #d8412f44}
+.dos{display:grid;grid-template-columns:240px 1fr;gap:3rem;margin-top:1rem;padding:2.6rem;border:1px solid #c8a95b55;background:linear-gradient(135deg,#0f1628dd,#0a0d14dd);position:relative}
+.dos::before,.dos::after{content:"";position:absolute;width:30px;height:30px;border:2px solid var(--shu)}.dos::before{top:-1px;left:-1px;border-right:0;border-bottom:0}.dos::after{right:-1px;bottom:-1px;border-left:0;border-top:0}
+.big{aspect-ratio:1;display:grid;place-items:center;position:relative;font:700 7rem var(--jp);color:var(--c);text-shadow:0 0 50px var(--c)}
+.big svg{position:absolute;inset:0;width:100%;height:100%}.big circle{fill:none;stroke:var(--c);stroke-width:3;stroke-dasharray:300 20;animation:spn 40s linear infinite;transform-origin:center}@keyframes spn{to{transform:rotate(360deg)}}
+.dos h3{font:300 2.6rem/1.1 var(--serif);letter-spacing:.05em;color:var(--kin2)}.dos .rl{font-style:italic;color:var(--shu2)}
+.dos p.bio{min-height:8.4em;margin-top:1rem;color:#d6cfba}
+.rd{background:#000;color:transparent;padding:0 .25em;cursor:pointer;transition:.5s;border-bottom:1px solid var(--shu)}.rd:hover,.rd.sh,body[data-l=hi] .rd{background:#2a0d0f;color:var(--shu2)}
+.st{display:grid;grid-template-columns:repeat(6,1fr);gap:.6rem;margin:1.4rem 0}
+.st div{text-align:center;border:1px solid #c8a95b44;padding:.3rem 0;font:700 .65rem var(--serif);letter-spacing:.2em;color:var(--mute)}.st b{display:block;font:300 1.7rem/1.1 var(--serif);color:var(--kin2);letter-spacing:0}
+.sk{display:grid;grid-template-columns:1fr 1fr;gap:.4rem 2rem}.sk div{display:grid;grid-template-columns:130px 1fr 40px;align-items:center;gap:.6rem;font-size:1rem}
+.sk i{height:5px;background:#ffffff14;position:relative}.sk i::after{content:"";position:absolute;inset:0;width:var(--w);background:linear-gradient(90deg,var(--shu),var(--kin));transform-origin:left;animation:gr 1.4s ease both}@keyframes gr{from{transform:scaleX(0)}}
+.sk .mt i::after{background:linear-gradient(90deg,var(--glow),#1e7a52);box-shadow:0 0 10px var(--glow)}
+/* kronika */
+.ctl{display:flex;gap:1rem;align-items:center;margin-bottom:1rem}.ctl button{width:46px;height:46px;border:1px solid var(--kin);background:none;color:var(--kin2);font:1.4rem var(--serif);cursor:pointer;transition:.3s}.ctl button:hover{background:var(--shu);border-color:var(--shu);color:#fff}
+.thr{flex:1;height:2px;background:#ffffff1a;position:relative}.thr i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--shu);box-shadow:0 0 12px var(--shu)}.thr i::after{content:"針";position:absolute;right:-12px;top:-14px;font:700 1rem var(--jp);color:var(--kin2)}
+.emaki{overflow-x:auto;cursor:grab;scrollbar-width:none;padding:60px 9vw 90px;margin:0 -9vw}.emaki::-webkit-scrollbar{display:none}.emaki.dr{cursor:grabbing;user-select:none}
+.track{display:flex;gap:44px;width:max-content;position:relative}
+.track::before{content:"";position:absolute;left:0;right:0;top:50%;height:70px;margin-top:-35px;opacity:.6;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='70'%3E%3Cpath d='M0 35Q50 5 100 35T200 35' fill='none' stroke='%23c8a95b' stroke-width='1.5'/%3E%3Cpath d='M0 45Q50 15 100 45T200 45' fill='none' stroke='%23d8412f' stroke-width='1' stroke-dasharray='2 8'/%3E%3C/svg%3E") repeat-x center}
+.pn{width:410px;flex:none;position:relative;z-index:1;padding:2rem 2.2rem 2.4rem;color:#2a2018;background:linear-gradient(180deg,#f0e8d2,#d8ccaf);box-shadow:0 24px 50px #000c;transition:.5s}
+.pn:nth-child(even){margin-top:80px}.pn:hover{transform:translateY(-8px) rotate(-.4deg)}
+.pn::before,.pn::after{content:"";position:absolute;top:-8px;bottom:-8px;width:14px;background:linear-gradient(90deg,#3a1510,#7d2a1d,#3a1510);box-shadow:0 0 10px #000a}.pn::before{left:-7px}.pn::after{right:-7px}
+.pn .d{font:700 .8rem var(--serif);letter-spacing:.3em;color:#9a2f22;text-transform:uppercase}
+.pn .k{position:absolute;top:8px;right:22px;font:700 3.6rem/1 var(--jp);color:#2a201814}
+.pn h4{font:700 1.8rem/1.1 var(--serif);margin:.3rem 0 .6rem}.pn p{font-size:1.12rem;line-height:1.55}
+.pn .ev{margin-top:.9rem;padding-top:.6rem;border-top:1px dashed #8a6a4a;font-style:italic;font-size:1.02rem}
+.pn .sn{position:absolute;bottom:-15px;right:26px;background:#0a0e19;color:var(--glow);border:1px solid var(--glow);padding:.1rem 1rem;font:700 .8rem var(--serif);letter-spacing:.2em;box-shadow:0 0 14px #7dffb255}
+.pn.fu{opacity:.82;background:linear-gradient(180deg,#d9d2c0,#b9ae93)}
+/* viewports */
+.vp{min-height:64vh;display:grid;place-items:center;text-align:center;color:var(--mute);border:9px solid #24160f;outline:1px solid var(--kin);outline-offset:-5px;box-shadow:inset 0 0 100px #000,0 30px 60px #000a;background:linear-gradient(#c8a95b1f 2px,transparent 2px) 0 0/90px 90px,linear-gradient(90deg,#c8a95b1f 2px,transparent 2px) 0 0/90px 90px,#0d1322}
+.vp b{display:block;font:700 6rem var(--jp);color:#c8a95b33}.vp code{color:var(--kin2);background:#000a;padding:.2rem .8rem;font-size:.95rem}
+/* status */
+.stg{display:grid;grid-template-columns:1fr 1.2fr;gap:5vw;max-width:1200px}
+.dial{text-align:center}.dial svg{width:min(300px,100%);transform:rotate(-90deg)}.dial .tr{fill:none;stroke:#ffffff14;stroke-width:6}.dial .vl{fill:none;stroke:url(#sg2);stroke-width:6;stroke-linecap:round;stroke-dasharray:314;transition:.4s;filter:drop-shadow(0 0 8px var(--shu))}
+.dial .num{margin-top:-190px;height:100px;font:300 5.4rem/100px var(--serif);color:var(--kin2)}.dial .lb{font:700 .72rem var(--serif);letter-spacing:.4em;color:var(--mute);text-transform:uppercase;margin-bottom:5.4rem}
+input[type=range]{-webkit-appearance:none;width:100%;max-width:340px;height:4px;background:linear-gradient(90deg,var(--glow),var(--shu));outline:0;border-radius:4px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;background:var(--shu);border:2px solid var(--kin2);border-radius:3px;transform:rotate(45deg);cursor:pointer;box-shadow:0 0 16px var(--shu)}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;background:var(--shu);border:2px solid var(--kin2);border-radius:3px;cursor:pointer}
+.dial p{font-style:italic;color:var(--mute);font-size:1rem;margin-top:.8rem}
+.cards{display:grid;gap:1.6rem}.pnl{border:1px solid #c8a95b44;padding:1.4rem 1.8rem;background:#0d1322cc;position:relative}.pnl h3{font:700 .8rem var(--serif);letter-spacing:.4em;color:var(--shu2);text-transform:uppercase;margin-bottom:.7rem}
+.rit{display:flex;align-items:center;gap:1.6rem}.rit svg{width:130px;flex:none}.rit b{font:300 3rem/1 var(--serif);color:var(--kin2)}
+.sq{display:flex;gap:6px;flex-wrap:wrap}.sq i{width:22px;height:22px;border:1px solid var(--kin);transition:.4s;cursor:pointer}.sq i.on{background:var(--shu);box-shadow:0 0 10px var(--shu)}
+.eyes{display:flex;gap:.7rem;font:700 1.6rem var(--jp);color:#ffffff1c}.eyes b{cursor:pointer;transition:.4s}.eyes b.on{color:var(--glow);text-shadow:0 0 14px var(--glow)}
+@media(max-width:850px){.pro,.dos,.stg{grid-template-columns:1fr}.sk{grid-template-columns:1fr}.st{grid-template-columns:repeat(3,1fr)}.pn{width:80vw}#nav{right:6px;gap:8px}.hk{width:32px;height:32px}section{padding-right:16vw}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter>
+<linearGradient id="sg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7dffb2"/><stop offset="1" stop-color="#d8412f"/></linearGradient>
+</defs></svg>
+<div id="vig"></div><canvas id="fx"></canvas>
+<nav id="nav">
+ <a href="#intro" class="on"><i class="hk">序</i><span>Intro</span></a><a href="#postaci"><i class="hk">人</i><span>Postaci</span></a><a href="#kronika"><i class="hk">記</i><span>Kronika</span></a><a href="#notatki"><i class="hk">筆</i><span>Notatki</span></a><a href="#mapa"><i class="hk">図</i><span>Mapa</span></a><a href="#status"><i class="hk">状</i><span>Status</span></a>
+</nav>
+<div id="main">
+<section id="intro" style="padding:0">
+ <div class="hero">
+ <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+   <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05070d"/><stop offset=".55" stop-color="#14203d"/><stop offset="1" stop-color="#4a2230"/></linearGradient>
+   <radialGradient id="scl"><stop offset="0" stop-color="#ffe2c4"/><stop offset=".4" stop-color="#ff7a52"/><stop offset=".85" stop-color="#b02a1f"/><stop offset="1" stop-color="#4d0c10"/></radialGradient>
+   <radialGradient id="gw"><stop offset="0" stop-color="#d8412f" stop-opacity=".55"/><stop offset="1" stop-color="#d8412f" stop-opacity="0"/></radialGradient>
+   <radialGradient id="ir"><stop offset="0" stop-color="#ffcf70"/><stop offset="1" stop-color="#b8321e"/></radialGradient>
+   <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b2a2c"/><stop offset="1" stop-color="#040a0e"/></linearGradient>
+   <filter id="bl"><feGaussianBlur stdDeviation="22"/></filter>
+   <pattern id="sgh" width="80" height="40" patternUnits="userSpaceOnUse"><g fill="none" stroke="#7dd6c0" stroke-opacity=".2" stroke-width="1.5"><circle cx="40" cy="40" r="38"/><circle cx="40" cy="40" r="28"/><circle cx="40" cy="40" r="18"/><circle cx="0" cy="20" r="38"/><circle cx="0" cy="20" r="28"/><circle cx="0" cy="20" r="18"/><circle cx="80" cy="20" r="38"/><circle cx="80" cy="20" r="28"/><circle cx="80" cy="20" r="18"/></g></pattern>
+   <clipPath id="lid"><ellipse cx="800" cy="330" rx="200" ry="2"><animate attributeName="ry" values="2;2;200" keyTimes="0;.3;1" dur="5s" begin="0.5s" fill="freeze"/></ellipse></clipPath>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <g fill="#fff" opacity=".7" id="stars"></g>
+  <circle cx="800" cy="330" r="330" fill="url(#gw)"/>
+  <g clip-path="url(#lid)"><circle cx="800" cy="330" r="190" fill="url(#scl)"/><circle id="irs" cx="800" cy="330" r="96" fill="url(#ir)" stroke="#5a0f12" stroke-width="4"/><ellipse id="pup" cx="800" cy="330" rx="12" ry="86" fill="#060306"/></g>
+  <g id="l1"><path fill="#1a2644" d="M0 640L120 560L220 600L360 470L480 590L620 520L760 610L900 500L1040 600L1200 480L1340 590L1480 520L1600 600V900H0Z"/></g>
+  <ellipse class="drift" cx="500" cy="610" rx="700" ry="26" fill="#aab8d8" opacity=".14" filter="url(#bl)"/>
+  <g id="l2"><path fill="#0f1830" d="M0 720L140 640L300 700L460 600L640 690L800 630L980 710L1160 620L1340 700L1500 640L1600 690V900H0Z"/></g>
+  <ellipse class="drift b" cx="1100" cy="690" rx="760" ry="30" fill="#aab8d8" opacity=".12" filter="url(#bl)"/>
+  <g id="pg" transform="translate(250 650)" fill="#05070d"></g>
+  <g transform="translate(1270 726)"><path d="M-90 0Q-60 36 0 40Q70 36 100 -6L84 -10Q0 8 -90 0Z" fill="#05070d"/><path d="M0 -4V-190" stroke="#05070d" stroke-width="5"/><path d="M-6 -176V-8Q60 -4 74 -20L70 -150Q40 -170 -6 -176Z" fill="#2a1219" stroke="#d8412f" stroke-width="1.5"/><g stroke="#d8412f" stroke-opacity=".6"><path d="M-6 -140H72M-6 -100H72M-6 -60H72"/></g></g>
+  <rect y="720" width="1600" height="180" fill="url(#sea)"/><rect y="720" width="1600" height="180" fill="url(#sgh)"/>
+  <g id="tent"></g>
+  <rect y="720" width="1600" height="180" fill="url(#sea)" opacity=".35"/>
+ </svg>
+ <div class="vk">深淵ノ絹</div><div class="vk2">一九二六年 · 上海</div>
+ <div class="htx">
+  <div class="ey">Zew Cthulhu · Szanghaj 1926</div>
+  <h1 class="gl">Jedwab Głębin</h1>
+  <div class="sub">Szlak, którego nie ma na żadnej mapie, kończy się pod wodą</div>
+  <a class="btn" href="#postaci">Rozwiń zwój <span>→</span></a>
+ </div>
+ </div>
+ <div style="padding:14vh 9vw 12vh;position:relative">
+  <div class="pro rv">
+   <div>
+    <p class="l">Pewnej nocy w porcie Szanghaju dobija statek „Lotos z Fuzhou”. Brak załogi, brak ładunku poza belami jedwabiu, które w ciemności szepczą między sobą w języku starszym niż kanton. Wzór tkaniny przypomina mapę, a mapa prowadzi na dno rzeki Huangpu. Zbieracie się wokół niej, nie wiedząc jeszcze, że Ten, Który Śni, zaczął się budzić, a każdy dzień na brzegu jest dniem mniej do rytuału.</p>
+    <p style="margin-top:1.2rem">To kampania dla czwórki śledczych w mieście, które nigdy nie śpi, bo boi się snów. Rozum jest tu bronią, ale każdy kolejny fragment prawdy kosztuje kawałek rozumu.</p>
+   </div>
+   <div class="fct"><div><b>4</b>Badaczy</div><div><b>6</b>Sesji</div><div><b>49</b>Dni rytuału</div><div><b>Vengrath</b>Strażnik Tajemnic</div></div>
+  </div>
+ </div>
+</section>
+
+<section id="postaci">
+ <div class="hd rv"><span class="wm">人</span><small>Dramatis personae</small><h2>Postaci</h2><div class="brush"></div></div>
+ <div class="flt rv" id="flt"><button class="on" data-f="*">Wszyscy</button><button data-f="pc">Badacze</button><button data-f="npc">Sojusznicy</button><button data-f="foe">Zagrożenia</button></div>
+ <div class="rail" id="rail"></div>
+ <div class="dos rv" id="dos"></div>
+</section>
+
+<section id="kronika">
+ <div class="hd rv"><span class="wm">記</span><small>Emaki · Zwój wydarzeń</small><h2>Kronika</h2><div class="brush"></div></div>
+ <div class="ctl"><button id="pv">←</button><div class="thr"><i id="th"></i></div><button id="nx">→</button></div>
+ <div class="emaki" id="em"><div class="track" id="trk"></div></div>
+</section>
+
+<section id="notatki">
+ <div class="hd rv"><span class="wm">筆</span><small>Dziennik śledczego</small><h2>Notatki</h2><div class="brush"></div></div>
+ <div class="vp rv" id="notatki-viewport"><div><b>筆</b>Tu zostanie osadzony viewport modułu Notatek<br><br><code>#notatki-viewport</code></div></div>
+</section>
+
+<section id="mapa">
+ <div class="hd rv"><span class="wm">図</span><small>Szlak i dno rzeki</small><h2>Mapa</h2><div class="brush"></div></div>
+ <div class="vp rv" id="mapa-viewport"><div><b>図</b>Tu zostanie osadzony viewport modułu Mapy<br><br><code>#mapa-viewport</code></div></div>
+</section>
+
+<section id="status">
+ <div class="hd rv"><span class="wm">状</span><small>Stan śledztwa</small><h2>Status</h2><div class="brush"></div></div>
+ <div class="stg">
+  <div class="dial rv"><svg viewBox="0 0 120 120"><circle class="tr" cx="60" cy="60" r="50"/><circle class="vl" id="vl" cx="60" cy="60" r="50"/></svg>
+   <div class="num" id="sn">62</div><div class="lb">Poczytalność drużyny</div>
+   <input type="range" id="sl" min="0" max="99" value="62"><p>Przeciągnij, aby zobaczyć świat oczami bohaterów. Cała strona reaguje.</p></div>
+  <div class="cards">
+   <div class="pnl rv"><h3>Rytuał · odliczanie</h3><div class="rit"><svg viewBox="0 0 120 120" id="rg"></svg><div><b>28</b><br>dni do przebudzenia</div></div></div>
+   <div class="pnl rv"><h3>Dowody 7 / 12</h3><div class="sq" id="sq"></div></div>
+   <div class="pnl rv"><h3>Znaki Starszych</h3><div class="eyes" id="ey"></div></div>
+  </div>
+ </div>
+</section>
+</div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],NS='http://www.w3.org/2000/svg';
+// scene setup
+for(let i=0;i<60;i++){const c=document.createElementNS(NS,'circle');c.setAttribute('cx',Math.random()*1600);c.setAttribute('cy',Math.random()*380);c.setAttribute('r',Math.random()*1.4+.3);c.setAttribute('opacity',Math.random());$('#stars').appendChild(c)}
+let pg='';for(let i=0;i<5;i++){const w=74-i*11,y=-i*48;pg+=`<path d="M${-w} ${y}Q${-w*.5} ${y-6} ${-w*.34} ${y-24}H${w*.34}Q${w*.5} ${y-6} ${w} ${y}Z"/><rect x="${-w*.28}" y="${y-44}" width="${w*.56}" height="22"/>`}pg+='<path d="M0 -240V-290" stroke="#05070d" stroke-width="4"/><rect x="-80" y="0" width="160" height="150"/>';$('#pg').innerHTML=pg;
+const T=[];[260,640,980,1330,1500].forEach((bx,i)=>{const a=document.createElementNS(NS,'path'),b=document.createElementNS(NS,'path');a.setAttribute('fill','#061513');a.setAttribute('stroke','#3d8b7a');a.setAttribute('stroke-opacity','.5');a.setAttribute('stroke-width','1.5');b.setAttribute('fill','none');b.setAttribute('stroke','#7dffb2');b.setAttribute('stroke-opacity','.25');$('#tent').append(a,b);T.push({a,b,bx,i,h:[520,640,430,560,480][i]})});
+const sl=$('#sl');let ins=.37,mx=0,my=0;
+function setIns(san){ins=(99-san)/99;document.documentElement.style.setProperty('--ins',ins);$('#sn').textContent=san;$('#vl').style.strokeDashoffset=314*(1-san/99);document.body.dataset.l=ins>.6?'hi':ins>.3?'mid':'lo'}
+sl.oninput=()=>setIns(+sl.value);setIns(62);
+function tent(t){T.forEach(o=>{const n=30,len=o.h/n;let x=o.bx,y=930,ang=-Math.PI/2+Math.sin(t*.0005+o.i)*.18,L=[],R=[],M=[];
+ for(let j=0;j<=n;j++){const w=17*(1-j/n)+1.5,nx=-Math.sin(ang),ny=Math.cos(ang);L.push([x+nx*w,y+ny*w]);R.push([x-nx*w,y-ny*w]);
+  ang+=Math.sin(t*.0011+o.i*1.7+j*.2)*(.07+ins*.12)*(1+j*.05)+(o.i%2?.012:-.012);x+=Math.cos(ang)*len;y+=Math.sin(ang)*len}
+ const f=p=>p[0].toFixed(1)+' '+p[1].toFixed(1);o.a.setAttribute('d','M'+L.map(f).join('L')+'L'+R.reverse().map(f).join('L')+'Z');o.b.setAttribute('d','M'+L.map(f).join('L'))})}
+// characters
+const C=[
+['Dr Wiktor Hale','Psychiatra i okultysta','pc','医','#7dffb2','探',[55,60,50,80,65,85],71,[['Psychoanaliza',70],['Okultyzm',55],['Medycyna',60],['Mity Cthulhu',3,1]],'Przyjechał do Szanghaju leczyć obłąkanych marynarzy. Zostanie, by leczyć siebie. Ma w notesie <span class="rd">listę nazwisk pacjentów, którzy znikli ze szpitala w jedną noc</span>.'],
+['Mei-Lin Zawada','Tłumaczka starych tekstów','pc','訳','#c8a95b','探',[40,50,65,90,60,90],64,[['Języki obce',85],['Biblioteka',70],['Historia',65],['Mity Cthulhu',5,1]],'Córka polskiego kupca i szanghajskiej śpiewaczki. Czyta pięć pism, w tym jedno, którego <span class="rd">nauczyła się z sennego szeptu zamiast ze słownika</span>.'],
+['Kpt. Jonasz Brandt','Szmugler i żeglarz','pc','船','#5c8bd6','探',[75,70,60,55,55,50],58,[['Nawigacja',75],['Pilotowanie',70],['Strzelectwo',55],['Mity Cthulhu',2,1]],'Jego statek „Czarny Karp” przewiózł już opium, broń i jedną relikwię, o której woli nie opowiadać. <span class="rd">Wie, że woda pod Szanghajem jest za głęboka.</span>'],
+['Ojciec Tanaka Gen','Mnich-egzorcysta','pc','僧','#d8412f','探',[50,65,55,70,85,70],80,[['Okultyzm',65],['Medytacja',80],['Walka wręcz',50],['Mity Cthulhu',8,1]],'Przysięgał, że wyrzekł się świata. Świat pamięta inaczej. W klasztorze zostawił <span class="rd">pieczęć, której nie miał prawa zdejmować</span>.'],
+['Madame Yuan','Handlarka jedwabiu i sekretów','npc','絹','#e8c46a','友',[40,45,60,85,70,75],70,[['Handel',90],['Plotki',85],['Psychologia',70],['Mity Cthulhu',12,1]],'Kupuje i sprzedaje, co się da. Najcenniejsze towary trzyma <span class="rd">pod podłogą herbaciarni, w beczkach pełnych słonej wody</span>.'],
+['Inspektor Chen','Policja Koncesji','npc','警','#8fa4c8','友',[65,70,55,65,60,55],60,[['Śledztwo',70],['Prawo',60],['Walka wręcz',65],['Mity Cthulhu',0,1]],'Uczciwy w mieście, w którym uczciwość jest towarem deficytowym. Zaczął zapisywać sny swoich podwładnych.'],
+['Zhu Xian','Kapłan Głębi','foe','蛸','#3d8b7a','禍',[60,75,50,75,90,60],0,[['Rytuały',90],['Perswazja',75],['Mity Cthulhu',65,1],['Zbieractwo',50]],'Był kiedyś nauczycielem. Dziś w jego oczach pływają <span class="rd">rzeczy, które nie mają odbić w lustrach</span>. Zbiera jedwab, bo jedwab pamięta.'],
+['Ten, Który Śni','Wielki Stary pod Huangpu','foe','夢','#7dffb2','禍',[0,0,0,0,0,0],0,[['Sen',100],['Wola',100],['Obecność',99],['Mity Cthulhu',100,1]],'Nie ma nazwy, którą można by wymówić bez szkody. Chiński mnich zwał go <span class="rd">Sennym Smokiem Pod Mostem</span>. Kapłani mówią po prostu: Pan Głębi.']];
+const TG={pc:'探',npc:'友',foe:'禍'},ST=['SIŁ','KON','ZRĘ','INT','MOC','WYK'],rail=$('#rail'),dos=$('#dos');let tw;
+function show(x,el){$$('.cd').forEach(c=>c.classList.toggle('sel',c===el));
+ dos.style.setProperty('--c',x[4]);const san=x[7];
+ dos.innerHTML=`<div class="big"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46"/></svg>${x[3]}</div><div><h3 class="gl">${x[0]}</h3><div class="rl">${x[1]}</div><p class="bio"></p><div class="st">${x[6].map((v,i)=>`<div>${ST[i]}<b>${v||'—'}</b></div>`).join('')}</div><div class="sk">${x[8].map(s=>`<div class="${s[2]?'mt':''}"><span>${s[0]}</span><i style="--w:${s[1]}%"></i><span>${s[1]}%</span></div>`).join('')}</div></div>`;
+ const b=dos.querySelector('.bio');b.innerHTML=x[9];const txt=x[9];clearInterval(tw);let i=0,tmp=document.createElement('div');tmp.innerHTML=txt;const full=tmp.innerHTML;b.style.opacity=0;requestAnimationFrame(()=>{b.style.transition='opacity 1.2s';b.style.opacity=1});
+ b.querySelectorAll('.rd').forEach(r=>r.onclick=()=>r.classList.toggle('sh'))}
+C.forEach((x,i)=>{const e=document.createElement('div');e.className='cd';e.dataset.t=x[2];e.style.setProperty('--c',x[4]);
+ e.innerHTML=`<svg class="en" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44"/></svg><i class="hk tg">${TG[x[2]]}</i><div class="nm">${x[3]}</div><div class="bt"><h3>${x[0]}</h3><small>${x[1]}</small><div class="sanb"><i style="width:${x[7]}%"></i></div></div>`;
+ e.onclick=()=>show(x,e);rail.appendChild(e)});
+show(C[0],rail.children[0]);
+$('#flt').onclick=e=>{const f=e.target.dataset.f;if(!f)return;[...$('#flt').children].forEach(b=>b.classList.toggle('on',b===e.target));$$('.cd').forEach(c=>c.style.display=(f=='*'||c.dataset.t==f)?'':'none')};
+// kronika
+const E=[['零一','3 września','Zawiadomienie z portu','„Lotos z Fuzhou” dobija bez załogi. W ładowni czterdzieści bel jedwabiu, każda wilgotna, choć sucha.','Dowód: kartka z imionami marynarzy, żadne nie istnieje w rejestrach.','−1/1k3 POCZ.'],
+['零二','7 września','Magazyn przy ulicy Kapusty','Hale rozwija belę. Wzór układa się w mapę rzeki, a w jej centrum wyhaftowano oko.','Dowód: fragment tkaniny, który po zmroku zmienia kolor.','−1/1k4 POCZ.'],
+['零三','12 września','Herbata u Madame Yuan','Mei-Lin tłumaczy symbole. To nie mapa, to pieśń kołysankowa, a ktoś ją śpiewa od tysiąca lat.','Dowód: spisana kołysanka w nieznanym języku.','0/1k2 POCZ.'],
+['零四','19 września','Świątynia pod mostem','Tanaka rozpoznaje pieczęć uwięzienia. Jest złamana od wewnątrz. Kultyści już tu byli.','Dowód: nadpalony zwój i brudna woda w kielichu ofiarnym.','−2/1k6 POCZ.'],
+['零五','28 września','Noc czerwonych latarni','Pościg po dachach koncesji. Brandt traci „Czarnego Karpia”, a Zhu Xian po raz pierwszy zdejmuje maskę.','Dowód: twarz, której nikt nie potrafi opisać tak samo.','−3/1k8 POCZ.'],
+['零六','Dzień 49','Przebudzenie','Woda cofa się z doku. Nad rzeką pojawia się coś, co wygląda jak wschodzące słońce, i otwiera oko.','Dowód: jeszcze nie wiadomo, kto go zdoła zapisać.','?/1k20 POCZ.']];
+E.forEach((x,i)=>{const p=document.createElement('div');p.className='pn'+(i==5?' fu':'');p.innerHTML=`<div class="d">Sesja ${x[0]=='零一'?'I':['','II','III','IV','V','VI'][i]} · ${x[1]}</div><div class="k">${x[0]}</div><h4>${x[2]}</h4><p>${x[3]}</p><div class="ev">${x[4]}</div><div class="sn">${x[5]}</div>`;$('#trk').appendChild(p)});
+const em=$('#em');function th(){$('#th').style.width=em.scrollLeft/(em.scrollWidth-em.clientWidth)*100+'%'}em.onscroll=th;th();
+$('#nx').onclick=()=>em.scrollBy({left:450,behavior:'smooth'});$('#pv').onclick=()=>em.scrollBy({left:-450,behavior:'smooth'});
+let dr=0,sx=0,sl0=0;em.onpointerdown=e=>{dr=1;sx=e.clientX;sl0=em.scrollLeft;em.classList.add('dr')};addEventListener('pointerup',()=>{dr=0;em.classList.remove('dr')});addEventListener('pointermove',e=>{if(dr)em.scrollLeft=sl0-(e.clientX-sx)});
+// status extras
+let rg='';for(let i=0;i<49;i++){const a=i*360/49-90,r=Math.PI/180;rg+=`<line x1="${60+44*Math.cos(a*r)}" y1="${60+44*Math.sin(a*r)}" x2="${60+56*Math.cos(a*r)}" y2="${60+56*Math.sin(a*r)}" stroke="${i<21?'#d8412f':'#ffffff33'}" stroke-width="2" ${i<21?'style="filter:drop-shadow(0 0 3px #d8412f)"':''}/>`}$('#rg').innerHTML=rg;
+for(let i=0;i<12;i++){const s=document.createElement('i');if(i<7)s.className='on';s.onclick=()=>s.classList.toggle('on');$('#sq').appendChild(s)}
+[1,1,1,0,0,0,0,0,0].forEach(v=>{const b=document.createElement('b');b.textContent='眼';if(v)b.className='on';b.onclick=()=>b.classList.toggle('on');$('#ey').appendChild(b)});
+// observers
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.1});$$('.rv').forEach((e,i)=>{e.style.transitionDelay=(i%3)*.08+'s';io.observe(e)});
+const so=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&$$('#nav a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')=='#'+e.target.id))),{threshold:.35});$$('section').forEach(s=>so.observe(s));
+// whispers & jitter
+const W=['ia… ia…','Ph’nglui mglw’nafh','深淵','słyszysz?','oni patrzą','絹が泣いている','Cthulhu fhtagn','nie śpij','眼','pod wodą…','woda pamięta'];
+setInterval(()=>{if(Math.random()<ins*.9){const w=document.createElement('div');w.className='wh';w.textContent=W[Math.random()*W.length|0];w.style.left=Math.random()*80+5+'vw';w.style.top=Math.random()*80+8+'vh';document.body.appendChild(w);setTimeout(()=>w.remove(),4600)}},2300);
+setInterval(()=>{if(ins>.5){const els=$$('p,h3,h4,small'),e=els[Math.random()*els.length|0];if(e){e.classList.add('jt');setTimeout(()=>e.classList.remove('jt'),1100)}}},1700);
+// parallax
+const l1=$('#l1'),l2=$('#l2'),pup=$('#pup'),irs=$('#irs');
+addEventListener('mousemove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;B.push({x:e.clientX,y:e.clientY,r:2,l:1})});
+// canvas
+const cv=$('#fx'),x=cv.getContext('2d');let W_,H_;const L=[],B=[];function rs(){W_=cv.width=innerWidth;H_=cv.height=innerHeight}rs();addEventListener('resize',rs);
+for(let i=0;i<24;i++)L.push({x:Math.random()*2000,y:Math.random()*1000,r:Math.random()*5+3,s:Math.random()*.35+.12,p:Math.random()*6});
+(function f(t){x.clearRect(0,0,W_,H_);
+ const R=Math.round(255-130*ins),G=Math.round(150+105*ins),Bl=Math.round(80+98*ins);
+ L.forEach(l=>{l.y-=l.s;l.x+=Math.sin(t/2000+l.p)*.3;if(l.y<-30){l.y=H_+30;l.x=Math.random()*W_}const a=.35+.25*Math.sin(t/700+l.p);
+  const g=x.createRadialGradient(l.x,l.y,0,l.x,l.y,l.r*6);g.addColorStop(0,`rgba(${R},${G},${Bl},${a})`);g.addColorStop(1,`rgba(${R},${G},${Bl},0)`);x.fillStyle=g;x.beginPath();x.arc(l.x,l.y,l.r*6,0,7);x.fill()});
+ for(let i=B.length-1;i>=0;i--){const b=B[i];b.r+=.9;b.l-=.025;if(b.l<=0){B.splice(i,1);continue}const g=x.createRadialGradient(b.x,b.y,0,b.x,b.y,b.r);g.addColorStop(0,`rgba(216,65,47,${b.l*.5})`);g.addColorStop(1,'rgba(216,65,47,0)');x.fillStyle=g;x.beginPath();x.arc(b.x,b.y,b.r,0,7);x.fill()}
+ if(scrollY<innerHeight*1.2){tent(t);l1.style.transform=`translate(${mx*-14}px,${scrollY*.12}px)`;l2.style.transform=`translate(${mx*-28}px,${scrollY*.2}px)`;
+  pup.setAttribute('transform',`translate(${mx*36} ${my*26})`);pup.setAttribute('rx',12+ins*46+Math.sin(t/300)*ins*4);irs.setAttribute('transform',`translate(${mx*18} ${my*12})`)}
+ requestAnimationFrame(f)})(0);
+</script>
+</body>
+</html>
