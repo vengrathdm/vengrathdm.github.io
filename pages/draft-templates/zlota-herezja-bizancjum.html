@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Złota Herezja — Kampania</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@property --a{syntax:'<angle>';initial-value:0deg;inherits:false}
+:root{--gold:#d4a73a;--gold2:#f6df8a;--gold3:#8f6414;--lap:#0e2a6b;--lap2:#071a47;--por:#4a1235;--crim:#a31621;--em:#1f6b4a;--iv:#f3e8c9;--ink:#1a0f0a;
+--cin:'Cinzel','Cormorant Garamond',serif;--cor:'Cormorant Garamond',Georgia,serif;--gen:'Gentium Plus',Georgia,serif;
+--gl:linear-gradient(135deg,#8f6414,#f6df8a 28%,#d4a73a 50%,#fff0b0 62%,#8f6414)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:#050d2b;color:var(--iv);font:500 1.28rem/1.65 var(--cor);overflow-x:hidden}
+@keyframes spin{to{--a:360deg}}
+#fx{position:fixed;inset:0;z-index:60;pointer-events:none;mix-blend-mode:screen}
+/* wheel menu */
+#wh{position:fixed;top:20px;right:20px;z-index:90;width:64px;height:64px}
+#wb{width:64px;height:64px;border-radius:50%;border:0;cursor:pointer;position:relative;z-index:3;background:conic-gradient(from var(--a),#8f6414,#f6df8a,#d4a73a,#fff0b0,#8f6414);animation:spin 6s linear infinite;box-shadow:0 8px 24px #000a,0 0 0 3px #050f33,0 0 0 4px var(--gold)}
+#wb::before{content:"";position:absolute;inset:7px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#1f4bb5,#071a47)}
+#wb svg{position:absolute;inset:14px;width:36px;height:36px}
+.wi{position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;text-decoration:none;font:700 1.15rem var(--gen);color:var(--gold2);background:radial-gradient(circle at 35% 30%,#1f4bb5,#071a47);box-shadow:0 0 0 2px var(--gold),0 6px 14px #000a;transform:scale(.3);opacity:0;pointer-events:none;transition:.6s cubic-bezier(.3,1.5,.5,1);z-index:2}
+#wh.o .wi{opacity:1;pointer-events:auto;transform:translate(var(--x),var(--y))}
+.wi span{position:absolute;top:50px;font:700 .62rem var(--cin);letter-spacing:.2em;white-space:nowrap;color:var(--gold2);text-shadow:0 2px 4px #000;opacity:0;transition:.3s;text-transform:uppercase}
+.wi:hover span,.wi.on span{opacity:1}.wi.on{background:radial-gradient(circle at 35% 30%,#ff6a4d,#a31621)}
+/* sections */
+section{position:relative;padding:15vh 9vw 14vh;overflow:hidden}
+section::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(rgba(0,0,0,.28) 1px,transparent 1px) 0 0/16px 16px,linear-gradient(90deg,rgba(0,0,0,.28) 1px,transparent 1px) 0 0/16px 16px,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.035' numOctaves='2' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 .9 0 0 0 0 .6 0 0 0 1.4 -.45'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E")}
+section>*{position:relative;z-index:1}
+section::after{content:"";position:absolute;top:0;left:0;right:0;height:24px;z-index:2;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M2 22V2H22V16H10V9H16' fill='none' stroke='%23d4a73a' stroke-width='2'/%3E%3C/svg%3E") repeat-x,linear-gradient(#050d2b,#050d2b);border-bottom:2px solid var(--gold)}
+#intro{padding:0;background:#050d2b}#intro::before,#intro::after{display:none}
+#postaci{background:linear-gradient(#3b0e2d,#1f0718)}
+#kronika{background:linear-gradient(#0d3a2b,#06201a)}
+#notatki{background:linear-gradient(#0c2461,#061538)}
+#mapa{background:linear-gradient(#4a0b14,#260509)}
+#status{background:linear-gradient(#081c52,#030a22)}
+.hd{text-align:center;margin-bottom:4.5rem}
+.hd .gr{font:700 1rem var(--gen);letter-spacing:.7em;color:var(--gold);padding-left:.7em}
+.hd h2{font:900 clamp(2.6rem,7vw,5.4rem)/1.1 var(--cin);letter-spacing:.1em;text-transform:uppercase;background:var(--gl);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 0 #000a)}
+.hd .orn{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:.8rem}
+.hd .orn::before,.hd .orn::after{content:"";width:min(160px,22vw);height:6px;border-block:1px solid var(--gold)}
+.hd .orn i{width:16px;height:16px;transform:rotate(45deg);background:var(--crim);border:2px solid var(--gold)}
+.rv{opacity:0;transform:translateY(34px) scale(.98);filter:brightness(2.4) saturate(.3);transition:1.3s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none;filter:none}
+/* hero */
+.hero{position:relative;height:100vh;min-height:680px;overflow:hidden}
+.hero>svg{position:absolute;inset:0;width:100%;height:100%}
+.rot{transform-origin:800px 330px;animation:rt 150s linear infinite}.rot.b{animation-duration:100s;animation-direction:reverse}.rot.c{animation-duration:220s}
+@keyframes rt{to{transform:rotate(360deg)}}
+.pup{transform-origin:800px 330px;animation:br 5s ease-in-out infinite}@keyframes br{50%{transform:scaleX(2.2)}}
+.ht{position:absolute;left:0;right:0;bottom:4vh;text-align:center;z-index:3;padding:0 4vw}
+.cart{display:inline-block;max-width:960px;padding:2.2rem clamp(1.6rem,6vw,5rem) 2rem;background:linear-gradient(#0a1c52f2,#040c2bf2);border:4px double var(--gold);border-radius:180px 180px 12px 12px/110px 110px 12px 12px;box-shadow:0 30px 80px #000c,0 0 0 8px #050d2b,0 0 0 10px var(--gold3),inset 0 0 60px #0006}
+.cart .g{font:700 1rem var(--gen);letter-spacing:.8em;color:var(--gold);padding-left:.8em}
+.cart .e{font:700 .8rem var(--cin);letter-spacing:.4em;color:var(--gold2);text-transform:uppercase;margin-top:.3rem}
+h1{font:900 clamp(2.8rem,8vw,6.4rem)/1.05 var(--cin);letter-spacing:.06em;background:var(--gl);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 7s ease-in-out infinite;filter:drop-shadow(0 4px 0 #000)}
+@keyframes sh{50%{background-position:100% 0}}
+.cart .s{font:italic 500 clamp(1.1rem,2.4vw,1.6rem) var(--cor);color:var(--iv)}
+.btn{display:inline-block;margin-top:1.4rem;padding:.8rem 2.6rem;font:700 .82rem var(--cin);letter-spacing:.35em;text-transform:uppercase;text-decoration:none;color:#2a1604;background:var(--gl);border-radius:40px;box-shadow:0 6px 0 #5e420b,0 12px 24px #0009;transition:.3s;position:relative;top:0}
+.btn:hover{top:3px;box-shadow:0 3px 0 #5e420b,0 8px 18px #0009;filter:brightness(1.12)}
+/* prolog */
+.pro{position:relative;padding:14vh 9vw 12vh;background:linear-gradient(#050d2b,#0a1c52);display:grid;grid-template-columns:1.5fr 1fr;gap:6vw;max-width:none}
+.pro .tx{max-width:620px;margin-left:auto}
+.dc::first-letter{float:left;font:900 4.6rem/.9 var(--cin);color:var(--gold2);background:linear-gradient(135deg,#a31621,#5a0a12);border:2px solid var(--gold);padding:.3rem .7rem .2rem;margin:.3rem .8rem 0 0;box-shadow:0 0 0 3px #050d2b,0 0 0 4px var(--gold3)}
+.rds{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-content:center;justify-items:center}
+.rdl{width:140px;height:140px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font:700 .62rem/1.2 var(--cin);letter-spacing:.2em;color:var(--gold);text-transform:uppercase;background:radial-gradient(circle,#1c43a0,#071a47);box-shadow:0 0 0 4px #050d2b,0 0 0 6px var(--gold),0 0 0 10px #050d2b,0 0 0 11px var(--gold3),0 16px 30px #000a}
+.rdl b{font:900 2.4rem/1 var(--cin);color:var(--gold2);letter-spacing:0}
+/* iconostasis */
+.flt{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap;margin-bottom:5rem}
+.flt button{background:none;border:2px solid var(--gold3);color:var(--gold);padding:.5rem 1.6rem;font:700 .74rem var(--cin);letter-spacing:.3em;text-transform:uppercase;cursor:pointer;border-radius:30px 30px 0 0;transition:.3s}
+.flt button.on,.flt button:hover{background:var(--gl);color:#2a1604;border-color:var(--gold2)}
+.ico{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:4.5rem 2.4rem;max-width:1250px;margin:auto}
+.ic{text-align:center;cursor:pointer;position:relative;padding-top:56px}
+.ic::before{content:"";position:absolute;top:0;left:50%;width:2px;height:34px;background:var(--gold);box-shadow:0 0 0 1px #0006}
+.ic::after{content:"";position:absolute;top:30px;left:50%;margin-left:-8px;width:16px;height:22px;border-radius:4px 4px 10px 10px;background:radial-gradient(circle at 50% 70%,#ffd070,#ff4d1a 60%,#7a1010);box-shadow:0 0 22px 8px #ff6a2a66;animation:lm .22s infinite alternate}
+@keyframes lm{to{box-shadow:0 0 30px 12px #ff6a2a88;transform:scale(1.06,.94)}}
+.fr{aspect-ratio:200/280;border-radius:105px 105px 8px 8px;padding:8px;background:var(--gl);box-shadow:0 0 0 3px #050d2b,0 22px 40px #000b;transition:.5s cubic-bezier(.2,.8,.3,1);position:relative}
+.fr>div{width:100%;height:100%;border-radius:98px 98px 2px 2px;overflow:hidden;box-shadow:inset 0 0 0 2px #0008}
+.fr svg{width:100%;height:100%;display:block}
+.fr::after{content:"";position:absolute;inset:8px;border-radius:98px 98px 2px 2px;background:linear-gradient(115deg,transparent 40%,#fff6 50%,transparent 60%) -150% 0/250% 100%;transition:.9s;pointer-events:none}
+.ic:hover .fr{transform:translateY(-12px);box-shadow:0 0 0 3px #050d2b,0 34px 60px #000c,0 0 50px #d4a73a77}.ic:hover .fr::after{background-position:150% 0}
+.np{display:inline-block;margin-top:1.1rem;padding:.4rem 1.3rem;background:linear-gradient(#0a1c52,#040c2b);border:2px solid var(--gold);min-width:80%}
+.np h3{font:700 1rem var(--cin);letter-spacing:.08em;color:var(--gold2)}.np small{display:block;font:italic 500 1.02rem/1.2 var(--cor);color:var(--iv);opacity:.85}
+dialog{margin:auto;width:min(96%,980px);background:none;border:0;padding:0;overflow:visible;color:var(--ink)}
+dialog::backdrop{background:#030a22dd;backdrop-filter:blur(6px)}
+.cx{display:grid;grid-template-columns:.8fr 1.2fr;position:relative;background:var(--iv);box-shadow:0 0 0 6px #050d2b,0 0 0 9px var(--gold),0 40px 100px #000;animation:op .8s cubic-bezier(.2,1.2,.4,1)}
+@keyframes op{from{transform:scale(.8) rotateX(20deg);opacity:0}}
+.cx .pl{padding:2.4rem;background:linear-gradient(#a31621,#5a0a12);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem}
+.cx .pl .fr{width:100%;max-width:260px}.cx .pl em{font:700 .8rem var(--cin);letter-spacing:.3em;color:var(--gold2);text-align:center;text-transform:uppercase}
+.cx .pr{padding:2.6rem 2.8rem;background:linear-gradient(rgba(0,0,0,.05) 1px,transparent 1px) 0 0/16px 16px,linear-gradient(90deg,rgba(0,0,0,.05) 1px,transparent 1px) 0 0/16px 16px,var(--iv)}
+.cx h3{font:900 2rem/1.1 var(--cin);color:#5a0a12}.cx .rl{font:italic 500 1.15rem var(--cor);color:#7a4a1a;margin-bottom:1rem}
+.cx p.dc{font-size:1.18rem;line-height:1.55}.cx blockquote{margin:1rem 0;padding-left:1rem;border-left:4px solid var(--crim);font-style:italic;color:#4a2a10}
+.vb{display:grid;grid-template-columns:120px 1fr;gap:.8rem;align-items:center;margin:.35rem 0;font:700 .7rem var(--cin);letter-spacing:.15em;text-transform:uppercase;color:#5a0a12}
+.vb i{height:14px;border:2px solid var(--gold3);position:relative;background:#0002}.vb i::after{content:"";position:absolute;inset:0;width:var(--w);background:repeating-linear-gradient(90deg,var(--c,#a31621) 0 10px,#0004 10px 11px);animation:gw 1.4s ease both}@keyframes gw{from{width:0}}
+.cx .x{position:absolute;top:-22px;right:-22px;width:46px;height:46px;border-radius:50%;border:3px solid var(--gold);background:#a31621;color:var(--gold2);font:1.6rem var(--gen);cursor:pointer;z-index:3;box-shadow:0 6px 16px #000a}
+/* kronika */
+.men{position:relative;max-width:1100px;margin:auto}
+.sp{position:absolute;left:50%;top:0;bottom:0;width:24px;margin-left:-12px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M2 22V2H22V16H10V9H16' fill='none' stroke='%23d4a73a' stroke-width='2'/%3E%3C/svg%3E") repeat-y;opacity:.45}
+.sp i{position:absolute;left:-3px;top:0;width:30px;height:var(--p,0%);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M2 22V2H22V16H10V9H16' fill='none' stroke='%23fff0b0' stroke-width='3'/%3E%3C/svg%3E") repeat-y;filter:drop-shadow(0 0 6px #f6df8a);margin-left:-2px}
+.en{display:grid;grid-template-columns:1fr 130px 1fr;align-items:center;margin-bottom:4rem;position:relative}
+.en .cd{grid-column:1;justify-self:end}.en:nth-child(even) .cd{grid-column:3;justify-self:start}.en .ro{grid-column:2;grid-row:1;justify-self:center}
+.ro{width:104px;height:104px;border-radius:50%;padding:7px;background:conic-gradient(from var(--a),#8f6414,#f6df8a,#d4a73a,#fff0b0,#8f6414);animation:spin 8s linear infinite;box-shadow:0 0 0 4px #06201a,0 14px 30px #000a;position:relative;z-index:2;cursor:pointer;transition:transform .6s}
+.ro>div{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#1f4bb5,#071a47);display:grid;place-items:center;box-shadow:inset 0 0 0 2px #0008}
+.ro svg{width:56px;height:56px;fill:var(--gold2);stroke:var(--gold2)}
+.en.open .ro{transform:scale(1.15) rotate(8deg)}
+.cd{width:100%;max-width:470px;background:linear-gradient(180deg,#f3e8c9,#e2d1a6);color:var(--ink);padding:2.4rem 2rem 1.8rem;border-radius:90px 90px 8px 8px/60px 60px 8px 8px;box-shadow:0 0 0 4px #06201a,0 0 0 6px var(--gold),0 24px 50px #000a;cursor:pointer;transition:.5s;text-align:center}
+.cd:hover{transform:translateY(-6px)}
+.cd time{font:700 .78rem var(--cin);letter-spacing:.3em;color:var(--crim);text-transform:uppercase}
+.cd h4{font:900 1.5rem/1.15 var(--cin);color:#2a1604;margin:.3rem 0 .6rem}.cd p{font-size:1.12rem;line-height:1.5}
+.cd .sc{max-height:0;overflow:hidden;opacity:0;transition:.9s;font-style:italic;color:#5a0a12;border-top:1px dashed var(--gold3);margin-top:0;padding-top:0}
+.en.open .sc{max-height:160px;opacity:1;margin-top:.9rem;padding-top:.7rem}
+.sc b{display:block;font:700 .66rem var(--cin);letter-spacing:.3em;color:var(--gold3);font-style:normal}
+/* triptych */
+.tri{position:relative;perspective:1900px;max-width:1150px;margin:auto}
+.core{min-height:64vh;display:grid;place-items:center;text-align:center;padding:3rem;border:6px solid var(--gold);border-radius:240px 240px 8px 8px/170px 170px 8px 8px;background:linear-gradient(rgba(0,0,0,.25) 1px,transparent 1px) 0 0/16px 16px,linear-gradient(90deg,rgba(0,0,0,.25) 1px,transparent 1px) 0 0/16px 16px,radial-gradient(ellipse at 50% 20%,#1c43a0,#061538);box-shadow:0 0 0 6px #050d2b,0 0 0 8px var(--gold3),inset 0 0 120px #000a,0 40px 80px #000a;color:var(--iv)}
+.core h3{font:900 3rem var(--cin);background:var(--gl);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.1em;text-transform:uppercase}
+.core code{display:inline-block;margin-top:1rem;font:.95rem monospace;background:#000a;color:var(--gold2);padding:.2rem .9rem;border:1px solid var(--gold3)}
+.dr{position:absolute;top:0;bottom:0;width:50%;z-index:3;border:6px solid var(--gold);transition:transform 2.6s cubic-bezier(.6,0,.2,1) .4s;box-shadow:0 0 0 6px #050d2b;background:var(--dc) 50%/120px no-repeat,linear-gradient(rgba(0,0,0,.3) 1px,transparent 1px) 0 0/16px 16px,linear-gradient(90deg,rgba(0,0,0,.3) 1px,transparent 1px) 0 0/16px 16px,linear-gradient(#4a1235,#260a1e)}
+.dr.l{left:0;transform-origin:left center;border-radius:240px 0 0 8px/170px 0 0 8px;border-right-width:3px}
+.dr.r{right:0;transform-origin:right center;border-radius:0 240px 8px 0/0 170px 8px 0;border-left-width:3px}
+.tri.in .dr.l{transform:rotateY(-105deg)}.tri.in .dr.r{transform:rotateY(105deg)}
+.tri{--dc:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='%23d4a73a' stroke='%23f6df8a' stroke-width='2'%3E%3Cpath d='M42 10h16v32h32v16H58v32H42V58H10V42h32z'/%3E%3C/g%3E%3C/svg%3E")}
+/* status */
+.stg{display:grid;grid-template-columns:1fr 1.1fr;gap:5vw;max-width:1200px;margin:auto;align-items:center}
+.rings{text-align:center}.rings svg{width:min(380px,100%)}
+.lg{display:flex;flex-direction:column;gap:.6rem;max-width:300px;margin:1.5rem auto 0;text-align:left}.lg div{display:flex;justify-content:space-between;font:700 .78rem var(--cin);letter-spacing:.2em;text-transform:uppercase;border-bottom:1px dotted var(--gold3);padding-bottom:.3rem}.lg i{display:inline-block;width:14px;height:14px;margin-right:.7rem;vertical-align:-1px}
+.pn{border:2px solid var(--gold3);background:#040c2bcc;padding:1.6rem 2rem;margin-bottom:1.8rem;box-shadow:0 0 0 4px #030a22,0 0 0 5px var(--gold3);position:relative}
+.pn h3{font:700 .85rem var(--cin);letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:.8rem}
+.dm{display:flex;gap:.5rem;flex-wrap:wrap}.dm button{width:48px;height:48px;background:none;border:0;cursor:pointer;padding:0}.dm svg{width:100%;height:100%;fill:none;stroke:var(--gold3);stroke-width:2;transition:.4s}.dm button.on svg{fill:var(--gold);stroke:var(--gold2);filter:drop-shadow(0 0 8px #f6df8a)}
+.cb{display:grid;grid-template-columns:150px 1fr 40px;gap:.8rem;align-items:center;margin:.55rem 0;font:700 .68rem var(--cin);letter-spacing:.15em;text-transform:uppercase;color:var(--iv)}
+.cb i{height:16px;border:2px solid var(--gold);position:relative;display:block}.cb i::after{content:"";position:absolute;inset:0;width:0;background:repeating-linear-gradient(90deg,var(--c) 0 10px,#0006 10px 11px);transition:2s .3s}.cb.in i::after{width:var(--w)}
+@media(max-width:850px){.pro,.stg,.cx{grid-template-columns:1fr}.en{grid-template-columns:70px 1fr}.en .cd,.en:nth-child(even) .cd{grid-column:2;grid-row:1;justify-self:stretch}.en .ro{grid-column:1;width:64px;height:64px;padding:4px}.ro svg{width:34px;height:34px}.sp{left:32px}.cb{grid-template-columns:1fr 40px}.cb i{grid-column:1/-1;order:3}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<radialGradient id="ig" cx=".5" cy=".4" r=".8"><stop offset="0" stop-color="#f6df8a"/><stop offset="1" stop-color="#b8861f"/></radialGradient>
+<pattern id="tess" width="9" height="9" patternUnits="userSpaceOnUse"><rect width="9" height="9" fill="none" stroke="#000" stroke-opacity=".18"/></pattern>
+</defs></svg>
+<canvas id="fx"></canvas>
+<div id="wh"><button id="wb" aria-label="Menu"><svg viewBox="0 0 40 40" fill="none" stroke="#f6df8a" stroke-width="3"><circle cx="20" cy="20" r="14"/><path d="M20 6v28M6 20h28"/><circle cx="20" cy="20" r="4" fill="#a31621"/></svg></button></div>
+
+<section id="intro">
+ <div class="hero">
+ <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+   <radialGradient id="sk" cx=".5" cy=".37" r=".8"><stop offset="0" stop-color="#2556c8"/><stop offset=".5" stop-color="#0b2467"/><stop offset="1" stop-color="#040a24"/></radialGradient>
+   <radialGradient id="rb" cx=".4" cy=".35"><stop offset="0" stop-color="#ff9a88"/><stop offset=".5" stop-color="#a31621"/><stop offset="1" stop-color="#3d070c"/></radialGradient>
+   <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8f6414"/><stop offset=".4" stop-color="#f6df8a"/><stop offset="1" stop-color="#a87a1c"/></linearGradient>
+   <linearGradient id="fd" x1="0" y1="0" x2="0" y2="1"><stop offset=".55" stop-color="#040a24" stop-opacity="0"/><stop offset="1" stop-color="#050d2b"/></linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sk)"/>
+  <g id="stars" fill="#f6df8a"></g>
+  <g class="rot c" id="rays"></g>
+  <path d="M30 400Q800 -360 1570 400" fill="none" stroke="url(#gg)" stroke-width="40" stroke-dasharray="20 3"/>
+  <path d="M30 440Q800 -320 1570 440" fill="none" stroke="#a31621" stroke-width="14" stroke-dasharray="12 3"/>
+  <g class="rot"><circle cx="800" cy="330" r="330" fill="none" stroke="url(#gg)" stroke-width="28" stroke-dasharray="17 3"/></g>
+  <g class="rot b"><circle cx="800" cy="330" r="294" fill="none" stroke="#a31621" stroke-width="24" stroke-dasharray="13 3"/></g>
+  <g class="rot"><circle cx="800" cy="330" r="260" fill="none" stroke="#3a74f0" stroke-width="20" stroke-dasharray="11 3"/></g>
+  <g class="rot b"><circle cx="800" cy="330" r="230" fill="none" stroke="#f6df8a" stroke-width="16" stroke-dasharray="9 3"/></g>
+  <circle cx="800" cy="330" r="212" fill="none" stroke="#8f6414" stroke-width="6"/><circle cx="800" cy="330" r="204" fill="#06194a"/>
+  <g class="rot c"><g id="med"></g></g>
+  <g class="rot b" style="animation-duration:180s"><polygon points="705,235 895,235 895,425 705,425" fill="#d4a73a" stroke="#fff0b0" stroke-width="3"/><polygon points="705,235 895,235 895,425 705,425" transform="rotate(45 800 330)" fill="#a31621" stroke="#f6df8a" stroke-width="3"/></g>
+  <circle cx="800" cy="330" r="62" fill="#06194a" stroke="url(#gg)" stroke-width="8"/>
+  <circle cx="800" cy="330" r="46" fill="url(#rb)"/>
+  <ellipse class="pup" cx="800" cy="330" rx="6" ry="38" fill="#100306"/>
+  <ellipse cx="786" cy="312" rx="8" ry="5" fill="#fff" opacity=".7" transform="rotate(-30 786 312)"/>
+  <rect width="1600" height="900" fill="url(#fd)"/>
+ </svg>
+ <div class="ht"><div class="cart">
+  <div class="g">ΧΡΥΣΟΠΟΛΙΣ</div>
+  <div class="e">Rok 1042 od Założenia Kopuł · Księga I</div>
+  <h1>Złota Herezja</h1>
+  <div class="s">Pod dziewięcioma kopułami budzi się to, co miało spać na zawsze</div>
+  <a class="btn" href="#postaci">Wejdź pod kopułę</a>
+ </div></div>
+ </div>
+ <div class="pro rv">
+  <div class="tx"><p class="dc">Dziewięć kopuł Chrysopolis stoi nad światem od tysiąca lat, a pod nimi śpi smok Ashgorrax, spętany relikwiami dziewięciu męczenników. Teraz mozaiki zaczynają się kruszyć, a ze szczelin w posadzce Katedry Wszystkich Świętych sączy się blady ogień, który nie parzy, tylko przekonuje. Cesarzowa Zoe wzywa do pałacu cztery osoby, których nie ma w żadnym rejestrze. Mają znaleźć źródło płomienia, zanim Sobór uzna je za jego narzędzia.</p>
+  <p style="margin-top:1.2rem;opacity:.85">Kampania o wierze, relikwiach, cesarskich intrygach i cenie, jaką płaci się za prawdę ukrytą pod złotem.</p></div>
+  <div class="rds"><div class="rdl"><b>4</b>Pielgrzymów</div><div class="rdl"><b>V</b>Poziom</div><div class="rdl"><b>7</b>Sesji</div><div class="rdl"><b>IX</b>Kopuł</div></div>
+ </div>
+</section>
+
+<section id="postaci">
+ <div class="hd rv"><div class="gr">ΕΙΚΟΝΕΣ</div><h2>Postaci</h2><div class="orn"><i></i></div></div>
+ <div class="flt rv" id="flt"><button class="on" data-f="*">Wszyscy</button><button data-f="pc">Drużyna</button><button data-f="court">Dwór</button><button data-f="heresy">Herezja</button></div>
+ <div class="ico" id="ico"></div>
+ <dialog id="dlg"><div class="cx"><button class="x" onclick="dlg.close()">×</button><div class="pl" id="dpl"></div><div class="pr" id="dpr"></div></div></dialog>
+</section>
+
+<section id="kronika">
+ <div class="hd rv"><div class="gr">ΜΗΝΟΛΟΓΙΟΝ</div><h2>Kronika</h2><div class="orn"><i></i></div></div>
+ <div class="men" id="men"><div class="sp"><i id="spi"></i></div></div>
+</section>
+
+<section id="notatki">
+ <div class="hd rv"><div class="gr">ΥΠΟΜΝΗΜΑΤΑ</div><h2>Notatki</h2><div class="orn"><i></i></div></div>
+ <div class="tri" id="t1"><div class="dr l"></div><div class="dr r"></div><div class="core" id="notatki-viewport"><div><h3>Notatki</h3>Tu zostanie osadzony viewport modułu Notatek<br><code>#notatki-viewport</code></div></div></div>
+</section>
+
+<section id="mapa">
+ <div class="hd rv"><div class="gr">ΧΑΡΤΗΣ</div><h2>Mapa</h2><div class="orn"><i></i></div></div>
+ <div class="tri" id="t2"><div class="dr l"></div><div class="dr r"></div><div class="core" id="mapa-viewport" style="background-color:#3a0710"><div><h3>Mapa</h3>Tu zostanie osadzony viewport modułu Mapy<br><code>#mapa-viewport</code></div></div></div>
+</section>
+
+<section id="status">
+ <div class="hd rv"><div class="gr">ΚΑΤΑΣΤΑΣΙΣ</div><h2>Status</h2><div class="orn"><i></i></div></div>
+ <div class="stg">
+  <div class="rings rv"><svg viewBox="0 0 240 240" id="rg"></svg><div class="lg" id="lg"></div></div>
+  <div>
+   <div class="pn rv"><h3>Dziewięć Kopuł · Zapalone światła</h3><div class="dm" id="dm"></div></div>
+   <div class="pn rv" id="fc"><h3>Wpływy frakcji</h3></div>
+   <div class="pn rv"><h3>Do Soboru pozostało</h3><div style="font:900 3.2rem/1 var(--cin);color:var(--gold2)">17 <span style="font-size:1rem;letter-spacing:.3em">dni</span></div></div>
+  </div>
+ </div>
+</section>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],NS='http://www.w3.org/2000/svg';
+// hero build
+let st='';for(let i=0;i<90;i++){const x=Math.random()*1600,y=Math.random()*520,s=Math.random()*6+3;st+=`<rect x="${x}" y="${y}" width="${s}" height="${s}" transform="rotate(45 ${x} ${y})" opacity="${Math.random()*.6+.2}"/>`}$('#stars').innerHTML=st;
+let ry='';for(let i=0;i<32;i++){const a=i*11.25,r=Math.PI/180,x1=800+1100*Math.cos((a-2.4)*r),y1=330+1100*Math.sin((a-2.4)*r),x2=800+1100*Math.cos((a+2.4)*r),y2=330+1100*Math.sin((a+2.4)*r);ry+=`<polygon points="800,330 ${x1},${y1} ${x2},${y2}" fill="#f6df8a" opacity="${i%2?.05:.11}"/>`}$('#rays').innerHTML=ry;
+let md='';for(let i=0;i<8;i++){const a=i*45*Math.PI/180,x=800+370*Math.cos(a),y=330+370*Math.sin(a);md+=''}
+$('#med').innerHTML='';
+// wheel
+const WL=[['#intro','Intro','Α'],['#postaci','Postaci','Β'],['#kronika','Kronika','Γ'],['#notatki','Notatki','Δ'],['#mapa','Mapa','Ε'],['#status','Status','Ζ']];
+const wh=$('#wh');WL.forEach((w,i)=>{const a=document.createElement('a');a.href=w[0];a.className='wi'+(i?'':' on');const th=(90+i*18)*Math.PI/180;a.style.setProperty('--x',170*Math.cos(th)+'px');a.style.setProperty('--y',170*Math.sin(th)+'px');a.innerHTML=`${w[2]}<span>${w[1]}</span>`;a.onclick=()=>wh.classList.remove('o');wh.appendChild(a)});
+$('#wb').onclick=()=>wh.classList.toggle('o');addEventListener('keydown',e=>e.key=='Escape'&&wh.classList.remove('o'));
+// icons
+function human(c){const f=c.f||'#e2bf93',foe=c.g=='heresy';let s='';
+ s+=`<rect x="87" y="150" width="26" height="36" fill="#b98a5e"/><path d="M18 280C18 206 56 180 100 178C144 180 182 206 182 280Z" fill="${c.rb}" stroke="#0007" stroke-width="2"/><g fill="none" stroke="#f6df8a" stroke-width="2.4" opacity=".75"><path d="M52 280C58 240 70 214 84 198"/><path d="M148 280C142 240 130 214 116 198"/><path d="M100 220V280"/></g><path d="M68 182Q100 206 132 182L126 198Q100 220 74 198Z" fill="#d4a73a" stroke="#8f6414" stroke-width="2"/><path d="M100 236v26M88 248h24" stroke="#f6df8a" stroke-width="4"/>`;
+ s+=`<ellipse cx="100" cy="116" rx="34" ry="46" fill="${f}" stroke="#6a4020" stroke-width="2"/><path d="M100 70A34 46 0 0 1 100 162Q124 118 100 70Z" fill="#8a5a35" opacity=".45"/>`;
+ s+=`<ellipse cx="86" cy="113" rx="9" ry="5" fill="#fff"/><ellipse cx="114" cy="113" rx="9" ry="5" fill="#fff"/><circle cx="86" cy="113" r="3.6" fill="${c.e||'#1a0f0a'}"/><circle cx="114" cy="113" r="3.6" fill="${c.e||'#1a0f0a'}"/><path d="M74 101Q86 94 97 101M103 101Q114 94 126 101" stroke="#2a1a10" stroke-width="3" fill="none"/><path d="M100 114Q93 132 97 139Q103 141 106 136" stroke="#8a5a35" stroke-width="2.5" fill="none"/><path d="M92 149Q100 153 108 149" stroke="#a31621" stroke-width="3" fill="none"/>`;
+ const A={
+ hair:`<path d="M64 112C58 62 142 62 136 112C130 88 70 88 64 112Z" fill="${c.h}"/>`,
+ helm:`<path d="M62 114C56 54 144 54 138 114L128 104C120 86 80 86 72 104Z" fill="#6f7a8a" stroke="#2a3340" stroke-width="2"/><path d="M100 56C88 28 122 18 130 40C118 36 110 44 112 56Z" fill="#a31621"/><path d="M100 60V92" stroke="#2a3340" stroke-width="4"/>`,
+ hood:`<path fill-rule="evenodd" d="M48 196C34 92 68 48 100 48C132 48 166 92 152 196L134 152C138 100 124 76 100 76C76 76 62 100 66 152Z" fill="${c.rb}" stroke="#0007" stroke-width="2"/>`,
+ veil:`<path fill-rule="evenodd" d="M46 200C34 94 66 46 100 46C134 46 166 94 154 200L134 150C138 102 124 74 100 74C76 74 62 102 66 150Z" fill="#7a0f18" stroke="#d4a73a" stroke-width="3"/><path d="M100 54v14M93 61h14" stroke="#f6df8a" stroke-width="3"/>`,
+ crown:`<path d="M62 92L68 56L84 74L100 44L116 74L132 56L138 92Z" fill="#d4a73a" stroke="#8f6414" stroke-width="2"/><circle cx="68" cy="56" r="5" fill="#a31621"/><circle cx="100" cy="44" r="6" fill="#2f66e0"/><circle cx="132" cy="56" r="5" fill="#a31621"/><path d="M66 94V132M134 94V132" stroke="#f6df8a" stroke-width="3" stroke-dasharray="1 8" stroke-linecap="round"/><circle cx="62" cy="100" r="5" fill="#fff"/><circle cx="62" cy="116" r="5" fill="#fff"/><circle cx="138" cy="100" r="5" fill="#fff"/><circle cx="138" cy="116" r="5" fill="#fff"/>`+`<path d="M64 112C60 90 140 90 136 112C128 100 72 100 64 112Z" fill="${c.h}"/>`,
+ mitre:`<path d="M66 92C66 48 100 24 100 24C100 24 134 48 134 92Z" fill="#d4a73a" stroke="#8f6414" stroke-width="2"/><path d="M100 40v34M86 56h28" stroke="#a31621" stroke-width="5"/><path d="M62 100C60 96 140 96 138 100V150C130 130 70 130 62 150Z" fill="${c.h}" opacity=".9"/>`,
+ cap:`<path d="M64 94C64 52 136 52 136 94Z" fill="#6b1a1f" stroke="#d4a73a" stroke-width="2"/><rect x="62" y="90" width="76" height="8" fill="#d4a73a"/>`,
+ flame:`<path d="M58 106C46 70 72 62 64 30C84 50 88 66 94 46C96 26 102 14 102 14C106 38 114 52 124 36C128 60 146 66 142 104C132 82 70 82 58 106Z" fill="#ff5a1f" stroke="#7a1010" stroke-width="2"/><path d="M76 96C70 76 86 74 84 56C94 66 98 76 102 62C108 72 118 74 122 96C110 84 88 84 76 96Z" fill="#ffd070"/>`};
+ s+=A[c.a]||A.hair;
+ if(c.a=='book')s+='';
+ if(c.b=='book')s+=`<rect x="64" y="222" width="72" height="54" rx="4" fill="#a31621" stroke="#f6df8a" stroke-width="3"/><path d="M100 230v38M86 246h28" stroke="#f6df8a" stroke-width="4"/><circle cx="72" cy="230" r="3" fill="#2f66e0"/><circle cx="128" cy="230" r="3" fill="#2f66e0"/><ellipse cx="60" cy="268" rx="12" ry="9" fill="${f}"/><ellipse cx="140" cy="268" rx="12" ry="9" fill="${f}"/>`;
+ if(c.b=='scroll')s+=`<rect x="70" y="236" width="60" height="36" rx="6" fill="#efe0b4" stroke="#8f6414" stroke-width="3"/><path d="M80 248h40M80 258h30" stroke="#5a0a12" stroke-width="3"/>`;
+ if(c.b=='relic')s+=`<path d="M70 276V232L100 214L130 232V276Z" fill="#d4a73a" stroke="#8f6414" stroke-width="3"/><circle cx="100" cy="246" r="9" fill="#a31621" stroke="#f6df8a" stroke-width="2"/>`;
+ return s}
+function dragon(c){return `<path d="M36 280C26 196 54 100 108 84C142 74 174 92 178 122L200 130L176 144C168 176 142 214 122 280Z" fill="#1d3b2e" stroke="#0a1a12" stroke-width="3"/><g fill="none" stroke="#d4a73a" stroke-width="2" opacity=".7"><path d="M60 280C64 220 84 160 112 120"/><path d="M84 280C90 230 104 190 124 156"/><path d="M110 280C114 240 126 214 142 190"/></g><path d="M92 90L78 36L116 72ZM128 80L144 32L156 90Z" fill="#0f2219" stroke="#d4a73a" stroke-width="2"/><ellipse cx="138" cy="116" rx="17" ry="9" fill="#ffb347" stroke="#0a1a12" stroke-width="2"/><ellipse cx="138" cy="116" rx="3.5" ry="9" fill="#050505"/><path d="M178 150L186 164L170 160ZM164 160L170 176L154 170Z" fill="#f3e8c9"/><circle cx="188" cy="134" r="3" fill="#050505"/>`}
+function icon(c){const foe=c.g=='heresy';let s=`<svg viewBox="0 0 200 280"><rect width="200" height="280" fill="url(#ig)"/><rect width="200" height="280" fill="url(#tess)"/><text x="100" y="30" text-anchor="middle" font-family="Gentium Plus,serif" font-weight="700" font-size="15" letter-spacing="4" fill="#7a1010">${c.gr}</text>`;
+ s+=`<circle cx="100" cy="108" r="76" fill="${foe?'#4a0b12':'#f6df8a'}" stroke="#8f6414" stroke-width="3"/><circle cx="100" cy="108" r="66" fill="none" stroke="${foe?'#ff6a2a':'#a31621'}" stroke-width="6" stroke-dasharray="6 2"/>`;
+ s+=c.a=='dragon'?dragon(c):human(c);return s+'</svg>'}
+const C=[
+{n:'Teofana z Kolchidy',r:'Paladynka-Relikwiarzystka',g:'pc',a:'veil',b:'relic',rb:'#a31621',h:'#2a1a10',gr:'ΘΕΟΦΑΝΩ',v:[92,85,60,50,35],d:'Wychowana w klasztorze strażników relikwii, nosi na piersi kość świętej, która potrafi rozbić zaklęcie jednym dotknięciem. Od kiedy ogień zaczął sączyć się z posadzki, relikwia robi się ciepła.',q:'„Wiara nie pyta o cenę. To dlatego tak łatwo ją kupić.”'},
+{n:'Kasjusz Dracontios',r:'Łowca smoków Gwardii Waregskiej',g:'pc',a:'helm',rb:'#3d4a5c',h:'#2a1a10',gr:'ΚΑΣΙΟΣ',v:[55,95,50,70,45],d:'Ostatni z linii zabójców smoków. Jego miecz został przekuty z łuski młodego wyrma, a rękojeść owinięta skórą, której nigdy nie zdejmuje. Boi się tylko jednego, że kiedyś zabraknie mu smoków.',q:'„Każdy smok to tylko kolejne zamknięte drzwi.”'},
+{n:'Irena Studytka',r:'Skryba-iluminatorka',g:'pc',a:'hair',b:'book',rb:'#0e2a6b',h:'#3a1f12',gr:'ΕΙΡΗΝΗ',v:[60,40,95,55,75],d:'Maluje złotem i lapis lazuli ostrzeżenia, które potem się spełniają. Jej księga czasem pisze sama, a tusz jest zawsze wilgotny.',q:'„Zanim coś się stanie, ktoś już to opisał.”'},
+{n:'Brat Nikefor',r:'Mnich i cesarski szpieg',g:'pc',a:'hood',rb:'#3a2a1f',gr:'ΝΙΚΗΦΟΡΟΣ',v:[50,55,70,92,88],d:'Dla świata zwykły mnich z klasztoru za miastem. Dla cesarskiej tajnej służby człowiek, który zna każdy sekretny tunel pod Chrysopolis.',q:'„Cisza jest najlepszym modlitewnikiem.”'},
+{n:'Cesarzowa Zoe',r:'Porfirogeneta, Pani Dziewięciu Kopuł',g:'court',a:'crown',rb:'#4a1235',h:'#1a0f0a',gr:'ΖΩΗ',v:[70,40,85,30,95],d:'Urodzona w purpurze, rządzi od dwudziestu lat. Wzywa was, bo nikt z jej dworu nie jest już bezpieczny dla prawdy.',q:'„Zaufanie to luksus, na który stać tylko umarłych.”'},
+{n:'Patriarcha Maksymos',r:'Głowa Kościoła Dziewięciu',g:'court',a:'mitre',rb:'#d9ccaa',h:'#e6e6e6',gr:'ΜΑΞΙΜΟΣ',v:[98,25,80,20,60],d:'Starzec, który pamięta chwilę, gdy smok został uwięziony. Utrzymuje, że pęknięcia w mozaikach to próba wiary, nie zagrożenie.',q:'„Co pęka, to się goi. Taka jest łaska.”'},
+{n:'Ioannes Chartularios',r:'Eunuch i mistrz szpiegów',g:'court',a:'cap',b:'scroll',rb:'#1f6b4a',h:'#1a0f0a',gr:'ΙΩΑΝΝΗΣ',v:[30,25,90,70,99],d:'Zna cenę każdego urzędnika w cesarstwie. Podpisuje listy cesarzowej i czyta cudze, zanim dotrą do adresata.',q:'„Pergamin cierpliwie czeka na każdego.”'},
+{n:'Archont Ignis',r:'Prorok Bladego Płomienia',g:'heresy',a:'flame',rb:'#1a1010',f:'#cfc2b0',e:'#ff6a2a',gr:'ΙΓΝΙΣ',v:[99,70,75,40,90],d:'Kiedyś patriarszy diakon. Dziś głosi, że płomień pod katedrą jest prawdziwą łaską, a tysiącletni kościół jedynie klatką. Jego wyznawcy płoną z radości.',q:'„Nie palę was. Wyzwalam.”'},
+{n:'Ashgorrax',r:'Smok uwięziony pod Kopułą',g:'heresy',a:'dragon',gr:'ΑΣΓΟΡΑΞ',v:[0,100,100,30,100],d:'Starszy niż cesarstwo, mądrzejszy niż patriarchat i bardziej cierpliwy niż wszystkie relikwie razem wzięte. Nie ryczy, tylko szepcze, i to wszystkim naraz.',q:'„Tysiąc lat to chwila. Wystarczyło poczekać.”'}];
+const GN={pc:'Drużyna',court:'Dwór Cesarski',heresy:'Herezja'},VN=['Wiara','Męstwo','Mądrość','Zręczność','Przebiegłość'],VC=['#d4a73a','#a31621','#2f66e0','#1f9a6b','#8a3fb0'];
+const ico=$('#ico');C.forEach(c=>{const e=document.createElement('div');e.className='ic rv';e.dataset.g=c.g;e.innerHTML=`<div class="fr"><div>${icon(c)}</div></div><div class="np"><h3>${c.n}</h3><small>${c.r}</small></div>`;
+ e.onclick=()=>{$('#dpl').innerHTML=`<div class="fr"><div>${icon(c)}</div></div><em>${GN[c.g]}</em>`;$('#dpr').innerHTML=`<h3>${c.n}</h3><div class="rl">${c.r}</div><p class="dc">${c.d}</p><blockquote>${c.q}</blockquote>${c.v.map((v,i)=>`<div class="vb"><span>${VN[i]}</span><i style="--w:${v}%;--c:${VC[i]}"></i></div>`).join('')}`;dlg.showModal()};ico.appendChild(e)});
+dlg.onclick=e=>{if(e.target==dlg)dlg.close()};
+$('#flt').onclick=e=>{const f=e.target.dataset.f;if(!f)return;[...$('#flt').children].forEach(b=>b.classList.toggle('on',b==e.target));$$('.ic').forEach(c=>c.style.display=(f=='*'||c.dataset.g==f)?'':'none')};
+// kronika
+const SY={crown:'M10 46L14 20L26 34L32 14L38 34L50 20L54 46Z',crack:'M32 4L24 22L38 30L22 46L36 54L28 62',book:'M8 14H30V50H8ZM34 14H56V50H34Z',cup:'M16 12H48C48 30 40 34 34 36V48H44V54H20V48H30V36C24 34 16 30 16 12Z',fire:'M32 4C40 20 52 26 48 44C46 58 18 58 16 44C14 32 26 28 28 16C30 24 34 24 32 4Z',eye:'M4 32C16 14 48 14 60 32C48 50 16 50 4 32ZM32 20a12 12 0 1 0 .1 0Z'};
+const E=[['crown','1 Kwietnia','Pieczęć Cesarska','Cztery listy z tą samą pieczęcią zapraszają was do Pałacu Purpurowego. Pachną dymem, choć nikt ich nie palił.','Adnotacja Irene: pieczęć jest prawdziwa, ale wosk jest za świeży.'],
+['crack','9 Kwietnia','Pęknięcie w Mozaice','W Sali Dziewięciu Cnót mozaika z Archaniołem pęka od oka do ust. Z rysy sączy się światło, którego nie wolno oglądać.','Adnotacja Nikefora: nikt ze strażników nie widział, jak to się stało.'],
+['book','17 Kwietnia','Zakazana Biblioteka','Irena odnajduje w skryptorium kodeks zapisany tuszem, który nie schnie. Ostatnia strona opisuje wasze imiona.','Adnotacja Teofany: relikwia przy sercu zrobiła się gorąca.'],
+['cup','26 Kwietnia','Procesja Relikwii','Procesja ulicami Chrysopolis. Jedna z kości męczenników milknie podczas modlitwy i potem znika z relikwiarza.','Adnotacja Kasjusza: zabrał ją ktoś, kto znał hasło strażników.'],
+['fire','4 Maja','Blady Ogień w Katedrze','W nocy Archont Ignis wzywa wiernych do płomienia. Przychodzą tłumy i nikt nie krzyczy, gdy zaczynają płonąć.','Adnotacja Maksymosa: to tylko procesja pokutna.'],
+['eye','Sobór','Sobór Dziewięciu Kopuł','Za siedemnaście dni stanie przed wami cały dwór, patriarcha i płomień. Ktoś będzie musiał zdjąć jedną maskę.','Adnotacja Ashgorraxa: jeszcze nie.']];
+const men=$('#men');E.forEach((x,i)=>{const e=document.createElement('div');e.className='en rv';e.innerHTML=`<div class="cd"><time>${x[1]}</time><h4>${x[2]}</h4><p>${x[3]}</p><div class="sc"><b>Scholion</b>${x[4]}</div></div><div class="ro"><div><svg viewBox="0 0 64 64"><path fill-rule="evenodd" d="${SY[x[0]]}" ${x[0]=='crack'?'fill="none" stroke-width="4" stroke-linejoin="round"':''}/></svg></div></div>`;e.onclick=()=>e.classList.toggle('open');men.appendChild(e)});
+function up(){const r=men.getBoundingClientRect();$('#spi').style.setProperty('--p',Math.max(0,Math.min(100,(innerHeight*.6-r.top)/r.height*100))+'%')}addEventListener('scroll',up);up();
+// status
+const RG=[['Wiara',78,'#f6df8a',64,104],['Łaska Cesarska',54,'#4f86f7',52,82],['Herezja',63,'#ff4d3a',40,60]];let sv='<g transform="rotate(-90 120 120)">';
+RG.forEach((r,i)=>{const sg=100/r[3];sv+=`<circle cx="120" cy="120" r="${r[4]}" fill="none" stroke="#fff" stroke-opacity=".1" stroke-width="16" pathLength="100" stroke-dasharray="${sg*.82} ${sg*.18}"/><mask id="mk${i}"><circle class="mv" data-v="${r[1]}" cx="120" cy="120" r="${r[4]}" fill="none" stroke="#fff" stroke-width="20" pathLength="100" stroke-dasharray="0 100" style="transition:stroke-dasharray 2.4s cubic-bezier(.2,.8,.2,1)"/></mask><circle cx="120" cy="120" r="${r[4]}" fill="none" stroke="${r[2]}" stroke-width="16" pathLength="100" stroke-dasharray="${sg*.82} ${sg*.18}" mask="url(#mk${i})" style="filter:drop-shadow(0 0 4px ${r[2]})"/>`});
+$('#rg').innerHTML=sv+'</g><text x="120" y="132" text-anchor="middle" font-family="Cinzel" font-weight="900" font-size="34" fill="#f6df8a">☩</text>';
+$('#lg').innerHTML=RG.map(r=>`<div><span><i style="background:${r[2]}"></i>${r[0]}</span><b>${r[1]}%</b></div>`).join('');
+for(let i=0;i<9;i++){const b=document.createElement('button');if(i<5)b.className='on';b.innerHTML='<svg viewBox="0 0 40 40"><path d="M4 36V24A16 16 0 0 1 36 24V36Z"/><path d="M20 8V2M16 4h8"/></svg>';b.onclick=()=>b.classList.toggle('on');$('#dm').appendChild(b)}
+[['Patriarchat',70,'#d4a73a'],['Dwór Cesarski',55,'#a31621'],['Gwardia Waregska',35,'#2f66e0'],['Kult Płomienia',62,'#ff6a2a']].forEach(f=>$('#fc').insertAdjacentHTML('beforeend',`<div class="cb" style="--w:${f[1]}%;--c:${f[2]}"><span>${f[0]}</span><i></i><span>${f[1]}</span></div>`));
+// observers
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll?.('.mv').forEach(m=>m.setAttribute('stroke-dasharray',m.dataset.v+' 100'));if(e.target.id=='fc')e.target.querySelectorAll('.cb').forEach(c=>c.classList.add('in'))}}),{threshold:.15});
+$$('.rv,.tri,#fc').forEach((e,i)=>{e.style.transitionDelay=e.classList.contains('rv')?(i%3)*.09+'s':'';io.observe(e)});
+const sr=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const m=document.querySelector('.rings');if(e.target.id=='status'){$$('.mv').forEach(v=>v.setAttribute('stroke-dasharray',v.dataset.v+' 100'));$$('.cb').forEach(c=>c.classList.add('in'))}}}),{threshold:.2});sr.observe($('#status'));
+const so=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&$$('.wi').forEach(a=>a.classList.toggle('on',a.getAttribute('href')=='#'+e.target.id))),{threshold:.4});$$('section').forEach(s=>so.observe(s));
+// mosaic glint
+const cv=$('#fx'),x=cv.getContext('2d'),T=14;let W,H,mx=innerWidth/2,my=innerHeight/3,A=[];
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY});
+const hs=(i,j)=>((Math.imul(i,73856093)^Math.imul(j,19349663))>>>0)/4294967295;
+(function f(t){x.clearRect(0,0,W,H);const R=300,i0=Math.floor((mx-R)/T),i1=Math.ceil((mx+R)/T),j0=Math.floor((my-R)/T),j1=Math.ceil((my+R)/T);
+ for(let i=i0;i<=i1;i++)for(let j=j0;j<=j1;j++){const cx=i*T+T/2,cy=j*T+T/2,d=Math.hypot(cx-mx,cy-my);if(d>R)continue;const h=hs(i,j),b=Math.pow(1-d/R,2),s=Math.pow(Math.max(0,Math.sin(t*.0022*(.4+h)+h*40+d*.025)),10),a=b*(.05+.85*s);if(a<.02)continue;x.fillStyle=`rgba(255,${225+h*30|0},${150+h*60|0},${a})`;x.fillRect(i*T+1,j*T+1,T-2,T-2)}
+ if(Math.random()<.7)A.push({i:Math.random()*W/T|0,j:Math.random()*H/T|0,l:1});
+ for(let k=A.length-1;k>=0;k--){const s=A[k];s.l-=.02;if(s.l<=0){A.splice(k,1);continue}x.fillStyle=`rgba(255,236,170,${Math.sin(s.l*Math.PI)*.55})`;x.fillRect(s.i*T+1,s.j*T+1,T-2,T-2)}
+ requestAnimationFrame(f)})(0);
+</script>
+</body>
+</html>
