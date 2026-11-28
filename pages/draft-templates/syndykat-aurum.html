@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Syndykat Aurum — Kampania</title>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,500;0,800;1,500&family=Poiret+One&display=swap" rel="stylesheet">
+<style>
+:root{--k:#07070a;--k2:#101016;--au:#d9b45f;--au2:#f6e3a1;--au3:#8c6d2b;--em:#0f6b5c;--em2:#2fd0b0;--rose:#b4415a;--ink:#ece6d6;--mute:#8d8a80;
+--h:'Playfair Display',Georgia,serif;--p:'Poiret One','Josefin Sans',sans-serif;--b:'Josefin Sans',sans-serif;
+--gold:linear-gradient(135deg,#8c6d2b,#f6e3a1 35%,#d9b45f 55%,#8c6d2b 100%)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--k);color:var(--ink);font:300 1.1rem/1.8 var(--b);overflow-x:hidden;
+background-image:radial-gradient(circle at var(--mx,50%) var(--my,30%),#d9b45f14,transparent 28%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%23d9b45f' stroke-opacity='.07'/%3E%3C/svg%3E")}
+/* ticker */
+.tk{position:fixed;top:0;left:0;right:0;height:30px;background:var(--gold);color:#120d02;font:600 .7rem/30px var(--b);letter-spacing:.3em;text-transform:uppercase;overflow:hidden;z-index:50;white-space:nowrap}
+.tk div{display:inline-block;padding-left:100%;animation:tk 50s linear infinite}@keyframes tk{to{transform:translateX(-100%)}}
+header{position:fixed;top:30px;left:0;right:0;z-index:40;display:flex;justify-content:center;gap:clamp(.6rem,3vw,3rem);padding:1rem;background:linear-gradient(#07070af0,#07070a00)}
+header a{font:600 .72rem var(--b);letter-spacing:.35em;color:var(--mute);text-decoration:none;text-transform:uppercase;padding:.4rem 0;position:relative;transition:.3s}
+header a::after{content:"";position:absolute;left:50%;right:50%;bottom:0;height:1px;background:var(--au);transition:.4s}
+header a:hover,header a.on{color:var(--au2)}header a:hover::after,header a.on::after{left:0;right:0}
+/* floors */
+#fl{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:10px;align-items:center;padding:14px 8px;border:1px solid #d9b45f55;background:#07070acc}
+#fl a{font:500 .8rem var(--h);color:var(--mute);text-decoration:none;width:26px;height:26px;display:grid;place-items:center;border:1px solid transparent;transition:.3s}
+#fl a.on{color:#120d02;background:var(--gold);box-shadow:0 0 14px var(--au)}
+section{min-height:100vh;padding:14vh 9vw 10vh;position:relative}
+.eb{font:400 .78rem var(--b);letter-spacing:.6em;color:var(--em2);text-transform:uppercase;text-align:center}
+h2{font:800 clamp(2.4rem,6vw,4.6rem) var(--h);text-align:center;text-transform:uppercase;letter-spacing:.14em;background:var(--gold);-webkit-background-clip:text;background-clip:text;color:transparent;margin:.4rem 0}
+.dv{height:26px;margin:0 auto 3.5rem;max-width:520px;display:flex;align-items:center;gap:14px}
+.dv::before,.dv::after{content:"";flex:1;height:5px;border-block:1px solid var(--au)}
+.dv i{width:16px;height:16px;transform:rotate(45deg);border:1px solid var(--au);box-shadow:0 0 0 4px var(--k),0 0 0 5px var(--au3)}
+.rv{opacity:0;transform:translateY(30px) scale(.98);transition:1s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none}
+/* hero */
+#intro{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.sun{position:absolute;left:50%;bottom:-30vh;width:160vmax;height:160vmax;transform:translateX(-50%);
+background:repeating-conic-gradient(from 0deg at 50% 50%,#d9b45f2a 0 3deg,transparent 3deg 9deg);-webkit-mask:radial-gradient(circle,#000 0,transparent 45%);mask:radial-gradient(circle,#000 0,transparent 45%);animation:rot 240s linear infinite}
+@keyframes rot{to{transform:translateX(-50%) rotate(360deg)}}
+.tower{position:absolute;bottom:0;left:0;right:0;height:38vh;pointer-events:none;opacity:.9}
+.hero{position:relative;z-index:2}
+.frame{display:inline-block;padding:3.2rem clamp(1.5rem,6vw,5rem);position:relative;background:#07070acc;backdrop-filter:blur(4px);
+clip-path:polygon(28px 0,calc(100% - 28px) 0,100% 28px,100% calc(100% - 28px),calc(100% - 28px) 100%,28px 100%,0 calc(100% - 28px),0 28px);border:0}
+.frame::before{content:"";position:absolute;inset:0;background:var(--gold);z-index:-2}
+.frame::after{content:"";position:absolute;inset:3px;background:var(--k);z-index:-1;clip-path:polygon(26px 0,calc(100% - 26px) 0,100% 26px,100% calc(100% - 26px),calc(100% - 26px) 100%,26px 100%,0 calc(100% - 26px),0 26px)}
+.big{font:800 clamp(3rem,10vw,8rem)/.92 var(--h);letter-spacing:.06em;background:var(--gold);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:sh 6s ease-in-out infinite}
+@keyframes sh{50%{background-position:100% 0}}
+.sub{font:400 clamp(1rem,2.4vw,1.7rem) var(--p);letter-spacing:.5em;margin-top:1rem;color:var(--au2);text-transform:uppercase}
+.hero p{max-width:52ch;margin:2rem auto 0;color:#cfc9b8}
+.btn{display:inline-block;margin-top:2rem;padding:1rem 2.6rem;font:600 .78rem var(--b);letter-spacing:.4em;text-transform:uppercase;color:#120d02;background:var(--gold);text-decoration:none;clip-path:polygon(14px 0,100% 0,calc(100% - 14px) 100%,0 100%);transition:.4s}
+.btn:hover{filter:brightness(1.2);letter-spacing:.5em}
+.stats{display:flex;justify-content:center;gap:clamp(1rem,4vw,4rem);margin-top:3rem;flex-wrap:wrap}
+.stats div{text-align:center;font:600 .65rem var(--b);letter-spacing:.35em;color:var(--mute);text-transform:uppercase}.stats b{display:block;font:500 2.4rem var(--h);color:var(--au2);letter-spacing:0}
+/* postaci */
+.flt{display:flex;justify-content:center;gap:.5rem;margin-bottom:3.5rem;flex-wrap:wrap}
+.flt button{background:none;color:var(--mute);border:1px solid #d9b45f44;padding:.5rem 1.6rem;font:600 .68rem var(--b);letter-spacing:.3em;text-transform:uppercase;cursor:pointer;transition:.3s}
+.flt button.on,.flt button:hover{color:#120d02;background:var(--gold);border-color:transparent}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:2.4rem;max-width:1300px;margin:auto}
+.ar{cursor:pointer;padding:3px;background:var(--gold);border-radius:999px 999px 0 0;transition:.5s;position:relative}
+.ar:hover{transform:translateY(-12px);box-shadow:0 20px 50px -10px var(--c),0 0 0 1px var(--au)}
+.ar .i{border-radius:999px 999px 0 0;background:linear-gradient(180deg,#14141c,#07070a);padding:3rem 1.2rem 1.6rem;text-align:center;height:100%;position:relative;overflow:hidden}
+.ar .i::before{content:"";position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 50% 62%,var(--c) 0 2deg,transparent 2deg 12deg);opacity:.1;transition:.5s}
+.ar:hover .i::before{opacity:.28}
+.mono{width:120px;height:120px;margin:0 auto 1.2rem;border:1px solid var(--au);transform:rotate(45deg);display:grid;place-items:center;position:relative;box-shadow:inset 0 0 30px var(--c)}
+.mono span{transform:rotate(-45deg);font:italic 500 2.6rem var(--h);color:var(--au2)}
+.ar h3{font:500 1.35rem var(--h);color:var(--au2);position:relative;margin-top:1.6rem}.ar small{font:400 .7rem var(--b);letter-spacing:.3em;color:var(--em2);text-transform:uppercase;position:relative}
+.ar p{font-size:.92rem;color:var(--mute);margin-top:.5rem;position:relative}
+dialog{margin:auto;max-width:640px;width:92%;background:var(--k2);color:var(--ink);border:0;padding:3px;background:var(--gold)}
+dialog::backdrop{background:#000d;backdrop-filter:blur(6px)}
+dialog .m{background:var(--k);padding:2.6rem;position:relative}
+dialog h3{font:800 2rem var(--h);color:var(--au2);text-transform:uppercase;letter-spacing:.1em}
+dialog table{width:100%;margin-top:1.2rem;border-collapse:collapse}dialog td{padding:.5rem 0;border-bottom:1px solid #d9b45f33}dialog td:last-child{text-align:right;color:var(--au2)}
+dialog button{position:absolute;top:10px;right:14px;background:none;border:0;color:var(--au);font:2rem var(--h);cursor:pointer}
+/* kronika */
+.ledger{max-width:1000px;margin:auto}
+.row{display:grid;grid-template-columns:110px 1fr;gap:2rem;padding:2rem 0;border-top:1px solid #d9b45f44;position:relative;cursor:pointer;transition:.4s}
+.row:last-child{border-bottom:1px solid #d9b45f44}
+.row:hover{background:linear-gradient(90deg,#d9b45f12,transparent)}
+.num{font:800 3.4rem/1 var(--h);color:transparent;-webkit-text-stroke:1px var(--au);transition:.4s;text-align:center}
+.row:hover .num,.row.open .num{color:var(--au);text-shadow:0 0 24px var(--au)}
+.row time{font:600 .68rem var(--b);letter-spacing:.4em;color:var(--em2);text-transform:uppercase}
+.row h4{font:500 1.7rem var(--h);color:var(--au2)}
+.row p{max-height:0;overflow:hidden;transition:.7s;color:#c9c3b2}.row.open p{max-height:300px;margin-top:.8rem}
+.row::after{content:"+";position:absolute;right:10px;top:2rem;font:1.6rem var(--h);color:var(--au);transition:.4s}.row.open::after{transform:rotate(45deg)}
+/* viewport */
+.vp{max-width:1200px;margin:auto;min-height:62vh;display:grid;place-items:center;text-align:center;color:var(--mute);position:relative;border:1px solid #d9b45f66;outline:1px solid #d9b45f33;outline-offset:8px;background:repeating-linear-gradient(135deg,#d9b45f08 0 2px,transparent 2px 16px)}
+.vp::before,.vp::after{content:"";position:absolute;width:40px;height:40px;border:2px solid var(--au)}.vp::before{top:-2px;left:-2px;border-right:0;border-bottom:0}.vp::after{bottom:-2px;right:-2px;border-left:0;border-top:0}
+.vp b{display:block;font:800 4rem var(--h);color:var(--au3)}.vp code{color:var(--au2);font-size:.95rem}
+/* status */
+.gs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2.5rem;max-width:1200px;margin:auto}
+.g{text-align:center;padding:1.8rem 1rem;border:1px solid #d9b45f44;background:linear-gradient(180deg,#14141c,transparent)}
+.g svg{width:100%;max-width:240px}.g .a{fill:none;stroke:#ffffff14;stroke-width:8}.g .f{fill:none;stroke:var(--c);stroke-width:8;stroke-dasharray:157;stroke-dashoffset:157;transition:2.2s cubic-bezier(.2,.7,.2,1);filter:drop-shadow(0 0 5px var(--c))}
+.g .nd{stroke:var(--au2);stroke-width:2;transform-origin:60px 60px;transform:rotate(-90deg);transition:2.2s cubic-bezier(.3,1.4,.4,1)}
+.g h5{font:600 .7rem var(--b);letter-spacing:.4em;color:var(--mute);text-transform:uppercase}.g b{font:500 2rem var(--h);color:var(--au2);display:block}
+.bars{max-width:1200px;margin:3rem auto 0}.bar{display:grid;grid-template-columns:200px 1fr 50px;gap:1rem;align-items:center;margin:.8rem 0;font:600 .7rem var(--b);letter-spacing:.25em;text-transform:uppercase;color:var(--mute)}
+.bar i{height:10px;border:1px solid var(--au3);position:relative;display:block}.bar i::after{content:"";position:absolute;inset:2px;width:0;background:var(--gold);transition:2s;transition-delay:.4s}.bar.in i::after{width:var(--w)}
+@media(max-width:800px){#fl{display:none}header{gap:.6rem}header a{letter-spacing:.15em;font-size:.6rem}.row{grid-template-columns:60px 1fr}.num{font-size:2rem}.bar{grid-template-columns:1fr 60px}.bar i{grid-column:1/-1;order:3}}
+</style>
+</head>
+<body>
+<div class="tk"><div>★ Złoty Zenit nadchodzi ★ Burmistrz zaprzecza istnieniu Gildii Cieni ★ Dyrygible Aurum wstrzymane z powodu burzy etery ★ Zaginął Mistrz Zegara ★ Nocne latarnie gasną o północy ★ Syndykat Aurum zaprasza na Bal Pod Kopułą ★</div></div>
+<header id="nav"><a href="#intro" class="on">Intro</a><a href="#postaci">Postaci</a><a href="#kronika">Kronika</a><a href="#notatki">Notatki</a><a href="#mapa">Mapa</a><a href="#status">Status</a></header>
+<div id="fl"><a href="#status">VI</a><a href="#mapa">V</a><a href="#notatki">IV</a><a href="#kronika">III</a><a href="#postaci">II</a><a href="#intro" class="on">I</a></div>
+
+<section id="intro">
+ <div class="sun"></div>
+ <svg class="tower" viewBox="0 0 1200 300" preserveAspectRatio="none"><defs><linearGradient id="tg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9b45f" stop-opacity=".5"/><stop offset="1" stop-color="#07070a"/></linearGradient></defs>
+  <g fill="#0b0b10" stroke="url(#tg)" stroke-width="2"><path d="M0 300V200h60v-40h40V200h50V120h30V80h20V120h30V200h70V300zM300 300V140h40V90h30V50h10V10h10V50h10V90h30V140h40V300zM520 300V180h60V130h30V60h20V130h30V180h60V300zM780 300V120h50V70h20V30h10V70h20V120h50V300zM1000 300V170h60V110h30V170h60V210h50V300z"/></g>
+  <g stroke="#d9b45f" stroke-opacity=".5"><path d="M358 40V300M560 130V300M800 70V300"/></g></svg>
+ <div class="hero rv">
+  <div class="frame">
+   <div class="eb">Rok Złotego Zenitu · Tom I</div>
+   <h1 class="big">Syndykat<br>Aurum</h1>
+   <div class="sub">Magia · Jazz · Zdrada</div>
+  </div>
+  <p>Aurelia, Miasto Tysiąca Latarni, tańczy nad przepaścią. Dyrygible kursują między wieżami z mosiądzu i kryształu, golemy parzą kawę w kawiarniach, a gildie arkanistów prowadzą wojny przy pomocy kontraktów. Dziś w nocy zginie ktoś ważny. Wy dowiecie się pierwsi.</p>
+  <a class="btn" href="#postaci">Wejdź do holu</a>
+  <div class="stats"><div><b>5</b>Agentów</div><div><b>III</b>Poziom</div><div><b>9</b>Sesji</div><div><b>Vengrath</b>Mistrz Gry</div></div>
+ </div>
+</section>
+
+<section id="postaci">
+ <div class="eb rv">Lista gości</div><h2 class="rv">Postaci</h2><div class="dv"><i></i></div>
+ <div class="flt rv" id="flt"><button class="on" data-f="*">Wszyscy</button><button data-f="pc">Agenci</button><button data-f="npc">Kontakty</button><button data-f="foe">Przeciwnicy</button></div>
+ <div class="grid" id="chars"></div>
+ <dialog id="dlg"><div class="m"><button onclick="dlg.close()">×</button><div id="dc"></div></div></dialog>
+</section>
+
+<section id="kronika">
+ <div class="eb rv">Dziennik zdarzeń</div><h2 class="rv">Kronika</h2><div class="dv"><i></i></div>
+ <div class="ledger" id="led"></div>
+</section>
+
+<section id="notatki">
+ <div class="eb rv">Akta sprawy</div><h2 class="rv">Notatki</h2><div class="dv"><i></i></div>
+ <div class="vp rv" id="notatki-viewport"><div><b>IV</b>Miejsce na viewport modułu Notatek<br><code>#notatki-viewport</code></div></div>
+</section>
+
+<section id="mapa">
+ <div class="eb rv">Plan miasta</div><h2 class="rv">Mapa</h2><div class="dv"><i></i></div>
+ <div class="vp rv" id="mapa-viewport"><div><b>V</b>Miejsce na viewport modułu Mapy<br><code>#mapa-viewport</code></div></div>
+</section>
+
+<section id="status">
+ <div class="eb rv">Raport kwartalny</div><h2 class="rv">Status</h2><div class="dv"><i></i></div>
+ <div class="gs rv" id="gs"></div>
+ <div class="bars rv" id="bars"></div>
+</section>
+
+<script>
+const C=[
+['Isadora Vance','Detektyw-arkanistka','pc','IV','#2fd0b0','Była prokurator Gildii Światła. Widzi ślady zaklęć na przedmiotach, a od ostatniej sprawy także na ludziach.',[['Klasa','Czarodziej 3'],['KP','13'],['Specjalizacja','Wróżbita']]],
+['Kapitan Orlo Brass','Pilot dyrygibla','pc','OB','#d9b45f','Jego statek „Zmierzch Pani” ma dziewięć żyć i ani jednej ważnej licencji.',[['Klasa','Łotrzyk 3'],['KP','15'],['Statek','Zmierzch Pani']]],
+['Mina Kessler','Inżynier-golemiarka','pc','MK','#b4415a','Zbudowała pierwszego golema, który nauczył się śpiewać. Teraz go szuka.',[['Klasa','Artefaktor 3'],['KP','16'],['Golem','Bis']]],
+['Czarny Dżentelmen','Szef Syndykatu','foe','CD','#8c6d2b','Nikt nie widział jego twarzy w świetle. Każdy dług w mieście kończy w jego księgach.',[['Rola','Antagonista'],['Wpływy','Cała Dolna Aurelia'],['CR','11']]],
+['Lady Seraphine','Śpiewaczka z Kopuły','npc','LS','#f6e3a1','Jej koncerty to rytuały, o których publiczność nie wie. Płaci za to głosem.',[['Rola','Informatorka'],['Lokacja','Opera Kopuła'],['Postawa','Dwuznaczna']]],
+['Inspektor Valdis','Wydział Spraw Niemożliwych','npc','IV','#5fa0d0','Zmęczony, uczciwy i dlatego niebezpiecznie samotny.',[['Rola','Sojusznik'],['Lokacja','Komisariat 13'],['Postawa','Ufny']]],
+['Dama w Welonie','Widmo z Hotelu Aurelian','foe','DW','#9b7bd0','Pojawia się w lustrach na siódmym piętrze. Zawsze pierwsza wie, kto umrze.',[['Rola','Zjawa'],['Lokacja','Hotel Aurelian'],['CR','6']]]];
+const L={pc:'Agent',npc:'Kontakt',foe:'Przeciwnik'},g=document.getElementById('chars');
+C.forEach((x,i)=>{const e=document.createElement('div');e.className='ar rv';e.dataset.t=x[2];e.style.setProperty('--c',x[4]);
+e.innerHTML=`<div class="i"><div class="mono"><span>${x[3]}</span></div><small>${L[x[2]]}</small><h3>${x[0]}</h3><p>${x[1]}</p></div>`;
+e.onclick=()=>{dc.innerHTML=`<small style="letter-spacing:.4em;color:var(--em2);text-transform:uppercase;font-size:.7rem">${L[x[2]]}</small><h3>${x[0]}</h3><p style="font-style:italic;color:var(--au)">${x[1]}</p><p style="margin-top:1rem">${x[5]}</p><table>${x[6].map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}</table>`;dlg.showModal()};
+g.appendChild(e)});
+dlg.onclick=e=>{if(e.target==dlg)dlg.close()};
+flt.onclick=e=>{const f=e.target.dataset.f;if(!f)return;[...flt.children].forEach(b=>b.classList.toggle('on',b==e.target));document.querySelectorAll('.ar').forEach(c=>c.style.display=(f=='*'||c.dataset.t==f)?'':'none')};
+const E=[['12 stycznia','Morderstwo w Hotelu Aurelian','Na siódmym piętrze znaleziono ciało arcymaga. Pokój zamknięty od środka, na lustrze ślad dłoni z cienia.'],
+['19 stycznia','Opera Kopuła','Lady Seraphine ostrzega w garderobie: „Nie ufajcie niczemu, co odbija światło”. Chwilę później gasną wszystkie latarnie.'],
+['27 stycznia','Pościg nad Dolną Aurelią','Orlo ucieka przed dyrygiblami Syndykatu, a Mina ratuje śpiewającego golema przed rozbiórką.'],
+['3 lutego','Księgi Czarnego Dżentelmena','Isadora odkrywa, że dług, o który toczy się wojna, został zaciągnięty w imieniu jej zmarłego ojca.'],
+['11 lutego','Bal Pod Kopułą','Syndykat zaprasza wszystkich. Wstęp po zmroku, wyjście wyłącznie z pozwolenia.']];
+const led=document.getElementById('led');E.forEach((x,i)=>{const e=document.createElement('div');e.className='row rv';e.innerHTML=`<div class="num">${['I','II','III','IV','V'][i]}</div><div><time>${x[0]}</time><h4>${x[1]}</h4><p>${x[2]}</p></div>`;e.onclick=()=>e.classList.toggle('open');led.appendChild(e)});
+const G=[['Reputacja',78,'#2fd0b0'],['Zagrożenie',54,'#b4415a'],['Fundusze',31,'#d9b45f']];
+gs.innerHTML=G.map(x=>`<div class="g" style="--c:${x[2]}"><svg viewBox="0 0 120 76"><path class="a" d="M10 60A50 50 0 0 1 110 60"/><path class="f" d="M10 60A50 50 0 0 1 110 60" data-v="${x[1]}"/><line class="nd" x1="60" y1="60" x2="104" y2="60" data-v="${x[1]}"/><circle cx="60" cy="60" r="5" fill="#d9b45f"/></svg><b>${x[1]}%</b><h5>${x[0]}</h5></div>`).join('');
+bars.innerHTML=[['Gildia Światła',70],['Gildia Cieni',35],['Policja Aurelii',55],['Podziemie',82]].map(x=>`<div class="bar" style="--w:${x[1]}%"><span>${x[0]}</span><i></i><span>${x[1]}</span></div>`).join('');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('.f').forEach(f=>f.style.strokeDashoffset=157*(1-f.dataset.v/100));e.target.querySelectorAll('.nd').forEach(n=>n.style.transform=`rotate(${n.dataset.v*1.8-90}deg)`)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach((e,i)=>{e.style.transitionDelay=(i%4)*.09+'s';io.observe(e)});
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)document.querySelectorAll('#nav a,#fl a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')=='#'+e.target.id))}),{threshold:.5});
+document.querySelectorAll('section').forEach(s=>so.observe(s));
+addEventListener('mousemove',e=>{document.body.style.setProperty('--mx',e.clientX+'px');document.body.style.setProperty('--my',e.clientY+'px')});
+</script>
+</body>
+</html>
