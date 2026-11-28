@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090b12">
+<meta name="description" content="Galeria sześciu niezależnych projektów wizualnych stron kampanii RPG.">
+<title>Draft Templates — Galeria projektów kampanii</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#090b12;--panel:#11151d;--gold:#d8b96d;--muted:#a9a28f;--cream:#f1e7d2;--line:#b99a5c55;--display:"Cinzel",Georgia,serif;--body:"Cormorant Garamond",Georgia,serif;--sans:"Jost",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -10%,#293047 0,transparent 52%),radial-gradient(circle at 8% 65%,#4a1a2a33,transparent 28%),radial-gradient(circle at 94% 80%,#14504733,transparent 25%),var(--bg);color:var(--cream);font:400 20px/1.55 var(--body);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.13;background-image:linear-gradient(90deg,transparent 49.8%,#d8b96d22 50%,transparent 50.2%),linear-gradient(transparent 49.8%,#d8b96d22 50%,transparent 50.2%);background-size:84px 84px;mask-image:linear-gradient(to bottom,#000,transparent 75%)}
+a{color:inherit}.shell{width:min(1280px,calc(100% - 44px));margin:auto;position:relative;z-index:1}
+header{padding:76px 0 42px;text-align:center}.eyebrow{font:500 11px var(--sans);letter-spacing:.55em;text-transform:uppercase;color:var(--gold)}h1{font:600 clamp(38px,7vw,76px)/1.08 var(--display);letter-spacing:.08em;margin:16px 0 10px;color:transparent;background:linear-gradient(110deg,#8b6a2c,#f4dfa0 38%,#c9a75e 62%,#fff0c1 76%,#8b6a2c);-webkit-background-clip:text;background-clip:text;text-shadow:0 12px 40px #0008}.lead{max-width:680px;margin:0 auto;color:#d0c8b7;font-style:italic;font-size:23px}.orn{display:flex;align-items:center;justify-content:center;gap:14px;margin:28px auto 0;width:min(520px,85%)}.orn:before,.orn:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--gold))}.orn:after{transform:scaleX(-1)}.orn i{width:11px;height:11px;border:1px solid var(--gold);transform:rotate(45deg);box-shadow:0 0 0 5px #090b12,0 0 0 6px #b99a5c66}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;padding:12px 0 80px}
+.card{--accent:#d8b96d;--accent2:#f6e3a1;--surface:#121a2d;--text:#f2e8d2;position:relative;isolation:isolate;display:flex;flex-direction:column;min-height:340px;padding:28px 26px 24px;text-decoration:none;background:linear-gradient(155deg,color-mix(in srgb,var(--surface),white 7%),var(--surface) 65%);border:1px solid color-mix(in srgb,var(--accent),transparent 42%);box-shadow:0 18px 42px #0006;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
+.card:before{content:"";position:absolute;inset:8px;border:1px solid color-mix(in srgb,var(--accent),transparent 72%);pointer-events:none;z-index:-1}
+.card:after{content:"";position:absolute;width:230px;height:230px;right:-90px;top:-105px;border:1px solid color-mix(in srgb,var(--accent),transparent 55%);border-radius:50%;box-shadow:0 0 0 14px color-mix(in srgb,var(--accent),transparent 94%),0 0 0 28px color-mix(in srgb,var(--accent),transparent 96%);pointer-events:none;z-index:-1}
+.card:hover{transform:translateY(-7px);border-color:var(--accent);box-shadow:0 26px 54px #0009,0 0 28px color-mix(in srgb,var(--accent),transparent 86%)}
+.card:focus-visible{outline:2px solid var(--accent2);outline-offset:4px}
+.card .top{display:flex;align-items:center;justify-content:space-between;gap:10px;font:500 10px var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--accent)}
+.sig{width:84px;height:84px;display:grid;place-items:center;margin:26px 0 16px;border:1px solid var(--accent);border-radius:50%;color:var(--accent2);font:500 32px var(--display);background:radial-gradient(circle at 35% 30%,color-mix(in srgb,var(--accent),transparent 85%),transparent 70%);box-shadow:inset 0 0 26px color-mix(in srgb,var(--accent),transparent 90%),0 0 24px color-mix(in srgb,var(--accent),transparent 92%)}
+h2{font:500 clamp(23px,2.4vw,30px)/1.2 var(--display);letter-spacing:.025em;margin:0 0 8px;color:var(--text)}
+.card p{margin:0;color:#c7c0b2;font-size:19px;max-width:35ch}
+.meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.meta span{font:400 9px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--accent2);border:1px solid color-mix(in srgb,var(--accent),transparent 70%);padding:5px 8px}
+.open{margin-top:auto;padding-top:24px;display:flex;justify-content:space-between;align-items:center;font:500 10px var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--accent2)}.arrow{font-size:20px;transition:transform .3s}.card:hover .arrow{transform:translateX(6px)}
+.c1{--accent:#d4a73a;--accent2:#f6df8a;--surface:#071a47;--text:#f3e8c9}.c2{--accent:#d9b45a;--accent2:#f6e3a1;--surface:#160e0d;--text:#f2ead8}.c3{--accent:#8a9a6b;--accent2:#d9988a;--surface:#24342a;--text:#f8f1de}.c4{--accent:#d9b45f;--accent2:#f6e3a1;--surface:#101016;--text:#ece6d6}.c5{--accent:#c9a24d;--accent2:#f2d98a;--surface:#6b3349;--text:#fff8f1}.c6{--accent:#c8a95b;--accent2:#ff6a4d;--surface:#101a30;--text:#ece4d0}
+footer{padding:0 0 38px;text-align:center;color:#8f8a7c;font:400 10px var(--sans);letter-spacing:.3em;text-transform:uppercase}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.shell{width:min(100% - 28px,520px)}header{padding:54px 0 28px}.grid{grid-template-columns:1fr;gap:15px;padding-bottom:50px}.card{min-height:300px;padding:24px}.sig{margin:18px 0 14px}.lead{font-size:21px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header>
+<div class="eyebrow">ARCHIWUM FORM · SZEŚĆ KIERUNKÓW WIZUALNYCH</div>
+<h1>Draft Templates</h1>
+<p class="lead">Sześć odrębnych opraw dla kampanii. Każdy projekt otwiera własną, samodzielną stronę demonstracyjną.</p>
+<div class="orn"><i></i></div>
+</header>
+<main class="grid" aria-label="Wybierz projekt kampanii">
+<a class="card c1" href="./zlota-herezja-bizancjum.html">
+<div class="top"><span>01 · Ikonostas</span><span>Byzantium</span></div><div class="sig">✧</div><h2>Złota Herezja</h2><p>Bizantyjska oprawa w granacie i złocie, z karmazynowymi akcentami i monumentalną typografią.</p><div class="meta"><span>Cinzel</span><span>Lapis Lazuli</span><span>Złoto</span></div><div class="open"><span>Otwórz projekt</span><span class="arrow">↗</span></div>
+</a>
+<a class="card c2" href="./aurelia-ostatni-seans.html">
+<div class="top"><span>02 · Noir</span><span>Art Deco</span></div><div class="sig">A</div><h2>Aurelia: Ostatni Seans</h2><p>Jazz, teatr i złoto na tle lakierowanej czerni oraz kurtyn w kolorze ciemnego wina.</p><div class="meta"><span>Limelight</span><span>Gold</span><span>Oxblood</span></div><div class="open"><span>Otwórz projekt</span><span class="arrow">↗</span></div>
+</a>
+<a class="card c3" href="./ogrod-lutecji.html">
+<div class="top"><span>03 · Botanika</span><span>Belle Époque</span></div><div class="sig">❀</div><h2>Ogród Lutecji</h2><p>Jasny papier, szałwia, przygaszona róża i organiczna nawigacja inspirowana pnączem.</p><div class="meta"><span>Italiana</span><span>Sage</span><span>Rose</span></div><div class="open"><span>Otwórz projekt</span><span class="arrow">↗</span></div>
+</a>
+<a class="card c4" href="./syndykat-aurum.html">
+<div class="top"><span>04 · Syndykat</span><span>Luxury Minimal</span></div><div class="sig">◇</div><h2>Syndykat Aurum</h2><p>Geometryczna, ciemna estetyka z metalicznym złotem i szmaragdowym światłem.</p><div class="meta"><span>Playfair Display</span><span>Onyx</span><span>Emerald</span></div><div class="open"><span>Otwórz projekt</span><span class="arrow">↗</span></div>
+</a>
+<a class="card c5" href="./bal-szeptanych-masek.html">
+<div class="top"><span>05 · Maskarada</span><span>Rococo</span></div><div class="sig">❧</div><h2>Bal Szeptanych Masek</h2><p>Pastelowa paleta różu, mięty i lawendy, złote ornamenty oraz teatralna kurtyna.</p><div class="meta"><span>Pinyon Script</span><span>Blush</span><span>Gold</span></div><div class="open"><span>Otwórz projekt</span><span class="arrow">↗</span></div>
+</a>
+<a class="card c6" href="./jedwab-glebin.html">
+<div class="top"><span>06 · Głębia</span><span>Ink &amp; Vermilion</span></div><div class="sig">水</div><h2>Jedwab Głębin</h2><p>Estetyka sumi-e: ciemny tusz, cynober, jadeit, złoto i pionowa nawigacja.</p><div class="meta"><span>Noto Serif JP</span><span>Sumi</span><span>Jade</span></div><div class="open"><span>Otwórz projekt</span><span class="arrow">↗</span></div>
+</a>
+</main>
+<footer>◆ DRAFT TEMPLATES · CAMPAIGN DESIGN ARCHIVE ◆</footer>
+</div>
+</body>
+</html>
