@@ -121,3 +121,23 @@ main>.section{width:min(1240px,calc(100% - clamp(245px,22vw,320px)));margin-left
  .hero-art,.wheel-mark,.year-wheel{animation:none!important}
  main>.section{animation:none!important}
 }
+
+/* Cinematic command palette */
+.echtra-palette[hidden]{display:none}
+.echtra-palette{position:fixed;inset:0;z-index:100;display:grid;place-items:start center;padding:15vh 18px 24px}
+.palette-backdrop{position:absolute;inset:0;background:#030704c9;backdrop-filter:blur(9px)}
+.palette-panel{position:relative;width:min(560px,100%);padding:17px;background:linear-gradient(145deg,#1d2b1f,#0b120d);border:1px solid #d2b779;box-shadow:0 30px 100px #000d,0 0 55px #c8aa681c;animation:palette-in .22s ease-out}
+@keyframes palette-in{from{opacity:0;transform:translateY(-12px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+.palette-heading,.palette-foot{display:flex;justify-content:space-between;align-items:center;color:#c9ab6a;font:9px var(--accent);letter-spacing:.15em}
+.palette-heading{padding:0 2px 12px;border-bottom:1px solid var(--line)}
+.palette-heading kbd{padding:4px 7px;border:1px solid #c9ab6a55;color:#b9b99f}
+.palette-input{width:100%;margin:14px 0;padding:14px 12px;border:1px solid #c9ab6a55;background:#080e09;color:#f0e7d0;font:17px var(--serif);outline:none}
+.palette-input:focus{border-color:#f0d99b;box-shadow:0 0 0 3px #c8aa6818}
+.palette-results{display:grid;gap:5px;max-height:42vh;overflow:auto}
+.palette-result{display:grid;grid-template-columns:32px 1fr 22px;align-items:center;gap:10px;padding:12px;border:1px solid transparent;background:transparent;color:#e7dec7;text-align:left;cursor:pointer}
+.palette-result span{color:#c9ab6a;font:10px var(--accent)}
+.palette-result strong{font:500 13px var(--accent);letter-spacing:.1em;text-transform:uppercase}
+.palette-result i{color:#a48c59;font-style:normal}
+.palette-result:hover,.palette-result.selected{border-color:#c9ab6a66;background:#c8aa6815}
+.palette-empty{padding:12px;color:#a8a88f;font:italic 14px var(--serif)}
+.palette-foot{justify-content:flex-end;padding:13px 2px 0;border-top:1px solid var(--line);margin-top:10px;color:#8e927c;font-size:8px}
