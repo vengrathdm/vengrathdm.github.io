@@ -6,7 +6,7 @@
 .tl .ev:nth-of-type(even){margin-left:calc(50% + 38px)}
 .tl .ev:before{content:"";position:absolute;top:28px;right:-51px;width:20px;height:20px;transform:rotate(45deg);background:var(--night);border:2px solid var(--gold);z-index:3}
 .tl .ev:nth-of-type(even):before{left:-51px;right:auto}
-.campaign-audio{display:block;width:100%;max-width:420px;margin:24px 0 0;accent-color:var(--mal)}
+
 @media(max-width:860px){.tl:before{left:18px}.tl .ev,.tl .ev:nth-of-type(even){width:auto;margin-left:46px}.tl .ev:before,.tl .ev:nth-of-type(even):before{left:-46px;right:auto}}
 
 /* Embedded campaign tools */
@@ -14,3 +14,17 @@
 .vp.module-vp:before,.vp.module-vp:after{pointer-events:none}
 .module-iframe{display:block;width:100%;height:100%;min-height:78vh;border:0;background:#111214}
 @media(max-width:860px){.vp.module-vp{height:82vh;min-height:82vh}.module-iframe{min-height:82vh}}
+
+/* Global campaign soundtrack player */
+#echtra-audio{position:fixed;z-index:1200;right:24px;bottom:24px;width:68px;height:68px;touch-action:none;user-select:none}
+#echtra-audio .audio-ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(#d9b45a 0deg,var(--audio-progress,#d9b45a) 0deg,rgba(185,207,196,.22) 0deg);box-shadow:0 5px 24px #0008;cursor:ns-resize}
+#echtra-audio .audio-ring:before{content:"";position:absolute;inset:5px;border-radius:50%;background:rgba(7,16,13,.97);border:1px solid rgba(217,180,90,.55)}
+#echtra-audio button{position:absolute;inset:10px;border:1px solid rgba(217,180,90,.5);border-radius:50%;background:linear-gradient(145deg,#254a38,#07100d);color:#f3d98b;display:grid;place-items:center;cursor:pointer;padding:0}
+#echtra-audio button svg{width:22px;height:22px;fill:currentColor}
+#echtra-audio .audio-tip{position:absolute;right:0;bottom:76px;white-space:nowrap;padding:5px 9px;border:1px solid #d9b45a;background:#07100deb;color:#f3d98b;font:11px/1.2 Georgia,serif;letter-spacing:.06em;border-radius:3px;opacity:0;pointer-events:none;transition:opacity .2s}
+#echtra-audio:hover .audio-tip,#echtra-audio:focus-within .audio-tip{opacity:1}
+@media(max-width:700px){#echtra-audio{right:14px;bottom:86px;width:60px;height:60px}}
+@media(prefers-reduced-motion:reduce){#echtra-audio .audio-tip{transition:none}}
+.ev .record{display:inline-flex;align-items:center;justify-content:center;margin-top:12px;padding:9px 18px;border:1px solid var(--gold);background:linear-gradient(135deg,#16291f,#0f1d17);color:var(--gold2);font-family:var(--sc);letter-spacing:.16em;text-decoration:none;transition:background .2s,border-color .2s,transform .2s;box-shadow:0 3px 12px rgba(0,0,0,.2)}
+.ev .record:hover{background:#254a38;border-color:var(--gold2);color:var(--vellum);transform:translateY(-1px)}
+.ev .record:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
