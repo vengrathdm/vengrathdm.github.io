@@ -275,3 +275,19 @@ main{margin-left:112px}
  .audio-button{right:12px;bottom:12px;width:47px;height:47px}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal-pending{opacity:1;transform:none}}
+
+/* Chapter dossier expansion */
+.chapter-card{cursor:pointer}
+.chapter-modal[hidden]{display:none}
+.chapter-modal{position:fixed;inset:0;z-index:110;display:grid;place-items:center;padding:24px}
+.chapter-modal-backdrop{position:absolute;inset:0;background:#03090bd9;backdrop-filter:blur(11px)}
+.chapter-modal-panel{position:relative;width:min(720px,100%);max-height:min(84svh,900px);overflow:auto;padding:clamp(24px,5vw,48px);background:linear-gradient(145deg,#1d393a,#0d191b);border:1px solid var(--copper);box-shadow:0 35px 110px #000d,0 0 0 8px #d18b6510;clip-path:polygon(0 0,calc(100% - 25px) 0,100% 25px,100% 100%,0 100%)}
+.chapter-modal-close{position:absolute;right:17px;top:13px;width:38px;height:38px;border:1px solid #d18b6588;border-radius:50%;background:#102021;color:var(--bone);font:24px var(--sans);cursor:pointer}
+.chapter-modal-body h2{margin:0 0 15px;font:clamp(36px,6vw,58px)/1 var(--display);letter-spacing:-.04em}
+.chapter-modal-hook{max-width:570px;margin:0 0 25px;color:#d4d7c8;font:17px/1.6 var(--display)}
+.chapter-modal-field{display:grid;grid-template-columns:125px minmax(0,1fr);gap:20px;padding:15px 0;border-top:1px solid #9bc6ad33}
+.chapter-modal-field span{color:var(--copper2);font:9px var(--mono);letter-spacing:.13em}
+.chapter-modal-field p{margin:0;color:#c5d0c4;font:14px/1.6 var(--sans)}
+.chapter-modal-done{margin-top:20px}
+body.modal-open{overflow:hidden}
+@media(max-width:520px){.chapter-modal{padding:10px}.chapter-modal-panel{padding:28px 20px}.chapter-modal-field{grid-template-columns:1fr;gap:6px}}
