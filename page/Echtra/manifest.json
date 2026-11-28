@@ -1,0 +1,21 @@
+{
+  "id": "echtra",
+  "title": "Echtra midst the Sidhe",
+  "language": "pl",
+  "entry": "/page/Echtra/",
+  "data": "./data.json",
+  "sections": [
+    "intro",
+    "postaci",
+    "kronika",
+    "notatki",
+    "mapa",
+    "status"
+  ],
+  "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0gjfyGW9ErTPXe7NhqmRLGn",
+  "audio": {
+    "src": "/page/echtra-midst-the-sidhe/res/audio/Morrigan.mp3",
+    "continuationKey": "echtra-midst-the-sidhe-theme"
+  },
+  "sourceCampaign": "/page/echtra-midst-the-sidhe/"
+}
