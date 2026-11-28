@@ -21,3 +21,27 @@
 .milestone .text-button{margin-top:13px;padding:7px 0;border-top:1px solid #bca66a33;color:var(--gold2);text-align:left}
 .milestone.done .text-button{color:#b6d0a1}
 .wheel-center b{white-space:pre-line}
+
+/* Single-section navigation and viewport-fitted hero */
+.section[hidden]{display:none!important}
+.hero{height:100svh;min-height:0;max-height:none}
+.hero-art{background-size:cover;background-position:center center}
+@media(max-height:700px) and (min-width:621px){
+ .hero-copy{padding-top:clamp(100px,17vh,150px);padding-bottom:clamp(82px,13vh,112px)}
+ .hero h1{font-size:clamp(54px,9vw,100px)}
+ .hero-subtitle{margin-top:20px;font-size:21px}
+ .hero-lede{font-size:16px;max-width:520px}
+ .hero-actions{margin-top:18px}
+}
+@media(max-height:560px){
+ .hero-copy{padding-top:92px;padding-bottom:65px}
+ .hero h1{font-size:clamp(45px,8vw,76px)}
+ .hero-subtitle{margin-top:13px;font-size:18px}
+ .hero-lede{font-size:14px;line-height:1.35}
+ .hero-actions{margin-top:12px}
+ .hero-foot{bottom:9px}
+}
+@media(max-width:620px){
+ .hero{height:100svh;min-height:0}
+ .hero-copy{padding-top:clamp(105px,19svh,155px);padding-bottom:clamp(90px,16svh,130px)}
+}
