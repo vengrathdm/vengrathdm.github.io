@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aurelia: Ostatni Seans</title>
+  <meta name="description" content="Kampania fantasy noir w złotym mieście jazzu, magii i teatru, pod którego sceną czeka bóg.">
+  <meta name="theme-color" content="#0a0908">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Limelight&family=Poiret+One&family=Jost:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --lacquer: #0a0908;
+      --jet: #100d0b;
+      --gold: #d9b45a;
+      --gold-hi: #f6e3a1;
+      --gold-lo: #8a6a2a;
+      --emerald: #0f5a4a;
+      --oxblood: #7a1f2b;
+      --ivory: #f2ead8;
+      --goldg: linear-gradient(135deg, #8a6a2a 0%, #f6e3a1 38%, #d9b45a 58%, #8a6a2a 100%);
+      --ch: polygon(16px 0, calc(100% - 16px) 0, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0 calc(100% - 16px), 0 16px);
+      --ch2: polygon(15px 0, calc(100% - 15px) 0, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 calc(100% - 15px), 0 15px);
+      --f-display: "Limelight", "Didot", "Georgia", serif;
+      --f-thin: "Poiret One", "Century Gothic", "Trebuchet MS", sans-serif;
+      --f-body: "Jost", "Century Gothic", "Trebuchet MS", sans-serif;
+      --R: 108px;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      font: 300 18px/1.75 var(--f-body); color: var(--ivory); min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 0, transparent 17px, rgba(217, 180, 90, .16) 18px, transparent 19px, transparent 25px, rgba(217, 180, 90, .1) 26px, transparent 27px) 0 0 / 54px 54px,
+        radial-gradient(circle at 50% 0, transparent 17px, rgba(217, 180, 90, .16) 18px, transparent 19px, transparent 25px, rgba(217, 180, 90, .1) 26px, transparent 27px) 27px 27px / 54px 54px,
+        var(--lacquer);
+    }
+    a { color: var(--gold-hi); }
+    :focus-visible { outline: 2px solid var(--gold-hi); outline-offset: 3px; }
+    .gold-text { background: var(--goldg); background-size: 220% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .deck[hidden] { display: none; }
+
+    /* Curtain: the single page-load moment */
+    .curtain { position: fixed; inset: 0; z-index: 200; display: flex; pointer-events: none; }
+    .curtain div {
+      flex: 1; transition: transform 2s cubic-bezier(.8, 0, .2, 1) .5s;
+      background:
+        linear-gradient(var(--gold), var(--gold)) bottom / 100% 10px no-repeat,
+        repeating-linear-gradient(90deg, #5c141e 0 34px, #7a1f2b 34px 52px, #4a0f18 52px 60px);
+      box-shadow: inset 0 -30px 40px rgba(0, 0, 0, .5);
+    }
+    .curtain.open .l { transform: translateX(-102%); }
+    .curtain.open .r { transform: translateX(102%); }
+
+    /* Shutters: section transitions */
+    .shutters { position: fixed; inset: 0; z-index: 100; display: flex; pointer-events: none; }
+    .shutters i {
+      flex: 1; background: var(--goldg); transform: scaleY(0); transform-origin: top; border-right: 1px solid var(--lacquer);
+      transition: transform .4s cubic-bezier(.7, 0, .3, 1) calc(var(--i) * 28ms);
+    }
+    .shutters.in i { transform: scaleY(1); }
+    .shutters.out i { transform: scaleY(0); transform-origin: bottom; }
+
+    /* Fan navigation */
+    .fan { position: fixed; top: 0; left: 50%; width: 0; height: 0; z-index: 60; }
+    .fan-bg {
+      position: absolute; left: calc(-1 * (var(--R) + 38px)); top: 0; width: calc(2 * (var(--R) + 38px)); height: calc(var(--R) + 38px);
+      border-radius: 0 0 999px 999px; border: 2px solid var(--gold); border-top: 0;
+      background: repeating-conic-gradient(from 90deg at 50% 0, rgba(217, 180, 90, .3) 0 1.5deg, #0e0b09 1.5deg 6deg);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, .7), inset 0 -12px 24px rgba(0, 0, 0, .8);
+    }
+    .fan-needle {
+      position: absolute; left: -1.5px; top: 0; width: 3px; height: calc(var(--R) - 22px);
+      background: var(--goldg); transform-origin: 50% 0; transition: rotate .8s cubic-bezier(.3, 1.5, .5, 1);
+    }
+    .fan-hub { position: absolute; left: -13px; top: -13px; width: 26px; height: 26px; border-radius: 50%; background: var(--goldg); border: 2px solid var(--lacquer); }
+    .fan button {
+      position: absolute; left: 0; top: 0; width: 38px; height: 38px; border-radius: 50%; cursor: pointer;
+      font: 15px var(--f-display); color: var(--gold-hi); background: var(--lacquer); border: 1.5px solid var(--gold);
+      transform: translate(-50%, -50%) rotate(var(--a)) translateY(var(--R)) rotate(calc(var(--a) * -1)); transition: background .25s, color .25s;
+    }
+    .fan button:hover, .fan button[aria-current="true"] { background: var(--gold-hi); color: var(--lacquer); }
+    .fan-label {
+      position: absolute; left: 0; top: calc(var(--R) + 46px); translate: -50% 0; white-space: nowrap;
+      font: 22px var(--f-thin); letter-spacing: .3em; color: var(--gold-hi); text-shadow: 0 2px 10px #000;
+    }
+    .home {
+      position: fixed; top: 16px; left: 18px; z-index: 61; font: 400 14px var(--f-body); letter-spacing: .12em; text-decoration: none;
+      color: var(--gold-hi); border: 1px solid var(--gold); padding: 6px 16px; background: var(--lacquer); clip-path: var(--ch);
+    }
+
+    /* Hero */
+    .hero {
+      --px: 0; --py: 0; --mx: 50%; --my: 40%;
+      position: relative; min-height: 100vh; min-height: 100svh; min-height: 100dvh; overflow: hidden;
+      display: grid; place-items: center; padding: 190px 20px 110px; text-align: center;
+      background: radial-gradient(circle 360px at var(--mx) var(--my), rgba(246, 227, 161, .12), transparent 70%);
+    }
+    .portal {
+      position: absolute; left: 50%; bottom: 0; width: min(94vw, 640px); translate: -50% 0;
+      transform: translate(calc(var(--px) * -14px), calc(var(--py) * -8px)); transition: transform .3s ease-out;
+    }
+    .portal svg { width: 100%; display: block; }
+    .rays { transform-origin: 300px 330px; animation: spin 240s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .hero-copy { position: relative; z-index: 2; transform: translate(calc(var(--px) * 8px), calc(var(--py) * 5px)); transition: transform .3s ease-out; }
+    .hero h1 { font: 400 clamp(3.4rem, 13vw, 9.4rem)/.95 var(--f-display); letter-spacing: .04em; animation: shimmer 7s ease-in-out infinite; filter: drop-shadow(0 6px 24px rgba(0, 0, 0, .8)); }
+    @keyframes shimmer { 0%, 100% { background-position: 0 0; } 50% { background-position: 100% 0; } }
+    .hero .sub { font: clamp(1.1rem, 3.5vw, 1.9rem) var(--f-thin); letter-spacing: .5em; margin: 18px -.5em 0 0; color: var(--ivory); }
+    .hero .tag { max-width: 32ch; margin: 26px auto 0; font-style: italic; color: #d8cfba; }
+    .enter {
+      display: inline-block; margin-top: 34px; padding: 12px 38px; font: 400 15px var(--f-body); letter-spacing: .3em; text-decoration: none;
+      color: var(--lacquer); background: var(--goldg); clip-path: var(--ch); transition: filter .3s, letter-spacing .3s;
+    }
+    .enter:hover { filter: brightness(1.2); letter-spacing: .38em; }
+    .steps { position: absolute; left: 50%; bottom: 0; translate: -50% 0; width: min(90vw, 760px); z-index: 1; }
+    .steps i { display: block; margin: 0 auto; height: 10px; background: var(--goldg); border-top: 1px solid var(--lacquer); }
+    .steps i:nth-child(1) { width: 40%; } .steps i:nth-child(2) { width: 62%; } .steps i:nth-child(3) { width: 100%; }
+
+    /* Common */
+    .wrap { max-width: 1060px; margin: 0 auto; padding: 230px 24px 120px; }
+    .intro .wrap { padding-top: 70px; }
+    h2 { font: 400 clamp(2rem, 5vw, 3.4rem)/1.1 var(--f-display); text-align: center; letter-spacing: .06em; }
+    .rule { display: flex; align-items: center; gap: 14px; max-width: 360px; margin: 14px auto 50px; }
+    .rule::before, .rule::after { content: ""; flex: 1; height: 2px; background: linear-gradient(90deg, transparent, var(--gold)); }
+    .rule::after { transform: scaleX(-1); }
+    .rule i { width: 12px; height: 12px; rotate: 45deg; background: var(--goldg); }
+    h3 { font: 400 1.5rem var(--f-display); color: var(--gold-hi); letter-spacing: .05em; }
+    .frame { position: relative; background: var(--goldg); clip-path: var(--ch); }
+    .frame::before { content: ""; position: absolute; inset: 2px; background: var(--jet); clip-path: var(--ch2); }
+    .frame > * { position: relative; }
+    .prologue { columns: 2 320px; column-gap: 54px; text-align: justify; hyphens: auto; }
+    .prologue p { margin-bottom: 1em; }
+    .prologue p:first-child::first-letter { font: 400 5rem/.78 var(--f-display); float: left; margin: 6px 12px 0 0; background: var(--goldg); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .houses { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 26px; margin-top: 60px; }
+    .house { padding: 30px 26px 28px; text-align: center; }
+    .house svg { width: 74px; margin-bottom: 12px; }
+    .house p { font-size: .95rem; margin-top: 10px; color: #d2c9b4; }
+
+    /* Postaci */
+    .cast { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 24px; perspective: 900px; }
+    .card {
+      cursor: pointer; background: none; border: 0; color: inherit; font: inherit; text-align: center; padding: 0;
+      transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .25s ease-out, filter .3s; position: relative;
+    }
+    .card svg { width: 100%; display: block; }
+    .card span { display: block; font: 17px var(--f-thin); letter-spacing: .18em; margin-top: 10px; color: var(--gold-hi); }
+    .card::after {
+      content: ""; position: absolute; inset: 0 0 38px; pointer-events: none; opacity: var(--g, 0); transition: opacity .3s;
+      background: radial-gradient(circle at var(--gx, 50%) var(--gy, 30%), rgba(255, 245, 200, .38), transparent 55%); border-radius: 999px 999px 0 0;
+    }
+    .card[aria-selected="true"] { filter: drop-shadow(0 0 22px rgba(246, 227, 161, .65)); }
+    .dossier { margin-top: 44px; padding: 40px; display: grid; grid-template-columns: 230px 1fr; gap: 40px; align-items: center; }
+    .dossier svg.big { width: 100%; }
+    .role { font: 22px var(--f-thin); letter-spacing: .12em; color: var(--ivory); margin: 4px 0 14px; }
+    .quote { font-style: italic; color: #d8cfba; border-left: 2px solid var(--gold); padding-left: 16px; margin-bottom: 20px; }
+    .stat { display: grid; grid-template-columns: 90px 1fr; align-items: center; margin: 5px 0; font: 400 13px var(--f-body); letter-spacing: .18em; }
+    .segs { display: flex; gap: 5px; }
+    .segs b { width: 16px; height: 11px; transform: skewX(-22deg); background: rgba(217, 180, 90, .16); }
+    .segs b.on { background: var(--goldg); }
+
+    /* Kronika */
+    .tickets { display: grid; gap: 22px; }
+    .ticket { position: relative; cursor: pointer; }
+    .ticket > button {
+      display: grid; grid-template-columns: 110px 1fr auto; align-items: center; gap: 22px; width: 100%; text-align: left; cursor: pointer;
+      padding: 22px 28px; color: inherit; font: inherit; background: var(--jet); border: 1px solid var(--gold);
+      -webkit-mask: radial-gradient(circle 13px at 0 50%, #0000 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 13px at 100% 50%, #0000 98%, #000) right / 51% 100% no-repeat;
+      mask: radial-gradient(circle 13px at 0 50%, #0000 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 13px at 100% 50%, #0000 98%, #000) right / 51% 100% no-repeat;
+    }
+    .ticket .num { font: 400 3.4rem/1 var(--f-display); text-align: center; border-right: 2px dashed var(--gold-lo); padding-right: 22px; }
+    .ticket .ttl { font: 400 1.5rem var(--f-display); letter-spacing: .04em; }
+    .ticket .meta { font: 18px var(--f-thin); letter-spacing: .15em; color: var(--gold-hi); text-align: right; }
+    .ticket .body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s ease; }
+    .ticket.open .body { grid-template-rows: 1fr; }
+    .ticket .body > div { overflow: hidden; }
+    .ticket .body p { padding: 18px 30px 6px 160px; }
+    .ticket .body a, .ticket .body em { display: inline-block; margin: 0 0 14px 160px; font: 400 14px var(--f-body); letter-spacing: .2em; }
+    .ticket.open > button { background: linear-gradient(90deg, #1b1510, var(--jet)); box-shadow: 0 0 34px rgba(217, 180, 90, .25); }
+
+    /* Placeholders */
+    .viewport {
+      min-height: 62vh; display: grid; place-items: center; text-align: center; padding: 40px;
+      background: repeating-linear-gradient(135deg, rgba(217, 180, 90, .05) 0 12px, transparent 12px 24px);
+    }
+    .viewport code { font: 400 15px ui-monospace, monospace; letter-spacing: .08em; color: var(--gold-hi); }
+    .viewport p { max-width: 46ch; margin: 10px auto 0; color: #d2c9b4; }
+
+    /* Status */
+    .gauges { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 26px; }
+    .gauge { padding: 30px 24px 26px; text-align: center; }
+    .gauge svg { width: 100%; max-width: 250px; overflow: visible; }
+    .needle { transform-origin: 100px 110px; transition: transform 1s cubic-bezier(.3, 1.6, .5, 1); }
+    .gauge .val { font: 400 2.4rem var(--f-display); }
+    .gauge p { font-size: .92rem; color: #d2c9b4; margin-top: 4px; }
+    .gauge .ctl { display: flex; gap: 34px; justify-content: center; margin-top: 14px; }
+    .gauge .ctl button {
+      width: 44px; height: 44px; rotate: 45deg; cursor: pointer; background: transparent; border: 1.5px solid var(--gold); color: var(--gold-hi); font: 22px var(--f-body); transition: .25s;
+    }
+    .gauge .ctl button span { display: block; rotate: -45deg; }
+    .gauge .ctl button:hover { background: var(--gold-hi); color: var(--lacquer); }
+
+    @media (max-width: 760px) {
+      :root { --R: 76px; }
+      body { font-size: 17px; }
+      .fan button { width: 32px; height: 32px; font-size: 13px; }
+      .fan-label { font-size: 17px; }
+      .home { top: auto; bottom: 14px; left: 14px; }
+      .hero { padding-top: 160px; }
+      .wrap { padding-top: 190px; }
+      .intro .wrap { padding-top: 70px; }
+      .dossier { grid-template-columns: 1fr; padding: 28px 22px; }
+      .ticket > button { grid-template-columns: 1fr; gap: 8px; }
+      .ticket .num { border: 0; padding: 0; text-align: left; font-size: 2.4rem; }
+      .ticket .meta { text-align: left; }
+      .ticket .body p, .ticket .body a, .ticket .body em { padding-left: 24px; margin-left: 0; }
+      .ticket .body a, .ticket .body em { margin-left: 24px; padding-left: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="curtain" id="curtain" aria-hidden="true"><div class="l"></div><div class="r"></div></div>
+  <div class="shutters" id="shutters" aria-hidden="true"></div>
+  <a class="home" href="/home/">POWRÓT</a>
+
+  <nav class="fan" aria-label="Sekcje kampanii" id="fan">
+    <div class="fan-bg"></div><div class="fan-needle" id="needle"></div><div class="fan-hub"></div>
+    <div class="fan-label" id="label">Intro</div>
+  </nav>
+
+  <main>
+    <section class="deck intro" id="intro" data-page-section="intro">
+      <header class="hero" id="hero">
+        <div class="portal" id="portal" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <h1 class="gold-text">AURELIA</h1>
+          <p class="sub">OSTATNI SEANS</p>
+          <p class="tag">Miasto złota nigdy nie gasi świateł. Pod sceną teatru ktoś zaczął odliczać takt.</p>
+          <a class="enter" href="#prolog" id="enter">WEJDŹ DO FOYER</a>
+        </div>
+        <div class="steps" aria-hidden="true"><i></i><i></i><i></i></div>
+      </header>
+      <div class="wrap" id="prolog">
+        <h2 class="gold-text">Prolog</h2><div class="rule"><i></i></div>
+        <div class="prologue">
+          <p>W Aurelii złoto płynie rurami pod ulicami, magia jest taryfą, a noc to tylko pora, o której otwierają się najlepsze lokale. Jedna scena stoi tu jednak ciemna od czterdziestu lat: Teatr Aurelia, najdroższy gmach, jaki kiedykolwiek wzniesiono ze strachu.</p>
+          <p>Anonimowy mecenas wysyła drużynie cztery bilety do loży, w której nikt nie powinien siedzieć. Pod sceną odlicza takt coś, co nie przepada za spóźnialskimi. Premiera nie może się odbyć. Premiera nie może się nie odbyć.</p>
+        </div>
+        <div class="houses" id="houses"></div>
+      </div>
+    </section>
+
+    <section class="deck" id="postaci" data-page-section="postaci" hidden>
+      <div class="wrap">
+        <h2 class="gold-text">Postaci</h2><div class="rule"><i></i></div>
+        <div class="cast" id="cast" role="tablist" aria-label="Drużyna"></div>
+        <article class="frame dossier" id="dossier" role="tabpanel"></article>
+      </div>
+    </section>
+
+    <section class="deck" id="kronika" data-page-section="kronika" hidden>
+      <div class="wrap">
+        <h2 class="gold-text">Kronika</h2><div class="rule"><i></i></div>
+        <div class="tickets" id="tickets"></div>
+      </div>
+    </section>
+
+    <section class="deck" id="notatki" data-page-section="notatki" hidden>
+      <div class="wrap">
+        <h2 class="gold-text">Notatki</h2><div class="rule"><i></i></div>
+        <div class="frame"><div class="viewport" id="notatki-viewport" data-viewport="notatki"><div><code>#notatki-viewport</code><p>Tu zamontujesz moduł notatek. Sekcja ma już ramę, tytuł i miejsce w nawigacji.</p></div></div></div>
+      </div>
+    </section>
+
+    <section class="deck" id="mapa" data-page-section="mapa" hidden>
+      <div class="wrap">
+        <h2 class="gold-text">Mapa</h2><div class="rule"><i></i></div>
+        <div class="frame"><div class="viewport" id="mapa-viewport" data-viewport="mapa"><div><code>#mapa-viewport</code><p>Tu zamontujesz mapę kampanii. Kontener zajmuje cały obszar ramy.</p></div></div></div>
+      </div>
+    </section>
+
+    <section class="deck" id="status" data-page-section="status" hidden>
+      <div class="wrap">
+        <h2 class="gold-text">Status</h2><div class="rule"><i></i></div>
+        <div class="gauges" id="gauges"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const SECTIONS = [
+        ["intro", "Intro", "I"], ["postaci", "Postaci", "II"], ["kronika", "Kronika", "III"],
+        ["notatki", "Notatki", "IV"], ["mapa", "Mapa", "V"], ["status", "Status", "VI"]
+      ];
+      const ANGLES = [70, 42, 14, -14, -42, -70];
+      const HOUSES = [
+        ["Dom Maestro", "Syndykat Orkiestry. Kontroluje jazz, długi i ciszę w odpowiednich proporcjach."],
+        ["Zakon Zwierciadła", "Policja arkanów. Wierzy, że pod sceną śpi bóg, i nie ma zamiaru go budzić."],
+        ["Złote Ręce", "Bankierzy, którzy wiedzą, kto naprawdę zapłacił za budowę teatru."]
+      ];
+      const CREW = [
+        { n: "Vivienne Corvane", role: "Primadonna, bardka", q: "Każda sala ma swoją nutę. Ta jest fałszywa od fundamentów.", s: [9, 6, 5, 7, 3], b: ["Jej dawny dyrygent zniknął pod sceną", "Zna libretto, którego nikt nie napisał"] },
+        { n: "Inspektor Brass", role: "Detektyw, czarodziej ognia", q: "Dym nie kłamie. Kłamią ci, którzy go zapalili.", s: [4, 9, 6, 9, 5], b: ["Ma dług u Zakonu Zwierciadła", "Pali tylko cudze papierosy"] },
+        { n: "Mara Delacroix", role: "Tancerka, kasjerka podziemnej ruletki", q: "Wszyscy patrzą na nogi. Nikt na ręce.", s: [8, 10, 4, 3, 7], b: ["Dłużniczka Złotych Rąk", "Zna każde tylne wyjście w mieście"] },
+        { n: "Teodor Vance", role: "Ochroniarz, były paladyn Gwiazdy", q: "Przysięgę złożyłem bogu. Ten w piwnicy to nie ten sam.", s: [3, 5, 10, 4, 9], b: ["Zdjął zbroję, nie zdjął przysięgi", "Nie lubi klaskania"] }
+      ];
+      const SESSIONS = [
+        ["I", "Premiera", "12 września", "Bilety, loża i pusta sala. Drużyna odkrywa, że pod parterem słychać orkiestrę, której nikt nie zatrudnił.", "#"],
+        ["II", "Antrakt", "26 września", "Rozmowa z Domem Maestro na zapleczu. Mara zbiera długi, a Brass znajduje partyturę spaloną od środka.", "#"],
+        ["III", "Pod sceną", "10 października", "Zejście do maszynerii teatru. Vivienne śpiewa jedną nutę i podłoga odpowiada.", ""],
+        ["IV", "Bis", "24 października", "Zakon żąda wydania partytury. Zostaje jedna noc, by zdecydować, kto zagra finał.", ""]
+      ];
+      const GAUGES = [
+        { k: "Sława teatru", v: 6, t: "Im głośniej o premierze, tym trudniej ją przerwać." },
+        { k: "Nić pod sceną", v: 3, t: "Rośnie z każdym fałszywym taktem." },
+        { k: "Kasa drużyny", v: 5, t: "Złote korony w sejfie loży." }
+      ];
+      const $ = (s, r = document) => r.querySelector(s);
+      const el = (t, html, cls) => { const e = document.createElement(t); if (html) e.innerHTML = html; if (cls) e.className = cls; return e; };
+      let uid = 0;
+
+      /* Generative deco art */
+      function rays(cx, cy, n, len, spread) {
+        let out = "";
+        for (let k = 0; k < n; k++) {
+          const a = (-spread / 2 + (k + .5) * spread / n - 90) * Math.PI / 180, w = spread / n * .36 * Math.PI / 180;
+          out += `<polygon points="${cx},${cy} ${cx + Math.cos(a - w) * len},${cy + Math.sin(a - w) * len} ${cx + Math.cos(a + w) * len},${cy + Math.sin(a + w) * len}"/>`;
+        }
+        return out;
+      }
+      function emblem(i, ch, big) {
+        const [bg, fg] = [["#0f5a4a", "#d9b45a"], ["#7a1f2b", "#f6e3a1"], ["#1c2b4a", "#d9b45a"], ["#4a3512", "#f6e3a1"]][i % 4];
+        const id = "e" + uid++;
+        return `<svg viewBox="0 0 100 130" ${big ? 'class="big"' : ''} role="img" aria-label="Godło: ${ch}"><defs><clipPath id="${id}"><path d="M4 128V50a46 46 0 0 1 92 0v78z"/></clipPath><linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6a2a"/><stop offset=".4" stop-color="#f6e3a1"/><stop offset="1" stop-color="#8a6a2a"/></linearGradient></defs><g clip-path="url(#${id})"><rect width="100" height="130" fill="${bg}"/><g fill="${fg}" opacity=".28">${rays(50, 96, 10 + i * 2, 120, 150)}</g><circle cx="50" cy="62" r="22" fill="#0a0908" stroke="url(#${id}g)" stroke-width="2.5"/><circle cx="50" cy="62" r="16" fill="none" stroke="${fg}" stroke-width=".8" stroke-dasharray="2 3"/><path d="M4 100h92M4 110h92M4 120h92" stroke="${fg}" stroke-width=".8" opacity=".5"/></g><text x="50" y="75" text-anchor="middle" font-family="Limelight,serif" font-size="34" fill="url(#${id}g)">${ch}</text><path d="M4 128V50a46 46 0 0 1 92 0v78z" fill="none" stroke="url(#${id}g)" stroke-width="3"/><path d="M10 128V50a40 40 0 0 1 80 0v78" fill="none" stroke="${fg}" stroke-width=".7"/></svg>`;
+      }
+      function portal() {
+        let arches = "";
+        for (let i = 0; i < 6; i++) {
+          const o = i * 20, r = 240 - o;
+          arches += `<path d="M${60 + o} 700V330a${r} ${r} 0 0 1 ${2 * r} 0v370" fill="none" stroke="url(#pg)" stroke-width="${i ? 1.5 : 4}" opacity="${1 - i * .13}"/>`;
+        }
+        $("#portal").innerHTML = `<svg viewBox="0 0 600 700"><defs><clipPath id="pc"><path d="M60 700V330a240 240 0 0 1 480 0v370z"/></clipPath><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6a2a"/><stop offset=".4" stop-color="#f6e3a1"/><stop offset=".6" stop-color="#d9b45a"/><stop offset="1" stop-color="#8a6a2a"/></linearGradient><radialGradient id="pr"><stop offset="0" stop-color="#f6e3a1" stop-opacity=".55"/><stop offset="1" stop-color="#d9b45a" stop-opacity="0"/></radialGradient></defs><g clip-path="url(#pc)"><rect width="600" height="700" fill="#0d0a08"/><circle cx="300" cy="330" r="300" fill="url(#pr)"/><g class="rays" fill="#d9b45a" opacity=".22">${rays(300, 330, 24, 700, 360)}</g></g>${arches}</svg>`;
+      }
+      portal();
+
+      /* Houses */
+      HOUSES.forEach(([n, t], i) => $("#houses").appendChild(el("article",
+        `${emblem(i, n[0])}<h3>${n}</h3><p>${t}</p>`, "frame house")));
+
+      /* Cast */
+      const cast = $("#cast"), dossier = $("#dossier");
+      function pick(i) {
+        const c = CREW[i];
+        [...cast.children].forEach((b, j) => b.setAttribute("aria-selected", String(i === j)));
+        const labels = ["URODA", "SPRYT", "HART", "ARKANA", "ORĘŻ"];
+        const stats = c.s.map((v, j) => `<div class="stat"><span>${labels[j]}</span><div class="segs">${Array.from({ length: 10 }, (_, k) => `<b class="${k < v ? "on" : ""}"></b>`).join("")}</div></div>`).join("");
+        dossier.innerHTML = `<div>${emblem(i, c.n[0], true)}</div><div><h3 style="font-size:2.1rem">${c.n}</h3><p class="role">${c.role}</p><p class="quote">${c.q}</p>${stats}<ul style="margin-top:16px;padding-left:18px;color:#d2c9b4">${c.b.map(x => `<li>${x}</li>`).join("")}</ul></div>`;
+      }
+      CREW.forEach((c, i) => {
+        const b = el("button", emblem(i, c.n[0]) + `<span>${c.n.split(" ").pop()}</span>`, "card");
+        b.setAttribute("role", "tab");
+        b.addEventListener("click", () => pick(i));
+        b.addEventListener("pointermove", e => {
+          const r = b.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+          b.style.setProperty("--ry", (x - .5) * 16 + "deg"); b.style.setProperty("--rx", (.5 - y) * 12 + "deg");
+          b.style.setProperty("--gx", x * 100 + "%"); b.style.setProperty("--gy", y * 100 + "%"); b.style.setProperty("--g", 1);
+        });
+        b.addEventListener("pointerleave", () => { b.style.setProperty("--rx", "0deg"); b.style.setProperty("--ry", "0deg"); b.style.setProperty("--g", 0); });
+        cast.appendChild(b);
+      });
+      pick(0);
+
+      /* Kronika */
+      SESSIONS.forEach(([num, t, d, n, url], i) => {
+        const last = i === SESSIONS.length - 1;
+        const tk = el("div", `<button aria-expanded="${last}"><span class="num gold-text">${num}</span><span class="ttl">${t}</span><span class="meta">${d}</span></button><div class="body"><div><p>${n}</p>${url ? `<a href="${url}">ODTWÓRZ NAGRANIE</a>` : "<em>BRAK NAGRANIA</em>"}</div></div>`, "ticket" + (last ? " open" : ""));
+        const btn = $("button", tk);
+        btn.addEventListener("click", () => { tk.classList.toggle("open"); btn.setAttribute("aria-expanded", String(tk.classList.contains("open"))); });
+        $("#tickets").appendChild(tk);
+      });
+
+      /* Status gauges */
+      GAUGES.forEach(g => {
+        const ticks = Array.from({ length: 11 }, (_, k) => { const a = (-90 + k * 18) * Math.PI / 180; return `<line x1="${100 + Math.sin(a) * 74}" y1="${110 - Math.cos(a) * 74}" x2="${100 + Math.sin(a) * (k % 5 ? 82 : 90)}" y2="${110 - Math.cos(a) * (k % 5 ? 82 : 90)}" stroke="#d9b45a" stroke-width="${k % 5 ? 1 : 2.5}"/>`; }).join("");
+        const card = el("article", `<svg viewBox="0 0 200 124"><path d="M14 110a86 86 0 0 1 172 0" fill="none" stroke="#d9b45a" stroke-width="2.5"/><path d="M26 110a74 74 0 0 1 148 0" fill="none" stroke="rgba(217,180,90,.3)" stroke-width="1"/>${ticks}<g class="needle"><polygon points="97,110 103,110 100,36" fill="#f6e3a1"/></g><circle cx="100" cy="110" r="9" fill="#d9b45a" stroke="#0a0908" stroke-width="2"/></svg><div class="val gold-text"></div><h3>${g.k}</h3><p>${g.t}</p><div class="ctl"><button aria-label="Zmniejsz: ${g.k}"><span>−</span></button><button aria-label="Zwiększ: ${g.k}"><span>+</span></button></div>`, "frame gauge");
+        const needle = $(".needle", card), val = $(".val", card);
+        const set = v => { g.v = Math.max(0, Math.min(10, v)); needle.style.transform = `rotate(${-90 + g.v * 18}deg)`; val.textContent = g.v; };
+        const [m, p] = card.querySelectorAll("button");
+        m.onclick = () => set(g.v - 1); p.onclick = () => set(g.v + 1);
+        const v0 = g.v; $("#gauges").appendChild(card); set(0);
+        requestAnimationFrame(() => requestAnimationFrame(() => set(v0)));
+      });
+
+      /* Fan nav */
+      const fan = $("#fan"), needle = $("#needle"), label = $("#label"), sh = $("#shutters");
+      for (let i = 0; i < 9; i++) { const b = el("i"); b.style.setProperty("--i", i); sh.appendChild(b); }
+      SECTIONS.forEach(([id, name, num], i) => {
+        const b = el("button", num); b.style.setProperty("--a", ANGLES[i] + "deg");
+        b.title = name; b.setAttribute("aria-label", name); b.dataset.go = id;
+        b.addEventListener("click", () => go(id)); fan.appendChild(b);
+      });
+      const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let busy = false, current = null;
+      function apply(id) {
+        const i = SECTIONS.findIndex(s => s[0] === id);
+        document.querySelectorAll(".deck").forEach(d => (d.hidden = d.id !== id));
+        fan.querySelectorAll("button").forEach(b => b.setAttribute("aria-current", String(b.dataset.go === id)));
+        needle.style.rotate = ANGLES[i] + "deg"; label.textContent = SECTIONS[i][1].toUpperCase().split("").join(" ");
+        window.scrollTo(0, 0); current = id;
+        try { history.replaceState(null, "", "#" + id); } catch (e) { /* file:// or sandbox */ }
+      }
+      function go(id) {
+        if (busy || id === current) return;
+        if (still) return apply(id);
+        busy = true; sh.className = "shutters in";
+        setTimeout(() => { apply(id); sh.className = "shutters out"; }, 700);
+        setTimeout(() => { sh.className = "shutters"; busy = false; }, 1400);
+      }
+
+      /* Hero: spotlight and parallax */
+      const hero = $("#hero");
+      hero.addEventListener("pointermove", e => {
+        const r = hero.getBoundingClientRect();
+        hero.style.setProperty("--mx", e.clientX - r.left + "px"); hero.style.setProperty("--my", e.clientY - r.top + "px");
+        hero.style.setProperty("--px", (e.clientX / innerWidth - .5) * 2); hero.style.setProperty("--py", (e.clientY / innerHeight - .5) * 2);
+      });
+      $("#enter").addEventListener("click", e => { e.preventDefault(); $("#prolog").scrollIntoView({ behavior: still ? "auto" : "smooth" }); });
+
+      /* Start */
+      const start = location.hash.slice(1);
+      apply(SECTIONS.some(s => s[0] === start) ? start : "intro");
+      const curtain = $("#curtain");
+      if (still) curtain.remove();
+      else { requestAnimationFrame(() => curtain.classList.add("open")); setTimeout(() => curtain.remove(), 3000); }
+    })();
+  </script>
+</body>
+</html>
