@@ -1,0 +1,581 @@
+{
+  "meta": {
+    "title": "Echtra midst the Sidhe",
+    "subtitle": "Rok, który odmówił umrzeć.",
+    "kicker": "D&D 5E · AUTORSKA KAMPANIA · IRGAELIA",
+    "description": "Archiwum wyprawy przez Irgaelię — od ognia Samhain po mrok Dworu Morrígan.",
+    "heroImage": "/core/graphics/voronoi/echtra-midst-the-sidhe.webp",
+    "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0gjfyGW9ErTPXe7NhqmRLGn",
+    "audioSrc": "/page/echtra-midst-the-sidhe/res/audio/Morrigan.mp3",
+    "loreUrl": "/page/EchtraLore/"
+  },
+  "intro": {
+    "title": "Koło roku nie zatrzyma się samo.",
+    "paragraphs": [
+      "Irgaelia żyje w rytmie dawnych praw. Samhain otwiera przejścia, duchy patronackie strzegą plemion, a Sidhe przypominają, że świat śmiertelników jest tylko jedną stroną opowieści.",
+      "W noc Samhain Dullahan przynosi proroctwo: tej nocy zabierze jedno życie, a przed kolejnym Samhain Dziki Gon ma pochłonąć wszystkie. Za przepowiednią stoi Morrígan — Phantom Queen, która splata losy bogów, plemion i Dworu Sidhe.",
+      "Nad Irgaelią nadciąga zima, która nie powinna nadejść. Zniszczenie Serca Zimy uwolni morze i otworzy drogę Fomorianom; pokonanie Balora nie przywróci jednak słońca. Bohaterowie będą musieli wejść do Drugiego Świata, uwolnić Letnią Królową i zmierzyć się z konsekwencjami Dzikiego Gonu.",
+      "To kampania o zobowiązaniach starszych niż pamięć, kruchych sojuszach i cyklu, który może przynieść odrodzenie albo ruinę. Czyny bohaterów zapiszą się w kamieniach Irgaelii — albo znikną we mgle."
+    ],
+    "facts": [
+      [
+        "ŚWIAT",
+        "Irgaelia"
+      ],
+      [
+        "ZAKRES",
+        "Poziomy 1–14"
+      ],
+      [
+        "MOTYW",
+        "Celtycki folklor"
+      ],
+      [
+        "OŚ FABUŁY",
+        "Koło pór roku"
+      ]
+    ]
+  },
+  "acts": [
+    {
+      "id": "prologue",
+      "name": "Prolog",
+      "season": "Samhain",
+      "symbol": "᚛",
+      "color": "#bca66a",
+      "subtitle": "Noc, w której granica staje się cienka",
+      "summary": "Podczas święta w Cúilfeorna pojawia się Dullahan. Proroctwo zapowiada powrót Dzikiego Gonu przed kolejnym Samhain.",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "id": "winter",
+      "name": "Akt I · Zima",
+      "season": "Zima",
+      "symbol": "❄",
+      "color": "#9db6c1",
+      "subtitle": "Serce mrozu bije pod lodem",
+      "summary": "Nienaturalna zima zaciska się na Irgaelii. Bohaterowie szukają źródła klątwy i drogi do Serca Zimy.",
+      "chapters": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "spring",
+      "name": "Akt II · Wiosna",
+      "season": "Wiosna",
+      "symbol": "❧",
+      "color": "#8ca77a",
+      "subtitle": "Odwilż odsłania dawny głód",
+      "summary": "Topniejący lód osłabia pieczęć. Fomorianie ruszają na Irgaelię, a bohaterowie muszą zebrać sojuszników i uderzyć w królestwo Balora.",
+      "chapters": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "summer",
+      "name": "Akt III · Lato",
+      "season": "Lato",
+      "symbol": "☼",
+      "color": "#d5ad63",
+      "subtitle": "Słońce gaśnie, choć lato nadeszło",
+      "summary": "Po upadku Balora świat pozostaje w półmroku. Trop prowadzi do Dworu Sidhe i uwięzionej Letniej Królowej.",
+      "chapters": [
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "autumn",
+      "name": "Akt IV · Jesień",
+      "season": "Jesień",
+      "symbol": "✥",
+      "color": "#a96848",
+      "subtitle": "Liście opadają, a Gon rusza",
+      "summary": "Agenci Morrígan podsycają konflikty. Proroctwo dojrzewa, a Dziki Gon schodzi na świat śmiertelników.",
+      "chapters": [
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "id": "wheel",
+      "name": "Akt V · Pełne Koło",
+      "season": "Pełne Koło",
+      "symbol": "✧",
+      "color": "#8b5260",
+      "subtitle": "Wszystkie drogi prowadzą do Phantom Queen",
+      "summary": "Po Dzikim Gonie pozostaje ostatnia konfrontacja: wojna z Morrígan i próba przerwania jej planu.",
+      "chapters": [
+        14
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "number": 1,
+      "title": "Samhain Festival",
+      "act": "prologue",
+      "hook": "Wśród święta, uczty i wróżb pojawia się Dullahan z proroctwem nadchodzącego Dzikiego Gonu.",
+      "goal": "Przetrwać przybycie Dullahana i usłyszeć przepowiednię, która wyznacza rok do powrotu Gonu.",
+      "antagonist": "Dullahan — Harbinger of Doom",
+      "places": [
+        "Cúilfeorna",
+        "Elder Oak"
+      ],
+      "turn": "Śmierć Keegana mac Éamoinn rozpoczyna Rok Nieszczęścia."
+    },
+    {
+      "number": 2,
+      "title": "The Comairle",
+      "act": "winter",
+      "hook": "Po proroctwie i nadejściu nienaturalnej zimy drużyna zostaje wysłana, by zebrać druidów Irgaelii.",
+      "goal": "Przekazać wieść królowi Nuadzie i doprowadzić do zwołania rady.",
+      "antagonist": "Brak bezpośredniego przeciwnika; ślady sił stojących za zimą.",
+      "places": [
+        "Oldwood",
+        "Ravenpass",
+        "Comairle",
+        "Tower of the Blind Eye"
+      ],
+      "turn": "Rada ma wskazać źródło klątwy i sposób powstrzymania zimy."
+    },
+    {
+      "number": 3,
+      "title": "The Longest Night",
+      "act": "winter",
+      "hook": "Druidzi ujawniają, że ziemię dotknęła klątwa, a jej źródłem jest Serce Zimy.",
+      "goal": "Zebrać mędrców i uzyskać wskazówki prowadzące do artefaktu.",
+      "antagonist": "Sługi Cailleach: mroźne olbrzymy, wilki zimowe i żywiołaki lodu.",
+      "places": [
+        "Tribe of the Bear",
+        "Tribe of the Raven",
+        "Tribe of the Snake",
+        "Council of the Wise"
+      ],
+      "turn": "Bohaterowie otrzymują kierunek ku północnym krainom."
+    },
+    {
+      "number": 4,
+      "title": "The Frozen Heart",
+      "act": "winter",
+      "hook": "Serce Zimy znajduje się na dalekiej północy, w domenie Cailleach.",
+      "goal": "Dotrzeć do Serca Zimy i zniszczyć je, osłabiając władzę bogini nad Irgaelią.",
+      "antagonist": "Cailleach, bogini Zimy; jej champion, pradawny lodowy wyrm Caoránach.",
+      "places": [
+        "Ever-Frozen Sea",
+        "Frozen Shore",
+        "The Gnarled Needle",
+        "Fortress of Solitude",
+        "Heart of Winter"
+      ],
+      "turn": "Zniszczenie Serca Zimy roztapia zamarznięte morze i osłabia pieczęć."
+    },
+    {
+      "number": 5,
+      "title": "Breaking the Ice",
+      "act": "spring",
+      "hook": "Odwilż osłabia starożytną pieczęć, która powstrzymywała Fomorian.",
+      "goal": "Obronić Irgaelię przed nagłym uderzeniem najeźdźców.",
+      "antagonist": "Wodzowie Fomorian prowadzący pierwszy szturm.",
+      "places": [
+        "Cúilfeorna",
+        "Irgaelia"
+      ],
+      "turn": "Najazd ujawnia, że zagrożenie jest większe niż pojedynczy rajd."
+    },
+    {
+      "number": 6,
+      "title": "The Gathering Storm",
+      "act": "spring",
+      "hook": "Aby uderzyć w źródło zagrożenia, bohaterowie potrzebują sojuszników, zasobów i latającego statku.",
+      "goal": "Zebrać wsparcie innych ludów i frakcji oraz przygotować wyprawę do krain Fomorian.",
+      "antagonist": "Agenci Balora próbujący sabotować przygotowania.",
+      "places": [
+        "Irgaelia",
+        "Blessing of Manannán"
+      ],
+      "turn": "Drużyna wyrusza na zachód z nowymi sojuszami."
+    },
+    {
+      "number": 7,
+      "title": "The Evil Eye",
+      "act": "spring",
+      "hook": "Z latającym statkiem i sprzymierzeńcami bohaterowie ruszają na ziemie Fomorian.",
+      "goal": "Pokonać Balora i jego Złe Oko, kończąc zagrożenie Fomorian.",
+      "antagonist": "Balor, King of the Fomorians.",
+      "places": [
+        "Land of the Fomorians",
+        "Throne of Balor",
+        "Broken Kingdom"
+      ],
+      "turn": "Śmierć Balora nie przywraca światła — słońce zaczyna gasnąć."
+    },
+    {
+      "number": 8,
+      "title": "The Dimming Sun",
+      "act": "summer",
+      "hook": "Po zwycięstwie nad Fomorianami słońce nie wschodzi właściwie, a świat trwa w bladym półmroku.",
+      "goal": "Zbadać przyczynę przygasania słońca i odnaleźć przejście do krainy Sidhe.",
+      "antagonist": "Mroczne fae służące Autumn Kingowi.",
+      "places": [
+        "Into the Sidhe",
+        "Otherworld"
+      ],
+      "turn": "Drużyna przekracza granicę Drugiego Świata."
+    },
+    {
+      "number": 9,
+      "title": "The Sidhe",
+      "act": "summer",
+      "hook": "W Drugim Świecie bohaterowie zostają wciągnięci w politykę Dworu Seelie i Unseelie.",
+      "goal": "Zdobyć sojuszników i odkryć sposób uwolnienia Letniej Królowej.",
+      "antagonist": "Autumn King — władca Dworu Unseelie.",
+      "places": [
+        "The Otherworld",
+        "The Seelie Court",
+        "The Unseelie Court",
+        "Petty War in Petty Case"
+      ],
+      "turn": "Bohaterowie poznają prawdę o uwięzieniu Letniej Królowej."
+    },
+    {
+      "number": 10,
+      "title": "Rescue in Twilight",
+      "act": "summer",
+      "hook": "Powstaje plan infiltracji Dworu Jesieni i uwolnienia Letniej Królowej z zaklętego więzienia.",
+      "goal": "Uwolnić Letnią Królową i przywrócić równowagę pór roku.",
+      "antagonist": "Autumn King i jego elitarni strażnicy fae.",
+      "places": [
+        "Autumn King's Court",
+        "Astral Prison",
+        "Irgaelia"
+      ],
+      "turn": "Uwolnienie królowej przywraca światło lata, lecz uruchamia kolejne wydarzenia."
+    },
+    {
+      "number": 11,
+      "title": "Whispers of War",
+      "act": "autumn",
+      "hook": "Agenci Morrígan podsycają bunt i niezgodę wśród ludzkich królestw.",
+      "goal": "Odkryć i powstrzymać spisek, zanim wybuchnie wojna domowa.",
+      "antagonist": "Mortal agents of Morrígan i skorumpowani możni.",
+      "places": [
+        "Irgaelia"
+      ],
+      "turn": "Konflikty osłabiają krainę przed nadejściem Dzikiego Gonu."
+    },
+    {
+      "number": 12,
+      "title": "The Seeds of Dissent",
+      "act": "autumn",
+      "hook": "Morrígan ujawnia się jako sprawczyni wydarzeń, a jej wpływ przynosi nieumarłe i widmowe zagrożenia.",
+      "goal": "Zakłócić rytuały bogini i przeciąć jej więź ze światem śmiertelników.",
+      "antagonist": "Widmowe sługi Morrígan i spaczeni druidzi.",
+      "places": [
+        "Irgaelia"
+      ],
+      "turn": "Bohaterowie przygotowują się na powrót Dullahana."
+    },
+    {
+      "number": 13,
+      "title": "The Wild Hunt",
+      "act": "autumn",
+      "hook": "Proroctwo się spełnia: Dziki Gon rusza przez Irgaelię pod wodzą Dullahana.",
+      "goal": "Powstrzymać Gon i odkryć rolę Morrígan; jeśli to możliwe, zwrócić Dullahana przeciwko niej.",
+      "antagonist": "Dullahan i widmowi jeźdźcy Dzikiego Gonu.",
+      "places": [
+        "Irgaelia"
+      ],
+      "turn": "Pokonanie Dullahana otwiera drogę do ostatecznej konfrontacji."
+    },
+    {
+      "number": 14,
+      "title": "War on the Phantom Queen",
+      "act": "wheel",
+      "hook": "Ostatnia bitwa rozgrywa się w twierdzy Morrígan poza światem śmiertelników.",
+      "goal": "Pokonać Phantom Queen i zakończyć jej panowanie nad losem Irgaelii.",
+      "antagonist": "Morrígan — Phantom Queen.",
+      "places": [
+        "Morrígan's Fortress",
+        "Beyond the Mortal Realm"
+      ],
+      "turn": "Zakończenie przygody i rozstrzygnięcie losu koła roku."
+    }
+  ],
+  "milestones": [
+    {
+      "id": "samhain",
+      "title": "Samhain i proroctwo",
+      "trigger": "Udział w święcie Samhain",
+      "effect": "Rozpoczyna się najcięższa zima."
+    },
+    {
+      "id": "heart",
+      "title": "Serce Zimy zniszczone",
+      "trigger": "Zniszczenie Frozen Heart",
+      "effect": "Morze odmarza; otwiera się droga dla inwazji Fomorian."
+    },
+    {
+      "id": "balor",
+      "title": "Balor pokonany",
+      "trigger": "Śmierć króla Fomorian",
+      "effect": "Słońce zaczyna przygasać."
+    },
+    {
+      "id": "queen",
+      "title": "Letnia Królowa uwolniona",
+      "trigger": "Uwolnienie Summer Queen",
+      "effect": "Uruchamia się Dziki Gon."
+    },
+    {
+      "id": "dullahan",
+      "title": "Dullahan pokonany",
+      "trigger": "Pokonanie przywódcy Dzikiego Gonu",
+      "effect": "Droga prowadzi do konfrontacji z Morrígan."
+    }
+  ],
+  "tribes": [
+    {
+      "name": "Tuath na Comhdhála",
+      "title": "Plemię Zgromadzenia",
+      "seat": "Comairle",
+      "spirit": "Sowa",
+      "leader": "Król Nuada i królowa Boyne",
+      "description": "Gospodarze świętego miejsca obrad i neutralni rozjemcy między plemionami."
+    },
+    {
+      "name": "Tuath na Trá Fuara",
+      "title": "Plemię Zimnego Brzegu",
+      "seat": "Cúilfeorna",
+      "spirit": "Wilk",
+      "leader": "Fionn Halfhand; druid Keegan mac Éamoinn",
+      "description": "Północny lud zahartowany przez zimno, sztormy i życie na odległym wybrzeżu."
+    },
+    {
+      "name": "Tuath na Gréine Éirí",
+      "title": "Plemię Wschodzącego Słońca",
+      "seat": "Eornaigh",
+      "spirit": "Niedźwiedź",
+      "leader": "Eoghan Brightblade; druid Aodhán mac Ríogháin",
+      "description": "Wojownicy wschodniego wybrzeża, związani z ochroną i siłą niedźwiedzia."
+    },
+    {
+      "name": "Tuath na Farraige Te",
+      "title": "Plemię Ciepłego Oceanu",
+      "seat": "Suidheach",
+      "spirit": "Wąż",
+      "leader": "Caoimhín Swiftwater; druid Róisín mac Fhearchair",
+      "description": "Żeglarze i kupcy południowych wybrzeży, których symbolem jest przemiana i płynność."
+    },
+    {
+      "name": "Tuath na hAbhann Síobtha",
+      "title": "Plemię Płynącej Rzeki",
+      "seat": "Airthin",
+      "spirit": "Kruk",
+      "leader": "Fiachra Wavecaller; druid Deirdre mac Néill",
+      "description": "Lud zachodnich ujść rzek, związany z omenami, burzami i przejściem dusz."
+    },
+    {
+      "name": "Tuath na Cloiche Ársa",
+      "title": "Plemię Starożytnego Kamienia",
+      "seat": "Silverna",
+      "spirit": "Jeleń",
+      "leader": "Conall Stoneguard; druid Síle mac Conchobhair",
+      "description": "Strażnicy megalitów, kamiennych kręgów i pamięci zapisanej w krajobrazie."
+    },
+    {
+      "name": "Tuath na Taoide Sníofa",
+      "title": "Plemię Splecionych Pływów",
+      "seat": "Clachair",
+      "spirit": "Delfin",
+      "leader": "Domhnall Tidewalker; druid Fionnuala mac Ruaidhrí",
+      "description": "Mieszkańcy południowych archipelagów i mistrzowie budowy statków."
+    },
+    {
+      "name": "Tuath na Lasracha Síoraí",
+      "title": "Plemię Wiecznego Płomienia",
+      "seat": "Feithra",
+      "spirit": "Lew",
+      "leader": "Tadhg Fireborn; druid Bríghid mac Eoghain",
+      "description": "Rzemieślnicy i kowale z wulkanicznych wyżyn, strażnicy świętego ognia."
+    },
+    {
+      "name": "Tuath na Gaoithe Cogarnaí",
+      "title": "Plemię Szepczących Wiatrów",
+      "seat": "Ardin",
+      "spirit": "Orzeł",
+      "leader": "Niall Windwhisper; druid Aoife mac Séamais",
+      "description": "Górski lud zwiadowców i posłańców, odczytujący znaki w wietrze."
+    }
+  ],
+  "gods": [
+    {
+      "name": "Dagda",
+      "title": "All-Father",
+      "role": "Mądrość, płodność i opieka nad wspólnotą",
+      "lore": "dagda.html"
+    },
+    {
+      "name": "Danu",
+      "title": "Divine Mother",
+      "role": "Ziemia, życie i równowaga natury",
+      "lore": "danu.html"
+    },
+    {
+      "name": "Brigid",
+      "title": "Flame of Inspiration",
+      "role": "Ogień, twórczość i uzdrawianie",
+      "lore": "brigid.html"
+    },
+    {
+      "name": "Lugh",
+      "title": "The Long Arm",
+      "role": "Słońce, sztuka, wojna i mistrzostwo",
+      "lore": "lugh.html"
+    },
+    {
+      "name": "Cernunnos",
+      "title": "The Wild",
+      "role": "Dzikość i pradawna natura",
+      "lore": "cernunnos.html"
+    },
+    {
+      "name": "Morrígan",
+      "title": "The Phantom Queen",
+      "role": "Wojna, los i śmierć",
+      "lore": "morrigan.html"
+    },
+    {
+      "name": "Manannán",
+      "title": "The Sealord",
+      "role": "Morze i żegluga",
+      "lore": "manannan.html"
+    },
+    {
+      "name": "Cailleach",
+      "title": "The Crone",
+      "role": "Zima i mroźna domena",
+      "lore": "cailleach.html"
+    }
+  ],
+  "courts": [
+    {
+      "name": "Dwór Seelie",
+      "title": "Letni blask i dawne przymierza",
+      "description": "Jeden z dwóch dworów Sidhe. Letnia Królowa zostaje uwięziona przez Autumn Kinga.",
+      "lore": "seelie-i-unseelie.html"
+    },
+    {
+      "name": "Dwór Unseelie",
+      "title": "Jesień, cień i dworska intryga",
+      "description": "Dwór związany z Autumn Kingiem i uwięzieniem Letniej Królowej.",
+      "lore": "seelie-i-unseelie.html"
+    },
+    {
+      "name": "Dziki Gon",
+      "title": "Proroctwo, które wraca",
+      "description": "Widmowa łowy prowadzona przez Dullahana, zapowiedziana podczas Samhain.",
+      "lore": "dziki-gon.html"
+    }
+  ],
+  "locations": [
+    {
+      "id": "cuilfeorna",
+      "name": "Cúilfeorna",
+      "kind": "Osada · północ",
+      "description": "Portowa osada plemienia Trá Fuara i miejsce rozpoczęcia kampanii podczas Samhain.",
+      "lore": "cuilfeorna.html",
+      "x": 125,
+      "y": 135
+    },
+    {
+      "id": "oldwood",
+      "name": "Oldwood",
+      "kind": "Pradawny las",
+      "description": "Las na drodze z Cúilfeorna do Comairle; dom Garran i miejsce skażone przez Frostroot.",
+      "lore": "stary-las.html",
+      "x": 285,
+      "y": 205
+    },
+    {
+      "id": "ravenpass",
+      "name": "Ravenpass",
+      "kind": "Przełęcz górska",
+      "description": "Górskie przejście między Oldwood a Comairle. W pobliżu znajduje się Raven’s Perch.",
+      "lore": "krucza-przelecz.html",
+      "x": 445,
+      "y": 150
+    },
+    {
+      "id": "comairle",
+      "name": "Comairle",
+      "kind": "Miasto · zgromadzenie",
+      "description": "Tradycyjna siedziba Wysokiego Króla, neutralny grunt i miejsce obrad druidów.",
+      "lore": "comairle.html",
+      "x": 610,
+      "y": 220
+    },
+    {
+      "id": "frozen-sea",
+      "name": "Ever-Frozen Sea",
+      "kind": "Północne morze",
+      "description": "Zamarzające morze, przez które bohaterowie wyruszają ku Krainom Wiecznej Zimy.",
+      "lore": "miejsca-i-regiony.html",
+      "x": 170,
+      "y": 365
+    },
+    {
+      "id": "frozen-shore",
+      "name": "Frozen Shore",
+      "kind": "Lodowe wybrzeże",
+      "description": "Granica, za którą statek nie może już płynąć; dalszą drogę trzeba pokonać pieszo.",
+      "lore": "miejsca-i-regiony.html",
+      "x": 360,
+      "y": 390
+    },
+    {
+      "id": "heart-winter",
+      "name": "Heart of Winter",
+      "kind": "Artefakt · cel wyprawy",
+      "description": "Źródło nadnaturalnej zimy, którego zniszczenie odmienia sytuację w Irgaelii.",
+      "lore": "serce-zimy.html",
+      "x": 545,
+      "y": 365
+    },
+    {
+      "id": "fomorian-lands",
+      "name": "Ziemie Fomorian",
+      "kind": "Zachód · wyprawa morska",
+      "description": "Królestwo Balora, do którego bohaterowie docierają po zebraniu sojuszników i statku.",
+      "lore": "fomorianie.html",
+      "x": 840,
+      "y": 120
+    },
+    {
+      "id": "otherworld",
+      "name": "The Otherworld",
+      "kind": "Drugi Świat",
+      "description": "Kraina Sidhe, w której bohaterowie stykają się z polityką dwóch dworów.",
+      "lore": "inny-swiat.html",
+      "x": 790,
+      "y": 330
+    },
+    {
+      "id": "autumn-court",
+      "name": "Autumn King's Court",
+      "kind": "Dwór Unseelie",
+      "description": "Siedziba Autumn Kinga i miejsce, z którego trzeba wydostać Letnią Królową.",
+      "lore": "dwor-jesieni.html",
+      "x": 920,
+      "y": 435
+    }
+  ]
+}
