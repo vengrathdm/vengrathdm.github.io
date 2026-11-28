@@ -94,7 +94,8 @@
     "tags": [
       "Kampania",
       "Aktywna",
-      "Third-Party"
+      "Third-Party",
+      "Forgotten Realms"
     ]
   },
   {
@@ -157,7 +158,8 @@
     "tags": [
       "Kampania",
       "Zamknięta",
-      "Homebrew"
+      "Homebrew",
+      "Irensberg"
     ]
   },
   {
@@ -203,7 +205,8 @@
     "tags": [
       "Kampania",
       "Zamknięta",
-      "Homebrew"
+      "Homebrew",
+      "Unspecified"
     ]
   },
   {
@@ -330,7 +333,8 @@
     "tags": [
       "Kampania",
       "Zamknięta",
-      "Third-Party"
+      "Third-Party",
+      "Drakkenheim"
     ]
   },
   {
@@ -345,7 +349,8 @@
     "tags": [
       "Kampania",
       "Zamknięta",
-      "Third-Party"
+      "Third-Party",
+      "Drakkenheim"
     ]
   },
   {
@@ -360,7 +365,8 @@
     "tags": [
       "Kampania",
       "Zamknięta",
-      "Third-Party"
+      "Third-Party",
+      "Drakkenheim"
     ]
   },
   {
@@ -406,7 +412,8 @@
     "tags": [
       "Kampania",
       "Aktywna",
-      "Homebrew"
+      "Homebrew",
+      "Irgaela"
     ]
   },
   {
@@ -421,7 +428,8 @@
     "tags": [
       "Kampania",
       "Zamknięta",
-      "Homebrew"
+      "Homebrew",
+      "Irgaela"
     ]
   },
   {
@@ -435,7 +443,8 @@
     "manifest": "/page/ku-chwale-tyra/manifest.json",
     "tags": [
       "Kampania",
-      "Zamknięta"
+      "Zamknięta",
+      "Forgotten Realms"
     ]
   },
   {
@@ -450,7 +459,8 @@
     "tags": [
       "Kampania",
       "Zamknięta",
-      "Homebrew"
+      "Homebrew",
+      "Antarriah"
     ]
   },
   {
@@ -557,7 +567,8 @@
     "tags": [
       "Kampania",
       "Zamknięta",
-      "Homebrew"
+      "Homebrew",
+      "Irensberg"
     ]
   },
   {
@@ -572,7 +583,8 @@
     "tags": [
       "Kampania",
       "Zamknięta",
-      "Homebrew"
+      "Homebrew",
+      "Irensberg"
     ]
   },
   {
@@ -616,7 +628,8 @@
     "manifest": "/page/trouble-below-the-mountains-of-ash/manifest.json",
     "tags": [
       "Kampania",
-      "Homebrew"
+      "Homebrew",
+      "Unspecified"
     ]
   },
   {
@@ -630,7 +643,8 @@
     "manifest": "/page/assault-on-castle-blackrose/manifest.json",
     "tags": [
       "Kampania",
-      "Homebrew"
+      "Homebrew",
+      "Unspecified"
     ]
   },
   {
@@ -672,7 +686,8 @@
     "manifest": "/page/dom-malowanych-luster/manifest.json",
     "tags": [
       "Kampania",
-      "Homebrew"
+      "Homebrew",
+      "Forgotten Realms"
     ]
   },
   {
@@ -686,7 +701,8 @@
     "manifest": "/page/the-dragon-and-the-kraken/manifest.json",
     "tags": [
       "Kampania",
-      "Homebrew"
+      "Homebrew",
+      "Unspecified"
     ]
   },
   {
@@ -702,7 +718,7 @@
       "Kampania",
       "W przygotowaniu",
       "Third-Party",
-      "Forgotten Realms"
+      "Midgard"
     ]
   },
   {
@@ -717,7 +733,8 @@
     "tags": [
       "Kampania",
       "W przygotowaniu",
-      "Third-Party"
+      "Third-Party",
+      "Grimnir"
     ]
   },
   {
@@ -780,7 +797,8 @@
     "tags": [
       "Kampania",
       "W przygotowaniu",
-      "Wizards of the Coast"
+      "Wizards of the Coast",
+      "Forgotten Realms"
     ]
   },
   {
