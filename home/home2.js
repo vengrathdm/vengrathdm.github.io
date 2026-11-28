@@ -11,8 +11,44 @@ function seededRandom(seed){let v=seed>>>0;return()=>{v=(v*1664525+1013904223)>>
 function describe(r){const tags=r.tags||[];if(tags.includes("Aktywna"))return"Aktywna kampania w kolekcji Vengrath.";if(tags.includes("Zamknięta"))return"Zakończona kampania zachowana w kolekcji Vengrath.";if(tags.includes("W przygotowaniu"))return"Projekt przygotowywany do przyszłej realizacji.";if(tags.includes("Narzędzie"))return"Interaktywne narzędzie z kolekcji Vengrath.";if(tags.includes("Archiwum"))return"Kronika zachowana w archiwum Vengrath.";return"Odkryj tę część kolekcji Vengrath."}
 function normalize(v){return String(v??"").trim().toLocaleLowerCase("pl").normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
 function visibleRecords(){const rawQuery=search.value;const revealHidden=rawQuery==="VENGRATH";const q=normalize(rawQuery);if(revealHidden)return records.filter(r=>r.visibility==="hidden"&&[...activeTags].every(tag=>(r.tags||[]).includes(tag)));return records.filter(r=>r.visibility!=="hidden"&&[...activeTags].every(tag=>(r.tags||[]).includes(tag))&&(!q||normalize(r.title).includes(q)||(r.tags||[]).some(tag=>normalize(tag).includes(q))))}
-function renderFilters(){filters.replaceChildren();const available=new Set(records.filter(r=>r.visibility!=="hidden").flatMap(r=>r.tags||[]));const priority=["Aktywna","Zamknięta","Kampania","Homebrew","Third-Party","Forgotten Realms","Ravenloft","Call of Cthulhu","Planescape","Narzędzie","Archiwum","MG"];const tags=[...priority.filter(tag=>available.has(tag)),...([...available].filter(tag=>!priority.includes(tag)).sort((a,b)=>a.localeCompare(b,"pl")))];["Wszystko",...tags].forEach(label=>{const b=document.createElement("button");b.type="button";b.className="filter";b.textContent=label;b.dataset.tag=label;filters.append(b)});syncFilterControls()}
-function syncFilterControls(){filters.querySelectorAll("button[data-tag]").forEach(b=>{const active=b.dataset.tag==="Wszystko"?!activeTags.size:activeTags.has(b.dataset.tag);b.classList.toggle("active",active);b.setAttribute("aria-pressed",String(active))});$("#clear-active-filters").hidden=!activeTags.size&&!search.value}
+const FILTER_GROUPS=[
+ {label:"Status",tags:["Aktywna","Zamknięta","W przygotowaniu"]},
+ {label:"Typ",tags:["Kampania","Narzędzie","Archiwum","MG","Makieta"]},
+ {label:"Źródło",tags:["Homebrew","Third-Party","Wizards of the Coast"]},
+ {label:"Świat",tags:["Forgotten Realms","Ravenloft","Planescape","Call of Cthulhu","Greyhawk","Thylea","Arcanum"]}
+];
+function renderFilters(){
+ filters.replaceChildren();
+ const available=new Set(records.filter(r=>r.visibility!=="hidden").flatMap(r=>r.tags||[]));
+ const allTags=[...available].sort((a,b)=>a.localeCompare(b,"pl"));
+ const reset=document.createElement("button");reset.type="button";reset.className="filter";reset.textContent="Wszystko";reset.dataset.tag="Wszystko";filters.append(reset);
+ const assigned=new Set();
+ FILTER_GROUPS.forEach(group=>{
+  const tags=group.tags.filter(tag=>available.has(tag));
+  if(!tags.length)return;
+  tags.forEach(tag=>assigned.add(tag));
+  const wrapper=document.createElement("div");wrapper.className="filter-group";
+  const trigger=document.createElement("button");trigger.type="button";trigger.className="filter filter-trigger";trigger.textContent=group.label+" ▾";trigger.dataset.filterToggle="true";trigger.setAttribute("aria-haspopup","true");trigger.setAttribute("aria-expanded","false");
+  const menu=document.createElement("div");menu.className="filter-menu";menu.hidden=true;menu.setAttribute("role","group");menu.setAttribute("aria-label",group.label);
+  tags.forEach(tag=>{const option=document.createElement("button");option.type="button";option.className="filter filter-option";option.textContent=tag;option.dataset.tag=tag;option.setAttribute("aria-pressed","false");menu.append(option)});
+  wrapper.append(trigger,menu);filters.append(wrapper);
+ });
+ const remaining=allTags.filter(tag=>!assigned.has(tag));
+ if(remaining.length){
+  const wrapper=document.createElement("div");wrapper.className="filter-group";
+  const trigger=document.createElement("button");trigger.type="button";trigger.className="filter filter-trigger";trigger.textContent="Pozostałe ▾";trigger.dataset.filterToggle="true";trigger.setAttribute("aria-haspopup","true");trigger.setAttribute("aria-expanded","false");
+  const menu=document.createElement("div");menu.className="filter-menu";menu.hidden=true;menu.setAttribute("role","group");menu.setAttribute("aria-label","Pozostałe");
+  remaining.forEach(tag=>{const option=document.createElement("button");option.type="button";option.className="filter filter-option";option.textContent=tag;option.dataset.tag=tag;option.setAttribute("aria-pressed","false");menu.append(option)});
+  wrapper.append(trigger,menu);filters.append(wrapper);
+ }
+ syncFilterControls();
+}
+function closeFilterMenus(except=null){filters.querySelectorAll(".filter-group").forEach(group=>{if(group===except)return;const trigger=group.querySelector("[data-filter-toggle]"),menu=group.querySelector(".filter-menu");menu.hidden=true;trigger.setAttribute("aria-expanded","false");group.classList.remove("is-open")})}
+function syncFilterControls(){
+ filters.querySelectorAll("button[data-tag]").forEach(b=>{const active=b.dataset.tag==="Wszystko"?!activeTags.size:activeTags.has(b.dataset.tag);b.classList.toggle("active",active);b.setAttribute("aria-pressed",String(active))});
+ filters.querySelectorAll(".filter-group").forEach(group=>{const selected=group.querySelectorAll("button[data-tag].active").length;const trigger=group.querySelector("[data-filter-toggle]");trigger.classList.toggle("active",selected>0);trigger.setAttribute("aria-label",trigger.textContent.replace(" ▾","")+(selected?", "+selected+" wybranych":""))});
+ $("#clear-active-filters").hidden=!activeTags.size&&!search.value;
+}
 function svgEl(name,attrs={}){const e=document.createElementNS("http://www.w3.org/2000/svg",name);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));return e}
 function pathOf(poly){return"M"+poly.map(p=>p.join(",")).join("L")+"Z"}
 function fitText(group,text,x,y,maxWidth,maxLines,fontSize,className,letterSpacing=0){
@@ -204,7 +240,16 @@ window.addEventListener("resize",closeContextMenu);
 function wrapScroll(){if(!worldWidth)return;let x=viewport.scrollLeft;while(x<worldWidth){x+=worldWidth}while(x>=worldWidth*2){x-=worldWidth}if(x!==viewport.scrollLeft)viewport.scrollLeft=x}
 function stopInertia(){if(inertiaFrame)cancelAnimationFrame(inertiaFrame);inertiaFrame=0}
 function runInertia(){stopInertia();let last=performance.now();const tick=now=>{const dt=Math.min(32,now-last);last=now;if(Math.abs(velocity)<.025){velocity=0;inertiaFrame=0;return}viewport.scrollLeft-=velocity*dt;velocity*=Math.pow(.93,dt/16.67);wrapScroll();inertiaFrame=requestAnimationFrame(tick)};inertiaFrame=requestAnimationFrame(tick)}
-filters.addEventListener("click",e=>{const b=e.target.closest("button[data-tag]");if(!b)return;if(b.dataset.tag==="Wszystko")activeTags.clear();else{if(activeTags.has(b.dataset.tag))activeTags.delete(b.dataset.tag);else activeTags.add(b.dataset.tag)}syncFilterControls();hidePreview();build()});
+filters.addEventListener("click",e=>{
+ const toggle=e.target.closest("button[data-filter-toggle]");
+ if(toggle){const group=toggle.closest(".filter-group"),menu=group.querySelector(".filter-menu"),opening=menu.hidden;closeFilterMenus(group);menu.hidden=!opening;toggle.setAttribute("aria-expanded",String(opening));group.classList.toggle("is-open",opening);return}
+ const b=e.target.closest("button[data-tag]");if(!b)return;
+ if(b.dataset.tag==="Wszystko"){activeTags.clear();closeFilterMenus()}
+ else{if(activeTags.has(b.dataset.tag))activeTags.delete(b.dataset.tag);else activeTags.add(b.dataset.tag)}
+ syncFilterControls();hidePreview();build();
+});
+document.addEventListener("pointerdown",e=>{if(!filters.contains(e.target))closeFilterMenus()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeFilterMenus();const open=filters.querySelector(".filter-group.is-open [data-filter-toggle]");open?.focus()}});
 search.addEventListener("input",()=>{syncFilterControls();hidePreview();build()});
 $("#clear-filters").addEventListener("click",()=>{search.value="";activeTags.clear();syncFilterControls();hidePreview();build()});
 $("#clear-active-filters").addEventListener("click",()=>{$("#search").value="";activeTags.clear();syncFilterControls();hidePreview();build()});
