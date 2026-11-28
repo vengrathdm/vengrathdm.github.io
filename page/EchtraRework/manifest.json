@@ -1,0 +1,24 @@
+{
+  "id": "echtra-rework",
+  "title": "Echtra midst the Sidhe — Rework",
+  "language": "pl",
+  "campaign": "Echtra midst the Sidhe",
+  "entry": "/page/EchtraRework/",
+  "theme": "./styles.css",
+  "content": "./campaign.json",
+  "sections": [
+    "campaign",
+    "seasons",
+    "chapters",
+    "atlas",
+    "world",
+    "party",
+    "chronicle",
+    "notes"
+  ],
+  "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0gjfyGW9ErTPXe7NhqmRLGn",
+  "audio": {
+    "src": "/page/echtra-midst-the-sidhe/res/audio/Morrigan.mp3",
+    "continuationKey": "echtra-rework-theme"
+  }
+}
