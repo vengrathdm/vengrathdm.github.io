@@ -1,0 +1,311 @@
+{
+  "campaign": {
+    "id": "echtra-midst-the-sidhe",
+    "title": "Echtra midst the Sidhe",
+    "language": "pl",
+    "kicker": "D&D · ARCHIWUM KAMPANII",
+    "lead": "Irgaelia to kraina celtyckich legend, dawnych bogów, druidów i Sidhe — istot z Drugiego Świata. Tutaj zmiana pór roku nie jest jedynie częścią natury. Jest częścią porządku świata.",
+    "introTitle": "Echtra midst the Sidhe",
+    "introParagraphs": [
+      "Irgaelia to kraina celtyckich legend, dawnych bogów, druidów i Sidhe — istot z Drugiego Świata. Tutaj zmiana pór roku nie jest jedynie częścią natury. Jest częścią porządku świata.",
+      "Echtra midst the Sidhe to autorska epicka kampania inspirowana przede wszystkim mitologią celtycką, szczególnie irlandzką, oraz tradycjami druidów, wojowników i fae. Jej świat — Irgaelia — ma własne plemiona, święte miejsca i bogów, a granica między światem śmiertelników a Drugim Światem jest cienka.",
+      "Historia rozpoczyna się podczas Samhain w Cúilfeorna. Święto, które powinno zamykać stary rok i otwierać nowy, zostaje naznaczone niepokojącymi omenami i pojawieniem się Dullahana. Od tego momentu bohaterowie zostają wciągnięci w historię, w której los Irgaelii splata się z rytmem pór roku i światem Sidhe.",
+      "W Irgaelii osiem plemion związanych jest z własnymi patronackimi duchami, a ich kultury tworzą mozaikę całego regionu. W tle obecne są dawne bóstwa natury, wojny i mądrości oraz dwa dwory Sidhe, których wpływ sięga świata śmiertelników."
+    ],
+    "dossier": [
+      [
+        "POSTACI",
+        "6"
+      ],
+      [
+        "NAGRANIA",
+        "27"
+      ],
+      [
+        "ŹRÓDŁO",
+        "HOMEBREW"
+      ],
+      [
+        "STATUS",
+        "AKTYWNA"
+      ],
+      [
+        "TON",
+        "CELTYCKA FANTASY"
+      ]
+    ],
+    "pillars": [
+      {
+        "title": "Ziemia",
+        "text": "Osiem plemion Irgaelii i ich patronackie duchy tworzą mozaikę krainy.",
+        "icon": "earth"
+      },
+      {
+        "title": "Drugi Świat",
+        "text": "Dwa dwory Sidhe wpływają na los śmiertelników zza cienkiej granicy światów.",
+        "icon": "fae"
+      },
+      {
+        "title": "Rytm Roku",
+        "text": "Samhain, omeny i pojawienie się Dullahana otwierają opowieść.",
+        "icon": "season"
+      }
+    ],
+    "notes": [
+      "Kampania inspirowana przede wszystkim mitologią celtycką, szczególnie irlandzką.",
+      "Świat obejmuje osiem plemion związanych z patronackimi duchami.",
+      "W tle działają dwa dwory Sidhe.",
+      "Historia rozpoczyna się podczas Samhain w Cúilfeorna."
+    ]
+  },
+  "characters": [
+    {
+      "id": "char-0050",
+      "name": "Caden Argall",
+      "player": "Viking",
+      "class": "Ranger",
+      "race": "Human",
+      "status": "Wycofana",
+      "portrait": "/core/portraits/char-0050.webp",
+      "history": "Brak zapisków.",
+      "achievementIds": []
+    },
+    {
+      "id": "char-0051",
+      "name": "Drogon Na'ar",
+      "player": "Rivani",
+      "class": "Sorcerer",
+      "race": "Dragonborn",
+      "status": "Aktywna",
+      "portrait": "/core/portraits/char-0051.webp",
+      "history": "Brak zapisków.",
+      "achievementIds": []
+    },
+    {
+      "id": "char-0052",
+      "name": "Sigrun",
+      "player": "Maria",
+      "class": "Druid",
+      "race": "Elf",
+      "status": "Aktywna",
+      "portrait": "/core/portraits/char-0052.webp",
+      "history": "Brak zapisków.",
+      "achievementIds": []
+    },
+    {
+      "id": "char-0053",
+      "name": "Grunmor",
+      "player": "Daniel",
+      "class": "Cleric",
+      "race": "Dwarf",
+      "status": "Aktywna",
+      "portrait": "/core/portraits/char-0053.webp",
+      "history": "Brak zapisków.",
+      "achievementIds": [
+        "kapitan"
+      ]
+    },
+    {
+      "id": "char-0054",
+      "name": "Feichin",
+      "player": "Mat",
+      "class": "Paladin",
+      "race": "Bogborn",
+      "status": "Aktywna",
+      "portrait": "/core/portraits/char-0054.webp",
+      "history": "Brak zapisków.",
+      "achievementIds": [
+        "blazen"
+      ]
+    },
+    {
+      "id": "char-0055",
+      "name": "Maeve",
+      "player": "wpoluwiatr",
+      "class": "Wizard",
+      "race": "Hexblood",
+      "status": "Aktywna",
+      "portrait": "/core/portraits/char-0055.webp",
+      "history": "Brak zapisków.",
+      "achievementIds": [
+        "blazen"
+      ]
+    }
+  ],
+  "chronicle": [
+    [
+      "S001",
+      "Echtra midst the Sidhe - S001 - Samhain",
+      "https://www.youtube.com/watch?v=okmE5gE2KnA"
+    ],
+    [
+      "S002",
+      "Echtra midst the Sidhe - S002 - Mroźny Korzeń",
+      "https://www.youtube.com/watch?v=rZcPbs-0tGg"
+    ],
+    [
+      "S003",
+      "Echtra midst the Sidhe - S003 - Fionach i Ryla",
+      "https://www.youtube.com/watch?v=2jeYEBFzJEE"
+    ],
+    [
+      "S004",
+      "Echtra midst the Sidhe - S004 - Ulice Comairle",
+      "https://www.youtube.com/watch?v=HH_NOEVhntA"
+    ],
+    [
+      "S005",
+      "Echtra midst the Sidhe - S005 - Dziad Mróz",
+      "https://www.youtube.com/watch?v=KnvcbjMQmRA"
+    ],
+    [
+      "S006",
+      "Echtra midst the Sidhe - S006 - Koszmary Deirdre",
+      "https://www.youtube.com/watch?v=GOEm5CHliJg"
+    ],
+    [
+      "S007",
+      "Echtra midst the Sidhe - S007 - Uczennica Aodhana",
+      "https://www.youtube.com/watch?v=nZVu21dWy0c"
+    ],
+    [
+      "S008",
+      "Echtra midst the Sidhe - S008 - Rada Druidów",
+      "https://www.youtube.com/watch?v=ui7Jgjbqncw"
+    ],
+    [
+      "S009",
+      "Echtra midst the Sidhe - S009 - Krypta Staruchy",
+      "https://www.youtube.com/watch?v=ybfBmvMh-3k"
+    ],
+    [
+      "S010",
+      "Echtra midst the Sidhe - S010 - Powrót do Comairle i Thornling",
+      "https://www.youtube.com/watch?v=IO0-yKX3gr8"
+    ],
+    [
+      "S010B",
+      "Echtra midst the Sidhe - S010B - Retrospekcja",
+      "https://www.youtube.com/watch?v=aiUUrzUBEDo"
+    ],
+    [
+      "S011",
+      "Echtra midst the Sidhe - S011 - Embarkion",
+      "https://www.youtube.com/watch?v=SbLCUKJfMm0"
+    ],
+    [
+      "S011B",
+      "Echtra midst the Sidhe - S011B - Retrospekcja2",
+      "https://www.youtube.com/watch?v=Tuctb90gGi4"
+    ],
+    [
+      "S012",
+      "Echtra midst the Sidhe - S012 - Morze Północne i Wieczna Zmarzlina",
+      "https://www.youtube.com/watch?v=KcF5NnA_9Gg"
+    ],
+    [
+      "S013",
+      "Echtra midst the Sidhe - S013 - Siostry Maeve",
+      "https://www.youtube.com/watch?v=6ueHHqDyfuw"
+    ],
+    [
+      "S014",
+      "Echtra midst the Sidhe - S014 - Intrygi",
+      "https://www.youtube.com/watch?v=HxZ0hiGUAog"
+    ],
+    [
+      "S015",
+      "Echtra midst the Sidhe - S015 - Matki",
+      "https://www.youtube.com/watch?v=8t-9Ttb4rq4"
+    ],
+    [
+      "S016",
+      "Echtra midst the Sidhe - S016 - Serce Zimy",
+      "https://www.youtube.com/watch?v=oEBaiQZXAyQ"
+    ],
+    [
+      "S017",
+      "Echtra midst the Sidhe - S017 - Żegluga do Domu",
+      "https://www.youtube.com/watch?v=AWs6Jpzfbfo"
+    ],
+    [
+      "S018",
+      "Echtra midst the Sidhe - S018 - Przełamanie Lodu",
+      "https://www.youtube.com/watch?v=1zfOxERZunE"
+    ],
+    [
+      "S019",
+      "Echtra midst the Sidhe - S019 - Inwazja Fomorian",
+      "https://www.youtube.com/watch?v=yO3ngxTvs6E"
+    ],
+    [
+      "S020",
+      "Echtra midst the Sidhe - S020 - Srebrna Ręka",
+      "https://www.youtube.com/watch?v=u71sG67Z9CU"
+    ],
+    [
+      "S021",
+      "Echtra midst the Sidhe - S021 - Lorobella",
+      "https://www.youtube.com/watch?v=OCRzM-E_mks"
+    ],
+    [
+      "S022",
+      "Echtra midst the Sidhe - S022 - Krucza Twierdza",
+      "https://www.youtube.com/watch?v=YcPF2z_P6M8"
+    ],
+    [
+      "S023",
+      "Echtra midst the Sidhe - S023 - Należyta Zapłata",
+      "https://www.youtube.com/watch?v=r0v8ivOPYtg"
+    ],
+    [
+      "S024",
+      "Echtra midst the Sidhe - S024 - Statek w Butelce",
+      "https://www.youtube.com/watch?v=yUiCJbTuLFQ"
+    ],
+    [
+      "S025",
+      "Echtra midst the Sidhe - S025 - Tropem Fomorian",
+      "https://www.youtube.com/watch?v=nqK3XcMh_Os"
+    ],
+    [
+      "S026",
+      "Echtra midst the Sidhe - S026 - Przybycie Osmandiasa",
+      "https://youtu.be/7O7-aYdrafg"
+    ],
+    [
+      "S028",
+      "Echtra midst the Sidhe - S028 - Przez Strzaskane Morze",
+      "https://youtu.be/WRVF35u6yJY"
+    ]
+  ],
+  "playlistUrl": "https://www.youtube.com/playlist?list=PL-Lm83myvu0gjfyGW9ErTPXe7NhqmRLGn",
+  "audio": {
+    "src": "/page/echtra-midst-the-sidhe/res/audio/Morrigan.mp3",
+    "continuationKey": "echtra-midst-the-sidhe-theme"
+  },
+  "status": {
+    "yearWheel": [
+      "Samhain",
+      "Yule",
+      "Imbolc",
+      "Ostara",
+      "Beltane",
+      "Litha",
+      "Lughnasadh",
+      "Mabon"
+    ],
+    "health": {
+      "available": false,
+      "label": "Brak danych o punktach życia postaci"
+    },
+    "corruption": {
+      "available": false,
+      "label": "Brak zarejestrowanego poziomu skażenia"
+    },
+    "threads": {
+      "available": false,
+      "label": "Brak zarejestrowanych wątków statusowych"
+    }
+  }
+}
