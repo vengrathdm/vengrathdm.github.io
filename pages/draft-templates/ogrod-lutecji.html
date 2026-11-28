@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ogród Lutecji</title>
+  <meta name="description" content="Kampania fantasy w Belle Époque: Lutecja rozkwitła w jedną noc, a Wielka Szklarnia pamięta każde imię.">
+  <meta name="theme-color" content="#f1e8d0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f1e8d0;
+      --paper: #f8f1de;
+      --forest: #2c3b2e;
+      --sage: #8a9a6b;
+      --teal: #4f7d78;
+      --ochre: #c79a3f;
+      --rose: #d9988a;
+      --plum: #5a3347;
+      --f-display: "Italiana", "Didot", "Georgia", serif;
+      --f-body: "Cormorant Garamond", "Georgia", serif;
+      --leaf: 0 64px 0 64px;
+      --nav: 150px;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      font: 500 21px/1.65 var(--f-body); color: var(--forest); min-height: 100vh;
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .28 0 0 0 0 .15 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse at 12% 8%, rgba(217, 152, 138, .28), transparent 45%),
+        radial-gradient(ellipse at 90% 70%, rgba(79, 125, 120, .22), transparent 50%),
+        var(--cream);
+      background-attachment: fixed;
+    }
+    a { color: var(--plum); }
+    :focus-visible { outline: 2px solid var(--plum); outline-offset: 3px; }
+    #pollen { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; }
+    .deck[hidden] { display: none; }
+    .deck { animation: unfold .8s ease-out; }
+    @keyframes unfold { from { opacity: 0; transform: translateY(18px); } }
+
+    /* Bloom transition */
+    .bloom {
+      position: fixed; inset: 0; z-index: 100; pointer-events: none; clip-path: circle(0 at var(--x, 50%) var(--y, 50%));
+      transition: clip-path .85s cubic-bezier(.6, 0, .2, 1), opacity .6s ease;
+      background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), var(--rose) 0, var(--sage) 38%, var(--teal) 100%);
+    }
+    .bloom.in { clip-path: circle(160vmax at var(--x, 50%) var(--y, 50%)); }
+    .bloom.out { opacity: 0; }
+    .bloom.reset { transition: none; }
+
+    /* Vine navigation */
+    .vine { position: fixed; z-index: 60; left: 8px; top: 50%; translate: 0 -50%; width: 120px; height: min(80vh, 640px); }
+    .vine svg.stem { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .vine .base { fill: none; stroke: var(--sage); stroke-width: 3; stroke-linecap: round; opacity: .55; }
+    .vine .grown { fill: none; stroke: var(--ochre); stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset 1s ease; }
+    .vine button {
+      position: absolute; width: 44px; height: 44px; translate: -50% -50%; border-radius: 50%; cursor: pointer; padding: 0;
+      background: var(--paper); border: 2px solid var(--forest);
+    }
+    .vine button svg { width: 100%; height: 100%; transition: transform .6s cubic-bezier(.3, 1.5, .5, 1); }
+    .vine button ellipse { fill: var(--rose); stroke: var(--forest); stroke-width: 1.2; transition: fill .4s; }
+    .vine button:hover ellipse { fill: var(--ochre); }
+    .vine button[aria-current="true"] { border-color: var(--ochre); box-shadow: 0 0 0 5px rgba(199, 154, 63, .3); }
+    .vine button[aria-current="true"] svg { transform: scale(1.3) rotate(30deg); }
+    .vine button[aria-current="true"] ellipse { fill: var(--ochre); }
+    .vine-label { position: absolute; font: 26px var(--f-display); color: var(--plum); white-space: nowrap; translate: 34px -50%; transition: top .8s, left .8s; }
+    .home {
+      position: fixed; top: 16px; right: 20px; z-index: 61; font: 600 16px var(--f-body); text-decoration: none; color: var(--forest);
+      background: var(--paper); border: 2px solid var(--forest); border-radius: 0 20px 0 20px; padding: 3px 18px;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh; min-height: 100dvh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 10px;
+      padding: 50px 40px 40px var(--nav);
+    }
+    .hero h1 { font: 400 clamp(3.6rem, 9.5vw, 8.4rem)/.88 var(--f-display); color: var(--forest); letter-spacing: -.01em; }
+    .hero h1 span { display: block; margin-left: .9em; color: var(--plum); }
+    .hero .tag { max-width: 25ch; margin: 22px 0 0 .3em; font-size: 1.35rem; font-style: italic; }
+    .whip { width: min(420px, 90%); display: block; margin: 8px 0 0; }
+    .whip path { fill: none; stroke: var(--ochre); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.4s .4s ease-out forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .enter {
+      display: inline-block; margin: 28px 0 0 .3em; padding: 10px 34px; font: 600 18px var(--f-body); text-decoration: none; color: var(--paper);
+      background: var(--forest); border-radius: 0 28px 0 28px; transition: background .3s, transform .3s;
+    }
+    .enter:hover { background: var(--plum); transform: translateX(6px) rotate(-1deg); }
+    .medal svg { width: 100%; max-width: 620px; display: block; margin: 0 auto; overflow: visible; }
+    .pt { transform: rotate(var(--r)) scale(1); animation: bloom 1.1s cubic-bezier(.3, 1.4, .5, 1) both; animation-delay: calc(.5s + var(--d) * 70ms); }
+    @keyframes bloom { from { transform: rotate(calc(var(--r) - 50deg)) scale(0); opacity: 0; } }
+    .tend { fill: none; stroke: var(--sage); stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.8s .2s ease-out forwards; }
+    .halo { transform-origin: 300px 300px; animation: slow 160s linear infinite; }
+    @keyframes slow { to { transform: rotate(360deg); } }
+
+    /* Common */
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 70px 40px 120px var(--nav); }
+    h2 { font: 400 clamp(2.6rem, 6vw, 4.4rem)/1 var(--f-display); color: var(--forest); }
+    h2 + .sway { display: block; width: 220px; margin: 4px 0 46px; }
+    .sway path { fill: none; stroke: var(--ochre); stroke-width: 3.5; stroke-linecap: round; }
+    h3 { font: 400 1.7rem/1.1 var(--f-display); color: var(--plum); }
+    .leaf {
+      background: var(--paper); border: 2px solid var(--forest); border-radius: var(--leaf); outline: 1px solid var(--ochre); outline-offset: -9px;
+      box-shadow: 8px 8px 0 rgba(138, 154, 107, .55);
+    }
+    .prologue { columns: 2 330px; column-gap: 56px; max-width: 920px; }
+    .prologue p { margin-bottom: 1em; }
+    .prologue p:first-child::first-letter { font: 400 5.4rem/.8 var(--f-display); float: left; margin: 8px 14px 0 0; color: var(--plum); }
+    .houses { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 70px; }
+    .house { padding: 34px 30px 32px; }
+    .house:nth-child(2) { margin-top: 34px; }
+    .house svg { width: 84px; display: block; margin-bottom: 8px; }
+    .house p { margin-top: 8px; font-size: 1.05rem; }
+
+    /* Postaci */
+    .cast { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 20px 30px; }
+    .med { background: none; border: 0; cursor: pointer; text-align: center; color: inherit; font: inherit; transition: transform .4s cubic-bezier(.3, 1.5, .5, 1); }
+    .med:nth-child(even) { margin-top: 46px; }
+    .med svg { width: 100%; display: block; overflow: visible; }
+    .med .spin { transform-origin: 0 0; animation: slow 60s linear infinite; }
+    .med:hover { transform: translateY(-6px) rotate(-2deg); }
+    .med[aria-selected="true"] { transform: scale(1.08); filter: drop-shadow(0 0 16px rgba(199, 154, 63, .8)); }
+    .med span { font: 22px var(--f-display); color: var(--plum); }
+    .dossier { margin-top: 70px; padding: 44px 46px; display: grid; grid-template-columns: 240px 1fr 260px; gap: 36px; align-items: center; }
+    .role { font: italic 600 1.3rem var(--f-body); color: var(--teal); margin: 2px 0 14px; }
+    .quote { border-left: 3px solid var(--ochre); padding-left: 16px; font-style: italic; margin-bottom: 14px; }
+    .dossier ul { padding-left: 18px; }
+    .flower text { font: 600 13px var(--f-body); fill: var(--forest); }
+
+    /* Kronika */
+    .chron { position: relative; display: grid; gap: 42px; }
+    .chron::before {
+      content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 60px; translate: -50% 0; opacity: .8;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='240'%3E%3Cpath d='M30 0C60 60 0 60 30 120S0 180 30 240' fill='none' stroke='%238a9a6b' stroke-width='3'/%3E%3Cellipse cx='44' cy='60' rx='9' ry='4' fill='%238a9a6b' transform='rotate(-30 44 60)'/%3E%3Cellipse cx='16' cy='180' rx='9' ry='4' fill='%238a9a6b' transform='rotate(30 16 180)'/%3E%3C/svg%3E") center top / 60px 240px repeat-y;
+    }
+    .entry { position: relative; width: calc(50% - 54px); }
+    .entry:nth-child(even) { margin-left: auto; }
+    .entry > button {
+      display: block; width: 100%; text-align: left; cursor: pointer; padding: 20px 34px 20px 28px; font: inherit; color: inherit;
+      background: var(--paper); border: 2px solid var(--forest); border-radius: var(--leaf); box-shadow: 7px 7px 0 rgba(138, 154, 107, .55); transition: transform .3s;
+    }
+    .entry:nth-child(even) > button { border-radius: 64px 0 64px 0; }
+    .entry > button:hover { transform: translateY(-3px); }
+    .entry .ttl { font: 400 1.75rem/1.1 var(--f-display); color: var(--plum); display: block; }
+    .entry .meta { font-style: italic; color: var(--teal); }
+    .entry .bud { position: absolute; top: 18px; left: calc(100% + 54px - 20px); width: 40px; height: 40px; translate: 0 0; }
+    .entry:nth-child(even) .bud { left: -54px; translate: -20px 0; }
+    .bud ellipse { fill: var(--cream); stroke: var(--forest); stroke-width: 1.5; transform: rotate(var(--r)) scale(.5); transform-origin: 0 0; transition: transform .7s cubic-bezier(.3, 1.6, .5, 1), fill .4s; }
+    .entry.open .bud ellipse { transform: rotate(var(--r)) scale(1); fill: var(--rose); }
+    .entry .body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s ease; }
+    .entry.open .body { grid-template-rows: 1fr; }
+    .entry .body > div { overflow: hidden; }
+    .entry .body p { padding: 16px 34px 4px 28px; }
+    .entry .body a, .entry .body em { display: inline-block; margin: 0 28px 10px; font-weight: 600; }
+
+    /* Placeholders */
+    .viewport {
+      min-height: 60vh; display: grid; place-items: center; text-align: center; padding: 40px;
+      background: repeating-linear-gradient(135deg, rgba(138, 154, 107, .1) 0 14px, transparent 14px 28px);
+    }
+    .viewport code { font: 600 15px ui-monospace, monospace; color: var(--plum); }
+    .viewport p { max-width: 44ch; margin: 8px auto 0; }
+    .oval { border-radius: 50% / 40%; overflow: hidden; }
+
+    /* Status */
+    .gauges { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 40px; }
+    .gauge { padding: 30px 24px 26px; text-align: center; }
+    .gauge:nth-child(2) { margin-top: 30px; }
+    .gauge svg { width: 100%; max-width: 230px; overflow: visible; }
+    .gauge .pet { transform: rotate(var(--r)) scale(var(--s, .5)); fill: transparent; stroke: var(--forest); stroke-width: 1.4; opacity: .4; transition: transform .6s cubic-bezier(.3, 1.6, .5, 1), fill .4s, opacity .4s; }
+    .gauge .pet.on { --s: 1; opacity: 1; fill: var(--c); }
+    .gauge .val { font: 400 2.6rem var(--f-display); color: var(--plum); }
+    .gauge p { font-size: 1rem; }
+    .gauge .ctl { display: flex; gap: 14px; justify-content: center; margin-top: 12px; }
+    .gauge .ctl button { width: 46px; height: 46px; border-radius: 50%; cursor: pointer; font: 600 24px var(--f-body); background: var(--cream); color: var(--forest); border: 2px solid var(--forest); transition: .25s; }
+    .gauge .ctl button:hover { background: var(--ochre); transform: rotate(90deg); }
+
+    @media (max-width: 860px) {
+      :root { --nav: 22px; }
+      body { font-size: 19px; }
+      .vine { left: 0; right: 0; top: auto; bottom: 0; translate: 0 0; width: auto; height: 88px; background: linear-gradient(transparent, var(--cream) 45%); }
+      .vine-label { display: none; }
+      .home { top: 10px; right: 10px; }
+      .hero { grid-template-columns: 1fr; padding: 60px 22px 120px; }
+      .medal { order: -1; }
+      .wrap { padding: 60px 22px 130px; }
+      .dossier { grid-template-columns: 1fr; padding: 30px 24px; }
+      .med:nth-child(even), .gauge:nth-child(2), .house:nth-child(2) { margin-top: 0; }
+      .chron::before { left: 22px; }
+      .entry, .entry:nth-child(even) { width: 100%; margin: 0; padding-left: 56px; }
+      .entry .bud, .entry:nth-child(even) .bud { left: 2px; translate: 0 0; }
+      .entry:nth-child(even) > button { border-radius: var(--leaf); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
+      .whip path, .tend { stroke-dashoffset: 0; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="pollen" aria-hidden="true"></canvas>
+  <div class="bloom" id="bloom" aria-hidden="true"></div>
+  <a class="home" href="/home/">Wróć</a>
+
+  <nav class="vine" id="vine" aria-label="Sekcje kampanii">
+    <svg class="stem" id="stem" aria-hidden="true"><path class="base" id="base"/><path class="grown" id="grown"/></svg>
+    <div class="vine-label" id="label">Intro</div>
+  </nav>
+
+  <main>
+    <section class="deck" id="intro" data-page-section="intro">
+      <header class="hero">
+        <div>
+          <h1>Ogród<span>Lutecji</span></h1>
+          <svg class="whip" viewBox="0 0 420 40" aria-hidden="true"><path pathLength="1" d="M4 24C60 -6 90 44 150 20S250 -4 300 22s80 8 116-6"/></svg>
+          <p class="tag">Miasto rozkwitło w jedną noc, a szklarnia nad rzeką pamięta każde imię.</p>
+          <a class="enter" href="#prolog" id="enter">Wejdź do ogrodu</a>
+        </div>
+        <div class="medal" id="medal" aria-hidden="true"></div>
+      </header>
+      <div class="wrap" id="prolog">
+        <h2>Prolog</h2><svg class="sway" viewBox="0 0 220 20" aria-hidden="true"><path d="M2 12C30 -4 50 24 80 10S130 -2 150 12s50 4 68-6"/></svg>
+        <div class="prologue">
+          <p>Lutecja rozkwitła w jedną noc. Żelazo owinęło się liśćmi, latarnie puściły pąki, a Wielka Szklarnia nad Sekwaną przestała być budynkiem i zaczęła być ogrodnikiem. Nikt nie wie, kto komu służy.</p>
+          <p>Pani Lazuli, ostatnia opiekunka szklarni, zaprasza drużynę na herbatę. W Lutecji takie zaproszenie zawsze oznacza jedno: ktoś zostanie przycięty. Pytanie, czy chodzi o gałąź, czy o głowę.</p>
+        </div>
+        <div class="houses" id="houses"></div>
+      </div>
+    </section>
+
+    <section class="deck" id="postaci" data-page-section="postaci" hidden>
+      <div class="wrap">
+        <h2>Postaci</h2><svg class="sway" viewBox="0 0 220 20" aria-hidden="true"><path d="M2 12C30 -4 50 24 80 10S130 -2 150 12s50 4 68-6"/></svg>
+        <div class="cast" id="cast" role="tablist" aria-label="Drużyna"></div>
+        <article class="leaf dossier" id="dossier" role="tabpanel"></article>
+      </div>
+    </section>
+
+    <section class="deck" id="kronika" data-page-section="kronika" hidden>
+      <div class="wrap">
+        <h2>Kronika</h2><svg class="sway" viewBox="0 0 220 20" aria-hidden="true"><path d="M2 12C30 -4 50 24 80 10S130 -2 150 12s50 4 68-6"/></svg>
+        <div class="chron" id="chron"></div>
+      </div>
+    </section>
+
+    <section class="deck" id="notatki" data-page-section="notatki" hidden>
+      <div class="wrap">
+        <h2>Notatki</h2><svg class="sway" viewBox="0 0 220 20" aria-hidden="true"><path d="M2 12C30 -4 50 24 80 10S130 -2 150 12s50 4 68-6"/></svg>
+        <div class="leaf"><div class="viewport" id="notatki-viewport" data-viewport="notatki"><div><code>#notatki-viewport</code><p>Tu zamontujesz moduł notatek. Sekcja ma już ramę, tytuł i miejsce na pędzie nawigacji.</p></div></div></div>
+      </div>
+    </section>
+
+    <section class="deck" id="mapa" data-page-section="mapa" hidden>
+      <div class="wrap">
+        <h2>Mapa</h2><svg class="sway" viewBox="0 0 220 20" aria-hidden="true"><path d="M2 12C30 -4 50 24 80 10S130 -2 150 12s50 4 68-6"/></svg>
+        <div class="leaf oval"><div class="viewport" id="mapa-viewport" data-viewport="mapa"><div><code>#mapa-viewport</code><p>Tu zamontujesz mapę kampanii. Owalna rama przycina to, co wychodzi poza kadr.</p></div></div></div>
+      </div>
+    </section>
+
+    <section class="deck" id="status" data-page-section="status" hidden>
+      <div class="wrap">
+        <h2>Status</h2><svg class="sway" viewBox="0 0 220 20" aria-hidden="true"><path d="M2 12C30 -4 50 24 80 10S130 -2 150 12s50 4 68-6"/></svg>
+        <div class="gauges" id="gauges"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const SECTIONS = [["intro", "Intro"], ["postaci", "Postaci"], ["kronika", "Kronika"], ["notatki", "Notatki"], ["mapa", "Mapa"], ["status", "Status"]];
+      const COLORS = ["#4f7d78", "#d9988a", "#c79a3f", "#8a9a6b", "#5a3347"];
+      const HOUSES = [
+        ["Zakon Przycinaczy", "Strażnicy ładu. Wierzą, że ogród trzeba kontrolować, zanim zacznie kontrolować ich."],
+        ["Dwór Szeptów", "Fey, którzy rozmawiają z korzeniami. Ich rozmowy kończą się czyimś przeprowadzką."],
+        ["Towarzystwo Botaników", "Uczeni i złodzieje nasion. Rzadko zgadzają się, który z tych tytułów jest obelgą."]
+      ];
+      const CREW = [
+        { n: "Amélie Fougère", role: "Alchemiczka zapachów, druidka", q: "Każda roślina pachnie tym, czego się boi.", s: [8, 9, 6, 5, 3], b: ["Hoduje paproć, która zna jej sekrety", "Jej pierwsza perfuma uśpiła całą ulicę"] },
+        { n: "Lucien Sorel", role: "Pojedynkowicz i poeta, bard", q: "Zabiję was rymem. Dopiero potem szpadą.", s: [10, 7, 3, 9, 6], b: ["Zakochany w fontannie", "Wyzwał na pojedynek własny cień"] },
+        { n: "Odile Marchetti", role: "Rzeźbiarka żelaza, artyficer", q: "Żelazo też kwitnie, tylko wolniej.", s: [5, 6, 9, 4, 8], b: ["Odlała bramę szklarni", "Nie ufa niczemu, co nie rdzewieje"] },
+        { n: "Bastien Roux", role: "Były przycinacz, łowca", q: "Cięcie jest łaską. Tego uczą od pierwszego dnia.", s: [3, 8, 7, 2, 10], b: ["Zdezerterował z Zakonu", "Wciąż nosi sekator za pasem"] }
+      ];
+      const SESSIONS = [
+        ["Pąk: zaproszenie", "3 listopada", "Karta zaproszenia pachnie bzem i prochem. Drużyna dociera do Wielkiej Szklarni i odkrywa, że brama sama się za nimi zamyka.", "#"],
+        ["Rozkwit: herbata", "17 listopada", "Pani Lazuli nalewa herbatę, której nikt nie pije. Odile znajduje w ścianie żelazne żyłki biegnące pod całą Lutecją.", "#"],
+        ["Pyłek: złodzieje nasion", "1 grudnia", "Towarzystwo Botaników proponuje układ. Lucien wyzywa na pojedynek fontannę, a fontanna przyjmuje wyzwanie.", ""],
+        ["Przekwit: cięcie", "15 grudnia", "Zakon Przycinaczy zbliża się do szklarni z piłami. Zostaje jedna noc, by zdecydować, co w ogrodzie zasługuje na przetrwanie.", ""]
+      ];
+      const GAUGES = [
+        { k: "Wiosna", v: 6, c: "#8a9a6b", t: "Jak bardzo ogród zdobył miasto." },
+        { k: "Cierń", v: 3, c: "#5a3347", t: "Rośnie z każdym cięciem." },
+        { k: "Nektar", v: 5, c: "#c79a3f", t: "Zapasy drużyny: eliksiry, pyłki, zaproszenia." }
+      ];
+      const $ = (s, r = document) => r.querySelector(s);
+      const el = (t, h, c) => { const e = document.createElement(t); if (h) e.innerHTML = h; if (c) e.className = c; return e; };
+      const rad = d => d * Math.PI / 180;
+
+      /* Generative flora */
+      function petals(n, rx, ry, fill, off, d0) {
+        let o = "";
+        for (let i = 0; i < n; i++) o += `<ellipse class="pt" cx="0" cy="${-ry}" rx="${rx}" ry="${ry}" fill="${fill}" fill-opacity=".92" stroke="#2c3b2e" stroke-width="1.5" style="--r:${(off + i * 360 / n).toFixed(1)}deg;--d:${d0 + i}"/>`;
+        return o;
+      }
+      function medallion() {
+        const tend = ["M20 560C120 540 170 440 240 380", "M580 560C480 530 430 450 370 390", "M30 40C110 70 180 150 230 230", "M575 55C500 90 430 150 380 230", "M300 600C290 540 310 480 300 420"]
+          .map(d => `<path class="tend" pathLength="1" d="${d}"/>`).join("");
+        const leaves = [[240, 380, 40], [370, 390, -40], [230, 230, 60], [380, 230, -60]].map(([x, y, a]) => `<ellipse cx="${x}" cy="${y}" rx="22" ry="9" transform="rotate(${a} ${x} ${y})" fill="#8a9a6b" stroke="#2c3b2e" stroke-width="1.5"/>`).join("");
+        $("#medal").innerHTML = `<svg viewBox="0 0 600 600"><defs><path id="tarc" d="M62 300A238 238 0 0 1 538 300"/></defs>
+          <g class="halo"><circle cx="300" cy="300" r="280" fill="none" stroke="#2c3b2e" stroke-width="2"/><circle cx="300" cy="300" r="262" fill="none" stroke="#c79a3f" stroke-width="5" stroke-dasharray="1 11" stroke-linecap="round"/></g>
+          <circle cx="300" cy="300" r="226" fill="#f8f1de" stroke="#2c3b2e" stroke-width="2"/><circle cx="300" cy="300" r="216" fill="none" stroke="#c79a3f" stroke-width="1.2"/>
+          <text font-family="Italiana,serif" font-size="27" letter-spacing="9" fill="#5a3347"><textPath href="#tarc" startOffset="50%" text-anchor="middle">SZKLARNIA PAMIĘTA</textPath></text>
+          ${tend}${leaves}
+          <g transform="translate(300 312)">${petals(8, 38, 112, "#4f7d78", 0, 0)}${petals(8, 32, 88, "#d9988a", 22.5, 8)}${petals(5, 28, 58, "#c79a3f", 0, 16)}<circle r="17" fill="#5a3347" stroke="#2c3b2e" stroke-width="2"/></g></svg>`;
+      }
+      function emblem(i, ch, big) {
+        const col = COLORS[i % 5], col2 = COLORS[(i + 1) % 5], n = 6 + i;
+        let p = "";
+        for (let k = 0; k < n; k++) p += `<ellipse cx="0" cy="-46" rx="15" ry="34" transform="rotate(${k * 360 / n})" fill="${k % 2 ? col : col2}" fill-opacity=".85" stroke="#2c3b2e" stroke-width="1.2"/>`;
+        return `<svg viewBox="-100 -100 200 200" role="img" aria-label="Medalion: ${ch}"><g class="spin"><circle r="94" fill="none" stroke="#c79a3f" stroke-width="4" stroke-dasharray="1 9" stroke-linecap="round"/></g><circle r="86" fill="#f8f1de" stroke="#2c3b2e" stroke-width="2"/>${p}<circle r="40" fill="#f8f1de" stroke="#2c3b2e" stroke-width="2.5"/><circle r="34" fill="none" stroke="#c79a3f" stroke-width="1"/><text y="20" text-anchor="middle" font-family="Italiana,serif" font-size="56" fill="#5a3347">${ch}</text></svg>`;
+      }
+      function statFlower(s) {
+        const L = ["Urok", "Zmysł", "Korzeń", "Pieśń", "Ostrze"];
+        return `<svg class="flower" viewBox="-130 -130 260 260" role="img" aria-label="Wykres atrybutów"><circle r="104" fill="none" stroke="#c79a3f" stroke-dasharray="2 6"/>${s.map((v, j) => `<ellipse cx="0" cy="${-(8 + v * 5)}" rx="16" ry="${8 + v * 5}" transform="rotate(${j * 72})" fill="${COLORS[j]}" fill-opacity=".8" stroke="#2c3b2e" stroke-width="1.4"/><text transform="rotate(${j * 72}) translate(0 -112)" text-anchor="middle">${L[j]}</text>`).join("")}<circle r="9" fill="#5a3347"/></svg>`;
+      }
+      medallion();
+
+      HOUSES.forEach(([n, t], i) => {
+        let p = ""; const k = 5 + i * 2;
+        for (let a = 0; a < k; a++) p += `<ellipse cx="0" cy="-17" rx="8" ry="16" transform="rotate(${a * 360 / k})" fill="${COLORS[i]}" fill-opacity=".85" stroke="#2c3b2e" stroke-width="1.2"/>`;
+        $("#houses").appendChild(el("article", `<svg viewBox="-40 -40 80 80" aria-hidden="true">${p}<circle r="6" fill="#c79a3f" stroke="#2c3b2e"/></svg><h3>${n}</h3><p>${t}</p>`, "leaf house"));
+      });
+
+      /* Postaci */
+      const cast = $("#cast"), dossier = $("#dossier");
+      function pick(i) {
+        const c = CREW[i];
+        [...cast.children].forEach((b, j) => b.setAttribute("aria-selected", String(i === j)));
+        dossier.innerHTML = `<div>${emblem(i, c.n[0])}</div><div><h3 style="font-size:2.3rem">${c.n}</h3><p class="role">${c.role}</p><p class="quote">${c.q}</p><ul>${c.b.map(x => `<li>${x}</li>`).join("")}</ul></div><div>${statFlower(c.s)}</div>`;
+      }
+      CREW.forEach((c, i) => {
+        const b = el("button", emblem(i, c.n[0]) + `<span>${c.n.split(" ")[0]}</span>`, "med");
+        b.setAttribute("role", "tab"); b.addEventListener("click", () => pick(i)); cast.appendChild(b);
+      });
+      pick(0);
+
+      /* Kronika */
+      SESSIONS.forEach(([t, d, n, url], i) => {
+        const last = i === SESSIONS.length - 1;
+        let bud = ""; for (let k = 0; k < 6; k++) bud += `<ellipse cx="0" cy="-9" rx="5" ry="9" style="--r:${k * 60}deg"/>`;
+        const e = el("article", `<svg class="bud" viewBox="-20 -20 40 40" aria-hidden="true">${bud}<circle r="3.5" fill="#c79a3f"/></svg><button aria-expanded="${last}"><span class="ttl">${t}</span><span class="meta">${d}</span></button><div class="body"><div><p>${n}</p>${url ? `<a href="${url}">Odtwórz nagranie</a>` : "<em>Brak nagrania</em>"}</div></div>`, "entry" + (last ? " open" : ""));
+        const btn = $("button", e);
+        btn.addEventListener("click", () => { e.classList.toggle("open"); btn.setAttribute("aria-expanded", String(e.classList.contains("open"))); });
+        $("#chron").appendChild(e);
+      });
+
+      /* Status */
+      GAUGES.forEach(g => {
+        let p = ""; for (let k = 0; k < 10; k++) p += `<ellipse class="pet" cx="0" cy="-42" rx="12" ry="34" style="--r:${k * 36}deg;--c:${g.c}"/>`;
+        const card = el("article", `<svg viewBox="-90 -90 180 180" aria-hidden="true">${p}<circle r="12" fill="#c79a3f" stroke="#2c3b2e" stroke-width="2"/></svg><div class="val"></div><h3>${g.k}</h3><p>${g.t}</p><div class="ctl"><button aria-label="Zmniejsz: ${g.k}">−</button><button aria-label="Zwiększ: ${g.k}">+</button></div>`, "leaf gauge");
+        const pets = card.querySelectorAll(".pet"), val = $(".val", card);
+        const set = v => { g.v = Math.max(0, Math.min(10, v)); pets.forEach((q, k) => q.classList.toggle("on", k < g.v)); val.textContent = g.v; };
+        const [m, pl] = card.querySelectorAll("button"); m.onclick = () => set(g.v - 1); pl.onclick = () => set(g.v + 1);
+        const v0 = g.v; set(0); $("#gauges").appendChild(card); setTimeout(() => set(v0), 60);
+      });
+
+      /* Vine navigation */
+      const vine = $("#vine"), stem = $("#stem"), base = $("#base"), grown = $("#grown"), label = $("#label"), bloom = $("#bloom");
+      const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let current = "intro", busy = false, nodes = [], total = 1, horiz = false;
+      const flowerIcon = () => { let p = ""; for (let k = 0; k < 6; k++) p += `<ellipse cx="0" cy="-8" rx="4.5" ry="8" transform="rotate(${k * 60})"/>`; return `<svg viewBox="-20 -20 40 40">${p}<circle r="3" fill="#2c3b2e"/></svg>`; };
+      const btns = SECTIONS.map(([id, name]) => { const b = el("button", flowerIcon()); b.title = name; b.setAttribute("aria-label", name); b.dataset.go = id; b.addEventListener("click", () => go(id, b)); vine.appendChild(b); return b; });
+      function layout() {
+        const r = vine.getBoundingClientRect(), W = r.width, H = r.height; horiz = innerWidth <= 860;
+        stem.setAttribute("viewBox", `0 0 ${W} ${H}`);
+        let d = "";
+        for (let t = 0; t <= 80; t++) {
+          const f = t / 80, x = horiz ? 30 + f * (W - 60) : W / 2 + 30 * Math.sin(f * Math.PI * 3), y = horiz ? H / 2 + 14 + 14 * Math.sin(f * Math.PI * 3) : 34 + f * (H - 68);
+          d += (t ? "L" : "M") + x.toFixed(1) + " " + y.toFixed(1);
+        }
+        base.setAttribute("d", d); grown.setAttribute("d", d); total = base.getTotalLength();
+        grown.style.strokeDasharray = total;
+        nodes = SECTIONS.map((_, i) => base.getPointAtLength(i / 5 * total));
+        btns.forEach((b, i) => { b.style.left = nodes[i].x + "px"; b.style.top = nodes[i].y + "px"; });
+        mark(current, true);
+      }
+      function mark(id, instant) {
+        const i = SECTIONS.findIndex(s => s[0] === id);
+        btns.forEach(b => b.setAttribute("aria-current", String(b.dataset.go === id)));
+        grown.style.transition = instant ? "none" : ""; grown.style.strokeDashoffset = total * (1 - i / 5);
+        label.textContent = SECTIONS[i][1]; label.style.left = nodes[i].x + "px"; label.style.top = nodes[i].y + "px";
+      }
+      function apply(id) {
+        document.querySelectorAll(".deck").forEach(d => (d.hidden = d.id !== id));
+        current = id; mark(id); window.scrollTo(0, 0);
+        try { history.replaceState(null, "", "#" + id); } catch (e) { /* file:// or sandbox */ }
+      }
+      function go(id, b) {
+        if (busy || id === current) return;
+        if (still) return apply(id);
+        busy = true;
+        const r = b.getBoundingClientRect(); bloom.style.setProperty("--x", r.left + r.width / 2 + "px"); bloom.style.setProperty("--y", r.top + r.height / 2 + "px");
+        bloom.className = "bloom in";
+        setTimeout(() => { apply(id); bloom.className = "bloom in out"; }, 900);
+        setTimeout(() => { bloom.className = "bloom reset"; void bloom.offsetWidth; bloom.className = "bloom"; busy = false; }, 1550);
+      }
+      addEventListener("resize", layout);
+
+      $("#enter").addEventListener("click", e => { e.preventDefault(); $("#prolog").scrollIntoView({ behavior: still ? "auto" : "smooth" }); });
+
+      /* Pollen */
+      const cv = $("#pollen"), cx = cv.getContext("2d"); let P = [], mx = -999, my = -999;
+      const seed = () => { cv.width = innerWidth; cv.height = innerHeight; P = Array.from({ length: 46 }, () => ({ x: Math.random() * cv.width, y: Math.random() * cv.height, r: Math.random() * 2.6 + .8, s: Math.random() * .5 + .15, p: Math.random() * 7, c: COLORS[Math.floor(Math.random() * 5)] })); };
+      addEventListener("pointermove", e => { mx = e.clientX; my = e.clientY; });
+      function tick(t) {
+        cx.clearRect(0, 0, cv.width, cv.height);
+        P.forEach(q => {
+          q.y -= q.s; q.x += Math.sin(t / 1400 + q.p) * .4;
+          const dx = q.x - mx, dy = q.y - my, d = Math.hypot(dx, dy); if (d < 90) { q.x += dx / d * 2.2; q.y += dy / d * 2.2; }
+          if (q.y < -10) { q.y = cv.height + 10; q.x = Math.random() * cv.width; }
+          cx.globalAlpha = .55; cx.fillStyle = q.c; cx.beginPath(); cx.arc(q.x, q.y, q.r, 0, 7); cx.fill();
+        });
+        requestAnimationFrame(tick);
+      }
+      addEventListener("resize", seed); seed(); if (!still) requestAnimationFrame(tick);
+
+      const start = location.hash.slice(1);
+      current = SECTIONS.some(s => s[0] === start) ? start : "intro";
+      document.querySelectorAll(".deck").forEach(d => (d.hidden = d.id !== current));
+      layout();
+    })();
+  </script>
+</body>
+</html>
